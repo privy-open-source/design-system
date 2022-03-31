@@ -1193,7 +1193,7 @@ __metadata:
     "@testing-library/vue": 6.5.1
     "@types/testing-library__jest-dom": 5.14.3
     autoprefixer: 10.4.4
-    happy-dom: 2.50.0
+    happy-dom: 2.52.0
     postcss: 8.4.12
     tailwindcss: 3.0.23
     typescript: 4.6.3
@@ -1905,9 +1905,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:2.50.0":
-  version: 2.50.0
-  resolution: "happy-dom@npm:2.50.0"
+"happy-dom@npm:2.52.0":
+  version: 2.52.0
+  resolution: "happy-dom@npm:2.52.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -1916,7 +1916,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 83e9a0b77310c4a4910e135bfe7e84d0bc8fcef1a7d09458dc24b467494ecc588ffddc5cad24e2dc11b66e75236ddd9d470a3a1cf2d657412b8fa85708fde1b3
+  checksum: 4ecd7a9919ce74e25c3eb7eb8276ce4d6b77436f4e38f8bf9347b787f9cce5d2a28b8f46e288c3f8e927e24a1f39628407fe4b34dcc9da469a1d6e7fb2874aa0
   languageName: node
   linkType: hard
 
