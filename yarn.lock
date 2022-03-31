@@ -1200,7 +1200,7 @@ __metadata:
     vite: 2.8.6
     vitepress: 0.22.3
     vitest: 0.7.12
-    vue-demi: 0.12.4
+    vue-demi: 0.12.5
   languageName: unknown
   linkType: soft
 
@@ -3181,9 +3181,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.12.4":
-  version: 0.12.4
-  resolution: "vue-demi@npm:0.12.4"
+"vue-demi@npm:0.12.5":
+  version: 0.12.5
+  resolution: "vue-demi@npm:0.12.5"
   peerDependencies:
     "@vue/composition-api": ^1.0.0-rc.1
     vue: ^3.0.0-0 || ^2.6.0
@@ -3193,7 +3193,7 @@ __metadata:
   bin:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
-  checksum: cd715e008837c67aa7018e96f5556ffd4f26cbeed031116251c3983b777ff163550670af28b2b39bc650c5f7c4738976524e013cfc36aa17e26bc07fad70efc5
+  checksum: 40a0470caea8312e0d4df2541f141c36c768dfc7f2f7d41f0f28ba29df11d3119e2f09b94c815f13b7c7f3f45dbc247b0e9e0c02a1800e2823e241c1d771e39b
   languageName: node
   linkType: hard
 
