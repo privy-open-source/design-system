@@ -1,6 +1,6 @@
 <template>
-  <button data-testid="button" class="btn" :class="classNames">
-    <slot></slot>
+  <button data-testid="btn" :class="classNames">
+    <slot />
 
   </button>
 </template>
@@ -17,7 +17,7 @@ export default defineComponent({
   },
   setup (props) {
     const classNames = computed(() => {
-      const result = []
+      const result: string[] = ['btn']
 
       if (props.variant)
         result.push(`btn-${props.variant}`)
@@ -33,11 +33,11 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .btn {
-  @apply p-1 rounded bg-red-500 text-white;
+  @apply p-2;
+}
+
+.btn-primary {
+  @apply bg-primary-100 text-white;
 }
 </style>
