@@ -2,7 +2,7 @@
   import Banner from './Banner.vue'
 </script>
 
-# Alert
+# Banner / Alert
 
 ## Usage
 
@@ -18,11 +18,14 @@
 
 ### Banner with Title
 
-<Banner>Your enterprise Privy Balance is running out. Please topup now.</Banner>
+  <Banner><div class="font-semibold">Your enterprise Privy Balance is running out. Please topup now.</div><div class="text-sm">Your enterprise Privy Balance is running out. Please topup now.</div></Banner>
 
 ```vue
 <template>
-  <Banner>Your enterprise Privy Balance is running out. Please topup now.</Banner>
+  <Banner>
+    <div class="font-semibold">Your enterprise Privy Balance is running out. Please topup now.</div>
+    <div class="text-sm">Your enterprise Privy Balance is running out. Please topup now.</div>
+  </Banner>
 </template>
 ```
 

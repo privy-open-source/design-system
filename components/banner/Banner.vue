@@ -4,7 +4,7 @@
     data-testid="banner"
     :class="classNames">
     <div class="banner__icon">
-      I
+      <component :is="icon" />
     </div>
     <div class="banner__body">
       <slot />
@@ -13,16 +13,20 @@
       v-if="dismissable"
       data-testid="banner-close"
       class="banner__close" @click="dismiss()">
-      &times;
+      <IconClose />
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import IconInfo from "@carbon/icons-vue/es/information--filled/20"
+import IconDanger from "@carbon/icons-vue/es/warning--filled/20"
+import IconClose from "@carbon/icons-vue/es/close/16"
 import { defineComponent, PropType, ref, computed } from "vue-demi"
 
 export default defineComponent({
-  props: {
+  components: { IconInfo, IconClose, IconDanger },
+  props     : {
     variant: {
       type   : String as PropType<'info' | 'danger'>,
       default: 'info',
@@ -44,6 +48,13 @@ export default defineComponent({
       return result
     })
 
+    const icon = computed(() => {
+      if (props.variant === 'danger')
+        return IconDanger
+
+      return IconInfo
+    })
+
     function dismiss (): void {
       show.value = false
       emit('dismissed')
@@ -52,6 +63,7 @@ export default defineComponent({
     return {
       classNames,
       show,
+      icon,
       dismiss,
     }
   }
@@ -67,16 +79,28 @@ export default defineComponent({
   @apply bg-background-100;
 }
 
+.banner--info .banner__icon {
+  @apply text-primary-100;
+}
+
 .banner--danger {
   @apply bg-danger-25;
 }
 
+.banner--danger .banner__icon {
+  @apply text-danger-100;
+}
+
 .banner__icon,
 .banner__close {
-  @apply flex-shrink-0 gap-2;
+  @apply flex-shrink-0;
 }
 
 .banner__body {
   @apply flex-grow;
+}
+
+.banner__close {
+  @apply text-secondary-50 cursor-pointer hover:text-secondary-100;
 }
 </style>

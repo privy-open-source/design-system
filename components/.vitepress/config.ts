@@ -32,8 +32,6 @@ export default defineConfig({
     ]
   },
   vite: {
-    plugins: [
-      fonts({ google: { families: ['DM Sans'] } }),
-    ]
+    plugins: []
   }
 })

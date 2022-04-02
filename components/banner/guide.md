@@ -2,7 +2,7 @@
   import Banner from './Banner.vue'
 </script>
 
-# Alert
+# Banner
 
 ## Usage
 

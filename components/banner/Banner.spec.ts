@@ -22,6 +22,23 @@ it('should rendered properly without any props', () => {
   expect(text).toBeInTheDocument()
 })
 
+it('should have "danger" style if variant set to "danger"', () => {
+  const screen = render({
+    components: { Banner },
+    template  : `
+      <Banner variant="danger">
+        Hello
+      </Banner>
+    `,
+  })
+
+  const banner = screen.queryByTestId('banner')
+
+  expect(banner).toBeInTheDocument()
+  expect(banner).toHaveClass('banner', 'banner--danger')
+  expect(banner).not.toHaveClass('banner--info')
+})
+
 it('should dismissed when close button clicked', async () => {
   const screen = render({
     components: { Banner },
