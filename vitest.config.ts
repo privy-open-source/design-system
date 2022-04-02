@@ -6,8 +6,13 @@ export default defineConfig({
   plugins: [
     Vue(),
   ],
-  test: {
+  build: { sourcemap: true },
+  test : {
     globals    : true,
     environment: 'happy-dom',
+    coverage   : {
+      exclude : ['**/*.spec.ts'],
+      reporter: ['text', 'json', 'html'],
+    },
   },
 } as UserConfig)
