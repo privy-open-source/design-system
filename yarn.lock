@@ -331,14 +331,14 @@ __metadata:
     "@types/testing-library__jest-dom": 5.14.3
     autoprefixer: 10.4.4
     c8: ^7.11.0
-    happy-dom: 2.52.0
+    happy-dom: 2.55.0
     postcss: 8.4.12
     tailwindcss: 3.0.23
     typescript: 4.6.3
-    vite: 2.9.0
+    vite: 2.9.1
     vite-plugin-fonts: ^0.3.0
     vitepress: 0.22.3
-    vitest: 0.8.1
+    vitest: 0.8.2
     vue-demi: 0.12.5
   languageName: unknown
   linkType: soft
@@ -2022,9 +2022,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:2.52.0":
-  version: 2.52.0
-  resolution: "happy-dom@npm:2.52.0"
+"happy-dom@npm:2.55.0":
+  version: 2.55.0
+  resolution: "happy-dom@npm:2.55.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -2033,7 +2033,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 4ecd7a9919ce74e25c3eb7eb8276ce4d6b77436f4e38f8bf9347b787f9cce5d2a28b8f46e288c3f8e927e24a1f39628407fe4b34dcc9da469a1d6e7fb2874aa0
+  checksum: 42b238183ce76f8bad9bf4fd7caf07fa4313c86d2a2a2143bf08dc09253020f9acf9c4d462333c96a4a2c759a0b70d48cc4628921861b74787773f44c9727cfe
   languageName: node
   linkType: hard
 
@@ -3611,9 +3611,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:2.9.0":
-  version: 2.9.0
-  resolution: "vite@npm:2.9.0"
+"vite@npm:2.9.1":
+  version: 2.9.1
+  resolution: "vite@npm:2.9.1"
   dependencies:
     esbuild: ^0.14.27
     fsevents: ~2.3.2
@@ -3636,7 +3636,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 2355a5a7a57a86558fb2378b493c98c97218ffdf5c7555df5531147217c8ec804d66434dfed130034c920cb0913cd5f0fa1f5d7756101601558320349c0e1cee
+  checksum: 0f0ac9337fa5c17faa4a59831a2df17475563b23a6162e86b2b60b19835ca1277f3249ea7a6608880354b39caf05779e9bad1e3b1f5b27010deced224aae47ea
   languageName: node
   linkType: hard
 
@@ -3685,9 +3685,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:0.8.1":
-  version: 0.8.1
-  resolution: "vitest@npm:0.8.1"
+"vitest@npm:0.8.2":
+  version: 0.8.2
+  resolution: "vitest@npm:0.8.2"
   dependencies:
     "@types/chai": ^4.3.0
     "@types/chai-subset": ^1.3.3
@@ -3712,7 +3712,7 @@ __metadata:
       optional: true
   bin:
     vitest: vitest.mjs
-  checksum: 6ae9c7ab102a5f44aa4abf28bf756e510b9249b82ea5d467118dabc5e3fe0f810a8bae483b29b3de6f9cc057745a03bb0ece56eb0148a288469b0a1840936a31
+  checksum: d5454454481b5147c9f4ec4db6612b01036bcc3b6712be0f3a0778073933e8dfb8bc2a382a88076ed2f2df8f10adc0e830391aaa7fe73da6c807de90b9cb6a84
   languageName: node
   linkType: hard
 
