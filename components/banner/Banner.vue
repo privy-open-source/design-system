@@ -19,9 +19,9 @@
 </template>
 
 <script lang="ts">
-import IconInfo from "@carbon/icons-vue/es/information--filled/20"
-import IconDanger from "@carbon/icons-vue/es/warning--filled/20"
-import IconClose from "@carbon/icons-vue/es/close/16"
+import IconInfo from "@carbon/icons-vue/lib/information--filled/20"
+import IconDanger from "@carbon/icons-vue/lib/warning--filled/20"
+import IconClose from "@carbon/icons-vue/lib/close/16"
 import { defineComponent, PropType, ref, computed } from "vue-demi"
 
 export default defineComponent({
