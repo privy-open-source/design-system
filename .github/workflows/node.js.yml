@@ -47,7 +47,7 @@ jobs:
         cache: 'yarn'
 
     - run: yarn install --immutable
-    - run: yarn build
+    # - run: yarn build
     - run: yarn coverage
 
     - uses: codecov/codecov-action@v2
@@ -55,7 +55,11 @@ jobs:
       with:
         fail_ci_if_error: true
 
-    - name: Deploy
+    - name: Build Docs
+      if: ${{ github.ref == 'refs/heads/main' }}
+      run: yarn docs:build
+
+    - name: Deploy Docs
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/main' }}
       with:
