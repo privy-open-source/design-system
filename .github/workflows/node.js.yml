@@ -47,17 +47,13 @@ jobs:
         cache: 'yarn'
 
     - run: yarn install --immutable
-    # - run: yarn build
+    - run: yarn docs:build
     - run: yarn coverage
 
     - uses: codecov/codecov-action@v2
       if: matrix.node-version == 16 && matrix.os == 'ubuntu-latest'
       with:
         fail_ci_if_error: true
-
-    - name: Build Docs
-      if: ${{ github.ref == 'refs/heads/main' }}
-      run: yarn docs:build
 
     - name: Deploy Docs
       uses: peaceiris/actions-gh-pages@v3

@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import fonts from 'vite-plugin-fonts'
 
 export default defineConfig({
+  base       : '/design-system/',
   title      : 'Design Sistem',
   themeConfig: {
     sidebar: [
