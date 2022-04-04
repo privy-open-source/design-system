@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.89eb5b8d.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"button/guide.md"}',r={};function o(c,n,s,i,_,d){return a(),t("div")}var u=e(r,[["render",o]]);export{f as __pageData,u as default};
