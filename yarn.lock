@@ -359,6 +359,7 @@ __metadata:
     c8: ^7.11.0
     happy-dom: 2.55.0
     postcss: 8.4.12
+    postcss-nested: ^5.0.6
     tailwindcss: 3.0.23
     typescript: 4.6.3
     vite: 2.9.1
@@ -2933,7 +2934,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nested@npm:5.0.6":
+"postcss-nested@npm:5.0.6, postcss-nested@npm:^5.0.6":
   version: 5.0.6
   resolution: "postcss-nested@npm:5.0.6"
   dependencies:

@@ -1,8 +1,6 @@
-import '@testing-library/jest-dom'
 import { vi } from 'vitest'
 import { fireEvent, render } from "@testing-library/vue"
 import Banner from './Banner.vue'
-
 
 it('should rendered properly without any props', () => {
   const screen = render({
@@ -88,7 +86,6 @@ it('should emit event "dismissed" if close button clicked', async () => {
   expect(spy).toBeCalled()
 })
 
-
 it('should have no close button if props "dismissable" set to false', () => {
   const screen = render({
     components: { Banner },
@@ -102,4 +99,35 @@ it('should have no close button if props "dismissable" set to false', () => {
   const close = screen.queryByTestId('banner-close')
 
   expect(close).not.toBeInTheDocument()
+})
+
+it('sould be able to dimissed via slot-scope "close" function', async () => {
+  const screen = render({
+    components: { Banner },
+    template  : `
+      <Banner :dismissable="false">
+        <template #default="{ close }">
+          Hello
+
+          <span @click="close()">
+            Click Me
+          </span>
+        </template>
+      </Banner>
+    `,
+  })
+
+  const banner  = screen.queryByTestId('banner')
+  const text    = screen.queryByText('Hello')
+  const close   = screen.queryByTestId('banner-close')
+  const clickMe = screen.queryByText('Click Me')
+
+  expect(banner).toBeInTheDocument()
+  expect(text).toBeInTheDocument()
+  expect(close).not.toBeInTheDocument()
+
+  await fireEvent.click(clickMe)
+
+  expect(banner).not.toBeInTheDocument()
+  expect(text).not.toBeInTheDocument()
 })
