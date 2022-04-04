@@ -14,5 +14,8 @@ export default defineConfig({
       exclude : ['**/*.spec.ts'],
       reporter: ['text', 'json', 'html'],
     },
+    setupFiles: [
+      './vitest.setup.ts'
+    ]
   },
 } as UserConfig)

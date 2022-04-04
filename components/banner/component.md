@@ -8,28 +8,34 @@
 
 ### Simple Banner
 
-<Banner>Your enterprise Privy Balance is running out. Please topup now.</Banner>
+<Banner class="mt-3">Your enterprise Privy Balance is running out. Please topup now.</Banner>
 
 ```vue
 <template>
-  <Banner>Your enterprise Privy Balance is running out. Please topup now.</Banner>
+  <Banner>
+    Your enterprise Privy Balance is running out. Please topup now.
+  </Banner>
 </template>
 ```
 
 ### Banner with Title
 
-  <Banner><div class="font-semibold">Your enterprise Privy Balance is running out. Please topup now.</div><div class="text-sm">Your enterprise Privy Balance is running out. Please topup now.</div></Banner>
+<Banner class="mt-3"><div class="font-semibold">Your enterprise Privy Balance is running out. Please topup now.</div><div class="text-sm">Your enterprise Privy Balance is running out. Please topup now.</div></Banner>
 
 ```vue
 <template>
   <Banner>
-    <div class="font-semibold">Your enterprise Privy Balance is running out. Please topup now.</div>
-    <div class="text-sm">Your enterprise Privy Balance is running out. Please topup now.</div>
+    <div class="font-semibold">
+      Your enterprise Privy Balance is running out. Please topup now.
+    </div>
+    <div class="text-sm">
+      Your enterprise Privy Balance is running out. Please topup now.
+    </div>
   </Banner>
 </template>
 ```
 
-## Banner Variants
+## Variants
 
 Banner have 2 variants: `info` and `danger`, default is `info`
 
@@ -38,8 +44,12 @@ Banner have 2 variants: `info` and `danger`, default is `info`
 
 ```vue
 <template>
-  <Banner variant="info">Your enterprise Privy Balance is running out. Please topup now.</Banner>
-  <Banner variant="danger">Your enterprise Privy Balance is running out. Please topup now.</Banner>
+  <Banner variant="info">
+    Your enterprise Privy Balance is running out. Please topup now.
+  </Banner>
+  <Banner variant="danger">
+    Your enterprise Privy Balance is running out. Please topup now.
+  </Banner>
 </template>
 ```
 
@@ -50,7 +60,11 @@ You can hide close button with `dismissable` set to `false`
 <Banner :dismissable="false">Your enterprise Privy Balance is running out. Please topup now.</Banner>
 
 ```vue
-<Banner :dismissable="false">Your enterprise Privy Balance is running out. Please topup now.</Banner>
+<template>
+  <Banner :dismissable="false">
+    Your enterprise Privy Balance is running out. Please topup now.
+  </Banner>
+</template>
 ```
 
 ## API
@@ -71,4 +85,4 @@ You can hide close button with `dismissable` set to `false`
 
 | Name        | Argunments | Description                     |
 |-------------|------------|---------------------------------|
-| `dismissed` |            | Event when close button clicked |
+| `dismissed` | -          | Event when close button clicked |

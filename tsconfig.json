@@ -18,5 +18,10 @@
     "components/**/*.tsx",
     "components/**/*.vue",
   ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -3,9 +3,17 @@ import fonts from 'vite-plugin-fonts'
 
 export default defineConfig({
   base       : '/design-system/',
-  title      : 'Design Sistem',
+  title      : 'Design System',
   themeConfig: {
-    sidebar: [
+    repo        : 'privy-open-source/design-system',
+    docsDir     : 'components',
+    docsBranch  : 'main',
+    editLinks   : true,
+    editLinkText: 'Edit this page on GitHub',
+    nextLinks   : false,
+    prevLinks   : false,
+    lastUpdated : 'Last Updated',
+    sidebar     : [
       {
         text       : 'Guide',
         collapsable: true,
@@ -22,11 +30,11 @@ export default defineConfig({
         children   : [
           {
             text: 'Banner',
-            link: '/banner/playground'
+            link: '/banner/component'
           },
           {
             text: 'Button',
-            link: '/button/playground'
+            link: '/button/component'
           }
         ]
       },

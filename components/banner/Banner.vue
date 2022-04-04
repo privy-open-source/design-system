@@ -7,12 +7,12 @@
       <component :is="icon" />
     </div>
     <div class="banner__body">
-      <slot />
+      <slot :close="close" />
     </div>
     <div
       v-if="dismissable"
       data-testid="banner-close"
-      class="banner__close" @click="dismiss()">
+      class="banner__close" @click="close()">
       <IconClose />
     </div>
   </div>
@@ -24,11 +24,13 @@ import IconDanger from "@carbon/icons-vue/lib/warning--filled/20"
 import IconClose from "@carbon/icons-vue/lib/close/16"
 import { defineComponent, PropType, ref, computed } from "vue-demi"
 
+type StyleVariant = 'info' | 'danger'
+
 export default defineComponent({
   components: { IconInfo, IconClose, IconDanger },
   props     : {
     variant: {
-      type   : String as PropType<'info' | 'danger'>,
+      type   : String as PropType<StyleVariant>,
       default: 'info',
     },
     dismissable: {
@@ -36,6 +38,7 @@ export default defineComponent({
       default: true,
     },
   },
+  emits: ['dismissed'],
   setup (props, { emit }) {
     const show = ref(true)
 
@@ -55,7 +58,7 @@ export default defineComponent({
       return IconInfo
     })
 
-    function dismiss (): void {
+    function close (): void {
       show.value = false
       emit('dismissed')
     }
@@ -64,7 +67,7 @@ export default defineComponent({
       classNames,
       show,
       icon,
-      dismiss,
+      close,
     }
   }
 })
