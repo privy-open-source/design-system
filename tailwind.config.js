@@ -119,11 +119,12 @@ module.exports = {
         75 : '#BABABA',
         100: '#A3A3A3',
       },
-      black: '#000000',
-      dark : '#404040',
-      grey : '#808080',
-      light: '#BFBFBF',
-      white: '#FFFFFF',
+      black      : '#000000',
+      dark       : '#404040',
+      grey       : '#808080',
+      light      : '#BFBFBF',
+      white      : '#FFFFFF',
+      transparent: 'transparent',
     },
     borderRadius: {
       'none'   : '0rem',
@@ -137,7 +138,7 @@ module.exports = {
       '2xl'    : '1.25rem',
       '3xl'    : '1.375rem',
       'full'   : '9999px',
-    }
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
