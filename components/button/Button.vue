@@ -61,8 +61,16 @@ export default defineComponent({
   @apply self-baseline;
 }
 
+.btn--sm {
+  @apply p-1 gap-1 text-sm;
+}
+
 .btn--md {
   @apply p-2 gap-2;
+}
+
+.btn--lg {
+  @apply p-3 gap-3 text-lg;
 }
 
 .btn--solid {
@@ -129,33 +137,39 @@ export default defineComponent({
   }
 }
 
+.btn--ghost {
+  @apply border border-transparent hover:bg-black hover:bg-opacity-5 hover:shadow-lg active:shadow-none;
+}
+
 .btn--link {
+  @apply border border-transparent hover:underline;
+
   &.btn--primary {
-    @apply text-primary-100 hover:underline hover:text-primary-hovered active:text-primary-focused;
+    @apply text-primary-100 hover:text-primary-hovered active:text-primary-focused;
   }
 
   &.btn--secondary {
-    @apply text-secondary-100 hover:underline hover:text-secondary-hovered active:text-secondary-focused;
+    @apply text-secondary-100 hover:text-secondary-hovered active:text-secondary-focused;
   }
 
   &.btn--success {
-    @apply text-success-100 hover:underline hover:text-success-hovered active:text-success-focused;
+    @apply text-success-100 hover:text-success-hovered active:text-success-focused;
   }
 
   &.btn--info {
-    @apply text-info-100 hover:underline hover:text-info-hovered active:text-info-focused;
+    @apply text-info-100 hover:text-info-hovered active:text-info-focused;
   }
 
   &.btn--warning {
-    @apply text-warning-100 hover:underline hover:text-warning-hovered active:text-warning-focused;
+    @apply text-warning-100 hover:text-warning-hovered active:text-warning-focused;
   }
 
   &.btn--danger {
-    @apply text-danger-100 hover:underline hover:text-danger-hovered active:text-danger-focused;
+    @apply text-danger-100 hover:text-danger-hovered active:text-danger-focused;
   }
 
   &.btn--gold {
-    @apply text-gold-100 hover:underline hover:text-gold-hovered active:text-gold-focused;
+    @apply text-gold-100 hover:text-gold-hovered active:text-gold-focused;
   }
 }
 </style>

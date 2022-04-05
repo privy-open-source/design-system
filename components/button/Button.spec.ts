@@ -54,6 +54,23 @@ it('should have style "secondary" if color props set to "secondary"', () => {
   expect(button).not.toHaveClass('btn--primary')
 })
 
+it('should have style "lg" if size props set to "lg"', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button size="lg">
+        Hello
+      </Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveClass('btn', 'btn--solid', 'btn--lg')
+  expect(button).not.toHaveClass('btn--md')
+})
+
 it('should emit "click" when button is clicked', async () => {
   const spy    = vi.fn()
   const screen = render({
