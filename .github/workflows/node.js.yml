@@ -50,7 +50,7 @@ jobs:
     - run: yarn docs:build
     - run: yarn coverage
 
-    - uses: codecov/codecov-action@v2
+    - uses: codecov/codecov-action@v3
       if: matrix.node-version == 16 && matrix.os == 'ubuntu-latest'
       with:
         fail_ci_if_error: true
