@@ -71,8 +71,8 @@ You can hide close button with `dismissable` set to `false`
 
 ### Props
 
-| Props         | Type      | Default | Description                                     |
-|---------------|-----------|---------|-------------------------------------------------|
+| Props         |   Type    | Default | Description                                     |
+|---------------|:---------:|:-------:|-------------------------------------------------|
 | `variant`     | `String`  | `info`  | Banner variant, valid value is `info`, `danger` |
 | `dismissable` | `Boolean` | `true`  | Show / Hide dismiss button                      |
 
@@ -83,6 +83,6 @@ You can hide close button with `dismissable` set to `false`
 
 ### Events
 
-| Name        | Argunments | Description                     |
-|-------------|------------|---------------------------------|
-| `dismissed` | -          | Event when close button clicked |
+| Name        | Arguments | Description                     |
+|-------------|-----------|---------------------------------|
+| `dismissed` | -         | Event when close button clicked |

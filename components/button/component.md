@@ -176,12 +176,12 @@ It's also work with other variants (except `ghost`).
 
 ### Props
 
-| Props      | Type      | Default   | Description                                                                                                 |
-|------------|-----------|-----------|-------------------------------------------------------------------------------------------------------------|
-| `variant`  | `String`  | `solid`   | Button style variant, valid value is `solid`, `outline`, `ghost`, `link`                                    |
+| Props      |   Type    |  Default  | Description                                                                                                 |
+|------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
+| `variant`  | `String`  |  `solid`  | Button style variant, valid value is `solid`, `outline`, `ghost`, `link`                                    |
 | `color`    | `String`  | `primary` | Button color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
-| `size`     | `String`  | `md`      | Size of button, valid value is `sm`, `md`, `lg`                                                             |
-| `disabled` | `Boolean` | `false`   | Disable state                                                                                               |
+| `size`     | `String`  |   `md`    | Size of button, valid value is `sm`, `md`, `lg`                                                             |
+| `disabled` | `Boolean` |  `false`  | Disable state                                                                                               |
 
 ### Slots
 | Name      | Description                |
@@ -190,6 +190,6 @@ It's also work with other variants (except `ghost`).
 
 ### Events
 
-| Name    | Argunments              | Description                  |
+| Name    | Arguments               | Description                  |
 |---------|-------------------------|------------------------------|
 | `click` | Native DOM Event object | Event when button is clicked |

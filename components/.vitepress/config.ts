@@ -13,6 +13,7 @@ export default defineConfig({
     nextLinks   : false,
     prevLinks   : false,
     lastUpdated : 'Last Updated',
+    smoothScroll: true,
     sidebar     : [
       {
         text       : 'Guide',
@@ -28,6 +29,10 @@ export default defineConfig({
         text       : 'Components',
         collapsable: true,
         children   : [
+          {
+            text: 'Avatar',
+            link: '/avatar/component'
+          },
           {
             text: 'Banner',
             link: '/banner/component'
