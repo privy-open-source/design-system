@@ -13,13 +13,10 @@ const COLOR_SEED: Array<[string, string]> = [
 ]
 
 export function colorHash (text: string): [string, string] {
-  let hash   = 0
-  let index  = 0
-  let length = text.length
+  let hash = 0
 
-  if (length > 0)
-    while (index < length)
-      hash = (hash << 5) - hash + text.charCodeAt(index++) | 0
+  for (let index = 0; index < text.length; ++index)
+    hash = (hash << 5) - hash + text.charCodeAt(index) | 0
 
   return COLOR_SEED.at(Math.abs(hash) % COLOR_SEED.length)
 }
