@@ -40,7 +40,11 @@ export default defineComponent({
       default: 'md',
     },
   },
-  setup (props) {
+  emits: [
+    'imgloaded',
+    'imgloadfail',
+  ],
+  setup (props, { emit }) {
     const imageSrc = ref(createSpinner(50))
 
     const classNames = computed(() => {
@@ -75,9 +79,11 @@ export default defineComponent({
       loadImage(props.src)
         .then((src) => {
           imageSrc.value = src
+          emit('imgloaded', src)
         })
-        .catch(() => {
+        .catch((error) => {
           imageSrc.value = props.fallbackSrc
+          emit('imgloadfail', error)
         })
     }
 

@@ -13,6 +13,7 @@ export default defineConfig({
     nextLinks   : false,
     prevLinks   : false,
     lastUpdated : 'Last Updated',
+    smoothScroll: true,
     sidebar     : [
       {
         text       : 'Guide',

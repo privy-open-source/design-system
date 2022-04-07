@@ -30,7 +30,7 @@ export function dummyAvatar (): string {
 
 export function loadImage (url?: string | null): Promise<string> {
   if (!url)
-    return Promise.reject(new Error('Invalid image url'))
+    return Promise.reject(new Error('ERR_INVALID_IMAGE_SRC'))
 
   return new Promise((resolve, reject) => {
     const image  = new window.Image()
@@ -39,9 +39,9 @@ export function loadImage (url?: string | null): Promise<string> {
       resolve(url)
     }
 
-    const onError = (error: ErrorEvent) => {
+    const onError = () => {
       onFinish()
-      reject(error)
+      reject(new Error('ERR_FAILED_LOAD_IMAGE'))
     }
 
     const onFinish = () => {

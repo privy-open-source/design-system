@@ -111,3 +111,28 @@ If prop `variant` not settled, it will detect the variant with some caveats:
   <Avatar variant="alias" name="Tarjono Smith" />
   <Avatar />
 </div>
+
+## API
+
+### Props
+
+| Props         |   Type   | Default | Description                                                                                                                       |
+|---------------|:--------:|:-------:|-----------------------------------------------------------------------------------------------------------------------------------|
+| `variant`     | `String` | `image` | Avatar type variant, valid value: `avatar`, `alias`. default valus is determine by some caveats, see [this](#auto-detect-variant) |
+| `src`         | `String` |    -    | Image URL, **required if using variant `image`**                                                                                  |
+| `fallbackSrc` | `String` |    -    | Fallback image url for broken link                                                                                                |
+| `name`        | `String` |    -    | Avatar name which would be generate into alias, **required if using variant `alias`**                                             |
+| `name`        | `String` |    -    | Avatar name which would be generate into alias, **required if using variant `alias`**                                             |
+| `size`        | `String` |  `md`   | Avatar size, valid value: `xs`, `sm`, `md`, `lg`, `xl`                                                                            |
+
+### Slots
+| Name      | Description                                     |
+|-----------|-------------------------------------------------|
+| `default` | Content to replace default avatar image element |
+
+### Events
+
+| Name        | Arguments | Description                                                    |
+|-------------|-----------|----------------------------------------------------------------|
+| `imgloaded` | Image src | Event when image loaded, only when using variant `image`       |
+| `imgloaded` | Error     | Event when image fail to load, only when using variant `image` |

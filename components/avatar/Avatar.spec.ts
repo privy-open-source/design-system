@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/vue'
 import Avatar from './Avatar.vue'
+import IconUser from '@carbon/icons-vue/lib/events/20'
 import MockImage from './__mocks__/image'
 import IMG from './avatar.png'
 import { vi } from 'vitest'
@@ -114,4 +115,38 @@ it('should re-init if src changed', async () => {
   await delay(1)
 
   expect(image).toHaveAttribute('src', '/imageB.jpg')
+})
+
+it('should have style "lg" if size prop set to "lg"', () => {
+  const screen = render({
+    components: { Avatar },
+    template  : `
+      <Avatar size="lg" />
+    `,
+  })
+
+  const avatar = screen.queryByTestId('avatar')
+
+  expect(avatar).toBeInTheDocument()
+  expect(avatar).toHaveClass('avatar--lg')
+  expect(avatar).not.toHaveClass('avatar--md')
+})
+
+it('should replace image if slot is used', () => {
+  const screen = render({
+    components: { Avatar, IconUser },
+    template  : `
+      <Avatar>
+        <IconUser data-testid="icon" />
+      </Avatar>
+    `,
+  })
+
+  const avatar = screen.queryByTestId('avatar')
+  const image  = screen.queryByTestId('avatar-image')
+  const icon   = screen.queryByTestId('icon')
+
+  expect(avatar).toBeInTheDocument()
+  expect(icon).toBeInTheDocument()
+  expect(image).not.toBeInTheDocument()
 })
