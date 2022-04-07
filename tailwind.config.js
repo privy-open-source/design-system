@@ -119,6 +119,10 @@ module.exports = {
         75 : '#BABABA',
         100: '#A3A3A3',
       },
+      overlay: {
+        primary  : 'rgba(0, 0, 0, 0.2)',
+        secondary: 'rgba(0, 0, 0, 0.1)',
+      },
       black      : '#000000',
       dark       : '#404040',
       grey       : '#808080',

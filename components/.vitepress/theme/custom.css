@@ -5,3 +5,7 @@
   --c-brand: #0065D1;
   --c-brand-light: #408BDD;
 }
+
+ul {
+  @apply list-disc;
+}

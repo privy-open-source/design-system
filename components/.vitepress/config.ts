@@ -29,6 +29,10 @@ export default defineConfig({
         collapsable: true,
         children   : [
           {
+            text: 'Avatar',
+            link: '/avatar/component'
+          },
+          {
             text: 'Banner',
             link: '/banner/component'
           },
