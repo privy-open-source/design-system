@@ -77,6 +77,7 @@ You can hide close button with `dismissable` set to `false`
 | `dismissable` | `Boolean` | `true`  | Show / Hide dismiss button                      |
 
 ### Slots
+
 | Name      | Description                |
 |-----------|----------------------------|
 | `default` | Content to place in banner |

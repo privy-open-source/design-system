@@ -184,6 +184,7 @@ It's also work with other variants (except `ghost`).
 | `disabled` | `Boolean` |  `false`  | Disable state                                                                                               |
 
 ### Slots
+
 | Name      | Description                |
 |-----------|----------------------------|
 | `default` | Content to place in button |

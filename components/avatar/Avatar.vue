@@ -42,7 +42,7 @@ export default defineComponent({
   },
   emits: [
     'imgloaded',
-    'imgloadfail',
+    'imgerror',
   ],
   setup (props, { emit }) {
     const imageSrc = ref(createSpinner(50))
@@ -83,7 +83,7 @@ export default defineComponent({
         })
         .catch((error) => {
           imageSrc.value = props.fallbackSrc
-          emit('imgloadfail', error)
+          emit('imgerror', error)
         })
     }
 

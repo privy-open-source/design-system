@@ -2,7 +2,6 @@ import { fireEvent, render } from '@testing-library/vue'
 import Avatar from './Avatar.vue'
 import IconUser from '@carbon/icons-vue/lib/events/20'
 import MockImage from './__mocks__/image'
-import IMG from './avatar.png'
 import { vi } from 'vitest'
 
 vi.stubGlobal('Image', MockImage)
@@ -55,13 +54,8 @@ it('should have type "image" if src is present', async () => {
   const screen = render({
     components: { Avatar },
     template  : `
-      <Avatar :src="image" />
+      <Avatar src="/imageA.jpg" />
     `,
-    data: () => {
-      return {
-        image: IMG
-      }
-    }
   })
 
   const image = screen.queryByTestId('avatar-image')
@@ -149,4 +143,46 @@ it('should replace image if slot is used', () => {
   expect(avatar).toBeInTheDocument()
   expect(icon).toBeInTheDocument()
   expect(image).not.toBeInTheDocument()
+})
+
+it('should emit event "imgloaded" when image sucess to load', async () => {
+  const spy    = vi.fn()
+  const screen = render({
+    components: { Avatar, IconUser },
+    template  : `
+      <Avatar src="/imageA.jpg" @imgloaded="onLoaded" />
+    `,
+    methods: {
+      onLoaded: spy,
+    }
+  })
+
+  const image = screen.queryByTestId('avatar-image')
+
+  await delay(1)
+
+  expect(image).toBeInTheDocument()
+  expect(spy).toBeCalled()
+  expect(spy).toBeCalledWith('/imageA.jpg')
+})
+
+it('should emit event "imgerror" when image fail to load', async () => {
+  const spy    = vi.fn()
+  const screen = render({
+    components: { Avatar, IconUser },
+    template  : `
+      <Avatar src="/broken-link.jpg" @imgerror="onFailed" />
+    `,
+    methods: {
+      onFailed: spy,
+    }
+  })
+
+  const image = screen.queryByTestId('avatar-image')
+
+  await delay(1)
+
+  expect(image).toBeInTheDocument()
+  expect(spy).toBeCalled()
+  expect(spy).toHaveBeenCalledWith(expect.objectContaining({ message: 'ERR_FAILED_LOAD_IMAGE' }))
 })

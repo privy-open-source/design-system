@@ -92,7 +92,7 @@ Avatar has 2 style variant: `image` and `alias`
 
 If prop `variant` not settled, it will detect the variant with some caveats:
   - if `src` is provided, it will use `image`
-  - if no `src` and `name` is provided, it will use `alias`
+  - if `name` is provided, it will use `alias`
   - Otherwise, it will use `image`
 
 ```vue
@@ -118,7 +118,7 @@ If prop `variant` not settled, it will detect the variant with some caveats:
 
 | Props         |   Type   | Default | Description                                                                                                                       |
 |---------------|:--------:|:-------:|-----------------------------------------------------------------------------------------------------------------------------------|
-| `variant`     | `String` | `image` | Avatar type variant, valid value: `avatar`, `alias`. default valus is determine by some caveats, see [this](#auto-detect-variant) |
+| `variant`     | `String` | `image` | Avatar type variant, valid value: `avatar`, `alias`. default value is determine by some caveats, see [this](#auto-detect-variant) |
 | `src`         | `String` |    -    | Image URL, **required if using variant `image`**                                                                                  |
 | `fallbackSrc` | `String` |    -    | Fallback image url for broken link                                                                                                |
 | `name`        | `String` |    -    | Avatar name which would be generate into alias, **required if using variant `alias`**                                             |
@@ -126,13 +126,14 @@ If prop `variant` not settled, it will detect the variant with some caveats:
 | `size`        | `String` |  `md`   | Avatar size, valid value: `xs`, `sm`, `md`, `lg`, `xl`                                                                            |
 
 ### Slots
+
 | Name      | Description                                     |
 |-----------|-------------------------------------------------|
 | `default` | Content to replace default avatar image element |
 
 ### Events
 
-| Name        | Arguments | Description                                                    |
-|-------------|-----------|----------------------------------------------------------------|
-| `imgloaded` | Image src | Event when image loaded, only when using variant `image`       |
-| `imgloaded` | Error     | Event when image fail to load, only when using variant `image` |
+| Name        | Arguments | Description                   |
+|-------------|-----------|-------------------------------|
+| `imgloaded` | Image URL | Event when image loaded       |
+| `imgerror`  | Error     | Event when image fail to load |
