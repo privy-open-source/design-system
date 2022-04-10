@@ -186,3 +186,19 @@ it('should emit event "imgerror" when image fail to load', async () => {
   expect(spy).toBeCalled()
   expect(spy).toHaveBeenCalledWith(expect.objectContaining({ message: 'ERR_FAILED_LOAD_IMAGE' }))
 })
+
+it('should have addiotional class if prop imgClass if provided', () => {
+  const screen = render({
+    components: { Avatar },
+    template  : `
+      <Avatar img-class="custom-class" />
+    `,
+  })
+
+  const avatar = screen.queryByTestId('avatar')
+  const image  = screen.queryByTestId('avatar-image')
+
+  expect(avatar).toBeInTheDocument()
+  expect(image).toHaveClass('custom-class')
+  expect(avatar).not.toHaveClass('custom-class')
+})

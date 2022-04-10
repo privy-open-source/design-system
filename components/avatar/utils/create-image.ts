@@ -1,4 +1,4 @@
-import avatarImg from './avatar.png?inline'
+import avatarImg from '../assets/avatar.png'
 import { colorHash, colorRandom } from './color-hash'
 
 export function createText (text: string, size: number, bgColor: string, textColor: string): string {
@@ -26,31 +26,4 @@ export function createAlias (name?: string, size = 50): string {
 
 export function dummyAvatar (): string {
   return avatarImg
-}
-
-export function loadImage (url?: string | null): Promise<string> {
-  if (!url)
-    return Promise.reject(new Error('ERR_INVALID_IMAGE_SRC'))
-
-  return new Promise((resolve, reject) => {
-    const image  = new window.Image()
-    const onLoad = () => {
-      onFinish()
-      resolve(url)
-    }
-
-    const onError = () => {
-      onFinish()
-      reject(new Error('ERR_FAILED_LOAD_IMAGE'))
-    }
-
-    const onFinish = () => {
-      image.removeEventListener('load', onLoad)
-      image.removeEventListener('error', onError)
-    }
-
-    image.addEventListener('load', onLoad)
-    image.addEventListener('error', onError)
-    image.src = url
-  })
 }

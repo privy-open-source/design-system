@@ -122,8 +122,8 @@ If prop `variant` not settled, it will detect the variant with some caveats:
 | `src`         | `String` |    -    | Image URL, **required if using variant `image`**                                                                                  |
 | `fallbackSrc` | `String` |    -    | Fallback image url for broken link                                                                                                |
 | `name`        | `String` |    -    | Avatar name which would be generate into alias, **required if using variant `alias`**                                             |
-| `name`        | `String` |    -    | Avatar name which would be generate into alias, **required if using variant `alias`**                                             |
 | `size`        | `String` |  `md`   | Avatar size, valid value: `xs`, `sm`, `md`, `lg`, `xl`                                                                            |
+| `imgClass`    | `String` |  `md`   | Additional class for image element                                                                                                |
 
 ### Slots
 
