@@ -1,5 +1,6 @@
 
-import { createAlias, createSpinner, createText, getAlias } from "./create-image"
+import { createAlias, createSpinner, createText, dummyAvatar, getAlias } from "./create-image"
+import DEFAULT_IMAGE from '../assets/avatar.png'
 
 describe('createText', () => {
   it('should be able to generate image text', () => {
@@ -69,5 +70,13 @@ describe('createAlias', () => {
 
     expect(image).toContain('data:image/svg+xml')
     expect(image).toContain(encodeURIComponent('･ᴗ･'))
+  })
+})
+
+describe('dummyImage', () => {
+  it('should return dummy image', () => {
+    const image = dummyAvatar()
+
+    expect(image).toBe(DEFAULT_IMAGE)
   })
 })

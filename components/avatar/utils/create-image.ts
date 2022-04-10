@@ -1,4 +1,4 @@
-import avatarImg from './avatar.png?inline'
+import avatarImg from '../assets/avatar.png'
 import { colorHash, colorRandom } from './color-hash'
 
 export function createText (text: string, size: number, bgColor: string, textColor: string): string {
