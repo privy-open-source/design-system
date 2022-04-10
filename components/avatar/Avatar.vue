@@ -6,6 +6,7 @@
       <img
         data-testid="avatar-image"
         class="avatar__image"
+        :class="imgClass"
         :data-type="type"
         :src="imageSrc"
         alt="Avatar Image">
@@ -15,7 +16,8 @@
 
 <script lang="ts">
 import { computed, defineComponent, onMounted, PropType, ref, watch } from 'vue-demi'
-import { createAlias, createSpinner, dummyAvatar, loadImage } from './utils'
+import { createAlias, createSpinner, dummyAvatar } from './utils/create-image'
+import loadImage from './utils/load-image'
 
 type TypeVariant = 'image' | 'alias'
 type SizeVariant = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -39,6 +41,7 @@ export default defineComponent({
       type   : String as PropType<SizeVariant>,
       default: 'md',
     },
+    imgClass: {},
   },
   emits: [
     'imgloaded',

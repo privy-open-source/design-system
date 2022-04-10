@@ -358,6 +358,7 @@ __metadata:
     autoprefixer: 10.4.4
     c8: ^7.11.0
     happy-dom: 2.55.0
+    jest-extended: ^2.0.0
     postcss: 8.4.12
     postcss-nested: ^5.0.6
     tailwindcss: 3.0.23
@@ -2352,7 +2353,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^27.5.1":
+"jest-diff@npm:^27.2.5, jest-diff@npm:^27.5.1":
   version: 27.5.1
   resolution: "jest-diff@npm:27.5.1"
   dependencies:
@@ -2364,7 +2365,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-get-type@npm:^27.5.1":
+"jest-extended@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "jest-extended@npm:2.0.0"
+  dependencies:
+    jest-diff: ^27.2.5
+    jest-get-type: ^27.0.6
+  peerDependencies:
+    jest: ">=27.2.5"
+  checksum: cd645b460ac68dec41918f1c55e84406828961a7dfa5b8a88e2f38d946399c9b6678c2443fcb88c375c7212008a6ccb2f1ad2eb98cccc0e3f8abcc68c4e68890
+  languageName: node
+  linkType: hard
+
+"jest-get-type@npm:^27.0.6, jest-get-type@npm:^27.5.1":
   version: 27.5.1
   resolution: "jest-get-type@npm:27.5.1"
   checksum: 63064ab70195c21007d897c1157bf88ff94a790824a10f8c890392e7d17eda9c3900513cb291ca1c8d5722cad79169764e9a1279f7c8a9c4cd6e9109ff04bbc0

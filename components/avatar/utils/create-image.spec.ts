@@ -1,5 +1,5 @@
 
-import { createAlias, createSpinner, createText, getAlias } from "./utils"
+import { createAlias, createSpinner, createText, getAlias } from "./create-image"
 
 describe('createText', () => {
   it('should be able to generate image text', () => {

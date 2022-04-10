@@ -19,6 +19,7 @@
     "autoprefixer": "10.4.4",
     "c8": "^7.11.0",
     "happy-dom": "2.55.0",
+    "jest-extended": "^2.0.0",
     "postcss": "8.4.12",
     "postcss-nested": "^5.0.6",
     "tailwindcss": "3.0.23",

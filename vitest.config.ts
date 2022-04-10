@@ -11,8 +11,12 @@ export default defineConfig({
     globals    : true,
     environment: 'happy-dom',
     coverage   : {
-      exclude : ['**/*.spec.ts', '**/__mocks__/*'],
       reporter: ['text', 'json', 'html'],
+      exclude : [
+        '**/*.spec.ts',
+        '**/__mocks__/*',
+        'vitest.setup.ts',
+      ],
     },
     setupFiles: [
       './vitest.setup.ts'
