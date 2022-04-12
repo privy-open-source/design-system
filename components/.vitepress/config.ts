@@ -4,6 +4,7 @@ import fonts from 'vite-plugin-fonts'
 export default defineConfig({
   base       : '/design-system/',
   title      : 'Design System',
+  description: 'Privy Design System',
   themeConfig: {
     repo        : 'privy-open-source/design-system',
     docsDir     : 'components',

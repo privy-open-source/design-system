@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     "./components/**/*.{vue,js,ts,jsx,tsx,md}",
-    "./components/.vitepress/theme/*.{vue,js,ts,jsx,tsx}",
+    "./components/.vitepress/theme/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {

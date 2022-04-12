@@ -71,6 +71,38 @@ it('should have style "lg" if size props set to "lg"', () => {
   expect(button).not.toHaveClass('btn--md')
 })
 
+it('should have style "icon" if icon is provided', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button icon>
+        Hello
+      </Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveClass('btn--icon')
+})
+
+it('should have style "pill" if pill is provided', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button pill>
+        Hello
+      </Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveClass('btn--pill')
+})
+
 it('should emit "click" when button is clicked', async () => {
   const spy    = vi.fn()
   const screen = render({

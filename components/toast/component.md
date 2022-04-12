@@ -60,14 +60,12 @@ toast({
 
 There available 4 type variants: `info`, `success`, `warn`, `error`. default is `info`
 
-**Preview:**
-
-<div class="flex flex-col gap-3">
+<preview class="flex-col items-center gap-3">
   <Toast type="info" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast type="success" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast type="warn" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast type="error" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-</div>
+</preview>
 
 **Try it:**
 
@@ -138,14 +136,12 @@ toast({
 
 There available 2 style variant: `simple` and `filled`. default is `simple`
 
-**Preview:**
-
-<div class="flex flex-col gap-3">
+<preview class="flex-col items-center gap-3">
   <Toast variant="filled" type="info" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast variant="filled" type="success" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast variant="filled" type="warn" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast variant="filled" type="error" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-</div>
+</preview>
 
 **Try it:**
 

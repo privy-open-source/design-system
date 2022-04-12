@@ -9,9 +9,9 @@
 
 ### Using image
 
-<div class="flex gap-1 mt-3">
+<preview>
   <Avatar src="https://picsum.photos/50" />
-</div>
+</preview>
 
 ```vue
 <template>
@@ -21,9 +21,9 @@
 
 ### Using alias
 
-<div class="flex gap-1 mt-3">
+<preview>
   <Avatar variant="alias" name="Tarjono Smith" />
-</div>
+</preview>
 
 ```vue
 <template>
@@ -32,11 +32,11 @@
 ```
 
 ### Using icon
-<div class="flex gap-1 mt-3">
+<preview>
   <Avatar>
     <IconUser />
   </Avatar>
-</div>
+</preview>
 
 ```vue
 <template>
@@ -54,13 +54,13 @@
 
 There available 5 size variant: `xs`, `sm`, `md`, `lg`, `xl`. default is `md`
 
-<div class="flex gap-1 mt-3">
+<preview class="items-center gap-3">
   <Avatar src="https://picsum.photos/24" size="xs" />
   <Avatar src="https://picsum.photos/32" size="sm" />
   <Avatar src="https://picsum.photos/40" size="md" />
   <Avatar src="https://picsum.photos/56" size="lg" />
   <Avatar src="https://picsum.photos/96" size="xl" />
-</div>
+</preview>
 
 ```vue
 <template>
@@ -76,10 +76,10 @@ There available 5 size variant: `xs`, `sm`, `md`, `lg`, `xl`. default is `md`
 
 Avatar has 2 style variant: `image` and `alias`
 
-<div class="flex gap-1 mt-3">
+<preview class="gap-3">
   <Avatar variant="image" src="https://picsum.photos/40" />
   <Avatar variant="alias" name="Tarjono Smith" />
-</div>
+</preview>
 
 ```vue
 <template>
@@ -108,11 +108,11 @@ If prop `variant` not set, it will detect the variant with some caveats:
 
 **Result**:
 
-<div class="flex gap-1 mt-3">
+<preview class="gap-3">
   <Avatar variant="image" src="https://picsum.photos/40" />
   <Avatar variant="alias" name="Tarjono Smith" />
   <Avatar />
-</div>
+</preview>
 
 ## API
 
