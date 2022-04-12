@@ -1,0 +1,1 @@
+import{_ as e,b as t,a}from"./app.b3c5b416.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"button/guide.md"}',r={};function o(n,s,c,i,_,d){return a(),t("div")}var u=e(r,[["render",o]]);export{f as __pageData,u as default};
