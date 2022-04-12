@@ -87,9 +87,8 @@ it('should removed when close clockid', async () => {
     methods: {
       addToast () {
         this.$refs.toast.add({
-          title   : 'This is title',
-          text    : 'This is text message',
-          duration: 10,
+          title: 'This is title',
+          text : 'This is text message',
         })
       }
     }

@@ -15,7 +15,7 @@ export interface ToastOption {
   toastClass?: string | string[],
 }
 
-let instance: Ref<InstanceType<typeof ToastContainer>> = ref()
+const instance: Ref<InstanceType<typeof ToastContainer>> = ref()
 
 function useToast () {
   if (!instance.value) {
