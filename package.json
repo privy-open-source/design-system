@@ -7,7 +7,7 @@
     "docs:dev": "vitepress dev components",
     "docs:build": "vitepress build components",
     "docs:serve": "vitepress serve components",
-    "test": "vitest",
+    "test": "vitest --coverage",
     "coverage": "vitest run --coverage"
   },
   "devDependencies": {

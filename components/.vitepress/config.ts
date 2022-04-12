@@ -40,7 +40,11 @@ export default defineConfig({
           {
             text: 'Button',
             link: '/button/component'
-          }
+          },
+          {
+            text: 'Toast',
+            link: '/toast/component'
+          },
         ]
       },
     ]
