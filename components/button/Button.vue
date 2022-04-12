@@ -27,6 +27,14 @@ export default defineComponent({
     size: {
       type   : String as PropType<SizeVariant>,
       default: 'md',
+    },
+    icon: {
+      type   : Boolean,
+      default: false,
+    },
+    pill: {
+      type: Boolean,
+      default: false,
     }
   },
   setup (props) {
@@ -41,6 +49,12 @@ export default defineComponent({
 
       if (props.size)
         result.push(`btn--${props.size}`)
+
+      if (props.icon)
+        result.push('btn--icon')
+
+      if (props.pill)
+        result.push('btn--pill')
 
       return result
     })
@@ -62,15 +76,15 @@ export default defineComponent({
 }
 
 .btn--sm {
-  @apply p-1 gap-1 text-sm;
+  @apply px-2 py-1 gap-1 text-sm rounded-sm;
 }
 
 .btn--md {
-  @apply p-2 gap-2;
+  @apply px-4 py-2 gap-2 rounded;
 }
 
 .btn--lg {
-  @apply p-3 gap-3 text-lg;
+  @apply px-5 py-3 gap-3 text-lg rounded;
 }
 
 .btn--solid {
@@ -138,7 +152,7 @@ export default defineComponent({
 }
 
 .btn--ghost {
-  @apply border border-transparent hover:bg-black hover:bg-opacity-5 hover:shadow-lg active:shadow-none;
+  @apply border border-transparent bg-white hover:bg-secondary-5 hover:shadow-lg active:shadow-none;
 }
 
 .btn--link {
@@ -171,5 +185,23 @@ export default defineComponent({
   &.btn--gold {
     @apply text-gold-100 hover:text-gold-hovered active:text-gold-focused;
   }
+}
+
+.btn--icon {
+  &.btn--sm {
+    @apply p-1;
+  }
+
+  &.btn--md {
+    @apply p-2;
+  }
+
+  &.btn--lg {
+    @apply p-3;
+  }
+}
+
+.btn--pill {
+  @apply rounded-full;
 }
 </style>

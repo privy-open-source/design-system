@@ -1,0 +1,27 @@
+:root {
+  --font-family-base: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --c-brand: #0065D1;
+  --c-brand-light: #408BDD;
+  --code-bg-color: #0b2138;
+}
+
+.content {
+  ul {
+    @apply list-disc;
+  }
+
+  th, td {
+    @apply border-primary-25;
+  }
+
+  thead > tr:first-child,
+  tr:nth-child(2n) {
+    @apply bg-primary-5;
+  }
+
+  .token.attr-name {
+    @apply text-[#cc99cd];
+  }
+}
