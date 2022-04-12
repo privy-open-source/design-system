@@ -4,7 +4,9 @@
     data-testid="banner"
     :class="classNames">
     <div class="banner__icon">
-      <component :is="icon" />
+      <component
+        v-if="icon"
+        :is="icon" />
     </div>
     <div class="banner__body">
       <slot :close="close" />
@@ -25,6 +27,11 @@ import IconClose from "@carbon/icons-vue/lib/close/16"
 import { defineComponent, PropType, ref, computed } from "vue-demi"
 
 type StyleVariant = 'info' | 'danger'
+
+const BannerIcons = {
+  'danger': IconDanger,
+  'info'  : IconInfo,
+}
 
 export default defineComponent({
   components: { IconInfo, IconClose, IconDanger },
@@ -52,10 +59,7 @@ export default defineComponent({
     })
 
     const icon = computed(() => {
-      if (props.variant === 'danger')
-        return IconDanger
-
-      return IconInfo
+      return BannerIcons[props.variant]
     })
 
     function close (): void {

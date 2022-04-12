@@ -90,7 +90,7 @@ Avatar has 2 style variant: `image` and `alias`
 
 ### Auto-detect variant
 
-If prop `variant` not settled, it will detect the variant with some caveats:
+If prop `variant` not set, it will detect the variant with some caveats:
   - if `src` is provided, it will use `image`
   - if `name` is provided, it will use `alias`
   - Otherwise, it will use `image`
@@ -105,7 +105,9 @@ If prop `variant` not settled, it will detect the variant with some caveats:
   <Avatar />
 </template>
 ```
+
 **Result**:
+
 <div class="flex gap-1 mt-3">
   <Avatar variant="image" src="https://picsum.photos/40" />
   <Avatar variant="alias" name="Tarjono Smith" />
@@ -123,7 +125,7 @@ If prop `variant` not settled, it will detect the variant with some caveats:
 | `fallbackSrc` | `String` |    -    | Fallback image url for broken link                                                                                                |
 | `name`        | `String` |    -    | Avatar name which would be generate into alias, **required if using variant `alias`**                                             |
 | `size`        | `String` |  `md`   | Avatar size, valid value: `xs`, `sm`, `md`, `lg`, `xl`                                                                            |
-| `imgClass`    | `String` |  `md`   | Additional class for image element                                                                                                |
+| `imgClass`    | `String` |    -    | Additional class for image element                                                                                                |
 
 ### Slots
 
