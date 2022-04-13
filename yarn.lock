@@ -363,7 +363,7 @@ __metadata:
     postcss-nested: ^5.0.6
     tailwindcss: 3.0.24
     typescript: 4.6.3
-    vite: 2.9.1
+    vite: 2.9.2
     vitepress: 0.22.3
     vitest: 0.9.3
     vue-demi: 0.12.5
@@ -3559,9 +3559,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:2.9.1, vite@npm:^2.9.1":
-  version: 2.9.1
-  resolution: "vite@npm:2.9.1"
+"vite@npm:2.9.2":
+  version: 2.9.2
+  resolution: "vite@npm:2.9.2"
   dependencies:
     esbuild: ^0.14.27
     fsevents: ~2.3.2
@@ -3584,7 +3584,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 0f0ac9337fa5c17faa4a59831a2df17475563b23a6162e86b2b60b19835ca1277f3249ea7a6608880354b39caf05779e9bad1e3b1f5b27010deced224aae47ea
+  checksum: 564d6810187be849ea73fe0b83652b841f12d1e495b3fee9a9bb6ba805272d9a48c25e5bc37ca9ebcfdd516a4d672e6bdef104aee41d86be8f738c69d50ace68
   languageName: node
   linkType: hard
 
@@ -3614,6 +3614,35 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 4b02d133892c98362c10214b7ad518d74b59745889197a2ba0b63260ed083fcef75a447e8fb58dbd2af8747386274b36017983d93031254df6ead38701950dcc
+  languageName: node
+  linkType: hard
+
+"vite@npm:^2.9.1":
+  version: 2.9.1
+  resolution: "vite@npm:2.9.1"
+  dependencies:
+    esbuild: ^0.14.27
+    fsevents: ~2.3.2
+    postcss: ^8.4.12
+    resolve: ^1.22.0
+    rollup: ^2.59.0
+  peerDependencies:
+    less: "*"
+    sass: "*"
+    stylus: "*"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  peerDependenciesMeta:
+    less:
+      optional: true
+    sass:
+      optional: true
+    stylus:
+      optional: true
+  bin:
+    vite: bin/vite.js
+  checksum: 0f0ac9337fa5c17faa4a59831a2df17475563b23a6162e86b2b60b19835ca1277f3249ea7a6608880354b39caf05779e9bad1e3b1f5b27010deced224aae47ea
   languageName: node
   linkType: hard
 
