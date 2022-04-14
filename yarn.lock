@@ -363,7 +363,7 @@ __metadata:
     postcss-nested: ^5.0.6
     tailwindcss: 3.0.24
     typescript: 4.6.3
-    vite: 2.9.2
+    vite: 2.9.5
     vitepress: 0.22.3
     vitest: 0.9.3
     vue-demi: 0.12.5
@@ -3559,9 +3559,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:2.9.2":
-  version: 2.9.2
-  resolution: "vite@npm:2.9.2"
+"vite@npm:2.9.5":
+  version: 2.9.5
+  resolution: "vite@npm:2.9.5"
   dependencies:
     esbuild: ^0.14.27
     fsevents: ~2.3.2
@@ -3584,7 +3584,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 564d6810187be849ea73fe0b83652b841f12d1e495b3fee9a9bb6ba805272d9a48c25e5bc37ca9ebcfdd516a4d672e6bdef104aee41d86be8f738c69d50ace68
+  checksum: 354189cbce6904a3b58ca70b7ad9e1bb751ded9c13e483165562e634804cfb29bbf1507a4e6334cb9987e3f1f41e9f50764878a3c837523762e9da65229c9543
   languageName: node
   linkType: hard
 
