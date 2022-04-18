@@ -1,7 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: [
+  darkMode: 'class',
+  content : [
     "./components/**/*.{vue,js,ts,jsx,tsx,md}",
     "./components/.vitepress/theme/**/*.{vue,js,ts,jsx,tsx}",
   ],

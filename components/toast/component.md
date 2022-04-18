@@ -69,7 +69,7 @@ There available 4 type variants: `info`, `success`, `warn`, `error`. default is 
 
 **Try it:**
 
-<div class="flex gap-3 mt-3">
+<div class="flex flex-wrap gap-3 mt-3">
   <Button color="primary" @click="toast({
     type : 'info',
     title: 'Lorem ipsum',
@@ -145,7 +145,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
 
 **Try it:**
 
-<div class="flex gap-3 mt-3">
+<div class="flex flex-wrap gap-3 mt-3">
   <Button type="" color="primary" @click="toast({
     type   : 'info',
     variant: 'filled',
@@ -216,7 +216,7 @@ toast({
 })
 ```
 
-## Custom Toast Class
+## Customization
 
 You can add some custom class to Toast element via `toastClass`.
 
@@ -242,7 +242,9 @@ toast({
 
 ## API
 
-### Options
+### toast
+
+`toast(options: ToastOptions): Promise<void>`
 
 | Options      |   Type   | Default  | Description                                                               |
 |--------------|:--------:|:--------:|---------------------------------------------------------------------------|

@@ -15,6 +15,7 @@ export default defineConfig({
     prevLinks   : false,
     lastUpdated : 'Last Updated',
     smoothScroll: true,
+    nav         : [],
     sidebar     : [
       {
         text       : 'Guide',
@@ -43,8 +44,16 @@ export default defineConfig({
             link: '/button/component'
           },
           {
+            text: 'Overlay',
+            link: '/overlay/component'
+          },
+          {
             text: 'Toast',
             link: '/toast/component'
+          },
+          {
+            text: 'Toggle',
+            link: '/toggle/component'
           },
         ]
       },
