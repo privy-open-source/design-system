@@ -11,9 +11,11 @@ import {
   nextTick,
 } from "vue-demi"
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
 export type Component = DefineComponent<{}, {}, any>
 export type ComponentInstance<C extends Component> = InstanceType<C>
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let instances: Ref<Map<Component, Ref<ComponentInstance<any>>>>
 let container: App<Element>
 
