@@ -7,7 +7,7 @@
     "docs:dev": "vitepress dev components",
     "docs:build": "vitepress build components",
     "docs:serve": "vitepress serve components",
-    "test": "vitest --coverage",
+    "test": "vitest",
     "coverage": "vitest run --coverage"
   },
   "devDependencies": {
@@ -31,6 +31,7 @@
   "dependencies": {
     "@carbon/icons-vue": "^10.49.1",
     "@fontsource/dm-sans": "^4.5.6",
+    "@vueuse/core": "^8.2.5",
     "vue-demi": "0.12.5"
   },
   "workspaces": [

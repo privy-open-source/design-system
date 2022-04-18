@@ -5,23 +5,24 @@
   --c-brand: #0065D1;
   --c-brand-light: #408BDD;
   --code-bg-color: #0b2138;
+  --c-text-light-1: #232323;
+  --c-text-light-2: #5A5A5A;
+  --c-text-light-3: #919191;
 }
 
-.content {
-  ul {
-    @apply list-disc;
-  }
+.content ul {
+  @apply list-disc;
+}
 
-  th, td {
-    @apply border-primary-25;
-  }
+.content th, td {
+  @apply border-primary-25;
+}
 
-  thead > tr:first-child,
-  tr:nth-child(2n) {
-    @apply bg-primary-5;
-  }
+.content thead > tr:first-child,
+.content tr:nth-child(2n) {
+  @apply bg-primary-5;
+}
 
-  .token.attr-name {
-    @apply text-[#cc99cd];
-  }
+.content .token.attr-name {
+  @apply text-[#cc99cd];
 }

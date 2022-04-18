@@ -37,7 +37,7 @@
 
 ### Button with icon + text
 
-<preview class="gap-3">
+<preview class="flex-col items-center gap-3 md:flex-row">
   <Button><IconBee /> Click Me</Button>
   <Button>Click Me <IconBee /></Button>
 </preview>
@@ -57,11 +57,13 @@
 
 Button has 4 variants, `solid`, `outline`, `ghost`, `link`. default is `solid`
 
-<preview class="gap-3">
-  <Button variant="solid">Click me</Button>
-  <Button variant="outline">Click me</Button>
-  <Button variant="ghost">Click me</Button>
-  <Button variant="link">Click me</Button>
+<preview>
+  <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+    <Button variant="solid">Click me</Button>
+    <Button variant="outline">Click me</Button>
+    <Button variant="ghost">Click me</Button>
+    <Button variant="link">Click me</Button>
+  </div>
 </preview>
 
 ```vue
@@ -78,7 +80,7 @@ Button has 4 variants, `solid`, `outline`, `ghost`, `link`. default is `solid`
 Button available in 7 different colors `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`. default is `primary`
 
 <preview>
-  <div class="grid grid-cols-4 grid-rows-2 gap-3">
+  <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
     <Button color="primary">Click me</Button>
     <Button color="secondary">Click me</Button>
     <Button color="success">Click me</Button>
@@ -104,7 +106,7 @@ Button available in 7 different colors `primary`, `secondary`, `success`, `info`
 It's also work with other variants (except `ghost`).
 
 <preview label="outline variant">
-  <div class="grid grid-cols-4 grid-rows-2 gap-3">
+  <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
     <Button variant="outline" color="primary">Click me</Button>
     <Button variant="outline" color="secondary">Click me</Button>
     <Button variant="outline" color="success">Click me</Button>
@@ -116,7 +118,7 @@ It's also work with other variants (except `ghost`).
 </preview>
 
 <preview label="link variant">
-  <div class="grid grid-cols-4 grid-rows-2 gap-3">
+  <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
     <Button variant="link" color="primary">Click me</Button>
     <Button variant="link" color="secondary">Click me</Button>
     <Button variant="link" color="success">Click me</Button>
@@ -151,7 +153,7 @@ It's also work with other variants (except `ghost`).
 
 3 sizes you can use: `sm`, `md`, `lg`. default is `md`
 
-<preview class="items-center gap-3">
+<preview class="flex-col items-center gap-3 md:flex-row">
   <Button size="sm">Click me</Button>
   <Button size="md">Click me</Button>
   <Button size="lg">Click me</Button>
@@ -169,7 +171,7 @@ It's also work with other variants (except `ghost`).
 
 You can add prop `pill` to make button more rounded
 
-<preview class="items-center gap-3">
+<preview class="flex-col items-center gap-3 md:flex-row">
   <Button size="sm" pill>Click me</Button>
   <Button size="md" pill>Click me</Button>
   <Button size="lg" pill>Click me</Button>
@@ -219,11 +221,13 @@ You can also combine with `pill` mode to make round button
 
 ## Disable state
 
-<preview class="items-center gap-3">
-  <Button variant="solid" disabled>Click me</Button>
-  <Button variant="outline" disabled>Click me</Button>
-  <Button variant="ghost" disabled>Click me</Button>
-  <Button variant="link" disabled>Click me</Button>
+<preview label="link variant">
+  <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+    <Button variant="solid" disabled>Click me</Button>
+    <Button variant="outline" disabled>Click me</Button>
+    <Button variant="ghost" disabled>Click me</Button>
+    <Button variant="link" disabled>Click me</Button>
+  </div>
 </preview>
 
 ```vue

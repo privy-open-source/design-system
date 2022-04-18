@@ -54,7 +54,7 @@
 
 There available 5 size variant: `xs`, `sm`, `md`, `lg`, `xl`. default is `md`
 
-<preview class="items-center gap-3">
+<preview class="flex-col items-center gap-3 lg:flex-row">
   <Avatar src="https://picsum.photos/24" size="xs" />
   <Avatar src="https://picsum.photos/32" size="sm" />
   <Avatar src="https://picsum.photos/40" size="md" />
@@ -135,7 +135,7 @@ If prop `variant` not set, it will detect the variant with some caveats:
 
 ### Events
 
-| Name        | Arguments | Description                   |
-|-------------|-----------|-------------------------------|
-| `imgloaded` | Image URL | Event when image loaded       |
-| `imgerror`  | Error     | Event when image fail to load |
+| Name        | Arguments | Description                     |
+|-------------|-----------|---------------------------------|
+| `imgloaded` | Image URL | Event when image loaded         |
+| `imgerror`  | Error     | Event when image failed to load |
