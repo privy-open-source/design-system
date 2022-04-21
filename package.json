@@ -11,17 +11,17 @@
     "coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.2",
+    "@tailwindcss/typography": "0.5.2",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/vue": "6.5.1",
     "@types/testing-library__jest-dom": "5.14.3",
-    "@vitejs/plugin-vue": "^2.3.1",
+    "@vitejs/plugin-vue": "2.3.1",
     "autoprefixer": "10.4.4",
     "c8": "7.11.2",
     "happy-dom": "2.55.0",
-    "jest-extended": "^2.0.0",
+    "jest-extended": "2.0.0",
     "postcss": "8.4.12",
-    "postcss-nested": "^5.0.6",
+    "postcss-nested": "5.0.6",
     "tailwindcss": "3.0.24",
     "typescript": "4.6.3",
     "vite": "2.9.5",
@@ -29,8 +29,8 @@
     "vitest": "0.9.3"
   },
   "dependencies": {
-    "@carbon/icons-vue": "^10.49.1",
-    "@fontsource/dm-sans": "^4.5.6",
+    "@carbon/icons-vue": "10.49.1",
+    "@fontsource/dm-sans": "4.5.6",
     "@vueuse/core": "8.3.0",
     "vue-demi": "0.12.5"
   },
