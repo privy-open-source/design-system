@@ -1,5 +1,5 @@
 <template>
-  <div data-testid="toggle" class="toggle" :class="classNames" @click="toggle()">
+  <label data-testid="toggle" class="toggle" :class="classNames">
     <div class="toggle__switch">
       <span
         v-if="noLabel === false"
@@ -8,7 +8,12 @@
           {{ checkedLabel }}
         </slot>
       </span>
-      <input type="checkbox" class="toggle__pointer" :checked="checked" :disabled="disabled" :value="value" />
+      <input
+        type="checkbox"
+        class="toggle__pointer"
+        :disabled="disabled || readonly"
+        v-model="value"
+        @change="$emit('change', $event)" />
       <span
         v-if="noLabel === false"
         class="toggle__label toggle__uncheckedLabel">
@@ -18,23 +23,22 @@
       </span>
     </div>
     <slot />
-  </div>
+  </label>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, PropType, ref, WritableComputedRef, watch } from "vue-demi"
-import { useVModel } from "@vueuse/core"
+import { useVModel } from "../checkbox/use-checkbox"
 
 type StyleVariant = 'pill' | 'flat'
 
 export default defineComponent({
   props: {
-    /* for vue3 v-model */
     modelValue: {
       default: false,
     },
-    /* for vue2 v-model */
     checked: {
+      type   : Boolean,
       default: false,
     },
     value: {
@@ -44,7 +48,7 @@ export default defineComponent({
       default: false,
     },
     variant: {
-      type: String as PropType<StyleVariant>,
+      type   : String as PropType<StyleVariant>,
       default: 'pill'
     },
     checkedLabel: {
@@ -68,14 +72,12 @@ export default defineComponent({
       default: false,
     },
   },
-  model: {
-    prop : 'checked',
-    event: 'change',
-  },
-  emits: ['change'],
-  setup (props, { emit }) {
-    const model = useVModel(props) as WritableComputedRef<unknown>
-    const value = ref(false)
+  emits: [
+    'change',
+    'update:modelValue',
+  ],
+  setup (props) {
+    const value = useVModel(props) as WritableComputedRef<unknown>
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -92,22 +94,9 @@ export default defineComponent({
       return result
     })
 
-    function toggle() {
-      if (!props.disabled || props.readonly) {
-        value.value = !value.value
-        model.value = value.value ? props.value : props.uncheckedValue
-
-        emit('change', model.value)
-      }
-    }
-
-    watch(model, (newValue) => {
-      value.value = newValue === props.value
-    }, { immediate: true })
-
     return {
       classNames,
-      toggle,
+      value,
     }
   },
 })
@@ -117,16 +106,16 @@ export default defineComponent({
 .toggle {
   @apply inline-flex cursor-pointer relative items-center gap-3 select-none;
 
-  &--disabled {
-    @apply opacity-50 pointer-events-none;
-  }
-
-  .toggle__switch {
+  &__switch {
     @apply relative;
   }
 
   &__pointer {
-    @apply appearance-none cursor-pointer;
+    @apply appearance-none cursor-pointer will-change-transform;
+  }
+
+  &--disabled {
+    @apply opacity-50 pointer-events-none;
   }
 
   &--pill {

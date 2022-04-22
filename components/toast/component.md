@@ -146,7 +146,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
 **Try it:**
 
 <div class="flex flex-wrap gap-3 mt-3">
-  <Button type="" color="primary" @click="toast({
+  <Button color="primary" @click="toast({
     type   : 'info',
     variant: 'filled',
     title  : 'Lorem ipsum',
@@ -154,7 +154,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
   })">
     Info
   </Button>
-  <Button type="" color="success" @click="toast({
+  <Button color="success" @click="toast({
     type   : 'success',
     variant: 'filled',
     title  : 'Lorem ipsum',
@@ -162,7 +162,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
   })">
     Success
   </Button>
-  <Button type="" color="warning" @click="toast({
+  <Button color="warning" @click="toast({
     type   : 'warn',
     variant: 'filled',
     title  : 'Lorem ipsum',
@@ -170,7 +170,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
   })">
     Warn
   </Button>
-  <Button type="" color="danger" @click="toast({
+  <Button color="danger" @click="toast({
     type   : 'error',
     variant: 'filled',
     title  : 'Lorem ipsum',

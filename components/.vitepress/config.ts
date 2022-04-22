@@ -44,8 +44,16 @@ export default defineConfig({
             link: '/button/component'
           },
           {
+            text: 'Checkbox',
+            link: '/checkbox/component'
+          },
+          {
             text: 'Overlay',
             link: '/overlay/component'
+          },
+          {
+            text: 'Radio',
+            link: '/radio/component'
           },
           {
             text: 'Toast',

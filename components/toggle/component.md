@@ -28,7 +28,7 @@
 <preview>
   <Toggle>
     <template #checked>
-      <svg width="2" height="8" viewBox="0 0 2 8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="8" rx="1" fill="white" /></svg>
+      <svg width="8" height="8" viewBox="0 0 2 8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="8" rx="1" fill="white" /></svg>
     </template>
     <template #unchecked>
       <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="3" stroke="white" stroke-width="2"/></svg>
@@ -43,7 +43,7 @@
 <template>
   <Toggle>
     <template #checked>
-      <svg width="2" height="8" viewBox="0 0 2 8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="8" rx="1" fill="white" /></svg>
+      <svg width="8" height="8" viewBox="0 0 2 8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="8" rx="1" fill="white" /></svg>
     </template>
     <template #unchecked>
       <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="3" stroke="white" stroke-width="2"/></svg>
@@ -151,6 +151,20 @@ You can hide toggle label with `no-label` prop
 <template>
   <Toggle variant="pill" disabled>Pill</Toggle>
   <Toggle variant="flat" disabled>Flat</Toggle>
+</template>
+```
+
+## Readonly state
+
+<preview class="flex-col items-center gap-3">
+  <Toggle readonly>Readonly False</Toggle>
+  <Toggle readonly checked>Readonly True</Toggle>
+</preview>
+
+```vue
+<template>
+  <Toggle readonly>Readonly False</Toggle>
+  <Toggle readonly checked>Readonly True</Toggle>
 </template>
 ```
 

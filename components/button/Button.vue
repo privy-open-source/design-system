@@ -33,7 +33,7 @@ export default defineComponent({
       default: false,
     },
     pill: {
-      type: Boolean,
+      type   : Boolean,
       default: false,
     }
   },
