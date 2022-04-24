@@ -276,10 +276,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:4.5.6":
-  version: 4.5.6
-  resolution: "@fontsource/dm-sans@npm:4.5.6"
-  checksum: 73bea107586c9238bf394b81fe8c0b03ef498b68be38920514a91bd8c39472bc1823b538e2be28b78c997da29ae830de17eee7b98456898db28062dd0c52278c
+"@fontsource/dm-sans@npm:4.5.7":
+  version: 4.5.7
+  resolution: "@fontsource/dm-sans@npm:4.5.7"
+  checksum: 34bef372bffea68aec4170b4f5c9690458f97868a1dee2976832d44502f7a3bddfb370203990c2c8562cd36025c4beea95c4f3dfb7c72ec047e5e192d0be44db
   languageName: node
   linkType: hard
 
@@ -373,7 +373,7 @@ __metadata:
   resolution: "@privyid/design-system@workspace:."
   dependencies:
     "@carbon/icons-vue": 10.49.1
-    "@fontsource/dm-sans": 4.5.6
+    "@fontsource/dm-sans": 4.5.7
     "@tailwindcss/typography": 0.5.2
     "@testing-library/jest-dom": 5.16.4
     "@testing-library/vue": 6.5.1
