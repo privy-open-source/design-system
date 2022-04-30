@@ -384,7 +384,7 @@ __metadata:
     c8: 7.11.2
     happy-dom: 3.1.0
     jest-extended: 2.0.0
-    postcss: 8.4.12
+    postcss: 8.4.13
     postcss-nested: 5.0.6
     tailwindcss: 3.0.24
     typescript: 4.6.3
@@ -2717,6 +2717,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "nanoid@npm:3.3.3"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: ada019402a07464a694553c61d2dca8a4353645a7d92f2830f0d487fedff403678a0bee5323a46522752b2eab95a0bc3da98b6cccaa7c0c55cd9975130e6d6f0
+  languageName: node
+  linkType: hard
+
 "negotiator@npm:^0.6.3":
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
@@ -2975,7 +2984,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.12, postcss@npm:^8.1.10, postcss@npm:^8.4.12, postcss@npm:^8.4.6":
+"postcss@npm:8.4.13":
+  version: 8.4.13
+  resolution: "postcss@npm:8.4.13"
+  dependencies:
+    nanoid: ^3.3.3
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 514fb3552805a5d039a2d6b4df3e73f657001716ca93c0d57e6067b0473abdea70276d80afc96005c9aaff82ed5d98062bd97724d3f47ca400fba0b5e9e436ed
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.1.10, postcss@npm:^8.4.12, postcss@npm:^8.4.6":
   version: 8.4.12
   resolution: "postcss@npm:8.4.12"
   dependencies:
