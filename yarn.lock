@@ -378,7 +378,7 @@ __metadata:
     "@testing-library/jest-dom": 5.16.4
     "@testing-library/vue": 6.5.1
     "@types/testing-library__jest-dom": 5.14.3
-    "@vitejs/plugin-vue": 2.3.1
+    "@vitejs/plugin-vue": 2.3.2
     "@vueuse/core": 8.4.2
     autoprefixer: 10.4.7
     c8: 7.11.2
@@ -564,13 +564,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:2.3.1":
-  version: 2.3.1
-  resolution: "@vitejs/plugin-vue@npm:2.3.1"
+"@vitejs/plugin-vue@npm:2.3.2":
+  version: 2.3.2
+  resolution: "@vitejs/plugin-vue@npm:2.3.2"
   peerDependencies:
     vite: ^2.5.10
     vue: ^3.2.25
-  checksum: 7102d80c7b37c5761213ca57a5d50db95bda387dee92a77bd3d0198fd00c47d117ba82761c26a9d40f83e274d6fa8e3932765f5f930e8139848be7b7b176a200
+  checksum: cfd539b412fee269705a8fd81cbc45529ffc3fe3d1962c6d70b8532994c95d2a54004afc94eef161c64055644a4e7be44b95654fd78d8bd01b61acf6190c34d4
   languageName: node
   linkType: hard
 
