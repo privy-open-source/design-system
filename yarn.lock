@@ -382,7 +382,7 @@ __metadata:
     "@vueuse/core": 8.4.2
     autoprefixer: 10.4.7
     c8: 7.11.2
-    happy-dom: 3.1.1
+    happy-dom: 3.2.0
     jest-extended: 2.0.0
     postcss: 8.4.13
     postcss-nested: 5.0.6
@@ -2105,9 +2105,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:3.1.1":
-  version: 3.1.1
-  resolution: "happy-dom@npm:3.1.1"
+"happy-dom@npm:3.2.0":
+  version: 3.2.0
+  resolution: "happy-dom@npm:3.2.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -2116,7 +2116,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 7fea6d91e47ddd4bc50c662c45202b9304460b7953b85906415d5a9237889d5e7d7cba13aa51c1d1409fe279c98cfe0bb001f82f7bfbffeab031522fad1b246a
+  checksum: 760c5c630924060ccb1575fb8c6f9cf5c39f7aca5cf710cfc9a35ba5fe105c0a76d7169ba7cf1eb4b4cc00353b27c16d579dee6c461f367bdbe7305ce0c22f24
   languageName: node
   linkType: hard
 
