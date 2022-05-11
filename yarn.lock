@@ -388,7 +388,7 @@ __metadata:
     postcss-nested: 5.0.6
     tailwindcss: 3.0.24
     typescript: 4.6.4
-    vite: 2.9.8
+    vite: 2.9.9
     vitepress: 0.22.4
     vitest: 0.10.0
     vue-demi: 0.12.5
@@ -564,17 +564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:2.3.2":
-  version: 2.3.2
-  resolution: "@vitejs/plugin-vue@npm:2.3.2"
-  peerDependencies:
-    vite: ^2.5.10
-    vue: ^3.2.25
-  checksum: cfd539b412fee269705a8fd81cbc45529ffc3fe3d1962c6d70b8532994c95d2a54004afc94eef161c64055644a4e7be44b95654fd78d8bd01b61acf6190c34d4
-  languageName: node
-  linkType: hard
-
-"@vitejs/plugin-vue@npm:^2.3.2":
+"@vitejs/plugin-vue@npm:2.3.2, @vitejs/plugin-vue@npm:^2.3.2":
   version: 2.3.2
   resolution: "@vitejs/plugin-vue@npm:2.3.2"
   peerDependencies:
@@ -3443,9 +3433,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:2.9.8, vite@npm:^2.9.7":
-  version: 2.9.8
-  resolution: "vite@npm:2.9.8"
+"vite@npm:2.9.9":
+  version: 2.9.9
+  resolution: "vite@npm:2.9.9"
   dependencies:
     esbuild: ^0.14.27
     fsevents: ~2.3.2
@@ -3468,7 +3458,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 7de3450bec4caa06f4540d1d252563ef0b7e1bdd167d04abf03db72cfd8c9a93879e18861283bc7d075e1d094b78b71770ca36f9b965bdf28c66665eafdc29dc
+  checksum: 9292b8ba510a393d0c61c407ebfb4eaa818b2d8d106b3476cdc94cb57a0c59348a535936d698db04b35910a1cfdb16aeaf872f0f995b54cf6d7ed31bc7886deb
   languageName: node
   linkType: hard
 
@@ -3498,6 +3488,35 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 354189cbce6904a3b58ca70b7ad9e1bb751ded9c13e483165562e634804cfb29bbf1507a4e6334cb9987e3f1f41e9f50764878a3c837523762e9da65229c9543
+  languageName: node
+  linkType: hard
+
+"vite@npm:^2.9.7":
+  version: 2.9.8
+  resolution: "vite@npm:2.9.8"
+  dependencies:
+    esbuild: ^0.14.27
+    fsevents: ~2.3.2
+    postcss: ^8.4.13
+    resolve: ^1.22.0
+    rollup: ^2.59.0
+  peerDependencies:
+    less: "*"
+    sass: "*"
+    stylus: "*"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  peerDependenciesMeta:
+    less:
+      optional: true
+    sass:
+      optional: true
+    stylus:
+      optional: true
+  bin:
+    vite: bin/vite.js
+  checksum: 7de3450bec4caa06f4540d1d252563ef0b7e1bdd167d04abf03db72cfd8c9a93879e18861283bc7d075e1d094b78b71770ca36f9b965bdf28c66665eafdc29dc
   languageName: node
   linkType: hard
 
