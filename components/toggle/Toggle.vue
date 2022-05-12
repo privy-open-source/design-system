@@ -72,6 +72,10 @@ export default defineComponent({
       default: false,
     },
   },
+  models: {
+    prop: 'modelValue',
+    event: 'update:modelValue',
+  },
   emits: [
     'change',
     'update:modelValue',

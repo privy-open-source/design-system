@@ -1,5 +1,6 @@
-import { computed, getCurrentInstance, ref } from "vue-demi"
+import { computed, getCurrentInstance } from "vue-demi"
 import type { CheckboxProps } from "../checkbox/use-checkbox"
+import { isEqual } from "../utils/value"
 
 export type RadioProps = Omit<CheckboxProps, "uncheckedValue">
 
@@ -9,7 +10,7 @@ export function useVModel<P extends RadioProps>(props: P) {
 
   const model = computed({
     get () {
-      return JSON.stringify(props.modelValue) === JSON.stringify(checked)
+      return isEqual(props.modelValue, checked)
     },
     set (value: boolean) {
       if (value)

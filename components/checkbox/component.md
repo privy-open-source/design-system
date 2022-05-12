@@ -69,3 +69,11 @@
   </div>
 </template>
 ```
+
+## Disabled State
+
+<preview>
+  <Checkbox v-model="value" value="3" disabled>
+    Checkbox Label
+  </Checkbox>
+</preview>

@@ -7,8 +7,7 @@
       v-model="value"
       type="radio"
       :name="name"
-      :disabled="disabled || readonly"
-      @change="$emit('change', $event)">
+      :disabled="disabled || readonly">
     <span class="radio__icon">
       <svg width="10" height="10" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="7" cy="7" r="6.25" fill="white"/>
@@ -57,8 +56,11 @@ export default defineComponent({
       default: false,
     },
   },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
   emits: [
-    'change',
     'update:modelValue',
   ],
   setup (props) {

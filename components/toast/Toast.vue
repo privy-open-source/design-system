@@ -154,6 +154,10 @@ export default defineComponent({
     .toast__icon {
       @apply bg-background-100 text-primary-100;
     }
+
+    .toast__title {
+      @apply text-body-100;
+    }
   }
 
   &.toast--error {
@@ -199,6 +203,10 @@ export default defineComponent({
 
     .toast__icon {
       @apply text-primary-100;
+    }
+
+    .toast__title {
+      @apply text-body-100;
     }
 
     .toast__text {

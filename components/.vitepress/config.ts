@@ -48,12 +48,24 @@ export default defineConfig({
             link: '/checkbox/component'
           },
           {
+            text: 'Dropdown',
+            link: '/dropdown/component'
+          },
+          {
+            text: 'Input',
+            link: '/input/component'
+          },
+          {
             text: 'Overlay',
             link: '/overlay/component'
           },
           {
             text: 'Radio',
             link: '/radio/component'
+          },
+          {
+            text: 'Select',
+            link: '/select/component'
           },
           {
             text: 'Toast',

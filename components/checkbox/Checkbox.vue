@@ -7,8 +7,7 @@
       v-model="value"
       type="checkbox"
       :name="name"
-      :disabled="disabled || readonly"
-      @change="$emit('change', $event)">
+      :disabled="disabled || readonly">
     <span class="checkbox__icon">
       <!-- checked icon -->
       <template v-if="indeterminate">
@@ -68,8 +67,11 @@ export default defineComponent({
       default: false,
     },
   },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
   emits: [
-    'change',
     'update:modelValue',
   ],
   setup (props) {
@@ -118,6 +120,10 @@ export default defineComponent({
     .checkbox__icon {
       @apply bg-primary-100;
     }
+  }
+
+  &--disabled {
+    @apply opacity-50;
   }
 }
 </style>

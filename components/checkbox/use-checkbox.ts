@@ -1,14 +1,7 @@
 
 import { syncRef } from "@vueuse/shared"
-import { computed, getCurrentInstance, ref, watch } from "vue-demi"
-
-function isEqual (a: unknown, b: unknown): boolean {
-  return JSON.stringify(a) === JSON.stringify(b)
-}
-
-function valueIn (array: unknown[], value: unknown): boolean {
-  return array.some((item) => isEqual(item, value))
-}
+import { computed, getCurrentInstance, ref } from "vue-demi"
+import { valueIn, isEqual } from "../utils/value"
 
 function isChecked (modelValue: unknown, checked: unknown): boolean {
   if (Array.isArray(modelValue))
@@ -26,7 +19,7 @@ export interface CheckboxProps {
 
 export function useVModel<P extends CheckboxProps> (props: P) {
   const { emit } = getCurrentInstance()
-  const value    = ref(false)
+  const value    = ref(props.checked)
 
   const checked   = props.value ?? true
   const unchecked = props.uncheckedValue ?? false
@@ -50,10 +43,6 @@ export function useVModel<P extends CheckboxProps> (props: P) {
   })
 
   syncRef(value, model)
-
-  watch(() => props.checked, (newValue) => {
-    value.value = newValue
-  }, { immediate: true })
 
   return value
 }

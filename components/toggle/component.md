@@ -3,9 +3,11 @@
   import IconLight from "@carbon/icons-vue/lib/light/16"
   import IconDark from "@carbon/icons-vue/lib/asleep/16"
   import { ref } from "vue-demi"
+  import { useDark } from '@vueuse/core'
 
   const modelA = ref(false)
   const modelB = ref('off')
+  const isDark = useDark()
 </script>
 
 # Toggle
@@ -90,7 +92,7 @@ You can customize toggle label with `checked-label` and `unchecked-label`
 You can also use `checked` and `unchecked` slot to customize the label, it allow you to use non-text label like an **icon**
 
 <preview class="flex-col items-center gap-3">
-  <Toggle>
+  <Toggle v-model="isDark">
     <template #checked>
       <IconDark />
     </template>

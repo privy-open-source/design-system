@@ -42,3 +42,12 @@
     </div>
   </Radio>
 </template>
+```
+
+## Disabled State
+
+<preview>
+  <Radio v-model="value" value="3" disabled>
+    Radio Label
+  </Radio>
+</preview>
