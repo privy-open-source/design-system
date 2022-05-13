@@ -173,25 +173,4 @@ export default defineComponent({
     @apply flex-shrink-0;
   }
 }
-
-.slide {
-  &-right,
-  &-left {
-    &-enter-active,
-    &-leave-active {
-      @apply duration-150 transition-[opacity,transform];
-    }
-
-  }
-
-  &-right-enter-from,
-  &-left-leave-to {
-    @apply opacity-0 -translate-x-5;
-  }
-
-  &-right-leave-to,
-  &-left-enter-from {
-    @apply opacity-0 translate-x-5;
-  }
-}
 </style>

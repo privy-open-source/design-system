@@ -44,6 +44,10 @@ export default defineConfig({
             link: '/button/component'
           },
           {
+            text: 'Calendar',
+            link: '/calendar/component'
+          },
+          {
             text: 'Checkbox',
             link: '/checkbox/component'
           },

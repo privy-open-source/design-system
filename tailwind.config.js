@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin       = require('tailwindcss/plugin')
 
 module.exports = {
   darkMode: 'class',
@@ -147,5 +148,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('./tailwind-animation')
   ],
 }
