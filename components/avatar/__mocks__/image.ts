@@ -1,14 +1,14 @@
-export default class MockImage extends EventTarget {
-  constructor() {
-    super()
+export default function MockImage () {
+  const et = new EventTarget()
 
-    Object.defineProperty(this, 'src', {
-      set (value: string) {
-        if (value && value !== '/broken-link.jpg')
-          this.dispatchEvent(new Event('load'))
-        else
-          this.dispatchEvent(new Event('error'))
-      }
-    })
-  }
+  Object.defineProperty(et, 'src', {
+    set (value: string) {
+      if (value && value !== '/broken-link.jpg')
+        et.dispatchEvent(new Event('load'))
+      else
+        et.dispatchEvent(new Event('error'))
+    }
+  })
+
+  return et
 }
