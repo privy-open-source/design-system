@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue-demi"
-import { useVModel } from "@vueuse/core"
+import { useVModel } from "./use-input"
 
 export default defineComponent({
   props: {
@@ -15,6 +15,12 @@ export default defineComponent({
       type   : [String, Number],
       default: '',
     },
+    disabled: {
+      type: Boolean,
+    },
+    readonly: {
+      type: Boolean,
+    }
   },
   models: {
     prop : 'modelValue',

@@ -28,9 +28,9 @@
         @click="select(item)">
         <slot name="option" :item="item">
           <div class="select__option">
-            <span class="select__optionText">{{ item.text }}</span>
+            <span class="select__option-text">{{ item.text }}</span>
             <IconCheck
-              class="select__optionChecked" />
+              class="select__option-checked" />
           </div>
         </slot>
       </DropdownItem>
@@ -195,11 +195,11 @@ export default defineComponent({
   &__option {
     @apply flex items-center justify-between;
 
-    &Text {
+    &-text {
       @apply flex-grow truncate;
     }
 
-    &Checked {
+    &-checked {
       @apply flex-shrink-0 text-primary-100 invisible;
 
       .selected & {

@@ -1,29 +1,37 @@
 <template>
   <div
     data-testid="calendar"
-    class="calendar">
+    class="calendar"
+    :viewmode="viewmode"
+    :class="classNames">
     <div class="calendar__nav">
       <Button
+        data-testid="calendar-prev"
         variant="outline"
         icon
         size="sm"
         :disabled="!canPrev"
+        :readonly="disabled || readonly"
         @click="prev">
         <IconBack />
       </Button>
 
       <Button
-        class="calendar__navTitle"
+        data-testid="calendar-title"
+        class="calendar__nav-title"
         variant="outline"
         size="sm"
-        @click="changeMode">
+        :readonly="disabled || readonly"
+        @click="changeMode(1)">
         {{ title }}
       </Button>
 
       <Button
+        data-testid="calendar-next"
         variant="outline"
         icon
         size="sm"
+        :readonly="disabled || readonly"
         :disabled="!canNext"
         @click="next">
         <IconNext />
@@ -31,12 +39,16 @@
     </div>
 
     <Transition :name="transition" mode="out-in">
-      <div class="calendar__items" :mode="mode" :key="`${cursor}+${mode}`">
+      <div
+        data-testid="calendar-items"
+        class="calendar__items"
+        :viewmode="viewmode"
+        :key="`${cursor}+${viewmode}`">
         <template v-for="item in items">
           <Button
             variant="outline"
             icon
-            :readonly="item.readonly"
+            :readonly="item.readonly || disabled || readonly"
             :active="item.active"
             :disabled="item.disabled"
             @click="selectItem(item)">
@@ -52,17 +64,18 @@
 import Button from "../button/Button.vue"
 import IconNext from "@carbon/icons-vue/lib/chevron--right/20"
 import IconBack from "@carbon/icons-vue/lib/chevron--left/20"
-import { defineComponent, ref, computed, watch, toRef } from "vue-demi"
-import { CalendarAdapter, CalendarItem, CalendarMode } from "./adapter/adapter"
+import { defineComponent, ref, computed, watch, toRef, PropType } from "vue-demi"
+import { CalendarAdapter, CalendarFormat, CalendarItem, CalendarMode } from "./adapter/adapter"
 import DateAdapter from "./adapter/date"
 import MonthAdapter from "./adapter/month"
 import YearAdapter from "./adapter/year"
 import { startOfMonth } from "date-fns"
+import { useVModel } from "../input/use-input"
 
 const Adapters: Record<CalendarMode, CalendarAdapter> = {
-  [CalendarMode.DATE] : DateAdapter,
-  [CalendarMode.MONTH]: MonthAdapter,
-  [CalendarMode.YEAR] : YearAdapter,
+  'date' : DateAdapter,
+  'month': MonthAdapter,
+  'year' : YearAdapter,
 }
 
 type TransitionMode = 'slide-left' | 'slide-right' | 'zoom-in' | 'zoom-out'
@@ -77,22 +90,32 @@ export default defineComponent({
     modelValue: {
       type: Date,
     },
+    disabled: {
+      type: Boolean,
+    },
+    readonly: {
+      type: Boolean,
+    },
     max: {
       type: Date,
     },
     min: {
       type: Date,
     },
+    mode: {
+      type   : String as PropType<CalendarMode>,
+      default: 'date',
+    },
   },
   emits: [
     'update:modelValue',
     'change',
   ],
-  setup (props) {
-    const mode       = ref<CalendarMode>(CalendarMode.DATE)
+  setup (props, { emit }) {
+    const viewmode   = ref<CalendarMode>(props.mode)
     const transition = ref<TransitionMode>('slide-left')
     const cursor     = ref(startOfMonth(props.modelValue ?? new Date()))
-    const model      = ref(new Date())
+    const model      = useVModel(props)
 
     const context = {
       cursor: cursor,
@@ -102,7 +125,7 @@ export default defineComponent({
     }
 
     const adapter = computed(() => {
-      return Adapters[mode.value]
+      return Adapters[viewmode.value]
     })
 
     const title = computed(() => {
@@ -121,27 +144,58 @@ export default defineComponent({
       return adapter.value.canPrev(context)
     })
 
+    const classNames = computed(() => {
+      const result = []
+
+      if (props.disabled)
+        result.push('calendar--disabled')
+
+      if (props.readonly)
+        result.push('calendar--readonly')
+
+      return result
+    })
+
     function next () {
-      cursor.value = adapter.value.getNextCursor(context)
+      if (!props.disabled && !props.readonly)
+        cursor.value = adapter.value.getNextCursor(context)
     }
 
-    function prev() {
-      cursor.value = adapter.value.getPrevCursor(context)
+    function prev () {
+      if (!props.disabled && !props.readonly)
+        cursor.value = adapter.value.getPrevCursor(context)
     }
 
-    function changeMode () {
-      if (mode.value !== CalendarMode.YEAR)
-        mode.value = mode.value + 1
+    function changeMode (step = 1) {
+      if (!props.disabled && !props.readonly) {
+        const index   = CalendarFormat.indexOf(viewmode.value)
+        const newMode = CalendarFormat[index + step]
+
+        if (newMode)
+          viewmode.value = newMode
+      }
     }
 
     function selectItem (item: CalendarItem) {
-      if (mode.value !== CalendarMode.DATE) {
-        cursor.value = item.value
-        mode.value   = mode.value - 1
-      } else {
+      if (viewmode.value === props.mode) {
         model.value = item.value
+
+        emit('change', item.value)
+      } else {
+        cursor.value = item.value
+
+        changeMode(-1)
       }
     }
+
+    watch(() => props.mode, (value) => {
+      const newIndex     = CalendarFormat.indexOf(value)
+      const currentIndex = CalendarFormat.indexOf(viewmode.value)
+
+      if (newIndex > currentIndex)
+        viewmode.value = value
+    })
+
 
     watch(cursor, (value, oldValue) => {
       transition.value = value > oldValue
@@ -149,8 +203,8 @@ export default defineComponent({
         : 'slide-right'
     })
 
-    watch(mode, (value, oldValue) => {
-      transition.value = value > oldValue
+    watch(viewmode, (value, oldValue) => {
+      transition.value = CalendarFormat.indexOf(value) > CalendarFormat.indexOf(oldValue)
         ? 'zoom-out'
         : 'zoom-in'
     })
@@ -159,10 +213,11 @@ export default defineComponent({
       transition,
       title,
       items,
-      mode,
+      viewmode,
       cursor,
       canNext,
       canPrev,
+      classNames,
       next,
       prev,
       changeMode,
@@ -174,12 +229,12 @@ export default defineComponent({
 
 <style lang="postcss">
 .calendar {
-  @apply p-4 bg-white flex flex-col gap-2 text-sm;
+  @apply p-2 md:p-4 bg-white flex flex-col gap-2 text-sm;
 
   &__nav {
     @apply flex justify-between gap-2;
 
-    &Title {
+    &-title {
       @apply flex-grow;
     }
   }
@@ -202,24 +257,29 @@ export default defineComponent({
       @apply font-normal;
     }
 
-    /* mode: date */
-    &[mode="1"] {
-      @apply grid grid-cols-7 gap-[1px];
+    &[viewmode="date"] {
+      @apply grid grid-cols-7 gap-1;
+
+      .btn--md {
+        @apply p-1 md:p-2;
+      }
 
       .btn--outline:nth-child(-n+7) {
         @apply font-medium;
       }
     }
 
-    /* mode: month */
-    /* mode: year */
-    &[mode="2"],
-    &[mode="3"] {
+    &[viewmode="month"],
+    &[viewmode="year"] {
       @apply grid grid-cols-4 gap-1;
       .btn--md {
         @apply px-3;
       }
     }
+  }
+
+  &--disabled {
+    @apply opacity-50;
   }
 }
 </style>

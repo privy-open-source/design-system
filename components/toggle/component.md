@@ -5,9 +5,10 @@
   import { ref } from "vue-demi"
   import { useDark } from '@vueuse/core'
 
-  const modelA = ref(false)
-  const modelB = ref('off')
-  const isDark = useDark()
+  const modelA   = ref(false)
+  const modelB   = ref('off')
+  const isDark   = useDark()
+  const selected = ref([])
 </script>
 
 # Toggle
@@ -59,7 +60,7 @@
 
 ## Type variant
 
-There available 4 type variants: `pill` and `flat`. default is `pill`
+There available 2 type variants: `pill` and `flat`. default is `pill`
 
 <preview class="flex-col items-center gap-3">
   <Toggle variant="pill">Pill</Toggle>
@@ -208,3 +209,30 @@ By default, value of toggle is always `Boolean`, but you can change it with `val
   </Toggle>
 </template>
 ```
+
+### Array v-model
+
+Similar to [Checkbox][checkbox], if v-model **state** is an *array* it will append the value instead of replacing it.
+
+<preview class="flex-col items-center">
+  <div class="flex flex-col gap-3">
+    <Toggle v-model="selected" value="apple">Apple</Toggle>
+    <Toggle v-model="selected" value="grape">Grape</Toggle>
+    <Toggle v-model="selected" value="pineapple">Pineapple</Toggle>
+  </div>
+</preview>
+
+**Selected :**
+<pre class="whitespace-normal"><code>{{ selected }}</code></pre>
+
+```vue
+<template>
+  <div class="flex flex-col gap-3">
+    <Toggle v-model="selected" value="apple">Apple</Toggle>
+    <Toggle v-model="selected" value="grape">Grape</Toggle>
+    <Toggle v-model="selected" value="pineapple">Pineapple</Toggle>
+  </div>
+</template>
+```
+
+[checkbox]: /checkbox/component

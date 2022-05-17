@@ -31,14 +31,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref, watch } from "vue-demi"
-import { createPopper, Instance as Popper } from "@popperjs/core"
+import { defineComponent, PropType, watch } from "vue-demi"
 import Button from "../button/Button.vue"
 import DropdownGroup from "./DropdownGroup.vue"
 import { useFocus } from "./use-focus"
-import { templateRef, tryOnMounted, onClickOutside, useVModel, syncRef, onKeyStroke } from "@vueuse/core"
+import { templateRef, onClickOutside, onKeyStroke } from "@vueuse/core"
+import { PoppperOption, usePopper } from "./use-popper"
+import { useVModel } from "../input/use-input"
 
-type PoppperOption        = (typeof createPopper) extends (a: unknown, b: unknown, c: infer O) => unknown ? O : never
 type DropdownGroupElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
 
 export default defineComponent({
@@ -85,9 +85,8 @@ export default defineComponent({
     const target = templateRef<HTMLDivElement>('dropdown')
     const menu   = templateRef<HTMLDivElement>('menu')
     const wizard = templateRef<DropdownGroupElement>('wizard')
-    const popper = ref<Popper>()
-    const isOpen = ref(false)
-    const model  = useVModel(props)
+    const popper = usePopper(target, menu, props.popper)
+    const isOpen = useVModel(props)
 
     const {
       next: nextFocus,
@@ -108,10 +107,6 @@ export default defineComponent({
       if (!props.disabled)
         isOpen.value = false
     }
-
-    tryOnMounted(() => {
-      popper.value = createPopper(target.value, menu.value, props.popper)
-    })
 
     onClickOutside(menu, () => {
       if (isOpen.value)
@@ -145,8 +140,6 @@ export default defineComponent({
       }
     })
 
-    syncRef(isOpen, model)
-
     return {
       isOpen,
       toggle,
@@ -173,18 +166,6 @@ export default defineComponent({
   &__menuContainer > .dropdown__item:last-child,
   &__menuContainer > .dropdown__group:last-child .dropdown__item {
     @apply rounded-b;
-  }
-}
-
-.fade {
-  &-enter-active,
-  &-leave-active {
-    @apply transition-opacity duration-200;
-  }
-
-  &-enter-from,
-  &-leave-to {
-    @apply opacity-0;
   }
 }
 </style>

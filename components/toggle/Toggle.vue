@@ -3,7 +3,7 @@
     <div class="toggle__switch">
       <span
         v-if="noLabel === false"
-        class="toggle__label toggle__checkedLabel">
+        class="toggle__label toggle__checked-label">
         <slot name="checked">
           {{ checkedLabel }}
         </slot>
@@ -16,7 +16,7 @@
         @change="$emit('change', $event)" />
       <span
         v-if="noLabel === false"
-        class="toggle__label toggle__uncheckedLabel">
+        class="toggle__label toggle__unchecked-label">
         <slot name="unchecked">
           {{ uncheckedLabel }}
         </slot>
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref, WritableComputedRef, watch } from "vue-demi"
+import { computed, defineComponent, PropType, WritableComputedRef } from "vue-demi"
 import { useVModel } from "../checkbox/use-checkbox"
 
 type StyleVariant = 'pill' | 'flat'
@@ -81,7 +81,7 @@ export default defineComponent({
     'update:modelValue',
   ],
   setup (props) {
-    const value = useVModel(props) as WritableComputedRef<unknown>
+    const value = useVModel(props)
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -152,27 +152,27 @@ export default defineComponent({
     }
 
     .toggle__label {
-      @apply p-1 z-20 relative text-sm;
+      @apply p-1 z-[2] relative text-sm rounded-none;
     }
 
-    .toggle__checkedLabel {
+    .toggle__checked-label {
       @apply text-body-50;
     }
 
-    .toggle__uncheckedLabel {
+    .toggle__unchecked-label {
       @apply text-body-100;
     }
 
     .toggle__pointer {
-      @apply w-1/2 h-full bg-white absolute z-10  transition-transform -translate-x-1/2;
+      @apply w-1/2 h-full bg-white absolute z-[1]  transition-transform -translate-x-1/2;
     }
 
     &.toggle--checked {
-      .toggle__checkedLabel {
+      .toggle__checked-label {
         @apply text-body-100;
       }
 
-      .toggle__uncheckedLabel {
+      .toggle__unchecked-label {
         @apply text-body-50;
       }
 

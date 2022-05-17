@@ -21,15 +21,13 @@ export interface CalendarAdapter {
   getNextCursor (context: CalendarContext): Date,
   getPrevCursor (context: CalendarContext): Date,
 
-  canNext(context: CalendarContext): boolean,
-  canPrev(context: CalendarContext): boolean,
+  canNext (context: CalendarContext): boolean,
+  canPrev (context: CalendarContext): boolean,
 }
 
-export enum CalendarMode {
-  DATE  = 1,
-  MONTH = 2,
-  YEAR  = 3,
-}
+export const CalendarFormat = ['date', 'month', 'year'] as const
+
+export type CalendarMode = typeof CalendarFormat[number]
 
 export function defineAdapter<Adapter extends CalendarAdapter>(adapter: Adapter): CalendarAdapter {
   return adapter

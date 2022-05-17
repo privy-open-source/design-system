@@ -1,4 +1,4 @@
-import { computed, getCurrentInstance, Ref } from "vue-demi"
+import { computed, Ref } from "vue-demi"
 import { SelectItem, SelectProps } from "../use-select"
 
 export interface AdapterContext {

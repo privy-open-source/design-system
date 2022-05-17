@@ -3,11 +3,11 @@
     <div class="dropdown__group" :key="tree._level">
       <template v-if="canBack" key="btn-back">
         <DropdownItem
-          class="dropdown__groupBtn dropdown__groupBtnBack"
+          class="dropdown__group-btn dropdown__group-btn-back"
           @click="back()">
           <slot name="button-back">
-            <IconBack class="dropdown__groupNext" />
-            <div class="dropdown__groupContent">
+            <IconBack class="dropdown__group-next" />
+            <div class="dropdown__group-content">
               Back
             </div>
           </slot>
@@ -16,13 +16,13 @@
 
       <template v-if="!isRoot" key="btn-next">
         <DropdownItem
-          class="dropdown__groupBtn"
+          class="dropdown__group-btn"
           @click="next()">
           <slot name="button-content">
-            <div class="dropdown__groupContent">
+            <div class="dropdown__group-content">
               {{ text }}
             </div>
-            <IconNext class="dropdown__groupNext" />
+            <IconNext class="dropdown__group-next" />
           </slot>
         </DropdownItem>
       </template>
@@ -156,20 +156,20 @@ export default defineComponent({
 
 <style lang="postcss">
 .dropdown__group {
-  &Btn {
+  &-btn {
     @apply flex items-center gap-1;
 
-    &Back {
+    &-back {
       @apply flex-shrink-0 text-sm text-body-75 font-medium;
     }
   }
 
-  &Content {
+  &-content {
     @apply flex-grow;
   }
 
-  &Next,
-  &Back {
+  &-next,
+  &-back {
     @apply flex-shrink-0;
   }
 }
