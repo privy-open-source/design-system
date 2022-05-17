@@ -1,0 +1,58 @@
+<script setup>
+    import Heading from './Heading.vue'
+</script>
+
+
+# Heading
+Headings are used as the titles of each major section of a page in the interface.
+
+## Usage
+Use for the title of each top-level page section. The default element of heading are `h2`
+
+### Basic Usage
+
+<preview>
+   <Heading>
+      Any title should here
+   </Heading>
+</preview>
+
+```vue
+<template>
+   <Heading>
+      Any title should here
+   </Heading>
+</template>
+```
+
+### Setting the element
+
+<preview>
+   <Heading element="h4">
+      Account Information
+   </Heading>
+</preview>
+
+```vue
+<template>
+   <Heading element="h4">
+      Account Information
+   </Heading>
+</template>
+```
+
+## API
+
+### Props
+
+| Props         |   Type    | Default    | Description                                     |
+|---------------|:---------:|:----------:|-------------------------------------------------|
+| `element`     | `String`  | `h2`       | Heading element, valid value is `h1` to  `h6`   |
+| `class`       | `String`  | `text-6xl` | Additional class for heading element            |
+| `id`          | `String`  | -          | Additional id for heading element               |
+
+### Slots
+
+| Name      | Description                 |
+|-----------|-----------------------------|
+| `default` | Content to place in heading |

@@ -44,6 +44,14 @@ export default defineConfig({
             link: '/button/component'
           },
           {
+            text: 'Card',
+            link: '/card/component'
+          },
+          {
+            text: 'Heading',
+            link: '/heading/component'
+          },
+          {
             text: 'Overlay',
             link: '/overlay/component'
           },
