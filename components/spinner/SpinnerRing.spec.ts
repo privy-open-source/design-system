@@ -7,8 +7,8 @@ it('should render properly without any props', () => {
     template  : `<Spinner />`
   })
 
-  const calendar = screen.getByTestId('spinner')
+  const spinner = screen.getByTestId('spinner')
 
-  expect(calendar).toBeInTheDocument()
-  expect(calendar).toHaveClass('spinner')
+  expect(spinner).toBeInTheDocument()
+  expect(spinner).toHaveClass('spinner')
 })
