@@ -1,5 +1,6 @@
 <script setup>
   import Calendar from "./Calendar.vue"
+  import Banner from "../banner/Banner.vue"
   import { ref } from "vue-demi"
   import { format } from 'date-fns'
 
@@ -107,12 +108,14 @@ for example, mode `month` make user can only select the month, but can't select 
 
 <pre class="max-w-full truncate"><code>{{ value ?? '-' }}</code></pre>
 
-::: tip
-value is a native `Date` instance, Component doesn't provide any date formatting. if you want change the format, you can use [date-fns][date-fns] or [moment.js][momentjs]
-:::
-
-[date-fns]: https://date-fns.org/
-[momentjs]: https://momentjs.com/
+<Banner class="mt-4">
+  <div class="font-semibold">
+    Info
+  </div>
+  <div class="text-sm">
+    value is a native <code>Date</code> instance, Component doesn't provide any date formatting. if you want change the format, you can use <a href="https://date-fns.org/">date-fns</a> or <a href="https://momentjs.com/">moment.js</a>
+  </div>
+</Banner>
 
 Example:
 
@@ -163,7 +166,7 @@ Example:
   </thead>
   <tbody>
     <tr>
-      <td colspan="4" class="text-center">There no slots here</td>
+      <td colspan="2" class="text-center">There no slots here</td>
     </tr>
   </tbody>
 </table>
