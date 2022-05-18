@@ -1,5 +1,5 @@
 import { syncRef } from "@vueuse/shared"
-import { computed, getCurrentInstance, ref, Ref, watch } from "vue-demi"
+import { computed, getCurrentInstance, ref, Ref } from "vue-demi"
 
 export interface InputProps<V = string> {
   modelValue: V,

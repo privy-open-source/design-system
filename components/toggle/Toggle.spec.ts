@@ -149,29 +149,6 @@ it('should use value in props `value` instead of true/false', async () => {
   expect(model.value).toBe('On')
 })
 
-it('should use value in props `value` instead of true/false', async () => {
-  const model  = ref(false)
-  const screen = render({
-    components: { Toggle },
-    template  : `
-      <Toggle v-model="model" value="On" />
-    `,
-    setup () {
-      return {
-        model,
-      }
-    }
-  })
-
-  const toggle = screen.queryByTestId('toggle')
-
-  expect(model.value).toBe(false)
-
-  await fireEvent.click(toggle)
-
-  expect(model.value).toBe('On')
-})
-
 it('should use value in props `value` and `unchecked-value` instead of true/false', async () => {
   const model  = ref(false)
   const screen = render({
