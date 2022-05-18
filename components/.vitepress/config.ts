@@ -48,6 +48,10 @@ export default defineConfig({
             link: '/heading/component'
           },
           {
+            text: 'Subheading',
+            link: '/subheading/component'
+          },
+          {
             text: 'Overlay',
             link: '/overlay/component'
           },
