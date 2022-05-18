@@ -1,5 +1,5 @@
 <template>
-  <label data-testid="toggle" class="toggle" :class="classNames">
+  <label data-testid="toggle" class="toggle" :class="classNames" @click.prevent="toggle">
     <div class="toggle__switch">
       <span
         v-if="noLabel === false"
@@ -12,8 +12,7 @@
         type="checkbox"
         class="toggle__pointer"
         :disabled="disabled || readonly"
-        v-model="value"
-        @change="$emit('change', $event)" />
+        :value="model" />
       <span
         v-if="noLabel === false"
         class="toggle__label toggle__unchecked-label">
@@ -27,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, WritableComputedRef } from "vue-demi"
+import { computed, defineComponent, PropType } from "vue-demi"
 import { useVModel } from "../checkbox/use-checkbox"
 
 type StyleVariant = 'pill' | 'flat'
@@ -80,8 +79,8 @@ export default defineComponent({
     'change',
     'update:modelValue',
   ],
-  setup (props) {
-    const value = useVModel(props)
+  setup (props, { emit }) {
+    const model = useVModel(props)
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -89,18 +88,30 @@ export default defineComponent({
       if (props.variant)
         result.push(`toggle--${props.variant}`)
 
-      if (value.value)
+      if (model.value)
         result.push('toggle--checked')
 
       if (props.disabled)
         result.push('toggle--disabled')
 
+      if (props.readonly)
+        result.push('toggle--readonly')
+
       return result
     })
 
+    function toggle () {
+      const newValue = !model.value
+
+      model.value = newValue
+
+      emit('change', newValue)
+    }
+
     return {
       classNames,
-      value,
+      model,
+      toggle,
     }
   },
 })

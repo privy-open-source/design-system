@@ -235,4 +235,9 @@ Similar to [Checkbox][checkbox], if v-model **state** is an *array* it will appe
 </template>
 ```
 
+## See Also
+- [Checkbox][checkbox]
+- [Radio][radio]
+
 [checkbox]: /checkbox/component
+[radio]: /radio/component
