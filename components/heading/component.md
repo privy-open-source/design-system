@@ -41,14 +41,14 @@ Use for the title of each top-level page section. The default element of heading
 ### Setting the element
 
 <preview>
-   <Heading element="h4">
+   <Heading element="h5">
       Account Information
    </Heading>
 </preview>
 
 ```vue
 <template>
-   <Heading element="h4">
+   <Heading element="h5">
       Account Information
    </Heading>
 </template>
@@ -60,9 +60,8 @@ Use for the title of each top-level page section. The default element of heading
 
 | Props         |   Type    | Default    | Description                                     |
 |---------------|:---------:|:----------:|-------------------------------------------------|
-| `element`     | `String`  | `h2`       | Heading element, valid value is `h1` to `h6`    |
+| `element`     | `String`  | `h3`       | Heading element, valid value is `h1` to `h6`    |
 | `class`       | `String`  | -          | Additional class for heading element            |
-| `id`          | `String`  | -          | Additional id for heading element               |
 
 ### Slots
 
