@@ -1,5 +1,5 @@
 import { syncRef } from "@vueuse/shared"
-import { computed, getCurrentInstance, ref, watch } from "vue-demi"
+import { computed, getCurrentInstance, ref } from "vue-demi"
 import { InputProps } from "../input/use-input"
 import { valueIn, isEqual } from "../utils/value"
 
