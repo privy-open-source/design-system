@@ -84,7 +84,7 @@ export default defineConfig({
         ]
       },
       {
-        text       : 'Global',
+        text       : 'Non-Component',
         collapsable: true,
         children   : [
           {

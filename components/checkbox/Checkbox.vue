@@ -72,6 +72,7 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: [
+    'change',
     'update:modelValue',
   ],
   setup (props) {
@@ -116,7 +117,8 @@ export default defineComponent({
     }
   }
 
-  &--checked {
+  &--checked,
+  &--indeterminate {
     .checkbox__icon {
       @apply bg-primary-100;
     }

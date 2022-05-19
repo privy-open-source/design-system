@@ -143,7 +143,7 @@ You can hide toggle label with `no-label` prop
 </template>
 ```
 
-## Disable state
+## Disabled state
 
 <preview class="flex-col items-center gap-3">
   <Toggle variant="pill" disabled>Pill</Toggle>
@@ -248,7 +248,7 @@ Similar to [Checkbox](/checkbox/component), if v-model **state** is an *array* i
 | `checkedLabel`   | `String`  |  `on`   | Label when Toggle is checked                                             |
 | `uncheckedLabel` | `String`  |  `off`  | Label when Toggle is unchecked                                           |
 | `noLabel`        | `Boolean` | `false` | Hide label                                                               |
-| `disabled`       | `Boolean` | `false` | Disable state                                                            |
+| `disabled`       | `Boolean` | `false` | Disabled state                                                           |
 | `readonly`       | `Boolean` | `false` | Readonly state                                                           |
 | `modelValue`     |   `Any`   |   `-`   | `v-model` value                                                          |
 
