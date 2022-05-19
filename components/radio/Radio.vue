@@ -2,14 +2,27 @@
   <label
     data-testid="radio"
     class="radio"
-    :class="classNames">
+    :class="classNames"
+    @click.prevent="toggle">
     <input
-      v-model="value"
       type="radio"
+      :value="model"
       :name="name"
       :disabled="disabled || readonly">
     <span class="radio__icon">
-      <svg width="10" height="10" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        v-if="apperance === 'checkbox'"
+        width="10"
+        height="10"
+        viewBox="0 0 14 10"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z" fill="white"/>
+      </svg>
+
+      <svg
+        v-else
+        width="10" height="10" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="7" cy="7" r="6.25" fill="white"/>
       </svg>
     </span>
@@ -21,12 +34,14 @@
 
 <script lang="ts">
 import { useVModel } from "./use-radio"
-import { computed, defineComponent, ref } from "vue-demi"
+import { computed, defineComponent, PropType } from "vue-demi"
 
 export interface ChangedInteface {
   value: any,
   state: boolean,
 }
+
+type ApperanceType = 'radio' | 'checkbox'
 
 export default defineComponent({
   props: {
@@ -51,9 +66,9 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
-    indeterminate: {
-      type   : Boolean,
-      default: false,
+    apperance: {
+      type   : String as PropType<ApperanceType>,
+      default: 'radio',
     },
   },
   models: {
@@ -62,28 +77,38 @@ export default defineComponent({
   },
   emits: [
     'update:modelValue',
+    'change',
   ],
   setup (props) {
-    const value = useVModel(props)
+    const model = useVModel(props)
 
     const classNames = computed(() => {
       const result: string[] = []
 
-      if (value.value)
+      if (model.value)
         result.push('radio--checked')
 
-      if (props.indeterminate)
-        result.push('radio--indeterminate')
+      if (props.readonly)
+        result.push('radio--readonly')
 
       if (props.disabled)
         result.push('radio--disabled')
 
+      if (props.apperance)
+        result.push(`radio--${props.apperance}`)
+
       return result
     })
 
+    function toggle () {
+      if (!props.disabled && !props.readonly)
+        model.value = true
+    }
+
     return {
-      value,
+      model,
       classNames,
+      toggle,
     }
   },
 })
@@ -112,6 +137,12 @@ export default defineComponent({
   &--checked {
     .radio__icon {
       @apply bg-primary-100;
+    }
+  }
+
+  &--checkbox {
+    .radio__icon {
+      @apply rounded-tn;
     }
   }
 }

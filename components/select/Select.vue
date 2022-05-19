@@ -111,13 +111,14 @@ export default defineComponent({
     const keyword   = ref('')
     const isOpen    = ref(false)
     const isLoading = useLoading()
-
-    const items = props.adapter.setup({
+    const context   = {
       props,
       keyword,
       isOpen,
       isLoading,
-    })
+    }
+
+    const items = props.adapter.setup(context)
 
     const model = computed({
       get (): SelectItem {

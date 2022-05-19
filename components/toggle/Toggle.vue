@@ -33,6 +33,10 @@ type StyleVariant = 'pill' | 'flat'
 
 export default defineComponent({
   props: {
+    variant: {
+      type   : String as PropType<StyleVariant>,
+      default: 'pill'
+    },
     modelValue: {
       default: false,
     },
@@ -45,10 +49,6 @@ export default defineComponent({
     },
     uncheckedValue: {
       default: false,
-    },
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'pill'
     },
     checkedLabel: {
       type   : String,
@@ -72,12 +72,12 @@ export default defineComponent({
     },
   },
   models: {
-    prop: 'modelValue',
+    prop : 'modelValue',
     event: 'update:modelValue',
   },
   emits: [
-    'change',
     'update:modelValue',
+    'change',
   ],
   setup (props, { emit }) {
     const model = useVModel(props)
@@ -101,11 +101,9 @@ export default defineComponent({
     })
 
     function toggle () {
-      const newValue = !model.value
-
-      model.value = newValue
-
-      emit('change', newValue)
+      if (!props.readonly && !props.disabled) {
+        model.value = !model.value
+      }
     }
 
     return {

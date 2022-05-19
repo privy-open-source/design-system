@@ -212,7 +212,7 @@ By default, value of toggle is always `Boolean`, but you can change it with `val
 
 ### Array v-model
 
-Similar to [Checkbox][checkbox], if v-model **state** is an *array* it will append the value instead of replacing it.
+Similar to [Checkbox](/checkbox/component), if v-model **state** is an *array* it will append the value instead of replacing it.
 
 <preview class="flex-col items-center">
   <div class="flex flex-col gap-3">
@@ -235,9 +235,37 @@ Similar to [Checkbox][checkbox], if v-model **state** is an *array* it will appe
 </template>
 ```
 
-## See Also
-- [Checkbox][checkbox]
-- [Radio][radio]
+## API
 
-[checkbox]: /checkbox/component
-[radio]: /radio/component
+### Props
+
+| Props            |   Type    | Default | Description                                                              |
+|------------------|:---------:|:-------:|--------------------------------------------------------------------------|
+| `variant`        | `String`  | `pill`  | Toggle style variant, valid value is `pill`, `flat`                      |
+| `checked`        | `Boolean` | `false` | Checked condition. if it is `true`, Toggle will be checked on first time |
+| `value`          |   `Any`   | `true`  | Checked value                                                            |
+| `uncheckedValue` |   `Any`   | `false` | Unchecked value                                                          |
+| `checkedLabel`   | `String`  |  `on`   | Label when Toggle is checked                                             |
+| `uncheckedLabel` | `String`  |  `off`  | Label when Toggle is unchecked                                           |
+| `noLabel`        | `Boolean` | `false` | Hide label                                                               |
+| `disabled`       | `Boolean` | `false` | Disable state                                                            |
+| `readonly`       | `Boolean` | `false` | Readonly state                                                           |
+| `modelValue`     |   `Any`   |   `-`   | `v-model` value                                                          |
+
+### Slots
+
+| Name        | Description                 |
+|-------------|-----------------------------|
+| `default`   | Content to place in toggle  |
+| `checked`   | Content for checked label   |
+| `unchecked` | Content for unchecked label |
+
+### Events
+
+| Name     | Arguments | Description              |
+|----------|-----------|--------------------------|
+| `change` | Boolean   | Event when value changed |
+
+## See Also
+- [Checkbox](/checkbox/component)
+- [Radio](/radio/component)

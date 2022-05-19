@@ -1,5 +1,6 @@
 
 import { fireEvent, render } from "@testing-library/vue"
+import { vi } from "vitest"
 import { ref } from "vue-demi"
 import Toggle from "./Toggle.vue"
 
@@ -15,7 +16,7 @@ it('should render properly without any prop', () => {
   expect(toggle).toHaveClass('toggle', 'toggle--pill')
 })
 
-it('should have style "flat" if variant prop set to "flat"', () => {
+it('should have style "flat" if `variant` prop set to "flat"', () => {
   const screen = render({
     components: { Toggle },
     template  : `<Toggle variant="flat" />`
@@ -88,6 +89,17 @@ it('should have readonly state if prop `readonly` is provided', () => {
   expect(toggle).toHaveClass('toggle', 'toggle--readonly')
 })
 
+it('should checked at start if prop `checked` is provided', () => {
+  const screen = render({
+    components: { Toggle },
+    template  : `<Toggle checked />`,
+  })
+
+  const toggle = screen.queryByTestId('toggle')
+
+  expect(toggle).toHaveClass('toggle--checked')
+})
+
 it('should toggle the state if clicked', async () => {
   const screen = render({
     components: { Toggle },
@@ -101,6 +113,40 @@ it('should toggle the state if clicked', async () => {
   await fireEvent.click(toggle)
 
   expect(toggle).toHaveClass('toggle--checked')
+
+  await fireEvent.click(toggle)
+
+  expect(toggle).not.toHaveClass('toggle--checked')
+})
+
+it('should not toggle the state if disabled', async () => {
+  const screen = render({
+    components: { Toggle },
+    template  : `<Toggle disabled />`,
+  })
+
+  const toggle = screen.queryByTestId('toggle')
+
+  expect(toggle).not.toHaveClass('toggle--checked')
+
+  await fireEvent.click(toggle)
+
+  expect(toggle).not.toHaveClass('toggle--checked')
+})
+
+it('should not toggle the state if readonly', async () => {
+  const screen = render({
+    components: { Toggle },
+    template  : `<Toggle readonly />`,
+  })
+
+  const toggle = screen.queryByTestId('toggle')
+
+  expect(toggle).not.toHaveClass('toggle--checked')
+
+  await fireEvent.click(toggle)
+
+  expect(toggle).not.toHaveClass('toggle--checked')
 })
 
 it('should modify state in v-model', async () => {
@@ -126,31 +172,8 @@ it('should modify state in v-model', async () => {
   expect(model.value).toBe(true)
 })
 
-it('should use value in props `value` instead of true/false', async () => {
-  const model  = ref(false)
-  const screen = render({
-    components: { Toggle },
-    template  : `
-      <Toggle v-model="model" value="On" />
-    `,
-    setup () {
-      return {
-        model,
-      }
-    }
-  })
-
-  const toggle = screen.queryByTestId('toggle')
-
-  expect(model.value).toBe(false)
-
-  await fireEvent.click(toggle)
-
-  expect(model.value).toBe('On')
-})
-
 it('should use value in props `value` and `unchecked-value` instead of true/false', async () => {
-  const model  = ref(false)
+  const model  = ref('')
   const screen = render({
     components: { Toggle },
     template  : `
@@ -168,13 +191,13 @@ it('should use value in props `value` and `unchecked-value` instead of true/fals
 
   const toggle = screen.queryByTestId('toggle')
 
-  expect(model.value).toBe('Off')
-
   await fireEvent.click(toggle)
 
   expect(model.value).toBe('On')
 
   await fireEvent.click(toggle)
+
+  expect(model.value).toBe('Off')
 })
 
 it('should append value if v-model is an array', async () => {
@@ -204,4 +227,54 @@ it('should append value if v-model is an array', async () => {
   await fireEvent.click(togglePineaple)
 
   expect(model.value).toStrictEqual(['apple', 'grape', 'pineapple'])
+})
+
+it('should remove value from array if toggle is clicked again', async () => {
+  const model  = ref(['apple', 'grape', 'pineapple'])
+  const screen = render({
+    components: { Toggle },
+    template  : `
+      <Toggle v-model="model" value="apple">Apple</Toggle>
+      <Toggle v-model="model" value="grape">Grape</Toggle>
+      <Toggle v-model="model" value="pineapple">Pineapple</Toggle>
+    `,
+    setup () {
+      return {
+        model,
+      }
+    }
+  })
+
+  const toggleApple = screen.queryByText('Apple')
+
+  expect(toggleApple).toHaveClass('toggle--checked')
+
+  await fireEvent.click(toggleApple)
+
+  expect(model.value).toStrictEqual(['grape', 'pineapple'])
+})
+
+it('should trigger event "change", when clicked', async () => {
+  const onChange = vi.fn()
+  const screen   = render({
+    components: { Toggle },
+    template  : `
+      <Toggle @change="onChange">Apple</Toggle>
+    `,
+    setup () {
+      return {
+        onChange,
+      }
+    }
+  })
+
+  const toggle = screen.queryByTestId('toggle')
+
+  await fireEvent.click(toggle)
+
+  expect(onChange).toBeCalledWith(true)
+
+  await fireEvent.click(toggle)
+
+  expect(onChange).toBeCalledWith(false)
 })
