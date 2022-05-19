@@ -1,5 +1,7 @@
 <template>
-    <p :class="className">
+    <p 
+        data-testid="subheading"
+        :class="className">
         <slot />
     </p>
 </template>
@@ -7,7 +9,8 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from "vue-demi"
 
-type SizeVariant = 'md' | 'sm'
+type SizeVariant = 'sm' | 'md'
+type OverlineVariant = 'normal' | 'medium'
 
 export default defineComponent({
     props: {
@@ -16,8 +19,8 @@ export default defineComponent({
             default: 'md'
         },
         overline: {
-            type: Boolean,
-            default: false
+            type: String as PropType<OverlineVariant>,
+            default: null
         }
     },
 
@@ -25,15 +28,13 @@ export default defineComponent({
         const className = computed(() => {
             const result: String[] = ['subheading']
 
-            console.log(props.size)
-
             if (props.size)
                 result.push(`subheading--${props.size}`)
 
             if (props.overline) {
-                const size = result.indexOf(`subheading--${props.size}`)
+                const size: number = result.indexOf(`subheading--${props.size}`)
                 result.splice(size, 1)
-                result.push(`subheading--overline`)
+                result.push(`subheading--overline-${props.overline}`)
             }
 
             return result
@@ -61,7 +62,18 @@ export default defineComponent({
         }
 
         &.subheading--overline {
-            @apply text-[0.6875rem] leading-[1.4] tracking-[0.09375rem];
+            &-normal,
+            &-medium {
+                @apply text-[0.6875rem] leading-[1.4] tracking-[0.09375rem];
+            }
+
+            &-normal {
+                @apply font-normal;
+            }
+
+            &-medium {
+                @apply font-medium;
+            }
         }
     }
 </style>

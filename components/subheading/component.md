@@ -43,14 +43,14 @@ Used for the title of any sub-sections
 ### Overline
 
 <preview>
-   <Subheading overline>
+   <Subheading overline="normal">
       Any title should here
    </Subheading>
 </preview>
 
 ```vue
 <template>
-   <Subheading overline>
+   <Subheading overline="normal">
       Any title should here
    </Subheading>
 </template>
@@ -59,14 +59,14 @@ Used for the title of any sub-sections
 ### Overline Medium
 
 <preview>
-   <Subheading class="font-medium" overline>
+   <Subheading overline="medium">
       Any title should here
    </Subheading>
 </preview>
 
 ```vue
 <template>
-   <Subheading class="font-medium" overline>
+   <Subheading overline="medium">
       Any title should here
    </Subheading>
 </template>
@@ -76,14 +76,14 @@ Used for the title of any sub-sections
 
 ### Props
 
-| Props         |   Type    | Default    | Description                                     |
-|---------------|:---------:|:----------:|-------------------------------------------------|
-| `size`        | `String`  | `md`       | Heading element, valid value is `sm`, `md`      |
-| `overline`    | `Boolean` | `false`    | Enable/disable `overline` variant. If overline are enable, the `size` will be disabled automatically               |
-| `class`       | `String`  | -          | Additional class for heading element            |
+| Props         |   Type    | Default    | Description                                           |
+|---------------|:---------:|:----------:|-------------------------------------------------------|
+| `size`        | `String`  | `md`       | Size of subheading, valid value is `sm` and `md`      |
+| `overline`    | `String`  | -          | Overline variant. Valid value is `normal` and `medium`. If overline is active, subheading's `size` will be disabled automatically               |
+| `class`       | `String`  | -          | Additional class for subheading element               |
 
 ### Slots
 
-| Name      | Description                 |
-|-----------|-----------------------------|
-| `default` | Content to place in heading |
+| Name      | Description                    |
+|-----------|--------------------------------|
+| `default` | Content to place in subheading |
