@@ -2,12 +2,14 @@
   <label
     data-testid="checkbox"
     class="checkbox"
-    :class="classNames">
+    :class="classNames"
+    @click.prevent="toggle">
     <input
-      v-model="value"
       type="checkbox"
+      :checked="model"
       :name="name"
-      :disabled="disabled || readonly">
+      :disabled="disabled || readonly"
+      :value="value">
     <span class="checkbox__icon">
       <!-- checked icon -->
       <template v-if="indeterminate">
@@ -76,12 +78,12 @@ export default defineComponent({
     'update:modelValue',
   ],
   setup (props) {
-    const value = useVModel(props)
+    const model = useVModel(props)
 
     const classNames = computed(() => {
       const result: string[] = []
 
-      if (value.value)
+      if (model.value)
         result.push('checkbox--checked')
 
       if (props.indeterminate)
@@ -90,12 +92,22 @@ export default defineComponent({
       if (props.disabled)
         result.push('checkbox--disabled')
 
+      if (props.readonly)
+        result.push('checkbox--readonly')
+
       return result
     })
 
+    function toggle () {
+      if (!props.readonly && !props.disabled) {
+        model.value = !model.value
+      }
+    }
+
     return {
-      value,
+      model,
       classNames,
+      toggle,
     }
   },
 })

@@ -17,11 +17,8 @@
       return result.value.length === items.value.length
     },
     set (value) {
-      if (selectAll.value !== value) {
-        result.value = value
-          ? [...items.value]
-          : []
-      }
+      if (selectAll.value !== value)
+        result.value = value ? [...items.value] : []
     },
   })
 
@@ -223,11 +220,8 @@ Indeterminate is condition between `checked` and `unchecked`. It's usefull for c
       return result.value.length === items.value.length
     },
     set (value) {
-      if (selectAll.value !== value) {
-        result.value = value
-          ? [...items.value]
-          : []
-      }
+      if (selectAll.value !== value)
+        result.value = value ? [...items.value] : []
     },
   })
 

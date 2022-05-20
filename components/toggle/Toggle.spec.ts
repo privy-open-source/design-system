@@ -64,6 +64,27 @@ it('should no label if `no-label` prop is given', () => {
   expect(uncheckLabel).not.toBeInTheDocument()
 })
 
+it('should be able to replace label via slot `checked` and `unchecked`', () => {
+  const screen = render({
+    components: { Toggle },
+    template  : `
+      <Toggle>
+        <template #checked>
+          <span data-testid="checked">AM</span>
+        </template>
+        <template #unchecked>
+          <span data-testid="unchecked">AM</span>
+        </template>
+      </Toggle>
+    `
+  })
+
+  const checkLabel   = screen.queryByTestId('checked')
+  const uncheckLabel = screen.queryByTestId('unchecked')
+
+  expect(checkLabel).toBeInTheDocument()
+  expect(uncheckLabel).toBeInTheDocument()
+})
 
 it('should have disabled state if prop `disabled` is provided', () => {
   const screen = render({

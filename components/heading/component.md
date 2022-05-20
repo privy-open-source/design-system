@@ -97,3 +97,25 @@ Use for the title of each top-level page section. The default element of heading
 | Name      | Description                 |
 |-----------|-----------------------------|
 | `default` | Content to place in heading |
+
+### Events
+
+<table>
+  <thead>
+    <tr>
+      <th>Props</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no props here</td>
+    </tr>
+  </tbody>
+</table>
+
+## See Also
+
+- [Heading Guide](/heading/guide)
+- [Subheading](/subheading/component)

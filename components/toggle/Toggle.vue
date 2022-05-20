@@ -12,7 +12,8 @@
         type="checkbox"
         class="toggle__pointer"
         :disabled="disabled || readonly"
-        :value="model" />
+        :value="value"
+        :checked="model" />
       <span
         v-if="noLabel === false"
         class="toggle__label toggle__unchecked-label">

@@ -50,6 +50,18 @@ export default defineConfig({
           {
             text: 'Dropdown',
             link: '/dropdown/component'
+          },
+          {
+            text: 'Spinner',
+            link: '/spinner/component'
+          },
+        ]
+      },
+      {
+        text       : 'Typography',
+        collapsable: true,
+        children   : [
+          {
             text: 'Heading',
             link: '/heading/component'
           },
@@ -57,15 +69,7 @@ export default defineConfig({
             text: 'Subheading',
             link: '/subheading/component'
           },
-          {
-            text: 'Overlay',
-            link: '/overlay/component'
-          },
-          {
-            text: 'Spinner',
-            link: '/spinner/component'
-          },
-        ]
+        ],
       },
       {
         text       : 'Form',

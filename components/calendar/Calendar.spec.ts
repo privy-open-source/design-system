@@ -1,5 +1,4 @@
 import { render, fireEvent } from "@testing-library/vue"
-import { nextTick } from "vue-demi"
 import Calendar from "./Calendar.vue"
 
 it('should render properly without any props', () => {
@@ -280,7 +279,6 @@ it('should force current viewmode, if props "mode" changed and current viewmode 
   expect(calendar).toHaveAttribute('viewmode', 'date')
 
   await fireEvent.click(button)
-  await nextTick()
 
   expect(calendar).toHaveAttribute('viewmode', 'year')
 })

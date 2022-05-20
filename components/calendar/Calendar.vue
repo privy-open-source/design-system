@@ -43,7 +43,7 @@
         data-testid="calendar-items"
         class="calendar__items"
         :viewmode="viewmode"
-        :key="`${cursor}+${viewmode}`">
+        :key="`${cursor.toISOString()}+${viewmode}`">
         <template v-for="item in items">
           <Button
             variant="outline"

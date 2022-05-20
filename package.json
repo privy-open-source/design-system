@@ -36,7 +36,6 @@
     "date-fns": "^2.28.0",
     "fuse.js": "^6.5.3",
     "tabbable": "^5.3.1",
-    "postcss-each": "^1.1.0",
     "vue-demi": "0.12.5"
   },
   "workspaces": [
