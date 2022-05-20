@@ -24,7 +24,7 @@ it('should able to display overlay', async () => {
   expect(overlay).toHaveClass('overlay')
 })
 
-it('should diplay overlay if "show" called', async () => {
+it('should display overlay if "show" called', async () => {
   const screen = render({
     components: { Overlay },
     template  : `

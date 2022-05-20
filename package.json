@@ -31,8 +31,11 @@
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.7",
+    "@popperjs/core": "^2.11.5",
     "@vueuse/core": "8.5.0",
-    "postcss-each": "^1.1.0",
+    "date-fns": "^2.28.0",
+    "fuse.js": "^6.5.3",
+    "tabbable": "^5.3.1",
     "vue-demi": "0.12.5"
   },
   "workspaces": [
