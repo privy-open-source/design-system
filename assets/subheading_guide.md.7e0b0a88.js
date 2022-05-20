@@ -1,0 +1,1 @@
+import{_ as e,b as t,a}from"./app.1eb03a29.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"subheading/guide.md"}',r={};function o(s,n,c,i,d,_){return a(),t("div")}var u=e(r,[["render",o]]);export{f as __pageData,u as default};
