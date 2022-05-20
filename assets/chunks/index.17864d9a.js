@@ -1,1 +1,0 @@
-import{B as o,o as i,z as s}from"../app.917d00f9.js";var n;const d=typeof window!="undefined",r=e=>typeof e!="undefined";d&&((n=window==null?void 0:window.navigator)==null?void 0:n.userAgent)&&/iP(ad|hone|od)/.test(window.navigator.userAgent);function u(e,t=!0){o()?i(e):t?e():s(e)}export{r as i,u as t};
