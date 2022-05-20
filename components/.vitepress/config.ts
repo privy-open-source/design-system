@@ -24,6 +24,10 @@ export default defineConfig({
           {
             text: 'Banner',
             link: '/banner/guide'
+          },
+          {
+            text: 'Heading',
+            link: '/heading/guide'
           }
         ]
       },
@@ -46,6 +50,16 @@ export default defineConfig({
           {
             text: 'Dropdown',
             link: '/dropdown/component'
+            text: 'Heading',
+            link: '/heading/component'
+          },
+          {
+            text: 'Subheading',
+            link: '/subheading/component'
+          },
+          {
+            text: 'Overlay',
+            link: '/overlay/component'
           },
           {
             text: 'Spinner',
