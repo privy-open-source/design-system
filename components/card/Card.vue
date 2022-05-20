@@ -11,7 +11,7 @@ import { computed, defineComponent } from 'vue-demi'
 
 export default defineComponent ({
     props: {
-        noPadding: {
+        sectioned: {
             type: Boolean,
             default: false,
         }
@@ -20,7 +20,7 @@ export default defineComponent ({
         const classNames = computed(() => {
             const result: string[] = ['card']
 
-            if (props.noPadding)
+            if (props.sectioned)
                 result.push('p-0')
             else
                 result.push('p-6')
