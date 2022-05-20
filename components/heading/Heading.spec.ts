@@ -15,7 +15,7 @@ it('should rendered properly without any props', () => {
     const text   = screen.queryByText('Heading Title')
   
     expect(heading).toBeInTheDocument()
-    expect(heading).toHaveClass('heading', 'h3')
+    expect(heading).toHaveClass('h3')
     expect(text).toBeInTheDocument()
 })
 
@@ -32,7 +32,7 @@ it('should have style "h1" if element set to "h1"', () => {
     const heading = screen.queryByTestId('heading')
   
     expect(heading).toBeInTheDocument()
-    expect(heading).toHaveClass('heading', 'h1')
+    expect(heading).toHaveClass('h1')
     expect(heading).not.toHaveClass('h3')
   })
   
