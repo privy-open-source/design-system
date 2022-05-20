@@ -32,6 +32,7 @@
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.7",
     "@vueuse/core": "8.5.0",
+    "postcss-each": "^1.1.0",
     "vue-demi": "0.12.5"
   },
   "workspaces": [

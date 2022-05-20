@@ -84,7 +84,7 @@ export default defineComponent({
 }
 
 .btn--lg {
-  @apply px-5 py-3 gap-3 text-lg rounded;
+  @apply px-5 py-3 gap-3 text-base rounded;
 }
 
 .btn--solid {
