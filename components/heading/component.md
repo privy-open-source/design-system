@@ -38,18 +38,48 @@ Use for the title of each top-level page section. The default element of heading
 </template>
 ```
 
-### Setting the element
+## Setting the element
 
 <preview>
+   <Heading element="h1">
+      Heading 1
+   </Heading>
+   <Heading element="h2">
+      Heading 2
+   </Heading>
+   <Heading element="h3">
+      Heading 3
+   </Heading>
+   <Heading element="h4">
+      Heading 4
+   </Heading>
    <Heading element="h5">
-      Account Information
+      Heading 5
+   </Heading>
+   <Heading element="h6">
+      Heading 6
    </Heading>
 </preview>
 
 ```vue
 <template>
+   <Heading element="h1">
+      Heading 1
+   </Heading>
+   <Heading element="h2">
+      Heading 2
+   </Heading>
+   <Heading element="h3">
+      Heading 3
+   </Heading>
+   <Heading element="h4">
+      Heading 4
+   </Heading>
    <Heading element="h5">
-      Account Information
+      Heading 5
+   </Heading>
+   <Heading element="h6">
+      Heading 6
    </Heading>
 </template>
 ```
@@ -61,7 +91,6 @@ Use for the title of each top-level page section. The default element of heading
 | Props         |   Type    | Default    | Description                                     |
 |---------------|:---------:|:----------:|-------------------------------------------------|
 | `element`     | `String`  | `h3`       | Heading element, valid value is `h1` to `h6`    |
-| `class`       | `String`  | -          | Additional class for heading element            |
 
 ### Slots
 

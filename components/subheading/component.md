@@ -2,6 +2,12 @@
     import Subheading from './Subheading.vue'
 </script>
 
+<style scoped lang="postcss">
+    .preview {
+        @apply block;
+    }
+</style>
+
 # Subheading
 Subheadings are used for the title of any sub-sections
 
@@ -12,62 +18,58 @@ Used for the title of any sub-sections
 
 <preview>
    <Subheading>
-      Any title should here
+      Any subtitle should here
    </Subheading>
 </preview>
 
 ```vue
 <template>
    <Subheading>
-      Any title should here
+      Any subtitle should here
    </Subheading>
 </template>
 ```
 
-### Sizing
+## Sizing
 
 <preview>
    <Subheading size="sm">
-      Any title should here
+      Any subtitle should here
+   </Subheading>
+   <Subheading size="md">
+      Any subtitle should here
    </Subheading>
 </preview>
 
 ```vue
 <template>
    <Subheading size="sm">
-      Any title should here
+      Any subtitle should here
+   </Subheading>
+   <Subheading size="md">
+      Any subtitle should here
    </Subheading>
 </template>
 ```
 
-### Overline
+## Overline
 
 <preview>
    <Subheading overline="normal">
-      Any title should here
+      Any section title should here
+   </Subheading>
+   <Subheading overline="medium">
+      Any section title should here
    </Subheading>
 </preview>
 
 ```vue
 <template>
    <Subheading overline="normal">
-      Any title should here
+      Any section title should here
    </Subheading>
-</template>
-```
-
-### Overline Medium
-
-<preview>
    <Subheading overline="medium">
-      Any title should here
-   </Subheading>
-</preview>
-
-```vue
-<template>
-   <Subheading overline="medium">
-      Any title should here
+      Any section title should here
    </Subheading>
 </template>
 ```
@@ -80,7 +82,6 @@ Used for the title of any sub-sections
 |---------------|:---------:|:----------:|-------------------------------------------------------|
 | `size`        | `String`  | `md`       | Size of subheading, valid value is `sm` and `md`      |
 | `overline`    | `String`  | -          | Overline variant. Valid value is `normal` and `medium`. If overline is active, subheading's `size` will be disabled automatically               |
-| `class`       | `String`  | -          | Additional class for subheading element               |
 
 ### Slots
 

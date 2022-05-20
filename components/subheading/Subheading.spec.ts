@@ -36,11 +36,11 @@ it('should have style "sm" if size set to "sm"', () => {
     expect(subheading).not.toHaveClass('subheading--md')
 })
 
-it('should have style "overline" if overline is provided', () => {
+it('should have style "overline normal" if overline normal is provided', () => {
     const screen = render({
       components: { Subheading },
       template  : `
-        <Subheading overline>
+        <Subheading overline="normal">
           Title
         </Subheading>
       `,
@@ -49,7 +49,7 @@ it('should have style "overline" if overline is provided', () => {
     const subheading = screen.queryByTestId('subheading')
   
     expect(subheading).toBeInTheDocument()
-    expect(subheading).toHaveClass('subheading', 'subheading--overline')
-    expect(subheading).not.toHaveClass('subheading--md', 'subheading--sm')
+    expect(subheading).toHaveClass('subheading', 'subheading--overline-normal')
+    expect(subheading).not.toHaveClass('subheading--md', 'subheading--sm', 'subheading--overline-medium')
 })
   
