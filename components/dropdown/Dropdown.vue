@@ -9,10 +9,10 @@
       :toggle="toggle"
       :open="open"
       :close="close"
-      :isOpen="isOpen">
+      :is-open="isOpen">
       <Button
-        @click="toggle"
-        :disabled="disabled">
+        :disabled="disabled"
+        @click="toggle">
         {{ text }}
       </Button>
     </slot>
@@ -22,7 +22,9 @@
         v-show="isOpen"
         ref="menu"
         class="dropdown__menu">
-        <DropdownGroup class="dropdown__menuContainer" ref="wizard">
+        <DropdownGroup
+          ref="wizard"
+          class="dropdown__menuContainer">
           <slot />
         </DropdownGroup>
       </div>
@@ -31,20 +33,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, watch } from "vue-demi"
-import Button from "../button/Button.vue"
-import DropdownGroup from "./DropdownGroup.vue"
-import { useFocus } from "./use-focus"
-import { templateRef, onClickOutside, onKeyStroke } from "@vueuse/core"
-import { PoppperOption, usePopper } from "./use-popper"
-import { useVModel } from "../input/use-input"
+import {
+  defineComponent, PropType, watch,
+} from 'vue-demi'
+import Button from '../button/Button.vue'
+import DropdownGroup from './DropdownGroup.vue'
+import { useFocus } from './use-focus'
+import {
+  templateRef, onClickOutside, onKeyStroke,
+} from '@vueuse/core'
+import { PoppperOption, usePopper } from './use-popper'
+import { useVModel } from '../input/use-input'
 
 type DropdownGroupElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
 
 export default defineComponent({
   components: {
     Button,
-    DropdownGroup
+    DropdownGroup,
   },
   props: {
     modelValue: {
@@ -52,7 +58,8 @@ export default defineComponent({
       default: false,
     },
     text: {
-      type: String,
+      type   : String,
+      default: '',
     },
     popper: {
       type   : Object as PropType<PoppperOption>,
@@ -65,22 +72,20 @@ export default defineComponent({
               options: { offset: [0, 6] },
             },
             { name: 'preventOverflow' },
-          ]
+          ],
         }
-      }
+      },
     },
     disabled: {
       type   : Boolean,
       default: false,
-    }
+    },
   },
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: [
-    'update:modelValue',
-  ],
+  emits: ['update:modelValue'],
   setup (props) {
     const target = templateRef<HTMLDivElement>('dropdown')
     const menu   = templateRef<HTMLDivElement>('menu')
@@ -88,10 +93,8 @@ export default defineComponent({
     const popper = usePopper(target, menu, props.popper)
     const isOpen = useVModel(props)
 
-    const {
-      next: nextFocus,
-      prev: prevFocus,
-    } = useFocus(menu)
+    const { next: nextFocus,
+      prev: prevFocus } = useFocus(menu)
 
     function toggle () {
       if (!props.disabled)
@@ -111,7 +114,7 @@ export default defineComponent({
     onClickOutside(menu, () => {
       if (isOpen.value)
         toggle()
-    }, { ignore: [target]})
+    }, { ignore: [target] })
 
     onKeyStroke('Escape', () => {
       if (isOpen.value)
@@ -132,12 +135,11 @@ export default defineComponent({
         nextFocus()
     })
 
-    watch (isOpen, (show) => {
-      if (show && popper.value) {
+    watch(isOpen, (show) => {
+      if (show && popper.value)
         popper.value.update()
-      } else {
+      else
         wizard.value.reset()
-      }
     })
 
     return {
@@ -146,7 +148,7 @@ export default defineComponent({
       open,
       close,
     }
-  }
+  },
 })
 </script>
 

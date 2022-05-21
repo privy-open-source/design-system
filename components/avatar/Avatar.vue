@@ -15,8 +15,19 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, PropType, ref, watch } from 'vue-demi'
-import { createAlias, createSpinner, dummyAvatar } from './utils/create-image'
+import {
+  computed,
+  defineComponent,
+  onMounted,
+  PropType,
+  ref,
+  watch,
+} from 'vue-demi'
+import {
+  createAlias,
+  createSpinner,
+  dummyAvatar,
+} from './utils/create-image'
 import loadImage from './utils/load-image'
 
 type TypeVariant = 'image' | 'alias'
@@ -25,28 +36,35 @@ type SizeVariant = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export default defineComponent({
   props: {
     variant: {
-      type: String as PropType<TypeVariant>,
+      type   : String as PropType<TypeVariant>,
+      default: undefined,
     },
     src: {
-      type: String,
+      type   : String,
+      default: undefined,
     },
     fallbackSrc: {
       type   : String,
       default: dummyAvatar(),
     },
     name: {
-      type: String,
+      type   : String,
+      default: undefined,
     },
     size: {
       type   : String as PropType<SizeVariant>,
       default: 'md',
     },
-    imgClass: {},
+    imgClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
   },
-  emits: [
-    'imgloaded',
-    'imgerror',
-  ],
+  emits: ['imgloaded', 'imgerror'],
   setup (props, { emit }) {
     const imageSrc = ref(createSpinner(50))
 
@@ -94,7 +112,11 @@ export default defineComponent({
       imageSrc.value = createAlias(props.name)
     }
 
-    watch(() => [props.src, props.name, props.variant], () => {
+    watch(() => [
+      props.src,
+      props.name,
+      props.variant,
+    ], () => {
       init()
     })
 
@@ -107,7 +129,7 @@ export default defineComponent({
       type,
       imageSrc,
     }
-  }
+  },
 })
 </script>
 

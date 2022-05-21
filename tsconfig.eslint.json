@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    ".eslintrc.js",
+    "postcss.config.js",
+    "tailwind.config.js",
+    "tailwind.animation.js",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ]
+}

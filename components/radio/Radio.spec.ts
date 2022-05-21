@@ -1,7 +1,7 @@
-import { fireEvent, render } from "@testing-library/vue"
-import { vi } from "vitest"
-import { ref } from "vue-demi"
-import Radio from "./Radio.vue"
+import { fireEvent, render } from '@testing-library/vue'
+import { vi } from 'vitest'
+import { ref } from 'vue-demi'
+import Radio from './Radio.vue'
 
 it('should render properly without any prop', () => {
   const screen = render({
@@ -83,10 +83,8 @@ it('should modify state in v-model', async () => {
       <Radio v-model="model" value="grape">Grape</Radio>
     `,
     setup () {
-      return {
-        model,
-      }
-    }
+      return { model }
+    },
   })
 
   const radioApple = screen.queryByText('Apple')
@@ -111,10 +109,8 @@ it('should trigger event "change" when clicked', async () => {
       </Radio>
     `,
     setup () {
-      return {
-        onChange,
-      }
-    }
+      return { onChange }
+    },
   })
 
   const radioApple = screen.queryByText('Apple')

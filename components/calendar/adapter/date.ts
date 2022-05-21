@@ -1,46 +1,63 @@
-import { eachDayOfInterval, endOfMonth, endOfWeek, isSameDay, isSameMonth, startOfMonth, startOfWeek, format, addMonths, subMonths, isAfter, isBefore, isWithinInterval, minTime, maxTime } from "date-fns"
-import { CalendarItem, defineAdapter } from "./adapter"
+import {
+  eachDayOfInterval,
+  endOfMonth,
+  endOfWeek,
+  isSameDay,
+  isSameMonth,
+  startOfMonth,
+  startOfWeek,
+  format,
+  addMonths,
+  subMonths,
+  isAfter,
+  isBefore,
+  isWithinInterval,
+  minTime,
+  maxTime,
+} from 'date-fns'
+import { CalendarItem, defineAdapter } from './adapter'
+
+function getInterval (date: Date) {
+  const start = startOfWeek(startOfMonth(date), { weekStartsOn: 1 })
+  const end   = endOfWeek(endOfMonth(date), { weekStartsOn: 1 })
+
+  return {
+    start,
+    end,
+  }
+}
 
 export default defineAdapter({
-  getInterval (date: Date) {
-    const start = startOfWeek(startOfMonth(date), { weekStartsOn: 1 })
-    const end   = endOfWeek(endOfMonth(date), { weekStartsOn: 1 })
-
-    return { start, end }
-  },
-
   getItems ({ cursor, model, min, max }) {
-    const dates: CalendarItem[] = eachDayOfInterval(this.getInterval(cursor.value))
-      .map((date) => {
-        const start      = min.value ?? minTime
-        const end        = max.value ?? maxTime
-        const isDisabled = !isSameMonth(cursor.value, date)
-          || !isWithinInterval(date, { start, end })
+    const dates: CalendarItem[] = eachDayOfInterval(getInterval(cursor.value)).map((date) => {
+      const start      = min.value ?? minTime
+      const end        = max.value ?? maxTime
+      const isDisabled = !isSameMonth(cursor.value, date)
+        || !isWithinInterval(date, {
+          start,
+          end,
+        })
 
-        return {
-          value   : date,
-          text    : date.getDate().toString(),
-          disabled: isDisabled,
-          active  : isSameDay(model.value, date),
-          readonly: false,
-        }
-      })
+      return {
+        value   : date,
+        text    : date.getDate().toString(),
+        disabled: isDisabled,
+        active  : isSameDay(model.value, date),
+        readonly: false,
+      }
+    })
 
-    const days: CalendarItem[] = dates.slice(0, 7)
-      .map((item) => {
-        return {
-          value   : item.value,
-          text    : format(item.value, 'EEEEEE'),
-          disabled: false,
-          readonly: true,
-          active  : false,
-        }
-      })
+    const days: CalendarItem[] = dates.slice(0, 7).map((item) => {
+      return {
+        value   : item.value,
+        text    : format(item.value, 'EEEEEE'),
+        disabled: false,
+        readonly: true,
+        active  : false,
+      }
+    })
 
-    return [
-      ...days,
-      ...dates,
-    ]
+    return [...days, ...dates]
   },
 
   getTitle ({ cursor }) {
@@ -61,7 +78,12 @@ export default defineAdapter({
     const start = startOfMonth(date)
     const end   = endOfMonth(date)
 
-    return !max || isBefore(date, max) || isWithinInterval(max, { start, end })
+    return max == null
+      || isBefore(date, max)
+      || isWithinInterval(max, {
+        start,
+        end,
+      })
   },
 
   canPrev (context) {
@@ -70,6 +92,11 @@ export default defineAdapter({
     const start = startOfMonth(date)
     const end   = endOfMonth(date)
 
-    return !min || isAfter(date, min) || isWithinInterval(min, { start, end })
+    return min == null
+      || isAfter(date, min)
+      || isWithinInterval(min, {
+        start,
+        end,
+      })
   },
 })

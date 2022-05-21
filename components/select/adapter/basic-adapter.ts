@@ -1,5 +1,5 @@
-import { computed } from "vue-demi"
-import { defineAdapter, useOptionsProp } from "./adapter"
+import { computed } from 'vue-demi'
+import { defineAdapter, useOptionsProp } from './adapter'
 
 /**
  * Filter options using simple .include search algorithm
@@ -16,5 +16,5 @@ export default defineAdapter({
     })
 
     return filtered
-  }
+  },
 })

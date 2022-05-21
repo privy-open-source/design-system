@@ -6,6 +6,7 @@ import { vi } from 'vitest'
 
 vi.stubGlobal('Image', MockImage)
 
+// eslint-disable-next-line @typescript-eslint/promise-function-async
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 it('should render properly', () => {
@@ -88,14 +89,12 @@ it('should re-init if src changed', async () => {
         :src="url" />
       <button @click="changeUrl">Change URL</button>
     `,
-    data: () => ({
-      url: '/imageA.jpg',
-    }),
+    data   : () => ({ url: '/imageA.jpg' }),
     methods: {
       changeUrl () {
         this.url = '/imageB.jpg'
-      }
-    }
+      },
+    },
   })
 
   const image  = screen.queryByTestId('avatar-image')
@@ -128,8 +127,11 @@ it('should have style "lg" if size prop set to "lg"', () => {
 
 it('should replace image if slot is used', () => {
   const screen = render({
-    components: { Avatar, IconUser },
-    template  : `
+    components: {
+      Avatar,
+      IconUser,
+    },
+    template: `
       <Avatar>
         <IconUser data-testid="icon" />
       </Avatar>
@@ -148,13 +150,14 @@ it('should replace image if slot is used', () => {
 it('should emit event "imgloaded" when image sucess to load', async () => {
   const spy    = vi.fn()
   const screen = render({
-    components: { Avatar, IconUser },
-    template  : `
+    components: {
+      Avatar,
+      IconUser,
+    },
+    template: `
       <Avatar src="/imageA.jpg" @imgloaded="onLoaded" />
     `,
-    methods: {
-      onLoaded: spy,
-    }
+    methods: { onLoaded: spy },
   })
 
   const image = screen.queryByTestId('avatar-image')
@@ -169,13 +172,14 @@ it('should emit event "imgloaded" when image sucess to load', async () => {
 it('should emit event "imgerror" when image fail to load', async () => {
   const spy    = vi.fn()
   const screen = render({
-    components: { Avatar, IconUser },
-    template  : `
+    components: {
+      Avatar,
+      IconUser,
+    },
+    template: `
       <Avatar src="/broken-link.jpg" @imgerror="onFailed" />
     `,
-    methods: {
-      onFailed: spy,
-    }
+    methods: { onFailed: spy },
   })
 
   const image = screen.queryByTestId('avatar-image')
@@ -184,7 +188,9 @@ it('should emit event "imgerror" when image fail to load', async () => {
 
   expect(image).toBeInTheDocument()
   expect(spy).toBeCalled()
-  expect(spy).toHaveBeenCalledWith(expect.objectContaining({ message: 'ERR_FAILED_LOAD_IMAGE' }))
+  expect(spy).toHaveBeenCalledWith(
+    expect.objectContaining({ message: 'ERR_FAILED_LOAD_IMAGE' }),
+  )
 })
 
 it('should have addiotional class if prop imgClass if provided', () => {

@@ -38,13 +38,17 @@
       </Button>
     </div>
 
-    <Transition :name="transition" mode="out-in">
+    <Transition
+      :name="transition"
+      mode="out-in">
       <div
+        :key="`${cursor.toISOString()}+${viewmode}`"
         data-testid="calendar-items"
         class="calendar__items"
-        :viewmode="viewmode"
-        :key="`${cursor.toISOString()}+${viewmode}`">
-        <template v-for="item in items">
+        :viewmode="viewmode">
+        <template
+          v-for="(item, i) in items"
+          :key="i">
           <Button
             variant="outline"
             icon
@@ -61,56 +65,63 @@
 </template>
 
 <script lang="ts">
-import Button from "../button/Button.vue"
-import IconNext from "@carbon/icons-vue/lib/chevron--right/20"
-import IconBack from "@carbon/icons-vue/lib/chevron--left/20"
-import { defineComponent, ref, computed, watch, toRef, PropType } from "vue-demi"
-import { CalendarAdapter, CalendarFormat, CalendarItem, CalendarMode } from "./adapter/adapter"
-import DateAdapter from "./adapter/date"
-import MonthAdapter from "./adapter/month"
-import YearAdapter from "./adapter/year"
-import { startOfMonth } from "date-fns"
-import { useVModel } from "../input/use-input"
+import Button from '../button/Button.vue'
+import IconNext from '@carbon/icons-vue/lib/chevron--right/20'
+import IconBack from '@carbon/icons-vue/lib/chevron--left/20'
+import {
+  defineComponent, ref, computed, watch, toRef, PropType,
+} from 'vue-demi'
+import {
+  CalendarAdapter, CalendarFormat, CalendarItem, CalendarMode,
+} from './adapter/adapter'
+import DateAdapter from './adapter/date'
+import MonthAdapter from './adapter/month'
+import YearAdapter from './adapter/year'
+import { startOfMonth } from 'date-fns'
+import { useVModel } from '../input/use-input'
 
 const Adapters: Record<CalendarMode, CalendarAdapter> = {
-  'date' : DateAdapter,
-  'month': MonthAdapter,
-  'year' : YearAdapter,
+  date : DateAdapter,
+  month: MonthAdapter,
+  year : YearAdapter,
 }
 
 type TransitionMode = 'slide-left' | 'slide-right' | 'zoom-in' | 'zoom-out'
 
 export default defineComponent({
   components: {
+    // eslint-disable-next-line vue/no-reserved-component-names
     Button,
     IconNext,
     IconBack,
   },
   props: {
     modelValue: {
-      type: Date,
+      type   : Date,
+      default: undefined,
     },
     disabled: {
-      type: Boolean,
+      type   : Boolean,
+      default: undefined,
     },
     readonly: {
-      type: Boolean,
+      type   : Boolean,
+      default: undefined,
     },
     max: {
-      type: Date,
+      type   : Date,
+      default: undefined,
     },
     min: {
-      type: Date,
+      type   : Date,
+      default: undefined,
     },
     mode: {
       type   : String as PropType<CalendarMode>,
       default: 'date',
     },
   },
-  emits: [
-    'update:modelValue',
-    'change',
-  ],
+  emits: ['update:modelValue', 'change'],
   setup (props, { emit }) {
     const viewmode   = ref<CalendarMode>(props.mode)
     const transition = ref<TransitionMode>('slide-left')
@@ -196,7 +207,6 @@ export default defineComponent({
         viewmode.value = value
     })
 
-
     watch(cursor, (value, oldValue) => {
       transition.value = value > oldValue
         ? 'slide-left'
@@ -223,7 +233,7 @@ export default defineComponent({
       changeMode,
       selectItem,
     }
-  }
+  },
 })
 </script>
 
@@ -250,7 +260,6 @@ export default defineComponent({
       @apply bg-primary-100 text-white;
     }
   }
-
 
   .calendar__items {
     .btn--outline {

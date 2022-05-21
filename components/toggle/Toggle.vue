@@ -1,5 +1,9 @@
 <template>
-  <label data-testid="toggle" class="toggle" :class="classNames" @click.prevent="toggle">
+  <label
+    data-testid="toggle"
+    class="toggle"
+    :class="classNames"
+    @click.prevent="toggle">
     <div class="toggle__switch">
       <span
         v-if="noLabel === false"
@@ -13,7 +17,7 @@
         class="toggle__pointer"
         :disabled="disabled || readonly"
         :value="value"
-        :checked="model" />
+        :checked="model">
       <span
         v-if="noLabel === false"
         class="toggle__label toggle__unchecked-label">
@@ -27,8 +31,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from "vue-demi"
-import { useVModel } from "../checkbox/use-checkbox"
+import {
+  computed, defineComponent, PropType,
+} from 'vue-demi'
+import { useVModel } from '../checkbox/use-checkbox'
 
 type StyleVariant = 'pill' | 'flat'
 
@@ -36,19 +42,16 @@ export default defineComponent({
   props: {
     variant: {
       type   : String as PropType<StyleVariant>,
-      default: 'pill'
+      default: 'pill',
     },
-    modelValue: {
-      default: false,
-    },
-    checked: {
+    // eslint-disable-next-line vue/require-prop-types
+    modelValue    : { default: false },
+    // eslint-disable-next-line vue/require-prop-types
+    value         : { default: true },
+    // eslint-disable-next-line vue/require-prop-types
+    uncheckedValue: { default: false },
+    checked       : {
       type   : Boolean,
-      default: false,
-    },
-    value: {
-      default: true,
-    },
-    uncheckedValue: {
       default: false,
     },
     checkedLabel: {
@@ -76,11 +79,8 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: [
-    'update:modelValue',
-    'change',
-  ],
-  setup (props, { emit }) {
+  emits: ['update:modelValue', 'change'],
+  setup (props) {
     const model = useVModel(props)
 
     const classNames = computed(() => {
@@ -102,9 +102,8 @@ export default defineComponent({
     })
 
     function toggle () {
-      if (!props.readonly && !props.disabled) {
+      if (!props.readonly && !props.disabled)
         model.value = !model.value
-      }
     }
 
     return {
