@@ -18,7 +18,7 @@
     "@vitejs/plugin-vue": "2.3.3",
     "autoprefixer": "10.4.7",
     "c8": "7.11.3",
-    "happy-dom": "4.0.0",
+    "happy-dom": "4.0.1",
     "jest-extended": "2.0.0",
     "postcss": "8.4.14",
     "postcss-nested": "5.0.6",
