@@ -35,7 +35,7 @@
     "@vueuse/core": "8.5.0",
     "date-fns": "2.28.0",
     "fuse.js": "6.5.3",
-    "tabbable": "5.3.1",
+    "tabbable": "5.3.2",
     "vue-demi": "0.12.5"
   },
   "workspaces": [
