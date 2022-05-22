@@ -1,16 +1,44 @@
 <template>
-    <section 
+    <component 
         data-testid="card"
+        :is="elementNames"
         :class="classNames">
-        <slot />
-    </section>
+        <header class="card__header" v-if="title">
+            <Heading element="h6">
+                {{ title }}
+            </Heading>
+
+            <span class="card__header__action" v-if="$slots.action">
+                <slot name="action" />
+            </span>
+        </header>
+        <div class="card__body" v-if="!sectioned">
+            <slot />
+        </div>
+        <slot v-else />
+        <footer class="card__footer" v-if="$slots.footer">
+            <slot name="footer" />
+        </footer>
+    </component>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue-demi'
+import { computed, defineComponent, PropType } from 'vue-demi'
+import Heading from '../heading/Heading.vue'
+
+type ElementVariant = 'div' | 'section' | 'article'
 
 export default defineComponent ({
+    components: { Heading },
     props: {
+        element: {
+            type: String as PropType<ElementVariant>,
+            default: 'section'
+        },
+        title: {
+            type: String,
+            default: null
+        },
         sectioned: {
             type: Boolean,
             default: false,
@@ -21,15 +49,18 @@ export default defineComponent ({
             const result: string[] = ['card']
 
             if (props.sectioned)
-                result.push('p-0')
-            else
-                result.push('p-6')
+                result.push('card--sectioned')
 
             return result
         })
 
+        const elementNames = computed(() => {
+            return props.element
+        })
+
         return {
-            classNames
+            classNames,
+            elementNames
         }
     }
 })
@@ -38,5 +69,48 @@ export default defineComponent ({
 <style lang="postcss">
 .card {
     @apply border bg-white border-secondary-5 rounded-md;
+
+    &__header,
+    &__body {
+        @apply pt-6 px-6;
+    }
+
+    &__body {
+        @apply pb-6;
+
+        > .card__section {
+            @apply pt-0;
+        }
+    }
+
+    &.card--sectioned {
+        > .card__body {
+            @apply p-0;
+        }
+    }
+
+    &__header {
+        @apply flex justify-between items-center;
+
+        &__action {
+            a{
+                &:not(.btn) {
+                    @apply text-xs;
+                }
+            }
+        }
+    }
+
+    &__section {
+        @apply border-b border-black border-opacity-10;
+
+        &:last-child {
+            @apply border-b-0;
+        }
+    }
+
+    &__footer {
+        @apply flex justify-end pb-6 pt-3;
+    }
 }
 </style>

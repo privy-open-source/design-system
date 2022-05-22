@@ -24,6 +24,10 @@ export default defineConfig({
           {
             text: 'Banner',
             link: '/banner/guide'
+          },
+          {
+            text: 'Heading',
+            link: '/heading/guide'
           }
         ]
       },
@@ -46,6 +50,14 @@ export default defineConfig({
           {
             text: 'Card',
             link: '/card/component'
+          },
+          {
+            text: 'Heading',
+            link: '/heading/component'
+          },
+          {
+            text: 'Subheading',
+            link: '/subheading/component'
           },
           {
             text: 'Overlay',
