@@ -42,6 +42,10 @@ export default defineComponent ({
         sectioned: {
             type: Boolean,
             default: false,
+        },
+        disabled: {
+            type: Boolean,
+            default: false,
         }
     },
     setup (props) {
@@ -50,6 +54,9 @@ export default defineComponent ({
 
             if (props.sectioned)
                 result.push('card--sectioned')
+
+            if (props.disabled)
+                result.push('card--disabled')
 
             return result
         })
@@ -81,12 +88,33 @@ export default defineComponent ({
         > .card__section {
             @apply pt-0;
         }
+
+        .card__section {
+            &:first-child {
+                @apply border-b-0 mt-6;
+            }
+
+            &:last-child {
+                .card__body {
+                    @apply pb-0;
+                }
+            }
+
+            @apply border-t border-black border-opacity-10;
+            .card__body {
+                @apply px-0;
+            }
+        }
     }
 
     &.card--sectioned {
         > .card__body {
             @apply p-0;
         }
+    }
+
+    &.card--disabled {
+        @apply bg-background-100;
     }
 
     &__header {
@@ -106,6 +134,10 @@ export default defineComponent ({
 
         &:last-child {
             @apply border-b-0;
+        }
+
+        &--disabled {
+            @apply bg-background-100;
         }
     }
 

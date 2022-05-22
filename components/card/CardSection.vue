@@ -32,12 +32,19 @@ export default defineComponent({
         title: {
             type: String,
             default: null
+        },
+        disabled: {
+            type: Boolean,
+            default: false,
         }
     },
     
-    setup () {
+    setup (props) {
         const classNames = computed(() => {
             const result: String[] = ['card__section']
+
+            if (props.disabled)
+                result.push('card__section--disabled')
 
             return result
         })
