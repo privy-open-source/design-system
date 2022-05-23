@@ -1,40 +1,48 @@
 <template>
-  <div data-testid="toggle" class="toggle" :class="classNames" @click="toggle()">
+  <label data-testid="toggle" class="toggle" :class="classNames" @click.prevent="toggle">
     <div class="toggle__switch">
       <span
         v-if="noLabel === false"
-        class="toggle__label toggle__checkedLabel">
+        class="toggle__label toggle__checked-label">
         <slot name="checked">
           {{ checkedLabel }}
         </slot>
       </span>
-      <input type="checkbox" class="toggle__pointer" :checked="checked" :disabled="disabled" :value="value" />
+      <input
+        type="checkbox"
+        class="toggle__pointer"
+        :disabled="disabled || readonly"
+        :value="value"
+        :checked="model" />
       <span
         v-if="noLabel === false"
-        class="toggle__label toggle__uncheckedLabel">
+        class="toggle__label toggle__unchecked-label">
         <slot name="unchecked">
           {{ uncheckedLabel }}
         </slot>
       </span>
     </div>
     <slot />
-  </div>
+  </label>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref, WritableComputedRef, watch } from "vue-demi"
-import { useVModel } from "@vueuse/core"
+import { computed, defineComponent, PropType } from "vue-demi"
+import { useVModel } from "../checkbox/use-checkbox"
 
 type StyleVariant = 'pill' | 'flat'
 
 export default defineComponent({
   props: {
-    /* for vue3 v-model */
+    variant: {
+      type   : String as PropType<StyleVariant>,
+      default: 'pill'
+    },
     modelValue: {
       default: false,
     },
-    /* for vue2 v-model */
     checked: {
+      type   : Boolean,
       default: false,
     },
     value: {
@@ -42,10 +50,6 @@ export default defineComponent({
     },
     uncheckedValue: {
       default: false,
-    },
-    variant: {
-      type: String as PropType<StyleVariant>,
-      default: 'pill'
     },
     checkedLabel: {
       type   : String,
@@ -68,14 +72,16 @@ export default defineComponent({
       default: false,
     },
   },
-  model: {
-    prop : 'checked',
-    event: 'change',
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
   },
-  emits: ['change'],
+  emits: [
+    'update:modelValue',
+    'change',
+  ],
   setup (props, { emit }) {
-    const model = useVModel(props) as WritableComputedRef<unknown>
-    const value = ref(false)
+    const model = useVModel(props)
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -83,30 +89,27 @@ export default defineComponent({
       if (props.variant)
         result.push(`toggle--${props.variant}`)
 
-      if (value.value)
+      if (model.value)
         result.push('toggle--checked')
 
       if (props.disabled)
         result.push('toggle--disabled')
 
+      if (props.readonly)
+        result.push('toggle--readonly')
+
       return result
     })
 
-    function toggle() {
-      if (!props.disabled || props.readonly) {
-        value.value = !value.value
-        model.value = value.value ? props.value : props.uncheckedValue
-
-        emit('change', model.value)
+    function toggle () {
+      if (!props.readonly && !props.disabled) {
+        model.value = !model.value
       }
     }
 
-    watch(model, (newValue) => {
-      value.value = newValue === props.value
-    }, { immediate: true })
-
     return {
       classNames,
+      model,
       toggle,
     }
   },
@@ -117,16 +120,16 @@ export default defineComponent({
 .toggle {
   @apply inline-flex cursor-pointer relative items-center gap-3 select-none;
 
-  &--disabled {
-    @apply opacity-50 pointer-events-none;
-  }
-
-  .toggle__switch {
+  &__switch {
     @apply relative;
   }
 
   &__pointer {
-    @apply appearance-none cursor-pointer;
+    @apply appearance-none cursor-pointer will-change-transform;
+  }
+
+  &--disabled {
+    @apply opacity-50 pointer-events-none;
   }
 
   &--pill {
@@ -159,27 +162,27 @@ export default defineComponent({
     }
 
     .toggle__label {
-      @apply p-1 z-20 relative text-sm;
+      @apply p-1 z-[2] relative text-sm rounded-none;
     }
 
-    .toggle__checkedLabel {
+    .toggle__checked-label {
       @apply text-body-50;
     }
 
-    .toggle__uncheckedLabel {
+    .toggle__unchecked-label {
       @apply text-body-100;
     }
 
     .toggle__pointer {
-      @apply w-1/2 h-full bg-white absolute z-10  transition-transform -translate-x-1/2;
+      @apply w-1/2 h-full bg-white absolute z-[1]  transition-transform -translate-x-1/2;
     }
 
     &.toggle--checked {
-      .toggle__checkedLabel {
+      .toggle__checked-label {
         @apply text-body-100;
       }
 
-      .toggle__uncheckedLabel {
+      .toggle__unchecked-label {
         @apply text-body-50;
       }
 

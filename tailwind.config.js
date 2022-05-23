@@ -3,8 +3,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   darkMode: 'class',
   content : [
-    "./components/**/*.{vue,js,ts,jsx,tsx,md}",
-    "./components/.vitepress/theme/**/*.{vue,js,ts,jsx,tsx}",
+    "./components/**/*.{vue,md}",
+    "./components/.vitepress/theme/**/*.{vue,md}",
   ],
   theme: {
     fontFamily: {
@@ -182,5 +182,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('./tailwind-animation')
   ],
 }

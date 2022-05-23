@@ -32,7 +32,7 @@ export default defineConfig({
         ]
       },
       {
-        text       : 'Components',
+        text       : 'Base',
         collapsable: true,
         children   : [
           {
@@ -52,6 +52,20 @@ export default defineConfig({
             link: '/card/component'
           },
           {
+            text: 'Dropdown',
+            link: '/dropdown/component'
+          },
+          {
+            text: 'Spinner',
+            link: '/spinner/component'
+          },
+        ]
+      },
+      {
+        text       : 'Typography',
+        collapsable: true,
+        children   : [
+          {
             text: 'Heading',
             link: '/heading/component'
           },
@@ -59,6 +73,42 @@ export default defineConfig({
             text: 'Subheading',
             link: '/subheading/component'
           },
+        ],
+      },
+      {
+        text       : 'Form',
+        collapsable: true,
+        children   : [
+          {
+            text: 'Calendar',
+            link: '/calendar/component'
+          },
+          {
+            text: 'Checkbox',
+            link: '/checkbox/component'
+          },
+          {
+            text: 'Input',
+            link: '/input/component'
+          },
+          {
+            text: 'Radio',
+            link: '/radio/component'
+          },
+          {
+            text: 'Select',
+            link: '/select/component'
+          },
+          {
+            text: 'Toggle',
+            link: '/toggle/component'
+          },
+        ]
+      },
+      {
+        text       : 'Non-Component',
+        collapsable: true,
+        children   : [
           {
             text: 'Overlay',
             link: '/overlay/component'
@@ -67,12 +117,8 @@ export default defineConfig({
             text: 'Toast',
             link: '/toast/component'
           },
-          {
-            text: 'Toggle',
-            link: '/toggle/component'
-          },
-        ]
-      },
+        ],
+      }
     ]
   },
   vite: {

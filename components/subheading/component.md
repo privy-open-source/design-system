@@ -88,3 +88,26 @@ Used for the title of any sub-sections
 | Name      | Description                    |
 |-----------|--------------------------------|
 | `default` | Content to place in subheading |
+
+### Events
+
+<table>
+  <thead>
+    <tr>
+      <th>Props</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no props here</td>
+    </tr>
+  </tbody>
+</table>
+
+## See Also
+
+- Subheading Guide
+- [Heading](/heading/guide)
+

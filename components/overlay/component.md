@@ -100,3 +100,6 @@ function onClick () {
     </tr>
   </tbody>
 </table>
+
+## See Also
+- [Spinner](/spinner/component)

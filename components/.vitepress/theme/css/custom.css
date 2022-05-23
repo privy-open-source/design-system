@@ -10,6 +10,15 @@
   --c-text-light-3: #919191;
 }
 
+:root.dark {
+  --c-bg: #0b1a28;
+  --c-text-light-1: #ffffff;
+  --c-text-light-2: #C8C8C8;
+  --c-text-light-3: #919191;
+  --code-bg-color: #132739;
+  --code-inline-bg-color: #132739;
+}
+
 .content ul {
   @apply list-disc;
 }

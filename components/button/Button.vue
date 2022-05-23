@@ -33,7 +33,7 @@ export default defineComponent({
       default: false,
     },
     pill: {
-      type: Boolean,
+      type   : Boolean,
       default: false,
     }
   },
@@ -152,7 +152,7 @@ export default defineComponent({
 }
 
 .btn--ghost {
-  @apply border border-transparent bg-white hover:bg-secondary-5 hover:shadow-lg active:shadow-none;
+  @apply border border-transparent bg-white text-body-100 hover:bg-secondary-5 hover:shadow-lg active:shadow-none;
 }
 
 .btn--link {
@@ -185,6 +185,10 @@ export default defineComponent({
   &.btn--gold {
     @apply text-gold-100 hover:text-gold-hovered active:text-gold-focused;
   }
+}
+
+.btn--input {
+  @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
 }
 
 .btn--icon {

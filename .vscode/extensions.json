@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "darkriszty.markdown-table-prettify",
+    "vue.volar",
+    "cpylua.language-postcss",
+    "bradlc.vscode-tailwindcss",
+    "editorconfig.editorconfig",
+    "lokalise.i18n-ally"
+  ]
+}
