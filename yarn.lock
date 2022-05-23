@@ -368,13 +368,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@popperjs/core@npm:2.11.5":
+  version: 2.11.5
+  resolution: "@popperjs/core@npm:2.11.5"
+  checksum: fd7f9dca3fb716d7426332b6ee283f88d2724c0ab342fb678865a640bad403dfb9eeebd8204a406986162f7e2b33394f104320008b74d0e9066d7322f70ea35d
+  languageName: node
+  linkType: hard
+
 "@privyid/design-system@workspace:.":
   version: 0.0.0-use.local
   resolution: "@privyid/design-system@workspace:."
   dependencies:
     "@carbon/icons-vue": 10.49.1
     "@fontsource/dm-sans": 4.5.7
-    "@tailwindcss/typography": 0.5.2
+    "@popperjs/core": 2.11.5
+    "@privyid/tailwind-preset": "workspace:^"
     "@testing-library/jest-dom": 5.16.4
     "@testing-library/vue": 6.5.1
     "@types/testing-library__jest-dom": 5.14.3
@@ -382,32 +390,39 @@ __metadata:
     "@vueuse/core": 8.5.0
     autoprefixer: 10.4.7
     c8: 7.11.3
-    happy-dom: 4.0.0
+    date-fns: 2.28.0
+    fuse.js: 6.5.3
+    happy-dom: 4.0.1
     jest-extended: 2.0.0
     postcss: 8.4.14
-    postcss-each: ^1.1.0
     postcss-nested: 5.0.6
+    tabbable: 5.3.2
     tailwindcss: 3.0.24
     typescript: 4.6.4
     vite: 2.9.9
     vitepress: 0.22.4
-    vitest: 0.12.6
+    vitest: 0.12.7
     vue-demi: 0.12.5
   languageName: unknown
   linkType: soft
 
-"@tailwindcss/typography@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@tailwindcss/typography@npm:0.5.2"
-  dependencies:
-    lodash.castarray: ^4.4.0
-    lodash.isplainobject: ^4.0.6
-    lodash.merge: ^4.6.2
+"@privyid/tailwind-animation@workspace:^, @privyid/tailwind-animation@workspace:packages/tailwind-animation":
+  version: 0.0.0-use.local
+  resolution: "@privyid/tailwind-animation@workspace:packages/tailwind-animation"
   peerDependencies:
-    tailwindcss: "*"
-  checksum: f6c27e32c9b48b0e906561d1e9dd3eec8fd5efc9792fd691269ceaa9d30d35bc715023215ec83ff8e5475c38af69e164d577672d935813b70e04b1c820b2ea8e
-  languageName: node
-  linkType: hard
+    tailwind: ">= 3.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@privyid/tailwind-preset@workspace:^, @privyid/tailwind-preset@workspace:packages/tailwind-preset":
+  version: 0.0.0-use.local
+  resolution: "@privyid/tailwind-preset@workspace:packages/tailwind-preset"
+  dependencies:
+    "@privyid/tailwind-animation": "workspace:^"
+  peerDependencies:
+    tailwind: ">= 3.0.0"
+  languageName: unknown
+  linkType: soft
 
 "@testing-library/dom@npm:^8.5.0":
   version: 8.11.4
@@ -1331,7 +1346,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.1":
+"date-fns@npm:2.28.0":
+  version: 2.28.0
+  resolution: "date-fns@npm:2.28.0"
+  checksum: a0516b2e4f99b8bffc6cc5193349f185f195398385bdcaf07f17c2c4a24473c99d933eb0018be4142a86a6d46cb0b06be6440ad874f15e795acbedd6fd727a1f
+  languageName: node
+  linkType: hard
+
+"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.1, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -1808,6 +1830,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fuse.js@npm:6.5.3":
+  version: 6.5.3
+  resolution: "fuse.js@npm:6.5.3"
+  checksum: f7c14f4422000e7f7e3515c66f7cefdfc38adec4cf380097f4146a201ea438af60b67dc5849b3c0de0115ce3f9bc5afad6fc6570c08dcfcef5bf6e95eb8e6d6f
+  languageName: node
+  linkType: hard
+
 "gauge@npm:^4.0.0":
   version: 4.0.3
   resolution: "gauge@npm:4.0.3"
@@ -1895,9 +1924,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:4.0.0":
-  version: 4.0.0
-  resolution: "happy-dom@npm:4.0.0"
+"happy-dom@npm:4.0.1":
+  version: 4.0.1
+  resolution: "happy-dom@npm:4.0.1"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -1906,7 +1935,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 1f9a2674c79eaa6d4575ce62457b89ab5c118d5d95f39cc1f450a7bf16cfe87245fa55601cabea8832e55fe913b49b11c6991566269a6c3ce6850d86278a59dd
+  checksum: 54188e62b20c20ec17954edb9c4b7a9af0d46dd1354cedbce925b753892ebc027c0ae29a296e80815c36c951523ca8ee38d0057954671e1efe63b8b7e5c1ae37
   languageName: node
   linkType: hard
 
@@ -2242,27 +2271,6 @@ __metadata:
   dependencies:
     p-locate: ^5.0.0
   checksum: 72eb661788a0368c099a184c59d2fee760b3831c9c1c33955e8a19ae4a21b4116e53fa736dc086cdeb9fce9f7cc508f2f92d2d3aae516f133e16a2bb59a39f5a
-  languageName: node
-  linkType: hard
-
-"lodash.castarray@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "lodash.castarray@npm:4.4.0"
-  checksum: fca8c7047e0ae2738b0b2503fb00157ae0ff6d8a1b716f87ed715b22560e09de438c75b65e01a7e44ceb41c5b31dce2eb576e46db04beb9c699c498e03cbd00f
-  languageName: node
-  linkType: hard
-
-"lodash.isplainobject@npm:^4.0.6":
-  version: 4.0.6
-  resolution: "lodash.isplainobject@npm:4.0.6"
-  checksum: 29c6351f281e0d9a1d58f1a4c8f4400924b4c79f18dfc4613624d7d54784df07efaff97c1ff2659f3e085ecf4fff493300adc4837553104cef2634110b0d5337
-  languageName: node
-  linkType: hard
-
-"lodash.merge@npm:^4.6.2":
-  version: 4.6.2
-  resolution: "lodash.merge@npm:4.6.2"
-  checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
   languageName: node
   linkType: hard
 
@@ -2716,17 +2724,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-each@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "postcss-each@npm:1.1.0"
-  dependencies:
-    postcss-simple-vars: ^6.0.0
-  peerDependencies:
-    postcss: ^8.0.0
-  checksum: c4f0d8a40b9147da1af47360515446056e8cf5319396ace45b5837040b999317b643cb574ed73783787b21de5f5732bac5aecf64f9373adbb69151cca54de215
-  languageName: node
-  linkType: hard
-
 "postcss-js@npm:^4.0.0":
   version: 4.0.0
   resolution: "postcss-js@npm:4.0.0"
@@ -2784,15 +2781,6 @@ __metadata:
     cssesc: ^3.0.0
     util-deprecate: ^1.0.2
   checksum: f8161ab4d3e5c76b8467189c6d164ba0f6b6e74677435f29e34caa1df01e052b582b4ae4f7468b2243c4befdd8bdcdb7685542d1b2fca8deae21b3e849c78802
-  languageName: node
-  linkType: hard
-
-"postcss-simple-vars@npm:^6.0.0":
-  version: 6.0.3
-  resolution: "postcss-simple-vars@npm:6.0.3"
-  peerDependencies:
-    postcss: ^8.2.1
-  checksum: 66fd71dc8fc76fc994595132d3476ab37e8c691b69730b117bbd89e0a4c92ee195328f02f1fe3ca7019f413c4b53a1ef30108c802190f6b572e78c55cb9ee349
   languageName: node
   linkType: hard
 
@@ -3299,6 +3287,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tabbable@npm:5.3.2":
+  version: 5.3.2
+  resolution: "tabbable@npm:5.3.2"
+  checksum: 30e9526fd1aaf173944597c838846c32bf38d71192f0565f7e0bd62b86e86c24be9c929b6b49b3f7a9066d913d7d6ba06d754c82ebb9334dd26a58e7df37b9d0
+  languageName: node
+  linkType: hard
+
 "tailwindcss@npm:3.0.24":
   version: 3.0.24
   resolution: "tailwindcss@npm:3.0.24"
@@ -3558,13 +3553,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:0.12.6":
-  version: 0.12.6
-  resolution: "vitest@npm:0.12.6"
+"vitest@npm:0.12.7":
+  version: 0.12.7
+  resolution: "vitest@npm:0.12.7"
   dependencies:
     "@types/chai": ^4.3.1
     "@types/chai-subset": ^1.3.3
     chai: ^4.3.6
+    debug: ^4.3.4
     local-pkg: ^0.4.1
     tinypool: ^0.1.3
     tinyspy: ^0.3.2
@@ -3585,7 +3581,7 @@ __metadata:
       optional: true
   bin:
     vitest: vitest.mjs
-  checksum: 8a8d3bc61ef9324663ad47378fc70631a8514b1ccfdbf1a5efc50a90665875db15bb4b89a9877dbdc2d99cc5718274901e6982252fa20ace499b05451dc02508
+  checksum: 39f107da8d19bca8243e40536218176f331e979988949cc7dbbdeb585b7b5521c37c17f5297b72f05a579fa7733d4aaf146e09445c420a919e8706d53fe1515f
   languageName: node
   linkType: hard
 

@@ -25,13 +25,15 @@ it('should have style "sectioned" if section is provided', () => {
      components: { Card, CardSection },
      template  : `
          <Card sectioned>
-            Content
+            <Card-Section>
+              Content
+            </Card-Section>
          </Card>
      `,
    })
  
-   const card = screen.queryByTestId('card')
-   const cardSection = screen.queryByTestId('card-section')
+   const card         = screen.queryByTestId('card')
+   const cardSection  = screen.queryByTestId('card-section')
  
    expect(card).toBeInTheDocument()
    expect(cardSection).toBeInTheDocument()

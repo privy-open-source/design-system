@@ -57,6 +57,8 @@ export default defineComponent({
 }
 
 .toast {
+  @apply will-change-[opacity,transform];
+
   &-enter-active,
   &-leave-active {
     @apply transition-all duration-150;

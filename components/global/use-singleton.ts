@@ -68,7 +68,9 @@ export async function removeSingleton<C extends Component>(component: C): Promis
 
 export async function resetSingleton() {
   if (instances) {
-    instances.value = new Map()
+    instances.value.clear()
+
+    triggerRef(instances)
 
     await nextTick()
   }

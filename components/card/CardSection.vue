@@ -1,25 +1,27 @@
 <template>
-    <div
-        data-testid="card-section"
-        :class="classNames"
-        >
-        <div class="card__header" v-if="title">
-            <Subheading
-                overline="medium">
-                    {{ title }}
-            </Subheading>
+  <div
+    data-testid="card-section"
+    :class="classNames"
+    >
+    <div class="card__header" v-if="title">
+      <Subheading
+        overline="medium">
+        {{ title }}
+      </Subheading>
 
-            <span class="card__header__action" v-if="$slots.action">
-                <slot name="action"></slot>
-            </span>
-        </div>
-        <div class="card__body">
-            <slot />
-        </div>
-        <footer class="card__footer" v-if="$slots.footer">
-            <slot name="footer" />
-        </footer>
+      <span class="card__header__action" v-if="$slots.action">
+        <slot name="action"></slot>
+      </span>
     </div>
+
+    <div class="card__body">
+      <slot />
+    </div>
+    
+    <footer class="card__footer" v-if="$slots.footer">
+      <slot name="footer" />
+    </footer>
+  </div>
 </template>
 
 <script lang="ts">

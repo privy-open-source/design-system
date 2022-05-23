@@ -3,7 +3,7 @@ import { vi } from "vitest"
 import { colorHash, colorRandom } from "./color-hash"
 
 describe('colorHash', () => {
-  it('should pick one of color, random by hashing some text', () => {
+  it('should pick one of color randomly by hashing some text', () => {
     const a = colorHash('Tarjono')
     const b = colorHash('Waluyo')
     const c = colorHash('Susilo Ahmad dimejo')

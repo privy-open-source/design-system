@@ -1,25 +1,31 @@
 <template>
-    <component 
-        data-testid="card"
-        :is="elementNames"
-        :class="classNames">
-        <header class="card__header" v-if="title">
-            <Heading element="h6">
-                {{ title }}
-            </Heading>
+  <component 
+    data-testid="card"
+    :is="elementNames"
+    :class="classNames">
+    <header class="card__header" v-if="$slots.header">
+      <slot name="header" />
+    </header>
 
-            <span class="card__header__action" v-if="$slots.action">
-                <slot name="action" />
-            </span>
-        </header>
-        <div class="card__body" v-if="!sectioned">
-            <slot />
-        </div>
-        <slot v-else />
-        <footer class="card__footer" v-if="$slots.footer">
-            <slot name="footer" />
-        </footer>
-    </component>
+    <header class="card__header card__header--default" v-else-if="title">
+      <Heading element="h6">
+        {{ title }}
+      </Heading>
+
+      <span class="card__header__action" v-if="$slots.action">
+        <slot name="action" />
+      </span>
+    </header>
+    
+    <div class="card__body" v-if="!sectioned">
+      <slot />
+    </div>
+    <slot v-else />
+
+    <footer class="card__footer" v-if="$slots.footer">
+      <slot name="footer" />
+    </footer>
+  </component>
 </template>
 
 <script lang="ts">
@@ -29,123 +35,164 @@ import Heading from '../heading/Heading.vue'
 type ElementVariant = 'div' | 'section' | 'article'
 
 export default defineComponent ({
-    components: { Heading },
-    props: {
-        element: {
-            type: String as PropType<ElementVariant>,
-            default: 'section'
-        },
-        title: {
-            type: String,
-            default: null
-        },
-        sectioned: {
-            type: Boolean,
-            default: false,
-        },
-        disabled: {
-            type: Boolean,
-            default: false,
-        }
+  components: { Heading },
+  props: {
+    element: {
+      type: String as PropType<ElementVariant>,
+      default: 'section'
     },
-    setup (props) {
-        const classNames = computed(() => {
-            const result: string[] = ['card']
-
-            if (props.sectioned)
-                result.push('card--sectioned')
-
-            if (props.disabled)
-                result.push('card--disabled')
-
-            return result
-        })
-
-        const elementNames = computed(() => {
-            return props.element
-        })
-
-        return {
-            classNames,
-            elementNames
-        }
+    title: {
+      type: String,
+      default: null
+    },
+    sectioned: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     }
+  },
+  setup (props, { slots }) {
+    const classNames = computed(() => {
+      const result: string[] = ['card']
+
+      if (props.sectioned)
+        result.push('card--sectioned')
+
+      if (props.disabled)
+        result.push('card--disabled')
+
+      return result
+    })
+
+    const elementNames = computed(() => {
+      return props.element
+    })
+
+    return {
+      classNames,
+      elementNames
+    }
+  }
 })
 </script>
 
 <style lang="postcss">
-/** 
-Card
+/**
+* Component Name		: Card
+* Component URI		  : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=294%3A5079
+* Date Created			: May 22, 2022
+* Last Update			  : May 23, 2022
 */
 .card {
-    @apply border bg-white border-secondary-5 rounded-md;
+  @apply border bg-white border-secondary-5 rounded-md;
 
-    &__header,
-    &__body {
-        @apply pt-6 px-6;
+  /* 
+  * Card Body & Card Header
+  * by default have 24px (1.5rem) padding
+  */
+  &__header,
+  &__body {
+    @apply pt-6 px-6;
+  }
+
+  &__body {
+    @apply pb-6;
+
+    > .card__section {
+      @apply pt-0;
     }
 
-    &__body {
-        @apply pb-6;
+    .card__section {
+      @apply border-b border-black border-opacity-10;
 
-        > .card__section {
-            @apply pt-0;
+      /**
+      * Adding border-top in the first element
+      * of Card Sub-Section and provide 24px (1.5rem)
+      * of margin-top
+      */
+      &:first-child {
+        @apply border-t mt-6;
+      }
+
+      &:last-child {
+        /**
+        * Remove padding-bottom of Card Body
+        * from the last element of Card Sub-Section
+        */
+        .card__body {
+          @apply pb-0;
         }
+      }
 
-        .card__section {
-            &:first-child {
-                @apply border-b-0 mt-6;
-            }
+      /**
+      * Remove padding-left-right Card Body
+      * in Card Sub-Section
+      */
+      .card__body {
+        @apply px-0;
+      }
+    }
+  }
 
-            &:last-child {
-                .card__body {
-                    @apply pb-0;
-                }
-            }
+  /**
+  * If Card have Section,
+  * padding of card-body-top-parent set to 0
+  */
+  &.card--sectioned {
+    > .card__body {
+      @apply p-0;
+    }
+  }
 
-            @apply border-t border-black border-opacity-10;
-            .card__body {
-                @apply px-0;
-            }
-        }
+  /** 
+  * Give background background-100 (#f5f5f5)
+  * If Card disabled
+  */
+  &.card--disabled {
+    @apply bg-background-100;
+  }
+
+  &__header {
+    &&--default {
+      @apply flex justify-between items-center;
     }
 
-    &.card--sectioned {
-        > .card__body {
-            @apply p-0;
+    &,
+    &__action {
+      a {
+        &:not(.btn) {
+          @apply text-xs;
         }
+
+        + a {
+          @apply pl-3;
+        }
+      }
+    }
+  }
+
+  &__section {
+    @apply border-b border-black border-opacity-10;
+
+    &:last-child {
+      @apply border-b-0;
+    }
+
+    &&--disabled,
+    &.card--disabled {
+      @apply bg-background-100;
     }
 
     &.card--disabled {
-        @apply bg-background-100;
+      @apply px-6 pb-6;
     }
+  }
 
-    &__header {
-        @apply flex justify-between items-center;
-
-        &__action {
-            a{
-                &:not(.btn) {
-                    @apply text-xs;
-                }
-            }
-        }
-    }
-
-    &__section {
-        @apply border-b border-black border-opacity-10;
-
-        &:last-child {
-            @apply border-b-0;
-        }
-
-        &--disabled {
-            @apply bg-background-100;
-        }
-    }
-
-    &__footer {
-        @apply flex justify-end pb-6 pt-3;
-    }
+  &__footer {
+    @apply pb-6 px-6 pt-3;
+  }
 }
 </style>
