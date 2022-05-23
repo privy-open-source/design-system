@@ -8,6 +8,8 @@
     "docs:build": "vitepress build components",
     "docs:serve": "vitepress serve components",
     "test": "vitest",
+    "lint": "eslint . --ext .js,.vue,.ts",
+    "fix": "yarn lint --fix",
     "coverage": "vitest run --coverage"
   },
   "devDependencies": {

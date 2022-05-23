@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import fonts from 'vite-plugin-fonts'
 
 export default defineConfig({
-  base       : '/design-system/',
+  base       : process.env.BASE_URL ?? '/design-system/',
   title      : 'Design System',
   description: 'Privy Design System',
   themeConfig: {

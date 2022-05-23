@@ -32,7 +32,9 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, PropType,
+  computed,
+  defineComponent,
+  PropType,
 } from 'vue-demi'
 import Heading from '../heading/Heading.vue'
 
