@@ -16,13 +16,13 @@ export interface CalendarContext {
 }
 
 export interface CalendarAdapter {
-  getItems: (this: CalendarAdapter, context: CalendarContext) => CalendarItem[]
-  getTitle: (this: CalendarAdapter, context: CalendarContext) => string
-  getNextCursor: (this: CalendarAdapter, context: CalendarContext) => Date
-  getPrevCursor: (this: CalendarAdapter, context: CalendarContext) => Date
+  getItems: (this: this, context: CalendarContext) => CalendarItem[]
+  getTitle: (this: this, context: CalendarContext) => string
+  getNextCursor: (this: this, context: CalendarContext) => Date
+  getPrevCursor: (this: this, context: CalendarContext) => Date
 
-  canNext: (this: CalendarAdapter, context: CalendarContext) => boolean
-  canPrev: (this: CalendarAdapter, context: CalendarContext) => boolean
+  canNext: (this: this, context: CalendarContext) => boolean
+  canPrev: (this: this, context: CalendarContext) => boolean
 }
 
 export const CalendarFormat = [

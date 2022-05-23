@@ -33,10 +33,7 @@ export default defineAdapter({
       const start      = min.value ?? minTime
       const end        = max.value ?? maxTime
       const isDisabled = !isSameMonth(cursor.value, date)
-        || !isWithinInterval(date, {
-          start,
-          end,
-        })
+        || !isWithinInterval(date, { start, end })
 
       return {
         value   : date,
@@ -78,12 +75,7 @@ export default defineAdapter({
     const start = startOfMonth(date)
     const end   = endOfMonth(date)
 
-    return max == null
-      || isBefore(date, max)
-      || isWithinInterval(max, {
-        start,
-        end,
-      })
+    return !max || isBefore(date, max) || isWithinInterval(max, { start, end })
   },
 
   canPrev (context) {
@@ -92,11 +84,6 @@ export default defineAdapter({
     const start = startOfMonth(date)
     const end   = endOfMonth(date)
 
-    return min == null
-      || isAfter(date, min)
-      || isWithinInterval(min, {
-        start,
-        end,
-      })
+    return !min || isAfter(date, min) || isWithinInterval(min, { start, end })
   },
 })

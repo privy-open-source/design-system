@@ -32,10 +32,7 @@ export default defineAdapter({
         const end        = max.value ?? maxTime
         const isDisabled = !isSameMonth(start, date)
           && !isSameMonth(end, date)
-          && !isWithinInterval(date, {
-            start,
-            end,
-          })
+          && !isWithinInterval(date, { start, end })
 
         return {
           value   : date,

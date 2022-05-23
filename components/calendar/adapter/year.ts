@@ -1,3 +1,4 @@
+import { defineAdapter } from './adapter'
 import {
   addYears,
   eachYearOfInterval,
@@ -11,7 +12,6 @@ import {
   startOfDecade,
   subYears,
 } from 'date-fns'
-import { defineAdapter } from './adapter'
 
 function getInterval (date: Date) {
   const start = startOfDecade(date)
@@ -30,10 +30,7 @@ export default defineAdapter({
       const end        = max.value ?? maxTime
       const isDisabled = !isSameYear(start, date)
         && !isSameYear(end, date)
-        && !isWithinInterval(date, {
-          start,
-          end,
-        })
+        && !isWithinInterval(date, { start, end })
 
       return {
         value   : date,

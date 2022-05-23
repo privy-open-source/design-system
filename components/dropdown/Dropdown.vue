@@ -34,14 +34,18 @@
 
 <script lang="ts">
 import {
-  defineComponent, PropType, watch,
+  defineComponent,
+  PropType,
+  watch,
 } from 'vue-demi'
+import {
+  templateRef,
+  onClickOutside,
+  onKeyStroke,
+} from '@vueuse/core'
 import Button from '../button/Button.vue'
 import DropdownGroup from './DropdownGroup.vue'
 import { useFocus } from './use-focus'
-import {
-  templateRef, onClickOutside, onKeyStroke,
-} from '@vueuse/core'
 import { PoppperOption, usePopper } from './use-popper'
 import { useVModel } from '../input/use-input'
 
