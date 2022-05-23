@@ -3,7 +3,7 @@
     data-testid="card"
     :is="elementNames"
     :class="classNames">
-    <header class="card__header" v-if="$slots.header">
+    <header data-testid="card-header" class="card__header" v-if="$slots.header">
       <slot name="header" />
     </header>
 
@@ -12,7 +12,7 @@
         {{ title }}
       </Heading>
 
-      <span class="card__header__action" v-if="$slots.action">
+      <span data-testid="card-header-action" class="card__header__action" v-if="$slots.action">
         <slot name="action" />
       </span>
     </header>
@@ -22,7 +22,7 @@
     </div>
     <slot v-else />
 
-    <footer class="card__footer" v-if="$slots.footer">
+    <footer data-testid="card-footer" class="card__footer" v-if="$slots.footer">
       <slot name="footer" />
     </footer>
   </component>
