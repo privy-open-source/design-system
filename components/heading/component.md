@@ -103,7 +103,7 @@ Use for the title of each top-level page section. The default element of heading
 <table>
   <thead>
     <tr>
-      <th>Props</th>
+      <th>Name</th>
       <th>Arguments</th>
       <th>Description</th>
     </tr>

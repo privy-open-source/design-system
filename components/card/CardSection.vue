@@ -3,7 +3,11 @@
     data-testid="card-section"
     :class="classNames"
     >
-    <div class="card__header" v-if="title">
+    <div class="card__header" v-if="$slots.header">
+      <slot name="header" />
+    </div>
+    
+    <div class="card__header card__header--default" v-else-if="title">
       <Subheading
         overline="medium">
         {{ title }}

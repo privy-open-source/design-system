@@ -94,7 +94,7 @@ Used for the title of any sub-sections
 <table>
   <thead>
     <tr>
-      <th>Props</th>
+      <th>Name</th>
       <th>Arguments</th>
       <th>Description</th>
     </tr>

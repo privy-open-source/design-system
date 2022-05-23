@@ -34,13 +34,7 @@
 ### Basic Usage
 
 <preview>
-  <Card title="hahhaa">
-    <template #header>
-      <div class="flex justify-between items-center">
-        <h2>asldkfaklsdjfkasd</h2>  
-        <span><a href="#" class="">Edit</a></span>
-      </div>
-    </template>
+  <Card>
     While here you will see the content of cards, everything goes here. If you need custom cards, take the component which more represent to what you need and detach it.
   </Card>
 </preview>
@@ -296,18 +290,18 @@
 | `disabled`    | `Boolean` | `false`    | Disable (look-like) Card                                        |
 
 ### Slots
-| Name      | Description                                                                        |
-|-----------|------------------------------------------------------------------------------------|
-| `action ` | Action (permalink or button) to place in Card/Card-Section Header                  |
-| `header ` | Content (in the form of— permalink or button) to place in Card/Card-Section Header |
-| `footer ` | Content (in the form of— permalink or button) to place in Card/Card-Section Footer |
+| Name      | Description                                                                                      |
+|-----------|--------------------------------------------------------------------------------------------------|
+| `action ` | Action (permalink or button) to place in Card/Card-Section Header just if `header` slot inactive |
+| `header ` | Content (in the form of— permalink or button) to place in Card/Card-Section Header               |
+| `footer ` | Content (in the form of— permalink or button) to place in Card/Card-Section Footer                |
 
 ### Events
 
 <table>
   <thead>
     <tr>
-      <th>Props</th>
+      <th>Name</th>
       <th>Arguments</th>
       <th>Description</th>
     </tr>
