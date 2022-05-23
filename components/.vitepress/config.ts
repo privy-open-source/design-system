@@ -48,6 +48,10 @@ export default defineConfig({
             link: '/button/component'
           },
           {
+            text: 'Card',
+            link: '/card/component'
+          },
+          {
             text: 'Dropdown',
             link: '/dropdown/component'
           },
