@@ -5,8 +5,8 @@
     :class="classNames">
     <div class="banner__icon">
       <component
-        v-if="icon"
-        :is="icon" />
+        :is="icon"
+        v-if="icon" />
     </div>
     <div class="banner__body">
       <slot :close="close" />
@@ -14,28 +14,38 @@
     <div
       v-if="dismissable"
       data-testid="banner-close"
-      class="banner__close" @click="close()">
+      class="banner__close"
+      @click="close()">
       <IconClose />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import IconInfo from "@carbon/icons-vue/lib/information--filled/20"
-import IconDanger from "@carbon/icons-vue/lib/warning--filled/20"
-import IconClose from "@carbon/icons-vue/lib/close/16"
-import { defineComponent, PropType, ref, computed } from "vue-demi"
+import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
+import IconDanger from '@carbon/icons-vue/lib/warning--filled/20'
+import IconClose from '@carbon/icons-vue/lib/close/16'
+import {
+  defineComponent,
+  PropType,
+  ref,
+  computed,
+} from 'vue-demi'
 
 type StyleVariant = 'info' | 'danger'
 
 const BannerIcons = {
-  'danger': IconDanger,
-  'info'  : IconInfo,
+  danger: IconDanger,
+  info  : IconInfo,
 }
 
 export default defineComponent({
-  components: { IconInfo, IconClose, IconDanger },
-  props     : {
+  components: {
+    IconInfo,
+    IconClose,
+    IconDanger,
+  },
+  props: {
     variant: {
       type   : String as PropType<StyleVariant>,
       default: 'info',
@@ -73,7 +83,7 @@ export default defineComponent({
       icon,
       close,
     }
-  }
+  },
 })
 </script>
 

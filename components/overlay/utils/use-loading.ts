@@ -1,15 +1,13 @@
-
 import { tryOnMounted } from '@vueuse/shared'
-import {
-  computed,
-  ref,
-} from 'vue-demi'
+import { computed, ref } from 'vue-demi'
 
 export interface LoadingOptions {
-  elapsed: number | boolean,
+  elapsed: number | boolean
 }
 
-export default function useLoading (options: LoadingOptions = { elapsed: true }) {
+export default function useLoading (
+  options: LoadingOptions = { elapsed: true },
+) {
   const counter = ref(0)
   const elapsed = ref(options.elapsed !== false)
   const loading = computed({
@@ -17,10 +15,8 @@ export default function useLoading (options: LoadingOptions = { elapsed: true })
       return counter.value > 0 || elapsed.value
     },
     set (value: boolean) {
-      if (value === true)
-        counter.value++
-      else
-        counter.value--
+      if (value) counter.value++
+      else counter.value--
     },
   })
 

@@ -1,13 +1,12 @@
-
-import { fireEvent, render } from "@testing-library/vue"
-import { vi } from "vitest"
-import { ref } from "vue-demi"
-import Toggle from "./Toggle.vue"
+import { fireEvent, render } from '@testing-library/vue'
+import { vi } from 'vitest'
+import { ref } from 'vue-demi'
+import Toggle from './Toggle.vue'
 
 it('should render properly without any prop', () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle />`
+    template  : '<Toggle />',
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -19,7 +18,7 @@ it('should render properly without any prop', () => {
 it('should have style "flat" if `variant` prop set to "flat"', () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle variant="flat" />`
+    template  : '<Toggle variant="flat" />',
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -32,7 +31,7 @@ it('should have style "flat" if `variant` prop set to "flat"', () => {
 it('should be able to change checked label with `checked-label` prop', () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle checked-label="PM" />`
+    template  : '<Toggle checked-label="PM" />',
   })
 
   const label = screen.queryByText('PM')
@@ -43,7 +42,7 @@ it('should be able to change checked label with `checked-label` prop', () => {
 it('should be able to change unchecked label with `unchecked-label` prop', () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle unchecked-label="AM" />`
+    template  : '<Toggle unchecked-label="AM" />',
   })
 
   const label = screen.queryByText('AM')
@@ -54,7 +53,7 @@ it('should be able to change unchecked label with `unchecked-label` prop', () =>
 it('should no label if `no-label` prop is given', () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle no-label />`
+    template  : '<Toggle no-label />',
   })
 
   const checkLabel   = screen.queryByText('on')
@@ -76,7 +75,7 @@ it('should be able to replace label via slot `checked` and `unchecked`', () => {
           <span data-testid="unchecked">AM</span>
         </template>
       </Toggle>
-    `
+    `,
   })
 
   const checkLabel   = screen.queryByTestId('checked')
@@ -89,7 +88,7 @@ it('should be able to replace label via slot `checked` and `unchecked`', () => {
 it('should have disabled state if prop `disabled` is provided', () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle disabled />`,
+    template  : '<Toggle disabled />',
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -101,7 +100,7 @@ it('should have disabled state if prop `disabled` is provided', () => {
 it('should have readonly state if prop `readonly` is provided', () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle readonly />`,
+    template  : '<Toggle readonly />',
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -113,7 +112,7 @@ it('should have readonly state if prop `readonly` is provided', () => {
 it('should checked at start if prop `checked` is provided', () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle checked />`,
+    template  : '<Toggle checked />',
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -124,7 +123,7 @@ it('should checked at start if prop `checked` is provided', () => {
 it('should toggle the state if clicked', async () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle />`,
+    template  : '<Toggle />',
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -143,7 +142,7 @@ it('should toggle the state if clicked', async () => {
 it('should not toggle the state if disabled', async () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle disabled />`,
+    template  : '<Toggle disabled />',
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -158,7 +157,7 @@ it('should not toggle the state if disabled', async () => {
 it('should not toggle the state if readonly', async () => {
   const screen = render({
     components: { Toggle },
-    template  : `<Toggle readonly />`,
+    template  : '<Toggle readonly />',
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -178,10 +177,8 @@ it('should modify state in v-model', async () => {
       <Toggle v-model="model" />
     `,
     setup () {
-      return {
-        model,
-      }
-    }
+      return { model }
+    },
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -204,10 +201,8 @@ it('should use value in props `value` and `unchecked-value` instead of true/fals
         unchecked-value="Off" />
     `,
     setup () {
-      return {
-        model,
-      }
-    }
+      return { model }
+    },
   })
 
   const toggle = screen.queryByTestId('toggle')
@@ -231,10 +226,8 @@ it('should append value if v-model is an array', async () => {
       <Toggle v-model="model" value="pineapple">Pineapple</Toggle>
     `,
     setup () {
-      return {
-        model,
-      }
-    }
+      return { model }
+    },
   })
 
   expect(model.value).toStrictEqual([])
@@ -247,11 +240,19 @@ it('should append value if v-model is an array', async () => {
   await fireEvent.click(toggleGrape)
   await fireEvent.click(togglePineaple)
 
-  expect(model.value).toStrictEqual(['apple', 'grape', 'pineapple'])
+  expect(model.value).toStrictEqual([
+    'apple',
+    'grape',
+    'pineapple',
+  ])
 })
 
 it('should remove value from array if toggle is clicked again', async () => {
-  const model  = ref(['apple', 'grape', 'pineapple'])
+  const model  = ref([
+    'apple',
+    'grape',
+    'pineapple',
+  ])
   const screen = render({
     components: { Toggle },
     template  : `
@@ -260,10 +261,8 @@ it('should remove value from array if toggle is clicked again', async () => {
       <Toggle v-model="model" value="pineapple">Pineapple</Toggle>
     `,
     setup () {
-      return {
-        model,
-      }
-    }
+      return { model }
+    },
   })
 
   const toggleApple = screen.queryByText('Apple')
@@ -283,10 +282,8 @@ it('should trigger event "change", when clicked', async () => {
       <Toggle @change="onChange">Apple</Toggle>
     `,
     setup () {
-      return {
-        onChange,
-      }
-    }
+      return { onChange }
+    },
   })
 
   const toggle = screen.queryByTestId('toggle')

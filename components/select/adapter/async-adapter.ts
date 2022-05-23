@@ -1,15 +1,20 @@
-import { computed } from "@vue/reactivity"
-import { useEventListener } from "@vueuse/core"
-import { tryOnMounted, watchDebounced } from "@vueuse/shared"
-import { getCurrentInstance, ref, watch, WatchSource } from "vue-demi"
-import { SelectItem } from "../use-select"
-import { defineAdapter } from "./adapter"
+import { computed } from 'vue'
+import { useEventListener } from '@vueuse/core'
+import { tryOnMounted, watchDebounced } from '@vueuse/shared'
+import {
+  getCurrentInstance,
+  ref,
+  watch,
+  WatchSource,
+} from 'vue-demi'
+import { SelectItem } from '../use-select'
+import { defineAdapter } from './adapter'
 
 export type LoadFn = (keyword: string, page: number, perPage: number) => Promise<SelectItem[]>
 
-export type AsyncHandler = {
-  load: LoadFn,
-  watch: WatchSource,
+export interface AsyncHandler {
+  load: LoadFn
+  watch: WatchSource
 }
 
 export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
@@ -24,28 +29,26 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
       const menuDiv = ref<HTMLDivElement>()
 
       const loadFn = computed(() => {
-        return typeof handler !== 'function'
-          ? handler.load
-          : handler
+        return typeof handler !== 'function' ? handler.load : handler
       })
 
-      function load() {
+      function load () {
         isLoading.value = true
 
-        loadFn.value(keyword.value, page.value, 20)
+        loadFn
+          .value(keyword.value, page.value, 20)
           .then((result) => {
             if (result && result.length > 0) {
               options.value.push(...result)
               page.value++
-            } else
-              isFinish.value = true
+            } else isFinish.value = true
           })
           .finally(() => {
             isLoading.value = false
           })
       }
 
-      function reset() {
+      function reset () {
         isFinish.value = false
         page.value     = 1
         options.value  = []
@@ -57,11 +60,15 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
         reset()
       })
 
-      watchDebounced(keyword, () => {
-        isTyping.value = false
+      watchDebounced(
+        keyword,
+        () => {
+          isTyping.value = false
 
-        load()
-      }, { debounce: 500 })
+          load()
+        },
+        { debounce: 500 },
+      )
 
       watch(isTyping, (value) => {
         // syncRef isTyping to isLoading
@@ -90,6 +97,6 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
       }, { passive: true })
 
       return options
-    }
+    },
   })
 }

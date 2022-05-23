@@ -1,14 +1,22 @@
-import Adapter from "./date"
-import { ref } from "vue-demi"
-import { CalendarContext, CalendarItem } from "./adapter"
+import Adapter from './date'
+import { ref } from 'vue-demi'
+import { CalendarContext, CalendarItem } from './adapter'
 
-export function createMockContext(minDate?: Date, maxDate?: Date): CalendarContext {
+export function createMockContext (
+  minDate?: Date,
+  maxDate?: Date,
+): CalendarContext {
   const cursor = ref(new Date(2022, 4, 13))
   const model  = ref(new Date(2022, 4, 13))
   const min    = ref(minDate)
   const max    = ref(maxDate)
 
-  return { cursor, model, min, max }
+  return {
+    cursor,
+    model,
+    min,
+    max,
+  }
 }
 
 describe('getItems', () => {
@@ -25,17 +33,20 @@ describe('getItems', () => {
    * 30  31   1   2   3   4   5
    */
   it('should be able to return list of date in one month (calendar-style)', () => {
-    const context  = createMockContext()
-    const items    = Adapter.getItems(context).map(i => i.text)
+    const context = createMockContext()
+    const items   = Adapter.getItems(context).map((i) => i.text)
+
+    /* eslint-disable array-element-newline, no-multi-spaces */
     const expected = [
       'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su',
-      '25', '26', '27', '28', '29', '30',  '1',
-       '2',  '3',  '4',  '5',  '6',  '7',  '8',
-       '9', '10', '11', '12', '13', '14', '15',
+      '25', '26', '27', '28', '29', '30', '1',
+      '2',  '3',  '4',  '5',  '6',  '7',  '8',
+      '9',  '10', '11', '12', '13', '14', '15',
       '16', '17', '18', '19', '20', '21', '22',
       '23', '24', '25', '26', '27', '28', '29',
       '30', '31',  '1',  '2',  '3',  '4',  '5',
     ]
+    /* eslint-enable array-element-newline, no-multi-spaces */
 
     expect(items).toStrictEqual(expected)
   })

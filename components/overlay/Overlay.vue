@@ -4,13 +4,15 @@
     data-testid="overlay"
     class="overlay">
     <div class="overlay__icon">
-      <img :src="icon" alt="overlay-icon">
+      <img
+        :src="icon"
+        alt="overlay-icon">
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue-demi"
+import { defineComponent } from 'vue-demi'
 import useLoading from './utils/use-loading'
 import Icon from './assets/icon-white.svg'
 
@@ -32,7 +34,7 @@ export default defineComponent({
       loading,
       icon: Icon,
     }
-  }
+  },
 })
 </script>
 

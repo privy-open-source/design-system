@@ -10,7 +10,8 @@ export function createSpinner (width = 50, height = width): string {
 }
 
 export function getAlias (name: string): string {
-  return name.split(' ')
+  return name
+    .split(' ')
     .slice(0, 2)
     .map((c) => c.at(0))
     .join('')

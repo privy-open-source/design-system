@@ -4,7 +4,7 @@ import showToast from './use-toast'
 it('should be able to show notify', async () => {
   await showToast({
     title: 'This is title',
-    text : 'This is message body'
+    text : 'This is message body',
   })
 
   const toast = getByTestId(document.body, 'toast')

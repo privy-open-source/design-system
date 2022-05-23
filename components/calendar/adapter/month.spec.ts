@@ -1,16 +1,19 @@
 import { CalendarItem } from './adapter'
 import { createMockContext } from './date.spec'
-import Adapter from "./month"
+import Adapter from './month'
 
 describe('getItems', () => {
   it('should be able to return list of monts in one years', () => {
-    const context  = createMockContext()
-    const items    = Adapter.getItems(context).map(i => i.text)
+    const context = createMockContext()
+    const items   = Adapter.getItems(context).map((i) => i.text)
+
+    /* eslint-disable array-element-newline, no-multi-spaces */
     const expected = [
       'Jan', 'Feb', 'Mar', 'Apr',
       'May', 'Jun', 'Jul', 'Aug',
       'Sep', 'Oct', 'Nov', 'Dec',
     ]
+    /* eslint-enable array-element-newline, no-multi-spaces */
 
     expect(items).toStrictEqual(expected)
   })

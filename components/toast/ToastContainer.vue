@@ -18,9 +18,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue-demi"
-import { ToastOption } from "./use-toast"
-import Toast from "./Toast.vue"
+import { defineComponent, ref } from 'vue-demi'
+import { ToastOption } from './use-toast'
+import Toast from './Toast.vue'
 
 interface ToastItem extends ToastOption {
   _id: symbol,
@@ -34,7 +34,7 @@ export default defineComponent({
     function add (option: ToastOption) {
       items.value.unshift({
         ...option,
-        _id: Symbol(),
+        _id: Symbol('id'),
       })
     }
 
@@ -47,7 +47,7 @@ export default defineComponent({
       remove,
       items,
     }
-  }
+  },
 })
 </script>
 

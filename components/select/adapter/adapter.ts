@@ -1,21 +1,21 @@
-import { computed, Ref } from "vue-demi"
-import { SelectItem, SelectProps } from "../use-select"
+import { computed, Ref } from 'vue-demi'
+import { SelectItem, SelectProps } from '../use-select'
 
 export interface AdapterContext {
-  props: SelectProps,
-  keyword: Ref<string>,
-  isOpen: Ref<boolean>,
-  isLoading: Ref<boolean>,
+  props: SelectProps
+  keyword: Ref<string>
+  isOpen: Ref<boolean>
+  isLoading: Ref<boolean>
 }
 
 export interface Adapter {
-  setup: (context: AdapterContext) => Ref<SelectItem[]>,
+  setup: (context: AdapterContext) => Ref<SelectItem[]>
 }
 
 /**
  * normalizing props.options to SelectItem[]
  */
-export function useOptionsProp(props: SelectProps) {
+export function useOptionsProp (props: SelectProps) {
   return computed(() => {
     if (Array.isArray(props.options)) {
       return props.options.map((item: SelectItem | string) => {

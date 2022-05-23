@@ -1,7 +1,6 @@
-
-import { vi } from "vitest"
-import MockImage from "../__mocks__/image"
-import loadImage from "./load-image"
+import { vi } from 'vitest'
+import MockImage from '../__mocks__/image'
+import loadImage from './load-image'
 
 vi.stubGlobal('Image', MockImage)
 
