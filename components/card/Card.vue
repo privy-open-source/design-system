@@ -74,6 +74,9 @@ export default defineComponent ({
 </script>
 
 <style lang="postcss">
+/** 
+Card
+*/
 .card {
     @apply border bg-white border-secondary-5 rounded-md;
 
