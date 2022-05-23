@@ -1,0 +1,9 @@
+{
+  "name": "@privyid/tailwind-animation",
+  "version": "0.1.0",
+  "packageManager": "yarn@3.2.1",
+  "main": "./index.js",
+  "peerDependencies": {
+    "tailwind": ">= 3.0.0"
+  }
+}
