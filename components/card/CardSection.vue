@@ -1,27 +1,28 @@
 <template>
   <div
     data-testid="card-section"
-    :class="classNames">
-    <div
-      v-if="title"
-      class="card__header">
+    :class="classNames"
+    >
+    <div data-testid="card-header" class="card__header" v-if="$slots.header">
+      <slot name="header" />
+    </div>
+    
+    <div class="card__header card__header--default" v-else-if="title">
       <Subheading
         overline="medium">
         {{ title }}
       </Subheading>
 
-      <span
-        v-if="$slots.action"
-        class="card__header__action">
-        <slot name="action" />
+      <span data-testid="card-header-action" class="card__header__action" v-if="$slots.action">
+        <slot name="action"></slot>
       </span>
     </div>
+
     <div class="card__body">
       <slot />
     </div>
-    <footer
-      v-if="$slots.footer"
-      class="card__footer">
+    
+    <footer data-testid="card-footer" class="card__footer" v-if="$slots.footer">
       <slot name="footer" />
     </footer>
   </div>

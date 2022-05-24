@@ -1,8 +1,8 @@
 <template>
   <component
-    :is="elementName"
     data-testid="heading"
-    :class="className">
+    :is="elementNames"
+    :class="classNames">
     <slot />
   </component>
 </template>
@@ -19,26 +19,27 @@ type ElementVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 export default defineComponent({
   props: {
     element: {
-      type   : String as PropType<ElementVariant>,
-      default: 'h3',
-    },
+      type: String as PropType<ElementVariant>,
+      default: 'h3'
+    }
   },
+  
   setup (props) {
-    const elementName = computed(() => {
+    const elementNames = computed(() => {
       return props.element
     })
 
-    const className = computed(() => {
+    const classNames = computed(() => {
       const result: string[] = [`${props.element}`]
 
       return result
     })
 
     return {
-      elementName,
-      className,
+      elementNames,
+      classNames
     }
-  },
+  }
 
 })
 </script>

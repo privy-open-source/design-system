@@ -157,7 +157,7 @@ export default defineComponent({
 }
 
 .btn--link {
-  @apply border border-transparent hover:underline;
+  @apply border border-transparent underline;
 
   &.btn--primary {
     @apply text-primary-100 hover:text-primary-hovered active:text-primary-focused;
