@@ -1,6 +1,7 @@
 <template>
   <component 
     data-testid="card"
+    v-if="show"
     :is="elementNames"
     :class="classNames">
     <header data-testid="card-header" class="card__header" v-if="$slots.header">
@@ -12,8 +13,16 @@
         {{ title }}
       </Heading>
 
-      <span data-testid="card-header-action" class="card__header__action" v-if="$slots.action">
+      <span data-testid="card-header-action" class="card__header__action" v-if="$slots.action && !callout">
         <slot name="action" />
+      </span>
+
+      <span 
+        data-testid="card-callout-dismiss"
+        v-if="dismissable && callout"
+        class="card__header__dismiss"
+        @click="close()">
+        <IconClose />
       </span>
     </header>
     
@@ -29,13 +38,14 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue-demi'
+import { computed, defineComponent, PropType, ref } from 'vue-demi'
+import IconClose from "@carbon/icons-vue/lib/close/16"
 import Heading from '../heading/Heading.vue'
 
 type ElementVariant = 'div' | 'section' | 'article'
 
 export default defineComponent ({
-  components: { Heading },
+  components: { Heading, IconClose },
   props: {
     element: {
       type: String as PropType<ElementVariant>,
@@ -52,9 +62,20 @@ export default defineComponent ({
     disabled: {
       type: Boolean,
       default: false,
+    },
+    callout: {
+      type: Boolean,
+      default: false,
+    },
+    dismissable: {
+      type: Boolean,
+      default: true,
     }
   },
-  setup (props, { slots }) {
+  emits:['dismissed'],
+  setup (props, { emit }) {
+    const show = ref(true)
+
     const classNames = computed(() => {
       const result: string[] = ['card']
 
@@ -64,6 +85,9 @@ export default defineComponent ({
       if (props.disabled)
         result.push('card--disabled')
 
+      if (props.callout)
+        result.push('card--callout')
+
       return result
     })
 
@@ -71,9 +95,16 @@ export default defineComponent ({
       return props.element
     })
 
+    function close(): void {
+      show.value = false
+      emit('dismissed')
+    }
+
     return {
       classNames,
-      elementNames
+      elementNames,
+      show,
+      close
     }
   }
 })
@@ -141,7 +172,7 @@ export default defineComponent ({
   * If Card have Section,
   * padding of card-body-top-parent set to 0
   */
-  &.card--sectioned {
+  &&--sectioned {
     > .card__body {
       @apply p-0;
     }
@@ -151,8 +182,16 @@ export default defineComponent ({
   * Give background background-100 (#f5f5f5)
   * If Card disabled
   */
-  &.card--disabled {
+  &&--disabled {
     @apply bg-background-100;
+  }
+
+  /** 
+  * Provide box-shadow when
+  * Card Callout is enable
+  */
+  &&--callout {
+    @apply shadow;
   }
 
   &__header {
@@ -171,6 +210,10 @@ export default defineComponent ({
           @apply pl-3;
         }
       }
+    }
+
+    &__dismiss {
+      @apply text-secondary-50 hover:text-secondary-100 hover:cursor-pointer;
     }
   }
 
