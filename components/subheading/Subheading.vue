@@ -1,5 +1,5 @@
 <template>
-  <p 
+  <p
     data-testid="subheading"
     :class="classNames">
     <slot />
@@ -19,32 +19,30 @@ type OverlineVariant = 'normal' | 'medium'
 export default defineComponent({
   props: {
     size: {
-      type: String as PropType<SizeVariant>,
-      default: 'md'
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
     },
     overline: {
-      type: String as PropType<OverlineVariant>,
-      default: null
-    }
+      type   : String as PropType<OverlineVariant>,
+      default: null,
+    },
   },
 
   setup (props) {
     const classNames = computed(() => {
       const result: String[] = ['subheading']
 
-      if (props.overline) 
+      if (props.overline)
         result.push(`subheading--overline-${props.overline}`)
 
-      else if (props.size) 
+      else if (props.size)
         result.push(`subheading--${props.size}`)
 
       return result
     })
 
-    return {
-      classNames
-    }
-  }
+    return { classNames }
+  },
 })
 </script>
 

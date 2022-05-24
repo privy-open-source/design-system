@@ -6,7 +6,7 @@ import Button from '../button/Button.vue'
 it('should rendered properly without any props', () => {
   const screen = render({
     components: { Card },
-    template: `
+    template  : `
       <Card>
         Content
       </Card>
@@ -24,7 +24,7 @@ it('should rendered properly without any props', () => {
 it('Card should have style "disabled" if disabled is provided', () => {
   const screen = render({
     components: { Card },
-    template: `
+    template  : `
       <Card disabled>
         Content
       </Card>
@@ -54,9 +54,9 @@ it('should be able to add Card Header via slot `header`', () => {
     `,
   })
 
-  const cardHeader  = screen.queryByTestId('card-header')
-  const text        = screen.queryByText('Card Header')
-  const action      = screen.queryByText('Button Text')
+  const cardHeader = screen.queryByTestId('card-header')
+  const text       = screen.queryByText('Card Header')
+  const action     = screen.queryByText('Button Text')
 
   expect(cardHeader).toBeInTheDocument()
   expect(text).toBeInTheDocument()
@@ -78,9 +78,9 @@ it('should be able to add Card Header Action via slot `action`', () => {
     `,
   })
 
-  const cardHeaderAction  = screen.queryByTestId('card-header-action')
-  const text              = screen.queryByText('Content')
-  const action            = screen.queryByText('Button Text')
+  const cardHeaderAction = screen.queryByTestId('card-header-action')
+  const text             = screen.queryByText('Content')
+  const action           = screen.queryByText('Button Text')
 
   expect(cardHeaderAction).toBeInTheDocument()
   expect(cardHeaderAction).toHaveClass('card__header__action')
@@ -101,8 +101,8 @@ it('should be able to add Card Footer via slot `footer`', () => {
     `,
   })
 
-  const cardFooter  = screen.queryByTestId('card-footer')
-  const action      = screen.queryByText('Button Text')
+  const cardFooter = screen.queryByTestId('card-footer')
+  const action     = screen.queryByText('Button Text')
 
   expect(cardFooter).toBeInTheDocument()
   expect(cardFooter).toHaveClass('card__footer')
@@ -121,10 +121,10 @@ it('Card should have style "callout" when callout is provided', async () => {
     `,
   })
 
-  const card     = screen.queryByTestId('card')
-  const dismiss  = screen.queryByTestId('card-callout-dismiss')
-  const text     = screen.queryByText('Content')
-  
+  const card    = screen.queryByTestId('card')
+  const dismiss = screen.queryByTestId('card-callout-dismiss')
+  const text    = screen.queryByText('Content')
+
   expect(card).toBeInTheDocument()
   expect(card).toHaveClass('card', 'card--callout')
   expect(text).toBeInTheDocument()
@@ -133,7 +133,6 @@ it('Card should have style "callout" when callout is provided', async () => {
 
   expect(card).not.toBeInTheDocument()
   expect(text).not.toBeInTheDocument()
-
 })
 
 it('should emit event "dismissed" if close button clicked', async () => {
@@ -147,14 +146,12 @@ it('should emit event "dismissed" if close button clicked', async () => {
         Content
       </Card>
     `,
-    methods: {
-      onDismissed: spy
-    }
+    methods: { onDismissed: spy },
   })
 
-  const card   = screen.queryByTestId('card')
-  const text   = screen.queryByText('Content')
-  const close  = screen.queryByTestId('card-callout-dismiss')
+  const card  = screen.queryByTestId('card')
+  const text  = screen.queryByText('Content')
+  const close = screen.queryByTestId('card-callout-dismiss')
 
   expect(card).toBeInTheDocument()
   expect(text).toBeInTheDocument()

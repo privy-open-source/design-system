@@ -3,6 +3,8 @@
   "include": [
     "components/**/*.vue",
     "components/**/*.ts",
+    "packages/**/*.ts",
+    "packages/**/*.js",
     "types/**/*.d.ts",
     ".eslintrc.js",
     "postcss.config.js",
