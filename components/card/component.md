@@ -5,7 +5,7 @@
   import Heading from '../heading/Heading.vue'
 </script>
 
-<style scope>
+<style scoped lang="postcss">
   .preview {
     @apply block;
 
