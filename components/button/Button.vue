@@ -50,6 +50,7 @@ export default defineComponent({
       if (props.variant)
         result.push(`btn--${props.variant}`)
 
+      // eslint-disable-next-line unicorn/explicit-length-check
       if (props.size)
         result.push(`btn--${props.size}`)
 

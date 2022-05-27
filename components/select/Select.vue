@@ -169,7 +169,8 @@ export default defineComponent({
           : model.value?.text
       },
       set (value: string) {
-        keyword.value = value
+        if (value !== search.value)
+          keyword.value = value
       },
     })
 

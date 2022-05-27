@@ -3,10 +3,18 @@ module.exports = {
     'standard-with-typescript',
     'plugin:vue/vue3-recommended',
     '@vue/eslint-config-typescript',
+    'plugin:unicorn/recommended',
   ],
-  plugins      : ['align-assignments'],
-  parserOptions: { project: './tsconfig.eslint.json' },
-  rules        : {
+  plugins      : ['align-assignments', 'unicorn'],
+  parserOptions: {
+    project: './tsconfig.eslint.json',
+    parser : {
+      'ts'        : '@typescript-eslint/parser',
+      'js'        : 'espree',
+      '<template>': 'espree',
+    },
+  },
+  rules: {
     'curly'                : ['error', 'multi-or-nest'],
     'array-element-newline': [
       'error',
@@ -84,6 +92,8 @@ module.exports = {
         multiline : 'never',
       },
     ],
+    'unicorn/prevent-abbreviations'      : 'off',
+    'unicorn/consistent-function-scoping': 'off',
   },
   overrides: [
     {
@@ -98,7 +108,26 @@ module.exports = {
         context      : true,
         jestPuppeteer: true,
       },
-      rules: { '@typescript-eslint/no-floating-promises': 'off' },
+      rules: {
+        '@typescript-eslint/no-floating-promises': 'off',
+        'unicorn/filename-case'                  : [
+          'error',
+          {
+            cases: {
+              kebabCase : true,
+              pascalCase: true,
+            },
+          },
+        ],
+      },
+    },
+    {
+      files: ['**/*.js'],
+      rules: { 'unicorn/prefer-module': 'off' },
+    },
+    {
+      files: ['**/*.vue'],
+      rules: { 'unicorn/filename-case': ['off', { case: 'pascalCase' }] },
     },
   ],
 }

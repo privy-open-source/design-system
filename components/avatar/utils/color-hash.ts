@@ -16,7 +16,7 @@ export function colorHash (text: string): [string, string] {
   let hash = 0
 
   for (let index = 0; index < text.length; ++index)
-    hash = ((hash << 5) - hash + text.charCodeAt(index)) | 0
+    hash = ((hash << 5) - hash + text.charCodeAt(index)) | 0 // eslint-disable-line unicorn/prefer-math-trunc, unicorn/prefer-code-point
 
   return COLOR_SEED.at(Math.abs(hash) % COLOR_SEED.length)
 }

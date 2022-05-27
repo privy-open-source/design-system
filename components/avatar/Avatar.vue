@@ -71,6 +71,7 @@ export default defineComponent({
     const classNames = computed(() => {
       const result: string[] = ['avatar']
 
+      // eslint-disable-next-line unicorn/explicit-length-check
       if (props.size)
         result.push(`avatar--${props.size}`)
 

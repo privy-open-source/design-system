@@ -68,7 +68,7 @@ export default defineComponent({
     },
     title: {
       type   : String,
-      default: null,
+      default: undefined,
     },
     sectioned: {
       type   : Boolean,

@@ -24,7 +24,7 @@ export default defineComponent({
     },
     overline: {
       type   : String as PropType<OverlineVariant>,
-      default: null,
+      default: undefined,
     },
   },
 
@@ -35,6 +35,7 @@ export default defineComponent({
       if (props.overline)
         result.push(`subheading--overline-${props.overline}`)
 
+      // eslint-disable-next-line unicorn/explicit-length-check
       else if (props.size)
         result.push(`subheading--${props.size}`)
 

@@ -29,13 +29,13 @@ export async function useSingleton<C extends Component> (
     const app    = createApp({
       name  : 'GlobalContainer',
       render: () => {
-        return Array.from(instances.value.entries()).map(([element, cRef]) => {
+        return [...instances.value.entries()].map(([element, cRef]) => {
           return h(element, { ref: cRef })
         })
       },
     })
 
-    document.body.appendChild(target)
+    document.body.append(target)
     app.mount(target)
 
     target.id = 'global'
@@ -44,7 +44,7 @@ export async function useSingleton<C extends Component> (
 
   let instance = instances.value.get(component)
 
-  if (instance == null) {
+  if (!instance) {
     instance = ref()
     instances.value.set(component, instance)
 
@@ -56,9 +56,7 @@ export async function useSingleton<C extends Component> (
   return unref(instance)
 }
 
-export async function removeSingleton<C extends Component> (
-  component: C,
-): Promise<void> {
+export async function removeSingleton<C extends Component> (component: C): Promise<void> {
   if (instances && container) {
     instances.value.delete(component)
 

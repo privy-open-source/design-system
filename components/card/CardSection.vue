@@ -47,7 +47,7 @@ export default defineComponent({
   props     : {
     title: {
       type   : String,
-      default: null,
+      default: undefined,
     },
     disabled: {
       type   : Boolean,
