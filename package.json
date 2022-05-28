@@ -35,7 +35,7 @@
     "eslint-plugin-unicorn": "^42.0.0",
     "eslint-plugin-varspacing": "^1.2.2",
     "eslint-plugin-vue": "^9.0.1",
-    "happy-dom": "4.0.1",
+    "happy-dom": "4.1.0",
     "jest-extended": "2.0.0",
     "postcss": "8.4.14",
     "postcss-nested": "5.0.6",
