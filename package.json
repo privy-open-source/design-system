@@ -10,7 +10,8 @@
     "test": "vitest",
     "lint": "eslint . --ext .js,.vue,.ts",
     "fix": "yarn lint --fix",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "postinstall": "husky install"
   },
   "devDependencies": {
     "@privyid/tailwind-preset": "workspace:^",
@@ -36,7 +37,9 @@
     "eslint-plugin-varspacing": "^1.2.2",
     "eslint-plugin-vue": "^9.0.1",
     "happy-dom": "4.1.0",
+    "husky": "^8.0.1",
     "jest-extended": "2.0.0",
+    "lint-staged": "^12.4.2",
     "postcss": "8.4.14",
     "postcss-nested": "5.0.6",
     "tailwindcss": "3.0.24",
@@ -54,6 +57,11 @@
     "fuse.js": "6.6.2",
     "tabbable": "5.3.3",
     "vue-demi": "0.12.5"
+  },
+  "lint-staged": {
+    "*.(js|ts|vue)": [
+      "eslint --fix"
+    ]
   },
   "workspaces": [
     "packages/*"
