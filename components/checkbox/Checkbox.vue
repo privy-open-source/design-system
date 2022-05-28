@@ -13,13 +13,30 @@
     <span class="checkbox__icon">
       <!-- checked icon -->
       <template v-if="indeterminate">
-        <svg width="10" height="10" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="14" height="2" fill="white"/>
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 14 2"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <rect
+            width="14"
+            height="2"
+            fill="white" />
         </svg>
       </template>
       <template v-else>
-        <svg width="10" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z" fill="white"/>
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 14 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z"
+            fill="white" />
         </svg>
       </template>
     </span>
@@ -30,8 +47,8 @@
 </template>
 
 <script lang="ts">
-import { useVModel } from "./use-checkbox"
-import { computed, defineComponent } from "vue-demi"
+import { useVModel } from './use-checkbox'
+import { computed, defineComponent } from 'vue-demi'
 
 export interface ChangedInteface {
   value: any,
@@ -41,19 +58,17 @@ export interface ChangedInteface {
 export default defineComponent({
   props: {
     name: {
-      type: String,
+      type   : String,
+      default: undefined,
     },
-    modelValue: {
-      default: false,
-    },
-    checked: {
+    // eslint-disable-next-line vue/require-prop-types
+    modelValue    : { default: false },
+    // eslint-disable-next-line vue/require-prop-types
+    value         : { default: true },
+    // eslint-disable-next-line vue/require-prop-types
+    uncheckedValue: { default: false },
+    checked       : {
       type   : Boolean,
-      default: false,
-    },
-    value: {
-      default: true,
-    },
-    uncheckedValue: {
       default: false,
     },
     readonly: {
@@ -73,10 +88,7 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: [
-    'change',
-    'update:modelValue',
-  ],
+  emits: ['change', 'update:modelValue'],
   setup (props) {
     const model = useVModel(props)
 
@@ -99,9 +111,8 @@ export default defineComponent({
     })
 
     function toggle () {
-      if (!props.readonly && !props.disabled) {
+      if (!props.readonly && !props.disabled)
         model.value = !model.value
-      }
     }
 
     return {

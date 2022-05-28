@@ -3,26 +3,29 @@
     data-testid="btn"
     :class="classNames">
     <slot />
-
   </button>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue-demi'
+import {
+  computed,
+  defineComponent,
+  PropType,
+} from 'vue-demi'
 
 type StyleVariant = 'solid' | 'outline' | 'ghost' | 'link'
 type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
-type SizeVariant  = 'sm' | 'md' | 'lg'
+type SizeVariant = 'sm' | 'md' | 'lg'
 
 export default defineComponent({
   props: {
     variant: {
       type   : String as PropType<StyleVariant>,
-      default: 'solid'
+      default: 'solid',
     },
     color: {
       type   : String as PropType<ColorVariant>,
-      default: 'primary'
+      default: 'primary',
     },
     size: {
       type   : String as PropType<SizeVariant>,
@@ -35,7 +38,7 @@ export default defineComponent({
     pill: {
       type   : Boolean,
       default: false,
-    }
+    },
   },
   setup (props) {
     const classNames = computed(() => {
@@ -47,6 +50,7 @@ export default defineComponent({
       if (props.variant)
         result.push(`btn--${props.variant}`)
 
+      // eslint-disable-next-line unicorn/explicit-length-check
       if (props.size)
         result.push(`btn--${props.size}`)
 
@@ -59,10 +63,8 @@ export default defineComponent({
       return result
     })
 
-    return {
-      classNames
-    }
-  }
+    return { classNames }
+  },
 })
 </script>
 

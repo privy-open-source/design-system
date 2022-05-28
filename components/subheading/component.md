@@ -78,10 +78,10 @@ Used for the title of any sub-sections
 
 ### Props
 
-| Props         |   Type    | Default    | Description                                           |
-|---------------|:---------:|:----------:|-------------------------------------------------------|
-| `size`        | `String`  | `md`       | Size of subheading, valid value is `sm` and `md`      |
-| `overline`    | `String`  | -          | Overline variant. Valid value is `normal` and `medium`. If overline is active, subheading's `size` will be disabled automatically               |
+| Props      |   Type   | Default | Description                                                                                                                       |
+|------------|:--------:|:-------:|-----------------------------------------------------------------------------------------------------------------------------------|
+| `size`     | `String` |  `md`   | Size of subheading, valid value is `sm` and `md`                                                                                  |
+| `overline` | `String` |    -    | Overline variant. Valid value is `normal` and `medium`. If overline is active, subheading's `size` will be disabled automatically |
 
 ### Slots
 

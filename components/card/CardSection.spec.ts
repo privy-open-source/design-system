@@ -6,7 +6,7 @@ import Button from '../button/Button.vue'
 it('should rendered properly with "sectioned" props', () => {
   const screen = render({
     components: { Card, CardSection },
-    template: `
+    template  : `
       <Card sectioned>
         <Card-Section>
           Content
@@ -15,9 +15,9 @@ it('should rendered properly with "sectioned" props', () => {
     `,
   })
 
-  const card          = screen.queryByTestId('card')
-  const cardSection   = screen.queryByTestId('card-section')
-  const text          = screen.queryByText('Content')
+  const card        = screen.queryByTestId('card')
+  const cardSection = screen.queryByTestId('card-section')
+  const text        = screen.queryByText('Content')
 
   expect(card).toBeInTheDocument()
   expect(cardSection).toBeInTheDocument()
@@ -37,17 +37,19 @@ it('Card-Section should have style "disabled" if disabled is provided', () => {
       </Card>
     `,
   })
- 
-   const cardSection  = screen.queryByTestId('card-section')
- 
-   expect(cardSection).toBeInTheDocument()
-   expect(cardSection).toHaveClass('card__section', 'card__section--disabled')
+
+  const cardSection = screen.queryByTestId('card-section')
+
+  expect(cardSection).toBeInTheDocument()
+  expect(cardSection).toHaveClass('card__section', 'card__section--disabled')
 })
 
 it('should be able to add Card Header via slot `header`', () => {
   const screen = render({
-    components: { Card, CardSection, Button },
-    template  : `
+    components: {
+      Card, CardSection, Button,
+    },
+    template: `
       <Card sectioned>
         <Card-Section>
           <template #header>
@@ -63,9 +65,9 @@ it('should be able to add Card Header via slot `header`', () => {
     `,
   })
 
-  const cardHeader  = screen.queryByTestId('card-header')
-  const text        = screen.queryByText('Card Header')
-  const action      = screen.queryByText('Button Text')
+  const cardHeader = screen.queryByTestId('card-header')
+  const text       = screen.queryByText('Card Header')
+  const action     = screen.queryByText('Button Text')
 
   expect(cardHeader).toBeInTheDocument()
   expect(cardHeader).toHaveClass('card__header')
@@ -75,8 +77,10 @@ it('should be able to add Card Header via slot `header`', () => {
 
 it('should be able to add Footer Action via slot `footer`', () => {
   const screen = render({
-    components: { Card, CardSection, Button },
-    template  : `
+    components: {
+      Card, CardSection, Button,
+    },
+    template: `
       <Card sectioned>
         <Card-Section>
           <template #footer>
@@ -88,8 +92,8 @@ it('should be able to add Footer Action via slot `footer`', () => {
     `,
   })
 
-  const cardFooter  = screen.queryByTestId('card-footer')
-  const text        = screen.queryByText('Sample Button')
+  const cardFooter = screen.queryByTestId('card-footer')
+  const text       = screen.queryByText('Sample Button')
 
   expect(cardFooter).toBeInTheDocument()
   expect(cardFooter).toHaveClass('card__footer')
@@ -111,9 +115,9 @@ it('should be able to add Header Action via slot `action`', () => {
     `,
   })
 
-  const cardHeaderAction  = screen.queryByTestId('card-header-action')
-  const text              = screen.queryByText('Content')
-  const action            = screen.queryByText('Edit')
+  const cardHeaderAction = screen.queryByTestId('card-header-action')
+  const text             = screen.queryByText('Content')
+  const action           = screen.queryByText('Edit')
 
   expect(cardHeaderAction).toBeInTheDocument()
   expect(cardHeaderAction).toHaveClass('card__header__action')

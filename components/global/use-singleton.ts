@@ -9,7 +9,7 @@ import {
   shallowRef,
   triggerRef,
   nextTick,
-} from "vue-demi"
+} from 'vue-demi'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
 export type Component = DefineComponent<{}, {}, any>
@@ -19,7 +19,7 @@ export type ComponentInstance<C extends Component> = InstanceType<C>
 let instances: Ref<Map<Component, Ref<ComponentInstance<any>>>>
 let container: App<Element>
 
-export async function useSingleton<C extends Component>(component: C): Promise<ComponentInstance<C>> {
+export async function useSingleton<C extends Component> (component: C): Promise<ComponentInstance<C>> {
   if (!instances)
     instances = shallowRef(new Map())
 
@@ -28,14 +28,14 @@ export async function useSingleton<C extends Component>(component: C): Promise<C
     const app    = createApp({
       name  : 'GlobalContainer',
       render: () => {
-        return Array.from(instances.value.entries())
+        return [...instances.value.entries()]
           .map(([element, cRef]) => {
             return h(element, { ref: cRef })
           })
-      }
+      },
     })
 
-    document.body.appendChild(target)
+    document.body.append(target)
     app.mount(target)
 
     target.id = 'global'
@@ -56,7 +56,7 @@ export async function useSingleton<C extends Component>(component: C): Promise<C
   return unref(instance)
 }
 
-export async function removeSingleton<C extends Component>(component: C): Promise<void> {
+export async function removeSingleton<C extends Component> (component: C): Promise<void> {
   if (instances && container) {
     instances.value.delete(component)
 
@@ -66,7 +66,7 @@ export async function removeSingleton<C extends Component>(component: C): Promis
   }
 }
 
-export async function resetSingleton() {
+export async function resetSingleton () {
   if (instances) {
     instances.value.clear()
 

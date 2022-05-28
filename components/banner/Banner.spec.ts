@@ -1,5 +1,5 @@
 import { vi } from 'vitest'
-import { fireEvent, render } from "@testing-library/vue"
+import { fireEvent, render } from '@testing-library/vue'
 import Banner from './Banner.vue'
 
 it('should rendered properly without any props', () => {
@@ -69,9 +69,7 @@ it('should emit event "dismissed" if close button clicked', async () => {
         Hello
       </Banner>
     `,
-    methods: {
-      onDismissed: spy
-    }
+    methods: { onDismissed: spy },
   })
 
   const banner = screen.queryByTestId('banner')

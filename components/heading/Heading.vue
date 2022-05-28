@@ -1,25 +1,29 @@
 <template>
   <component
-    data-testid="heading"
     :is="elementNames"
+    data-testid="heading"
     :class="classNames">
     <slot />
   </component>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, PropType } from "vue-demi"
+import {
+  defineComponent,
+  computed,
+  PropType,
+} from 'vue-demi'
 
 type ElementVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 export default defineComponent({
   props: {
     element: {
-      type: String as PropType<ElementVariant>,
-      default: 'h3'
-    }
+      type   : String as PropType<ElementVariant>,
+      default: 'h3',
+    },
   },
-  
+
   setup (props) {
     const elementNames = computed(() => {
       return props.element
@@ -33,9 +37,9 @@ export default defineComponent({
 
     return {
       elementNames,
-      classNames
+      classNames,
     }
-  }
+  },
 
 })
 </script>

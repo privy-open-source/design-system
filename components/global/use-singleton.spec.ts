@@ -1,22 +1,25 @@
+import {
+  queryAllByTestId, queryByTestId, queryByText,
+} from '@testing-library/vue'
+import { defineComponent } from 'vue-demi'
+import {
+  removeSingleton, resetSingleton, useSingleton,
+} from './use-singleton'
 
-import { queryAllByTestId, queryByTestId, queryByText } from "@testing-library/vue"
-import { defineComponent } from "vue-demi"
-import { removeSingleton, resetSingleton, useSingleton } from "./use-singleton"
+const mockComponent = defineComponent({
+  template: `
+    <div data-testid="mock">
+      Hello, This is global component
+    </div>
+  `,
+})
 
 describe('useSingleton', () => {
-  afterEach(() => {
-    return resetSingleton()
+  afterEach(async () => {
+    return await resetSingleton()
   })
 
   it('should be able render given component into global container', async () => {
-    const mockComponent = defineComponent({
-      template: `
-        <div data-testid="mock">
-          Hello, This is global component
-        </div>
-      `
-    })
-
     await useSingleton(mockComponent)
 
     const target = queryByTestId(document.body, 'mock')
@@ -27,14 +30,6 @@ describe('useSingleton', () => {
   })
 
   it('should be only create single instance per component', async () => {
-    const mockComponent = defineComponent({
-      template: `
-        <div data-testid="mock">
-          Hello, This is global component
-        </div>
-      `
-    })
-
     await useSingleton(mockComponent)
     await useSingleton(mockComponent)
 
@@ -46,14 +41,6 @@ describe('useSingleton', () => {
 
 describe('removeSingleton', () => {
   it('should be able remove component in global container', async () => {
-    const mockComponent = defineComponent({
-      template: `
-        <div data-testid="mock">
-          Hello, This is global component
-        </div>
-      `
-    })
-
     await useSingleton(mockComponent)
 
     const target = queryByTestId(document.body, 'mock')

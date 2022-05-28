@@ -1,5 +1,7 @@
 <template>
-  <div class="input-group" data-testid="input-group">
+  <div
+    class="input-group"
+    data-testid="input-group">
     <slot />
   </div>
 </template>

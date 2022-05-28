@@ -1,78 +1,93 @@
 <template>
-  <component 
-    data-testid="card"
-    v-if="show"
+  <component
     :is="elementNames"
+    v-if="show"
+    data-testid="card"
     :class="classNames">
-    <header data-testid="card-header" class="card__header" v-if="$slots.header">
+    <header
+      v-if="$slots.header"
+      data-testid="card-header"
+      class="card__header">
       <slot name="header" />
     </header>
 
-    <header class="card__header card__header--default" v-else-if="title">
+    <header
+      v-else-if="title"
+      class="card__header card__header--default">
       <Heading element="h6">
         {{ title }}
       </Heading>
 
-      <span data-testid="card-header-action" class="card__header__action" v-if="$slots.action && !callout">
+      <span
+        v-if="$slots.action && !callout"
+        data-testid="card-header-action"
+        class="card__header__action">
         <slot name="action" />
       </span>
 
-      <span 
-        data-testid="card-callout-dismiss"
+      <span
         v-if="dismissable && callout"
+        data-testid="card-callout-dismiss"
         class="card__header__dismiss"
         @click="close()">
         <IconClose />
       </span>
     </header>
-    
-    <div class="card__body" v-if="!sectioned">
+
+    <div
+      v-if="!sectioned"
+      class="card__body">
       <slot />
     </div>
     <slot v-else />
 
-    <footer data-testid="card-footer" class="card__footer" v-if="$slots.footer">
+    <footer
+      v-if="$slots.footer"
+      data-testid="card-footer"
+      class="card__footer">
       <slot name="footer" />
     </footer>
   </component>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref } from 'vue-demi'
-import IconClose from "@carbon/icons-vue/lib/close/16"
+import {
+  computed, defineComponent, PropType, ref,
+} from 'vue-demi'
+import IconClose from '@carbon/icons-vue/lib/close/16'
 import Heading from '../heading/Heading.vue'
 
 type ElementVariant = 'div' | 'section' | 'article'
 
-export default defineComponent ({
+export default defineComponent({
   components: { Heading, IconClose },
-  props: {
+  props     : {
     element: {
-      type: String as PropType<ElementVariant>,
-      default: 'section'
+      type   : String as PropType<ElementVariant>,
+      default: 'section',
     },
     title: {
-      type: String,
-      default: null
+      type   : String,
+      default: undefined,
     },
     sectioned: {
-      type: Boolean,
+      type   : Boolean,
       default: false,
     },
     disabled: {
-      type: Boolean,
+      type   : Boolean,
       default: false,
     },
     callout: {
-      type: Boolean,
+      type   : Boolean,
       default: false,
     },
     dismissable: {
-      type: Boolean,
+      type   : Boolean,
       default: true,
-    }
+    },
   },
-  emits:['dismissed'],
+  emits: ['dismissed'],
   setup (props, { emit }) {
     const show = ref(true)
 
@@ -95,7 +110,7 @@ export default defineComponent ({
       return props.element
     })
 
-    function close(): void {
+    function close (): void {
       show.value = false
       emit('dismissed')
     }
@@ -104,23 +119,23 @@ export default defineComponent ({
       classNames,
       elementNames,
       show,
-      close
+      close,
     }
-  }
+  },
 })
 </script>
 
 <style lang="postcss">
 /**
-* Component Name		: Card
-* Component URI		  : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=294%3A5079
-* Date Created			: May 22, 2022
-* Last Update			  : May 23, 2022
+* Component Name: Card
+* Component URI : https : //www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=294%3A5079
+* Date Created  : May 22, 2022
+* Last Update   : May 23, 2022
 */
 .card {
   @apply border bg-white border-secondary-5 rounded-md;
 
-  /* 
+  /*
   * Card Body & Card Header
   * by default have 24px (1.5rem) padding
   */
@@ -178,7 +193,7 @@ export default defineComponent ({
     }
   }
 
-  /** 
+  /**
   * Give background background-100 (#f5f5f5)
   * If Card disabled
   */
@@ -186,7 +201,7 @@ export default defineComponent ({
     @apply bg-background-100;
   }
 
-  /** 
+  /**
   * Provide box-shadow when
   * Card Callout is enable
   */

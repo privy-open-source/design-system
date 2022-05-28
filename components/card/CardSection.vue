@@ -1,28 +1,38 @@
 <template>
   <div
     data-testid="card-section"
-    :class="classNames"
-    >
-    <div data-testid="card-header" class="card__header" v-if="$slots.header">
+    :class="classNames">
+    <div
+      v-if="$slots.header"
+      data-testid="card-header"
+      class="card__header">
       <slot name="header" />
     </div>
-    
-    <div class="card__header card__header--default" v-else-if="title">
+
+    <div
+      v-else-if="title"
+      class="card__header card__header--default">
       <Subheading
         overline="medium">
         {{ title }}
       </Subheading>
 
-      <span data-testid="card-header-action" class="card__header__action" v-if="$slots.action">
-        <slot name="action"></slot>
+      <span
+        v-if="$slots.action"
+        data-testid="card-header-action"
+        class="card__header__action">
+        <slot name="action" />
       </span>
     </div>
 
     <div class="card__body">
       <slot />
     </div>
-    
-    <footer data-testid="card-footer" class="card__footer" v-if="$slots.footer">
+
+    <footer
+      v-if="$slots.footer"
+      data-testid="card-footer"
+      class="card__footer">
       <slot name="footer" />
     </footer>
   </div>
@@ -30,34 +40,32 @@
 
 <script lang="ts">
 import Subheading from '../subheading/Subheading.vue'
-import { defineComponent, computed } from "vue-demi"
+import { defineComponent, computed } from 'vue-demi'
 
 export default defineComponent({
-    components: { Subheading },
-    props: {
-        title: {
-            type: String,
-            default: null
-        },
-        disabled: {
-            type: Boolean,
-            default: false,
-        }
+  components: { Subheading },
+  props     : {
+    title: {
+      type   : String,
+      default: undefined,
     },
-    
-    setup (props) {
-        const classNames = computed(() => {
-            const result: String[] = ['card__section']
+    disabled: {
+      type   : Boolean,
+      default: false,
+    },
+  },
 
-            if (props.disabled)
-                result.push('card__section--disabled')
+  setup (props) {
+    const classNames = computed(() => {
+      const result: String[] = ['card__section']
 
-            return result
-        })
+      if (props.disabled)
+        result.push('card__section--disabled')
 
-        return {
-            classNames
-        }
-    }
+      return result
+    })
+
+    return { classNames }
+  },
 })
 </script>

@@ -1,5 +1,10 @@
-
-import { createAlias, createSpinner, createText, dummyAvatar, getAlias } from "./create-image"
+import {
+  createAlias,
+  createSpinner,
+  createText,
+  dummyAvatar,
+  getAlias,
+} from './create-image'
 import DEFAULT_IMAGE from '../assets/avatar.png'
 
 describe('createText', () => {

@@ -4,8 +4,8 @@
     :class="classNames">
     <div class="toast__icon">
       <component
-        v-if="icon"
-        :is="icon" />
+        :is="icon"
+        v-if="icon" />
     </div>
     <div class="toast__body">
       <div class="toast__title">
@@ -25,19 +25,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, ref, onMounted, onUnmounted } from "vue-demi"
+import {
+  defineComponent,
+  PropType,
+  computed,
+  ref,
+  onMounted,
+  onUnmounted,
+} from 'vue-demi'
 import { ToastStyleVariant, ToastTypeVariant } from './use-toast'
-import IconInfo from "@carbon/icons-vue/lib/information--filled/24"
-import IconSuccess from "@carbon/icons-vue/lib/checkmark/24"
-import IconWarn from "@carbon/icons-vue/lib/warning--filled/24"
-import IconError from "@carbon/icons-vue/lib/warning--alt--filled/24"
-import IconClose from "@carbon/icons-vue/lib/close/16"
+import IconInfo from '@carbon/icons-vue/lib/information--filled/24'
+import IconSuccess from '@carbon/icons-vue/lib/checkmark/24'
+import IconWarn from '@carbon/icons-vue/lib/warning--filled/24'
+import IconError from '@carbon/icons-vue/lib/warning--alt--filled/24'
+import IconClose from '@carbon/icons-vue/lib/close/16'
 
 const ToastIcons = {
-  'info'   : IconInfo,
-  'success': IconSuccess,
-  'warn'   : IconWarn,
-  'error'  : IconError,
+  info   : IconInfo,
+  success: IconSuccess,
+  warn   : IconWarn,
+  error  : IconError,
 }
 
 export default defineComponent({
@@ -53,11 +60,11 @@ export default defineComponent({
     },
     type: {
       type   : String as PropType<ToastTypeVariant>,
-      default: 'info'
+      default: 'info',
     },
     variant: {
       type   : String as PropType<ToastStyleVariant>,
-      default: 'simple'
+      default: 'simple',
     },
     duration: {
       type   : Number,
@@ -105,7 +112,7 @@ export default defineComponent({
       icon,
       close,
     }
-  }
+  },
 })
 </script>
 

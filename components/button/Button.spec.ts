@@ -112,9 +112,7 @@ it('should emit "click" when button is clicked', async () => {
         Hello
       </Button>
     `,
-    methods: {
-      onClick: spy
-    }
+    methods: { onClick: spy },
   })
 
   const button = screen.queryByTestId('btn')

@@ -1,6 +1,5 @@
-
-import { render, fireEvent } from "@testing-library/vue"
-import { vi } from "vitest"
+import { render, fireEvent } from '@testing-library/vue'
+import { vi } from 'vitest'
 import Toast from './Toast.vue'
 
 beforeEach(() => {
@@ -70,9 +69,7 @@ it('should dismiss automatically if toast out of duration', () => {
         text="this is text body"
         @dismissed="onDismissed" />
     `,
-    methods: {
-      onDismissed: spy,
-    }
+    methods: { onDismissed: spy },
   })
 
   const toast = screen.queryByTestId('toast')
@@ -95,9 +92,7 @@ it('should dismiss if close button clicked', async () => {
         text="this is text body"
         @dismissed="onDismissed" />
     `,
-    methods: {
-      onDismissed: spy,
-    }
+    methods: { onDismissed: spy },
   })
 
   const toast = screen.queryByTestId('toast')

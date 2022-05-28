@@ -1,10 +1,10 @@
-import { render, fireEvent } from "@testing-library/vue"
-import Calendar from "./Calendar.vue"
+import { render, fireEvent } from '@testing-library/vue'
+import Calendar from './Calendar.vue'
 
 it('should render properly without any props', () => {
   const screen = render({
     components: { Calendar },
-    template  : `<Calendar />`
+    template  : '<Calendar />',
   })
 
   const calendar = screen.getByTestId('calendar')
@@ -18,7 +18,7 @@ it('should have disabled style if "disabled" props is provided', () => {
     components: { Calendar },
     template  : `
       <Calendar disabled />
-    `
+    `,
   })
 
   const calendar = screen.getByTestId('calendar')
@@ -32,7 +32,7 @@ it('should have readonly style if "readonly" props is provided', () => {
     components: { Calendar },
     template  : `
       <Calendar readonly />
-    `
+    `,
   })
 
   const calendar = screen.getByTestId('calendar')
@@ -55,7 +55,7 @@ it('should disabled the date if "min" props is provided', () => {
         current: new Date(2022, 0, 20), // 20 Jan 2022
         min    : new Date(2022, 0, 15), // 15 Jan 2022
       }
-    }
+    },
   })
 
   const date = screen.getByText('13')
@@ -78,7 +78,7 @@ it('should disabled the date if "max" props is provided', () => {
         current: new Date(2022, 0, 20), // 20 Jan 2022
         max    : new Date(2022, 0, 15), // 15 Jan 2022
       }
-    }
+    },
   })
 
   const date = screen.getByText('18')
@@ -96,10 +96,8 @@ it('should go to next month, if next button is clicked', async () => {
       />
     `,
     data () {
-      return {
-        current: new Date(2022, 0, 20), // 20 Jan 2022
-      }
-    }
+      return { current: new Date(2022, 0, 20) /* 20 Jan 2022 */ }
+    },
   })
 
   const button = screen.queryByTestId('calendar-next')
@@ -121,10 +119,8 @@ it('should go to prev month, if prev button is clicked', async () => {
       />
     `,
     data () {
-      return {
-        current: new Date(2022, 0, 20), // 20 Jan 2022
-      }
-    }
+      return { current: new Date(2022, 0, 20) /* 20 Jan 2022 */ }
+    },
   })
 
   const button = screen.queryByTestId('calendar-prev')
@@ -146,10 +142,8 @@ it('should change to viewmode if title is clicked (date => month => year)', asyn
       />
     `,
     data () {
-      return {
-        current: new Date(2022, 0, 20), // 20 Jan 2022
-      }
-    }
+      return { current: new Date(2022, 0, 20) /* 20 Jan 2022 */ }
+    },
   })
 
   const calendar = screen.queryByTestId('calendar')
@@ -178,10 +172,8 @@ it('should go to specific month if on viewmode "month" and one of items is selec
       />
     `,
     data () {
-      return {
-        current: new Date(2022, 0, 20), // 20 Jan 2022
-      }
-    }
+      return { current: new Date(2022, 0, 20) /* 20 Jan 2022 */ }
+    },
   })
 
   const calendar = screen.queryByTestId('calendar')
@@ -209,10 +201,8 @@ it('should go to month viewmode at first time if props "mode" set to "month"', (
       />
     `,
     data () {
-      return {
-        current: new Date(2022, 0, 20), // 20 Jan 2022
-      }
-    }
+      return { current: new Date(2022, 0, 20) /* 20 Jan 2022 */ }
+    },
   })
 
   const calendar = screen.queryByTestId('calendar')
@@ -230,10 +220,8 @@ it('should limit to month selection, if props "mode" set to "month"', async () =
       />
     `,
     data () {
-      return {
-        current: new Date(2022, 0, 20), // 20 Jan 2022
-      }
-    }
+      return { current: new Date(2022, 0, 20) /* 20 Jan 2022 */ }
+    },
   })
 
   const calendar = screen.queryByTestId('calendar')
@@ -269,8 +257,8 @@ it('should force current viewmode, if props "mode" changed and current viewmode 
     methods: {
       changeMode () {
         this.mode = 'year'
-      }
-    }
+      },
+    },
   })
 
   const calendar = screen.queryByTestId('calendar')

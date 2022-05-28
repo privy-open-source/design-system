@@ -1,5 +1,5 @@
 <template>
-  <p 
+  <p
     data-testid="subheading"
     :class="classNames">
     <slot />
@@ -7,7 +7,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed } from "vue-demi"
+import {
+  defineComponent,
+  PropType,
+  computed,
+} from 'vue-demi'
 
 type SizeVariant = 'sm' | 'md'
 type OverlineVariant = 'normal' | 'medium'
@@ -15,32 +19,31 @@ type OverlineVariant = 'normal' | 'medium'
 export default defineComponent({
   props: {
     size: {
-      type: String as PropType<SizeVariant>,
-      default: 'md'
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
     },
     overline: {
-      type: String as PropType<OverlineVariant>,
-      default: null
-    }
+      type   : String as PropType<OverlineVariant>,
+      default: undefined,
+    },
   },
 
   setup (props) {
     const classNames = computed(() => {
       const result: String[] = ['subheading']
 
-      if (props.overline) 
+      if (props.overline)
         result.push(`subheading--overline-${props.overline}`)
 
-      else if (props.size) 
+      // eslint-disable-next-line unicorn/explicit-length-check
+      else if (props.size)
         result.push(`subheading--${props.size}`)
 
       return result
     })
 
-    return {
-      classNames
-    }
-  }
+    return { classNames }
+  },
 })
 </script>
 

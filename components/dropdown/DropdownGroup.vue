@@ -1,8 +1,14 @@
 <template>
-  <Transition :name="transition" mode="out-in">
-    <div class="dropdown__group" :key="tree._level">
-      <template v-if="canBack" key="btn-back">
+  <Transition
+    :name="transition"
+    mode="out-in">
+    <div
+      :key="tree._level"
+      class="dropdown__group">
+      <template
+        v-if="canBack">
         <DropdownItem
+          key="btn-back"
           class="dropdown__group-btn dropdown__group-btn-back"
           @click="back()">
           <slot name="button-back">
@@ -14,8 +20,9 @@
         </DropdownItem>
       </template>
 
-      <template v-if="!isRoot" key="btn-next">
+      <template v-if="!isRoot">
         <DropdownItem
+          key="btn-next"
           class="dropdown__group-btn"
           @click="next()">
           <slot name="button-content">
@@ -36,9 +43,9 @@
 </template>
 
 <script lang="ts">
-import DropdownItem from "./DropdownItem.vue"
-import IconNext from "@carbon/icons-vue/lib/chevron--right/16"
-import IconBack from "@carbon/icons-vue/lib/chevron--left/16"
+import DropdownItem from './DropdownItem.vue'
+import IconNext from '@carbon/icons-vue/lib/chevron--right/16'
+import IconBack from '@carbon/icons-vue/lib/chevron--left/16'
 import {
   defineComponent,
   InjectionKey,
@@ -49,8 +56,8 @@ import {
   ShallowRef,
   computed,
   watch,
-  Slot
-} from "vue-demi"
+  Slot,
+} from 'vue-demi'
 
 interface DropdownNode {
   _level: number, // Just id to trigger transition
@@ -64,7 +71,7 @@ interface DropdownContext {
   back: () => void,
 }
 
-const DROPDOWN_TREE: InjectionKey<DropdownContext> = Symbol()
+const DROPDOWN_TREE: InjectionKey<DropdownContext> = Symbol('DropdownContext')
 
 export default defineComponent({
   components: {
@@ -74,15 +81,16 @@ export default defineComponent({
   },
   props: {
     text: {
-      type: String,
+      type   : String,
+      default: '',
     },
     backText: {
       type   : String,
       default: 'Back',
-    }
+    },
   },
   setup (props, { slots }) {
-    const context    = inject(DROPDOWN_TREE, undefined)
+    const context    = inject(DROPDOWN_TREE)
     const transition = ref<'slide-left' | 'slide-right' | 'none'>('slide-left')
 
     const isRoot = computed(() => {
@@ -91,21 +99,20 @@ export default defineComponent({
 
     const tree: DropdownContext['tree'] = context?.tree ?? shallowRef({
       _level: 0,
-      slot  : slots.default
+      slot  : slots.default,
     })
 
     const next: DropdownContext['next'] = () => {
       tree.value = {
-        _level: tree.value._level+1,
+        _level: tree.value._level + 1,
         prev  : tree.value,
         slot  : slots.default,
       }
     }
 
     const back: DropdownContext['back'] = () => {
-      if (tree.value.prev) {
+      if (tree.value.prev)
         tree.value = tree.value.prev
-      }
     }
 
     const view = computed(() => {
@@ -148,9 +155,9 @@ export default defineComponent({
       back,
       reset,
       canBack,
-      transition
+      transition,
     }
-  }
+  },
 })
 </script>
 
