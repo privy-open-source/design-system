@@ -1,8 +1,8 @@
 <template>
   <component
-    :is="elementName"
+    :is="elementNames"
     data-testid="heading"
-    :class="className">
+    :class="classNames">
     <slot />
   </component>
 </template>
@@ -23,20 +23,21 @@ export default defineComponent({
       default: 'h3',
     },
   },
+
   setup (props) {
-    const elementName = computed(() => {
+    const elementNames = computed(() => {
       return props.element
     })
 
-    const className = computed(() => {
+    const classNames = computed(() => {
       const result: string[] = [`${props.element}`]
 
       return result
     })
 
     return {
-      elementName,
-      className,
+      elementNames,
+      classNames,
     }
   },
 

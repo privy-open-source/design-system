@@ -1,20 +1,20 @@
 <script setup>
-    import Heading from './Heading.vue'
+  import Heading from './Heading.vue'
 </script>
 
 <style scoped lang="postcss">
-    h1, h2, h3, h4, h5, h6 {
-        &[class^='h'] {
-            @apply mt-0;
-            font-weight: inherit;
-        }
+  h1, h2, h3, h4, h5, h6 {
+    &[class^='h'] {
+      @apply mt-0;
+      font-weight: inherit;
     }
+  }
 
-    h2 {
-        &[class^='h'] {
-            @apply m-0 p-0 border-b-0;
-        }
+  h2 {
+    &[class^='h'] {
+      @apply m-0 p-0 border-b-0;
     }
+  }
 </style>
 
 # Heading

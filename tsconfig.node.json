@@ -4,6 +4,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "preserve",
+    "downlevelIteration": true,
     "types": [
       "vite/client",
       "jest-extended"

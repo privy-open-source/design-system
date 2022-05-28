@@ -3,8 +3,15 @@
     data-testid="card-section"
     :class="classNames">
     <div
-      v-if="title"
+      v-if="$slots.header"
+      data-testid="card-header"
       class="card__header">
+      <slot name="header" />
+    </div>
+
+    <div
+      v-else-if="title"
+      class="card__header card__header--default">
       <Subheading
         overline="medium">
         {{ title }}
@@ -12,15 +19,19 @@
 
       <span
         v-if="$slots.action"
+        data-testid="card-header-action"
         class="card__header__action">
         <slot name="action" />
       </span>
     </div>
+
     <div class="card__body">
       <slot />
     </div>
+
     <footer
       v-if="$slots.footer"
+      data-testid="card-footer"
       class="card__footer">
       <slot name="footer" />
     </footer>
@@ -36,7 +47,7 @@ export default defineComponent({
   props     : {
     title: {
       type   : String,
-      default: null,
+      default: undefined,
     },
     disabled: {
       type   : Boolean,

@@ -90,7 +90,7 @@ export default defineComponent({
     },
   },
   setup (props, { slots }) {
-    const context    = inject(DROPDOWN_TREE, undefined)
+    const context    = inject(DROPDOWN_TREE)
     const transition = ref<'slide-left' | 'slide-right' | 'none'>('slide-left')
 
     const isRoot = computed(() => {

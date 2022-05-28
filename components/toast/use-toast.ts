@@ -15,5 +15,6 @@ export interface ToastOption {
 }
 
 export default async function showToast (option: ToastOption) {
+  // eslint-disable-next-line unicorn/no-await-expression-member
   (await useSingleton(ToastContainer)).add(option)
 }

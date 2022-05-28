@@ -138,5 +138,5 @@
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
 
-export default defineComponent({ })
+export default defineComponent({})
 </script>

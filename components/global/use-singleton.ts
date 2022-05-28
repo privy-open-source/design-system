@@ -19,23 +19,23 @@ export type ComponentInstance<C extends Component> = InstanceType<C>
 let instances: Ref<Map<Component, Ref<ComponentInstance<any>>>>
 let container: App<Element>
 
-export async function useSingleton<C extends Component> (
-  component: C,
-): Promise<ComponentInstance<C>> {
-  if (!instances) instances = shallowRef(new Map())
+export async function useSingleton<C extends Component> (component: C): Promise<ComponentInstance<C>> {
+  if (!instances)
+    instances = shallowRef(new Map())
 
   if (!container) {
     const target = document.createElement('div')
     const app    = createApp({
       name  : 'GlobalContainer',
       render: () => {
-        return Array.from(instances.value.entries()).map(([element, cRef]) => {
-          return h(element, { ref: cRef })
-        })
+        return [...instances.value.entries()]
+          .map(([element, cRef]) => {
+            return h(element, { ref: cRef })
+          })
       },
     })
 
-    document.body.appendChild(target)
+    document.body.append(target)
     app.mount(target)
 
     target.id = 'global'
@@ -44,7 +44,7 @@ export async function useSingleton<C extends Component> (
 
   let instance = instances.value.get(component)
 
-  if (instance == null) {
+  if (!instance) {
     instance = ref()
     instances.value.set(component, instance)
 
@@ -56,9 +56,7 @@ export async function useSingleton<C extends Component> (
   return unref(instance)
 }
 
-export async function removeSingleton<C extends Component> (
-  component: C,
-): Promise<void> {
+export async function removeSingleton<C extends Component> (component: C): Promise<void> {
   if (instances && container) {
     instances.value.delete(component)
 

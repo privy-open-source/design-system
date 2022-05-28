@@ -1,7 +1,7 @@
 <template>
   <p
     data-testid="subheading"
-    :class="className">
+    :class="classNames">
     <slot />
   </p>
 </template>
@@ -24,32 +24,32 @@ export default defineComponent({
     },
     overline: {
       type   : String as PropType<OverlineVariant>,
-      default: null,
+      default: undefined,
     },
   },
 
   setup (props) {
-    const className = computed(() => {
+    const classNames = computed(() => {
       const result: String[] = ['subheading']
 
       if (props.overline)
         result.push(`subheading--overline-${props.overline}`)
 
+      // eslint-disable-next-line unicorn/explicit-length-check
       else if (props.size)
         result.push(`subheading--${props.size}`)
 
       return result
     })
 
-    return { className }
+    return { classNames }
   },
 })
-
 </script>
 
 <style lang="postcss">
 .subheading {
-  @apply uppercase tracking-[.009375rem];
+  @apply m-0 uppercase tracking-[.009375rem];
 
   &.subheading--md {
     @apply text-base font-medium leading-tight;
@@ -62,15 +62,15 @@ export default defineComponent({
   &.subheading--overline {
     &-normal,
     &-medium {
-        @apply text-[0.6875rem] leading-[1.4] tracking-[0.09375rem];
+      @apply text-[0.6875rem] leading-[1.4] tracking-[0.09375rem];
     }
 
     &-normal {
-        @apply font-normal;
+      @apply font-normal;
     }
 
     &-medium {
-        @apply font-medium;
+      @apply font-medium;
     }
   }
 }

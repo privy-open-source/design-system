@@ -1,14 +1,14 @@
 import { computed } from 'vue'
 import { useEventListener } from '@vueuse/core'
 import { tryOnMounted, watchDebounced } from '@vueuse/shared'
+import { SelectItem } from '../use-select'
+import { defineAdapter } from './adapter'
 import {
   getCurrentInstance,
   ref,
   watch,
   WatchSource,
 } from 'vue-demi'
-import { SelectItem } from '../use-select'
-import { defineAdapter } from './adapter'
 
 export type LoadFn = (keyword: string, page: number, perPage: number) => Promise<SelectItem[]>
 
@@ -41,7 +41,8 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
             if (result && result.length > 0) {
               options.value.push(...result)
               page.value++
-            } else isFinish.value = true
+            } else
+              isFinish.value = true
           })
           .finally(() => {
             isLoading.value = false
@@ -56,19 +57,14 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
 
       watch(keyword, () => {
         isTyping.value = true
-
         reset()
       })
 
-      watchDebounced(
-        keyword,
-        () => {
-          isTyping.value = false
+      watchDebounced(keyword, () => {
+        isTyping.value = false
 
-          load()
-        },
-        { debounce: 500 },
-      )
+        load()
+      }, { debounce: 500 })
 
       watch(isTyping, (value) => {
         // syncRef isTyping to isLoading

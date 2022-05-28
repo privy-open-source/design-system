@@ -13,7 +13,7 @@ export function usePopper (reference: Ref<PopperParameters[0]>, menu: Ref<Popper
   })
 
   tryOnUnmounted(() => {
-    if (popper.value != null)
+    if (popper.value !== undefined)
       popper.value.destroy()
   })
 

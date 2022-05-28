@@ -50,6 +50,7 @@ export default defineComponent({
       if (props.variant)
         result.push(`btn--${props.variant}`)
 
+      // eslint-disable-next-line unicorn/explicit-length-check
       if (props.size)
         result.push(`btn--${props.size}`)
 
@@ -157,7 +158,7 @@ export default defineComponent({
 }
 
 .btn--link {
-  @apply border border-transparent hover:underline;
+  @apply border border-transparent underline;
 
   &.btn--primary {
     @apply text-primary-100 hover:text-primary-hovered active:text-primary-focused;
