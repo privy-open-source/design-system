@@ -1,16 +1,19 @@
 import { CalendarItem } from './adapter'
 import { createMockContext } from './date.spec'
-import Adapter from "./year"
+import Adapter from './year'
 
 describe('getItems', () => {
   it('should be able to return list of year in one decade', () => {
-    const context  = createMockContext()
-    const items    = Adapter.getItems(context).map(i => i.text)
+    const context = createMockContext()
+    const items   = Adapter.getItems(context).map((i) => i.text)
+
+    /* eslint-disable array-element-newline, no-multi-spaces */
     const expected = [
       '2020', '2021', '2022', '2023',
       '2024', '2025', '2026', '2027',
       '2028', '2029',
     ]
+    /* eslint-enable array-element-newline, no-multi-spaces */
 
     expect(items).toStrictEqual(expected)
   })

@@ -1,8 +1,7 @@
-
-import { render, fireEvent } from "@testing-library/vue"
-import { vi } from "vitest"
-import { nextTick } from "vue-demi"
-import ToastContainer from "./ToastContainer.vue"
+import { render, fireEvent } from '@testing-library/vue'
+import { vi } from 'vitest'
+import { nextTick } from 'vue-demi'
+import ToastContainer from './ToastContainer.vue'
 
 beforeEach(() => {
   vi.useFakeTimers()
@@ -25,10 +24,10 @@ it('should be able to show all toast', async () => {
       addToast () {
         this.$refs.toast.add({
           title: 'This is title',
-          text : 'This is text message'
+          text : 'This is text message',
         })
-      }
-    }
+      },
+    },
   })
 
   const button = screen.queryByText('Show')
@@ -57,8 +56,8 @@ it('should removed automatically when duration timeout', async () => {
           text    : 'This is text message',
           duration: 10,
         })
-      }
-    }
+      },
+    },
   })
 
   const button = screen.queryByText('Show')
@@ -90,8 +89,8 @@ it('should removed when close clockid', async () => {
           title: 'This is title',
           text : 'This is text message',
         })
-      }
-    }
+      },
+    },
   })
 
   const button = screen.queryByText('Show')

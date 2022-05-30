@@ -1,13 +1,13 @@
-import { focusable } from "tabbable"
-import { Ref } from "vue-demi"
+import { focusable } from 'tabbable'
+import { Ref } from 'vue-demi'
 
 export function useFocus (target: Ref<HTMLElement>) {
   function travel (step: number) {
     const elements    = focusable(target.value)
-    const index       = elements.findIndex((el) => el === document.activeElement)
+    const index       = elements.indexOf(document.activeElement as HTMLElement)
     const targetFocus = elements.at((index + step) % elements.length)
 
-    if (targetFocus)
+    if (targetFocus !== undefined)
       targetFocus.focus()
   }
 

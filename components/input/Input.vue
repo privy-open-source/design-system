@@ -1,13 +1,13 @@
 <template>
   <input
+    v-model="value"
     data-testid="input"
-    class="input"
-    v-model="value" />
+    class="input">
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue-demi"
-import { useVModel } from "./use-input"
+import { defineComponent } from 'vue-demi'
+import { useVModel } from './use-input'
 
 export default defineComponent({
   props: {
@@ -15,25 +15,19 @@ export default defineComponent({
       type   : [String, Number],
       default: '',
     },
-    disabled: {
-      type: Boolean,
-    },
-    readonly: {
-      type: Boolean,
-    }
+    disabled: { type: Boolean },
+    readonly: { type: Boolean },
   },
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: [
-    'update:modelValue',
-  ],
+  emits: ['update:modelValue'],
   setup (props) {
     const value = useVModel(props)
 
     return { value }
-  }
+  },
 })
 </script>
 

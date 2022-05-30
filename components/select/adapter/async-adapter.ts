@@ -1,15 +1,20 @@
-import { computed } from "@vue/reactivity"
-import { useEventListener } from "@vueuse/core"
-import { tryOnMounted, watchDebounced } from "@vueuse/shared"
-import { getCurrentInstance, ref, watch, WatchSource } from "vue-demi"
-import { SelectItem } from "../use-select"
-import { defineAdapter } from "./adapter"
+import { computed } from 'vue'
+import { useEventListener } from '@vueuse/core'
+import { tryOnMounted, watchDebounced } from '@vueuse/shared'
+import { SelectItem } from '../use-select'
+import { defineAdapter } from './adapter'
+import {
+  getCurrentInstance,
+  ref,
+  watch,
+  WatchSource,
+} from 'vue-demi'
 
 export type LoadFn = (keyword: string, page: number, perPage: number) => Promise<SelectItem[]>
 
-export type AsyncHandler = {
-  load: LoadFn,
-  watch: WatchSource,
+export interface AsyncHandler {
+  load: LoadFn
+  watch: WatchSource
 }
 
 export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
@@ -24,15 +29,14 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
       const menuDiv = ref<HTMLDivElement>()
 
       const loadFn = computed(() => {
-        return typeof handler !== 'function'
-          ? handler.load
-          : handler
+        return typeof handler !== 'function' ? handler.load : handler
       })
 
-      function load() {
+      function load () {
         isLoading.value = true
 
-        loadFn.value(keyword.value, page.value, 20)
+        loadFn
+          .value(keyword.value, page.value, 20)
           .then((result) => {
             if (result && result.length > 0) {
               options.value.push(...result)
@@ -45,7 +49,7 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
           })
       }
 
-      function reset() {
+      function reset () {
         isFinish.value = false
         page.value     = 1
         options.value  = []
@@ -53,7 +57,6 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
 
       watch(keyword, () => {
         isTyping.value = true
-
         reset()
       })
 
@@ -90,6 +93,6 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
       }, { passive: true })
 
       return options
-    }
+    },
   })
 }

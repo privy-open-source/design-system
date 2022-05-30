@@ -17,13 +17,25 @@
         viewBox="0 0 14 10"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z" fill="white"/>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z"
+          fill="white" />
       </svg>
 
       <svg
         v-else
-        width="10" height="10" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="7" cy="7" r="6.25" fill="white"/>
+        width="10"
+        height="10"
+        viewBox="0 0 14 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <circle
+          cx="7"
+          cy="7"
+          r="6.25"
+          fill="white" />
       </svg>
     </span>
     <span class="radio__label">
@@ -33,8 +45,10 @@
 </template>
 
 <script lang="ts">
-import { useVModel } from "./use-radio"
-import { computed, defineComponent, PropType } from "vue-demi"
+import { useVModel } from './use-radio'
+import {
+  computed, defineComponent, PropType,
+} from 'vue-demi'
 
 export interface ChangedInteface {
   value: any,
@@ -46,17 +60,16 @@ type ApperanceType = 'radio' | 'checkbox'
 export default defineComponent({
   props: {
     name: {
-      type: String,
+      type   : String,
+      default: '',
     },
-    modelValue: {
-      default: false,
-    },
-    checked: {
+    // eslint-disable-next-line vue/require-prop-types
+    modelValue: { default: false },
+    // eslint-disable-next-line vue/require-prop-types
+    value     : { default: true },
+    checked   : {
       type   : Boolean,
       default: false,
-    },
-    value: {
-      default: true,
     },
     readonly: {
       type   : Boolean,
@@ -75,10 +88,7 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: [
-    'update:modelValue',
-    'change',
-  ],
+  emits: ['update:modelValue', 'change'],
   setup (props) {
     const model = useVModel(props)
 

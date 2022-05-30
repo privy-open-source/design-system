@@ -1,8 +1,8 @@
+import { vi } from 'vitest'
+import { nextTick } from 'vue-demi'
+import useLoading from './use-loading'
 
-import { vi } from "vitest"
-import { nextTick } from "vue-demi"
-import useLoading from "./use-loading"
-
+// eslint-disable-next-line @typescript-eslint/promise-function-async
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 beforeEach(() => {
@@ -19,19 +19,17 @@ it('should be "true" until all async function finish up ()', async () => {
   const fnA = () => {
     loading.value = true
 
-    delay(1000)
-      .finally(() => {
-        loading.value = false
-      })
+    delay(1000).finally(() => {
+      loading.value = false
+    })
   }
 
   const fnB = () => {
     loading.value = true
 
-    delay(3000)
-      .finally(() => {
-        loading.value = false
-      })
+    delay(3000).finally(() => {
+      loading.value = false
+    })
   }
 
   fnA()

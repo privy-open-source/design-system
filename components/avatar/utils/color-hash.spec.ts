@@ -1,6 +1,5 @@
-
-import { vi } from "vitest"
-import { colorHash, colorRandom } from "./color-hash"
+import { vi } from 'vitest'
+import { colorHash, colorRandom } from './color-hash'
 
 describe('colorHash', () => {
   it('should pick one of color randomly by hashing some text', () => {

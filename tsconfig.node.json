@@ -3,6 +3,11 @@
     "composite": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "downlevelIteration": true,
+    "types": [
+      "vite/client",
+      "jest-extended"
+    ]
   }
 }

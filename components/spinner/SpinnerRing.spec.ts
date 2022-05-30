@@ -1,10 +1,10 @@
-import { render } from "@testing-library/vue"
-import Spinner from "./SpinnerRing.vue"
+import { render } from '@testing-library/vue'
+import Spinner from './SpinnerRing.vue'
 
 it('should render properly without any props', () => {
   const screen = render({
     components: { Spinner },
-    template  : `<Spinner />`
+    template  : '<Spinner />',
   })
 
   const spinner = screen.getByTestId('spinner')

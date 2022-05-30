@@ -2,24 +2,26 @@ import { defineConfig } from 'vite'
 import { UserConfig } from 'vitest'
 import Vue from '@vitejs/plugin-vue'
 
-export default defineConfig({
-  plugins: [
-    Vue(),
-  ],
-  build: { sourcemap: true },
-  test : {
+const config = defineConfig({
+  plugins: [Vue()],
+  build  : { sourcemap: true },
+  test   : {
     globals    : true,
     environment: 'happy-dom',
     coverage   : {
-      reporter: ['text', 'json', 'html'],
-      exclude : [
+      reporter: [
+        'text',
+        'json',
+        'html',
+      ],
+      exclude: [
         '**/*.spec.ts',
         '**/__mocks__/*',
         'vitest.setup.ts',
       ],
     },
-    setupFiles: [
-      './vitest.setup.ts'
-    ]
+    setupFiles: ['./vitest.setup.ts'],
   },
-} as UserConfig)
+}) as UserConfig
+
+export default config

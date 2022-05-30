@@ -1,16 +1,16 @@
 <template>
   <Dropdown
+    v-model="isOpen"
     class="select"
     data-testid="select"
-    :class="classNames"
-    v-model="isOpen">
+    :class="classNames">
     <template #activator>
       <Input
-        class="select__search"
         v-model="search"
-        @focus="onFocus"
+        class="select__search"
         :placeholder="placeholder"
-        :disabled="disabled" />
+        :disabled="disabled"
+        @focus="onFocus" />
       <IconArrow class="select__caret" />
     </template>
 
@@ -22,11 +22,15 @@
       </div>
     </template>
 
-    <template v-else v-for="item in items">
+    <template v-else>
       <DropdownItem
+        v-for="(item, i) in items"
+        :key="i"
         :class="{ selected: isSelected(item) }"
         @click="select(item)">
-        <slot name="option" :item="item">
+        <slot
+          name="option"
+          :item="item">
           <div class="select__option">
             <span class="select__option-text">{{ item.text }}</span>
             <IconCheck
@@ -39,7 +43,9 @@
     <template v-if="isLoading">
       <div class="select__loading">
         <slot name="loading">
-          <IconLoading width="14" height="14" />
+          <IconLoading
+            width="14"
+            height="14" />
           Loading...
         </slot>
       </div>
@@ -48,18 +54,23 @@
 </template>
 
 <script lang="ts">
-import Dropdown from "../dropdown/Dropdown.vue"
-import DropdownItem from "../dropdown/DropdownItem.vue"
-import Input from "../input/Input.vue"
-import IconArrow from "@carbon/icons-vue/lib/chevron--down/16"
-import IconCheck from "@carbon/icons-vue/lib/checkmark--filled/16"
-import IconLoading from "../spinner/SpinnerRing.vue"
-import { computed, defineComponent, PropType, ref } from "vue-demi"
-import { SelectItem } from "./use-select"
-import { Adapter } from "./adapter/adapter"
-import BasicAdapter from "./adapter/basic-adapter"
-import useLoading from "../overlay/utils/use-loading"
-import { isEqual } from "../utils/value"
+import Dropdown from '../dropdown/Dropdown.vue'
+import DropdownItem from '../dropdown/DropdownItem.vue'
+import Input from '../input/Input.vue'
+import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
+import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/16'
+import IconLoading from '../spinner/SpinnerRing.vue'
+import {
+  computed,
+  defineComponent,
+  PropType,
+  ref,
+} from 'vue-demi'
+import { SelectItem } from './use-select'
+import { Adapter } from './adapter/adapter'
+import BasicAdapter from './adapter/basic-adapter'
+import useLoading from '../overlay/utils/use-loading'
+import { isEqual } from '../utils/value'
 
 export default defineComponent({
   components: {
@@ -68,14 +79,19 @@ export default defineComponent({
     Input,
     IconArrow,
     IconCheck,
-    IconLoading
+    IconLoading,
   },
   props: {
-    modelValue: {
-      default: '',
-    },
-    selected: {
-      type: Object as PropType<SelectItem>,
+    // eslint-disable-next-line vue/require-prop-types
+    modelValue: { default: '' },
+    selected  : {
+      type   : Object as PropType<SelectItem>,
+      default: () => {
+        return {
+          text : '',
+          value: undefined,
+        }
+      },
     },
     options: {
       type   : Array as PropType<string[] | SelectItem[]>,
@@ -96,7 +112,7 @@ export default defineComponent({
     disabled: {
       type   : Boolean,
       default: false,
-    }
+    },
   },
   models: {
     prop : 'modelValue',
@@ -123,7 +139,10 @@ export default defineComponent({
     const model = computed({
       get (): SelectItem {
         return items.value.find((item) => isEqual(item.value, props.modelValue))
-          ?? { text: '', value: undefined }
+          ?? {
+            text : '',
+            value: undefined,
+          }
       },
       set (selected: SelectItem) {
         emit('update:modelValue', selected.value)
@@ -131,7 +150,7 @@ export default defineComponent({
 
         if (isOpen.value)
           emit('userInput', selected)
-      }
+      },
     })
 
     const classNames = computed(() => {
@@ -150,8 +169,9 @@ export default defineComponent({
           : model.value?.text
       },
       set (value: string) {
-        keyword.value = value
-      }
+        if (value !== search.value)
+          keyword.value = value
+      },
     })
 
     function select (item: SelectItem) {
@@ -179,7 +199,7 @@ export default defineComponent({
       onFocus,
       isSelected,
     }
-  }
+  },
 })
 </script>
 

@@ -1,7 +1,6 @@
-
-import { render, fireEvent } from "@testing-library/vue"
-import { nextTick } from "vue-demi"
-import Overlay from "./Overlay.vue"
+import { render, fireEvent } from '@testing-library/vue'
+import { nextTick } from 'vue-demi'
+import Overlay from './Overlay.vue'
 
 it('should able to display overlay', async () => {
   const screen = render({
@@ -13,7 +12,7 @@ it('should able to display overlay', async () => {
     `,
     mounted () {
       this.$refs.overlay.show()
-    }
+    },
   })
 
   await nextTick()
@@ -34,10 +33,10 @@ it('should display overlay if "show" called', async () => {
       </div>
     `,
     methods: {
-      showOverlay() {
+      showOverlay () {
         this.$refs.overlay.show()
-      }
-    }
+      },
+    },
   })
 
   const showBtn = screen.queryByText('Show')
@@ -62,10 +61,10 @@ it('should hide overlay if "hide" called', async () => {
       this.$refs.overlay.show()
     },
     methods: {
-      hideOverlay() {
+      hideOverlay () {
         this.$refs.overlay.hide()
-      }
-    }
+      },
+    },
   })
 
   await nextTick()

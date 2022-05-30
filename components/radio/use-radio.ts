@@ -1,8 +1,8 @@
-import { computed, getCurrentInstance } from "vue-demi"
-import type { CheckboxProps } from "../checkbox/use-checkbox"
-import { isEqual } from "../utils/value"
+import { computed, getCurrentInstance } from 'vue-demi'
+import type { CheckboxProps } from '../checkbox/use-checkbox'
+import { isEqual } from '../utils/value'
 
-export type RadioProps = Omit<CheckboxProps, "uncheckedValue">
+export type RadioProps = Omit<CheckboxProps, 'uncheckedValue'>
 
 export function useVModel (props: RadioProps) {
   const { emit } = getCurrentInstance()
@@ -15,8 +15,7 @@ export function useVModel (props: RadioProps) {
     set (value: boolean) {
       emit('change', value)
 
-      if (value)
-        emit('update:modelValue', checked)
+      if (value) emit('update:modelValue', checked)
     },
   })
 
