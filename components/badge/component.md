@@ -57,13 +57,12 @@ Badge available in 7 different colors. There are `primary`, `secondary`, `succes
 ```
 
 ## Variants
-Badge has 3 variants namely `light`, `inverse` and `dot`. When variant is not set, badge will looks as a  `default`
+Badge has 2 variants namely `light` and `inverse`. When variant is not set, badge will looks as a `default`
 
 <preview>
   <Badge>25</Badge>
   <Badge variant="light">7K</Badge>
   <Badge variant="inverse">999+</Badge>
-  <Badge variant="dot" />
 </preview>
 
 ```vue
@@ -71,7 +70,6 @@ Badge has 3 variants namely `light`, `inverse` and `dot`. When variant is not se
   <Badge>25</Badge>
   <Badge variant="light">7K</Badge>
   <Badge variant="inverse">999+</Badge>
-  <Badge variant="dot" />
 </template>
 ```
 
@@ -82,23 +80,13 @@ Badge has 3 variants namely `light`, `inverse` and `dot`. When variant is not se
 | Props      |   Type    |  Default  | Description                                                                                                 |
 |------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
 | `color`    | `String`  | `primary` | Badge color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
-| `variant`    | `String`  | - | Badge variant, valid value is `light`, `inverse` and `dot`. If `dot` variant is enable, badge content will be hide automatically. When need badge in `default` variant, just leave badge without setting up the variant. |
+| `variant`    | `String`  | - | Badge variant, valid value is `light` and `inverse`. If need badge in `default` variant, just leave badge without setting up the variant. |
 
 ### Slots
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2" class="text-center">There no slots here</td>
-    </tr>
-  </tbody>
-</table>
+| Name      | Description                 |
+|-----------|-----------------------------|
+| `default` | Content to place in badge |
 
 ### Events
 

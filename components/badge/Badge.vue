@@ -2,10 +2,7 @@
   <div
     data-testid="badge"
     :class="classNames">
-    <Dot
-      v-if="variant === 'dot'"
-      :color="color" />
-    <slot v-else />
+    <slot />
   </div>
 </template>
 
@@ -13,14 +10,12 @@
 import {
   defineComponent, PropType, computed,
 } from 'vue-demi'
-import Dot from '../dot/Dot.vue'
 
 type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
-type StyleVariant = 'light' | 'inverse' | 'dot'
+type StyleVariant = 'light' | 'inverse'
 
 export default defineComponent({
-  components: { Dot },
-  props     : {
+  props: {
     color: {
       type   : String as PropType<ColorVariant>,
       default: 'primary',

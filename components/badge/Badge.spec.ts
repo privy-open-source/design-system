@@ -49,19 +49,3 @@ it('should have style "light" if variant props set to "light"', () => {
   expect(badge).toHaveClass('badge', 'badge--warning', 'badge--light')
   expect(text).toBeInTheDocument()
 })
-
-it('should have style "dot" if variant props set to "dot"', () => {
-  const screen = render({
-    components: { Badge },
-    template  : `
-      <Badge color="danger" variant="dot" />
-    `,
-  })
-
-  const badge = screen.queryByTestId('badge')
-  const dot   = screen.queryByTestId('dot')
-
-  expect(badge).toBeInTheDocument()
-  expect(badge).toHaveClass('badge', 'badge--danger', 'badge--dot')
-  expect(dot).toBeInTheDocument()
-})
