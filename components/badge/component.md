@@ -57,7 +57,7 @@ Badge available in 7 different colors. There are `primary`, `secondary`, `succes
 ```
 
 ## Variants
-Badge has 4 variants namely `default`, `light`, `inverse` and `dot`. When variant is not set, badge will looks as a  `default`
+Badge has 3 variants namely `light`, `inverse` and `dot`. When variant is not set, badge will looks as a  `default`
 
 <preview>
   <Badge>25</Badge>

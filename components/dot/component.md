@@ -15,7 +15,7 @@
 </style>
 
 # Dot
-Dot is a sub-component used for [Badge](/badge/component) and [Label](/label/component)
+Dot is a sub-component used for [Badge](/badge/component) and Label
 
 ## Usage
 
