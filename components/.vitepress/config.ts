@@ -40,6 +40,10 @@ export default defineConfig({
             link: '/avatar/component'
           },
           {
+            text: 'Badge',
+            link: '/badge/component'
+          },
+          {
             text: 'Banner',
             link: '/banner/component'
           },
@@ -50,6 +54,10 @@ export default defineConfig({
           {
             text: 'Card',
             link: '/card/component'
+          },
+          {
+            text: 'Dot',
+            link: '/dot/component'
           },
           {
             text: 'Dropdown',
