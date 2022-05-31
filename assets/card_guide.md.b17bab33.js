@@ -1,1 +1,0 @@
-import{_ as e,b as t,a}from"./app.551c609b.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"card/guide.md"}',r={};function o(c,s,n,d,i,_){return a(),t("div")}var l=e(r,[["render",o]]);export{f as __pageData,l as default};
