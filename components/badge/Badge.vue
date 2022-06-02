@@ -12,7 +12,7 @@ import {
 } from 'vue-demi'
 
 type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
-type StyleVariant = 'light' | 'inverse'
+type StyleVariant = 'default' | 'light' | 'inverse'
 
 export default defineComponent({
   props: {
@@ -22,7 +22,7 @@ export default defineComponent({
     },
     variant: {
       type   : String as PropType<StyleVariant>,
-      default: undefined,
+      default: 'default',
     },
   },
 

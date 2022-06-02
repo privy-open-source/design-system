@@ -13,7 +13,7 @@ it('should render properly without any props', () => {
   const text  = screen.queryByText('25')
 
   expect(badge).toBeInTheDocument()
-  expect(badge).toHaveClass('badge', 'badge--primary')
+  expect(badge).toHaveClass('badge', 'badge--default', 'badge--primary')
   expect(text).toBeInTheDocument()
 })
 

@@ -5,10 +5,10 @@
 <style scoped lang="postcss">
   .preview {
     .dot {
-      margin-right: 1rem;
+      @apply mr-4;
 
       &:last-child {
-        margin-right: 0;
+        @apply mr-0;
       }
     }
   }
