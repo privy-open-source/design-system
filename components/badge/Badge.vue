@@ -12,7 +12,7 @@ import {
 } from 'vue-demi'
 
 type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
-type StyleVariant = 'light' | 'inverse'
+type StyleVariant = 'default' | 'light' | 'inverse'
 
 export default defineComponent({
   props: {
@@ -22,7 +22,7 @@ export default defineComponent({
     },
     variant: {
       type   : String as PropType<StyleVariant>,
-      default: undefined,
+      default: 'default',
     },
   },
 
@@ -65,66 +65,72 @@ export default defineComponent({
   * primary, secondary, success
   * info, warning, danger, & gold
   */
-  &--primary {
-    @apply bg-primary-100;
-  }
+  &--default {
+    &.badge {
+      &--primary {
+        @apply bg-primary-100;
+      }
 
-  &--secondary {
-    @apply bg-secondary-100;
-  }
+      &--secondary {
+        @apply bg-secondary-100;
+      }
 
-  &--success {
-    @apply bg-success-100;
-  }
+      &--success {
+        @apply bg-success-100;
+      }
 
-  &--info {
-    @apply bg-info-100;
-  }
+      &--info {
+        @apply bg-info-100;
+      }
 
-  &--warning {
-    @apply bg-warning-100;
-  }
+      &--warning {
+        @apply bg-warning-100;
+      }
 
-  &--danger {
-    @apply bg-danger-100;
-  }
+      &--danger {
+        @apply bg-danger-100;
+      }
 
-  &--gold {
-    @apply bg-gold-100;
+      &--gold {
+        @apply bg-gold-100;
+      }
+    }
   }
 
   /**
   * Set color of Badge
   * in light and inverse variant
   */
-  &&--light,
-  &&--inverse {
-    &.badge--primary {
-      @apply text-primary-100;
-    }
+  &--light,
+  &--inverse {
+    &.badge {
+      &--primary {
+        @apply text-primary-100;
+      }
 
-    &.badge--secondary {
-      @apply text-secondary-100;
-    }
+      &--secondary {
+        @apply text-secondary-100;
+      }
 
-    &.badge--success {
-      @apply text-success-100;
-    }
+      &--success {
+        @apply text-success-100;
+      }
 
-    &.badge--info {
-      @apply text-info-100;
-    }
+      &--info {
+        @apply text-info-100;
+      }
 
-    &.badge--warning {
-      @apply text-warning-100;
-    }
+      &--warning {
+        @apply text-warning-100;
+      }
 
-    &.badge--danger {
-      @apply text-danger-100;
-    }
+      &--danger {
+        @apply text-danger-100;
+      }
 
-    &.badge--gold {
-      @apply text-gold-100;
+      &--gold {
+        @apply text-gold-100;
+      }
     }
   }
 
@@ -132,33 +138,35 @@ export default defineComponent({
   * Set background
   * in light variant
   */
-  &&--light {
-    &.badge--primary {
-      @apply bg-primary-5;
-    }
+  &--light {
+    &.badge {
+      &--primary {
+        @apply bg-primary-5;
+      }
 
-    &.badge--secondary {
-      @apply bg-secondary-5;
-    }
+      &--secondary {
+        @apply bg-secondary-5;
+      }
 
-    &.badge--success {
-      @apply bg-success-5;
-    }
+      &--success {
+        @apply bg-success-5;
+      }
 
-    &.badge--info {
-      @apply bg-info-5;
-    }
+      &--info {
+        @apply bg-info-5;
+      }
 
-    &.badge--warning {
-      @apply bg-warning-5;
-    }
+      &--warning {
+        @apply bg-warning-5;
+      }
 
-    &.badge--danger {
-      @apply bg-danger-5;
-    }
+      &--danger {
+        @apply bg-danger-5;
+      }
 
-    &.badge--gold {
-      @apply bg-gold-5;
+      &--gold {
+        @apply bg-gold-5;
+      }
     }
   }
 
@@ -166,8 +174,8 @@ export default defineComponent({
   * Remove background
   * in inverse and dot variant
   */
-  &&--inverse,
-  &&--dot {
+  &--inverse,
+  &--dot {
     @apply bg-transparent;
   }
 
@@ -175,7 +183,7 @@ export default defineComponent({
   * Reset box-model of
   * dot variant
   */
-  &&--dot {
+  &--dot {
     @apply p-0 m-0 tracking-[0];
 
     .dot {
