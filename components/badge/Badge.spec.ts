@@ -47,5 +47,6 @@ it('should have style "light" if variant props set to "light"', () => {
 
   expect(badge).toBeInTheDocument()
   expect(badge).toHaveClass('badge', 'badge--warning', 'badge--light')
+  expect(badge).not.toHaveClass('badge--default')
   expect(text).toBeInTheDocument()
 })
