@@ -1,4 +1,5 @@
-import { render } from '@testing-library/vue'
+import { vi } from 'vitest'
+import { render, fireEvent } from '@testing-library/vue'
 import Label from './Label.vue'
 
 it('should render properly without any props', () => {
@@ -75,4 +76,46 @@ it('should have style "large" if size props set to "large"', () => {
   expect(dot).toBeInTheDocument()
   expect(dot).toHaveClass('dot', 'dot--danger')
   expect(text).toBeInTheDocument()
+})
+
+it('should have close button if props "dismissable" set to true', () => {
+  const screen = render({
+    components: { Label },
+    template  : `
+      <Label :dismissable="true">
+        Label
+      </Label>
+    `,
+  })
+
+  const dismiss = screen.queryByTestId('label-dismiss')
+
+  expect(dismiss).toBeInTheDocument()
+})
+
+it('should emit event "dismissed" if close button clicked', async () => {
+  const spy    = vi.fn()
+  const screen = render({
+    components: { Label },
+    template  : `
+      <Label
+        :dismissable="true"
+        @dismissed="onDismissed">
+        Label
+      </Label>
+    `,
+    methods: { onDismissed: spy },
+  })
+
+  const label = screen.queryByTestId('label')
+  const text  = screen.queryByText('Label')
+  const close = screen.queryByTestId('label-dismiss')
+
+  expect(label).toBeInTheDocument()
+  expect(text).toBeInTheDocument()
+  expect(close).toBeInTheDocument()
+
+  await fireEvent.click(close)
+
+  expect(spy).toBeCalled()
 })

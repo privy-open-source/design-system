@@ -1,26 +1,36 @@
 <template>
   <div
+    v-if="show"
     data-testid="label"
     :class="classNames">
     <Dot
       v-if="variant === 'dot'"
       data-testid="dot"
       :color="color" /> <slot />
+
+    <span
+      v-if="dismissable"
+      data-testid="label-dismiss"
+      class="label__dismiss"
+      @click="close">
+      <IconClose />
+    </span>
   </div>
 </template>
 
 <script lang="ts">
 import {
-  defineComponent, PropType, computed,
+  defineComponent, PropType, computed, ref,
 } from 'vue-demi'
 import Dot from '../dot/Dot.vue'
+import IconClose from '@carbon/icons-vue/lib/close/16'
 
 type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
 type StyleVariant = 'default' | 'light' | 'dot'
 type SizeVariant = 'large' | 'medium' | 'small' | 'tiny'
 
 export default defineComponent({
-  components: { Dot },
+  components: { Dot, IconClose },
   props     : {
     color: {
       type   : String as PropType<ColorVariant>,
@@ -34,9 +44,17 @@ export default defineComponent({
       type   : String as PropType<SizeVariant>,
       default: 'medium',
     },
+    dismissable: {
+      type   : Boolean,
+      default: false,
+    },
   },
 
-  setup (props) {
+  emits: ['dismissed'],
+
+  setup (props, { emit }) {
+    const show = ref(true)
+
     const classNames = computed(() => {
       const result: string[] = ['label']
 
@@ -53,7 +71,14 @@ export default defineComponent({
       return result
     })
 
-    return { classNames }
+    function close (): void {
+      show.value = false
+      emit('dismissed')
+    }
+
+    return {
+      classNames, show, close,
+    }
   },
 
 })
@@ -64,12 +89,21 @@ export default defineComponent({
 * Component Name: Label
 * Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=308%3A15173
 * Date Created  : June 2, 2022
-* Last Update   : June 2, 2022
+* Last Update   : June 3, 2022
 */
 
 .label {
   @apply inline-flex items-center border border-transparent;
 
+  &__dismiss {
+    @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-black border-opacity-10 text-black text-opacity-30;
+  }
+
+  /**
+  * Provide size of label
+  * There are large, medium
+  * small and tiny
+  */
   &--large {
     @apply text-base px-4 py-2 rounded;
   }
@@ -86,6 +120,10 @@ export default defineComponent({
     @apply px-2 py-0 text-xs rounded-tn;
   }
 
+  /**
+  * Set default label with
+  * color variant
+  */
   &--default {
     @apply text-white;
 
@@ -120,6 +158,10 @@ export default defineComponent({
     }
   }
 
+  /**
+  * Provide light variant
+  * in all color
+  */
   &--light {
     &.label {
       &--primary {
@@ -152,7 +194,15 @@ export default defineComponent({
     }
   }
 
+  /**
+  * Provide dot variant
+  * in all color
+  */
   &--dot {
+    /**
+    * Dot variant have
+    * white background and bordered
+    */
     @apply bg-white text-body-100 border-black border-opacity-10;
 
     &.label {

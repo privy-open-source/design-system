@@ -75,7 +75,7 @@ Label has 3 variants namely `default`, `light` and `dot`. When variant is not se
 Label has 4 size, namely `large`, `medium`, `small` and `tiny`. When size is not set, default label is `medium`
 
 <preview>
-  <Label size="large" color="success" variant="dot">Label</Label>
+  <Label size="large">Label</Label>
   <Label size="medium">Label</Label>
   <Label size="small">Label</Label>
   <Label size="tiny">Label</Label>
@@ -90,6 +90,19 @@ Label has 4 size, namely `large`, `medium`, `small` and `tiny`. When size is not
 </template>
 ```
 
+## Dismissible
+Label has dismiss feature. It can be show or hide by `dismissable` props. If `dismissable` set to `true`, dismiss button will show.
+
+<preview>
+  <Label :dismissable="true">Label</Label>
+</preview>
+
+```vue
+<template>
+  <Label :dismissable="true">Label</Label>
+</template>
+```
+
 ## API
 
 ### Props
@@ -99,9 +112,17 @@ Label has 4 size, namely `large`, `medium`, `small` and `tiny`. When size is not
 | `color`    | `String`  | `primary` | Label color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
 | `variant`    | `String`  | `default` | Label variant, valid value is `default`, `light` and `dot`. |
 | `size`    | `String`  | `medium` | Label variant, valid value is `large`, `medium`, `small` and `tiny`. |
+| `dismissable` | `Boolean` | `false`     | Show / Hide dismiss button                                      |
 
 ### Slots
 
 | Name      | Description                 |
 |-----------|-----------------------------|
 | `default` | Content to place in badge |
+
+### Events
+
+
+| Name        | Arguments | Description                     |
+|-------------|-----------|---------------------------------|
+| `dismissed` | -         | Event when close button clicked |
