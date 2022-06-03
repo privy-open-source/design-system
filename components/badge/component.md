@@ -5,10 +5,10 @@
 <style scoped lang="postcss">
   .preview {
     .badge {
-      margin-right: 1rem;
+      @apply mr-4;
 
       &:last-child {
-        margin-right: 0;
+        @apply mr-0;
       }
     }
   }
@@ -57,7 +57,7 @@ Badge available in 7 different colors. There are `primary`, `secondary`, `succes
 ```
 
 ## Variants
-Badge has 2 variants namely `light` and `inverse`. When variant is not set, badge will looks as a `default`
+Badge has 3 variants namely `default`, `light` and `inverse`. When variant is not set, badge will looks as a `default`
 
 <preview>
   <Badge>25</Badge>
@@ -80,16 +80,15 @@ Badge has 2 variants namely `light` and `inverse`. When variant is not set, badg
 | Props      |   Type    |  Default  | Description                                                                                                 |
 |------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
 | `color`    | `String`  | `primary` | Badge color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
-| `variant`    | `String`  | - | Badge variant, valid value is `light` and `inverse`. If need badge in `default` variant, just leave badge without setting up the variant. |
+| `variant`    | `String`  | `default` | Badge variant, valid value is `default`, `light` and `inverse`. If need badge in `default` variant, just leave badge without setting up the variant. |
 
 ### Slots
 
 | Name      | Description                 |
 |-----------|-----------------------------|
-| `default` | Content to place in badge |
+| `default` | Content to place in badge   |
 
 ### Events
-
 <table>
   <thead>
     <tr>
@@ -100,7 +99,7 @@ Badge has 2 variants namely `light` and `inverse`. When variant is not set, badg
   </thead>
   <tbody>
     <tr>
-      <td colspan="3" class="text-center">There no event here</td>
+      <td colspan="3" class="text-center">There is no event here</td>
     </tr>
   </tbody>
 </table>

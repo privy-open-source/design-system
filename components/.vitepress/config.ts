@@ -22,6 +22,10 @@ export default defineConfig({
         collapsable: true,
         children   : [
           {
+            text: 'Badge',
+            link: '/badge/guide'
+          },
+          {
             text: 'Banner',
             link: '/banner/guide'
           },
