@@ -1,1 +1,0 @@
-import{s}from"./index.f3792389.js";import{r as u,c as l,z as n}from"../app.4faac3d2.js";function d(e){const t=u(e.modelValue),{emit:o}=n(),a=l({get(){return e.modelValue},set(r){o("update:modelValue",r)}});return s(t,a),t}export{d as u};
