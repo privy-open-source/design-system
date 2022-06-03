@@ -68,6 +68,10 @@ export default defineConfig({
             link: '/dropdown/component'
           },
           {
+            text: 'Label',
+            link: '/label/component'
+          },
+          {
             text: 'Spinner',
             link: '/spinner/component'
           },
