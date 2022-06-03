@@ -95,11 +95,15 @@ Label has dismiss feature. It can be show or hide by `dismissable` props. If `di
 
 <preview>
   <Label :dismissable="true">Label</Label>
+  <Label variant="light" :dismissable="true">Label</Label>
+  <Label variant="dot" :dismissable="true">Label</Label>
 </preview>
 
 ```vue
 <template>
   <Label :dismissable="true">Label</Label>
+  <Label variant="light" :dismissable="true">Label</Label>
+  <Label variant="dot" :dismissable="true">Label</Label>
 </template>
 ```
 

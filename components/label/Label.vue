@@ -95,6 +95,9 @@ export default defineComponent({
 .label {
   @apply inline-flex items-center border border-transparent;
 
+  /**
+  * Add dismiss button
+  */
   &__dismiss {
     @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-black border-opacity-10 text-black text-opacity-30;
   }
