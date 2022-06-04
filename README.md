@@ -14,6 +14,12 @@ TODO
 ## Contribution
 See [Contributing Guide](/CONTRIBUTE.md)
 
+## Thanks to
+
+<a href="https://github.com/privy-open-source/design-system/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=privy-open-source/design-system" />
+</a>
+
 ## License
 
 [MIT](/LICENSE) License (c) 2022 Privy Identitas Digital
