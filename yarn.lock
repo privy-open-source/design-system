@@ -454,7 +454,7 @@ __metadata:
     vite: 2.9.9
     vitepress: 0.22.4
     vitest: 0.13.0
-    vue-demi: 0.12.5
+    vue-demi: 0.13.1
   languageName: unknown
   linkType: soft
 
@@ -5810,7 +5810,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:*, vue-demi@npm:0.12.5":
+"vue-demi@npm:*":
   version: 0.12.5
   resolution: "vue-demi@npm:0.12.5"
   peerDependencies:
@@ -5823,6 +5823,22 @@ __metadata:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
   checksum: 40a0470caea8312e0d4df2541f141c36c768dfc7f2f7d41f0f28ba29df11d3119e2f09b94c815f13b7c7f3f45dbc247b0e9e0c02a1800e2823e241c1d771e39b
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:0.13.1":
+  version: 0.13.1
+  resolution: "vue-demi@npm:0.13.1"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: d26b0602587f4dbd81f975f8f2de39910239805f0f2d72cafed0c7349c512f5363daf57e2761ba6a7ac66331a4cfa3dc857d6f7f62c57adbae85752d270118c8
   languageName: node
   linkType: hard
 
