@@ -3,10 +3,12 @@
     v-model="isOpen"
     class="select"
     data-testid="select"
+    aria-label="select"
     :class="classNames">
     <template #activator>
       <Input
         v-model="search"
+        data-testid="select-search"
         class="select__search"
         :placeholder="placeholder"
         :disabled="disabled"
@@ -15,7 +17,9 @@
     </template>
 
     <template v-if="!isLoading && items.length === 0">
-      <div class="select__empty">
+      <div
+        data-testid="select-item"
+        class="select__empty">
         <slot name="empty">
           No Data
         </slot>
@@ -26,13 +30,16 @@
       <DropdownItem
         v-for="(item, i) in items"
         :key="i"
+        data-testid="select-item"
         :class="{ selected: isSelected(item) }"
         @click="select(item)">
         <slot
           name="option"
           :item="item">
           <div class="select__option">
-            <span class="select__option-text">{{ item.text }}</span>
+            <span class="select__option-text">
+              {{ item.text }}
+            </span>
             <IconCheck
               class="select__option-checked" />
           </div>
@@ -41,7 +48,9 @@
     </template>
 
     <template v-if="isLoading">
-      <div class="select__loading">
+      <div
+        data-testid="select-loading"
+        class="select__loading">
         <slot name="loading">
           <IconLoading
             width="14"
@@ -126,7 +135,7 @@ export default defineComponent({
   setup (props, { emit }) {
     const keyword   = ref('')
     const isOpen    = ref(false)
-    const isLoading = useLoading()
+    const isLoading = useLoading({ elapsed: false })
     const context   = {
       props,
       keyword,

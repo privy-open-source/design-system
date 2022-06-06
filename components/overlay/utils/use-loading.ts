@@ -2,7 +2,7 @@ import { tryOnMounted } from '@vueuse/shared'
 import { computed, ref } from 'vue-demi'
 
 export interface LoadingOptions {
-  elapsed: number | boolean
+  elapsed: number | boolean,
 }
 
 export default function useLoading (options_?: LoadingOptions) {

@@ -13,6 +13,12 @@
     "downlevelIteration": true,
     "lib": ["esnext", "dom"]
   },
+  "include": [
+    "components/**/*.ts",
+    "components/**/*.d.ts",
+    "components/**/*.tsx",
+    "components/**/*.vue"
+  ],
   "exclude": [
     "node_modules",
     "dist",

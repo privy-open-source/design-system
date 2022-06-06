@@ -6,12 +6,12 @@ export type ToastTypeVariant = 'info' | 'success' | 'warn' | 'error'
 export type ToastStyleVariant = 'simple' | 'filled'
 
 export interface ToastOption {
-  type?: ToastTypeVariant
-  variant?: ToastStyleVariant
-  title: string
-  text: string
-  duration?: number
-  toastClass?: string | string[]
+  type?: ToastTypeVariant,
+  variant?: ToastStyleVariant,
+  title: string,
+  text: string,
+  duration?: number,
+  toastClass?: string | string[],
 }
 
 export default async function showToast (option: ToastOption) {

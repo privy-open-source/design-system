@@ -69,10 +69,18 @@ import Button from '../button/Button.vue'
 import IconNext from '@carbon/icons-vue/lib/chevron--right/20'
 import IconBack from '@carbon/icons-vue/lib/chevron--left/20'
 import {
-  defineComponent, ref, computed, watch, toRef, PropType,
+  defineComponent,
+  ref,
+  computed,
+  watch,
+  toRef,
+  PropType,
 } from 'vue-demi'
 import {
-  CalendarAdapter, CalendarFormat, CalendarItem, CalendarMode,
+  CalendarAdapter,
+  CalendarFormat,
+  CalendarItem,
+  CalendarMode,
 } from './adapter/adapter'
 import DateAdapter from './adapter/date'
 import MonthAdapter from './adapter/month'

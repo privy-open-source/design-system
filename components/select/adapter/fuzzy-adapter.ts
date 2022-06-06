@@ -14,7 +14,8 @@ export default defineAdapter({
 
     const normalizeOptions = useOptionsProp(props)
     const filteredOptions  = computed(() => {
-      if (!keyword.value) return normalizeOptions.value
+      if (!keyword.value)
+        return normalizeOptions.value
 
       return fuse.value.search(keyword.value).map((result) => {
         return result.item
