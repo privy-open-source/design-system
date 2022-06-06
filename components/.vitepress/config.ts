@@ -20,6 +20,10 @@ export default defineConfig({
         collapsable: true,
         children   : [
           {
+            text: 'Badge',
+            link: '/badge/guide'
+          },
+          {
             text: 'Banner',
             link: '/banner/guide'
           },
@@ -38,6 +42,10 @@ export default defineConfig({
             link: '/avatar/component'
           },
           {
+            text: 'Badge',
+            link: '/badge/component'
+          },
+          {
             text: 'Banner',
             link: '/banner/component'
           },
@@ -50,8 +58,16 @@ export default defineConfig({
             link: '/card/component'
           },
           {
+            text: 'Dot',
+            link: '/dot/component'
+          },
+          {
             text: 'Dropdown',
             link: '/dropdown/component'
+          },
+          {
+            text: 'Label',
+            link: '/label/component'
           },
           {
             text: 'Spinner',

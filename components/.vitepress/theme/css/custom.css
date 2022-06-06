@@ -35,3 +35,11 @@
 .content .token.attr-name {
   @apply text-[#cc99cd];
 }
+
+a.header-anchor {
+  margin-left: -1.25em;
+}
+
+h2 {
+  border-bottom-color: transparent;
+}

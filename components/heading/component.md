@@ -110,7 +110,7 @@ Use for the title of each top-level page section. The default element of heading
   </thead>
   <tbody>
     <tr>
-      <td colspan="3" class="text-center">There no props here</td>
+      <td colspan="3" class="text-center">There no event here</td>
     </tr>
   </tbody>
 </table>
