@@ -4,6 +4,7 @@
     class="select"
     data-testid="select"
     aria-label="select"
+    :disabled="disabled"
     :class="classNames">
     <template #activator>
       <Input
@@ -12,13 +13,14 @@
         class="select__search"
         :placeholder="placeholder"
         :disabled="disabled"
+        :readonly="readonly"
         @focus="onFocus" />
       <IconArrow class="select__caret" />
     </template>
 
     <template v-if="!isLoading && items.length === 0">
       <div
-        data-testid="select-item"
+        data-testid="select-no-data"
         class="select__empty">
         <slot name="empty">
           No Data
@@ -72,6 +74,7 @@ import IconLoading from '../spinner/SpinnerRing.vue'
 import {
   computed,
   defineComponent,
+  getCurrentInstance,
   PropType,
   ref,
 } from 'vue-demi'
@@ -80,6 +83,8 @@ import { Adapter } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
+import { tryOnMounted } from '@vueuse/shared'
+import { onStartTyping } from '@vueuse/core'
 
 export default defineComponent({
   components: {
@@ -91,9 +96,18 @@ export default defineComponent({
     IconLoading,
   },
   props: {
-    // eslint-disable-next-line vue/require-prop-types
-    modelValue: { default: '' },
-    selected  : {
+    modelValue: {
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: '',
+    },
+    selected: {
       type   : Object as PropType<SelectItem>,
       default: () => {
         return {
@@ -114,11 +128,11 @@ export default defineComponent({
       type   : Object as PropType<Adapter>,
       default: () => BasicAdapter,
     },
-    noAutoClose: {
+    disabled: {
       type   : Boolean,
       default: false,
     },
-    disabled: {
+    readonly: {
       type   : Boolean,
       default: false,
     },
@@ -133,6 +147,8 @@ export default defineComponent({
     'userInput',
   ],
   setup (props, { emit }) {
+    const vm        = getCurrentInstance()
+    const input     = ref<HTMLInputElement>()
     const keyword   = ref('')
     const isOpen    = ref(false)
     const isLoading = useLoading({ elapsed: false })
@@ -168,6 +184,12 @@ export default defineComponent({
       if (isOpen.value)
         result.push('select--open')
 
+      if (props.disabled)
+        result.push('select--disabled')
+
+      if (props.readonly)
+        result.push('select--readonly')
+
       return result
     })
 
@@ -184,18 +206,31 @@ export default defineComponent({
     })
 
     function select (item: SelectItem) {
-      model.value  = item
-      isOpen.value = props.noAutoClose
+      model.value = item
     }
 
     function onFocus () {
-      isOpen.value  = true
-      keyword.value = ''
+      if (!props.disabled && !props.readonly) {
+        isOpen.value  = true
+        keyword.value = ''
+      }
     }
 
     function isSelected (item: SelectItem) {
       return isEqual(item.value, model.value.value)
     }
+
+    onStartTyping(() => {
+      if (isOpen.value && input.value && input.value !== document.activeElement)
+        input.value.focus()
+    })
+
+    tryOnMounted(() => {
+      if (vm?.proxy?.$el) {
+        input.value = (vm.proxy.$el as HTMLElement)
+          .querySelector('.select__search')
+      }
+    })
 
     return {
       classNames,

@@ -49,3 +49,9 @@
 <preview>
   <Select placeholder="Coba" v-model="valueA" :adapter="asyncAdapter" />
 </preview>
+
+## Disabled State
+
+<preview>
+  <Select disabled />
+</preview>

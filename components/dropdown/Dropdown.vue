@@ -35,7 +35,10 @@
 <script lang="ts">
 import {
   defineComponent,
+  InjectionKey,
   PropType,
+  provide,
+  Ref,
   watch,
 } from 'vue-demi'
 import {
@@ -50,6 +53,15 @@ import { PoppperOption, usePopper } from './use-popper'
 import { useVModel } from '../input/use-input'
 
 type DropdownGroupElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
+
+interface DropdownContext {
+  close: () => void,
+  open: () => void,
+  toggle: () => void,
+  isOpen: Ref<boolean>,
+}
+
+export const DROPDOWN_CONTEXT: InjectionKey<DropdownContext> = Symbol('DropdownContext')
 
 export default defineComponent({
   components: {
@@ -97,8 +109,7 @@ export default defineComponent({
     const popper = usePopper(target, menu, props.popper)
     const isOpen = useVModel(props)
 
-    const { next: nextFocus,
-      prev: prevFocus } = useFocus(menu)
+    const { next: nextFocus, prev: prevFocus } = useFocus(menu)
 
     function toggle () {
       if (!props.disabled)
@@ -120,9 +131,13 @@ export default defineComponent({
         toggle()
     }, { ignore: [target] })
 
-    onKeyStroke('Escape', () => {
-      if (isOpen.value)
+    onKeyStroke('Escape', (event) => {
+      const target = event.target as HTMLElement
+
+      if (isOpen.value) {
         close()
+        target.blur()
+      }
     })
 
     onKeyStroke(['ArrowUp'], (event) => {
@@ -139,11 +154,29 @@ export default defineComponent({
         nextFocus()
     })
 
+    onKeyStroke(['Tab'], (event) => {
+      event.preventDefault()
+
+      if (isOpen.value) {
+        if (event.shiftKey)
+          prevFocus()
+        else
+          nextFocus()
+      }
+    })
+
     watch(isOpen, (show) => {
       if (show && popper.value)
         popper.value.update()
       else
         wizard.value.reset()
+    })
+
+    provide(DROPDOWN_CONTEXT, {
+      isOpen,
+      toggle,
+      open,
+      close,
     })
 
     return {

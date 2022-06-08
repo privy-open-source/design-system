@@ -32,7 +32,9 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, PropType,
+  computed,
+  defineComponent,
+  PropType,
 } from 'vue-demi'
 import { useVModel } from '../checkbox/use-checkbox'
 
@@ -44,13 +46,40 @@ export default defineComponent({
       type   : String as PropType<StyleVariant>,
       default: 'pill',
     },
-    // eslint-disable-next-line vue/require-prop-types
-    modelValue    : { default: false },
-    // eslint-disable-next-line vue/require-prop-types
-    value         : { default: true },
-    // eslint-disable-next-line vue/require-prop-types
-    uncheckedValue: { default: false },
-    checked       : {
+    modelValue: {
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: false,
+    },
+    value: {
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: true,
+    },
+    uncheckedValue: {
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: false,
+    },
+    checked: {
       type   : Boolean,
       default: false,
     },

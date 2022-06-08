@@ -45,7 +45,7 @@ module.exports = {
         ExportDeclaration: 'always',
       },
     ],
-    'object-property-newline': 'error',
+    'object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
     'camelcase'              : 'warn',
     'comma-dangle'           : ['error', 'always-multiline'],
     'no-multi-spaces'        : [

@@ -279,4 +279,6 @@ it('should no nothing if handler throw an error', async () => {
   await nextTick()
 
   expect(loading).not.toBeInTheDocument()
+
+  vi.useRealTimers()
 })

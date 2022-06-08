@@ -10,7 +10,7 @@
         <DropdownItem
           key="btn-back"
           class="dropdown__group-btn dropdown__group-btn-back"
-          @click="back()">
+          @click.prevent="back()">
           <slot name="button-back">
             <IconBack class="dropdown__group-next" />
             <div class="dropdown__group-content">
@@ -24,7 +24,7 @@
         <DropdownItem
           key="btn-next"
           class="dropdown__group-btn"
-          @click="next()">
+          @click.prevent="next()">
           <slot name="button-content">
             <div class="dropdown__group-content">
               {{ text }}
@@ -71,7 +71,7 @@ interface DropdownContext {
   back: () => void,
 }
 
-const DROPDOWN_TREE: InjectionKey<DropdownContext> = Symbol('DropdownContext')
+const DROPDOWN_TREE: InjectionKey<DropdownContext> = Symbol('DropdownTree')
 
 export default defineComponent({
   components: {
