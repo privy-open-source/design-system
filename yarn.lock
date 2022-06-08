@@ -427,7 +427,7 @@ __metadata:
     "@typescript-eslint/parser": 5.27.0
     "@vitejs/plugin-vue": 2.3.3
     "@vue/eslint-config-typescript": 10.0.0
-    "@vueuse/core": 8.5.0
+    "@vueuse/core": 8.6.0
     autoprefixer: 10.4.7
     c8: 7.11.3
     date-fns: 2.28.0
@@ -1129,12 +1129,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:8.5.0":
-  version: 8.5.0
-  resolution: "@vueuse/core@npm:8.5.0"
+"@vueuse/core@npm:8.6.0":
+  version: 8.6.0
+  resolution: "@vueuse/core@npm:8.6.0"
   dependencies:
-    "@vueuse/metadata": 8.5.0
-    "@vueuse/shared": 8.5.0
+    "@vueuse/metadata": 8.6.0
+    "@vueuse/shared": 8.6.0
     vue-demi: "*"
   peerDependencies:
     "@vue/composition-api": ^1.1.0
@@ -1144,20 +1144,20 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 6ab6154e09e1e2f32ae1216bb5edae9233b4bd4354f37aaf15eb1d38e4a9972832f5d530847e81bc38b5c5e8aae2aecabf1d3c1affd34b0c9f4d7e549151c281
+  checksum: 5577699514e9d0c240f3322c8676814539340acc3c1f23dc44e80f96bc6b1d3241ec7da18fbcfccd3f4215374613714664c09f8293071bb2aaceac929a75c8c5
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:8.5.0":
-  version: 8.5.0
-  resolution: "@vueuse/metadata@npm:8.5.0"
-  checksum: 568a1bf56ee7e34bb1e60e573e3a06bf5b9d70ab9d0af1cf68867f8e9856556e660a60e097089c7e46194aa382b4586d3b576fab8f35088dfaf628aa43db7e16
+"@vueuse/metadata@npm:8.6.0":
+  version: 8.6.0
+  resolution: "@vueuse/metadata@npm:8.6.0"
+  checksum: 434ae03d965a7fb9fa711b245d63e3b581a67902ec7ab6095f8ba395b3c6320da5f1b78e233686a73ba0349e49c2d183254b46cb3736a94b58c77b7992e27d0d
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:8.5.0":
-  version: 8.5.0
-  resolution: "@vueuse/shared@npm:8.5.0"
+"@vueuse/shared@npm:8.6.0":
+  version: 8.6.0
+  resolution: "@vueuse/shared@npm:8.6.0"
   dependencies:
     vue-demi: "*"
   peerDependencies:
@@ -1168,7 +1168,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 8a99f29accfc45a0c155b7918c76d4dc87f241748cc6df0d47be7b32ce37010f6b190ed22a2bd2acf0fbe97b2b7d0e22623043ede92d3bf201ce4dc0977c4516
+  checksum: 4c5eb1d034f79176e79386b13cbaf8481f3126d7fbce5ff4f79ac7aa3de84e67976662fe3dc21c002c5b5084edee8ccec304493fd80c9f28c58520a9aec32499
   languageName: node
   linkType: hard
 
