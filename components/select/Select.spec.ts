@@ -3,12 +3,13 @@ import { fireEvent, render } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { ref, nextTick } from 'vue-demi'
 import Select from './Select.vue'
+import type * as VueUser from '@vueuse/core'
 
 vi.mock('@vueuse/core', async () => {
   const core = await vi.importActual('@vueuse/core')
 
   return {
-    ...core as any,
+    ...core as typeof VueUser,
     onStartTyping,
   }
 })

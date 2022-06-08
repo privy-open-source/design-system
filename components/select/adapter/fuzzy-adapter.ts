@@ -23,7 +23,7 @@ export default defineAdapter({
     })
 
     watch(normalizeOptions, (items) => {
-      fuse.value = new Fuse(items, { keys: ['text'] })
+      fuse.value = new Fuse(items, { keys: ['text', 'value'] })
     }, { immediate: true })
 
     return filteredOptions

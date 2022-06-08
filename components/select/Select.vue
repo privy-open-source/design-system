@@ -142,6 +142,7 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: [
+    'change',
     'update:modelValue',
     'update:selected',
     'userInput',
@@ -170,6 +171,7 @@ export default defineComponent({
           }
       },
       set (selected: SelectItem) {
+        emit('change', selected)
         emit('update:modelValue', selected.value)
         emit('update:selected', selected)
 
@@ -210,10 +212,8 @@ export default defineComponent({
     }
 
     function onFocus () {
-      if (!props.disabled && !props.readonly) {
-        isOpen.value  = true
-        keyword.value = ''
-      }
+      if (!props.disabled && !props.readonly)
+        isOpen.value = true
     }
 
     function isSelected (item: SelectItem) {

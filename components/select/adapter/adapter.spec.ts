@@ -76,7 +76,7 @@ it('should return empty array if props is not valid array', () => {
   const props: SelectProps = {
     modelValue: undefined,
     selected  : undefined,
-    // @ts-expect-error
+    // @ts-expect-error, It should be never happen, because it's not allowsd
     options   : {},
   }
 

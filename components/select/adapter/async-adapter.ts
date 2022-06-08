@@ -49,6 +49,8 @@ export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps) {
 
       if (deps !== undefined) {
         watch(deps, () => {
+          keyword.value = ''
+
           reset()
           load()
         })
