@@ -72,6 +72,10 @@ export default defineConfig({
             link: '/label/component'
           },
           {
+            text: 'Modal',
+            link: '/modal/component'
+          },
+          {
             text: 'Spinner',
             link: '/spinner/component'
           },
