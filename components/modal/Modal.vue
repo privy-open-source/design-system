@@ -1,43 +1,60 @@
 <template>
-  <div
-    v-show="model"
-    :value="model"
-    class="modal"
-    data-testid="modal">
-    <div class="modal__dialog">
-      <div class="modal__content">
-        <div class="modal__header">
-          <Heading element="h6">
-            {{ title }}
-          </Heading>
-          <span
-            v-if="dismissable"
-            data-testid="modal-dismiss"
-            class="modal__dismiss"
-            @click="close">
-            <IconClose />
-          </span>
-        </div>
-        <div class="modal__body">
-          <template v-if="text">
-            {{ text }}
-          </template>
-          <slot v-else />
-        </div>
+  <transition
+    name="fade"
+    mode="out-in">
+    <div
+      v-show="model"
+      class="modal"
+      data-testid="modal">
+      <transition
+        name="slide-up"
+        mode="out-in">
         <div
-          v-if="$slots.footer"
-          class="modal__footer">
-          <slot name="footer" />
+          v-show="model"
+          class="modal__dialog">
+          <div class="modal__content">
+            <div class="modal__header">
+              <slot name="header">
+                <Heading element="h6">
+                  {{ title }}
+                </Heading>
+              </slot>
+              <span
+                v-if="dismissable"
+                data-testid="modal-dismiss"
+                class="modal__dismiss"
+                @click="close">
+                <IconClose />
+              </span>
+            </div>
+            <div class="modal__body">
+              <slot>
+                {{ text }}
+              </slot>
+            </div>
+            <div
+              v-if="$slots.footer"
+              class="modal__footer">
+              <slot
+                name="footer"
+                :close="close" />
+            </div>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue-demi'
+import {
+  defineComponent,
+  nextTick,
+  watch,
+} from 'vue-demi'
 import Heading from '../heading/Heading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'
+import { useVModel } from '../input/use-input'
 
 export default defineComponent({
   components: { Heading, IconClose },
@@ -50,8 +67,10 @@ export default defineComponent({
       type   : String,
       default: undefined,
     },
-    // eslint-disable-next-line vue/require-prop-types
-    modelValue : { default: false },
+    modelValue: {
+      type   : Boolean,
+      default: false,
+    },
     dismissable: {
       type   : Boolean,
       default: true,
@@ -61,21 +80,28 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['update:modelValue', 'dismissed'],
+  emits: [
+    'update:modelValue',
+    'dismissed',
+    'close',
+  ],
   setup (props, { emit }) {
-    const model = computed({
-      get () {
-        return props.modelValue
-      },
-      set (value: boolean) {
-        emit('update:modelValue', value)
-      },
-    })
+    const model = useVModel(props)
 
-    function close (): void {
-      model.value = false
-      emit('dismissed')
+    function close (event: Event): void {
+      emit('close', event)
+
+      if (!event.defaultPrevented)
+        model.value = false
     }
+
+    watch(model, (value) => {
+      if (value === false) {
+        nextTick(() => {
+          emit('dismissed')
+        })
+      }
+    })
 
     return {
       close,

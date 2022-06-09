@@ -21,19 +21,29 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent, PropType, computed,
-} from 'vue-demi'
-import {
-  ModalButtonColorVariant, ModalButtonStyleVariant, ModalFooterAlignVariant,
-} from 'use-modal'
 import Button from '../button/Button.vue'
+import {
+  defineComponent,
+  PropType,
+  computed,
+} from 'vue-demi'
+import type {
+  StyleVariant as FooterButtonStyleVariant,
+  ColorVariant as FooterButtonColorVariant,
+} from '../button/Button.vue'
+
+export type FooterAlignVariant = 'start' | 'end'
+
+export type {
+  StyleVariant as FooterButtonStyleVariant,
+  ColorVariant as FooterButtonColorVariant,
+} from '../button/Button.vue'
 
 export default defineComponent({
   components: { Button },
   props     : {
     align: {
-      type   : String as PropType<ModalFooterAlignVariant>,
+      type   : String as PropType<FooterAlignVariant>,
       default: 'start',
     },
     cancelClass: {
@@ -45,11 +55,11 @@ export default defineComponent({
       default: true,
     },
     cancelColor: {
-      type   : String as PropType<ModalButtonColorVariant>,
+      type   : String as PropType<FooterButtonColorVariant>,
       default: 'secondary',
     },
     cancelVariant: {
-      type   : String as PropType<ModalButtonStyleVariant>,
+      type   : String as PropType<FooterButtonStyleVariant>,
       default: 'link',
     },
     cancelText: {
@@ -65,11 +75,11 @@ export default defineComponent({
       default: true,
     },
     confirmColor: {
-      type   : String as PropType<ModalButtonColorVariant>,
+      type   : String as PropType<FooterButtonColorVariant>,
       default: 'primary',
     },
     confirmVariant: {
-      type   : String as PropType<ModalButtonStyleVariant>,
+      type   : String as PropType<FooterButtonStyleVariant>,
       default: 'solid',
     },
     confirmText: {
