@@ -440,7 +440,7 @@ __metadata:
     eslint-plugin-promise: 6.0.0
     eslint-plugin-unicorn: 42.0.0
     eslint-plugin-varspacing: 1.2.2
-    eslint-plugin-vue: 9.0.1
+    eslint-plugin-vue: 9.1.1
     fuse.js: 6.6.2
     happy-dom: 5.0.0
     husky: 8.0.1
@@ -2636,9 +2636,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vue@npm:9.0.1":
-  version: 9.0.1
-  resolution: "eslint-plugin-vue@npm:9.0.1"
+"eslint-plugin-vue@npm:9.1.1":
+  version: 9.1.1
+  resolution: "eslint-plugin-vue@npm:9.1.1"
   dependencies:
     eslint-utils: ^3.0.0
     natural-compare: ^1.4.0
@@ -2649,7 +2649,7 @@ __metadata:
     xml-name-validator: ^4.0.0
   peerDependencies:
     eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
-  checksum: d132fb5c630cb9ccb5b467460f5d904297ca9ec93cfb238cb0db1850061d32147521ac94ad356f1005b978bce3b30df6320a05aacd3120ea6d60735040046932
+  checksum: 6095e2f1c7ca43a7923d52423b7263fbf947680f628cb86a606ad2cc1e0abcbff67971b2d6bb028f6e710fff9c8b1289d5bda27e3ad253c683ce74c9d520580f
   languageName: node
   linkType: hard
 
