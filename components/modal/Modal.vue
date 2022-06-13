@@ -62,8 +62,8 @@ import {
   nextTick,
   watch,
   onMounted,
-  onUnmounted,
 } from 'vue-demi'
+import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'
 import { useVModel } from '../input/use-input'
@@ -116,17 +116,16 @@ export default defineComponent({
         close(event)
     }
 
-    function closeOnEsc (event: Event): void {
-      if (!props.noCloseOnEsc && event.key === 'Escape')
-        close(event)
+    function closeOnEsc (): void {
+      if (!props.noCloseOnEsc) {
+        onKeyStroke('Escape', (event) => {
+          close(event)
+        }, { eventName: 'keydown' })
+      }
     }
 
     onMounted(() => {
-      document.addEventListener('keydown', closeOnEsc)
-    })
-
-    onUnmounted(() => {
-      document.removeEventListener('keydown', closeOnEsc)
+      closeOnEsc()
     })
 
     watch(model, (value) => {
