@@ -5,27 +5,36 @@
     <div
       v-show="model"
       class="modal"
-      data-testid="modal">
+      data-testid="modal"
+      @click="closeOnBackdrop">
       <transition
         name="slide-up"
         mode="out-in">
         <div
           v-show="model"
           class="modal__dialog">
-          <div class="modal__content">
-            <div class="modal__header">
+          <div
+            class="modal__content"
+            @click.stop>
+            <span
+              v-if="dismissable"
+              data-testid="modal-dismiss"
+              class="modal__dismiss"
+              @click="close">
+              <IconClose />
+            </span>
+            <div
+              v-if="$slots.header || title"
+              data-testid="modal-header"
+              class="modal__header">
               <slot name="header">
-                <Heading element="h6">
+                <Heading
+                  v-if="title"
+                  class="modal__title"
+                  element="h6">
                   {{ title }}
                 </Heading>
               </slot>
-              <span
-                v-if="dismissable"
-                data-testid="modal-dismiss"
-                class="modal__dismiss"
-                @click="close">
-                <IconClose />
-              </span>
             </div>
             <div class="modal__body">
               <slot>
@@ -34,6 +43,7 @@
             </div>
             <div
               v-if="$slots.footer"
+              data-testid="modal-footer"
               class="modal__footer">
               <slot
                 name="footer"
@@ -51,6 +61,8 @@ import {
   defineComponent,
   nextTick,
   watch,
+  onMounted,
+  onUnmounted,
 } from 'vue-demi'
 import Heading from '../heading/Heading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'
@@ -60,8 +72,8 @@ export default defineComponent({
   components: { Heading, IconClose },
   props     : {
     title: {
-      type    : String,
-      required: true,
+      type   : String,
+      default: undefined,
     },
     text: {
       type   : String,
@@ -75,16 +87,20 @@ export default defineComponent({
       type   : Boolean,
       default: true,
     },
+    noCloseOnEsc: {
+      type   : Boolean,
+      default: false,
+    },
+    noCloseOnBackdrop: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: [
-    'update:modelValue',
-    'dismissed',
-    'close',
-  ],
+  emits: ['update:modelValue', 'close'],
   setup (props, { emit }) {
     const model = useVModel(props)
 
@@ -95,16 +111,35 @@ export default defineComponent({
         model.value = false
     }
 
+    function closeOnBackdrop (event: Event): void {
+      if (!props.noCloseOnBackdrop)
+        close(event)
+    }
+
+    function closeOnEsc (event: Event): void {
+      if (!props.noCloseOnEsc && event.key === 'Escape')
+        close(event)
+    }
+
+    onMounted(() => {
+      document.addEventListener('keydown', closeOnEsc)
+    })
+
+    onUnmounted(() => {
+      document.removeEventListener('keydown', closeOnEsc)
+    })
+
     watch(model, (value) => {
       if (value === false) {
         nextTick(() => {
-          emit('dismissed')
+          emit('close')
         })
       }
     })
 
     return {
       close,
+      closeOnBackdrop,
       model,
     }
   },
@@ -113,7 +148,7 @@ export default defineComponent({
 
 <style lang="postcss">
 /**
-* Component Name: Modal Dialog
+* Component Name: Modal
 * Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=336%3A10366
 * Date Created  : June 07, 2022
 * Last Update   : June 09, 2022
@@ -124,6 +159,18 @@ export default defineComponent({
   */
   @apply w-full h-full fixed left-0 top-0 bg-black bg-opacity-30 z-[1060];
 
+  &--banner {
+    .modal {
+      &__content {
+        @apply overflow-hidden;
+      }
+
+      &__body {
+        @apply p-0;
+      }
+    }
+  }
+
   &__dialog {
     @apply flex justify-center;
   }
@@ -133,7 +180,11 @@ export default defineComponent({
   * in white
   */
   &__content {
-    @apply w-[31.25rem] mt-8 bg-white rounded-md p-6;
+    @apply w-[31.25rem] mt-8 bg-white rounded-md relative;
+
+    .modal__dismiss {
+      @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[1061] text-black text-opacity-30;
+    }
   }
 
   /**
@@ -141,16 +192,26 @@ export default defineComponent({
   * of title and dismiss button
   */
   &__header {
-    @apply flex items-center justify-between;
+    @apply flex items-start p-6;
 
-    .modal__dismiss {
-      @apply hover:cursor-pointer;
+    .modal__title {
+      @apply grow pr-6;
+    }
+
+    + .modal__body {
+      @apply pt-0;
     }
   }
 
   &__body,
   &__footer {
-    @apply mt-6;
+    @apply p-6;
+  }
+
+  &__body {
+    + .modal__footer {
+      @apply pt-0;
+    }
   }
 }
 </style>

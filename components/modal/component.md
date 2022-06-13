@@ -5,21 +5,14 @@
 
   const basicModal = ref(true)
   const showModal = ref(false)
+  const mdl = ref(false)
 
   function click () {
     showModal.value = true
   }
 
-  function click2 () {
-    model2.value = true
-  }
-
-  function cancelCallback () {
-    console.log('cancel')
-  }
-
-  function confirmCallback () {
-    console.log('confirm')
+  function test () {
+    console.log('test')
   }
 </script>
 
@@ -61,7 +54,7 @@
 
 ```vue
 <template>
-  <Modal v-model="basicModal" title="Modal Title">
+  <Modal v-model="showModal" title="Modal Title">
     <p>
       This is place holder text. The basic dialog for modals
       should contain only valuable and relevant information.
@@ -77,14 +70,27 @@
 </template>
 ```
 
-<Modal v-model="showModal" title="Modal Title">
+<Modal
+  v-model="showModal" title="Modal Title">
   <p>
     This is place holder text. The basic dialog for modals
     should contain only valuable and relevant information.
   </p>
-  <template #footer>
+  <template #footer="{ close }">
     <div class="flex items-center justify-end">
-      <Button>Button Text</Button>
+      <Button @click="close">
+        Submit
+      </Button>
     </div>
   </template>
 </Modal>
+
+<div class="flex mt-5">
+  <Button @click="mdl = true">Show Modal</Button>
+</div>
+
+<Modal v-model="mdl" title="modal title" @dismissed="test">  
+  <div>Modal Text</div>
+</Modal>
+
+
