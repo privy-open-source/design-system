@@ -63,7 +63,7 @@
 </script>
 ```
 
-### with Custom Label
+### with Text and Value
 
 <preview>
   <Select :options="optionsB" v-model="value" />
@@ -297,6 +297,8 @@ To do this, you need add the province value as **watch dependencies**. It will a
 | `placeholder` | `String`  |      `-`      | Input placeholder                  |
 | `disabled`    | `Boolean` |    `false`    | Disabled state                     |
 | `readonly`    | `Boolean` |    `false`    | Readonly state                     |
+| `emptyText`   | `String`  |   `No Data`   | Label when options is empty        |
+| `loadingText` | `String`  | `Loading...`  | Label when loading                 |
 | `adapter`     | `Adapter` | `BaseAdapter` | Adapter for loading option's items |
 | `modelValue`  |   `Any`   |      `-`      | `v-model` value                    |
 | `selected`    | `Object`  |      `-`      | `v-model:selected` value           |

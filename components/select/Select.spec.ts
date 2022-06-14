@@ -4,6 +4,8 @@ import { vi } from 'vitest'
 import { ref, nextTick } from 'vue-demi'
 import Select from './Select.vue'
 import type * as VueUser from '@vueuse/core'
+import defineAsyncAdapter from './adapter/async-adapter'
+import { delay } from 'nanodelay'
 
 vi.mock('@vueuse/core', async () => {
   const core = await vi.importActual('@vueuse/core')
@@ -59,6 +61,47 @@ it('should be able to set input placeholder with prop `placeholder`', () => {
   const input = screen.getByTestId('select-search')
 
   expect(input).toHaveAttribute('placeholder', 'CobaLagi')
+})
+
+it('should be able to change empty text via `empty-text` prop', () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select empty-text="kosong" />
+    `,
+  })
+
+  const emptyText = screen.queryByText('kosong')
+
+  expect(emptyText).toBeInTheDocument()
+})
+
+it('should be able to change loading text via `loading-text` prop', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select
+        :adapter="adapter"
+        loading-text="Menunggu..." />
+    `,
+    setup () {
+      const adapter = defineAsyncAdapter(async () => {
+        await delay(100)
+
+        return []
+      })
+
+      return { adapter }
+    },
+  })
+
+  const select = screen.queryByTestId('select')
+
+  await fireEvent.click(select)
+
+  const loadingText = screen.queryByText('Menunggu...')
+
+  expect(loadingText).toBeInTheDocument()
 })
 
 it('should have style readonly if props disabled is provided', () => {

@@ -1,0 +1,8 @@
+# File ini jangan dihapus, untuk development
+version: '3'
+services:
+  web:
+    build:
+      context: ./
+    ports:
+      - 3020:8080

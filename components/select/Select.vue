@@ -23,7 +23,7 @@
         data-testid="select-no-data"
         class="select__empty">
         <slot name="empty">
-          No Data
+          {{ emptyText }}
         </slot>
       </div>
     </template>
@@ -35,17 +35,18 @@
         data-testid="select-item"
         :class="{ selected: isSelected(item) }"
         @click="select(item)">
-        <slot
-          name="option"
-          :item="item">
-          <div class="select__option">
-            <span class="select__option-text">
+        <div class="select__option">
+          <div class="select__option-text">
+            <slot
+              name="option"
+              :is-selected="isSelected(item)"
+              :item="item">
               {{ item.text }}
-            </span>
-            <IconCheck
-              class="select__option-checked" />
+            </slot>
           </div>
-        </slot>
+          <IconCheck
+            class="select__option-checked" />
+        </div>
       </DropdownItem>
     </template>
 
@@ -53,11 +54,11 @@
       <div
         data-testid="select-loading"
         class="select__loading">
+        <IconLoading
+          width="14"
+          height="14" />
         <slot name="loading">
-          <IconLoading
-            width="14"
-            height="14" />
-          Loading...
+          {{ loadingText }}
         </slot>
       </div>
     </template>
@@ -123,6 +124,14 @@ export default defineComponent({
     placeholder: {
       type   : String,
       default: '',
+    },
+    emptyText: {
+      type   : String,
+      default: 'No Data',
+    },
+    loadingText: {
+      type   : String,
+      default: 'Loading...',
     },
     adapter: {
       type   : Object as PropType<Adapter>,
