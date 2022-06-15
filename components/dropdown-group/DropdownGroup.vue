@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts">
-import DropdownItem from './DropdownItem.vue'
+import DropdownItem from '../dropdown/DropdownItem.vue'
 import IconNext from '@carbon/icons-vue/lib/chevron--right/16'
 import IconBack from '@carbon/icons-vue/lib/chevron--left/16'
 import {

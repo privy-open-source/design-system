@@ -267,6 +267,7 @@ it('should no nothing if handler throw an error', async () => {
   expect(select).toBeInTheDocument()
 
   vi.useFakeTimers()
+  vi.spyOn(console, 'error').mockImplementationOnce(() => {})
 
   await fireEvent.focus(search)
   await fireEvent.update(search, 'fail')

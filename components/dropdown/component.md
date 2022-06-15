@@ -1,7 +1,7 @@
 <script setup>
   import Dropdown from "./Dropdown.vue"
   import DropdownItem from "./DropdownItem.vue"
-  import DropdownGroup from "./DropdownGroup.vue"
+  import DropdownGroup from "../dropdown-group/DropdownGroup.vue"
   import DropdownDivider from "./DropdownDivider.vue"
   import { ref } from "vue-demi"
 

@@ -88,9 +88,9 @@ Use for the title of each top-level page section. The default element of heading
 
 ### Props
 
-| Props         |   Type    | Default    | Description                                     |
-|---------------|:---------:|:----------:|-------------------------------------------------|
-| `element`     | `String`  | `h3`       | Heading element, valid value is `h1` to `h6`    |
+| Props     |   Type   | Default | Description                                  |
+|-----------|:--------:|:-------:|----------------------------------------------|
+| `element` | `String` |  `h3`   | Heading element, valid value is `h1` to `h6` |
 
 ### Slots
 
