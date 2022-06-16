@@ -2,34 +2,6 @@
   import Badge from './Badge.vue'
 </script>
 
-<style scoped lang="postcss">
-  h1 {
-    img {
-      @apply inline-block mr-8;
-
-      + .header-anchor {
-        @apply mt-7;
-      }
-    }
-  }
-
-  h5 {
-    @apply mt-12 mb-4;
-
-    + p {
-      @apply mt-0;
-    }
-  }
-
-  .badge {
-    @apply mr-4;
-
-    &:last-child {
-      @apply mr-0;
-    }
-  }
-</style>
-
 # ![badge](./assets/images/img-guide-badge.svg) Badge
 
 ## Usage
