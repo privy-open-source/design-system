@@ -156,7 +156,7 @@ export default defineComponent({
   /**
   * Set modal backdrop
   */
-  @apply w-full h-full fixed left-0 top-0 bg-black bg-opacity-30 z-[1060];
+  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-black bg-opacity-30 z-[1060];
 
   &--banner {
     .modal {
@@ -179,7 +179,7 @@ export default defineComponent({
   * in white
   */
   &__content {
-    @apply w-[31.25rem] mt-8 bg-white rounded-md relative;
+    @apply w-[31.25rem] my-8 bg-white rounded-md relative;
 
     .modal__dismiss {
       @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[1061] text-black text-opacity-30;
