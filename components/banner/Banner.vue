@@ -90,34 +90,34 @@ export default defineComponent({
 <style lang="postcss">
 .banner {
   @apply p-4 flex gap-2 rounded text-body-100;
-}
 
-.banner--info {
-  @apply bg-background-100;
-}
+  &--info {
+    @apply bg-background-100;
 
-.banner--info .banner__icon {
-  @apply text-primary-100;
-}
+    .banner__icon {
+      @apply text-primary-100;
+    }
+  }
 
-.banner--danger {
-  @apply bg-danger-25;
-}
+  &--danger {
+    @apply bg-danger-5;
 
-.banner--danger .banner__icon {
-  @apply text-danger-100;
-}
+    .banner__icon {
+      @apply text-danger-100;
+    }
+  }
 
-.banner__icon,
-.banner__close {
-  @apply flex-shrink-0;
-}
+  &__body {
+    @apply flex-grow;
+  }
 
-.banner__body {
-  @apply flex-grow;
-}
+  &__icon,
+  &__close {
+    @apply flex-shrink-0;
+  }
 
-.banner__close {
-  @apply text-secondary-50 cursor-pointer hover:text-secondary-100;
+  &__close {
+    @apply cursor-pointer text-black text-opacity-30 hover:text-opacity-50;
+  }
 }
 </style>
