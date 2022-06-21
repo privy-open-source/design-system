@@ -37,7 +37,7 @@
   import Button from "../../../button/Button.vue"
   import icon from "../assets/icon-privy.svg"
   import { useRouter } from "vitepress"
-  import IconGithub from "@carbon/icons-vue/es/logo--github/20"
+  import IconGithub from "@carbon/icons-vue/lib/logo--github/20"
 
   export default defineComponent({
     components: { Heading, Subheading, Badge, Button, IconGithub },
