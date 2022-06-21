@@ -1,6 +1,7 @@
 import { fireEvent, render } from '@testing-library/vue'
+import { delay } from 'nanodelay'
 import { vi } from 'vitest'
-import { nextTick } from 'vue-demi'
+import { nextTick, ref } from 'vue-demi'
 import Dropdown from './Dropdown.vue'
 import DropdownItem from './DropdownItem.vue'
 
@@ -164,6 +165,7 @@ it('should hide when click outside', async () => {
   expect(menu).toBeVisible()
 
   await fireEvent.click(window)
+  await delay(0)
 
   menu = screen.queryByTestId('dropdown-menu')
 
@@ -361,4 +363,125 @@ it('should be able to custom activator button', async () => {
   await fireEvent.focus(input)
 
   expect(dropdown).toHaveClass('dropdown--open')
+})
+
+it('should be able to change button variant via `variant` prop', () => {
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown variant="outline">
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+
+  expect(button).toHaveClass('btn--outline')
+})
+
+it('should be able to change button color via `color` prop', () => {
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown color="success">
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+
+  expect(button).toHaveClass('btn--success')
+})
+
+it('should be able to change button size via `size` prop', () => {
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown size="lg">
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+
+  expect(button).toHaveClass('btn--lg')
+})
+
+it('should be able to change to pill mode via `pill` prop', () => {
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown pill>
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+
+  expect(button).toHaveClass('btn--pill')
+})
+
+it('should be able to change to icon mode via `icon` prop', () => {
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown icon>
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+
+  expect(button).toHaveClass('btn--icon')
+})
+
+it('should be able to toggle dropdown via v-model', async () => {
+  const model  = ref(false)
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown v-model="model">
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const dropdown = screen.queryByTestId('dropdown')
+  const button   = screen.queryByTestId('dropdown-activator')
+
+  let menu = screen.queryByTestId('dropdown-menu')
+
+  expect(dropdown).toBeInTheDocument()
+  expect(button).toBeInTheDocument()
+  expect(menu).not.toBeVisible()
+
+  model.value = true
+  await nextTick()
+
+  menu = screen.queryByTestId('dropdown-menu')
+
+  expect(dropdown).toHaveClass('dropdown--open')
+  expect(menu).toBeVisible()
+
+  await fireEvent.click(button)
+
+  menu = screen.queryByTestId('dropdown-menu')
+
+  expect(dropdown).not.toHaveClass('dropdown--open')
+  expect(menu).not.toBeVisible()
+  expect(model.value).toBe(false)
 })

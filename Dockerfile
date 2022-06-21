@@ -3,7 +3,7 @@
 ##############################
 FROM node:16-alpine as builder
 
-RUN apk update && apk upgrade
+# RUN apk update && apk upgrade
 
 # Set working directory
 WORKDIR /usr/src/app
@@ -36,6 +36,12 @@ RUN yarn docs:build
 ##############################
 ## Running
 ##############################
-FROM halverneus/static-file-server
+FROM halverneus/static-file-server:v1.8.6
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Set folder
+ENV FOLDER=/usr/src/app/web
 
 COPY --from=builder /usr/src/app/components/.vitepress/dist ./web

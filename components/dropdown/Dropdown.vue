@@ -12,8 +12,13 @@
       :is-open="isOpen">
       <Button
         data-testid="dropdown-activator"
+        :variant="variant"
+        :color="color"
+        :size="size"
+        :icon="icon"
+        :pill="pill"
         :disabled="disabled"
-        @click="toggle">
+        @click.prevent="toggle">
         <slot name="button-content">
           {{ text }}
         </slot>
@@ -56,6 +61,11 @@ import DropdownGroup from '../dropdown-group/DropdownGroup.vue'
 import { useFocus } from './utils/use-focus'
 import { usePopper, Placement } from './utils/use-popper'
 import { useVModel } from '../input/use-input'
+import type {
+  StyleVariant,
+  ColorVariant,
+  SizeVariant,
+} from '../button/Button.vue'
 
 type DropdownGroupElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
 
@@ -85,6 +95,26 @@ export default defineComponent({
     placement: {
       type   : String as PropType<Placement>,
       default: 'bottom-start',
+    },
+    variant: {
+      type   : String as PropType<StyleVariant>,
+      default: 'solid',
+    },
+    color: {
+      type   : String as PropType<ColorVariant>,
+      default: 'primary',
+    },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
+    },
+    icon: {
+      type   : Boolean,
+      default: false,
+    },
+    pill: {
+      type   : Boolean,
+      default: false,
     },
     disabled: {
       type   : Boolean,
@@ -122,8 +152,12 @@ export default defineComponent({
     }
 
     onClickOutside(menu, () => {
-      if (isOpen.value)
-        close()
+      if (isOpen.value) {
+        // Add little delay too prevent race condition with v-model changing
+        setTimeout(() => {
+          close()
+        })
+      }
     }, { ignore: [target] })
 
     onKeyStroke('Escape', (event) => {
@@ -132,7 +166,7 @@ export default defineComponent({
       if (isOpen.value) {
         close()
 
-        /* In HappyDOM, blur() is undefined which shouldn't happen in Real Browser */
+        /* In HappyDOM, blur() is undefined, which shouldn't happen in Real Browser */
         /* c8 ignore next 2 */
         if (typeof target.blur === 'function')
           target.blur()
@@ -164,12 +198,12 @@ export default defineComponent({
       }
     })
 
-    watch(isOpen, (show) => {
-      if (show && popper.value)
+    watch(isOpen, (value) => {
+      if (value && popper.value)
         popper.value.update()
-      else
+      else if (wizard.value)
         wizard.value.reset()
-    })
+    }, { immediate: true })
 
     provide(DROPDOWN_CONTEXT, {
       isOpen,

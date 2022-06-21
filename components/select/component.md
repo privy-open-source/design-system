@@ -159,8 +159,9 @@ If you want to get original selected item (text and value) not value only. you c
 ```vue
 <template>
   <Select
+    :options="optionsB"
     v-model="value"
-    :options="options" />
+    v-model:selected="selected" />
 </template>
 ```
 

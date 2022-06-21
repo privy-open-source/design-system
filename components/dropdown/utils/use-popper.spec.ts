@@ -1,13 +1,12 @@
 import { vi } from 'vitest'
 import {
-  ref, nextTick, isRef,
+  ref,
+  nextTick,
+  isRef,
 } from 'vue-demi'
-import type { Placement } from './use-popper'
-import { usePopper } from './use-popper'
+import { usePopper, Placement } from './use-popper'
 
 it('should create popper instance', async () => {
-  // const { usePopper } = (await import('./use-popper'))
-
   const target    = ref(document.createElement('div'))
   const menu      = ref(document.createElement('div'))
   const placement = ref<Placement>('bottom-start')
@@ -19,8 +18,6 @@ it('should create popper instance', async () => {
 })
 
 it('should update optionse if placement changed', async () => {
-  // const { usePopper } = (await import('./use-popper'))
-
   const target    = ref(document.createElement('div'))
   const menu      = ref(document.createElement('div'))
   const placement = ref<Placement>('bottom-start')
