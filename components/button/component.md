@@ -55,7 +55,7 @@
 
 ## Variants
 
-Button has 4 variants, `solid`, `outline`, `ghost`, `link`. default is `solid`
+Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
 
 <preview>
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -151,9 +151,10 @@ It's also work with other variants (except `ghost`).
 
 ## Sizing
 
-3 sizes you can use: `sm`, `md`, `lg`. default is `md`
+3 sizes you can use: `xs`, `sm`, `md`, `lg`. default is `md`
 
 <preview class="flex-col items-center gap-3 md:flex-row">
+  <Button size="xs">Click me</Button>
   <Button size="sm">Click me</Button>
   <Button size="md">Click me</Button>
   <Button size="lg">Click me</Button>
@@ -161,6 +162,7 @@ It's also work with other variants (except `ghost`).
 
 ```vue
 <template>
+  <Button size="xs">Click me</Button>
   <Button size="sm">Click me</Button>
   <Button size="md">Click me</Button>
   <Button size="lg">Click me</Button>
@@ -172,6 +174,7 @@ It's also work with other variants (except `ghost`).
 You can add prop `pill` to make button more rounded
 
 <preview class="flex-col items-center gap-3 md:flex-row">
+  <Button size="xs" pill>Click me</Button>
   <Button size="sm" pill>Click me</Button>
   <Button size="md" pill>Click me</Button>
   <Button size="lg" pill>Click me</Button>
@@ -179,6 +182,7 @@ You can add prop `pill` to make button more rounded
 
 ```vue
 <template>
+  <Button size="xs" pill>Click me</Button>
   <Button size="sm" pill>Click me</Button>
   <Button size="md" pill>Click me</Button>
   <Button size="lg" pill>Click me</Button>
@@ -190,6 +194,7 @@ You can add prop `pill` to make button more rounded
 You can add prop `icon` to make button more square, it's suitable for button with icon only
 
 <preview class="items-center gap-3">
+  <Button size="xs" icon><IconBee /></Button>
   <Button size="sm" icon><IconBee /></Button>
   <Button size="md" icon><IconBee /></Button>
   <Button size="lg" icon><IconBee /></Button>
@@ -197,6 +202,7 @@ You can add prop `icon` to make button more square, it's suitable for button wit
 
 ```vue
 <template>
+  <Button size="xs" icon><IconBee /></Button>
   <Button size="sm" icon><IconBee /></Button>
   <Button size="md" icon><IconBee /></Button>
   <Button size="lg" icon><IconBee /></Button>
@@ -206,6 +212,7 @@ You can add prop `icon` to make button more square, it's suitable for button wit
 You can also combine with `pill` mode to make round button
 
 <preview class="items-center gap-3">
+  <Button size="xs" icon pill><IconBee /></Button>
   <Button size="sm" icon pill><IconBee /></Button>
   <Button size="md" icon pill><IconBee /></Button>
   <Button size="lg" icon pill><IconBee /></Button>
@@ -213,6 +220,7 @@ You can also combine with `pill` mode to make round button
 
 ```vue
 <template>
+  <Button size="xs" icon pill><IconBee /></Button>
   <Button size="sm" icon pill><IconBee /></Button>
   <Button size="md" icon pill><IconBee /></Button>
   <Button size="lg" icon pill><IconBee /></Button>
@@ -247,7 +255,7 @@ You can also combine with `pill` mode to make round button
 |------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
 | `variant`  | `String`  |  `solid`  | Button style variant, valid value is `solid`, `outline`, `ghost`, `link`                                    |
 | `color`    | `String`  | `primary` | Button color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
-| `size`     | `String`  |   `md`    | Size of button, valid value is `sm`, `md`, `lg`                                                             |
+| `size`     | `String`  |   `md`    | Size of button, valid value is `xs`, `sm`, `md`, `lg`                                                             |
 | `pill`     | `Boolean` |  `false`  | Enable pill mode                                                                                            |
 | `icon`     | `Boolean` |  `false`  | Enable icon mode                                                                                            |
 | `disabled` | `Boolean` |  `false`  | Disable state                                                                                               |
