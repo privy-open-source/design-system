@@ -71,8 +71,8 @@ export default defineComponent({
 <style lang="postcss">
 /**
 * Component Name: Button
-* Component URI : https : //www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=294%3A5079
-* Date Created  : Feb 22, 2022
+* Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=291%3A3945
+* Date Created  : Feb 01, 2022
 * Last Update   : June 20, 2022
 */
 .btn {
@@ -227,6 +227,9 @@ export default defineComponent({
     @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
   }
 
+  /**
+  * Button icon variant
+  */
   &--icon {
     &.btn--xs {
       @apply p-1;
