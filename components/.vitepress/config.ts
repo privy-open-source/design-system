@@ -56,6 +56,10 @@ export default defineConfig({
             link: '/button/component'
           },
           {
+            text: 'Button Group',
+            link: '/buttonGroup/component'
+          },
+          {
             text: 'Card',
             link: '/card/component'
           },
