@@ -12,7 +12,7 @@
 TODO
 
 ## Contribution
-See [Contributing Guide](/CONTRIBUTE.md)
+See [Contributing Guide](/CONTRIBUTING.md)
 
 ## Thanks to
 

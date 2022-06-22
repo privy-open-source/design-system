@@ -10,8 +10,8 @@ export default defineAdapter({
     const filtered = computed(() => {
       return options.value.filter((item) => {
         return item.text
-          .toLocaleLowerCase()
-          .includes(keyword.value.toLocaleLowerCase())
+          .toLowerCase()
+          .includes(keyword.value.toLowerCase())
       })
     })
 

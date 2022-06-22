@@ -3,11 +3,9 @@ import Avatar from './Avatar.vue'
 import IconUser from '@carbon/icons-vue/lib/events/20'
 import MockImage from './__mocks__/image'
 import { vi } from 'vitest'
+import { delay } from 'nanodelay'
 
 vi.stubGlobal('Image', MockImage)
-
-// eslint-disable-next-line @typescript-eslint/promise-function-async
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 it('should render properly', () => {
   const screen = render({

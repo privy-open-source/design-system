@@ -7,6 +7,7 @@ module.exports = plugin(
         transitionDuration      : '150ms',
         transitionProperty      : 'opacity, transform',
         transitionTimingFunction: 'cubic-bezier(0.2, 0, 0.38, 0.9)',
+        willChange              : 'opacity, transform',
       },
       '.slide-up-enter, .slide-up-enter-from, .slide-up-leave-to': {
         opacity  : 0,
@@ -16,6 +17,7 @@ module.exports = plugin(
         transitionDuration      : '150ms',
         transitionProperty      : 'opacity',
         transitionTimingFunction: 'cubic-bezier(0.2, 0, 0.38, 0.9)',
+        willChange              : 'opacity, transform',
       },
       '.fade-enter, .fade-enter-from, .fade-leave-to'                                               : { opacity: 0 },
       '.zoom-in-enter-active, .zoom-out-enter-active, .zoom-in-leave-active, .zoom-out-leave-active':
@@ -23,6 +25,7 @@ module.exports = plugin(
           transitionDuration      : '150ms',
           transitionProperty      : 'opacity, transform',
           transitionTimingFunction: 'cubic-bezier(0.2, 0, 0.38, 0.9)',
+          willChange              : 'opacity, transform',
         },
       '.zoom-in-enter, .zoom-in-enter-from': {
         opacity  : 0,
@@ -45,6 +48,7 @@ module.exports = plugin(
           transitionDuration      : '150ms',
           transitionProperty      : 'opacity, transform',
           transitionTimingFunction: 'cubic-bezier(0.2, 0, 0.38, 0.9)',
+          willChange              : 'opacity, transform',
         },
       '.slide-right-enter, .slide-right-enter-from': {
         opacity  : 0,

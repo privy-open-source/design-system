@@ -1,5 +1,5 @@
 import { focusable } from 'tabbable'
-import { Ref } from 'vue-demi'
+import type { Ref } from 'vue-demi'
 
 export function useFocus (target: Ref<HTMLElement>) {
   function travel (step: number) {
