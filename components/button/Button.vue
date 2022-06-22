@@ -13,9 +13,9 @@ import {
   PropType,
 } from 'vue-demi'
 
-type StyleVariant = 'solid' | 'outline' | 'ghost' | 'link'
-type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
-type SizeVariant = 'sm' | 'md' | 'lg'
+export type StyleVariant = 'solid' | 'outline' | 'ghost' | 'link' | 'input'
+export type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
+export type SizeVariant = 'sm' | 'md' | 'lg'
 
 export default defineComponent({
   props: {

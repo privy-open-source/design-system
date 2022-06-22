@@ -11,9 +11,17 @@
       :close="close"
       :is-open="isOpen">
       <Button
+        data-testid="dropdown-activator"
+        :variant="variant"
+        :color="color"
+        :size="size"
+        :icon="icon"
+        :pill="pill"
         :disabled="disabled"
-        @click="toggle">
-        {{ text }}
+        @click.prevent="toggle">
+        <slot name="button-content">
+          {{ text }}
+        </slot>
       </Button>
     </slot>
 
@@ -21,6 +29,7 @@
       <div
         v-show="isOpen"
         ref="menu"
+        data-testid="dropdown-menu"
         class="dropdown__menu">
         <DropdownGroup
           ref="wizard"
@@ -35,8 +44,12 @@
 <script lang="ts">
 import {
   defineComponent,
+  InjectionKey,
   PropType,
+  provide,
+  Ref,
   watch,
+  toRef,
 } from 'vue-demi'
 import {
   templateRef,
@@ -44,12 +57,26 @@ import {
   onKeyStroke,
 } from '@vueuse/core'
 import Button from '../button/Button.vue'
-import DropdownGroup from './DropdownGroup.vue'
-import { useFocus } from './use-focus'
-import { PoppperOption, usePopper } from './use-popper'
+import DropdownGroup from '../dropdown-group/DropdownGroup.vue'
+import { useFocus } from './utils/use-focus'
+import { usePopper, Placement } from './utils/use-popper'
 import { useVModel } from '../input/use-input'
+import type {
+  StyleVariant,
+  ColorVariant,
+  SizeVariant,
+} from '../button/Button.vue'
 
 type DropdownGroupElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
+
+interface DropdownContext {
+  close: () => void,
+  open: () => void,
+  toggle: () => void,
+  isOpen: Ref<boolean>,
+}
+
+export const DROPDOWN_CONTEXT: InjectionKey<DropdownContext> = Symbol('DropdownContext')
 
 export default defineComponent({
   components: {
@@ -65,20 +92,29 @@ export default defineComponent({
       type   : String,
       default: '',
     },
-    popper: {
-      type   : Object as PropType<PoppperOption>,
-      default: (): PoppperOption => {
-        return {
-          placement: 'bottom-start',
-          modifiers: [
-            {
-              name   : 'offset',
-              options: { offset: [0, 6] },
-            },
-            { name: 'preventOverflow' },
-          ],
-        }
-      },
+    placement: {
+      type   : String as PropType<Placement>,
+      default: 'bottom-start',
+    },
+    variant: {
+      type   : String as PropType<StyleVariant>,
+      default: 'solid',
+    },
+    color: {
+      type   : String as PropType<ColorVariant>,
+      default: 'primary',
+    },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
+    },
+    icon: {
+      type   : Boolean,
+      default: false,
+    },
+    pill: {
+      type   : Boolean,
+      default: false,
     },
     disabled: {
       type   : Boolean,
@@ -91,14 +127,14 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   setup (props) {
-    const target = templateRef<HTMLDivElement>('dropdown')
-    const menu   = templateRef<HTMLDivElement>('menu')
-    const wizard = templateRef<DropdownGroupElement>('wizard')
-    const popper = usePopper(target, menu, props.popper)
-    const isOpen = useVModel(props)
+    const target    = templateRef<HTMLDivElement>('dropdown')
+    const menu      = templateRef<HTMLDivElement>('menu')
+    const wizard    = templateRef<DropdownGroupElement>('wizard')
+    const placement = toRef(props, 'placement')
+    const popper    = usePopper(target, menu, placement)
+    const isOpen    = useVModel(props)
 
-    const { next: nextFocus,
-      prev: prevFocus } = useFocus(menu)
+    const { next: nextFocus, prev: prevFocus } = useFocus(menu)
 
     function toggle () {
       if (!props.disabled)
@@ -116,13 +152,25 @@ export default defineComponent({
     }
 
     onClickOutside(menu, () => {
-      if (isOpen.value)
-        toggle()
+      if (isOpen.value) {
+        // Add little delay too prevent race condition with v-model changing
+        setTimeout(() => {
+          close()
+        })
+      }
     }, { ignore: [target] })
 
-    onKeyStroke('Escape', () => {
-      if (isOpen.value)
+    onKeyStroke('Escape', (event) => {
+      const target = event.target as HTMLElement
+
+      if (isOpen.value) {
         close()
+
+        /* In HappyDOM, blur() is undefined, which shouldn't happen in Real Browser */
+        /* c8 ignore next 2 */
+        if (typeof target.blur === 'function')
+          target.blur()
+      }
     })
 
     onKeyStroke(['ArrowUp'], (event) => {
@@ -139,11 +187,29 @@ export default defineComponent({
         nextFocus()
     })
 
-    watch(isOpen, (show) => {
-      if (show && popper.value)
+    onKeyStroke(['Tab'], (event) => {
+      event.preventDefault()
+
+      if (isOpen.value) {
+        if (event.shiftKey)
+          prevFocus()
+        else
+          nextFocus()
+      }
+    })
+
+    watch(isOpen, (value) => {
+      if (value && popper.value)
         popper.value.update()
-      else
+      else if (wizard.value)
         wizard.value.reset()
+    }, { immediate: true })
+
+    provide(DROPDOWN_CONTEXT, {
+      isOpen,
+      toggle,
+      open,
+      close,
     })
 
     return {

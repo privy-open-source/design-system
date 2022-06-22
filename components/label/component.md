@@ -111,17 +111,17 @@ Label has dismiss feature. It can be show or hide by `dismissable` props. If `di
 
 ### Props
 
-| Props      |   Type    |  Default  | Description                                                                                                 |
-|------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
-| `color`    | `String`  | `primary` | Label color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
-| `variant`    | `String`  | `default` | Label variant, valid value is `default`, `light` and `dot`. |
-| `size`    | `String`  | `medium` | Label variant, valid value is `large`, `medium`, `small` and `tiny`. |
-| `dismissable` | `Boolean` | `false`     | Show / Hide dismiss button                                      |
+| Props         |   Type    |  Default  | Description                                                                                                |
+|---------------|:---------:|:---------:|------------------------------------------------------------------------------------------------------------|
+| `color`       | `String`  | `primary` | Label color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
+| `variant`     | `String`  | `default` | Label variant, valid value is `default`, `light` and `dot`.                                                |
+| `size`        | `String`  | `medium`  | Label variant, valid value is `large`, `medium`, `small` and `tiny`.                                       |
+| `dismissable` | `Boolean` |  `false`  | Show / Hide dismiss button                                                                                 |
 
 ### Slots
 
-| Name      | Description                 |
-|-----------|-----------------------------|
+| Name      | Description               |
+|-----------|---------------------------|
 | `default` | Content to place in badge |
 
 ### Events

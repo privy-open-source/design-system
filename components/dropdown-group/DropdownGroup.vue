@@ -4,17 +4,18 @@
     mode="out-in">
     <div
       :key="tree._level"
+      data-testid="dropdown-group"
       class="dropdown__group">
       <template
         v-if="canBack">
         <DropdownItem
           key="btn-back"
           class="dropdown__group-btn dropdown__group-btn-back"
-          @click="back()">
+          @click.prevent="back()">
           <slot name="button-back">
             <IconBack class="dropdown__group-next" />
             <div class="dropdown__group-content">
-              Back
+              {{ backLabel }}
             </div>
           </slot>
         </DropdownItem>
@@ -24,7 +25,7 @@
         <DropdownItem
           key="btn-next"
           class="dropdown__group-btn"
-          @click="next()">
+          @click.prevent="next()">
           <slot name="button-content">
             <div class="dropdown__group-content">
               {{ text }}
@@ -43,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import DropdownItem from './DropdownItem.vue'
+import DropdownItem from '../dropdown/DropdownItem.vue'
 import IconNext from '@carbon/icons-vue/lib/chevron--right/16'
 import IconBack from '@carbon/icons-vue/lib/chevron--left/16'
 import {
@@ -57,6 +58,7 @@ import {
   computed,
   watch,
   Slot,
+  ComputedRef,
 } from 'vue-demi'
 
 interface DropdownNode {
@@ -69,9 +71,10 @@ interface DropdownContext {
   tree: ShallowRef<DropdownNode>,
   next: () => void,
   back: () => void,
+  backText: ComputedRef<string>,
 }
 
-const DROPDOWN_TREE: InjectionKey<DropdownContext> = Symbol('DropdownContext')
+const DROPDOWN_TREE: InjectionKey<DropdownContext> = Symbol('DropdownTree')
 
 export default defineComponent({
   components: {
@@ -90,7 +93,7 @@ export default defineComponent({
     },
   },
   setup (props, { slots }) {
-    const context    = inject(DROPDOWN_TREE)
+    const context    = inject(DROPDOWN_TREE, undefined, true)
     const transition = ref<'slide-left' | 'slide-right' | 'none'>('slide-left')
 
     const isRoot = computed(() => {
@@ -123,6 +126,10 @@ export default defineComponent({
       return Boolean(isRoot.value && tree.value.prev)
     })
 
+    const backLabel = computed(() => {
+      return context?.backText.value ?? props.backText
+    })
+
     watch(tree, (value, oldValue) => {
       transition.value = value._level > oldValue._level
         ? 'slide-left'
@@ -134,6 +141,7 @@ export default defineComponent({
         tree,
         next,
         back,
+        backText: backLabel,
       })
     }
 
@@ -156,6 +164,7 @@ export default defineComponent({
       reset,
       canBack,
       transition,
+      backLabel,
     }
   },
 })

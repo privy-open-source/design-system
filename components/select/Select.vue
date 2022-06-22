@@ -3,21 +3,27 @@
     v-model="isOpen"
     class="select"
     data-testid="select"
+    aria-label="select"
+    :disabled="disabled"
     :class="classNames">
     <template #activator>
       <Input
         v-model="search"
+        data-testid="select-search"
         class="select__search"
         :placeholder="placeholder"
         :disabled="disabled"
+        :readonly="readonly"
         @focus="onFocus" />
       <IconArrow class="select__caret" />
     </template>
 
     <template v-if="!isLoading && items.length === 0">
-      <div class="select__empty">
+      <div
+        data-testid="select-no-data"
+        class="select__empty">
         <slot name="empty">
-          No Data
+          {{ emptyText }}
         </slot>
       </div>
     </template>
@@ -26,27 +32,33 @@
       <DropdownItem
         v-for="(item, i) in items"
         :key="i"
+        data-testid="select-item"
         :class="{ selected: isSelected(item) }"
         @click="select(item)">
-        <slot
-          name="option"
-          :item="item">
-          <div class="select__option">
-            <span class="select__option-text">{{ item.text }}</span>
-            <IconCheck
-              class="select__option-checked" />
+        <div class="select__option">
+          <div class="select__option-text">
+            <slot
+              name="option"
+              :is-selected="isSelected(item)"
+              :item="item">
+              {{ item.text }}
+            </slot>
           </div>
-        </slot>
+          <IconCheck
+            class="select__option-checked" />
+        </div>
       </DropdownItem>
     </template>
 
     <template v-if="isLoading">
-      <div class="select__loading">
+      <div
+        data-testid="select-loading"
+        class="select__loading">
+        <IconLoading
+          width="14"
+          height="14" />
         <slot name="loading">
-          <IconLoading
-            width="14"
-            height="14" />
-          Loading...
+          {{ loadingText }}
         </slot>
       </div>
     </template>
@@ -63,6 +75,7 @@ import IconLoading from '../spinner/SpinnerRing.vue'
 import {
   computed,
   defineComponent,
+  getCurrentInstance,
   PropType,
   ref,
 } from 'vue-demi'
@@ -71,6 +84,8 @@ import { Adapter } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
+import { tryOnMounted } from '@vueuse/shared'
+import { onStartTyping } from '@vueuse/core'
 
 export default defineComponent({
   components: {
@@ -82,9 +97,18 @@ export default defineComponent({
     IconLoading,
   },
   props: {
-    // eslint-disable-next-line vue/require-prop-types
-    modelValue: { default: '' },
-    selected  : {
+    modelValue: {
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: '',
+    },
+    selected: {
       type   : Object as PropType<SelectItem>,
       default: () => {
         return {
@@ -101,15 +125,23 @@ export default defineComponent({
       type   : String,
       default: '',
     },
+    emptyText: {
+      type   : String,
+      default: 'No Data',
+    },
+    loadingText: {
+      type   : String,
+      default: 'Loading...',
+    },
     adapter: {
       type   : Object as PropType<Adapter>,
       default: () => BasicAdapter,
     },
-    noAutoClose: {
+    disabled: {
       type   : Boolean,
       default: false,
     },
-    disabled: {
+    readonly: {
       type   : Boolean,
       default: false,
     },
@@ -119,14 +151,17 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: [
+    'change',
     'update:modelValue',
     'update:selected',
     'userInput',
   ],
   setup (props, { emit }) {
+    const vm        = getCurrentInstance()
+    const input     = ref<HTMLInputElement>()
     const keyword   = ref('')
     const isOpen    = ref(false)
-    const isLoading = useLoading()
+    const isLoading = useLoading({ elapsed: false })
     const context   = {
       props,
       keyword,
@@ -145,6 +180,7 @@ export default defineComponent({
           }
       },
       set (selected: SelectItem) {
+        emit('change', selected)
         emit('update:modelValue', selected.value)
         emit('update:selected', selected)
 
@@ -158,6 +194,12 @@ export default defineComponent({
 
       if (isOpen.value)
         result.push('select--open')
+
+      if (props.disabled)
+        result.push('select--disabled')
+
+      if (props.readonly)
+        result.push('select--readonly')
 
       return result
     })
@@ -175,18 +217,29 @@ export default defineComponent({
     })
 
     function select (item: SelectItem) {
-      model.value  = item
-      isOpen.value = props.noAutoClose
+      model.value = item
     }
 
     function onFocus () {
-      isOpen.value  = true
-      keyword.value = ''
+      if (!props.disabled && !props.readonly)
+        isOpen.value = true
     }
 
     function isSelected (item: SelectItem) {
       return isEqual(item.value, model.value.value)
     }
+
+    onStartTyping(() => {
+      if (isOpen.value && input.value && input.value !== document.activeElement)
+        input.value.focus()
+    })
+
+    tryOnMounted(() => {
+      if (vm?.proxy?.$el) {
+        input.value = (vm.proxy.$el as HTMLElement)
+          .querySelector('.select__search')
+      }
+    })
 
     return {
       classNames,

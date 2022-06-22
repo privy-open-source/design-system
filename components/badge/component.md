@@ -77,16 +77,16 @@ Badge has 3 variants namely `default`, `light` and `inverse`. When variant is no
 
 ### Props
 
-| Props      |   Type    |  Default  | Description                                                                                                 |
-|------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
-| `color`    | `String`  | `primary` | Badge color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
-| `variant`    | `String`  | `default` | Badge variant, valid value is `default`, `light` and `inverse`. If need badge in `default` variant, just leave badge without setting up the variant. |
+| Props     |   Type   |  Default  | Description                                                                                                                                          |
+|-----------|:--------:|:---------:|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `color`   | `String` | `primary` | Badge color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`                                           |
+| `variant` | `String` | `default` | Badge variant, valid value is `default`, `light` and `inverse`. If need badge in `default` variant, just leave badge without setting up the variant. |
 
 ### Slots
 
-| Name      | Description                 |
-|-----------|-----------------------------|
-| `default` | Content to place in badge   |
+| Name      | Description               |
+|-----------|---------------------------|
+| `default` | Content to place in badge |
 
 ### Events
 <table>

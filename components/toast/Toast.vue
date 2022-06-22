@@ -118,7 +118,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .toast {
-  @apply flex shadow-lg w-72 md:w-96 overflow-hidden;
+  @apply flex shadow-xl w-72 md:w-96 overflow-hidden;
 
   .toast__icon,
   .toast__close {

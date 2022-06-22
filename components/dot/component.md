@@ -61,9 +61,9 @@ Dot available in 7 different colors `primary`, `secondary`, `success`, `info`, `
 
 ### Props
 
-| Props      |   Type    |  Default  | Description                                                                                                 |
-|------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
-| `color`    | `String`  | `primary` | Dot color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
+| Props   |   Type   |  Default  | Description                                                                                              |
+|---------|:--------:|:---------:|----------------------------------------------------------------------------------------------------------|
+| `color` | `String` | `primary` | Dot color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
 
 ### Slots
 
