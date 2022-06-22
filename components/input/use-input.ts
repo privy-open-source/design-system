@@ -4,7 +4,7 @@ import {
 } from 'vue-demi'
 
 export interface InputProps<V = string> {
-  modelValue: V
+  modelValue: V,
 }
 
 export function useVModel<V> (props: InputProps<V>): Ref<V> {

@@ -2,14 +2,14 @@ import { computed, Ref } from 'vue-demi'
 import { SelectItem, SelectProps } from '../use-select'
 
 export interface AdapterContext {
-  props: SelectProps
-  keyword: Ref<string>
-  isOpen: Ref<boolean>
-  isLoading: Ref<boolean>
+  props: SelectProps,
+  keyword: Ref<string>,
+  isOpen: Ref<boolean>,
+  isLoading: Ref<boolean>,
 }
 
 export interface Adapter {
-  setup: (context: AdapterContext) => Ref<SelectItem[]>
+  setup: (context: AdapterContext) => Ref<SelectItem[]>,
 }
 
 /**

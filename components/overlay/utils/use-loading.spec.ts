@@ -1,9 +1,7 @@
 import { vi } from 'vitest'
 import { nextTick } from 'vue-demi'
 import useLoading from './use-loading'
-
-// eslint-disable-next-line @typescript-eslint/promise-function-async
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+import { delay } from 'nanodelay'
 
 beforeEach(() => {
   vi.useFakeTimers()

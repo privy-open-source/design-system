@@ -45,7 +45,7 @@ module.exports = {
         ExportDeclaration: 'always',
       },
     ],
-    'object-property-newline': 'error',
+    'object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
     'camelcase'              : 'warn',
     'comma-dangle'           : ['error', 'always-multiline'],
     'no-multi-spaces'        : [
@@ -82,10 +82,24 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/explicit-function-return-type' : 'off',
     '@typescript-eslint/strict-boolean-expressions'    : 'off',
-    'align-assignments/align-assignments'              : [2, { requiresOnly: false }],
-    'vue/multi-word-component-names'                   : 'off',
-    'vue/no-reserved-component-names'                  : 'off',
-    'vue/html-closing-bracket-newline'                 : [
+    '@typescript-eslint/member-delimiter-style'        : [
+      'error',
+      {
+        multiline: {
+          delimiter  : 'comma',
+          requireLast: true,
+        },
+        singleline: {
+          delimiter  : 'comma',
+          requireLast: false,
+        },
+        multilineDetection: 'brackets',
+      },
+    ],
+    'align-assignments/align-assignments': [2, { requiresOnly: false }],
+    'vue/multi-word-component-names'     : 'off',
+    'vue/no-reserved-component-names'    : 'off',
+    'vue/html-closing-bracket-newline'   : [
       'error',
       {
         singleline: 'never',
