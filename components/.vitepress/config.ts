@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitepress'
+import logo from './theme/assets/logo.svg'
 
 export default defineConfig({
   base       : process.env.BASE_URL ?? '/design-system/',
-  title      : 'Design System',
-  description: 'Privy Design System',
+  title      : 'Archi',
+  description: 'Archi - Open Source Design System by PrivyID',
   themeConfig: {
+    logo        : './assets/logo.svg',
     repo        : 'privy-open-source/design-system',
     docsDir     : 'components',
     docsBranch  : 'main',

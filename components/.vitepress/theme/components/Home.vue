@@ -1,15 +1,17 @@
 <template>
-  <div class="flex flex-col items-center justify-center min-h-screen">
+  <div class="flex flex-col items-center justify-center pt-8">
+    <img class="py-7" src="/assets/logo.svg" alt="icon privy" width="150">
+
     <div class="flex h-full">
       <div class="px-3 border-r">
-        <img :src="icon" alt="icon privy">
+        <img src="/assets/icon-privy.svg" alt="icon privy">
       </div>
       <div class="px-3">
         <Badge>
           Official
         </Badge>
         <Heading class="mt-2">
-          Design System
+          <span class="text-primary-100">Archi</span> Design System
         </Heading>
         <Subheading>
           By PrivyID
@@ -35,7 +37,6 @@
   import Subheading from "../../../subheading/Subheading.vue"
   import Badge from "../../../badge/Badge.vue"
   import Button from "../../../button/Button.vue"
-  import icon from "../assets/icon-privy.svg"
   import { useRouter } from "vitepress"
   import IconGithub from "@carbon/icons-vue/lib/logo--github/20"
 
@@ -53,7 +54,6 @@
       }
 
       return {
-        icon,
         gettingStarted,
         openGithub,
       }
