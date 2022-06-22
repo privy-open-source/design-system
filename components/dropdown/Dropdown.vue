@@ -125,8 +125,12 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['update:modelValue'],
-  setup (props) {
+  emits: [
+    'show',
+    'hide',
+    'update:modelValue',
+  ],
+  setup (props, { emit }) {
     const target    = templateRef<HTMLDivElement>('dropdown')
     const menu      = templateRef<HTMLDivElement>('menu')
     const wizard    = templateRef<DropdownGroupElement>('wizard')
@@ -137,18 +141,28 @@ export default defineComponent({
     const { next: nextFocus, prev: prevFocus } = useFocus(menu)
 
     function toggle () {
-      if (!props.disabled)
-        isOpen.value = !isOpen.value
+      if (!props.disabled) {
+        if (isOpen.value)
+          close()
+        else
+          open()
+      }
     }
 
     function open () {
-      if (!props.disabled)
+      if (!props.disabled) {
         isOpen.value = true
+
+        emit('show')
+      }
     }
 
     function close () {
-      if (!props.disabled)
+      if (!props.disabled) {
         isOpen.value = false
+
+        emit('hide')
+      }
     }
 
     onClickOutside(menu, () => {
