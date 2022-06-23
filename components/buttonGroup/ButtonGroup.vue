@@ -1,6 +1,6 @@
 <template>
   <div
-    data-testid="button-group"
+    data-testid="btn-group"
     :class="classNames">
     <slot />
   </div>

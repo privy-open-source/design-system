@@ -122,7 +122,7 @@ Button Group all addon is group a series of buttons with only icon
 
 ## Variants
 
-Button Group just available in 3 variants: `solid`, `outline` and `ghost`. You can make these variants by applying variant to each button in a group.
+Button Group just available in 2 variants: `solid` and `outline`. You can make these variants by applying variant to each button in a group.
 
 <preview class="flex-col items-center gap-3">
   <div>
@@ -139,13 +139,6 @@ Button Group just available in 3 variants: `solid`, `outline` and `ghost`. You c
       <Button variant="outline">Button Text</Button>
     </Button-Group>
   </div>
-  <div>
-    <Button-Group>
-      <Button variant="ghost">Button Text</Button>
-      <Button variant="ghost">Button Text</Button>
-      <Button variant="ghost">Button Text</Button>
-    </Button-Group>
-  </div>
 </preview>
 
 ```vue
@@ -159,11 +152,6 @@ Button Group just available in 3 variants: `solid`, `outline` and `ghost`. You c
     <Button variant="outline">Button Text</Button>
     <Button variant="outline">Button Text</Button>
     <Button variant="outline">Button Text</Button>
-  </Button-Group>
-  <Button-Group>
-    <Button variant="ghost">Button Text</Button>
-    <Button variant="ghost">Button Text</Button>
-    <Button variant="ghost">Button Text</Button>
   </Button-Group>
 </template>
 ```
@@ -340,13 +328,6 @@ You just add `pill` in Button Group to make button more rounded. Prop `pill` of 
       <Button variant="outline">Button Text</Button>
     </Button-Group>
   </div>
-  <div>
-    <Button-Group pill>
-      <Button variant="ghost">Button Text</Button>
-      <Button variant="ghost">Button Text</Button>
-      <Button variant="ghost">Button Text</Button>
-    </Button-Group>
-  </div>
 </preview>
 
 ```vue
@@ -366,12 +347,6 @@ You just add `pill` in Button Group to make button more rounded. Prop `pill` of 
     </Button-Group>
   </div>
   <div>
-    <Button-Group pill>
-      <Button variant="ghost">Button Text</Button>
-      <Button variant="ghost">Button Text</Button>
-      <Button variant="ghost">Button Text</Button>
-    </Button-Group>
-  </div>
 </template>
 ```
 
