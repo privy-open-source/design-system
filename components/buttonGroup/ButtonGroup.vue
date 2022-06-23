@@ -1,5 +1,7 @@
 <template>
-  <div :class="classNames">
+  <div
+    data-testid="button-group"
+    :class="classNames">
     <slot />
   </div>
 </template>
@@ -26,7 +28,8 @@ export default defineComponent({
     const classNames = computed(() => {
       const result: string[] = ['btn-group']
 
-      if (props.size > 0)
+      // eslint-disable-next-line unicorn/explicit-length-check
+      if (props.size)
         result.push(`btn-group--${props.size}`)
 
       if (props.pill)
@@ -43,11 +46,17 @@ export default defineComponent({
 
 <style lang="postcss">
 .btn-group {
+  @apply inline-flex items-center;
+
   &--xs {
     .btn {
-      @apply px-2 py-1 gap-1 text-sm;
+      &,
+      .dropdown > & {
+        @apply px-2 py-1 gap-1 text-sm;
+      }
 
-      &:first-child {
+      &:first-child,
+      .dropdown:first-child {
         @apply rounded-l-xs;
       }
 
@@ -58,7 +67,8 @@ export default defineComponent({
   }
 
   &--sm {
-    .btn {
+    .btn,
+    .dropdown .btn {
       @apply px-4 py-2 gap-2 text-base;
 
       &:first-child {
@@ -73,12 +83,16 @@ export default defineComponent({
 
   &--md {
     .btn {
-      @apply px-5 py-3 gap-3 text-base;
+      &,
+      .dropdown > .btn {
+        @apply px-5 py-3 gap-3 text-base;
+      }
     }
   }
 
   &--lg {
-    .btn {
+    .btn,
+    .dropdown .btn {
       @apply px-8 py-5 gap-4 text-base;
     }
   }
@@ -94,14 +108,21 @@ export default defineComponent({
         @apply rounded-r;
       }
     }
-  }
 
-  .btn {
-    @apply rounded-none border-r-black;
+    .dropdown {
+      &:first-child > .btn {
+        @apply rounded-l;
+      }
+
+      &:last-child > .btn {
+        @apply rounded-r;
+      }
+    }
   }
 
   &--pill {
-    .btn {
+    .btn,
+    .dropdown .btn {
       &:first-child {
         @apply rounded-l-full;
       }
@@ -110,6 +131,34 @@ export default defineComponent({
         @apply rounded-r-full;
       }
     }
+  }
+
+  .btn {
+    @apply rounded-none;
+
+    &--solid,
+    &--ghost {
+      &:not(:last-child) {
+        &.btn--primary,
+        &.btn--secondary,
+        &.btn--success,
+        &.btn--warning,
+        &.btn--info,
+        &.btn--danger,
+        &.btn--gold {
+          @apply border-r-black border-opacity-10;
+        }
+      }
+    }
+
+    &--outline,
+    &--ghost {
+      @apply ml-[-1px];
+    }
+  }
+
+  .dropdown > .btn {
+    @apply rounded-none;
   }
 
 }
