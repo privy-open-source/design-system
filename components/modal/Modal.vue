@@ -61,7 +61,6 @@ import {
   defineComponent,
   nextTick,
   watch,
-  onMounted,
 } from 'vue-demi'
 import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
@@ -116,17 +115,10 @@ export default defineComponent({
         close(event)
     }
 
-    function closeOnEsc (): void {
-      if (!props.noCloseOnEsc) {
-        onKeyStroke('Escape', (event) => {
-          close(event)
-        }, { eventName: 'keydown' })
-      }
-    }
-
-    onMounted(() => {
-      closeOnEsc()
-    })
+    onKeyStroke('Escape', (event) => {
+      if (!props.noCloseOnEsc)
+        close(event)
+    }, { eventName: 'keydown' })
 
     watch(model, (value) => {
       if (value === false) {

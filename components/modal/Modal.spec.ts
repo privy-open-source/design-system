@@ -79,7 +79,7 @@ it('Modal will close if `Escape` button was pressed', async () => {
 
   await fireEvent.keyDown(window, { key: 'Escape' })
 
-  expect(modal).toHaveAttribute('style', 'display: none;')
+  expect(modal).not.toBeVisible()
 })
 
 it('should be able to add Modal Header via slot "header"', () => {
