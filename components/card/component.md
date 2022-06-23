@@ -36,8 +36,8 @@
 
 <preview>
   <Card>
-    While here you will see the content of cards, everything goes here. 
-    If you need custom cards, take the component which more represent to 
+    While here you will see the content of cards, everything goes here.
+    If you need custom cards, take the component which more represent to
     what you need and detach it.
   </Card>
 </preview>
@@ -45,8 +45,8 @@
 ```vue
 <template>
   <Card>
-    While here you will see the content of cards, everything goes here. 
-    If you need custom cards, take the component which more represent to 
+    While here you will see the content of cards, everything goes here.
+    If you need custom cards, take the component which more represent to
     what you need and detach it.
   </Card>
 </template>
@@ -56,8 +56,8 @@
 <preview>
   <Card
     title="Any Title Should Here">
-    While here you will see the content of cards, everything goes here. 
-    If you need custom cards, take the component which more represent to 
+    While here you will see the content of cards, everything goes here.
+    If you need custom cards, take the component which more represent to
     what you need and detach it.
   </Card>
   <Card
@@ -65,8 +65,8 @@
     <template #action>
       <Button color="primary" variant="link">Button Text</Button>
     </template>
-    While here you will see the content of cards, everything goes here. 
-    If you need custom cards, take the component which more represent to 
+    While here you will see the content of cards, everything goes here.
+    If you need custom cards, take the component which more represent to
     what you need and detach it.
   </Card>
 </preview>
@@ -75,8 +75,8 @@
 <template>
   <Card
     title="Any Title Should Here">
-    While here you will see the content of cards, everything goes here. 
-    If you need custom cards, take the component which more represent to 
+    While here you will see the content of cards, everything goes here.
+    If you need custom cards, take the component which more represent to
     what you need and detach it.
   </Card>
   <Card
@@ -84,8 +84,8 @@
     <template #action>
       <Button color="primary" variant="link">Button Text</Button>
     </template>
-    While here you will see the content of cards, everything goes here. 
-    If you need custom cards, take the component which more represent to 
+    While here you will see the content of cards, everything goes here.
+    If you need custom cards, take the component which more represent to
     what you need and detach it.
   </Card>
 </template>
@@ -93,10 +93,10 @@
 
 ### Card with Footer
 <preview>
-  <Card 
+  <Card
     title="Any Title Should Here">
-    While here you will see the content of cards, everything goes here. 
-    If you need custom cards, take the component which more represent to 
+    While here you will see the content of cards, everything goes here.
+    If you need custom cards, take the component which more represent to
     what you need and detach it.
     <template #footer>
       <Button variant="outline" color="primary">Enable Sample Button</Button>
@@ -107,10 +107,10 @@
 
 ```vue
 <template>
-  <Card 
+  <Card
     title="Any Title Should Here">
-    While here you will see the content of cards, everything goes here. 
-    If you need custom cards, take the component which more represent to 
+    While here you will see the content of cards, everything goes here.
+    If you need custom cards, take the component which more represent to
     what you need and detach it.
     <template #footer>
       <Button variant="outline" color="primary">Enable Sample Button</Button>
@@ -122,43 +122,43 @@
 
 ## Sectioned
 <preview>
-  <Card 
+  <Card
     title="Card with Section"
     sectioned>
     <Card-Section>
-      While here you will see the content of cards, everything goes here. 
-      If you need custom cards, take the component which more represent to 
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
       what you need and detach it.
     </Card-Section>
-    <Card-Section 
+    <Card-Section
       title="Subtitle supposedly here">
       <template #action>
-        <a href="#" class="text-primary-100 hover:text-primary-hovered underline">Edit</a>
+        <a href="#" class="underline text-primary-100 hover:text-primary-hovered">Edit</a>
       </template>
-      While here you will see the content of cards, everything goes here. 
-      If you need custom cards, take the component which more represent to 
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
       what you need and detach it.
     </Card-Section>
   </Card>
-  <Card 
+  <Card
     title="Card with Sub-Section"
     sectioned>
     <template #action>
       <Button variant="link" color="primary">Button Text</Button>
     </template>
     <Card-Section>
-      While here you will see the content of cards, everything goes here. 
-      If you need custom cards, take the component which more represent to 
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
       what you need and detach it.
     </Card-Section>
-    <Card-Section 
+    <Card-Section
       title="Subtitle supposedly here">
-      While here you will see the content of cards, everything goes here. 
-      If you need custom cards, take the component which more represent to 
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
       what you need and detach it.
       <Card-Section>
-        While here you will see the content of cards, everything goes here. 
-        If you need custom cards, take the component which more represent to 
+        While here you will see the content of cards, everything goes here.
+        If you need custom cards, take the component which more represent to
         what you need and detach it.
       </Card-Section>
     </Card-Section>
@@ -167,44 +167,44 @@
 
 ```vue
 <template>
-  <Card 
+  <Card
     title="Card Section"
     sectioned>
     <Card-Section>
-      While here you will see the content of cards, everything goes here. 
-      If you need custom cards, take the component which more represent to 
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
       what you need and detach it.
     </Card-Section>
-    <Card-Section 
+    <Card-Section
       title="Subtitle supposedly here">
       <template #action>
-        <a href="#" class="text-primary-100 hover:text-primary-hovered underline">Edit</a>
+        <a href="#" class="underline text-primary-100 hover:text-primary-hovered">Edit</a>
       </template>
-      While here you will see the content of cards, everything goes here. 
-      If you need custom cards, take the component which more represent to 
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
       what you need and detach it.
     </Card-Section>
   </Card>
 
-  <Card 
+  <Card
     title="Card Sub-Section"
     sectioned>
     <template #action>
       <Button variant="link" color="primary">Button Text</Button>
     </template>
     <Card-Section>
-      While here you will see the content of cards, everything goes here. 
-      If you need custom cards, take the component which more represent to 
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
       what you need and detach it.
     </Card-Section>
-    <Card-Section 
+    <Card-Section
       title="Subtitle supposedly here">
-      While here you will see the content of cards, everything goes here. 
-      If you need custom cards, take the component which more represent to 
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
       what you need and detach it.
       <Card-Section>
-        While here you will see the content of cards, everything goes here. 
-        If you need custom cards, take the component which more represent to 
+        While here you will see the content of cards, everything goes here.
+        If you need custom cards, take the component which more represent to
         what you need and detach it.
       </Card-Section>
     </Card-Section>
@@ -214,14 +214,14 @@
 
 ## Callout
 <preview>
-  <Card 
+  <Card
     title="Hello and Happy New Year!"
     element="div"
     callout>
     <div class="flex items-start gap-x-8">
       <div class="w-3/4">
-        What amazing growth you achieved this year, Tarjono! You deserve 
-        every bit of it and we’re sure you’ll do even better next year. 
+        What amazing growth you achieved this year, Tarjono! You deserve
+        every bit of it and we’re sure you’ll do even better next year.
         There’s a 30% membership renewal discount waiting for you when you come back.
         <div class="pt-8">
           <Button variant="outline" color="secondary">Collect Discount</Button>
@@ -237,14 +237,14 @@
 
 ```vue
 <template>
-  <Card 
+  <Card
     title="Hello and Happy New Year!"
     element="div"
     callout>
     <div class="flex items-start gap-x-8">
       <div class="w-3/4">
-        What amazing growth you achieved this year, Tarjono! You deserve 
-        every bit of it and we’re sure you’ll do even better next year. 
+        What amazing growth you achieved this year, Tarjono! You deserve
+        every bit of it and we’re sure you’ll do even better next year.
         There’s a 30% membership renewal discount waiting for you when you come back.
         <div class="pt-8">
           <Button variant="outline" color="secondary">Collect Discount</Button>
@@ -263,21 +263,21 @@
 
 ### Props
 
-| Props         |   Type    | Default    | Description                                                     |
-|---------------|:---------:|:----------:|-----------------------------------------------------------------|
-| `element`     | `String`  | `section`  | Card element, valid value is `div`, `section`, and `article`    |
-| `title`       | `String`  | -          | Card Header Title                                               |
-| `sectioned`   | `Boolean` | `false`    | Enable Card Section                                             |
-| `disabled`    | `Boolean` | `false`    | Disable (look-like) Card                                        |
-| `callout`     | `Boolean` | `false`    | Enable Callout                                                  |
-| `dismissable` | `Boolean` | `true`     | Show / Hide dismiss button                                      |
+| Props         |   Type    |  Default  | Description                                                  |
+|---------------|:---------:|:---------:|--------------------------------------------------------------|
+| `element`     | `String`  | `section` | Card element, valid value is `div`, `section`, and `article` |
+| `title`       | `String`  |     -     | Card Header Title                                            |
+| `sectioned`   | `Boolean` |  `false`  | Enable Card Section                                          |
+| `disabled`    | `Boolean` |  `false`  | Disable (look-like) Card                                     |
+| `callout`     | `Boolean` |  `false`  | Enable Callout                                               |
+| `dismissable` | `Boolean` |  `true`   | Show / Hide dismiss button                                   |
 
 ### Slots
 | Name      | Description                                                                                      |
 |-----------|--------------------------------------------------------------------------------------------------|
 | `action ` | Action (permalink or button) to place in Card/Card-Section Header just if `header` slot inactive |
 | `header ` | Content (in the form of— permalink or button) to place in Card/Card-Section Header               |
-| `footer ` | Content (in the form of— permalink or button) to place in Card/Card-Section Footer                |
+| `footer ` | Content (in the form of— permalink or button) to place in Card/Card-Section Footer               |
 
 ### Events
 

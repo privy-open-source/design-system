@@ -1,23 +1,19 @@
-import { computed } from 'vue'
-import { useEventListener } from '@vueuse/core'
-import { tryOnMounted, watchDebounced } from '@vueuse/shared'
+import { tryOnMounted } from '@vueuse/shared'
 import { SelectItem } from '../use-select'
 import { defineAdapter } from './adapter'
+import { onFinishTyping, onStartTyping } from '../utils/use-on-typing'
 import {
   getCurrentInstance,
   ref,
   watch,
-  WatchSource,
 } from 'vue-demi'
+import { onScrollBottom } from '../utils/use-on-scroll'
 
 export type LoadFn = (keyword: string, page: number, perPage: number) => Promise<SelectItem[]>
 
-export interface AsyncHandler {
-  load: LoadFn
-  watch: WatchSource
-}
+export type WatchDeps = Parameters<typeof watch>[0]
 
-export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
+export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps) {
   return defineAdapter({
     setup ({ isLoading, keyword }) {
       const options  = ref([])
@@ -28,22 +24,18 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
       const vm      = getCurrentInstance()
       const menuDiv = ref<HTMLDivElement>()
 
-      const loadFn = computed(() => {
-        return typeof handler !== 'function' ? handler.load : handler
-      })
-
       function load () {
         isLoading.value = true
 
-        loadFn
-          .value(keyword.value, page.value, 20)
+        loadFn(keyword.value, page.value, 20)
           .then((result) => {
-            if (result && result.length > 0) {
+            if (Array.isArray(result) && result.length > 0) {
               options.value.push(...result)
               page.value++
             } else
               isFinish.value = true
           })
+          .catch(console.error)
           .finally(() => {
             isLoading.value = false
           })
@@ -55,42 +47,44 @@ export default function defineAsyncAdapter (handler: LoadFn | AsyncHandler) {
         options.value  = []
       }
 
-      watch(keyword, () => {
-        isTyping.value = true
-        reset()
-      })
+      if (deps !== undefined) {
+        watch(deps, () => {
+          keyword.value = ''
 
-      watchDebounced(keyword, () => {
-        isTyping.value = false
-
-        load()
-      }, { debounce: 500 })
-
-      watch(isTyping, (value) => {
-        // syncRef isTyping to isLoading
-        isLoading.value = value
-      })
-
-      if (typeof handler !== 'function' && handler.watch) {
-        watch(handler.watch, () => {
           reset()
           load()
         })
       }
 
       tryOnMounted(() => {
-        menuDiv.value = (vm.proxy.$el as HTMLElement).querySelector('.dropdown__menu')
+        if (vm?.proxy?.$el) {
+          menuDiv.value = (vm.proxy.$el as HTMLElement)
+            .querySelector('.dropdown__menu')
+        }
 
         load()
       })
 
-      useEventListener(menuDiv, 'scroll', (event) => {
-        const target   = event.target as HTMLDivElement
-        const isBottom = (target.scrollTop + target.offsetHeight) >= target.scrollHeight
+      onStartTyping(keyword, () => {
+        isTyping.value = true
 
-        if (isBottom && !isLoading.value && !isFinish.value)
+        reset()
+      })
+
+      onFinishTyping(keyword, () => {
+        isTyping.value = false
+
+        load()
+      })
+
+      watch(isTyping, (value) => {
+        isLoading.value = value
+      })
+
+      onScrollBottom(menuDiv, () => {
+        if (!isLoading.value && !isFinish.value)
           load()
-      }, { passive: true })
+      })
 
       return options
     },

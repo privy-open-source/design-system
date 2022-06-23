@@ -61,13 +61,40 @@ export default defineComponent({
       type   : String,
       default: undefined,
     },
-    // eslint-disable-next-line vue/require-prop-types
-    modelValue    : { default: false },
-    // eslint-disable-next-line vue/require-prop-types
-    value         : { default: true },
-    // eslint-disable-next-line vue/require-prop-types
-    uncheckedValue: { default: false },
-    checked       : {
+    modelValue: {
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: false,
+    },
+    value: {
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: true,
+    },
+    uncheckedValue: {
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: false,
+    },
+    checked: {
       type   : Boolean,
       default: false,
     },
