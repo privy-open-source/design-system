@@ -7,7 +7,7 @@
 <style lang="postcss">
 /**
 * Global Styling
-* 
+*
 *
  */
 .app {
@@ -24,7 +24,6 @@
   caption {
     @apply text-xs text-subtext-100;
   }
-
 
 }
 </style>

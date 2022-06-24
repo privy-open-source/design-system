@@ -2,8 +2,8 @@
   import { ref } from "vue-demi"
   import ButtonGroup from './ButtonGroup.vue'
   import Button from '../button/Button.vue'
-  import Dropdown from "../dropdown/Dropdown.vue"
-  import DropdownItem from "../dropdown/DropdownItem.vue"
+  import Dropdown from '../dropdown/Dropdown.vue'
+  import DropdownItem from '../dropdown/DropdownItem.vue'
   import IconChevronLeft from '@carbon/icons-vue/lib/chevron--left/20'
   import IconChevronRight from '@carbon/icons-vue/lib/chevron--right/20'
   import IconChevronDown from '@carbon/icons-vue/lib/chevron--down/20'
@@ -39,7 +39,7 @@ Place one add-on on either side of a Button. You may also make Button all addon.
 
 <preview>
   <Button-Group>
-    <Button><IconChevronLeft /></Button>
+    <Button icon><IconChevronLeft /></Button>
     <Button>Button Text</Button>
   </Button-Group>
 </preview>
@@ -47,7 +47,7 @@ Place one add-on on either side of a Button. You may also make Button all addon.
 ```vue
 <template>
   <Button-Group>
-    <Button><IconChevronLeft /></Button>
+    <Button icon><IconChevronLeft /></Button>
     <Button>Button Text</Button>
   </Button-Group>
 </template>
@@ -63,9 +63,10 @@ In the button group, to simplify several actions in one button, it can be combin
 <preview>
   <Button-Group>
     <Button>Button Text</Button>
-    <Dropdown>
-      <template #activator="{ open }">
-        <Button @click="open"><IconChevronDown /></Button>
+    <Dropdown
+      icon>
+      <template #button-content>
+        <IconChevronDown />
       </template>
       <DropdownItem>Action</DropdownItem>
       <DropdownItem>Another action</DropdownItem>
@@ -79,9 +80,10 @@ In the button group, to simplify several actions in one button, it can be combin
 <template>
   <Button-Group>
     <Button>Button Text</Button>
-    <Dropdown>
-      <template #activator="{ open }">
-        <Button @click="open"><IconChevronDown /></Button>
+    <Dropdown
+      icon>
+      <template #button-content>
+        <IconChevronDown />
       </template>
       <DropdownItem>Action</DropdownItem>
       <DropdownItem>Another action</DropdownItem>
@@ -99,16 +101,16 @@ In the button group, to simplify several actions in one button, it can be combin
 Button Group all addon is group a series of buttons with only icon
 <preview>
   <Button-Group>
-    <Button><IconChevronLeft /></Button>
-    <Button><IconChevronRight /></Button>
+    <Button icon><IconChevronLeft /></Button>
+    <Button icon><IconChevronRight /></Button>
   </Button-Group>
 </preview>
 
 ```vue
 <template>
   <Button-Group>
-    <Button><IconChevronLeft /></Button>
-    <Button><IconChevronRight /></Button>
+    <Button icon><IconChevronLeft /></Button>
+    <Button icon><IconChevronRight /></Button>
   </Button-Group>
 </template>
 
@@ -157,7 +159,7 @@ Button Group just available in 2 variants: `solid` and `outline`. You can make t
 ```
 
 ## Color
-You can change color of Button Group by applying color to every button in a group.
+You can change color of Button Group by applying color to every Button in a group.
 <preview class="flex-col items-center gap-3">
   <div>
     <Button-Group>
@@ -366,6 +368,17 @@ You just add `pill` in Button Group to make button more rounded. Prop `pill` of 
 
 ### Events
 
-| Name    | Arguments               | Description                  |
-|---------|-------------------------|------------------------------|
-| `click` | Native DOM Event object | Event when button is clicked |
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no event here</td>
+    </tr>
+  </tbody>
+</table>

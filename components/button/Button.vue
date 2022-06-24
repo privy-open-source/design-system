@@ -13,7 +13,7 @@ import {
   PropType,
 } from 'vue-demi'
 
-export type StyleVariant = 'solid' | 'outline' | 'ghost' | 'link'
+export type StyleVariant = 'solid' | 'outline' | 'ghost' | 'link' | 'input'
 export type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
 export type SizeVariant = 'xs' | 'sm' | 'md' | 'lg'
 
@@ -107,35 +107,35 @@ export default defineComponent({
   * default style variant
   */
   &--solid {
-    @apply border;
+    @apply border hover:shadow-lg focus:shadow-none active:shadow-none text-white;
 
     &.btn {
       &--primary {
-        @apply bg-primary-100 text-white hover:bg-primary-hovered focus:bg-primary-focused active:bg-primary-focused;
+        @apply bg-primary-100 hover:bg-primary-hovered focus:bg-primary-focused active:bg-primary-focused;
       }
 
       &--secondary {
-        @apply bg-secondary-100 text-white hover:bg-secondary-hovered focus:bg-secondary-focused active:bg-secondary-focused;
+        @apply bg-secondary-100 hover:bg-secondary-hovered focus:bg-secondary-focused active:bg-secondary-focused;
       }
 
       &--success {
-        @apply bg-success-100 text-white hover:bg-success-hovered focus:bg-success-focused active:bg-success-focused;
+        @apply bg-success-100 hover:bg-success-hovered focus:bg-success-focused active:bg-success-focused;
       }
 
       &--info {
-        @apply bg-info-100 text-white hover:bg-info-hovered focus:bg-info-focused active:bg-info-focused;
+        @apply bg-info-100 hover:bg-info-hovered focus:bg-info-focused active:bg-info-focused;
       }
 
       &--warning {
-        @apply bg-warning-100 text-white hover:bg-warning-hovered focus:bg-warning-focused active:bg-warning-focused;
+        @apply bg-warning-100 hover:bg-warning-hovered focus:bg-warning-focused active:bg-warning-focused;
       }
 
       &--danger {
-        @apply bg-danger-100 text-white hover:bg-danger-hovered focus:border-danger-focused active:bg-danger-focused;
+        @apply bg-danger-100 hover:bg-danger-hovered focus:border-danger-focused active:bg-danger-focused;
       }
 
       &--gold {
-        @apply bg-gold-100 text-white hover:bg-gold-hovered focus:bg-gold-focused active:bg-gold-focused;
+        @apply bg-gold-100 hover:bg-gold-hovered focus:bg-gold-focused active:bg-gold-focused;
       }
     }
   }
@@ -188,7 +188,7 @@ export default defineComponent({
   * Button ghost variant
   */
   &--ghost {
-    @apply border-transparent bg-white bg-opacity-[0.0001] hover:border-black hover:border-opacity-5 hover:bg-black hover:bg-opacity-5 active:bg-black active:bg-opacity-5 active:border-black active:border-opacity-5 focus:bg-black focus:bg-opacity-5 focus:border-black focus:border-opacity-5;
+    @apply border-transparent bg-white hover:border-black hover:border-opacity-5 hover:bg-black hover:bg-opacity-5 active:bg-black active:bg-opacity-5 active:border-black active:border-opacity-5 focus:bg-black focus:bg-opacity-5 focus:border-black focus:border-opacity-5;
   }
 
   /**

@@ -1,11 +1,13 @@
 <script setup>
+  import IconBee from '@carbon/icons-vue/lib/bee/20'
   import Dropdown from "./Dropdown.vue"
   import DropdownItem from "./DropdownItem.vue"
-  import DropdownGroup from "./DropdownGroup.vue"
-  import DropdownDivider from "./DropdownDivider.vue"
+  import DropdownGroup from "../dropdown-group/DropdownGroup.vue"
+  import Banner from '../banner/Banner.vue'
+  import Checkbox from '../checkbox/Checkbox.vue'
   import { ref } from "vue-demi"
 
-  const count = ref(0)
+  const show = ref(false)
 </script>
 
 # Dropdown
@@ -17,8 +19,6 @@
   <Dropdown text="Click Here">
     <DropdownItem>Item Text</DropdownItem>
     <DropdownItem>Item Text</DropdownItem>
-    <DropdownDivider />
-    <DropdownItem>Item Text</DropdownItem>
     <DropdownItem>Item Text</DropdownItem>
   </Dropdown>
 </preview>
@@ -26,7 +26,6 @@
 ```vue
 <template>
   <Dropdown text="Click Here">
-    <DropdownItem>Item Text</DropdownItem>
     <DropdownItem>Item Text</DropdownItem>
     <DropdownItem>Item Text</DropdownItem>
     <DropdownItem>Item Text</DropdownItem>
@@ -83,56 +82,230 @@
 </template>
 ```
 
-## Nested Item
+## Placement
 
-<preview>
-  <Dropdown text="Click Here">
-    <DropdownGroup text="Folder A">
-      <DropdownGroup text="Subfolder A1">
-        <DropdownItem>Item A.I</DropdownItem>
-        <DropdownItem>Item A.I</DropdownItem>
-      </DropdownGroup>
-      <DropdownGroup text="Subfolder A2">
-        <DropdownItem>Item A2.II</DropdownItem>
-        <DropdownItem>Item A2.II</DropdownItem>
-      </DropdownGroup>
-    </DropdownGroup>
-    <DropdownGroup text="Folder B">
-      <DropdownGroup text="Subfolder B1">
-        <DropdownItem>Item B.I</DropdownItem>
-        <DropdownItem>Item B.I</DropdownItem>
-      </DropdownGroup>
-      <DropdownGroup text="Subfolder B2">
-        <DropdownItem>Item B2.II</DropdownItem>
-        <DropdownItem>Item B2.II</DropdownItem>
-      </DropdownGroup>
-    </DropdownGroup>
+You can change popup placement via `placement` prop. Valid options is:
+
+- `auto`
+- `top`
+- `bottom`
+- `right`
+- `left`
+
+<preview class="flex-col gap-3 md:flex-row">
+  <Dropdown text="Auto" placement="auto">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Top" placement="top">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Bottom" placement="bottom">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Right" placement="right">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Left" placement="left">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
   </Dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Click Here">
-    <DropdownGroup text="Folder A">
-      <DropdownGroup text="Menu A1">
-        <DropdownItem>Item A.I</DropdownItem>
-        <DropdownItem>Item A.I</DropdownItem>
-      </DropdownGroup>
-      <DropdownGroup text="Menu A2">
-        <DropdownItem>Item A2.II</DropdownItem>
-        <DropdownItem>Item A2.II</DropdownItem>
-      </DropdownGroup>
-    </DropdownGroup>
-    <DropdownGroup text="Folder B">
-      <DropdownGroup text="Menu B1">
-        <DropdownItem>Item B.I</DropdownItem>
-        <DropdownItem>Item B.I</DropdownItem>
-      </DropdownGroup>
-      <DropdownGroup text="Menu B2">
-        <DropdownItem>Item B2.II</DropdownItem>
-        <DropdownItem>Item B2.II</DropdownItem>
-      </DropdownGroup>
-    </DropdownGroup>
+  <Dropdown text="Auto" placement="auto">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Top" placement="top">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Bottom" placement="bottom">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Right" placement="right">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Left" placement="left">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</template>
+```
+
+### Placement Align
+
+You can combine placement with suffix `*-start` and `*-end` to set popup position align
+
+<Banner class="md:!hidden" :dismissable="false">Because limited screen width, maybe you can notice the different.</Banner>
+
+<preview class="flex-col gap-3 md:flex-row">
+  <Dropdown text="Bottom" placement="bottom">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Bottom Start" placement="bottom-start">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Bottom End" placement="bottom-end">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</preview>
+
+```vue
+<template>
+  <Dropdown text="Bottom" placement="bottom">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Bottom Start" placement="bottom-start">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+  <Dropdown text="Bottom End" placement="bottom-end">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</template>
+```
+
+## Button Customization
+
+Every props in [Button](/button/component) like `variant`, `color`, `size`, `pill` and `icon`  also works in here.
+
+<preview>
+  <Dropdown
+    text="Button"
+    variant="outline"
+    color="secondary"
+    size="lg"
+    pill
+    icon>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</preview>
+
+```vue
+<template>
+  <Dropdown
+    text="Button"
+    variant="outline"
+    color="secondary"
+    size="lg"
+    pill>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</template>
+```
+
+### Custom Button Content
+
+You also can customize button content via slot `button-content`
+
+<preview>
+  <Dropdown
+    text="Button"
+    icon>
+    <template #button-content>
+      <IconBee />
+    </template>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</preview>
+
+```vue
+<template>
+  <Dropdown
+    icon>
+    <template #button-content>
+      <IconBee />
+    </template>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</template>
+
+<script setup>
+  import IconBee from '@carbon/icons-vue/lib/bee/20'
+</script>
+```
+
+## Disabled State
+
+<preview>
+  <Dropdown
+    text="Button"
+    disabled>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</preview>
+
+```vue
+<template>
+  <Dropdown
+    text="Button"
+    disabled>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</template>
+```
+
+## Binding v-model
+
+You can programmatically toggle dropdown using `v-model`
+
+<preview class="flex-col gap-2">
+  <Checkbox v-model="show">Show Dropdown</Checkbox>
+  <Dropdown
+    v-model="show"
+    text="Button">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</preview>
+
+```vue
+<template>
+  <Checkbox v-model="show">Show Dropdown</Checkbox>
+  <Dropdown
+    v-model="show"
+    text="Button">
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
   </Dropdown>
 </template>
 ```
