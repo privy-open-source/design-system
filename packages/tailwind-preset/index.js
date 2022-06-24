@@ -5,6 +5,13 @@ module.exports = {
   theme   : {
     fontFamily: { sans: ['DM Sans', ...defaultTheme.fontFamily.sans] },
     fontSize  : {
+      'xxs': [
+        '0.6875rem',
+        {
+          lineHeight   : '1.36',
+          letterSpacing: '0.025rem',
+        },
+      ],
       'xs': [
         '0.75rem',
         {
