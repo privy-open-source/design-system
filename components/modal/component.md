@@ -42,6 +42,7 @@
 
 <preview>
   <Modal 
+    no-close-on-backdrop
     v-model="basicModal" 
     title="Modal Title" 
     text="This is place holder text. The basic dialog for modals
@@ -98,7 +99,9 @@ You can hide close button with `dismissable` set to `false`
 </div>
 
 <preview>
-  <Modal v-model="banner2" class="modal--banner" :dismissable="false">
+  <Modal 
+    no-close-on-backdrop
+    v-model="banner2" class="modal--banner" :dismissable="false">
     <div class="text-center px-16 py-7">
       <Heading element="h6">Give Me Title Here</Heading>
       <p>

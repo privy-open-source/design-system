@@ -5,17 +5,16 @@
     <div
       v-show="model"
       class="modal"
-      data-testid="modal"
-      @click="closeOnBackdrop">
+      data-testid="modal">
       <transition
         name="slide-up"
         mode="out-in">
         <div
           v-show="model"
+          ref="modal"
           class="modal__dialog">
           <div
-            class="modal__content"
-            @click.stop>
+            class="modal__content">
             <span
               v-if="dismissable"
               data-testid="modal-dismiss"
@@ -62,7 +61,9 @@ import {
   nextTick,
   watch,
 } from 'vue-demi'
-import { onKeyStroke } from '@vueuse/core'
+import {
+  onKeyStroke, templateRef, onClickOutside,
+} from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'
 import { useVModel } from '../input/use-input'
@@ -102,6 +103,7 @@ export default defineComponent({
   emits: ['update:modelValue', 'close'],
   setup (props, { emit }) {
     const model = useVModel(props)
+    const modal = templateRef<HTMLDivElement>('modal')
 
     function close (event: Event): void {
       emit('close', event)
@@ -110,10 +112,10 @@ export default defineComponent({
         model.value = false
     }
 
-    function closeOnBackdrop (event: Event): void {
+    onClickOutside(modal, (event) => {
       if (!props.noCloseOnBackdrop)
         close(event)
-    }
+    })
 
     onKeyStroke('Escape', (event) => {
       if (!props.noCloseOnEsc)
@@ -129,9 +131,8 @@ export default defineComponent({
     })
 
     return {
-      close,
-      closeOnBackdrop,
       model,
+      close,
     }
   },
 })
@@ -142,7 +143,7 @@ export default defineComponent({
 * Component Name: Modal
 * Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=336%3A10366
 * Date Created  : June 07, 2022
-* Last Update   : June 09, 2022
+* Last Update   : June 24, 2022
 */
 .modal {
   /**

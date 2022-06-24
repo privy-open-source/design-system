@@ -1,5 +1,7 @@
 import { render, fireEvent } from '@testing-library/vue'
+import { delay } from 'nanodelay'
 import { vi } from 'vitest'
+import { ref, nextTick } from 'vue-demi'
 import Modal from './Modal.vue'
 import Button from '../button/Button.vue'
 
@@ -24,7 +26,7 @@ it('should have no close button if props "dismissable" set to false', () => {
     components: { Modal },
     template  : `
       <Modal :dismissable="false">
-        Modal
+        <p>Modal</p>
       </Modal>
     `,
   })
@@ -35,50 +37,114 @@ it('should have no close button if props "dismissable" set to false', () => {
 })
 
 it('should emit event "close" if close button clicked', async () => {
+  const model  = ref(false)
   const spy    = vi.fn()
   const screen = render({
     components: { Modal },
     template  : `
       <Modal
+        v-model="model"
         title="Modal Title"
         @close="onDismissed">
         Modal Text
       </Modal>
     `,
     methods: { onDismissed: spy },
+    setup () {
+      return { model }
+    },
   })
 
-  const modal = screen.queryByTestId('modal')
+  let modal   = screen.queryByTestId('modal')
   const close = screen.queryByTestId('modal-dismiss')
 
   expect(modal).toBeInTheDocument()
   expect(close).toBeInTheDocument()
   expect(spy).not.toBeCalled()
 
-  await fireEvent.click(close)
+  model.value = true
+  await nextTick()
 
+  modal = screen.queryByTestId('modal')
+  expect(modal).toBeVisible()
+
+  await fireEvent.click(close)
+  await delay(0)
+
+  modal = screen.queryByTestId('modal')
   expect(spy).toBeCalled()
+  expect(modal).not.toBeVisible()
 })
 
 it('Modal will close if `Escape` button was pressed', async () => {
+  const model  = ref(false)
   const screen = render({
     components: { Modal },
     template  : `
       <Modal
+        v-model="model"
         title="Modal Title">
         Modal Text
       </Modal>
     `,
+    setup () {
+      return { model }
+    },
   })
 
-  const modal = screen.queryByTestId('modal')
-  const text  = screen.queryByText('Modal Text')
+  let modal  = screen.queryByTestId('modal')
+  const text = screen.queryByText('Modal Text')
 
   expect(modal).toBeInTheDocument()
+  expect(modal).not.toBeVisible()
   expect(text).toBeInTheDocument()
 
-  await fireEvent.keyDown(window, { key: 'Escape' })
+  model.value = true
+  await nextTick()
 
+  modal = screen.queryByTestId('modal')
+  expect(modal).toBeVisible()
+
+  await fireEvent.keyDown(window, { key: 'Escape' })
+  await delay(0)
+
+  modal = screen.queryByTestId('modal')
+  expect(modal).not.toBeVisible()
+})
+
+it('Modal will close when click outisde or when modal backdrop was clicked', async () => {
+  const model  = ref(false)
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        v-model="model"
+        title="Modal Title">
+        Modal Text
+      </Modal>
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  let modal  = screen.queryByTestId('modal')
+  const text = screen.queryByText('Modal Text')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).not.toBeVisible()
+  expect(text).toBeInTheDocument()
+
+  model.value = true
+  await nextTick()
+
+  modal = screen.queryByTestId('modal')
+  expect(modal).toBeVisible()
+
+  await fireEvent.click(window)
+  await delay(0)
+
+  modal = screen.queryByTestId('modal')
   expect(modal).not.toBeVisible()
 })
 
@@ -129,50 +195,66 @@ it('should be able to add Modal Footer via slot "footer"', () => {
   expect(action).toBeInTheDocument()
 })
 
-it('If "no-close-on-backdrop" props is true, Modal will not close while modal backdrop is clicked', async () => {
+it('If "no-close-on-backdrop" props is true, Modal will not close while modal backdrop was clicked', async () => {
+  const model  = ref(false)
   const screen = render({
     components: { Modal },
     template  : `
-      <Modal 
+      <Modal v-model="model"
         no-close-on-backdrop
         title="Modal Title">
-        Modal Text
+        <p>Modal Text</p>
       </Modal>
     `,
+    setup () {
+      return { model }
+    },
   })
 
-  const modal = screen.queryByTestId('modal')
-  const text  = screen.queryByText('Modal Text')
-
+  let modal = screen.queryByTestId('modal')
   expect(modal).toBeInTheDocument()
-  expect(text).toBeInTheDocument()
+  expect(modal).not.toBeVisible()
 
-  await fireEvent.click(modal)
+  model.value = true
+  await nextTick()
 
-  expect(modal).toBeInTheDocument()
-  expect(text).toBeInTheDocument()
+  await fireEvent.click(window)
+  await delay(0)
+
+  modal = screen.queryByTestId('modal')
+  expect(modal).toBeVisible()
 })
 
-it('If "no-close-on-esc" props is true, Modal will not close while modal esc is pressed', async () => {
+it('If "no-close-on-esc" props is true, Modal will not close while modal esc was pressed', async () => {
+  const model  = ref(false)
   const screen = render({
     components: { Modal },
     template  : `
       <Modal 
-        no-close-on-backdrop
+        v-model="model"
+        no-close-on-esc
         title="Modal Title">
         Modal Text
       </Modal>
     `,
+    setup () {
+      return { model }
+    },
   })
 
-  const modal = screen.queryByTestId('modal')
-  const text  = screen.queryByText('Modal Text')
+  let modal  = screen.queryByTestId('modal')
+  const text = screen.queryByText('Modal Text')
 
   expect(modal).toBeInTheDocument()
   expect(text).toBeInTheDocument()
+  expect(modal).not.toBeVisible()
+
+  model.value = true
+  await nextTick()
 
   await fireEvent.keyDown(window, { key: 'Escape' })
+  await delay(0)
 
-  expect(modal).toBeInTheDocument()
-  expect(text).toBeInTheDocument()
+  modal = screen.queryByTestId('modal')
+  expect(modal).toBeVisible()
 })
