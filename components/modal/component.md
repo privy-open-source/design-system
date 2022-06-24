@@ -41,7 +41,8 @@
 </div>
 
 <preview>
-  <Modal 
+  <Modal
+    no-close-on-esc
     no-close-on-backdrop
     v-model="basicModal" 
     title="Modal Title" 
@@ -100,6 +101,7 @@ You can hide close button with `dismissable` set to `false`
 
 <preview>
   <Modal 
+    no-close-on-esc
     no-close-on-backdrop
     v-model="banner2" class="modal--banner" :dismissable="false">
     <div class="text-center px-16 py-7">
@@ -110,10 +112,10 @@ You can hide close button with `dismissable` set to `false`
       </p>
     </div>
     <div class="flex items-center px-16 pb-7 justify-between">
-      <Button variant="ghost" @click="close">
+      <Button variant="ghost" @click="banner2 = false">
         Button Text
       </Button>
-      <Button variant="ghost" @click="close">
+      <Button variant="ghost" @click="banner2 = false">
         Button Text
       </Button>
     </div>
@@ -189,7 +191,12 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
 
 ```vue
 <template>
-  <Modal v-model="bannerSheet" class="modal--banner" :dismissable="false" no-close-on-esc no-close-on-backdrop>
+  <Modal 
+    v-model="bannerSheet" 
+    class="modal--banner" 
+    :dismissable="false" 
+    no-close-on-esc 
+    no-close-on-backdrop>
     <img src="./assets/images/img-modal-banner-sheet.jpg">
     <div class="text-center p-6">
       <Heading element="h6">Give Me Title Here</Heading>

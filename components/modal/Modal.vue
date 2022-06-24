@@ -5,16 +5,17 @@
     <div
       v-show="model"
       class="modal"
-      data-testid="modal">
+      data-testid="modal"
+      @click="closeOnBackdrop">
       <transition
         name="slide-up"
         mode="out-in">
         <div
           v-show="model"
-          ref="modal"
           class="modal__dialog">
           <div
-            class="modal__content">
+            class="modal__content"
+            @click.stop>
             <span
               v-if="dismissable"
               data-testid="modal-dismiss"
@@ -61,9 +62,7 @@ import {
   nextTick,
   watch,
 } from 'vue-demi'
-import {
-  onKeyStroke, templateRef, onClickOutside,
-} from '@vueuse/core'
+import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'
 import { useVModel } from '../input/use-input'
@@ -103,7 +102,6 @@ export default defineComponent({
   emits: ['update:modelValue', 'close'],
   setup (props, { emit }) {
     const model = useVModel(props)
-    const modal = templateRef<HTMLDivElement>('modal')
 
     function close (event: Event): void {
       emit('close', event)
@@ -112,10 +110,10 @@ export default defineComponent({
         model.value = false
     }
 
-    onClickOutside(modal, (event) => {
+    function closeOnBackdrop (event: Event): void {
       if (!props.noCloseOnBackdrop)
         close(event)
-    })
+    }
 
     onKeyStroke('Escape', (event) => {
       if (!props.noCloseOnEsc)
@@ -132,6 +130,7 @@ export default defineComponent({
 
     return {
       model,
+      closeOnBackdrop,
       close,
     }
   },

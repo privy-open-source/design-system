@@ -141,7 +141,7 @@ it('Modal will close when click outisde or when modal backdrop was clicked', asy
   modal = screen.queryByTestId('modal')
   expect(modal).toBeVisible()
 
-  await fireEvent.click(window)
+  await fireEvent.click(modal)
   await delay(0)
 
   modal = screen.queryByTestId('modal')
@@ -218,7 +218,7 @@ it('If "no-close-on-backdrop" props is true, Modal will not close while modal ba
   model.value = true
   await nextTick()
 
-  await fireEvent.click(window)
+  await fireEvent.click(modal)
   await delay(0)
 
   modal = screen.queryByTestId('modal')
