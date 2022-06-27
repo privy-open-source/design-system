@@ -57,7 +57,7 @@ import {
   onKeyStroke,
 } from '@vueuse/core'
 import Button from '../button/Button.vue'
-import DropdownGroup from '../dropdown-group/DropdownGroup.vue'
+import DropdownGroup from '../dropdown-subitem/DropdownSubitem.vue'
 import { useFocus } from './utils/use-focus'
 import { usePopper, Placement } from './utils/use-popper'
 import { useVModel } from '../input/use-input'
@@ -67,7 +67,7 @@ import type {
   SizeVariant,
 } from '../button/Button.vue'
 
-type DropdownGroupElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
+type DropdownSubitemElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
 
 interface DropdownContext {
   close: () => void,
@@ -133,7 +133,7 @@ export default defineComponent({
   setup (props, { emit }) {
     const target    = templateRef<HTMLDivElement>('dropdown')
     const menu      = templateRef<HTMLDivElement>('menu')
-    const wizard    = templateRef<DropdownGroupElement>('wizard')
+    const wizard    = templateRef<DropdownSubitemElement>('wizard')
     const placement = toRef(props, 'placement')
     const popper    = usePopper(target, menu, placement)
     const isOpen    = useVModel(props)
@@ -245,12 +245,12 @@ export default defineComponent({
   }
 
   &__menuContainer > .dropdown__item:first-child,
-  &__menuContainer > .dropdown__group:first-child .dropdown__item {
+  &__menuContainer > .dropdown__subitem:first-child .dropdown__item {
     @apply rounded-t;
   }
 
   &__menuContainer > .dropdown__item:last-child,
-  &__menuContainer > .dropdown__group:last-child .dropdown__item {
+  &__menuContainer > .dropdown__subitem:last-child .dropdown__item {
     @apply rounded-b;
   }
 }

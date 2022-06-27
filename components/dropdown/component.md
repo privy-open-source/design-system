@@ -3,7 +3,6 @@
   import Input from "../input/Input.vue"
   import Dropdown from "./Dropdown.vue"
   import DropdownItem from "./DropdownItem.vue"
-  import DropdownGroup from "../dropdown-group/DropdownGroup.vue"
   import Banner from '../banner/Banner.vue'
   import Checkbox from '../checkbox/Checkbox.vue'
   import { ref } from "vue-demi"
@@ -379,5 +378,4 @@ You can programmatically toggle dropdown using `v-model`
 
 ## See Also
 - [Button](/button/component)
-- Dropdown Group
-- [Select](/select/component)
+- [Dropdown Subitem](/dropdown-subitem/component)
