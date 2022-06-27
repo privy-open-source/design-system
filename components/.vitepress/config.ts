@@ -74,6 +74,10 @@ export default defineConfig({
             link: '/label/component'
           },
           {
+            text: 'Modal',
+            link: '/modal/component'
+          },
+          {
             text: 'Spinner',
             link: '/spinner/component'
           },
@@ -90,6 +94,10 @@ export default defineConfig({
           {
             text: 'Subheading',
             link: '/subheading/component'
+          },
+          {
+            text: 'Truncate',
+            link: '/truncate/component'
           },
         ],
       },
@@ -127,6 +135,10 @@ export default defineConfig({
         text       : 'Non-Component',
         collapsable: true,
         children   : [
+          {
+            text: 'Dialog',
+            link: '/dialog/component'
+          },
           {
             text: 'Overlay',
             link: '/overlay/component'
