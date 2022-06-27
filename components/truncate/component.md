@@ -40,13 +40,13 @@
 </template>
 ```
 
-## Show More mode
+## Expandable
 
 <preview>
   <Truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
-    show-more />
+    expandable />
 </preview>
 
 ```vue
@@ -54,7 +54,7 @@
   <Truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
-    show-more />
+    expandable />
 </template>
 ```
 
@@ -66,7 +66,7 @@ You can change "show more" and "show less" text via prop `show-more-text` and `s
   <Truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
-    show-more
+    expandable
     show-more-text="Lihat Selengkapnya"
     show-less-text="Sembunyikan" />
 </preview>
@@ -76,9 +76,53 @@ You can change "show more" and "show less" text via prop `show-more-text` and `s
   <Truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
-    show-more
+    expandable
     show-more-text="Lihat Selengkapnya"
     show-less-text="Sembunyikan" />
 </template>
 ```
 
+## API
+
+### Props
+
+| Props          |   Type    |   Default   | Description                      |
+|----------------|:---------:|:-----------:|----------------------------------|
+| `text`         | `String`  |     `-`     | Text to truncate                 |
+| `length`       | `Number`  |    `100`    | Max length before text truncated |
+| `expandable`   | `Boolean` |   `false`   | Show expand button               |
+| `showMoreText` | `String`  | `Show More` | Text for show more's button      |
+| `showLessText` | `String`  | `Show Less` | Text for show lest's button      |
+
+### Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" class="text-center">There no slots here</td>
+    </tr>
+  </tbody>
+</table>
+
+### Events
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no props here</td>
+    </tr>
+  </tbody>
+</table>
