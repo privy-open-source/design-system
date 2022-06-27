@@ -72,7 +72,7 @@
 <table>
   <thead>
     <tr>
-      <th>Props</th>
+      <th>Name</th>
       <th>Arguments</th>
       <th>Description</th>
     </tr>
