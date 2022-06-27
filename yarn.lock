@@ -446,7 +446,7 @@ __metadata:
     husky: 8.0.1
     jest-extended: 2.0.0
     lint-staged: 13.0.1
-    nanodelay: ^2.0.2
+    nanodelay: 2.0.2
     postcss: 8.4.14
     postcss-nested: 5.0.6
     tabbable: 5.3.3
@@ -4145,7 +4145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanodelay@npm:^2.0.2":
+"nanodelay@npm:2.0.2":
   version: 2.0.2
   resolution: "nanodelay@npm:2.0.2"
   checksum: 459fb58e3b9d262a16a5f5ab63ff71ca1f83a61c712b5ba7495d03d4d28dc96dcef3bbc282e277187d05e4ccfa7345e7c0082dcc76ae9790bb416eb2f6e627ae
