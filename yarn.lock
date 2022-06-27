@@ -431,6 +431,7 @@ __metadata:
     autoprefixer: 10.4.7
     c8: 7.11.3
     date-fns: 2.28.0
+    defu: ^6.0.0
     eslint: 8.17.0
     eslint-config-standard-with-typescript: latest
     eslint-plugin-align-assignments: 1.1.2
@@ -2023,6 +2024,13 @@ __metadata:
   version: 1.0.0
   resolution: "defined@npm:1.0.0"
   checksum: 77672997c5001773371c4dbcce98da0b3dc43089d6da2ad87c4b800adb727633cea8723ea3889fe0c2112a2404e2fd07e3bfd0e55f7426aa6441d8992045dbd5
+  languageName: node
+  linkType: hard
+
+"defu@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "defu@npm:6.0.0"
+  checksum: 3c24ef0009b796e32a1655a23fc1f11a79b42012255b6bc88889242da77b7e45bfa4293d9661d28f3f6c12c931309e18f5047efa492670585a3da768887cea74
   languageName: node
   linkType: hard
 
