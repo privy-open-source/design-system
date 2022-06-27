@@ -91,6 +91,10 @@ export default defineConfig({
             text: 'Subheading',
             link: '/subheading/component'
           },
+          {
+            text: 'Truncate',
+            link: '/truncate/component'
+          },
         ],
       },
       {
