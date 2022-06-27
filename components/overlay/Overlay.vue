@@ -19,7 +19,6 @@ import Icon from './assets/icon-white.svg'
 export default defineComponent({
   setup () {
     const loading = useLoading({ elapsed: false })
-    // console.log(loading)
 
     function show () {
       loading.value = true
