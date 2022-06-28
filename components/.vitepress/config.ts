@@ -28,6 +28,10 @@ export default defineConfig({
             link: '/banner/guide'
           },
           {
+            text: 'Button',
+            link: '/button/guide'
+          },
+          {
             text: 'Heading',
             link: '/heading/guide'
           }
