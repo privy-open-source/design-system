@@ -1,6 +1,6 @@
 <script setup>
   import ButtonGroup from './ButtonGroup.vue'
-  import Button from '../Button/Button.vue'
+  import Button from '../button/Button.vue'
   import Dropdown from '../dropdown/Dropdown.vue'
   import DropdownItem from '../dropdown/DropdownItem.vue'
   import IconChevronDown from '@carbon/icons-vue/lib/chevron--down/20'
