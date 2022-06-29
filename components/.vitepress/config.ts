@@ -32,6 +32,10 @@ export default defineConfig({
             link: '/button/guide'
           },
           {
+            text: 'Button Group',
+            link: '/button-group/guide'
+          },
+          {
             text: 'Heading',
             link: '/heading/guide'
           }
@@ -56,6 +60,10 @@ export default defineConfig({
           {
             text: 'Button',
             link: '/button/component'
+          },
+          {
+            text: 'Button Group',
+            link: '/button-group/component'
           },
           {
             text: 'Card',
