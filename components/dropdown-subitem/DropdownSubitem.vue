@@ -4,19 +4,18 @@
     mode="out-in">
     <div
       :key="tree._level"
-      data-testid="dropdown-group"
-      class="dropdown__group">
+      data-testid="dropdown-subitem"
+      class="dropdown__subitem">
       <template
         v-if="canBack">
         <DropdownItem
           key="btn-back"
-          class="dropdown__group-btn dropdown__group-btn-back"
+          data-testid="dropdown-back"
+          class="dropdown__subitem-btn dropdown__subitem-btn-back"
           @click.prevent="back()">
           <slot name="button-back">
-            <IconBack class="dropdown__group-next" />
-            <div class="dropdown__group-content">
-              {{ backLabel }}
-            </div>
+            <IconBack class="dropdown__subitem-next" />
+            <div class="dropdown__group-content" />
           </slot>
         </DropdownItem>
       </template>
@@ -24,14 +23,14 @@
       <template v-if="!isRoot">
         <DropdownItem
           key="btn-next"
-          class="dropdown__group-btn"
-          @click.prevent="next()">
-          <slot name="button-content">
-            <div class="dropdown__group-content">
+          class="dropdown__subitem-btn"
+          @click.prevent="handleOnClick">
+          <div class="dropdown__subitem-content">
+            <slot name="button-content">
               {{ text }}
-            </div>
-            <IconNext class="dropdown__group-next" />
-          </slot>
+            </slot>
+          </div>
+          <IconNext class="dropdown__subitem-next" />
         </DropdownItem>
       </template>
 
@@ -46,7 +45,7 @@
 <script lang="ts">
 import DropdownItem from '../dropdown/DropdownItem.vue'
 import IconNext from '@carbon/icons-vue/lib/chevron--right/16'
-import IconBack from '@carbon/icons-vue/lib/chevron--left/16'
+import IconBack from '@carbon/icons-vue/lib/arrow--left/16'
 import {
   defineComponent,
   InjectionKey,
@@ -57,21 +56,19 @@ import {
   ShallowRef,
   computed,
   watch,
-  Slot,
-  ComputedRef,
+  Slots,
 } from 'vue-demi'
 
 interface DropdownNode {
   _level: number, // Just id to trigger transition
   prev?: DropdownNode,
-  slot: Slot,
+  slots: Slots,
 }
 
 interface DropdownContext {
   tree: ShallowRef<DropdownNode>,
   next: () => void,
   back: () => void,
-  backText: ComputedRef<string>,
 }
 
 const DROPDOWN_TREE: InjectionKey<DropdownContext> = Symbol('DropdownTree')
@@ -87,12 +84,9 @@ export default defineComponent({
       type   : String,
       default: '',
     },
-    backText: {
-      type   : String,
-      default: 'Back',
-    },
   },
-  setup (props, { slots }) {
+  emits: ['click'],
+  setup (props, { slots, emit }) {
     const context    = inject(DROPDOWN_TREE, undefined, true)
     const transition = ref<'slide-left' | 'slide-right' | 'none'>('slide-left')
 
@@ -102,14 +96,14 @@ export default defineComponent({
 
     const tree: DropdownContext['tree'] = context?.tree ?? shallowRef({
       _level: 0,
-      slot  : slots.default,
+      slots : slots,
     })
 
     const next: DropdownContext['next'] = () => {
       tree.value = {
         _level: tree.value._level + 1,
         prev  : tree.value,
-        slot  : slots.default,
+        slots : slots,
       }
     }
 
@@ -119,15 +113,11 @@ export default defineComponent({
     }
 
     const view = computed(() => {
-      return tree.value.slot
+      return tree.value.slots.default
     })
 
     const canBack = computed(() => {
       return Boolean(isRoot.value && tree.value.prev)
-    })
-
-    const backLabel = computed(() => {
-      return context?.backText.value ?? props.backText
     })
 
     watch(tree, (value, oldValue) => {
@@ -141,7 +131,6 @@ export default defineComponent({
         tree,
         next,
         back,
-        backText: backLabel,
       })
     }
 
@@ -150,9 +139,18 @@ export default defineComponent({
         tree.value = {
           prev  : undefined,
           _level: 0,
-          slot  : slots.default,
+          slots : slots,
         }
       }
+    }
+
+    function handleOnClick () {
+      const event = new MouseEvent('click')
+
+      emit('click', event)
+
+      if (!event.defaultPrevented)
+        next()
     }
 
     return {
@@ -164,19 +162,19 @@ export default defineComponent({
       reset,
       canBack,
       transition,
-      backLabel,
+      handleOnClick,
     }
   },
 })
 </script>
 
 <style lang="postcss">
-.dropdown__group {
+.dropdown__subitem {
   &-btn {
     @apply flex items-center gap-1;
 
     &-back {
-      @apply flex-shrink-0 text-sm text-body-75 font-medium;
+      @apply flex-shrink-0;
     }
   }
 

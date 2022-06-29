@@ -70,6 +70,10 @@ export default defineConfig({
             link: '/dropdown/component'
           },
           {
+            text: 'Dropdown Subitem',
+            link: '/dropdown-subitem/component'
+          },
+          {
             text: 'Label',
             link: '/label/component'
           },
