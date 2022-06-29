@@ -485,3 +485,48 @@ it('should be able to toggle dropdown via v-model', async () => {
   expect(menu).not.toBeVisible()
   expect(model.value).toBe(false)
 })
+
+it('should trigger event `show` when Dropdown shown', async () => {
+  const spy    = vi.fn()
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown @show="onShow">
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+    setup () {
+      return { onShow: spy }
+    },
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+
+  await fireEvent.click(button)
+
+  expect(spy).toBeCalled()
+})
+
+it('should trigger event `show` when Dropdown shown', async () => {
+  const spy    = vi.fn()
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown @hide="onHide">
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+    setup () {
+      return { onHide: spy }
+    },
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+
+  await fireEvent.click(button)
+  await fireEvent.click(button)
+
+  expect(spy).toBeCalled()
+})

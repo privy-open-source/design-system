@@ -1,8 +1,8 @@
 <script setup>
   import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import Input from "../input/Input.vue"
   import Dropdown from "./Dropdown.vue"
   import DropdownItem from "./DropdownItem.vue"
-  import DropdownGroup from "../dropdown-group/DropdownGroup.vue"
   import Banner from '../banner/Banner.vue'
   import Checkbox from '../checkbox/Checkbox.vue'
   import { ref } from "vue-demi"
@@ -154,7 +154,7 @@ You can change popup placement via `placement` prop. Valid options is:
 
 You can combine placement with suffix `*-start` and `*-end` to set popup position align
 
-<Banner class="md:!hidden" :dismissable="false">Because limited screen width, maybe you can notice the different.</Banner>
+<Banner class="md:!hidden" :dismissable="false">Because limited screen width, maybe you can't notice the different.</Banner>
 
 <preview class="flex-col gap-3 md:flex-row">
   <Dropdown text="Bottom" placement="bottom">
@@ -196,7 +196,10 @@ You can combine placement with suffix `*-start` and `*-end` to set popup positio
 
 ## Button Customization
 
+### Variant, Color and Size
+
 Every props in [Button](/button/component) like `variant`, `color`, `size`, `pill` and `icon`  also works in here.
+Check out [Button](/button/component) for more information.
 
 <preview>
   <Dropdown
@@ -262,6 +265,38 @@ You also can customize button content via slot `button-content`
 </script>
 ```
 
+### Custom Activator
+
+You can also completely change dropdown's activator button to something else via slot `activator`.
+
+<preview>
+  <Dropdown
+    text="Button"
+    icon>
+    <template #activator="{ open }">
+      <Input placeholder="This is Dropdown" @focus="open" />
+    </template>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</preview>
+
+```vue
+<template>
+  <Dropdown
+    text="Button"
+    icon>
+    <template #activator="{ open }">
+      <Input placeholder="This is Dropdown" @focus="open" />
+    </template>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</template>
+```
+
 ## Disabled State
 
 <preview>
@@ -309,3 +344,38 @@ You can programmatically toggle dropdown using `v-model`
   </Dropdown>
 </template>
 ```
+
+## API
+
+### Props
+
+| Props        |   Type    |    Default     | Description                                                                                                                                                                                                                        |
+|--------------|:---------:|:--------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`       | `String`  |      `-`       | Dropdown's button text                                                                                                                                                                                                             |
+| `variant`    | `String`  |    `solid`     | Dropdown's button style variant, valid value is `solid`, `outline`, `ghost`, `link`                                                                                                                                                |
+| `color`      | `String`  |   `primary`    | Dropdown's button color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`                                                                                                             |
+| `size`       | `String`  |      `md`      | Size of button, valid value is `sm`, `md`, `lg`                                                                                                                                                                                    |
+| `pill`       | `Boolean` |    `false`     | Enable pill mode                                                                                                                                                                                                                   |
+| `icon`       | `Boolean` |    `false`     | Enable icon mode                                                                                                                                                                                                                   |
+| `disabled`   | `Boolean` |    `false`     | Disable state                                                                                                                                                                                                                      |
+| `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`auto`, `auto-start`, `auto-end`,<br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
+| `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |
+
+### Slots
+
+| Name             | Description                           |
+|------------------|---------------------------------------|
+| `default`        | Dropdown menu content                 |
+| `button-content` | Content to placed in Activator Button |
+| `activator`      | Content to replace Activator Button   |
+
+### Events
+
+| Name   | Arguments | Description                      |
+|--------|-----------|----------------------------------|
+| `show` | -         | Event when dropdown popup shown  |
+| `hide` | -         | Event when dropdown popup hidden |
+
+## See Also
+- [Button](/button/component)
+- [Dropdown Subitem](/dropdown-subitem/component)

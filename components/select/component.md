@@ -151,9 +151,11 @@ If you want to get original selected item (text and value) not value only. you c
 </preview>
 
 **v-model**
+
 <pre><code>{{ value }}</code></pre>
 
 **v-model:selected**
+
 <pre class="whitespace-normal"><code>{{ selected }}</code></pre>
 
 ```vue
@@ -210,7 +212,9 @@ It will take care of loading, inifinite load, and other stuff.
     v-model="province" />
 </preview>
 
-**Result:** <pre><code>{{ province }}</code></pre>
+**Result:**
+
+<pre><code>{{ province }}</code></pre>
 
 ```vue
 <template>

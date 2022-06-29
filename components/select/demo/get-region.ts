@@ -17,6 +17,9 @@ export async function getProvinces (keyword = '', page = 1, perPage = 20) {
 }
 
 export async function getCities (id: string, keyword = '', page = 1, perPage = 20) {
+  if (!id)
+    return { data: [] }
+
   const { default: regencies } = await import(`./api/regencies/${id}.ts`)
   const data                   = searchAndPaging(regencies, keyword, page, perPage)
 

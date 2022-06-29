@@ -33,7 +33,7 @@ export default defineConfig({
           },
           {
             text: 'Button Group',
-            link: '/buttonGroup/guide'
+            link: '/button-group/guide'
           },
           {
             text: 'Heading',
@@ -63,7 +63,7 @@ export default defineConfig({
           },
           {
             text: 'Button Group',
-            link: '/buttonGroup/component'
+            link: '/button-group/component'
           },
           {
             text: 'Card',
@@ -76,6 +76,10 @@ export default defineConfig({
           {
             text: 'Dropdown',
             link: '/dropdown/component'
+          },
+          {
+            text: 'Dropdown Subitem',
+            link: '/dropdown-subitem/component'
           },
           {
             text: 'Label',
