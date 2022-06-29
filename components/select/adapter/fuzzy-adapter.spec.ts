@@ -92,7 +92,7 @@ it('should be able to filter (search) items by keyword', async () => {
   expect(screen.queryByText('Grape')).toBeInTheDocument()
   expect(screen.queryByText('Banana')).toBeInTheDocument()
 
-  await fireEvent.focus(search)
+  search.focus()
   await fireEvent.update(search, 'nn')
 
   expect(screen.queryByText('Apple')).not.toBeInTheDocument()

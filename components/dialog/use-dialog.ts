@@ -8,30 +8,30 @@ import type {
 } from './DialogFooter.vue'
 
 export interface DialogOptions {
-  title: string
-  text?: string
-  footerAlign?: FooterAlignVariant
+  title: string,
+  text?: string,
+  footerAlign?: FooterAlignVariant,
   cancel?: {
-    text?: string
-    visible?: boolean
-    className?: string
-    closeModal?: boolean
-    color?: FooterButtonColorVariant
-    variant?: FooterButtonStyleVariant
-  }
+    text?: string,
+    visible?: boolean,
+    className?: string,
+    closeModal?: boolean,
+    color?: FooterButtonColorVariant,
+    variant?: FooterButtonStyleVariant,
+  },
   confirm?: {
-    text?: string
-    visible?: boolean
-    className?: string
-    closeModal?: boolean
-    color?: FooterButtonColorVariant
-    variant?: FooterButtonStyleVariant
-  }
+    text?: string,
+    visible?: boolean,
+    className?: string,
+    closeModal?: boolean,
+    color?: FooterButtonColorVariant,
+    variant?: FooterButtonStyleVariant,
+  },
 }
 
 export interface DialogContext extends DialogOptions {
-  onConfirm: () => void
-  onCancel: () => void
+  onConfirm: () => void,
+  onCancel: () => void,
 }
 
 export async function confirm (options: DialogOptions): Promise<boolean> {

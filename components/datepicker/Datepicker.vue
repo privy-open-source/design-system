@@ -27,7 +27,8 @@
       :max="max"
       :min="min"
       :mode="mode"
-      class="datepicker__calendar" />
+      class="datepicker__calendar"
+      @change="onSelected" />
   </Dropdown>
 </template>
 
@@ -122,12 +123,17 @@ export default defineComponent({
         isOpen.value = true
     }
 
+    function onSelected () {
+      isOpen.value = false
+    }
+
     return {
       isOpen,
       classNames,
       model,
-      onFocus,
       value,
+      onFocus,
+      onSelected,
     }
   },
 })

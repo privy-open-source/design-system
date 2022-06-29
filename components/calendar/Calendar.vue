@@ -52,6 +52,7 @@
           <Button
             variant="outline"
             icon
+            data-testid="calendar-item"
             :readonly="item.readonly || disabled || readonly"
             :active="item.active"
             :disabled="item.disabled"
