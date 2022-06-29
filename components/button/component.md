@@ -232,7 +232,7 @@ You can also combine with `pill` mode to make round button
 <preview label="link variant">
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
     <Button variant="solid" disabled>Click me</Button>
-    <Button variant="outline" disabled>Click me</Button>
+    <Button variant="outline" color="gold" disabled>Click me</Button>
     <Button variant="ghost" disabled>Click me</Button>
     <Button variant="link" disabled>Click me</Button>
   </div>

@@ -83,6 +83,15 @@
     }
   }
 
+  h2 {
+    border-bottom-color: transparent;
+  }
+
+
+  h4 {
+    @apply mt-6;
+  }
+
   h5 {
     @apply mt-12 mb-4;
 
@@ -119,8 +128,4 @@
 
 a.header-anchor {
   margin-left: -1.25em;
-}
-
-h2 {
-  border-bottom-color: transparent;
 }
