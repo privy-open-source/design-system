@@ -118,6 +118,10 @@ export default defineConfig({
             link: '/checkbox/component'
           },
           {
+            text: 'Datepicker',
+            link: '/datepicker/component'
+          },
+          {
             text: 'Input',
             link: '/input/component'
           },
