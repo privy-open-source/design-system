@@ -1,19 +1,19 @@
 import { fireEvent, render } from '@testing-library/vue'
-import DropdownGroup from './DropdownGroup.vue'
+import DropdownSubitem from './DropdownSubitem.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
 
 it('should be able to render child', () => {
   const screen = render({
-    components: { DropdownGroup, DropdownItem },
+    components: { DropdownSubitem, DropdownItem },
     template  : `
-      <DropdownGroup>
+      <DropdownSubitem>
         <DropdownItem>Item 1</DropdownItem>
         <DropdownItem>Item 2</DropdownItem>
-      </DropdownGroup>
+      </DropdownSubitem>
     `,
   })
 
-  const dropdown = screen.queryByTestId('dropdown-group')
+  const dropdown = screen.queryByTestId('dropdown-subitem')
   const item1    = screen.queryByText('Item 1')
   const item2    = screen.queryByText('Item 2')
 
@@ -22,19 +22,19 @@ it('should be able to render child', () => {
   expect(item2).toBeInTheDocument()
 })
 
-it('should able to render sub item', async () => {
+it('should able to render subitem', async () => {
   const screen = render({
-    components: { DropdownGroup, DropdownItem },
+    components: { DropdownSubitem, DropdownItem },
     template  : `
-      <DropdownGroup>
+      <DropdownSubitem>
         <DropdownItem>Item 1</DropdownItem>
         <DropdownItem>Item 2</DropdownItem>
 
-        <DropdownGroup text="Subitem">
+        <DropdownSubitem text="Subitem">
           <DropdownItem>Item 3</DropdownItem>
           <DropdownItem>Item 4</DropdownItem>
-        </DropdownGroup>
-      </DropdownGroup>
+        </DropdownSubitem>
+      </DropdownSubitem>
     `,
   })
 
@@ -58,17 +58,17 @@ it('should able to render sub item', async () => {
 
 it('should able to back main menu after click sub menu', async () => {
   const screen = render({
-    components: { DropdownGroup, DropdownItem },
+    components: { DropdownSubitem, DropdownItem },
     template  : `
-      <DropdownGroup>
+      <DropdownSubitem>
         <DropdownItem>Item 1</DropdownItem>
         <DropdownItem>Item 2</DropdownItem>
 
-        <DropdownGroup text="Subitem">
+        <DropdownSubitem text="Subitem">
           <DropdownItem>Item 3</DropdownItem>
           <DropdownItem>Item 4</DropdownItem>
-        </DropdownGroup>
-      </DropdownGroup>
+        </DropdownSubitem>
+      </DropdownSubitem>
     `,
   })
 
@@ -80,7 +80,7 @@ it('should able to back main menu after click sub menu', async () => {
 
   const item3 = screen.queryByText('Item 3')
   const item4 = screen.queryByText('Item 4')
-  const back  = screen.queryByText('Back')
+  const back  = screen.queryByTestId('dropdown-back')
 
   expect(back).toBeInTheDocument()
   expect(item3).toBeInTheDocument()
@@ -95,40 +95,15 @@ it('should able to back main menu after click sub menu', async () => {
   expect(item2).toBeInTheDocument()
 })
 
-it('should able to change back button text via prop `backText`', async () => {
-  const screen = render({
-    components: { DropdownGroup, DropdownItem },
-    template  : `
-      <DropdownGroup backText="Kembali">
-        <DropdownItem>Item 1</DropdownItem>
-        <DropdownItem>Item 2</DropdownItem>
-
-        <DropdownGroup text="Subitem">
-          <DropdownItem>Item 3</DropdownItem>
-          <DropdownItem>Item 4</DropdownItem>
-        </DropdownGroup>
-      </DropdownGroup>
-    `,
-  })
-
-  const subitem = screen.queryByText('Subitem')
-
-  await fireEvent.click(subitem)
-
-  const back = screen.queryByText('Kembali')
-
-  expect(back).toBeInTheDocument()
-})
-
 it('should able to modify button content via slot `button-content`', async () => {
   const screen = render({
-    components: { DropdownGroup, DropdownItem },
+    components: { DropdownSubitem, DropdownItem },
     template  : `
-      <DropdownGroup>
+      <DropdownSubitem>
         <DropdownItem>Item 1</DropdownItem>
         <DropdownItem>Item 2</DropdownItem>
 
-        <DropdownGroup>
+        <DropdownSubitem>
           <template #button-content>
             <span data-testid="custom-button">
               Coba
@@ -136,8 +111,8 @@ it('should able to modify button content via slot `button-content`', async () =>
           </template>
           <DropdownItem>Item 3</DropdownItem>
           <DropdownItem>Item 4</DropdownItem>
-        </DropdownGroup>
-      </DropdownGroup>
+        </DropdownSubitem>
+      </DropdownSubitem>
     `,
   })
 
@@ -147,7 +122,7 @@ it('should able to modify button content via slot `button-content`', async () =>
 
   const item3 = screen.queryByText('Item 3')
   const item4 = screen.queryByText('Item 4')
-  const back  = screen.queryByText('Back')
+  const back  = screen.queryByTestId('dropdown-back')
 
   expect(back).toBeInTheDocument()
   expect(item3).toBeInTheDocument()
