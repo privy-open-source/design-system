@@ -14,7 +14,7 @@ it('should render properly without any props', () => {
   const text  = screen.queryByText('Label')
 
   expect(label).toBeInTheDocument()
-  expect(label).toHaveClass('label', 'label--default', 'label--medium')
+  expect(label).toHaveClass('label', 'label--default', 'label--md')
   expect(text).toBeInTheDocument()
 })
 
@@ -56,11 +56,11 @@ it('should have style "light" if variant props set to "light"', () => {
   expect(text).toBeInTheDocument()
 })
 
-it('should have style "large" if size props set to "large"', () => {
+it('should have style "lg" if size props set to "lg"', () => {
   const screen = render({
     components: { Label },
     template  : `
-      <Label color="danger" size="large" variant="dot">
+      <Label color="danger" size="lg" variant="dot">
         Label
       </Label>
     `,
@@ -71,8 +71,8 @@ it('should have style "large" if size props set to "large"', () => {
   const text  = screen.queryByText('Label')
 
   expect(label).toBeInTheDocument()
-  expect(label).toHaveClass('label', 'label--danger', 'label--dot', 'label--large')
-  expect(label).not.toHaveClass('label--default', 'label--primary', 'label--medium')
+  expect(label).toHaveClass('label', 'label--danger', 'label--dot', 'label--lg')
+  expect(label).not.toHaveClass('label--default', 'label--primary', 'label--md')
   expect(dot).toBeInTheDocument()
   expect(dot).toHaveClass('dot', 'dot--danger')
   expect(text).toBeInTheDocument()
