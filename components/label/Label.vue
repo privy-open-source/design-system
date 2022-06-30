@@ -27,7 +27,7 @@ import IconClose from '@carbon/icons-vue/lib/close/16'
 
 type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
 type StyleVariant = 'default' | 'light' | 'dot'
-type SizeVariant = 'large' | 'medium' | 'small' | 'tiny'
+type SizeVariant = 'lg' | 'md' | 'sm' | 'xs'
 
 export default defineComponent({
   components: { Dot, IconClose },
@@ -42,7 +42,7 @@ export default defineComponent({
     },
     size: {
       type   : String as PropType<SizeVariant>,
-      default: 'medium',
+      default: 'md',
     },
     dismissable: {
       type   : Boolean,
@@ -89,7 +89,7 @@ export default defineComponent({
 * Component Name: Label
 * Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=308%3A15173
 * Date Created  : June 2, 2022
-* Last Update   : June 3, 2022
+* Last Update   : June 24, 2022
 */
 
 .label {
@@ -104,23 +104,23 @@ export default defineComponent({
 
   /**
   * Provide size of label
-  * There are large, medium
-  * small and tiny
+  * There are lg, md,
+  * sm and xs
   */
-  &--large {
+  &--lg {
     @apply text-base px-4 py-2 rounded;
   }
 
-  &--medium {
+  &--md {
     @apply text-sm px-3 py-1 rounded-sm;
   }
 
-  &--small {
-    @apply text-sm px-2 py-[0.125] rounded-xs;
+  &--sm {
+    @apply text-xs px-2 py-[0.125rem] rounded-xs;
   }
 
-  &--tiny {
-    @apply px-2 py-0 text-xs rounded-tn;
+  &--xs {
+    @apply px-2 py-0 text-xxs rounded-tn;
   }
 
   /**
@@ -209,20 +209,20 @@ export default defineComponent({
     @apply bg-white text-body-100 border-black border-opacity-10;
 
     &.label {
-      &--large,
-      &--medium {
+      &--lg,
+      &--md {
         .dot {
           @apply mr-2;
         }
       }
 
-      &--small {
+      &--sm {
         .dot {
           @apply mr-1.5;
         }
       }
 
-      &--tiny {
+      &--xs {
         .dot {
           @apply mr-1;
         }
