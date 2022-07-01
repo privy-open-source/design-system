@@ -7,7 +7,7 @@
     <div class="calendar__nav">
       <Button
         data-testid="calendar-prev"
-        variant="outline"
+        variant="solid"
         icon
         size="sm"
         :disabled="!canPrev"
@@ -19,7 +19,7 @@
       <Button
         data-testid="calendar-title"
         class="calendar__nav-title"
-        variant="outline"
+        variant="solid"
         size="sm"
         :readonly="disabled || readonly"
         @click="changeMode(1)">
@@ -28,7 +28,7 @@
 
       <Button
         data-testid="calendar-next"
-        variant="outline"
+        variant="solid"
         icon
         size="sm"
         :readonly="disabled || readonly"
@@ -50,7 +50,7 @@
           v-for="(item, i) in items"
           :key="i">
           <Button
-            variant="outline"
+            variant="solid"
             icon
             data-testid="calendar-item"
             :readonly="item.readonly || disabled || readonly"
@@ -258,15 +258,25 @@ export default defineComponent({
     }
   }
 
-  .btn--outline {
-    @apply border-0 justify-center;
+  .btn--solid {
+    @apply border-0 justify-center bg-transparent text-body-100;
+
+    &:hover,
+    &:focus,
+    &:active {
+      @apply text-white;
+    }
 
     &[readonly] {
       @apply pointer-events-none;
     }
 
-    &[active="true"]:not(:hover) {
+    &[active="true"] {
       @apply bg-primary-100 text-white;
+
+      &:active {
+        @apply bg-primary-focused;
+      }
     }
   }
 

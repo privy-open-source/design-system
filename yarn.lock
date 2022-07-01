@@ -431,7 +431,7 @@ __metadata:
     autoprefixer: 10.4.7
     c8: 7.11.3
     date-fns: 2.28.0
-    defu: ^6.0.0
+    defu: 6.0.0
     eslint: 8.17.0
     eslint-config-standard-with-typescript: latest
     eslint-plugin-align-assignments: 1.1.2
@@ -453,9 +453,9 @@ __metadata:
     tabbable: 5.3.3
     tailwindcss: 3.1.4
     typescript: 4.7.3
-    vite: ^2.9.13
+    vite: 2.9.13
     vitepress: 0.22.4
-    vitest: ^0.16.0
+    vitest: 0.16.0
     vue-demi: 0.13.1
   languageName: unknown
   linkType: soft
@@ -2031,7 +2031,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:^6.0.0":
+"defu@npm:6.0.0":
   version: 6.0.0
   resolution: "defu@npm:6.0.0"
   checksum: 3c24ef0009b796e32a1655a23fc1f11a79b42012255b6bc88889242da77b7e45bfa4293d9661d28f3f6c12c931309e18f5047efa492670585a3da768887cea74
@@ -5802,7 +5802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^2.9.12, vite@npm:^2.9.13":
+"vite@npm:2.9.13, vite@npm:^2.9.12":
   version: 2.9.13
   resolution: "vite@npm:2.9.13"
   dependencies:
@@ -5876,7 +5876,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^0.16.0":
+"vitest@npm:0.16.0":
   version: 0.16.0
   resolution: "vitest@npm:0.16.0"
   dependencies:
