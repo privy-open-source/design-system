@@ -15,7 +15,7 @@ import {
 
 export type StyleVariant = 'solid' | 'outline' | 'ghost' | 'link' | 'input'
 export type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
-export type SizeVariant = 'sm' | 'md' | 'lg'
+export type SizeVariant = 'xs' | 'sm' | 'md' | 'lg'
 
 export default defineComponent({
   props: {
@@ -69,145 +69,193 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
+/**
+* Component Name: Button
+* Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=291%3A3945
+* Date Created  : Feb 01, 2022
+* Last Update   : June 20, 2022
+*/
 .btn {
   @apply inline-flex font-medium disabled:opacity-50 disabled:pointer-events-none;
-}
 
-.btn > svg {
-  @apply self-baseline;
-}
-
-.btn--sm {
-  @apply px-2 py-1 gap-1 text-sm rounded-sm;
-}
-
-.btn--md {
-  @apply px-4 py-2 gap-2 rounded;
-}
-
-.btn--lg {
-  @apply px-5 py-3 gap-3 text-base rounded;
-}
-
-.btn--solid {
-  @apply border;
-
-  &.btn--primary {
-    @apply bg-primary-100 border-primary-100 text-white hover:bg-primary-hovered active:bg-primary-focused;
+  > svg {
+    @apply self-baseline;
   }
 
-  &.btn--secondary {
-    @apply bg-secondary-100 border-secondary-100 text-white hover:bg-secondary-hovered active:bg-secondary-focused;
+  /*
+  * Button has 4 different sizing
+  * eg: xs, sm, md, and lg
+  */
+  &--xs {
+    @apply px-2 py-1 gap-1 text-sm rounded-xs;
   }
 
-  &.btn--success {
-    @apply bg-success-100 border-success-100 text-white hover:bg-success-hovered active:bg-success-focused;
+  &--sm {
+    @apply px-4 py-2 gap-2 text-base rounded-sm;
   }
 
-  &.btn--info {
-    @apply bg-info-100 border-info-100 text-white hover:bg-info-hovered active:bg-info-focused;
+  &--md {
+    @apply px-5 py-3 gap-3 text-base rounded;
   }
 
-  &.btn--warning {
-    @apply bg-warning-100 border-warning-100 text-white hover:bg-warning-hovered active:bg-warning-focused;
+  &--lg {
+    @apply px-8 py-5 gap-4 text-base rounded;
   }
 
-  &.btn--danger {
-    @apply bg-danger-100 border-danger-100 text-white hover:bg-danger-hovered active:bg-danger-focused;
+  /*
+  * Button solid is the
+  * default style variant
+  */
+  &--solid {
+    @apply border hover:shadow-lg focus:shadow-none active:shadow-none text-white;
+
+    &.btn {
+      &--primary {
+        @apply bg-primary-100 hover:bg-primary-hovered focus:bg-primary-focused active:bg-primary-focused;
+      }
+
+      &--secondary {
+        @apply bg-secondary-100 hover:bg-secondary-hovered focus:bg-secondary-focused active:bg-secondary-focused;
+      }
+
+      &--success {
+        @apply bg-success-100 hover:bg-success-hovered focus:bg-success-focused active:bg-success-focused;
+      }
+
+      &--info {
+        @apply bg-info-100 hover:bg-info-hovered focus:bg-info-focused active:bg-info-focused;
+      }
+
+      &--warning {
+        @apply bg-warning-100 hover:bg-warning-hovered focus:bg-warning-focused active:bg-warning-focused;
+      }
+
+      &--danger {
+        @apply bg-danger-100 hover:bg-danger-hovered focus:border-danger-focused active:bg-danger-focused;
+      }
+
+      &--gold {
+        @apply bg-gold-100 hover:bg-gold-hovered focus:bg-gold-focused active:bg-gold-focused;
+      }
+    }
   }
 
-  &.btn--gold {
-    @apply bg-gold-100 border-gold-100 text-white hover:bg-gold-hovered active:bg-gold-focused;
-  }
-}
-
-.btn--outline {
-  @apply border;
-
-  &.btn--primary {
-    @apply border-primary-100 hover:text-white hover:bg-primary-hovered active:bg-primary-focused;
+  &--outline,
+  &--ghost {
+    @apply border text-body-75 hover:text-body-100 hover:shadow-lg focus:shadow-none active:shadow-none focus:text-body-100 active:text-body-100;
   }
 
-  &.btn--secondary {
-    @apply border-secondary-100 hover:text-white hover:bg-secondary-hovered active:bg-secondary-focused;
+  /**
+  * Provide colors in
+  * button outline variant
+  * and border colors for
+  * solid variant
+  */
+  &--solid,
+  &--outline {
+    &.btn {
+      &--primary {
+        @apply border-primary-100 hover:border-primary-hovered active:border-primary-focused focus:border-primary-focused;
+      }
+
+      &--secondary {
+        @apply border-secondary-100 hover:border-secondary-hovered active:border-secondary-focused focus:border-secondary-focused;
+      }
+
+      &--success {
+        @apply border-success-100 hover:border-success-hovered active:border-success-focused focus:border-success-focused;
+      }
+
+      &--info {
+        @apply border-info-100 hover:border-info-hovered active:border-info-focused focus:border-info-focused;
+      }
+
+      &--warning {
+        @apply border-warning-100 hover:border-warning-hovered active:border-warning-focused focus:border-warning-focused;
+      }
+
+      &--danger {
+        @apply border-danger-100 hover:border-danger-hovered active:border-danger-focused focus:border-danger-focused;
+      }
+
+      &--gold {
+        @apply border-gold-100 hover:border-gold-hovered active:border-gold-focused focus:border-gold-focused;
+      }
+    }
   }
 
-  &.btn--success {
-    @apply border-success-100 hover:text-white hover:bg-success-hovered active:bg-success-focused;
+  /**
+  * Button ghost variant
+  */
+  &--ghost {
+    @apply border-transparent bg-white hover:border-black hover:border-opacity-5 hover:bg-black hover:bg-opacity-5 active:bg-black active:bg-opacity-5 active:border-black active:border-opacity-5 focus:bg-black focus:bg-opacity-5 focus:border-black focus:border-opacity-5;
   }
 
-  &.btn--info {
-    @apply border-info-100 hover:text-white hover:bg-info-hovered active:bg-info-focused;
+  /**
+  * Provide text colors
+  * in button link variant
+  */
+  &--link {
+    @apply border border-transparent underline;
+
+    &.btn {
+      &--primary {
+        @apply text-primary-100 hover:text-primary-hovered active:text-primary-focused focus:text-primary-focused;
+      }
+
+      &--secondary {
+        @apply text-secondary-100 hover:text-secondary-hovered active:text-secondary-focused focus:text-secondary-focused;
+      }
+
+      &--success {
+        @apply text-success-100 hover:text-success-hovered active:text-success-focused focus:text-success-focused;
+      }
+
+      &--info {
+        @apply text-info-100 hover:text-info-hovered active:text-info-focused focus:text-info-focused;
+      }
+
+      &--warning {
+        @apply text-warning-100 hover:text-warning-hovered active:text-warning-focused focus:text-warning-focused;
+      }
+
+      &--danger {
+        @apply text-danger-100 hover:text-danger-hovered active:text-danger-focused focus:text-danger-focused;
+      }
+
+      &--gold {
+        @apply text-gold-100 hover:text-gold-hovered active:text-gold-focused focus:text-gold-focused;
+      }
+    }
   }
 
-  &.btn--warning {
-    @apply border-warning-100 hover:text-white hover:bg-warning-hovered active:bg-warning-focused;
+  &--input {
+    @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
   }
 
-  &.btn--danger {
-    @apply border-danger-100 hover:text-white hover:bg-danger-hovered active:bg-danger-focused;
+  /**
+  * Button icon variant
+  */
+  &--icon {
+    &.btn--xs {
+      @apply p-1;
+    }
+
+    &.btn--sm {
+      @apply p-2;
+    }
+
+    &.btn--md {
+      @apply p-3;
+    }
+
+    &.btn--lg {
+      @apply p-4;
+    }
   }
 
-  &.btn--gold {
-    @apply border-gold-100 hover:text-white hover:bg-gold-hovered active:bg-gold-focused;
+  &--pill {
+    @apply rounded-full;
   }
-}
-
-.btn--ghost {
-  @apply border border-transparent bg-white text-body-100 hover:bg-secondary-5 hover:shadow-lg active:shadow-none;
-}
-
-.btn--link {
-  @apply border border-transparent underline;
-
-  &.btn--primary {
-    @apply text-primary-100 hover:text-primary-hovered active:text-primary-focused;
-  }
-
-  &.btn--secondary {
-    @apply text-secondary-100 hover:text-secondary-hovered active:text-secondary-focused;
-  }
-
-  &.btn--success {
-    @apply text-success-100 hover:text-success-hovered active:text-success-focused;
-  }
-
-  &.btn--info {
-    @apply text-info-100 hover:text-info-hovered active:text-info-focused;
-  }
-
-  &.btn--warning {
-    @apply text-warning-100 hover:text-warning-hovered active:text-warning-focused;
-  }
-
-  &.btn--danger {
-    @apply text-danger-100 hover:text-danger-hovered active:text-danger-focused;
-  }
-
-  &.btn--gold {
-    @apply text-gold-100 hover:text-gold-hovered active:text-gold-focused;
-  }
-}
-
-.btn--input {
-  @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
-}
-
-.btn--icon {
-  &.btn--sm {
-    @apply p-1;
-  }
-
-  &.btn--md {
-    @apply p-2;
-  }
-
-  &.btn--lg {
-    @apply p-3;
-  }
-}
-
-.btn--pill {
-  @apply rounded-full;
 }
 </style>

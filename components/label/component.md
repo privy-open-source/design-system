@@ -72,21 +72,21 @@ Label has 3 variants namely `default`, `light` and `dot`. When variant is not se
 ```
 
 ## Sizing
-Label has 4 size, namely `large`, `medium`, `small` and `tiny`. When size is not set, default label is `medium`
+Label has 4 size, namely `lg`, `md`, `sm` and `xs`. When size is not set, default label is `md`
 
 <preview>
-  <Label size="large">Label</Label>
-  <Label size="medium">Label</Label>
-  <Label size="small">Label</Label>
-  <Label size="tiny">Label</Label>
+  <Label size="lg">Label</Label>
+  <Label size="md">Label</Label>
+  <Label size="sm">Label</Label>
+  <Label size="xs">Label</Label>
 </preview>
 
 ```vue
 <template>
-  <Label size="large">Label</Label>
-  <Label size="medium">Label</Label>
-  <Label size="small">Label</Label>
-  <Label size="tiny">Label</Label>
+  <Label size="lg">Label</Label>
+  <Label size="md">Label</Label>
+  <Label size="sm">Label</Label>
+  <Label size="xs">Label</Label>
 </template>
 ```
 
@@ -115,7 +115,7 @@ Label has dismiss feature. It can be show or hide by `dismissable` props. If `di
 |---------------|:---------:|:---------:|------------------------------------------------------------------------------------------------------------|
 | `color`       | `String`  | `primary` | Label color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
 | `variant`     | `String`  | `default` | Label variant, valid value is `default`, `light` and `dot`.                                                |
-| `size`        | `String`  | `medium`  | Label variant, valid value is `large`, `medium`, `small` and `tiny`.                                       |
+| `size`        | `String`  | `md`  | Label variant, valid value is `lg`, `md`, `sm` and `xs`.                                       |
 | `dismissable` | `Boolean` |  `false`  | Show / Hide dismiss button                                                                                 |
 
 ### Slots

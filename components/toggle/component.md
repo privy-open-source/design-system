@@ -223,6 +223,7 @@ Similar to [Checkbox](/checkbox/component), if v-model **state** is an *array* i
 </preview>
 
 **Selected :**
+
 <pre class="whitespace-normal"><code>{{ selected }}</code></pre>
 
 ```vue

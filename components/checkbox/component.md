@@ -143,9 +143,7 @@ By default, value of toggle is always `Boolean`, but you can change it with `val
 
 If v-model **state** is an *array* it will append the value instead of replacing it.
 
-<banner>
-  <strong>Warn!</strong> selected order is not guaranteed
-</banner>
+<Banner><strong>Warn!</strong> selected order is not guaranteed</Banner>
 
 <preview class="flex-col items-center">
   <div class="flex flex-col gap-3">
@@ -158,6 +156,7 @@ If v-model **state** is an *array* it will append the value instead of replacing
 </preview>
 
 **Selected :**
+
 <pre class="whitespace-normal"><code>{{ selected }}</code></pre>
 
 ```vue
@@ -192,6 +191,7 @@ Indeterminate is condition between `checked` and `unchecked`. It's usefull for c
 </preview>
 
 **Result :**
+
 <pre class="whitespace-normal"><code>{{ result }}</code></pre>
 
 ```vue

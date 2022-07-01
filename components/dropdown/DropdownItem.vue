@@ -42,7 +42,7 @@ export default defineComponent({
 
   &:hover,
   &:focus-visible {
-    @apply bg-secondary-25;
+    @apply bg-background-75;
   }
 }
 </style>

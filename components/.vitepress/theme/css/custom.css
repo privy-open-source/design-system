@@ -45,8 +45,13 @@
             > a.sidebar-link-item {
               @apply text-sm inline-block rounded-sm py-1 px-3 border-l-0;
 
+              &.active,
+              &:hover {
+                @apply bg-primary-100 bg-opacity-10 text-body-100;
+              }
+
               &.active {
-                @apply bg-primary-100 bg-opacity-10 text-body-100 font-bold;
+                @apply font-bold;
               }
             }
 
@@ -76,6 +81,15 @@
         @apply mt-7;
       }
     }
+  }
+
+  h2 {
+    border-bottom-color: transparent;
+  }
+
+
+  h4 {
+    @apply mt-6;
   }
 
   h5 {
@@ -114,8 +128,4 @@
 
 a.header-anchor {
   margin-left: -1.25em;
-}
-
-h2 {
-  border-bottom-color: transparent;
 }

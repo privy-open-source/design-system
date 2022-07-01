@@ -8,7 +8,8 @@ import { InputProps } from '../input/use-input'
 import { valueIn, isEqual } from '../utils/value'
 
 function isChecked (modelValue: unknown, checked: unknown): boolean {
-  if (Array.isArray(modelValue)) return valueIn(modelValue, checked)
+  if (Array.isArray(modelValue))
+    return valueIn(modelValue, checked)
 
   return isEqual(modelValue, checked)
 }

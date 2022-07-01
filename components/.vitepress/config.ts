@@ -30,6 +30,14 @@ export default defineConfig({
             link: '/banner/guide'
           },
           {
+            text: 'Button',
+            link: '/button/guide'
+          },
+          {
+            text: 'Button Group',
+            link: '/button-group/guide'
+          },
+          {
             text: 'Heading',
             link: '/heading/guide'
           }
@@ -56,6 +64,10 @@ export default defineConfig({
             link: '/button/component'
           },
           {
+            text: 'Button Group',
+            link: '/button-group/component'
+          },
+          {
             text: 'Card',
             link: '/card/component'
           },
@@ -66,6 +78,10 @@ export default defineConfig({
           {
             text: 'Dropdown',
             link: '/dropdown/component'
+          },
+          {
+            text: 'Dropdown Subitem',
+            link: '/dropdown-subitem/component'
           },
           {
             text: 'Label',
@@ -110,6 +126,10 @@ export default defineConfig({
           {
             text: 'Checkbox',
             link: '/checkbox/component'
+          },
+          {
+            text: 'Datepicker',
+            link: '/datepicker/component'
           },
           {
             text: 'Input',
