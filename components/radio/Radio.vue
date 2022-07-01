@@ -164,7 +164,7 @@ export default defineComponent({
 
   &--checked {
     .radio__icon {
-      @apply bg-primary-100;
+      @apply bg-primary-100 border-primary-100;
     }
   }
 

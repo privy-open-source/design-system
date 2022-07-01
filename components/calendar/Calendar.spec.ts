@@ -1,4 +1,5 @@
 import { render, fireEvent } from '@testing-library/vue'
+import { ref } from 'vue-demi'
 import Calendar from './Calendar.vue'
 
 it('should render properly without any props', () => {
@@ -269,4 +270,25 @@ it('should force current viewmode, if props "mode" changed and current viewmode 
   await fireEvent.click(button)
 
   expect(calendar).toHaveAttribute('viewmode', 'year')
+})
+
+it('should modify value in v-model', async () => {
+  const model  = ref(new Date(2022, 0, 15))
+  const screen = render({
+    components: { Calendar },
+    template  : `
+      <Calendar v-model="model" />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const items    = screen.queryAllByTestId('calendar-item')
+  const expected = new Date(2022, 0, 1)
+
+  await fireEvent.click(items.at(12))
+
+  expect(model.value).toBeDate()
+  expect(model.value.toISOString()).toBe(expected.toISOString())
 })

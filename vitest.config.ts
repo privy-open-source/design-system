@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import { UserConfig } from 'vitest'
 import Vue from '@vitejs/plugin-vue'
 
 const config = defineConfig({
@@ -22,6 +21,6 @@ const config = defineConfig({
     },
     setupFiles: ['./vitest.setup.ts'],
   },
-}) as UserConfig
+})
 
 export default config

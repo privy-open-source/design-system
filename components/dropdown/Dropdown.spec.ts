@@ -360,7 +360,8 @@ it('should be able to custom activator button', async () => {
   expect(input).toBeInTheDocument()
   expect(dropdown).not.toHaveClass('dropdown--open')
 
-  await fireEvent.focus(input)
+  input.focus()
+  await nextTick()
 
   expect(dropdown).toHaveClass('dropdown--open')
 })

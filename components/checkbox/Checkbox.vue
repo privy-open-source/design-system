@@ -170,7 +170,7 @@ export default defineComponent({
   &--checked,
   &--indeterminate {
     .checkbox__icon {
-      @apply bg-primary-100;
+      @apply bg-primary-100 border-primary-100;
     }
   }
 

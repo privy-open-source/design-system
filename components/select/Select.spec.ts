@@ -45,7 +45,8 @@ it('should open if input is focused', async () => {
   expect(select).toHaveClass('select')
   expect(select).not.toHaveClass('select--open')
 
-  await fireEvent.focus(input)
+  input.focus()
+  await nextTick()
 
   expect(select).toHaveClass('select--open')
 })
@@ -128,7 +129,8 @@ it('should have not able to open if select is disabled', async () => {
   const select = screen.queryByTestId('select')
   const input  = screen.queryByTestId('select-search')
 
-  await fireEvent.focus(input)
+  input.focus()
+  await nextTick()
 
   expect(select).toHaveClass('select--disabled')
   expect(select).not.toHaveClass('select--open')
@@ -145,7 +147,8 @@ it('should have not able to open if select is readonly', async () => {
   const select = screen.queryByTestId('select')
   const input  = screen.queryByTestId('select-search')
 
-  await fireEvent.focus(input)
+  input.focus()
+  await nextTick()
 
   expect(select).toHaveClass('select--readonly')
   expect(select).not.toHaveClass('select--open')
@@ -165,6 +168,11 @@ it('should modify state in v-model', async () => {
       return { model }
     },
   })
+
+  const input = screen.queryByTestId('select-search')
+
+  input.focus()
+  await nextTick()
 
   const items = screen.queryAllByTestId('select-item')
 
@@ -187,6 +195,11 @@ it('should modify state in v-model:selected', async () => {
       return { model }
     },
   })
+
+  const input = screen.queryByTestId('select-search')
+
+  input.focus()
+  await nextTick()
 
   const items = screen.queryAllByTestId('select-item')
 
@@ -212,7 +225,8 @@ it('should trigger event `user-input` when real user selecting the item', async 
 
   const input = screen.queryByTestId('select-search')
 
-  await fireEvent.focus(input)
+  input.focus()
+  await nextTick()
 
   const items = screen.queryAllByTestId('select-item')
 

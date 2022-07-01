@@ -115,7 +115,7 @@ it('should be show loading user start typing', async () => {
   expect(handler).toBeCalledTimes(1)
   expect(select).toBeInTheDocument()
 
-  await fireEvent.focus(search)
+  search.focus()
   await fireEvent.update(search, 'nn')
 
   const loading = screen.queryByTestId('select-loading')
@@ -147,7 +147,7 @@ it('should be reload when user finish typing', async () => {
 
   vi.useFakeTimers()
 
-  await fireEvent.focus(search)
+  search.focus()
   await fireEvent.update(search, 'nn')
 
   vi.advanceTimersByTime(501)
@@ -269,7 +269,7 @@ it('should no nothing if handler throw an error', async () => {
   vi.useFakeTimers()
   vi.spyOn(console, 'error').mockReturnThis()
 
-  await fireEvent.focus(search)
+  search.focus()
   await fireEvent.update(search, 'fail')
 
   vi.advanceTimersByTime(501)

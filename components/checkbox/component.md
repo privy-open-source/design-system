@@ -157,7 +157,7 @@ If v-model **state** is an *array* it will append the value instead of replacing
 
 **Selected :**
 
-<pre><code>{{ selected }}</code></pre>
+<pre class="whitespace-normal"><code>{{ selected }}</code></pre>
 
 ```vue
 <template>

@@ -6,6 +6,7 @@
     "jsx": "preserve",
     "downlevelIteration": true,
     "types": [
+      "vitest",
       "vite/client",
       "jest-extended"
     ]
