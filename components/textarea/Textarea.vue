@@ -10,14 +10,16 @@
       v-bind="$attrs"
       :placeholder="placeholder"
       :disabled="disabled"
+      :readonly="readonly"
       :rows="rows"
       :maxlength="maxlength"
+      :aria-valuemax="maxlength"
       @input="handleInput" />
     <div
       v-if="showCounter"
       data-testid="calendar-counter"
       class="textarea__counter">
-      {{ charactersLength }}{{ maxlength ? `/${maxlength}` : '' }}
+      {{ charactersLength }}<span v-if="maxlength">/{{ maxlength }}</span>
     </div>
   </div>
 </template>
@@ -31,8 +33,6 @@ import {
   watch,
 } from 'vue-demi'
 import { templateRef } from '@vueuse/core'
-
-export const DEFAULT_ROW_HEIGHT = 24
 
 export default defineComponent({
   props: {
@@ -66,13 +66,18 @@ export default defineComponent({
     },
     rows: {
       type   : [Number, String],
-      default: 4,
+      default: 3,
     },
     maxlength: {
       type   : [Number, String],
       default: undefined,
     },
   },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
+  emits: ['input', 'update:modelValue'],
   setup (props) {
     const textarea = templateRef<HTMLTextAreaElement>('textarea')
     const model    = useVModel(props)
@@ -82,13 +87,16 @@ export default defineComponent({
       const results: string[] = ['textarea']
 
       if (props.resize)
-        results.push('textarea--resizeable')
+        results.push('textarea--resize')
 
       if (props.disabled)
         results.push('textarea--disabled')
 
       if (props.autoGrow)
         results.push('textarea--autogrow')
+
+      if (props.readonly)
+        results.push('textarea--readonly')
 
       return results
     })
@@ -104,21 +112,15 @@ export default defineComponent({
     }, { flush: 'post' })
 
     onMounted(() => {
-      setTimeout(() => {
-        if (props.autoGrow && textarea.value)
-          calculateRowHeight()
-      }, 0)
+      if (props.autoGrow && textarea.value)
+        calculateRowHeight()
     })
 
     /** define functions */
     function calculateRowHeight () {
       // reset height and max height to zero
       textarea.value.style.height = 'auto'
-
-      const height    = textarea.value.scrollHeight
-      const minHeight = Number.parseInt(props.rows.toString(), 10) * DEFAULT_ROW_HEIGHT
-
-      textarea.value.style.height = `${Math.max(minHeight, height)}px`
+      textarea.value.style.height = `${textarea.value.scrollHeight}px`
     }
 
     function handleInput () {
@@ -142,7 +144,7 @@ export default defineComponent({
   @apply flex flex-auto relative;
 
   &__input {
-    @apply p-3 rounded-sm border border-secondary-25 placeholder:text-subtext-75 w-full outline-none bg-white resize-none;
+    @apply p-3 rounded-sm border border-secondary-25 placeholder:text-subtext-75 w-full outline-none bg-white resize-none min-h-[46px];
 
     &:focus {
       @apply border-secondary-75 ring ring-secondary-25 ring-opacity-30;
@@ -150,7 +152,7 @@ export default defineComponent({
   }
 
   &__counter {
-    @apply text-right text-subtext-50 text-xs absolute bottom-1 right-1;
+    @apply text-right text-subtext-50 text-xs absolute bottom-1 right-1 pointer-events-none;
   }
 
   &--autogrow {
@@ -159,7 +161,7 @@ export default defineComponent({
     }
   }
 
-  &--resizeable {
+  &--resize {
     .textarea__input {
       @apply resize-y;
     }
