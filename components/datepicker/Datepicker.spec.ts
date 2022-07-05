@@ -71,7 +71,7 @@ it('should be able to set display format via prop `format`', () => {
   expect(input).toHaveValue('2022-01-31')
 })
 
-it('should have style readonly if props disabled is provided', () => {
+it('should have style disabled if props disabled is provided', () => {
   const screen = render({
     components: { Datepicker },
     template  : `

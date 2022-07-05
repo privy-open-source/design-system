@@ -92,8 +92,8 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['update:modelValue'],
-  setup (props) {
+  emits: ['change', 'update:modelValue'],
+  setup (props, { emit }) {
     const model  = useVModel(props)
     const isOpen = ref(false)
 
@@ -123,8 +123,10 @@ export default defineComponent({
         isOpen.value = true
     }
 
-    function onSelected () {
+    function onSelected (event: Event) {
       isOpen.value = false
+
+      emit('change', event)
     }
 
     return {
