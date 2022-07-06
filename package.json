@@ -30,7 +30,7 @@
     "eslint-config-standard-with-typescript": "latest",
     "eslint-plugin-align-assignments": "1.1.2",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-n": "15.2.2",
+    "eslint-plugin-n": "15.2.4",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-unicorn": "42.0.0",
