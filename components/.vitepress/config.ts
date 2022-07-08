@@ -144,6 +144,10 @@ export default defineConfig({
             link: '/select/component'
           },
           {
+            text: 'Textarea',
+            link: '/textarea/component'
+          },
+          {
             text: 'Toggle',
             link: '/toggle/component'
           },

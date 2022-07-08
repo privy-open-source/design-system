@@ -52,7 +52,7 @@
 
 ## Sizing
 
-There available 5 size variant: `xs`, `sm`, `md`, `lg`, `xl`. default is `md`
+There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is `md`
 
 <preview class="flex-col items-center gap-3 lg:flex-row">
   <Avatar src="https://picsum.photos/24" size="xs" />
@@ -120,10 +120,10 @@ If prop `variant` not set, it will detect the variant with some caveats:
 
 | Props         |   Type   | Default | Description                                                                                                                       |
 |---------------|:--------:|:-------:|-----------------------------------------------------------------------------------------------------------------------------------|
-| `variant`     | `String` | `image` | Avatar type variant, valid value: `avatar`, `alias`. default value is determine by some caveats, see [this](#auto-detect-variant) |
+| `variant`     | `String` | `image` | Avatar type variant, valid value: `avatar`, `alias`. default value is determined by some caveats, see [this](#auto-detect-variant) |
 | `src`         | `String` |    -    | Image URL, **required if using variant `image`**                                                                                  |
 | `fallbackSrc` | `String` |    -    | Fallback image url for broken link                                                                                                |
-| `name`        | `String` |    -    | Avatar name which would be generate into alias, **required if using variant `alias`**                                             |
+| `name`        | `String` |    -    | Avatar name which would be generated into alias, **required if using variant `alias`**                                             |
 | `size`        | `String` |  `md`   | Avatar size, valid value: `xs`, `sm`, `md`, `lg`, `xl`                                                                            |
 | `imgClass`    | `String` |    -    | Additional class for image element                                                                                                |
 
