@@ -21,6 +21,23 @@ it('should render properly without any props', () => {
   expect(text).toBeInTheDocument()
 })
 
+it('should have style `scroll` when props "scroll" set to true', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal modal-body-scrollable>Modal</Modal>
+    `,
+  })
+
+  const modal     = screen.queryByTestId('modal')
+  const text      = screen.queryByText('Modal')
+  const modalBody = screen.queryByTestId('modal-body')
+
+  expect(modal).toBeInTheDocument()
+  expect(modalBody).toHaveClass('modal__body', 'modal__body--scroll')
+  expect(text).toBeInTheDocument()
+})
+
 it('should have no close button if props "dismissable" set to false', () => {
   const screen = render({
     components: { Modal },
