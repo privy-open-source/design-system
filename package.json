@@ -53,7 +53,7 @@
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.7",
     "@popperjs/core": "2.11.5",
-    "@vueuse/core": "8.6.0",
+    "@vueuse/core": "8.9.2",
     "date-fns": "2.28.0",
     "defu": "6.0.0",
     "fuse.js": "6.6.2",
