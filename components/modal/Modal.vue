@@ -38,7 +38,7 @@
             </div>
             <div
               data-testid="modal-body"
-              :class="modalBodyScrollable ? 'modal__body modal__body--scroll' : 'modal__body'">
+              :class="[ { 'modal__body--scroll' : modalBodyScrollable }, 'modal__body' ]">
               <slot>
                 {{ text }}
               </slot>
