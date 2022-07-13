@@ -38,7 +38,7 @@
             </div>
             <div
               data-testid="modal-body"
-              :class="[ { 'modal__body--scroll' : modalBodyScrollable }, 'modal__body']">
+              :class="modalBodyScrollable ? 'modal__body modal__body--scroll' : 'modal__body'">
               <slot>
                 {{ text }}
               </slot>
@@ -88,15 +88,15 @@ export default defineComponent({
       type   : Boolean,
       default: true,
     },
-    modalBodyScrollable: {
-      type   : Boolean,
-      default: false,
-    },
     noCloseOnEsc: {
       type   : Boolean,
       default: false,
     },
     noCloseOnBackdrop: {
+      type   : Boolean,
+      default: false,
+    },
+    modalBodyScrollable: {
       type   : Boolean,
       default: false,
     },

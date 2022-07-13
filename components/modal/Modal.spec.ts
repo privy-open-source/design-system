@@ -21,20 +21,38 @@ it('should render properly without any props', () => {
   expect(text).toBeInTheDocument()
 })
 
-it('should have style `scroll` when props "scroll" set to true', () => {
+it('should be able to add Modal Title via props "title"', () => {
   const screen = render({
     components: { Modal },
     template  : `
-      <Modal modal-body-scrollable>Modal</Modal>
+      <Modal
+        title="Modal Title">
+        Modal Text
+      </Modal>
     `,
   })
 
-  const modal     = screen.queryByTestId('modal')
-  const text      = screen.queryByText('Modal')
-  const modalBody = screen.queryByTestId('modal-body')
+  const modal = screen.queryByTestId('modal')
+  const title = screen.queryByText('Modal Title')
 
   expect(modal).toBeInTheDocument()
-  expect(modalBody).toHaveClass('modal__body', 'modal__body--scroll')
+  expect(title).toBeInTheDocument()
+})
+
+it('should be able to add Modal Text via props "text"', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        title="Modal Title"
+        text="Modal Text" />
+    `,
+  })
+
+  const modal = screen.queryByTestId('modal')
+  const text  = screen.queryByText('Modal Text')
+
+  expect(modal).toBeInTheDocument()
   expect(text).toBeInTheDocument()
 })
 
@@ -274,4 +292,23 @@ it('If "no-close-on-esc" props is true, Modal will not close while modal esc was
 
   modal = screen.queryByTestId('modal')
   expect(modal).toBeVisible()
+})
+
+it('should have style `modal-body-scrollable` when props "modal-body-scrollable" set to true', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        title="Modal Title" 
+        modal-body-scrollable>
+        Modal Text
+      </Modal>
+    `,
+  })
+
+  const modal     = screen.queryByTestId('modal')
+  const modalBody = screen.queryByTestId('modal-body')
+
+  expect(modal).toBeInTheDocument()
+  expect(modalBody).toHaveClass('modal__body', 'modal__body--scroll')
 })
