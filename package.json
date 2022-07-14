@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@privyid/tailwind-preset": "workspace:^",
-    "@rushstack/eslint-patch": "1.1.3",
+    "@rushstack/eslint-patch": "1.1.4",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/vue": "6.6.0",
     "@types/eslint": "8.4.3",
