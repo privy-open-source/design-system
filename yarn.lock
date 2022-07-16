@@ -422,7 +422,7 @@ __metadata:
     "@testing-library/jest-dom": 5.16.4
     "@testing-library/vue": 6.6.0
     "@types/eslint": 8.4.3
-    "@types/testing-library__jest-dom": 5.14.3
+    "@types/testing-library__jest-dom": 5.14.5
     "@typescript-eslint/eslint-plugin": 5.29.0
     "@typescript-eslint/parser": 5.29.0
     "@vitejs/plugin-vue": 2.3.3
@@ -670,7 +670,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/testing-library__jest-dom@npm:5.14.3, @types/testing-library__jest-dom@npm:^5.9.1":
+"@types/testing-library__jest-dom@npm:5.14.5":
+  version: 5.14.5
+  resolution: "@types/testing-library__jest-dom@npm:5.14.5"
+  dependencies:
+    "@types/jest": "*"
+  checksum: dcb05416758fe88c1f4f3aa97b4699fcb46a5ed8f53c6b81721e66155452a48caf12ecb97dfdfd4130678e65efd66b9fca0ac434b3d63affec84842a84a6bf38
+  languageName: node
+  linkType: hard
+
+"@types/testing-library__jest-dom@npm:^5.9.1":
   version: 5.14.3
   resolution: "@types/testing-library__jest-dom@npm:5.14.3"
   dependencies:
