@@ -100,6 +100,10 @@ export default defineConfig({
         collapsable: true,
         children   : [
           {
+            text: 'Caption',
+            link: '/caption/component'
+          },
+          {
             text: 'Heading',
             link: '/heading/component'
           },
