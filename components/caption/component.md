@@ -2,11 +2,6 @@
     import Caption from './Caption.vue'
 </script>
 
-<style scoped lang="postcss">
-  .preview {
-
-  }
-</style>
 # Caption
 
 ## Usage
@@ -79,8 +74,3 @@
     </tr>
   </tbody>
 </table>
-
-## See Also
-
-- [Heading Guide](/heading/guide)
-- [Subheading](/subheading/component)
