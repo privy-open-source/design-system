@@ -420,7 +420,7 @@ __metadata:
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": 1.1.4
     "@testing-library/jest-dom": 5.16.4
-    "@testing-library/vue": 6.6.0
+    "@testing-library/vue": 6.6.1
     "@types/eslint": 8.4.3
     "@types/testing-library__jest-dom": 5.14.5
     "@typescript-eslint/eslint-plugin": 5.29.0
@@ -518,17 +518,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/vue@npm:6.6.0":
-  version: 6.6.0
-  resolution: "@testing-library/vue@npm:6.6.0"
+"@testing-library/vue@npm:6.6.1":
+  version: 6.6.1
+  resolution: "@testing-library/vue@npm:6.6.1"
   dependencies:
     "@babel/runtime": ^7.15.4
     "@testing-library/dom": ^8.5.0
-    "@vue/test-utils": ^2.0.0-rc.18
+    "@vue/test-utils": ^2.0.0
   peerDependencies:
     "@vue/compiler-sfc": ">= 3"
     vue: ">= 3"
-  checksum: 3e89e05ca12e8e3811ce481470433c3f5d42438f1dc43485297558fdb8a5390bbbc48827c4471cbc6be44622f1588ec118ecd63170ebe3732f096058d7c82b42
+  checksum: c05e043b7c33e8e17220c7766231235f75ab2056dfb205323f65a8d02d7b6914f26bd732701b6c83d3419583695e0eb016c92c7967f627963ec9a75ff2d75d6a
   languageName: node
   linkType: hard
 
@@ -1141,12 +1141,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/test-utils@npm:^2.0.0-rc.18":
-  version: 2.0.0-rc.18
-  resolution: "@vue/test-utils@npm:2.0.0-rc.18"
+"@vue/test-utils@npm:^2.0.0":
+  version: 2.0.2
+  resolution: "@vue/test-utils@npm:2.0.2"
   peerDependencies:
     vue: ^3.0.1
-  checksum: 23b02701193b0d10ce5d06c9c1bf1ef7916cb874b39143fb1651d7ad12dff5c48ea8a7a0d953dc25cea709062aab96fdbfd0355176cbaed811b0e087da2ae49f
+  checksum: 384bdd4231d3f3eaa02e2ffaef2e2c90934cd9f44ab53fdfe1e9603fbe9a0e702c4a15e8bdc0fc907af210f23abe35fc43a4814598ed0a297af4fa144161f87f
   languageName: node
   linkType: hard
 

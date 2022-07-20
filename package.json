@@ -17,7 +17,7 @@
     "@privyid/tailwind-preset": "workspace:^",
     "@rushstack/eslint-patch": "1.1.4",
     "@testing-library/jest-dom": "5.16.4",
-    "@testing-library/vue": "6.6.0",
+    "@testing-library/vue": "6.6.1",
     "@types/eslint": "8.4.3",
     "@types/testing-library__jest-dom": "5.14.5",
     "@typescript-eslint/eslint-plugin": "5.29.0",
