@@ -5,7 +5,6 @@
 # Caption
 
 ## Usage
-
 ### Basic Usage
 
 <preview>
@@ -22,24 +21,24 @@
 </template>
 ```
 
-## Setting The Element
+## Bold
 
 <preview class="flex-col">
   <Caption>
-    Any caption should here
+    Default caption should here
   </Caption>
   <Caption bold>
-    Any caption should here
+    Bold caption should here
   </Caption>
 </preview>
 
 ```vue
 <template>
   <Caption>
-    Any caption should here
+    Default caption should here
   </Caption>
   <Caption bold>
-    Any caption should here
+    Bold caption should here
   </Caption>
 </template>
 ```
