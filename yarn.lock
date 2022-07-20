@@ -418,16 +418,16 @@ __metadata:
     "@fontsource/dm-sans": 4.5.7
     "@popperjs/core": 2.11.5
     "@privyid/tailwind-preset": "workspace:^"
-    "@rushstack/eslint-patch": 1.1.3
+    "@rushstack/eslint-patch": 1.1.4
     "@testing-library/jest-dom": 5.16.4
     "@testing-library/vue": 6.6.0
     "@types/eslint": 8.4.3
-    "@types/testing-library__jest-dom": 5.14.3
+    "@types/testing-library__jest-dom": 5.14.5
     "@typescript-eslint/eslint-plugin": 5.29.0
     "@typescript-eslint/parser": 5.29.0
     "@vitejs/plugin-vue": 2.3.3
     "@vue/eslint-config-typescript": 11.0.0
-    "@vueuse/core": 8.6.0
+    "@vueuse/core": 8.9.2
     autoprefixer: 10.4.7
     c8: 7.11.3
     date-fns: 2.28.0
@@ -446,12 +446,12 @@ __metadata:
     happy-dom: 5.3.1
     husky: 8.0.1
     jest-extended: 2.0.0
-    lint-staged: 13.0.1
+    lint-staged: 13.0.3
     nanodelay: 2.0.2
     postcss: 8.4.14
     postcss-nested: 5.0.6
     tabbable: 5.3.3
-    tailwindcss: 3.1.4
+    tailwindcss: 3.1.6
     typescript: 4.7.3
     vite: 2.9.13
     vitepress: 0.22.4
@@ -478,10 +478,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rushstack/eslint-patch@npm:1.1.3":
-  version: 1.1.3
-  resolution: "@rushstack/eslint-patch@npm:1.1.3"
-  checksum: 53752d1e34e45a91b30a016b837c33054fcbd0a295c0312b0812dab78289ea680d7c0c3f19c1f885f49764d416727747133765ff5bfce31a9c4cc93c7a56ebe1
+"@rushstack/eslint-patch@npm:1.1.4":
+  version: 1.1.4
+  resolution: "@rushstack/eslint-patch@npm:1.1.4"
+  checksum: 597bc84e2f76c7f5f2bcedd4c4b1dd5d02524167a0f67ac588e8fbbd94666297aaf0e6a53ec46afb95554164fc1169ff782841003280e4bc98e80ab6559412c6
   languageName: node
   linkType: hard
 
@@ -670,12 +670,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/testing-library__jest-dom@npm:5.14.3, @types/testing-library__jest-dom@npm:^5.9.1":
+"@types/testing-library__jest-dom@npm:5.14.5":
+  version: 5.14.5
+  resolution: "@types/testing-library__jest-dom@npm:5.14.5"
+  dependencies:
+    "@types/jest": "*"
+  checksum: dcb05416758fe88c1f4f3aa97b4699fcb46a5ed8f53c6b81721e66155452a48caf12ecb97dfdfd4130678e65efd66b9fca0ac434b3d63affec84842a84a6bf38
+  languageName: node
+  linkType: hard
+
+"@types/testing-library__jest-dom@npm:^5.9.1":
   version: 5.14.3
   resolution: "@types/testing-library__jest-dom@npm:5.14.3"
   dependencies:
     "@types/jest": "*"
   checksum: 203443d0e7e5929fbc9e441146f92d85efa033b4697e427ed0164df1c40b720b6bb9bbd96a3171ea5fd8d9301b538fd0f49d4f35594d142afd0f6d2ecac25785
+  languageName: node
+  linkType: hard
+
+"@types/web-bluetooth@npm:^0.0.14":
+  version: 0.0.14
+  resolution: "@types/web-bluetooth@npm:0.0.14"
+  checksum: 1eb694ff2ba6ef239e10024bfb205c087fb1a43aa8b4a31f3a3b7c90eccf2f55c7fb4c1057e382e1c2f4d6d8a137e68bf1255790b980c5ac95026419a623c6b5
   languageName: node
   linkType: hard
 
@@ -1134,12 +1150,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:8.6.0":
-  version: 8.6.0
-  resolution: "@vueuse/core@npm:8.6.0"
+"@vueuse/core@npm:8.9.2":
+  version: 8.9.2
+  resolution: "@vueuse/core@npm:8.9.2"
   dependencies:
-    "@vueuse/metadata": 8.6.0
-    "@vueuse/shared": 8.6.0
+    "@types/web-bluetooth": ^0.0.14
+    "@vueuse/metadata": 8.9.2
+    "@vueuse/shared": 8.9.2
     vue-demi: "*"
   peerDependencies:
     "@vue/composition-api": ^1.1.0
@@ -1149,20 +1166,20 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 5577699514e9d0c240f3322c8676814539340acc3c1f23dc44e80f96bc6b1d3241ec7da18fbcfccd3f4215374613714664c09f8293071bb2aaceac929a75c8c5
+  checksum: 9d9d694c78468fcbecb8485807f673c035c272ad690e266b7b7c2e79023c0a6ee25c0318242737a87f6ca39ed43ea15d683ec66b991ae56b91cf6175e577c726
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:8.6.0":
-  version: 8.6.0
-  resolution: "@vueuse/metadata@npm:8.6.0"
-  checksum: 434ae03d965a7fb9fa711b245d63e3b581a67902ec7ab6095f8ba395b3c6320da5f1b78e233686a73ba0349e49c2d183254b46cb3736a94b58c77b7992e27d0d
+"@vueuse/metadata@npm:8.9.2":
+  version: 8.9.2
+  resolution: "@vueuse/metadata@npm:8.9.2"
+  checksum: 003c35acbaf4cd3f0cb70e4a32461ee29d1cbcc737ac02a8b41eb330b6cb860b8747fbdcee8aa063753d06b5bc26f8f36f5cc3ef4725e3e183218428ea4a1866
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:8.6.0":
-  version: 8.6.0
-  resolution: "@vueuse/shared@npm:8.6.0"
+"@vueuse/shared@npm:8.9.2":
+  version: 8.9.2
+  resolution: "@vueuse/shared@npm:8.9.2"
   dependencies:
     vue-demi: "*"
   peerDependencies:
@@ -1173,7 +1190,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 4c5eb1d034f79176e79386b13cbaf8481f3126d7fbce5ff4f79ac7aa3de84e67976662fe3dc21c002c5b5084edee8ccec304493fd80c9f28c58520a9aec32499
+  checksum: e6085a9c19a4be4edd40775656958e4f8fdb82e338442e09c30aada0d7e1abc55c58393fbbf0dc782a59ff7594d93b125a4aef1ccadda84479c41dd013d5ac11
   languageName: node
   linkType: hard
 
@@ -3789,9 +3806,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:13.0.1":
-  version: 13.0.1
-  resolution: "lint-staged@npm:13.0.1"
+"lint-staged@npm:13.0.3":
+  version: 13.0.3
+  resolution: "lint-staged@npm:13.0.3"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.17
@@ -3808,7 +3825,7 @@ __metadata:
     yaml: ^2.1.1
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: a321b351bbdc7dba09c9f026e385b887dabaaea1258eb478fbbe73dc395e11ebe26c946f8514426c7fc7e3e0efbe0761fe64f70e0d26361f912af79f80bf3e4e
+  checksum: 53d585007df06e162febab6b0836b55016d902586a267823c8a1158529d8c742dc7297e523f7023dff02250bef3eb0d6934f4ec4f9961adfc2ebbed5f54162d0
   languageName: node
   linkType: hard
 
@@ -4943,7 +4960,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.1.7":
+"resolve@npm:^1.1.7, resolve@npm:^1.22.1":
   version: 1.22.1
   resolution: "resolve@npm:1.22.1"
   dependencies:
@@ -4969,7 +4986,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
   version: 1.22.1
   resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
   dependencies:
@@ -5490,9 +5507,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.1.4":
-  version: 3.1.4
-  resolution: "tailwindcss@npm:3.1.4"
+"tailwindcss@npm:3.1.6":
+  version: 3.1.6
+  resolution: "tailwindcss@npm:3.1.6"
   dependencies:
     arg: ^5.0.2
     chokidar: ^3.5.3
@@ -5515,13 +5532,13 @@ __metadata:
     postcss-selector-parser: ^6.0.10
     postcss-value-parser: ^4.2.0
     quick-lru: ^5.1.1
-    resolve: ^1.22.0
+    resolve: ^1.22.1
   peerDependencies:
     postcss: ^8.0.9
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 716b7d80e51c4904d845920cbb88483114ae6f14b20328b9206f49fd642bbcd390b9764fc574f85901b0377184c5d4eb94c00bcf73e280f81e772cf621d390a5
+  checksum: 90719c6fd0dcdda5c8e2882ad421048c9dd90890e0c118d12ff3ec31adba53eb2df8fed1ed203e728e5b32297e1cc207df463a6b196d37344a63fde9f67c52b6
   languageName: node
   linkType: hard
 
