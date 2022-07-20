@@ -36,7 +36,9 @@
                 </Heading>
               </slot>
             </div>
-            <div class="modal__body">
+            <div
+              data-testid="modal-body"
+              :class="[ { 'modal__body--scroll' : modalBodyScrollable }, 'modal__body' ]">
               <slot>
                 {{ text }}
               </slot>
@@ -94,6 +96,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    modalBodyScrollable: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -148,7 +154,7 @@ export default defineComponent({
   /**
   * Set modal backdrop
   */
-  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-black bg-opacity-30 z-[1060];
+  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-black bg-opacity-30 z-[1060] overscroll-contain;
 
   &--banner {
     .modal {
@@ -200,8 +206,18 @@ export default defineComponent({
   }
 
   &__body {
+    &&--scroll {
+      @apply max-h-64 overflow-y-auto overscroll-contain;
+    }
+
     + .modal__footer {
-      @apply pt-0;
+      @apply pt-6;
+    }
+
+    &:not(&--scroll) {
+      + .modal__footer {
+        @apply pt-0;
+      }
     }
   }
 }

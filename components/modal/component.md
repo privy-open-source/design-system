@@ -10,6 +10,8 @@
   const bannerSheet = ref(false)
   const banner2 = ref(true)
   const bottomSheet = ref(false)
+  const scrollModal = ref(true)
+  const bodyScroll = ref(false)
 
   function click () {
     showModal.value = true
@@ -22,6 +24,10 @@
 
     &.banner {
       @apply h-[48rem];
+    }
+
+    &.scroll {
+      @apply h-[31rem];
     }
 
     .modal {
@@ -77,7 +83,8 @@
 
 <Modal
   v-model="showModal"
-  title="Modal Title">
+  title="Modal Title"
+  scroll>
   <p>
     This is place holder text. The basic dialog for modals
     should contain only valuable and relevant information.
@@ -234,6 +241,91 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
   </template>
 </Modal>
 
+## Modal Scroll
+When modals content become too long, modal body can scroll itself by adding props `modal-body-scrollable`.
+
+<div class="flex mt-5">
+  <Button @click="bodyScroll = true">Show Modal</Button>
+</div>
+
+<preview class="scroll">
+  <Modal 
+    v-model="scrollModal" 
+    title="Modal Title"
+    no-close-on-esc 
+    no-close-on-backdrop
+    modal-body-scrollable>
+    <div>
+      <p>
+        This is place holder text. The basic dialog for modals should contain only valuable and relevant information. Simplify dialogs by removing unnecessary elements or content that does not support user tasks. If you find that the number of required elements for your design are making the dialog excessively large, then try a different design solution.
+      </p>
+      <blockquote>
+        A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+      </blockquote>
+      <p>
+        I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
+      </p>
+    </div>
+    <template #footer="{ close }">
+      <Button @click="close">
+        Button Text
+      </Button>
+    </template>
+  </Modal>
+</preview>
+
+```vue
+<template>
+  <Modal 
+    v-model="scrollModal"
+    title="Modal Title"
+    no-close-on-esc 
+    no-close-on-backdrop
+    modal-body-scrollable>
+    <div>
+      <p>
+        This is place holder text. The basic dialog for modals should contain only valuable and relevant information. Simplify dialogs by removing unnecessary elements or content that does not support user tasks. If you find that the number of required elements for your design are making the dialog excessively large, then try a different design solution.
+      </p>
+      <blockquote>
+        A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+      </blockquote>
+      <p>
+        I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
+      </p>
+    </div>
+    <template #footer="{ close }">
+      <Button @click="close">
+        Button Text
+      </Button>
+    </template>
+  </Modal>
+</template>
+```
+
+<Modal 
+  v-model="bodyScroll"
+  title="Modal Title"
+  no-close-on-esc 
+  no-close-on-backdrop
+  modal-body-scrollable>
+  <div>
+    <p>
+      This is place holder text. The basic dialog for modals should contain only valuable and relevant information. Simplify dialogs by removing unnecessary elements or content that does not support user tasks. If you find that the number of required elements for your design are making the dialog excessively large, then try a different design solution.
+    </p>
+    <blockquote>
+      A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+    </blockquote>
+    <p>
+      I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
+    </p>
+  </div>
+  <template #footer="{ close }">
+    <Button @click="close">
+      Button Text
+    </Button>
+  </template>
+</Modal>
+
 ## API
 
 ### Props
@@ -245,6 +337,7 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
 | `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                      |
 | `no-close-on-esc`          | `Boolean` | `false` | No close modal while Escape was pressed         |
 | `no-close-on-backdrop`     | `Boolean` | `false` | No close modal while Modal Backdrop was clicked |
+| `modal-body-scrollable`    | `Boolean` | `false` | Scrollable modal body when content is to long   |
 
 ### Slots
 | Name      | Description                                                                                      |

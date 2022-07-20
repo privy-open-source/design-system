@@ -1,5 +1,7 @@
 <template>
-  <div :class="footerClassNames">
+  <div
+    data-testid="dialog-footer"
+    :class="footerClassNames">
     <Button
       v-if="cancelVisible"
       :class="cancelClass"
