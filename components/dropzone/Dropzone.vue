@@ -23,10 +23,14 @@
 <script lang="ts">
 import { templateRef } from '@vueuse/core'
 import {
-  defineComponent, PropType, ref,
+  defineComponent,
+  PropType,
+  ref,
 } from 'vue-demi'
 import { useVModel } from '../input/use-input'
 import accept from 'attr-accept'
+
+const File = globalThis.File
 
 export default defineComponent({
   props: {
