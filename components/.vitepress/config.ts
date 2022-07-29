@@ -21,25 +21,25 @@ export default defineConfig({
         children   : [
           {
             text: 'Badge',
-            link: '/badge/guide'
+            link: '/badge/guide',
           },
           {
             text: 'Banner',
-            link: '/banner/guide'
+            link: '/banner/guide',
           },
           {
             text: 'Button',
-            link: '/button/guide'
+            link: '/button/guide',
           },
           {
             text: 'Button Group',
-            link: '/button-group/guide'
+            link: '/button-group/guide',
           },
           {
             text: 'Heading',
-            link: '/heading/guide'
-          }
-        ]
+            link: '/heading/guide',
+          },
+        ],
       },
       {
         text       : 'Base',
@@ -47,53 +47,53 @@ export default defineConfig({
         children   : [
           {
             text: 'Avatar',
-            link: '/avatar/component'
+            link: '/avatar/component',
           },
           {
             text: 'Badge',
-            link: '/badge/component'
+            link: '/badge/component',
           },
           {
             text: 'Banner',
-            link: '/banner/component'
+            link: '/banner/component',
           },
           {
             text: 'Button',
-            link: '/button/component'
+            link: '/button/component',
           },
           {
             text: 'Button Group',
-            link: '/button-group/component'
+            link: '/button-group/component',
           },
           {
             text: 'Card',
-            link: '/card/component'
+            link: '/card/component',
           },
           {
             text: 'Dot',
-            link: '/dot/component'
+            link: '/dot/component',
           },
           {
             text: 'Dropdown',
-            link: '/dropdown/component'
+            link: '/dropdown/component',
           },
           {
             text: 'Dropdown Subitem',
-            link: '/dropdown-subitem/component'
+            link: '/dropdown-subitem/component',
           },
           {
             text: 'Label',
-            link: '/label/component'
+            link: '/label/component',
           },
           {
             text: 'Modal',
-            link: '/modal/component'
+            link: '/modal/component',
           },
           {
             text: 'Spinner',
-            link: '/spinner/component'
+            link: '/spinner/component',
           },
-        ]
+        ],
       },
       {
         text       : 'Typography',
@@ -101,19 +101,19 @@ export default defineConfig({
         children   : [
           {
             text: 'Caption',
-            link: '/caption/component'
+            link: '/caption/component',
           },
           {
             text: 'Heading',
-            link: '/heading/component'
+            link: '/heading/component',
           },
           {
             text: 'Subheading',
-            link: '/subheading/component'
+            link: '/subheading/component',
           },
           {
             text: 'Truncate',
-            link: '/truncate/component'
+            link: '/truncate/component',
           },
         ],
       },
@@ -123,37 +123,37 @@ export default defineConfig({
         children   : [
           {
             text: 'Calendar',
-            link: '/calendar/component'
+            link: '/calendar/component',
           },
           {
             text: 'Checkbox',
-            link: '/checkbox/component'
+            link: '/checkbox/component',
           },
           {
             text: 'Datepicker',
-            link: '/datepicker/component'
+            link: '/datepicker/component',
           },
           {
             text: 'Input',
-            link: '/input/component'
+            link: '/input/component',
           },
           {
             text: 'Radio',
-            link: '/radio/component'
+            link: '/radio/component',
           },
           {
             text: 'Select',
-            link: '/select/component'
+            link: '/select/component',
           },
           {
             text: 'Textarea',
-            link: '/textarea/component'
+            link: '/textarea/component',
           },
           {
             text: 'Toggle',
-            link: '/toggle/component'
+            link: '/toggle/component',
           },
-        ]
+        ],
       },
       {
         text       : 'Non-Component',
@@ -161,21 +161,29 @@ export default defineConfig({
         children   : [
           {
             text: 'Dialog',
-            link: '/dialog/component'
+            link: '/dialog/component',
           },
           {
             text: 'Overlay',
-            link: '/overlay/component'
+            link: '/overlay/component',
           },
           {
             text: 'Toast',
-            link: '/toast/component'
+            link: '/toast/component',
           },
         ],
-      }
-    ]
+      },
+      {
+        text       : 'Headless',
+        collapsable: true,
+        children   : [
+          {
+            text: 'Dropzone',
+            link: '/dropzone/component',
+          },
+        ],
+      },
+    ],
   },
-  vite: {
-    plugins: []
-  }
+  vite: { plugins: [] },
 })

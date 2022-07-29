@@ -428,6 +428,7 @@ __metadata:
     "@vitejs/plugin-vue": 2.3.3
     "@vue/eslint-config-typescript": 11.0.0
     "@vueuse/core": 8.9.2
+    attr-accept: ^2.2.2
     autoprefixer: 10.4.7
     c8: 7.11.3
     date-fns: 2.28.0
@@ -1479,6 +1480,13 @@ __metadata:
   bin:
     atob: bin/atob.js
   checksum: dfeeeb70090c5ebea7be4b9f787f866686c645d9f39a0d184c817252d0cf08455ed25267d79c03254d3be1f03ac399992a792edcd5ffb9c91e097ab5ef42833a
+  languageName: node
+  linkType: hard
+
+"attr-accept@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "attr-accept@npm:2.2.2"
+  checksum: 496f7249354ab53e522510c1dc8f67a1887382187adde4dc205507d2f014836a247073b05e9d9ea51e2e9c7f71b0d2aa21730af80efa9af2d68303e5f0565c4d
   languageName: node
   linkType: hard
 
