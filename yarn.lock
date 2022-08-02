@@ -427,7 +427,7 @@ __metadata:
     "@typescript-eslint/parser": 5.29.0
     "@vitejs/plugin-vue": 2.3.3
     "@vue/eslint-config-typescript": 11.0.0
-    "@vueuse/core": 8.9.2
+    "@vueuse/core": 8.9.4
     attr-accept: ^2.2.2
     autoprefixer: 10.4.7
     c8: 7.11.3
@@ -453,7 +453,7 @@ __metadata:
     postcss-nested: 5.0.6
     tabbable: 5.3.3
     tailwindcss: 3.1.6
-    typescript: 4.7.3
+    typescript: 4.7.4
     vite: 2.9.13
     vitepress: 0.22.4
     vitest: 0.16.0
@@ -1151,13 +1151,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:8.9.2":
-  version: 8.9.2
-  resolution: "@vueuse/core@npm:8.9.2"
+"@vueuse/core@npm:8.9.4":
+  version: 8.9.4
+  resolution: "@vueuse/core@npm:8.9.4"
   dependencies:
     "@types/web-bluetooth": ^0.0.14
-    "@vueuse/metadata": 8.9.2
-    "@vueuse/shared": 8.9.2
+    "@vueuse/metadata": 8.9.4
+    "@vueuse/shared": 8.9.4
     vue-demi: "*"
   peerDependencies:
     "@vue/composition-api": ^1.1.0
@@ -1167,20 +1167,20 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 9d9d694c78468fcbecb8485807f673c035c272ad690e266b7b7c2e79023c0a6ee25c0318242737a87f6ca39ed43ea15d683ec66b991ae56b91cf6175e577c726
+  checksum: 4f19874884d246e724562051143f27e18d7e7aefb941d4417e785027b87a895aea7ed51f3c9d6c1af219ea33d41cc1e0fcba113b72922ce6057a518cb0b83572
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:8.9.2":
-  version: 8.9.2
-  resolution: "@vueuse/metadata@npm:8.9.2"
-  checksum: 003c35acbaf4cd3f0cb70e4a32461ee29d1cbcc737ac02a8b41eb330b6cb860b8747fbdcee8aa063753d06b5bc26f8f36f5cc3ef4725e3e183218428ea4a1866
+"@vueuse/metadata@npm:8.9.4":
+  version: 8.9.4
+  resolution: "@vueuse/metadata@npm:8.9.4"
+  checksum: f289adc73d7d396e0245b0f219126811556497dcc093008b2b9e8c9023196c52eb5918dce4f5f6cc3a01db9c6a699b6adfc678800a1b543f6cc1c857d5643526
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:8.9.2":
-  version: 8.9.2
-  resolution: "@vueuse/shared@npm:8.9.2"
+"@vueuse/shared@npm:8.9.4":
+  version: 8.9.4
+  resolution: "@vueuse/shared@npm:8.9.4"
   dependencies:
     vue-demi: "*"
   peerDependencies:
@@ -1191,7 +1191,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: e6085a9c19a4be4edd40775656958e4f8fdb82e338442e09c30aada0d7e1abc55c58393fbbf0dc782a59ff7594d93b125a4aef1ccadda84479c41dd013d5ac11
+  checksum: 83a29ec879073100e268863f607b3a8175ac1d70318b85f74907ed69bcf0d538f89b2ccd3c14ac37eab326ec3564e0c1623f1f9af0980516a5617e7f81fdd9bb
   languageName: node
   linkType: hard
 
@@ -5733,23 +5733,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.7.3":
-  version: 4.7.3
-  resolution: "typescript@npm:4.7.3"
+"typescript@npm:4.7.4":
+  version: 4.7.4
+  resolution: "typescript@npm:4.7.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: fd13a1ce53790a36bb8350e1f5e5e384b5f6cb9b0635114a6d01d49cb99916abdcfbc13c7521cdae2f2d3f6d8bc4a8ae7625edf645a04ee940588cd5e7597b2f
+  checksum: 5750181b1cd7e6482c4195825547e70f944114fb47e58e4aa7553e62f11b3f3173766aef9c281783edfd881f7b8299cf35e3ca8caebe73d8464528c907a164df
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.7.3#~builtin<compat/typescript>":
-  version: 4.7.3
-  resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"
+"typescript@patch:typescript@4.7.4#~builtin<compat/typescript>":
+  version: 4.7.4
+  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 137d18a77f52254a284960b16ab53d0619f57b69b5d585804b8413f798a1175ce3e774fb95e6a101868577aafe357d8fcfc9171f0dc9fc0c210e9ae59d107cc0
+  checksum: 9096d8f6c16cb80ef3bf96fcbbd055bf1c4a43bd14f3b7be45a9fbe7ada46ec977f604d5feed3263b4f2aa7d4c7477ce5f9cd87de0d6feedec69a983f3a4f93e
   languageName: node
   linkType: hard
 
