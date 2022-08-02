@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.2.2",
   "private": true,
   "scripts": {
     "dev": "yarn docs:dev",
@@ -44,7 +44,7 @@
     "postcss": "8.4.14",
     "postcss-nested": "5.0.6",
     "tailwindcss": "3.1.6",
-    "typescript": "4.7.3",
+    "typescript": "4.7.4",
     "vite": "2.9.13",
     "vitepress": "0.22.4",
     "vitest": "0.16.0"
@@ -53,7 +53,7 @@
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.7",
     "@popperjs/core": "2.11.5",
-    "@vueuse/core": "8.9.2",
+    "@vueuse/core": "8.9.4",
     "date-fns": "2.28.0",
     "defu": "6.0.0",
     "fuse.js": "6.6.2",
