@@ -31,6 +31,8 @@ export default defineComponent({
   @apply relative flex;
 
   &__item {
+    @apply will-change-transform;
+
     &:nth-child(2) {
       @apply z-[2];
     }

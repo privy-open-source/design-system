@@ -24,7 +24,7 @@ Headless component for Drag'n'Drop or Upload files.
 <preview class="flex-col items-stretch">
   <Dropzone accept="application/pdf">
     <template #default="{ isDragover, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded"
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <Spread :active="isDragover">
           <IconFile class="w-16 h-16 mt-5 fill-primary-100" />
@@ -84,10 +84,10 @@ Headless component for Drag'n'Drop or Upload files.
 
 <preview class="flex-col items-stretch">
   <Dropzone accept="image/*">
-    <template #default="{ isDragover, model, browse }">
+    <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
-        <Spread :active="isDragover">
+        <Spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
         </Spread>
         <Heading element="h5">

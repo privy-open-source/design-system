@@ -1,10 +1,13 @@
 <template>
   <label
     class="dropzone"
+    data-testid="dropzone"
     @drop.prevent="onDrop"
     @dragover.prevent
     @dragenter.prevent="isDragover = true"
-    @dragleave.prevent="isDragover = false">
+    @dragleave.prevent="isDragover = false"
+    @mouseover="isHovered = true"
+    @mouseout="isHovered = false">
     <input
       ref="input"
       class="dropzone__input"
@@ -15,6 +18,7 @@
       @change="onChange">
     <slot
       :is-dragover="isDragover"
+      :is-hovered="isHovered"
       :model="model"
       :browse="browse" />
   </label>
@@ -29,14 +33,27 @@ import {
 } from 'vue-demi'
 import { useVModel } from '../input/use-input'
 import accept from 'attr-accept'
+import { toBase64 } from '../utils/base64'
 
 const File = globalThis.File
+
+export interface ModelModifier {
+  base64?: boolean,
+}
 
 export default defineComponent({
   props: {
     modelValue: {
-      type   : [File, Array] as PropType<File | File[]>,
+      type: [
+        File,
+        Array,
+        String,
+      ] as PropType<File | File[] | string | string[]>,
       default: undefined,
+    },
+    modelModifiers: {
+      type   : Object as PropType<ModelModifier>,
+      default: () => ({} as ModelModifier),
     },
     multiple: {
       type   : Boolean,
@@ -61,6 +78,7 @@ export default defineComponent({
     const input = templateRef<HTMLInputElement>('input')
 
     const isDragover = ref(false)
+    const isHovered  = ref(false)
 
     function browse () {
       input.value.click()
@@ -81,7 +99,14 @@ export default defineComponent({
       handleFiles(files)
     }
 
-    function handleFiles (fileList: FileList) {
+    function filesToBase64 (files: File | File[]): Promise<string | string[]> {
+      if (Array.isArray(files))
+        return Promise.all(files.map((file) => toBase64(file)))
+
+      return toBase64(files)
+    }
+
+    async function handleFiles (fileList: FileList) {
       if (fileList.length > 0) {
         // eslint-disable-next-line unicorn/prefer-spread
         const files = Array.from(fileList)
@@ -89,9 +114,10 @@ export default defineComponent({
             return accept(file, props.accept)
           })
 
-        const value = props.multiple ? files : files.at(0)
-        model.value = value
+        const file  = props.multiple ? files : files.at(0)
+        const value = props.modelModifiers.base64 ? await filesToBase64(file) : file
 
+        model.value = value
         emit('change', value)
       } else
         emit('cancel')
@@ -100,6 +126,7 @@ export default defineComponent({
     return {
       browse,
       isDragover,
+      isHovered,
       model,
       onDrop,
       onChange,
