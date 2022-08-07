@@ -450,7 +450,7 @@ __metadata:
     eslint-plugin-varspacing: 1.2.2
     eslint-plugin-vue: 9.1.1
     fuse.js: 6.6.2
-    happy-dom: 5.3.1
+    happy-dom: 5.4.0
     husky: 8.0.1
     jest-extended: 2.0.0
     lint-staged: 13.0.3
@@ -3230,9 +3230,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:5.3.1":
-  version: 5.3.1
-  resolution: "happy-dom@npm:5.3.1"
+"happy-dom@npm:5.4.0":
+  version: 5.4.0
+  resolution: "happy-dom@npm:5.4.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -3241,7 +3241,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: f51ff1cdabfd0f28ae0b20dad2b713be09ae596deac787a0faa59a0cb376f3d04856d8e74ae64491667f71fd5ca4fc153dbb9ad2ee58617d94c3143ce3b9e38c
+  checksum: 269cd647ffdfe45b7cce838c0eb918ad0e589e8a324bf73c250964a35b3ab4fcefdfb71750b1c74c36a926bc9e60212d8ee662b6a8c408bdbee91996c23b669e
   languageName: node
   linkType: hard
 
