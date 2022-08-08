@@ -90,6 +90,10 @@ export default defineConfig({
             link: '/modal/component'
           },
           {
+            text: 'Nav',
+            link: '/nav/component'
+          },
+          {
             text: 'Spinner',
             link: '/spinner/component'
           },
