@@ -25,7 +25,7 @@ export default defineComponent({
     },
     variant: {
       type   : String as PropType<StyleVariant>,
-      default: 'tabs',
+      default: 'pills',
     },
     align: {
       type   : String as PropType<AlignVariant>,

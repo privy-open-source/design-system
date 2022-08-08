@@ -13,7 +13,7 @@ it('should rendered properly without any props', () => {
   const nav = screen.queryByTestId('nav')
 
   expect(nav).toBeInTheDocument()
-  expect(nav).toHaveClass('nav', 'nav--tabs', 'nav--align-left')
+  expect(nav).toHaveClass('nav', 'nav--pills', 'nav--align-left')
 })
 
 it('should have style `fill` by setting the `fill` prop', () => {
@@ -61,11 +61,11 @@ it('should have style `vertical` by setting the `vertical` prop', () => {
   expect(nav).toHaveClass('nav', 'nav--vertical')
 })
 
-it('should have style `pills` if variant props set to `pills`', () => {
+it('should have style `lines` if variant props set to `lines`', () => {
   const screen = render({
     components: { Nav },
     template  : `
-      <Nav variant="pills">
+      <Nav variant="lines">
       </Nav>
     `,
   })
@@ -73,8 +73,8 @@ it('should have style `pills` if variant props set to `pills`', () => {
   const nav = screen.queryByTestId('nav')
 
   expect(nav).toBeInTheDocument()
-  expect(nav).toHaveClass('nav--pills')
-  expect(nav).not.toHaveClass('nav--tabs')
+  expect(nav).toHaveClass('nav--lines')
+  expect(nav).not.toHaveClass('nav--pills')
 })
 
 it('should be able to change alignment via props `align`', () => {
@@ -89,5 +89,5 @@ it('should be able to change alignment via props `align`', () => {
   const nav = screen.queryByTestId('nav')
 
   expect(nav).toBeInTheDocument()
-  expect(nav).toHaveClass('nav', 'nav--tabs', 'nav--align-center')
+  expect(nav).toHaveClass('nav', 'nav--pills', 'nav--align-center')
 })
