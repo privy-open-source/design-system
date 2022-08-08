@@ -230,7 +230,7 @@ export default defineComponent({
   }
 
   &--input {
-    @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
+    @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 focus:bg-secondary-25 focus:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
   }
 
   /**

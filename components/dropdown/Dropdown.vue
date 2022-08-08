@@ -12,6 +12,7 @@
       :is-open="isOpen">
       <Button
         data-testid="dropdown-activator"
+        class="dropdown__activator"
         :variant="variant"
         :color="color"
         :size="size"

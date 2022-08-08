@@ -172,6 +172,16 @@ export default defineConfig({
             link: '/toast/component'
           },
         ],
+      },
+      {
+        text       : 'Dashboard',
+        collapsable: true,
+        children   : [
+          {
+            text: 'Filterbar',
+            link: '/filterbar/component'
+          },
+        ],
       }
     ]
   },
