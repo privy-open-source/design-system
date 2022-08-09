@@ -415,6 +415,7 @@ When you need title for grouping navigation, you can add navigation title by usi
 |  `justified`   | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
 | `align`        | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
 | `vertical`     | `Boolean` | `false`     | Activate vertical navigation                                      |
+| `title`        | `String`  | `undefined` | Title to place in the top of navigation block                     |
 
 ### Slots `<Nav>`
 
