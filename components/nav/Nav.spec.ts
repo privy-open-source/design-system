@@ -91,3 +91,20 @@ it('should be able to change alignment via props `align`', () => {
   expect(nav).toBeInTheDocument()
   expect(nav).toHaveClass('nav', 'nav--pills', 'nav--align-center')
 })
+
+it('should be able to add navigation title via props `title`', () => {
+  const screen = render({
+    components: { Nav },
+    template  : `
+      <Nav title="Document">
+      </Nav>
+    `,
+  })
+
+  const nav   = screen.queryByTestId('nav')
+  const title = screen.queryByText('Document')
+
+  expect(nav).toBeInTheDocument()
+  expect(nav).toHaveClass('nav', 'nav--has-title')
+  expect(title).toBeInTheDocument()
+})

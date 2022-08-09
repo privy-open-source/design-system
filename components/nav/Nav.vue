@@ -2,6 +2,13 @@
   <ul
     data-testid="nav"
     :class="classNames">
+    <li
+      v-if="title"
+      class="nav__title">
+      <Caption bold>
+        {{ title }}
+      </Caption>
+    </li>
     <slot />
   </ul>
 </template>
@@ -10,11 +17,13 @@
 import {
   computed, defineComponent, PropType,
 } from 'vue-demi'
+import Caption from '../caption/Caption.vue'
 type StyleVariant = 'tabs' | 'pills' | 'lines'
 type AlignVariant = 'left' | 'right' | 'center'
 
 export default defineComponent({
-  props: {
+  components: { Caption },
+  props     : {
     fill: {
       type   : Boolean,
       default: false,
@@ -34,6 +43,10 @@ export default defineComponent({
     vertical: {
       type   : Boolean,
       default: false,
+    },
+    title: {
+      type   : String,
+      default: undefined,
     },
   },
 
@@ -55,6 +68,9 @@ export default defineComponent({
 
       if (props.vertical)
         result.push('nav--vertical')
+
+      if (props.title)
+        result.push('nav--has-title')
 
       return result
     })
@@ -220,6 +236,21 @@ export default defineComponent({
       &__link {
         @apply mb-0 -mr-[1px];
       }
+    }
+  }
+
+  /**
+  * Navigation Title
+  */
+  &&--has-title {
+    @apply relative pt-7 mt-5;
+  }
+
+  &__title {
+    @apply absolute left-5 top-0 text-base inline-block;
+
+    .caption {
+      @apply text-body-75;
     }
   }
 }
