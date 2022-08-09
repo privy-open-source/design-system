@@ -300,10 +300,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:4.5.7":
-  version: 4.5.7
-  resolution: "@fontsource/dm-sans@npm:4.5.7"
-  checksum: 34bef372bffea68aec4170b4f5c9690458f97868a1dee2976832d44502f7a3bddfb370203990c2c8562cd36025c4beea95c4f3dfb7c72ec047e5e192d0be44db
+"@fontsource/dm-sans@npm:4.5.8":
+  version: 4.5.8
+  resolution: "@fontsource/dm-sans@npm:4.5.8"
+  checksum: d4caf72d47fef5dfdf0c1fc96e3646e9a1cee1c7e48060964a001cdec051f0014fb27f7350f9432e60a0ac2859eacc466327e694a27d5834210aeaa5ec175001
   languageName: node
   linkType: hard
 
@@ -429,7 +429,7 @@ __metadata:
   resolution: "@privyid/design-system@workspace:."
   dependencies:
     "@carbon/icons-vue": 10.49.1
-    "@fontsource/dm-sans": 4.5.7
+    "@fontsource/dm-sans": 4.5.8
     "@popperjs/core": 2.11.5
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": 1.1.4
