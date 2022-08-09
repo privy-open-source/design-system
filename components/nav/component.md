@@ -373,6 +373,37 @@ Navigation by default appear on horizontal line. You can stack navigation by set
 </template>
 ```
 
+## Title
+When you need title for grouping navigation, you can add navigation title by using `title` prop.
+
+<preview>
+  <Nav title="Document">
+    <NavItem disabled>Need Action</NavItem>
+    <NavItem>In Progress</NavItem>
+    <NavItem>Others</NavItem>
+  </Nav>
+  <Nav vertical title="Quick Jump" class="w-80">
+    <NavItem>To Sign</NavItem>
+    <NavItem>To Review</NavItem>
+    <NavItem>Auditrail</NavItem>
+  </Nav>
+</preview>
+
+```vue
+<template>
+  <Nav title="Document">
+    <NavItem disabled>Need Action</NavItem>
+    <NavItem>In Progress</NavItem>
+    <NavItem>Others</NavItem>
+  </Nav>
+  <Nav vertical title="Quick Jump" class="w-80">
+    <NavItem>To Sign</NavItem>
+    <NavItem>To Review</NavItem>
+    <NavItem>Auditrail</NavItem>
+  </Nav>
+</template>
+```
+
 ## API
 
 ### Props `<Nav>`

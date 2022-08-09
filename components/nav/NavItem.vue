@@ -79,14 +79,14 @@ export default defineComponent({
 <style lang="postcss">
 .nav {
   &__link {
-    @apply block p-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-subtext-100 hover:text-body-100;
+    @apply block p-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-body-50 hover:text-body-100;
 
     &--active {
       @apply text-body-100 cursor-default;
     }
 
     &--disabled {
-      @apply text-subtext-100 hover:text-subtext-100 focus:text-subtext-100 active:text-subtext-100 cursor-default;
+      @apply text-subtext-50 hover:text-subtext-50 focus:text-subtext-50 active:text-subtext-50 cursor-default;
     }
 
     &--icon {
