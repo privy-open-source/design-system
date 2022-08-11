@@ -33,7 +33,7 @@
     "eslint-plugin-n": "15.2.4",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.0.0",
-    "eslint-plugin-unicorn": "42.0.0",
+    "eslint-plugin-unicorn": "43.0.2",
     "eslint-plugin-varspacing": "1.2.2",
     "eslint-plugin-vue": "9.1.1",
     "happy-dom": "5.4.0",
