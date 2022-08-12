@@ -18,8 +18,8 @@ import {
   computed, defineComponent, PropType,
 } from 'vue-demi'
 import Caption from '../caption/Caption.vue'
-type StyleVariant = 'tabs' | 'pills' | 'lines'
-type AlignVariant = 'left' | 'right' | 'center'
+export type StyleVariant = 'tabs' | 'pills' | 'lines'
+export type AlignVariant = 'left' | 'right' | 'center'
 
 export default defineComponent({
   components: { Caption },
@@ -92,7 +92,7 @@ export default defineComponent({
   * Default navigation
   * is horizontal
   */
-  @apply pl-2 list-none flex flex-wrap mb-0 !important;
+  @apply pl-2 list-none flex flex-wrap mb-0;
 
   /*
   * Navigation variant:
@@ -119,6 +119,14 @@ export default defineComponent({
       .nav__link {
         &--active {
           @apply border-r border-r-body-100 border-y-0 rounded-tr-none;
+        }
+      }
+
+      &.nav--align-right {
+        .nav__link {
+          &--active {
+            @apply border-l border-l-body-100 border-r-0 rounded-tl-none;
+          }
         }
       }
     }
@@ -148,6 +156,14 @@ export default defineComponent({
       .nav__link {
         &--active {
           @apply border-l-secondary-25/50 border-y-secondary-25/50 border-r-transparent bg-white rounded-l rounded-r-none;
+        }
+      }
+
+      &.nav--align-right {
+        .nav__link {
+          &--active {
+            @apply border-r-secondary-25/50 border-y-secondary-25/50 border-l-transparent rounded-r rounded-l-none;
+          }
         }
       }
     }
@@ -230,11 +246,25 @@ export default defineComponent({
   * Vertical Navigation
   */
   &&--vertical {
-    @apply pl-0 pt-2 flex-col;
+    @apply pt-2 flex-col;
 
     .nav {
       &__link {
         @apply mb-0 -mr-[1px];
+      }
+    }
+
+    &.nav--align-right {
+      @apply pl-0 ml-auto;
+
+      .nav {
+        &__link {
+          @apply -ml-[1px] mr-0;
+        }
+      }
+
+      &.nav--pills {
+        @apply pl-2 pr-0;
       }
     }
   }

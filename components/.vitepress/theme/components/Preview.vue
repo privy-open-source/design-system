@@ -27,5 +27,11 @@ export default defineComponent({
   &__label {
     @apply absolute top-[0.6em] right-[1em] text-[0.8rem] text-[#888];
   }
+
+  ul {
+    &:is(.nav) {
+      @apply list-none;
+    }
+  }
 }
 </style>

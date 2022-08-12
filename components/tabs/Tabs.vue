@@ -1,0 +1,155 @@
+<template>
+  <div
+    data-testid="tabs"
+    class="tabs"
+    :class="classNames">
+    <nav
+      data-testid="tabs-nav"
+      class="tabs__nav"
+      :class="navWrapperClass">
+      <Nav
+        class="nav"
+        :variant="variant"
+        :align="align"
+        :vertical="vertical"
+        :justified="justified"
+        :fill="fill">
+        <NavItem active>
+          <template #icon>
+            <IconEdit />
+          </template>
+          To Sign
+          <Badge
+            color="secondary"
+            variant="light">
+            25
+          </Badge>
+        </NavItem>
+        <NavItem>To Review</NavItem>
+        <NavItem disabled>
+          Disabled
+        </NavItem>
+      </Nav>
+    </nav>
+
+    <div class="tabs__content">
+      <slot />
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import {
+  defineComponent, PropType, computed,
+} from 'vue-demi'
+import Nav, { StyleVariant as TabsStyleVariant, AlignVariant as TabsAlignVariant } from '../nav/Nav.vue'
+import NavItem from '../nav/NavItem.vue'
+import IconEdit from '@carbon/icons-vue/lib/edit/24'
+import Badge from '../badge/Badge.vue'
+
+export default defineComponent({
+  components: {
+    Nav, NavItem, IconEdit, Badge,
+  },
+  props: {
+    variant: {
+      type   : String as PropType<TabsStyleVariant>,
+      default: 'tabs',
+    },
+    align: {
+      type   : String as PropType<TabsAlignVariant>,
+      default: 'left',
+    },
+    vertical: {
+      type   : Boolean,
+      default: false,
+    },
+    fill: {
+      type   : Boolean,
+      default: false,
+    },
+    justified: {
+      type   : Boolean,
+      default: false,
+    },
+    navWrapperClass: {
+      type   : String,
+      default: undefined,
+    },
+  },
+  setup (props) {
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (props.vertical && props.align)
+        result.push(`tabs--vertical-align-${props.align}`)
+
+      return result
+    })
+
+    return { classNames }
+  },
+})
+
+</script>
+
+<style lang="postcss">
+/**
+* Component Name: Tabs
+* Component URI : https://www.figma.com/file/tVQNwXeQkMtZlX1x3qjJu8/B-A-S-E-%2F-Style-Guide?node-id=262%3A2160
+* Date Created  : Aug 11, 2022
+* Last Update   : Aug 12, 2022
+*/
+.tabs {
+
+  /**
+  * tab content
+  */
+  &__content {
+    @apply py-6 w-full;
+  }
+
+  /**
+  * set border bottom
+  * for navigation
+  */
+  .nav {
+    @apply border-b border-b-secondary-25/50;
+
+    &--vertical {
+      @apply border-b-0 border-r border-r-secondary-25/50;
+    }
+  }
+
+  /**
+  * alignment tabs in vertical
+  * orientation
+  */
+  &--vertical-align-right,
+  &--vertical-align-left {
+    @apply w-full flex items-start;
+
+    .tabs {
+      &__nav {
+        @apply shrink-0;
+      }
+
+      &__content {
+        @apply grow p-6;
+      }
+    }
+  }
+
+  /**
+  * right align for
+  * vertical navigation
+  */
+  &--vertical-align-right {
+    @apply flex-row-reverse;
+
+    .nav {
+      @apply border-b-0 border-r-0 border-l border-l-secondary-25/50;
+    }
+  }
+}
+</style>
