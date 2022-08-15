@@ -58,7 +58,7 @@
     "defu": "6.0.0",
     "fuse.js": "6.6.2",
     "tabbable": "5.3.3",
-    "vue-demi": "0.13.1"
+    "vue-demi": "0.13.7"
   },
   "lint-staged": {
     "*.(js|ts|vue)": [
