@@ -181,10 +181,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-validator-identifier@npm:^7.15.7, @babel/helper-validator-identifier@npm:^7.16.7":
+"@babel/helper-validator-identifier@npm:^7.16.7":
   version: 7.16.7
   resolution: "@babel/helper-validator-identifier@npm:7.16.7"
   checksum: dbb3db9d184343152520a209b5684f5e0ed416109cde82b428ca9c759c29b10c7450657785a8b5c5256aa74acc6da491c1f0cf6b784939f7931ef82982051b69
+  languageName: node
+  linkType: hard
+
+"@babel/helper-validator-identifier@npm:^7.18.6":
+  version: 7.18.6
+  resolution: "@babel/helper-validator-identifier@npm:7.18.6"
+  checksum: e295254d616bbe26e48c196a198476ab4d42a73b90478c9842536cf910ead887f5af6b5c4df544d3052a25ccb3614866fa808dc1e3a5a4291acd444e243c0648
   languageName: node
   linkType: hard
 
@@ -300,10 +307,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:4.5.7":
-  version: 4.5.7
-  resolution: "@fontsource/dm-sans@npm:4.5.7"
-  checksum: 34bef372bffea68aec4170b4f5c9690458f97868a1dee2976832d44502f7a3bddfb370203990c2c8562cd36025c4beea95c4f3dfb7c72ec047e5e192d0be44db
+"@fontsource/dm-sans@npm:4.5.8":
+  version: 4.5.8
+  resolution: "@fontsource/dm-sans@npm:4.5.8"
+  checksum: d4caf72d47fef5dfdf0c1fc96e3646e9a1cee1c7e48060964a001cdec051f0014fb27f7350f9432e60a0ac2859eacc466327e694a27d5834210aeaa5ec175001
   languageName: node
   linkType: hard
 
@@ -429,7 +436,7 @@ __metadata:
   resolution: "@privyid/design-system@workspace:."
   dependencies:
     "@carbon/icons-vue": 10.49.1
-    "@fontsource/dm-sans": 4.5.7
+    "@fontsource/dm-sans": 4.5.8
     "@popperjs/core": 2.11.5
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": 1.1.4
@@ -453,7 +460,7 @@ __metadata:
     eslint-plugin-n: 15.2.4
     eslint-plugin-node: 11.1.0
     eslint-plugin-promise: 6.0.0
-    eslint-plugin-unicorn: 42.0.0
+    eslint-plugin-unicorn: 43.0.2
     eslint-plugin-varspacing: 1.2.2
     eslint-plugin-vue: 9.1.1
     fuse.js: 6.6.2
@@ -465,12 +472,12 @@ __metadata:
     postcss: 8.4.16
     postcss-nested: 5.0.6
     tabbable: 5.3.3
-    tailwindcss: 3.1.7
+    tailwindcss: 3.1.8
     typescript: 4.7.4
     vite: 2.9.13
     vitepress: 0.22.4
     vitest: 0.16.0
-    vue-demi: 0.13.1
+    vue-demi: 0.13.7
   languageName: unknown
   linkType: soft
 
@@ -1756,10 +1763,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ci-info@npm:^3.3.0":
-  version: 3.3.1
-  resolution: "ci-info@npm:3.3.1"
-  checksum: 244546317cca96955860d2cb8d0bf47dd66d9078bbe83a215fa87464ab24b352c6fc6f56027d1c82f002e3f833be253f1320d35ed7199bd81134f7788c657f3a
+"ci-info@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "ci-info@npm:3.3.2"
+  checksum: fd81f1edd2d3b0f6cb077b2e84365136d87b9db8c055928c1ad69da8a76c2c2f19cba8ea51b90238302157ca927f91f92b653e933f2398dde4867500f08d6e62
   languageName: node
   linkType: hard
 
@@ -2623,12 +2630,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:42.0.0":
-  version: 42.0.0
-  resolution: "eslint-plugin-unicorn@npm:42.0.0"
+"eslint-plugin-unicorn@npm:43.0.2":
+  version: 43.0.2
+  resolution: "eslint-plugin-unicorn@npm:43.0.2"
   dependencies:
-    "@babel/helper-validator-identifier": ^7.15.7
-    ci-info: ^3.3.0
+    "@babel/helper-validator-identifier": ^7.18.6
+    ci-info: ^3.3.2
     clean-regexp: ^1.0.0
     eslint-utils: ^3.0.0
     esquery: ^1.4.0
@@ -2639,11 +2646,11 @@ __metadata:
     read-pkg-up: ^7.0.1
     regexp-tree: ^0.1.24
     safe-regex: ^2.1.1
-    semver: ^7.3.5
+    semver: ^7.3.7
     strip-indent: ^3.0.0
   peerDependencies:
-    eslint: ">=8.8.0"
-  checksum: 03757cbf417d39691fe04048ac9352585162a4dd68c2f26f5bc0956409625c7c4841487f0fa623e0d6dd5ff9cc3e758b74e4d170e3b0a877bbd0114995310058
+    eslint: ">=8.18.0"
+  checksum: 1b63eb013cbc0b3c9ef131a1e049b4b53d8e208393675d5f97d3fa83c050ebcb695a7fd210f4de1460f42f89c2ecca261280488834591d5c21e146d297a9ee2e
   languageName: node
   linkType: hard
 
@@ -5525,9 +5532,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.1.7":
-  version: 3.1.7
-  resolution: "tailwindcss@npm:3.1.7"
+"tailwindcss@npm:3.1.8":
+  version: 3.1.8
+  resolution: "tailwindcss@npm:3.1.8"
   dependencies:
     arg: ^5.0.2
     chokidar: ^3.5.3
@@ -5556,7 +5563,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: adbc9869b72f741e9a0fc281b79710863617a588fd5d897316b676f789b6482c79f46f324223300ca962afbe55bed3ec16a37a6ccf4bb2c99c53cf8c5dd9700d
+  checksum: 86480301fc6ae1e392c2aba8264ab425bd919078176b010fda724518a7c265e950da5f4120c69c9041509c318207985fa9d680b6f5021e23f8214135a61a54b6
   languageName: node
   linkType: hard
 
@@ -5974,9 +5981,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.13.1":
-  version: 0.13.1
-  resolution: "vue-demi@npm:0.13.1"
+"vue-demi@npm:0.13.7":
+  version: 0.13.7
+  resolution: "vue-demi@npm:0.13.7"
   peerDependencies:
     "@vue/composition-api": ^1.0.0-rc.1
     vue: ^3.0.0-0 || ^2.6.0
@@ -5986,7 +5993,7 @@ __metadata:
   bin:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
-  checksum: d26b0602587f4dbd81f975f8f2de39910239805f0f2d72cafed0c7349c512f5363daf57e2761ba6a7ac66331a4cfa3dc857d6f7f62c57adbae85752d270118c8
+  checksum: b5e348d2e9e83207a69fe1362fcfbf99dab34db9591202f2a2f394b9693860c506d865440b7ee8f0277d67e5e7a4b0ff5326a1b8b955a4b98261b1e1df13e189
   languageName: node
   linkType: hard
 
