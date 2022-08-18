@@ -1,6 +1,7 @@
 <script setup>
   import Tabs from './Tabs.vue'
   import Tab from './Tab.vue'
+  import Badge from '../badge/Badge.vue'
 </script>
 
 <style scoped>
@@ -18,12 +19,13 @@
 <preview>
   <Tabs>
     <Tab title="home">home page content</Tab>
-  </Tabs>
-  <Tabs variant="lines" align="center">
-    <Tab title="home">home page content</Tab>
-  </Tabs>
-  <Tabs variant="pills" align="right">
-    <Tab title="home">home page content</Tab>
+    <Tab title="profile">profile page content</Tab>
+    <Tab disabled>
+      <template #title>
+        Setting <Badge>new</Badge>
+      </template>
+      setting page content
+    </Tab>
   </Tabs>
 </preview>
 
@@ -31,6 +33,13 @@
 <template>
   <Tabs>
     <Tab title="home">home page content</Tab>
+    <Tab title="profile">profile page content</Tab>
+    <Tab disabled>
+      <template #title>
+        Setting <Badge>new</Badge>
+      </template>
+      setting page content
+    </Tab>
   </Tabs>
 </template>
 ```

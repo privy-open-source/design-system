@@ -86,7 +86,7 @@ export default defineComponent({
     }
 
     &--disabled {
-      @apply text-subtext-50 hover:text-subtext-50 focus:text-subtext-50 active:text-subtext-50 cursor-default;
+      @apply text-subtext-50 hover:text-subtext-50 focus:text-subtext-50 active:text-subtext-50 cursor-default pointer-events-none;
     }
 
     &--icon {

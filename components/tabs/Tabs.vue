@@ -14,20 +14,19 @@
         :vertical="vertical"
         :justified="justified"
         :fill="fill">
-        <NavItem active>
-          <template #icon>
-            <IconEdit />
+        <NavItem
+          v-for="(tab, i) in tabs"
+          :key="i"
+          data-testid="tab"
+          :disabled="tab.disabled"
+          :active="i === active"
+          @click="selectTab(i, tab)">
+          <template v-if="tab.slots.title">
+            <component :is="tab.slots.title" />
           </template>
-          To Sign
-          <Badge
-            color="secondary"
-            variant="light">
-            25
-          </Badge>
-        </NavItem>
-        <NavItem>To Review</NavItem>
-        <NavItem disabled>
-          Disabled
+          <template v-else>
+            {{ tab.title }}
+          </template>
         </NavItem>
       </Nav>
     </nav>
@@ -40,16 +39,24 @@
 
 <script lang="ts">
 import {
-  defineComponent, PropType, computed,
+  defineComponent,
+  PropType,
+  computed,
+  provide,
 } from 'vue-demi'
 import Nav, { StyleVariant as TabsStyleVariant, AlignVariant as TabsAlignVariant } from '../nav/Nav.vue'
 import NavItem from '../nav/NavItem.vue'
-import IconEdit from '@carbon/icons-vue/lib/edit/24'
-import Badge from '../badge/Badge.vue'
+import {
+  initTabs,
+  TabContext,
+  TABS_POINTER,
+} from './use-tab'
+import { useVModel } from '../input/use-input'
 
 export default defineComponent({
   components: {
-    Nav, NavItem, IconEdit, Badge,
+    Nav,
+    NavItem,
   },
   props: {
     variant: {
@@ -76,6 +83,10 @@ export default defineComponent({
       type   : String,
       default: undefined,
     },
+    modelValue: {
+      type   : Number,
+      default: 0,
+    },
   },
   setup (props) {
     const classNames = computed(() => {
@@ -87,7 +98,22 @@ export default defineComponent({
       return result
     })
 
-    return { classNames }
+    const active = useVModel(props)
+    const tabs   = initTabs()
+
+    function selectTab (index: number, tab: TabContext) {
+      if (!tab.disabled)
+        active.value = index
+    }
+
+    provide(TABS_POINTER, active)
+
+    return {
+      classNames,
+      active,
+      tabs,
+      selectTab,
+    }
   },
 })
 
