@@ -1,6 +1,7 @@
 <script setup>
 import Nav from './Nav.vue'
 import NavItem from './NavItem.vue'
+import NavSubItem from './NavSubItem.vue'
 import NavText from './NavText.vue'
 import IconEdit from '@carbon/icons-vue/lib/edit/16'
 import IconView from '@carbon/icons-vue/lib/view/16'
@@ -360,6 +361,12 @@ Navigation by default appear on horizontal line. You can stack navigation by set
     <NavItem active>To Sign</NavItem>
     <NavItem>To Review</NavItem>
     <NavItem>Auditrail</NavItem>
+    <NavSubItem text="Documents">
+      <Nav>
+        <NavItem active>To Sign</NavItem>
+        <NavItem>To Review</NavItem>
+      </Nav>
+    </NavSubItem>
   </Nav>
 </preview>
 

@@ -14,13 +14,13 @@ import { StyleVariant, AlignVariant } from '../nav/Nav.vue'
 
 type TypeVariant = 'wide' | 'narrow'
 
-interface NavSetup {
+interface NavSettings {
   variant: string,
   align: string,
   type: string,
 }
 
-export const NAV_SETUP: InjectionKey<NavSetup> = Symbol('NavSetup')
+export const NAV_SETTINGS: InjectionKey<NavSettings> = Symbol('NavSettings')
 
 export default defineComponent({
   props: {
@@ -40,9 +40,13 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    iconOnly: {
+      type   : Boolean,
+      default: false,
+    },
   },
   setup (props) {
-    provide(NAV_SETUP, {
+    provide(NAV_SETTINGS, {
       variant: props.variant,
       align  : props.align,
       type   : props.type,
@@ -57,8 +61,14 @@ export default defineComponent({
       if (props.align)
         result.push(`sidebar--${props.align}`)
 
+      if (props.variant)
+        result.push(`sidebar--${props.variant}`)
+
       if (props.fixed)
         result.push('sidebar--fixed')
+
+      if (props.iconOnly)
+        result.push('sidebar--icon-only')
 
       return result
     })
@@ -70,7 +80,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .sidebar {
-  @apply bg-white;
+  @apply bg-white px-2 py-4;
+
+  &:not(.sidebar--narrow) {
+    @apply w-60;
+  }
 
   &&--fixed {
     @apply fixed left-0 top-0 h-full;
@@ -81,13 +95,15 @@ export default defineComponent({
   }
 
   &&--narrow {
-    .nav__link {
-      @apply flex-col justify-center;
+    @apply w-16;
+  }
 
-      &__label {
-        @apply ml-0 mt-3 justify-center;
-      }
-    }
+  &&--tabs {
+    @apply pr-0 border-r border-r-secondary-25/50;
+  }
+
+  &&--lines {
+    @apply px-0;
   }
 }
 </style>

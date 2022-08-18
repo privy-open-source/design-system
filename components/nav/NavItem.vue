@@ -7,7 +7,9 @@
       :href="link"
       :target="target"
       :class="classNames">
-      <slot name="icon" />
+      <span class="nav__link__icon">
+        <slot name="icon" />
+      </span>
       <span
         v-if="$slots.default"
         class="nav__link__label">
@@ -92,7 +94,7 @@ export default defineComponent({
     &--icon {
       @apply flex items-center;
 
-      svg {
+      .nav__link__icon {
         @apply grow-0;
       }
 

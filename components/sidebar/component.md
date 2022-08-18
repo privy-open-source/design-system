@@ -1,7 +1,9 @@
 <script setup>
   import Sidebar from './Sidebar.vue'
   import SidebarNav from './SidebarNav.vue'
+  import SidebarBrand from './SidebarBrand.vue'
   import NavItem from '../nav/NavItem.vue'
+  import NavSubItem from '../nav/NavSubItem.vue'
   import IconDocument from '@carbon/icons-vue/lib/document/20'
 </script>
 
@@ -12,12 +14,42 @@
     .sidebar--fixed {
       @apply absolute;
     }
-
-    .sidebar {
-      @apply w-auto;
-    }
   }
 </style>
+
+<preview>
+<Sidebar fixed variant="pills" align="left" type="narrow">
+  <SidebarBrand>
+    <img src="./assets/images/logo-privy-icon.svg" alt="" />
+  </SidebarBrand>
+  <SidebarNav>
+    <NavItem active>
+      <template #icon>
+        <IconDocument />
+      </template>
+      Home
+    </NavItem>
+    <NavItem>
+      <template #icon>
+        <IconDocument />
+      </template>
+      Dashboard
+    </NavItem>
+  </SidebarNav>
+  <SidebarNav bottom>
+    <NavItem active>
+      <template #icon>
+        <IconDocument />
+      </template>
+    </NavItem>
+    <NavItem>
+      <template #icon>
+        <IconDocument />
+      </template>
+    </NavItem>
+  </SidebarNav>
+</Sidebar>
+</preview>
 
 <preview>
 <div class="w-14">
@@ -39,16 +71,28 @@
 
 
 <preview>
-<div class="w-80">
+<div>
   <Sidebar fixed variant="pills" align="right">
     <SidebarNav title="Menus">
-      <NavItem active>Dashboard</NavItem>
-      <NavItem>
+      <NavItem active>
         <template #icon>
           <IconDocument />
         </template>
-        Documents
+        Dashboard
       </NavItem>
+      <NavSubItem text="Documents">
+        <template #icon>
+          <IconDocument />
+        </template>
+        <SidebarNav>
+          <NavItem>
+            Contacts
+          </NavItem>
+          <NavItem>
+            Structure
+          </NavItem>
+        </SidebarNav>
+      </NavSubItem>
       <NavItem>Contacts</NavItem>
       <NavItem>Structure</NavItem>
     </SidebarNav>

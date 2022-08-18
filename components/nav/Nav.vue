@@ -92,7 +92,7 @@ export default defineComponent({
   * Default navigation
   * is horizontal
   */
-  @apply pl-2 list-none flex flex-wrap mb-0 !important;
+  @apply pl-2 list-none flex flex-wrap mb-0;
 
   /*
   * Navigation variant:
@@ -233,8 +233,14 @@ export default defineComponent({
     @apply pl-0 pt-2 flex-col;
 
     .nav {
+      @apply flex-col;
+
       &__link {
         @apply mb-0 -mr-[1px];
+      }
+
+      &__title {
+        @apply left-3;
       }
     }
   }
