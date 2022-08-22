@@ -447,7 +447,7 @@ __metadata:
     "@types/testing-library__jest-dom": 5.14.5
     "@typescript-eslint/eslint-plugin": 5.32.0
     "@typescript-eslint/parser": 5.32.0
-    "@vitejs/plugin-vue": 2.3.3
+    "@vitejs/plugin-vue": 2.3.4
     "@vue/eslint-config-typescript": 11.0.0
     "@vueuse/core": 8.9.4
     autoprefixer: 10.4.8
@@ -1022,13 +1022,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:2.3.3":
-  version: 2.3.3
-  resolution: "@vitejs/plugin-vue@npm:2.3.3"
+"@vitejs/plugin-vue@npm:2.3.4":
+  version: 2.3.4
+  resolution: "@vitejs/plugin-vue@npm:2.3.4"
   peerDependencies:
     vite: ^2.5.10
     vue: ^3.2.25
-  checksum: 9303dcb9c8580d0ee9b33542639ac1a36ad9cc0e773a1f9b9b05623d74574f6a901ce781918b53f5a58eb3c6218ba96c27ef6efbf3e7ef6be16864fc1cae1626
+  checksum: 1203eda14a4d7bd3a892e71137dd3997908e0f9f07dced41c8b7d5851c42121fcff2f18df392f9c792a02de409e7634021f56aa71076ee68dd5fa8fdd4f7c478
   languageName: node
   linkType: hard
 
