@@ -97,6 +97,10 @@ export default defineConfig({
             text: 'Spinner',
             link: '/spinner/component'
           },
+          {
+            text: 'Table',
+            link: '/table/component'
+          }
         ]
       },
       {

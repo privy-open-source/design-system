@@ -198,5 +198,14 @@ export default defineComponent({
       }
     }
   }
+
+  .dropdown__menu & {
+    @apply px-3 py-2 cursor-pointer text-body-100 w-full select-none text-left;
+
+    &:hover,
+    &:focus-visible {
+      @apply bg-background-75;
+    }
+  }
 }
 </style>

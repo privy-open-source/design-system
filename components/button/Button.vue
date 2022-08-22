@@ -196,7 +196,7 @@ export default defineComponent({
   * in button link variant
   */
   &--link {
-    @apply border border-transparent underline;
+    @apply border border-transparent hover:underline;
 
     &.btn {
       &--primary {

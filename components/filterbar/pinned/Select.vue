@@ -3,29 +3,27 @@
     v-model="isOpen"
     variant="input"
     class="filterbar__select"
-    :class="{'filterbar__select--active': selected !== undefined }">
+    :class="{'filterbar--active': selected !== undefined }"
+    caret>
     <template #button-content>
       {{ selected ? selected.text : schema.label }}
-      <IconArrow />
     </template>
-
     <Caption
       class="px-3 py-2"
       bold>
       {{ schema.label }}
     </Caption>
-    <DropdownItem
+    <template
       v-for="(item, i) in items"
       :key="i">
       <Radio
         v-model="model"
         apperance="option"
-        class="filterbar__select__option"
         :value="item.value"
         @click="close">
         {{ item.text }}
       </Radio>
-    </DropdownItem>
+    </template>
   </Dropdown>
 </template>
 
@@ -36,38 +34,52 @@ import {
   PropType,
   ref,
 } from 'vue-demi'
-import Dropdown from '../../dropdown/Dropdown.vue'
-import DropdownItem from '../../dropdown/DropdownItem.vue'
-import { useVModel } from '../../input/use-input'
-import { useOptionsProp } from '../../select/adapter/adapter'
-import { FilterSelect } from '../use-filterbar'
-import Radio from '../../radio/Radio.vue'
 import Caption from '../../caption/Caption.vue'
-import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
+import Dropdown from '../../dropdown/Dropdown.vue'
+import Radio from '../../radio/Radio.vue'
+import { useOptionsProp } from '../../select/adapter/adapter'
+import { useVModel } from '../../input/use-input'
 import { isEqual } from '../../utils/value'
+import { FilterSelect } from '../use-filterbar'
+import { SelectItem } from '../../select/use-select'
 
 export default defineComponent({
   components: {
     Caption,
-    Radio,
     Dropdown,
-    DropdownItem,
-    IconArrow,
+    Radio,
   },
   props: {
     schema: {
       type    : Object as PropType<FilterSelect>,
       required: true,
     },
+    options: {
+      type   : Array as PropType<string[] | SelectItem[]>,
+      default: () => ([]),
+    },
     modelValue: {
-      type   : String,
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
       default: undefined,
     },
   },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
+  emits: ['update:modelValue'],
   setup (props) {
-    const model  = useVModel(props)
-    const items  = useOptionsProp(props.schema)
+    const items  = useOptionsProp(props)
     const isOpen = ref(false)
+
+    const model = useVModel(props)
 
     const selected = computed(() => {
       return items.value.find((item) => {
@@ -80,8 +92,8 @@ export default defineComponent({
     }
 
     return {
-      items,
       model,
+      items,
       isOpen,
       selected,
       close,
@@ -89,29 +101,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="postcss">
-.filterbar__select {
-  &-label {
-    @apply pr-8 truncate;
-  }
-
-  .dropdown__item {
-    @apply p-0;
-  }
-
-  &__option {
-    @apply px-3 py-2 w-full;
-  }
-
-  &.filterbar__select--active {
-    .dropdown__activator {
-      @apply bg-body-100 text-white;
-    }
-  }
-
-  &-badge.badge--primary {
-   @apply bg-white bg-opacity-20 text-white;
-  }
-}
-</style>

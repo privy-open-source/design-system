@@ -1,7 +1,7 @@
 <template>
   <div class="filterbar">
     <template
-      v-for="item in items"
+      v-for="item in pinnedItems"
       :key="item.key">
       <slot :name="`cell(${item.key})`">
         <component
@@ -9,6 +9,7 @@
           class="filterbar__item"
           :schema="item"
           :model-value="getValue(item.key)"
+          v-bind="item"
           @update:model-value="setValue(item.key, $event)" />
       </slot>
     </template>
@@ -29,17 +30,17 @@ import {
 import { FilterItem } from './use-filterbar'
 import Dropdown from '../dropdown/Dropdown.vue'
 import Button from '../button/Button.vue'
-import Select from './type/Select.vue'
-import Toggle from './type/Toggle.vue'
-import Multiselect from './type/Multiselect.vue'
+import Select from './pinned/Select.vue'
+import Toggle from './pinned/Toggle.vue'
+import Multiselect from './pinned/Multiselect.vue'
+import Date from './pinned/Date.vue'
 import { useVModel } from '../input/use-input'
-import IconSetting from '@carbon/icons-vue/lib/settings--adjust/20'
 
 export default defineComponent({
   components: {
-    IconSetting,
     Button,
     Dropdown,
+    Date,
     Select,
     Multiselect,
     Toggle,
@@ -61,7 +62,8 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup (props) {
     const model = useVModel(props)
-    const items = computed(() => {
+
+    const pinnedItems = computed(() => {
       return props.schema
         .filter((item) => {
           return item.pinned !== false
@@ -81,7 +83,8 @@ export default defineComponent({
     }
 
     return {
-      items,
+      model,
+      pinnedItems,
       getValue,
       setValue,
       reset,
@@ -93,5 +96,14 @@ export default defineComponent({
 <style lang="postcss">
 .filterbar {
   @apply flex gap-2;
+
+  &__item {
+    &.filterbar--active {
+      &.btn--input,
+      & .dropdown__activator.btn--input {
+        @apply bg-body-100 text-white;
+      }
+    }
+  }
 }
 </style>

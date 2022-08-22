@@ -1,8 +1,8 @@
 <template>
   <Button
-    class="filterbar__toggle"
-    :class="{'filterbar__toggle--active': model }"
+    class="filterbar__item filterbar--pinned"
     variant="input"
+    :class="{ 'filterbar--active': model }"
     @click="toggle">
     {{ schema.label }}
   </Button>
@@ -10,20 +10,27 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue-demi'
-import { useVModel } from '../../checkbox/use-checkbox'
-import { FilterSelect } from '../use-filterbar'
 import Button from '../../button/Button.vue'
+import { useVModel } from '../../checkbox/use-checkbox'
+import { FilterToggle } from '../use-filterbar'
 
 export default defineComponent({
   components: { Button },
   props     : {
     schema: {
-      type    : Object as PropType<FilterSelect>,
+      type    : Object as PropType<FilterToggle>,
       required: true,
     },
     modelValue: {
-      type   : Boolean,
-      default: undefined,
+      type: [
+        String,
+        Number,
+        Boolean,
+        Array,
+        Object,
+        Date,
+      ],
+      default: false,
     },
     value: {
       type: [
@@ -52,6 +59,11 @@ export default defineComponent({
       default: false,
     },
   },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
+  emits: ['update:modelValue', 'change'],
   setup (props) {
     const model = useVModel(props)
 
@@ -66,11 +78,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="postcss">
-.filterbar__toggle {
-  &.filterbar__toggle--active {
-    @apply bg-body-100 text-white;
-  }
-}
-</style>

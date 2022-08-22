@@ -1,7 +1,9 @@
 import defu from 'defu'
 import { SelectProps } from '../select/use-select'
 import { Adapter } from '../select/adapter/adapter'
-import { startCase } from 'lodash-es'
+import { startCase } from 'lodash'
+import { CalendarMode } from '../calendar/adapter/adapter'
+import { MaybeRef } from '@vueuse/core'
 
 interface FilterType {
   key: string,
@@ -18,35 +20,37 @@ interface FilterText extends FilterType {
 
 export interface FilterSelect extends FilterType {
   type: 'select',
-  options: SelectProps['options'],
+  options: MaybeRef<SelectProps['options']>,
   search?: boolean,
   adapter?: Adapter,
 }
 
 export interface FilterSelectMultiple extends FilterType {
   type: 'multiselect',
-  options: SelectProps['options'],
+  options: MaybeRef<SelectProps['options']>,
   search?: boolean,
   adapter?: Adapter,
 }
 
-interface FilterToggle extends FilterType {
+export interface FilterToggle extends FilterType {
   type: 'toggle',
   value?: unknown,
   uncheckedValue?: unknown,
 }
 
-interface FilterDate extends FilterType {
+export interface FilterDate extends FilterType {
   type: 'date',
   min?: Date,
   max?: Date,
+  format?: string,
+  mode?: CalendarMode,
 }
 
-interface FitlerDateRange extends FilterType {
+export interface FitlerDateRange extends FilterType {
   type: 'daterange',
 }
 
-export type FilterItem = FilterText | FilterSelect | FilterToggle | FilterDate | FitlerDateRange
+export type FilterItem = FilterText | FilterSelect | FilterSelectMultiple | FilterToggle | FilterDate | FitlerDateRange
 
 export function defineFilter (scheme: FilterItem[]): FilterItem[] {
   return scheme.map((item) => {
