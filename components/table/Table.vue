@@ -40,7 +40,7 @@
       handle=".datatable__drag"
       item-key="_key"
       :disabled="!draggable">
-      <template #item="{ element }">
+      <template #item="{ element, index }">
         <div
           class="datatable__row"
           data-role="row">
@@ -55,7 +55,8 @@
             class="datatable__cell datatable__checkbox">
             <Checkbox
               v-model="model"
-              :value="element" />
+              :value="element"
+              :disabled="element._selectable === false" />
           </div>
 
           <div
@@ -78,6 +79,7 @@
             </template>
             <slot
               :name="`cell(${field.key})`"
+              :index="index"
               :item="element">
               {{ field.formatter(element[field.key], element) }}
             </slot>
@@ -143,7 +145,7 @@ export default defineComponent({
   setup (props, { emit }) {
     const model = useVModel(props)
 
-    const rows = computed({
+    const rows = computed<Record<string, unknown>[]>({
       get () {
         return props.items.map((item) => {
           return { ...item, _key: Symbol('item-key') }
@@ -169,19 +171,23 @@ export default defineComponent({
       return results
     })
 
+    const selectableRows = computed(() => {
+      return props.items.filter((item) => item._selectable !== false)
+    })
+
     const selectAll = computed({
       get () {
-        return model.value.length === rows.value.length
+        return model.value.length === selectableRows.value.length
       },
       set (value) {
         if (selectAll.value !== value)
-          model.value = value ? [...rows.value] : []
+          model.value = value ? [...selectableRows.value] : []
       },
     })
 
     const indeterminate = computed(() => {
       return model.value.length > 0
-        && model.value.length < rows.value.length
+        && model.value.length < selectableRows.value.length
     })
 
     return {
