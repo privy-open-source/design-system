@@ -25,12 +25,14 @@ export interface TableField {
   thClass?: HTMLAttributes['class'],
 }
 
+export function baseFormatter (value: unknown): string {
+  return isNil(value) ? '-' : String(value)
+}
+
 function normalizeField (field: TableField): TableField {
   return defu(field, {
     label    : startCase(field.key),
-    formatter: (value: unknown, _item: Record<string, unknown>): string => {
-      return isNil(value) ? '-' : String(value)
-    },
+    formatter: baseFormatter,
   })
 }
 

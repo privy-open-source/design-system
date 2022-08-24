@@ -1,5 +1,6 @@
 <template>
   <div
+    data-testid="datatable"
     class="datatable"
     :class="classNames">
     <div
@@ -16,6 +17,7 @@
         class="datatable__header datatable__checkbox">
         <Checkbox
           v-model="selectAll"
+          data-testid="datatable-select-all"
           :indeterminate="indeterminate" />
       </div>
 
@@ -23,8 +25,10 @@
         v-for="field in fields"
         :key="field.key"
         class="datatable__header"
+        data-testid="datatable-static-header"
         :class="field.thClass"
-        :style="field.width ? { width: `${field.width}%` } : { flex: '1 1 0%' }">
+        :style="field.width ? { width: `${field.width}%` } : { flex: '1 1 0%' }"
+        :data-header="field.key">
         <slot
           :name="`head(${field.key})`"
           :label="field.label"
@@ -46,7 +50,8 @@
           data-role="row">
           <div
             v-if="draggable"
-            class="datatable__cell datatable__drag">
+            class="datatable__cell datatable__drag"
+            data-testid="datatable-drag-handle">
             <IconDrag />
           </div>
 
@@ -55,6 +60,7 @@
             class="datatable__cell datatable__checkbox">
             <Checkbox
               v-model="model"
+              data-testid="datatable-select"
               :value="element"
               :disabled="element._selectable === false" />
           </div>
@@ -63,8 +69,10 @@
             v-for="field in fields"
             :key="field.key"
             class="datatable__cell"
+            data-testid="datatable-cell"
             :class="field.tdClass"
-            :style="field.width ? { width: `${field.width}%` } : { flex: '1 1 0%' }">
+            :style="field.width ? { width: `${field.width}%` } : { flex: '1 1 0%' }"
+            :data-cell="field.key">
             <template v-if="variant === 'flexible'">
               <div
                 class="datatable__header"
@@ -72,7 +80,8 @@
                 <slot
                   :name="`head(${field.key})`"
                   :label="field.label"
-                  :field="field">
+                  :field="field"
+                  :data-header="field.key">
                   {{ field.label }}
                 </slot>
               </div>
@@ -93,7 +102,6 @@
 <script lang="ts">
 import {
   computed,
-  defineAsyncComponent,
   defineComponent,
   PropType,
 } from 'vue-demi'
@@ -101,7 +109,8 @@ import { TableField } from './use-table'
 import Checkbox from '../checkbox/Checkbox.vue'
 import { useVModel } from '../input/use-input'
 import IconDrag from '@carbon/icons-vue/lib/draggable/16'
-import { omit } from 'lodash'
+import Draggable from 'vuedraggable'
+import defu from 'defu'
 
 type TypeVariant = 'flexible' | 'static'
 
@@ -109,7 +118,7 @@ export default defineComponent({
   components: {
     Checkbox,
     IconDrag,
-    Draggable: defineAsyncComponent(() => import('vuedraggable')),
+    Draggable,
   },
   props: {
     variant: {
@@ -148,11 +157,11 @@ export default defineComponent({
     const rows = computed<Record<string, unknown>[]>({
       get () {
         return props.items.map((item) => {
-          return { ...item, _key: Symbol('item-key') }
+          return defu(item, { _key: Symbol('item-key') })
         })
       },
       set (items) {
-        emit('update:items', items.map((item) => omit(item, '_key')))
+        emit('update:items', items)
       },
     })
 
