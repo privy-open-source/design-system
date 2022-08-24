@@ -2,18 +2,6 @@
   import Badge from './Badge.vue'
 </script>
 
-<style scoped lang="postcss">
-  .preview {
-    .badge {
-      @apply mr-4;
-
-      &:last-child {
-        @apply mr-0;
-      }
-    }
-  }
-</style>
-
 # Badge
 Badges are placed before/after the label of the thing they're quantifying, such as the number of notification/document received.
 
@@ -34,7 +22,7 @@ Badges are placed before/after the label of the thing they're quantifying, such 
 ## Colors
 Badge available in 7 different colors. There are `primary`, `secondary`, `success`, `info`, `warning`, `danger` and `gold`. Default color is `primary`
 
-<preview>
+<preview class="gap-4">
   <Badge color="primary">25</Badge>
   <Badge color="secondary">7K</Badge>
   <Badge color="success">999+</Badge>
@@ -59,7 +47,7 @@ Badge available in 7 different colors. There are `primary`, `secondary`, `succes
 ## Variants
 Badge has 3 variants namely `default`, `light` and `inverse`. When variant is not set, badge will looks as a `default`
 
-<preview>
+<preview class="gap-4">
   <Badge>25</Badge>
   <Badge variant="light">7K</Badge>
   <Badge variant="inverse">999+</Badge>
