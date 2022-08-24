@@ -15,7 +15,7 @@ export interface Adapter {
 /**
  * normalizing props.options to SelectItem[]
  */
-export function useOptionsProp (props: SelectProps) {
+export function useOptionsProp (props: Pick<SelectProps, 'options'>) {
   return computed(() => {
     if (Array.isArray(props.options)) {
       return props.options.map((item: SelectItem | string) => {
