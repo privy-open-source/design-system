@@ -319,6 +319,30 @@ You can also completely change dropdown's activator button to something else via
 </template>
 ```
 
+## Hide Caret
+
+Add props `no-caret` to hide caret icon
+
+<preview>
+  <Dropdown
+    text="Button"
+    no-caret>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</preview>
+
+```vue
+<template>
+  <Dropdown
+    text="Button"
+    no-caret>
+    <DropdownItem>Item Text</DropdownItem>
+    <DropdownItem>Item Text</DropdownItem>
+  </Dropdown>
+</template>
+```
+
 ## Binding v-model
 
 You can programmatically toggle dropdown using `v-model`
@@ -357,6 +381,7 @@ You can programmatically toggle dropdown using `v-model`
 | `size`       | `String`  |      `md`      | Size of button, valid value is `sm`, `md`, `lg`                                                                                                                                                                                    |
 | `pill`       | `Boolean` |    `false`     | Enable pill mode                                                                                                                                                                                                                   |
 | `icon`       | `Boolean` |    `false`     | Enable icon mode                                                                                                                                                                                                                   |
+| `no-caret`   | `Boolean` |    `false`     | Hide caret icon                                                                                                                                                                                                                    |
 | `disabled`   | `Boolean` |    `false`     | Disable state                                                                                                                                                                                                                      |
 | `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`auto`, `auto-start`, `auto-end`,<br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
 | `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |

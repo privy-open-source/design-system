@@ -26,11 +26,17 @@
           class="dropdown__subitem-btn"
           @click.prevent="handleOnClick">
           <div class="dropdown__subitem-content">
-            <slot name="button-content">
+            <slot
+              name="button-content"
+              :next="next"
+              :back="back">
               {{ text }}
             </slot>
           </div>
-          <IconNext class="dropdown__subitem-next" />
+          <IconNext
+            v-if="!noCaret"
+            data-testid="dropdown-subitem-next"
+            class="dropdown__subitem-next" />
         </DropdownItem>
       </template>
 
@@ -48,30 +54,14 @@ import IconNext from '@carbon/icons-vue/lib/chevron--right/16'
 import IconBack from '@carbon/icons-vue/lib/arrow--left/16'
 import {
   defineComponent,
-  InjectionKey,
   inject,
   provide,
   ref,
   shallowRef,
-  ShallowRef,
   computed,
   watch,
-  Slots,
 } from 'vue-demi'
-
-interface DropdownNode {
-  _level: number, // Just id to trigger transition
-  prev?: DropdownNode,
-  slots: Slots,
-}
-
-interface DropdownContext {
-  tree: ShallowRef<DropdownNode>,
-  next: () => void,
-  back: () => void,
-}
-
-const DROPDOWN_TREE: InjectionKey<DropdownContext> = Symbol('DropdownTree')
+import { DropdownContext, DROPDOWN_TREE } from './use-dropdown-subitem'
 
 export default defineComponent({
   components: {
@@ -83,6 +73,10 @@ export default defineComponent({
     text: {
       type   : String,
       default: '',
+    },
+    noCaret: {
+      type   : Boolean,
+      default: false,
     },
   },
   emits: ['click'],

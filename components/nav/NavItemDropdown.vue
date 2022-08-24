@@ -4,9 +4,10 @@
     class="nav__item nav__item--dropdown">
     <Dropdown
       :text="text"
+      :icon="icon"
       placement="bottom-end"
       variant="ghost"
-      :icon="icon">
+      no-caret>
       <template #button-content>
         <slot name="button-content">
           {{ text }}

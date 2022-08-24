@@ -97,6 +97,10 @@ export default defineConfig({
             text: 'Spinner',
             link: '/spinner/component'
           },
+          {
+            text: 'Table',
+            link: '/table/component'
+          }
         ]
       },
       {
@@ -174,6 +178,16 @@ export default defineConfig({
           {
             text: 'Toast',
             link: '/toast/component'
+          },
+        ],
+      },
+      {
+        text       : 'Dashboard',
+        collapsable: true,
+        children   : [
+          {
+            text: 'Filterbar',
+            link: '/filterbar/component'
           },
         ],
       }

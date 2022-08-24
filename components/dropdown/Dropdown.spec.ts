@@ -531,3 +531,19 @@ it('should trigger event `show` when Dropdown shown', async () => {
 
   expect(spy).toBeCalled()
 })
+
+it('should hide caret icon if props `no-caret` is provided', () => {
+  const screen = render({
+    components: { Dropdown, DropdownItem },
+    template  : `
+      <Dropdown no-caret>
+        <DropdownItem text="Item1" />
+        <DropdownItem text="Item2" />
+      </Dropdown>
+    `,
+  })
+
+  const caret = screen.queryByTestId('dropdown-caret')
+
+  expect(caret).not.toBeInTheDocument()
+})
