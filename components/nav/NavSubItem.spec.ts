@@ -1,4 +1,4 @@
-import { render } from '@testing-library/vue'
+import { render, fireEvent } from '@testing-library/vue'
 import Nav from './Nav.vue'
 import NavItem from './NavItem.vue'
 import NavSubItem from './NavSubItem.vue'
@@ -72,4 +72,38 @@ it('should be able to add icon via slot `icon`', () => {
 
   expect(navSubItem).toBeInTheDocument()
   expect(navSubItem).toHaveClass('nav__subitem--icon')
+})
+
+it('should toggle submenu if `collapsible` prop was added', async () => {
+  const screen = render({
+    components: {
+      Nav, NavItem, IconEdit, NavSubItem,
+    },
+    template: `
+      <Nav>
+        <NavSubItem text="Documents" collapsible>
+          <template #icon>
+            <IconDocument />
+          </template>
+          Document
+          <Nav>
+            <NavItem active>To Sign</NavItem>
+            <NavItem>To Review</NavItem>
+          </Nav>
+        </NavSubItem>
+      </Nav>
+    `,
+  })
+
+  const navSubItem = screen.queryByTestId('nav-subitem')
+  const item       = screen.queryByTestId('nav-subitem-parent')
+
+  expect(navSubItem).toBeInTheDocument()
+  expect(item).toBeInTheDocument()
+
+  expect(navSubItem).toHaveClass('nav__subitem--collapsed')
+
+  await fireEvent.click(item)
+
+  expect(navSubItem).not.toHaveClass('nav__subitem--collapsed')
 })

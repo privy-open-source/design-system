@@ -5,6 +5,7 @@
     :class="classNames">
     <div
       class="nav__subitem__parent"
+      data-testid="nav-subitem-parent"
       @click.prevent="collapse">
       <span
         v-if="$slots.icon"
@@ -48,7 +49,7 @@ export default defineComponent({
         result.push('nav__subitem--icon')
 
       if (props.collapsible && type !== 'narrow')
-        result.push('nav__subitem--collapsible collapsed')
+        result.push('nav__subitem--collapsible nav__subitem--collapsed')
 
       return result
     })
@@ -57,7 +58,7 @@ export default defineComponent({
       if (props.collapsible && type !== 'narrow') {
         const container = (event.target as HTMLElement).closest('li')
 
-        container?.classList.toggle('collapsed')
+        container?.classList.toggle('nav__subitem--collapsed')
       }
     }
 
@@ -76,7 +77,7 @@ export default defineComponent({
         @apply cursor-pointer text-body-100;
       }
 
-      &.collapsed {
+      &.nav__subitem--collapsed {
         .nav__subitem__parent {
           @apply text-body-50;
         }
