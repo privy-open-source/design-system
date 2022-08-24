@@ -12,6 +12,7 @@
       :is-open="isOpen">
       <Button
         data-testid="dropdown-activator"
+        class="dropdown__activator"
         :variant="variant"
         :color="color"
         :size="size"
@@ -22,6 +23,10 @@
         <slot name="button-content">
           {{ text }}
         </slot>
+        <IconArrow
+          v-if="!noCaret"
+          class="dropdown__caret"
+          data-testid="dropdown-caret" />
       </Button>
     </slot>
 
@@ -61,6 +66,7 @@ import DropdownGroup from '../dropdown-subitem/DropdownSubitem.vue'
 import { useFocus } from './utils/use-focus'
 import { usePopper, Placement } from './utils/use-popper'
 import { useVModel } from '../input/use-input'
+import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
 import type {
   StyleVariant,
   ColorVariant,
@@ -76,12 +82,13 @@ interface DropdownContext {
   isOpen: Ref<boolean>,
 }
 
-export const DROPDOWN_CONTEXT: InjectionKey<DropdownContext> = Symbol('DropdownContext')
+export const DROPDOWN_CONTEXT: InjectionKey<DropdownContext> = Symbol('DROPDOWN_CONTEXT')
 
 export default defineComponent({
   components: {
     Button,
     DropdownGroup,
+    IconArrow,
   },
   props: {
     modelValue: {
@@ -117,6 +124,10 @@ export default defineComponent({
       default: false,
     },
     disabled: {
+      type   : Boolean,
+      default: false,
+    },
+    noCaret: {
       type   : Boolean,
       default: false,
     },
@@ -252,6 +263,10 @@ export default defineComponent({
   &__menuContainer > .dropdown__item:last-child,
   &__menuContainer > .dropdown__subitem:last-child .dropdown__item {
     @apply rounded-b;
+  }
+
+  &__activator > &__caret {
+    @apply self-center;
   }
 }
 </style>

@@ -10,8 +10,9 @@
       :name="name"
       :disabled="disabled || readonly">
     <span class="radio__icon">
+      <IconCheck v-if="apperance === 'option'" />
       <svg
-        v-if="apperance === 'checkbox'"
+        v-else-if="apperance === 'checkbox'"
         width="10"
         height="10"
         viewBox="0 0 14 10"
@@ -46,8 +47,11 @@
 
 <script lang="ts">
 import { useVModel } from './use-radio'
+import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/16'
 import {
-  computed, defineComponent, PropType,
+  computed,
+  defineComponent,
+  PropType,
 } from 'vue-demi'
 
 export interface ChangedInteface {
@@ -55,10 +59,11 @@ export interface ChangedInteface {
   state: boolean,
 }
 
-type ApperanceType = 'radio' | 'checkbox'
+type ApperanceType = 'radio' | 'checkbox' | 'option'
 
 export default defineComponent({
-  props: {
+  components: { IconCheck },
+  props     : {
     name: {
       type   : String,
       default: '',
@@ -171,6 +176,35 @@ export default defineComponent({
   &--checkbox {
     .radio__icon {
       @apply rounded-tn;
+    }
+  }
+
+  &--option {
+    .radio__icon {
+      @apply order-2 border-none invisible bg-transparent;
+
+      & > svg {
+        @apply w-4;
+      }
+    }
+
+    .radio__label {
+      @apply flex-grow;
+    }
+
+    &.radio--checked {
+      .radio__icon {
+        @apply text-primary-100 visible;
+      }
+    }
+  }
+
+  .dropdown__menu & {
+    @apply px-3 py-2 cursor-pointer text-body-100 w-full select-none text-left;
+
+    &:hover,
+    &:focus-visible {
+      @apply bg-background-75;
     }
   }
 }
