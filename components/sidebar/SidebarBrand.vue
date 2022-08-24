@@ -30,6 +30,14 @@ export default defineComponent({
     }
   }
 
+  &&--wide {
+    .sidebar__brand {
+      img {
+        @apply h-7 w-auto;
+      }
+    }
+  }
+
   &&--tabs,
   &&--lines {
     .sidebar__brand {

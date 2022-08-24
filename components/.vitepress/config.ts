@@ -94,6 +94,10 @@ export default defineConfig({
             link: '/nav/component'
           },
           {
+            text: 'Sidebar',
+            link: '/sidebar/component'
+          },
+          {
             text: 'Spinner',
             link: '/spinner/component'
           },

@@ -14,7 +14,7 @@ import {
   computed, defineComponent, inject,
 } from 'vue-demi'
 import Nav from '../nav/Nav.vue'
-import { NAV_SETTINGS } from './Sidebar.vue'
+import { SIDEBAR_SETTINGS } from './Sidebar.vue'
 
 export default defineComponent({
   components: { Nav },
@@ -30,7 +30,7 @@ export default defineComponent({
   },
 
   setup (props) {
-    const settings = inject(NAV_SETTINGS, undefined, true)
+    const settings = inject(SIDEBAR_SETTINGS, undefined, true)
     const variant  = settings?.variant
     const align    = settings?.align
 
@@ -76,9 +76,41 @@ export default defineComponent({
 
     .nav--pills {
       .nav__link {
-        @apply p-0;
+        /* .nav__link__icon {
+          @apply
+        } */
 
-        &__icon {
+        &:is(.nav__link--icon) {
+          @apply p-0;
+
+          .nav__link__icon {
+            @apply rounded p-3 inline-block;
+          }
+
+          .nav__link__label {
+            @apply mt-0 px-1 pb-3;
+          }
+
+          &.nav__link--active {
+            @apply bg-transparent text-body-100;
+
+            .nav__link__icon {
+              @apply bg-secondary-5;
+            }
+          }
+        }
+
+        &:not(.nav__link--icon) {
+          .nav__link__icon {
+            @apply hidden;
+          }
+
+          .nav__link__label {
+            @apply mt-0;
+          }
+        }
+
+        /* &__icon {
           @apply rounded p-3 inline-block;
         }
 
@@ -92,7 +124,7 @@ export default defineComponent({
 
         &__label {
           @apply mt-0 px-1 pb-3;
-        }
+        } */
       }
     }
 

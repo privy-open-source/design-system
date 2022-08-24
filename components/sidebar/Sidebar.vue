@@ -14,13 +14,13 @@ import { StyleVariant, AlignVariant } from '../nav/Nav.vue'
 
 type TypeVariant = 'wide' | 'narrow'
 
-interface NavSettings {
+interface SidebarSettings {
   variant: string,
   align: string,
   type: string,
 }
 
-export const NAV_SETTINGS: InjectionKey<NavSettings> = Symbol('NavSettings')
+export const SIDEBAR_SETTINGS: InjectionKey<SidebarSettings> = Symbol('SidebarSettings')
 
 export default defineComponent({
   props: {
@@ -46,7 +46,7 @@ export default defineComponent({
     },
   },
   setup (props) {
-    provide(NAV_SETTINGS, {
+    provide(SIDEBAR_SETTINGS, {
       variant: props.variant,
       align  : props.align,
       type   : props.type,
@@ -83,7 +83,13 @@ export default defineComponent({
   @apply bg-white px-2 py-4;
 
   &:not(.sidebar--narrow) {
-    @apply w-60;
+    @apply w-56;
+  }
+
+  &:not(.sidebar--fixed) {
+    &.sidebar--right {
+      @apply ml-auto;
+    }
   }
 
   &&--fixed {

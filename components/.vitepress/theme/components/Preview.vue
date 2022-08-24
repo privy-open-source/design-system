@@ -29,7 +29,7 @@ export default defineComponent({
   }
 
   ul {
-    @apply list-none;
+    @apply list-none mt-0;
   }
 }
 </style>
