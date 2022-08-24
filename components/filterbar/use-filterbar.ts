@@ -9,7 +9,7 @@ interface FilterType {
   key: string,
   label?: string,
   placeholder?: string,
-  default?: any,
+  default?: unknown,
   pinned?: boolean,
   type: 'text' | 'select' | 'multiselect' | 'toggle' | 'date' | 'daterange',
 }
