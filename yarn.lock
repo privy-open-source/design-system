@@ -480,7 +480,7 @@ __metadata:
     vite: 2.9.15
     vitepress: 0.22.4
     vitest: 0.16.0
-    vue-demi: 0.13.7
+    vue-demi: 0.13.10
     vuedraggable: next
   languageName: unknown
   linkType: soft
@@ -6057,9 +6057,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.13.7":
-  version: 0.13.7
-  resolution: "vue-demi@npm:0.13.7"
+"vue-demi@npm:0.13.10":
+  version: 0.13.10
+  resolution: "vue-demi@npm:0.13.10"
   peerDependencies:
     "@vue/composition-api": ^1.0.0-rc.1
     vue: ^3.0.0-0 || ^2.6.0
@@ -6069,7 +6069,7 @@ __metadata:
   bin:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
-  checksum: b5e348d2e9e83207a69fe1362fcfbf99dab34db9591202f2a2f394b9693860c506d865440b7ee8f0277d67e5e7a4b0ff5326a1b8b955a4b98261b1e1df13e189
+  checksum: d87ccdeca48e8a939a232b2cbff32616379058fe3fe8753c1a522f9094910edacad7ca2ea9faf96131ccbf10b68d825b6d4ba9c0ea515faddbed2145e95e5c05
   languageName: node
   linkType: hard
 
