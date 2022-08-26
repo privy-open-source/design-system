@@ -98,6 +98,10 @@ export default defineConfig({
             link: '/sidebar/component'
           },
           {
+            text: 'Sidebar Menu',
+            link: '/sidebar-menu/component'
+          },
+          {
             text: 'Spinner',
             link: '/spinner/component'
           },

@@ -8,7 +8,7 @@ export interface SubMenu {
 
 export interface MenuItem {
   name: string,
-  label: string,
+  label?: string,
   url: string,
   icon?: string | Component,
   collapsible?: boolean,
@@ -16,9 +16,9 @@ export interface MenuItem {
 }
 
 export interface Menu {
-  title: string,
-  bottom?: false,
-  condensed?: false,
+  title?: string,
+  bottom?: boolean,
+  condensed?: boolean,
   items?: MenuItem[],
 }
 

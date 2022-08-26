@@ -1,5 +1,6 @@
 <template>
   <Sidebar
+    data-testid="sidebar-menu"
     :type="type"
     :fixed="fixed"
     :align="align">
