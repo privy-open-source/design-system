@@ -380,6 +380,37 @@ Navigation by default appear on horizontal line. You can stack navigation by set
 </template>
 ```
 
+## Condensed Navigation
+If you need less space/padding of navigation, you can set by using `condensed` prop.
+
+<preview>
+  <Nav condensed>
+    <NavItem active>Need Action</NavItem>
+    <NavItem>In Progress</NavItem>
+    <NavItem>Others</NavItem>
+  </Nav>
+  <Nav vertical condensed class="w-80">
+    <NavItem>To Sign</NavItem>
+    <NavItem>To Review</NavItem>
+    <NavItem>Auditrail</NavItem>
+  </Nav>
+</preview>
+
+```vue
+<template>
+  <Nav condensed>
+    <NavItem active>Need Action</NavItem>
+    <NavItem>In Progress</NavItem>
+    <NavItem>Others</NavItem>
+  </Nav>
+  <Nav vertical condensed class="w-80">
+    <NavItem>To Sign</NavItem>
+    <NavItem>To Review</NavItem>
+    <NavItem>Auditrail</NavItem>
+  </Nav>
+</template>
+```
+
 ## Title
 When you need title for grouping navigation, you can add navigation title by using `title` prop.
 
@@ -423,6 +454,7 @@ When you need title for grouping navigation, you can add navigation title by usi
 | `align`        | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
 | `vertical`     | `Boolean` | `false`     | Activate vertical navigation                                      |
 | `title`        | `String`  | `undefined` | Title to place in the top of navigation block                     |
+| `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
 
 ### Slots `<Nav>`
 

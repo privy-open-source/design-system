@@ -48,6 +48,10 @@ export default defineComponent({
       type   : String,
       default: undefined,
     },
+    condensed: {
+      type   : Boolean,
+      default: false,
+    },
   },
 
   setup (props) {
@@ -71,6 +75,9 @@ export default defineComponent({
 
       if (props.title)
         result.push('nav--has-title')
+
+      if (props.condensed)
+        result.push('nav--condensed')
 
       return result
     })
@@ -167,6 +174,19 @@ export default defineComponent({
     .nav__link {
       &--active {
         @apply bg-secondary-5 rounded-b;
+      }
+    }
+
+    /**
+    * Remove background of
+    * active state in
+    * condensed mode
+    */
+    &.nav--condensed {
+      .nav__link {
+        &--active {
+          @apply bg-transparent;
+        }
       }
     }
 

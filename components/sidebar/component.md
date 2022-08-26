@@ -31,7 +31,7 @@
   <SidebarBrand>
     <img src="./assets/images/logo-privy.svg" alt="" />
   </SidebarBrand>
-  <SidebarNav>
+  <SidebarNav title="Main">
     <NavItem active>Documents</NavItem>
     <NavItem>Contacts</NavItem>
     <NavItem>Structure</NavItem>
@@ -112,7 +112,36 @@ To align Sidebar, use align prop. Available value are `left` and `right`
   </Sidebar>
 </template>
 ```
+## Condensed
+When you need less space/padding of sidebar navigation, you can set by using `condensed` prop.
 
+<preview>
+<Sidebar fixed>
+  <SidebarBrand>
+    <img src="./assets/images/logo-privy.svg" alt="" />
+  </SidebarBrand>
+  <SidebarNav condensed>
+    <NavItem active>Documents</NavItem>
+    <NavItem>Contacts</NavItem>
+    <NavItem>Structure</NavItem>
+  </SidebarNav>
+</Sidebar>
+</preview>
+
+```vue
+<template>
+  <Sidebar fixed>
+    <SidebarBrand>
+      <img src="./assets/images/logo-privy.svg" alt="" />
+    </SidebarBrand>
+    <SidebarNav condensed>
+      <NavItem active>Documents</NavItem>
+      <NavItem>Contacts</NavItem>
+      <NavItem>Structure</NavItem>
+    </SidebarNav>
+  </Sidebar>
+</template>
+```
 
 ## Types
 Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`, you can place your navigation with icon-only or icon-label.
@@ -414,3 +443,63 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
   </Sidebar>
 </template>
 ```
+
+## API
+
+### Props `<Sidebar>`
+
+| Props          |   Type    | Default     | Description                                                       |
+|----------------|:---------:|:-----------:|-------------------------------------------------------------------|
+| `variant`      | `String`  | `pills`     | Sidebar variant, valid value is `pills`, `lines` and `tabs`       |
+| `align`        | `String`  | `left`      | Sidebar alignment, valid value is `left` and `right`              |
+| `type`         | `String`  | `wide`      | Sidebar type, valid value is `wide` and `narrow`                  |
+| `fixed`        | `Boolean` | `false`     | Activate fixed Sidebar                                            |
+
+### Slots `<Sidebar>`
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| `default`        | Content to place in the Sidebar                         |
+
+### Props `<SidebarBrand>`
+
+| Props          |   Type    | Default     | Description                                                       |
+|----------------|:---------:|:-----------:|-------------------------------------------------------------------|
+| `href`         | `String`  | `undefined` | Target URL of the Sidebar Brand link                              |
+
+### Slots `<SidebarBrand>`
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| `default`        | Content to place in the Sidebar Brand                   |
+
+### Props `<SidebarNav>`
+
+| Props          |   Type    | Default     | Description                                                       |
+|----------------|:---------:|:-----------:|-------------------------------------------------------------------|
+| `title`        | `String`  | `undefined` | Title to place in the top of sidebar navigation block             |
+| `bottom`       | `Boolean` | `false`     | Place group of sidebar navigation in the bottom of Sidebar        |
+| `condensed`    | `Boolean` | `false`     | Activate condensed of group navigation with less space            |
+
+### Slots `<SidebarNav>`
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| `default`        | Content to place in the Sidebar Nav                     |
+
+### Events
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no event here</td>
+    </tr>
+  </tbody>
+</table>

@@ -31,5 +31,9 @@ export default defineComponent({
   ul {
     @apply list-none mt-0;
   }
+
+  img {
+    max-width: inherit;
+  }
 }
 </style>

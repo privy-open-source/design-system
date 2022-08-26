@@ -12,7 +12,7 @@ import {
 } from 'vue-demi'
 import { StyleVariant, AlignVariant } from '../nav/Nav.vue'
 
-type TypeVariant = 'wide' | 'narrow'
+export type TypeVariant = 'wide' | 'narrow'
 
 interface SidebarSettings {
   variant: string,
@@ -40,10 +40,6 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
-    iconOnly: {
-      type   : Boolean,
-      default: false,
-    },
   },
   setup (props) {
     provide(SIDEBAR_SETTINGS, {
@@ -67,9 +63,6 @@ export default defineComponent({
       if (props.fixed)
         result.push('sidebar--fixed')
 
-      if (props.iconOnly)
-        result.push('sidebar--icon-only')
-
       return result
     })
 
@@ -83,7 +76,7 @@ export default defineComponent({
   @apply bg-white px-2 py-4;
 
   &:not(.sidebar--narrow) {
-    @apply w-56;
+    @apply w-[230px];
   }
 
   &:not(.sidebar--fixed) {
@@ -101,7 +94,7 @@ export default defineComponent({
   }
 
   &&--narrow {
-    @apply w-16;
+    @apply w-[60px];
   }
 
   &&--tabs {

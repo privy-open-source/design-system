@@ -1,8 +1,10 @@
 <template>
   <Nav
+    data-testid="sidebar-nav"
     :title="title"
     vertical
     :variant="variant"
+    :condensed="condensed"
     :align="align"
     :class="classNames">
     <slot />
@@ -24,6 +26,10 @@ export default defineComponent({
       default: undefined,
     },
     bottom: {
+      type   : Boolean,
+      default: false,
+    },
+    condensed: {
       type   : Boolean,
       default: false,
     },

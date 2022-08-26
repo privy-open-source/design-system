@@ -81,6 +81,14 @@ export default defineComponent({
 
 <style lang="postcss">
 .nav {
+  &__item {
+    &&--no-label {
+      .nav__link__label {
+        @apply hidden;
+      }
+    }
+  }
+
   &__link {
     @apply block p-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-body-50 hover:text-body-100;
 
@@ -97,6 +105,10 @@ export default defineComponent({
 
       .nav__link__icon {
         @apply grow-0;
+
+        img {
+          @apply w-5 h-5;
+        }
       }
 
       .nav__link__label {
@@ -114,6 +126,12 @@ export default defineComponent({
       .badge {
         @apply ml-auto;
       }
+    }
+  }
+
+  &&--condensed {
+    .nav__link {
+      @apply py-1;
     }
   }
 }

@@ -103,6 +103,10 @@ export default defineComponent({
 
       .nav__link__icon {
         @apply grow-0;
+
+        img {
+          @apply w-5 h-5;
+        }
       }
 
       .nav__link__label {
@@ -111,6 +115,14 @@ export default defineComponent({
         .badge {
           @apply ml-auto;
         }
+      }
+    }
+  }
+
+  &&--condensed {
+    .nav__subitem {
+      &__parent {
+        @apply py-1;
       }
     }
   }
