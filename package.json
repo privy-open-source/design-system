@@ -31,7 +31,7 @@
     "eslint-config-standard-with-typescript": "latest",
     "eslint-plugin-align-assignments": "1.1.2",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-n": "15.2.4",
+    "eslint-plugin-n": "15.2.5",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-unicorn": "43.0.2",
@@ -61,7 +61,7 @@
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "tabbable": "5.3.3",
-    "vue-demi": "0.13.7",
+    "vue-demi": "0.13.10",
     "vuedraggable": "next"
   },
   "lint-staged": {
