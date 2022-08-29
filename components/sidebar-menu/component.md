@@ -7,27 +7,28 @@
   import IconDocument from '@carbon/icons-vue/lib/document/20'
   import IconUsers from '@carbon/icons-vue/lib/group/20'
   import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
+  import IconEN from './assets/images/img-flag.svg'
 
   const basic = defineMenu([
     {
       items: [
         {
-          name: 'dashboard',
+          name : 'dashboard',
           label: 'Dashboard',
-          url: '/',
-          icon: IconDashboard
+          url  : '/',
+          icon : IconDashboard
         },
         {
-          name: 'documents',
+          name : 'documents',
           label: 'Documents',
-          url: '/',
-          icon: IconDocument
+          url  : '/',
+          icon : IconDocument
         },
         {
-          name: 'contacts',
+          name : 'contacts',
           label: 'Contacts',
-          url: '/',
-          icon: IconUsers
+          url  : '/',
+          icon : IconUsers
         }
       ]
     },
@@ -37,40 +38,40 @@
     {
       items: [
         {
-          name: 'dashboard',
+          name : 'dashboard',
           label: 'Dashboard',
-          url: '/',
-          icon: IconDashboard,
+          url  : '/',
+          icon : IconDashboard,
         },
         {
-          name: 'document',
-          label: 'Documents',
-          url: '/',
-          icon: IconDocument,
+          name       : 'document',
+          label      : 'Documents',
+          url        : '/',
+          icon       : IconDocument,
           collapsible: true,
-          submenu: [
+          submenu    : [
             {
-              name: 'need-action',
+              name : 'need-action',
               label: 'Need Action',
-              url: '/'
+              url  : '/'
             },
             {
-              name: 'in-progress',
+              name : 'in-progress',
               label: 'In Progress',
-              url: '/'
+              url  : '/'
             },
             {
-              name: 'others',
+              name : 'others',
               label: 'Others',
-              url: '/'
+              url  : '/'
             }
           ]
         },
         {
-          name: 'contact',
+          name : 'contact',
           label: 'Contacts',
-          url: '/',
-          icon: IconUsers
+          url  : '/',
+          icon : IconUsers
         }
       ]
     },
@@ -79,9 +80,9 @@
       title: 'Quick Jump',
       items: [
         {
-          name: 'rejects',
+          name : 'rejects',
           label: 'Rejects',
-          url: '/',
+          url  : '/',
         },
         {
           name: 'archives',
@@ -94,16 +95,16 @@
       bottom: true,
       items: [
         {
-          name: 'settings',
+          name : 'settings',
           label: 'Settings',
-          icon: IconSettings,
-          url: '/',
+          icon : IconSettings,
+          url  : '/',
         },
         {
-          name: 'english',
+          name : 'english',
           label: 'English',
-          url: '/',
-          icon: './assets/images/img-flag.svg'
+          url  : '/',
+          icon : IconEN
         },
       ]
     },
@@ -114,34 +115,34 @@
       items: [
         {
           name: 'dashboard',
-          url: '/',
+          url : '/',
           icon: IconDashboard
         },
         {
           name: 'document',
-          url: '/',
+          url : '/',
           icon: IconDocument
         },
         {
           name: 'users',
-          url: '/',
+          url : '/',
           icon: IconUsers
         }
       ]
     },
     {
       bottom: true,
-      items: [
+      items : [
         {
           name: 'settings',
-          url: '/',
+          url : '/',
           icon: IconSettings
         },
         {
-          name: 'language',
+          name : 'language',
           label: 'ENG',
-          url: '/',
-          icon: './assets/images/img-flag.svg'
+          url  : '/',
+          icon : './assets/images/img-flag.svg'
         }
       ]
     }
@@ -193,22 +194,22 @@ const menus = defineMenu([
   {
     items: [
       {
-        name: 'dashboard',
+        name : 'dashboard',
         label: 'Dashboard',
-        url: '/',
-        icon: IconDashboard
+        url  : '/',
+        icon : IconDashboard
       },
       {
-        name: 'documents',
+        name : 'documents',
         label: 'Documents',
-        url: '/',
-        icon: IconDocument
+        url  : '/',
+        icon : IconDocument
       },
       {
-        name: 'contacts',
+        name : 'contacts',
         label: 'Contacts',
-        url: '/',
-        icon: IconUsers
+        url  : '/',
+        icon : IconUsers
       }
     ]
   },
@@ -245,56 +246,56 @@ const menus = defineMenu([
   {
     items: [
       {
-        name: 'dashboard',
+        name : 'dashboard',
         label: 'Dashboard',
-        url: '/',
-        icon: IconDashboard,
+        url  : '/',
+        icon : IconDashboard,
       },
       {
-        name: 'document',
-        label: 'Documents',
-        url: '/',
-        icon: IconDocument,
+        name       : 'document',
+        label      : 'Documents',
+        url        : '/',
+        icon       : IconDocument,
         collapsible: true,
-        submenu: [
+        submenu    : [
           {
-            name: 'need-action',
+            name : 'need-action',
             label: 'Need Action',
-            url: '/'
+            url  : '/'
           },
           {
-            name: 'in-progress',
+            name : 'in-progress',
             label: 'In Progress',
-            url: '/'
+            url  : '/'
           },
           {
-            name: 'others',
+            name : 'others',
             label: 'Others',
-            url: '/'
+            url  : '/'
           }
         ]
       },
       {
-        name: 'contact',
+        name : 'contact',
         label: 'Contacts',
-        url: '/',
-        icon: IconUsers
+        url  : '/',
+        icon : IconUsers
       }
     ]
   },
   {
     condensed: true,
-    title: 'Quick Jump',
-    items: [
+    title    : 'Quick Jump',
+    items    : [
       {
-        name: 'rejects',
+        name : 'rejects',
         label: 'Rejects',
-        url: '/',
+        url  : '/',
       },
       {
-        name: 'archives',
+        name : 'archives',
         label: 'Archives',
-        url: '/',
+        url  : '/',
       },
     ]
   },
@@ -302,16 +303,16 @@ const menus = defineMenu([
     bottom: true,
     items: [
       {
-        name: 'settings',
+        name : 'settings',
         label: 'Settings',
-        icon: IconSettings,
-        url: '/',
+        icon : IconSettings,
+        url  : '/',
       },
       {
-        name: 'english',
+        name : 'english',
         label: 'English',
-        url: '/',
-        icon: './assets/images/img-flag.svg'
+        url  : '/',
+        icon : './assets/images/img-flag.svg'
       },
     ]
   },
@@ -349,17 +350,17 @@ const menus = defineMenu([
     items: [
       {
         name: 'dashboard',
-        url: '/',
+        url : '/',
         icon: IconDashboard
       },
       {
         name: 'document',
-        url: '/',
+        url : '/',
         icon: IconDocument
       },
       {
         name: 'users',
-        url: '/',
+        url : '/',
         icon: IconUsers
       }
     ]
@@ -369,14 +370,14 @@ const menus = defineMenu([
     items: [
       {
         name: 'settings',
-        url: '/',
+        url : '/',
         icon: IconSettings
       },
       {
-        name: 'language',
+        name : 'language',
         label: 'ENG',
-        url: '/',
-        icon: './assets/images/img-flag.svg'
+        url  : '/',
+        icon : './assets/images/img-flag.svg'
       }
     ]
   }

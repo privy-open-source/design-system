@@ -1,4 +1,4 @@
-import { Component } from 'vue-demi'
+import { Component } from '../global/use-singleton'
 
 export interface SubMenu {
   name: string,
