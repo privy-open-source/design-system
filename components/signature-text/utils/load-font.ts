@@ -4,7 +4,7 @@ export default async function loadFont (font: string): Promise<void> {
   return await new Promise<void>((resolve, reject) => {
     WebFont.load({
       google: { families: [font] },
-      fontactive (_familyName, _fvd) {
+      fontactive () {
         resolve()
       },
       fontinactive () {
