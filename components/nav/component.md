@@ -1,6 +1,7 @@
 <script setup>
 import Nav from './Nav.vue'
 import NavItem from './NavItem.vue'
+import NavSubItem from './NavSubItem.vue'
 import NavText from './NavText.vue'
 import IconEdit from '@carbon/icons-vue/lib/edit/16'
 import IconView from '@carbon/icons-vue/lib/view/16'
@@ -360,6 +361,12 @@ Navigation by default appear on horizontal line. You can stack navigation by set
     <NavItem active>To Sign</NavItem>
     <NavItem>To Review</NavItem>
     <NavItem>Auditrail</NavItem>
+    <NavSubItem text="Documents">
+      <Nav>
+        <NavItem active>To Sign</NavItem>
+        <NavItem>To Review</NavItem>
+      </Nav>
+    </NavSubItem>
   </Nav>
 </preview>
 
@@ -367,6 +374,37 @@ Navigation by default appear on horizontal line. You can stack navigation by set
 <template>
   <Nav vertical class="w-80">
     <NavItem active>To Sign</NavItem>
+    <NavItem>To Review</NavItem>
+    <NavItem>Auditrail</NavItem>
+  </Nav>
+</template>
+```
+
+## Condensed Navigation
+If you need less space/padding of navigation, you can set by using `condensed` prop.
+
+<preview>
+  <Nav condensed>
+    <NavItem active>Need Action</NavItem>
+    <NavItem>In Progress</NavItem>
+    <NavItem>Others</NavItem>
+  </Nav>
+  <Nav vertical condensed class="w-80">
+    <NavItem>To Sign</NavItem>
+    <NavItem>To Review</NavItem>
+    <NavItem>Auditrail</NavItem>
+  </Nav>
+</preview>
+
+```vue
+<template>
+  <Nav condensed>
+    <NavItem active>Need Action</NavItem>
+    <NavItem>In Progress</NavItem>
+    <NavItem>Others</NavItem>
+  </Nav>
+  <Nav vertical condensed class="w-80">
+    <NavItem>To Sign</NavItem>
     <NavItem>To Review</NavItem>
     <NavItem>Auditrail</NavItem>
   </Nav>
@@ -416,6 +454,7 @@ When you need title for grouping navigation, you can add navigation title by usi
 | `align`        | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
 | `vertical`     | `Boolean` | `false`     | Activate vertical navigation                                      |
 | `title`        | `String`  | `undefined` | Title to place in the top of navigation block                     |
+| `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
 
 ### Slots `<Nav>`
 
