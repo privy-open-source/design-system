@@ -3,6 +3,7 @@ import Nav from './Nav.vue'
 import NavItem from './NavItem.vue'
 import NavSubItem from './NavSubItem.vue'
 import IconEdit from '@carbon/icons-vue/lib/edit/16'
+import IconDocument from '@carbon/icons-vue/lib/document/20'
 
 it('should rendered properly without any props', () => {
   const screen = render({
@@ -51,7 +52,7 @@ it('should be abble to change parent-submenu text via props `text`', () => {
 it('should be able to add icon via slot `icon`', () => {
   const screen = render({
     components: {
-      Nav, NavItem, IconEdit, NavSubItem,
+      Nav, NavItem, IconEdit, NavSubItem, IconDocument,
     },
     template: `
       <Nav>
@@ -77,7 +78,7 @@ it('should be able to add icon via slot `icon`', () => {
 it('should toggle submenu if `collapsible` prop was added', async () => {
   const screen = render({
     components: {
-      Nav, NavItem, IconEdit, NavSubItem,
+      Nav, NavItem, IconEdit, NavSubItem, IconDocument,
     },
     template: `
       <Nav>
