@@ -18,8 +18,8 @@ import {
   computed, defineComponent, PropType,
 } from 'vue-demi'
 import Caption from '../caption/Caption.vue'
-type StyleVariant = 'tabs' | 'pills' | 'lines'
-type AlignVariant = 'left' | 'right' | 'center'
+export type StyleVariant = 'tabs' | 'pills' | 'lines'
+export type AlignVariant = 'left' | 'right' | 'center'
 
 export default defineComponent({
   components: { Caption },
@@ -48,6 +48,10 @@ export default defineComponent({
       type   : String,
       default: undefined,
     },
+    condensed: {
+      type   : Boolean,
+      default: false,
+    },
   },
 
   setup (props) {
@@ -72,6 +76,9 @@ export default defineComponent({
       if (props.title)
         result.push('nav--has-title')
 
+      if (props.condensed)
+        result.push('nav--condensed')
+
       return result
     })
 
@@ -92,7 +99,7 @@ export default defineComponent({
   * Default navigation
   * is horizontal
   */
-  @apply pl-2 list-none flex flex-wrap mb-0 !important;
+  @apply pl-2 list-none flex flex-wrap mb-0;
 
   /*
   * Navigation variant:
@@ -170,6 +177,19 @@ export default defineComponent({
       }
     }
 
+    /**
+    * Remove background of
+    * active state in
+    * condensed mode
+    */
+    &.nav--condensed {
+      .nav__link {
+        &--active {
+          @apply bg-transparent;
+        }
+      }
+    }
+
     &.nav--vertical {
       @apply pb-0 pr-2;
     }
@@ -233,8 +253,14 @@ export default defineComponent({
     @apply pl-0 pt-2 flex-col;
 
     .nav {
+      @apply flex-col;
+
       &__link {
         @apply mb-0 -mr-[1px];
+      }
+
+      &__title {
+        @apply left-3;
       }
     }
   }
