@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/promise-function-async
 export default function loadImage (url?: string | null): Promise<string> {
-  if (!url) return Promise.reject(new Error('ERR_INVALID_IMAGE_SRC'))
+  if (!url)
+    return Promise.reject(new Error('ERR_INVALID_IMAGE_SRC'))
 
   return new Promise((resolve, reject) => {
     const image  = new window.Image()

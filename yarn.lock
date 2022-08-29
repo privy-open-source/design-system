@@ -445,6 +445,7 @@ __metadata:
     "@types/lodash": ^4
     "@types/lodash-es": ^4
     "@types/testing-library__jest-dom": 5.14.5
+    "@types/webfontloader": ^1
     "@typescript-eslint/eslint-plugin": 5.32.0
     "@typescript-eslint/parser": 5.32.0
     "@vitejs/plugin-vue": 2.3.4
@@ -482,6 +483,7 @@ __metadata:
     vitest: 0.16.0
     vue-demi: 0.13.7
     vuedraggable: next
+    webfontloader: ^1.6.28
   languageName: unknown
   linkType: soft
 
@@ -723,6 +725,13 @@ __metadata:
   version: 0.0.14
   resolution: "@types/web-bluetooth@npm:0.0.14"
   checksum: 1eb694ff2ba6ef239e10024bfb205c087fb1a43aa8b4a31f3a3b7c90eccf2f55c7fb4c1057e382e1c2f4d6d8a137e68bf1255790b980c5ac95026419a623c6b5
+  languageName: node
+  linkType: hard
+
+"@types/webfontloader@npm:^1":
+  version: 1.6.34
+  resolution: "@types/webfontloader@npm:1.6.34"
+  checksum: acd945cbf76f22f9f1040ed0b86aafba0b0dd1f5fe05238896208273fd4243eec9412e0349fb4991948ee62102270ddacc21e354052dcbdcd5a3278131f83277
   languageName: node
   linkType: hard
 
@@ -6128,6 +6137,13 @@ __metadata:
   peerDependencies:
     vue: ^3.0.1
   checksum: 8b4c5a6b384361df97f7a3595d7772dfbb086bf97c6702a1117b532a9e49db2908cb5d21b7959cb10179714c4c2225e4be0b77b29f778923169ea8a8197a429f
+  languageName: node
+  linkType: hard
+
+"webfontloader@npm:^1.6.28":
+  version: 1.6.28
+  resolution: "webfontloader@npm:1.6.28"
+  checksum: cbebbe593cb0d27dbb4d418f7f96bd9893024f1f2062e858af76209b6524e25d766964b6e2a724f3b694fadef661dd3a01065455a96df05337b3281ca09ab656
   languageName: node
   linkType: hard
 
