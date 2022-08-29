@@ -142,8 +142,14 @@ export default defineComponent({
   .nav {
     @apply border-b border-b-secondary-25/50;
 
+    &:not(.nav--fill) {
+      .badge {
+        @apply ml-2;
+      }
+    }
+
     &--vertical {
-      @apply border-b-0 border-r border-r-secondary-25/50;
+      @apply pb-2 border-b-0 border-r border-r-secondary-25/50;
     }
   }
 
