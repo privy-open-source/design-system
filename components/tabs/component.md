@@ -362,7 +362,7 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
 ```
 
 ### Vertical
-Available alignment in vertical Tabs is just `left` and `right`
+The available alignment in vertical Tabs is just `left` and `right`
 
 <preview>
   <Tabs vertical nav-wrapper-class="w-48">
@@ -447,3 +447,54 @@ Available alignment in vertical Tabs is just `left` and `right`
   </Tabs>
 </template>
 ```
+
+## API
+
+### Props `<Tabs>`
+
+| Props               |   Type    | Default     | Description                                                            |
+|---------------------|:---------:|:-----------:|------------------------------------------------------------------------|
+| `variant`           | `String`  | `pills`     | Tabs navigation variant, valid value is `pills`, `lines` and `tabs`    |
+| `fill`              | `Boolean` | `false`     | Activate fullwidth Tabs navigation with `fill` type                    |
+| `justified`         | `Boolean` | `false`     | Activate fullwidth Tabs navigation with `justified` type               |
+| `align`             | `String`  | `left`      | Tabs navigation alignment, valid value is `left`, `center`, and `right`|
+| `vertical`          | `Boolean` | `false`     | Activate vertical Tabs                                                 |
+| `nav-wrapper-class` | `String`  | `undefined` | Class to place in the navigation wrapper                               |
+
+### Slots `<Tabs>`
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| `default`        | Content to place in the Nav                             |
+
+### Props `<Tab>`
+
+| Props          |   Type     | Default      | Description                                                 |
+|----------------|:----------:|:------------:|-------------------------------------------------------------|
+| `title`        | `String`   | `undefined`  | Place content in the Tab title                              |
+| `disabled`     | `Boolean`  | `false`      | Disable tab functionality and place it in disabled state    |
+
+### Slots `<Tab>`
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| `default`        | Content to place in the Tab                             |
+| `icon`           | Content to place icon in Tab navigation                 |
+| `title`          | Content to place icon in Tab title                      |
+
+### Events
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no event here</td>
+    </tr>
+  </tbody>
+</table>

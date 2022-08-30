@@ -503,8 +503,8 @@ When you need title for grouping navigation, you can add navigation title by usi
 | Props          |   Type    | Default     | Description                                                       |
 |----------------|:---------:|:-----------:|-------------------------------------------------------------------|
 | `variant`      | `String`  | `pills`     | Navigation variant, valid value is `pills`, `lines` and `tabs`    |
-|  `fill`        | `Boolean` | `false`     | Activate fullwidth navigation with `fill` type                    |
-|  `justified`   | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
+| `fill`         | `Boolean` | `false`     | Activate fullwidth navigation with `fill` type                    |
+| `justified`    | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
 | `align`        | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
 | `vertical`     | `Boolean` | `false`     | Activate vertical navigation                                      |
 | `title`        | `String`  | `undefined` | Title to place in the top of navigation block                     |
@@ -536,7 +536,7 @@ When you need title for grouping navigation, you can add navigation title by usi
 
 | Props          |   Type     | Default      | Description                                  |
 |----------------|:----------:|:------------:|-------------------------------------------------------------------|
-| `text`         | `String`   | `undefined`  | Place text in the submenu parent styling                          |
+| `text`         | `String`   | `undefined`  | Place text in the submenu parent                                  |
 | `collapsible`  | `Boolean`  | `false`      | Enable collapsible Submenu                                        |
 
 ### Slots `<NavSubItem>`
