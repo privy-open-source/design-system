@@ -114,13 +114,46 @@ Similar to [Dropdown](/dropdown/component), You can change button content via sl
 </template>
 ```
 
+## Hide Caret
+
+Similar with [Dropdown](/dropdown/component), you can hide caret icon with `no-caret` props.
+
+<preview>
+  <Dropdown text="Fruit">
+    <DropdownSubitem text="with Caret">
+      <DropdownItem>Apple</DropdownItem>
+      <DropdownItem>Avocado</DropdownItem>
+    </DropdownSubitem>
+    <DropdownSubitem text="without Caret" no-caret>
+      <DropdownItem>Banana</DropdownItem>
+      <DropdownItem>Blueberry</DropdownItem>
+    </DropdownSubitem>
+  </Dropdown>
+</preview>
+
+```vue
+<template>
+  <Dropdown text="Fruit">
+    <DropdownSubitem text="with Caret">
+      <DropdownItem>Apple</DropdownItem>
+      <DropdownItem>Avocado</DropdownItem>
+    </DropdownSubitem>
+    <DropdownSubitem text="without Caret" no-caret>
+      <DropdownItem>Banana</DropdownItem>
+      <DropdownItem>Blueberry</DropdownItem>
+    </DropdownSubitem>
+  </Dropdown>
+</template>
+```
+
 ## API
 
 ### Props
 
-| Props  |   Type   | Default | Description  |
-|--------|:--------:|:-------:|--------------|
-| `text` | `String` |   `-`   | Text content |
+| Props      |   Type    | Default | Description     |
+|------------|:---------:|:-------:|-----------------|
+| `text`     | `String`  |   `-`   | Text content    |
+| `no-caret` | `Boolean` | `false` | Hide caret icon |
 
 ### Slots
 

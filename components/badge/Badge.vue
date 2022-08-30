@@ -1,9 +1,9 @@
 <template>
-  <div
+  <span
     data-testid="badge"
     :class="classNames">
     <slot />
-  </div>
+  </span>
 </template>
 
 <script lang="ts">
