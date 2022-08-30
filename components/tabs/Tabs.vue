@@ -20,7 +20,13 @@
           data-testid="tab"
           :disabled="tab.disabled"
           :active="i === active"
+          :class="{ 'nav__item--no-label' : (!tab.title && !tab.slots.title) }"
           @click="selectTab(i, tab)">
+          <template
+            v-if="tab.slots.icon"
+            #icon>
+            <component :is="tab.slots.icon" />
+          </template>
           <template v-if="tab.slots.title">
             <component :is="tab.slots.title" />
           </template>
@@ -142,7 +148,7 @@ export default defineComponent({
   .nav {
     @apply border-b border-b-secondary-25/50;
 
-    &:not(.nav--fill) {
+    &__link {
       .badge {
         @apply ml-2;
       }

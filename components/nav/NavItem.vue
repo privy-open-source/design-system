@@ -7,7 +7,11 @@
       :href="link"
       :target="target"
       :class="classNames">
-      <slot name="icon" />
+      <span
+        v-if="$slots.icon"
+        class="nav__link__icon">
+        <slot name="icon" />
+      </span>
       <span
         v-if="$slots.default"
         class="nav__link__label">
@@ -21,6 +25,7 @@
 import {
   computed, defineComponent, PropType,
 } from 'vue-demi'
+
 type TargetVariant = '_blank' | '_self' | '_parent' | '_top'
 
 export default defineComponent({
@@ -78,6 +83,14 @@ export default defineComponent({
 
 <style lang="postcss">
 .nav {
+  &__item {
+    &&--no-label {
+      .nav__link__label {
+        @apply hidden;
+      }
+    }
+  }
+
   &__link {
     @apply block p-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-body-50 hover:text-body-100;
 
@@ -92,25 +105,45 @@ export default defineComponent({
     &--icon {
       @apply flex items-center;
 
-      svg {
+      .nav__link__icon {
         @apply grow-0;
+
+        img {
+          @apply w-5 h-5;
+        }
       }
 
       .nav__link__label {
         @apply shrink ml-3 w-full;
-
-        .badge {
-          @apply ml-auto;
-        }
       }
     }
 
     &__label {
       @apply flex;
+    }
+  }
 
-      .badge {
-        @apply ml-auto;
+  &:is(.nav--justified, .nav--fill) {
+    .nav__link {
+      &--icon {
+        .nav__link__label {
+          .badge {
+            @apply ml-auto;
+          }
+        }
       }
+
+      &__label {
+        .badge {
+          @apply ml-auto;
+        }
+      }
+    }
+  }
+
+  &&--condensed {
+    .nav__link {
+      @apply py-1;
     }
   }
 }

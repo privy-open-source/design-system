@@ -48,6 +48,10 @@ export default defineComponent({
       type   : String,
       default: undefined,
     },
+    condensed: {
+      type   : Boolean,
+      default: false,
+    },
   },
 
   setup (props) {
@@ -71,6 +75,9 @@ export default defineComponent({
 
       if (props.title)
         result.push('nav--has-title')
+
+      if (props.condensed)
+        result.push('nav--condensed')
 
       return result
     })
@@ -101,13 +108,18 @@ export default defineComponent({
   &&--lines {
     @apply text-center;
 
+    &:not(.nav--vertical) {
+      .nav__link {
+        @apply border-x-0;
+      }
+    }
     /**
     * Set active state
     * with border-bottom
     */
     .nav__link {
       &--active {
-        @apply border-b-body-100 border-x-0;
+        @apply border-b-body-100;
       }
     }
 
@@ -117,15 +129,19 @@ export default defineComponent({
     */
     &.nav--vertical {
       .nav__link {
+        @apply border-y-0;
+
         &--active {
-          @apply border-r border-r-body-100 border-y-0 rounded-tr-none;
+          @apply border-r border-r-body-100 rounded-tr-none;
         }
       }
 
       &.nav--align-right {
         .nav__link {
+          @apply border-r-0;
+
           &--active {
-            @apply border-l border-l-body-100 border-r-0 rounded-tl-none;
+            @apply border-l border-l-body-100 rounded-tl-none;
           }
         }
       }
@@ -183,6 +199,19 @@ export default defineComponent({
     .nav__link {
       &--active {
         @apply bg-secondary-5 rounded-b;
+      }
+    }
+
+    /**
+    * Remove background of
+    * active state in
+    * condensed mode
+    */
+    &.nav--condensed {
+      .nav__link {
+        &--active {
+          @apply bg-transparent;
+        }
       }
     }
 
@@ -249,8 +278,14 @@ export default defineComponent({
     @apply pt-2 flex-col;
 
     .nav {
+      @apply flex-col;
+
       &__link {
         @apply mb-0 -mr-[1px];
+      }
+
+      &__title {
+        @apply left-3;
       }
     }
 

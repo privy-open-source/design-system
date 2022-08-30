@@ -108,3 +108,18 @@ it('should be able to add navigation title via props `title`', () => {
   expect(nav).toHaveClass('nav', 'nav--has-title')
   expect(title).toBeInTheDocument()
 })
+
+it('should be able to make condensed navigation via props `condensed`', () => {
+  const screen = render({
+    components: { Nav },
+    template  : `
+      <Nav condensed>
+      </Nav>
+    `,
+  })
+
+  const nav = screen.queryByTestId('nav')
+
+  expect(nav).toBeInTheDocument()
+  expect(nav).toHaveClass('nav', 'nav--condensed')
+})

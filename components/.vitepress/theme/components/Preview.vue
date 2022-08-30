@@ -30,8 +30,12 @@ export default defineComponent({
 
   ul {
     &:is(.nav) {
-      @apply list-none;
+      @apply list-none mt-0;
     }
+  }
+
+  img {
+    max-width: inherit;
   }
 }
 </style>
