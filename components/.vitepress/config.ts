@@ -36,6 +36,10 @@ export default defineConfig({
             link: '/button-group/guide'
           },
           {
+            text: 'Color',
+            link: '/color/guide'
+          },
+          {
             text: 'Heading',
             link: '/heading/guide'
           }
