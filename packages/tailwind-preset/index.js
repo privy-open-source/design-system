@@ -216,5 +216,5 @@ module.exports = {
       'outline': '0 0 0 4px rgba(var(--tw-shadow-color, 220, 220, 220), 0.35)',
     },
   },
-  plugins: [require('@privyid/tailwind-animation')],
+  plugins: [require('@privyid/tailwind-animation'), require('@privyid/tailwind-extended')],
 }

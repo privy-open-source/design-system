@@ -7,7 +7,7 @@ vi.stubGlobal('Image', MockImage)
 it('should resolved if url is valid url', () => {
   const promise = loadImage('/imageA.jpg')
 
-  expect(promise).resolves.toBe('/imageA.jpg')
+  expect(promise).resolves.toContain({ src: '/imageA.jpg' })
 })
 
 it('should rejected if url is broken link', () => {

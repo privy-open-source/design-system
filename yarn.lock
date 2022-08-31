@@ -346,6 +346,70 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@interactjs/actions@npm:^1.10.17":
+  version: 1.10.17
+  resolution: "@interactjs/actions@npm:1.10.17"
+  dependencies:
+    "@interactjs/interact": 1.10.17
+  peerDependencies:
+    "@interactjs/core": 1.10.17
+    "@interactjs/utils": 1.10.17
+  dependenciesMeta:
+    "@interactjs/interact":
+      optional: true
+  checksum: 1ce4e459642e89160a268600253c4d9771a4cd1b0417711aaf3e7bd59f6799325826db8f767f3ae49d5045577aecd72b124d0c94da9a8fae491e8e087b9b6c4e
+  languageName: node
+  linkType: hard
+
+"@interactjs/auto-start@npm:^1.10.17":
+  version: 1.10.17
+  resolution: "@interactjs/auto-start@npm:1.10.17"
+  dependencies:
+    "@interactjs/interact": 1.10.17
+  peerDependencies:
+    "@interactjs/core": 1.10.17
+    "@interactjs/utils": 1.10.17
+  dependenciesMeta:
+    "@interactjs/interact":
+      optional: true
+  checksum: 5e8e6b3284fa75a246405a387cc62998e88a7ceec319524101df0bd83eb9814df642b48e835519a3fb955a60b1c8854dc65d5d852923933c44002d6427261571
+  languageName: node
+  linkType: hard
+
+"@interactjs/core@npm:1.10.17":
+  version: 1.10.17
+  resolution: "@interactjs/core@npm:1.10.17"
+  peerDependencies:
+    "@interactjs/utils": 1.10.17
+  checksum: 99c245211ae6e9c04519eb6952c4a58a7d02c8954685e3f47688ccbbaedce052d73620a84eef139f373d77187bf2e01e5ea36f36d544d42ad65486eb94e1cb44
+  languageName: node
+  linkType: hard
+
+"@interactjs/interact@npm:1.10.17, @interactjs/interact@npm:^1.10.17":
+  version: 1.10.17
+  resolution: "@interactjs/interact@npm:1.10.17"
+  dependencies:
+    "@interactjs/core": 1.10.17
+    "@interactjs/types": 1.10.17
+    "@interactjs/utils": 1.10.17
+  checksum: 694001ed11bcd0cb97ed1fc7fe63b68ed57b24abdb0f8d2adb3bc3f361ef1fa60b484826cefb0c66861dfa924e160c9b4c4d0db824573d65b8f4eb50ac47fb97
+  languageName: node
+  linkType: hard
+
+"@interactjs/types@npm:1.10.17":
+  version: 1.10.17
+  resolution: "@interactjs/types@npm:1.10.17"
+  checksum: 7e2d5e9448c714b4b2e00a423c33c259719bec3be87914cba1c80058eaecc8d5a587dcb29dcbb837d8832a4cf0eb26d9456f00d800f66717984952fb731891ec
+  languageName: node
+  linkType: hard
+
+"@interactjs/utils@npm:1.10.17":
+  version: 1.10.17
+  resolution: "@interactjs/utils@npm:1.10.17"
+  checksum: 0eeb2d82ec11249c8a3b48d3617733c80b9c10836e1a99436cf70ae778a548e44133d6c77c6984c0d34129746efbc313232b1512279477e2df830dac4ac2bba0
+  languageName: node
+  linkType: hard
+
 "@istanbuljs/schema@npm:^0.1.2, @istanbuljs/schema@npm:^0.1.3":
   version: 0.1.3
   resolution: "@istanbuljs/schema@npm:0.1.3"
@@ -437,6 +501,9 @@ __metadata:
   dependencies:
     "@carbon/icons-vue": 10.49.1
     "@fontsource/dm-sans": 4.5.8
+    "@interactjs/actions": ^1.10.17
+    "@interactjs/auto-start": ^1.10.17
+    "@interactjs/interact": ^1.10.17
     "@popperjs/core": 2.11.6
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": 1.1.4
@@ -468,6 +535,7 @@ __metadata:
     fuse.js: 6.6.2
     happy-dom: 5.4.0
     husky: 8.0.1
+    interactjs: ^1.10.17
     jest-extended: 2.0.0
     lint-staged: 13.0.3
     lodash: ^4.17.21
@@ -495,11 +563,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@privyid/tailwind-extended@workspace:^, @privyid/tailwind-extended@workspace:packages/tailwind-extended":
+  version: 0.0.0-use.local
+  resolution: "@privyid/tailwind-extended@workspace:packages/tailwind-extended"
+  peerDependencies:
+    tailwind: ">= 3.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@privyid/tailwind-preset@workspace:^, @privyid/tailwind-preset@workspace:packages/tailwind-preset":
   version: 0.0.0-use.local
   resolution: "@privyid/tailwind-preset@workspace:packages/tailwind-preset"
   dependencies:
     "@privyid/tailwind-animation": "workspace:^"
+    "@privyid/tailwind-extended": "workspace:^"
   peerDependencies:
     tailwind: ">= 3.0.0"
   languageName: unknown
@@ -3471,6 +3548,15 @@ __metadata:
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
+  languageName: node
+  linkType: hard
+
+"interactjs@npm:^1.10.17":
+  version: 1.10.17
+  resolution: "interactjs@npm:1.10.17"
+  dependencies:
+    "@interactjs/types": 1.10.17
+  checksum: a3754aa1ca5600084b33902097051f435ea0c89e96992e0a54bb3c780bd59e10f95997bc6b2c98fcfc2f7289ef0a7df192e93e83cceec7e5612e8d5912d74720
   languageName: node
   linkType: hard
 

@@ -56,7 +56,7 @@ export default defineComponent({
     const model = useVModel(props)
 
     const src = computed(() => {
-      if (!ready.value && !props.text)
+      if (!ready.value)
         return createSpinner(props.width, props.height)
 
       return model.value
@@ -113,3 +113,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="postcss">
+  .signature--text {
+    @apply max-w-full h-auto;
+  }
+</style>

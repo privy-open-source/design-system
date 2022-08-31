@@ -207,6 +207,10 @@ export default defineConfig({
             text: 'Signature Text',
             link: '/signature-text/component'
           },
+          {
+            text: 'Signature Draw',
+            link: '/signature-draw/component'
+          },
         ],
       },
     ]
