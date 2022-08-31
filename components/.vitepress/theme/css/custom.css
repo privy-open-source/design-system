@@ -2,8 +2,8 @@
   --font-family-base: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  --c-brand: #0065D1;
-  --c-brand-light: #408BDD;
+  --vp-c-brand: #0065D1;
+  --vp-c-brand-light: #408BDD;
   --code-bg-color: #0b2138;
   --c-text-light-1: #232323;
   --c-text-light-2: #5A5A5A;

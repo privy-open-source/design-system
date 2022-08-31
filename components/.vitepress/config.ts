@@ -3,8 +3,8 @@ import logo from './theme/assets/logo.svg'
 
 export default defineConfig({
   base       : process.env.BASE_URL ?? '/design-system/',
-  title      : 'Archi',
-  description: 'Archi - Open Source Design System by PrivyID',
+  title      : 'Persona',
+  description: 'Persona - PrivyID\'s Design System',
   themeConfig: {
     logo        : './assets/logo.svg',
     repo        : 'privy-open-source/design-system',
@@ -20,7 +20,7 @@ export default defineConfig({
       {
         text       : 'Guide',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Badge',
             link: '/badge/guide'
@@ -50,7 +50,7 @@ export default defineConfig({
       {
         text       : 'Base',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Avatar',
             link: '/avatar/component'
@@ -120,7 +120,7 @@ export default defineConfig({
       {
         text       : 'Typography',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Caption',
             link: '/caption/component'
@@ -142,7 +142,7 @@ export default defineConfig({
       {
         text       : 'Form',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Calendar',
             link: '/calendar/component'
@@ -180,7 +180,7 @@ export default defineConfig({
       {
         text       : 'Non-Component',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Dialog',
             link: '/dialog/component'
@@ -198,7 +198,7 @@ export default defineConfig({
       {
         text       : 'Dashboard',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Filterbar',
             link: '/filterbar/component'
