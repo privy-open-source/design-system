@@ -119,7 +119,9 @@ export default defineComponent({
     */
     .nav__link {
       &--active {
-        @apply border-b-body-100;
+        &:not(.nav__link--disabled) {
+          @apply border-b-body-100;
+        }
       }
     }
 
@@ -132,7 +134,9 @@ export default defineComponent({
         @apply border-y-0;
 
         &--active {
-          @apply border-r border-r-body-100 rounded-tr-none;
+          &:not(.nav__link--disabled) {
+            @apply border-r border-r-body-100 rounded-tr-none;
+          }
         }
       }
 
@@ -141,7 +145,9 @@ export default defineComponent({
           @apply border-r-0;
 
           &--active {
-            @apply border-l border-l-body-100 rounded-tl-none;
+            &:not(.nav__link--disabled) {
+              @apply border-l border-l-body-100 rounded-tl-none;
+            }
           }
         }
       }
@@ -160,7 +166,9 @@ export default defineComponent({
     */
     .nav__link {
       &--active {
-        @apply border-t-secondary-25/50 border-x-secondary-25/50 bg-white;
+        &:not(.nav__link--disabled) {
+          @apply border-t-secondary-25/50 border-x-secondary-25/50 bg-white;
+        }
       }
     }
 
@@ -171,14 +179,18 @@ export default defineComponent({
     &.nav--vertical {
       .nav__link {
         &--active {
-          @apply border-l-secondary-25/50 border-y-secondary-25/50 border-r-transparent bg-white rounded-l rounded-r-none;
+          &:not(.nav__link--disabled) {
+            @apply border-l-secondary-25/50 border-y-secondary-25/50 border-r-transparent bg-white rounded-l rounded-r-none;
+          }
         }
       }
 
       &.nav--align-right {
         .nav__link {
           &--active {
-            @apply border-r-secondary-25/50 border-y-secondary-25/50 border-l-transparent rounded-r rounded-l-none;
+            &:not(.nav__link--disabled) {
+              @apply border-r-secondary-25/50 border-y-secondary-25/50 border-l-transparent rounded-r rounded-l-none;
+            }
           }
         }
       }
@@ -198,7 +210,9 @@ export default defineComponent({
     */
     .nav__link {
       &--active {
-        @apply bg-secondary-5 rounded-b;
+        &:not(.nav__link--disabled) {
+          @apply bg-secondary-5 rounded-b;
+        }
       }
     }
 

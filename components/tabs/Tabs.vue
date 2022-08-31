@@ -4,11 +4,12 @@
     class="tabs"
     :class="classNames">
     <nav
-      data-testid="tabs-nav"
+      data-testid="tabs-nav-wrapper"
       class="tabs__nav"
       :class="navWrapperClass">
       <Nav
         class="nav"
+        data-testid="tabs-nav"
         :variant="variant"
         :align="align"
         :vertical="vertical"

@@ -9,11 +9,13 @@
       :class="classNames">
       <span
         v-if="$slots.icon"
+        data-testid="nav-icon"
         class="nav__link__icon">
         <slot name="icon" />
       </span>
       <span
         v-if="$slots.default"
+        data-testid="nav-label"
         class="nav__link__label">
         <slot />
       </span>

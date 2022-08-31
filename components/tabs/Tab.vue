@@ -5,6 +5,7 @@
     class="tab__panel">
     <div
       v-show="isShow"
+      data-testid="tab-content"
       class="tab__content">
       <slot />
     </div>
@@ -39,7 +40,7 @@ export default defineComponent({
     })
 
     const isShow = computedInject(TABS_POINTER, (active) => {
-      return active.value === index
+      return props.disabled ? false : active.value === index
     })
 
     return { index, isShow }
