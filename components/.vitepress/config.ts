@@ -38,6 +38,10 @@ export default defineConfig({
             link: '/button-group/guide'
           },
           {
+            text: 'Color',
+            link: '/color/guide'
+          },
+          {
             text: 'Heading',
             link: '/heading/guide'
           }
@@ -92,15 +96,35 @@ export default defineConfig({
             link: '/modal/component'
           },
           {
+            text: 'Nav',
+            link: '/nav/component'
+          },
+          {
+            text: 'Sidebar',
+            link: '/sidebar/component'
+          },
+          {
+            text: 'Sidebar Menu',
+            link: '/sidebar-menu/component'
+          },
+          {
             text: 'Spinner',
             link: '/spinner/component'
           },
+          {
+            text: 'Table',
+            link: '/table/component'
+          }
         ]
       },
       {
         text       : 'Typography',
         collapsable: true,
         children   : [
+          {
+            text: 'Caption',
+            link: '/caption/component'
+          },
           {
             text: 'Heading',
             link: '/heading/component'
@@ -168,6 +192,16 @@ export default defineConfig({
           {
             text: 'Toast',
             link: '/toast/component'
+          },
+        ],
+      },
+      {
+        text       : 'Dashboard',
+        collapsable: true,
+        children   : [
+          {
+            text: 'Filterbar',
+            link: '/filterbar/component'
           },
         ],
       }

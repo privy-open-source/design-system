@@ -128,3 +128,14 @@ it('should able to modify button content via slot `button-content`', async () =>
   expect(item3).toBeInTheDocument()
   expect(item4).toBeInTheDocument()
 })
+
+it('should caret icon if `no-caret` is provided', () => {
+  const screen = render({
+    components: { DropdownSubitem },
+    template  : '<DropdownSubitem />',
+  })
+
+  const caret = screen.queryByTestId('dropdown-subitem-next')
+
+  expect(caret).not.toBeInTheDocument()
+})

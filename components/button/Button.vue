@@ -188,7 +188,7 @@ export default defineComponent({
   * Button ghost variant
   */
   &--ghost {
-    @apply border-transparent bg-white hover:border-black hover:border-opacity-5 hover:bg-black hover:bg-opacity-5 active:bg-black active:bg-opacity-5 active:border-black active:border-opacity-5 focus:bg-black focus:bg-opacity-5 focus:border-black focus:border-opacity-5;
+    @apply border-transparent bg-transparent hover:border-black hover:border-opacity-5 hover:bg-black hover:bg-opacity-5 active:bg-black active:bg-opacity-5 active:border-black active:border-opacity-5 focus:bg-black focus:bg-opacity-5 focus:border-black focus:border-opacity-5;
   }
 
   /**
@@ -196,7 +196,7 @@ export default defineComponent({
   * in button link variant
   */
   &--link {
-    @apply border border-transparent underline;
+    @apply border border-transparent hover:underline;
 
     &.btn {
       &--primary {
@@ -230,7 +230,7 @@ export default defineComponent({
   }
 
   &--input {
-    @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
+    @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 focus:bg-secondary-25 focus:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
   }
 
   /**
