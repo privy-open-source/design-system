@@ -35,7 +35,8 @@
           :placeholder="placeholder"
           :color="color"
           :width="mode === 'rotate' ? height : width"
-          :height="mode === 'rotate' ? width : height" />
+          :height="mode === 'rotate' ? width : height"
+          :reset-label="resetLabel" />
         <Button @click="close">
           <span>{{ closeDrawLabel }}</span>
         </Button>
@@ -68,7 +69,7 @@ export default defineComponent({
   props: {
     modelValue: {
       type   : String,
-      default: undefined,
+      default: '',
     },
     width: {
       type   : Number,
@@ -85,6 +86,10 @@ export default defineComponent({
     placeholder: {
       type   : String,
       default: '',
+    },
+    resetLabel: {
+      type   : String,
+      default: 'Reset',
     },
     openDrawLabel: {
       type   : String,
@@ -185,7 +190,7 @@ export default defineComponent({
       .signature-draw__modal {
         @apply flex-col-reverse;
 
-        .signature-draw__clear {
+        .signature-draw__reset {
           @apply bottom-1 top-auto;
         }
 

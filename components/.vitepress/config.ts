@@ -208,12 +208,12 @@ export default defineConfig({
         collapsable: true,
         children   : [
           {
-            text: 'Signature Text',
-            link: '/signature-text/component'
-          },
-          {
             text: 'Signature Draw',
             link: '/signature-draw/component'
+          },
+          {
+            text: 'Signature Text',
+            link: '/signature-text/component'
           },
         ],
       },

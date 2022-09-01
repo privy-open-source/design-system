@@ -2,6 +2,7 @@ import '@interactjs/auto-start'
 import '@interactjs/actions/drag'
 import Interact from '@interactjs/interact'
 import { InteractEvent } from '@interactjs/types'
+import { throttle } from 'lodash'
 import {
   onBeforeUnmount,
   onMounted,
@@ -16,14 +17,16 @@ export interface DrawHooks {
 export default function useDraw (target: Ref<HTMLCanvasElement>, hooks?: DrawHooks) {
   onMounted(() => {
     if (target.value) {
+      const onmove = throttle(hooks.onmove, 1000 / 120 /* limit 120fps */)
+
       Interact(target.value)
         .styleCursor(false)
         .draggable({
           origin : 'self',
           inertia: true,
           onstart: hooks.onstart,
-          onmove : hooks.onmove,
-          onend  : hooks.onmove,
+          onmove : onmove,
+          onend  : onmove,
         })
     }
   })

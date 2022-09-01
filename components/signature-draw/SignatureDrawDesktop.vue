@@ -1,23 +1,27 @@
 <template>
   <div
-    class="signature-draw signature-draw--desktop">
+    class="signature-draw signature-draw--desktop"
+    data-testid="signature-draw-desktop">
     <canvas
       ref="canvas"
       class="signature-draw__canvas"
+      data-testid="signature-draw-canvas"
       :width="width"
       :height="height" />
     <Caption
       v-if="isBlank"
-      class="signature-draw__placeholder">
+      class="signature-draw__placeholder"
+      data-testid="signature-draw-placeholder">
       {{ placeholder }}
     </Caption>
     <div
       v-if="!isBlank"
       class="signature-draw__control">
       <Button
+        data-testid="signature-draw-reset"
         variant="link"
         size="xs"
-        class="signature-draw__clear"
+        class="signature-draw__reset"
         @click="reset()">
         <span>{{ resetLabel }}</span>
       </Button>
@@ -38,6 +42,7 @@ import {
   drawLine,
   placeImage,
   replaceColor,
+  toDataURL,
 } from './utils/canvas'
 import useDraw from './utils/use-draw'
 import { useVModel } from '../input/use-input'
@@ -50,7 +55,7 @@ export default defineComponent({
   props     : {
     modelValue: {
       type   : String,
-      default: undefined,
+      default: '',
     },
     width: {
       type   : Number,
@@ -96,7 +101,7 @@ export default defineComponent({
       if (!isBlank.value) {
         replaceColor(canvas.value, color)
 
-        model.value = canvas.value.toDataURL()
+        model.value = toDataURL(canvas.value)
       }
     }
 
@@ -115,7 +120,7 @@ export default defineComponent({
           drawLine(canvas.value, coordinate, options)
 
           isBlank.value = false
-          model.value   = canvas.value.toDataURL()
+          model.value   = toDataURL(canvas.value)
         }
       },
     })
@@ -152,7 +157,7 @@ export default defineComponent({
       @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center;
     }
 
-    &__clear {
+    &__reset {
       @apply absolute right-1 top-1;
     }
   }

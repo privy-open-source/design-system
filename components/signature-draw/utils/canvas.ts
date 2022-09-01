@@ -84,3 +84,7 @@ export async function placeImage (canvas: HTMLCanvasElement, url: string) {
   context.clearRect(0, 0, canvas.width, canvas.height)
   context.drawImage(image, 0, 0)
 }
+
+export function toDataURL (canvas: HTMLCanvasElement): string {
+  return canvas.toDataURL()
+}

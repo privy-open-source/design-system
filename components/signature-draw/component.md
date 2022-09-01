@@ -95,8 +95,8 @@ const result = ref('')
 | `color`          | `String` |    `#000000`    | Pencil color                                        |
 | `modelValue`     | `String` |       `-`       | Result of draw image, in [base64-dataURI][data-uri] |
 | `resetLabel`     | `String` |     `Reset`     | Reset button's label                                |
-| `openDrawLabel`  | `String` | `Click to Draw` | Start draw button's label                           |
-| `closeDrawLabel` | `String` |     `Save`      | Save draw button's label                            |
+| `openDrawLabel`  | `String` | `Click to Draw` | Start draw button's label (in mobile-view)          |
+| `closeDrawLabel` | `String` |     `Save`      | Save draw button's label (in mobile-view)           |
 
 ### Slots
 
