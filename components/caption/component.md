@@ -1,5 +1,5 @@
 <script setup>
-    import Caption from './Caption.vue'
+  import pCaption from './Caption.vue'
 </script>
 
 # Caption
@@ -8,38 +8,38 @@
 ### Basic Usage
 
 <preview>
-  <Caption>
+  <p-caption>
     Any caption should here
-  </Caption>
+  </p-caption>
 </preview>
 
 ```vue
 <template>
-  <Caption>
+  <p-caption>
     Any caption should here
-  </Caption>
+  </p-caption>
 </template>
 ```
 
 ## Bold
 
 <preview class="flex-col">
-  <Caption>
+  <p-caption>
     Default caption should here
-  </Caption>
-  <Caption bold>
+  </p-caption>
+  <p-caption bold>
     Bold caption should here
-  </Caption>
+  </p-caption>
 </preview>
 
 ```vue
 <template>
-  <Caption>
+  <p-caption>
     Default caption should here
-  </Caption>
-  <Caption bold>
+  </p-caption>
+  <p-caption bold>
     Bold caption should here
-  </Caption>
+  </p-caption>
 </template>
 ```
 

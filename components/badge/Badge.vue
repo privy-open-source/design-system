@@ -8,7 +8,9 @@
 
 <script lang="ts">
 import {
-  defineComponent, PropType, computed,
+  defineComponent,
+  PropType,
+  computed,
 } from 'vue-demi'
 
 type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'

@@ -1,4 +1,4 @@
-# @privyid/design-system
+# Persona Design System
 
 [![Build CI](https://github.com/privy-open-source/design-system/actions/workflows/node.js.yml/badge.svg)](https://github.com/privy-open-source/design-system/actions/workflows/node.js.yml)
 [![CodeQL](https://github.com/privy-open-source/design-system/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/privy-open-source/design-system/actions/workflows/codeql-analysis.yml)

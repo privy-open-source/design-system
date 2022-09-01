@@ -1,5 +1,5 @@
 <script setup>
-  import Button from './Button.vue'
+  import pButton from './Button.vue'
   import IconBee from '@carbon/icons-vue/lib/bee/20'
 </script>
 
@@ -10,24 +10,24 @@
 ### Simple Button
 
 <preview>
-  <Button>Click me</Button>
+  <p-button>Click me</p-button>
 </preview>
 
 ```vue
 <template>
-  <Button>Click me</Button>
+  <p-button>Click me</p-button>
 </template>
 ```
 
 ### Button with icon
 
 <preview>
-  <Button icon><IconBee /></Button>
+  <p-button icon><IconBee /></p-button>
 </preview>
 
 ```vue
 <template>
-  <Button icon><IconBee /></Button>
+  <p-button icon><IconBee /></p-button>
 </template>
 
 <script setup>
@@ -38,14 +38,14 @@
 ### Button with icon + text
 
 <preview class="flex-col items-center gap-3 md:flex-row">
-  <Button><IconBee /> Click Me</Button>
-  <Button>Click Me <IconBee /></Button>
+  <p-button><IconBee /> Click Me</p-button>
+  <p-button>Click Me <IconBee /></p-button>
 </preview>
 
 ```vue
 <template>
-  <Button><IconBee /> Click Me</Button>
-  <Button>Click Me <IconBee /></Button>
+  <p-button><IconBee /> Click Me</p-button>
+  <p-button>Click Me <IconBee /></p-button>
 </template>
 
 <script setup>
@@ -59,19 +59,19 @@ Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
 
 <preview>
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
-    <Button variant="solid">Click me</Button>
-    <Button variant="outline">Click me</Button>
-    <Button variant="ghost">Click me</Button>
-    <Button variant="link">Click me</Button>
+    <p-button variant="solid">Click me</p-button>
+    <p-button variant="outline">Click me</p-button>
+    <p-button variant="ghost">Click me</p-button>
+    <p-button variant="link">Click me</p-button>
   </div>
 </preview>
 
 ```vue
 <template>
-  <Button variant="solid">Click me</Button>
-  <Button variant="outline">Click me</Button>
-  <Button variant="ghost">Click me</Button>
-  <Button variant="link">Click me</Button>
+  <p-button variant="solid">Click me</p-button>
+  <p-button variant="outline">Click me</p-button>
+  <p-button variant="ghost">Click me</p-button>
+  <p-button variant="link">Click me</p-button>
 </template>
 ```
 
@@ -81,25 +81,25 @@ Button available in 7 different colors `primary`, `secondary`, `success`, `info`
 
 <preview>
   <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-    <Button color="primary">Click me</Button>
-    <Button color="secondary">Click me</Button>
-    <Button color="success">Click me</Button>
-    <Button color="info">Click me</Button>
-    <Button color="warning">Click me</Button>
-    <Button color="danger">Click me</Button>
-    <Button color="gold">Click me</Button>
+    <p-button color="primary">Click me</p-button>
+    <p-button color="secondary">Click me</p-button>
+    <p-button color="success">Click me</p-button>
+    <p-button color="info">Click me</p-button>
+    <p-button color="warning">Click me</p-button>
+    <p-button color="danger">Click me</p-button>
+    <p-button color="gold">Click me</p-button>
   </div>
 </preview>
 
 ```vue
 <template>
-  <Button color="primary">Click me</Button>
-  <Button color="secondary">Click me</Button>
-  <Button color="success">Click me</Button>
-  <Button color="info">Click me</Button>
-  <Button color="warning">Click me</Button>
-  <Button color="danger">Click me</Button>
-  <Button color="gold">Click me</Button>
+  <p-button color="primary">Click me</p-button>
+  <p-button color="secondary">Click me</p-button>
+  <p-button color="success">Click me</p-button>
+  <p-button color="info">Click me</p-button>
+  <p-button color="warning">Click me</p-button>
+  <p-button color="danger">Click me</p-button>
+  <p-button color="gold">Click me</p-button>
 </template>
 ```
 
@@ -107,45 +107,45 @@ It's also work with other variants (except `ghost`).
 
 <preview label="outline variant">
   <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-    <Button variant="outline" color="primary">Click me</Button>
-    <Button variant="outline" color="secondary">Click me</Button>
-    <Button variant="outline" color="success">Click me</Button>
-    <Button variant="outline" color="info">Click me</Button>
-    <Button variant="outline" color="warning">Click me</Button>
-    <Button variant="outline" color="danger">Click me</Button>
-    <Button variant="outline" color="gold">Click me</Button>
+    <p-button variant="outline" color="primary">Click me</p-button>
+    <p-button variant="outline" color="secondary">Click me</p-button>
+    <p-button variant="outline" color="success">Click me</p-button>
+    <p-button variant="outline" color="info">Click me</p-button>
+    <p-button variant="outline" color="warning">Click me</p-button>
+    <p-button variant="outline" color="danger">Click me</p-button>
+    <p-button variant="outline" color="gold">Click me</p-button>
   </div>
 </preview>
 
 <preview label="link variant">
   <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-    <Button variant="link" color="primary">Click me</Button>
-    <Button variant="link" color="secondary">Click me</Button>
-    <Button variant="link" color="success">Click me</Button>
-    <Button variant="link" color="info">Click me</Button>
-    <Button variant="link" color="warning">Click me</Button>
-    <Button variant="link" color="danger">Click me</Button>
-    <Button variant="link" color="gold">Click me</Button>
+    <p-button variant="link" color="primary">Click me</p-button>
+    <p-button variant="link" color="secondary">Click me</p-button>
+    <p-button variant="link" color="success">Click me</p-button>
+    <p-button variant="link" color="info">Click me</p-button>
+    <p-button variant="link" color="warning">Click me</p-button>
+    <p-button variant="link" color="danger">Click me</p-button>
+    <p-button variant="link" color="gold">Click me</p-button>
   </div>
 </preview>
 
 ```vue
 <template>
-  <Button variant="outline" color="primary">Click me</Button>
-  <Button variant="outline" color="secondary">Click me</Button>
-  <Button variant="outline" color="success">Click me</Button>
-  <Button variant="outline" color="info">Click me</Button>
-  <Button variant="outline" color="warning">Click me</Button>
-  <Button variant="outline" color="danger">Click me</Button>
-  <Button variant="outline" color="gold">Click me</Button>
+  <p-button variant="outline" color="primary">Click me</p-button>
+  <p-button variant="outline" color="secondary">Click me</p-button>
+  <p-button variant="outline" color="success">Click me</p-button>
+  <p-button variant="outline" color="info">Click me</p-button>
+  <p-button variant="outline" color="warning">Click me</p-button>
+  <p-button variant="outline" color="danger">Click me</p-button>
+  <p-button variant="outline" color="gold">Click me</p-button>
 
-  <Button variant="link" color="primary">Click me</Button>
-  <Button variant="link" color="secondary">Click me</Button>
-  <Button variant="link" color="success">Click me</Button>
-  <Button variant="link" color="info">Click me</Button>
-  <Button variant="link" color="warning">Click me</Button>
-  <Button variant="link" color="danger">Click me</Button>
-  <Button variant="link" color="gold">Click me</Button>
+  <p-button variant="link" color="primary">Click me</p-button>
+  <p-button variant="link" color="secondary">Click me</p-button>
+  <p-button variant="link" color="success">Click me</p-button>
+  <p-button variant="link" color="info">Click me</p-button>
+  <p-button variant="link" color="warning">Click me</p-button>
+  <p-button variant="link" color="danger">Click me</p-button>
+  <p-button variant="link" color="gold">Click me</p-button>
 </template>
 ```
 
@@ -154,18 +154,18 @@ It's also work with other variants (except `ghost`).
 3 sizes you can use: `xs`, `sm`, `md`, `lg`. default is `md`
 
 <preview class="flex-col items-center gap-3 md:flex-row">
-  <Button size="xs">Click me</Button>
-  <Button size="sm">Click me</Button>
-  <Button size="md">Click me</Button>
-  <Button size="lg">Click me</Button>
+  <p-button size="xs">Click me</p-button>
+  <p-button size="sm">Click me</p-button>
+  <p-button size="md">Click me</p-button>
+  <p-button size="lg">Click me</p-button>
 </preview>
 
 ```vue
 <template>
-  <Button size="xs">Click me</Button>
-  <Button size="sm">Click me</Button>
-  <Button size="md">Click me</Button>
-  <Button size="lg">Click me</Button>
+  <p-button size="xs">Click me</p-button>
+  <p-button size="sm">Click me</p-button>
+  <p-button size="md">Click me</p-button>
+  <p-button size="lg">Click me</p-button>
 </template>
 ```
 
@@ -174,18 +174,18 @@ It's also work with other variants (except `ghost`).
 You can add prop `pill` to make button more rounded
 
 <preview class="flex-col items-center gap-3 md:flex-row">
-  <Button size="xs" pill>Click me</Button>
-  <Button size="sm" pill>Click me</Button>
-  <Button size="md" pill>Click me</Button>
-  <Button size="lg" pill>Click me</Button>
+  <p-button size="xs" pill>Click me</p-button>
+  <p-button size="sm" pill>Click me</p-button>
+  <p-button size="md" pill>Click me</p-button>
+  <p-button size="lg" pill>Click me</p-button>
 </preview>
 
 ```vue
 <template>
-  <Button size="xs" pill>Click me</Button>
-  <Button size="sm" pill>Click me</Button>
-  <Button size="md" pill>Click me</Button>
-  <Button size="lg" pill>Click me</Button>
+  <p-button size="xs" pill>Click me</p-button>
+  <p-button size="sm" pill>Click me</p-button>
+  <p-button size="md" pill>Click me</p-button>
+  <p-button size="lg" pill>Click me</p-button>
 </template>
 ```
 
@@ -194,36 +194,36 @@ You can add prop `pill` to make button more rounded
 You can add prop `icon` to make button more square, it's suitable for button with icon only
 
 <preview class="items-center gap-3">
-  <Button size="xs" icon><IconBee /></Button>
-  <Button size="sm" icon><IconBee /></Button>
-  <Button size="md" icon><IconBee /></Button>
-  <Button size="lg" icon><IconBee /></Button>
+  <p-button size="xs" icon><IconBee /></p-button>
+  <p-button size="sm" icon><IconBee /></p-button>
+  <p-button size="md" icon><IconBee /></p-button>
+  <p-button size="lg" icon><IconBee /></p-button>
 </preview>
 
 ```vue
 <template>
-  <Button size="xs" icon><IconBee /></Button>
-  <Button size="sm" icon><IconBee /></Button>
-  <Button size="md" icon><IconBee /></Button>
-  <Button size="lg" icon><IconBee /></Button>
+  <p-button size="xs" icon><IconBee /></p-button>
+  <p-button size="sm" icon><IconBee /></p-button>
+  <p-button size="md" icon><IconBee /></p-button>
+  <p-button size="lg" icon><IconBee /></p-button>
 </template>
 ```
 
 You can also combine with `pill` mode to make round button
 
 <preview class="items-center gap-3">
-  <Button size="xs" icon pill><IconBee /></Button>
-  <Button size="sm" icon pill><IconBee /></Button>
-  <Button size="md" icon pill><IconBee /></Button>
-  <Button size="lg" icon pill><IconBee /></Button>
+  <p-button size="xs" icon pill><IconBee /></p-button>
+  <p-button size="sm" icon pill><IconBee /></p-button>
+  <p-button size="md" icon pill><IconBee /></p-button>
+  <p-button size="lg" icon pill><IconBee /></p-button>
 </preview>
 
 ```vue
 <template>
-  <Button size="xs" icon pill><IconBee /></Button>
-  <Button size="sm" icon pill><IconBee /></Button>
-  <Button size="md" icon pill><IconBee /></Button>
-  <Button size="lg" icon pill><IconBee /></Button>
+  <p-button size="xs" icon pill><IconBee /></p-button>
+  <p-button size="sm" icon pill><IconBee /></p-button>
+  <p-button size="md" icon pill><IconBee /></p-button>
+  <p-button size="lg" icon pill><IconBee /></p-button>
 </template>
 ```
 
@@ -231,19 +231,19 @@ You can also combine with `pill` mode to make round button
 
 <preview label="link variant">
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
-    <Button variant="solid" disabled>Click me</Button>
-    <Button variant="outline" color="gold" disabled>Click me</Button>
-    <Button variant="ghost" disabled>Click me</Button>
-    <Button variant="link" disabled>Click me</Button>
+    <p-button variant="solid" disabled>Click me</p-button>
+    <p-button variant="outline" color="gold" disabled>Click me</p-button>
+    <p-button variant="ghost" disabled>Click me</p-button>
+    <p-button variant="link" disabled>Click me</p-button>
   </div>
 </preview>
 
 ```vue
 <template>
-  <Button variant="solid" disabled>Click me</Button>
-  <Button variant="outline" disabled>Click me</Button>
-  <Button variant="ghost" disabled>Click me</Button>
-  <Button variant="link" disabled>Click me</Button>
+  <p-button variant="solid" disabled>Click me</p-button>
+  <p-button variant="outline" disabled>Click me</p-button>
+  <p-button variant="ghost" disabled>Click me</p-button>
+  <p-button variant="link" disabled>Click me</p-button>
 </template>
 ```
 

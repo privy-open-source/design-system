@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "yarn docs:dev",
-    "docs:dev": "vitepress dev components",
+    "docs:dev": "vitepress dev components --port 3000",
     "docs:build": "vitepress build components",
     "docs:serve": "vitepress serve components",
     "test": "vitest",

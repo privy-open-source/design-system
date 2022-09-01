@@ -107,7 +107,7 @@ export default defineComponent({
   * default style variant
   */
   &--solid {
-    @apply border hover:shadow-lg focus:shadow-none active:shadow-none text-white;
+    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-white;
 
     &.btn {
       &--primary {
@@ -142,7 +142,7 @@ export default defineComponent({
 
   &--outline,
   &--ghost {
-    @apply border text-body-75 hover:text-body-100 hover:shadow-lg focus:shadow-none active:shadow-none focus:text-body-100 active:text-body-100;
+    @apply border border-solid text-body-75 hover:text-body-100 hover:shadow-lg focus:shadow-none active:shadow-none focus:text-body-100 active:text-body-100;
   }
 
   /**
@@ -230,7 +230,7 @@ export default defineComponent({
   }
 
   &--input {
-    @apply border border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 focus:bg-secondary-25 focus:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
+    @apply border border-solid border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 focus:bg-secondary-25 focus:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
   }
 
   /**

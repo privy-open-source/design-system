@@ -1,6 +1,6 @@
 <script setup>
-  import Spinner from "./Spinner.vue"
-  import SpinnerRing from "./SpinnerRing.vue"
+  import pSpinner from "./Spinner.vue"
+  import pSpinnerRing from "./SpinnerRing.vue"
 </script>
 
 # Spinner
@@ -10,24 +10,24 @@
 ### Spinner
 
 <preview>
-  <Spinner />
+  <p-spinner />
 </preview>
 
 ```vue
 <template>
-  <Spinner />
+  <p-spinner />
 </template>
 ```
 
 ### Spinner Ring
 
 <preview>
-  <SpinnerRing />
+  <p-spinner-ring />
 </preview>
 
 ```vue
 <template>
-  <SpinnerRing />
+  <p-spinner-ring />
 </template>
 ```
 

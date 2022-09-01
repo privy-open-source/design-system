@@ -1,78 +1,78 @@
 <script setup>
-  import Radio from "./Radio.vue"
+  import pRadio from "./Radio.vue"
   import { ref } from "vue-demi"
 
   const value    = ref('')
   const selected = ref()
 </script>
 
-
 # Radio
 
 ## Usage
 
 ### Simple Usage
+
 <preview>
-  <Radio value="1" v-model="value">Radio Label</Radio>
+  <p-radio value="1" v-model="value">Radio Label</p-radio>
 </preview>
 
 ```vue
 <template>
-  <Radio value="1" v-model="value">Radio Label</Radio>
+  <p-radio value="1" v-model="value">Radio Label</p-radio>
 </template>
 ```
 
 ### With Subtext
 
 <preview>
-  <Radio v-model="value">
+  <p-radio v-model="value">
     <div>Radio Label</div>
     <div class="text-subtext-100">
       Text
     </div>
-  </Radio>
+  </p-radio>
 </preview>
 
 ```vue
 <template>
-  <Radio v-model="value">
+  <p-radio v-model="value">
     <div>Radio Label</div>
     <div class="text-subtext-100">
       Text
     </div>
-  </Radio>
+  </p-radio>
 </template>
 ```
 
 ## Disabled State
 
 <preview>
-  <Radio disabled>
+  <p-radio disabled>
     Radio Label
-  </Radio>
+  </p-radio>
 </preview>
 
 ```vue
 <template>
-  <Radio v-model="value" disabled>
+  <p-radio v-model="value" disabled>
     Radio Label
-  </Radio>
+  </p-radio>
 </template>
 ```
 
 ## Readonly State
 
 <preview>
-  <Radio readonly>
+  <p-radio readonly>
     Radio Label
-  </Radio>
+  </p-radio>
 </preview>
 
 ```vue
 <template>
-  <Radio readonly>
+  <p-radio readonly>
     Radio Label
-  </Radio>
+  </p-radio>
 </template>
 ```
 
@@ -80,9 +80,9 @@
 
 <preview class="justify-center">
   <div class="flex flex-col gap-3">
-    <Radio v-model="selected" value="apple">Apple</Radio>
-    <Radio v-model="selected" value="grape">Grape</Radio>
-    <Radio v-model="selected" value="orange">Orange</Radio>
+    <p-radio v-model="selected" value="apple">Apple</p-radio>
+    <p-radio v-model="selected" value="grape">Grape</p-radio>
+    <p-radio v-model="selected" value="orange">Orange</p-radio>
   </div>
 </preview>
 
@@ -92,9 +92,9 @@
 
 ```vue
 <template>
-  <Radio v-model="selected" value="apple">Apple</Radio>
-  <Radio v-model="selected" value="grape">Grape</Radio>
-  <Radio v-model="selected" value="orange">Orange</Radio>
+  <p-radio v-model="selected" value="apple">Apple</p-radio>
+  <p-radio v-model="selected" value="grape">Grape</p-radio>
+  <p-radio v-model="selected" value="orange">Orange</p-radio>
 </template>
 ```
 
@@ -104,9 +104,9 @@ Some case, you may need some [Checkbox](/checkbox/component) but work like a Rad
 
 <preview class="justify-center">
   <div class="flex flex-col gap-3">
-    <Radio apperance="checkbox" v-model="selected" value="apple">Apple</Radio>
-    <Radio apperance="checkbox" v-model="selected" value="grape">Grape</Radio>
-    <Radio apperance="checkbox" v-model="selected" value="orange">Orange</Radio>
+    <p-radio apperance="checkbox" v-model="selected" value="apple">Apple</p-radio>
+    <p-radio apperance="checkbox" v-model="selected" value="grape">Grape</p-radio>
+    <p-radio apperance="checkbox" v-model="selected" value="orange">Orange</p-radio>
   </div>
 </preview>
 
@@ -116,9 +116,9 @@ Some case, you may need some [Checkbox](/checkbox/component) but work like a Rad
 
 ```vue
 <template>
-  <Radio apperance="checkbox" v-model="selected" value="apple">Apple</Radio>
-  <Radio apperance="checkbox" v-model="selected" value="grape">Grape</Radio>
-  <Radio apperance="checkbox" v-model="selected" value="orange">Orange</Radio>
+  <p-radio apperance="checkbox" v-model="selected" value="apple">Apple</p-radio>
+  <p-radio apperance="checkbox" v-model="selected" value="grape">Grape</p-radio>
+  <p-radio apperance="checkbox" v-model="selected" value="orange">Orange</p-radio>
 </template>
 ```
 

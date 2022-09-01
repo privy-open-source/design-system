@@ -16,6 +16,9 @@ export default defineConfig({
     prevLinks   : false,
     lastUpdated : 'Last Updated',
     nav         : [],
+    socialLinks : [
+      { icon: 'github', link: 'https://github.com/privy-open-source/design-system' }
+    ],
     sidebar     : [
       {
         text       : 'Guide',

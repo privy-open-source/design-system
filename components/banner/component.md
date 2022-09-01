@@ -1,6 +1,6 @@
 <script setup>
-  import Banner from './Banner.vue'
-  import Button from '../button/Button.vue'
+  import pBanner from './Banner.vue'
+  import pButton from '../button/Button.vue'
 </script>
 
 # Banner
@@ -10,49 +10,49 @@
 ### Simple usage
 
 <preview class="flex-col">
-  <Banner>
+  <p-banner>
     Your enterprise Privy Balance is running out. Please topup now.
-  </Banner>
+  </p-banner>
 </preview>
 
 ```vue
 <template>
-  <Banner>
+  <p-banner>
     Your enterprise Privy Balance is running out. Please topup now.
-  </Banner>
+  </p-banner>
 </template>
 ```
 
 ### with Title
 
 <preview class="flex-col">
-  <Banner>
+  <p-banner>
     <div class="font-semibold">
       Your enterprise Privy Balance is running out. Please topup now.
     </div>
     <div class="text-sm">
       Your enterprise Privy Balance is running out. Please topup now.
     </div>
-  </Banner>
+  </p-banner>
 </preview>
 
 ```vue
 <template>
-  <Banner>
+  <p-banner>
     <div class="font-semibold">
       Your enterprise Privy Balance is running out. Please topup now.
     </div>
     <div class="text-sm">
       Your enterprise Privy Balance is running out. Please topup now.
     </div>
-  </Banner>
+  </p-banner>
 </template>
 ```
 
 ### with Title + Button
 
 <preview class="flex-col">
-  <Banner>
+  <p-banner>
     <div class="font-semibold">
       Your enterprise Privy Balance is running out. Please topup now.
     </div>
@@ -60,15 +60,15 @@
       Your enterprise Privy Balance is running out. Please topup now.
     </div>
     <div class="mt-3">
-      <Button variant="outline">Top Up Balance</Button>
-      <Button variant="link" color="secondary">Learn More</Button>
+      <p-button variant="outline">Top Up Balance</p-button>
+      <p-button variant="link" color="secondary">Learn More</p-button>
     </div>
-  </Banner>
+  </p-banner>
 </preview>
 
 ```vue
 <template>
-  <Banner>
+  <p-banner>
     <div class="font-semibold">
       Your enterprise Privy Balance is running out. Please topup now.
     </div>
@@ -76,10 +76,10 @@
       Your enterprise Privy Balance is running out. Please topup now.
     </div>
     <div class="mt-3">
-      <Button variant="outline">Top Up Balance</Button>
-      <Button variant="link" color="secondary">Learn More</Button>
+      <p-button variant="outline">Top Up Balance</p-button>
+      <p-button variant="link" color="secondary">Learn More</p-button>
     </div>
-  </Banner>
+  </p-banner>
 </template>
 ```
 
@@ -88,18 +88,18 @@
 Banner have 2 variants: `info` and `danger`, default is `info`
 
 <preview class="flex-col gap-3">
-  <Banner variant="info">Your enterprise Privy Balance is running out. Please topup now.</Banner>
-  <Banner variant="danger">Your enterprise Privy Balance is running out. Please topup now.</Banner>
+  <p-banner variant="info">Your enterprise Privy Balance is running out. Please topup now.</p-banner>
+  <p-banner variant="danger">Your enterprise Privy Balance is running out. Please topup now.</p-banner>
 </preview>
 
 ```vue
 <template>
-  <Banner variant="info">
+  <p-banner variant="info">
     Your enterprise Privy Balance is running out. Please topup now.
-  </Banner>
-  <Banner variant="danger">
+  </p-banner>
+  <p-banner variant="danger">
     Your enterprise Privy Balance is running out. Please topup now.
-  </Banner>
+  </p-banner>
 </template>
 ```
 
@@ -108,14 +108,14 @@ Banner have 2 variants: `info` and `danger`, default is `info`
 You can hide close button with `dismissable` set to `false`
 
 <preview class="flex-col">
-  <Banner :dismissable="false">Your enterprise Privy Balance is running out. Please topup now.</Banner>
+  <p-banner :dismissable="false">Your enterprise Privy Balance is running out. Please topup now.</p-banner>
 </preview>
 
 ```vue
 <template>
-  <Banner :dismissable="false">
+  <p-banner :dismissable="false">
     Your enterprise Privy Balance is running out. Please topup now.
-  </Banner>
+  </p-banner>
 </template>
 ```
 

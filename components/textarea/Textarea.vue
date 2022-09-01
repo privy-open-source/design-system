@@ -144,7 +144,7 @@ export default defineComponent({
   @apply flex flex-auto relative;
 
   &__input {
-    @apply p-3 rounded-sm border border-secondary-25 placeholder:text-subtext-75 w-full outline-none bg-white resize-none min-h-[46px];
+    @apply p-3 rounded-sm border border-secondary-25 border-solid placeholder:text-subtext-75 w-full outline-none bg-white resize-none min-h-[46px];
 
     &:focus {
       @apply border-secondary-75 ring ring-secondary-25 ring-opacity-30;
