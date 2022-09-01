@@ -1,6 +1,7 @@
 <template>
   <div
     class="signature-draw signature-draw--mobile"
+    data-testid="signature-draw-mobile"
     :class="classNames"
     :style="style">
     <div class="signature-draw__preview">
@@ -8,11 +9,13 @@
         <img
           :src="model"
           alt="signature-draw-preview"
+          data-testid="signature-draw-preview"
           @click="open()">
         <Button
           variant="link"
           size="xs"
           class="signature-draw__clear"
+          data-testid="signature-draw-edit"
           icon
           @click="open()">
           <IconEdit />
@@ -20,6 +23,7 @@
       </template>
       <template v-else>
         <Button
+          data-testid="signature-draw-open"
           @click="open">
           {{ openDrawLabel }}
         </Button>
@@ -28,7 +32,8 @@
     <transition name="zoom-in">
       <div
         v-if="isOpen"
-        class="signature-draw__modal">
+        class="signature-draw__modal"
+        data-testid="signature-draw-modal">
         <SignatureDrawDesktop
           v-model="rawModel"
           :class="classNames"
@@ -37,7 +42,9 @@
           :width="mode === 'rotate' ? height : width"
           :height="mode === 'rotate' ? width : height"
           :reset-label="resetLabel" />
-        <Button @click="close">
+        <Button
+          data-testid="signature-draw-close"
+          @click="close">
           <span>{{ closeDrawLabel }}</span>
         </Button>
       </div>

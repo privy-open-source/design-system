@@ -192,9 +192,9 @@ This component has build-in Fuzzy-search Adapter, powered by [Fuze.js](https://f
   import FuzzyAdapter from './select/adapter/fuzzy-adapter'
 
   const options = ref([
-    { text: '🍎 Apple', value: 'Apple' },
-    { text: '🍇 Grape', value: 'Grape' },
-    { text: '🍌 Banana', value: 'Banana'},
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape' },
+    { text: '🍌 Bananen', value: 'Banana'},
   ])
 </script>
 ```
