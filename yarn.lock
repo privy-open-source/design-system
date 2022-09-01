@@ -442,8 +442,8 @@ __metadata:
     "@rushstack/eslint-patch": 1.1.4
     "@testing-library/jest-dom": 5.16.5
     "@testing-library/vue": 6.6.0
-    "@types/lodash": ^4
-    "@types/lodash-es": ^4
+    "@types/lodash": 4.14.184
+    "@types/lodash-es": 4.17.6
     "@types/testing-library__jest-dom": 5.14.5
     "@typescript-eslint/eslint-plugin": 5.35.1
     "@typescript-eslint/parser": 5.35.1
@@ -469,8 +469,8 @@ __metadata:
     husky: 8.0.1
     jest-extended: 2.0.0
     lint-staged: 13.0.3
-    lodash: ^4.17.21
-    lodash-es: ^4.17.21
+    lodash: 4.17.21
+    lodash-es: 4.17.21
     nanodelay: 2.0.2
     postcss: 8.4.16
     postcss-nested: 5.0.6
@@ -643,7 +643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash-es@npm:^4":
+"@types/lodash-es@npm:4.17.6":
   version: 4.17.6
   resolution: "@types/lodash-es@npm:4.17.6"
   dependencies:
@@ -659,7 +659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4":
+"@types/lodash@npm:4.14.184":
   version: 4.14.184
   resolution: "@types/lodash@npm:4.14.184"
   checksum: 6d9a4d67f7f9d0ec3fd21174f3dd3d00629dc1227eb469450eace53adbc1f7e2330699c28d0fe093e5f0fef0f0e763098be1f779268857213224af082b62be21
@@ -3928,7 +3928,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash-es@npm:^4.17.21":
+"lodash-es@npm:4.17.21":
   version: 4.17.21
   resolution: "lodash-es@npm:4.17.21"
   checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
@@ -3942,7 +3942,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.17.21":
+"lodash@npm:4.17.21, lodash@npm:^4.17.15, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
