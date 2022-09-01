@@ -1,6 +1,6 @@
 <script setup>
   import Banner from "../banner/Banner.vue"
-  import Checkbox from "./Checkbox.vue"
+  import pCheckbox from "./Checkbox.vue"
   import { ref, computed } from "vue-demi"
 
   const value    = ref(false)
@@ -35,73 +35,73 @@
 ### Simple Usage
 
 <preview>
-  <Checkbox>Checklist Label</Checkbox>
+  <p-checkbox>Checklist Label</p-checkbox>
 </preview>
 
 ```vue
 <template>
-  <Checkbox>Checklist Label</Checkbox>
+  <p-checkbox>Checklist Label</p-checkbox>
 </template>
 ```
 
 ### With Subtext
 
 <preview>
-  <Checkbox>
+  <p-checkbox>
     <div>Checklist Label</div>
     <div class="text-subtext-100">
       Text
     </div>
-  </Checkbox>
+  </p-checkbox>
 </preview>
 
 ```vue
 <template>
-  <Checkbox>
+  <p-checkbox>
     <div>Checklist Label</div>
     <div class="text-subtext-100">
       Text
     </div>
-  </Checkbox>
+  </p-checkbox>
 </template>
 ```
 
 ## Disabled State
 
 <preview>
-  <Checkbox disabled>
+  <p-checkbox disabled>
     Checkbox Label
-  </Checkbox>
+  </p-checkbox>
 </preview>
 
 ```vue
 <template>
-  <Checkbox disabled>
+  <p-checkbox disabled>
     Checkbox Label
-  </Checkbox>
+  </p-checkbox>
 </template>
 ```
 
 ## Readonly State
 
 <preview>
-  <Checkbox readonly>
+  <p-checkbox readonly>
     Checkbox Label
-  </Checkbox>
+  </p-checkbox>
 </preview>
 
 ```vue
 <template>
-  <Checkbox readonly>
+  <p-checkbox readonly>
     Checkbox Label
-  </Checkbox>
+  </p-checkbox>
 </template>
 ```
 
 ## Binding v-model
 
 <preview class="flex-col items-center gap-3">
-  <Checkbox v-model="modelA">Checkbox Label</Checkbox>
+  <p-checkbox v-model="modelA">Checkbox Label</p-checkbox>
 </preview>
 
 **Result :**
@@ -110,7 +110,7 @@
 
 ```vue
 <template>
-  <Checkbox v-model="modelA">Text</Checkbox>
+  <p-checkbox v-model="modelA">Text</p-checkbox>
 </template>
 ```
 
@@ -119,9 +119,9 @@
 By default, value of toggle is always `Boolean`, but you can change it with `value` and `unchecked-value`.
 
 <preview class="flex-col items-center gap-3">
-  <Checkbox v-model="modelB" value="agree" unchecked-value="disagree">
+  <p-checkbox v-model="modelB" value="agree" unchecked-value="disagree">
     I agree with Term and Condition
-  </Checkbox>
+  </p-checkbox>
 </preview>
 
 **Result :**
@@ -130,12 +130,12 @@ By default, value of toggle is always `Boolean`, but you can change it with `val
 
 ```vue
 <template>
-  <Checkbox
+  <p-checkbox
     v-model="model"
-    value="on"
-    unchecked-value="off">
+    value="agree"
+    unchecked-value="disagree">
     Active
-  </Checkbox>
+  </p-checkbox>
 </template>
 ```
 
@@ -147,11 +147,11 @@ If v-model **state** is an *array* it will append the value instead of replacing
 
 <preview class="flex-col items-center">
   <div class="flex flex-col gap-3">
-    <Checkbox v-model="selected" value="apple">Apple</Checkbox>
-    <Checkbox v-model="selected" value="grape">Grape</Checkbox>
-    <Checkbox v-model="selected" value="pineapple">Pineapple</Checkbox>
-    <Checkbox v-model="selected" :value="{ id: 1, name: 'Tarjono' }">Object</Checkbox>
-    <Checkbox v-model="selected" :value="['Item 1']">Array</Checkbox>
+    <p-checkbox v-model="selected" value="apple">Apple</p-checkbox>
+    <p-checkbox v-model="selected" value="grape">Grape</p-checkbox>
+    <p-checkbox v-model="selected" value="pineapple">Pineapple</p-checkbox>
+    <p-checkbox v-model="selected" :value="{ id: 1, name: 'Tarjono' }">Object</p-checkbox>
+    <p-checkbox v-model="selected" :value="['Item 1']">Array</p-checkbox>
   </div>
 </preview>
 
@@ -162,11 +162,11 @@ If v-model **state** is an *array* it will append the value instead of replacing
 ```vue
 <template>
   <div class="flex flex-col gap-3">
-    <Checkbox v-model="selected" value="apple">Apple</Checkbox>
-    <Checkbox v-model="selected" value="grape">Grape</Checkbox>
-    <Checkbox v-model="selected" value="pineapple">Pineapple</Checkbox>
-    <Checkbox v-model="selected" :value="{ id: 1, name: 'Tarjono' }">Object</Checkbox>
-    <Checkbox v-model="selected" :value="['Item 1']">Array</Checkbox>
+    <p-checkbox v-model="selected" value="apple">Apple</p-checkbox>
+    <p-checkbox v-model="selected" value="grape">Grape</p-checkbox>
+    <p-checkbox v-model="selected" value="pineapple">Pineapple</p-checkbox>
+    <p-checkbox v-model="selected" :value="{ id: 1, name: 'Tarjono' }">Object</p-checkbox>
+    <p-checkbox v-model="selected" :value="['Item 1']">Array</p-checkbox>
   </div>
 </template>
 ```
@@ -177,15 +177,15 @@ Indeterminate is condition between `checked` and `unchecked`. It's usefull for c
 
 <preview class="flex-col items-center">
   <div class="flex flex-col gap-3">
-    <Checkbox
+    <p-checkbox
       v-model="selectAll"
       :indeterminate="indeterminate">
       Select All
-    </Checkbox>
+    </p-checkbox>
     <template v-for="item of items">
-      <Checkbox v-model="result" :value="item" class="ml-4">
+      <p-checkbox v-model="result" :value="item" class="ml-4">
         {{ item }}
-      </Checkbox>
+      </p-checkbox>
     </template>
   </div>
 </preview>
@@ -197,16 +197,16 @@ Indeterminate is condition between `checked` and `unchecked`. It's usefull for c
 ```vue
 <template>
   <div class="flex flex-col gap-3">
-    <Checkbox
+    <p-checkbox
       v-model="selectAll"
       :indeterminate="indeterminate">
       Select All
-    </Checkbox>
+    </p-checkbox>
 
     <template v-for="item of items">
-      <Checkbox v-model="result" :value="item" class="ml-4">
+      <p-checkbox v-model="result" :value="item" class="ml-4">
         {{ item }}
-      </Checkbox>
+      </p-checkbox>
     </template>
   </div>
 </template>

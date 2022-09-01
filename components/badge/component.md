@@ -1,5 +1,5 @@
 <script setup>
-  import Badge from './Badge.vue'
+  import pBadge from './Badge.vue'
 </script>
 
 # Badge
@@ -10,12 +10,12 @@ Badges are placed before/after the label of the thing they're quantifying, such 
 ### Basic Usage
 
 <preview>
-  <Badge>25</Badge>
+  <p-badge>25</p-badge>
 </preview>
 
 ```vue
 <template>
-  <Badge>25</Badge>
+  <p-badge>25</p-badge>
 </template>
 ```
 
@@ -23,24 +23,24 @@ Badges are placed before/after the label of the thing they're quantifying, such 
 Badge available in 7 different colors. There are `primary`, `secondary`, `success`, `info`, `warning`, `danger` and `gold`. Default color is `primary`
 
 <preview class="gap-4">
-  <Badge color="primary">25</Badge>
-  <Badge color="secondary">7K</Badge>
-  <Badge color="success">999+</Badge>
-  <Badge color="info">25</Badge>
-  <Badge color="warning">7K</Badge>
-  <Badge color="danger">999+</Badge>
-  <Badge color="gold">25</Badge>
+  <p-badge color="primary">25</p-badge>
+  <p-badge color="secondary">7K</p-badge>
+  <p-badge color="success">999+</p-badge>
+  <p-badge color="info">25</p-badge>
+  <p-badge color="warning">7K</p-badge>
+  <p-badge color="danger">999+</p-badge>
+  <p-badge color="gold">25</p-badge>
 </preview>
 
 ```vue
 <template>
-  <Badge color="primary">25</Badge>
-  <Badge color="secondary">7K</Badge>
-  <Badge color="success">999+</Badge>
-  <Badge color="info">25</Badge>
-  <Badge color="warning">7K</Badge>
-  <Badge color="danger">999+</Badge>
-  <Badge color="gold">25</Badge>
+  <p-badge color="primary">25</p-badge>
+  <p-badge color="secondary">7K</p-badge>
+  <p-badge color="success">999+</p-badge>
+  <p-badge color="info">25</p-badge>
+  <p-badge color="warning">7K</p-badge>
+  <p-badge color="danger">999+</p-badge>
+  <p-badge color="gold">25</p-badge>
 </template>
 ```
 
@@ -48,16 +48,16 @@ Badge available in 7 different colors. There are `primary`, `secondary`, `succes
 Badge has 3 variants namely `default`, `light` and `inverse`. When variant is not set, badge will looks as a `default`
 
 <preview class="gap-4">
-  <Badge>25</Badge>
-  <Badge variant="light">7K</Badge>
-  <Badge variant="inverse">999+</Badge>
+  <p-badge>25</p-badge>
+  <p-badge variant="light">7K</p-badge>
+  <p-badge variant="inverse">999+</p-badge>
 </preview>
 
 ```vue
 <template>
-  <Badge>25</Badge>
-  <Badge variant="light">7K</Badge>
-  <Badge variant="inverse">999+</Badge>
+  <p-badge>25</p-badge>
+  <p-badge variant="light">7K</p-badge>
+  <p-badge variant="inverse">999+</p-badge>
 </template>
 ```
 

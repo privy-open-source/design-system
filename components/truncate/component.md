@@ -1,5 +1,5 @@
 <script setup>
-  import Truncate from './Truncate.vue'
+  import pTruncate from './Truncate.vue'
 </script>
 
 # Truncate
@@ -9,14 +9,14 @@
 ### Simple Usage
 
 <preview>
-  <Truncate
+  <p-truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30" />
 </preview>
 
 ```vue
 <template>
-  <Truncate
+  <p-truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30" />
 </template>
@@ -25,7 +25,7 @@
 ## Custom Omission
 
 <preview>
-  <Truncate
+  <p-truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
     omission=" [...]" />
@@ -33,7 +33,7 @@
 
 ```vue
 <template>
-  <Truncate
+  <p-truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
     omission=" [...]" />
@@ -43,7 +43,7 @@
 ## Expandable
 
 <preview>
-  <Truncate
+  <p-truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
     expandable />
@@ -51,7 +51,7 @@
 
 ```vue
 <template>
-  <Truncate
+  <p-truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
     expandable />
@@ -63,7 +63,7 @@
 You can change "show more" and "show less" text via prop `show-more-text` and `show-less-text`
 
 <preview>
-  <Truncate
+  <p-truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
     expandable
@@ -73,7 +73,7 @@ You can change "show more" and "show less" text via prop `show-more-text` and `s
 
 ```vue
 <template>
-  <Truncate
+  <p-truncate
     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
     length="30"
     expandable

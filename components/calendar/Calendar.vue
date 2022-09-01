@@ -216,16 +216,13 @@ export default defineComponent({
         viewmode.value = value
     })
 
-    watch(cursor, (value, oldValue) => {
-      transition.value = value > oldValue
-        ? 'slide-left'
-        : 'slide-right'
-    })
+    watch([viewmode, cursor], ([vm, cursor], [vmOld, cursorOld]) => {
+      const mode = CalendarFormat.indexOf(vm) - CalendarFormat.indexOf(vmOld)
 
-    watch(viewmode, (value, oldValue) => {
-      transition.value = CalendarFormat.indexOf(value) > CalendarFormat.indexOf(oldValue)
-        ? 'zoom-out'
-        : 'zoom-in'
+      if (mode !== 0)
+        transition.value = mode > 0 ? 'zoom-out' : 'zoom-in'
+      else
+        transition.value = cursor > cursorOld ? 'slide-left' : 'slide-right'
     })
 
     return {

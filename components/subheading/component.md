@@ -1,5 +1,5 @@
 <script setup>
-  import Subheading from './Subheading.vue'
+  import pSubheading from './Subheading.vue'
 </script>
 
 <style scoped lang="postcss">
@@ -17,60 +17,60 @@ Used for the title of any sub-sections
 ### Basic Usage
 
 <preview>
-  <Subheading>
+  <p-subheading>
     Any subtitle should here
-  </Subheading>
+  </p-subheading>
 </preview>
 
 ```vue
 <template>
-  <Subheading>
+  <p-subheading>
     Any subtitle should here
-  </Subheading>
+  </p-subheading>
 </template>
 ```
 
 ## Sizing
 
 <preview>
-  <Subheading size="sm">
+  <p-subheading size="sm">
     Any subtitle should here
-  </Subheading>
-  <Subheading size="md">
+  </p-subheading>
+  <p-subheading size="md">
     Any subtitle should here
-  </Subheading>
+  </p-subheading>
 </preview>
 
 ```vue
 <template>
-  <Subheading size="sm">
+  <p-subheading size="sm">
     Any subtitle should here
-  </Subheading>
-  <Subheading size="md">
+  </p-subheading>
+  <p-subheading size="md">
     Any subtitle should here
-  </Subheading>
+  </p-subheading>
 </template>
 ```
 
 ## Overline
 
 <preview>
-  <Subheading overline="normal">
+  <p-subheading overline="normal">
     Any section title should here
-  </Subheading>
-  <Subheading overline="medium">
+  </p-subheading>
+  <p-subheading overline="medium">
     Any section title should here
-  </Subheading>
+  </p-subheading>
 </preview>
 
 ```vue
 <template>
-  <Subheading overline="normal">
+  <p-subheading overline="normal">
     Any section title should here
-  </Subheading>
-  <Subheading overline="medium">
+  </p-subheading>
+  <p-subheading overline="medium">
     Any section title should here
-  </Subheading>
+  </p-subheading>
 </template>
 ```
 

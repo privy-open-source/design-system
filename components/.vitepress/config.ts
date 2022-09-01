@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitepress'
+import logo from './theme/assets/logo.svg'
 
 export default defineConfig({
   base       : process.env.BASE_URL ?? '/design-system/',
-  title      : 'Design System',
-  description: 'Privy Design System',
+  title      : 'Persona',
+  description: 'Persona - PrivyID\'s Design System',
   themeConfig: {
+    logo        : './assets/logo.svg',
     repo        : 'privy-open-source/design-system',
     docsDir     : 'components',
     docsBranch  : 'main',
@@ -14,11 +16,14 @@ export default defineConfig({
     prevLinks   : false,
     lastUpdated : 'Last Updated',
     nav         : [],
+    socialLinks : [
+      { icon: 'github', link: 'https://github.com/privy-open-source/design-system' }
+    ],
     sidebar     : [
       {
         text       : 'Guide',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Badge',
             link: '/badge/guide'
@@ -48,7 +53,7 @@ export default defineConfig({
       {
         text       : 'Base',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Avatar',
             link: '/avatar/component'
@@ -118,7 +123,7 @@ export default defineConfig({
       {
         text       : 'Typography',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Caption',
             link: '/caption/component'
@@ -140,7 +145,7 @@ export default defineConfig({
       {
         text       : 'Form',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Calendar',
             link: '/calendar/component'
@@ -178,7 +183,7 @@ export default defineConfig({
       {
         text       : 'Non-Component',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Dialog',
             link: '/dialog/component'
@@ -196,7 +201,7 @@ export default defineConfig({
       {
         text       : 'Dashboard',
         collapsable: true,
-        children   : [
+        items      : [
           {
             text: 'Filterbar',
             link: '/filterbar/component'

@@ -1,5 +1,5 @@
 <script setup>
-  import Textarea from './Textarea.vue'
+  import pTextarea from './Textarea.vue'
 </script>
 
 # Textarea
@@ -9,46 +9,46 @@
 ### Simple Usage
 
 <preview>
-  <Textarea />
+  <p-textarea />
 </preview>
 
 ```vue
 <template>
-  <Textarea />
+  <p-textarea />
 </template>
 ```
 
 ## Placeholder
 
 <preview>
-  <Textarea placeholder="Write something" />
+  <p-textarea placeholder="Write something" />
 </preview>
 
 ```vue
 <template>
-  <Textarea placeholder="Write something" />
+  <p-textarea placeholder="Write something" />
 </template>
 ```
 
 ## Disabled State
 <preview>
-  <Textarea disabled />
+  <p-textarea disabled />
 </preview>
 
 ```vue
 <template>
-  <Textarea disabled />
+  <p-textarea disabled />
 </template>
 ```
 
 ## Readonly State
 <preview>
-  <Textarea readonly />
+  <p-textarea readonly />
 </preview>
 
 ```vue
 <template>
-  <Textarea readonly />
+  <p-textarea readonly />
 </template>
 ```
 
@@ -56,12 +56,12 @@
 Enable resize button via prop `resize`
 
 <preview>
-  <Textarea resize />
+  <p-textarea resize />
 </preview>
 
 ```vue
 <template>
-  <Textarea resize />
+  <p-textarea resize />
 </template>
 ```
 
@@ -70,12 +70,12 @@ Enable resize button via prop `resize`
 Auto adjust textarea based on text height.
 
 <preview>
-  <Textarea rows="1" auto-grow />
+  <p-textarea rows="1" auto-grow />
 </preview>
 
 ```vue
 <template>
-  <Textarea rows="1" auto-grow />
+  <p-textarea rows="1" auto-grow />
 </template>
 ```
 
@@ -84,14 +84,14 @@ Auto adjust textarea based on text height.
 Show character counter with prop `show-counter`
 
 <preview class="flex-col gap-3">
-  <Textarea show-counter />
-  <Textarea show-counter maxlength="50" />
+  <p-textarea show-counter />
+  <p-textarea show-counter maxlength="50" />
 </preview>
 
 ```vue
 <template>
-  <Textarea show-counter />
-  <Textarea show-counter maxlength="50" />
+  <p-textarea show-counter />
+  <p-textarea show-counter maxlength="50" />
 </template>
 ```
 

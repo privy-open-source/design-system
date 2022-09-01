@@ -1,5 +1,5 @@
 <script setup>
-    import Heading from './Heading.vue'
+    import pHeading from './Heading.vue'
 </script>
 
 <style scoped lang="postcss">
@@ -25,62 +25,62 @@ Use for the title of each top-level page section. The default element of heading
 ### Basic Usage
 
 <preview>
-  <Heading>
+  <p-heading>
     Any title should here
-  </Heading>
+  </p-heading>
 </preview>
 
 ```vue
 <template>
-  <Heading>
+  <p-heading>
     Any title should here
-  </Heading>
+  </p-heading>
 </template>
 ```
 
 ## Setting The Element
 
 <preview>
-  <Heading element="h1">
+  <p-heading element="h1">
     Heading 1
-  </Heading>
-  <Heading element="h2">
+  </p-heading>
+  <p-heading element="h2">
     Heading 2
-  </Heading>
-  <Heading element="h3">
+  </p-heading>
+  <p-heading element="h3">
     Heading 3
-  </Heading>
-  <Heading element="h4">
+  </p-heading>
+  <p-heading element="h4">
     Heading 4
-  </Heading>
-  <Heading element="h5">
+  </p-heading>
+  <p-heading element="h5">
     Heading 5
-  </Heading>
-  <Heading element="h6">
+  </p-heading>
+  <p-heading element="h6">
     Heading 6
-  </Heading>
+  </p-heading>
 </preview>
 
 ```vue
 <template>
-  <Heading element="h1">
+  <p-heading element="h1">
     Heading 1
-  </Heading>
-  <Heading element="h2">
+  </p-heading>
+  <p-heading element="h2">
     Heading 2
-  </Heading>
-  <Heading element="h3">
+  </p-heading>
+  <p-heading element="h3">
     Heading 3
-  </Heading>
-  <Heading element="h4">
+  </p-heading>
+  <p-heading element="h4">
     Heading 4
-  </Heading>
-  <Heading element="h5">
+  </p-heading>
+  <p-heading element="h5">
     Heading 5
-  </Heading>
-  <Heading element="h6">
+  </p-heading>
+  <p-heading element="h6">
     Heading 6
-  </Heading>
+  </p-heading>
 </template>
 ```
 

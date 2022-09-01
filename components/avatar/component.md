@@ -1,5 +1,5 @@
 <script setup>
-  import Avatar from './Avatar.vue'
+  import pAvatar from './Avatar.vue'
   import IconUser from '@carbon/icons-vue/lib/events/20'
 </script>
 
@@ -10,39 +10,39 @@
 ### Using image
 
 <preview>
-  <Avatar src="https://picsum.photos/50" />
+  <p-avatar src="https://picsum.photos/50" />
 </preview>
 
 ```vue
 <template>
-  <Avatar src="https://picsum.photos/50" />
+  <p-avatar src="https://picsum.photos/50" />
 </template>
 ```
 
 ### Using alias
 
 <preview>
-  <Avatar variant="alias" name="Tarjono Smith" />
+  <p-avatar variant="alias" name="Tarjono Smith" />
 </preview>
 
 ```vue
 <template>
-  <Avatar variant="alias" name="Tarjono Smith" />
+  <p-avatar variant="alias" name="Tarjono Smith" />
 </template>
 ```
 
 ### Using icon
 <preview>
-  <Avatar>
+  <p-avatar>
     <IconUser />
-  </Avatar>
+  </p-avatar>
 </preview>
 
 ```vue
 <template>
-  <Avatar>
+  <p-avatar>
     <IconUser />
-  </Avatar>
+  </p-avatar>
 </template>
 
 <script setup>
@@ -55,20 +55,20 @@
 There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is `md`
 
 <preview class="flex-col items-center gap-3 lg:flex-row">
-  <Avatar src="https://picsum.photos/24" size="xs" />
-  <Avatar src="https://picsum.photos/32" size="sm" />
-  <Avatar src="https://picsum.photos/40" size="md" />
-  <Avatar src="https://picsum.photos/56" size="lg" />
-  <Avatar src="https://picsum.photos/96" size="xl" />
+  <p-avatar src="https://picsum.photos/24" size="xs" />
+  <p-avatar src="https://picsum.photos/32" size="sm" />
+  <p-avatar src="https://picsum.photos/40" size="md" />
+  <p-avatar src="https://picsum.photos/56" size="lg" />
+  <p-avatar src="https://picsum.photos/96" size="xl" />
 </preview>
 
 ```vue
 <template>
-  <Avatar src="https://picsum.photos/24" size="xs" />
-  <Avatar src="https://picsum.photos/32" size="sm" />
-  <Avatar src="https://picsum.photos/40" size="md" />
-  <Avatar src="https://picsum.photos/56" size="lg" />
-  <Avatar src="https://picsum.photos/96" size="xl" />
+  <p-avatar src="https://picsum.photos/24" size="xs" />
+  <p-avatar src="https://picsum.photos/32" size="sm" />
+  <p-avatar src="https://picsum.photos/40" size="md" />
+  <p-avatar src="https://picsum.photos/56" size="lg" />
+  <p-avatar src="https://picsum.photos/96" size="xl" />
 </template>
 ```
 
@@ -77,14 +77,14 @@ There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is
 Avatar has 2 style variant: `image` and `alias`
 
 <preview class="gap-3">
-  <Avatar variant="image" src="https://picsum.photos/40" />
-  <Avatar variant="alias" name="Tarjono Smith" />
+  <p-avatar variant="image" src="https://picsum.photos/40" />
+  <p-avatar variant="alias" name="Tarjono Smith" />
 </preview>
 
 ```vue
 <template>
-  <Avatar variant="image" src="https://picsum.photos/40" />
-  <Avatar variant="alias" name="Tarjono Smith" />
+  <p-avatar variant="image" src="https://picsum.photos/40" />
+  <p-avatar variant="alias" name="Tarjono Smith" />
 </template>
 ```
 
@@ -98,20 +98,20 @@ If prop `variant` not set, it will detect the variant with some caveats:
 ```vue
 <template>
   <!-- This will use `image` -->
-  <Avatar src="https://picsum.photos/40" />
+  <p-avatar src="https://picsum.photos/40" />
   <!-- This will use `alias` -->
-  <Avatar name="Tarjono Smith" />
+  <p-avatar name="Tarjono Smith" />
   <!-- This will use `image` -->
-  <Avatar />
+  <p-avatar />
 </template>
 ```
 
 **Result**:
 
 <preview class="gap-3">
-  <Avatar variant="image" src="https://picsum.photos/40" />
-  <Avatar variant="alias" name="Tarjono Smith" />
-  <Avatar />
+  <p-avatar variant="image" src="https://picsum.photos/40" />
+  <p-avatar variant="alias" name="Tarjono Smith" />
+  <p-avatar />
 </preview>
 
 ## API

@@ -34,8 +34,8 @@
 
   const selectOnly = defineFilter([
     {
-      type: 'select',
-      key : 'location',
+      type   : 'select',
+      key    : 'location',
       options: [
         'Jakarta',
         'Bandung',
@@ -138,8 +138,8 @@ import { defineFilter } from './use-filterbar'
 
 const schema = defineFilter([
   {
-    type: 'select',
-    key : 'location',
+    type   : 'select',
+    key    : 'location',
     options: [
       'Jakarta',
       'Bandung',

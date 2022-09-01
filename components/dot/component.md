@@ -1,5 +1,5 @@
 <script setup>
-  import Dot from './Dot.vue'
+  import pDot from './Dot.vue'
 </script>
 
 <style scoped lang="postcss">
@@ -22,12 +22,12 @@ Dot is a sub-component used for [Badge](/badge/component) and Label
 ### Basic Usage
 
 <preview>
-  <Dot />
+  <p-dot />
 </preview>
 
 ```vue
 <template>
-  <Dot />
+  <p-dot />
 </template>
 ```
 
@@ -35,24 +35,24 @@ Dot is a sub-component used for [Badge](/badge/component) and Label
 Dot available in 7 different colors `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`. default is `primary`
 
 <preview>
-  <Dot color="primary" />
-  <Dot color="secondary" />
-  <Dot color="success" />
-  <Dot color="info" />
-  <Dot color="warning" />
-  <Dot color="danger" />
-  <Dot color="gold" />
+  <p-dot color="primary" />
+  <p-dot color="secondary" />
+  <p-dot color="success" />
+  <p-dot color="info" />
+  <p-dot color="warning" />
+  <p-dot color="danger" />
+  <p-dot color="gold" />
 </preview>
 
 ```vue
 <template>
-  <Dot color="primary" />
-  <Dot color="secondary" />
-  <Dot color="success" />
-  <Dot color="info" />
-  <Dot color="warning" />
-  <Dot color="danger" />
-  <Dot color="gold" />
+  <p-dot color="primary" />
+  <p-dot color="secondary" />
+  <p-dot color="success" />
+  <p-dot color="info" />
+  <p-dot color="warning" />
+  <p-dot color="danger" />
+  <p-dot color="gold" />
 </template>
 ```
 

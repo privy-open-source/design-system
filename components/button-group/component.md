@@ -1,9 +1,9 @@
 <script setup>
   import { ref } from "vue-demi"
-  import ButtonGroup from './ButtonGroup.vue'
-  import Button from '../button/Button.vue'
-  import Dropdown from '../dropdown/Dropdown.vue'
-  import DropdownItem from '../dropdown/DropdownItem.vue'
+  import pButtonGroup from './ButtonGroup.vue'
+  import pButton from '../button/Button.vue'
+  import pDropdown from '../dropdown/Dropdown.vue'
+  import pDropdownItem from '../dropdown/DropdownItem.vue'
   import IconChevronLeft from '@carbon/icons-vue/lib/chevron--left/20'
   import IconChevronRight from '@carbon/icons-vue/lib/chevron--right/20'
   import IconChevronDown from '@carbon/icons-vue/lib/chevron--down/20'
@@ -11,45 +11,48 @@
 </script>
 
 # Button Group
-Button Group is a collection of buttons consisting of at least 2 buttons in single line. 
+
+Button Group is a collection of buttons consisting of at least 2 buttons in single line.
 Therefore, the Button Group is very dependent on the [Button](/button/component) component. But it should be underlined that not all props on the Button can work here.
+
 ## Usage
 
 ### Simple Button
 
 <preview class="flex-col items-center">
-  <Button-Group>
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-  </Button-Group>
+  <p-button-group>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
 </preview>
 
 ```vue
 <template>
-  <Button-Group>
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-  </Button-Group>
+  <p-button-group>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
 </template>
 ```
 ### Button with Addon
+
 Place one add-on on either side of a Button. You may also make Button all addon.
 
 #### Addon Left
 
 <preview>
-  <Button-Group>
-    <Button icon><IconChevronLeft /></Button>
-    <Button>Button Text</Button>
-  </Button-Group>
+  <p-button-group>
+    <p-button icon><IconChevronLeft /></p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
 </preview>
 
 ```vue
 <template>
-  <Button-Group>
-    <Button icon><IconChevronLeft /></Button>
-    <Button>Button Text</Button>
-  </Button-Group>
+  <p-button-group>
+    <p-button icon><IconChevronLeft /></p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
 </template>
 
 <script setup>
@@ -61,35 +64,36 @@ Place one add-on on either side of a Button. You may also make Button all addon.
 In the button group, to simplify several actions in one button, it can be combined with the [Dropdown](/dropdown/component) component.
 
 <preview>
-  <Button-Group>
-    <Button>Button Text</Button>
-    <Dropdown
+  <p-button-group>
+    <p-button>Button Text</p-button>
+    <p-dropdown
+      no-caret
       icon>
       <template #button-content>
         <IconChevronDown />
       </template>
-      <DropdownItem>Action</DropdownItem>
-      <DropdownItem>Another action</DropdownItem>
-      <DropdownItem>Something else here</DropdownItem>
-    </Dropdown>
-  </Button-Group>
+      <p-dropdown-item>Action</p-dropdown-item>
+      <p-dropdown-item>Another action</p-dropdown-item>
+      <p-dropdown-item>Something else here</p-dropdown-item>
+    </p-dropdown>
+  </p-button-group>
 </preview>
-
 
 ```vue
 <template>
-  <Button-Group>
-    <Button>Button Text</Button>
-    <Dropdown
+  <p-button-group>
+    <p-button>Button Text</p-button>
+    <p-dropdown
+      no-caret
       icon>
       <template #button-content>
         <IconChevronDown />
       </template>
-      <DropdownItem>Action</DropdownItem>
-      <DropdownItem>Another action</DropdownItem>
-      <DropdownItem>Something else here</DropdownItem>
-    </Dropdown>
-  </Button-Group>
+      <p-dropdown-item>Action</p-dropdown-item>
+      <p-dropdown-item>Another action</p-dropdown-item>
+      <p-dropdown-item>Something else here</p-dropdown-item>
+    </p-dropdown>
+  </p-button-group>
 </template>
 
 <script setup>
@@ -99,19 +103,20 @@ In the button group, to simplify several actions in one button, it can be combin
 
 #### All Addon
 Button Group all addon is group a series of buttons with only icon
+
 <preview>
-  <Button-Group>
-    <Button icon><IconChevronLeft /></Button>
-    <Button icon><IconChevronRight /></Button>
-  </Button-Group>
+  <p-button-group>
+    <p-button icon><IconChevronLeft /></p-button>
+    <p-button icon><IconChevronRight /></p-button>
+  </p-button-group>
 </preview>
 
 ```vue
 <template>
-  <Button-Group>
-    <Button icon><IconChevronLeft /></Button>
-    <Button icon><IconChevronRight /></Button>
-  </Button-Group>
+  <p-button-group>
+    <p-button icon><IconChevronLeft /></p-button>
+    <p-button icon><IconChevronRight /></p-button>
+  </p-button-group>
 </template>
 
 <script setup>
@@ -120,41 +125,39 @@ Button Group all addon is group a series of buttons with only icon
 </script>
 ```
 
-
-
 ## Variants
 
 Button Group just available in 2 variants: `solid` and `outline`. You can make these variants by applying variant to each button in a group.
 
 <preview class="flex-col items-center gap-3">
   <div>
-    <Button-Group>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group>
-      <Button variant="outline">Button Text</Button>
-      <Button variant="outline">Button Text</Button>
-      <Button variant="outline">Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button variant="outline">Button Text</p-button>
+      <p-button variant="outline">Button Text</p-button>
+      <p-button variant="outline">Button Text</p-button>
+    </p-button-group>
   </div>
 </preview>
 
 ```vue
 <template>
-  <Button-Group>
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-  </Button-Group>
-  <Button-Group>
-    <Button variant="outline">Button Text</Button>
-    <Button variant="outline">Button Text</Button>
-    <Button variant="outline">Button Text</Button>
-  </Button-Group>
+  <p-button-group>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
+  <p-button-group>
+    <p-button variant="outline">Button Text</p-button>
+    <p-button variant="outline">Button Text</p-button>
+    <p-button variant="outline">Button Text</p-button>
+  </p-button-group>
 </template>
 ```
 
@@ -162,93 +165,93 @@ Button Group just available in 2 variants: `solid` and `outline`. You can make t
 You can change color of Button Group by applying color to every Button in a group.
 <preview class="flex-col items-center gap-3">
   <div>
-    <Button-Group>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group>
-      <Button color="secondary">Button Text</Button>
-      <Button color="secondary">Button Text</Button>
-      <Button color="secondary">Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button color="secondary">Button Text</p-button>
+      <p-button color="secondary">Button Text</p-button>
+      <p-button color="secondary">Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group>
-      <Button color="success">Button Text</Button>
-      <Button color="success">Button Text</Button>
-      <Button color="success">Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button color="success">Button Text</p-button>
+      <p-button color="success">Button Text</p-button>
+      <p-button color="success">Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group>
-      <Button color="warning">Button Text</Button>
-      <Button color="warning">Button Text</Button>
-      <Button color="warning">Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button color="warning">Button Text</p-button>
+      <p-button color="warning">Button Text</p-button>
+      <p-button color="warning">Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group>
-      <Button color="info">Button Text</Button>
-      <Button color="info">Button Text</Button>
-      <Button color="info">Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button color="info">Button Text</p-button>
+      <p-button color="info">Button Text</p-button>
+      <p-button color="info">Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group>
-      <Button color="danger">Button Text</Button>
-      <Button color="danger">Button Text</Button>
-      <Button color="danger">Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button color="danger">Button Text</p-button>
+      <p-button color="danger">Button Text</p-button>
+      <p-button color="danger">Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group>
-      <Button color="gold">Button Text</Button>
-      <Button color="gold">Button Text</Button>
-      <Button color="gold">Button Text</Button>
-    </Button-Group>
+    <p-button-group>
+      <p-button color="gold">Button Text</p-button>
+      <p-button color="gold">Button Text</p-button>
+      <p-button color="gold">Button Text</p-button>
+    </p-button-group>
   </div>
 </preview>
 
 ```vue
 <template>
-  <Button-Group>
-    <Button color="primary">Button Text</Button>
-    <Button color="primary">Button Text</Button>
-    <Button color="primary">Button Text</Button>
-  </Button-Group>
-  <Button-Group>
-    <Button color="secondary">Button Text</Button>
-    <Button color="secondary">Button Text</Button>
-    <Button color="secondary">Button Text</Button>
-  </Button-Group>
-  <Button-Group>
-    <Button color="success">Button Text</Button>
-    <Button color="success">Button Text</Button>
-    <Button color="success">Button Text</Button>
-  </Button-Group>
-  <Button-Group>
-    <Button color="warning">Button Text</Button>
-    <Button color="warning">Button Text</Button>
-    <Button color="warning">Button Text</Button>
-  </Button-Group>
-  <Button-Group>
-    <Button color="info">Button Text</Button>
-    <Button color="info">Button Text</Button>
-    <Button color="info">Button Text</Button>
-  </Button-Group>
-  <Button-Group>
-    <Button color="danger">Button Text</Button>
-    <Button color="danger">Button Text</Button>
-    <Button color="danger">Button Text</Button>
-  </Button-Group>
-  <Button-Group>
-    <Button color="gold">Button Text</Button>
-    <Button color="gold">Button Text</Button>
-    <Button color="gold">Button Text</Button>
-  </Button-Group>
+  <p-button-group>
+    <p-button color="primary">Button Text</p-button>
+    <p-button color="primary">Button Text</p-button>
+    <p-button color="primary">Button Text</p-button>
+  </p-button-group>
+  <p-button-group>
+    <p-button color="secondary">Button Text</p-button>
+    <p-button color="secondary">Button Text</p-button>
+    <p-button color="secondary">Button Text</p-button>
+  </p-button-group>
+  <p-button-group>
+    <p-button color="success">Button Text</p-button>
+    <p-button color="success">Button Text</p-button>
+    <p-button color="success">Button Text</p-button>
+  </p-button-group>
+  <p-button-group>
+    <p-button color="warning">Button Text</p-button>
+    <p-button color="warning">Button Text</p-button>
+    <p-button color="warning">Button Text</p-button>
+  </p-button-group>
+  <p-button-group>
+    <p-button color="info">Button Text</p-button>
+    <p-button color="info">Button Text</p-button>
+    <p-button color="info">Button Text</p-button>
+  </p-button-group>
+  <p-button-group>
+    <p-button color="danger">Button Text</p-button>
+    <p-button color="danger">Button Text</p-button>
+    <p-button color="danger">Button Text</p-button>
+  </p-button-group>
+  <p-button-group>
+    <p-button color="gold">Button Text</p-button>
+    <p-button color="gold">Button Text</p-button>
+    <p-button color="gold">Button Text</p-button>
+  </p-button-group>
 </template>
 ```
 
@@ -258,57 +261,57 @@ Instead of applying button sizing prop to every button in a group, you just can 
 
 <preview class="flex-col items-center gap-3">
   <div>
-    <Button-Group size="xs">
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-    </Button-Group>
+    <p-button-group size="xs">
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group size="sm">
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-    </Button-Group>
+    <p-button-group size="sm">
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group size="md">
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-    </Button-Group>
+    <p-button-group size="md">
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group size="lg">
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-    </Button-Group>
+    <p-button-group size="lg">
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+    </p-button-group>
   </div>
 </preview>
 
 ```vue
 <template>
-  <Button-Group size="xs">
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-  </Button-Group>
-  <Button-Group size="sm">
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-  </Button-Group>
-  <Button-Group size="md">
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-  </Button-Group>
-  <Button-Group size="lg">
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-    <Button>Button Text</Button>
-  </Button-Group>
+  <p-button-group size="xs">
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
+  <p-button-group size="sm">
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
+  <p-button-group size="md">
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
+  <p-button-group size="lg">
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+  </p-button-group>
 </template>
 ```
 ## Pill mode
@@ -317,36 +320,36 @@ You just add `pill` in Button Group to make button more rounded. Prop `pill` of 
 
 <preview class="flex-col items-center gap-3">
   <div>
-    <Button-Group pill>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-    </Button-Group>
+    <p-button-group pill>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+    <p-button>Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group pill>
-      <Button variant="outline">Button Text</Button>
-      <Button variant="outline">Button Text</Button>
-      <Button variant="outline">Button Text</Button>
-    </Button-Group>
+    <p-button-group pill>
+      <p-button variant="outline">Button Text</p-button>
+      <p-button variant="outline">Button Text</p-button>
+      <p-button variant="outline">Button Text</p-button>
+    </p-button-group>
   </div>
 </preview>
 
 ```vue
 <template>
   <div>
-    <Button-Group pill>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-      <Button>Button Text</Button>
-    </Button-Group>
+    <p-button-group pill>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+      <p-button>Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
-    <Button-Group pill>
-      <Button variant="outline">Button Text</Button>
-      <Button variant="outline">Button Text</Button>
-      <Button variant="outline">Button Text</Button>
-    </Button-Group>
+    <p-button-group pill>
+      <p-button variant="outline">Button Text</p-button>
+      <p-button variant="outline">Button Text</p-button>
+      <p-button variant="outline">Button Text</p-button>
+    </p-button-group>
   </div>
   <div>
 </template>
@@ -360,6 +363,7 @@ You just add `pill` in Button Group to make button more rounded. Prop `pill` of 
 |------------|:---------:|:---------:|---------------------------------------------------------------------|
 | `size`     | `String`  |   `md`    | Size of button group, valid value is `xs`, `sm`, `md` and `lg`      |
 | `pill`     | `Boolean` |  `false`  | Enable pill mode                                                    |
+
 ### Slots
 
 | Name      | Description                                               |

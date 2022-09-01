@@ -1,8 +1,7 @@
 <script setup>
-  import Card from './Card.vue'
-  import Button from '../button/Button.vue'
-  import CardSection from './CardSection.vue'
-  import Heading from '../heading/Heading.vue'
+  import pCard from './Card.vue'
+  import pButton from '../button/Button.vue'
+  import pCardSection from './CardSection.vue'
 </script>
 
 <style scoped lang="postcss">
@@ -35,102 +34,102 @@
 ### Basic Usage
 
 <preview>
-  <Card>
+  <p-card>
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
     what you need and detach it.
-  </Card>
+  </p-card>
 </preview>
 
 ```vue
 <template>
-  <Card>
+  <p-card>
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
     what you need and detach it.
-  </Card>
+  </p-card>
 </template>
 ```
 
 ### Card with Header
 <preview>
-  <Card
+  <p-card
     title="Any Title Should Here">
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
     what you need and detach it.
-  </Card>
-  <Card
+  </p-card>
+  <p-card
     title="Any Title Should Here">
     <template #action>
-      <Button color="primary" variant="link">Button Text</Button>
+      <p-button color="primary" variant="link">Button Text</p-button>
     </template>
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
     what you need and detach it.
-  </Card>
+  </p-card>
 </preview>
 
 ```vue
 <template>
-  <Card
+  <p-card
     title="Any Title Should Here">
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
     what you need and detach it.
-  </Card>
-  <Card
+  </p-card>
+  <p-card
     title="Any Title Should Here">
     <template #action>
-      <Button color="primary" variant="link">Button Text</Button>
+      <p-button color="primary" variant="link">Button Text</p-button>
     </template>
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
     what you need and detach it.
-  </Card>
+  </p-card>
 </template>
 ```
 
 ### Card with Footer
 <preview>
-  <Card
+  <p-card
     title="Any Title Should Here">
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
     what you need and detach it.
     <template #footer>
-      <Button variant="outline" color="primary">Enable Sample Button</Button>
-      <Button variant="link" color="primary">Button Text</Button>
+      <p-button variant="outline" color="primary">Enable Sample Button</p-button>
+      <p-button variant="link" color="primary">Button Text</p-button>
     </template>
-  </Card>
+  </p-card>
 </preview>
 
 ```vue
 <template>
-  <Card
+  <p-card
     title="Any Title Should Here">
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
     what you need and detach it.
     <template #footer>
-      <Button variant="outline" color="primary">Enable Sample Button</Button>
-      <Button variant="link" color="primary">Button Text</Button>
+      <p-button variant="outline" color="primary">Enable Sample Button</p-button>
+      <p-button variant="link" color="primary">Button Text</p-button>
     </template>
-  </Card>
+  </p-card>
 </template>
 ```
 
 ## Sectioned
 <preview>
-  <Card
+  <p-card
     title="Card with Section"
     sectioned>
-    <Card-Section>
+    <p-card-section>
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
       what you need and detach it.
-    </Card-Section>
-    <Card-Section
+    </p-card-section>
+    <p-card-section
       title="Subtitle supposedly here">
       <template #action>
         <a href="#" class="underline text-primary-100 hover:text-primary-hovered">Edit</a>
@@ -138,44 +137,45 @@
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
       what you need and detach it.
-    </Card-Section>
-  </Card>
-  <Card
+    </p-card-section>
+  </p-card>
+
+  <p-card
     title="Card with Sub-Section"
     sectioned>
     <template #action>
-      <Button variant="link" color="primary">Button Text</Button>
+      <p-button variant="link" color="primary">Button Text</p-button>
     </template>
-    <Card-Section>
+    <p-card-section>
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
       what you need and detach it.
-    </Card-Section>
-    <Card-Section
+    </p-card-section>
+    <p-card-section
       title="Subtitle supposedly here">
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
       what you need and detach it.
-      <Card-Section>
+      <p-card-section>
         While here you will see the content of cards, everything goes here.
         If you need custom cards, take the component which more represent to
         what you need and detach it.
-      </Card-Section>
-    </Card-Section>
-  </Card>
+      </p-card-section>
+    </p-card-section>
+  </p-card>
 </preview>
 
 ```vue
 <template>
-  <Card
+  <p-card
     title="Card Section"
     sectioned>
-    <Card-Section>
+    <p-card-section>
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
       what you need and detach it.
-    </Card-Section>
-    <Card-Section
+    </p-card-section>
+    <p-card-section
       title="Subtitle supposedly here">
       <template #action>
         <a href="#" class="underline text-primary-100 hover:text-primary-hovered">Edit</a>
@@ -183,38 +183,38 @@
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
       what you need and detach it.
-    </Card-Section>
-  </Card>
+    </p-card-section>
+  </p-card>
 
-  <Card
+  <p-card
     title="Card Sub-Section"
     sectioned>
     <template #action>
-      <Button variant="link" color="primary">Button Text</Button>
+      <p-button variant="link" color="primary">Button Text</p-button>
     </template>
-    <Card-Section>
+    <p-card-section>
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
       what you need and detach it.
-    </Card-Section>
-    <Card-Section
+    </p-card-section>
+    <p-card-section
       title="Subtitle supposedly here">
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
       what you need and detach it.
-      <Card-Section>
+      <p-card-section>
         While here you will see the content of cards, everything goes here.
         If you need custom cards, take the component which more represent to
         what you need and detach it.
-      </Card-Section>
-    </Card-Section>
-  </Card>
+      </p-card-section>
+    </p-card-section>
+  </p-card>
 </template>
 ```
 
 ## Callout
 <preview>
-  <Card
+  <p-card
     title="Hello and Happy New Year!"
     element="div"
     callout>
@@ -224,20 +224,20 @@
         every bit of it and we’re sure you’ll do even better next year.
         There’s a 30% membership renewal discount waiting for you when you come back.
         <div class="pt-8">
-          <Button variant="outline" color="secondary">Collect Discount</Button>
-          <Button variant="link" color="primary">Learn More</Button>
+          <p-button variant="outline" color="secondary">Collect Discount</p-button>
+          <p-button variant="link" color="primary">Learn More</p-button>
         </div>
       </div>
       <div class="w-1/4">
         <img src="./assets/images/img-card-callout-01.svg">
       </div>
     </div>
-  </Card>
+  </p-card>
 </preview>
 
 ```vue
 <template>
-  <Card
+  <p-card
     title="Hello and Happy New Year!"
     element="div"
     callout>
@@ -247,15 +247,15 @@
         every bit of it and we’re sure you’ll do even better next year.
         There’s a 30% membership renewal discount waiting for you when you come back.
         <div class="pt-8">
-          <Button variant="outline" color="secondary">Collect Discount</Button>
-          <Button variant="link" color="primary">Learn More</Button>
+          <p-button variant="outline" color="secondary">Collect Discount</p-button>
+          <p-button variant="link" color="primary">Learn More</p-button>
         </div>
       </div>
       <div class="w-1/4">
         <img src="./assets/images/img-card-callout-01.svg">
       </div>
     </div>
-  </Card>
+  </p-card>
 </template>
 ```
 

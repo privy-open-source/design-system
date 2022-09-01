@@ -1,5 +1,5 @@
 <script setup>
-  import Label from './Label.vue'
+  import pLabel from './Label.vue'
 </script>
 
 <style scoped lang="postcss">
@@ -20,12 +20,12 @@
 
 ### Basic Usage
 <preview>
-  <Label>Label</Label>
+  <p-label>Label</p-label>
 </preview>
 
 ```vue
 <template>
-  <Label>Label</Label>
+  <p-label>Label</p-label>
 </template>
 ```
 
@@ -33,24 +33,24 @@
 Label available in 7 different colors. There are `primary`, `secondary`, `success`, `info`, `warning`, `danger` and `gold`. Default color is `primary`
 
 <preview>
-  <Label color="primary">Label</Label>
-  <Label color="secondary">Label</Label>
-  <Label color="success">Label</Label>
-  <Label color="info">Label</Label>
-  <Label color="warning">Label</Label>
-  <Label color="danger">Label</Label>
-  <Label color="gold">Label</Label>
+  <p-label color="primary">Label</p-label>
+  <p-label color="secondary">Label</p-label>
+  <p-label color="success">Label</p-label>
+  <p-label color="info">Label</p-label>
+  <p-label color="warning">Label</p-label>
+  <p-label color="danger">Label</p-label>
+  <p-label color="gold">Label</p-label>
 </preview>
 
 ```vue
 <template>
-  <Label color="primary">Label</Label>
-  <Label color="secondary">Label</Label>
-  <Label color="success">Label</Label>
-  <Label color="info">Label</Label>
-  <Label color="warning">Label</Label>
-  <Label color="danger">Label</Label>
-  <Label color="gold">Label</Label>
+  <p-label color="primary">Label</p-label>
+  <p-label color="secondary">Label</p-label>
+  <p-label color="success">Label</p-label>
+  <p-label color="info">Label</p-label>
+  <p-label color="warning">Label</p-label>
+  <p-label color="danger">Label</p-label>
+  <p-label color="gold">Label</p-label>
 </template>
 ```
 
@@ -58,16 +58,16 @@ Label available in 7 different colors. There are `primary`, `secondary`, `succes
 Label has 3 variants namely `default`, `light` and `dot`. When variant is not set, label will looks as a `default`
 
 <preview>
-  <Label>Label</Label>
-  <Label variant="light">Label</Label>
-  <Label variant="dot">Label</Label>
+  <p-label>Label</p-label>
+  <p-label variant="light">Label</p-label>
+  <p-label variant="dot">Label</p-label>
 </preview>
 
 ```vue
 <template>
-  <Label>Label</Label>
-  <Label variant="light">Label</Label>
-  <Label variant="dot">Label</Label>
+  <p-label>Label</p-label>
+  <p-label variant="light">Label</p-label>
+  <p-label variant="dot">Label</p-label>
 </template>
 ```
 
@@ -75,18 +75,18 @@ Label has 3 variants namely `default`, `light` and `dot`. When variant is not se
 Label has 4 size, namely `lg`, `md`, `sm` and `xs`. When size is not set, default label is `md`
 
 <preview>
-  <Label size="lg">Label</Label>
-  <Label size="md">Label</Label>
-  <Label size="sm">Label</Label>
-  <Label size="xs">Label</Label>
+  <p-label size="lg">Label</p-label>
+  <p-label size="md">Label</p-label>
+  <p-label size="sm">Label</p-label>
+  <p-label size="xs">Label</p-label>
 </preview>
 
 ```vue
 <template>
-  <Label size="lg">Label</Label>
-  <Label size="md">Label</Label>
-  <Label size="sm">Label</Label>
-  <Label size="xs">Label</Label>
+  <p-label size="lg">Label</p-label>
+  <p-label size="md">Label</p-label>
+  <p-label size="sm">Label</p-label>
+  <p-label size="xs">Label</p-label>
 </template>
 ```
 
@@ -94,16 +94,16 @@ Label has 4 size, namely `lg`, `md`, `sm` and `xs`. When size is not set, defaul
 Label has dismiss feature. It can be show or hide by `dismissable` props. If `dismissable` set to `true`, dismiss button will show.
 
 <preview>
-  <Label :dismissable="true">Label</Label>
-  <Label variant="light" :dismissable="true">Label</Label>
-  <Label variant="dot" :dismissable="true">Label</Label>
+  <p-label :dismissable="true">Label</p-label>
+  <p-label variant="light" :dismissable="true">Label</p-label>
+  <p-label variant="dot" :dismissable="true">Label</p-label>
 </preview>
 
 ```vue
 <template>
-  <Label :dismissable="true">Label</Label>
-  <Label variant="light" :dismissable="true">Label</Label>
-  <Label variant="dot" :dismissable="true">Label</Label>
+  <p-label :dismissable="true">Label</p-label>
+  <p-label variant="light" :dismissable="true">Label</p-label>
+  <p-label variant="dot" :dismissable="true">Label</p-label>
 </template>
 ```
 
