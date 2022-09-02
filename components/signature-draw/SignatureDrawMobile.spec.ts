@@ -7,6 +7,7 @@ import { nextTick, ref } from 'vue-demi'
 import { setWindow, useWindowSize } from './__mocks__/use-window-size'
 import rotateImage from './__mocks__/rotate-image'
 import SignatureDrawMobile from './SignatureDrawMobile.vue'
+import { delay } from 'nanodelay'
 
 vi.mock('./utils/use-draw.ts', () => ({ default: useDraw }))
 
@@ -21,6 +22,14 @@ vi.mock('@vueuse/core', async () => {
     ...vueuse as typeof VueUse,
     useWindowSize,
   }
+})
+
+beforeEach(() => {
+  setWindow(375, 667)
+})
+
+afterEach(() => {
+  vi.restoreAllMocks()
 })
 
 it('should render properly', () => {
@@ -151,9 +160,96 @@ it('should modify state in v-model', async () => {
   triggerDraw()
   await nextTick()
 
-  const save = screen.queryByTestId('signature-draw-close')
+  const save  = screen.queryByTestId('signature-draw-close')
+  const modal = screen.queryByTestId('signature-draw-modal')
 
   await fireEvent.click(save)
+  await delay(1)
 
   expect(model.value).toStartWith('data:image/png')
+  expect(modal).not.toBeInTheDocument()
+})
+
+it('should show preview of sign instead of button, if user has drawn', () => {
+  const model  = ref('data:image/png;base64,123456789')
+  const screen = render({
+    components: { SignatureDrawMobile },
+    template  : '<SignatureDrawMobile v-model="model" />',
+    setup () {
+      return { model }
+    },
+  })
+
+  const preview = screen.queryByTestId('signature-draw-preview')
+
+  expect(preview).toBeInTheDocument()
+})
+
+it('should open canvas if image preview is clicked', async () => {
+  const model  = ref('data:image/png;base64,123456789')
+  const screen = render({
+    components: { SignatureDrawMobile },
+    template  : '<SignatureDrawMobile v-model="model" />',
+    setup () {
+      return { model }
+    },
+  })
+
+  const preview = screen.queryByTestId('signature-draw-preview')
+
+  await fireEvent.click(preview)
+  await delay(1)
+
+  const modal = screen.queryByTestId('signature-draw-modal')
+
+  expect(modal).toBeInTheDocument()
+})
+
+it('should open canvas if edit button is clicked', async () => {
+  const model  = ref('data:image/png;base64,123456789')
+  const screen = render({
+    components: { SignatureDrawMobile },
+    template  : '<SignatureDrawMobile v-model="model" />',
+    setup () {
+      return { model }
+    },
+  })
+
+  const preview = screen.queryByTestId('signature-draw-edit')
+
+  await fireEvent.click(preview)
+  await delay(1)
+
+  const modal = screen.queryByTestId('signature-draw-modal')
+
+  expect(modal).toBeInTheDocument()
+})
+
+it('should change draw button label if `openDrawLabel` prop is provided', () => {
+  const screen = render({
+    components: { SignatureDrawMobile },
+    template  : '<SignatureDrawMobile open-draw-label="Open" />',
+  })
+
+  const open = screen.queryByTestId('signature-draw-open')
+
+  expect(open).toBeInTheDocument()
+  expect(open).toHaveTextContent('Open')
+})
+
+it('should change save button label if `closeDrawLabel` prop is provided', async () => {
+  const screen = render({
+    components: { SignatureDrawMobile },
+    template  : '<SignatureDrawMobile close-draw-label="Simpan" />',
+  })
+
+  const open = screen.queryByTestId('signature-draw-open')
+
+  await fireEvent.click(open)
+  await delay(1)
+
+  const close = screen.queryByTestId('signature-draw-close')
+
+  expect(close).toBeInTheDocument()
+  expect(close).toHaveTextContent('Simpan')
 })

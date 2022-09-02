@@ -14,7 +14,7 @@
         <Button
           variant="link"
           size="xs"
-          class="signature-draw__clear"
+          class="signature-draw__reset"
           data-testid="signature-draw-edit"
           icon
           @click="open()">
