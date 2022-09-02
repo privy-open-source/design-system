@@ -37,13 +37,13 @@
         }
 
         > .sidebar-link-item {
-          @apply text-base font-bold py-0 px-2 mb-1;
+          @apply px-2 py-0 mb-1 text-base font-bold;
         }
-  
+
         > .sidebar-links {
           > .sidebar-link {
             > a.sidebar-link-item {
-              @apply text-sm inline-block rounded-sm py-1 px-3 border-l-0;
+              @apply inline-block px-3 py-1 text-sm border-l-0 rounded-sm;
 
               &.active,
               &:hover {
@@ -97,14 +97,6 @@
 
     + p {
       @apply mt-0;
-    }
-  }
-
-  .badge {
-    @apply mr-4;
-
-    &:last-child {
-      @apply mr-0;
     }
   }
 

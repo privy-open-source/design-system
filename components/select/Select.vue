@@ -78,6 +78,7 @@ import {
   getCurrentInstance,
   PropType,
   ref,
+  watch,
 } from 'vue-demi'
 import { SelectItem } from './use-select'
 import { Adapter } from './adapter/adapter'
@@ -228,6 +229,11 @@ export default defineComponent({
     function isSelected (item: SelectItem) {
       return isEqual(item.value, model.value.value)
     }
+
+    watch(isOpen, (value) => {
+      if (!value)
+        keyword.value = ''
+    }, { flush: 'post' })
 
     onStartTyping(() => {
       if (isOpen.value && input.value && input.value !== document.activeElement)

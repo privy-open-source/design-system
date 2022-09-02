@@ -9,4 +9,5 @@
   "eslint.lintTask.enable": true,
   "volar.autoCompleteRefs": false,
   "volar.vueserver.useSecondServer": true,
+  "C_Cpp.dimInactiveRegions": false,
 }
