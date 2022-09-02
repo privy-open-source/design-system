@@ -115,7 +115,7 @@ Label has dismiss feature. It can be show or hide by `dismissable` props. If `di
 |---------------|:---------:|:---------:|------------------------------------------------------------------------------------------------------------|
 | `color`       | `String`  | `primary` | Label color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
 | `variant`     | `String`  | `default` | Label variant, valid value is `default`, `light` and `dot`.                                                |
-| `size`        | `String`  | `md`  | Label variant, valid value is `lg`, `md`, `sm` and `xs`.                                       |
+| `size`        | `String`  |   `md`    | Label variant, valid value is `lg`, `md`, `sm` and `xs`.                                                   |
 | `dismissable` | `Boolean` |  `false`  | Show / Hide dismiss button                                                                                 |
 
 ### Slots
@@ -125,7 +125,6 @@ Label has dismiss feature. It can be show or hide by `dismissable` props. If `di
 | `default` | Content to place in badge |
 
 ### Events
-
 
 | Name        | Arguments | Description                     |
 |-------------|-----------|---------------------------------|

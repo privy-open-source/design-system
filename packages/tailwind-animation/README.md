@@ -11,7 +11,7 @@ Then, add into `tailwind.config.js`
 ```js
 module.exports = {
   plugins: [
-    require('@privyid/tailwind-presets')
+    require('@privyid/tailwind-animation')
   ],
   // ...
 }

@@ -21,6 +21,7 @@
     "@types/lodash": "4.14.184",
     "@types/lodash-es": "4.17.6",
     "@types/testing-library__jest-dom": "5.14.5",
+    "@types/webfontloader": "^1",
     "@typescript-eslint/eslint-plugin": "5.35.1",
     "@typescript-eslint/parser": "5.35.1",
     "@vitejs/plugin-vue": "2.3.4",
@@ -48,11 +49,14 @@
     "typescript": "4.7.4",
     "vite": "2.9.15",
     "vitepress": "0.22.4",
-    "vitest": "0.16.0"
+    "vitest": "0.21"
   },
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.8",
+    "@interactjs/actions": "^1.10.17",
+    "@interactjs/auto-start": "^1.10.17",
+    "@interactjs/interact": "^1.10.17",
     "@popperjs/core": "2.11.6",
     "@vueuse/core": "8.9.4",
     "date-fns": "2.29.2",
@@ -62,7 +66,8 @@
     "lodash-es": "4.17.21",
     "tabbable": "5.3.3",
     "vue-demi": "0.13.10",
-    "vuedraggable": "next"
+    "vuedraggable": "next",
+    "webfontloader": "^1.6.28"
   },
   "lint-staged": {
     "*.(js|ts|vue)": [
