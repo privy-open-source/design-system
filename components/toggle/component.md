@@ -1,5 +1,5 @@
 <script setup>
-  import Toggle from "./Toggle.vue"
+  import pToggle from "./Toggle.vue"
   import IconLight from "@carbon/icons-vue/lib/light/16"
   import IconDark from "@carbon/icons-vue/lib/asleep/16"
   import { ref } from "vue-demi"
@@ -17,19 +17,19 @@
 
 ### Simple Usage
 <preview>
-  <Toggle>Text</Toggle>
+  <p-toggle>Text</p-toggle>
 </preview>
 
 ```vue
 <template>
-  <Toggle>Text</Toggle>
+  <p-toggle>Text</p-toggle>
 </template>
 ```
 
 ### With Icon
 
 <preview>
-  <Toggle>
+  <p-toggle>
     <template #checked>
       <svg width="8" height="8" viewBox="0 0 2 8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="8" rx="1" fill="white" /></svg>
     </template>
@@ -39,12 +39,12 @@
     <template #default>
       Text
     </template>
-  </Toggle>
+  </p-toggle>
 </preview>
 
 ```vue
 <template>
-  <Toggle>
+  <p-toggle>
     <template #checked>
       <svg width="8" height="8" viewBox="0 0 2 8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="8" rx="1" fill="white" /></svg>
     </template>
@@ -54,7 +54,7 @@
     <template #default>
       Text
     </template>
-  </Toggle>
+  </p-toggle>
 </template>
 ```
 
@@ -63,14 +63,14 @@
 There available 2 type variants: `pill` and `flat`. default is `pill`
 
 <preview class="flex-col items-center gap-3">
-  <Toggle variant="pill">Pill</Toggle>
-  <Toggle variant="flat">Flat</Toggle>
+  <p-toggle variant="pill">Pill</p-toggle>
+  <p-toggle variant="flat">Flat</p-toggle>
 </preview>
 
 ```vue
 <template>
-  <Toggle variant="pill">Pill</Toggle>
-  <Toggle variant="flat">Flat</Toggle>
+  <p-toggle variant="pill">Pill</p-toggle>
+  <p-toggle variant="flat">Flat</p-toggle>
 </template>
 ```
 
@@ -79,21 +79,21 @@ There available 2 type variants: `pill` and `flat`. default is `pill`
 You can customize toggle label with `checked-label` and `unchecked-label`
 
 <preview class="flex-col items-center gap-3">
-  <Toggle variant="pill" checked-label="Y" unchecked-label="N">Text</Toggle>
-  <Toggle variant="flat" checked-label="PM" unchecked-label="AM">Text</Toggle>
+  <p-toggle variant="pill" checked-label="Y" unchecked-label="N">Text</p-toggle>
+  <p-toggle variant="flat" checked-label="PM" unchecked-label="AM">Text</p-toggle>
 </preview>
 
 ```vue
 <template>
-  <Toggle variant="pill" checked-label="Y" unchecked-label="N">Text</Toggle>
-  <Toggle variant="flat" checked-label="PM" unchecked-label="AM">Text</Toggle>
+  <p-toggle variant="pill" checked-label="Y" unchecked-label="N">Text</p-toggle>
+  <p-toggle variant="flat" checked-label="PM" unchecked-label="AM">Text</p-toggle>
 </template>
 ```
 
 You can also use `checked` and `unchecked` slot to customize the label, it allow you to use non-text label like an **icon**
 
 <preview class="flex-col items-center gap-3">
-  <Toggle v-model="isDark">
+  <p-toggle v-model="isDark">
     <template #checked>
       <IconDark />
     </template>
@@ -103,12 +103,12 @@ You can also use `checked` and `unchecked` slot to customize the label, it allow
     <template #default>
       Dark Mode
     </template>
-  </Toggle>
+  </p-toggle>
 </preview>
 
 ```vue
 <template>
-  <Toggle>
+  <p-toggle>
     <template #checked>
       <IconDark />
     </template>
@@ -118,7 +118,7 @@ You can also use `checked` and `unchecked` slot to customize the label, it allow
     <template #default>
       Dark Mode
     </template>
-  </Toggle>
+  </p-toggle>
 </template>
 
 <script setup>
@@ -132,49 +132,49 @@ You can also use `checked` and `unchecked` slot to customize the label, it allow
 You can hide toggle label with `no-label` prop
 
 <preview class="flex-col items-center gap-3">
-  <Toggle variant="pill" no-label>Text</Toggle>
-  <Toggle variant="flat" no-label>Text</Toggle>
+  <p-toggle variant="pill" no-label>Text</p-toggle>
+  <p-toggle variant="flat" no-label>Text</p-toggle>
 </preview>
 
 ```vue
 <template>
-  <Toggle variant="pill" no-label>Text</Toggle>
-  <Toggle variant="flat" no-label>Text</Toggle>
+  <p-toggle variant="pill" no-label>Text</p-toggle>
+  <p-toggle variant="flat" no-label>Text</p-toggle>
 </template>
 ```
 
 ## Disabled state
 
 <preview class="flex-col items-center gap-3">
-  <Toggle variant="pill" disabled>Pill</Toggle>
-  <Toggle variant="flat" disabled>Flat</Toggle>
+  <p-toggle variant="pill" disabled>Pill</p-toggle>
+  <p-toggle variant="flat" disabled>Flat</p-toggle>
 </preview>
 
 ```vue
 <template>
-  <Toggle variant="pill" disabled>Pill</Toggle>
-  <Toggle variant="flat" disabled>Flat</Toggle>
+  <p-toggle variant="pill" disabled>Pill</p-toggle>
+  <p-toggle variant="flat" disabled>Flat</p-toggle>
 </template>
 ```
 
 ## Readonly state
 
 <preview class="flex-col items-center gap-3">
-  <Toggle readonly>Readonly False</Toggle>
-  <Toggle readonly checked>Readonly True</Toggle>
+  <p-toggle readonly>Readonly False</p-toggle>
+  <p-toggle readonly checked>Readonly True</p-toggle>
 </preview>
 
 ```vue
 <template>
-  <Toggle readonly>Readonly False</Toggle>
-  <Toggle readonly checked>Readonly True</Toggle>
+  <p-toggle readonly>Readonly False</p-toggle>
+  <p-toggle readonly checked>Readonly True</p-toggle>
 </template>
 ```
 
 ## Binding v-model
 
 <preview class="flex-col items-center gap-3">
-  <Toggle v-model="modelA">Text</Toggle>
+  <p-toggle v-model="modelA">Text</p-toggle>
 </preview>
 
 **Result :**
@@ -183,7 +183,7 @@ You can hide toggle label with `no-label` prop
 
 ```vue
 <template>
-  <Toggle v-model="modelA">Text</Toggle>
+  <p-toggle v-model="modelA">Text</p-toggle>
 </template>
 ```
 
@@ -192,7 +192,7 @@ You can hide toggle label with `no-label` prop
 By default, value of toggle is always `Boolean`, but you can change it with `value` and `unchecked-value`.
 
 <preview class="flex-col items-center gap-3">
-  <Toggle v-model="modelB" value="on" unchecked-value="off">Lamp</Toggle>
+  <p-toggle v-model="modelB" value="on" unchecked-value="off">Lamp</p-toggle>
 </preview>
 
 **Result :**
@@ -201,12 +201,12 @@ By default, value of toggle is always `Boolean`, but you can change it with `val
 
 ```vue
 <template>
-  <Toggle
+  <p-toggle
     v-model="model"
     value="on"
     unchecked-value="off">
     Active
-  </Toggle>
+  </p-toggle>
 </template>
 ```
 
@@ -216,9 +216,9 @@ Similar to [Checkbox](/checkbox/component), if v-model **state** is an *array* i
 
 <preview class="flex-col items-center">
   <div class="flex flex-col gap-3">
-    <Toggle v-model="selected" value="apple">Apple</Toggle>
-    <Toggle v-model="selected" value="grape">Grape</Toggle>
-    <Toggle v-model="selected" value="pineapple">Pineapple</Toggle>
+    <p-toggle v-model="selected" value="apple">Apple</p-toggle>
+    <p-toggle v-model="selected" value="grape">Grape</p-toggle>
+    <p-toggle v-model="selected" value="pineapple">Pineapple</p-toggle>
   </div>
 </preview>
 
@@ -229,9 +229,9 @@ Similar to [Checkbox](/checkbox/component), if v-model **state** is an *array* i
 ```vue
 <template>
   <div class="flex flex-col gap-3">
-    <Toggle v-model="selected" value="apple">Apple</Toggle>
-    <Toggle v-model="selected" value="grape">Grape</Toggle>
-    <Toggle v-model="selected" value="pineapple">Pineapple</Toggle>
+    <p-toggle v-model="selected" value="apple">Apple</p-toggle>
+    <p-toggle v-model="selected" value="grape">Grape</p-toggle>
+    <p-toggle v-model="selected" value="pineapple">Pineapple</p-toggle>
   </div>
 </template>
 ```

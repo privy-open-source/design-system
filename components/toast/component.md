@@ -20,7 +20,7 @@
 </div>
 
 ```ts
-import toast from './use-toast'
+import toast from '@privyid/persona/toast'
 
 toast({
   title: 'Lorem ipsum',
@@ -44,7 +44,7 @@ toast({
 </div>
 
 ```ts
-import toast from './use-toast'
+import toast from '@privyid/persona/toast'
 
 toast({
   type      : 'error',
@@ -101,7 +101,7 @@ There available 4 type variants: `info`, `success`, `warn`, `error`. default is 
 </div>
 
 ```ts
-import toast from './use-toast'
+import toast from '@privyid/persona/toast'
 
 // info
 toast({
@@ -181,7 +181,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
 </div>
 
 ```ts
-import toast from './use-toast'
+import toast from '@privyid/persona/toast'
 
 // info
 toast({
@@ -231,7 +231,7 @@ You can add some custom class to Toast element via `toastClass`.
 </div>
 
 ```ts
-import toast from './use-toast'
+import toast from '@privyid/persona/toast'
 
 toast({
   title     : 'Lorem ipsum',

@@ -35,7 +35,7 @@
 </div>
 
 ```ts
-import dialog from './use-dialog'
+import dialog from '@privyid/persona/dialog'
 
 dialog.alert({
   title: 'Dialog',
@@ -50,7 +50,7 @@ dialog.alert({
 </div>
 
 ```ts
-import dialog from './use-dialog'
+import dialog from '@privyid/persona/dialog'
 
 dialog.confirm({
   title: 'Delete Confirmation',

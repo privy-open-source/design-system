@@ -2,9 +2,9 @@
   import IconBee from '@carbon/icons-vue/lib/bee/20'
   import Badge from '../badge/Badge.vue'
   import Input from "../input/Input.vue"
-  import Dropdown from "../dropdown/Dropdown.vue"
-  import DropdownItem from "../dropdown/DropdownItem.vue"
-  import DropdownSubitem from "./DropdownSubitem.vue"
+  import pDropdown from "../dropdown/Dropdown.vue"
+  import pDropdownItem from "../dropdown/DropdownItem.vue"
+  import pDropdownSubitem from "./DropdownSubitem.vue"
   import Banner from '../banner/Banner.vue'
   import Checkbox from '../checkbox/Checkbox.vue'
   import { ref } from "vue-demi"
@@ -19,60 +19,60 @@
 ### Simple Usage
 
 <preview>
-  <Dropdown text="Fruit">
-    <DropdownSubitem text="Fruit A">
-      <DropdownItem>Apple</DropdownItem>
-      <DropdownItem>Avocado</DropdownItem>
-    </DropdownSubitem>
-    <DropdownSubitem text="Fruit B">
-      <DropdownItem>Banana</DropdownItem>
-      <DropdownItem>Blueberry</DropdownItem>
-    </DropdownSubitem>
-  </Dropdown>
+  <p-dropdown text="Fruit">
+    <p-dropdown-subitem text="Fruit A">
+      <p-dropdown-item>Apple</p-dropdown-item>
+      <p-dropdown-item>Avocado</p-dropdown-item>
+    </p-dropdown-subitem>
+    <p-dropdown-subitem text="Fruit B">
+      <p-dropdown-item>Banana</p-dropdown-item>
+      <p-dropdown-item>Blueberry</p-dropdown-item>
+    </p-dropdown-subitem>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Fruit">
-    <DropdownSubitem text="Fruit A">
-      <DropdownItem>Apple</DropdownItem>
-      <DropdownItem>Avocado</DropdownItem>
-    </DropdownSubitem>
-    <DropdownSubitem text="Fruit B">
-      <DropdownItem>Banana</DropdownItem>
-      <DropdownItem>Blueberry</DropdownItem>
-    </DropdownSubitem>
-  </Dropdown>
+  <p-dropdown text="Fruit">
+    <p-dropdown-subitem text="Fruit A">
+      <p-dropdown-item>Apple</p-dropdown-item>
+      <p-dropdown-item>Avocado</p-dropdown-item>
+    </p-dropdown-subitem>
+    <p-dropdown-subitem text="Fruit B">
+      <p-dropdown-item>Banana</p-dropdown-item>
+      <p-dropdown-item>Blueberry</p-dropdown-item>
+    </p-dropdown-subitem>
+  </p-dropdown>
 </template>
 ```
 
 ### Multi Level Subitem
 
 <preview>
-  <Dropdown text="Multi Level">
-    <DropdownSubitem text="Level A" backText="Kembali">
-      <DropdownItem>Item A-1</DropdownItem>
-      <DropdownItem>Item A-2</DropdownItem>
-      <DropdownSubitem text="Level AA">
-        <DropdownItem>Item AA-1</DropdownItem>
-        <DropdownItem>Item AA-2</DropdownItem>
-      </DropdownSubitem>
-    </DropdownSubitem>
-  </Dropdown>
+  <p-dropdown text="Multi Level">
+    <p-dropdown-subitem text="Level A" backText="Kembali">
+      <p-dropdown-item>Item A-1</p-dropdown-item>
+      <p-dropdown-item>Item A-2</p-dropdown-item>
+      <p-dropdown-subitem text="Level AA">
+        <p-dropdown-item>Item AA-1</p-dropdown-item>
+        <p-dropdown-item>Item AA-2</p-dropdown-item>
+      </p-dropdown-subitem>
+    </p-dropdown-subitem>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Multi Level">
-    <DropdownSubitem text="Level A">
-      <DropdownItem>Item A-1</DropdownItem>
-      <DropdownItem>Item A-2</DropdownItem>
-      <DropdownSubitem text="Level AA">
-        <DropdownItem>Item AA-1</DropdownItem>
-        <DropdownItem>Item AA-2</DropdownItem>
-      </DropdownSubitem>
-    </DropdownSubitem>
-  </Dropdown>
+  <p-dropdown text="Multi Level">
+    <p-dropdown-subitem text="Level A">
+      <p-dropdown-item>Item A-1</p-dropdown-item>
+      <p-dropdown-item>Item A-2</p-dropdown-item>
+      <p-dropdown-subitem text="Level AA">
+        <p-dropdown-item>Item AA-1</p-dropdown-item>
+        <p-dropdown-item>Item AA-2</p-dropdown-item>
+      </p-dropdown-subitem>
+    </p-dropdown-subitem>
+  </p-dropdown>
 </template>
 ```
 
@@ -81,36 +81,36 @@
 Similar to [Dropdown](/dropdown/component), You can change button content via slot `button-content`
 
 <preview>
-  <Dropdown text="Custom Content">
-    <DropdownSubitem>
+  <p-dropdown text="Custom Content">
+    <p-dropdown-subitem>
       <template #button-content>
         <IconBee class="inline-block" /> Fruit A
       </template>
-      <DropdownItem>Apple</DropdownItem>
-      <DropdownItem>Avocado</DropdownItem>
-    </DropdownSubitem>
-    <DropdownSubitem text="Fruit B">
-      <DropdownItem>Banana</DropdownItem>
-      <DropdownItem>Blueberry</DropdownItem>
-    </DropdownSubitem>
-  </Dropdown>
+      <p-dropdown-item>Apple</p-dropdown-item>
+      <p-dropdown-item>Avocado</p-dropdown-item>
+    </p-dropdown-subitem>
+    <p-dropdown-subitem text="Fruit B">
+      <p-dropdown-item>Banana</p-dropdown-item>
+      <p-dropdown-item>Blueberry</p-dropdown-item>
+    </p-dropdown-subitem>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Custom Content">
-    <DropdownSubitem>
+  <p-dropdown text="Custom Content">
+    <p-dropdown-subitem>
       <template #button-content>
         <IconBee class="inline-block" /> Fruit A
       </template>
-      <DropdownItem>Apple</DropdownItem>
-      <DropdownItem>Avocado</DropdownItem>
-    </DropdownSubitem>
-    <DropdownSubitem text="Fruit B">
-      <DropdownItem>Banana</DropdownItem>
-      <DropdownItem>Blueberry</DropdownItem>
-    </DropdownSubitem>
-  </Dropdown>
+      <p-dropdown-item>Apple</p-dropdown-item>
+      <p-dropdown-item>Avocado</p-dropdown-item>
+    </p-dropdown-subitem>
+    <p-dropdown-subitem text="Fruit B">
+      <p-dropdown-item>Banana</p-dropdown-item>
+      <p-dropdown-item>Blueberry</p-dropdown-item>
+    </p-dropdown-subitem>
+  </p-dropdown>
 </template>
 ```
 
@@ -119,30 +119,30 @@ Similar to [Dropdown](/dropdown/component), You can change button content via sl
 Similar with [Dropdown](/dropdown/component), you can hide caret icon with `no-caret` props.
 
 <preview>
-  <Dropdown text="Fruit">
-    <DropdownSubitem text="with Caret">
-      <DropdownItem>Apple</DropdownItem>
-      <DropdownItem>Avocado</DropdownItem>
-    </DropdownSubitem>
-    <DropdownSubitem text="without Caret" no-caret>
-      <DropdownItem>Banana</DropdownItem>
-      <DropdownItem>Blueberry</DropdownItem>
-    </DropdownSubitem>
-  </Dropdown>
+  <p-dropdown text="Fruit">
+    <p-dropdown-subitem text="with Caret">
+      <p-dropdown-item>Apple</p-dropdown-item>
+      <p-dropdown-item>Avocado</p-dropdown-item>
+    </p-dropdown-subitem>
+    <p-dropdown-subitem text="without Caret" no-caret>
+      <p-dropdown-item>Banana</p-dropdown-item>
+      <p-dropdown-item>Blueberry</p-dropdown-item>
+    </p-dropdown-subitem>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Fruit">
-    <DropdownSubitem text="with Caret">
-      <DropdownItem>Apple</DropdownItem>
-      <DropdownItem>Avocado</DropdownItem>
-    </DropdownSubitem>
-    <DropdownSubitem text="without Caret" no-caret>
-      <DropdownItem>Banana</DropdownItem>
-      <DropdownItem>Blueberry</DropdownItem>
-    </DropdownSubitem>
-  </Dropdown>
+  <p-dropdown text="Fruit">
+    <p-dropdown-subitem text="with Caret">
+      <p-dropdown-item>Apple</p-dropdown-item>
+      <p-dropdown-item>Avocado</p-dropdown-item>
+    </p-dropdown-subitem>
+    <p-dropdown-subitem text="without Caret" no-caret>
+      <p-dropdown-item>Banana</p-dropdown-item>
+      <p-dropdown-item>Blueberry</p-dropdown-item>
+    </p-dropdown-subitem>
+  </p-dropdown>
 </template>
 ```
 

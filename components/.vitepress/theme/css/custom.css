@@ -69,12 +69,12 @@
   }
 
   th, td {
-    @apply border-primary-25;
+    @apply border-primary-25 dark:border-dark-default;
   }
 
   thead > tr:first-child,
   tr:nth-child(2n) {
-    @apply bg-primary-5;
+    @apply bg-primary-5 dark:bg-dark-90;
   }
 
   .token.attr-name {

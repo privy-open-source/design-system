@@ -142,7 +142,7 @@
           name : 'language',
           label: 'ENG',
           url  : '/',
-          icon : './assets/images/img-flag.svg'
+          icon : IconEN,
         }
       ]
     }

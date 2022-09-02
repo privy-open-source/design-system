@@ -1,17 +1,17 @@
 <script setup>
   import { ref } from 'vue-demi'
-  import Button from '../button/Button.vue'
-  import Modal from './Modal.vue'
-  import Heading from '../heading/Heading.vue'
+  import pButton from '../button/Button.vue'
+  import pModal from './Modal.vue'
+  import pHeading from '../heading/Heading.vue'
 
-  const basicModal = ref(true)
-  const showModal = ref(false)
-  const banner1 = ref(true)
+  const basicModal  = ref(true)
+  const showModal   = ref(false)
+  const banner1     = ref(true)
   const bannerSheet = ref(false)
-  const banner2 = ref(true)
+  const banner2     = ref(true)
   const bottomSheet = ref(false)
   const scrollModal = ref(true)
-  const bodyScroll = ref(false)
+  const bodyScroll  = ref(false)
 
   function click () {
     showModal.value = true
@@ -31,7 +31,11 @@
     }
 
     .modal {
-      @apply absolute w-full h-full;
+      @apply absolute w-full h-full z-10;
+    }
+
+    img {
+      @apply max-w-full;
     }
   }
 </style>
@@ -43,45 +47,45 @@
 ### Simple Usage
 
 <div class="flex mt-5">
-  <Button @click="click">Show Modal</Button>
+  <p-button @click="click">Show Modal</p-button>
 </div>
 
 <preview>
-  <Modal
+  <p-modal
     no-close-on-esc
     no-close-on-backdrop
-    v-model="basicModal" 
-    title="Modal Title" 
+    v-model="basicModal"
+    title="Modal Title"
     text="This is place holder text. The basic dialog for modals
       should contain only valuable and relevant information.">
     <template #footer="{ close }">
       <div class="flex items-center justify-end">
-        <Button @click="close">
+        <p-button @click="close">
           Submit
-        </Button>
+        </p-button>
       </div>
     </template>
-  </Modal>
+  </p-modal>
 </preview>
 
 ```vue
 <template>
-  <Modal v-model="showModal" 
-    title="Modal Title" 
+  <p-modal v-model="showModal"
+    title="Modal Title"
     text="This is place holder text. The basic dialog for modals
       should contain only valuable and relevant information.">
     <template #footer="{ close }">
       <div class="flex items-center justify-end">
-        <Button @click="close">
+        <p-button @click="close">
           Submit
-        </Button>
+        </p-button>
       </div>
     </template>
-  </Modal>
+  </p-modal>
 </template>
 ```
 
-<Modal
+<p-modal
   v-model="showModal"
   title="Modal Title"
   scroll>
@@ -91,96 +95,96 @@
   </p>
   <template #footer="{ close }">
     <div class="flex items-center justify-end">
-      <Button @click="close">
+      <p-button @click="close">
         Submit
-      </Button>
+      </p-button>
     </div>
   </template>
-</Modal>
+</p-modal>
 
 ## Hide close button
 
 You can hide close button with `dismissable` set to `false`
 
 <div class="flex mt-5">
-  <Button @click="bottomSheet = true">Show Modal</Button>
+  <p-button @click="bottomSheet = true">Show Modal</p-button>
 </div>
 
 <preview>
-  <Modal 
+  <p-modal
     no-close-on-esc
     no-close-on-backdrop
     v-model="banner2" class="modal--banner" :dismissable="false">
-    <div class="text-center px-16 py-7">
-      <Heading element="h6">Give Me Title Here</Heading>
+    <div class="px-16 text-center py-7">
+      <p-heading element="h6">Give Me Title Here</p-heading>
       <p>
         Explain what this menu to do, <br>
         descriptive but as short as possible
       </p>
     </div>
-    <div class="flex items-center px-16 pb-7 justify-between">
-      <Button variant="ghost" @click="banner2 = false">
+    <div class="flex items-center justify-between px-16 pb-7">
+      <p-button variant="ghost" @click="banner2 = false">
         Button Text
-      </Button>
-      <Button variant="ghost" @click="banner2 = false">
+      </p-button>
+      <p-button variant="ghost" @click="banner2 = false">
         Button Text
-      </Button>
+      </p-button>
     </div>
-  </Modal>
+  </p-modal>
 </preview>
 
 ```vue
 <template>
-  <Modal v-model="bottomSheet" class="modal--banner" :dismissable="false">
-    <div class="text-center px-16 py-7">
-      <Heading element="h6">Give Me Title Here</Heading>
+  <p-modal v-model="bottomSheet" class="modal--banner" :dismissable="false">
+    <div class="px-16 text-center py-7">
+      <p-heading element="h6">Give Me Title Here</p-heading>
       <p>
         Explain what this menu to do, <br>
         descriptive but as short as possible
       </p>
     </div>
-    <div class="flex items-center px-16 pb-7 justify-between">
-      <Button variant="ghost">
+    <div class="flex items-center justify-between px-16 pb-7">
+      <p-button variant="ghost">
         Button Text
-      </Button>
-      <Button variant="ghost">
+      </p-button>
+      <p-button variant="ghost">
         Button Text
-      </Button>
+      </p-button>
     </div>
-  </Modal>
+  </p-modal>
 </template>
 ```
 
-<Modal v-model="bottomSheet" class="modal--banner" :dismissable="false">
-  <div class="text-center px-16 py-7">
-    <Heading element="h6">Give Me Title Here</Heading>
+<p-modal v-model="bottomSheet" class="modal--banner" :dismissable="false">
+  <div class="px-16 text-center py-7">
+    <p-heading element="h6">Give Me Title Here</p-heading>
     <p>
       Explain what this menu to do, <br>
       descriptive but as short as possible
     </p>
   </div>
-  <div class="flex items-center px-16 pb-7 justify-between">
-    <Button variant="ghost" @click="bottomSheet = false">
+  <div class="flex items-center justify-between px-16 pb-7">
+    <p-button variant="ghost" @click="bottomSheet = false">
       Button Text
-    </Button>
-    <Button variant="ghost" @click="bottomSheet = false">
+    </p-button>
+    <p-button variant="ghost" @click="bottomSheet = false">
       Button Text
-    </Button>
+    </p-button>
   </div>
-</Modal>
+</p-modal>
 
 ## No Close Modal
 Modal will not close while Escape button was pressed by props `no-close-on-esc`. Also you can make modal can't close while backdrop was clicked by props `no-close-on-backdrop`.
 
 <div class="flex mt-5">
-  <Button @click="bannerSheet = true">Show Modal</Button>
+  <p-button @click="bannerSheet = true">Show Modal</p-button>
 </div>
 
 <preview class="banner">
-  <Modal v-model="banner1" class="modal--banner" :dismissable="false" no-close-on-esc no-close-on-backdrop>
+  <p-modal v-model="banner1" class="modal--banner" :dismissable="false" no-close-on-esc no-close-on-backdrop>
     <img src="./assets/images/img-modal-banner-sheet.jpg">
-    <div class="text-center p-6">
-      <Heading element="h6">Give Me Title Here</Heading>
+    <div class="p-6 text-center">
+      <p-heading element="h6">Give Me Title Here</p-heading>
       <p>
         Explain what this menu to do, <br>
         descriptive but as short as possible
@@ -188,25 +192,25 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
     </div>
     <template #footer="{ close }">
       <div class="flex items-center justify-center">
-        <Button variant="ghost" @click="close">
+        <p-button variant="ghost" @click="close">
           Button Text
-        </Button>
+        </p-button>
       </div>
     </template>
-  </Modal>
+  </p-modal>
 </preview>
 
 ```vue
 <template>
-  <Modal 
-    v-model="bannerSheet" 
-    class="modal--banner" 
-    :dismissable="false" 
-    no-close-on-esc 
+  <p-modal
+    v-model="bannerSheet"
+    class="modal--banner"
+    :dismissable="false"
+    no-close-on-esc
     no-close-on-backdrop>
     <img src="./assets/images/img-modal-banner-sheet.jpg">
-    <div class="text-center p-6">
-      <Heading element="h6">Give Me Title Here</Heading>
+    <div class="p-6 text-center">
+      <p-heading element="h6">Give Me Title Here</p-heading>
       <p>
         Explain what this menu to do, <br>
         descriptive but as short as possible
@@ -214,19 +218,19 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
     </div>
     <template #footer="{ close }">
       <div class="flex items-center justify-center">
-        <Button variant="ghost" @click="close">
+        <p-button variant="ghost" @click="close">
           Button Text
-        </Button>
+        </p-button>
       </div>
     </template>
-  </Modal>
+  </p-modal>
 </template>
 ```
 
-<Modal v-model="bannerSheet" class="modal--banner" :dismissable="false" no-close-on-esc no-close-on-backdrop>
+<p-modal v-model="bannerSheet" class="modal--banner" :dismissable="false" no-close-on-esc no-close-on-backdrop>
   <img src="./assets/images/img-modal-banner-sheet.jpg">
-  <div class="text-center p-6">
-    <Heading element="h6">Give Me Title Here</Heading>
+  <div class="p-6 text-center">
+    <p-heading element="h6">Give Me Title Here</p-heading>
     <p>
       Explain what this menu to do, <br>
       descriptive but as short as possible
@@ -234,25 +238,25 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
   </div>
   <template #footer="{ close }">
     <div class="flex items-center justify-center">
-      <Button variant="ghost" @click="close">
+      <p-button variant="ghost" @click="close">
         Button Text
-      </Button>
+      </p-button>
     </div>
   </template>
-</Modal>
+</p-modal>
 
 ## Modal Scroll
 When modals content become too long, modal body can scroll itself by adding props `modal-body-scrollable`.
 
 <div class="flex mt-5">
-  <Button @click="bodyScroll = true">Show Modal</Button>
+  <p-button @click="bodyScroll = true">Show Modal</p-button>
 </div>
 
 <preview class="scroll">
-  <Modal 
-    v-model="scrollModal" 
+  <p-modal
+    v-model="scrollModal"
     title="Modal Title"
-    no-close-on-esc 
+    no-close-on-esc
     no-close-on-backdrop
     modal-body-scrollable>
     <div>
@@ -267,19 +271,19 @@ When modals content become too long, modal body can scroll itself by adding prop
       </p>
     </div>
     <template #footer="{ close }">
-      <Button @click="close">
+      <p-button @click="close">
         Button Text
-      </Button>
+      </p-button>
     </template>
-  </Modal>
+  </p-modal>
 </preview>
 
 ```vue
 <template>
-  <Modal 
+  <p-modal
     v-model="scrollModal"
     title="Modal Title"
-    no-close-on-esc 
+    no-close-on-esc
     no-close-on-backdrop
     modal-body-scrollable>
     <div>
@@ -294,18 +298,18 @@ When modals content become too long, modal body can scroll itself by adding prop
       </p>
     </div>
     <template #footer="{ close }">
-      <Button @click="close">
+      <p-button @click="close">
         Button Text
-      </Button>
+      </p-button>
     </template>
-  </Modal>
+  </p-modal>
 </template>
 ```
 
-<Modal 
+<p-modal
   v-model="bodyScroll"
   title="Modal Title"
-  no-close-on-esc 
+  no-close-on-esc
   no-close-on-backdrop
   modal-body-scrollable>
   <div>
@@ -320,11 +324,11 @@ When modals content become too long, modal body can scroll itself by adding prop
     </p>
   </div>
   <template #footer="{ close }">
-    <Button @click="close">
+    <p-button @click="close">
       Button Text
-    </Button>
+    </p-button>
   </template>
-</Modal>
+</p-modal>
 
 ## API
 

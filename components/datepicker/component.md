@@ -1,5 +1,5 @@
 <script setup>
-  import Datepicker from './Datepicker.vue'
+  import pDatepicker from './Datepicker.vue'
   import Banner from '../banner/Banner.vue'
   import { ref } from 'vue-demi'
 
@@ -13,12 +13,12 @@
 ### Simple Usage
 
 <preview>
-  <Datepicker v-model="value" />
+  <p-datepicker v-model="value" />
 </preview>
 
 ```vue
 <template>
-  <Datepicker v-model="value" />
+  <p-datepicker v-model="value" />
 </template>
 ```
 
@@ -27,12 +27,12 @@
 You can set input placeholder via `placeholder` props
 
 <preview>
-  <Datepicker placeholder="Pick A Date" />
+  <p-datepicker placeholder="Pick A Date" />
 </preview>
 
 ```vue
 <template>
-  <Datepicker placeholder="Pick A Date" />
+  <p-datepicker placeholder="Pick A Date" />
 </template>
 ```
 
@@ -43,14 +43,14 @@ You can date via prop `format`. default is `dd/MM/yyyy`
 <Banner><strong>Please note</strong>, this component internally use <b>date-fns</b> for date formatting. The format tokens differ from Moment.js. See: <a href="https://date-fns.org/docs/format" target="_blank">date-fns</a></Banner>
 
 <preview>
-  <Datepicker
+  <p-datepicker
     v-model="value"
     format="yyyy-MM-dd" />
 </preview>
 
 ```vue
 <template>
-  <Datepicker
+  <p-datepicker
     v-model="value"
     format="yyyy-MM-dd" />
 </template>
@@ -61,7 +61,7 @@ You can date via prop `format`. default is `dd/MM/yyyy`
 You can limit the date via `min` or `max` props
 
 <preview>
-  <Datepicker
+  <p-datepicker
     :min="new Date(2022, 0, 1)"
     :max="new Date(2022, 11, 31)" />
 </preview>
@@ -69,7 +69,7 @@ You can limit the date via `min` or `max` props
 ```vue
 <template>
   <!-- Limit 1 Jan - 31 Dec 2022 -->
-  <Datepicker
+  <p-datepicker
     :min="new Date(2022, 0, 1)"
     :max="new Date(2022, 11, 31)" />
 </template>
@@ -82,26 +82,26 @@ There 3 available mode: `date` , `month`, `year`. default is `date`. it will lim
 for example, mode `month` make user can only select the month, but can't select what spesific date.
 
 <preview class="flex-col items-center gap-2">
-  <Datepicker
+  <p-datepicker
     format="dd MMM yyyy"
     mode="date" />
-  <Datepicker
+  <p-datepicker
     format="MMM yyyy"
     mode="month" />
-  <Datepicker
+  <p-datepicker
     format="yyyy"
     mode="year" />
 </preview>
 
 ```vue
 <template>
-  <Datepicker
+  <p-datepicker
     format="dd MMM yyyy"
     mode="date" />
-  <Datepicker
+  <p-datepicker
     format="MMM yyyy"
     mode="month" />
-  <Datepicker
+  <p-datepicker
     format="yyyy"
     mode="year" />
 </template>
@@ -110,35 +110,35 @@ for example, mode `month` make user can only select the month, but can't select 
 ## Disabled State
 
 <preview class="flex-col items-center gap-2">
-  <Datepicker disabled />
+  <p-datepicker disabled />
 </preview>
 
 ```vue
 <template>
-  <Datepicker disabled />
+  <p-datepicker disabled />
 </template>
 ```
 
 ## Readonly state
 <preview>
-  <Datepicker readonly />
+  <p-datepicker readonly />
 </preview>
 
 ```vue
 <template>
-  <Datepicker readonly />
+  <p-datepicker readonly />
 </template>
 ```
 
 ## Binding v-model
 
 <preview>
-  <Datepicker v-model="value" />
+  <p-datepicker v-model="value" />
 </preview>
 
 ```vue
 <template>
-  <Datepicker v-vmodel="value" />
+  <p-datepicker v-vmodel="value" />
 </template>
 ```
 

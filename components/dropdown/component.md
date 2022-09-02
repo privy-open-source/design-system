@@ -1,10 +1,11 @@
 <script setup>
   import IconBee from '@carbon/icons-vue/lib/bee/20'
-  import Input from "../input/Input.vue"
-  import Dropdown from "./Dropdown.vue"
-  import DropdownItem from "./DropdownItem.vue"
+  import pInput from "../input/Input.vue"
+  import pDropdown from "./Dropdown.vue"
+  import pDropdownItem from "./DropdownItem.vue"
   import Banner from '../banner/Banner.vue'
-  import Checkbox from '../checkbox/Checkbox.vue'
+  import pCheckbox from '../checkbox/Checkbox.vue'
+  import pCaption from '../caption/Caption.vue'
   import { ref } from "vue-demi"
 
   const show = ref(false)
@@ -16,69 +17,57 @@
 
 ### Simple Usage
 <preview>
-  <Dropdown text="Click Here">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+  <p-dropdown text="Click Here">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Click Here">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+  <p-dropdown text="Click Here">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 
 ### With Subtext
 <preview>
-  <Dropdown text="Click Here">
-    <DropdownItem>
-      <div>Item Text</div>
-      <div class="text-xs text-subtext-100">
-        Item Subtext
-      </div>
-    </DropdownItem>
-    <DropdownItem>
-      <div>Item Text</div>
-      <div class="text-xs text-subtext-100">
-        Item Subtext
-      </div>
-    </DropdownItem>
-    <DropdownItem>
-      <div>Item Text</div>
-      <div class="text-xs text-subtext-100">
-        Item Subtext
-      </div>
-    </DropdownItem>
-  </Dropdown>
+  <p-dropdown text="Click Here">
+    <p-dropdown-item>
+      Item Text
+      <p-caption>Item Subtext</p-caption>
+    </p-dropdown-item>
+    <p-dropdown-item>
+      Item Text
+      <p-caption>Item Subtext</p-caption>
+    </p-dropdown-item>
+    <p-dropdown-item>
+      Item Text
+      <p-caption>Item Subtext</p-caption>
+    </p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Click Here">
-    <DropdownItem>
-      <div>Item Text</div>
-      <div class="text-xs text-subtext-100">
-        Item Subtext
-      </div>
-    </DropdownItem>
-    <DropdownItem>
-      <div>Item Text</div>
-      <div class="text-xs text-subtext-100">
-        Item Subtext
-      </div>
-    </DropdownItem>
-    <DropdownItem>
-      <div>Item Text</div>
-      <div class="text-xs text-subtext-100">
-        Item Subtext
-      </div>
-    </DropdownItem>
-  </Dropdown>
+  <p-dropdown text="Click Here">
+    <p-dropdown-item>
+      Item Text
+      <p-caption>Item Subtext</p-caption>
+    </p-dropdown-item>
+    <p-dropdown-item>
+      Item Text
+      <p-caption>Item Subtext</p-caption>
+    </p-dropdown-item>
+    <p-dropdown-item>
+      Item Text
+      <p-caption>Item Subtext</p-caption>
+    </p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 
@@ -93,60 +82,60 @@ You can change popup placement via `placement` prop. Valid options is:
 - `left`
 
 <preview class="flex-col gap-3 md:flex-row">
-  <Dropdown text="Auto" placement="auto">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Top" placement="top">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Bottom" placement="bottom">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Right" placement="right">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Left" placement="left">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+  <p-dropdown text="Auto" placement="auto">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Top" placement="top">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Bottom" placement="bottom">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Right" placement="right">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Left" placement="left">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Auto" placement="auto">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Top" placement="top">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Bottom" placement="bottom">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Right" placement="right">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Left" placement="left">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+  <p-dropdown text="Auto" placement="auto">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Top" placement="top">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Bottom" placement="bottom">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Right" placement="right">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Left" placement="left">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 
@@ -157,40 +146,40 @@ You can combine placement with suffix `*-start` and `*-end` to set popup positio
 <Banner class="md:!hidden" :dismissable="false">Because limited screen width, maybe you can't notice the different.</Banner>
 
 <preview class="flex-col gap-3 md:flex-row">
-  <Dropdown text="Bottom" placement="bottom">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Bottom Start" placement="bottom-start">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Bottom End" placement="bottom-end">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+  <p-dropdown text="Bottom" placement="bottom">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Bottom Start" placement="bottom-start">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Bottom End" placement="bottom-end">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown text="Bottom" placement="bottom">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Bottom Start" placement="bottom-start">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
-  <Dropdown text="Bottom End" placement="bottom-end">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+  <p-dropdown text="Bottom" placement="bottom">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Bottom Start" placement="bottom-start">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+  <p-dropdown text="Bottom End" placement="bottom-end">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 
@@ -202,31 +191,31 @@ Every props in [Button](/button/component) like `variant`, `color`, `size`, `pil
 Check out [Button](/button/component) for more information.
 
 <preview>
-  <Dropdown
+  <p-dropdown
     text="Button"
     variant="outline"
     color="secondary"
     size="lg"
     pill
     icon>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown
+  <p-dropdown
     text="Button"
     variant="outline"
     color="secondary"
     size="lg"
     pill>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 
@@ -235,29 +224,29 @@ Check out [Button](/button/component) for more information.
 You also can customize button content via slot `button-content`
 
 <preview>
-  <Dropdown
+  <p-dropdown
     text="Button"
     icon>
     <template #button-content>
       <IconBee />
     </template>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown
+  <p-dropdown
     icon>
     <template #button-content>
       <IconBee />
     </template>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 
 <script setup>
@@ -270,52 +259,52 @@ You also can customize button content via slot `button-content`
 You can also completely change dropdown's activator button to something else via slot `activator`.
 
 <preview>
-  <Dropdown
+  <p-dropdown
     text="Button"
     icon>
     <template #activator="{ open }">
-      <Input placeholder="This is Dropdown" @focus="open" />
+      <p-input placeholder="This is Dropdown" @focus="open" />
     </template>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown
+  <p-dropdown
     text="Button"
     icon>
     <template #activator="{ open }">
-      <Input placeholder="This is Dropdown" @focus="open" />
+      <p-input placeholder="This is Dropdown" @focus="open" />
     </template>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 
 ## Disabled State
 
 <preview>
-  <Dropdown
+  <p-dropdown
     text="Button"
     disabled>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown
+  <p-dropdown
     text="Button"
     disabled>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 
@@ -324,22 +313,22 @@ You can also completely change dropdown's activator button to something else via
 Add props `no-caret` to hide caret icon
 
 <preview>
-  <Dropdown
+  <p-dropdown
     text="Button"
     no-caret>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Dropdown
+  <p-dropdown
     text="Button"
     no-caret>
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 
@@ -348,24 +337,24 @@ Add props `no-caret` to hide caret icon
 You can programmatically toggle dropdown using `v-model`
 
 <preview class="flex-col gap-2">
-  <Checkbox v-model="show">Show Dropdown</Checkbox>
-  <Dropdown
+  <p-checkbox v-model="show">Show Dropdown</p-checkbox>
+  <p-dropdown
     v-model="show"
     text="Button">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </preview>
 
 ```vue
 <template>
-  <Checkbox v-model="show">Show Dropdown</Checkbox>
-  <Dropdown
+  <p-checkbox v-model="show">Show Dropdown</p-checkbox>
+  <p-dropdown
     v-model="show"
     text="Button">
-    <DropdownItem>Item Text</DropdownItem>
-    <DropdownItem>Item Text</DropdownItem>
-  </Dropdown>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
 </template>
 ```
 

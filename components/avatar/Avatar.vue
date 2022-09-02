@@ -99,9 +99,9 @@ export default defineComponent({
       imageSrc.value = createSpinner(50)
 
       loadImage(props.src)
-        .then((src) => {
-          imageSrc.value = src
-          emit('imgloaded', src)
+        .then(() => {
+          imageSrc.value = props.src
+          emit('imgloaded', props.src)
         })
         .catch((error) => {
           imageSrc.value = props.fallbackSrc

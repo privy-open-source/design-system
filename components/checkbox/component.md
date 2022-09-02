@@ -1,6 +1,7 @@
 <script setup>
   import Banner from "../banner/Banner.vue"
   import pCheckbox from "./Checkbox.vue"
+  import pCaption from "../caption/Caption.vue"
   import { ref, computed } from "vue-demi"
 
   const value    = ref(false)
@@ -49,9 +50,7 @@
 <preview>
   <p-checkbox>
     <div>Checklist Label</div>
-    <div class="text-subtext-100">
-      Text
-    </div>
+    <p-caption>Text</p-caption>
   </p-checkbox>
 </preview>
 
@@ -59,9 +58,7 @@
 <template>
   <p-checkbox>
     <div>Checklist Label</div>
-    <div class="text-subtext-100">
-      Text
-    </div>
+    <p-caption>Text</p-caption>
   </p-checkbox>
 </template>
 ```

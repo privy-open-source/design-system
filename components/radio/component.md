@@ -1,5 +1,6 @@
 <script setup>
   import pRadio from "./Radio.vue"
+  import pCaption from "../caption/Caption.vue"
   import { ref } from "vue-demi"
 
   const value    = ref('')
@@ -27,9 +28,7 @@
 <preview>
   <p-radio v-model="value">
     <div>Radio Label</div>
-    <div class="text-subtext-100">
-      Text
-    </div>
+    <p-caption>Text</p-caption>
   </p-radio>
 </preview>
 
@@ -37,9 +36,7 @@
 <template>
   <p-radio v-model="value">
     <div>Radio Label</div>
-    <div class="text-subtext-100">
-      Text
-    </div>
+    <p-caption>Text</p-caption>
   </p-radio>
 </template>
 ```

@@ -50,7 +50,7 @@ export default defineComponent({
 
   &--xs {
     .btn {
-      &,
+      &:not(.btn--icon),
       .dropdown > & {
         @apply px-2 py-1 gap-1 text-sm;
       }
@@ -67,23 +67,25 @@ export default defineComponent({
   }
 
   &--sm {
-    .btn,
-    .dropdown .btn {
-      @apply px-4 py-2 gap-2 text-base;
+    .btn {
+      &:not(.btn--icon),
+      .dropdown .btn {
+        @apply px-4 py-2 gap-2 text-base;
 
-      &:first-child {
-        @apply rounded-l-sm;
-      }
+        &:first-child {
+          @apply rounded-l-sm;
+        }
 
-      &:last-child {
-        @apply rounded-r-sm;
+        &:last-child {
+          @apply rounded-r-sm;
+        }
       }
     }
   }
 
   &--md {
     .btn {
-      &,
+      &:not(.btn--icon),
       .dropdown > .btn {
         @apply px-5 py-3 gap-3 text-base;
       }
@@ -91,9 +93,11 @@ export default defineComponent({
   }
 
   &--lg {
-    .btn,
-    .dropdown .btn {
-      @apply px-8 py-5 gap-4 text-base;
+    .btn {
+      &:not(.btn--icon),
+      .dropdown .btn {
+        @apply px-8 py-5 gap-4 text-base;
+      }
     }
   }
 

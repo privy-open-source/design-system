@@ -207,7 +207,21 @@ export default defineConfig({
             link: '/filterbar/component'
           },
         ],
-      }
+      },
+      {
+        text       : 'Signature',
+        collapsible: true,
+        items      : [
+          {
+            text: 'Signature Draw',
+            link: '/signature-draw/component'
+          },
+          {
+            text: 'Signature Text',
+            link: '/signature-text/component'
+          },
+        ],
+      },
     ]
   },
   vite: {

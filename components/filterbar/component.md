@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from 'vue-demi'
-  import Filterbar from './Filterbar.vue'
+  import pFilterbar from './Filterbar.vue'
   import { defineFilter } from './use-filterbar'
 
   const query = ref({})
@@ -63,16 +63,16 @@
 
 ### Simple Usage
 <preview>
-  <Filterbar :schema="schema" v-model="query" />
+  <p-filterbar :schema="schema" v-model="query" />
 </preview>
 
 ```vue
 <template>
-  <Filterbar :schema="schema" v-model="query" />
+  <p-filterbar :schema="schema" v-model="query" />
 </template>
 
 <script setup>
-import { defineFilter } from './use-filterbar'
+import { defineFilter } from '@privyid/persona/filterbar'
 
 const query  = ref({})
 const schema = defineFilter([
@@ -102,16 +102,16 @@ const schema = defineFilter([
 ### `toggle`
 
 <preview>
-  <Filterbar :schema="toggleOnly" v-model="query" />
+  <p-filterbar :schema="toggleOnly" v-model="query" />
 </preview>
 
 ```vue
 <template>
-  <Filterbar :schema="schema" v-model="query" />
+  <p-filterbar :schema="schema" v-model="query" />
 </template>
 
 <script setup>
-import { defineFilter } from './use-filterbar'
+import { defineFilter } from '@privyid/persona/filterbar'
 
 const schema = defineFilter([
   {
@@ -125,16 +125,16 @@ const schema = defineFilter([
 ### `select`
 
 <preview>
-  <Filterbar :schema="selectOnly" v-model="query" />
+  <p-filterbar :schema="selectOnly" v-model="query" />
 </preview>
 
 ```vue
 <template>
-  <Filterbar :schema="schema" v-model="query" />
+  <p-filterbar :schema="schema" v-model="query" />
 </template>
 
 <script setup>
-import { defineFilter } from './use-filterbar'
+import { defineFilter } from '@privyid/persona/filterbar'
 
 const schema = defineFilter([
   {
@@ -153,16 +153,16 @@ const schema = defineFilter([
 ### `multiselect`
 
 <preview>
-  <Filterbar :schema="multiselectOnly" v-model="query" />
+  <p-filterbar :schema="multiselectOnly" v-model="query" />
 </preview>
 
 ```vue
 <template>
-  <Filterbar :schema="schema" v-model="query" />
+  <p-filterbar :schema="schema" v-model="query" />
 </template>
 
 <script setup>
-import { defineFilter } from './use-filterbar'
+import { defineFilter } from '@privyid/persona/filterbar'
 
 const schema = defineFilter([
   {

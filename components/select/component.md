@@ -1,5 +1,5 @@
 <script setup>
-  import Select from "./Select.vue"
+  import pSelect from "./Select.vue"
   import FuzzyAdapter from "../select/adapter/fuzzy-adapter"
   import defineAsyncAdapter from "./adapter/async-adapter"
   import { ref } from "vue-demi"
@@ -48,12 +48,12 @@
 ### Simple Usage
 
 <preview>
-  <Select :options="optionsA" v-model="value" />
+  <p-select :options="optionsA" v-model="value" />
 </preview>
 
 ```vue
 <template>
-  <Select
+  <p-select
     v-model="value"
     :options="options" />
 </template>
@@ -66,12 +66,12 @@
 ### with Text and Value
 
 <preview>
-  <Select :options="optionsB" v-model="value" />
+  <p-select :options="optionsB" v-model="value" />
 </preview>
 
 ```vue
 <template>
-  <Select
+  <p-select
     v-model="value"
     :options="options" />
 </template>
@@ -89,42 +89,42 @@
 You can set input placeholder via `placeholder` props
 
 <preview>
-  <Select placeholder="Pick A Value" />
+  <p-select placeholder="Pick A Value" />
 </preview>
 
 ```vue
 <template>
-  <Select placeholder="Pick A Value" />
+  <p-select placeholder="Pick A Value" />
 </template>
 ```
 
 ## Disabled State
 
 <preview>
-  <Select disabled />
+  <p-select disabled />
 </preview>
 
 ```vue
 <template>
-  <Select disabled />
+  <p-select disabled />
 </template>
 ```
 
 ## Readonly State
 <preview>
-  <Select readonly />
+  <p-select readonly />
 </preview>
 
 ```vue
 <template>
-  <Select readonly />
+  <p-select readonly />
 </template>
 ```
 
 ## Binding v-model
 
 <preview>
-  <Select :options="optionsB" v-model="value" />
+  <p-select :options="optionsB" v-model="value" />
 </preview>
 
 **Result :**
@@ -133,7 +133,7 @@ You can set input placeholder via `placeholder` props
 
 ```vue
 <template>
-  <Select
+  <p-select
     v-model="value"
     :options="options" />
 </template>
@@ -144,7 +144,7 @@ You can set input placeholder via `placeholder` props
 If you want to get original selected item (text and value) not value only. you can use `v-model:selected`.
 
 <preview>
-  <Select
+  <p-select
     :options="optionsB"
     v-model="value"
     v-model:selected="selected" />
@@ -160,7 +160,7 @@ If you want to get original selected item (text and value) not value only. you c
 
 ```vue
 <template>
-  <Select
+  <p-select
     :options="optionsB"
     v-model="value"
     v-model:selected="selected" />
@@ -174,7 +174,7 @@ This component has build-in Fuzzy-search Adapter, powered by [Fuze.js](https://f
 **Example:** try type `nn`, and you'll got `Bananen`
 
 <preview>
-  <Select
+  <p-select
     :adapter="FuzzyAdapter"
     :options="optionsB"
     v-model="value" />
@@ -182,7 +182,7 @@ This component has build-in Fuzzy-search Adapter, powered by [Fuze.js](https://f
 
 ```vue
 <template>
-  <Select
+  <p-select
     v-model="value"
     :adapter="FuzzyAdapter"
     :options="options" />
@@ -192,9 +192,9 @@ This component has build-in Fuzzy-search Adapter, powered by [Fuze.js](https://f
   import FuzzyAdapter from './select/adapter/fuzzy-adapter'
 
   const options = ref([
-    { text: '🍎 Apple', value: 'Apple' },
-    { text: '🍇 Grape', value: 'Grape' },
-    { text: '🍌 Banana', value: 'Banana'},
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape' },
+    { text: '🍌 Bananen', value: 'Banana'},
   ])
 </script>
 ```
@@ -207,7 +207,7 @@ You just need define custom async adapter and request handler.
 It will take care of loading, inifinite load, and other stuff.
 
 <preview>
-  <Select
+  <p-select
     :adapter="provincesAdapter"
     v-model="province" />
 </preview>
@@ -218,7 +218,7 @@ It will take care of loading, inifinite load, and other stuff.
 
 ```vue
 <template>
-  <Select
+  <p-select
     :adapter="provincesAdapter"
     v-model="province" />
 </template>
@@ -247,12 +247,12 @@ Normally, when you select the province, it should trigger reload on city based o
 To do this, you need add the province value as **watch dependencies**. It will automatically reload when `province` is changed
 
 <preview class="flex-col gap-2">
-  <Select
+  <p-select
     v-model="province"
     placeholder="Select Province"
     :adapter="provincesAdapter"
     @user-input="city = ''" />
-  <Select
+  <p-select
     v-model="city"
     placeholder="Select Cities"
     :adapter="citiesAdapter" />
@@ -260,12 +260,12 @@ To do this, you need add the province value as **watch dependencies**. It will a
 
 ```vue
 <template>
-  <Select
+  <p-select
     v-model="province"
     placeholder="Select Province"
     :adapter="provincesAdapter"
     @user-input="city = ''" />
-  <Select
+  <p-select
     v-model="city"
     placeholder="Select Cities"
     :adapter="citiesAdapter" />

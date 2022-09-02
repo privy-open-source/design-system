@@ -1,5 +1,5 @@
 <script setup>
-  import Calendar from "./Calendar.vue"
+  import pCalendar from "./Calendar.vue"
   import Banner from "../banner/Banner.vue"
   import { ref } from "vue-demi"
   import { format } from 'date-fns'
@@ -15,12 +15,12 @@
 ### Simple Usage
 
 <preview>
-  <Calendar />
+  <p-calendar />
 </preview>
 
 ```vue
 <template>
-  <Calendar />
+  <p-calendar />
 </template>
 ```
 
@@ -29,7 +29,7 @@
 You can limit the date via `min` or `max` props
 
 <preview>
-  <Calendar
+  <p-calendar
     :min="new Date(2022, 0, 1)"
     :max="new Date(2022, 11, 31)" />
 </preview>
@@ -37,7 +37,7 @@ You can limit the date via `min` or `max` props
 ```vue
 <template>
   <!-- Limit 1 Jan - 31 Dec 2022 -->
-  <Calendar
+  <p-calendar
     :min="new Date(2022, 0, 1)"
     :max="new Date(2022, 11, 31)" />
 </template>
@@ -50,21 +50,21 @@ There 3 available mode: `date` , `month`, `year`. default is `date`. it will lim
 for example, mode `month` make user can only select the month, but can't select what spesific date.
 
 <preview class="flex-col items-center gap-2">
-  <Calendar
+  <p-calendar
     mode="date" />
-  <Calendar
+  <p-calendar
     mode="month" />
-  <Calendar
+  <p-calendar
     mode="year" />
 </preview>
 
 ```vue
 <template>
-  <Calendar
+  <p-calendar
     mode="date" />
-  <Calendar
+  <p-calendar
     mode="month" />
-  <Calendar
+  <p-calendar
     mode="year" />
 </template>
 ```
@@ -72,35 +72,35 @@ for example, mode `month` make user can only select the month, but can't select 
 ## Disabled State
 
 <preview class="flex-col items-center gap-2">
-  <Calendar disabled />
+  <p-calendar disabled />
 </preview>
 
 ```vue
 <template>
-  <Calendar disabled />
+  <p-calendar disabled />
 </template>
 ```
 
 ## Readonly state
 <preview>
-  <Calendar readonly />
+  <p-calendar readonly />
 </preview>
 
 ```vue
 <template>
-  <Calendar readonly />
+  <p-calendar readonly />
 </template>
 ```
 
 ## Binding v-model
 
 <preview>
-  <Calendar v-model="value" />
+  <p-calendar v-model="value" />
 </preview>
 
 ```vue
 <template>
-  <Calendar v-vmodel="value" />
+  <p-calendar v-vmodel="value" />
 </template>
 ```
 
@@ -121,7 +121,7 @@ Example:
 
 <preview>
   <div>
-    <Calendar v-model="value" />
+    <p-calendar v-model="value" />
     <div>
       Result: {{ value && format(value, 'dd-MM-yyyy') }}
     </div>
@@ -131,7 +131,7 @@ Example:
 ```vue
 <template>
   <div>
-    <Calendar v-model="value" />
+    <p-calendar v-model="value" />
     <div>
       Result: {{ value && format(value, 'dd-MM-yyyy') }}
     </div>
