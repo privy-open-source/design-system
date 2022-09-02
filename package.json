@@ -15,6 +15,7 @@
     "postinstall": "husky install"
   },
   "devDependencies": {
+    "@interactjs/types": "^1.10.17",
     "@privyid/tailwind-preset": "workspace:^",
     "@rushstack/eslint-patch": "1.1.4",
     "@testing-library/jest-dom": "5.16.5",
@@ -55,14 +56,12 @@
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.8",
-    "@interactjs/actions": "^1.10.17",
-    "@interactjs/auto-start": "^1.10.17",
-    "@interactjs/interact": "^1.10.17",
     "@popperjs/core": "2.11.6",
     "@vueuse/core": "8.9.4",
     "date-fns": "2.29.2",
     "defu": "6.0.0",
     "fuse.js": "6.6.2",
+    "interactjs": "^1.10.17",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
     "tabbable": "5.3.3",

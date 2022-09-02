@@ -1,8 +1,5 @@
-import '@interactjs/auto-start'
-import '@interactjs/actions/drag'
-import Interact from '@interactjs/interact'
-import { InteractEvent } from '@interactjs/types'
-import { throttle } from 'lodash'
+import type { InteractEvent } from '@interactjs/types'
+import { throttle } from 'lodash-es'
 import {
   onBeforeUnmount,
   onMounted,
@@ -15,9 +12,10 @@ export interface DrawHooks {
 }
 
 export default function useDraw (target: Ref<HTMLCanvasElement>, hooks?: DrawHooks) {
-  onMounted(() => {
+  onMounted(async () => {
     if (target.value) {
-      const onmove = throttle(hooks.onmove, 1000 / 120 /* limit 120fps */)
+      const { default: Interact } = await import('interactjs')
+      const onmove                = throttle(hooks.onmove, 1000 / 120 /* limit 120fps */)
 
       Interact(target.value)
         .styleCursor(false)
@@ -31,7 +29,9 @@ export default function useDraw (target: Ref<HTMLCanvasElement>, hooks?: DrawHoo
     }
   })
 
-  onBeforeUnmount(() => {
+  onBeforeUnmount(async () => {
+    const { default: Interact } = await import('interactjs')
+
     Interact(target.value).unset()
   })
 }
