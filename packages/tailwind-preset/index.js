@@ -70,6 +70,18 @@ module.exports = {
         },
       ],
     },
+    fontWeight: {
+      inherit   : 'inherit',
+      thin      : 100,
+      extralight: 200,
+      light     : 300,
+      normal    : 400,
+      medium    : 500,
+      semibold  : 600,
+      bold      : 700,
+      extrabold : 800,
+      black     : 900,
+    },
     colors: {
       primary: {
         5      : '#F2F7FD',
@@ -162,6 +174,7 @@ module.exports = {
         75 : '#8640DD',
         100: '#5E00D1',
       },
+      inherit   : 'inherit',
       background: {
         25 : '#FDFDFD',
         50 : '#FAFAFA',

@@ -27,47 +27,6 @@
   @media (min-width: 960px) {
     width: 15rem;
   }
-
-  > .sidebar {
-    &-links {
-      > .sidebar-link {
-        @apply py-1.5 pr-6 pl-8;
-
-        + .sidebar-link {
-          @apply pt-8;
-        }
-
-        > .sidebar-link-item {
-          @apply px-2 py-0 mb-1 text-base font-bold;
-        }
-
-        > .sidebar-links {
-          > .sidebar-link {
-            > a.sidebar-link-item {
-              @apply inline-block px-3 py-1 text-sm border-l-0 rounded-sm;
-
-              &.active,
-              &:hover {
-                @apply bg-primary-100 bg-opacity-10 text-body-100;
-              }
-
-              &.active {
-                @apply font-bold;
-              }
-            }
-
-            > .sidebar-links > .sidebar-link > .sidebar-link-item {
-              @apply px-6;
-            }
-
-            > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > .sidebar-link-item {
-              @apply px-10;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 /*

@@ -22,7 +22,7 @@ export default defineConfig({
     sidebar     : [
       {
         text       : 'Guide',
-        collapsable: true,
+        collapsible: true,
         items      : [
           {
             text: 'Badge',
@@ -52,7 +52,7 @@ export default defineConfig({
       },
       {
         text       : 'Base',
-        collapsable: true,
+        collapsible: true,
         items      : [
           {
             text: 'Avatar',
@@ -122,7 +122,7 @@ export default defineConfig({
       },
       {
         text       : 'Typography',
-        collapsable: true,
+        collapsible: true,
         items      : [
           {
             text: 'Caption',
@@ -144,7 +144,7 @@ export default defineConfig({
       },
       {
         text       : 'Form',
-        collapsable: true,
+        collapsible: true,
         items      : [
           {
             text: 'Calendar',
@@ -182,7 +182,7 @@ export default defineConfig({
       },
       {
         text       : 'Non-Component',
-        collapsable: true,
+        collapsible: true,
         items      : [
           {
             text: 'Dialog',
@@ -200,7 +200,7 @@ export default defineConfig({
       },
       {
         text       : 'Dashboard',
-        collapsable: true,
+        collapsible: true,
         items      : [
           {
             text: 'Filterbar',
