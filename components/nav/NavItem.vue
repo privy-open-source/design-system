@@ -21,7 +21,9 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, PropType,
+  computed,
+  defineComponent,
+  PropType,
 } from 'vue-demi'
 
 type TargetVariant = '_blank' | '_self' | '_parent' | '_top'

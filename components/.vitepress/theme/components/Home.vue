@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-center pt-8">
-    <img class="py-7" src="/assets/logo.svg" alt="icon privy" width="150">
+    <img class="py-7" src="/assets/logo.svg" alt="icon privy" width="150" height="150">
 
     <div class="flex h-full">
       <div class="px-3 border-r">
@@ -37,7 +37,7 @@
   import Subheading from "../../../subheading/Subheading.vue"
   import Badge from "../../../badge/Badge.vue"
   import Button from "../../../button/Button.vue"
-  import { useRouter } from "vitepress"
+  import { useRouter, withBase } from "vitepress"
   import IconGithub from "@carbon/icons-vue/lib/logo--github/20"
 
   export default defineComponent({
@@ -46,7 +46,7 @@
       const router = useRouter()
 
       function gettingStarted () {
-        router.go('/getting-started')
+        router.go(withBase('/getting-started'))
       }
 
       function openGithub () {

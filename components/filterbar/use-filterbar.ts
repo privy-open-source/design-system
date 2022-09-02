@@ -1,7 +1,7 @@
 import defu from 'defu'
 import { SelectProps } from '../select/use-select'
 import { Adapter } from '../select/adapter/adapter'
-import { startCase } from 'lodash'
+import { startCase } from 'lodash-es'
 import { CalendarMode } from '../calendar/adapter/adapter'
 import { MaybeRef } from '@vueuse/core'
 

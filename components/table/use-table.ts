@@ -1,5 +1,5 @@
 import defu from 'defu'
-import { startCase, isNil } from 'lodash'
+import { startCase, isNil } from 'lodash-es'
 import { HTMLAttributes } from 'vue-demi'
 
 export interface TableField {

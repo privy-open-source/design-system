@@ -18,15 +18,13 @@
           v-if="item.submenu"
           :text="item.label"
           :collapsible="item.collapsible">
-          <template
-            v-if="item.icon"
-            #icon>
-            <template v-if="typeof item.icon === 'string'">
+          <template #icon>
+            <template v-if="item.icon && typeof item.icon === 'string'">
               <img
                 :src="item.icon"
                 alt="icon-menu">
             </template>
-            <template v-else>
+            <template v-else-if="item.icon">
               <component :is="item.icon" />
             </template>
           </template>
@@ -44,14 +42,13 @@
           :href="item.url"
           :class="{ 'nav__item--no-label' : !item.label }">
           <template
-            v-if="item.icon"
             #icon>
-            <template v-if="typeof item.icon === 'string'">
+            <template v-if="item.icon && typeof item.icon === 'string'">
               <img
                 :src="item.icon"
                 alt="icon-menu">
             </template>
-            <template v-else>
+            <template v-else-if="item.icon">
               <component :is="item.icon" />
             </template>
           </template>

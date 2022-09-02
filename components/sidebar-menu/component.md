@@ -148,7 +148,7 @@
     }
   ])
 </script>
-<style scoped>
+<style scoped lang="postcss">
   .preview {
     @apply block h-[28rem] overflow-hidden;
 
@@ -165,6 +165,7 @@
 # Sidebar Menu
 
 ## Usage
+
 ### Basic Sidebar
 
 <preview class="flex-col gap-2">
@@ -218,6 +219,7 @@ const menus = defineMenu([
 ```
 
 ### Fixed Sidebar
+
 <preview class="flex-col gap-2 higher">
   <p-sidebar-menu fixed :menus="fixed">
     <p-sidebar-brand>
@@ -321,6 +323,7 @@ const menus = defineMenu([
 ```
 
 ### Narrow Sidebar
+
 <preview class="flex-col gap-2 higher">
   <p-sidebar-menu fixed :menus="narrow" type="narrow">
     <p-sidebar-brand>
