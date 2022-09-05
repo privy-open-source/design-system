@@ -1,7 +1,7 @@
 <script setup>
-  import Tabs from './Tabs.vue'
-  import Tab from './Tab.vue'
-  import Badge from '../badge/Badge.vue'
+  import pTabs from './Tabs.vue'
+  import pTab from './Tab.vue'
+  import pBadge from '../badge/Badge.vue'
   import IconEdit from '@carbon/icons-vue/lib/edit/20'
   import IconView from '@carbon/icons-vue/lib/view/20'
   import IconDocument from '@carbon/icons-vue/lib/document/20'
@@ -20,20 +20,20 @@
 ### Basic Usage
 
 <preview>
-  <Tabs>
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
+  <p-tabs>
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs>
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
+  <p-tabs>
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
 </template>
 ```
 
@@ -41,40 +41,40 @@
 Navigation of tabs has 3 variants, `tabs`, `pills` and `lines`. Default is `pills`
 
 <preview>
-  <Tabs variant="tabs">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs variant="pills">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs variant="lines">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
+  <p-tabs variant="tabs">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs variant="pills">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs variant="lines">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs variant="tabs">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs variant="pills">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs variant="lines">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
+  <p-tabs variant="tabs">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs variant="pills">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs variant="lines">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
 </template>
 ```
 
@@ -82,30 +82,30 @@ Navigation of tabs has 3 variants, `tabs`, `pills` and `lines`. Default is `pill
 Tabs can be fullwidth. There are 2 options available: `fill` and `justified`. To proportionately fill all available space, choose `fill`. When need every nav item will be the same width, choose `justified`.
 
 <preview>
-  <Tabs fill>
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs justified>
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
+  <p-tabs fill>
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs justified>
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs fill>
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs justified>
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
+  <p-tabs fill>
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs justified>
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
 </template>
 ```
 
@@ -113,40 +113,40 @@ Tabs can be fullwidth. There are 2 options available: `fill` and `justified`. To
 To align Tabs, use `align` prop. Available value are `left`, `right` and `center`. The `center` align just working in horizontal Tabs.
 
 <preview>
-  <Tabs align="left">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs align="center">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs align="right">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
+  <p-tabs align="left">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs align="center">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs align="right">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs align="left">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs align="center">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
-  <Tabs align="right">
-    <Tab title="Home">Home page content</Tab>
-    <Tab title="Profile">Profile page content</Tab>
-    <Tab title="Setting" disabled>Setting page content</Tab>
-  </Tabs>
+  <p-tabs align="left">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs align="center">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
+  <p-tabs align="right">
+    <p-tab title="Home">Home page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
+  </p-tabs>
 </template>
 ```
 
@@ -155,59 +155,59 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
 ### Icon
 
 <preview>
-  <Tabs>
-    <Tab>
+  <p-tabs>
+    <p-tab>
       <template #icon>
         <IconEdit />
       </template>
       But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
-    </Tab>
-    <Tab>
+    </p-tab>
+    <p-tab>
       <template #icon>
         <IconView />
       </template>
       A wonderful serenity has taken possession of my entire soul, like these sweet mornings
-    </Tab>
-    <Tab disabled>
+    </p-tab>
+    <p-tab disabled>
       <template #icon>
         <IconDocument />
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs>
-    <Tab>
+  <p-tabs>
+    <p-tab>
       <template #icon>
         <IconEdit />
       </template>
       But I must explain to you how all this mistaken idea of 
       denouncing pleasure and praising pain was born
-    </Tab>
-    <Tab>
+    </p-tab>
+    <p-tab>
       <template #icon>
         <IconView />
       </template>
       A wonderful serenity has taken possession of my entire soul, 
       like these sweet mornings
-    </Tab>
-    <Tab disabled>
+    </p-tab>
+    <p-tab disabled>
       <template #icon>
         <IconDocument />
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, 
       he found himself transformed
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </template>
 ```
 
 <preview>
-  <Tabs>
-    <Tab>
+  <p-tabs>
+    <p-tab>
       <template #icon>
         <IconEdit />
       </template>
@@ -215,8 +215,8 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
         Edit
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed
-    </Tab>
-    <Tab>
+    </p-tab>
+    <p-tab>
       <template #icon>
         <IconView />
       </template>
@@ -224,8 +224,8 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
         View
       </template>
       A wonderful serenity has taken possession of my entire soul, like these sweet mornings
-    </Tab>
-    <Tab disabled>
+    </p-tab>
+    <p-tab disabled>
       <template #icon>
         <IconDocument />
       </template>
@@ -233,14 +233,14 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
         Setting
       </template>
       But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs>
-    <Tab>
+  <p-tabs>
+    <p-tab>
       <template #icon>
         <IconEdit />
       </template>
@@ -249,8 +249,8 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, 
       he found himself transformed
-    </Tab>
-    <Tab>
+    </p-tab>
+    <p-tab>
       <template #icon>
         <IconView />
       </template>
@@ -259,8 +259,8 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
       </template>
       A wonderful serenity has taken possession of my entire soul, 
       like these sweet mornings
-    </Tab>
-    <Tab disabled>
+    </p-tab>
+    <p-tab disabled>
       <template #icon>
         <IconDocument />
       </template>
@@ -269,95 +269,95 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
       </template>
       But I must explain to you how all this mistaken idea of denouncing 
       pleasure and praising pain was born
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </template>
 ```
 ### Badge
 
 <preview>
-  <Tabs>
-    <Tab>
+  <p-tabs>
+    <p-tab>
       <template #title>
-        To Sign <Badge color="primary">25</Badge>
+        To Sign <p-badge color="primary">25</p-badge>
       </template>
       But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
-    </Tab>
-    <Tab>
+    </p-tab>
+    <p-tab>
       <template #title>
-        To Review <Badge color="primary">25</Badge>
+        To Review <p-badge color="primary">25</p-badge>
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs>
-    <Tab>
+  <p-tabs>
+    <p-tab>
       <template #title>
-        To Sign <Badge color="primary">25</Badge>
+        To Sign <p-badge color="primary">25</p-badge>
       </template>
       But I must explain to you how all this mistaken idea 
       of denouncing pleasure and praising pain was born
-    </Tab>
-    <Tab>
+    </p-tab>
+    <p-tab>
       <template #title>
-        To Review <Badge color="primary">25</Badge>
+        To Review <p-badge color="primary">25</p-badge>
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, 
       he found himself transformed
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </template>
 ```
 
 <preview>
-  <Tabs justified>
-    <Tab>
+  <p-tabs justified>
+    <p-tab>
       <template #icon>
         <IconEdit />
       </template>
       <template #title>
-        To Sign <Badge color="primary" variant="light">25</Badge>
+        To Sign <p-badge color="primary" variant="light">25</p-badge>
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed
-    </Tab>
-    <Tab>
+    </p-tab>
+    <p-tab>
       <template #icon>
         <IconView />
       </template>
       <template #title>
-        To Review <Badge color="primary" variant="light">25</Badge>
+        To Review <p-badge color="primary" variant="light">25</p-badge>
       </template>
       A wonderful serenity has taken possession of my entire soul, like these sweet mornings
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs justified>
-    <Tab>
+  <p-tabs justified>
+    <p-tab>
       <template #icon>
         <IconEdit />
       </template>
       <template #title>
-        To Sign <Badge color="primary" variant="light">25</Badge>
+        To Sign <p-badge color="primary" variant="light">25</p-badge>
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed
-    </Tab>
-    <Tab>
+    </p-tab>
+    <p-tab>
       <template #icon>
         <IconView />
       </template>
       <template #title>
-        To Review <Badge color="primary" variant="light">25</Badge>
+        To Review <p-badge color="primary" variant="light">25</p-badge>
       </template>
       A wonderful serenity has taken possession of my entire soul, like these sweet mornings
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </template>
 ```
 
@@ -365,92 +365,92 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
 The available alignment in vertical Tabs is just `left` and `right`
 
 <preview>
-  <Tabs vertical nav-wrapper-class="w-48">
-    <Tab title="Home">
+  <p-tabs vertical nav-wrapper-class="w-48">
+    <p-tab title="Home">
       One morning, when Gregor Samsa woke from troubled dreams, 
       he found himself transformed in his bed into a horrible vermin. 
       He lay on his armour-like back, and if he lifted his head
-    </Tab>
-    <Tab title="Profile">
+    </p-tab>
+    <p-tab title="Profile">
       But I must explain to you how all this mistaken idea of 
       denouncing pleasure and praising pain was born and I will 
       give you a complete account of the system,
-    </Tab>
-    <Tab title="Setting" disabled>
+    </p-tab>
+    <p-tab title="Setting" disabled>
       Far far away, behind the word mountains, far from 
       the countries Vokalia and Consonantia, there live the 
       blind texts. Separated they live in Bookmarksgrove right
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs vertical nav-wrapper-class="w-48">
-    <Tab title="Home">
+  <p-tabs vertical nav-wrapper-class="w-48">
+    <p-tab title="Home">
       One morning, when Gregor Samsa woke from troubled dreams, 
       he found himself transformed in his bed into a horrible vermin. 
       He lay on his armour-like back, and if he lifted his head
-    </Tab>
-    <Tab title="Profile">
+    </p-tab>
+    <p-tab title="Profile">
       But I must explain to you how all this mistaken idea of 
       denouncing pleasure and praising pain was born and I will 
       give you a complete account of the system,
-    </Tab>
-    <Tab title="Setting" disabled>
+    </p-tab>
+    <p-tab title="Setting" disabled>
       Far far away, behind the word mountains, far from 
       the countries Vokalia and Consonantia, there live the 
       blind texts. Separated they live in Bookmarksgrove right
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </template>
 ```
 
 <preview>
-  <Tabs vertical nav-wrapper-class="w-48" align="right">
-    <Tab title="Home">
+  <p-tabs vertical nav-wrapper-class="w-48" align="right">
+    <p-tab title="Home">
       One morning, when Gregor Samsa woke from troubled dreams, 
       he found himself transformed in his bed into a horrible vermin. 
       He lay on his armour-like back, and if he lifted his head
-    </Tab>
-    <Tab title="Profile">
+    </p-tab>
+    <p-tab title="Profile">
       But I must explain to you how all this mistaken idea of 
       denouncing pleasure and praising pain was born and I will 
       give you a complete account of the system,
-    </Tab>
-    <Tab title="Setting" disabled>
+    </p-tab>
+    <p-tab title="Setting" disabled>
       Far far away, behind the word mountains, far from 
       the countries Vokalia and Consonantia, there live the 
       blind texts. Separated they live in Bookmarksgrove right
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </preview>
 
 ```vue
 <template>
-  <Tabs vertical nav-wrapper-class="w-48" align="right">
-    <Tab title="Home">
+  <p-tabs vertical nav-wrapper-class="w-48" align="right">
+    <p-tab title="Home">
       One morning, when Gregor Samsa woke from troubled dreams, 
       he found himself transformed in his bed into a horrible vermin. 
       He lay on his armour-like back, and if he lifted his head
-    </Tab>
-    <Tab title="Profile">
+    </p-tab>
+    <p-tab title="Profile">
       But I must explain to you how all this mistaken idea of 
       denouncing pleasure and praising pain was born and I will 
       give you a complete account of the system,
-    </Tab>
-    <Tab title="Setting" disabled>
+    </p-tab>
+    <p-tab title="Setting" disabled>
       Far far away, behind the word mountains, far from 
       the countries Vokalia and Consonantia, there live the 
       blind texts. Separated they live in Bookmarksgrove right
-    </Tab>
-  </Tabs>
+    </p-tab>
+  </p-tabs>
 </template>
 ```
 
 ## API
 
-### Props `<Tabs>`
+### Props `<p-tabs>`
 
 | Props               |   Type    | Default     | Description                                                            |
 |---------------------|:---------:|:-----------:|------------------------------------------------------------------------|
@@ -461,20 +461,20 @@ The available alignment in vertical Tabs is just `left` and `right`
 | `vertical`          | `Boolean` | `false`     | Activate vertical Tabs                                                 |
 | `nav-wrapper-class` | `String`  | `undefined` | Class to place in the navigation wrapper                               |
 
-### Slots `<Tabs>`
+### Slots `<p-tabs>`
 
 | Name             | Description                                             |
 |------------------|---------------------------------------------------------|
 | `default`        | Content to place in the Nav                             |
 
-### Props `<Tab>`
+### Props `<p-tab>`
 
 | Props          |   Type     | Default      | Description                                                 |
 |----------------|:----------:|:------------:|-------------------------------------------------------------|
 | `title`        | `String`   | `undefined`  | Place content in the Tab title                              |
 | `disabled`     | `Boolean`  | `false`      | Disable tab functionality and place it in disabled state    |
 
-### Slots `<Tab>`
+### Slots `<p-tab>`
 
 | Name             | Description                                             |
 |------------------|---------------------------------------------------------|

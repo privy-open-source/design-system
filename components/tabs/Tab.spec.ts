@@ -1,14 +1,16 @@
 import { render } from '@testing-library/vue'
-import Tabs from './Tabs.vue'
-import Tab from './Tab.vue'
+import pTabs from './Tabs.vue'
+import pTab from './Tab.vue'
+import { delay } from 'nanodelay'
+import IconEdit from '@carbon/icons-vue/lib/edit/16'
 
 it('should rendered properly without any props', () => {
   const screen = render({
-    components: { Tabs, Tab },
+    components: { pTabs, pTab },
     template  : `
-      <Tabs>
-        <Tab title="To Sign">To Sign Content</Tab>
-      </Tabs>
+      <p-tabs>
+        <p-tab title="To Sign">To Sign Content</p-tab>
+      </p-tabs>
     `,
   })
 
@@ -22,15 +24,39 @@ it('should rendered properly without any props', () => {
 
 it('should be `disabled` by setting the `disabled` prop', () => {
   const screen = render({
-    components: { Tabs, Tab },
+    components: { pTabs, pTab },
     template  : `
-      <Tabs>
-        <Tab title="To Sign" disabled>To Sign Content</Tab>
-      </Tabs>
+      <p-tabs>
+        <p-tab title="To Sign" disabled>To Sign Content</p-tab>
+      </p-tabs>
     `,
   })
 
   const tabContent = screen.queryByTestId('tab-content')
 
   expect(tabContent).not.toBeVisible()
+})
+
+it('should have style no-label when Tab navigation is just an icon', async () => {
+  const screen = render({
+    components: {
+      pTabs, pTab, IconEdit,
+    },
+    template: `
+      <p-tabs>
+        <p-tab>
+          <template #icon>
+            <IconEdit />
+          </template>
+        </p-tab>
+      </p-tabs>
+    `,
+  })
+
+  await delay(2)
+
+  const tab = screen.queryByTestId('tab')
+
+  expect(tab).toBeInTheDocument()
+  expect(tab).toHaveClass('nav__item--no-label')
 })

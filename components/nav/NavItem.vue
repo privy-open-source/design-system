@@ -1,7 +1,8 @@
 <template>
   <li
     data-testid="nav-item"
-    class="nav__item">
+    class="nav__item"
+    :class="navItemClass">
     <a
       data-testid="nav-link"
       :href="link"
@@ -66,6 +67,15 @@ export default defineComponent({
       return result
     })
 
+    const navItemClass = computed(() => {
+      const result: string[] = ['']
+
+      if (props.active)
+        result.push('nav__item--active')
+
+      return result
+    })
+
     const link = computed(() => {
       let permalink: string | undefined
 
@@ -77,6 +87,7 @@ export default defineComponent({
 
     return {
       classNames,
+      navItemClass,
       link,
     }
   },

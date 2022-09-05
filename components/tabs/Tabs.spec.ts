@@ -1,12 +1,14 @@
-import { render } from '@testing-library/vue'
-import Tabs from './Tabs.vue'
+import { fireEvent, render } from '@testing-library/vue'
+import pTabs from './Tabs.vue'
+import pTab from './Tab.vue'
+import { delay } from 'nanodelay'
 
 it('should rendered properly without any props', () => {
   const screen = render({
-    components: { Tabs },
+    components: { pTabs },
     template  : `
-      <Tabs>
-      </Tabs>
+      <p-tabs>
+      </p-tabs>
     `,
   })
 
@@ -18,10 +20,10 @@ it('should rendered properly without any props', () => {
 
 it('should have style `fill` by setting the `fill` prop', () => {
   const screen = render({
-    components: { Tabs },
+    components: { pTabs },
     template  : `
-      <Tabs fill>
-      </Tabs>
+      <p-tabs fill>
+      </p-tabs>
     `,
   })
 
@@ -33,10 +35,10 @@ it('should have style `fill` by setting the `fill` prop', () => {
 
 it('should have style `justified` by setting the `justified` prop', () => {
   const screen = render({
-    components: { Tabs },
+    components: { pTabs },
     template  : `
-      <Tabs justified>
-      </Tabs>
+      <p-tabs justified>
+      </p-tabs>
     `,
   })
 
@@ -48,10 +50,10 @@ it('should have style `justified` by setting the `justified` prop', () => {
 
 it('should have style `vertical` by setting the `vertical` prop', () => {
   const screen = render({
-    components: { Tabs },
+    components: { pTabs },
     template  : `
-      <Tabs vertical>
-      </Tabs>
+      <p-tabs vertical>
+      </p-tabs>
     `,
   })
 
@@ -66,10 +68,10 @@ it('should have style `vertical` by setting the `vertical` prop', () => {
 
 it('should have style `pills` if variant props set to `pills`', () => {
   const screen = render({
-    components: { Tabs },
+    components: { pTabs },
     template  : `
-      <Tabs variant="pills">
-      </Tabs>
+      <p-tabs variant="pills">
+      </p-tabs>
     `,
   })
 
@@ -82,10 +84,10 @@ it('should have style `pills` if variant props set to `pills`', () => {
 
 it('should be able to change alignment via props `align`', () => {
   const screen = render({
-    components: { Tabs },
+    components: { pTabs },
     template  : `
-      <Tabs align="center">
-      </Tabs>
+      <p-tabs align="center">
+      </p-tabs>
     `,
   })
 
@@ -97,10 +99,10 @@ it('should be able to change alignment via props `align`', () => {
 
 it('should be able to change vertical tabs alignment via props `align`', () => {
   const screen = render({
-    components: { Tabs },
+    components: { pTabs },
     template  : `
-      <Tabs align="right" vertical>
-      </Tabs>
+      <p-tabs align="right" vertical>
+      </p-tabs>
     `,
   })
 
@@ -112,10 +114,10 @@ it('should be able to change vertical tabs alignment via props `align`', () => {
 
 it('should be able to add nav wrapper class title via props `nav-wrapper-class`', () => {
   const screen = render({
-    components: { Tabs },
+    components: { pTabs },
     template  : `
-      <Tabs nav-wrapper-class="w-64">
-      </Tabs>
+      <p-tabs nav-wrapper-class="w-64">
+      </p-tabs>
     `,
   })
 
@@ -123,4 +125,33 @@ it('should be able to add nav wrapper class title via props `nav-wrapper-class`'
 
   expect(tabsNav).toBeInTheDocument()
   expect(tabsNav).toHaveClass('tabs__nav', 'w-64')
+})
+
+it('should active when tab (except disable) is clicked', async () => {
+  const screen = render({
+    components: { pTabs, pTab },
+    template  : `
+    <p-tabs>
+      <p-tab title="Home">Home page content</p-tab>
+      <p-tab title="Profile">Profile page content</p-tab>
+      <p-tab title="Setting" disabled>Setting page content</p-tab>
+    </p-tabs>
+    `,
+  })
+
+  const tabs = screen.queryByTestId('tabs')
+
+  await delay(2)
+
+  let tab = screen.queryAllByTestId('tab')
+
+  expect(tabs).toBeInTheDocument()
+  expect(tab.at(0)).toHaveClass('nav__item', 'nav__item--active')
+
+  await fireEvent.click(tab.at(1))
+
+  tab = screen.queryAllByTestId('tab')
+
+  expect(tab.at(1)).toHaveClass('nav__item--active')
+  expect(tab.at(0)).not.toHaveClass('nav__item--active')
 })
