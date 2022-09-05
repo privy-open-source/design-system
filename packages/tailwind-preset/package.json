@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "packageManager": "yarn@3.2.2",
   "main": "./index.js",
+  "types": "./index.d.ts",
   "peerDependencies": {
     "tailwind": ">= 3.0.0"
   },
