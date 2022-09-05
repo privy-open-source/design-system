@@ -1188,7 +1188,7 @@ __metadata:
     "@types/lodash": 4.14.184
     "@types/lodash-es": 4.17.6
     "@types/testing-library__jest-dom": 5.14.5
-    "@types/webfontloader": ^1
+    "@types/webfontloader": 1.6.34
     "@typescript-eslint/eslint-plugin": 5.35.1
     "@typescript-eslint/parser": 5.35.1
     "@vitejs/plugin-vue": 2.3.4
@@ -1204,7 +1204,7 @@ __metadata:
     eslint-plugin-import: 2.26.0
     eslint-plugin-n: 15.2.5
     eslint-plugin-node: 11.1.0
-    eslint-plugin-promise: 6.0.0
+    eslint-plugin-promise: 6.0.1
     eslint-plugin-unicorn: 43.0.2
     eslint-plugin-varspacing: 1.2.2
     eslint-plugin-vue: 9.4.0
@@ -1226,7 +1226,7 @@ __metadata:
     vitest: 0.21
     vue-demi: 0.13.10
     vuedraggable: next
-    webfontloader: ^1.6.28
+    webfontloader: 1.6.28
   languageName: unknown
   linkType: soft
 
@@ -1678,7 +1678,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webfontloader@npm:^1":
+"@types/webfontloader@npm:1.6.34":
   version: 1.6.34
   resolution: "@types/webfontloader@npm:1.6.34"
   checksum: acd945cbf76f22f9f1040ed0b86aafba0b0dd1f5fe05238896208273fd4243eec9412e0349fb4991948ee62102270ddacc21e354052dcbdcd5a3278131f83277
@@ -4764,12 +4764,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:6.0.0":
-  version: 6.0.0
-  resolution: "eslint-plugin-promise@npm:6.0.0"
+"eslint-plugin-promise@npm:6.0.1":
+  version: 6.0.1
+  resolution: "eslint-plugin-promise@npm:6.0.1"
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
-  checksum: 7e761507c51267b77e4ad710e7c8938aa4f8f69b975886034e57497a1816e9527eda364e25aac03d1b4e0df2e738ba98e49ad075d028824fcfea533a1419751c
+  checksum: c1bb3c2e591787e97133dcaf764f908420a3a1959a3132e199db8f14d70dfa79fc9caf991ca60a4b60ae5f1f9823bc96c2e52304828a4278ef2f3964fe121de9
   languageName: node
   linkType: hard
 
@@ -11118,7 +11118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webfontloader@npm:^1.6.28":
+"webfontloader@npm:1.6.28":
   version: 1.6.28
   resolution: "webfontloader@npm:1.6.28"
   checksum: cbebbe593cb0d27dbb4d418f7f96bd9893024f1f2062e858af76209b6524e25d766964b6e2a724f3b694fadef661dd3a01065455a96df05337b3281ca09ab656
