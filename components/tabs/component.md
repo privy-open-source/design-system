@@ -22,8 +22,8 @@
 <preview>
   <p-tabs>
     <p-tab title="Home">Home page content</p-tab>
-    <p-tab v-for="i in 3" :title="`Home ${i}`">Home page content #{{ i }}</p-tab>
-    <p-tab title="Profile" :disabled="false">Profile page content</p-tab>
+    <p-tab title="Profile">Profile page content</p-tab>
+    <p-tab title="Setting" disabled>Setting page content</p-tab>
   </p-tabs>
 </preview>
 
