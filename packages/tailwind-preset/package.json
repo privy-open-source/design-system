@@ -1,12 +1,13 @@
 {
   "name": "@privyid/tailwind-preset",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "packageManager": "yarn@3.2.2",
   "main": "./index.js",
   "peerDependencies": {
     "tailwind": ">= 3.0.0"
   },
   "dependencies": {
-    "@privyid/tailwind-animation": "workspace:^"
+    "@privyid/tailwind-animation": "workspace:^",
+    "@privyid/tailwind-extended": "workspace:^"
   }
 }

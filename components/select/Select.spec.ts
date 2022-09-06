@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { ref, nextTick } from 'vue-demi'
 import Select from './Select.vue'
-import type * as VueUser from '@vueuse/core'
+import type * as VueUse from '@vueuse/core'
 import defineAsyncAdapter from './adapter/async-adapter'
 import { delay } from 'nanodelay'
 
@@ -11,7 +11,7 @@ vi.mock('@vueuse/core', async () => {
   const core = await vi.importActual('@vueuse/core')
 
   return {
-    ...core as typeof VueUser,
+    ...core as typeof VueUse,
     onStartTyping,
   }
 })

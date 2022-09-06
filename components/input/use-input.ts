@@ -1,6 +1,9 @@
 import { syncRef } from '@vueuse/shared'
 import {
-  computed, getCurrentInstance, ref, Ref,
+  computed,
+  getCurrentInstance,
+  Ref,
+  ref,
 } from 'vue-demi'
 
 export interface InputProps<V = string> {
