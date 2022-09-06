@@ -16,20 +16,18 @@ import {
   watch,
   PropType,
   shallowRef,
-  onBeforeUpdate,
   onBeforeUnmount,
   toRef,
+  computed,
 } from 'vue-demi'
-import loadData from './adapter/index'
-
-export type TypeVariant = 'bar' | 'line' | 'pie'
+import getAdapter, { ChartType } from './adapter/index'
 
 export type LegendPosition = 'none' | LayoutPosition
 
 export default defineComponent({
   props: {
     variant: {
-      type   : String as PropType<TypeVariant>,
+      type   : String as PropType<ChartType>,
       default: 'line',
     },
     legend: {
@@ -43,23 +41,43 @@ export default defineComponent({
     const variant  = toRef(props, 'variant')
     const legend   = toRef(props, 'legend')
 
+    const data = computed(() => {
+      return getAdapter(variant.value).getDatasets(slots.default())
+    })
+
     function createChart () {
       if (instance.value)
         instance.value.destroy()
 
       instance.value = new Chart(canvas.value, {
         type   : variant.value,
-        data   : loadData(variant.value, slots.default()),
+        data   : data.value,
         options: {
           plugins: {
             legend: {
               display : legend.value !== 'none',
               position: legend.value !== 'none' ? legend.value : undefined,
+              labels  : {
+                color: '#9CA3AF',
+                font : {
+                  family: 'DM Sans',
+                  size  : 12,
+                  weight: '600',
+                },
+              },
             },
           },
+          ...getAdapter(variant.value).getStyle(),
         },
       })
     }
+
+    watch(data, (newData) => {
+      if (instance.value) {
+        instance.value.data = newData
+        instance.value.update()
+      }
+    })
 
     watch([variant, legend], () => {
       createChart()
@@ -67,13 +85,6 @@ export default defineComponent({
 
     onMounted(() => {
       createChart()
-    })
-
-    onBeforeUpdate(() => {
-      if (instance.value) {
-        instance.value.data = loadData(variant.value, slots.default())
-        instance.value.update()
-      }
     })
 
     onBeforeUnmount(() => {

@@ -9,7 +9,7 @@ export default defineComponent({
   name : 'ChartVal',
   props: {
     name: {
-      type    : String,
+      type    : [String, Number],
       required: true,
     },
     value: {

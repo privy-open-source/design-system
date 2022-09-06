@@ -1,35 +1,42 @@
 import { ChartData, ChartDataset } from 'chart.js'
 import { startCase } from 'lodash'
 import { Slots, VNode } from 'vue-demi'
+import { defineAdapter } from '.'
 import { colorHash } from '../../avatar/utils/color-hash'
 import { findAllChildren } from '../../utils/vnode'
 
-export default function getDatasets (vnodes: VNode[]): ChartData {
-  const sets     = findAllChildren(vnodes, 'ChartSet')
-  const datasets = new Map<string, ChartDataset>()
-  const labels   = [] as string[]
+export default defineAdapter({
+  getDatasets (vnodes: VNode[]): ChartData {
+    const sets     = findAllChildren(vnodes, 'ChartSet')
+    const datasets = new Map<string, ChartDataset>()
+    const labels   = [] as string[]
 
-  for (const set of sets) {
-    const values = findAllChildren((set.children as Slots).default(), 'ChartVal')
+    for (const set of sets) {
+      const values = findAllChildren((set.children as Slots).default(), 'ChartVal')
 
-    for (const value of values) {
-      const item  = datasets.get(set.props.name)
-      const color = value.props.color ?? colorHash(value.props.name).at(1)
+      for (const value of values) {
+        const item  = datasets.get(set.props.name)
+        const color = value.props.color ?? colorHash(value.props.name).at(1)
 
-      if (item) {
-        item.data.push(value.props.value);
-        (item.backgroundColor as string[]).push(color)
-      } else {
-        datasets.set(set.props.name, {
-          label          : startCase(set.props.name),
-          data           : [value.props.value],
-          backgroundColor: [color],
-        })
+        if (item) {
+          item.data.push(value.props.value);
+          (item.backgroundColor as string[]).push(color)
+        } else {
+          datasets.set(set.props.name, {
+            label          : startCase(set.props.name),
+            data           : [value.props.value],
+            backgroundColor: [color],
+          })
+        }
+
+        labels.push(startCase(value.props.name))
       }
-
-      labels.push(startCase(value.props.name))
     }
-  }
 
-  return { labels, datasets: [...datasets.values()] }
-}
+    return { labels, datasets: [...datasets.values()] }
+  },
+
+  getStyle () {
+    return {}
+  },
+})
