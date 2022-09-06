@@ -361,12 +361,6 @@ Navigation by default appear on horizontal line. You can stack navigation by set
     <NavItem active>To Sign</NavItem>
     <NavItem>To Review</NavItem>
     <NavItem>Auditrail</NavItem>
-    <NavSubItem text="Documents">
-      <Nav>
-        <NavItem active>To Sign</NavItem>
-        <NavItem>To Review</NavItem>
-      </Nav>
-    </NavSubItem>
   </Nav>
 </preview>
 
@@ -376,6 +370,66 @@ Navigation by default appear on horizontal line. You can stack navigation by set
     <NavItem active>To Sign</NavItem>
     <NavItem>To Review</NavItem>
     <NavItem>Auditrail</NavItem>
+  </Nav>
+</template>
+```
+
+## Submenu
+Submenu just support in vertical navigation. If you need collapsible menus, you just add `collapsible` prop 
+
+### Default Submenu
+<preview>
+  <Nav vertical class="w-64">
+    <NavItem active>Home</NavItem>
+    <NavSubItem text="Documents">
+      <Nav>
+        <NavItem>To Sign</NavItem>
+        <NavItem>To Review</NavItem>
+      </Nav>
+    </NavSubItem>
+    <NavItem>Contacts</NavItem>
+  </Nav>
+</preview>
+
+```vue
+<template>
+  <Nav vertical class="w-64">
+    <NavItem active>Home</NavItem>
+    <NavSubItem text="Documents">
+      <Nav>
+        <NavItem>To Sign</NavItem>
+        <NavItem>To Review</NavItem>
+      </Nav>
+    </NavSubItem>
+    <NavItem>Contacts</NavItem>
+  </Nav>
+</template>
+```
+### Collapsible Submenu
+<preview>
+  <Nav vertical class="w-64">
+    <NavItem active>Home</NavItem>
+    <NavSubItem text="Documents" collapsible>
+      <Nav>
+        <NavItem>To Sign</NavItem>
+        <NavItem>To Review</NavItem>
+      </Nav>
+    </NavSubItem>
+    <NavItem>Contacts</NavItem>
+  </Nav>
+</preview>
+
+```vue
+<template>
+  <Nav vertical class="w-64">
+    <NavItem active>Home</NavItem>
+    <NavSubItem text="Documents" collapsible>
+      <Nav>
+        <NavItem>To Sign</NavItem>
+        <NavItem>To Review</NavItem>
+      </Nav>
+    </NavSubItem>
+    <NavItem>Contacts</NavItem>
   </Nav>
 </template>
 ```
@@ -449,8 +503,8 @@ When you need title for grouping navigation, you can add navigation title by usi
 | Props          |   Type    | Default     | Description                                                       |
 |----------------|:---------:|:-----------:|-------------------------------------------------------------------|
 | `variant`      | `String`  | `pills`     | Navigation variant, valid value is `pills`, `lines` and `tabs`    |
-|  `fill`        | `Boolean` | `false`     | Activate fullwidth navigation with `fill` type                    |
-|  `justified`   | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
+| `fill`         | `Boolean` | `false`     | Activate fullwidth navigation with `fill` type                    |
+| `justified`    | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
 | `align`        | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
 | `vertical`     | `Boolean` | `false`     | Activate vertical navigation                                      |
 | `title`        | `String`  | `undefined` | Title to place in the top of navigation block                     |
@@ -477,6 +531,19 @@ When you need title for grouping navigation, you can add navigation title by usi
 |------------------|---------------------------------------------------------|
 | `default`        | Content to place in the nav item                        |
 | `icon`           | Content to place icon in nav item                       |
+
+### Props `<NavSubItem>`
+
+| Props          |   Type     | Default      | Description                                  |
+|----------------|:----------:|:------------:|-------------------------------------------------------------------|
+| `text`         | `String`   | `undefined`  | Place text in the submenu parent                                  |
+| `collapsible`  | `Boolean`  | `false`      | Enable collapsible Submenu                                        |
+
+### Slots `<NavSubItem>`
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| `default`        | Content to place in the submenu item                        |
 
 ### Props `<NavItemDropdown>`
 

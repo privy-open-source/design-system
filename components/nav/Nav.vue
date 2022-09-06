@@ -108,13 +108,20 @@ export default defineComponent({
   &&--lines {
     @apply text-center;
 
+    &:not(.nav--vertical) {
+      .nav__link {
+        @apply border-x-0;
+      }
+    }
     /**
     * Set active state
     * with border-bottom
     */
     .nav__link {
       &--active {
-        @apply border-b-body-100 border-x-0;
+        &:not(.nav__link--disabled) {
+          @apply border-b-body-100;
+        }
       }
     }
 
@@ -124,8 +131,24 @@ export default defineComponent({
     */
     &.nav--vertical {
       .nav__link {
+        @apply border-y-0;
+
         &--active {
-          @apply border-r border-r-body-100 border-y-0 rounded-tr-none;
+          &:not(.nav__link--disabled) {
+            @apply border-r border-r-body-100 rounded-tr-none;
+          }
+        }
+      }
+
+      &.nav--align-right {
+        .nav__link {
+          @apply border-r-0;
+
+          &--active {
+            &:not(.nav__link--disabled) {
+              @apply border-l border-l-body-100 rounded-tl-none;
+            }
+          }
         }
       }
     }
@@ -143,7 +166,9 @@ export default defineComponent({
     */
     .nav__link {
       &--active {
-        @apply border-t-secondary-25/50 border-x-secondary-25/50 bg-white;
+        &:not(.nav__link--disabled) {
+          @apply border-t-secondary-25/50 border-x-secondary-25/50 bg-white;
+        }
       }
     }
 
@@ -154,7 +179,19 @@ export default defineComponent({
     &.nav--vertical {
       .nav__link {
         &--active {
-          @apply border-l-secondary-25/50 border-y-secondary-25/50 border-r-transparent bg-white rounded-l rounded-r-none;
+          &:not(.nav__link--disabled) {
+            @apply border-l-secondary-25/50 border-y-secondary-25/50 border-r-transparent bg-white rounded-l rounded-r-none;
+          }
+        }
+      }
+
+      &.nav--align-right {
+        .nav__link {
+          &--active {
+            &:not(.nav__link--disabled) {
+              @apply border-r-secondary-25/50 border-y-secondary-25/50 border-l-transparent rounded-r rounded-l-none;
+            }
+          }
         }
       }
     }
@@ -173,7 +210,9 @@ export default defineComponent({
     */
     .nav__link {
       &--active {
-        @apply bg-secondary-5 rounded-b;
+        &:not(.nav__link--disabled) {
+          @apply bg-secondary-5 rounded-b;
+        }
       }
     }
 
@@ -250,7 +289,7 @@ export default defineComponent({
   * Vertical Navigation
   */
   &&--vertical {
-    @apply pl-0 pt-2 flex-col;
+    @apply pt-2 flex-col;
 
     .nav {
       @apply flex-col;
@@ -261,6 +300,20 @@ export default defineComponent({
 
       &__title {
         @apply left-3;
+      }
+    }
+
+    &.nav--align-right {
+      @apply pl-0 ml-auto;
+
+      .nav {
+        &__link {
+          @apply -ml-[1px] mr-0;
+        }
+      }
+
+      &.nav--pills {
+        @apply pl-2 pr-0;
       }
     }
   }

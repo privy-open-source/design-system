@@ -1,17 +1,22 @@
 <template>
   <li
     data-testid="nav-item"
-    class="nav__item">
+    class="nav__item"
+    :class="navItemClass">
     <a
       data-testid="nav-link"
       :href="link"
       :target="target"
       :class="classNames">
-      <span class="nav__link__icon">
+      <span
+        v-if="$slots.icon"
+        data-testid="nav-icon"
+        class="nav__link__icon">
         <slot name="icon" />
       </span>
       <span
         v-if="$slots.default"
+        data-testid="nav-label"
         class="nav__link__label">
         <slot />
       </span>
@@ -62,6 +67,15 @@ export default defineComponent({
       return result
     })
 
+    const navItemClass = computed(() => {
+      const result: string[] = ['']
+
+      if (props.active)
+        result.push('nav__item--active')
+
+      return result
+    })
+
     const link = computed(() => {
       let permalink: string | undefined
 
@@ -73,6 +87,7 @@ export default defineComponent({
 
     return {
       classNames,
+      navItemClass,
       link,
     }
   },
@@ -97,7 +112,7 @@ export default defineComponent({
     }
 
     &--disabled {
-      @apply text-subtext-50 hover:text-subtext-50 focus:text-subtext-50 active:text-subtext-50 cursor-default;
+      @apply text-subtext-50 hover:text-subtext-50 focus:text-subtext-50 active:text-subtext-50 cursor-default pointer-events-none;
     }
 
     &--icon {
@@ -113,18 +128,28 @@ export default defineComponent({
 
       .nav__link__label {
         @apply shrink ml-3 w-full;
-
-        .badge {
-          @apply ml-auto;
-        }
       }
     }
 
     &__label {
       @apply flex;
+    }
+  }
 
-      .badge {
-        @apply ml-auto;
+  &:is(.nav--justified, .nav--fill) {
+    .nav__link {
+      &--icon {
+        .nav__link__label {
+          .badge {
+            @apply ml-auto;
+          }
+        }
+      }
+
+      &__label {
+        .badge {
+          @apply ml-auto;
+        }
       }
     }
   }

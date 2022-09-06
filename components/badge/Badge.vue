@@ -109,7 +109,7 @@ export default defineComponent({
       }
 
       &--secondary {
-        @apply text-secondary-100;
+        @apply text-body-75;
       }
 
       &--success {
