@@ -39,7 +39,9 @@
     </nav>
 
     <div class="tabs__content">
-      <slot />
+      <tab-content :active="active">
+        <slot />
+      </tab-content>
     </div>
   </div>
 </template>
@@ -49,21 +51,25 @@ import {
   defineComponent,
   PropType,
   computed,
-  provide,
+  Slots,
 } from 'vue-demi'
 import Nav, { StyleVariant as TabsStyleVariant, AlignVariant as TabsAlignVariant } from '../nav/Nav.vue'
 import NavItem from '../nav/NavItem.vue'
-import {
-  initTabs,
-  TabContext,
-  TABS_POINTER,
-} from './use-tab'
+import TabContent from './TabContent.vue'
 import { useVModel } from '../input/use-input'
+import { findAllChildren } from '../utils/vnode'
+
+interface TabContext {
+  title: string,
+  disabled: boolean,
+  slots: Slots,
+}
 
 export default defineComponent({
   components: {
     Nav,
     NavItem,
+    TabContent,
   },
   props: {
     variant: {
@@ -95,7 +101,7 @@ export default defineComponent({
       default: 0,
     },
   },
-  setup (props) {
+  setup (props, { slots }) {
     const classNames = computed(() => {
       const result: string[] = []
 
@@ -106,14 +112,23 @@ export default defineComponent({
     })
 
     const active = useVModel(props)
-    const tabs   = initTabs()
+    const tabs   = computed<TabContext[]>(() => {
+      const vnodes = slots.default ? slots.default() : []
+      const tabs   = findAllChildren(vnodes, 'Tab')
+
+      return tabs.map((vnode) => {
+        return {
+          title   : vnode.props?.title,
+          disabled: vnode.props?.disabled === '' ? true : !!(vnode.props?.disabled),
+          slots   : vnode.children as Slots,
+        }
+      })
+    })
 
     function selectTab (index: number, tab: TabContext) {
       if (!tab.disabled)
         active.value = index
     }
-
-    provide(TABS_POINTER, active)
 
     return {
       classNames,

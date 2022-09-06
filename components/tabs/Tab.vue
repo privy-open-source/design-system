@@ -1,10 +1,8 @@
 <template>
   <section
     data-testid="tab-panel"
-    :data-tabid="index"
     class="tab__panel">
     <div
-      v-show="isShow"
       data-testid="tab-content"
       class="tab__content">
       <slot />
@@ -13,12 +11,7 @@
 </template>
 
 <script lang="ts">
-import { computedInject } from '@vueuse/core'
-import {
-  defineComponent,
-  toRef,
-} from 'vue-demi'
-import { addTab, TABS_POINTER } from './use-tab'
+import { defineComponent } from 'vue-demi'
 
 export default defineComponent({
   name : 'Tab',
@@ -31,19 +24,6 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
-  },
-  setup (props, { slots }) {
-    const index = addTab({
-      title   : toRef(props, 'title'),
-      disabled: toRef(props, 'disabled'),
-      slots   : slots,
-    })
-
-    const isShow = computedInject(TABS_POINTER, (active) => {
-      return props.disabled ? false : active.value === index
-    })
-
-    return { index, isShow }
   },
 })
 </script>

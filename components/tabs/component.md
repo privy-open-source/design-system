@@ -22,8 +22,8 @@
 <preview>
   <p-tabs>
     <p-tab title="Home">Home page content</p-tab>
-    <p-tab title="Profile">Profile page content</p-tab>
-    <p-tab title="Setting" disabled>Setting page content</p-tab>
+    <p-tab v-for="i in 3" :title="`Home ${i}`">Home page content #{{ i }}</p-tab>
+    <p-tab title="Profile" :disabled="false">Profile page content</p-tab>
   </p-tabs>
 </preview>
 
@@ -184,21 +184,21 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
       <template #icon>
         <IconEdit />
       </template>
-      But I must explain to you how all this mistaken idea of 
+      But I must explain to you how all this mistaken idea of
       denouncing pleasure and praising pain was born
     </p-tab>
     <p-tab>
       <template #icon>
         <IconView />
       </template>
-      A wonderful serenity has taken possession of my entire soul, 
+      A wonderful serenity has taken possession of my entire soul,
       like these sweet mornings
     </p-tab>
     <p-tab disabled>
       <template #icon>
         <IconDocument />
       </template>
-      One morning, when Gregor Samsa woke from troubled dreams, 
+      One morning, when Gregor Samsa woke from troubled dreams,
       he found himself transformed
     </p-tab>
   </p-tabs>
@@ -247,7 +247,7 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
       <template #title>
         Edit
       </template>
-      One morning, when Gregor Samsa woke from troubled dreams, 
+      One morning, when Gregor Samsa woke from troubled dreams,
       he found himself transformed
     </p-tab>
     <p-tab>
@@ -257,7 +257,7 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
       <template #title>
         View
       </template>
-      A wonderful serenity has taken possession of my entire soul, 
+      A wonderful serenity has taken possession of my entire soul,
       like these sweet mornings
     </p-tab>
     <p-tab disabled>
@@ -267,7 +267,7 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
       <template #title>
         Setting
       </template>
-      But I must explain to you how all this mistaken idea of denouncing 
+      But I must explain to you how all this mistaken idea of denouncing
       pleasure and praising pain was born
     </p-tab>
   </p-tabs>
@@ -299,14 +299,14 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
       <template #title>
         To Sign <p-badge color="primary">25</p-badge>
       </template>
-      But I must explain to you how all this mistaken idea 
+      But I must explain to you how all this mistaken idea
       of denouncing pleasure and praising pain was born
     </p-tab>
     <p-tab>
       <template #title>
         To Review <p-badge color="primary">25</p-badge>
       </template>
-      One morning, when Gregor Samsa woke from troubled dreams, 
+      One morning, when Gregor Samsa woke from troubled dreams,
       he found himself transformed
     </p-tab>
   </p-tabs>
@@ -367,18 +367,18 @@ The available alignment in vertical Tabs is just `left` and `right`
 <preview>
   <p-tabs vertical nav-wrapper-class="w-48">
     <p-tab title="Home">
-      One morning, when Gregor Samsa woke from troubled dreams, 
-      he found himself transformed in his bed into a horrible vermin. 
+      One morning, when Gregor Samsa woke from troubled dreams,
+      he found himself transformed in his bed into a horrible vermin.
       He lay on his armour-like back, and if he lifted his head
     </p-tab>
     <p-tab title="Profile">
-      But I must explain to you how all this mistaken idea of 
-      denouncing pleasure and praising pain was born and I will 
+      But I must explain to you how all this mistaken idea of
+      denouncing pleasure and praising pain was born and I will
       give you a complete account of the system,
     </p-tab>
     <p-tab title="Setting" disabled>
-      Far far away, behind the word mountains, far from 
-      the countries Vokalia and Consonantia, there live the 
+      Far far away, behind the word mountains, far from
+      the countries Vokalia and Consonantia, there live the
       blind texts. Separated they live in Bookmarksgrove right
     </p-tab>
   </p-tabs>
@@ -388,18 +388,18 @@ The available alignment in vertical Tabs is just `left` and `right`
 <template>
   <p-tabs vertical nav-wrapper-class="w-48">
     <p-tab title="Home">
-      One morning, when Gregor Samsa woke from troubled dreams, 
-      he found himself transformed in his bed into a horrible vermin. 
+      One morning, when Gregor Samsa woke from troubled dreams,
+      he found himself transformed in his bed into a horrible vermin.
       He lay on his armour-like back, and if he lifted his head
     </p-tab>
     <p-tab title="Profile">
-      But I must explain to you how all this mistaken idea of 
-      denouncing pleasure and praising pain was born and I will 
+      But I must explain to you how all this mistaken idea of
+      denouncing pleasure and praising pain was born and I will
       give you a complete account of the system,
     </p-tab>
     <p-tab title="Setting" disabled>
-      Far far away, behind the word mountains, far from 
-      the countries Vokalia and Consonantia, there live the 
+      Far far away, behind the word mountains, far from
+      the countries Vokalia and Consonantia, there live the
       blind texts. Separated they live in Bookmarksgrove right
     </p-tab>
   </p-tabs>
@@ -409,18 +409,18 @@ The available alignment in vertical Tabs is just `left` and `right`
 <preview>
   <p-tabs vertical nav-wrapper-class="w-48" align="right">
     <p-tab title="Home">
-      One morning, when Gregor Samsa woke from troubled dreams, 
-      he found himself transformed in his bed into a horrible vermin. 
+      One morning, when Gregor Samsa woke from troubled dreams,
+      he found himself transformed in his bed into a horrible vermin.
       He lay on his armour-like back, and if he lifted his head
     </p-tab>
     <p-tab title="Profile">
-      But I must explain to you how all this mistaken idea of 
-      denouncing pleasure and praising pain was born and I will 
+      But I must explain to you how all this mistaken idea of
+      denouncing pleasure and praising pain was born and I will
       give you a complete account of the system,
     </p-tab>
     <p-tab title="Setting" disabled>
-      Far far away, behind the word mountains, far from 
-      the countries Vokalia and Consonantia, there live the 
+      Far far away, behind the word mountains, far from
+      the countries Vokalia and Consonantia, there live the
       blind texts. Separated they live in Bookmarksgrove right
     </p-tab>
   </p-tabs>
@@ -430,18 +430,18 @@ The available alignment in vertical Tabs is just `left` and `right`
 <template>
   <p-tabs vertical nav-wrapper-class="w-48" align="right">
     <p-tab title="Home">
-      One morning, when Gregor Samsa woke from troubled dreams, 
-      he found himself transformed in his bed into a horrible vermin. 
+      One morning, when Gregor Samsa woke from troubled dreams,
+      he found himself transformed in his bed into a horrible vermin.
       He lay on his armour-like back, and if he lifted his head
     </p-tab>
     <p-tab title="Profile">
-      But I must explain to you how all this mistaken idea of 
-      denouncing pleasure and praising pain was born and I will 
+      But I must explain to you how all this mistaken idea of
+      denouncing pleasure and praising pain was born and I will
       give you a complete account of the system,
     </p-tab>
     <p-tab title="Setting" disabled>
-      Far far away, behind the word mountains, far from 
-      the countries Vokalia and Consonantia, there live the 
+      Far far away, behind the word mountains, far from
+      the countries Vokalia and Consonantia, there live the
       blind texts. Separated they live in Bookmarksgrove right
     </p-tab>
   </p-tabs>
