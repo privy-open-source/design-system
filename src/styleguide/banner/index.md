@@ -3,7 +3,7 @@
   import Button from '../../components/button/Button.vue'
 </script>
 
-# ![badge](../../public/assets/images/img-guide-banner.svg) Banner
+# ![badge](/assets/images/img-guide-banner.svg) Banner
 
 ## Usage
 

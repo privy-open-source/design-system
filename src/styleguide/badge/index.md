@@ -2,7 +2,7 @@
   import Badge from '../../components/badge/Badge.vue'
 </script>
 
-# ![badge](../../public/assets/images/img-guide-badge.svg) Badge
+# ![badge](/assets/images/img-guide-badge.svg) Badge
 
 ## Usage
 Badges are placed before/after the label of the thing they're quantifying, such as the number of notification/document received. They should only be used to represent a number, however, the following letters and special characters can be used to represent number values: + (represent more) or K (represent thousands).

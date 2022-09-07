@@ -8,7 +8,7 @@
   import IconChevronRight from '@carbon/icons-vue/lib/chevron--right/20'
 </script>
 
-# ![button](../../public/assets/images/img-guide-button.svg) Buttons Group
+# ![button](/assets/images/img-guide-button.svg) Buttons Group
 
 ## Usage
 A button group displays multiple buttons together that gives user access to similar actions or frequently performed.

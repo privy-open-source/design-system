@@ -6,7 +6,7 @@
 <style scoped lang="postcss">
 </style>
 
-# ![button](../../public/assets/images/img-guide-button.svg) Button
+# ![button](/assets/images/img-guide-button.svg) Button
 
 ## Usage
 Buttons are used primarily for actions, such as “Add”, “Continue”, “Cancel”, or “Save”. Ghost and Link buttons, which look similar to text hyperlink, are used for less important or less commonly used actions, such as “Learn More” or “Continue Later”

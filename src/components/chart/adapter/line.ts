@@ -1,4 +1,4 @@
-import type { ChartDataset, ChartData } from 'chart.js'
+import type { ChartDataset, ChartData } from 'chart.js/auto'
 import { startCase } from 'lodash-es'
 import { Slots, VNode } from 'vue-demi'
 import { defineAdapter } from './adapter'

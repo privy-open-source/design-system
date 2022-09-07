@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import { templateRef, pausableWatch } from '@vueuse/core'
-import type { LayoutPosition, Chart } from 'chart.js'
+import type { LayoutPosition, Chart } from 'chart.js/auto'
+import { templateRef, watchPausable } from '@vueuse/core'
 import {
   defineComponent,
   onMounted,
@@ -26,6 +26,7 @@ import {
   nextTick,
 } from 'vue-demi'
 import getAdapter, { ChartType } from './adapter/index'
+import { createChart } from './use-chart'
 
 export type LegendPosition = 'none' | LayoutPosition
 
@@ -62,16 +63,14 @@ export default defineComponent({
       return getAdapter(variant.value).getDatasets(slots.default())
     })
 
-    async function createChart () {
+    async function initChart () {
       if (instance.value)
         instance.value.destroy()
 
-      const { default: Chart } = await import('chart.js/auto')
-
-      instance.value = new Chart(canvas.value, {
-        type   : variant.value,
-        data   : data.value,
-        options: {
+      instance.value = await createChart(
+        canvas.value,
+        variant.value,
+        data.value, {
           plugins: {
             legend: {
               display : legend.value !== 'none',
@@ -88,27 +87,27 @@ export default defineComponent({
           },
           ...getAdapter(variant.value).getStyle(),
         },
-      })
+      )
     }
 
-    const dataWatcher = pausableWatch(data, (newData) => {
+    const dataWatcher = watchPausable(data, (newData) => {
       if (instance.value) {
         instance.value.data = newData
         instance.value.update()
       }
-    }, { flush: 'post' })
+    })
 
     watch([variant, legend], async () => {
       dataWatcher.pause()
 
-      await createChart()
+      await initChart()
       await nextTick()
 
       dataWatcher.resume()
     }, { flush: 'pre' })
 
     onMounted(() => {
-      createChart()
+      initChart()
     })
 
     onBeforeUnmount(() => {

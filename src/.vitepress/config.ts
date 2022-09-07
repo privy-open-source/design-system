@@ -15,15 +15,26 @@ export default defineConfig({
     prevLinks   : false,
     lastUpdated : 'Last Updated',
     nav         : [
-      { text: 'Components', link: '/components/avatar/index' },
-      { text: 'Foundation', link: '/foundation/color/index' },
-      { text: 'Styleguide', link: '/styleguide/badge/index' },
+      { text: 'Docs', link: '/docs/getting-started' },
+      { text: 'Components', link: '/components/avatar/' },
+      { text: 'Foundation', link: '/foundation/color/' },
+      { text: 'Styleguide', link: '/styleguide/badge/' },
       { text: 'Ecosystem', link: '/ecosystem' },
     ],
     socialLinks : [
       { icon: 'github', link: 'https://github.com/privy-open-source/design-system' }
     ],
     sidebar: {
+      '/docs/': [
+        {
+          text       : 'Documentation',
+          collapsible: true,
+          items      : [
+            { text: 'Instalation', link: '/docs/getting-started' },
+            { text: 'Editor Setup', link: '/docs/editor-setup' },
+          ]
+        }
+      ],
       '/foundation/': [
         {
           text       : 'Foundation',
@@ -31,7 +42,7 @@ export default defineConfig({
           items      : [
             {
               text: 'Color',
-              link: '/foundation/color/index'
+              link: '/foundation/color/'
             },
           ]
         }
@@ -43,75 +54,75 @@ export default defineConfig({
           items      : [
             {
               text: 'Avatar',
-              link: '/components/avatar/index'
+              link: '/components/avatar/'
             },
             {
               text: 'Badge',
-              link: '/components/badge/index'
+              link: '/components/badge/'
             },
             {
               text: 'Banner',
-              link: '/components/banner/index'
+              link: '/components/banner/'
             },
             {
               text: 'Button',
-              link: '/components/button/index'
+              link: '/components/button/'
             },
             {
               text: 'Button Group',
-              link: '/components/button-group/index'
+              link: '/components/button-group/'
             },
             {
               text: 'Card',
-              link: '/components/card/index'
+              link: '/components/card/'
             },
             {
               text: 'Chart',
-              link: '/components/chart/index'
+              link: '/components/chart/'
             },
             {
               text: 'Dot',
-              link: '/components/dot/index'
+              link: '/components/dot/'
             },
             {
               text: 'Dropdown',
-              link: '/components/dropdown/index'
+              link: '/components/dropdown/'
             },
             {
               text: 'Dropdown Subitem',
-              link: '/components/dropdown-subitem/index'
+              link: '/components/dropdown-subitem/'
             },
             {
               text: 'Label',
-              link: '/components/label/index'
+              link: '/components/label/'
             },
             {
               text: 'Modal',
-              link: '/components/modal/index'
+              link: '/components/modal/'
             },
             {
               text: 'Nav',
-              link: '/components/nav/index'
+              link: '/components/nav/'
             },
             {
               text: 'Sidebar',
-              link: '/components/sidebar/index'
+              link: '/components/sidebar/'
             },
             {
               text: 'Sidebar Menu',
-              link: '/components/sidebar-menu/index'
+              link: '/components/sidebar-menu/'
             },
             {
               text: 'Spinner',
-              link: '/components/spinner/index'
+              link: '/components/spinner/'
             },
             {
               text: 'Tabs',
-              link: '/components/tabs/index'
+              link: '/components/tabs/'
             },
             {
               text: 'Table',
-              link: '/components/table/index'
+              link: '/components/table/'
             }
           ]
         },
@@ -121,19 +132,19 @@ export default defineConfig({
           items      : [
             {
               text: 'Caption',
-              link: '/components/caption/index'
+              link: '/components/caption/'
             },
             {
               text: 'Heading',
-              link: '/components/heading/index'
+              link: '/components/heading/'
             },
             {
               text: 'Subheading',
-              link: '/components/subheading/index'
+              link: '/components/subheading/'
             },
             {
               text: 'Truncate',
-              link: '/components/truncate/index'
+              link: '/components/truncate/'
             },
           ],
         },
@@ -143,35 +154,35 @@ export default defineConfig({
           items      : [
             {
               text: 'Calendar',
-              link: '/components/calendar/index'
+              link: '/components/calendar/'
             },
             {
               text: 'Checkbox',
-              link: '/components/checkbox/index'
+              link: '/components/checkbox/'
             },
             {
               text: 'Datepicker',
-              link: '/components/datepicker/index'
+              link: '/components/datepicker/'
             },
             {
               text: 'Input',
-              link: '/components/input/index'
+              link: '/components/input/'
             },
             {
               text: 'Radio',
-              link: '/components/radio/index'
+              link: '/components/radio/'
             },
             {
               text: 'Select',
-              link: '/components/select/index'
+              link: '/components/select/'
             },
             {
               text: 'Textarea',
-              link: '/components/textarea/index'
+              link: '/components/textarea/'
             },
             {
               text: 'Toggle',
-              link: '/components/toggle/index'
+              link: '/components/toggle/'
             },
           ]
         },
@@ -181,15 +192,15 @@ export default defineConfig({
           items      : [
             {
               text: 'Dialog',
-              link: '/components/dialog/index'
+              link: '/components/dialog/'
             },
             {
               text: 'Overlay',
-              link: '/components/overlay/index'
+              link: '/components/overlay/'
             },
             {
               text: 'Toast',
-              link: '/components/toast/index'
+              link: '/components/toast/'
             },
           ],
         },
@@ -199,7 +210,7 @@ export default defineConfig({
           items      : [
             {
               text: 'Filterbar',
-              link: '/components/filterbar/index'
+              link: '/components/filterbar/'
             },
           ],
         },
@@ -209,11 +220,11 @@ export default defineConfig({
           items      : [
             {
               text: 'Signature Draw',
-              link: '/components/signature-draw/index'
+              link: '/components/signature-draw/'
             },
             {
               text: 'Signature Text',
-              link: '/components/signature-text/index'
+              link: '/components/signature-text/'
             },
           ],
         },
@@ -225,23 +236,23 @@ export default defineConfig({
           items      : [
             {
               text: 'Badge',
-              link: '/styleguide/badge/index'
+              link: '/styleguide/badge/'
             },
             {
               text: 'Banner',
-              link: '/styleguide/banner/index'
+              link: '/styleguide/banner/'
             },
             {
               text: 'Button',
-              link: '/styleguide/button/index'
+              link: '/styleguide/button/'
             },
             {
               text: 'Button Group',
-              link: '/styleguide/button-group/index'
+              link: '/styleguide/button-group/'
             },
             {
               text: 'Heading',
-              link: '/styleguide/heading/index'
+              link: '/styleguide/heading/'
             }
           ]
         },

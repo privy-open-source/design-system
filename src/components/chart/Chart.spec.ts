@@ -1,14 +1,14 @@
-import { chartRender, MockChart } from './__mocks__/chart.js'
+import { createChart, updateChart } from './__mocks__/use-chart.js.js'
 import { render } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { ref } from 'vue-demi'
+import { delay } from 'nanodelay'
 import pChart from './Chart.vue'
 import pChartSet from './ChartSet.vue'
 import pChartVal from './ChartVal.vue'
-import { delay } from 'nanodelay'
 
-vi.mock('chart.js/auto', () => {
-  return { default: MockChart }
+vi.mock('./use-chart.ts', () => {
+  return { createChart }
 })
 
 afterEach(() => {
@@ -110,14 +110,12 @@ it('should re-render if data changed', async () => {
     },
   })
 
-  const chart = screen.queryByTestId('chart')
+  await delay(1)
 
-  expect(chart).toBeInTheDocument()
-  expect(chart).toHaveClass('chart--line')
-  expect(chart).not.toHaveClass('chart--pie')
+  const canvas = screen.queryByTestId('chart-canvas')
 
-  expect(chartRender).toBeCalledTimes(1)
-  expect(chartRender).lastCalledWith({
+  expect(createChart).toBeCalledTimes(1)
+  expect(createChart).lastCalledWith(canvas, 'line', {
     labels  : ['January'],
     datasets: [
       {
@@ -133,13 +131,55 @@ it('should re-render if data changed', async () => {
         backgroundColor: ['#e42e2c'],
       },
     ],
+  }, {
+    plugins: {
+      legend: {
+        display : true,
+        position: 'bottom',
+        labels  : {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+        grid: { borderColor: '#BFBFBF' },
+      },
+      y: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+        grid: {
+          borderColor: '#BFBFBF',
+          borderDash : [4],
+        },
+      },
+    },
   })
 
   isShow.value = true
   await delay(1)
 
-  expect(chartRender).toBeCalledTimes(2)
-  expect(chartRender).lastCalledWith({
+  expect(updateChart).toBeCalledTimes(1)
+  expect(updateChart).lastCalledWith({
     labels  : ['January', 'February'],
     datasets: [
       {
@@ -181,14 +221,10 @@ it('should re-render if variant changed', async () => {
 
   await delay(1)
 
-  const chart = screen.queryByTestId('chart')
+  const canvas = screen.queryByTestId('chart-canvas')
 
-  expect(chart).toBeInTheDocument()
-  expect(chart).toHaveClass('chart--line')
-  expect(chart).not.toHaveClass('chart--pie')
-
-  expect(chartRender).toBeCalledTimes(1)
-  expect(chartRender).lastCalledWith({
+  expect(createChart).toBeCalledTimes(1)
+  expect(createChart).lastCalledWith(canvas, 'line', {
     labels  : ['January'],
     datasets: [
       {
@@ -204,13 +240,55 @@ it('should re-render if variant changed', async () => {
         backgroundColor: ['#e42e2c'],
       },
     ],
+  }, {
+    plugins: {
+      legend: {
+        display : true,
+        position: 'bottom',
+        labels  : {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+        grid: { borderColor: '#BFBFBF' },
+      },
+      y: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+        grid: {
+          borderColor: '#BFBFBF',
+          borderDash : [4],
+        },
+      },
+    },
   })
 
   variant.value = 'pie'
   await delay(1)
 
-  expect(chartRender).toBeCalledTimes(2)
-  expect(chartRender).lastCalledWith({
+  expect(createChart).toBeCalledTimes(2)
+  expect(createChart).lastCalledWith(canvas, 'pie', {
     labels  : ['Success', 'Failed'],
     datasets: [
       {
@@ -219,6 +297,21 @@ it('should re-render if variant changed', async () => {
         backgroundColor: ['#23b242', '#e42e2c'],
       },
     ],
+  }, {
+    plugins: {
+      legend: {
+        display : true,
+        position: 'bottom',
+        labels  : {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+      },
+    },
   })
 })
 
@@ -245,16 +338,130 @@ it('should re-render if variant changed', async () => {
 
   await delay(1)
 
-  const chart = screen.queryByTestId('chart')
+  const canvas = screen.queryByTestId('chart-canvas')
 
-  expect(chart).toBeInTheDocument()
-  expect(chart).toHaveClass('chart--line')
-  expect(chart).not.toHaveClass('chart--pie')
-
-  expect(chartRender).toBeCalledTimes(1)
+  expect(createChart).toBeCalledTimes(1)
+  expect(createChart).lastCalledWith(canvas, 'line', {
+    labels  : ['January'],
+    datasets: [
+      {
+        label          : 'Success',
+        data           : ['30'],
+        borderColor    : ['#23b242'],
+        backgroundColor: ['#23b242'],
+      },
+      {
+        label          : 'Failed',
+        data           : ['10'],
+        borderColor    : ['#e42e2c'],
+        backgroundColor: ['#e42e2c'],
+      },
+    ],
+  }, {
+    plugins: {
+      legend: {
+        display : true,
+        position: 'left',
+        labels  : {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+        grid: { borderColor: '#BFBFBF' },
+      },
+      y: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+        grid: {
+          borderColor: '#BFBFBF',
+          borderDash : [4],
+        },
+      },
+    },
+  })
 
   legend.value = 'none'
   await delay(1)
 
-  expect(chartRender).toBeCalledTimes(2)
+  expect(createChart).toBeCalledTimes(2)
+  expect(createChart).lastCalledWith(canvas, 'line', {
+    labels  : ['January'],
+    datasets: [
+      {
+        label          : 'Success',
+        data           : ['30'],
+        borderColor    : ['#23b242'],
+        backgroundColor: ['#23b242'],
+      },
+      {
+        label          : 'Failed',
+        data           : ['10'],
+        borderColor    : ['#e42e2c'],
+        backgroundColor: ['#e42e2c'],
+      },
+    ],
+  }, {
+    plugins: {
+      legend: {
+        display : false,
+        position: undefined,
+        labels  : {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+        grid: { borderColor: '#BFBFBF' },
+      },
+      y: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: '600',
+          },
+        },
+        grid: {
+          borderColor: '#BFBFBF',
+          borderDash : [4],
+        },
+      },
+    },
+  })
 })

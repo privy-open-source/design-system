@@ -46,7 +46,7 @@
       const router = useRouter()
 
       function gettingStarted () {
-        router.go(withBase('/getting-started'))
+        router.go(withBase('/docs/getting-started'))
       }
 
       function openGithub () {

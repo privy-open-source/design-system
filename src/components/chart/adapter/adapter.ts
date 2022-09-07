@@ -1,4 +1,4 @@
-import type { ChartData, ChartOptions } from 'chart.js'
+import type { ChartData, ChartOptions } from 'chart.js/auto'
 import { VNode } from 'vue-demi'
 
 export interface ChartAdapter {
