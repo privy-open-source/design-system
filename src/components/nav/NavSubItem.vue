@@ -15,6 +15,9 @@
       <span class="nav__link__label">
         {{ text }}
       </span>
+      <IconArrow
+        v-if="collapsible"
+        class="nav__link__caret" />
     </div>
     <slot />
   </li>
@@ -25,9 +28,11 @@ import {
   defineComponent, computed, inject,
 } from 'vue-demi'
 import { SIDEBAR_SETTINGS } from '../sidebar/Sidebar.vue'
+import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
 
 export default defineComponent({
-  props: {
+  components: { IconArrow },
+  props     : {
     text: {
       type   : String,
       default: undefined,
@@ -74,7 +79,11 @@ export default defineComponent({
 
     &&--collapsible {
       .nav__subitem__parent {
-        @apply cursor-pointer text-body-100;
+        @apply cursor-pointer text-body-100 relative;
+      }
+
+      .nav__link__caret {
+        @apply absolute right-0 rotate-180 origin-center ease-in-out duration-150;
       }
 
       &.nav__subitem--collapsed {
@@ -82,8 +91,13 @@ export default defineComponent({
           @apply text-body-50;
         }
 
-        > .sidebar__nav {
+        > .sidebar__nav,
+        > .nav {
           @apply hidden;
+        }
+
+        .nav__link__caret {
+          @apply rotate-0 ease-in-out duration-150;
         }
       }
     }

@@ -102,6 +102,10 @@ export default defineConfig({
               link: '/components/spinner/component'
             },
             {
+              text: 'Tabs',
+              link: '/components/tabs/component'
+            },
+            {
               text: 'Table',
               link: '/components/table/component'
             }

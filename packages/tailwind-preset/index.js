@@ -89,6 +89,7 @@ module.exports = {
         50     : '#80B2E8',
         75     : '#408BDD',
         100    : '#0065D1',
+        DEFAULT: '#0065D1',
         focused: '#004C9D',
         hovered: '#0056B2',
       },
