@@ -1,9 +1,9 @@
 import { ChartData, ChartDataset } from 'chart.js'
 import { startCase } from 'lodash'
 import { Slots, VNode } from 'vue-demi'
-import { defineAdapter } from '.'
 import { colorHash } from '../../avatar/utils/color-hash'
 import { findAllChildren } from '../../utils/vnode'
+import { defineAdapter } from './adapter'
 
 export default defineAdapter({
   getDatasets (vnodes: VNode[]): ChartData {

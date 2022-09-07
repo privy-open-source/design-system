@@ -1,14 +1,18 @@
 <template>
-  <div class="chart">
+  <div
+    class="chart"
+    data-testid="chart"
+    :class="classNames">
     <slot />
     <canvas
       ref="canvas"
+      data-testid="chart-canvas"
       class="chart__canvas" />
   </div>
 </template>
 
 <script lang="ts">
-import { templateRef } from '@vueuse/core'
+import { templateRef, pausableWatch } from '@vueuse/core'
 import Chart, { LayoutPosition } from 'chart.js/auto'
 import {
   defineComponent,
@@ -19,6 +23,7 @@ import {
   onBeforeUnmount,
   toRef,
   computed,
+  nextTick,
 } from 'vue-demi'
 import getAdapter, { ChartType } from './adapter/index'
 
@@ -40,6 +45,18 @@ export default defineComponent({
     const canvas   = templateRef<HTMLCanvasElement>('canvas')
     const variant  = toRef(props, 'variant')
     const legend   = toRef(props, 'legend')
+
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (props.variant)
+        result.push(`chart--${props.variant}`)
+
+      if (props.legend)
+        result.push(`chart--${props.legend}`)
+
+      return result
+    })
 
     const data = computed(() => {
       return getAdapter(variant.value).getDatasets(slots.default())
@@ -72,16 +89,20 @@ export default defineComponent({
       })
     }
 
-    watch(data, (newData) => {
+    const dataWatcher = pausableWatch(data, (newData) => {
       if (instance.value) {
         instance.value.data = newData
         instance.value.update()
       }
-    })
+    }, { flush: 'post' })
 
     watch([variant, legend], () => {
+      dataWatcher.pause()
       createChart()
-    })
+      nextTick(() => {
+        dataWatcher.resume()
+      })
+    }, { flush: 'pre' })
 
     onMounted(() => {
       createChart()
@@ -92,7 +113,7 @@ export default defineComponent({
         instance.value.destroy()
     })
 
-    return { canvas }
+    return { canvas, classNames }
   },
 })
 </script>
