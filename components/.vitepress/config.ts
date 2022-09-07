@@ -74,6 +74,10 @@ export default defineConfig({
             link: '/card/component',
           },
           {
+            text: 'Chart',
+            link: '/chart/component',
+          },
+          {
             text: 'Dot',
             link: '/dot/component',
           },
@@ -112,6 +116,10 @@ export default defineConfig({
           {
             text: 'Table',
             link: '/table/component',
+          },
+          {
+            text: 'Tabs',
+            link: '/tabs/component',
           },
         ],
       },
