@@ -74,6 +74,10 @@ export default defineConfig({
             link: '/card/component'
           },
           {
+            text: 'Chart',
+            link: '/chart/component'
+          },
+          {
             text: 'Dot',
             link: '/dot/component'
           },
