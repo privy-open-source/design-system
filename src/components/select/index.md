@@ -324,6 +324,6 @@ To do this, you need add the province value as **watch dependencies**. It will a
 | `userInput` | Object    | Similar to `change`, but it's only triggered when user really clicked the option |
 
 ## See Also
-- [Input](/input/component)
+- [Input](/components/input/index)
 - Input Group
-- [Dropdown](/dropdown/component)
+- [Dropdown](/components/dropdown/index)

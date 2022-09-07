@@ -108,6 +108,6 @@ Used for the title of any sub-sections
 
 ## See Also
 
-- Subheading Guide
-- [Heading](/heading/guide)
+- [Heading Guide](/styleguide/heading/index)
+- [Heading](/components/heading/index)
 

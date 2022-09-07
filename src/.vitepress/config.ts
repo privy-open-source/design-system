@@ -15,7 +15,7 @@ export default defineConfig({
     prevLinks   : false,
     lastUpdated : 'Last Updated',
     nav         : [
-      { text: 'Components', link: '/components/avatar/component' },
+      { text: 'Components', link: '/components/avatar/index' },
       { text: 'Foundation', link: '/foundation/color/index' },
       { text: 'Styleguide', link: '/styleguide/badge/index' },
       { text: 'Ecosystem', link: '/ecosystem' },
@@ -43,71 +43,75 @@ export default defineConfig({
           items      : [
             {
               text: 'Avatar',
-              link: '/components/avatar/component'
+              link: '/components/avatar/index'
             },
             {
               text: 'Badge',
-              link: '/components/badge/component'
+              link: '/components/badge/index'
             },
             {
               text: 'Banner',
-              link: '/components/banner/component'
+              link: '/components/banner/index'
             },
             {
               text: 'Button',
-              link: '/components/button/component'
+              link: '/components/button/index'
             },
             {
               text: 'Button Group',
-              link: '/components/button-group/component'
+              link: '/components/button-group/index'
             },
             {
               text: 'Card',
-              link: '/components/card/component'
+              link: '/components/card/index'
+            },
+            {
+              text: 'Chart',
+              link: '/components/chart/index'
             },
             {
               text: 'Dot',
-              link: '/components/dot/component'
+              link: '/components/dot/index'
             },
             {
               text: 'Dropdown',
-              link: '/components/dropdown/component'
+              link: '/components/dropdown/index'
             },
             {
               text: 'Dropdown Subitem',
-              link: '/components/dropdown-subitem/component'
+              link: '/components/dropdown-subitem/index'
             },
             {
               text: 'Label',
-              link: '/components/label/component'
+              link: '/components/label/index'
             },
             {
               text: 'Modal',
-              link: '/components/modal/component'
+              link: '/components/modal/index'
             },
             {
               text: 'Nav',
-              link: '/components/nav/component'
+              link: '/components/nav/index'
             },
             {
               text: 'Sidebar',
-              link: '/components/sidebar/component'
+              link: '/components/sidebar/index'
             },
             {
               text: 'Sidebar Menu',
-              link: '/components/sidebar-menu/component'
+              link: '/components/sidebar-menu/index'
             },
             {
               text: 'Spinner',
-              link: '/components/spinner/component'
+              link: '/components/spinner/index'
             },
             {
               text: 'Tabs',
-              link: '/components/tabs/component'
+              link: '/components/tabs/index'
             },
             {
               text: 'Table',
-              link: '/components/table/component'
+              link: '/components/table/index'
             }
           ]
         },
@@ -117,19 +121,19 @@ export default defineConfig({
           items      : [
             {
               text: 'Caption',
-              link: '/components/caption/component'
+              link: '/components/caption/index'
             },
             {
               text: 'Heading',
-              link: '/components/heading/component'
+              link: '/components/heading/index'
             },
             {
               text: 'Subheading',
-              link: '/components/subheading/component'
+              link: '/components/subheading/index'
             },
             {
               text: 'Truncate',
-              link: '/components/truncate/component'
+              link: '/components/truncate/index'
             },
           ],
         },
@@ -139,35 +143,35 @@ export default defineConfig({
           items      : [
             {
               text: 'Calendar',
-              link: '/components/calendar/component'
+              link: '/components/calendar/index'
             },
             {
               text: 'Checkbox',
-              link: '/components/checkbox/component'
+              link: '/components/checkbox/index'
             },
             {
               text: 'Datepicker',
-              link: '/components/datepicker/component'
+              link: '/components/datepicker/index'
             },
             {
               text: 'Input',
-              link: '/components/input/component'
+              link: '/components/input/index'
             },
             {
               text: 'Radio',
-              link: '/components/radio/component'
+              link: '/components/radio/index'
             },
             {
               text: 'Select',
-              link: '/components/select/component'
+              link: '/components/select/index'
             },
             {
               text: 'Textarea',
-              link: '/components/textarea/component'
+              link: '/components/textarea/index'
             },
             {
               text: 'Toggle',
-              link: '/components/toggle/component'
+              link: '/components/toggle/index'
             },
           ]
         },
@@ -177,15 +181,15 @@ export default defineConfig({
           items      : [
             {
               text: 'Dialog',
-              link: '/components/dialog/component'
+              link: '/components/dialog/index'
             },
             {
               text: 'Overlay',
-              link: '/components/overlay/component'
+              link: '/components/overlay/index'
             },
             {
               text: 'Toast',
-              link: '/components/toast/component'
+              link: '/components/toast/index'
             },
           ],
         },
@@ -195,7 +199,7 @@ export default defineConfig({
           items      : [
             {
               text: 'Filterbar',
-              link: '/components/filterbar/component'
+              link: '/components/filterbar/index'
             },
           ],
         },
@@ -205,11 +209,11 @@ export default defineConfig({
           items      : [
             {
               text: 'Signature Draw',
-              link: '/components/signature-draw/component'
+              link: '/components/signature-draw/index'
             },
             {
               text: 'Signature Text',
-              link: '/components/signature-text/component'
+              link: '/components/signature-text/index'
             },
           ],
         },

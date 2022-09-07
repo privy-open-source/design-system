@@ -212,7 +212,7 @@ By default, value of toggle is always `Boolean`, but you can change it with `val
 
 ### Array v-model
 
-Similar to [Checkbox](/checkbox/component), if v-model **state** is an *array* it will append the value instead of replacing it.
+Similar to [Checkbox](/components/checkbox/index), if v-model **state** is an *array* it will append the value instead of replacing it.
 
 <preview class="flex-col items-center">
   <div class="flex flex-col gap-3">
@@ -268,5 +268,5 @@ Similar to [Checkbox](/checkbox/component), if v-model **state** is an *array* i
 | `change` | Boolean   | Event when value changed |
 
 ## See Also
-- [Checkbox](/checkbox/component)
-- [Radio](/radio/component)
+- [Checkbox](/components/checkbox/index)
+- [Radio](/components/radio/index)

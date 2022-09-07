@@ -117,5 +117,5 @@ Use for the title of each top-level page section. The default element of heading
 
 ## See Also
 
-- [Heading Guide](/heading/guide)
-- [Subheading](/subheading/component)
+- [Heading Guide](/styleguide/heading/index)
+- [Subheading](/components/subheading/index)

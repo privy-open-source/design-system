@@ -132,4 +132,4 @@ Show character counter with prop `show-counter`
 | `input` | Native Input Object | Event when value inputted |
 
 ## See Also
-- [Input](/input/component)
+- [Input](/components/input/index)

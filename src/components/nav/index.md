@@ -1,8 +1,7 @@
 <script setup>
-import Nav from './Nav.vue'
-import NavItem from './NavItem.vue'
-import NavSubItem from './NavSubItem.vue'
-import NavText from './NavText.vue'
+import pNav from './Nav.vue'
+import pNavItem from './NavItem.vue'
+import pNavSubItem from './NavSubItem.vue'
 import IconEdit from '@carbon/icons-vue/lib/edit/16'
 import IconView from '@carbon/icons-vue/lib/view/16'
 import IconDocument from '@carbon/icons-vue/lib/document/16'
@@ -25,20 +24,20 @@ import DropdownItem from '../dropdown/DropdownItem.vue'
 ### Simple Navigation
 
 <preview>
-  <Nav>
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem disabled>Disabled</NavItem>
-  </Nav>
+  <p-nav>
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item disabled>Disabled</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav>
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem disabled>Disabled</NavItem>
-  </Nav>
+  <p-nav>
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item disabled>Disabled</p-nav-item>
+  </p-nav>
 </template>
 ```
 
@@ -47,40 +46,40 @@ import DropdownItem from '../dropdown/DropdownItem.vue'
 Navigation has 3 variants, `pills`, `tabs` and `lines`. Default is `pills`
 
 <preview>
-  <Nav variant="pills">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
-  <Nav variant="tabs">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
-  <Nav variant="lines">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav variant="pills">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav variant="tabs">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav variant="lines">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav variant="pills">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
-  <Nav variant="tabs">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
-  <Nav variant="lines">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav variant="pills">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav variant="tabs">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav variant="lines">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </template>
 ```
 
@@ -89,30 +88,30 @@ Navigation has 3 variants, `pills`, `tabs` and `lines`. Default is `pills`
 Navigation can be fullwidth. There are 2 options available: `fill` and `justified`. To proportionately fill all available space, choose `fill`. When need every nav item will be the same width, choose `justified`.
 
 <preview>
-  <Nav fill>
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
-  <Nav justified variant="pills">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav fill>
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav justified variant="pills">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav fill>
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
-  <Nav justified variant="pills">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav fill>
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav justified variant="pills">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </template>
 ```
 
@@ -122,40 +121,40 @@ Navigation can be fullwidth. There are 2 options available: `fill` and `justifie
 To align Navigation, use `align` prop. Available value are `left`, `right` and `center`
 
 <preview>
-  <Nav align="left">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem disabled>Auditrail</NavItem>
-  </Nav>
-  <Nav align="center">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem disabled>Auditrail</NavItem>
-  </Nav>
-  <Nav align="right">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem disabled>Auditrail</NavItem>
-  </Nav>
+  <p-nav align="left">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item disabled>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav align="center">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item disabled>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav align="right">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item disabled>Auditrail</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav align="left">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem disabled>Auditrail</NavItem>
-  </Nav>
-  <Nav align="center">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem disabled>Auditrail</NavItem>
-  </Nav>
-  <Nav align="right">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem disabled>Auditrail</NavItem>
-  </Nav>
+  <p-nav align="left">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item disabled>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav align="center">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item disabled>Auditrail</p-nav-item>
+  </p-nav>
+  <p-nav align="right">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item disabled>Auditrail</p-nav-item>
+  </p-nav>
 </template>
 ```
 
@@ -163,144 +162,144 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
 
 ### Icon
 <preview>
-  <Nav>
-    <NavItem active>
+  <p-nav>
+    <p-nav-item active>
       <template #icon>
         <IconEdit />
       </template>
-    </NavItem>
-    <NavItem>
+    </p-nav-item>
+    <p-nav-item>
       <template #icon>
         <IconView />
       </template>
-    </NavItem>
-    <NavItem disabled>
+    </p-nav-item>
+    <p-nav-item disabled>
       <template #icon>
         <IconDocument />
       </template>
-    </NavItem>
-  </Nav>
-  <Nav fill>
-    <NavItem active>
+    </p-nav-item>
+  </p-nav>
+  <p-nav fill>
+    <p-nav-item active>
       <template #icon>
         <IconEdit />
       </template>
       To Sign
-    </NavItem>
-    <NavItem>
+    </p-nav-item>
+    <p-nav-item>
       <template #icon>
         <IconView />
       </template>
       To Review
-    </NavItem>
-    <NavItem disabled>  
+    </p-nav-item>
+    <p-nav-item disabled>
       <template #icon>
         <IconDocument />
       </template>
       Auditrail
-    </NavItem>
-  </Nav>
+    </p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav>
-    <NavItem active>
+  <p-nav>
+    <p-nav-item active>
       <template #icon>
         <IconEdit />
       </template>
-    </NavItem>
-    <NavItem>
+    </p-nav-item>
+    <p-nav-item>
       <template #icon>
         <IconView />
       </template>
-    </NavItem>
-    <NavItem disabled>
+    </p-nav-item>
+    <p-nav-item disabled>
       <template #icon>
         <IconDocument />
       </template>
-    </NavItem>
-  </Nav>
-  <Nav fill>
-    <NavItem active>
+    </p-nav-item>
+  </p-nav>
+  <p-nav fill>
+    <p-nav-item active>
       <template #icon>
         <IconEdit />
       </template>
       To Sign
-    </NavItem>
-    <NavItem>
+    </p-nav-item>
+    <p-nav-item>
       <template #icon>
         <IconView />
       </template>
       To Review
-    </NavItem>
-    <NavItem disabled>  
+    </p-nav-item>
+    <p-nav-item disabled>
       <template #icon>
         <IconDocument />
       </template>
       Auditrail
-    </NavItem>
-  </Nav>
+    </p-nav-item>
+  </p-nav>
 </template>
 ```
 
 ### Badge
 <preview>
-  <Nav fill>
-    <NavItem active>To Sign <Badge color="secondary" variant="light">25</Badge></NavItem>
-    <NavItem>To Review <Badge color="secondary" variant="light">25</Badge></NavItem>
-  </Nav>
-  <Nav fill>
-    <NavItem active>
+  <p-nav fill>
+    <p-nav-item active>To Sign <Badge color="secondary" variant="light">25</Badge></p-nav-item>
+    <p-nav-item>To Review <Badge color="secondary" variant="light">25</Badge></p-nav-item>
+  </p-nav>
+  <p-nav fill>
+    <p-nav-item active>
       <template #icon>
         <IconView />
       </template>
       To Sign <Badge color="secondary" variant="light">25</Badge>
-    </NavItem>
-    <NavItem>
+    </p-nav-item>
+    <p-nav-item>
       <template #icon>
         <IconView />
       </template>
       To Review <Badge color="secondary" variant="light">25</Badge>
-    </NavItem>
-  </Nav>
+    </p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav fill>
-    <NavItem active>
-      To Sign 
+  <p-nav fill>
+    <p-nav-item active>
+      To Sign
       <Badge color="secondary" variant="light">25</Badge>
-    </NavItem>
-    <NavItem>
-      To Review 
+    </p-nav-item>
+    <p-nav-item>
+      To Review
       <Badge color="secondary" variant="light">25</Badge>
-    </NavItem>
-  </Nav>
-  <Nav fill>
-    <NavItem active>
+    </p-nav-item>
+  </p-nav>
+  <p-nav fill>
+    <p-nav-item active>
       <template #icon>
         <IconView />
       </template>
       To Sign <Badge color="secondary" variant="light">25</Badge>
-    </NavItem>
-    <NavItem>
+    </p-nav-item>
+    <p-nav-item>
       <template #icon>
         <IconView />
       </template>
       To Review <Badge color="secondary" variant="light">25</Badge>
-    </NavItem>
-  </Nav>
+    </p-nav-item>
+  </p-nav>
 </template>
 ```
 
 ## Dropdown
 
 <preview>
-  <Nav>
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
+  <p-nav>
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
     <NavItemDropdown icon>
       <template #button-content>
         <IconMenu />
@@ -309,10 +308,10 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
       <DropdownItem>Item Text</DropdownItem>
       <DropdownItem>Item Text</DropdownItem>
     </NavItemDropdown>
-  </Nav>
-  <Nav fill>
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
+  </p-nav>
+  <p-nav fill>
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
     <NavItemDropdown icon>
       <template #button-content>
         <IconMenu />
@@ -321,14 +320,14 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
       <DropdownItem>Item Text</DropdownItem>
       <DropdownItem>Item Text</DropdownItem>
     </NavItemDropdown>
-  </Nav>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav>
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
+  <p-nav>
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
     <NavItemDropdown icon>
       <template #button-content>
         <IconMenu />
@@ -337,10 +336,10 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
       <DropdownItem>Item Text</DropdownItem>
       <DropdownItem>Item Text</DropdownItem>
     </NavItemDropdown>
-  </Nav>
-  <Nav fill>
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
+  </p-nav>
+  <p-nav fill>
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
     <NavItemDropdown icon>
       <template #button-content>
         <IconMenu />
@@ -349,7 +348,7 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
       <DropdownItem>Item Text</DropdownItem>
       <DropdownItem>Item Text</DropdownItem>
     </NavItemDropdown>
-  </Nav>
+  </p-nav>
 </template>
 ```
 
@@ -357,80 +356,80 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
 Navigation by default appear on horizontal line. You can stack navigation by setting `vertical` prop.
 
 <preview>
-  <Nav vertical class="w-80">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav vertical class="w-80">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav vertical class="w-80">
-    <NavItem active>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav vertical class="w-80">
+    <p-nav-item active>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </template>
 ```
 
 ## Submenu
-Submenu just support in vertical navigation. If you need collapsible menus, you just add `collapsible` prop 
+Submenu just support in vertical navigation. If you need collapsible menus, you just add `collapsible` prop
 
 ### Default Submenu
 <preview>
-  <Nav vertical class="w-64">
-    <NavItem active>Home</NavItem>
-    <NavSubItem text="Documents">
-      <Nav>
-        <NavItem>To Sign</NavItem>
-        <NavItem>To Review</NavItem>
-      </Nav>
-    </NavSubItem>
-    <NavItem>Contacts</NavItem>
-  </Nav>
+  <p-nav vertical class="w-64">
+    <p-nav-item active>Home</p-nav-item>
+    <p-nav-sub-item text="Documents">
+      <p-nav>
+        <p-nav-item>To Sign</p-nav-item>
+        <p-nav-item>To Review</p-nav-item>
+      </p-nav>
+    </p-nav-sub-item>
+    <p-nav-item>Contacts</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav vertical class="w-64">
-    <NavItem active>Home</NavItem>
-    <NavSubItem text="Documents">
-      <Nav>
-        <NavItem>To Sign</NavItem>
-        <NavItem>To Review</NavItem>
-      </Nav>
-    </NavSubItem>
-    <NavItem>Contacts</NavItem>
-  </Nav>
+  <p-nav vertical class="w-64">
+    <p-nav-item active>Home</p-nav-item>
+    <p-nav-sub-item text="Documents">
+      <p-nav>
+        <p-nav-item>To Sign</p-nav-item>
+        <p-nav-item>To Review</p-nav-item>
+      </p-nav>
+    </p-nav-sub-item>
+    <p-nav-item>Contacts</p-nav-item>
+  </p-nav>
 </template>
 ```
 ### Collapsible Submenu
 <preview>
-  <Nav vertical class="w-64">
-    <NavItem active>Home</NavItem>
-    <NavSubItem text="Documents" collapsible>
-      <Nav>
-        <NavItem>To Sign</NavItem>
-        <NavItem>To Review</NavItem>
-      </Nav>
-    </NavSubItem>
-    <NavItem>Contacts</NavItem>
-  </Nav>
+  <p-nav vertical class="w-64">
+    <p-nav-item active>Home</p-nav-item>
+    <p-nav-sub-item text="Documents" collapsible>
+      <p-nav>
+        <p-nav-item>To Sign</p-nav-item>
+        <p-nav-item>To Review</p-nav-item>
+      </p-nav>
+    </p-nav-sub-item>
+    <p-nav-item>Contacts</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav vertical class="w-64">
-    <NavItem active>Home</NavItem>
-    <NavSubItem text="Documents" collapsible>
-      <Nav>
-        <NavItem>To Sign</NavItem>
-        <NavItem>To Review</NavItem>
-      </Nav>
-    </NavSubItem>
-    <NavItem>Contacts</NavItem>
-  </Nav>
+  <p-nav vertical class="w-64">
+    <p-nav-item active>Home</p-nav-item>
+    <p-nav-sub-item text="Documents" collapsible>
+      <p-nav>
+        <p-nav-item>To Sign</p-nav-item>
+        <p-nav-item>To Review</p-nav-item>
+      </p-nav>
+    </p-nav-sub-item>
+    <p-nav-item>Contacts</p-nav-item>
+  </p-nav>
 </template>
 ```
 
@@ -438,30 +437,30 @@ Submenu just support in vertical navigation. If you need collapsible menus, you 
 If you need less space/padding of navigation, you can set by using `condensed` prop.
 
 <preview>
-  <Nav condensed>
-    <NavItem active>Need Action</NavItem>
-    <NavItem>In Progress</NavItem>
-    <NavItem>Others</NavItem>
-  </Nav>
-  <Nav vertical condensed class="w-80">
-    <NavItem>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav condensed>
+    <p-nav-item active>Need Action</p-nav-item>
+    <p-nav-item>In Progress</p-nav-item>
+    <p-nav-item>Others</p-nav-item>
+  </p-nav>
+  <p-nav vertical condensed class="w-80">
+    <p-nav-item>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav condensed>
-    <NavItem active>Need Action</NavItem>
-    <NavItem>In Progress</NavItem>
-    <NavItem>Others</NavItem>
-  </Nav>
-  <Nav vertical condensed class="w-80">
-    <NavItem>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav condensed>
+    <p-nav-item active>Need Action</p-nav-item>
+    <p-nav-item>In Progress</p-nav-item>
+    <p-nav-item>Others</p-nav-item>
+  </p-nav>
+  <p-nav vertical condensed class="w-80">
+    <p-nav-item>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </template>
 ```
 
@@ -469,36 +468,36 @@ If you need less space/padding of navigation, you can set by using `condensed` p
 When you need title for grouping navigation, you can add navigation title by using `title` prop.
 
 <preview>
-  <Nav title="Document">
-    <NavItem disabled>Need Action</NavItem>
-    <NavItem>In Progress</NavItem>
-    <NavItem>Others</NavItem>
-  </Nav>
-  <Nav vertical title="Quick Jump" class="w-80">
-    <NavItem>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav title="Document">
+    <p-nav-item disabled>Need Action</p-nav-item>
+    <p-nav-item>In Progress</p-nav-item>
+    <p-nav-item>Others</p-nav-item>
+  </p-nav>
+  <p-nav vertical title="Quick Jump" class="w-80">
+    <p-nav-item>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </preview>
 
 ```vue
 <template>
-  <Nav title="Document">
-    <NavItem disabled>Need Action</NavItem>
-    <NavItem>In Progress</NavItem>
-    <NavItem>Others</NavItem>
-  </Nav>
-  <Nav vertical title="Quick Jump" class="w-80">
-    <NavItem>To Sign</NavItem>
-    <NavItem>To Review</NavItem>
-    <NavItem>Auditrail</NavItem>
-  </Nav>
+  <p-nav title="Document">
+    <p-nav-item disabled>Need Action</p-nav-item>
+    <p-nav-item>In Progress</p-nav-item>
+    <p-nav-item>Others</p-nav-item>
+  </p-nav>
+  <p-nav vertical title="Quick Jump" class="w-80">
+    <p-nav-item>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
 </template>
 ```
 
 ## API
 
-### Props `<Nav>`
+### Props `<p-nav>`
 
 | Props          |   Type    | Default     | Description                                                       |
 |----------------|:---------:|:-----------:|-------------------------------------------------------------------|
@@ -510,13 +509,13 @@ When you need title for grouping navigation, you can add navigation title by usi
 | `title`        | `String`  | `undefined` | Title to place in the top of navigation block                     |
 | `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
 
-### Slots `<Nav>`
+### Slots `<p-nav>`
 
 | Name             | Description                                             |
 |------------------|---------------------------------------------------------|
 | `default`        | Content to place in the Nav                             |
 
-### Props `<NavItem>`
+### Props `<p-nav-item>`
 
 | Props          |   Type     | Default      | Description                                  |
 |----------------|:----------:|:------------:|-------------------------------------------------------------------|
@@ -525,21 +524,21 @@ When you need title for grouping navigation, you can add navigation title by usi
 | `href`         | `String`   | `undefined`  | Target URL of the link                                            |
 | `target`       | `String`   | `_self`      | Sets the `target` attribute on the rendered link, valid value is `_blank`, `_self`, `_parent`, dan `_top` |
 
-### Slots `<NavItem>`
+### Slots `<p-nav-item>`
 
 | Name             | Description                                             |
 |------------------|---------------------------------------------------------|
 | `default`        | Content to place in the nav item                        |
 | `icon`           | Content to place icon in nav item                       |
 
-### Props `<NavSubItem>`
+### Props `<p-nav-sub-item>`
 
 | Props          |   Type     | Default      | Description                                  |
 |----------------|:----------:|:------------:|-------------------------------------------------------------------|
 | `text`         | `String`   | `undefined`  | Place text in the submenu parent                                  |
 | `collapsible`  | `Boolean`  | `false`      | Enable collapsible Submenu                                        |
 
-### Slots `<NavSubItem>`
+### Slots `<p-nav-sub-item>`
 
 | Name             | Description                                             |
 |------------------|---------------------------------------------------------|

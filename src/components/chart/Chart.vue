@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { templateRef, pausableWatch } from '@vueuse/core'
-import Chart, { LayoutPosition } from 'chart.js/auto'
+import type { LayoutPosition, Chart } from 'chart.js'
 import {
   defineComponent,
   onMounted,
@@ -62,9 +62,11 @@ export default defineComponent({
       return getAdapter(variant.value).getDatasets(slots.default())
     })
 
-    function createChart () {
+    async function createChart () {
       if (instance.value)
         instance.value.destroy()
+
+      const { default: Chart } = await import('chart.js/auto')
 
       instance.value = new Chart(canvas.value, {
         type   : variant.value,
@@ -96,12 +98,13 @@ export default defineComponent({
       }
     }, { flush: 'post' })
 
-    watch([variant, legend], () => {
+    watch([variant, legend], async () => {
       dataWatcher.pause()
-      createChart()
-      nextTick(() => {
-        dataWatcher.resume()
-      })
+
+      await createChart()
+      await nextTick()
+
+      dataWatcher.resume()
     }, { flush: 'pre' })
 
     onMounted(() => {

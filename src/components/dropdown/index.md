@@ -187,8 +187,8 @@ You can combine placement with suffix `*-start` and `*-end` to set popup positio
 
 ### Variant, Color and Size
 
-Every props in [Button](/button/component) like `variant`, `color`, `size`, `pill` and `icon`  also works in here.
-Check out [Button](/button/component) for more information.
+Every props in [Button][button] like `variant`, `color`, `size`, `pill` and `icon`  also works in here.
+Check out [Button][button] for more information.
 
 <preview>
   <p-dropdown
@@ -391,5 +391,8 @@ You can programmatically toggle dropdown using `v-model`
 | `hide` | -         | Event when dropdown popup hidden |
 
 ## See Also
-- [Button](/button/component)
-- [Dropdown Subitem](/dropdown-subitem/component)
+- [Button][button]
+- [Dropdown Subitem][dropdown-subitem]
+
+[button]: /components/button/index
+[dropdown-subitem]: /components/dropdown-subitem/index

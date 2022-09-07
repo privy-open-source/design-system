@@ -78,7 +78,7 @@
 
 ## Custom Button Content
 
-Similar to [Dropdown](/dropdown/component), You can change button content via slot `button-content`
+Similar to [Dropdown][dropdown], You can change button content via slot `button-content`
 
 <preview>
   <p-dropdown text="Custom Content">
@@ -116,7 +116,7 @@ Similar to [Dropdown](/dropdown/component), You can change button content via sl
 
 ## Hide Caret
 
-Similar with [Dropdown](/dropdown/component), you can hide caret icon with `no-caret` props.
+Similar with [Dropdown][dropdown], you can hide caret icon with `no-caret` props.
 
 <preview>
   <p-dropdown text="Fruit">
@@ -169,4 +169,6 @@ Similar with [Dropdown](/dropdown/component), you can hide caret icon with `no-c
 
 ## See Also
 
-- [Dropdown](/dropdown/component)
+- [Dropdown][dropdown]
+
+[dropdown]: /components/dropdown/index

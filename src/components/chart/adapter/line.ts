@@ -1,5 +1,5 @@
-import { ChartDataset, ChartData } from 'chart.js'
-import { startCase } from 'lodash'
+import type { ChartDataset, ChartData } from 'chart.js'
+import { startCase } from 'lodash-es'
 import { Slots, VNode } from 'vue-demi'
 import { defineAdapter } from './adapter'
 import { colorHash } from '../../avatar/utils/color-hash'

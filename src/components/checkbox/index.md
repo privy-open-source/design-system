@@ -256,5 +256,8 @@ Indeterminate is condition between `checked` and `unchecked`. It's usefull for c
 | `change` | Boolean   | Event when value changed |
 
 ## See Also
-- [Toggle](/toggle/component)
-- [Radio](/radio/component)
+- [Toggle][toggle]
+- [Radio][radio]
+
+[Toggle]: /components/toggle/index
+[Radio]: /components/radio/index

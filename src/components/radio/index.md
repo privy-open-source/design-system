@@ -97,7 +97,7 @@
 
 ## Apperance
 
-Some case, you may need some [Checkbox](/checkbox/component) but work like a Radio. You can change the apperance via `apperance` props.
+Some case, you may need some [Checkbox][checkbox] but work like a Radio. You can change the apperance via `apperance` props.
 
 <preview class="justify-center">
   <div class="flex flex-col gap-3">
@@ -145,5 +145,8 @@ Some case, you may need some [Checkbox](/checkbox/component) but work like a Rad
 | `change` | Boolean   | Event when value changed |
 
 ## See Also
-- [Checkbox](/checkbox/component)
-- [Toggle](/toggle/component)
+- [Checkbox][checkbox]
+- [Toggle][toggle]
+
+[checkbox]: /components/checkbox/index
+[toggle]: /components/toggle/index

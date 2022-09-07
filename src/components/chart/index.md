@@ -201,7 +201,7 @@ There 3 variant chart: `line`, `bar`, `pie`. default is `line`
 </template>
 ```
 
-## Legend location
+## Legend position
 
 You can set position of label using prop `legend`, valid value is `top`, `left`, `bottom`, `right`, `chartArea` and `none` to disabled.
 Default is `bottom`.

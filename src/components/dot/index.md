@@ -15,7 +15,7 @@
 </style>
 
 # Dot
-Dot is a sub-component used for [Badge](/badge/component) and Label
+Dot is a sub-component used for [Badge][badge] and Label
 
 ## Usage
 
@@ -97,3 +97,9 @@ Dot available in 7 different colors `primary`, `secondary`, `success`, `info`, `
     </tr>
   </tbody>
 </table>
+
+## See Also
+
+- [Badge][badge]
+
+[badge]: /components/badge/index

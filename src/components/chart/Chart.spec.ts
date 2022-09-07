@@ -1,10 +1,11 @@
 import { chartRender, MockChart } from './__mocks__/chart.js'
 import { render } from '@testing-library/vue'
 import { vi } from 'vitest'
-import { nextTick, ref } from 'vue-demi'
+import { ref } from 'vue-demi'
 import pChart from './Chart.vue'
 import pChartSet from './ChartSet.vue'
 import pChartVal from './ChartVal.vue'
+import { delay } from 'nanodelay'
 
 vi.mock('chart.js/auto', () => {
   return { default: MockChart }
@@ -135,7 +136,7 @@ it('should re-render if data changed', async () => {
   })
 
   isShow.value = true
-  await nextTick()
+  await delay(1)
 
   expect(chartRender).toBeCalledTimes(2)
   expect(chartRender).lastCalledWith({
@@ -178,6 +179,8 @@ it('should re-render if variant changed', async () => {
     },
   })
 
+  await delay(1)
+
   const chart = screen.queryByTestId('chart')
 
   expect(chart).toBeInTheDocument()
@@ -204,7 +207,7 @@ it('should re-render if variant changed', async () => {
   })
 
   variant.value = 'pie'
-  await nextTick()
+  await delay(1)
 
   expect(chartRender).toBeCalledTimes(2)
   expect(chartRender).lastCalledWith({
@@ -240,6 +243,8 @@ it('should re-render if variant changed', async () => {
     },
   })
 
+  await delay(1)
+
   const chart = screen.queryByTestId('chart')
 
   expect(chart).toBeInTheDocument()
@@ -249,7 +254,7 @@ it('should re-render if variant changed', async () => {
   expect(chartRender).toBeCalledTimes(1)
 
   legend.value = 'none'
-  await nextTick()
+  await delay(1)
 
   expect(chartRender).toBeCalledTimes(2)
 })

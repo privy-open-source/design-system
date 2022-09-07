@@ -13,7 +13,7 @@
 # Button Group
 
 Button Group is a collection of buttons consisting of at least 2 buttons in single line.
-Therefore, the Button Group is very dependent on the [Button](/button/component) component. But it should be underlined that not all props on the Button can work here.
+Therefore, the Button Group is very dependent on the [Button][button] component. But it should be underlined that not all props on the Button can work here.
 
 ## Usage
 
@@ -61,7 +61,7 @@ Place one add-on on either side of a Button. You may also make Button all addon.
 ```
 
 #### Addon Right
-In the button group, to simplify several actions in one button, it can be combined with the [Dropdown](/dropdown/component) component.
+In the button group, to simplify several actions in one button, it can be combined with the [Dropdown][dropdown] component.
 
 <preview>
   <p-button-group>
@@ -386,3 +386,10 @@ You just add `pill` in Button Group to make button more rounded. Prop `pill` of 
     </tr>
   </tbody>
 </table>
+
+## See Also
+- [Button][button]
+- [Dropdown][dropdown]
+
+[button]: /components/button/index
+[dropdown]: /components/dropdown/index

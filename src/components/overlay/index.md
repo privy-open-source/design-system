@@ -102,4 +102,4 @@ function onClick () {
 </table>
 
 ## See Also
-- [Spinner](/spinner/component)
+- [Spinner](/components/spinner/index)

@@ -85,4 +85,4 @@
 </table>
 
 ## See Also
-- [Overlay](/overlay/component)
+- [Overlay](/components/overlay/index)
