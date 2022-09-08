@@ -14,10 +14,10 @@
     "lib": ["esnext", "dom"]
   },
   "include": [
-    "components/**/*.ts",
-    "components/**/*.d.ts",
-    "components/**/*.tsx",
-    "components/**/*.vue"
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
   ],
   "exclude": [
     "node_modules",
