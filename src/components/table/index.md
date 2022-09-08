@@ -93,7 +93,7 @@
 </template>
 
 <script setup>
-import { defineTable } from '@privyid/persona/table'
+import { defineTable } from '@privyid/persona/core'
 
 const fields = defineTable([
   'id',

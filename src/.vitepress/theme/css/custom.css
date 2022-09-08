@@ -29,6 +29,10 @@
   }
 }
 
+.VPSidebar > .nav {
+  @apply block pl-0;
+}
+
 /*
 * CONTENT
 */

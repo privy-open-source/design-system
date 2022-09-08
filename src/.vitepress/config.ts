@@ -19,7 +19,7 @@ export default defineConfig({
       { text: 'Components', link: '/components/avatar/' },
       { text: 'Foundation', link: '/foundation/color/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
-      { text: 'Ecosystem', link: '/ecosystem' },
+      { text: 'Ecosystem', link: '/ecosystem/' },
     ],
     socialLinks : [
       { icon: 'github', link: 'https://github.com/privy-open-source/design-system' }

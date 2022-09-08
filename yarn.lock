@@ -593,12 +593,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/icon-helpers@npm:^10.32.0":
+  version: 10.32.0
+  resolution: "@carbon/icon-helpers@npm:10.32.0"
+  checksum: 0e30aa111ccde24bf02dd17b3d1016ce829e2a1f9082c2986520b3df38a8cad504a231d0d4fd0cbe15b3e35af0e091ff7ce09cb2d20553e4618d800981f933b5
+  languageName: node
+  linkType: hard
+
 "@carbon/icons-vue@npm:10.49.1":
   version: 10.49.1
   resolution: "@carbon/icons-vue@npm:10.49.1"
   dependencies:
     "@carbon/icon-helpers": ^10.29.0
   checksum: 063dd316bbcaca1a1b6ffa400744643be1467810398672a19682a8aa0a2958ea30e504a6d91cfbe7340044f705fa6c43e599472ac174548a94113b8098afe2a0
+  languageName: node
+  linkType: hard
+
+"@carbon/icons-vue@npm:^10.49.1":
+  version: 10.56.0
+  resolution: "@carbon/icons-vue@npm:10.56.0"
+  dependencies:
+    "@carbon/icon-helpers": ^10.32.0
+  checksum: 81257d986c1c7ed7704239b9e65a3d1672cc428e4ec34e1e2188a971aa66f6ef122848da04f646d839ebdb226abdc690073a3c035477ff6e6022776204fcbd91
   languageName: node
   linkType: hard
 
@@ -1235,6 +1251,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
+    "@carbon/icons-vue": ^10.49.1
     "@nuxt/kit": ^3.0.0-rc.9
     "@nuxt/module-builder": latest
     "@nuxtjs/tailwindcss": ^5.3.2
