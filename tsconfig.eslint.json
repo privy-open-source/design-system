@@ -1,21 +1,25 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "components/**/*.vue",
-    "components/**/*.ts",
+    "src/**/*.vue",
+    "src/**/*.ts",
     "packages/**/*.ts",
     "packages/**/*.js",
+    "cypress/**/*.ts",
     "types/**/*.d.ts",
     ".eslintrc.js",
     "postcss.config.js",
     "tailwind.config.js",
     "tailwind.animation.js",
+    "vite.config.ts",
     "vitest.config.ts",
+    "cypress.config.ts",
     "vitest.setup.ts"
   ],
   "exclude": [
     "node_modules",
     "coverage",
-    "dist"
+    "dist",
+    ".nuxt"
   ]
 }

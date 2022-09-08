@@ -1,8 +1,9 @@
 {
   "name": "@privyid/tailwind-extended",
-  "version": "0.1.0",
-  "packageManager": "yarn@3.2.2",
+  "version": "0.3.0",
+  "packageManager": "yarn@3.2.3",
   "main": "./index.js",
+  "types": "./index.d.ts",
   "peerDependencies": {
     "tailwind": ">= 3.0.0"
   }
