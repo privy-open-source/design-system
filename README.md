@@ -9,15 +9,15 @@
   [![codecov](https://codecov.io/gh/privy-open-source/design-system/branch/main/graph/badge.svg?token=8X8YYDP2SI)](https://codecov.io/gh/privy-open-source/design-system)
   [![CodeFactor](https://www.codefactor.io/repository/github/privy-open-source/design-system/badge)](https://www.codefactor.io/repository/github/privy-open-source/design-system)
 
-  [Installation](#installation) •
-  [Docs](#documentation) •
+  [Installation](https://privy-open-source.github.io/design-system/docs/getting-starter) •
+  [Docs](https://privy-open-source.github.io/design-system/) •
   [Demo](#demo)
 
 </div>
 
 ## Installation
 
-TODO
+Goto [Online Docs](https://privy-open-source.github.io/design-system/)
 
 ## Contribution
 See [Contributing Guide](/CONTRIBUTING.md)
