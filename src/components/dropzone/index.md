@@ -1,8 +1,8 @@
 <script setup>
-  import Dropzone from './Dropzone.vue'
-  import Heading from '../heading/Heading.vue'
-  import Caption from '../caption/Caption.vue'
-  import Spread from '../spread/Spread.vue'
+  import pDropzone from './Dropzone.vue'
+  import pHeading from '../heading/Heading.vue'
+  import pCaption from '../caption/Caption.vue'
+  import pSpread from '../spread/Spread.vue'
   import IconFile from '@carbon/icons-vue/lib/document/32'
   import IconImage from '@carbon/icons-vue/lib/image/32'
 </script>
@@ -22,17 +22,17 @@ Headless component for Drag'n'Drop or Upload files.
 ### Upload Document
 
 <preview class="flex-col items-stretch">
-  <Dropzone accept="application/pdf">
-    <template #default="{ isDragover, model, browse }">
+  <p-dropzone accept="application/pdf">
+    <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded"
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
-        <Spread :active="isDragover">
+        <p-spread :active="isDragover || isHovered">
           <IconFile class="w-16 h-16 mt-5 fill-primary-100" />
-        </Spread>
-        <Heading element="h5">
+        </p-spread>
+        <p-heading element="h5">
           Upload Document
-        </Heading>
-        <Heading element="h6">
+        </p-heading>
+        <p-heading element="h6">
           <template v-if="!model">
             Drag your document here or click
             <a href="#" @click.prevent="browse">Browse</a>
@@ -40,28 +40,28 @@ Headless component for Drag'n'Drop or Upload files.
           <template v-else>
             {{ model.name }}
           </template>
-        </Heading>
-        <Caption bold>PDF, DOC & DOCX up to 25MB each</Caption>
-        <Caption>10 documents max for multiple upload</Caption>
-        <Caption class="mt-16 text-sm">PDF file format is recommended for a faster uploading process.</Caption>
+        </p-heading>
+        <p-caption bold>PDF, DOC & DOCX up to 25MB each</p-caption>
+        <p-caption>10 documents max for multiple upload</p-caption>
+        <p-caption class="mt-16 text-sm">PDF file format is recommended for a faster uploading process.</p-caption>
       </div>
     </template>
-  </Dropzone>
+  </p-dropzone>
 </preview>
 
 ```vue
 <template class="flex-col items-stretch">
-  <Dropzone accept="application/pdf">
-    <template #default="{ isDragover, model, browse }">
+  <p-dropzone accept="application/pdf">
+    <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
-        <Spread :active="isDragover">
+        <p-spread :active="isDragover || isHovered">
           <IconFile class="w-16 h-16 mt-5 fill-primary-100" />
-        </Spread>
-        <Heading element="h5">
+        </p-spread>
+        <p-heading element="h5">
           Upload Document
-        </Heading>
-        <Heading element="h6">
+        </p-heading>
+        <p-heading element="h6">
           <template v-if="!model">
             Drag your document here or click
             <a href="#" @click.prevent="browse">Browse</a>
@@ -69,13 +69,13 @@ Headless component for Drag'n'Drop or Upload files.
           <template v-else>
             {{ model.name }}
           </template>
-        </Heading>
-        <Caption bold>PDF, DOC & DOCX up to 25MB each</Caption>
-        <Caption>10 documents max for multiple upload</Caption>
-        <Caption class="mt-16 text-sm">PDF file format is recommended for a faster uploading process.</Caption>
+        </p-heading>
+        <p-caption bold>PDF, DOC & DOCX up to 25MB each</p-caption>
+        <p-caption>10 documents max for multiple upload</p-caption>
+        <p-caption class="mt-16 text-sm">PDF file format is recommended for a faster uploading process.</p-caption>
       </div>
     </template>
-  </Dropzone>
+  </p-dropzone>
 </template>
 
 ```
@@ -83,17 +83,17 @@ Headless component for Drag'n'Drop or Upload files.
 ### Add Photo
 
 <preview class="flex-col items-stretch">
-  <Dropzone accept="image/*">
+  <p-dropzone accept="image/*">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
-        <Spread :active="isDragover || isHovered">
+        <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
-        </Spread>
-        <Heading element="h5">
+        </p-spread>
+        <p-heading element="h5">
           Add Photo
-        </Heading>
-        <Heading element="h6">
+        </p-heading>
+        <p-heading element="h6">
           <template v-if="!model">
             Drag your document here or click
             <a href="#" @click.prevent="browse">Browse</a>
@@ -101,26 +101,26 @@ Headless component for Drag'n'Drop or Upload files.
           <template v-else>
             {{ model.name }}
           </template>
-        </Heading>
-        <Caption bold>JPG & PNG up to 5MB</Caption>
+        </p-heading>
+        <p-caption bold>JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
-  </Dropzone>
+  </p-dropzone>
 </preview>
 
 ```vue
 <template class="flex-col items-stretch">
-  <Dropzone accept="image/*">
-    <template #default="{ isDragover, model, browse }">
+  <p-dropzone accept="image/*">
+    <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
-        <Spread :active="isDragover">
+        <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
-        </Spread>
-        <Heading element="h5">
+        </p-spread>
+        <p-heading element="h5">
           Add Photo
-        </Heading>
-        <Heading element="h6">
+        </p-heading>
+        <p-heading element="h6">
           <template v-if="!model">
             Drag your document here or click
             <a href="#" @click.prevent="browse">Browse</a>
@@ -128,11 +128,11 @@ Headless component for Drag'n'Drop or Upload files.
           <template v-else>
             {{ model.name }}
           </template>
-        </Heading>
-        <Caption bold>JPG & PNG up to 5MB</Caption>
+        </p-heading>
+        <p-caption bold>JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
-  </Dropzone>
+  </p-dropzone>
 </template>
 
 ```

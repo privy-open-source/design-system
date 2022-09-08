@@ -39,7 +39,7 @@ export default defineComponent({
 
     &:nth-child(1),
     &:nth-child(3) {
-      @apply opacity-25 absolute top-0 left-0 origin-bottom transition-transform z-[1];
+      @apply opacity-25 absolute top-0 left-0 origin-bottom transition-transform z-[1] will-change-transform;
     }
   }
 

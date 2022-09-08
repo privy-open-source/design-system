@@ -21,19 +21,14 @@ export default defineConfig({
       { text: 'Styleguide', link: '/styleguide/badge/' },
       { text: 'Ecosystem', link: '/ecosystem' },
     ],
-    socialLinks : [
-      { icon: 'github', link: 'https://github.com/privy-open-source/design-system' }
-    ],
-    sidebar: {
+    socialLinks: [{ icon: 'github', link: 'https://github.com/privy-open-source/design-system' }],
+    sidebar    : {
       '/docs/': [
         {
           text       : 'Documentation',
           collapsible: true,
-          items      : [
-            { text: 'Instalation', link: '/docs/getting-started' },
-            { text: 'Editor Setup', link: '/docs/editor-setup' },
-          ]
-        }
+          items      : [{ text: 'Instalation', link: '/docs/getting-started' }, { text: 'Editor Setup', link: '/docs/editor-setup' }],
+        },
       ],
       '/foundation/': [
         {
@@ -42,10 +37,10 @@ export default defineConfig({
           items      : [
             {
               text: 'Color',
-              link: '/foundation/color/'
+              link: '/foundation/color/',
             },
-          ]
-        }
+          ],
+        },
       ],
       '/components/': [
         {
@@ -54,77 +49,77 @@ export default defineConfig({
           items      : [
             {
               text: 'Avatar',
-              link: '/components/avatar/'
+              link: '/components/avatar/',
             },
             {
               text: 'Badge',
-              link: '/components/badge/'
+              link: '/components/badge/',
             },
             {
               text: 'Banner',
-              link: '/components/banner/'
+              link: '/components/banner/',
             },
             {
               text: 'Button',
-              link: '/components/button/'
+              link: '/components/button/',
             },
             {
               text: 'Button Group',
-              link: '/components/button-group/'
+              link: '/components/button-group/',
             },
             {
               text: 'Card',
-              link: '/components/card/'
+              link: '/components/card/',
             },
             {
               text: 'Chart',
-              link: '/components/chart/'
+              link: '/components/chart/',
             },
             {
               text: 'Dot',
-              link: '/components/dot/'
+              link: '/components/dot/',
             },
             {
               text: 'Dropdown',
-              link: '/components/dropdown/'
+              link: '/components/dropdown/',
             },
             {
               text: 'Dropdown Subitem',
-              link: '/components/dropdown-subitem/'
+              link: '/components/dropdown-subitem/',
             },
             {
               text: 'Label',
-              link: '/components/label/'
+              link: '/components/label/',
             },
             {
               text: 'Modal',
-              link: '/components/modal/'
+              link: '/components/modal/',
             },
             {
               text: 'Nav',
-              link: '/components/nav/'
+              link: '/components/nav/',
             },
             {
               text: 'Sidebar',
-              link: '/components/sidebar/'
+              link: '/components/sidebar/',
             },
             {
               text: 'Sidebar Menu',
-              link: '/components/sidebar-menu/'
+              link: '/components/sidebar-menu/',
             },
             {
               text: 'Spinner',
-              link: '/components/spinner/'
+              link: '/components/spinner/',
             },
             {
               text: 'Tabs',
-              link: '/components/tabs/'
+              link: '/components/tabs/',
             },
             {
               text: 'Table',
-              link: '/components/table/'
-            }
-          ]
+              link: '/components/table/',
+            },
+          ],
         },
         {
           text       : 'Typography',
@@ -132,19 +127,19 @@ export default defineConfig({
           items      : [
             {
               text: 'Caption',
-              link: '/components/caption/'
+              link: '/components/caption/',
             },
             {
               text: 'Heading',
-              link: '/components/heading/'
+              link: '/components/heading/',
             },
             {
               text: 'Subheading',
-              link: '/components/subheading/'
+              link: '/components/subheading/',
             },
             {
               text: 'Truncate',
-              link: '/components/truncate/'
+              link: '/components/truncate/',
             },
           ],
         },
@@ -154,53 +149,35 @@ export default defineConfig({
           items      : [
             {
               text: 'Calendar',
-              link: '/components/calendar/'
+              link: '/components/calendar/',
             },
             {
               text: 'Checkbox',
-              link: '/components/checkbox/'
+              link: '/components/checkbox/',
             },
             {
               text: 'Datepicker',
-              link: '/components/datepicker/'
+              link: '/components/datepicker/',
             },
             {
               text: 'Input',
-              link: '/components/input/'
+              link: '/components/input/',
             },
             {
               text: 'Radio',
-              link: '/components/radio/'
+              link: '/components/radio/',
             },
             {
               text: 'Select',
-              link: '/components/select/'
+              link: '/components/select/',
             },
             {
               text: 'Textarea',
-              link: '/components/textarea/'
+              link: '/components/textarea/',
             },
             {
               text: 'Toggle',
-              link: '/components/toggle/'
-            },
-          ]
-        },
-        {
-          text       : 'Non-Component',
-          collapsible: true,
-          items      : [
-            {
-              text: 'Dialog',
-              link: '/components/dialog/'
-            },
-            {
-              text: 'Overlay',
-              link: '/components/overlay/'
-            },
-            {
-              text: 'Toast',
-              link: '/components/toast/'
+              link: '/components/toggle/',
             },
           ],
         },
@@ -210,7 +187,7 @@ export default defineConfig({
           items      : [
             {
               text: 'Filterbar',
-              link: '/components/filterbar/'
+              link: '/components/filterbar/',
             },
           ],
         },
@@ -220,11 +197,39 @@ export default defineConfig({
           items      : [
             {
               text: 'Signature Draw',
-              link: '/components/signature-draw/'
+              link: '/components/signature-draw/',
             },
             {
               text: 'Signature Text',
-              link: '/components/signature-text/'
+              link: '/components/signature-text/',
+            },
+          ],
+        },
+        {
+          text       : 'Non-Component',
+          collapsible: true,
+          items      : [
+            {
+              text: 'Dialog',
+              link: '/components/dialog/',
+            },
+            {
+              text: 'Overlay',
+              link: '/components/overlay/',
+            },
+            {
+              text: 'Toast',
+              link: '/components/toast/',
+            },
+          ],
+        },
+        {
+          text       : 'Headless',
+          collapsible: true,
+          items      : [
+            {
+              text: 'Dropzone',
+              link: '/components/dropzone/',
             },
           ],
         },
@@ -236,30 +241,28 @@ export default defineConfig({
           items      : [
             {
               text: 'Badge',
-              link: '/styleguide/badge/'
+              link: '/styleguide/badge/',
             },
             {
               text: 'Banner',
-              link: '/styleguide/banner/'
+              link: '/styleguide/banner/',
             },
             {
               text: 'Button',
-              link: '/styleguide/button/'
+              link: '/styleguide/button/',
             },
             {
               text: 'Button Group',
-              link: '/styleguide/button-group/'
+              link: '/styleguide/button-group/',
             },
             {
               text: 'Heading',
-              link: '/styleguide/heading/'
-            }
-          ]
+              link: '/styleguide/heading/',
+            },
+          ],
         },
       ],
-    }
+    },
   },
-  vite: {
-    plugins: []
-  }
+  vite: { plugins: [] },
 })
