@@ -4,16 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "yarn docs:dev",
-    "docs:dev": "vitepress dev components",
-    "docs:build": "vitepress build components",
-    "docs:serve": "vitepress serve components",
+    "prod": "yarn docs:build && yarn docs:serve",
+    "docs:dev": "vitepress dev src --port 3000",
+    "docs:build": "vitepress build src",
+    "docs:serve": "vitepress serve src",
     "test": "vitest",
     "lint": "eslint . --ext .js,.vue,.ts",
     "fix": "yarn lint --fix",
     "coverage": "vitest run --coverage --reporter=dot",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "packages:prepare": "yarn workspaces foreach -vt run prepare",
+    "packages:build": "yarn workspaces foreach -vt run build"
   },
   "devDependencies": {
+    "@interactjs/types": "^1.10.17",
     "@privyid/tailwind-preset": "workspace:^",
     "@rushstack/eslint-patch": "1.1.4",
     "@testing-library/jest-dom": "5.16.5",
@@ -47,16 +51,12 @@
     "postcss-nested": "5.0.6",
     "tailwindcss": "3.1.8",
     "typescript": "4.7.4",
-    "vite": "2.9.15",
-    "vitepress": "0.22.4",
-    "vitest": "0.21.1"
+    "vitepress": "1.0.0-alpha.13",
+    "vitest": "0.21"
   },
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.8",
-    "@interactjs/actions": "1.10.17",
-    "@interactjs/auto-start": "1.10.17",
-    "@interactjs/interact": "1.10.17",
     "@popperjs/core": "2.11.6",
     "@vueuse/core": "8.9.4",
     "attr-accept": "^2.2.2",
@@ -64,6 +64,7 @@
     "date-fns": "2.29.2",
     "defu": "6.0.0",
     "fuse.js": "6.6.2",
+    "interactjs": "^1.10.17",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
     "tabbable": "5.3.3",

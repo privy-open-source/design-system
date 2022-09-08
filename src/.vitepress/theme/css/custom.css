@@ -1,0 +1,87 @@
+:root {
+  --vp-font-family-base: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --vp-c-brand: #0065D1;
+  --vp-c-brand-light: #408BDD;
+  --vp-c-brand-dark: #0056B2;
+  --code-bg-color: #0b2138;
+  --c-text-light-1: #232323;
+  --c-text-light-2: #5A5A5A;
+  --c-text-light-3: #919191;
+}
+
+:root.dark {
+  --c-bg: #0b1a28;
+  --c-text-light-1: #ffffff;
+  --c-text-light-2: #C8C8C8;
+  --c-text-light-3: #919191;
+  --code-bg-color: #132739;
+  --code-inline-bg-color: #132739;
+}
+
+/*
+* SIDEBAR
+*/
+.sidebar {
+  @media (min-width: 960px) {
+    width: 15rem;
+  }
+}
+
+/*
+* CONTENT
+*/
+.content {
+  h1 {
+    img {
+      @apply inline-block mr-8;
+
+      + .header-anchor {
+        @apply mt-7;
+      }
+    }
+  }
+
+  h2 {
+    border-bottom-color: transparent;
+  }
+
+
+  h4 {
+    @apply mt-6;
+  }
+
+  h5 {
+    @apply mt-12 mb-4;
+
+    + p {
+      @apply mt-0;
+    }
+  }
+
+  ul {
+    @apply list-disc;
+
+    &.root {
+      @apply list-none;
+    }
+  }
+
+  th, td {
+    @apply border-primary-25 dark:border-dark-default;
+  }
+
+  thead > tr:first-child,
+  tr:nth-child(2n) {
+    @apply bg-primary-5 dark:bg-dark-90;
+  }
+
+  .token.attr-name {
+    @apply text-[#cc99cd];
+  }
+}
+
+a.header-anchor {
+  margin-left: -1.25em;
+}

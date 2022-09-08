@@ -111,8 +111,12 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/*.spec.js', '**/*.spec.ts'],
-      env  : {
+      files: [
+        '**/*.spec.js',
+        '**/*.spec.ts',
+        '**/*.cy.ts',
+      ],
+      env: {
         jest: true,
         node: true,
       },

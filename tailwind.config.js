@@ -1,4 +1,4 @@
 module.exports = {
-  content: ['./components/**/*.{vue,md}', './components/.vitepress/theme/**/*.{vue,md}'],
+  content: ['./src/**/*.{vue,md}', './src/.vitepress/theme/**/*.{vue,md}'],
   presets: [require('@privyid/tailwind-preset')],
 }
