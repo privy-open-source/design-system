@@ -2,9 +2,9 @@
   <div class="flex flex-col items-center justify-center pt-8">
     <img class="py-7" src="/assets/images/logo.svg" alt="icon privy" width="150" height="150">
 
-    <div class="flex h-full">
+    <div class="flex h-full px-3">
       <div class="px-3 border-r">
-        <img src="/assets/images/icon-privy.svg" alt="icon privy">
+        <img class="min-w-[2rem]" src="/assets/images/icon-privy.svg" alt="icon privy">
       </div>
       <div class="px-3">
         <Badge>
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="flex gap-2 mt-10">
+    <div class="flex flex-col items-center justify-center gap-2 mt-10 md:flex-row">
       <Button size="lg" @click="gettingStarted">
         Get Started
       </Button>

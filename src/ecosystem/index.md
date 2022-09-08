@@ -6,7 +6,7 @@
 
 # Ecosystem
 
-## Official Package
+## Official Packages
 
 <div class="space-y-4">
   <p-card

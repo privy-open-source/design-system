@@ -5,16 +5,13 @@ export default defineConfig({
   title      : 'Persona',
   description: 'Persona - PrivyID\'s Design System',
   themeConfig: {
-    logo        : './assets/images/logo.svg',
-    repo        : 'privy-open-source/design-system',
-    docsDir     : 'components',
-    docsBranch  : 'main',
-    editLinks   : true,
-    editLinkText: 'Edit this page on GitHub',
-    nextLinks   : false,
-    prevLinks   : false,
-    lastUpdated : 'Last Updated',
-    nav         : [
+    logo    : './assets/images/logo.svg',
+    editLink: { pattern: 'https://github.com/privy-open-source/design-system/edit/main/src/:path' },
+    footer  : {
+      message  : 'Released under the MIT License.',
+      copyright: 'Copyright © 2022 Privy Identitas Digital'
+    },
+    nav      : [
       { text: 'Docs', link: '/docs/getting-started' },
       { text: 'Components', link: '/components/avatar/' },
       { text: 'Foundation', link: '/foundation/color/' },

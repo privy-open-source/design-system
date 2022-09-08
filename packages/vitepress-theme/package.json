@@ -1,4 +1,4 @@
 {
-  "name": "vitepress-theme",
+  "name": "@privyid/vitepress-theme",
   "packageManager": "yarn@3.2.2"
 }
