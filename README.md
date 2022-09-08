@@ -1,6 +1,6 @@
 <div align="center">
 
-  ![Persona Icon](/components/public/assets/logo.svg)
+  ![Persona Icon](/src/public/assets/images/logo.svg)
 
   # Persona Design System
 
@@ -10,7 +10,7 @@
   [![CodeFactor](https://www.codefactor.io/repository/github/privy-open-source/design-system/badge)](https://www.codefactor.io/repository/github/privy-open-source/design-system)
 
   [Installation](#installation) •
-  [Documentation](#documentation) •
+  [Docs](#documentation) •
   [Demo](#demo)
 
 </div>

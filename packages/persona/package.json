@@ -1,12 +1,16 @@
 {
   "name": "@privyid/persona",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
+    },
+    "./core": {
+      "import": "./dist/core/index.mjs",
+      "require": "./dist/core/index.cjs"
     }
   },
   "main": "./dist/module.cjs",
@@ -15,8 +19,9 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "yarn build",
+    "prepack": "yarn build && yarn cleanup",
     "build": "nuxt-module-build",
+    "cleanup": "del-cli dist/**/*.spec.{d.ts,mjs} dist/**/__mocks__ dist/**/*.md",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
@@ -29,6 +34,7 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
+    "del-cli": "^5.0.0",
     "nuxt": "^3.0.0-rc.9"
   }
 }

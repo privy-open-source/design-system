@@ -12,8 +12,9 @@ export default defineNuxtModule({
     'components:dirs' (dirs) {
       // Add ./components dir to the list
       dirs.push({
-        path  : fileURLToPath(new URL('components', import.meta.url)),
-        prefix: 'p',
+        path      : fileURLToPath(new URL('components', import.meta.url)),
+        prefix    : 'p',
+        extensions: ['vue'],
       })
     },
   },

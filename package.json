@@ -12,7 +12,9 @@
     "lint": "eslint . --ext .js,.vue,.ts",
     "fix": "yarn lint --fix",
     "coverage": "vitest run --coverage --reporter=dot",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "packages:prepare": "yarn workspaces foreach -vt run prepare",
+    "packages:build": "yarn workspaces foreach -vt run build"
   },
   "devDependencies": {
     "@interactjs/types": "^1.10.17",

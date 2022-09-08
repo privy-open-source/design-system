@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <p-card>
+    <client-only>
+      <p-signature-draw />
+    </client-only>
     <p-button>Button</p-button>
-  </div>
+  </p-card>
 </template>
 
 <script setup>
