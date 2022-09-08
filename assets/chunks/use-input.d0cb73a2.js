@@ -1,0 +1,1 @@
+import{r as l,c as n,L as s,E as r}from"../app.5d60bad4.js";function m(e){const t=l(e.modelValue),{emit:o}=r(),a=n({get(){return e.modelValue},set(u){o("update:modelValue",u)}});return s(t,a),t}export{m as u};
