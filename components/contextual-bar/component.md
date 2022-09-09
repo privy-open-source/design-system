@@ -6,9 +6,7 @@ import pSubheading from '../subheading/Subheading.vue'
 import { ref, onMounted } from "vue-demi"
 
 const sample1 = ref(false)
-const sample2 = ref(false)
 const body = document.querySelector('body')
-const contextualbar = ref()
 
 const sample01 = ref(true)
 const sample02 = ref(true)
@@ -25,7 +23,7 @@ const sample12 = ref(true)
 
 function example1 () {
   sample1.value = true
-  
+
   setTimeout(() => {
     body?.setAttribute('style', ``)
     sample1.value = false
@@ -33,7 +31,7 @@ function example1 () {
 }
 
 onMounted (() => {
-  // body?.setAttribute('style', ``)
+  body?.setAttribute('style', ``)
 })
 </script>
 
@@ -230,3 +228,25 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
   <p-contextual-bar class="example1" color="info" message="Hey! This is Title Text and telling less as possible" v-model="sample1" align="center">
   </p-contextual-bar>
 </preview>
+
+## API
+
+### Props
+
+| Props                      |   Type    | Default | Description                                     |
+|----------------------------|:---------:|:-------:|-------------------------------------------------|
+| `variant`                  | `String`  | `info`  | Contextualbar variants, valid value is `neutral`, `info`, `error` and `warning`                                     |
+| `align`                    | `String`  | `left`  | Contextualbar alignment, valid value is `left`, `center` and `right`|
+| `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                      |
+| `message`                  | `String`  | -       | Content inside of Contextualbar                 |
+
+### Slots
+| Name      | Description                                                  |
+|-----------|--------------------------------------------------------------|
+| `default ` | Content to place in Contextualbar                           |
+
+### Events
+
+| Name        | Arguments | Description                     |
+|-------------|-----------|---------------------------------|
+| `close`     | -         | Event when close button clicked |
