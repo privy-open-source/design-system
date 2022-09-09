@@ -1,6 +1,7 @@
 <template>
   <label
     class="dropzone"
+    :class="classNames"
     data-testid="dropzone"
     @drop.prevent="onDrop"
     @dragover.prevent
@@ -10,6 +11,7 @@
     @mouseout="isHovered = false">
     <input
       ref="input"
+      data-testid="dropzone-input"
       class="dropzone__input"
       type="file"
       :multiple="multiple"
@@ -25,14 +27,15 @@
 </template>
 
 <script lang="ts">
+import accept from 'attr-accept/dist/es'
 import { templateRef } from '@vueuse/core'
 import {
+  computed,
   defineComponent,
   PropType,
   ref,
 } from 'vue-demi'
 import { useVModel } from '../input/use-input'
-import accept from 'attr-accept'
 import { toBase64 } from '../utils/base64'
 
 const File = globalThis.File
@@ -61,7 +64,7 @@ export default defineComponent({
     },
     accept: {
       type   : String,
-      default: '*',
+      default: '',
     },
   },
   models: {
@@ -79,6 +82,18 @@ export default defineComponent({
 
     const isDragover = ref(false)
     const isHovered  = ref(false)
+
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (isDragover.value)
+        result.push('dropzone--dragover')
+
+      if (isHovered.value)
+        result.push('dropzone--hover')
+
+      return result
+    })
 
     function browse () {
       input.value.click()
@@ -124,6 +139,7 @@ export default defineComponent({
     }
 
     return {
+      classNames,
       browse,
       isDragover,
       isHovered,

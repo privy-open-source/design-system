@@ -1,6 +1,7 @@
 <template>
   <div
     class="spread"
+    data-testid="spread"
     :class="{ 'spread--active': active }">
     <template
       v-for="i in 3"

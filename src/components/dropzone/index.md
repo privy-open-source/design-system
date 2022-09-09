@@ -7,9 +7,15 @@
   import IconImage from '@carbon/icons-vue/lib/image/32'
 </script>
 
-<style lang="postcss">
-  .preview .h5 {
-    @apply mt-0;
+<style scoped lang="postcss">
+  .preview {
+    .h5 {
+      @apply mt-0;
+    }
+
+    a {
+      @apply underline text-primary-100 hover:text-primary-hovered;
+    }
   }
 </style>
 
