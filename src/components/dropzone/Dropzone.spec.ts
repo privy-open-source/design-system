@@ -287,3 +287,33 @@ it('should formal all files if props multiple set to true and using v-model.base
 
   expect(model.value).toStrictEqual(['data:text/plain;base64,YWJjZGVmZ2hpamts', 'data:text/plain;base64,MTIzNDU2Nzg5MDAw'])
 })
+
+it('should not process files if type is not accepted', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Dropzone },
+    template  : `
+      <Dropzone v-model="model" multiple accept=".txt" />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('dropzone-input')
+  const file1 = new File(['12345679'], 'notes.png', { type: 'image/png' })
+  const file2 = new File(['12345679'], 'notes.jpg', { type: 'image/jpg' })
+  const file3 = new File(['12345679'], 'notes.gif', { type: 'image/gif' })
+  const file4 = new File(['12345679'], 'notes.txt', { type: 'text/plain' })
+
+  const files = [
+    file1,
+    file2,
+    file3,
+    file4,
+  ]
+
+  await fireEvent.change(input, { target: { files } })
+
+  expect(model.value).toStrictEqual([file4])
+})

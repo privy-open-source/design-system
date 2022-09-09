@@ -15,7 +15,7 @@ export default function useDraw (target: Ref<HTMLCanvasElement>, hooks?: DrawHoo
   onMounted(async () => {
     if (target.value) {
       const { default: Interact } = await import('interactjs')
-      const onmove                = throttle(hooks.onmove, 1000 / 120 /* limit 120fps */)
+      const onmove                = throttle(hooks.onmove, 1000 / 60 /* limit 60fps */)
 
       Interact(target.value)
         .styleCursor(false)

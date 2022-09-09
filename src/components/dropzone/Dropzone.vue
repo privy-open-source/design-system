@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import accept from 'attr-accept/dist/es'
+import accept from './utils/accept'
 import { templateRef } from '@vueuse/core'
 import {
   computed,
@@ -124,11 +124,7 @@ export default defineComponent({
     async function handleFiles (fileList: FileList) {
       if (fileList.length > 0) {
         // eslint-disable-next-line unicorn/prefer-spread
-        const files = Array.from(fileList)
-          .filter((file) => {
-            return accept(file, props.accept)
-          })
-
+        const files = accept(props.accept, Array.from(fileList))
         const file  = props.multiple ? files : files.at(0)
         const value = props.modelModifiers.base64 ? await filesToBase64(file) : file
 

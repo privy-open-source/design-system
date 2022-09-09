@@ -59,7 +59,6 @@
     "@fontsource/dm-sans": "4.5.8",
     "@popperjs/core": "2.11.6",
     "@vueuse/core": "8.9.4",
-    "attr-accept": "^2.2.2",
     "chart.js": "^3.9.1",
     "date-fns": "2.29.2",
     "defu": "6.0.0",
