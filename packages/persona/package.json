@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
-    "del-cli": "^5.0.0",
-    "nuxt": "^3.0.0-rc.9"
+    "del-cli": "5.0.0",
+    "nuxt": "3.0.0-rc.9"
   }
 }
