@@ -1,52 +1,121 @@
 <template>
   <div
+    v-show="model"
+    ref="contextualbar"
     data-testid="contextual-bar"
     class="contextual-bar"
     :class="classNames">
-    <slot />
+    <div class="contextual-bar__wrapper">
+      <span
+        v-if="!message"
+        class="contextual-bar__icon"
+        data-testid="contextual-bar-icon"><IconInfo /></span>
+      <div
+        class="contextual-bar__content"
+        data-testid="contextual-bar-content"
+        :class="{ 'contextual-bar__content--icon' : message }">
+        <template v-if="message">
+          {{ message }}
+        </template>
+        <slot />
+      </div>
+    </div>
+    <div
+      v-if="dismissable"
+      data-testid="contextual-bar-close"
+      class="contextual-bar__close"
+      @click="close">
+      <IconClose />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import {
-  computed, defineComponent, PropType,
+  computed, defineComponent, PropType, ref, onMounted, watch, nextTick,
 } from 'vue-demi'
+import { AlignVariant } from '../nav/Nav.vue'
+import { useVModel } from '../input/use-input'
+import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
+import IconClose from '@carbon/icons-vue/lib/close/20'
 
-type ColorVariant = 'default' | 'info' | 'danger' | 'warning'
+type StyleVariant = 'neutral' | 'info' | 'error' | 'warning'
 
 export default defineComponent({
-  props: {
-    color: {
-      type   : String as PropType<ColorVariant>,
+  components: { IconInfo, IconClose },
+  props     : {
+    variant: {
+      type   : String as PropType<StyleVariant>,
       default: 'info',
+    },
+    dismissable: {
+      type   : Boolean,
+      default: true,
+    },
+    message: {
+      type   : String,
+      default: undefined,
+    },
+    align: {
+      type   : String as PropType<AlignVariant>,
+      default: 'left',
+    },
+    modelValue: {
+      type   : Boolean,
+      default: false,
     },
   },
 
-  setup (props) {
-    function init () : void {
-      const navbar = document.querySelector('.nav-bar')
-      // let contextualBarHeight = document.querySelector('.contextual-bar')?.getAttribute('display')
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
+  emits: ['update:modelValue', 'close'],
 
-      // navbar?.classList.add('top')
-      navbar?.setAttribute('style', 'top:')
+  setup (props, { emit }) {
+    const model         = useVModel(props)
+    const contextualbar = ref<HTMLElement[]>([])
+    const body          = document.querySelector('body')
+
+    onMounted(() => {
+      const attr = contextualbar.value?.getAttribute('style')
+      body?.setAttribute('style', `transform: translateY(${contextualbar.value?.clientHeight}px)`)
+      contextualbar.value?.setAttribute('style', `transform: translateY(-${contextualbar.value?.clientHeight}px);${attr}`)
+    })
+
+    function close (event: Event) : void {
+      body?.setAttribute('style', '')
+      emit('close', event)
+
+      if (!event.defaultPrevented)
+        model.value = false
     }
 
     const classNames = computed(() => {
       const result: string[] = ['']
 
-      if (props.color)
-        result.push(`contextual-bar--${props.color}`)
+      if (props.variant)
+        result.push(`contextual-bar--${props.variant}`)
+
+      if (props.align)
+        result.push(`contextual-bar--align-${props.align}`)
 
       return result
     })
 
-    // watch (init, (value, oldValue) => {
-    //   console.log(value)
-    // })
+    watch(model, (value) => {
+      if (value === false) {
+        nextTick(() => {
+          emit('close')
+        })
+      }
+    })
 
     return {
+      model,
       classNames,
-      init,
+      contextualbar,
+      close,
     }
   },
 })
@@ -54,23 +123,89 @@ export default defineComponent({
 
 <style lang="postcss">
 .contextual-bar {
-  @apply fixed top-0 left-0 py-6 w-full;
+  @apply fixed z-[1030] top-0 left-0 p-6 w-full;
 
-  &&--default,
-  &&--danger,
+  &__wrapper {
+    @apply px-24 items-start flex mr-9;
+
+    .btn {
+      @apply ml-4;
+    }
+  }
+
+  &&--align-left {
+    .contextual-bar__wrapper {
+      @apply justify-start text-left;
+    }
+  }
+
+  &&--align-center {
+    .contextual-bar__wrapper {
+      @apply justify-center text-center;
+    }
+  }
+
+  &&--align-right {
+    .contextual-bar__wrapper {
+      @apply justify-end text-right;
+    }
+  }
+
+  &&--align-center,
+  &&--align-right {
+    .contextual-bar__content {
+      @apply flex-grow-0;
+    }
+  }
+
+  &__content {
+    @apply flex-grow;
+
+    &&--icon {
+      background-image: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"%3e%3cpath fill-rule="evenodd" clip-rule="evenodd" d="M11 0.5C5.20101 0.5 0.5 5.20101 0.5 11C0.5 16.799 5.20101 21.5 11 21.5C16.799 21.5 21.5 16.799 21.5 11C21.5 8.21523 20.3938 5.54451 18.4246 3.57538C16.4555 1.60625 13.7848 0.5 11 0.5ZM11 4.25C11.6213 4.25 12.125 4.75368 12.125 5.375C12.125 5.99632 11.6213 6.5 11 6.5C10.3787 6.5 9.875 5.99632 9.875 5.375C9.875 4.75368 10.3787 4.25 11 4.25V4.25ZM14 17.09H8V15.41H10.16V10.34H8.75V8.66H11.8475V15.41H14V17.09Z" fill="%23ffffff"/%3e%3c/svg%3e');
+      @apply pl-9 bg-no-repeat bg-[left_center] bg-[length:20px_20px];
+    }
+  }
+
+  &__icon {
+    @apply relative mr-4 flex-shrink;
+  }
+
+  &__close {
+    @apply absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-black text-opacity-30 hover:text-opacity-50;
+  }
+
+  &&--neutral,
+  &&--error,
   &&--warning {
     @apply text-white;
   }
 
-  &&--default {
+  &&--neutral {
     @apply bg-black;
+
+    .contextual-bar__close {
+      @apply text-white text-opacity-40 hover:text-opacity-60;
+    }
   }
 
   &&--info {
     @apply bg-background-100 text-body-100;
+
+    .contextual-bar {
+      &__icon {
+        @apply text-primary-100;
+      }
+
+      &__content {
+        &--icon {
+          background-image: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"%3e%3cpath fill-rule="evenodd" clip-rule="evenodd" d="M11 0.5C5.20101 0.5 0.5 5.20101 0.5 11C0.5 16.799 5.20101 21.5 11 21.5C16.799 21.5 21.5 16.799 21.5 11C21.5 8.21523 20.3938 5.54451 18.4246 3.57538C16.4555 1.60625 13.7848 0.5 11 0.5ZM11 4.25C11.6213 4.25 12.125 4.75368 12.125 5.375C12.125 5.99632 11.6213 6.5 11 6.5C10.3787 6.5 9.875 5.99632 9.875 5.375C9.875 4.75368 10.3787 4.25 11 4.25V4.25ZM14 17.09H8V15.41H10.16V10.34H8.75V8.66H11.8475V15.41H14V17.09Z" fill="%230065D1"/%3e%3c/svg%3e');
+        }
+      }
+    }
   }
 
-  &&--danger {
+  &&--error {
     @apply bg-danger-100;
   }
 

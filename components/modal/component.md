@@ -50,7 +50,6 @@
   <Modal
     no-close-on-esc
     no-close-on-backdrop
-    v-model="basicModal" 
     title="Modal Title" 
     text="This is place holder text. The basic dialog for modals
       should contain only valuable and relevant information.">

@@ -74,6 +74,10 @@ export default defineConfig({
             link: '/card/component'
           },
           {
+            text: 'Contextual Bar',
+            link: '/contextual-bar/component'
+          },
+          {
             text: 'Dot',
             link: '/dot/component'
           },
