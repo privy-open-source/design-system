@@ -13,8 +13,8 @@ export default defineComponent({
     label: {
       type   : String,
       default: 'preview',
-    }
-  }
+    },
+  },
 })
 </script>
 

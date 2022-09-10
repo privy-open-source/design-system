@@ -68,6 +68,7 @@
     "lodash-es": "4.17.21",
     "tabbable": "5.3.3",
     "vue-demi": "0.13.10",
+    "vue-router": "4",
     "vuedraggable": "next",
     "webfontloader": "1.6.28"
   },

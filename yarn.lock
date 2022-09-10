@@ -1226,6 +1226,7 @@ __metadata:
     vitepress: 1.0.0-alpha.13
     vitest: 0.21.1
     vue-demi: 0.13.10
+    vue-router: 4
     vuedraggable: next
     webfontloader: 1.6.28
   languageName: unknown
@@ -11340,7 +11341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-router@npm:^4.1.5":
+"vue-router@npm:4, vue-router@npm:^4.1.5":
   version: 4.1.5
   resolution: "vue-router@npm:4.1.5"
   dependencies:
