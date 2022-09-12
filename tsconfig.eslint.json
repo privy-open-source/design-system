@@ -3,6 +3,8 @@
   "include": [
     "src/**/*.vue",
     "src/**/*.ts",
+    "src/.vitepress/**/*.ts",
+    "src/.vitepress/**/*.vue",
     "packages/**/*.ts",
     "packages/**/*.js",
     "cypress/**/*.ts",
