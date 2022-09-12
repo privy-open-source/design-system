@@ -25,7 +25,6 @@ function example1 () {
   sample1.value = true
 
   setTimeout(() => {
-    body?.setAttribute('style', ``)
     sample1.value = false
   }, 3000)
 }
@@ -115,7 +114,7 @@ onMounted (() => {
 <preview class="preview--bar">
   <p-contextual-bar v-model="sample04">
     <p-subheading>Hey! This is Title Text</p-subheading>
-    <p-caption>You will be unable to sign or seal a document</p-caption> 
+    <p-caption>You will be unable to sign or seal a document</p-caption>
   </p-contextual-bar>
 </preview>
 
@@ -123,7 +122,7 @@ onMounted (() => {
 <template>
   <p-contextual-bar v-model="sample">
     <p-subheading>Hey! This is Title Text</p-subheading>
-    <p-caption>You will be unable to sign or seal a document</p-caption> 
+    <p-caption>You will be unable to sign or seal a document</p-caption>
   </p-contextual-bar>
 </template>
 ```
@@ -132,14 +131,14 @@ onMounted (() => {
 
 <preview class="preview--bar">
   <p-contextual-bar v-model="sample05">
-    <div class="flex justify-between items-center">
+    <div class="flex items-center justify-between">
       <div class="flex-grow-1">
         <p-subheading>Hey! This is Title Text</p-subheading>
         <p-caption>You will be unable to sign or seal a document</p-caption>
       </div>
       <div class="flex-shrink-0">
         <p-button color="primary" size="sm">Button</p-button>
-      </div> 
+      </div>
     </div>
   </p-contextual-bar>
 </preview>
@@ -147,14 +146,14 @@ onMounted (() => {
 ```vue
 <template>
   <p-contextual-bar v-model="sample">
-    <div class="flex justify-between items-center">
+    <div class="flex items-center justify-between">
       <div class="flex-grow-1">
         <p-subheading>Hey! This is Title Text</p-subheading>
         <p-caption>You will be unable to sign or seal a document</p-caption>
       </div>
       <div class="flex-shrink-0">
         <p-button color="primary" size="sm">Button</p-button>
-      </div> 
+      </div>
     </div>
   </p-contextual-bar>
 </template>

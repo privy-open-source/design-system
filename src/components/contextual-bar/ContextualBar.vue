@@ -32,12 +32,21 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, PropType, ref, onMounted, watch, nextTick,
+  computed,
+  defineComponent,
+  PropType,
+  onMounted,
+  watch,
 } from 'vue-demi'
 import { AlignVariant } from '../nav/Nav.vue'
 import { useVModel } from '../input/use-input'
 import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 import IconClose from '@carbon/icons-vue/lib/close/20'
+import {
+  templateRef,
+  until,
+  useElementBounding,
+} from '@vueuse/core'
 
 type StyleVariant = 'neutral' | 'info' | 'error' | 'warning'
 
@@ -62,7 +71,7 @@ export default defineComponent({
     },
     modelValue: {
       type   : Boolean,
-      default: false,
+      default: true,
     },
   },
 
@@ -74,17 +83,22 @@ export default defineComponent({
 
   setup (props, { emit }) {
     const model         = useVModel(props)
-    const contextualbar = ref<HTMLElement[]>([])
-    const body          = document.querySelector('body')
+    const contextualbar = templateRef<HTMLDivElement>('contextualbar')
+    const { height }    = useElementBounding(contextualbar)
 
-    onMounted(() => {
-      const attr = contextualbar.value?.getAttribute('style')
-      body?.setAttribute('style', `transform: translateY(${contextualbar.value?.clientHeight}px)`)
-      contextualbar.value?.setAttribute('style', `transform: translateY(-${contextualbar.value?.clientHeight}px);${attr}`)
-    })
+    async function show () {
+      await until(height).changed()
+
+      document.body?.style.setProperty('transform', `translateY(${height.value}px)`)
+      contextualbar.value?.style.setProperty('transform', `translateY(-${height.value}px)`)
+    }
+
+    async function hide () {
+      contextualbar.value?.style.setProperty('transform', 'translateY(-0px)')
+      document.body?.style.removeProperty('transform')
+    }
 
     function close (event: Event) : void {
-      body?.setAttribute('style', '')
       emit('close', event)
 
       if (!event.defaultPrevented)
@@ -103,18 +117,23 @@ export default defineComponent({
       return result
     })
 
+    onMounted(() => {
+      if (model.value)
+        show()
+      else
+        hide()
+    })
+
     watch(model, (value) => {
-      if (value === false) {
-        nextTick(() => {
-          emit('close')
-        })
-      }
+      if (value)
+        show()
+      else
+        hide()
     })
 
     return {
       model,
       classNames,
-      contextualbar,
       close,
     }
   },

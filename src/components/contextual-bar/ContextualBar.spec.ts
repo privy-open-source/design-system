@@ -2,7 +2,22 @@ import { vi } from 'vitest'
 import { fireEvent, render } from '@testing-library/vue'
 import { delay } from 'nanodelay'
 import { ref, nextTick } from 'vue-demi'
+import { useElementBounding, simulateHeightChanged } from './__mocks__/use-element-bounding'
 import pContextualBar from './ContextualBar.vue'
+import type * as VueUse from '@vueuse/core'
+
+vi.mock('@vueuse/core', async () => {
+  const core = await vi.importActual('@vueuse/core')
+
+  return {
+    ...core as typeof VueUse,
+    useElementBounding,
+  }
+})
+
+afterEach(() => {
+  vi.restoreAllMocks()
+})
 
 it('should rendered properly without any props', () => {
   const screen = render({
@@ -167,12 +182,17 @@ it('should have style attribute `display: none` when contextual bar is hide', as
     },
   })
 
+  await simulateHeightChanged(0) // Simulate heigth changing
+
   let bar = screen.queryByTestId('contextual-bar')
-  expect(bar).toHaveAttribute('style', 'transform: translateY(-0px); display: none;')
+  expect(bar).toHaveStyle({ transform: 'translateY(-0px)', display: 'none' })
 
   model.value = true
   await nextTick()
 
+  await simulateHeightChanged(42)
+
   bar = screen.queryByTestId('contextual-bar')
-  expect(bar).toHaveAttribute('style', 'transform: translateY(-0px);')
+  expect(bar).toHaveStyle({ transform: 'translateY(-42px)' })
+  expect(document.body).toHaveStyle({ transform: 'translateY(42px)' })
 })
