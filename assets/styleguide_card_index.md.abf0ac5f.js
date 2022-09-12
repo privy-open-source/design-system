@@ -1,1 +1,0 @@
-import{_ as e,a as t,b as a}from"./app.5d60bad4.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"styleguide/card/index.md"}'),r={name:"styleguide/card/index.md"};function n(s,c,d,o,i,p){return t(),a("div")}const m=e(r,[["render",n]]);export{l as __pageData,m as default};
