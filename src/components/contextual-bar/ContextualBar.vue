@@ -90,11 +90,14 @@ export default defineComponent({
       await until(height).changed()
 
       document.body?.style.setProperty('transform', `translateY(${height.value}px)`)
+      document.body?.style.setProperty('transition', 'transform 0.15s ease-in-out')
       contextualbar.value?.style.setProperty('transform', `translateY(-${height.value}px)`)
+      contextualbar.value?.style.setProperty('transition', 'transform 0.15s ease-in-out')
     }
 
     async function hide () {
       contextualbar.value?.style.setProperty('transform', 'translateY(-0px)')
+      contextualbar.value?.style.setProperty('transition', 'transform 0.15s ease-in-out')
       document.body?.style.removeProperty('transform')
     }
 

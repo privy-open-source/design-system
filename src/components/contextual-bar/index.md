@@ -6,7 +6,6 @@ import pSubheading from '../subheading/Subheading.vue'
 import { ref, onMounted } from "vue-demi"
 
 const sample1 = ref(false)
-const body = document.querySelector('body')
 
 const sample01 = ref(true)
 const sample02 = ref(true)
@@ -30,7 +29,7 @@ function example1 () {
 }
 
 onMounted (() => {
-  body?.setAttribute('style', ``)
+  document.body?.style.removeProperty('transform')
 })
 </script>
 

@@ -54,12 +54,8 @@
   <p-modal
     no-close-on-esc
     no-close-on-backdrop
-<<<<<<< HEAD:components/modal/component.md
-    title="Modal Title" 
-=======
     v-model="basicModal"
     title="Modal Title"
->>>>>>> main:src/components/modal/index.md
     text="This is place holder text. The basic dialog for modals
       should contain only valuable and relevant information.">
     <template #footer="{ close }">
