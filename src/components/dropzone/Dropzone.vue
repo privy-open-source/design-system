@@ -14,7 +14,7 @@
       data-testid="dropzone-input"
       class="dropzone__input"
       type="file"
-      :multiple="multiple"
+      :multiple="multiple !== false"
       :accept="accept"
       v-bind="$attrs"
       @change="onChange">
@@ -22,6 +22,7 @@
       :is-dragover="isDragover"
       :is-hovered="isHovered"
       :model="model"
+      :raw-model="rawModel"
       :browse="browse" />
   </label>
 </template>
@@ -32,17 +33,22 @@ import { templateRef } from '@vueuse/core'
 import {
   computed,
   defineComponent,
+  nextTick,
   PropType,
   ref,
+  toRef,
 } from 'vue-demi'
 import { useVModel } from '../input/use-input'
 import { toBase64 } from '../utils/base64'
+import { useToNumber } from '@vueuse/shared'
 
 const File = globalThis.File
 
 export interface ModelModifier {
   base64?: boolean,
 }
+
+export type MultipleType = 'replace' | 'append'
 
 export default defineComponent({
   props: {
@@ -59,8 +65,12 @@ export default defineComponent({
       default: () => ({} as ModelModifier),
     },
     multiple: {
-      type   : Boolean,
+      type   : [Boolean, String] as PropType<boolean | MultipleType>,
       default: false,
+    },
+    maxlength: {
+      type   : [Number, String],
+      default: undefined,
     },
     accept: {
       type   : String,
@@ -77,8 +87,10 @@ export default defineComponent({
     'cancel',
   ],
   setup (props, { emit }) {
-    const model = useVModel(props)
-    const input = templateRef<HTMLInputElement>('input')
+    const rawModel  = ref<File | File[]>()
+    const model     = useVModel(props)
+    const input     = templateRef<HTMLInputElement>('input')
+    const maxlength = useToNumber(toRef(props, 'maxlength'), { method: 'parseInt' })
 
     const isDragover = ref(false)
     const isHovered  = ref(false)
@@ -112,6 +124,13 @@ export default defineComponent({
       const files  = target.files
 
       handleFiles(files)
+
+      if (props.multiple === 'append') {
+        /* Issue with multiselect with same file(s), need to be reset */
+        nextTick(() => {
+          target.value = ''
+        })
+      }
     }
 
     function filesToBase64 (files: File | File[]): Promise<string | string[]> {
@@ -125,8 +144,24 @@ export default defineComponent({
       if (fileList.length > 0) {
         // eslint-disable-next-line unicorn/prefer-spread
         const files = accept(props.accept, Array.from(fileList))
-        const file  = props.multiple ? files : files.at(0)
-        const value = props.modelModifiers.base64 ? await filesToBase64(file) : file
+        const file  = props.multiple !== false ? files : files.at(0)
+
+        let value: typeof props.modelValue = file
+
+        // multiple="append"
+        if (props.multiple === 'append' && Array.isArray(model.value))
+          value = [...model.value as File[], ...value as File[]]
+
+        // maxlength
+        if (Number.isInteger(maxlength.value) && Array.isArray(value))
+          value = value.slice(0, maxlength.value)
+
+        // keep original value before converting base64
+        rawModel.value = value
+
+        // v-model.base64
+        if (props.modelModifiers.base64)
+          value = await filesToBase64(file)
 
         model.value = value
         emit('change', value)
@@ -140,6 +175,7 @@ export default defineComponent({
       isDragover,
       isHovered,
       model,
+      rawModel,
       onDrop,
       onChange,
     }

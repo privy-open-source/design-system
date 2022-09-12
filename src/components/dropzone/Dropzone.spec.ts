@@ -317,3 +317,66 @@ it('should not process files if type is not accepted', async () => {
 
   expect(model.value).toStrictEqual([file4])
 })
+
+it('should append files every input change', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Dropzone },
+    template  : `
+      <Dropzone v-model="model" multiple="append" />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('dropzone-input')
+  const file1 = new File(['12345679'], 'notes.png', { type: 'image/png' })
+  const file2 = new File(['12345679'], 'notes.jpg', { type: 'image/jpg' })
+
+  const files = [file1, file2]
+
+  await fireEvent.change(input, { target: { files } })
+
+  expect(model.value).toStrictEqual([file1, file2])
+
+  await fireEvent.change(input, { target: { files } })
+
+  expect(model.value).toStrictEqual([
+    file1,
+    file2,
+    file1,
+    file2,
+  ])
+})
+
+it('should limiting files if maxlength provided', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Dropzone },
+    template  : `
+      <Dropzone v-model="model" multiple="append" maxlength="3" />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('dropzone-input')
+  const file1 = new File(['12345679'], 'notes.png', { type: 'image/png' })
+  const file2 = new File(['12345679'], 'notes.jpg', { type: 'image/jpg' })
+
+  const files = [file1, file2]
+
+  await fireEvent.change(input, { target: { files } })
+
+  expect(model.value).toStrictEqual([file1, file2])
+
+  await fireEvent.change(input, { target: { files } })
+
+  expect(model.value).toStrictEqual([
+    file1,
+    file2,
+    file1,
+  ])
+})
