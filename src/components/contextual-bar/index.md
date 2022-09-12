@@ -42,7 +42,7 @@ onMounted (() => {
         @apply static translate-y-0 z-0 !important;
 
         &__wrapper {
-          @apply px-5 !important;
+          @apply px-6 !important;
         }
       }
     }
@@ -65,14 +65,14 @@ onMounted (() => {
 
 <preview class="preview--bar">
   <p-contextual-bar v-model="sample01">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
 </preview>
 
 ```vue
 <template>
   <p-contextual-bar>
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
 </template>
 
@@ -95,7 +95,7 @@ onMounted (() => {
 ### With Two Action
 
 <preview class="preview--bar">
-  <p-contextual-bar message="Hey! This is Title Text" v-model="sample03">
+  <p-contextual-bar message="This is Title Text" v-model="sample03">
     <p-button size="sm" color="primary">Button</p-button>
     <p-button size="sm" color="primary" variant="outline">Button</p-button>
   </p-contextual-bar>
@@ -103,7 +103,7 @@ onMounted (() => {
 
 ```vue
 <template>
-  <p-contextual-bar v-model="sample" message="Hey! This is Title Text">
+  <p-contextual-bar v-model="sample" message="This is Title Text">
     <p-button size="sm" color="primary">Button</p-button>
     <p-button size="sm" color="primary" variant="outline">Button</p-button>
   </p-contextual-bar>
@@ -165,32 +165,32 @@ Contextual Bar have 4 variants: `info`, `neutral`, `warning` and `error`. Defaul
 
 <preview class="flex-col gap-4 preview--bar">
   <p-contextual-bar variant="info" v-model="sample06">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
   <p-contextual-bar variant="neutral" v-model="sample07">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
   <p-contextual-bar variant="warning" v-model="sample08">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
   <p-contextual-bar variant="error" v-model="sample09">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
 </preview>
 
 ```vue
 <template>
   <p-contextual-bar variant="info" v-model="sample">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
   <p-contextual-bar variant="neutral" v-model="sample">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
   <p-contextual-bar variant="warning" v-model="sample">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
   <p-contextual-bar variant="error" v-model="sample">
-    Hey! This is Title Text and telling less as possible
+    Hey! This is Title Text and telling less
   </p-contextual-bar>
 </template>
 ```

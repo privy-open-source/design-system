@@ -163,7 +163,7 @@ export default defineComponent({
 
     &&--icon {
       background-image: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"%3e%3cpath fill-rule="evenodd" clip-rule="evenodd" d="M11 0.5C5.20101 0.5 0.5 5.20101 0.5 11C0.5 16.799 5.20101 21.5 11 21.5C16.799 21.5 21.5 16.799 21.5 11C21.5 8.21523 20.3938 5.54451 18.4246 3.57538C16.4555 1.60625 13.7848 0.5 11 0.5ZM11 4.25C11.6213 4.25 12.125 4.75368 12.125 5.375C12.125 5.99632 11.6213 6.5 11 6.5C10.3787 6.5 9.875 5.99632 9.875 5.375C9.875 4.75368 10.3787 4.25 11 4.25V4.25ZM14 17.09H8V15.41H10.16V10.34H8.75V8.66H11.8475V15.41H14V17.09Z" fill="%23ffffff"/%3e%3c/svg%3e');
-      @apply pl-9 bg-no-repeat bg-[left_center] bg-[length:20px_20px];
+      @apply pl-9 bg-no-repeat bg-[left_center] bg-[length:19px_19px];
     }
   }
 
