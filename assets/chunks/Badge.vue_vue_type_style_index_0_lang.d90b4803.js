@@ -1,1 +1,0 @@
-import{d as a,c as n}from"../app.d00c72d9.js";const o=a({props:{color:{type:String,default:"primary"},variant:{type:String,default:"default"}},setup(e){return{classNames:n(()=>{const t=["badge"];return e.color&&t.push(`badge--${e.color}`),e.variant&&t.push(`badge--${e.variant}`),t})}}});export{o as _};
