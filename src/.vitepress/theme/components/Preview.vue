@@ -28,6 +28,10 @@ export default defineComponent({
     @apply font-inherit text-inherit hover:text-inherit;
   }
 
+  p {
+    @apply my-0;
+  }
+
   h2 {
     @apply border-t-0;
   }

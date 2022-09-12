@@ -16,6 +16,10 @@ vi.mock('@vueuse/core', async () => {
   }
 })
 
+afterEach(() => {
+  vi.restoreAllMocks()
+})
+
 it('should render properly without any prop', () => {
   const screen = render({
     components: { Select },
