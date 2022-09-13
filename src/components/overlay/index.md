@@ -48,7 +48,7 @@
 </div>
 
 ```ts
-import { showOverlay, hideOverlay } from '@privyid/persona/overlay'
+import { showOverlay, hideOverlay } from '@privyid/persona/core'
 
 function onClick () {
   showOverlay()
