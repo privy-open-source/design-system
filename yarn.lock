@@ -1248,7 +1248,7 @@ __metadata:
     typescript: 4.7.4
     vitepress: 1.0.0-alpha.13
     vitest: 0.21.1
-    vue-demi: 0.13.10
+    vue-demi: 0.13.11
     vuedraggable: next
     webfontloader: 1.6.28
   languageName: unknown
@@ -11293,9 +11293,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.13.10":
-  version: 0.13.10
-  resolution: "vue-demi@npm:0.13.10"
+"vue-demi@npm:0.13.11":
+  version: 0.13.11
+  resolution: "vue-demi@npm:0.13.11"
   peerDependencies:
     "@vue/composition-api": ^1.0.0-rc.1
     vue: ^3.0.0-0 || ^2.6.0
@@ -11305,7 +11305,7 @@ __metadata:
   bin:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
-  checksum: d87ccdeca48e8a939a232b2cbff32616379058fe3fe8753c1a522f9094910edacad7ca2ea9faf96131ccbf10b68d825b6d4ba9c0ea515faddbed2145e95e5c05
+  checksum: 0fbe9bf8ab7fe498ffa2bbd0cfc8f6f43a6bbaa5eda3e20ef1b70dca7c8b0ddb216a7ff2f632b694fe0735805638975abb441c621ec0bd2e6d4656353f316c15
   languageName: node
   linkType: hard
 

@@ -13,8 +13,8 @@ export default defineComponent({
     label: {
       type   : String,
       default: 'preview',
-    }
-  }
+    },
+  },
 })
 </script>
 
@@ -26,6 +26,10 @@ export default defineComponent({
 
   a {
     @apply font-inherit text-inherit hover:text-inherit;
+  }
+
+  p {
+    @apply my-0;
   }
 
   h2 {
