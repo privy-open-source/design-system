@@ -76,8 +76,12 @@ export default defineConfig({
               link: '/components/chart/',
             },
             {
+              text: 'Collapse',
+              link: '/components/collapse/',
+            },
+            {
               text: 'Contextual Bar',
-              link: '/components/contextual-bar/'
+              link: '/components/contextual-bar/',
             },
             {
               text: 'Dot',
