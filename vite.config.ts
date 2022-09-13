@@ -12,6 +12,7 @@ const config = defineConfig({
         'text',
         'json',
         'html',
+        'lcov',
       ],
       exclude: [
         '**/*.spec.ts',
