@@ -186,7 +186,7 @@
 </template>
 
 <script setup>
-import { defineMenu } from '@privyid/persona/sidebar-menu'
+import { defineMenu } from '@privyid/persona/core'
 import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
 import IconDocument from '@carbon/icons-vue/lib/document/20'
 import IconUsers from '@carbon/icons-vue/lib/group/20'
@@ -238,7 +238,7 @@ const menus = defineMenu([
 </template>
 
 <script setup>
-import { defineMenu } from '@privyid/persona/sidebar-menu'
+import { defineMenu } from '@privyid/persona/core'
 import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
 import IconDocument from '@carbon/icons-vue/lib/document/20'
 import IconUsers from '@carbon/icons-vue/lib/group/20'
@@ -342,7 +342,7 @@ const menus = defineMenu([
 </template>
 
 <script setup>
-import { defineMenu } from '@privyid/persona/sidebar-menu'
+import { defineMenu } from '@privyid/persona/core'
 import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
 import IconDocument from '@carbon/icons-vue/lib/document/20'
 import IconUsers from '@carbon/icons-vue/lib/group/20'
