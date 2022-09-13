@@ -1,0 +1,1 @@
+import{N as i}from"../app.a1814972.js";function h(t,s){const n=[...t],r=[];for(;n.length>0;){const e=n.shift();e.type===i&&Array.isArray(e.children)?n.push(...e.children):e.type&&e.type.name===s&&r.push(e)}return r}export{h as f};

@@ -1,1 +1,0 @@
-import{_ as e,a as t,b as a}from"./app.86bd6600.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"styleguide/subheading/index.md"}'),n={name:"styleguide/subheading/index.md"};function s(r,d,i,o,c,p){return t(),a("div")}const m=e(n,[["render",s]]);export{l as __pageData,m as default};
