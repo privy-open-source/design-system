@@ -11,7 +11,7 @@ import NavItemDropdown from './NavItemDropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
   .preview {
     @apply block;
   }

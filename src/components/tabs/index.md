@@ -7,7 +7,7 @@
   import IconDocument from '@carbon/icons-vue/lib/document/20'
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
   .preview {
     @apply block;
   }

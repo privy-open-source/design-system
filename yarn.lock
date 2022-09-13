@@ -675,20 +675,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "@eslint/eslintrc@npm:1.3.0"
+"@eslint/eslintrc@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "@eslint/eslintrc@npm:1.3.1"
   dependencies:
     ajv: ^6.12.4
     debug: ^4.3.2
-    espree: ^9.3.2
+    espree: ^9.4.0
     globals: ^13.15.0
     ignore: ^5.2.0
     import-fresh: ^3.2.1
     js-yaml: ^4.1.0
     minimatch: ^3.1.2
     strip-json-comments: ^3.1.1
-  checksum: a1e734ad31a8b5328dce9f479f185fd4fc83dd7f06c538e1fa457fd8226b89602a55cc6458cd52b29573b01cdfaf42331be8cfc1fec732570086b591f4ed6515
+  checksum: 9844dcc58a44399649926d5a17a2d53d529b80d3e8c3e9d0964ae198bac77ee6bb1cf44940f30cd9c2e300f7568ec82500be42ace6cacefb08aebf9905fe208e
   languageName: node
   linkType: hard
 
@@ -724,6 +724,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@humanwhocodes/module-importer@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@humanwhocodes/module-importer@npm:1.0.1"
+  checksum: 0fd22007db8034a2cdf2c764b140d37d9020bbfce8a49d3ec5c05290e77d4b0263b1b972b752df8c89e5eaa94073408f2b7d977aed131faf6cf396ebb5d7fb61
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/object-schema@npm:^1.2.1":
   version: 1.2.1
   resolution: "@humanwhocodes/object-schema@npm:1.2.1"
@@ -731,7 +738,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interactjs/types@npm:1.10.17, @interactjs/types@npm:^1.10.17":
+"@interactjs/types@npm:1.10.17":
   version: 1.10.17
   resolution: "@interactjs/types@npm:1.10.17"
   checksum: 7e2d5e9448c714b4b2e00a423c33c259719bec3be87914cba1c80058eaecc8d5a587dcb29dcbb837d8832a4cf0eb26d9456f00d800f66717984952fb731891ec
@@ -1179,7 +1186,7 @@ __metadata:
   dependencies:
     "@carbon/icons-vue": 10.49.1
     "@fontsource/dm-sans": 4.5.8
-    "@interactjs/types": ^1.10.17
+    "@interactjs/types": 1.10.17
     "@popperjs/core": 2.11.6
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": 1.1.4
@@ -1197,10 +1204,10 @@ __metadata:
     "@vueuse/core": 8.9.4
     autoprefixer: 10.4.8
     c8: 7.12.0
-    chart.js: ^3.9.1
+    chart.js: 3.9.1
     date-fns: 2.29.2
-    defu: 6.0.0
-    eslint: 8.21.0
+    defu: 6.1.0
+    eslint: 8.23.0
     eslint-config-standard-with-typescript: latest
     eslint-plugin-align-assignments: 1.1.2
     eslint-plugin-import: 2.26.0
@@ -1213,7 +1220,7 @@ __metadata:
     fuse.js: 6.6.2
     happy-dom: 5.4.0
     husky: 8.0.1
-    interactjs: ^1.10.17
+    interactjs: 1.10.17
     jest-extended: 2.0.0
     lint-staged: 13.0.3
     lodash: 4.17.21
@@ -1226,7 +1233,7 @@ __metadata:
     typescript: 4.7.4
     vitepress: 1.0.0-alpha.13
     vitest: 0.23.1
-    vue-demi: 0.13.10
+    vue-demi: 0.13.11
     vuedraggable: next
     webfontloader: 1.6.28
   languageName: unknown
@@ -1240,8 +1247,8 @@ __metadata:
     "@nuxt/module-builder": latest
     "@nuxtjs/tailwindcss": ^5.3.2
     "@privyid/tailwind-preset": "workspace:^"
-    del-cli: ^5.0.0
-    nuxt: ^3.0.0-rc.9
+    del-cli: 5.0.0
+    nuxt: 3.0.0-rc.9
     postcss-custom-properties: ^12.1.8
   languageName: unknown
   linkType: soft
@@ -3113,7 +3120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chart.js@npm:^3.9.1":
+"chart.js@npm:3.9.1":
   version: 3.9.1
   resolution: "chart.js@npm:3.9.1"
   checksum: 9ab0c0ac01215af0b3f020f2e313030fd6e347b48ed17d5484ee9c4e8ead45e78ae71bea16c397621c386b409ce0b14bf17f9f6c2492cd15b56c0f433efdfff6
@@ -3851,10 +3858,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:6.0.0":
-  version: 6.0.0
-  resolution: "defu@npm:6.0.0"
-  checksum: 3c24ef0009b796e32a1655a23fc1f11a79b42012255b6bc88889242da77b7e45bfa4293d9661d28f3f6c12c931309e18f5047efa492670585a3da768887cea74
+"defu@npm:6.1.0, defu@npm:^6.0.0, defu@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "defu@npm:6.1.0"
+  checksum: 403a9ba8ab08dca87576eb062fa488c5cc58a5c8601955f2325dcc077c23da8a68169591505654a8c70ca3567006516ef92a4c44129643f928c58c4e7281195a
   languageName: node
   linkType: hard
 
@@ -3872,14 +3879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:^6.0.0, defu@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "defu@npm:6.1.0"
-  checksum: 403a9ba8ab08dca87576eb062fa488c5cc58a5c8601955f2325dcc077c23da8a68169591505654a8c70ca3567006516ef92a4c44129643f928c58c4e7281195a
-  languageName: node
-  linkType: hard
-
-"del-cli@npm:^5.0.0":
+"del-cli@npm:5.0.0":
   version: 5.0.0
   resolution: "del-cli@npm:5.0.0"
   dependencies:
@@ -5000,13 +5000,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.21.0":
-  version: 8.21.0
-  resolution: "eslint@npm:8.21.0"
+"eslint@npm:8.23.0":
+  version: 8.23.0
+  resolution: "eslint@npm:8.23.0"
   dependencies:
-    "@eslint/eslintrc": ^1.3.0
+    "@eslint/eslintrc": ^1.3.1
     "@humanwhocodes/config-array": ^0.10.4
     "@humanwhocodes/gitignore-to-minimatch": ^1.0.2
+    "@humanwhocodes/module-importer": ^1.0.1
     ajv: ^6.10.0
     chalk: ^4.0.0
     cross-spawn: ^7.0.2
@@ -5016,7 +5017,7 @@ __metadata:
     eslint-scope: ^7.1.1
     eslint-utils: ^3.0.0
     eslint-visitor-keys: ^3.3.0
-    espree: ^9.3.3
+    espree: ^9.4.0
     esquery: ^1.4.0
     esutils: ^2.0.2
     fast-deep-equal: ^3.1.3
@@ -5042,14 +5043,13 @@ __metadata:
     strip-ansi: ^6.0.1
     strip-json-comments: ^3.1.0
     text-table: ^0.2.0
-    v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: 1d39ddb08772ea230cb7d74f7f81f85b9d46965d3600725c7eb39a27bcdaf28cb2a780dacf6cfa1cfbf2da606b57a5e7e3ab373ab474cbcf0ba042076821f501
+  checksum: ff6075daa28d817a7ac4508f31bc108a04d9ab5056608c8651b5bf9cfea5d708ca16dea6cdab2c3c0ae99b0bf0e726af8504eaa8e17c8e12e242cb68237ead64
   languageName: node
   linkType: hard
 
-"espree@npm:^9.3.1, espree@npm:^9.3.2":
+"espree@npm:^9.3.1":
   version: 9.3.2
   resolution: "espree@npm:9.3.2"
   dependencies:
@@ -5060,14 +5060,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"espree@npm:^9.3.3":
-  version: 9.3.3
-  resolution: "espree@npm:9.3.3"
+"espree@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "espree@npm:9.4.0"
   dependencies:
     acorn: ^8.8.0
     acorn-jsx: ^5.3.2
     eslint-visitor-keys: ^3.3.0
-  checksum: 33e8a36fc15d082e68672e322e22a53856b564d60aad8f291a667bfc21b2c900c42412d37dd3c7a0f18b9d0d8f8858dabe8776dbd4b4c2f72c5cf4d6afeabf65
+  checksum: 2e3020dde67892d2ba3632413b44d0dc31d92c29ce72267d7ec24216a562f0a6494d3696e2fa39a3ec8c0e0088d773947ab2925fbb716801a11eb8dd313ac89c
   languageName: node
   linkType: hard
 
@@ -6221,7 +6221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"interactjs@npm:^1.10.17":
+"interactjs@npm:1.10.17":
   version: 1.10.17
   resolution: "interactjs@npm:1.10.17"
   dependencies:
@@ -7972,7 +7972,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt@npm:^3.0.0-rc.9":
+"nuxt@npm:3.0.0-rc.9":
   version: 3.0.0-rc.9
   resolution: "nuxt@npm:3.0.0-rc.9"
   dependencies:
@@ -11025,13 +11025,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"v8-compile-cache@npm:^2.0.3":
-  version: 2.3.0
-  resolution: "v8-compile-cache@npm:2.3.0"
-  checksum: adb0a271eaa2297f2f4c536acbfee872d0dd26ec2d76f66921aa7fc437319132773483344207bdbeee169225f4739016d8d2dbf0553913a52bb34da6d0334f8e
-  languageName: node
-  linkType: hard
-
 "v8-to-istanbul@npm:^9.0.0":
   version: 9.0.0
   resolution: "v8-to-istanbul@npm:9.0.0"
@@ -11300,9 +11293,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.13.10":
-  version: 0.13.10
-  resolution: "vue-demi@npm:0.13.10"
+"vue-demi@npm:0.13.11":
+  version: 0.13.11
+  resolution: "vue-demi@npm:0.13.11"
   peerDependencies:
     "@vue/composition-api": ^1.0.0-rc.1
     vue: ^3.0.0-0 || ^2.6.0
@@ -11312,7 +11305,7 @@ __metadata:
   bin:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
-  checksum: d87ccdeca48e8a939a232b2cbff32616379058fe3fe8753c1a522f9094910edacad7ca2ea9faf96131ccbf10b68d825b6d4ba9c0ea515faddbed2145e95e5c05
+  checksum: 0fbe9bf8ab7fe498ffa2bbd0cfc8f6f43a6bbaa5eda3e20ef1b70dca7c8b0ddb216a7ff2f632b694fe0735805638975abb441c621ec0bd2e6d4656353f316c15
   languageName: node
   linkType: hard
 

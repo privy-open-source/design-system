@@ -30,3 +30,7 @@ export {
 export {
   defineTable,
 } from '../components/table/use-table'
+
+export {
+  toBase64,
+} from '../components/utils/base64'
