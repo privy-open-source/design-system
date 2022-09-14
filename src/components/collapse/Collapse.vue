@@ -1,11 +1,15 @@
 <template>
-  <div
-    v-show="model"
-    data-testid="collapse"
-    class="collapse"
-    :class="classNames">
-    <slot />
-  </div>
+  <transition
+    name="fade"
+    mode="out-in">
+    <div
+      v-show="model"
+      data-testid="collapse"
+      class="collapse"
+      :class="classNames">
+      <slot />
+    </div>
+  </transition>
 </template>
 
 <script lang="ts">
@@ -44,9 +48,7 @@ export default defineComponent({
     watch(model, (value) => {
       if (value === false) {
         nextTick(() => {
-          setTimeout(() => {
-            model.value = false
-          }, 100)
+          model.value = false
         })
       }
     })
@@ -63,11 +65,11 @@ export default defineComponent({
 <style lang="postcss">
 .collapse {
   &&--show {
-    @apply min-h-[0.5rem] relative overflow-hidden h-auto opacity-100 transition-all duration-1000 ease-in-out;
+    @apply block;
   }
 
   &:not(.collapse--show) {
-    @apply h-0 opacity-0 transition-all duration-1000 ease-in-out;
+    @apply hidden;
   }
 }
 </style>

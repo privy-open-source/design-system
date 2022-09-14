@@ -5,15 +5,36 @@
   import pCard from './../card/Card.vue'
 
   const sample = ref(false)
+  const sample2 = ref(false)
 </script>
 
 # Collapse
 
 ## Usage
 
+### Simple Usage
+
 <preview class="flex-col">
   <p-button class="mb-5" @click="sample = !sample">Collapse</p-button>
   <p-collapse v-model="sample">
+    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
+  </p-collapse>
+</preview>
+
+```vue
+<template>
+  <p-button class="mb-5" @click="sample = !sample">Collapse</p-button>
+  <p-collapse v-model="sample">
+    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
+  </p-collapse>
+</template>
+```
+
+### With Card
+
+<preview class="flex-col">
+  <p-button class="mb-5" @click="sample2 = !sample2">Collapse</p-button>
+  <p-collapse v-model="sample2">
     <p-card>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born</p-card>
   </p-collapse>
 </preview>
