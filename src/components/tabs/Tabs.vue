@@ -21,12 +21,12 @@
           data-testid="tab"
           :disabled="tab.disabled"
           :active="i === active"
-          :class="{ 'nav__item--no-label' : (!tab.title && !tab.slots.title) }"
+          :class="[{ 'nav__item--no-icon' : (!tab.slots.icon) }, { 'nav__item--no-label' : (!tab.title && !tab.slots.title) }]"
           @click="selectTab(i, tab)">
-          <template
-            v-if="tab.slots.icon"
-            #icon>
-            <component :is="tab.slots.icon" />
+          <template #icon>
+            <template v-if="tab.slots.icon">
+              <component :is="tab.slots.icon" />
+            </template>
           </template>
           <template v-if="tab.slots.title">
             <component :is="tab.slots.title" />

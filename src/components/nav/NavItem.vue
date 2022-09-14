@@ -104,6 +104,16 @@ export default defineComponent({
         @apply hidden;
       }
     }
+
+    &&--no-icon {
+      .nav__link__icon {
+        @apply hidden;
+      }
+
+      .nav__link__label {
+        @apply ml-0;
+      }
+    }
   }
 
   &__link {
