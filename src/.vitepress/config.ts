@@ -101,6 +101,10 @@ export default defineConfig({
               link: '/components/nav/',
             },
             {
+              text: 'Progress',
+              link: '/components/progress/',
+            },
+            {
               text: 'Sidebar',
               link: '/components/sidebar/',
             },
