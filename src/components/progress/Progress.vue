@@ -128,7 +128,10 @@ export default defineComponent({
   }
 
   &__bar {
-    @apply bg-secondary-25 absolute rounded-full;
+    background: linear-gradient(to right, theme(colors.primary.100) 50%, theme(colors.secondary.25) 50%);
+    transition: background-position 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+    @apply bg-[length:201%_100%] bg-right absolute rounded-tn;
   }
 
   &__label {
@@ -140,9 +143,12 @@ export default defineComponent({
   }
 
   &--active {
-    .progress__point,
-    .progress__bar {
+    .progress__point {
       @apply bg-primary-100 text-white;
+    }
+
+    .progress__bar {
+      @apply bg-left;
     }
   }
 

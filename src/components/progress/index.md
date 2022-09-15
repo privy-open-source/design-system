@@ -41,14 +41,14 @@ There are 2 variants, `dot` and `counter`, default is `dot`
   <p-progress :active="3" variant="dot">
     <p-progress-item label="Step 1" />
     <p-progress-item label="Step 2" />
+    <p-progress-item label="Step 3" />
     <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
   </p-progress>
   <p-progress :active="3" variant="counter">
     <p-progress-item label="Step 1" />
     <p-progress-item label="Step 2" />
+    <p-progress-item label="Step 3" />
     <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
   </p-progress>
 </preview>
 
@@ -57,14 +57,14 @@ There are 2 variants, `dot` and `counter`, default is `dot`
   <p-progress :active="3" variant="dot">
     <p-progress-item label="Step 1" />
     <p-progress-item label="Step 2" />
+    <p-progress-item label="Step 3" />
     <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
   </p-progress>
   <p-progress :active="3" variant="counter">
     <p-progress-item label="Step 1" />
     <p-progress-item label="Step 2" />
+    <p-progress-item label="Step 3" />
     <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
   </p-progress>
 </template>
 ```
@@ -77,14 +77,14 @@ There are 2 label's variants, `specific` and `general`, default is `specific`
   <p-progress :active="3" label-variant="specific">
     <p-progress-item label="Step 1" />
     <p-progress-item label="Step 2" />
+    <p-progress-item label="Step 3" />
     <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
   </p-progress>
   <p-progress :active="3" label-variant="general">
     <p-progress-item label="Step 1" />
     <p-progress-item label="Step 2" />
+    <p-progress-item label="Step 3" />
     <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
   </p-progress>
 </preview>
 
@@ -93,14 +93,14 @@ There are 2 label's variants, `specific` and `general`, default is `specific`
   <p-progress :active="3" label-variant="specific">
     <p-progress-item label="Step 1" />
     <p-progress-item label="Step 2" />
+    <p-progress-item label="Step 3" />
     <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
   </p-progress>
   <p-progress :active="3" label-variant="general">
     <p-progress-item label="Step 1" />
     <p-progress-item label="Step 2" />
+    <p-progress-item label="Step 3" />
     <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
   </p-progress>
 </template>
 ```
@@ -170,7 +170,7 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 
 | Props          |   Type    |  Default   | Description                                                  |
 |----------------|:---------:|:----------:|--------------------------------------------------------------|
-| `active`       | `Number`  |    `1`     | Progress active position                                     |
+| `active`       | `Number`  |    `1`     | Progress active position, start from 1                       |
 | `variant`      | `String`  |   `dot`    | Progress point variant, valid value is `dot`, `counter`      |
 | `labelVariant` | `String`  | `specific` | Progress label variant, valid value is `specific`, `general` |
 | `vertical`     | `Boolean` |  `false`   | Vertical mode                                                |

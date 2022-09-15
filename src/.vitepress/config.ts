@@ -240,6 +240,10 @@ export default defineConfig({
               text: 'Spread',
               link: '/components/spread/',
             },
+            {
+              text: 'Steps',
+              link: '/components/steps/',
+            },
           ],
         },
       ],
