@@ -14,7 +14,8 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, nextTick, watch,
+  computed,
+  defineComponent,
 } from 'vue-demi'
 import { useVModel } from '../input/use-input'
 
@@ -43,14 +44,6 @@ export default defineComponent({
         result.push('collapse--show')
 
       return result
-    })
-
-    watch(model, (value) => {
-      if (value === false) {
-        nextTick(() => {
-          model.value = false
-        })
-      }
     })
 
     return {
