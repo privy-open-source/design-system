@@ -3,9 +3,7 @@
     class="progress"
     :class="classNames">
     <div class="progress__items">
-      <ProgressItems :active="current">
-        <slot />
-      </ProgressItems>
+      <slot />
     </div>
 
     <div
@@ -21,14 +19,14 @@
 </template>
 
 <script lang="ts">
+import { findLast } from 'lodash-es'
 import {
   defineComponent,
   computed,
   PropType,
   Slots,
 } from 'vue-demi'
-import { findAllChildren } from '../utils/vnode'
-import ProgressItems from './ProgressItems.vue'
+import { findAllChildren, toBoolean } from '../utils/vnode'
 
 export type IconVariant = 'dot' | 'counter'
 
@@ -40,12 +38,7 @@ interface ProgressLabel {
 }
 
 export default defineComponent({
-  components: { ProgressItems },
-  props     : {
-    active: {
-      type   : [Number, String],
-      default: 1,
-    },
+  props: {
     variant: {
       type   : String as PropType<IconVariant>,
       default: 'dot',
@@ -60,10 +53,6 @@ export default defineComponent({
     },
   },
   setup (props, { slots }) {
-    const current = computed(() => {
-      return (Number.parseInt(`${props.active}`) || 0) - 1
-    })
-
     const classNames = computed(() => {
       const result: string[] = []
 
@@ -81,23 +70,19 @@ export default defineComponent({
       return result
     })
 
-    const labels = computed<ProgressLabel[]>(() => {
-      const vnodes = findAllChildren(slots.default(), 'ProgressItem')
-
-      return vnodes.map((item) => {
-        return {
-          label: item.props?.label ?? '',
-          slots: (item.children as Slots),
-        }
-      })
-    })
-
     const label = computed<ProgressLabel>(() => {
-      return labels.value.at(current.value)
+      const vnodes     = findAllChildren(slots.default(), 'ProgressItem')
+      const activeNode = findLast(vnodes, (vnode) => {
+        return toBoolean(vnode.props?.active)
+      })
+
+      return {
+        label: activeNode?.props?.label ?? '',
+        slots: activeNode?.children as Slots ?? {},
+      }
     })
 
     return {
-      current,
       classNames,
       label,
     }
@@ -131,7 +116,7 @@ export default defineComponent({
     background: linear-gradient(to right, theme(colors.primary.100) 50%, theme(colors.secondary.25) 50%);
     transition: background-position 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
 
-    @apply bg-[length:201%_100%] bg-right absolute rounded-tn;
+    @apply bg-[length:210%_100%] bg-right absolute rounded-tn;
   }
 
   &__label {
@@ -147,8 +132,10 @@ export default defineComponent({
       @apply bg-primary-100 text-white;
     }
 
-    .progress__bar {
-      @apply bg-left;
+    & + & {
+      .progress__bar {
+        @apply bg-left;
+      }
     }
   }
 
@@ -165,21 +152,6 @@ export default defineComponent({
 
     .progress__bar {
       @apply w-[calc(100%_-_3rem)] h-1 top-3 right-[calc(50%_+_1.5rem)];
-    }
-
-    /**
-    * (experimental) arrow divider
-    */
-    &.progress--arrow {
-      .progress__bar {
-        @apply w-0 h-0 border-l-[6px] border-y-[6px] border-y-transparent border-l-secondary-25 top-3 -left-0 bg-transparent rounded-none -translate-y-1/2;
-      }
-
-      .progress--active {
-        .progress__bar {
-          @apply border-l-primary-100;
-        }
-      }
     }
   }
 

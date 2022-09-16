@@ -58,7 +58,7 @@ import Nav, { StyleVariant as TabsStyleVariant, AlignVariant as TabsAlignVariant
 import NavItem from '../nav/NavItem.vue'
 import TabContent from './TabContent.vue'
 import { useVModel } from '../input/use-input'
-import { findAllChildren } from '../utils/vnode'
+import { findAllChildren, toBoolean } from '../utils/vnode'
 
 interface TabContext {
   title: string,
@@ -120,7 +120,7 @@ export default defineComponent({
       return tabs.map((vnode) => {
         return {
           title   : vnode.props?.title,
-          disabled: vnode.props?.disabled === '' ? true : !!(vnode.props?.disabled),
+          disabled: toBoolean(vnode.props?.disabled),
           slots   : vnode.children as Slots,
         }
       })

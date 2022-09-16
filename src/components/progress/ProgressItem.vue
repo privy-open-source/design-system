@@ -1,6 +1,7 @@
 <template>
   <div
-    class="progress__item">
+    class="progress__item"
+    :class="classNames">
     <div class="progress__content">
       <div class="progress__bar" />
       <div class="progress__point">
@@ -19,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue-demi'
+import { computed, defineComponent } from 'vue-demi'
 
 export default defineComponent({
   name : 'ProgressItem',
@@ -28,6 +29,22 @@ export default defineComponent({
       type   : String,
       default: '',
     },
+    active: {
+      type   : Boolean,
+      default: false,
+    },
+  },
+  setup (props) {
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (props.active)
+        result.push('progress--active')
+
+      return result
+    })
+
+    return { classNames }
   },
 })
 </script>

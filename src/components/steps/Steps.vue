@@ -18,8 +18,14 @@ import {
 import StepSlider from './StepSlider.vue'
 import { useVModel } from '../input/use-input'
 import { findAllChildren } from '../utils/vnode'
-import { STEPS_CONTEXT } from './use-steps'
-import { noop, clamp } from 'lodash-es'
+import {
+  STEPS_CONTEXT,
+  TravelHook,
+  FinishedHook,
+  runHook,
+} from './use-steps'
+import { noop } from 'lodash-es'
+import { syncRef, useClamp } from '@vueuse/core'
 
 export default defineComponent({
   components: { StepSlider },
@@ -28,12 +34,16 @@ export default defineComponent({
       type   : Number,
       default: 1,
     },
+    onBeforePrev: {
+      type   : Function as PropType<TravelHook>,
+      default: () => noop,
+    },
     onBeforeNext: {
-      type   : Function as PropType<(to: number, from: number) => number | Promise<number>>,
+      type   : Function as PropType<TravelHook>,
       default: () => noop,
     },
     onFinished: {
-      type   : Function as PropType<() => void | Promise<void>>,
+      type   : Function as PropType<FinishedHook>,
       default: () => noop,
     },
   },
@@ -43,6 +53,8 @@ export default defineComponent({
     const total = computed(() => {
       return findAllChildren(slots.default(), 'Step').length
     })
+
+    const step = useClamp(model, 1, total)
 
     const canNext = computed(() => {
       return model.value <= total.value
@@ -56,24 +68,30 @@ export default defineComponent({
       const from = model.value
       const to   = model.value + 1
 
-      if (canNext.value && await props.onBeforeNext(to, from)) {
+      if (canNext.value && await runHook(props.onBeforeNext, to, from)) {
         if (to <= total.value)
-          model.value = to
+          step.value = to
         else
           await props.onFinished()
       }
     }
 
     async function prev () {
-      if (canPrev.value)
-        model.value--
+      const from = model.value
+      const to   = model.value - 1
+
+      if (canPrev.value && await runHook(props.onBeforePrev, to, from))
+        step.value = to
     }
 
-    function toStep (step: number) {
-      model.value = clamp(step, 1, total.value)
+    function toStep (to: number) {
+      step.value = to
     }
+
+    syncRef(step, model)
 
     provide(STEPS_CONTEXT, {
+      step,
       next,
       prev,
       canNext,
