@@ -128,6 +128,10 @@ export default defineConfig({
               text: 'Table',
               link: '/components/table/',
             },
+            {
+              text: 'Wizard',
+              link: '/components/wizard/',
+            },
           ],
         },
         {

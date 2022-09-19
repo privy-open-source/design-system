@@ -2,6 +2,7 @@
 import {
   defineComponent,
   h,
+  KeepAlive,
   ref,
   Transition,
   watch,
@@ -13,6 +14,10 @@ export default defineComponent({
     active: {
       type   : Number,
       default: 0,
+    },
+    keepAlive: {
+      type   : Boolean,
+      default: false,
     },
   },
   setup (props, { slots }) {
@@ -26,11 +31,21 @@ export default defineComponent({
 
     return () => {
       const step = findAllChildren(slots.default(), 'Step').at(props.active)
+      const body = () => {
+        if (step) {
+          if (props.keepAlive)
+            return h(KeepAlive, h(step, { key: props.active }))
+
+          return h(step, { key: props.active })
+        }
+
+        return []
+      }
 
       return h(Transition, {
         name: transition.value,
         mode: 'out-in',
-      }, { default: () => step && h(step, { key: props.active }) })
+      }, body)
     }
   },
 })

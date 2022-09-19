@@ -2,7 +2,6 @@
   import pChart from './Chart.vue'
   import pChartSet from './ChartSet.vue'
   import pChartVal from './ChartVal.vue'
-  import { ref } from 'vue-demi'
 </script>
 
 # Chart
@@ -10,6 +9,7 @@
 ## Usage
 
 ### Simple Usage
+
 
 <preview>
   <p-chart>
@@ -192,7 +192,7 @@ There 3 variant chart: `line`, `bar`, `pie`. default is `line`
 <template>
   <div class="w-1/2">
     <p-chart variant="pie">
-      <p-chart-set name="Genre">
+      <p-chart-set name="Gender">
         <p-chart-val name="male" value="49" color="#408bdd" />
         <p-chart-val name="female" value="61" color="#eb6261" />
       </p-chart-set>

@@ -4,8 +4,11 @@
   import pCard from '../card/Card.vue'
   import pButton from '../button/Button.vue'
   import pInput from '../input/Input.vue'
-  import { reactive } from 'vue-demi'
+  import pBanner from '../banner/Banner.vue'
+  import { reactive, ref } from 'vue-demi'
   import { dialog } from '../../core/'
+
+  const step = ref(1)
 
   const form = reactive({
     name : '',
@@ -349,3 +352,128 @@ This hook run when `next` function called in **last step**, and after `on-before
   }
 </script>
 ```
+
+## Binding v-model
+
+You can binding current step with v-model
+
+<p-banner variant="danger" :dismissable="false">
+  Changing the step using v-model, will skip all hooks.
+</p-banner>
+
+<preview>
+  <p-steps v-model="step">
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 1</div>
+            <div class="space-x-2">
+              <p-button disabled>Prev</p-button>
+              <p-button @click="next">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 2</div>
+            <div class="space-x-2">
+              <p-button @click="prev">Prev</p-button>
+              <p-button @click="next">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 3</div>
+            <div class="space-x-2">
+              <p-button @click="prev">Prev</p-button>
+              <p-button @click="next">Finish</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+  </p-steps>
+</preview>
+
+**Step :**
+
+<pre><code>{{ step }}</code></pre>
+
+## API
+
+### Props `<p-steps>`
+
+| Props            |    Type    | Default | Description                                                       |
+|------------------|:----------:|:-------:|-------------------------------------------------------------------|
+| `on-before-next` | `Function` |   `-`   | Hook which run before navigate to next page                       |
+| `on-before-prev` | `Function` |   `-`   | Hook which run before navigate to previous page                   |
+| `on-finished`    | `Function` |   `-`   | Hook which run on last step, after `on-before-next` hook resolved |
+| `keep-alive`     | `Boolean`  | `false` | Enable [KeepAlive][KeepAlive]                                     |
+| `modelValue`     |  `Number`  |   `1`   | Binding v-model                                                   |
+
+### Slot `<p-steps>`
+
+| Name      | Description                 |
+|-----------|-----------------------------|
+| `default` | Content to place `<p-step>` |
+
+### Events `<p-steps>`
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no event here</td>
+    </tr>
+  </tbody>
+</table>
+
+### Props `<p-step>`
+
+| Props            |    Type    | Default | Description                                                       |
+|------------------|:----------:|:-------:|-------------------------------------------------------------------|
+| `on-before-next` | `Function` |   `-`   | Hook which run before navigate to next page                       |
+| `on-before-prev` | `Function` |   `-`   | Hook which run before navigate to previous page                   |
+| `on-finished`    | `Function` |   `-`   | Hook which run on last step, after `on-before-next` hook resolved |
+
+### Slots `<p-step>`
+
+| Name      | Description  |
+|-----------|--------------|
+| `default` | Step content |
+
+### Events `<p-step>`
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no event here</td>
+    </tr>
+  </tbody>
+</table>
+
+
+[KeepAlive]: https://vuejs.org/guide/built-ins/keep-alive.html

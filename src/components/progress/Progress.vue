@@ -7,12 +7,12 @@
     </div>
 
     <div
-      class="progress__label">
-      <template v-if="label.slots && label.slots.label">
-        <component :is="label.slots.label" />
+      class="progress__title">
+      <template v-if="item.slots?.title">
+        <component :is="item.slots.title" />
       </template>
       <template v-else>
-        {{ label.label }}
+        {{ item.title }}
       </template>
     </div>
   </div>
@@ -30,11 +30,11 @@ import { findAllChildren, toBoolean } from '../utils/vnode'
 
 export type IconVariant = 'dot' | 'counter'
 
-export type LabelVariant = 'specific' | 'general'
+export type TitleVariant = 'specific' | 'general'
 
 interface ProgressLabel {
-  label: string,
-  slots : Slots,
+  title: string,
+  slots: Slots,
 }
 
 export default defineComponent({
@@ -43,8 +43,8 @@ export default defineComponent({
       type   : String as PropType<IconVariant>,
       default: 'dot',
     },
-    labelVariant: {
-      type   : String as PropType<LabelVariant>,
+    titleVariant: {
+      type   : String as PropType<TitleVariant>,
       default: 'specific',
     },
     vertical: {
@@ -59,8 +59,8 @@ export default defineComponent({
       if (props.variant)
         result.push(`progress--${props.variant}`)
 
-      if (props.labelVariant)
-        result.push(`progress--${props.labelVariant}`)
+      if (props.titleVariant)
+        result.push(`progress--${props.titleVariant}`)
 
       if (props.vertical)
         result.push('progress--vertical')
@@ -70,21 +70,21 @@ export default defineComponent({
       return result
     })
 
-    const label = computed<ProgressLabel>(() => {
+    const item = computed<ProgressLabel>(() => {
       const vnodes     = findAllChildren(slots.default(), 'ProgressItem')
       const activeNode = findLast(vnodes, (vnode) => {
         return toBoolean(vnode.props?.active)
       })
 
       return {
-        label: activeNode?.props?.label ?? '',
+        title: activeNode?.props?.title ?? '',
         slots: activeNode?.children as Slots ?? {},
       }
     })
 
     return {
       classNames,
-      label,
+      item,
     }
   },
 })
@@ -119,11 +119,11 @@ export default defineComponent({
     @apply bg-[length:210%_100%] bg-right absolute rounded-tn;
   }
 
-  &__label {
+  &__title {
     @apply truncate text-sm text-center w-full;
   }
 
-  & > .progress__label {
+  & > .progress__title {
     @apply pt-2;
   }
 
@@ -158,7 +158,7 @@ export default defineComponent({
   &--vertical {
     @apply h-full;
 
-    > .progress__label {
+    > .progress__title {
       @apply hidden;
     }
 
@@ -195,13 +195,13 @@ export default defineComponent({
   }
 
   &--specific {
-    > .progress__label {
+    > .progress__title {
       @apply hidden;
     }
   }
 
   &--general {
-    .progress__content > .progress__label {
+    .progress__content > .progress__title {
       @apply hidden;
     }
   }

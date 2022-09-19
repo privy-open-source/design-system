@@ -2,7 +2,9 @@
   <div
     class="steps"
     data-testid="steps">
-    <StepSlider :active="model - 1">
+    <StepSlider
+      :active="model - 1"
+      :keep-alive="keepAlive">
       <slot />
     </StepSlider>
   </div>
@@ -34,6 +36,10 @@ export default defineComponent({
       type   : Number,
       default: 1,
     },
+    keepAlive: {
+      type   : Boolean,
+      default: false,
+    },
     onBeforePrev: {
       type   : Function as PropType<TravelHook>,
       default: () => noop,
@@ -47,6 +53,11 @@ export default defineComponent({
       default: () => noop,
     },
   },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
+  emits: ['update:modelValue'],
   setup (props, { slots }) {
     const model = useVModel(props)
 

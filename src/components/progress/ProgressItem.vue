@@ -10,9 +10,9 @@
         </slot>
       </div>
       <div
-        class="progress__label">
-        <slot name="label">
-          {{ label }}
+        class="progress__title">
+        <slot name="title">
+          {{ title }}
         </slot>
       </div>
     </div>
@@ -25,7 +25,7 @@ import { computed, defineComponent } from 'vue-demi'
 export default defineComponent({
   name : 'ProgressItem',
   props: {
-    label: {
+    title: {
       type   : String,
       default: '',
     },

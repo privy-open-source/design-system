@@ -13,22 +13,22 @@
 
 <preview>
   <p-progress>
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
+    <p-progress-item title="Step 5" />
   </p-progress>
 </preview>
 
 ```vue
 <template>
   <p-progress>
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
+    <p-progress-item title="Step 5" />
   </p-progress>
 </template>
 ```
@@ -37,22 +37,22 @@
 
 <preview>
   <p-progress>
-    <p-progress-item label="Step 1" active />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" active />
-    <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
+    <p-progress-item title="Step 1" active />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" active />
+    <p-progress-item title="Step 4" />
+    <p-progress-item title="Step 5" />
   </p-progress>
 </preview>
 
 ```vue
 <template>
   <p-progress>
-    <p-progress-item label="Step 1" active />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" active />
-    <p-progress-item label="Step 4" />
-    <p-progress-item label="Step 5" />
+    <p-progress-item title="Step 1" active />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" active />
+    <p-progress-item title="Step 4" />
+    <p-progress-item title="Step 5" />
   </p-progress>
 </template>
 ```
@@ -62,68 +62,68 @@ There are 2 variants, `dot` and `counter`, default is `dot`
 
 <preview class="flex-col gap-4">
   <p-progress variant="dot">
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
   <p-progress variant="counter">
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
 </preview>
 
 ```vue
 <template>
   <p-progress variant="dot">
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
   <p-progress variant="counter">
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
 </template>
 ```
 
-## Label Variants
+## Title Variants
 
 There are 2 label's variants, `specific` and `general`, default is `specific`
 
 <preview class="flex-col gap-4">
-  <p-progress label-variant="specific">
-    <p-progress-item label="Step 1" active />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+  <p-progress title-variant="specific">
+    <p-progress-item title="Step 1" active />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
-  <p-progress label-variant="general">
-    <p-progress-item label="Step 1" active />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+  <p-progress title-variant="general">
+    <p-progress-item title="Step 1" active />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
 </preview>
 
 ```vue
 <template>
-<p-progress label-variant="specific">
-    <p-progress-item label="Step 1" active />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+<p-progress title-variant="specific">
+    <p-progress-item title="Step 1" active />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
-  <p-progress label-variant="general">
-    <p-progress-item label="Step 1" active />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+  <p-progress title-variant="general">
+    <p-progress-item title="Step 1" active />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
 </template>
 ```
@@ -133,28 +133,28 @@ You can customize progress point with icon with slot `icon`.
 
 <preview class="flex-col gap-4">
   <p-progress variant="dot">
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" active>
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" active>
       <template #icon>
         <IconDocument />
       </template>
     </p-progress-item>
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
 </preview>
 
 ```vue
 <template>
   <p-progress variant="dot">
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" active>
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" active>
       <template #icon>
         <IconDocument />
       </template>
     </p-progress-item>
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
 </template>
 
@@ -168,10 +168,10 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 <preview>
   <div class="h-96">
     <p-progress vertical>
-      <p-progress-item label="Step 1" />
-      <p-progress-item label="Step 2" active />
-      <p-progress-item label="Step 3" />
-      <p-progress-item label="Step 4" />
+      <p-progress-item title="Step 1" />
+      <p-progress-item title="Step 2" active />
+      <p-progress-item title="Step 3" />
+      <p-progress-item title="Step 4" />
     </p-progress>
   </div>
 </preview>
@@ -179,10 +179,10 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 ```vue
 <template>
   <p-progress vertical>
-    <p-progress-item label="Step 1" />
-    <p-progress-item label="Step 2" active />
-    <p-progress-item label="Step 3" />
-    <p-progress-item label="Step 4" />
+    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 2" active />
+    <p-progress-item title="Step 3" />
+    <p-progress-item title="Step 4" />
   </p-progress>
 </template>
 ```
@@ -194,7 +194,7 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 | Props          |   Type    |  Default   | Description                                                  |
 |----------------|:---------:|:----------:|--------------------------------------------------------------|
 | `variant`      | `String`  |   `dot`    | Progress point variant, valid value is `dot`, `counter`      |
-| `labelVariant` | `String`  | `specific` | Progress label variant, valid value is `specific`, `general` |
+| `titleVariant` | `String`  | `specific` | Progress title variant, valid value is `specific`, `general` |
 | `vertical`     | `Boolean` |  `false`   | Vertical mode                                                |
 
 ### Slots `<p-progress>`
@@ -224,14 +224,14 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 
 | Props    |   Type    | Default | Description                |
 |----------|:---------:|:-------:|----------------------------|
-| `label`  | `String`  |   `-`   | Progress Item label        |
+| `title`  | `String`  |   `-`   | Progress Item label        |
 | `active` | `Boolean` | `false` | Progress Item active state |
 
 ### Slots `<p-progress-item>`
 
 | Name    | Description                             |
 |---------|-----------------------------------------|
-| `label` | Content to use as label                 |
+| `title` | Content to use as title                 |
 | `icon`  | Content to place as progress point icon |
 
 ### Events `<p-progress-item>`

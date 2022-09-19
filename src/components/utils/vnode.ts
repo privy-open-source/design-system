@@ -5,7 +5,7 @@ import {
 } from 'vue-demi'
 
 /**
- * Coerce props value to boolean
+ * Coerce props's value to boolean
  * @param value prop value
  */
 export function toBoolean (value: '' | boolean): boolean {
@@ -18,7 +18,7 @@ export function toBoolean (value: '' | boolean): boolean {
  * @param names children name(s)
  * @example
  * // Looking for 'Tab' and 'RouteTab'
- * findAllChildren(slots.default(), 'Tab', 'RouteTab)
+ * findAllChildren(slots.default(), 'Tab', 'RouteTab')
  */
 export function findAllChildren (vnodes: VNode[], ...names: string[]): VNode[] {
   const scan   = [...vnodes]
