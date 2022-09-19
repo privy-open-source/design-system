@@ -63,7 +63,7 @@ onMounted (() => {
 
 <preview class="preview--bar">
   <p-contextual-bar v-model="sample01">
-    Hey! This is Title Text and telling less
+    Hey! This is Title Text and telling less You will be unable to sign or seal a document while your privy balance runs out.
   </p-contextual-bar>
 </preview>
 

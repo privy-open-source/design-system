@@ -111,7 +111,7 @@ export default defineComponent({
 
     &.btn {
       &--primary {
-        @apply bg-primary-100 hover:bg-primary-hovered focus:bg-primary-focused active:bg-primary-focused;
+        @apply bg-purple-60  hover:bg-primary-hovered focus:bg-primary-focused active:bg-primary-focused;
       }
 
       &--secondary {
