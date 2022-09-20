@@ -4,7 +4,7 @@ import pButton from '../button/Button.vue'
 import { ref, onMounted } from "vue-demi"
 import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 
-const sample1 = ref(true)
+const sample1 = ref(false)
 
 const sample01 = ref(true)
 const sample02 = ref(true)
