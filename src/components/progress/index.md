@@ -168,7 +168,7 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 <preview>
   <div class="h-96">
     <p-progress vertical>
-      <p-progress-item title="Step 1" />
+      <p-progress-item title="Step 1" active />
       <p-progress-item title="Step 2" active />
       <p-progress-item title="Step 3" />
       <p-progress-item title="Step 4" />
@@ -179,7 +179,7 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 ```vue
 <template>
   <p-progress vertical>
-    <p-progress-item title="Step 1" />
+    <p-progress-item title="Step 1" active />
     <p-progress-item title="Step 2" active />
     <p-progress-item title="Step 3" />
     <p-progress-item title="Step 4" />
@@ -224,7 +224,7 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 
 | Props    |   Type    | Default | Description                |
 |----------|:---------:|:-------:|----------------------------|
-| `title`  | `String`  |   `-`   | Progress Item label        |
+| `title`  | `String`  |   `-`   | Progress Item title        |
 | `active` | `Boolean` | `false` | Progress Item active state |
 
 ### Slots `<p-progress-item>`
@@ -250,3 +250,7 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
     </tr>
   </tbody>
 </table>
+
+## See Also
+- [Steps](/components/steps/)
+- [Wizard](/components/wizard/)

@@ -446,11 +446,10 @@ You can binding current step with v-model
 
 ### Props `<p-step>`
 
-| Props            |    Type    | Default | Description                                                       |
-|------------------|:----------:|:-------:|-------------------------------------------------------------------|
-| `on-before-next` | `Function` |   `-`   | Hook which run before navigate to next page                       |
-| `on-before-prev` | `Function` |   `-`   | Hook which run before navigate to previous page                   |
-| `on-finished`    | `Function` |   `-`   | Hook which run on last step, after `on-before-next` hook resolved |
+| Props            |    Type    | Default | Description                                     |
+|------------------|:----------:|:-------:|-------------------------------------------------|
+| `on-before-next` | `Function` |   `-`   | Hook which run before navigate to next page     |
+| `on-before-prev` | `Function` |   `-`   | Hook which run before navigate to previous page |
 
 ### Slots `<p-step>`
 
@@ -475,5 +474,8 @@ You can binding current step with v-model
   </tbody>
 </table>
 
+## See Also
+- [Wizard](/components/wizard/)
+- [Progress](/components/progress/)
 
 [KeepAlive]: https://vuejs.org/guide/built-ins/keep-alive.html

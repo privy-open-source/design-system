@@ -113,10 +113,8 @@ export default defineComponent({
   }
 
   &__bar {
-    background: linear-gradient(to right, theme(colors.primary.100) 50%, theme(colors.secondary.25) 50%);
-    transition: background-position 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
-
-    @apply bg-[length:210%_100%] bg-right absolute rounded-tn;
+    @apply absolute rounded-tn transition-[background-position] ease-linear duration-150;
+    @apply from-[theme(colors.primary.100)_50%] to-[theme(colors.secondary.25)_50%];
   }
 
   &__title {
@@ -130,12 +128,6 @@ export default defineComponent({
   &--active {
     .progress__point {
       @apply bg-primary-100 text-white;
-    }
-
-    & + & {
-      .progress__bar {
-        @apply bg-left;
-      }
     }
   }
 
@@ -152,6 +144,13 @@ export default defineComponent({
 
     .progress__bar {
       @apply w-[calc(100%_-_3rem)] h-1 top-3 right-[calc(50%_+_1.5rem)];
+      @apply bg-gradient-to-r bg-[length:210%_100%] bg-right;
+    }
+
+    .progress--active + .progress--active {
+      .progress__bar {
+        @apply bg-left;
+      }
     }
   }
 
@@ -172,6 +171,13 @@ export default defineComponent({
 
     .progress__bar {
       @apply h-[calc(100%_-_4.25rem)] w-1 bottom-[calc(50%_+_2.25rem)] left-1/2 -translate-x-1/2;
+      @apply bg-gradient-to-b bg-bottom bg-[length:100%_210%];
+    }
+
+    .progress--active + .progress--active {
+      .progress__bar {
+        @apply bg-top;
+      }
     }
   }
 
@@ -184,9 +190,10 @@ export default defineComponent({
   &--counter {
     counter-reset: progress;
 
-    .progress__point-item {
-      &::before {
-        counter-increment: progress;
+    .progress__point {
+      counter-increment: progress;
+
+      &-item::before {
         content: counter(progress);
 
         @apply text-sm font-medium;

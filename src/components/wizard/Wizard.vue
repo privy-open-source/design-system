@@ -5,6 +5,7 @@
     <div class="wizard__header">
       <WizardHeader
         :active="model - 1"
+        :variant="variant"
         :title-variant="titleVariant">
         <slot />
       </WizardHeader>
@@ -29,7 +30,7 @@ import WizardBody from './WizardBody.vue'
 import { noop } from 'lodash-es'
 import { TravelHook, FinishedHook } from '../steps/use-steps'
 import { useVModel } from '../input/use-input'
-import { TitleVariant } from '../progress/Progress.vue'
+import { TitleVariant, IconVariant } from '../progress/Progress.vue'
 
 export default defineComponent({
   components: {
@@ -40,6 +41,10 @@ export default defineComponent({
     modelValue: {
       type   : Number,
       default: 1,
+    },
+    variant: {
+      type   : String as PropType<IconVariant>,
+      default: 'dot',
     },
     titleVariant: {
       type   : String as PropType<TitleVariant>,
