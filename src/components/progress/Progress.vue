@@ -1,12 +1,14 @@
 <template>
   <div
     class="progress"
+    data-testid="progress"
     :class="classNames">
     <div class="progress__items">
       <slot />
     </div>
 
     <div
+      data-testid="progress-title-general"
       class="progress__title">
       <template v-if="item.slots?.title">
         <component :is="item.slots.title" />
