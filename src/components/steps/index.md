@@ -15,8 +15,8 @@
     email: '',
   })
 
-  function validate (to, currentStep) {
-    if (currentStep === 1) {
+  function validate (to, from) {
+    if (from === 1) {
       if (!form.name) {
         dialog.alert({ text: 'Name is required' })
 
@@ -24,7 +24,7 @@
       }
     }
 
-    if (currentStep === 2) {
+    if (from === 2) {
       if (!form.email || !form.email.includes('@')) {
         dialog.alert({ text: 'Email must be valid email' })
 
@@ -76,13 +76,14 @@
       </template>
     </p-step>
     <p-step>
-      <template #default="{ next, prev }">
+      <template #default="{ next, prev, toStep }">
         <p-card>
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 3</div>
             <div class="space-x-2">
               <p-button @click="prev">Prev</p-button>
               <p-button @click="next">Finish</p-button>
+              <p-button @click="toStep(1)">To Step 1</p-button>
             </div>
           </div>
         </p-card>
@@ -121,13 +122,14 @@
       </template>
     </p-step>
     <p-step>
-      <template #default="{ next, prev }">
+      <template #default="{ next, prev, to }">
         <p-card>
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 3</div>
             <div class="space-x-2">
               <p-button @click="prev">Prev</p-button>
               <p-button @click="next">Finish</p-button>
+              <p-button @click="to(1)">To Step 1</p-button>
             </div>
           </div>
         </p-card>
@@ -227,8 +229,8 @@ This hook ran when `next` function was called, suit for form validation.
     email: '',
   })
 
-  function validate (to, currentStep) {
-    if (currentStep === 1) {
+  function validate (to, from) {
+    if (from === 1) {
       if (!name.value) {
         dialog.alert({ text: 'Name is required' })
 
@@ -236,7 +238,7 @@ This hook ran when `next` function was called, suit for form validation.
       }
     }
 
-    if (currentStep === 2) {
+    if (from === 2) {
       if (!form.email || !form.email.includes('@')) {
         dialog.alert({ text: 'Email must be valid email' })
 
@@ -345,7 +347,7 @@ This hook run when `next` function called in **last step**, and after `on-before
     email: '',
   })
 
-  function validate (to, currentStep) { /* Example above */ }
+  function validate (to, from) { /* Example above */ }
 
   function save() {
     dialog.alert({ text: 'Success' })
@@ -358,7 +360,7 @@ This hook run when `next` function called in **last step**, and after `on-before
 You can binding current step with v-model
 
 <p-banner variant="danger" :dismissable="false">
-  Changing the step using v-model, will skip all hooks.
+  Changing the step using v-model, will skip all hooks. Use <code>toStep()</code> instead if you want to keep all hooks.
 </p-banner>
 
 <preview>

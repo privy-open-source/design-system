@@ -1,9 +1,10 @@
-import type { InteractEvent } from '@interactjs/types'
+import type { InteractEvent, Interactable } from '@interactjs/types'
 import { throttle } from 'lodash-es'
 import {
   onBeforeUnmount,
   onMounted,
   Ref,
+  shallowRef,
 } from 'vue-demi'
 
 export interface DrawHooks {
@@ -12,12 +13,14 @@ export interface DrawHooks {
 }
 
 export default function useDraw (target: Ref<HTMLCanvasElement>, hooks?: DrawHooks) {
+  const instance = shallowRef<Interactable>()
+
   onMounted(async () => {
     if (target.value) {
       const { default: Interact } = await import('interactjs')
       const onmove                = throttle(hooks.onmove, 1000 / 60 /* limit 60fps */)
 
-      Interact(target.value)
+      instance.value = Interact(target.value)
         .styleCursor(false)
         .draggable({
           origin : 'self',
@@ -30,8 +33,6 @@ export default function useDraw (target: Ref<HTMLCanvasElement>, hooks?: DrawHoo
   })
 
   onBeforeUnmount(async () => {
-    const { default: Interact } = await import('interactjs')
-
-    Interact(target.value).unset()
+    instance.value?.unset()
   })
 }

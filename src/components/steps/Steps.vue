@@ -16,18 +16,19 @@ import {
   defineComponent,
   PropType,
   provide,
+  ref,
 } from 'vue-demi'
 import StepSlider from './StepSlider.vue'
 import { useVModel } from '../input/use-input'
 import { findAllChildren } from '../utils/vnode'
+import { STEPS_CONTEXT } from './use-steps'
+import { syncRef, useClamp } from '@vueuse/core'
 import {
-  STEPS_CONTEXT,
   TravelHook,
   FinishedHook,
-  runHook,
-} from './use-steps'
+  runAllHooks,
+} from './utils/hook'
 import { noop } from 'lodash-es'
-import { syncRef, useClamp } from '@vueuse/core'
 
 export default defineComponent({
   components: { StepSlider },
@@ -42,15 +43,15 @@ export default defineComponent({
     },
     onBeforePrev: {
       type   : Function as PropType<TravelHook>,
-      default: () => noop,
+      default: () => true,
     },
     onBeforeNext: {
       type   : Function as PropType<TravelHook>,
-      default: () => noop,
+      default: () => true,
     },
     onFinished: {
       type   : Function as PropType<FinishedHook>,
-      default: () => noop,
+      default: noop,
     },
   },
   models: {
@@ -59,6 +60,9 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   setup (props, { slots }) {
+    const onNextHooks = ref([props.onBeforeNext])
+    const onPrevHooks = ref([props.onBeforePrev])
+
     const model = useVModel(props)
 
     const total = computed(() => {
@@ -76,27 +80,27 @@ export default defineComponent({
     })
 
     async function next () {
-      const from = model.value
-      const to   = model.value + 1
+      if (canNext.value)
+        await toStep(model.value + 1)
+    }
 
-      if (canNext.value && await runHook(props.onBeforeNext, to, from)) {
+    async function prev () {
+      if (canPrev.value)
+        await toStep(model.value - 1)
+    }
+
+    async function toStep (to: number) {
+      const from  = model.value
+      const hooks = to > from
+        ? onNextHooks.value
+        : onPrevHooks.value
+
+      if (await runAllHooks(hooks, to, from)) {
         if (to <= total.value)
           step.value = to
         else
           await props.onFinished()
       }
-    }
-
-    async function prev () {
-      const from = model.value
-      const to   = model.value - 1
-
-      if (canPrev.value && await runHook(props.onBeforePrev, to, from))
-        step.value = to
-    }
-
-    function toStep (to: number) {
-      step.value = to
     }
 
     syncRef(step, model)
@@ -108,6 +112,8 @@ export default defineComponent({
       canNext,
       canPrev,
       toStep,
+      onPrevHooks,
+      onNextHooks,
     })
 
     return { model }

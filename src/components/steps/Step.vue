@@ -1,6 +1,9 @@
 <template>
-  <div class="step">
+  <div
+    class="step"
+    data-testid="step">
     <slot
+      :step="step"
       :next="next"
       :prev="prev"
       :can-prev="canPrev"
@@ -10,24 +13,23 @@
 </template>
 
 <script lang="ts">
-import { noop } from 'lodash-es'
-import { defineComponent, PropType } from 'vue-demi'
 import {
-  runHook,
-  TravelHook,
-  useStep,
-} from './use-steps'
+  defineComponent,
+  PropType,
+} from 'vue-demi'
+import { useStep } from './use-steps'
+import { TravelHook } from './utils/hook'
 
 export default defineComponent({
   name : 'Step',
   props: {
     onBeforePrev: {
       type   : Function as PropType<TravelHook>,
-      default: () => noop,
+      default: () => true,
     },
     onBeforeNext: {
       type   : Function as PropType<TravelHook>,
-      default: () => noop,
+      default: () => true,
     },
   },
   setup (props) {
@@ -36,25 +38,15 @@ export default defineComponent({
       canPrev,
       toStep,
       step,
-      next: goNext,
-      prev: goPrev,
+      next,
+      prev,
+      onBeforeNext,
+      onBeforePrev,
     } = useStep()
 
-    async function next () {
-      const from = step.value
-      const to   = step.value + 1
-
-      if (await runHook(props.onBeforeNext, to, from))
-        goNext()
-    }
-
-    async function prev () {
-      const from = step.value
-      const to   = step.value - 1
-
-      if (await runHook(props.onBeforePrev, to, from))
-        goPrev()
-    }
+    // Registering Hooks
+    onBeforeNext(props.onBeforeNext)
+    onBeforePrev(props.onBeforePrev)
 
     return {
       canNext,
@@ -62,6 +54,7 @@ export default defineComponent({
       toStep,
       prev,
       next,
+      step,
     }
   },
 })

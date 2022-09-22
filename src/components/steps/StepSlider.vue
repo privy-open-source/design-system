@@ -32,14 +32,9 @@ export default defineComponent({
     return () => {
       const step = findAllChildren(slots.default(), 'Step').at(props.active)
       const body = () => {
-        if (step) {
-          if (props.keepAlive)
-            return h(KeepAlive, h(step, { key: props.active }))
-
-          return h(step, { key: props.active })
-        }
-
-        return []
+        return props.keepAlive
+          ? h(KeepAlive, () => h(step, { key: props.active }))
+          : h(step, { key: props.active })
       }
 
       return h(Transition, {
