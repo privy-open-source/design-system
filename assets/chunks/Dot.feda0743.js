@@ -1,0 +1,1 @@
+import{d as o,c as a,_ as n,a as r,b as c,n as l}from"../app.48af1ec3.js";const p=o({props:{color:{type:String,default:"primary"}},setup(s){return{classNames:a(()=>{const e=["dot"];return s.color&&e.push(`dot--${s.color}`),e})}}});function _(s,t,e,d,u,i){return r(),c("span",{"data-testid":"dot",class:l(s.classNames)},null,2)}const f=n(p,[["render",_]]);export{f as D};

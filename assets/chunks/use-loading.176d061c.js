@@ -1,1 +1,0 @@
-import{r as l,c as n,z as r}from"../app.42862046.js";function p(o){const e={elapsed:!0,...o},s=l(0),t=l(e.elapsed!==!1),u=n({get(){return s.value>0||t.value},set(a){a?s.value++:s.value--}});return r(()=>{if(e.elapsed!==!1){const a=e.elapsed===!0?200:e.elapsed;setTimeout(()=>{t.value=!1},a)}}),u}export{p as u};
