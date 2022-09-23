@@ -4,7 +4,23 @@ import {
   VNode,
 } from 'vue-demi'
 
-export function findAllChildren (vnodes: VNode[], name: string): VNode[] {
+/**
+ * Coerce props's value to boolean
+ * @param value prop value
+ */
+export function toBoolean (value: '' | boolean): boolean {
+  return value === '' ? true : Boolean(value)
+}
+
+/**
+ *
+ * @param vnodes vnodes tree to be scanned
+ * @param names children name(s)
+ * @example
+ * // Looking for 'Tab' and 'RouteTab'
+ * findAllChildren(slots.default(), 'Tab', 'RouteTab')
+ */
+export function findAllChildren (vnodes: VNode[], ...names: string[]): VNode[] {
   const scan   = [...vnodes]
   const result = [] as VNode[]
 
@@ -15,7 +31,7 @@ export function findAllChildren (vnodes: VNode[], name: string): VNode[] {
     if (vnode.type === Fragment && Array.isArray(vnode.children))
       scan.push(...vnode.children as VNode[])
 
-    else if (vnode.type && (vnode.type as Component).name === name)
+    else if (vnode.type && names.includes((vnode.type as Component).name))
       result.push(vnode)
   }
 
