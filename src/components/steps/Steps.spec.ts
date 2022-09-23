@@ -3,6 +3,7 @@ import Steps from './Steps.vue'
 import Step from './Step.vue'
 import { delay } from 'nanodelay'
 import { vi } from 'vitest'
+import { ref } from 'vue-demi'
 
 it('should render properly', () => {
   const screen = render({
@@ -212,4 +213,38 @@ it('should trigger on-finished when next() is called on last step', async () => 
   await delay(0)
 
   expect(onFinished).toBeCalled()
+})
+
+it('should modify value inside v-model', async () => {
+  const model  = ref(1)
+  const screen = render({
+    components: { Steps, Step },
+    template  : `
+      <Steps v-model="model">
+        <Step>
+          <template #default="{ prev, next }">
+            <button @click="prev">
+              Prev
+            </button>
+            <button @click="next">
+              Next
+            </button>
+          </template>
+        </Step>
+        <Step>
+          <span>Step 2</span>
+        </Step>
+      </Steps>
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const nextBtn = screen.queryByText('Next')
+
+  await fireEvent.click(nextBtn)
+  await delay(0)
+
+  expect(model.value).toBe(2)
 })

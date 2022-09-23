@@ -6,11 +6,14 @@
     <Step
       v-for="(item, i) in steps"
       :key="i"
-      v-bind="item.props">
+      v-bind="item.props"
+      data-testid="wizard-step">
       <template #default="slotData">
-        <component
-          :is="item.children.default"
-          v-bind="slotData" />
+        <template v-if="item.children?.default">
+          <component
+            :is="item.children.default"
+            v-bind="slotData" />
+        </template>
       </template>
     </step>
   </Steps>

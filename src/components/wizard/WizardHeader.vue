@@ -16,17 +16,24 @@ export default defineComponent({
       default: 0,
     },
   },
-  setup (props, { slots, attrs }) {
+  setup (props, { slots }) {
     return () => {
       const vnodes = findAllChildren(slots.default(), 'WizardStep')
 
-      return h(Progress, {}, {
+      return h(Progress, { 'data-testid': 'wizard-progress' }, {
         default: () => {
           return vnodes.map((vnode, index) => {
-            return h(ProgressItem, mergeProps(vnode.props, attrs, { active: index <= props.active }), {
+            const vprops = mergeProps(vnode.props, {
+              'active'     : index <= props.active,
+              'data-testid': 'wizard-progress-item',
+            })
+
+            const vslots = {
               icon : (vnode.children as Slots)?.icon,
               title: (vnode.children as Slots)?.title,
-            })
+            }
+
+            return h(ProgressItem, vprops, vslots)
           })
         },
       })

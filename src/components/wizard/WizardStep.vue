@@ -1,11 +1,6 @@
-<template>
-  <slot />
-</template>
-
 <script lang="ts">
-import { noop } from 'lodash-es'
 import { defineComponent, PropType } from 'vue-demi'
-import { TravelHook } from '../steps/use-steps'
+import { TravelHook } from '../steps/utils/hook'
 
 export default defineComponent({
   name : 'WizardStep',
@@ -16,15 +11,12 @@ export default defineComponent({
     },
     onBeforePrev: {
       type   : Function as PropType<TravelHook>,
-      default: () => noop,
+      default: undefined,
     },
     onBeforeNext: {
       type   : Function as PropType<TravelHook>,
-      default: () => noop,
+      default: undefined,
     },
-  },
-  setup () {
-    return {}
   },
 })
 </script>

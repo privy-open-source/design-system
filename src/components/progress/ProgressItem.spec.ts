@@ -52,7 +52,7 @@ it('should able to replace icon content with slot `icon`', () => {
   expect(icon).toBeInTheDocument()
 })
 
-it('should able to replace title content with slot `icon`', () => {
+it('should able to replace title content with slot `title`', () => {
   const screen = render({
     components: { ProgressItem },
     template  : `

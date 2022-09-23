@@ -8,6 +8,7 @@
     </div>
 
     <div
+      v-if="titleVariant === 'general'"
       data-testid="progress-title-general"
       class="progress__title">
       <template v-if="item.slots?.title">

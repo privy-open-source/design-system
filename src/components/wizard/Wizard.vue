@@ -27,8 +27,7 @@
 import { defineComponent, PropType } from 'vue-demi'
 import WizardHeader from './WizardHeader.vue'
 import WizardBody from './WizardBody.vue'
-import { noop } from 'lodash-es'
-import { TravelHook, FinishedHook } from '../steps/use-steps'
+import { TravelHook, FinishedHook } from '../steps/utils/hook'
 import { useVModel } from '../input/use-input'
 import { TitleVariant, IconVariant } from '../progress/Progress.vue'
 
@@ -56,15 +55,15 @@ export default defineComponent({
     },
     onBeforePrev: {
       type   : Function as PropType<TravelHook>,
-      default: () => noop,
+      default: undefined,
     },
     onBeforeNext: {
       type   : Function as PropType<TravelHook>,
-      default: () => noop,
+      default: undefined,
     },
     onFinished: {
       type   : Function as PropType<FinishedHook>,
-      default: () => noop,
+      default: undefined,
     },
   },
   setup (props) {

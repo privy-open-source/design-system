@@ -4,10 +4,8 @@
   import pButton from '../button/Button.vue'
   import pInput from '../input/Input.vue'
   import IconDocument from '@carbon/icons-vue/lib/document/16'
-  import { ref, reactive } from 'vue-demi'
+  import { reactive } from 'vue-demi'
   import { dialog } from '../../core/'
-
-  const step = ref(1)
 
   const form = reactive({
     name : '',
@@ -40,6 +38,7 @@
 </script>
 
 # Wizard
+> Fancy form wizard
 
 ## Usage
 
@@ -374,9 +373,11 @@ Go to [Steps](/components/steps/#hooks) for more examples.
 
 ### Slots `<p-wizard-step>`
 
-| Name      | Description  |
-|-----------|--------------|
-| `default` | Step content |
+| Name      | Description                             |
+|-----------|-----------------------------------------|
+| `default` | Step content                            |
+| `title`   | Content to use as title                 |
+| `icon`    | Content to place as progress point icon |
 
 ### Events `<p-wizard-step>`
 
@@ -399,3 +400,5 @@ Go to [Steps](/components/steps/#hooks) for more examples.
 
 - [Steps](/components/steps/)
 - [Progress](/components/progress/)
+
+[KeepAlive]: https://vuejs.org/guide/built-ins/keep-alive.html
