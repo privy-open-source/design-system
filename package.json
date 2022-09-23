@@ -8,7 +8,7 @@
     "docs:dev": "vitepress dev src --port 3000",
     "docs:build": "vitepress build src",
     "docs:serve": "vitepress serve src",
-    "test": "vitest",
+    "test": "vitest --reporter=dot",
     "lint": "eslint . --ext .js,.vue,.ts",
     "fix": "yarn lint --fix",
     "coverage": "vitest run --coverage --reporter=dot",

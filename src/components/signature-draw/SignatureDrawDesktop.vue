@@ -119,10 +119,10 @@ export default defineComponent({
           const options    = { color: props.color }
 
           drawLine(canvas.value, coordinate, options)
-
-          isBlank.value = false
-          model.value   = toDataURL(canvas.value)
         }
+
+        isBlank.value = false
+        model.value   = toDataURL(canvas.value)
       },
     })
 

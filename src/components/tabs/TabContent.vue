@@ -3,7 +3,7 @@ import {
   defineComponent,
   h,
 } from 'vue-demi'
-import { findAllChildren } from '../utils/vnode'
+import { findAllChildren, toBoolean } from '../utils/vnode'
 
 export default defineComponent({
   props: {
@@ -16,7 +16,7 @@ export default defineComponent({
     return () => {
       return findAllChildren(slots.default(), 'Tab')
         .map((vnode, index) => {
-          const isDisabled = vnode.props?.disabled === '' ? true : !!(vnode.props?.disabled)
+          const isDisabled = toBoolean(vnode.props?.disabled)
           const isActive   = index === props.active && !isDisabled
 
           return h(vnode, {
