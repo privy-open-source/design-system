@@ -5,7 +5,9 @@
       ref="video"
       :srcObject.prop="stream"
       class="camera__video"
-      autoplay />
+      muted
+      autoplay
+      playsinline />
     <div
       v-else-if="!isTaken"
       class="camera__fallback" />
