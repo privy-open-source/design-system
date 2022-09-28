@@ -61,7 +61,7 @@
     "@popperjs/core": "2.11.6",
     "@vueuse/core": "8.9.4",
     "chart.js": "3.9.1",
-    "date-fns": "2.29.2",
+    "date-fns": "2.29.3",
     "defu": "6.1.0",
     "fuse.js": "6.6.2",
     "interactjs": "1.10.17",
