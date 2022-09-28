@@ -63,7 +63,7 @@
     "@vueuse/sound": "^1.1.7",
     "buffer": "^6.0.3",
     "chart.js": "3.9.1",
-    "date-fns": "2.29.2",
+    "date-fns": "2.29.3",
     "defu": "6.1.0",
     "fuse.js": "6.6.2",
     "interactjs": "1.10.17",
