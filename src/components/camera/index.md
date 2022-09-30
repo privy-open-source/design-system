@@ -11,5 +11,5 @@
 ### Simple Usage
 
 <preview>
-  <Camera />
+  <Camera mask="ektp" />
 </preview>

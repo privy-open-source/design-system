@@ -48,10 +48,6 @@ export default defineComponent({
     }
   }
 
-  img {
-    @apply max-w-[inherit];
-  }
-
   /**
   * Navigation
   */
