@@ -215,7 +215,7 @@ Add prop `multiple` to enable multi-selected upload.
 
 ### Appending values
 
-When user selecting the files, and then selecting again, the old list of files is replaced with new ones. Set `multiple` prop to `'append'` if you keep the last ones.
+When user selecting the files, and then selecting again, the old list of files is replaced with new ones. Set `multiple` prop to `'append'` if you want to keep the last ones.
 
 <preview class="flex-col items-stretch">
   <p-dropzone accept="image/*" multiple="append" maxlength="10">

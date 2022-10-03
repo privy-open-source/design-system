@@ -7,6 +7,8 @@ export {
   default as toast,
 } from '../components/toast/use-toast'
 
+export * as dialog from '../components/dialog/use-dialog'
+
 export {
   defineOptions,
 } from '../components/select/use-select'

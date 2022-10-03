@@ -11,13 +11,13 @@
 
   [Installation](https://privy-open-source.github.io/design-system/docs/getting-started.html) •
   [Docs](https://privy-open-source.github.io/design-system/) •
-  [Demo](#demo)
+  [Demo](https://stackblitz.com/github/privy-open-source/persona-starter/tree/dashboard)
 
 </div>
 
 ## Installation
 
-Goto [Online Docs](https://privy-open-source.github.io/design-system/)
+Goto [Online Docs](https://privy-open-source.github.io/design-system/docs/getting-started.html)
 
 ## Contribution
 See [Contributing Guide](/CONTRIBUTING.md)
