@@ -138,3 +138,6 @@ dist
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Eslint Github
+eslint-results.sarif
