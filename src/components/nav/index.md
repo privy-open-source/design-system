@@ -300,7 +300,7 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
   <p-nav>
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
-    <NavItemDropdown icon>
+    <NavItemDropdown icon no-caret>
       <template #button-content>
         <IconMenu />
       </template>
@@ -312,7 +312,7 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
   <p-nav fill>
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
-    <NavItemDropdown icon>
+    <NavItemDropdown icon no-caret>
       <template #button-content>
         <IconMenu />
       </template>
