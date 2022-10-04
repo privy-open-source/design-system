@@ -38,5 +38,5 @@ export function fromBase64 (dataurl: string, filename?: string): globalThis.File
   const mime   = arr[0].match(/:(.*?);/)[1]
   const buffer = Buffer.from(arr[1], 'base64')
 
-  return new File([buffer], name, { type: mime })
+  return new globalThis.File([buffer], name, { type: mime })
 }

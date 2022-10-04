@@ -1,4 +1,4 @@
-export async function takePicture (video: HTMLVideoElement, mirror = false): Promise<string> {
+export function takePicture (video: HTMLVideoElement, mirror = false): string {
   const canvas  = document.createElement('canvas')
   const context = canvas.getContext('2d')
 

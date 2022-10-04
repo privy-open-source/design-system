@@ -15,8 +15,10 @@ export default function useVideoSize (target: MaybeRef<HTMLVideoElement>) {
   })
 
   watch(() => unrefElement(target), (video) => {
-    width.value  = video.videoWidth
-    height.value = video.videoHeight
+    if (video) {
+      width.value  = video.videoWidth
+      height.value = video.videoHeight
+    }
   })
 
   return { width, height }

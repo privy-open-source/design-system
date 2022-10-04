@@ -1,5 +1,5 @@
 <script setup>
-  import Camera from './Camera.vue'
+  import pCamera from './Camera.vue'
 </script>
 
 # Camera
@@ -11,5 +11,5 @@
 ### Simple Usage
 
 <preview>
-  <Camera mask="ektp" />
+  <p-camera />
 </preview>
