@@ -66,6 +66,9 @@ export default defineComponent({
       if (props.fixed)
         result.push('navbar--fixed')
 
+      if (props.variant)
+        result.push(`navbar--${props.variant}`)
+
       if (props.toggleable)
         result.push(`navbar--expand-${props.toggleable}`)
 
@@ -73,7 +76,7 @@ export default defineComponent({
     })
 
     onMounted(() => {
-      document.body?.style.setProperty('padding-top', `${height}px`)
+      document.body?.style.setProperty('padding-top', `${height?.value}px`)
     })
 
     return {

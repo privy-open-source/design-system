@@ -1,6 +1,7 @@
 <template>
   <Button
     class="navbar__toggle"
+    data-testid="navbar-toggle"
     :class="classNames"
     @click="expanded">
     <slot :expanded="expand">

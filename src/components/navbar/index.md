@@ -26,7 +26,7 @@
 </style>
 
 <preview class="flex-grow">
-  <p-navbar fixed variant="pills" toggleable="sm">
+  <p-navbar fixed>
     <p-navbar-brand>
       <img src="../../public/assets/images/logo-privy.svg" />
     </p-navbar-brand>
