@@ -1041,7 +1041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/eslint-formatter-sarif@npm:^3.0.0":
+"@microsoft/eslint-formatter-sarif@npm:3.0.0":
   version: 3.0.0
   resolution: "@microsoft/eslint-formatter-sarif@npm:3.0.0"
   dependencies:
@@ -1396,7 +1396,7 @@ __metadata:
     "@carbon/icons-vue": 10.49.1
     "@fontsource/dm-sans": 4.5.8
     "@interactjs/types": 1.10.17
-    "@microsoft/eslint-formatter-sarif": ^3.0.0
+    "@microsoft/eslint-formatter-sarif": 3.0.0
     "@popperjs/core": 2.11.6
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": 1.1.4
@@ -1419,7 +1419,7 @@ __metadata:
     defu: 6.1.0
     eslint: 8.23.1
     eslint-config-standard-with-typescript: latest
-    eslint-formatter-pretty: ^4.1.0
+    eslint-formatter-pretty: 4.1.0
     eslint-plugin-align-assignments: 1.1.2
     eslint-plugin-import: 2.26.0
     eslint-plugin-n: 15.2.5
@@ -5437,7 +5437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-formatter-pretty@npm:^4.1.0":
+"eslint-formatter-pretty@npm:4.1.0":
   version: 4.1.0
   resolution: "eslint-formatter-pretty@npm:4.1.0"
   dependencies:
