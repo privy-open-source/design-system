@@ -1,5 +1,7 @@
 <script setup>
   import pCamera from './Camera.vue'
+  import Liveness from './adapter/qr-code'
+  import { ref } from 'vue-demi'
 </script>
 
 # Camera
@@ -10,6 +12,6 @@
 
 ### Simple Usage
 
-<preview>
+<preview class="flex-col">
   <p-camera />
 </preview>
