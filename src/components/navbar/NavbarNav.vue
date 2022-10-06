@@ -2,6 +2,7 @@
   <Nav
     :align="align"
     :variant="variant"
+    :condensed="condensed"
     class="navbar__nav"
     data-testid="navbar-nav">
     <slot />
@@ -13,7 +14,7 @@ import {
   defineComponent, inject, PropType,
 } from 'vue-demi'
 import Nav, { AlignVariant } from '../nav/Nav.vue'
-import { NAVBAR_SETTINGS } from './Navbar.vue'
+import { NAVBAR_SETTINGS } from './use-navbar'
 
 export default defineComponent({
   components: { Nav },
@@ -24,10 +25,11 @@ export default defineComponent({
     },
   },
   setup () {
-    const settings = inject(NAVBAR_SETTINGS, undefined, false)
-    const variant  = settings?.variant
+    const settings  = inject(NAVBAR_SETTINGS, undefined, false)
+    const variant   = settings?.variant
+    const condensed = settings?.condensed
 
-    return { variant }
+    return { variant, condensed }
   },
 })
 </script>
@@ -76,6 +78,12 @@ export default defineComponent({
               @apply bg-secondary-5 hover:bg-secondary-5;
             }
           }
+        }
+      }
+
+      &.nav--condensed {
+        .nav__link--active {
+          @apply bg-secondary-5;
         }
       }
     }

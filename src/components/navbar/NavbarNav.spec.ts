@@ -49,3 +49,19 @@ it('should be abble to change variant via prop `variant`', () => {
   expect(navbarNav).toBeInTheDocument()
   expect(navbarNav).toHaveClass('nav--lines')
 })
+
+it('should be abble to make condensed navigation via prop `condensed`', () => {
+  const screen = render({
+    components: { Navbar, NavbarNav },
+    template  : `
+      <Navbar condensed>
+        <NavbarNav></NavbarNav>
+      </Navbar>
+    `,
+  })
+
+  const navbarNav = screen.queryByTestId('navbar-nav')
+
+  expect(navbarNav).toBeInTheDocument()
+  expect(navbarNav).toHaveClass('nav--condensed')
+})

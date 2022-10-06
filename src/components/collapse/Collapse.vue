@@ -3,7 +3,7 @@
     name="fade"
     mode="out-in">
     <div
-      v-show="model"
+      v-show="model || isToggleable"
       data-testid="collapse"
       class="collapse"
       :class="classNames">
@@ -19,7 +19,7 @@ import {
   inject,
 } from 'vue-demi'
 import { useVModel } from '../input/use-input'
-import { NAVBAR_SETTINGS } from '../navbar/Navbar.vue'
+import { NAVBAR_SETTINGS } from '../navbar/use-navbar'
 import { useMediaQuery } from '@vueuse/core'
 
 export default defineComponent({
@@ -42,21 +42,20 @@ export default defineComponent({
   emits: ['update:modelValue'],
 
   setup (props) {
-    const model      = useVModel(props)
-    const settings   = inject(NAVBAR_SETTINGS, undefined, false)
-    const toggleable = settings?.toggleable
-    const lg         = useMediaQuery('(min-width: 1024px)')
-    const md         = useMediaQuery('(min-width: 768px)')
-    const sm         = useMediaQuery('(min-width: 640px)')
+    const model   = useVModel(props)
+    const context = inject(NAVBAR_SETTINGS, undefined, true)
+    const lg      = useMediaQuery('(min-width: 1024px)')
+    const md      = useMediaQuery('(min-width: 768px)')
+    const sm      = useMediaQuery('(min-width: 640px)')
 
     const isToggleable = computed(() => {
-      if (toggleable?.value === 'lg')
+      if (context?.toggleable?.value === 'lg')
         return lg.value
 
-      if (toggleable?.value === 'md')
+      if (context?.toggleable?.value === 'md')
         return md.value
 
-      if (toggleable?.value === 'sm')
+      if (context?.toggleable?.value === 'sm')
         return sm.value
 
       return model.value

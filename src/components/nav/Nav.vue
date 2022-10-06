@@ -18,6 +18,7 @@ import {
   computed, defineComponent, PropType,
 } from 'vue-demi'
 import Caption from '../caption/Caption.vue'
+
 export type StyleVariant = 'tabs' | 'pills' | 'lines'
 export type AlignVariant = 'left' | 'right' | 'center'
 

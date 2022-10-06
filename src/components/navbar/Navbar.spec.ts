@@ -16,7 +16,7 @@ it('should rendered properly without any props', () => {
   const navbar = screen.queryByTestId('navbar')
 
   expect(navbar).toBeInTheDocument()
-  expect(navbar).toHaveClass('navbar', 'navbar--light', 'navbar--expand-md')
+  expect(navbar).toHaveClass('navbar', 'navbar--light')
 })
 
 it('should be abble to change variant via prop `variant`', () => {
@@ -45,7 +45,7 @@ it('should be able to make navbar fixed via prop `fixed`', () => {
           <img src="../../public/assets/images/logo-privy.svg" />
         </NavbarBrand>
         <NavbarNav>
-          <Navitem>Label</Navitem>
+          <NavItem>Label</NavItem>
         </NavbarNav>
       </Navbar>
     `,

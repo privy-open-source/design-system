@@ -105,6 +105,10 @@ export default defineConfig({
               link: '/components/nav/',
             },
             {
+              text: 'Navbar',
+              link: '/components/navbar/',
+            },
+            {
               text: 'Sidebar',
               link: '/components/sidebar/',
             },

@@ -2,10 +2,14 @@
   <Button
     class="navbar__toggle"
     data-testid="navbar-toggle"
+    variant="outline"
+    color="secondary"
     :class="classNames"
+    icon
     @click="expanded">
     <slot :expanded="expand">
-      <IconMenu />
+      <IconClose v-if="expand" />
+      <IconMenu v-else />
     </slot>
   </Button>
 </template>
@@ -15,11 +19,14 @@ import {
   defineComponent, inject, ref, computed,
 } from 'vue-demi'
 import Button from '../button/Button.vue'
-import IconMenu from '@carbon/icons-vue/lib/overflow-menu--vertical/16'
-import { NAVBAR_SETTINGS } from './Navbar.vue'
+import IconMenu from '@carbon/icons-vue/lib/menu/20'
+import IconClose from '@carbon/icons-vue/lib/close/20'
+import { NAVBAR_SETTINGS } from './use-navbar'
 
 export default defineComponent({
-  components: { Button, IconMenu },
+  components: {
+    Button, IconMenu, IconClose,
+  },
   setup () {
     const expand     = ref(false)
     const settings   = inject(NAVBAR_SETTINGS, undefined, false)

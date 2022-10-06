@@ -10,22 +10,17 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, InjectionKey, onMounted, PropType, provide, Ref, toRef,
+  computed, defineComponent, onMounted, PropType, provide, toRef,
 } from 'vue-demi'
 import { StyleVariant } from '../nav/Nav.vue'
 import {
-  templateRef, useElementBounding, useWindowScroll,
+  templateRef,
+  useElementBounding,
+  useWindowScroll,
 } from '@vueuse/core'
-
-type ColorVariant = 'light' | 'dark'
-type ToggleableVariant = 'sm' | 'md' | 'lg'
-
-interface NavbarSettings {
-  variant: Ref<StyleVariant>,
-  toggleable: Ref<string>,
-}
-
-export const NAVBAR_SETTINGS: InjectionKey<NavbarSettings> = Symbol('NavbarSettings')
+import {
+  ToggleableVariant, ColorVariant, NAVBAR_SETTINGS,
+} from './use-navbar'
 
 export default defineComponent({
   props: {
@@ -34,8 +29,8 @@ export default defineComponent({
       default: 'pills',
     },
     toggleable: {
-      type   : String as PropType<ToggleableVariant>,
-      default: 'md',
+      type   : String as PropType<ToggleableVariant | undefined>,
+      default: undefined,
     },
     fixed: {
       type   : Boolean,
@@ -44,6 +39,10 @@ export default defineComponent({
     color: {
       type   : String as PropType<ColorVariant>,
       default: 'light',
+    },
+    condensed: {
+      type   : Boolean,
+      default: false,
     },
   },
 
@@ -55,6 +54,7 @@ export default defineComponent({
     provide(NAVBAR_SETTINGS, {
       variant   : toRef(props, 'variant'),
       toggleable: toRef(props, 'toggleable'),
+      condensed : toRef(props, 'condensed'),
     })
 
     const classNames = computed(() => {
@@ -90,7 +90,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .navbar {
-  @apply relative justify-between p-5 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  @apply relative p-5 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
 
   &&--fixed {
     @apply fixed left-0 top-0 w-full z-[1030];
@@ -110,6 +110,8 @@ export default defineComponent({
 
   &&--expand {
     :is(&-lg, &-md, &-sm) {
+      @apply justify-between;
+
       .navbar__nav {
         @apply flex-col;
       }
