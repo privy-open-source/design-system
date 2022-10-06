@@ -4,19 +4,19 @@ import { takePicture } from '../utils/take-picture'
 
 export default defineAdapter({
   meta: {
-    mask         : 'square',
-    facingMode   : 'environment',
-    autoStart    : true,
-    transformable: false,
+    mask      : 'square',
+    facingMode: 'environment',
+    autoStart : true,
   },
-  async run ({ video, notify }) {
-    const reader = new BrowserQRCodeReader()
-    const result = await reader.decodeOnceFromVideoElement(video.value)
-    const image  = takePicture(video.value)
-    const text   = result.getText()
+  async run ({ video, toast: notify, meta }) {
+    const isMirrored = meta.value.mirror && meta.value.mirror !== 'preview'
+    const reader     = new BrowserQRCodeReader()
+    const result     = await reader.decodeOnceFromVideoElement(video.value)
+    const image      = takePicture(video.value, isMirrored)
+    const text       = result.getText()
 
     notify(text)
 
-    return [image, text]
+    return { preview: image, result: text }
   },
 })

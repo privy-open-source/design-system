@@ -1,3 +1,4 @@
+import { fromBase64 } from '../../utils/base64'
 import {
   createTemplate,
   motionDetection,
@@ -15,15 +16,16 @@ const MOTION_AREA_SIZE = 160
  */
 export default defineAdapter({
   meta: {
-    mask      : 'circle',
-    mirror    : 'all',
+    mask      : 'round',
+    mirror    : true,
     facingMode: 'user',
   },
-  async run ({ video, notify }) {
+  async run ({ video, toast, meta, modifier }) {
     return await new Promise((resolve) => {
-      const photoA  = takePicture(video.value)
-      const canvas  = document.createElement('canvas')
-      const context = canvas.getContext('2d', { willReadFrequently: true })
+      const isMirrored = meta.value.mirror && meta.value.mirror !== 'preview'
+      const photoA     = takePicture(video.value, isMirrored)
+      const canvas     = document.createElement('canvas')
+      const context    = canvas.getContext('2d', { willReadFrequently: true })
 
       canvas.width  = MOTION_AREA_SIZE
       canvas.height = MOTION_AREA_SIZE
@@ -46,21 +48,24 @@ export default defineAdapter({
 
         const imageData = context.getImageData(0, 0, canvas.width, canvas.height)
 
-        if (template) {
-          const movement = motionDetection(imageData, template)
-
-          if (movement > MOTION_THRESHOLD) {
-            const photoB = takePicture(video.value)
-
-            clearInterval(interval)
-            notify('')
-            resolve([photoB, photoA])
-          }
-        } else
+        if (!template)
           template = createTemplate(imageData)
+        else if (motionDetection(imageData, template) > MOTION_THRESHOLD) {
+          const photoB = takePicture(video.value, isMirrored)
+          const result = modifier.value.base64
+            ? [fromBase64(photoB), fromBase64(photoA)]
+            : [photoB, photoA]
+
+          clearInterval(interval)
+          toast('')
+          resolve({
+            preview: photoB,
+            result : result,
+          })
+        }
       }, 1000 / MOTION_FPS)
 
-      notify('Move your head slowly. Your photo will be taken automatically')
+      toast('Move your head slowly. Your photo will be taken automatically')
     })
   },
 })

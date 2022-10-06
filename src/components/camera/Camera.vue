@@ -33,13 +33,13 @@
         class="camera__mask" />
     </div>
 
-    <!-- Notify -->
+    <!-- Toast -->
     <transition name="slide-up">
       <div
         v-if="message"
         :key="message"
-        class="camera__notify">
-        <span class="camera__notify-text">
+        class="camera__toast">
+        <span class="camera__toast-text">
           {{ message }}
         </span>
       </div>
@@ -100,6 +100,7 @@ import {
   onMounted,
   PropType,
   ref,
+  toRef,
 } from 'vue-demi'
 import pButton from '../button/Button.vue'
 import IconRotate from '@carbon/icons-vue/lib/renew/16'
@@ -108,8 +109,13 @@ import IconRetake from '@carbon/icons-vue/lib/reset/24'
 import shutterWav from './assets/shutter.wav'
 import { useSound } from '@vueuse/sound'
 import { useVModel } from '../input/use-input'
-import CameraAdapter from './adapter/camera'
-import { Adapter, MaskVariant } from './adapter/adapter'
+import BasicAdapter from './adapter/basic'
+import {
+  Adapter,
+  AdapterMeta,
+  MaskVariant,
+  ModelModifier,
+} from './adapter/adapter'
 import {
   usePermission,
   useDevicesList,
@@ -117,13 +123,7 @@ import {
 } from '@vueuse/core'
 import { until } from '@vueuse/shared'
 import { dialog } from '../../core'
-import { flipVertical } from './utils/flip-image'
-import { fromBase64 } from '../utils/base64'
 import defu from 'defu'
-
-interface ModelModifier {
-  base64: boolean,
-}
 
 export default defineComponent({
   components: {
@@ -147,7 +147,7 @@ export default defineComponent({
     },
     mirror: {
       type   : [Boolean, String] as PropType<boolean | 'preview' | 'all'>,
-      default: false,
+      default: undefined,
     },
     mask: {
       type   : String as PropType<MaskVariant>,
@@ -155,13 +155,13 @@ export default defineComponent({
     },
     adapter: {
       type   : Object as PropType<Adapter>,
-      default: CameraAdapter,
+      default: BasicAdapter,
     },
     facingMode: {
       type   : String as PropType<ConstrainDOMString>,
       default: undefined,
     },
-    muted: {
+    silent: {
       type   : Boolean,
       default: false,
     },
@@ -171,12 +171,14 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: [
+    'start',
     'change',
     'result',
     'update:modelValue',
   ],
   setup (props, { emit }) {
     const model        = useVModel(props)
+    const modifier     = toRef(props, 'modelModifiers')
     const isProcessing = ref(false)
     const isTaken      = ref(false)
     const preview      = ref('')
@@ -187,15 +189,15 @@ export default defineComponent({
     const permission = usePermission('camera')
     const camera     = ref(0)
 
-    const cameraOptions: ComputedRef<Adapter['meta']> = computed(() => {
+    const meta: ComputedRef<AdapterMeta> = computed(() => {
       return defu({
         mirror    : props.mirror,
         mask      : props.mask,
         facingMode: props.facingMode,
-      }, props.adapter.meta)
+      }, props.adapter.meta, { autoStart: false })
     })
 
-    const { videoInputs: cameras } = useDevicesList({ constraints: { video: { facingMode: cameraOptions.value.facingMode } } })
+    const { videoInputs: cameras } = useDevicesList({ constraints: { video: { facingMode: meta.value.facingMode } } })
 
     const deviceId = computed(() => {
       return cameras.value?.at(camera.value)?.deviceId
@@ -209,11 +211,11 @@ export default defineComponent({
     const classNames = computed(() => {
       const result: string[] = []
 
-      if (cameraOptions.value.mirror)
+      if (meta.value.mirror)
         result.push('camera--mirror')
 
-      if (cameraOptions.value.mask)
-        result.push(`camera__mask--${cameraOptions.value.mask}`)
+      if (meta.value.mask)
+        result.push(`camera__mask--${meta.value.mask}`)
       else
         result.push('camera__mask--none')
 
@@ -246,45 +248,31 @@ export default defineComponent({
       camera.value = (camera.value + 1) % cameras.value.length
     }
 
-    function notify (text: string) {
+    function toast (text: string) {
       message.value = text
     }
 
     async function take () {
       isProcessing.value = true
 
-      const isMirrored = cameraOptions.value.mirror && cameraOptions.value.mirror !== 'preview'
-      const result     = await props.adapter.run({
+      const output = await props.adapter.run({
         video,
-        notify,
+        toast,
         stream,
+        meta,
+        modifier,
       })
 
-      let value: typeof props.modelValue = result
-
-      if (isMirrored && cameraOptions.value.transformable !== false) {
-        value = Array.isArray(result)
-          ? await Promise.all(result.map((image) => flipVertical(image)))
-          : await flipVertical(result)
-      }
-
-      preview.value = Array.isArray(value) ? value.at(0) : value
-
-      if (!props.modelModifiers.base64 && cameraOptions.value.transformable !== false) {
-        value = Array.isArray(value)
-          ? value.map((image) => fromBase64(image))
-          : fromBase64(value)
-      }
-
-      model.value        = value
+      preview.value      = output.preview
+      model.value        = output.result
       isTaken.value      = true
       isProcessing.value = false
       isActive.value     = false
 
-      emit('result', value)
-      emit('change', value)
+      emit('result', output.result)
+      emit('change', output.result)
 
-      if (!props.muted)
+      if (!props.silent)
         shutter.play()
     }
 
@@ -296,7 +284,9 @@ export default defineComponent({
     }
 
     function onStart () {
-      if (cameraOptions.value.autoStart)
+      emit('start', stream.value)
+
+      if (meta.value.autoStart)
         take()
     }
 
@@ -358,12 +348,12 @@ export default defineComponent({
       @apply aspect-square w-2/3 md:w-1/2;
     }
 
-    &--circle & {
+    &--round & {
       @apply aspect-square rounded-full w-1/2;
     }
 
-    &--ektp & {
-      @apply aspect-[8.56/5.98] w-2/3 rounded-md;
+    &--card & {
+      @apply aspect-[85.60/53.98] w-2/3 rounded-md;
     }
   }
 
@@ -379,7 +369,7 @@ export default defineComponent({
     @apply py-3 flex w-full flex-shrink-0 justify-center items-center absolute bottom-0 gap-3;
   }
 
-  &__notify {
+  &__toast {
     @apply absolute bottom-20 left-0 right-0 text-center text-white;
 
     &-text {
