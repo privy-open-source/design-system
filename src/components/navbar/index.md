@@ -16,7 +16,6 @@
   import IconBee from '@carbon/icons-vue/lib/bee/20'
   import IconView from '@carbon/icons-vue/lib/view/20'
 
-  const ex = ref(false)
   const menu = ref(false)
 </script>
 
@@ -28,7 +27,7 @@
       @apply h-36 overflow-hidden;
 
       .navbar--fixed {
-        @apply absolute;
+        @apply absolute z-10;
       }
     }
   }
@@ -461,36 +460,6 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
   const menu = ref(false)
 </script>
 ```
-
-<preview class="flex-grow">
-  <p-navbar fixed toggleable="lg">
-    <p-navbar-brand>
-      <img src="../../public/assets/images/logo-privy.svg" />
-    </p-navbar-brand>
-    <p-navbar-toggle @click="ex =! ex">
-      <!-- <template #default="{ expanded }">
-        <IconBee v-if="expanded" />
-        <IconView v-else />
-      </template> -->
-    </p-navbar-toggle>
-    <p-collapse v-model="ex" is-nav>
-      <p-navbar-nav align="left">
-        <p-nav-item>Label</p-nav-item>
-      </p-navbar-nav>
-      <p-navbar-nav align="right">
-        <p-nav-form>
-          <p-input-group>
-            <p-input placeholder="Input Here" />
-            <p-button variant="input" color="secondary">Search</p-button>
-          </p-input-group>
-        </p-nav-form>
-        <p-nav-form>
-          <p-avatar src="https://picsum.photos/50" />
-        </p-nav-form>
-      </p-navbar-nav>
-    </p-collapse>
-  </p-navbar>
-</preview>
 
 ## API
 
