@@ -105,8 +105,8 @@ export default defineConfig({
               link: '/components/nav/',
             },
             {
-              text: 'Navbar',
-              link: '/components/navbar/',
+              text: 'Progress',
+              link: '/components/progress/',
             },
             {
               text: 'Sidebar',
@@ -127,6 +127,10 @@ export default defineConfig({
             {
               text: 'Table',
               link: '/components/table/',
+            },
+            {
+              text: 'Wizard',
+              link: '/components/wizard/',
             },
           ],
         },
@@ -243,6 +247,10 @@ export default defineConfig({
             {
               text: 'Spread',
               link: '/components/spread/',
+            },
+            {
+              text: 'Steps',
+              link: '/components/steps/',
             },
           ],
         },

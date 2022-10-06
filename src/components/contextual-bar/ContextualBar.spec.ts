@@ -4,7 +4,9 @@ import { delay } from 'nanodelay'
 import { ref, nextTick } from 'vue-demi'
 import { useElementBounding, simulateHeightChanged } from './__mocks__/use-element-bounding'
 import pContextualBar from './ContextualBar.vue'
+import pButton from '../button/Button.vue'
 import type * as VueUse from '@vueuse/core'
+import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 
 vi.mock('@vueuse/core', async () => {
   const core = await vi.importActual('@vueuse/core')
@@ -23,44 +25,36 @@ it('should rendered properly without any props', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar>
-        Hey!
-      </p-contextual-bar>
-    `,
-  })
-
-  const bar  = screen.queryByTestId('contextual-bar')
-  const text = screen.queryByText('Hey!')
-
-  expect(bar).toBeInTheDocument()
-  expect(bar).toHaveClass('contextual-bar', 'contextual-bar--info')
-  expect(text).toBeInTheDocument()
-})
-
-it('should have `error` style if variant set to `error`', () => {
-  const screen = render({
-    components: { pContextualBar },
-    template  : `
-      <p-contextual-bar variant="error">
-        Hey!
-      </p-contextual-bar>
+      <p-contextual-bar />
     `,
   })
 
   const bar = screen.queryByTestId('contextual-bar')
 
   expect(bar).toBeInTheDocument()
-  expect(bar).toHaveClass('contextual-bar', 'contextual-bar--error')
-  expect(bar).not.toHaveClass('contextual-bar--info')
+  expect(bar).toHaveClass('contextual-bar', 'contextual-bar--light')
+})
+
+it('should have `dark` style if variant set to `dark`', () => {
+  const screen = render({
+    components: { pContextualBar },
+    template  : `
+      <p-contextual-bar variant="dark" />
+    `,
+  })
+
+  const bar = screen.queryByTestId('contextual-bar')
+
+  expect(bar).toBeInTheDocument()
+  expect(bar).toHaveClass('contextual-bar', 'contextual-bar--dark')
+  expect(bar).not.toHaveClass('contextual-bar--light')
 })
 
 it('should have `center` alignment if align set to `center`', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar align="center">
-        Hey!
-      </p-contextual-bar>
+      <p-contextual-bar align="center" />
     `,
   })
 
@@ -70,23 +64,133 @@ it('should have `center` alignment if align set to `center`', () => {
   expect(bar).toHaveClass('contextual-bar', 'contextual-bar--align-center')
 })
 
-it('should be abble to add message content via prop `message`', () => {
+it('should be abble to add title content via prop `title`', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar message="Hey!">
+      <p-contextual-bar title="Hey!" />
+    `,
+  })
+
+  const title = screen.queryByTestId('contextual-bar-title')
+  const text  = screen.queryByText('Hey!')
+
+  expect(title).toBeInTheDocument()
+  expect(title).toHaveClass('contextual-bar__content__title')
+  expect(text).toBeInTheDocument()
+})
+
+it('should be abble to add title content via slot `title`', () => {
+  const screen = render({
+    components: { pContextualBar },
+    template  : `
+      <p-contextual-bar>
+        <template #title>
+          hey!
+        </template>
       </p-contextual-bar>
     `,
   })
 
-  const bar  = screen.queryByTestId('contextual-bar-content')
-  const icon = screen.queryByTestId('contextual-bar-icon')
-  const text = screen.queryByText('Hey!')
+  const title = screen.queryByTestId('contextual-bar-title')
+  const text  = screen.queryByText('hey!')
+
+  expect(title).toBeInTheDocument()
+  expect(title).toHaveClass('contextual-bar__content__title')
+  expect(text).toBeInTheDocument()
+})
+
+it('should be abble to add additional message via prop `message`', () => {
+  const screen = render({
+    components: { pContextualBar },
+    template  : `
+      <p-contextual-bar message="hello" />
+    `,
+  })
+
+  const message = screen.queryByTestId('contextual-bar-message')
+  const wrapper = screen.queryByTestId('contextual-bar-wrapper')
+  const text    = screen.queryByText('hello')
+
+  expect(message).toBeInTheDocument()
+  expect(message).toHaveClass('contextual-bar__content__message')
+  expect(wrapper).toHaveClass('contextual-bar__wrapper', 'contextual-bar__wrapper--with-message')
+  expect(text).toBeInTheDocument()
+})
+
+it('should be abble to add additional message via slot `message`', () => {
+  const screen = render({
+    components: { pContextualBar },
+    template  : `
+      <p-contextual-bar>
+        <template #message>
+          hello
+        </template>
+      </p-contextual-bar>
+    `,
+  })
+
+  const message = screen.queryByTestId('contextual-bar-message')
+  const wrapper = screen.queryByTestId('contextual-bar-wrapper')
+  const text    = screen.queryByText('hello')
+
+  expect(message).toBeInTheDocument()
+  expect(message).toHaveClass('contextual-bar__content__message')
+  expect(wrapper).toHaveClass('contextual-bar__wrapper', 'contextual-bar__wrapper--with-message')
+  expect(text).toBeInTheDocument()
+})
+
+it('should be abble to add custom background via prop `background-url`', () => {
+  const screen = render({
+    components: { pContextualBar },
+    template  : `
+      <p-contextual-bar background-url="assets/images/img-background-contextualbar.svg" title="hey!" />
+    `,
+  })
+
+  const bar = screen.queryByTestId('contextual-bar')
 
   expect(bar).toBeInTheDocument()
-  expect(bar).toHaveClass('contextual-bar__content--icon')
-  expect(icon).not.toBeInTheDocument()
-  expect(text).toBeInTheDocument()
+  expect(bar).toHaveClass('contextual-bar--background-image')
+  expect(bar).toHaveStyle({ 'background-image': 'url(\'assets/images/img-background-contextualbar.svg\')' })
+})
+
+it('should be abble to add icon via slot `icon`', () => {
+  const screen = render({
+    components: { pContextualBar, IconInfo },
+    template  : `
+      <p-contextual-bar>
+        <template #icon>
+          <IconInfo />
+        </template>
+      </p-contextual-bar>
+    `,
+  })
+
+  const icon = screen.queryByTestId('contextual-bar-icon')
+
+  expect(icon).toBeInTheDocument()
+  expect(icon).toHaveClass('contextual-bar__icon')
+})
+
+it('should be abble to add button action via slot `action`', () => {
+  const screen = render({
+    components: { pContextualBar, pButton },
+    template  : `
+      <p-contextual-bar>
+        <template #action>
+          <p-button color="primary">Button Text</p-button>
+        </template>
+      </p-contextual-bar>
+    `,
+  })
+
+  const action  = screen.queryByTestId('contextual-bar-action')
+  const wrapper = screen.queryByTestId('contextual-bar-wrapper')
+
+  expect(action).toBeInTheDocument()
+  expect(action).toHaveClass('contextual-bar__action')
+  expect(wrapper).toHaveClass('contextual-bar__wrapper', 'contextual-bar__wrapper--with-action')
 })
 
 it('should dismissed when close button clicked', async () => {
@@ -94,9 +198,7 @@ it('should dismissed when close button clicked', async () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar v-model="model">
-        Hey!
-      </p-contextual-bar>
+      <p-contextual-bar v-model="model" title="hey!" />
     `,
     setup () {
       return { model }
@@ -104,7 +206,7 @@ it('should dismissed when close button clicked', async () => {
   })
 
   const bar   = screen.queryByTestId('contextual-bar')
-  const text  = screen.queryByText('Hey!')
+  const text  = screen.queryByText('hey!')
   const close = screen.queryByTestId('contextual-bar-close')
 
   expect(bar).toBeInTheDocument()
@@ -122,9 +224,7 @@ it('should emit event `close` if close button clicked', async () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar v-model="model" @close="onClose">
-        Hey!
-      </p-contextual-bar>
+      <p-contextual-bar v-model="model" @close="onClose" title="hey!" />
     `,
     methods: { onClose: spy },
     setup () {
@@ -157,9 +257,7 @@ it('should have no close button if props `dismissable` set to false', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar :dismissable="false">
-        Hello
-      </p-contextual-bar>
+      <p-contextual-bar :dismissable="false" title="hello" />
     `,
   })
 
@@ -173,9 +271,7 @@ it('should have style attribute `display: none` when contextual bar is hide', as
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar v-model="model">
-        Hello
-      </p-contextual-bar>
+      <p-contextual-bar v-model="model" title="hello" />
     `,
     setup () {
       return { model }

@@ -24,7 +24,8 @@
   }
 </script>
 
-# Dialog (Instant Modal)
+# Dialog
+> Instant Modal
 
 ## Usage
 
