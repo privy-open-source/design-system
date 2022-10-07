@@ -6,9 +6,9 @@ import IconEdit from '@carbon/icons-vue/lib/edit/16'
 import IconView from '@carbon/icons-vue/lib/view/16'
 import IconDocument from '@carbon/icons-vue/lib/document/16'
 import IconMenu from '@carbon/icons-vue/lib/overflow-menu--vertical/16'
-import Badge from '../badge/Badge.vue'
-import NavItemDropdown from './NavItemDropdown.vue'
-import DropdownItem from '../dropdown/DropdownItem.vue'
+import pBadge from '../badge/Badge.vue'
+import pNavItemDropdown from './NavItemDropdown.vue'
+import pDropdownItem from '../dropdown/DropdownItem.vue'
 </script>
 
 <style lang="postcss" scoped>
@@ -246,21 +246,21 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
 ### Badge
 <preview>
   <p-nav fill>
-    <p-nav-item active>To Sign <Badge color="secondary" variant="light">25</Badge></p-nav-item>
-    <p-nav-item>To Review <Badge color="secondary" variant="light">25</Badge></p-nav-item>
+    <p-nav-item active>To Sign <p-badge color="secondary" variant="light">25</p-badge></p-nav-item>
+    <p-nav-item>To Review <p-badge color="secondary" variant="light">25</p-badge></p-nav-item>
   </p-nav>
   <p-nav fill>
     <p-nav-item active>
       <template #icon>
         <IconView />
       </template>
-      To Sign <Badge color="secondary" variant="light">25</Badge>
+      To Sign <p-badge color="secondary" variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       <template #icon>
         <IconView />
       </template>
-      To Review <Badge color="secondary" variant="light">25</Badge>
+      To Review <p-badge color="secondary" variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
 </preview>
@@ -270,11 +270,11 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
   <p-nav fill>
     <p-nav-item active>
       To Sign
-      <Badge color="secondary" variant="light">25</Badge>
+      <p-badge color="secondary" variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       To Review
-      <Badge color="secondary" variant="light">25</Badge>
+      <p-badge color="secondary" variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
   <p-nav fill>
@@ -282,13 +282,13 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
       <template #icon>
         <IconView />
       </template>
-      To Sign <Badge color="secondary" variant="light">25</Badge>
+      To Sign <p-badge color="secondary" variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       <template #icon>
         <IconView />
       </template>
-      To Review <Badge color="secondary" variant="light">25</Badge>
+      To Review <p-badge color="secondary" variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
 </template>
@@ -300,26 +300,26 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
   <p-nav>
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
-    <NavItemDropdown icon>
+    <p-nav-item-dropdown icon no-caret>
       <template #button-content>
         <IconMenu />
       </template>
-      <DropdownItem>Item Text</DropdownItem>
-      <DropdownItem>Item Text</DropdownItem>
-      <DropdownItem>Item Text</DropdownItem>
-    </NavItemDropdown>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+    </p-nav-item-dropdown>
   </p-nav>
   <p-nav fill>
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
-    <NavItemDropdown icon>
+    <p-nav-item-dropdown icon no-caret>
       <template #button-content>
         <IconMenu />
       </template>
-      <DropdownItem>Item Text</DropdownItem>
-      <DropdownItem>Item Text</DropdownItem>
-      <DropdownItem>Item Text</DropdownItem>
-    </NavItemDropdown>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+    </p-nav-item-dropdown>
   </p-nav>
 </preview>
 
@@ -328,26 +328,26 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
   <p-nav>
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
-    <NavItemDropdown icon>
+    <p-nav-item-dropdown icon>
       <template #button-content>
         <IconMenu />
       </template>
-      <DropdownItem>Item Text</DropdownItem>
-      <DropdownItem>Item Text</DropdownItem>
-      <DropdownItem>Item Text</DropdownItem>
-    </NavItemDropdown>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+    </p-nav-item-dropdown>
   </p-nav>
   <p-nav fill>
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
-    <NavItemDropdown icon>
+    <p-nav-item-dropdown icon>
       <template #button-content>
         <IconMenu />
       </template>
-      <DropdownItem>Item Text</DropdownItem>
-      <DropdownItem>Item Text</DropdownItem>
-      <DropdownItem>Item Text</DropdownItem>
-    </NavItemDropdown>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+    </p-nav-item-dropdown>
   </p-nav>
 </template>
 ```
@@ -544,13 +544,13 @@ When you need title for grouping navigation, you can add navigation title by usi
 |------------------|---------------------------------------------------------|
 | `default`        | Content to place in the submenu item                        |
 
-### Props `<NavItemDropdown>`
+### Props `<p-nav-item-dropdown>`
 
 | Props          |   Type     | Default      | Description                                  |
 |----------------|:----------:|:------------:|-------------------------------------------------------------------|
 | `text`         | `String`   | `undefined`  | Text to place in the toggle element (link) of dropdown            |
 
-### Slots `<NavItemDropdown>`
+### Slots `<p-nav-item-dropdown>`
 
 | Name              | Description                                             |
 |-------------------|---------------------------------------------------------|

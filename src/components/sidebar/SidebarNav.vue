@@ -64,6 +64,10 @@ export default defineComponent({
   &__nav {
     &.nav--pills.nav--vertical {
       @apply pl-0 pr-0;
+
+      .nav__link {
+        @apply pr-3;
+      }
     }
 
     &&--bottom {
