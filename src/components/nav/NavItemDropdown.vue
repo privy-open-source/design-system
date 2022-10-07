@@ -7,7 +7,7 @@
       :icon="icon"
       placement="bottom-end"
       variant="ghost"
-      no-caret>
+      :no-caret="noCaret">
       <template #button-content>
         <slot name="button-content">
           {{ text }}
@@ -31,6 +31,10 @@ export default defineComponent({
       default: '',
     },
     icon: {
+      type   : Boolean,
+      default: false,
+    },
+    noCaret: {
       type   : Boolean,
       default: false,
     },

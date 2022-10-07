@@ -41,10 +41,19 @@ export default defineComponent({
   }
 
   ul {
-    @apply list-none mt-0;
+    @apply list-none m-0 p-0;
 
     li + li {
       @apply mt-0;
+    }
+  }
+
+  /**
+  * Content
+  */
+  .vp-doc {
+    ul, ol {
+      @apply p-0 m-0;
     }
   }
 
