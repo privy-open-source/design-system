@@ -208,7 +208,7 @@ const menus = defineNavbarMenu([
 </script>
 ```
 
-## Settings Navbar
+## Settings
 You can settings navbar like `variant`, `color`, `fixed` etc. via `settings` prop.
 
 <preview class="preview--fixed">
