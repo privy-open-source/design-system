@@ -11,7 +11,6 @@
   import pInput from '../input/Input.vue'
   import pInputGroup from '../input/InputGroup.vue'
   import pButton from '../button/Button.vue'
-  import pAvatar from '../avatar/Avatar.vue'
   import pCollapse from '../collapse/Collapse.vue'
   import IconBee from '@carbon/icons-vue/lib/bee/20'
   import IconView from '@carbon/icons-vue/lib/view/20'
@@ -181,9 +180,9 @@ Navbar has 2 colors, `light` and `dark`.
     <p-navbar-brand>
       <img src="../../public/assets/images/logo.svg" />
     </p-navbar-brand>
-    <p-navbar-nav>
+    <!-- <p-navbar-nav>
       <p-nav-item active>Label</p-nav-item>
-    </p-navbar-nav>
+    </p-navbar-nav> -->
   </p-navbar>
   <p-navbar color="dark">
     <p-navbar-brand>
@@ -464,13 +463,13 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 ## API
 
 ### Props `<p-navbar>`
-| Props          |   Type    | Default     | Description                                                       |
-|----------------|:---------:|:-----------:|-------------------------------------------------------------------|
-| `variant`      | `String`  | `pills`     | Navbar variant, valid value is `pills` and `lines`                |
-| `color`        | `String`  | `light`     | Navbar color, valid value is `light` and `dark`                   |
-| `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
-| `fixed`        | `Boolean` | `false`     | Activate fixed Navbar                                             |
-| `toggleable`   | `String`  | -           | automatically expand navigation with desired breakpoint           |
+| Props            |   Type    | Default     | Description                                                       |
+|------------------|:---------:|:-----------:|-------------------------------------------------------------------|
+| `variant`        | `String`  | `pills`     | Navbar variant, valid value is `pills` and `lines`                |
+| `color`          | `String`  | `light`     | Navbar color, valid value is `light` and `dark`                   |
+| `condensed`      | `Boolean` | `false`     | Activate condensed navigation with less space                     |
+| `fixed`          | `Boolean` | `false`     | Activate fixed Navbar                                             |
+| `toggleable`     | `String`  | -           | Automatically expand navigation with desired breakpoint, valid value is `sm`, `md` and `lg`          |
 ### Slots `<p-navbar>`
 
 | Name             | Description                                             |

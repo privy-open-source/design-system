@@ -109,6 +109,10 @@ export default defineConfig({
               link: '/components/navbar/',
             },
             {
+              text: 'Navbar Menu',
+              link: '/components/navbar-menu/',
+            },
+            {
               text: 'Progress',
               link: '/components/progress/',
             },
