@@ -1,10 +1,12 @@
 <template>
   <div
     class="camera"
+    data-testid="camera"
     :class="classNames">
     <video
       v-if="stream"
       ref="video"
+      data-testid="camera-video"
       :srcObject.prop="stream"
       class="camera__video"
       muted
@@ -109,7 +111,7 @@ import IconRetake from '@carbon/icons-vue/lib/reset/24'
 import shutterWav from './assets/shutter.wav'
 import { useSound } from '@vueuse/sound'
 import { useVModel } from '../input/use-input'
-import BasicAdapter from './adapter/basic'
+import CaptureAdapter from './adapter/capture'
 import {
   Adapter,
   AdapterMeta,
@@ -122,7 +124,7 @@ import {
   useUserMedia,
 } from '@vueuse/core'
 import { until } from '@vueuse/shared'
-import { dialog } from '../../core'
+import * as dialog from '../dialog/use-dialog'
 import defu from 'defu'
 
 export default defineComponent({
@@ -155,7 +157,7 @@ export default defineComponent({
     },
     adapter: {
       type   : Object as PropType<Adapter>,
-      default: BasicAdapter,
+      default: CaptureAdapter,
     },
     facingMode: {
       type   : String as PropType<ConstrainDOMString>,

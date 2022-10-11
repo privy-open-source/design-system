@@ -23,7 +23,7 @@ export {
 
 export {
   default as BasicAdapter,
-} from '../components/select/adapter/async-adapter'
+} from '../components/select/adapter/basic-adapter'
 
 export {
   defineMenu,
@@ -35,4 +35,17 @@ export {
 
 export {
   toBase64,
+  fromBase64,
 } from '../components/utils/base64'
+
+export {
+  default as CaptureAdapter,
+} from '../components/camera/adapter/capture'
+
+export {
+  default as LivenessAdapter,
+} from '../components/camera/adapter/liveness'
+
+export {
+  default as QrCodeAdapter,
+} from '../components/camera/adapter/qr-code'

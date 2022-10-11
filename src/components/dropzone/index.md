@@ -87,7 +87,6 @@
     </template>
   </p-dropzone>
 </template>
-
 ```
 
 ### Add Photo

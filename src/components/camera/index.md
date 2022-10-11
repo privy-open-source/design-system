@@ -61,14 +61,14 @@ Add mask overlay using prop `mask`. There are 3 available masks `square`, `round
 
 <preview class="flex-col gap-2">
   <p-camera mask="square" />
-  <p-camera mask="circle" />
+  <p-camera mask="round" />
   <p-camera mask="card" />
 </preview>
 
 ```vue
 <template>
   <p-camera mask="square" />
-  <p-camera mask="circle" />
+  <p-camera mask="round" />
   <p-camera mask="card" />
 </template>
 ```

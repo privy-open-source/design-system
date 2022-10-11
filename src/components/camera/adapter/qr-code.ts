@@ -9,7 +9,7 @@ export default defineAdapter({
     autoStart : true,
   },
   async run ({ video, toast: notify, meta }) {
-    const isMirrored = meta.value.mirror && meta.value.mirror !== 'preview'
+    const isMirrored = !!(meta.value.mirror && meta.value.mirror !== 'preview')
     const reader     = new BrowserQRCodeReader()
     const result     = await reader.decodeOnceFromVideoElement(video.value)
     const image      = takePicture(video.value, isMirrored)

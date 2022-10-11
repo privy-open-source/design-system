@@ -8,6 +8,39 @@ export interface MotionTemplate {
   buffer: Uint8ClampedArray,
 }
 
+export const MOTION_THRESHOLD = 40
+
+export const MOTION_FPS = 15
+
+export const MOTION_AREA_SIZE = 160
+
+/**
+ * Capture and create sample image from HTML Video Element
+ * @param canvas Canvas 2d context
+ * @param video Html Video element
+ */
+export function takeSample (canvas: HTMLCanvasElement, video: HTMLVideoElement): ImageData {
+  const context = canvas.getContext('2d', { willReadFrequently: true })
+
+  context.drawImage(
+    video,
+    (video.videoWidth / 2) - MOTION_AREA_SIZE,
+    (video.videoHeight / 2) - MOTION_AREA_SIZE,
+    MOTION_AREA_SIZE,
+    MOTION_AREA_SIZE,
+    0,
+    0,
+    MOTION_AREA_SIZE,
+    MOTION_AREA_SIZE,
+  )
+
+  return context.getImageData(0, 0, canvas.width, canvas.height)
+}
+
+/**
+ * create motion template
+ * @param imageData sample imagedata
+ */
 export function createTemplate (imageData: ImageData): MotionTemplate {
   // cut out the template:
   // we use a small width, quarter-size image around the center as template
@@ -45,6 +78,11 @@ export function createTemplate (imageData: ImageData): MotionTemplate {
   return template
 }
 
+/**
+ * Compare image with Motion template and return the movement distance
+ * @param imageData new sample's imagedata
+ * @param template motion template to compare
+ */
 export function motionDetection (imageData: ImageData, template: MotionTemplate): number {
   // this is the major computing step: Perform a normalized cross-correlation between the template of the first image and each incoming image
   // this algorithm is basically called "Template Matching" - we use the normalized cross correlation to be independent of lighting changes
