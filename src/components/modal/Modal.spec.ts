@@ -312,3 +312,21 @@ it('should have style `modal-body-scrollable` when props "modal-body-scrollable"
   expect(modal).toBeInTheDocument()
   expect(modalBody).toHaveClass('modal__body', 'modal__body--scroll')
 })
+
+it('should have style `lg` if size props set to `lg`', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        title="Modal Title"
+        size="lg">
+        Modal Text
+      </Modal>
+    `,
+  })
+
+  const modal = screen.queryByTestId('modal')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).toHaveClass('modal--lg')
+})
