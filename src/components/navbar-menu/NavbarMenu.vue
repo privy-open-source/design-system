@@ -8,7 +8,7 @@
     :condensed="settings.condensed">
     <slot />
     <NavbarToggle
-      v-if="settings.toggleable && Object.keys(settings.collapse).length > 0"
+      v-if="settings.toggleable && (settings.collapse && Object.keys(settings.collapse).length > 0)"
       @click="toggle =! toggle">
       <template #default="{ expanded }">
         <template v-if="expanded">
