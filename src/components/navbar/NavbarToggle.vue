@@ -8,8 +8,12 @@
     icon
     @click="expanded">
     <slot :expanded="expand">
-      <IconClose v-if="expand" />
-      <IconMenu v-else />
+      <IconClose
+        v-if="expand"
+        data-testid="default-expanded-icon" />
+      <IconMenu
+        v-else
+        data-testid="default-collapsed-icon" />
     </slot>
   </Button>
 </template>

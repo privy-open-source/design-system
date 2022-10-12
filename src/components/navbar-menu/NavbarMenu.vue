@@ -12,27 +12,29 @@
       @click="toggle =! toggle">
       <template #default="{ expanded }">
         <template v-if="expanded">
-          <template v-if="settings.collapse.collapsedIcon">
-            <template v-if="settings.collapse.collapsedIcon && typeof settings.collapse.collapsedIcon === 'string'">
-              <img
-                :src="settings.collapse.collapsedIcon"
-                alt="icon-menu">
-            </template>
-            <template v-else-if="settings.collapse.collapsedIcon">
-              <component :is="settings.collapse.collapsedIcon" />
-            </template>
+          <template v-if="settings.collapse.collapsedIcon && typeof settings.collapse.collapsedIcon === 'string'">
+            <img
+              :src="settings.collapse.collapsedIcon"
+              alt="icon-menu"
+              data-testid="collapsed-icon-image">
+          </template>
+          <template v-else-if="settings.collapse.collapsedIcon">
+            <component
+              :is="settings.collapse.collapsedIcon"
+              data-testid="collapsed-icon" />
           </template>
         </template>
         <template v-else>
-          <template v-if="settings.collapse.expandedIcon">
-            <template v-if="settings.collapse.expandedIcon && typeof settings.collapse.expandedIcon === 'string'">
-              <img
-                :src="settings.collapse.expandedIcon"
-                alt="icon-menu">
-            </template>
-            <template v-else-if="settings.collapse.expandedIcon">
-              <component :is="settings.collapse.expandedIcon" />
-            </template>
+          <template v-if="settings.collapse.expandedIcon && typeof settings.collapse.expandedIcon === 'string'">
+            <img
+              :src="settings.collapse.expandedIcon"
+              alt="icon-menu"
+              data-testid="expanded-icon-image">
+          </template>
+          <template v-else-if="settings.collapse.expandedIcon">
+            <component
+              :is="settings.collapse.expandedIcon"
+              data-testid="expanded-icon" />
           </template>
         </template>
       </template>
@@ -52,15 +54,20 @@
         <template
           v-for="(item, id) in menu.items"
           :key="id">
-          <NavItemDropdown v-if="item.submenu">
+          <NavItemDropdown
+            v-if="item.submenu"
+            :icon="item.icon !== null">
             <template #button-content>
               <template v-if="item.icon && typeof item.icon === 'string'">
                 <img
                   :src="item.icon"
-                  alt="icon-menu">
+                  alt="icon-menu"
+                  data-testid="dropdown-icon-image">
               </template>
               <template v-else-if="item.icon">
-                <component :is="item.icon" />
+                <component
+                  :is="item.icon"
+                  data-testid="dropdown-icon" />
               </template>
               {{ item.label }}
             </template>
@@ -98,15 +105,20 @@
       <template
         v-for="(item, id) in menu.items"
         :key="id">
-        <NavItemDropdown v-if="item.submenu">
+        <NavItemDropdown
+          v-if="item.submenu"
+          :icon="item.icon !== null">
           <template #button-content>
             <template v-if="item.icon && typeof item.icon === 'string'">
               <img
                 :src="item.icon"
-                alt="icon-menu">
+                alt="icon-menu"
+                data-testid="dropdown-icon-image">
             </template>
             <template v-else-if="item.icon">
-              <component :is="item.icon" />
+              <component
+                :is="item.icon"
+                data-testid="dropdown-icon" />
             </template>
             {{ item.label }}
           </template>

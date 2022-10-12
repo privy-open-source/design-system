@@ -219,6 +219,14 @@ You can settings navbar like `variant`, `color`, `fixed` etc. via `settings` pro
   </p-navbar-menu>
 </preview>
 
+<preview class="preview--fixed">
+  <p-navbar-menu :menus="basic" :settings="setup">
+    <p-navbar-brand>
+      <img src="../../public/assets/images/logo-privy-icon.svg" />
+    </p-navbar-brand>
+  </p-navbar-menu>
+</preview>
+
 ```vue
 <template>
   <p-navbar-menu :menus="menus" :settings="settings">
