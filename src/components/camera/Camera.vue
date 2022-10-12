@@ -2,6 +2,7 @@
   <div
     class="camera"
     data-testid="camera"
+    :data-deviceid="deviceId"
     :class="classNames">
     <video
       v-if="stream"
@@ -17,6 +18,7 @@
     <!-- Result -->
     <img
       v-if="isTaken && !stream"
+      data-testid="camera-result"
       class="camera__result"
       :src="preview"
       alt="camera-result">
@@ -24,6 +26,7 @@
     <!-- Camera off -->
     <span
       v-if="!isActive && !isTaken"
+      data-testid="camera-off"
       class="camera__off-info">
       Camera is off
     </span>
@@ -32,6 +35,7 @@
     <div class="camera__mask-container">
       <div
         v-if="!isTaken"
+        data-testid="camera-mask"
         class="camera__mask" />
     </div>
 
@@ -41,7 +45,9 @@
         v-if="message"
         :key="message"
         class="camera__toast">
-        <span class="camera__toast-text">
+        <span
+          data-testid="camera-toast"
+          class="camera__toast-text">
           {{ message }}
         </span>
       </div>
@@ -51,6 +57,7 @@
     <div class="camera__controls">
       <p-button
         v-if="cameras.length > 1 && !isTaken"
+        data-testid="camera-toggle"
         color="secondary"
         size="sm"
         icon
@@ -62,7 +69,7 @@
       <!-- Main Button -->
       <p-button
         v-if="!isActive && !isTaken"
-        data-testid="turn-on"
+        data-testid="camera-turn-on"
         class="camera__main-control"
         icon
         pill
@@ -71,7 +78,7 @@
       </p-button>
       <p-button
         v-else-if="isActive && !isTaken"
-        data-testid="take"
+        data-testid="camera-take"
         class="camera__main-control"
         icon
         pill
@@ -81,7 +88,7 @@
       </p-button>
       <p-button
         v-else
-        data-testid="retake"
+        data-testid="camera-retake"
         class="camera__main-control"
         icon
         pill
@@ -90,6 +97,8 @@
       </p-button>
       <!-- End Main Button -->
     </div>
+
+    <slot />
   </div>
 </template>
 
@@ -122,8 +131,8 @@ import {
   usePermission,
   useDevicesList,
   useUserMedia,
+  until,
 } from '@vueuse/core'
-import { until } from '@vueuse/shared'
 import * as dialog from '../dialog/use-dialog'
 import defu from 'defu'
 
@@ -316,6 +325,8 @@ export default defineComponent({
       preview,
       turnOn,
       onStart,
+      toast,
+      deviceId,
     }
   },
 })

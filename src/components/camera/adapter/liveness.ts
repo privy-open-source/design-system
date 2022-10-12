@@ -32,22 +32,24 @@ export default defineAdapter({
       let template: MotionTemplate
 
       const interval = setInterval(function processFrame () {
-        const imageData = takeSample(canvas, video.value)
+        if (video.value) {
+          const imageData = takeSample(canvas, video.value)
 
-        if (!template)
-          template = createTemplate(imageData)
-        else if (motionDetection(imageData, template) > MOTION_THRESHOLD) {
-          const photoB = takePicture(video.value, isMirrored)
-          const result = modifier.value.base64
-            ? [photoB, photoA]
-            : [fromBase64(photoB), fromBase64(photoA)]
+          if (!template)
+            template = createTemplate(imageData)
+          else if (motionDetection(imageData, template) > MOTION_THRESHOLD) {
+            const photoB = takePicture(video.value, isMirrored)
+            const result = modifier.value.base64
+              ? [photoB, photoA]
+              : [fromBase64(photoB), fromBase64(photoA)]
 
-          clearInterval(interval)
-          toast('')
-          resolve({
-            preview: photoB,
-            result : result,
-          })
+            clearInterval(interval)
+            toast('')
+            resolve({
+              preview: photoB,
+              result : result,
+            })
+          }
         }
       }, 1000 / MOTION_FPS)
 

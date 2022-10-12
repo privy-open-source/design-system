@@ -1,6 +1,6 @@
 import { ComputedRef, Ref } from 'vue-demi'
 
-export type MaskVariant = 'square' | 'round' | 'ektp' | 'none'
+export type MaskVariant = 'square' | 'round' | 'card' | 'none'
 
 export type MirrorMode = boolean | 'preview' | 'all'
 
@@ -10,7 +10,7 @@ export interface ModelModifier {
 
 export interface AdapterMeta {
   /**
-   * Auto take an image
+   * Auto take an image,
    * It will start processing when camera started.
    */
   autoStart: boolean,
