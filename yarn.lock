@@ -1412,7 +1412,11 @@ __metadata:
     "@vitest/coverage-c8": 0.23.4
     "@vue/eslint-config-typescript": 11.0.1
     "@vueuse/core": 8.9.4
+    "@vueuse/sound": ^1.1.7
+    "@zxing/browser": ^0.1.1
+    "@zxing/library": ^0.19.1
     autoprefixer: 10.4.12
+    buffer: ^6.0.3
     c8: 7.12.0
     chart.js: 3.9.1
     date-fns: 2.29.3
@@ -1443,7 +1447,7 @@ __metadata:
     tailwindcss: 3.1.8
     typescript: 4.8.3
     vitepress: 1.0.0-alpha.15
-    vitest: 0.23.1
+    vitest: 0.23.4
     vue-demi: 0.13.11
     vuedraggable: next
     webfontloader: 1.6.28
@@ -2423,6 +2427,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/composition-api@npm:>=1.0.0-rc.1":
+  version: 1.7.1
+  resolution: "@vue/composition-api@npm:1.7.1"
+  peerDependencies:
+    vue: ">= 2.5 < 2.7"
+  checksum: dedd90e17cc6d3577510b5439a568932862a122dcff922c52ab0a25db7ee289caea1aa2d5e43c817eb91619e1b955e5e8e9460a4435f5c3565284d39750c9d4c
+  languageName: node
+  linkType: hard
+
 "@vue/devtools-api@npm:^6.1.4, @vue/devtools-api@npm:^6.2.1":
   version: 6.2.1
   resolution: "@vue/devtools-api@npm:6.2.1"
@@ -2664,6 +2677,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vueuse/sound@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "@vueuse/sound@npm:1.1.7"
+  dependencies:
+    "@vue/composition-api": ">=1.0.0-rc.1"
+    howler: ^2.2.1
+    vue-demi: latest
+  dependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  checksum: 513ce86ef1ed492e14299f3436c20c81bdbe531dd1d9a3243f380532490447a75ab91559f9c2592558a2aa93042b01a53d649004c315d15c2ca1092b73f83c49
+  languageName: node
+  linkType: hard
+
 "@zhead/schema-vue@npm:^0.7.3":
   version: 0.7.3
   resolution: "@zhead/schema-vue@npm:0.7.3"
@@ -2680,6 +2707,40 @@ __metadata:
   version: 0.7.3
   resolution: "@zhead/schema@npm:0.7.3"
   checksum: a6131bd3e667fb08c0e72722a9d7bad55b831526b1f6e2072123afd10e3d45507504c10ff8d84a1e1fa2e2b3e223a3a1938eb6bb220f07d2cfadc185862d677c
+  languageName: node
+  linkType: hard
+
+"@zxing/browser@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@zxing/browser@npm:0.1.1"
+  dependencies:
+    "@zxing/text-encoding": ^0.9.0
+  peerDependencies:
+    "@zxing/library": ^0.19.1
+  dependenciesMeta:
+    "@zxing/text-encoding":
+      optional: true
+  checksum: c681b8b8c61d33c75b2e67cab05ced4de01d00d3999a8ab287c8daf349cc593e4ba62f933497cd794b83468c853eec1e30b15651da3d0665b5bcd8815e5fae17
+  languageName: node
+  linkType: hard
+
+"@zxing/library@npm:^0.19.1":
+  version: 0.19.1
+  resolution: "@zxing/library@npm:0.19.1"
+  dependencies:
+    "@zxing/text-encoding": ~0.9.0
+    ts-custom-error: ^3.0.0
+  dependenciesMeta:
+    "@zxing/text-encoding":
+      optional: true
+  checksum: ed650e4afc74560950efad3d1479f4bcd9878b6baadd4ac9280cec45bdbeba957bb1185cde7858e49493b3f0052d25bd0be3a1c277433e4e09e1f29018aec2f3
+  languageName: node
+  linkType: hard
+
+"@zxing/text-encoding@npm:^0.9.0, @zxing/text-encoding@npm:~0.9.0":
+  version: 0.9.0
+  resolution: "@zxing/text-encoding@npm:0.9.0"
+  checksum: c23b12aee7639382e4949961304a1294776afaffa40f579e09ffecd0e5e68cf26ef3edd75009de46da8a536e571448755ca68b3e2ea707d53793c0edb2e2c34a
   languageName: node
   linkType: hard
 
@@ -6612,6 +6673,13 @@ __metadata:
   dependencies:
     lru-cache: ^6.0.0
   checksum: c3f87b3c2f7eb8c2748c8f49c0c2517c9a95f35d26f4bf54b2a8cba05d2e668f3753548b6ea366b18ec8dadb4e12066e19fa382a01496b0ffa0497eb23cbe461
+  languageName: node
+  linkType: hard
+
+"howler@npm:^2.2.1":
+  version: 2.2.3
+  resolution: "howler@npm:2.2.3"
+  checksum: c04ce19411f4d86f8508d411a93aea943f128c2686b3df3c61383fd4ed8f5551232c4389aba3a8d4c8b0eeb34ae51df5a9c3ccd9ba48583ac53e9bf9fcbd1ecf
   languageName: node
   linkType: hard
 
@@ -11388,17 +11456,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinybench@npm:^2.1.3, tinybench@npm:^2.1.5":
+"tinybench@npm:^2.1.5":
   version: 2.1.5
   resolution: "tinybench@npm:2.1.5"
   checksum: 5a6d378271a00ace6fa6970404eb1efd539d3e9b9908a9cb6d66ad78acfd873762734f3fc69fe10d86217318871367997d2a8b9566039fd224c518493466aa96
-  languageName: node
-  linkType: hard
-
-"tinypool@npm:^0.2.4":
-  version: 0.2.4
-  resolution: "tinypool@npm:0.2.4"
-  checksum: f050bd36c89529a2a0d3f9c1fdbba3f317114e3ee6eb5d5ba72c51e887d45ef3ef8d8533fb2ca2eba7189d19d2231712b81b3a75e099248532f5563369929c33
   languageName: node
   linkType: hard
 
@@ -11459,6 +11520,13 @@ __metadata:
   version: 4.0.2
   resolution: "trim-newlines@npm:4.0.2"
   checksum: 1eef206eb77361856dff0b827e5811baf64574bb21e81b7ad643fe321c5c19b0a452dd83e9afc31206993fcff9bb90a379925d7b5915f887de1ca7da5b57933a
+  languageName: node
+  linkType: hard
+
+"ts-custom-error@npm:^3.0.0":
+  version: 3.2.2
+  resolution: "ts-custom-error@npm:3.2.2"
+  checksum: e0d8ab82c631ae16111eb9d55941151c060290b245203f425df2878c2dc0cd4ba9deea4fbb7a3b5e527dc03d434c4a34ca1c96ac122e3edb08d5cbdd6f544802
   languageName: node
   linkType: hard
 
@@ -12041,44 +12109,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:0.23.1":
-  version: 0.23.1
-  resolution: "vitest@npm:0.23.1"
-  dependencies:
-    "@types/chai": ^4.3.3
-    "@types/chai-subset": ^1.3.3
-    "@types/node": "*"
-    chai: ^4.3.6
-    debug: ^4.3.4
-    local-pkg: ^0.4.2
-    strip-literal: ^0.4.0
-    tinybench: ^2.1.3
-    tinypool: ^0.2.4
-    tinyspy: ^1.0.2
-    vite: ^2.9.12 || ^3.0.0-0
-  peerDependencies:
-    "@edge-runtime/vm": "*"
-    "@vitest/browser": "*"
-    "@vitest/ui": "*"
-    happy-dom: "*"
-    jsdom: "*"
-  peerDependenciesMeta:
-    "@edge-runtime/vm":
-      optional: true
-    "@vitest/browser":
-      optional: true
-    "@vitest/ui":
-      optional: true
-    happy-dom:
-      optional: true
-    jsdom:
-      optional: true
-  bin:
-    vitest: vitest.mjs
-  checksum: 26ca78dc0979c435f2b2f265fc94d13d4e2da5e72680812471cd0b802e5727784c1c05b7dff945bb6638da0ae50ada06dfea5c28cec318575cad95d8a769c131
-  languageName: node
-  linkType: hard
-
 "vitest@npm:0.23.4":
   version: 0.23.4
   resolution: "vitest@npm:0.23.4"
@@ -12216,7 +12246,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.13.11":
+"vue-demi@npm:0.13.11, vue-demi@npm:latest":
   version: 0.13.11
   resolution: "vue-demi@npm:0.13.11"
   peerDependencies:
