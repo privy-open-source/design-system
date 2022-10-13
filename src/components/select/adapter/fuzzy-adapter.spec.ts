@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/vue'
 import Select from '../Select.vue'
+import { defineOptions } from '../use-select'
 import Adapter from './fuzzy-adapter'
 
 it('should be able to display items from props `options`', async () => {
@@ -59,7 +60,7 @@ it('should be able to filter (search) items by keyword', async () => {
         :options="options" />
     `,
     setup () {
-      const options = [
+      const options = defineOptions([
         {
           text : 'Apple',
           value: 'Apple',
@@ -72,7 +73,7 @@ it('should be able to filter (search) items by keyword', async () => {
           text : 'Banana',
           value: 'Banana',
         },
-      ]
+      ])
 
       return {
         options,

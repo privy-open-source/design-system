@@ -55,14 +55,18 @@
     "postcss-nested": "5.0.6",
     "tailwindcss": "3.1.8",
     "typescript": "4.8.3",
-    "vitepress": "1.0.0-alpha.15",
-    "vitest": "0.23.1"
+    "vitepress": "1.0.0-alpha.20",
+    "vitest": "0.23.4"
   },
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.8",
     "@popperjs/core": "2.11.6",
     "@vueuse/core": "8.9.4",
+    "@vueuse/sound": "^1.1.7",
+    "@zxing/browser": "^0.1.1",
+    "@zxing/library": "^0.19.1",
+    "buffer": "^6.0.3",
     "chart.js": "3.9.1",
     "date-fns": "2.29.3",
     "defu": "6.1.0",

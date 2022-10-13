@@ -85,6 +85,6 @@ export async function placeImage (canvas: HTMLCanvasElement, url: string) {
   context.drawImage(image, 0, 0)
 }
 
-export function toDataURL (canvas: HTMLCanvasElement): string {
-  return canvas.toDataURL()
+export function toDataURL (canvas: HTMLCanvasElement, ...args: Parameters<HTMLCanvasElement['toDataURL']>): string {
+  return canvas.toDataURL(...args)
 }

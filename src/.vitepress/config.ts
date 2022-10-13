@@ -65,6 +65,10 @@ export default defineConfig({
               link: '/components/button-group/',
             },
             {
+              text: 'Camera',
+              link: '/components/camera/',
+            },
+            {
               text: 'Card',
               link: '/components/card/',
             },
