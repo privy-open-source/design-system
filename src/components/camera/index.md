@@ -168,13 +168,13 @@ You can add modifier `base64` to your `v-model`, it's enforce result to [base64-
 
 ### Props
 
-| Props        |        Type         |    Default     | Description                                                                        |
-|--------------|:-------------------:|:--------------:|------------------------------------------------------------------------------------|
-| `mirror`     | `Boolean`, `String` |      `-`       | Enable mirror mode, set to `preview` for [Preview Only](#preview-only-mirror-mode) |
-| `mask`       |      `String`       |      `-`       | Enable mask overlay, valid value is `square`, `round`, `card`, `none`              |
-| `silent`     |      `Boolean`      |    `false`     | Mute shutter sound                                                                 |
-| `adapter`    |      `Adapter`      | `BasicAdapter` | Camera Adapter                                                                     |
-| `modelValue` |       `File`        |      `-`       | Camera Adapter                                                                     |
+| Props        |        Type         |     Default      | Description                                                                        |
+|--------------|:-------------------:|:----------------:|------------------------------------------------------------------------------------|
+| `mirror`     | `Boolean`, `String` |       `-`        | Enable mirror mode, set to `preview` for [Preview Only](#preview-only-mirror-mode) |
+| `mask`       |      `String`       |       `-`        | Enable mask overlay, valid value is `square`, `round`, `card`, `none`              |
+| `silent`     |      `Boolean`      |     `false`      | Mute shutter sound                                                                 |
+| `adapter`    |      `Adapter`      | `CaptureAdapter` | Camera Adapter                                                                     |
+| `modelValue` |       `File`        |       `-`        | v-model value                                                                      |
 
 ### Slots
 
