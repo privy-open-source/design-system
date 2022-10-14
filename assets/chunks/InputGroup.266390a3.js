@@ -1,0 +1,1 @@
+import{_ as e,o,c as n,r as s}from"../app.56afe14f.js";const r={},_={class:"input-group","data-testid":"input-group"};function c(t,p){return o(),n("div",_,[s(t.$slots,"default")])}const u=e(r,[["render",c]]);export{u as p};
