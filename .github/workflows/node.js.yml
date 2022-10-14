@@ -50,14 +50,20 @@ jobs:
       - run: yarn docs:build
       - run: yarn coverage
 
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@1.1.3
+        if: matrix.node-version == 16 && matrix.os == 'ubuntu-latest'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: codecov/codecov-action@v3
         if: matrix.node-version == 16 && matrix.os == 'ubuntu-latest'
         with:
-          fail_ci_if_error: true
+          fail_ci_if_error: false
 
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: matrix.node-version == 16 && github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./src/.vitepress/dist

@@ -8,5 +8,5 @@ export function formatName (text: string) {
   if (!text)
     return ''
 
-  return capitalize(String(text).trim().replace(/[^\s,.A-z]+/g, ''))
+  return capitalize(String(text).trim().replace(/[^\s,.A-Za-z]+/g, ''))
 }

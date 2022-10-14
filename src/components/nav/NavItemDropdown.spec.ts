@@ -56,3 +56,23 @@ it('should be able to change to icon mode via `icon` prop', () => {
 
   expect(button).toHaveClass('btn--ghost', 'btn--icon')
 })
+
+it('should be able to hide dropdown caret with `no-caret` prop', () => {
+  const screen = render({
+    components: {
+      Nav, NavItem, NavItemDropdown,
+    },
+    template: `
+      <Nav>
+        <NavItemDropdown no-caret>
+        </NavItemDropdown>
+      </Nav>
+    `,
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+  const caret  = screen.queryByTestId('dropdown-caret')
+
+  expect(button).toBeInTheDocument()
+  expect(caret).not.toBeInTheDocument()
+})

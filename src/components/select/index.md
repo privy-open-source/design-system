@@ -189,7 +189,7 @@ This component has build-in Fuzzy-search Adapter, powered by [Fuze.js](https://f
 </template>
 
 <script setup>
-  import { FuzzyAdapter } from '@privyid/persona/select'
+  import { FuzzyAdapter } from '@privyid/persona/core'
 
   const options = ref([
     { text: '🍎 Apfel', value: 'Apple' },
@@ -224,7 +224,7 @@ It will take care of loading, inifinite load, and other stuff.
 </template>
 
 <script setup>
-  import { defineAsyncAdapter } from "@privyid/persona/adapter"
+  import { defineAsyncAdapter } from "@privyid/persona/core"
   import { getProvinces } from '~/api/region'
 
   const provincesAdapter = defineAsyncAdapter(async (keyword, page, perPage) => {
@@ -272,7 +272,7 @@ To do this, you need add the province value as **watch dependencies**. It will a
 </template>
 
 <script setup>
-  import { defineAsyncAdapter } from "@privyid/persona/select"
+  import { defineAsyncAdapter } from "@privyid/persona/core"
   import { getProvinces } from '~/api/region'
 
   const province = ref('')

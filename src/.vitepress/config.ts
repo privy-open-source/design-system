@@ -5,22 +5,20 @@ export default defineConfig({
   title      : 'Persona',
   description: 'Persona - PrivyID\'s Design System',
   themeConfig: {
-    logo        : './assets/images/logo.svg',
-    repo        : 'privy-open-source/design-system',
-    docsDir     : 'components',
-    docsBranch  : 'main',
-    editLinks   : true,
-    editLinkText: 'Edit this page on GitHub',
-    nextLinks   : false,
-    prevLinks   : false,
-    lastUpdated : 'Last Updated',
-    nav         : [
+    logo    : './assets/images/logo.svg',
+    editLink: { pattern: 'https://github.com/privy-open-source/design-system/edit/main/src/:path' },
+    footer  : {
+      message  : 'Released under the MIT License.',
+      copyright: 'Copyright © 2022 Privy Identitas Digital',
+    },
+    nav: [
       { text: 'Docs', link: '/docs/getting-started' },
       { text: 'Components', link: '/components/avatar/' },
       { text: 'Foundation', link: '/foundation/color/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
-      { text: 'Ecosystem', link: '/ecosystem' },
+      { text: 'Ecosystem', link: '/ecosystem/' },
     ],
+    outline    : [2, 3],
     socialLinks: [{ icon: 'github', link: 'https://github.com/privy-open-source/design-system' }],
     sidebar    : {
       '/docs/': [
@@ -68,12 +66,24 @@ export default defineConfig({
               link: '/components/button-group/',
             },
             {
+              text: 'Camera',
+              link: '/components/camera/',
+            },
+            {
               text: 'Card',
               link: '/components/card/',
             },
             {
               text: 'Chart',
               link: '/components/chart/',
+            },
+            {
+              text: 'Collapse',
+              link: '/components/collapse/',
+            },
+            {
+              text: 'Contextual Bar',
+              link: '/components/contextual-bar/',
             },
             {
               text: 'Dot',
@@ -100,6 +110,14 @@ export default defineConfig({
               link: '/components/nav/',
             },
             {
+              text: 'Progress',
+              link: '/components/progress/',
+            },
+            {
+              text: 'Navbar',
+              link: '/components/navbar/',
+            },
+            {
               text: 'Sidebar',
               link: '/components/sidebar/',
             },
@@ -118,6 +136,10 @@ export default defineConfig({
             {
               text: 'Table',
               link: '/components/table/',
+            },
+            {
+              text: 'Wizard',
+              link: '/components/wizard/',
             },
           ],
         },
@@ -182,24 +204,6 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Non-Component',
-          collapsible: true,
-          items      : [
-            {
-              text: 'Dialog',
-              link: '/components/dialog/',
-            },
-            {
-              text: 'Overlay',
-              link: '/components/overlay/',
-            },
-            {
-              text: 'Toast',
-              link: '/components/toast/',
-            },
-          ],
-        },
-        {
           text       : 'Dashboard',
           collapsible: true,
           items      : [
@@ -220,6 +224,42 @@ export default defineConfig({
             {
               text: 'Signature Text',
               link: '/components/signature-text/',
+            },
+          ],
+        },
+        {
+          text       : 'Non-Component',
+          collapsible: true,
+          items      : [
+            {
+              text: 'Dialog',
+              link: '/components/dialog/',
+            },
+            {
+              text: 'Overlay',
+              link: '/components/overlay/',
+            },
+            {
+              text: 'Toast',
+              link: '/components/toast/',
+            },
+          ],
+        },
+        {
+          text       : 'Headless',
+          collapsible: true,
+          items      : [
+            {
+              text: 'Dropzone',
+              link: '/components/dropzone/',
+            },
+            {
+              text: 'Spread',
+              link: '/components/spread/',
+            },
+            {
+              text: 'Steps',
+              link: '/components/steps/',
             },
           ],
         },

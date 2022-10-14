@@ -6,11 +6,13 @@
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "require": "./dist/module.cjs",
+      "types": "./dist/module.d.ts"
     },
     "./core": {
       "import": "./dist/core/index.mjs",
-      "require": "./dist/core/index.cjs"
+      "require": "./dist/core/index.cjs",
+      "types": "./dist/core/index.d.ts"
     }
   },
   "main": "./dist/module.cjs",
@@ -27,6 +29,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
+    "@carbon/icons-vue": "^10.49.1",
     "@nuxt/kit": "^3.0.0-rc.9",
     "@nuxtjs/tailwindcss": "^5.3.2",
     "@privyid/tailwind-preset": "workspace:^",
@@ -35,6 +38,6 @@
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "del-cli": "5.0.0",
-    "nuxt": "3.0.0-rc.9"
+    "nuxt": "3.0.0-rc.11"
   }
 }

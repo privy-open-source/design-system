@@ -18,6 +18,7 @@ import {
   computed, defineComponent, PropType,
 } from 'vue-demi'
 import Caption from '../caption/Caption.vue'
+
 export type StyleVariant = 'tabs' | 'pills' | 'lines'
 export type AlignVariant = 'left' | 'right' | 'center'
 
@@ -199,7 +200,7 @@ export default defineComponent({
 
   /*
   * Navigation variant:
-  * Tabs
+  * Pills
   */
   &&--pills {
     @apply pb-2;
@@ -213,6 +214,12 @@ export default defineComponent({
         &:not(.nav__link--disabled) {
           @apply bg-secondary-5 rounded-b;
         }
+      }
+    }
+
+    &:not(.nav--fill) {
+      .nav__link {
+        @apply pr-32;
       }
     }
 

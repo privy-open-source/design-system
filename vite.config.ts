@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
+import { UserConfig } from 'vite'
+import type { UserConfig as VitestConfig } from 'vitest/config'
 import Vue from '@vitejs/plugin-vue'
 
-const config = defineConfig({
+const config: UserConfig & Pick<VitestConfig, 'test'> = {
   plugins: [Vue()],
   build  : { sourcemap: true },
   test   : {
@@ -12,6 +13,7 @@ const config = defineConfig({
         'text',
         'json',
         'html',
+        'lcov',
       ],
       exclude: [
         '**/*.spec.ts',
@@ -21,6 +23,6 @@ const config = defineConfig({
     },
     setupFiles: ['./vitest.setup.ts'],
   },
-})
+}
 
 export default config
