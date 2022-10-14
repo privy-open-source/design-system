@@ -18,6 +18,7 @@ export default defineConfig({
       { text: 'Styleguide', link: '/styleguide/badge/' },
       { text: 'Ecosystem', link: '/ecosystem/' },
     ],
+    outline    : [2, 3],
     socialLinks: [{ icon: 'github', link: 'https://github.com/privy-open-source/design-system' }],
     sidebar    : {
       '/docs/': [

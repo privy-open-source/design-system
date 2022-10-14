@@ -1,21 +1,19 @@
 :root {
-  --vp-font-family-base: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  --vp-c-brand: #0065D1;
-  --vp-c-brand-light: #408BDD;
-  --vp-c-brand-dark: #0056B2;
+  --vp-font-family-base: theme(fontFamily.sans);
+  --vp-c-brand: theme(colors.primary.100);
+  --vp-c-brand-light: theme(colors.primary.75);
+  --vp-c-brand-dark: theme(colors.primary.hovered);
+  --c-text-light-1: theme(colors.body.100);
+  --c-text-light-2: theme(colors.body.75);
+  --c-text-light-3: theme(colors.body.50);
   --code-bg-color: #0b2138;
-  --c-text-light-1: #232323;
-  --c-text-light-2: #5A5A5A;
-  --c-text-light-3: #919191;
 }
 
 :root.dark {
+  --c-text-light-1: theme(colors.white);
+  --c-text-light-2: theme(colors.body.25);
+  --c-text-light-3: theme(colors.body.50);
   --c-bg: #0b1a28;
-  --c-text-light-1: #ffffff;
-  --c-text-light-2: #C8C8C8;
-  --c-text-light-3: #919191;
   --code-bg-color: #132739;
   --code-inline-bg-color: #132739;
 }
@@ -67,7 +65,8 @@
   ul {
     @apply list-disc;
 
-    &.root {
+    &.root,
+    &.nested {
       @apply list-none;
     }
   }
