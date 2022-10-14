@@ -12,6 +12,7 @@ export interface DialogOptions {
   title: string,
   text?: string,
   size?: SizeVariant,
+  centered?: boolean,
   footerAlign?: FooterAlignVariant,
   cancel?: {
     text?: string,

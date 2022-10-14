@@ -330,3 +330,21 @@ it('should have style `lg` if size props set to `lg`', () => {
   expect(modal).toBeInTheDocument()
   expect(modal).toHaveClass('modal--lg')
 })
+
+it('should have style `center` if setting the centered prop', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        title="Modal Title"
+        centered>
+        Modal Text
+      </Modal>
+    `,
+  })
+
+  const modal = screen.queryByTestId('modal')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).toHaveClass('modal--centered')
+})

@@ -14,6 +14,8 @@
   const bodyScroll  = ref(false)
   const modalSize   = ref(true)
   const size        = ref(false)
+  const modalCenter   = ref(true)
+  const centered        = ref(false)
 
   function click () {
     showModal.value = true
@@ -394,6 +396,70 @@ Modal has 4 different sizing, there are `sm`, `md`, `lg` and `xl`. You can chang
       A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
     </blockquote>
   </div>
+  <template #footer="{ close }">
+    <p-button @click="close">
+      Button Text
+    </p-button>
+  </template>
+</p-modal>
+
+## Centered Modal
+Modal can be vertically center in the viewport by setting `centered` prop.
+
+
+<div class="flex mt-5">
+  <p-button @click="centered = true">Show Modal</p-button>
+</div>
+
+<preview>
+  <p-modal
+    v-model="modalCenter"
+    title="Modal Title"
+    size="sm"
+    no-close-on-esc
+    no-close-on-backdrop
+    centered>
+    <div>
+      This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information.
+    </div>
+    <template #footer="{ close }">
+      <p-button @click="close">
+        Button Text
+      </p-button>
+    </template>
+  </p-modal>
+</preview>
+
+```vue
+<template>
+  <p-modal
+    v-model="modalCenter"
+    title="Modal Title"
+    size="sm"
+    centered>
+    <div>
+      This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information.
+    </div>
+    <template #footer="{ close }">
+      <p-button @click="close">
+        Button Text
+      </p-button>
+    </template>
+  </p-modal>
+</template>
+```
+
+<p-modal
+  v-model="centered"
+  title="Modal Title"
+  size="sm"
+  centered>
+    <div>
+      This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information.
+    </div>
   <template #footer="{ close }">
     <p-button @click="close">
       Button Text

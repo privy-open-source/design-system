@@ -109,6 +109,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    centered: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -123,6 +127,9 @@ export default defineComponent({
       // eslint-disable-next-line unicorn/explicit-length-check
       if (props.size)
         result.push(`modal--${props.size}`)
+
+      if (props.centered)
+        result.push('modal--centered')
 
       return result
     })
@@ -267,6 +274,16 @@ export default defineComponent({
   &&--sm {
     .modal__content {
       @apply w-[400px];
+    }
+  }
+
+  /**
+  * Modal vertically center
+  * in the viewport
+  */
+  &&--centered {
+    .modal__dialog {
+      @apply flex items-center min-h-[calc(100%-4rem)] my-8;
     }
   }
 
