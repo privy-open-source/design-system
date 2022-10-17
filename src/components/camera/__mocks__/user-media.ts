@@ -57,5 +57,5 @@ export async function setPermission (value: PermissionState) {
 }
 
 export function usePermission () {
-  return permission
+  return { state: permission, isSupported: true }
 }

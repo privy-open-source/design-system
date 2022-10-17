@@ -45,11 +45,11 @@
         v-if="message"
         :key="message"
         class="camera__toast">
-        <span
+        <div
           data-testid="camera-toast"
           class="camera__toast-text">
           {{ message }}
-        </span>
+        </div>
       </div>
     </transition>
 
@@ -98,7 +98,12 @@
       <!-- End Main Button -->
     </div>
 
-    <slot />
+    <slot
+      :cameras="cameras"
+      :preview="preview"
+      :stream="stream"
+      :video="video"
+      :toast="toast" />
   </div>
 </template>
 
@@ -197,7 +202,7 @@ export default defineComponent({
     const shutter      = useSound(shutterWav)
 
     const video      = ref<HTMLVideoElement>()
-    const permission = usePermission('camera')
+    const permission = usePermission('camera', { controls: true })
     const camera     = ref(0)
 
     const meta: ComputedRef<AdapterMeta> = computed(() => {
@@ -234,7 +239,7 @@ export default defineComponent({
     })
 
     async function turnOn () {
-      if (permission.value === 'denied') {
+      if (permission.state.value === 'denied') {
         await dialog.alert({
           title      : 'Camera Access Blocked',
           text       : 'Privy need to access your internal camera to process this journey',
@@ -243,7 +248,7 @@ export default defineComponent({
         })
       }
 
-      if (permission.value === 'prompt') {
+      if (permission.state.value === 'prompt') {
         await dialog.alert({
           title      : 'Camera Access Required',
           text       : 'Privy need to access your internal camera to process this journey',
@@ -302,7 +307,9 @@ export default defineComponent({
     }
 
     onMounted(async () => {
-      await until(permission).not.toBeUndefined()
+      if (permission.isSupported)
+        await until(permission.state).not.toBeUndefined()
+
       await turnOn()
     })
 
@@ -383,10 +390,10 @@ export default defineComponent({
   }
 
   &__toast {
-    @apply absolute bottom-20 left-0 right-0 text-center text-white;
+    @apply absolute bottom-20 left-0 right-0 text-center text-white px-4;
 
     &-text {
-      @apply bg-black bg-opacity-80 px-4 py-1 text-sm rounded shadow-md;
+      @apply bg-black bg-opacity-80 px-4 py-1 text-sm rounded shadow-md inline-block max-w-full truncate;
     }
   }
 }
