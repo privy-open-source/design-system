@@ -5,6 +5,7 @@
     <div
       v-show="model"
       class="modal"
+      :class="classNames"
       data-testid="modal"
       @click="closeOnBackdrop">
       <transition
@@ -60,14 +61,18 @@
 
 <script lang="ts">
 import {
+  computed,
   defineComponent,
   nextTick,
+  PropType,
   watch,
 } from 'vue-demi'
 import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'
 import { useVModel } from '../input/use-input'
+
+export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl'
 
 export default defineComponent({
   components: { Heading, IconClose },
@@ -88,6 +93,10 @@ export default defineComponent({
       type   : Boolean,
       default: true,
     },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
+    },
     noCloseOnEsc: {
       type   : Boolean,
       default: false,
@@ -100,6 +109,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    centered: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -107,7 +120,19 @@ export default defineComponent({
   },
   emits: ['update:modelValue', 'close'],
   setup (props, { emit }) {
-    const model = useVModel(props)
+    const model      = useVModel(props)
+    const classNames = computed(() => {
+      const result: string[] = ['']
+
+      // eslint-disable-next-line unicorn/explicit-length-check
+      if (props.size)
+        result.push(`modal--${props.size}`)
+
+      if (props.centered)
+        result.push('modal--centered')
+
+      return result
+    })
 
     function close (event: Event): void {
       emit('close', event)
@@ -136,6 +161,7 @@ export default defineComponent({
 
     return {
       model,
+      classNames,
       closeOnBackdrop,
       close,
     }
@@ -173,11 +199,11 @@ export default defineComponent({
   }
 
   /**
-  * Modal content are 500px width
+  * Modal content are
   * in white
   */
   &__content {
-    @apply w-[31.25rem] my-8 bg-white rounded-md relative;
+    @apply my-8 bg-white rounded-md relative;
 
     .modal__dismiss {
       @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[1061] text-black text-opacity-30;
@@ -220,5 +246,46 @@ export default defineComponent({
       }
     }
   }
+
+  /**
+  * Modal has 4 different size
+  * eg: small, medium, large
+  * and extra large. default
+  * size are medium
+  */
+  &&--xl {
+    .modal__content {
+      @apply w-[960px];
+    }
+  }
+
+  &&--lg {
+    .modal__content {
+      @apply w-[800px];
+    }
+  }
+
+  &&--md {
+    .modal__content {
+      @apply w-[600px];
+    }
+  }
+
+  &&--sm {
+    .modal__content {
+      @apply w-[400px];
+    }
+  }
+
+  /**
+  * Modal vertically center
+  * in the viewport
+  */
+  &&--centered {
+    .modal__dialog {
+      @apply flex items-center min-h-[calc(100%-4rem)] my-8;
+    }
+  }
+
 }
 </style>
