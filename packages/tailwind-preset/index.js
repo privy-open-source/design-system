@@ -322,6 +322,7 @@ module.exports = {
       '2xl'    : '0 25px 50px -12px rgba(var(--tw-shadow-color, 0, 0, 0), 0.25)',
       'inner'  : 'inset 2px 0 4px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06), inset 0 4px 6px -1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06)',
       'none'   : 'none',
+      'mask'   : '0 0 0 999px rgba(0,0,0,0.5)',
       'outline': '0 0 0 4px rgba(var(--tw-shadow-color, 220, 220, 220), 0.35)',
     },
   },

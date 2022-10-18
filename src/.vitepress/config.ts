@@ -86,6 +86,10 @@ export default defineConfig({
               link: '/components/contextual-bar/',
             },
             {
+              text: 'Cropper',
+              link: '/components/cropper/',
+            },
+            {
               text: 'Dot',
               link: '/components/dot/',
             },

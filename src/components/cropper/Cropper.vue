@@ -1,0 +1,410 @@
+<template>
+  <div
+    class="cropper"
+    :class="classNames">
+    <div
+      class="cropper__preview">
+      <div
+        ref="parent"
+        class="cropper__image-container"
+        @wheel.prevent="onMouseWheel">
+        <img
+          ref="target"
+          :src="preview"
+          alt="cropper-preview"
+          class="cropper__image"
+          :style="imgStyle"
+          :width="imgWidth"
+          :height="imgHeight"
+          @load="onImageLoaded">
+      </div>
+      <div
+        v-if="!noCrop"
+        class="cropper__mask"
+        :style="maskStyle" />
+    </div>
+    <div class="cropper__control">
+      <div class="cropper__control-bar">
+        <p-button
+          size="xs"
+          variant="link"
+          icon
+          pill
+          @click="zoomOut">
+          <IconZoomOut />
+        </p-button>
+        <input
+          v-model="scale"
+          class="cropper__slider"
+          min="0.5"
+          max="2"
+          step="0.1"
+          type="range">
+        <p-button
+          size="xs"
+          variant="link"
+          icon
+          pill
+          @click="zoomIn">
+          <IconZoomIn />
+        </p-button>
+        <p-button
+          size="xs"
+          variant="link"
+          icon
+          pill
+          @click="rotate(-90)">
+          <IconRotateLeft />
+        </p-button>
+        <p-button
+          size="xs"
+          variant="link"
+          icon
+          pill
+          @click="rotate(90)">
+          <IconRotateRight />
+        </p-button>
+      </div>
+
+      <p-button
+        class="flex-shrink-0"
+        size="xs"
+        variant="link"
+        @click="reset()">
+        Reset
+      </p-button>
+
+      <slot name="control" />
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import {
+  templateRef,
+  useClamp,
+  watchDebounced,
+} from '@vueuse/core'
+import {
+  computed,
+  defineComponent,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  PropType,
+  ref,
+  StyleValue,
+  toRef,
+  watch,
+} from 'vue-demi'
+import { usePinch } from './utils/use-pinch'
+import pButton from '../button/Button.vue'
+import IconRotateLeft from '@carbon/icons-vue/lib/rotate--counterclockwise/16'
+import IconRotateRight from '@carbon/icons-vue/lib/rotate--clockwise/16'
+import IconZoomIn from '@carbon/icons-vue/lib/zoom--in/16'
+import IconZoomOut from '@carbon/icons-vue/lib/zoom--out/16'
+import { cropImage } from './utils/crop-image'
+import { useVModel } from '../input/use-input'
+import { ModelModifier } from '../camera/adapter/adapter'
+import { fromBase64 } from '../utils/base64'
+import {
+  useRatio,
+  useRatioHeight,
+  useRatioWidth,
+} from './utils/use-ratio'
+
+export default defineComponent({
+  components: {
+    pButton,
+    IconRotateLeft,
+    IconRotateRight,
+    IconZoomIn,
+    IconZoomOut,
+  },
+  props: {
+    modelValue: {
+      type   : [String, globalThis.File],
+      default: '',
+    },
+    modelModifiers: {
+      type   : Object as PropType<ModelModifier>,
+      default: () => ({} as ModelModifier),
+    },
+    src: {
+      type   : [String, globalThis.File],
+      default: undefined,
+    },
+    ratio: {
+      type   : Number,
+      default: undefined,
+    },
+    width: {
+      type   : [String, Number],
+      default: undefined,
+    },
+    height: {
+      type   : [String, Number],
+      default: undefined,
+    },
+    imgWidth: {
+      type   : [String, Number],
+      default: 1024,
+    },
+    imgHeight: {
+      type   : [String, Number],
+      default: 1024,
+    },
+    rounded: {
+      type   : Boolean,
+      default: false,
+    },
+    noCrop: {
+      type   : Boolean,
+      default: false,
+    },
+  },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
+  emits: ['update:modelValue'],
+  setup (props) {
+    const model   = useVModel(props)
+    const x       = ref(0)
+    const y       = ref(0)
+    const angle   = ref(0)
+    const scale   = useClamp(1, 0.5, 2)
+    const preview = ref('')
+    const debug   = ref('')
+    const ratio   = useRatio(props)
+    const width   = useRatioWidth(props)
+    const height  = useRatioHeight(props)
+    const rounded = toRef(props, 'rounded')
+    const src     = toRef(props, 'src')
+    const parent  = templateRef<HTMLDivElement>('parent')
+    const target  = templateRef<HTMLImageElement>('target')
+
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (props.rounded)
+        result.push('cropper--rounded')
+
+      return result
+    })
+
+    const imgStyle = computed<StyleValue>(() => {
+      return { transform: `scale(${scale.value}) rotate(${angle.value}deg) translate(${x.value}px, ${y.value}px)` }
+    })
+
+    const maskStyle = computed<StyleValue>(() => {
+      return {
+        aspectRatio: `${ratio.value}`,
+        width      : width.value ? `${width.value}px` : '66.666667%',
+      }
+    })
+
+    function fit () {
+      if (parent.value && target.value) {
+        const w = angle.value % 180 === 0 ? target.value.width : target.value.height
+        const h = angle.value % 180 === 0 ? target.value.height : target.value.width
+
+        scale.value = Math.min(parent.value.clientWidth / w, parent.value.clientHeight / h)
+      }
+
+      x.value = 0
+      y.value = 0
+    }
+
+    function zoomIn () {
+      scale.value += 0.1
+    }
+
+    function zoomOut () {
+      scale.value -= 0.1
+    }
+
+    function rotate (degress: number) {
+      angle.value = ((Math.trunc(angle.value / 90) * 90) + degress) % 360
+
+      fit()
+    }
+
+    function onMouseWheel (event: WheelEvent) {
+      if (event.deltaY > 0)
+        zoomIn()
+      else
+        zoomOut()
+    }
+
+    function reset () {
+      angle.value = 0
+
+      fit()
+    }
+
+    function crop () {
+      if (parent.value && target.value) {
+        const pWidth = (parent.value.clientWidth * 2 / 3)
+        const w      = width.value ?? pWidth
+        const h      = height.value ?? (w / ratio.value)
+        const mScale = w / pWidth // mobile scale, responsive scale to fix crop ratio on mobile.
+
+        const result = cropImage({
+          image  : target.value,
+          width  : w,
+          height : h,
+          x      : x.value,
+          y      : y.value,
+          angle  : angle.value,
+          scale  : scale.value * mScale,
+          rounded: props.rounded,
+        })
+
+        debug.value = result
+        model.value = props.modelModifiers.base64
+          ? result
+          : fromBase64(result)
+      }
+    }
+
+    function onImageLoaded () {
+      if (!props.noCrop)
+        crop()
+    }
+
+    usePinch(target, {
+      onpinch (event) {
+        angle.value += event.angle
+        scale.value *= event.scale
+
+        this.onmove(event)
+      },
+      onmove (event) {
+        switch (angle.value) {
+          case -90:
+          case 270:
+            x.value += -event.dy
+            y.value += event.dx
+            break
+
+          case 90:
+          case -270:
+            x.value += event.dy
+            y.value += -event.dx
+            break
+
+          case 180:
+          case -180:
+            x.value += -event.dx
+            y.value += -event.dy
+            break
+
+          default:
+            x.value += event.dx
+            y.value += event.dy
+            break
+        }
+      },
+    })
+
+    watch(src, (value) => {
+      if (preview.value && preview.value.startsWith('blob'))
+        URL.revokeObjectURL(preview.value)
+
+      preview.value = value instanceof globalThis.File
+        ? URL.createObjectURL(value)
+        : value
+    })
+
+    watchDebounced([
+      src,
+      width,
+      height,
+      ratio,
+      rounded,
+      x,
+      y,
+      scale,
+      angle,
+    ], () => {
+      nextTick(() => {
+        if (!props.noCrop)
+          crop()
+      })
+    }, { debounce: 500 })
+
+    onMounted(() => {
+      if (props.src) {
+        preview.value = props.src instanceof globalThis.File
+          ? URL.createObjectURL(props.src)
+          : props.src
+      }
+    })
+
+    onBeforeUnmount(() => {
+      if (preview.value && preview.value.startsWith('blob'))
+        URL.revokeObjectURL(preview.value)
+    })
+
+    return {
+      classNames,
+      preview,
+      imgStyle,
+      maskStyle,
+      scale,
+      angle,
+      reset,
+      onMouseWheel,
+      onImageLoaded,
+      rotate,
+      zoomIn,
+      zoomOut,
+      crop,
+      model,
+    }
+  },
+})
+</script>
+
+<style lang="postcss">
+.cropper {
+  @apply bg-white w-full aspect-square;
+
+  &__preview {
+    background-image: url("./assets/ps-neutral.png");
+
+    @apply flex w-full overflow-hidden h-auto relative aspect-square;
+  }
+
+  &__mask {
+    @apply border border-white border-dashed shadow-mask absolute top-0 left-0 right-0 bottom-0 m-auto pointer-events-none touch-none max-w-[66.666667%];
+  }
+
+  &__image {
+    @apply touch-none h-auto origin-center object-contain;
+
+    &-container {
+      @apply w-full h-full absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center;
+    }
+  }
+
+  &__control {
+    @apply p-2 gap-2 flex justify-between max-w-full overflow-hidden;
+
+    &-bar {
+      @apply flex flex-grow max-w-md gap-2;
+    }
+  }
+
+  &__slider {
+    @apply flex-grow w-full;
+  }
+
+  &--rounded {
+    .cropper__mask {
+      @apply rounded-full
+    }
+  }
+}
+</style>
