@@ -12,6 +12,10 @@
   const bottomSheet = ref(false)
   const scrollModal = ref(true)
   const bodyScroll  = ref(false)
+  const modalSize   = ref(true)
+  const size        = ref(false)
+  const modalCenter   = ref(true)
+  const centered        = ref(false)
 
   function click () {
     showModal.value = true
@@ -330,6 +334,140 @@ When modals content become too long, modal body can scroll itself by adding prop
   </template>
 </p-modal>
 
+## Sizing
+Modal has 4 different sizing, there are `sm`, `md`, `lg` and `xl`. You can change the size via prop `size`. Default size are `md`.
+
+
+<div class="flex mt-5">
+  <p-button @click="size = true">Show Modal XL</p-button>
+</div>
+
+<preview>
+  <p-modal
+    v-model="modalSize"
+    title="Modal Title"
+    size="sm"
+    no-close-on-esc
+    no-close-on-backdrop>
+    <div>
+      <blockquote>
+        A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+      </blockquote>
+    </div>
+    <template #footer="{ close }">
+      <p-button @click="close">
+        Button Text
+      </p-button>
+    </template>
+  </p-modal>
+</preview>
+
+```vue
+<template>
+  <p-modal
+    v-model="modalSize"
+    title="Modal Title"
+    size="sm"
+    no-close-on-esc
+    no-close-on-backdrop>
+    <div>
+      <blockquote>
+        A wonderful serenity has taken possession of my entire soul,
+        like these sweet mornings of spring which I enjoy with my whole heart.
+      </blockquote>
+    </div>
+    <template #footer="{ close }">
+      <p-button @click="close">
+        Button Text
+      </p-button>
+    </template>
+  </p-modal>
+</template>
+```
+
+<p-modal
+  v-model="size"
+  title="Modal Title"
+  size="lg"
+  no-close-on-esc
+  no-close-on-backdrop>
+  <div>
+    <blockquote>
+      A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+    </blockquote>
+  </div>
+  <template #footer="{ close }">
+    <p-button @click="close">
+      Button Text
+    </p-button>
+  </template>
+</p-modal>
+
+## Centered Modal
+Modal can be vertically center in the viewport by setting `centered` prop.
+
+
+<div class="flex mt-5">
+  <p-button @click="centered = true">Show Modal</p-button>
+</div>
+
+<preview>
+  <p-modal
+    v-model="modalCenter"
+    title="Modal Title"
+    size="sm"
+    no-close-on-esc
+    no-close-on-backdrop
+    centered>
+    <div>
+      This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information.
+    </div>
+    <template #footer="{ close }">
+      <p-button @click="close">
+        Button Text
+      </p-button>
+    </template>
+  </p-modal>
+</preview>
+
+```vue
+<template>
+  <p-modal
+    v-model="modalCenter"
+    title="Modal Title"
+    size="sm"
+    centered>
+    <div>
+      This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information.
+    </div>
+    <template #footer="{ close }">
+      <p-button @click="close">
+        Button Text
+      </p-button>
+    </template>
+  </p-modal>
+</template>
+```
+
+<p-modal
+  v-model="centered"
+  title="Modal Title"
+  size="sm"
+  centered>
+    <div>
+      This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information.
+    </div>
+  <template #footer="{ close }">
+    <p-button @click="close">
+      Button Text
+    </p-button>
+  </template>
+</p-modal>
+
+
 ## API
 
 ### Props
@@ -339,6 +477,7 @@ When modals content become too long, modal body can scroll itself by adding prop
 | `title`                    | `String`  | -       | Modal Title                                     |
 | `text`                     | `String`  | -       | Text inside of Modal Body                       |
 | `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                      |
+| `size`                     | `String`  | `md`    | Size of modal, valid value is `sm`, `md`, `lg` and `xl`  |
 | `no-close-on-esc`          | `Boolean` | `false` | No close modal while Escape was pressed         |
 | `no-close-on-backdrop`     | `Boolean` | `false` | No close modal while Modal Backdrop was clicked |
 | `modal-body-scrollable`    | `Boolean` | `false` | Scrollable modal body when content is to long   |
