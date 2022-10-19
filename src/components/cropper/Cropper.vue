@@ -17,10 +17,10 @@
           alt="cropper-preview"
           tabindex="0"
           class="cropper__image"
+          :class="imgClass"
           :style="imgStyle"
           :width="imgWidth"
           :height="imgHeight"
-          crossorigin="anonymous"
           @load="onImageLoaded"
           @keydown.up.prevent="move(0, -1)"
           @keydown.down.prevent="move(0, 1)"
@@ -39,7 +39,7 @@
           variant="link"
           icon
           pill
-          @click="zoomOut">
+          @click="zoomOut()">
           <IconZoomOut />
         </p-button>
         <input
@@ -54,7 +54,7 @@
           variant="link"
           icon
           pill
-          @click="zoomIn">
+          @click="zoomIn()">
           <IconZoomIn />
         </p-button>
         <p-button
@@ -83,7 +83,15 @@
         Reset
       </p-button>
 
-      <slot name="control" />
+      <slot
+        name="control"
+        :scale="scale"
+        :angle="angle"
+        :crop="crop"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :rotate="rotate"
+        :reset="reset" />
     </div>
   </div>
 </template>
@@ -163,6 +171,14 @@ export default defineComponent({
       type   : [String, Number],
       default: 512,
     },
+    imgClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
     rounded: {
       type   : Boolean,
       default: false,
@@ -171,7 +187,7 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
-    noAutoCrop: {
+    noAutocrop: {
       type   : Boolean,
       default: false,
     },
@@ -184,6 +200,7 @@ export default defineComponent({
     'update:modelValue',
     'change',
     'result',
+    'load',
   ],
   setup (props, { emit }) {
     const model   = useVModel(props)
@@ -314,7 +331,9 @@ export default defineComponent({
     }
 
     function onImageLoaded () {
-      if (!props.noCrop && !props.noAutoCrop)
+      emit('load')
+
+      if (!props.noCrop && !props.noAutocrop)
         crop()
     }
 
@@ -336,7 +355,7 @@ export default defineComponent({
 
       preview.value = value instanceof globalThis.File
         ? URL.createObjectURL(value)
-        : value
+        : (value ?? createSpinner(512, 512))
     })
 
     watchDebounced([
@@ -350,7 +369,7 @@ export default defineComponent({
       scale,
       angle,
     ], () => {
-      if (!props.noCrop && !props.noAutoCrop)
+      if (!props.noCrop && !props.noAutocrop)
         crop()
     }, { debounce: 500 })
 
