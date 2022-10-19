@@ -127,7 +127,7 @@ You can add modifier `base64` to your `v-model`, it's enforce result to [base64-
 
 <pre class="truncate"><code>{{ resultB64 }}</code></pre>
 
-<img class="mt-2 border" :src="resultB64 || EMPTY_IMG" width="430" height="230" alt="Result Image" />
+<img class="mt-2 border" :src="resultB64 || EMPTY_IMG" alt="Result Image" />
 
 ### Disabling Autocrop
 
@@ -142,7 +142,7 @@ You can disabled it using prop `no-autocrop`. And for trigger cropping, you can 
 **result:**
 
 <pre class="truncate"><code>{{ result2 }}</code></pre>
-<img class="mt-2 border" :src="result2 || EMPTY_IMG" width="430" height="230" alt="Result Image" />
+<img class="mt-2 border" :src="result2 || EMPTY_IMG" alt="Result Image" />
 
 ```vue
 <template>

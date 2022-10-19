@@ -290,10 +290,10 @@ export default defineComponent({
 
     function crop () {
       if (parent.value && target.value && canvas.value) {
-        const pWidth = (parent.value.clientWidth * 2 / 3)
-        const w      = width.value ?? pWidth
+        const mWidth = (parent.value.clientWidth * 2 / 3)
+        const w      = width.value ?? mWidth
         const h      = height.value ?? (w / ratio.value)
-        const mScale = w / pWidth // mobile scale, responsive scale to fix crop ratio on mobile.
+        const mScale = w > mWidth ? w / mWidth : 1 // mobile scale, responsive scale to fix crop ratio on mobile.
 
         const result = cropImage({
           canvas : canvas.value,
