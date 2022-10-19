@@ -1,16 +1,48 @@
 import { createCanvas } from '../../signature-draw/utils/canvas'
 
 interface CropImage {
+  /**
+   * Canvas's element
+   */
+  canvas?: HTMLCanvasElement,
+  /**
+   * Image's element to crop
+   */
   image: HTMLImageElement,
+  /**
+   * Crop width
+   */
   width: number,
+  /**
+   * Crop height
+   */
   height: number,
+  /**
+   * Zoom factor
+   */
   scale: number,
+  /**
+   * Rotate angle
+   */
   angle: number,
+  /**
+   * X offset
+   */
   x: number,
+  /**
+   * Y offset
+   */
   y: number,
+  /**
+   * Enable border-radius
+   */
   rounded: boolean,
 }
 
+/**
+ * Crop image using canvas
+ * @param options CropOption
+ */
 export function cropImage (options: CropImage): string {
   const {
     width,
@@ -23,22 +55,23 @@ export function cropImage (options: CropImage): string {
     rounded,
   } = options
 
-  const canvas = createCanvas(width, height)
+  const canvas = options.canvas ?? createCanvas(width, height)
   const ctx    = canvas.getContext('2d')
 
   const imgW = image.width * scale
   const imgH = image.height * scale
 
-  const offsetX = x * scale
-  const offsetY = y * scale
+  canvas.width  = width
+  canvas.height = height
 
+  ctx.clearRect(0, 0, width, height)
   ctx.translate(width / 2, height / 2)
   ctx.rotate(angle * Math.PI / 180)
   ctx.translate(width / -2, height / -2)
   ctx.drawImage(
     image,
-    (width - imgW) / 2 + offsetX,
-    (height - imgH) / 2 + offsetY,
+    (width - imgW) / 2 + x,
+    (height - imgH) / 2 + y,
     imgW,
     imgH,
   )

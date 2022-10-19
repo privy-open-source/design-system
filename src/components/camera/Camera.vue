@@ -307,10 +307,10 @@ export default defineComponent({
     }
 
     onMounted(async () => {
-      if (permission.isSupported)
+      if (permission.isSupported) {
         await until(permission.state).not.toBeUndefined()
-
-      await turnOn()
+        await turnOn()
+      }
     })
 
     onBeforeUnmount(() => {

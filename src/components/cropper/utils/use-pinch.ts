@@ -29,14 +29,28 @@ export function usePinch (target: Ref<HTMLElement>, hooks: EventHooks) {
       instance.value = Interact(target.value)
         .styleCursor(true)
         .gesturable({
-          onstart: hooks.onstart,
-          onmove : onpinch,
-          onend  : onpinch,
+          inertia  : true,
+          onstart  : hooks.onstart,
+          onmove   : onpinch,
+          onend    : onpinch,
+          modifiers: [
+            Interact.modifiers.restrict({
+              restriction: 'parent',
+              endOnly    : true,
+            }),
+          ],
         })
         .draggable({
-          onstart: hooks.onstart,
-          onmove : onmove,
-          onend  : onmove,
+          inertia  : true,
+          onstart  : hooks.onstart,
+          onmove   : onmove,
+          onend    : onmove,
+          modifiers: [
+            Interact.modifiers.restrict({
+              restriction: 'parent',
+              endOnly    : true,
+            }),
+          ],
         })
     }
   })
