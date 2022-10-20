@@ -86,6 +86,10 @@ export default defineConfig({
               link: '/components/contextual-bar/',
             },
             {
+              text: 'Cropper',
+              link: '/components/cropper/',
+            },
+            {
               text: 'Dot',
               link: '/components/dot/',
             },
@@ -110,12 +114,12 @@ export default defineConfig({
               link: '/components/nav/',
             },
             {
-              text: 'Progress',
-              link: '/components/progress/',
-            },
-            {
               text: 'Navbar',
               link: '/components/navbar/',
+            },
+            {
+              text: 'Progress',
+              link: '/components/progress/',
             },
             {
               text: 'Sidebar',
