@@ -307,10 +307,10 @@ export default defineComponent({
     }
 
     onMounted(async () => {
-      if (permission.isSupported)
+      if (permission.isSupported) {
         await until(permission.state).not.toBeUndefined()
-
-      await turnOn()
+        await turnOn()
+      }
     })
 
     onBeforeUnmount(() => {
@@ -358,7 +358,7 @@ export default defineComponent({
   }
 
   &__mask {
-    @apply absolute top-1/2 left-1/2 shadow-[0_0_0_999px_rgba(0,0,0,0.5)] -translate-x-1/2 -translate-y-1/2;
+    @apply absolute top-1/2 left-1/2 shadow-mask -translate-x-1/2 -translate-y-1/2;
 
     &--none &-container {
       @apply hidden;
