@@ -1,22 +1,26 @@
 <template>
   <div
+    data-testid="cropper"
     class="cropper"
     :class="classNames">
     <div
       class="cropper__preview">
       <canvas
         ref="canvas"
+        data-testid="cropper-canvas"
         class="cropper__canvas" />
       <div
         ref="parent"
+        data-testid="cropper-container"
         class="cropper__image-container"
         @wheel.prevent="onMouseWheel">
         <img
           ref="target"
-          :src="preview"
+          data-testid="cropper-preview"
           alt="cropper-preview"
           tabindex="0"
           class="cropper__image"
+          :src="preview"
           :class="imgClass"
           :style="imgStyle"
           :width="imgWidth"
@@ -29,12 +33,14 @@
       </div>
       <div
         v-if="!noCrop"
+        data-testid="cropper-mask"
         class="cropper__mask"
         :style="maskStyle" />
     </div>
     <div class="cropper__control">
       <div class="cropper__control-bar">
         <p-button
+          data-testid="cropper-zoom-out"
           size="xs"
           variant="link"
           icon
@@ -44,12 +50,14 @@
         </p-button>
         <input
           v-model="scale"
+          data-testid="cropper-zoom-slider"
           class="cropper__slider"
           min="0.5"
           max="2"
           step="0.1"
           type="range">
         <p-button
+          data-testid="cropper-zoom-in"
           size="xs"
           variant="link"
           icon
@@ -58,6 +66,7 @@
           <IconZoomIn />
         </p-button>
         <p-button
+          data-testid="cropper-rotate-left"
           size="xs"
           variant="link"
           icon
@@ -66,6 +75,7 @@
           <IconRotateLeft />
         </p-button>
         <p-button
+          data-testid="cropper-rotate-right"
           size="xs"
           variant="link"
           icon
@@ -76,6 +86,7 @@
       </div>
 
       <p-button
+        data-testid="cropper-reset"
         class="flex-shrink-0"
         size="xs"
         variant="link"
@@ -221,6 +232,9 @@ export default defineComponent({
     const classNames = computed(() => {
       const result: string[] = []
 
+      if (props.noCrop)
+        result.push('cropper--no-crop')
+
       if (props.rounded)
         result.push('cropper--rounded')
 
@@ -288,12 +302,12 @@ export default defineComponent({
       fit()
     }
 
-    function crop () {
+    function crop (): string {
       if (parent.value && target.value && canvas.value) {
         const mWidth = (parent.value.clientWidth * 2 / 3)
         const w      = width.value ?? mWidth
         const h      = height.value ?? (w / ratio.value)
-        const mScale = w > mWidth ? w / mWidth : 1 // mobile scale, responsive scale to fix crop ratio on mobile.
+        const mScale = (mWidth > 0) && (w > mWidth) ? (w / mWidth) : 1 // mobile scale, responsive scale to fix crop ratio on mobile.
 
         const result = cropImage({
           canvas : canvas.value,
@@ -332,6 +346,7 @@ export default defineComponent({
 
     function onImageLoaded () {
       emit('load')
+      fit()
 
       if (!props.noCrop && !props.noAutocrop)
         crop()
@@ -351,10 +366,10 @@ export default defineComponent({
 
     watch(src, (value) => {
       if (preview.value && preview.value.startsWith('blob'))
-        URL.revokeObjectURL(preview.value)
+        window.URL.revokeObjectURL(preview.value)
 
       preview.value = value instanceof globalThis.File
-        ? URL.createObjectURL(value)
+        ? window.URL.createObjectURL(value)
         : (value ?? createSpinner(512, 512))
     })
 
@@ -376,14 +391,14 @@ export default defineComponent({
     onMounted(() => {
       if (props.src) {
         preview.value = props.src instanceof globalThis.File
-          ? URL.createObjectURL(props.src)
+          ? window.URL.createObjectURL(props.src)
           : props.src
       }
     })
 
     onBeforeUnmount(() => {
       if (preview.value && preview.value.startsWith('blob'))
-        URL.revokeObjectURL(preview.value)
+        window.URL.revokeObjectURL(preview.value)
     })
 
     return {

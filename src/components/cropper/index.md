@@ -132,7 +132,7 @@ You can add modifier `base64` to your `v-model`, it's enforce result to [base64-
 ### Disabling Autocrop
 
 By default, cropping process was ran every movement (drag, zoom, & rotate). It can be exhausting the resource on some device.
-You can disabled it using prop `no-autocrop`. And for trigger cropping, you can use `templateRef` on `<p-cropper>` component, and call `.crop()` function.
+You can disabled it using prop `no-autocrop`. And to trigger the cropping, you can use `templateRef` on `<p-cropper>` component, and call `.crop()` function.
 
 <preview class="flex-col">
   <p-cropper ref="cropper" :src="img" v-model.base64="result2" no-autocrop />
