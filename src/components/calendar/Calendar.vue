@@ -87,7 +87,7 @@ import DateAdapter from './adapter/date'
 import MonthAdapter from './adapter/month'
 import YearAdapter from './adapter/year'
 import { startOfMonth } from 'date-fns'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 
 const Adapters: Record<CalendarMode, CalendarAdapter> = {
   date : DateAdapter,

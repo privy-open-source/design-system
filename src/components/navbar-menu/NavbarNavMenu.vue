@@ -48,7 +48,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import NavbarNav from '../navbar/NavbarNav.vue'
-import { Menu } from './use-navbar-menu'
+import { Menu } from '../sidebar-menu'
 
 export default defineComponent({
   components: { NavbarNav },

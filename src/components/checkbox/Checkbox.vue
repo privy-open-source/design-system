@@ -47,13 +47,8 @@
 </template>
 
 <script lang="ts">
-import { useVModel } from './use-checkbox'
+import { useVModel } from '.'
 import { computed, defineComponent } from 'vue-demi'
-
-export interface ChangedInteface {
-  value: any,
-  state: boolean,
-}
 
 export default defineComponent({
   props: {

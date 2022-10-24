@@ -6,10 +6,12 @@
 
 <script lang="ts">
 import {
-  defineComponent, PropType, computed,
+  defineComponent,
+  PropType,
+  computed,
 } from 'vue-demi'
+import { ColorVariant } from '.'
 
-type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
 export default defineComponent({
   props: {
     color: {

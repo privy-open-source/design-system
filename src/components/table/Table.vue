@@ -105,9 +105,9 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { TableField } from './use-table'
+import { TableField } from '.'
 import Checkbox from '../checkbox/Checkbox.vue'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import IconDrag from '@carbon/icons-vue/lib/draggable/16'
 import Draggable from 'vuedraggable'
 import defu from 'defu'

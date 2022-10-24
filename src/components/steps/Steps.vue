@@ -19,9 +19,9 @@ import {
   ref,
 } from 'vue-demi'
 import StepSlider from './StepSlider.vue'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import { findAllChildren } from '../utils/vnode'
-import { STEPS_CONTEXT } from './use-steps'
+import { STEPS_CONTEXT } from '.'
 import { syncRef, useClamp } from '@vueuse/core'
 import {
   TravelHook,

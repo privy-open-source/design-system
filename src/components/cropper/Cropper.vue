@@ -131,7 +131,7 @@ import IconRotateRight from '@carbon/icons-vue/lib/rotate--clockwise/16'
 import IconZoomIn from '@carbon/icons-vue/lib/zoom--in/16'
 import IconZoomOut from '@carbon/icons-vue/lib/zoom--out/16'
 import { cropImage } from './utils/crop-image'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import { ModelModifier } from '../camera/adapter/adapter'
 import { fromBase64 } from '../utils/base64'
 import {

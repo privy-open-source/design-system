@@ -33,7 +33,7 @@ import {
   onMounted,
   onUnmounted,
 } from 'vue-demi'
-import { ToastStyleVariant, ToastTypeVariant } from './use-toast'
+import { ToastStyleVariant, ToastTypeVariant } from '.'
 import IconInfo from '@carbon/icons-vue/lib/information--filled/24'
 import IconSuccess from '@carbon/icons-vue/lib/checkmark/24'
 import IconWarn from '@carbon/icons-vue/lib/warning--filled/24'

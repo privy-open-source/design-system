@@ -25,9 +25,11 @@
 
 <script lang="ts">
 import {
-  defineComponent, computed, inject,
+  defineComponent,
+  computed,
+  inject,
 } from 'vue-demi'
-import { SIDEBAR_SETTINGS } from '../sidebar/Sidebar.vue'
+import { SIDEBAR_SETTINGS } from '../sidebar'
 import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
 
 export default defineComponent({

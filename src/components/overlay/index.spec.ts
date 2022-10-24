@@ -1,4 +1,4 @@
-import { showOverlay, hideOverlay } from './use-overlay'
+import { showOverlay, hideOverlay } from '.'
 import { queryByTestId } from '@testing-library/vue'
 
 it('should be able to show and hide overlay', async () => {

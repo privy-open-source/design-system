@@ -124,7 +124,7 @@ import IconCamera from '@carbon/icons-vue/lib/camera/24'
 import IconRetake from '@carbon/icons-vue/lib/reset/24'
 import shutterWav from './assets/shutter.wav'
 import { useSound } from '@vueuse/sound'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import CaptureAdapter from './adapter/capture'
 import {
   Adapter,
@@ -138,7 +138,7 @@ import {
   useUserMedia,
   until,
 } from '@vueuse/core'
-import * as dialog from '../dialog/use-dialog'
+import * as dialog from '../dialog'
 import defu from 'defu'
 
 export default defineComponent({

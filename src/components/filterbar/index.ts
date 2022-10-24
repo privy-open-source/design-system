@@ -1,5 +1,5 @@
 import defu from 'defu'
-import { SelectProps } from '../select/use-select'
+import { SelectProps } from '../select'
 import { Adapter } from '../select/adapter/adapter'
 import { startCase } from 'lodash-es'
 import { CalendarMode } from '../calendar/adapter/adapter'

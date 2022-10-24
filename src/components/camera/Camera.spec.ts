@@ -31,7 +31,7 @@ vi.mock('@vueuse/core', async () => {
   }
 })
 
-vi.mock('../dialog/use-dialog.ts', () => dialog)
+vi.mock('../dialog', () => dialog)
 
 afterEach(() => {
   vi.restoreAllMocks()

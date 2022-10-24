@@ -70,7 +70,7 @@ import {
 import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 
 export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl'
 

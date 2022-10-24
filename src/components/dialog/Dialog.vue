@@ -35,7 +35,7 @@ import {
 } from 'vue-demi'
 import Modal from '../modal/Modal.vue'
 import DialogFooter from './DialogFooter.vue'
-import { DialogContext } from './use-dialog'
+import { DialogContext } from '.'
 
 export default defineComponent({
   components: { Modal, DialogFooter },

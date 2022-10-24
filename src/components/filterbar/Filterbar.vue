@@ -27,14 +27,14 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { FilterItem } from './use-filterbar'
+import { FilterItem } from '.'
 import Dropdown from '../dropdown/Dropdown.vue'
 import Button from '../button/Button.vue'
 import Select from './pinned/Select.vue'
 import Toggle from './pinned/Toggle.vue'
 import Multiselect from './pinned/Multiselect.vue'
 import Date from './pinned/Date.vue'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 
 export default defineComponent({
   components: {

@@ -8,9 +8,11 @@
 
 <script lang="ts">
 import {
-  defineComponent, PropType, computed,
+  defineComponent,
+  PropType,
+  computed,
 } from 'vue-demi'
-import type { SizeVariant } from '../button/Button.vue'
+import type { SizeVariant } from '../button'
 
 export default defineComponent({
   props: {
