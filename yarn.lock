@@ -1501,10 +1501,10 @@ __metadata:
   linkType: hard
 
 "@rollup/plugin-commonjs@npm:^23.0.0":
-  version: 23.0.0
-  resolution: "@rollup/plugin-commonjs@npm:23.0.0"
+  version: 23.0.1
+  resolution: "@rollup/plugin-commonjs@npm:23.0.1"
   dependencies:
-    "@rollup/pluginutils": ^4.2.1
+    "@rollup/pluginutils": ^5.0.1
     commondir: ^1.0.1
     estree-walker: ^2.0.2
     glob: ^8.0.3
@@ -1515,7 +1515,7 @@ __metadata:
   peerDependenciesMeta:
     rollup:
       optional: true
-  checksum: a8b23ae4c6dc67d13149908444a5eab1375d63b5e5a22f48acd024cd67568cf90524700df76f078e4238e9ffab27ccd29b620625e55cbc50b3780c8f7159b5eb
+  checksum: f96bbdbcb1e36c25c9ffa376869161537706e659643aa133661de1072b58b171d513a035a430dd1daba66b382f9f79bfd0c6b8db13489f507c5789bd7bd29226
   languageName: node
   linkType: hard
 
@@ -12348,7 +12348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^3.0.0":
+"vite@npm:^3.0.0, vite@npm:^3.1.7, vite@npm:~3.1.8":
   version: 3.1.8
   resolution: "vite@npm:3.1.8"
   dependencies:
@@ -12409,38 +12409,6 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: cd0a0bb11777d9006f408a67ef1063c1771baaf091f9e4f102f0fdaec77559784b76788e80a398ac8fe2fc90027e83712ae860ed51510b81c4153d8c5ca5fb37
-  languageName: node
-  linkType: hard
-
-"vite@npm:^3.1.7, vite@npm:~3.1.8":
-  version: 3.1.8
-  resolution: "vite@npm:3.1.8"
-  dependencies:
-    esbuild: ^0.15.9
-    fsevents: ~2.3.2
-    postcss: ^8.4.16
-    resolve: ^1.22.1
-    rollup: ~2.78.0
-  peerDependencies:
-    less: "*"
-    sass: "*"
-    stylus: "*"
-    terser: ^5.4.0
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  peerDependenciesMeta:
-    less:
-      optional: true
-    sass:
-      optional: true
-    stylus:
-      optional: true
-    terser:
-      optional: true
-  bin:
-    vite: bin/vite.js
-  checksum: 982696ad134577dd9915c4c3548ad36ddcf5dc6d341058548a670a13d860e4cdaaf2b320a59221f178018df089d148b9980e9a344316bef12b698a1c1abc7390
   languageName: node
   linkType: hard
 
