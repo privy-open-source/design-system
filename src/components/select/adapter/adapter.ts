@@ -1,5 +1,5 @@
 import { computed, Ref } from 'vue-demi'
-import { SelectItem, SelectProps } from '../use-select'
+import { SelectItem, SelectProps } from '..'
 
 export interface AdapterContext {
   props: SelectProps,

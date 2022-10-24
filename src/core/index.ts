@@ -1,17 +1,17 @@
 export {
   hideOverlay,
   showOverlay,
-} from '../components/overlay/use-overlay'
+} from '../components/overlay'
 
 export {
   default as toast,
-} from '../components/toast/use-toast'
+} from '../components/toast'
 
-export * as dialog from '../components/dialog/use-dialog'
+export * as dialog from '../components/dialog'
 
 export {
   defineOptions,
-} from '../components/select/use-select'
+} from '../components/select'
 
 export {
   default as defineAsyncAdapter,
@@ -27,11 +27,11 @@ export {
 
 export {
   defineMenu,
-} from '../components/sidebar-menu/use-sidebar-menu'
+} from '../components/sidebar-menu'
 
 export {
   defineTable,
-} from '../components/table/use-table'
+} from '../components/table'
 
 export {
   toBase64,
@@ -49,3 +49,7 @@ export {
 export {
   default as QrCodeAdapter,
 } from '../components/camera/adapter/qr-code'
+
+export {
+  defineFilter,
+} from '../components/filterbar'

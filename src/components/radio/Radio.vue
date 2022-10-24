@@ -46,7 +46,7 @@
 </template>
 
 <script lang="ts">
-import { useVModel } from './use-radio'
+import { useVModel } from '.'
 import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/16'
 import {
   computed,

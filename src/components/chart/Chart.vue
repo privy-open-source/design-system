@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import type { LayoutPosition, Chart } from 'chart.js/auto'
+import type { Chart } from 'chart.js/auto'
 import { templateRef, watchPausable } from '@vueuse/core'
 import {
   defineComponent,
@@ -26,9 +26,8 @@ import {
   nextTick,
 } from 'vue-demi'
 import getAdapter, { ChartType } from './adapter/index'
-import { createChart } from './use-chart'
-
-export type LegendPosition = 'none' | LayoutPosition
+import { createChart } from './utils/use-chart'
+import { LegendPosition } from '.'
 
 export default defineComponent({
   props: {

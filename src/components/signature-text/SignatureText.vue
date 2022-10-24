@@ -15,7 +15,7 @@ import {
   onMounted,
   watch,
 } from 'vue-demi'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import { createSpinner } from '../avatar/utils/create-image'
 import { formatName } from './utils/formatter'
 import generate from './utils/generate-text'

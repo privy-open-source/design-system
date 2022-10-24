@@ -31,8 +31,7 @@ import {
   ref,
   computed,
 } from 'vue-demi'
-
-type StyleVariant = 'info' | 'danger'
+import { StyleVariant } from '.'
 
 const BannerIcons = {
   danger: IconDanger,

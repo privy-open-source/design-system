@@ -1,4 +1,4 @@
-import { createChart, updateChart } from './__mocks__/use-chart.js.js'
+import { createChart, updateChart } from './__mocks__/use-chart'
 import { render } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { ref } from 'vue-demi'
@@ -7,7 +7,7 @@ import pChart from './Chart.vue'
 import pChartSet from './ChartSet.vue'
 import pChartVal from './ChartVal.vue'
 
-vi.mock('./use-chart.ts', () => {
+vi.mock('./utils/use-chart.ts', () => {
   return { createChart }
 })
 

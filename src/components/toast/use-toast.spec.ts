@@ -1,5 +1,5 @@
 import { getByTestId, getByText } from '@testing-library/vue'
-import showToast from './use-toast'
+import showToast from '.'
 
 it('should be able to show notify', async () => {
   await showToast({

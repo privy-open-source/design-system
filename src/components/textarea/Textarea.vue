@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import {
   defineComponent,
   computed,

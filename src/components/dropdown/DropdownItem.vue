@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent, inject } from 'vue-demi'
-import { DROPDOWN_CONTEXT } from './Dropdown.vue'
+import { DROPDOWN_CONTEXT } from '.'
 
 export default defineComponent({
   props: {

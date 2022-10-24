@@ -61,7 +61,7 @@ import {
   computed,
   watch,
 } from 'vue-demi'
-import { DropdownContext, DROPDOWN_TREE } from './use-dropdown-subitem'
+import { DropdownContext, DROPDOWN_TREE } from '.'
 
 export default defineComponent({
   components: {

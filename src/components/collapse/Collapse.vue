@@ -18,8 +18,8 @@ import {
   defineComponent,
   inject,
 } from 'vue-demi'
-import { useVModel } from '../input/use-input'
-import { NAVBAR_SETTINGS } from '../navbar/use-navbar'
+import { useVModel } from '../input'
+import { NAVBAR_SETTINGS } from '../navbar'
 import { useMediaQuery } from '@vueuse/core'
 
 export default defineComponent({

@@ -56,7 +56,7 @@ import {
 import Nav, { StyleVariant as TabsStyleVariant, AlignVariant as TabsAlignVariant } from '../nav/Nav.vue'
 import NavItem from '../nav/NavItem.vue'
 import TabContent from './TabContent.vue'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import { findAllChildren, toBoolean } from '../utils/vnode'
 
 interface TabContext {

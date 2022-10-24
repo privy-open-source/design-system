@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from 'nuxt'
 import PersonaModule from '..'
 import { fileURLToPath } from 'node:url'
 

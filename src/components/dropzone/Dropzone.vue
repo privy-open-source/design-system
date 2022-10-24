@@ -38,26 +38,19 @@ import {
   ref,
   toRef,
 } from 'vue-demi'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import { toBase64 } from '../utils/base64'
 import { useToNumber } from '@vueuse/shared'
-
-const File = globalThis.File
-
-export interface ModelModifier {
-  base64?: boolean,
-}
-
-export type MultipleType = 'replace' | 'append'
+import { ModelModifier, MultipleType } from '.'
 
 export default defineComponent({
   props: {
     modelValue: {
       type: [
-        File,
+        globalThis.File,
         Array,
         String,
-      ] as PropType<File | File[] | string | string[]>,
+      ] as PropType<globalThis.File | globalThis.File[] | string | string[]>,
       default: undefined,
     },
     modelModifiers: {
@@ -87,7 +80,7 @@ export default defineComponent({
     'cancel',
   ],
   setup (props, { emit }) {
-    const rawModel  = ref<File | File[]>()
+    const rawModel  = ref<globalThis.File | globalThis.File[]>()
     const model     = useVModel(props)
     const input     = templateRef<HTMLInputElement>('input')
     const maxlength = useToNumber(toRef(props, 'maxlength'), { method: 'parseInt' })
@@ -133,14 +126,14 @@ export default defineComponent({
       }
     }
 
-    function filesToBase64 (files: File | File[]): Promise<string | string[]> {
+    function filesToBase64 (files: globalThis.File | globalThis.File[]): Promise<string | string[]> {
       if (Array.isArray(files))
         return Promise.all(files.map((file) => toBase64(file)))
 
       return toBase64(files)
     }
 
-    async function handleFiles (fileList: FileList) {
+    async function handleFiles (fileList: globalThis.FileList) {
       if (fileList.length > 0) {
         // eslint-disable-next-line unicorn/prefer-spread
         const files = accept(props.accept, Array.from(fileList))
@@ -150,7 +143,7 @@ export default defineComponent({
 
         // multiple="append"
         if (props.multiple === 'append' && Array.isArray(model.value))
-          value = [...model.value as File[], ...value as File[]]
+          value = [...model.value as globalThis.File[], ...value as globalThis.File[]]
 
         // maxlength
         if (Number.isInteger(maxlength.value) && Array.isArray(value))

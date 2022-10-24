@@ -36,7 +36,7 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { useVModel } from '../checkbox/use-checkbox'
+import { useVModel } from '../checkbox'
 
 type StyleVariant = 'pill' | 'flat'
 

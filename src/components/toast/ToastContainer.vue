@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue-demi'
-import { ToastOption } from './use-toast'
+import { ToastOption } from '.'
 import Toast from './Toast.vue'
 
 interface ToastItem extends ToastOption {

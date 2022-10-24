@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/vue'
 import Select from '../Select.vue'
-import { defineOptions } from '../use-select'
+import { defineOptions } from '..'
 import Adapter from './basic-adapter'
 
 it('should be able to display items from props `options`', async () => {

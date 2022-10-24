@@ -21,7 +21,7 @@ import {
 import Button from '../button/Button.vue'
 import IconMenu from '@carbon/icons-vue/lib/menu/20'
 import IconClose from '@carbon/icons-vue/lib/close/20'
-import { NAVBAR_SETTINGS } from './use-navbar'
+import { NAVBAR_SETTINGS } from '.'
 
 export default defineComponent({
   components: {

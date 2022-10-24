@@ -13,10 +13,12 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, inject,
+  computed,
+  defineComponent,
+  inject,
 } from 'vue-demi'
 import Nav from '../nav/Nav.vue'
-import { SIDEBAR_SETTINGS } from './Sidebar.vue'
+import { SIDEBAR_SETTINGS } from '.'
 
 export default defineComponent({
   components: { Nav },

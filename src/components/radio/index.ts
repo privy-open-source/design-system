@@ -1,5 +1,5 @@
 import { computed, getCurrentInstance } from 'vue-demi'
-import type { CheckboxProps } from '../checkbox/use-checkbox'
+import type { CheckboxProps } from '../checkbox'
 import { isEqual } from '../utils/value'
 
 export type RadioProps = Omit<CheckboxProps, 'uncheckedValue'>

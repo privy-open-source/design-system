@@ -10,7 +10,12 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, onMounted, PropType, provide, toRef,
+  computed,
+  defineComponent,
+  onMounted,
+  PropType,
+  provide,
+  toRef,
 } from 'vue-demi'
 import { StyleVariant } from '../nav/Nav.vue'
 import {
@@ -19,8 +24,10 @@ import {
   useWindowScroll,
 } from '@vueuse/core'
 import {
-  ToggleableVariant, ColorVariant, NAVBAR_SETTINGS,
-} from './use-navbar'
+  ToggleableVariant,
+  ColorVariant,
+  NAVBAR_SETTINGS,
+} from '.'
 
 export default defineComponent({
   props: {

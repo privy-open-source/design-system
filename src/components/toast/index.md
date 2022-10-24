@@ -1,7 +1,7 @@
 <script setup>
   import Button from '../button/Button.vue'
   import Toast from './Toast.vue'
-  import toast from './use-toast'
+  import toast from '.'
 </script>
 
 # Toast

@@ -1,4 +1,4 @@
-import { baseFormatter, defineTable } from './use-table'
+import { baseFormatter, defineTable } from '.'
 
 describe('defineTable', () => {
   it('should able convert string to field object', () => {
