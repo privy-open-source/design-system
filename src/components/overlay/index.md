@@ -1,6 +1,6 @@
 <script setup>
   import { ref, onMounted } from 'vue-demi'
-  import { showOverlay, hideOverlay } from './use-overlay'
+  import { showOverlay, hideOverlay } from '.'
   import Button from '../button/Button.vue'
   import Overlay from './Overlay.vue'
 

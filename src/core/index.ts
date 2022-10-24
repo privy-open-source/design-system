@@ -49,3 +49,7 @@ export {
 export {
   default as QrCodeAdapter,
 } from '../components/camera/adapter/qr-code'
+
+export {
+  defineFilter,
+} from '../components/filterbar'

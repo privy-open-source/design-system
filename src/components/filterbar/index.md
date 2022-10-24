@@ -1,7 +1,7 @@
 <script setup>
   import { ref } from 'vue-demi'
   import pFilterbar from './Filterbar.vue'
-  import { defineFilter } from './use-filterbar'
+  import { defineFilter } from '.'
 
   const query = ref({})
 
@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import { defineFilter } from '@privyid/persona/filterbar'
+import { defineFilter } from '@privyid/persona/core'
 
 const query  = ref({})
 const schema = defineFilter([
@@ -111,7 +111,7 @@ const schema = defineFilter([
 </template>
 
 <script setup>
-import { defineFilter } from '@privyid/persona/filterbar'
+import { defineFilter } from '@privyid/persona/core'
 
 const schema = defineFilter([
   {
@@ -134,7 +134,7 @@ const schema = defineFilter([
 </template>
 
 <script setup>
-import { defineFilter } from '@privyid/persona/filterbar'
+import { defineFilter } from '@privyid/persona/core'
 
 const schema = defineFilter([
   {
@@ -162,7 +162,7 @@ const schema = defineFilter([
 </template>
 
 <script setup>
-import { defineFilter } from '@privyid/persona/filterbar'
+import { defineFilter } from '@privyid/persona/core'
 
 const schema = defineFilter([
   {

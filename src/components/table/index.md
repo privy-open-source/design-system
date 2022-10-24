@@ -1,7 +1,7 @@
 <script setup>
   import pTable from './Table.vue'
   import pBadge from '../badge/Badge.vue'
-  import { defineTable } from './use-table'
+  import { defineTable } from '.'
   import { ref }from 'vue-demi'
 
   const fields = defineTable([
