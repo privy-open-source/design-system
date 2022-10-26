@@ -4,10 +4,8 @@ import type { ColorVariant } from '..'
 
 /**
  * Parse placement from modifier
- * @param el HTMLElement
- * @param bindings Directive Binding
  */
-export function parsePlacement (el: HTMLElement, { modifiers }: DirectiveBinding): Placement {
+export function parsePlacement (_el: HTMLElement, { modifiers }: DirectiveBinding): Placement {
   /**
    * Modifier               👉 Result
    * -------------------------------
@@ -62,28 +60,41 @@ export function parsePlacement (el: HTMLElement, { modifiers }: DirectiveBinding
   return result
 }
 
-export function parseAction (el: HTMLElement, { modifiers }: DirectiveBinding): string {
+/**
+ * Parse action from modifier
+ */
+export function parseAction (_el: HTMLElement, { modifiers }: DirectiveBinding): string {
   const result: string[] = []
 
   if (modifiers.focus)
     result.push('focus')
 
-  if (modifiers.click)
-    result.push('click')
-
   if (modifiers.hover)
     result.push('hover')
+
+  if (modifiers.click)
+    result.push('click')
 
   return result.join('-') || 'focus-hover'
 }
 
+/**
+ * Parse value from element or bindings value
+ * @param el binding element
+ * @param bindings directive bindings options
+ */
 export function parseText (el: HTMLElement, bindings: DirectiveBinding<string | boolean>): string {
-  if (typeof bindings.value === 'string')
+  if (bindings.value && typeof bindings.value === 'string')
     return bindings.value
 
-  return el.getAttribute('title') ?? el.dataset.tooltipText
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  return el.getAttribute('title') || el.dataset.tooltipText
 }
 
-export function parseColor (el: HTMLElement, { modifiers }: DirectiveBinding): ColorVariant {
+/**
+ * Parse color from modifiers
+ * @param _el (unsuded)
+ */
+export function parseColor (_el: HTMLElement, { modifiers }: DirectiveBinding): ColorVariant {
   return modifiers.white ? 'white' : 'black'
 }

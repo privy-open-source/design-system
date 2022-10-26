@@ -1,5 +1,7 @@
 import { DirectiveBinding } from 'vue'
-import { parsePlacement } from './parse-bindings'
+import {
+  parseAction, parseColor, parsePlacement, parseText,
+} from './parse-bindings'
 
 function createModifiers (modifiers: DirectiveBinding['modifiers']): DirectiveBinding {
   const bindings: DirectiveBinding = {
@@ -94,5 +96,126 @@ describe('parsePlacement', () => {
     const placement = parsePlacement(undefined, createModifiers({ bottom: true, right: true }))
 
     expect(placement).toBe('bottom-end')
+  })
+})
+
+describe('parseAction', () => {
+  it('should return `focus-hover` if has no modifiers', () => {
+    const action = parseAction(undefined, createModifiers({}))
+
+    expect(action).toBe('focus-hover')
+  })
+
+  it('should return `click` if modifiers `click` is true', () => {
+    const action = parseAction(undefined, createModifiers({ click: true }))
+
+    expect(action).toBe('click')
+  })
+
+  it('should return `hover` if modifiers `hover` is true', () => {
+    const action = parseAction(undefined, createModifiers({ hover: true }))
+
+    expect(action).toBe('hover')
+  })
+
+  it('should return `focus` if modifiers `focus` is true', () => {
+    const action = parseAction(undefined, createModifiers({ focus: true }))
+
+    expect(action).toBe('focus')
+  })
+
+  it('should able to use more than one action', () => {
+    const action = parseAction(undefined, createModifiers({
+      focus: true,
+      click: true,
+      hover: true,
+    }))
+
+    expect(action).toInclude('focus')
+    expect(action).toInclude('click')
+    expect(action).toInclude('hover')
+  })
+})
+
+describe('parseText', () => {
+  it('should return text from value', () => {
+    const text = parseText(undefined, {
+      value    : 'Hello World',
+      oldValue : '',
+      instance : undefined,
+      modifiers: undefined,
+      dir      : undefined,
+    })
+
+    expect(text).toBe('Hello World')
+  })
+
+  it('should return text from attribute title if value not present', () => {
+    const el = document.createElement('div')
+
+    el.setAttribute('title', 'Hello World')
+
+    const text = parseText(el, {
+      value    : '',
+      oldValue : '',
+      instance : undefined,
+      modifiers: undefined,
+      dir      : undefined,
+    })
+
+    expect(text).toBe('Hello World')
+  })
+
+  it('should return text from attribute title if value is not string', () => {
+    const el = document.createElement('div')
+
+    el.setAttribute('title', 'Hello World')
+
+    const text = parseText(el, {
+      value    : false,
+      oldValue : '',
+      instance : undefined,
+      modifiers: undefined,
+      dir      : undefined,
+    })
+
+    expect(text).toBe('Hello World')
+  })
+
+  it('should return text from dataset TooltipText (attribute `data-tooltip-text`) if value nor attr title present', () => {
+    const el = document.createElement('div')
+
+    el.setAttribute('title', '')
+    el.dataset.tooltipText = 'Hello World'
+
+    const text = parseText(el, {
+      value    : '',
+      oldValue : '',
+      instance : undefined,
+      modifiers: undefined,
+      dir      : undefined,
+    })
+
+    expect(text).toBe('Hello World')
+  })
+})
+
+describe('parseColor', () => {
+  it('should return `black` if no modifiers', () => {
+    const color = parseColor(undefined, createModifiers({}))
+
+    expect(color).toBe('black')
+  })
+
+  it('should return `black` if modifiers `black` is true', () => {
+    const color = parseColor(undefined, createModifiers({ black: true }))
+
+    expect(color).toBe('black')
+  })
+
+  it('should return `white` if modifiers `white` is true', () => {
+    const color = parseColor(undefined, createModifiers({ white: true }))
+
+    expect(color).toBe('white')
   })
 })

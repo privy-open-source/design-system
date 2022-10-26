@@ -3,6 +3,7 @@
     v-show="isShow"
     ref="tooltip"
     class="tooltip"
+    data-testid="tooltip"
     :class="classNames">
     <div
       class="tooltip__arrow"

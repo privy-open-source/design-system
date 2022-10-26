@@ -17,8 +17,7 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { useStep } from '.'
-import { TravelHook } from './utils/hook'
+import { useStep, TravelHook } from '.'
 
 export default defineComponent({
   name : 'Step',
