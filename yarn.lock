@@ -1414,7 +1414,6 @@ __metadata:
     "@nuxtjs/tailwindcss": 5.3.2
     "@popperjs/core": 2.11.6
     "@privyid/tailwind-preset": "workspace:^"
-    "@types/marked": ^4
     "@vueuse/core": 8.9.4
     "@vueuse/sound": 1.1.7
     "@zxing/browser": 0.1.1
@@ -1427,7 +1426,6 @@ __metadata:
     fuse.js: 6.6.2
     interactjs: 1.10.17
     lodash-es: 4.17.21
-    marked: ^4.1.1
     nuxt: 3.0.0-rc.12
     postcss-custom-properties: 12.1.8
     tabbable: 5.3.3
