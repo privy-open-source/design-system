@@ -1,9 +1,13 @@
 import {
-  queryAllByTestId, queryByTestId, queryByText,
+  queryAllByTestId,
+  queryByTestId,
+  queryByText,
 } from '@testing-library/vue'
 import { defineComponent } from 'vue-demi'
 import {
-  removeSingleton, resetSingleton, useSingleton,
+  removeSingleton,
+  resetInstance,
+  useSingleton,
 } from './use-singleton'
 
 const mockComponent = defineComponent({
@@ -16,7 +20,7 @@ const mockComponent = defineComponent({
 
 describe('useSingleton', () => {
   afterEach(async () => {
-    return await resetSingleton()
+    return await resetInstance()
   })
 
   it('should be able render given component into global container', async () => {

@@ -1348,7 +1348,9 @@ __metadata:
     "@rushstack/eslint-patch": 1.2.0
     "@testing-library/jest-dom": 5.16.5
     "@testing-library/vue": 6.6.0
+    "@types/dompurify": ^2
     "@types/lodash-es": 4.17.6
+    "@types/marked": ^4
     "@types/testing-library__jest-dom": 5.14.5
     "@types/webfontloader": 1.6.34
     "@typescript-eslint/eslint-plugin": 5.38.0
@@ -1365,6 +1367,7 @@ __metadata:
     chart.js: 3.9.1
     date-fns: 2.29.3
     defu: 6.1.0
+    dompurify: ^2.4.0
     eslint: 8.23.1
     eslint-config-standard-with-typescript: latest
     eslint-formatter-pretty: 4.1.0
@@ -1383,7 +1386,9 @@ __metadata:
     jest-extended: 3.1.0
     lint-staged: 13.0.3
     lodash-es: 4.17.21
+    marked: ^4.1.1
     nanodelay: 2.0.2
+    p-queue: ^7.3.0
     postcss: 8.4.16
     postcss-nested: 5.0.6
     tabbable: 5.3.3
@@ -1409,6 +1414,7 @@ __metadata:
     "@nuxtjs/tailwindcss": 5.3.2
     "@popperjs/core": 2.11.6
     "@privyid/tailwind-preset": "workspace:^"
+    "@types/marked": ^4
     "@vueuse/core": 8.9.4
     "@vueuse/sound": 1.1.7
     "@zxing/browser": 0.1.1
@@ -1421,6 +1427,7 @@ __metadata:
     fuse.js: 6.6.2
     interactjs: 1.10.17
     lodash-es: 4.17.21
+    marked: ^4.1.1
     nuxt: 3.0.0-rc.12
     postcss-custom-properties: 12.1.8
     tabbable: 5.3.3
@@ -1787,6 +1794,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dompurify@npm:^2":
+  version: 2.3.4
+  resolution: "@types/dompurify@npm:2.3.4"
+  dependencies:
+    "@types/trusted-types": "*"
+  checksum: ea55678bc9fd32fcdae904ca191f2b8cc5b475277937e5e4c024690b0c3b9c73accfb7391f56d26d0f53fcff496a013773293e189a07a79afdd2b2ed4efacd5f
+  languageName: node
+  linkType: hard
+
 "@types/eslint@npm:^7.2.13":
   version: 7.29.0
   resolution: "@types/eslint@npm:7.29.0"
@@ -1864,6 +1880,13 @@ __metadata:
   version: 4.14.182
   resolution: "@types/lodash@npm:4.14.182"
   checksum: 7dd137aa9dbabd632408bd37009d984655164fa1ecc3f2b6eb94afe35bf0a5852cbab6183148d883e9c73a958b7fec9a9bcf7c8e45d41195add6a18c34958209
+  languageName: node
+  linkType: hard
+
+"@types/marked@npm:^4":
+  version: 4.0.7
+  resolution: "@types/marked@npm:4.0.7"
+  checksum: 4907b6a606578cd864bad429aca3c234591e6ed56bd141c575140487269b825a480ace9a85e4d003d1de1f007004c9d9b2fe600038ded5bba75aef59118e58d5
   languageName: node
   linkType: hard
 
@@ -1947,6 +1970,13 @@ __metadata:
   dependencies:
     "@types/jest": "*"
   checksum: 203443d0e7e5929fbc9e441146f92d85efa033b4697e427ed0164df1c40b720b6bb9bbd96a3171ea5fd8d9301b538fd0f49d4f35594d142afd0f6d2ecac25785
+  languageName: node
+  linkType: hard
+
+"@types/trusted-types@npm:*":
+  version: 2.0.2
+  resolution: "@types/trusted-types@npm:2.0.2"
+  checksum: 3371eef5f1c50e1c3c07a127c1207b262ba65b83dd167a1c460fc1b135a3fb0c97b9f508efebd383f239cc5dd5b7169093686a692a501fde9c3f7208657d9b0d
   languageName: node
   linkType: hard
 
@@ -4637,6 +4667,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dompurify@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "dompurify@npm:2.4.0"
+  checksum: c93ea73cf8e3ba044588450198563e56ce6902e36d0e16e3699df2fa59e82c4fdd11d4ad04ef5024569ce96a35b46f29d0bbea522516add33cd39a7f56a8a675
+  languageName: node
+  linkType: hard
+
 "domutils@npm:^2.8.0":
   version: 2.8.0
   resolution: "domutils@npm:2.8.0"
@@ -5980,7 +6017,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter3@npm:^4.0.0":
+"eventemitter3@npm:^4.0.0, eventemitter3@npm:^4.0.7":
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
   checksum: 1875311c42fcfe9c707b2712c32664a245629b42bb0a5a84439762dd0fd637fc54d078155ea83c2af9e0323c9ac13687e03cfba79b03af9f40c89b4960099374
@@ -8219,6 +8256,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"marked@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "marked@npm:4.1.1"
+  bin:
+    marked: bin/marked.js
+  checksum: 717e3357952ee53de831bf0eb110ed075bebca2376c58bcdf7ee523ef540d45308ad6d51b2c933da0968832ea4386f31c142ca65443e77c098e84f6cce73e418
+  languageName: node
+  linkType: hard
+
 "mdn-data@npm:2.0.14":
   version: 2.0.14
   resolution: "mdn-data@npm:2.0.14"
@@ -9272,6 +9318,23 @@ __metadata:
   dependencies:
     aggregate-error: ^4.0.0
   checksum: 065cb6fca6b78afbd070dd9224ff160dc23eea96e57863c09a0c8ea7ce921043f76854be7ee0abc295cff1ac9adcf700e79a1fbe3b80b625081087be58e7effb
+  languageName: node
+  linkType: hard
+
+"p-queue@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "p-queue@npm:7.3.0"
+  dependencies:
+    eventemitter3: ^4.0.7
+    p-timeout: ^5.0.2
+  checksum: eda8b8d4dac9456d1722c8ee0892bbb2e7f7b79d1f90b6cc1bac5fb9dcf3120285f90c28a68dc2f66bc9e46c7d7d42ad206a2c4d83e7aad27a0226ae042081ee
+  languageName: node
+  linkType: hard
+
+"p-timeout@npm:^5.0.2":
+  version: 5.1.0
+  resolution: "p-timeout@npm:5.1.0"
+  checksum: f5cd4e17301ff1ff1d8dbf2817df0ad88c6bba99349fc24d8d181827176ad4f8aca649190b8a5b1a428dfd6ddc091af4606835d3e0cb0656e04045da5c9e270c
   languageName: node
   linkType: hard
 

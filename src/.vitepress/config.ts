@@ -267,6 +267,20 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text       : 'Directive',
+          collapsible: true,
+          items      : [
+            {
+              text: 'Markdown',
+              link: '/components/markdown/',
+            },
+            {
+              text: 'Tooltip',
+              link: '/components/tooltip/',
+            },
+          ],
+        },
       ],
       '/styleguide/': [
         {
