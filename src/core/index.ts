@@ -53,3 +53,7 @@ export {
 export {
   defineFilter,
 } from '../components/filterbar'
+
+export {
+  markdown,
+} from '../components/markdown'

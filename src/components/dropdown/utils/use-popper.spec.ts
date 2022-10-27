@@ -31,3 +31,18 @@ it('should update optionse if placement changed', async () => {
   expect(instance.value.setOptions).toBeCalled()
   expect(setOptions).toBeCalledWith(expect.objectContaining({ placement: 'bottom-end' }))
 })
+
+it('should wait to reference target until it\'s defined', async () => {
+  const target    = ref()
+  const menu      = ref(document.createElement('div'))
+  const placement = ref<Placement>('bottom-start')
+
+  const instance = usePopper(target, menu, placement)
+
+  expect(instance.value).toBeUndefined()
+
+  target.value = document.createElement('div')
+  await nextTick()
+
+  expect(instance.value).not.toBeUndefined()
+})

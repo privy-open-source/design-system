@@ -1,5 +1,5 @@
 import { tryOnUnmounted } from '@vueuse/core'
-import { runAllHooks, TravelHook } from './utils/hook'
+import { runAllHooks } from './utils/hook'
 import { noop } from 'lodash-es'
 import {
   ComputedRef,
@@ -8,6 +8,10 @@ import {
   ref,
   Ref,
 } from 'vue-demi'
+
+export type TravelHook = (to: number, from: number) => boolean | Promise<boolean>
+
+export type FinishedHook = () => void | Promise<void>
 
 export interface StepContext {
   next: () => void,

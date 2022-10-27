@@ -11,8 +11,11 @@
     },
     "./core": {
       "import": "./dist/core/index.mjs",
-      "require": "./dist/core/index.cjs",
       "types": "./dist/core/index.d.ts"
+    },
+    "./directive": {
+      "import": "./dist/directive/index.mjs",
+      "types": "./dist/directive/index.d.ts"
     }
   },
   "main": "./dist/module.cjs",
