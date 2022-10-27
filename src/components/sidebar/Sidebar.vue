@@ -8,19 +8,13 @@
 
 <script lang="ts">
 import {
-  defineComponent, PropType, computed, provide, InjectionKey,
+  defineComponent,
+  PropType,
+  computed,
+  provide,
 } from 'vue-demi'
-import { StyleVariant, AlignVariant } from '../nav/Nav.vue'
-
-export type TypeVariant = 'wide' | 'narrow'
-
-interface SidebarSettings {
-  variant: string,
-  align: string,
-  type: string,
-}
-
-export const SIDEBAR_SETTINGS: InjectionKey<SidebarSettings> = Symbol('SidebarSettings')
+import { SIDEBAR_SETTINGS, TypeVariant } from '.'
+import { StyleVariant, AlignVariant } from '../nav'
 
 export default defineComponent({
   props: {

@@ -52,12 +52,14 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, PropType, ref,
+  computed,
+  defineComponent,
+  PropType,
+  ref,
 } from 'vue-demi'
 import IconClose from '@carbon/icons-vue/lib/close/16'
 import Heading from '../heading/Heading.vue'
-
-type ElementVariant = 'div' | 'section' | 'article'
+import { ElementVariant } from '.'
 
 export default defineComponent({
   components: { Heading, IconClose },

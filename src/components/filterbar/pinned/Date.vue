@@ -33,8 +33,8 @@ import {
 import Caption from '../../caption/Caption.vue'
 import Calendar from '../../calendar/Calendar.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
-import { useVModel } from '../../input/use-input'
-import { FilterDate } from '../use-filterbar'
+import { useVModel } from '../../input'
+import { FilterDate } from '..'
 import { CalendarMode } from '../../calendar/adapter/adapter'
 import { isDate, format as formatDate } from 'date-fns'
 

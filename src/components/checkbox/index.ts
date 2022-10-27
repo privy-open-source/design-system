@@ -4,7 +4,7 @@ import {
   getCurrentInstance,
   ref,
 } from 'vue-demi'
-import { InputProps } from '../input/use-input'
+import { InputProps } from '../input'
 import { valueIn, isEqual } from '../utils/value'
 
 function isChecked (modelValue: unknown, checked: unknown): boolean {

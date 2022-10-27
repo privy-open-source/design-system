@@ -1,16 +1,14 @@
-export type TravelHook = (to: number, from: number) => boolean | Promise<boolean>
+export type HookFn = (...args: unknown[]) => unknown | Promise<unknown>
 
-export type FinishedHook = () => void | Promise<void>
-
-export async function runHook (hook: TravelHook, ...args: Parameters<TravelHook>): Promise<boolean> {
+export async function runHook<H extends HookFn> (hook: H, ...args: Parameters<H>): Promise<boolean> {
   try {
-    return await hook.call(this, ...args)
+    return (await hook.call(hook, ...args)) !== false
   } catch {
     return false
   }
 }
 
-export async function runAllHooks (hooks: TravelHook[], ...args: Parameters<TravelHook>): Promise<boolean> {
+export async function runAllHooks<H extends HookFn> (hooks: Iterable<H>, ...args: Parameters<H>): Promise<boolean> {
   let result = true
 
   for (const hook of hooks) {

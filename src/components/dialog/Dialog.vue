@@ -4,6 +4,8 @@
     :key="id"
     v-model="modal"
     :title="context.title"
+    :size="context.size"
+    :centered="context.centered"
     :text="context.text"
     @close="onCancel">
     <template #footer>
@@ -33,7 +35,7 @@ import {
 } from 'vue-demi'
 import Modal from '../modal/Modal.vue'
 import DialogFooter from './DialogFooter.vue'
-import { DialogContext } from './use-dialog'
+import { DialogContext } from '.'
 
 export default defineComponent({
   components: { Modal, DialogFooter },

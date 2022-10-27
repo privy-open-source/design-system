@@ -1,7 +1,7 @@
 {
   "name": "@privyid/tailwind-preset",
-  "version": "0.3.0",
-  "packageManager": "yarn@3.2.3",
+  "version": "0.4.0",
+  "packageManager": "yarn@3.2.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "peerDependencies": {

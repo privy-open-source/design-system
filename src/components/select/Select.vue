@@ -80,7 +80,7 @@ import {
   ref,
   watch,
 } from 'vue-demi'
-import { SelectItem } from './use-select'
+import { SelectItem } from '.'
 import { Adapter } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'

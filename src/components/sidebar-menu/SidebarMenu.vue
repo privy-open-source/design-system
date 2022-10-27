@@ -61,12 +61,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue-demi'
-import Sidebar, { TypeVariant } from '../sidebar/Sidebar.vue'
+import Sidebar from '../sidebar/Sidebar.vue'
+import { TypeVariant } from '../sidebar'
 import SidebarNav from '../sidebar/SidebarNav.vue'
 import NavItem from '../nav/NavItem.vue'
 import NavSubItem from '../nav/NavSubItem.vue'
-import { Menu } from './use-sidebar-menu'
-import { AlignVariant } from '../nav/Nav.vue'
+import { Menu } from '.'
+import { AlignVariant } from '../nav'
 
 export default defineComponent({
   components: {

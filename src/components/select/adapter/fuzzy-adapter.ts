@@ -5,7 +5,7 @@ import {
   shallowRef,
   watch,
 } from 'vue-demi'
-import { SelectItem } from '../use-select'
+import { SelectItem } from '..'
 import { defineAdapter, useOptionsProp } from './adapter'
 
 export default defineAdapter({

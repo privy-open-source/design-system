@@ -20,7 +20,7 @@ export type {
 export function usePopper (reference: Ref<PopperParameters[0]>, menu: Ref<PopperParameters[1]>, placement: Ref<Placement>) {
   const popper = shallowRef<Popper>()
 
-  tryOnMounted(() => {
+  function init () {
     popper.value = createPopper(reference.value, menu.value, {
       placement: placement.value,
       modifiers: [
@@ -29,8 +29,24 @@ export function usePopper (reference: Ref<PopperParameters[0]>, menu: Ref<Popper
           options: { offset: [0, 6] },
         },
         { name: 'preventOverflow' },
+        { name: 'arrow', options: { padding: 12 } },
       ],
     })
+  }
+
+  tryOnMounted(() => {
+    if (reference.value)
+      init()
+  })
+
+  watch(reference, (target) => {
+    if (target) {
+      if (popper.value) {
+        popper.value.state.elements.reference = target
+        popper.value.forceUpdate()
+      } else
+        init()
+    }
   })
 
   watch(placement, async (value) => {

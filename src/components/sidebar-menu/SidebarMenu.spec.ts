@@ -1,6 +1,6 @@
 import { render } from '@testing-library/vue'
 import SidebarMenu from './SidebarMenu.vue'
-import { defineMenu } from './use-sidebar-menu'
+import { defineMenu } from '.'
 import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
 import IconDocument from '@carbon/icons-vue/lib/document/20'
 import IconUsers from '@carbon/icons-vue/lib/group/20'

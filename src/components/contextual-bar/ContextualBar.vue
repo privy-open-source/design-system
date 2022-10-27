@@ -65,7 +65,7 @@ import {
   watch,
 } from 'vue-demi'
 import { AlignVariant } from '../nav/Nav.vue'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import pCaption from '../caption/Caption.vue'
 import pSubheading from '../subheading/Subheading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/20'
@@ -74,12 +74,13 @@ import {
   until,
   useElementBounding,
 } from '@vueuse/core'
-
-type StyleVariant = 'light' | 'dark'
+import { StyleVariant } from '.'
 
 export default defineComponent({
   components: {
-    IconClose, pCaption, pSubheading,
+    IconClose,
+    pCaption,
+    pSubheading,
   },
   props: {
     variant: {

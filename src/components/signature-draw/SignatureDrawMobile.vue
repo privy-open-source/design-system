@@ -62,7 +62,7 @@ import {
   watch,
 } from 'vue-demi'
 import Button from '../button/Button.vue'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 import rotateImage from './utils/rotate-image'
 import IconEdit from '@carbon/icons-vue/lib/edit/20'

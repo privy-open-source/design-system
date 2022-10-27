@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import { useVModel } from './use-input'
+import { useVModel } from '.'
 
 export default defineComponent({
   props: {

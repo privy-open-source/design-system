@@ -1,4 +1,4 @@
-import { SelectProps, SelectItem } from '../use-select'
+import { SelectProps, SelectItem } from '..'
 import { useOptionsProp } from './adapter'
 
 it('should be able to convert Array of String into Array of SelectItem', () => {

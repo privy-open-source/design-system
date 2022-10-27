@@ -46,7 +46,7 @@ import {
   toDataURL,
 } from './utils/canvas'
 import useDraw from './utils/use-draw'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import { createLines } from './utils/smooth-line'
 import Caption from '../caption/Caption.vue'
 import Button from '../button/Button.vue'

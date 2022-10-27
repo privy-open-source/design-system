@@ -15,12 +15,12 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, PropType,
+  computed,
+  defineComponent,
+  PropType,
 } from 'vue-demi'
+import { AlignVariant, StyleVariant } from '.'
 import Caption from '../caption/Caption.vue'
-
-export type StyleVariant = 'tabs' | 'pills' | 'lines'
-export type AlignVariant = 'left' | 'right' | 'center'
 
 export default defineComponent({
   components: { Caption },

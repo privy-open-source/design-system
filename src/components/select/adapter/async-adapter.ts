@@ -1,5 +1,5 @@
 import { tryOnMounted } from '@vueuse/shared'
-import { SelectItem } from '../use-select'
+import { SelectItem } from '..'
 import { defineAdapter } from './adapter'
 import { onFinishTyping, onStartTyping } from '../utils/use-on-typing'
 import {

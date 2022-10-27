@@ -49,10 +49,8 @@
 <script lang="ts">
 import {
   defineComponent,
-  InjectionKey,
   PropType,
   provide,
-  Ref,
   watch,
   toRef,
 } from 'vue-demi'
@@ -65,24 +63,16 @@ import Button from '../button/Button.vue'
 import DropdownGroup from '../dropdown-subitem/DropdownSubitem.vue'
 import { useFocus } from './utils/use-focus'
 import { usePopper, Placement } from './utils/use-popper'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
 import type {
   StyleVariant,
   ColorVariant,
   SizeVariant,
-} from '../button/Button.vue'
+} from '../button'
+import { DROPDOWN_CONTEXT } from '.'
 
 type DropdownSubitemElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
-
-interface DropdownContext {
-  close: () => void,
-  open: () => void,
-  toggle: () => void,
-  isOpen: Ref<boolean>,
-}
-
-export const DROPDOWN_CONTEXT: InjectionKey<DropdownContext> = Symbol('DROPDOWN_CONTEXT')
 
 export default defineComponent({
   components: {

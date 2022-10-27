@@ -1,6 +1,6 @@
 <script setup>
   import Button from '../button/Button.vue'
-  import * as dialog from './use-dialog'
+  import * as dialog from '.'
 
   function example1 () {
     dialog.alert({
@@ -13,6 +13,7 @@
     dialog.confirm({
       title: 'Delete Confirmation',
       text : 'Are you sure?',
+      size: 'sm',
     }).then((value) => {
       if (value === true) {
         dialog.alert({
@@ -36,7 +37,7 @@
 </div>
 
 ```ts
-import dialog from '@privyid/persona/dialog'
+import dialog from '@privyid/persona/core'
 
 dialog.alert({
   title: 'Dialog',
@@ -51,11 +52,12 @@ dialog.alert({
 </div>
 
 ```ts
-import dialog from '@privyid/persona/dialog'
+import dialog from '@privyid/persona/core'
 
 dialog.confirm({
   title: 'Delete Confirmation',
   text : 'Are you sure?',
+  size: 'sm',
 }).then((value) => {
   if (value === true) {
     dialog.alert({

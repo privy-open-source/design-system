@@ -1,7 +1,7 @@
 <script setup>
   import pTable from './Table.vue'
   import pBadge from '../badge/Badge.vue'
-  import { defineTable } from './use-table'
+  import { defineTable } from '.'
   import { ref }from 'vue-demi'
 
   const fields = defineTable([
@@ -287,7 +287,7 @@ add prop `draggable` to enable drag-to-sort.
 ### Custom Cell
 
 <preview class="flex-col gap-2">
-  <p-table :fields="fields" v-model:items="items">
+  <p-table :fields="fields" :items="items">
     <template #cell(status)="{ item }">
       <p-badge>{{ item.status ? 'active' : 'inactive' }}</p-badge>
     </template>
@@ -296,7 +296,7 @@ add prop `draggable` to enable drag-to-sort.
 
 ```vue
 <template>
-  <p-table :fields="fields" v-model:items="items">
+  <p-table :fields="fields" :items="items">
     <template #cell(status)="{ item }">
       <p-badge>{{ item.status ? 'active' : 'inactive' }}</p-badge>
     </template>
@@ -307,7 +307,7 @@ add prop `draggable` to enable drag-to-sort.
 ### Custom Head
 
 <preview class="flex-col gap-2">
-  <p-table :fields="fields" v-model:items="items">
+  <p-table :fields="fields" :items="items">
     <template #head(status)="{ label }">
       {{ label }}<p-badge class="ml-1">new</p-badge>
     </template>
@@ -316,7 +316,7 @@ add prop `draggable` to enable drag-to-sort.
 
 ```vue
 <template>
-  <p-table :fields="fields" v-model:items="items">
+  <p-table :fields="fields" :items="items">
     <template #head(status)="{ label }">
       {{ label }}<p-badge class="ml-1">new</p-badge>
     </template>
