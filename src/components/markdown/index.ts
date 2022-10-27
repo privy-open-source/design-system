@@ -1,17 +1,15 @@
 import { Directive } from 'vue-demi'
 import { marked } from 'marked'
-import { sanitize } from 'isomorphic-dompurify'
+import * as DOMPurify from 'isomorphic-dompurify'
 
 export interface MarkdownOption {
   /**
    * Use inline parsing
-   * @default false
    * @link https://marked.js.org/using_advanced#inline
    */
   inline: boolean,
   /**
    * Disabled sanitize HTML result
-   * @default false
    */
   unsecure: boolean,
 }
@@ -27,7 +25,7 @@ export function markdown (text: string = '', options?: Partial<MarkdownOption>) 
     : marked.parse(text)
 
   if (html && !options?.unsecure)
-    return sanitize(html)
+    return DOMPurify.sanitize(html)
 
   return html
 }

@@ -5,7 +5,6 @@
     "moduleResolution": "node",
     "jsx": "preserve",
     "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true,
     "types": [
       "vitest",
       "vite/client",
