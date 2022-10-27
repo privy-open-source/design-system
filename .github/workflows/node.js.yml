@@ -48,7 +48,6 @@ jobs:
 
       - run: yarn install --immutable
       - run: yarn docs:build
-      - run: yarn packages:build
       - run: yarn coverage
 
       - name: Coveralls GitHub Action
