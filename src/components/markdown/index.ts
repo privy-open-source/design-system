@@ -29,7 +29,7 @@ export function markdown (text: string = '', options: Partial<MarkdownOption> = 
   if (html && !options.unsecure)
     return sanitize(html)
 
-  return html ?? ''
+  return html
 }
 
 export const pMd: Directive<HTMLElement, string> = (el, { value, modifiers }) => {

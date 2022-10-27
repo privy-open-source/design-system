@@ -29,6 +29,12 @@ describe('markdown', () => {
 
     expect(result).toBe("<p>123<a href='javascript:alert(1)'>I am a dolphin!</a></p>\n")
   })
+
+  it('should not thrown an error if text is undefined', () => {
+    expect(() => {
+      markdown()
+    }).not.toThrow()
+  })
 })
 
 describe('v-p-md', () => {
