@@ -21,12 +21,12 @@ export interface MarkdownOption {
  * @param text markdown string
  * @param options parsing options
  */
-export function markdown (text: string = '', options: Partial<MarkdownOption> = {}) {
-  const html = options.inline
+export function markdown (text: string = '', options?: Partial<MarkdownOption>) {
+  const html = options?.inline
     ? marked.parseInline(text)
     : marked.parse(text)
 
-  if (html && !options.unsecure)
+  if (html && !options?.unsecure)
     return sanitize(html)
 
   return html
