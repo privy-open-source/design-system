@@ -84,11 +84,13 @@ export function parseAction (_el: HTMLElement, { modifiers }: DirectiveBinding):
  * @param bindings directive bindings options
  */
 export function parseText (el: HTMLElement, bindings: DirectiveBinding<string | boolean>): string {
-  if (bindings.value && typeof bindings.value === 'string')
+  if (typeof bindings.value === 'string')
     return bindings.value
 
-  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-  return el.getAttribute('title') || el.dataset.tooltipText
+  if (el.hasAttribute('title'))
+    return el.getAttribute('title')
+
+  return el.dataset.tooltipText ?? ''
 }
 
 /**

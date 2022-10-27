@@ -156,8 +156,8 @@ describe('parseText', () => {
     el.setAttribute('title', 'Hello World')
 
     const text = parseText(el, {
-      value    : '',
-      oldValue : '',
+      value    : undefined,
+      oldValue : undefined,
       instance : undefined,
       modifiers: undefined,
       dir      : undefined,
@@ -185,12 +185,11 @@ describe('parseText', () => {
   it('should return text from dataset TooltipText (attribute `data-tooltip-text`) if value nor attr title present', () => {
     const el = document.createElement('div')
 
-    el.setAttribute('title', '')
     el.dataset.tooltipText = 'Hello World'
 
     const text = parseText(el, {
-      value    : '',
-      oldValue : '',
+      value    : undefined,
+      oldValue : undefined,
       instance : undefined,
       modifiers: undefined,
       dir      : undefined,

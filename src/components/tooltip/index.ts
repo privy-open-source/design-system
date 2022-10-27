@@ -30,13 +30,14 @@ const handleMouseLeave = createHandler('hover', 'hide')
 const handleFocus      = createHandler('focus', 'show')
 const handleBlur       = createHandler('focus', 'hide')
 
-export const PTooltip: Directive<HTMLElement, string | boolean> = {
+export const pTooltip: Directive<HTMLElement, string | boolean> = {
   async mounted (el, bindings) {
     const tooltip   = await useSingleton(TooltipContainer)
     const action    = parseAction(el, bindings)
     const color     = parseColor(el, bindings)
     const text      = parseText(el, bindings)
     const placement = parsePlacement(el, bindings)
+    const enable    = bindings.value !== false && !!text
 
     const id = tooltip.add({
       target   : el,
@@ -48,9 +49,9 @@ export const PTooltip: Directive<HTMLElement, string | boolean> = {
     el.dataset.tooltipId     = id
     el.dataset.tooltipAction = action
     el.dataset.tooltipText   = text
-    el.dataset.tooltipEnable = (bindings.value !== false && text) ? 'true' : 'false'
+    el.dataset.tooltipEnable = enable ? 'true' : 'false'
 
-    el.removeAttribute('title')
+    el.removeAttribute('title') // remove attribute title, we don't want native-browser's tooltip to shown
     el.addEventListener('click', handleClick)
     el.addEventListener('mouseenter', handleMouseEnter, { passive: true })
     el.addEventListener('mouseleave', handleMouseLeave, { passive: true })
@@ -65,10 +66,11 @@ export const PTooltip: Directive<HTMLElement, string | boolean> = {
     const color     = parseColor(el, bindings)
     const text      = parseText(el, bindings)
     const placement = parsePlacement(el, bindings)
+    const enable    = bindings.value !== false && !!text
 
     el.dataset.tooltipAction = action
     el.dataset.tooltipText   = text
-    el.dataset.tooltipEnable = (bindings.value !== false && text) ? 'true' : 'false'
+    el.dataset.tooltipEnable = enable ? 'true' : 'false'
 
     tooltip.update(id, {
       target   : el,
@@ -76,6 +78,9 @@ export const PTooltip: Directive<HTMLElement, string | boolean> = {
       text     : text,
       color    : color,
     })
+
+    if (!enable)
+      tooltip.hide(id)
 
     el.removeAttribute('title')
   },
@@ -101,4 +106,4 @@ export const PTooltip: Directive<HTMLElement, string | boolean> = {
   },
 }
 
-export const vPTooltip = PTooltip
+export const vPTooltip = pTooltip
