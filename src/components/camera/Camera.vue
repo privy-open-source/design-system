@@ -1,5 +1,6 @@
 <template>
   <div
+    v-p-aspect-ratio="4/3"
     class="camera"
     data-testid="camera"
     :data-deviceid="deviceId"
@@ -140,6 +141,7 @@ import {
 } from '@vueuse/core'
 import * as dialog from '../dialog'
 import defu from 'defu'
+import { pAspectRatio } from '../aspect-ratio'
 
 export default defineComponent({
   components: {
@@ -148,7 +150,8 @@ export default defineComponent({
     IconRetake,
     IconRotate,
   },
-  props: {
+  directives: { pAspectRatio },
+  props     : {
     modelValue: {
       type: [
         globalThis.File,
@@ -341,10 +344,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .camera {
-  @apply bg-black w-full flex flex-col aspect-video select-none relative;
+  @apply bg-black w-full flex flex-col aspect-compat-video select-none relative;
 
   &__video {
-    @apply flex-grow min-h-full max-w-full h-auto;
+    @apply flex-grow min-h-full max-w-full h-auto object-cover;
   }
 
   &--mirror {
@@ -365,20 +368,20 @@ export default defineComponent({
     }
 
     &--square & {
-      @apply aspect-square w-2/3 md:w-1/2;
+      @apply aspect-compat-square w-2/3 md:w-1/2;
     }
 
     &--round & {
-      @apply aspect-square rounded-full w-1/2;
+      @apply aspect-compat-square rounded-full w-1/2;
     }
 
     &--card & {
-      @apply aspect-[85.60/53.98] w-2/3 rounded-md;
+      @apply aspect-compat-[85.60/53.98] w-2/3 rounded-md;
     }
   }
 
   &__result {
-    @apply max-w-full h-auto;
+    @apply max-w-full h-full object-cover;
   }
 
   &__off-info {

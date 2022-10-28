@@ -33,6 +33,7 @@
       </div>
       <div
         v-if="!noCrop"
+        v-p-aspect-ratio.fixed="aspectRatio"
         data-testid="cropper-mask"
         class="cropper__mask"
         :style="maskStyle" />
@@ -139,9 +140,11 @@ import {
   useRatioHeight,
   useRatioWidth,
 } from './utils/use-ratio'
+import { pAspectRatio } from '../aspect-ratio'
 import { createSpinner } from '../avatar/utils/create-image'
 
 export default defineComponent({
+  directives: { pAspectRatio },
   components: {
     pButton,
     IconRotateLeft,
@@ -417,6 +420,7 @@ export default defineComponent({
       move,
       crop,
       model,
+      aspectRatio: ratio,
     }
   },
 })
@@ -424,7 +428,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .cropper {
-  @apply bg-white w-full aspect-square;
+  @apply bg-white w-full aspect-compat-square;
 
   &__canvas {
     @apply hidden;
@@ -433,7 +437,7 @@ export default defineComponent({
   &__preview {
     background-image: url("./assets/ps-neutral.png");
 
-    @apply flex w-full overflow-hidden h-auto relative aspect-square select-none;
+    @apply flex w-full overflow-hidden h-auto relative aspect-compat-square select-none;
   }
 
   &__mask {

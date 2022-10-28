@@ -1,5 +1,6 @@
 <template>
   <div
+    v-p-aspect-ratio="width / height"
     class="signature-draw signature-draw--mobile"
     data-testid="signature-draw-mobile"
     :class="classNames"
@@ -66,6 +67,7 @@ import { useVModel } from '../input'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 import rotateImage from './utils/rotate-image'
 import IconEdit from '@carbon/icons-vue/lib/edit/20'
+import { pAspectRatio } from '../aspect-ratio'
 
 export default defineComponent({
   components: {
@@ -73,7 +75,8 @@ export default defineComponent({
     IconEdit,
     SignatureDrawDesktop,
   },
-  props: {
+  directives: { pAspectRatio },
+  props     : {
     modelValue: {
       type   : String,
       default: '',

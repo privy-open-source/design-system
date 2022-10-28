@@ -1,5 +1,6 @@
 <template>
   <div
+    v-p-aspect-ratio="16/9"
     class="chart"
     data-testid="chart"
     :class="classNames">
@@ -28,9 +29,11 @@ import {
 import getAdapter, { ChartType } from './adapter/index'
 import { createChart } from './utils/use-chart'
 import { LegendPosition } from '.'
+import { pAspectRatio } from '../aspect-ratio'
 
 export default defineComponent({
-  props: {
+  directives: { pAspectRatio },
+  props     : {
     variant: {
       type   : String as PropType<ChartType>,
       default: 'line',
@@ -121,6 +124,6 @@ export default defineComponent({
 
 <style lang="postcss">
 .chart {
-  @apply w-full aspect-video bg-white;
+  @apply w-full bg-white p-4;
 }
 </style>
