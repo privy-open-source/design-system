@@ -19,12 +19,17 @@
     "packages:build": "yarn workspaces foreach -vt run build"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
     "@interactjs/types": "1.10.17",
     "@microsoft/eslint-formatter-sarif": "3.0.0",
     "@privyid/tailwind-preset": "workspace:^",
+    "@rollup/plugin-babel": "^6.0.2",
     "@rushstack/eslint-patch": "1.2.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/vue": "6.6.0",
+    "@types/babel__core": "^7",
+    "@types/babel__preset-env": "^7",
     "@types/lodash-es": "4.17.6",
     "@types/marked": "^4",
     "@types/testing-library__jest-dom": "5.14.5",
@@ -57,7 +62,7 @@
     "postcss-nested": "5.0.6",
     "tailwindcss": "3.1.8",
     "typescript": "4.8.4",
-    "vitepress": "1.0.0-alpha.22",
+    "vitepress": "1.0.0-alpha.25",
     "vitest": "0.24.3"
   },
   "dependencies": {
@@ -70,6 +75,7 @@
     "@zxing/library": "0.19.1",
     "buffer": "6.0.3",
     "chart.js": "3.9.1",
+    "core-js": "3",
     "date-fns": "2.29.3",
     "defu": "6.1.0",
     "fuse.js": "6.6.2",

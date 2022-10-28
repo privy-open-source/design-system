@@ -28,6 +28,35 @@ module.exports = {
 | `.vertical-rl`   | `writing-mode: vertical-rl`   |
 | `.vertical-lr`   | `writing-mode: vertical-lr`   |
 
+### Aspect Compat
+
+Similar to native tailwind [aspect-ratio](https://tailwindcss.com/docs/aspect-ratio) but with fallback for old browser.
+
+```css
+/* Tailwind Core aspect-ratio */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+/* Aspect Ratio Compat */
+.aspect-compat-video {
+  aspect-ratio: 16 / 9;
+}
+
+@supports not (aspect-ratio: 1/1) {
+  .aspect-compat-video::before {
+    content: '';
+    float: left;
+    padding-top: calc(100% * 16/9);
+  }
+  .aspect-compat-video::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+```
+
 ## License
 
 [MIT License](/LICENSE)

@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { babel } from '@rollup/plugin-babel'
 
 export default defineConfig({
   base       : process.env.BASE_URL ?? '/design-system/',
@@ -316,5 +317,22 @@ export default defineConfig({
       ],
     },
   },
-  vite: { plugins: [] },
+  vite: {
+    plugins: [
+      babel({
+        babelHelpers: 'bundled',
+        exclude     : /node_modules/,
+        presets     : [
+          [
+            '@babel/preset-env',
+            {
+              targets    : ['supports es6-module', 'maintained node versions'],
+              useBuiltIns: 'entry',
+              corejs     : '3.36',
+            },
+          ],
+        ],
+      }),
+    ],
+  },
 })

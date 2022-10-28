@@ -13,7 +13,6 @@
       :srcObject.prop="stream"
       class="camera__video"
       muted
-      autoplay
       playsinline
       @play="onStart" />
 
@@ -217,7 +216,10 @@ export default defineComponent({
       }, props.adapter.meta, { autoStart: false })
     })
 
-    const { videoInputs: cameras } = useDevicesList({ constraints: { video: { facingMode: meta.value.facingMode } } })
+    const { videoInputs: cameras } = useDevicesList({
+      requestPermissions: true,
+      constraints       : { video: { facingMode: meta.value.facingMode } },
+    })
 
     const deviceId = computed(() => {
       return cameras.value?.at(camera.value)?.deviceId
