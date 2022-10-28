@@ -12,6 +12,7 @@
       data-testid="camera-video"
       :srcObject.prop="stream"
       class="camera__video"
+      autoplay
       muted
       playsinline
       @play="onStart" />
@@ -264,6 +265,10 @@ export default defineComponent({
       }
 
       await start()
+
+      // Trigger video play if browser ignore autoplays attribute
+      if (typeof video.value?.play === 'function')
+        await video.value.play()
     }
 
     function toggle () {
@@ -347,7 +352,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .camera {
-  @apply bg-black w-full flex flex-col aspect-compat-video select-none relative overflow-hidden;
+  @apply bg-black w-full flex flex-col select-none relative overflow-hidden;
 
   &__video {
     @apply flex-grow min-h-full max-w-full h-auto object-cover;
