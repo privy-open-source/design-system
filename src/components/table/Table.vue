@@ -215,7 +215,7 @@ export default defineComponent({
   @apply flex flex-col w-full;
 
   &__headers {
-    @apply flex px-4 py-3 gap-2 bg-white;
+    @apply flex px-4 py-3 space-x-2 bg-white;
   }
 
   .datatable__header {
@@ -232,7 +232,7 @@ export default defineComponent({
   }
 
   &__row {
-    @apply flex px-4 py-2 gap-2 w-full items-center bg-white;
+    @apply flex px-4 py-2 space-x-2 w-full items-center bg-white;
   }
 
   &__cell {
@@ -256,7 +256,7 @@ export default defineComponent({
 
   &--flexible {
     .datatable__body {
-      @apply gap-3;
+      @apply space-y-3;
     }
 
     .datatable__row {

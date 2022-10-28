@@ -126,7 +126,7 @@ export default defineComponent({
   }
 
   .toast__body {
-    @apply flex-grow gap-2 flex flex-col;
+    @apply flex-grow space-y-2 flex flex-col;
   }
 
   .toast__title {
@@ -199,7 +199,7 @@ export default defineComponent({
 }
 
 .toast--filled {
-  @apply p-3 gap-3 items-start;
+  @apply p-3 space-x-3 items-start;
 
   .toast__close {
     @apply text-white cursor-pointer hover:text-subtext-100;

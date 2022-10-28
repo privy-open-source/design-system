@@ -8,6 +8,7 @@
     <video
       v-if="stream"
       ref="video"
+      v-p-aspect-ratio="4/3"
       data-testid="camera-video"
       :srcObject.prop="stream"
       class="camera__video"
@@ -344,7 +345,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .camera {
-  @apply bg-black w-full flex flex-col aspect-compat-video select-none relative;
+  @apply bg-black w-full flex flex-col aspect-compat-video select-none relative overflow-hidden;
 
   &__video {
     @apply flex-grow min-h-full max-w-full h-auto object-cover;
@@ -389,7 +390,7 @@ export default defineComponent({
   }
 
   &__controls {
-    @apply py-3 flex w-full flex-shrink-0 justify-center items-center absolute bottom-0 gap-3;
+    @apply py-3 flex w-full flex-shrink-0 justify-center items-center absolute bottom-0 space-x-3;
   }
 
   &__toast {

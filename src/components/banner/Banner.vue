@@ -88,7 +88,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .banner {
-  @apply p-4 flex gap-2 rounded text-body-100;
+  @apply p-4 flex space-x-2 rounded text-body-100;
 
   &--info {
     @apply bg-background-100;

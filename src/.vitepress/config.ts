@@ -25,7 +25,11 @@ export default defineConfig({
         {
           text       : 'Documentation',
           collapsible: true,
-          items      : [{ text: 'Instalation', link: '/docs/getting-started' }, { text: 'Editor Setup', link: '/docs/editor-setup' }],
+          items      : [
+            { text: 'Instalation', link: '/docs/getting-started' },
+            { text: 'Editor Setup', link: '/docs/editor-setup' },
+            { text: 'Browser Support', link: '/docs/browser-support' },
+          ],
         },
       ],
       '/foundation/': [

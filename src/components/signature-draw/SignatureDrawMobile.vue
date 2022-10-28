@@ -44,6 +44,7 @@
           :height="mode === 'rotate' ? width : height"
           :reset-label="resetLabel" />
         <Button
+          class="signature-draw__close"
           data-testid="signature-draw-close"
           @click="close">
           <span>{{ closeDrawLabel }}</span>
@@ -189,12 +190,20 @@ export default defineComponent({
     }
 
     &__modal {
-      @apply fixed w-full h-full top-0 left-0 bg-white z-50 flex items-center justify-center gap-4 flex-col p-5;
+      @apply fixed w-full h-full top-0 left-0 bg-white z-50 flex items-center justify-center flex-col p-5;
+    }
+
+    &__close {
+      @apply mt-4;
     }
 
     &--rotate {
       & * {
         @apply vertical-lr;
+      }
+
+      .signature-draw__close {
+        @apply mr-4 mt-0;
       }
 
       .signature-draw__modal {

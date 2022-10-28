@@ -12,7 +12,7 @@ module.exports = plugin(
       'aspect-compat': (value) => ({
         'aspect-ratio': value,
 
-        '@supports not (aspect-ratio: 1)': {
+        '@supports not (aspect-ratio: 1/1)': {
           '&::before': {
             float     : 'left',
             paddingTop: `calc(100% * ${value})`,

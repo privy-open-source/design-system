@@ -27,7 +27,7 @@
 import { defineComponent, PropType } from 'vue-demi'
 import WizardHeader from './WizardHeader.vue'
 import WizardBody from './WizardBody.vue'
-import { TravelHook, FinishedHook } from '../steps/utils/hook'
+import { TravelHook, FinishedHook } from '../steps'
 import { useVModel } from '../input'
 import { TitleVariant, IconVariant } from '../progress/Progress.vue'
 
@@ -76,7 +76,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .wizard {
-  @apply flex flex-col w-full gap-3;
+  @apply flex flex-col w-full space-y-3;
 
   .wizard__header {
     @apply flex-shrink-0;

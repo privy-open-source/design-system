@@ -220,7 +220,7 @@ toast({
 
 You can add some custom class to Toast element via `toastClass`.
 
-<div class="flex gap-3 mt-3">
+<div class="mt-3">
   <Button type="" color="primary" @click="toast({
     title     : 'Lorem ipsum',
     text      : 'Lorem ipsum dolor sit amet.',

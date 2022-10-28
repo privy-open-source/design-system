@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue-demi'
-import { TravelHook } from '../steps/utils/hook'
+import { TravelHook } from '../steps'
 
 export default defineComponent({
   name : 'WizardStep',
