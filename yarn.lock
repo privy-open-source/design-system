@@ -2462,6 +2462,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@privyid/browserslist-config@workspace:^, @privyid/browserslist-config@workspace:packages/browserslist-config":
+  version: 0.0.0-use.local
+  resolution: "@privyid/browserslist-config@workspace:packages/browserslist-config"
+  languageName: unknown
+  linkType: soft
+
 "@privyid/design-system@workspace:.":
   version: 0.0.0-use.local
   resolution: "@privyid/design-system@workspace:."
@@ -2473,6 +2479,7 @@ __metadata:
     "@interactjs/types": 1.10.17
     "@microsoft/eslint-formatter-sarif": 3.0.0
     "@popperjs/core": 2.11.6
+    "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rollup/plugin-babel": ^6.0.2
     "@rushstack/eslint-patch": 1.2.0

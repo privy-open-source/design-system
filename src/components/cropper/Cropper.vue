@@ -456,10 +456,10 @@ export default defineComponent({
   }
 
   &__control {
-    @apply p-2 gap-2 flex justify-between max-w-full overflow-hidden;
+    @apply p-2 space-x-2 flex justify-between max-w-full overflow-hidden;
 
     &-bar {
-      @apply flex flex-grow max-w-md gap-2;
+      @apply flex flex-grow max-w-md space-x-2;
     }
   }
 

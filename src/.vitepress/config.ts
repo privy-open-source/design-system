@@ -326,7 +326,7 @@ export default defineConfig({
           [
             '@babel/preset-env',
             {
-              targets    : ['supports es6-module', 'maintained node versions'],
+              targets    : ['extends @privyid/browserslist-config'],
               useBuiltIns: 'entry',
               corejs     : '3.36',
             },

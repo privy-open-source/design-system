@@ -1,6 +1,1 @@
-[production]
-supports es6-module
-maintained node versions
-
-[modern]
-defaults and supports es6-module and supports flexbox-gap
+extends @privyid/browserslist-config

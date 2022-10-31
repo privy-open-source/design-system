@@ -214,11 +214,11 @@ export default defineComponent({
         }
 
         .btn--xs {
-          @apply py-2 px-1;
+          @apply py-2 px-1 pi-1;
         }
 
         .btn--md {
-          @apply py-5 px-3;
+          @apply py-5 px-3 pi-3;
         }
       }
     }

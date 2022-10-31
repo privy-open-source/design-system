@@ -8,7 +8,6 @@
     <video
       v-if="stream"
       ref="video"
-      v-p-aspect-ratio="4/3"
       data-testid="camera-video"
       :srcObject.prop="stream"
       class="camera__video"
@@ -218,7 +217,7 @@ export default defineComponent({
     })
 
     const { videoInputs: cameras } = useDevicesList({
-      requestPermissions: true,
+      requestPermissions: false,
       constraints       : { video: { facingMode: meta.value.facingMode } },
     })
 
@@ -376,7 +375,7 @@ export default defineComponent({
     }
 
     &--square & {
-      @apply aspect-compat-square w-2/3 md:w-1/2;
+      @apply aspect-compat-square w-1/2;
     }
 
     &--round & {
@@ -389,7 +388,7 @@ export default defineComponent({
   }
 
   &__result {
-    @apply max-w-full h-full object-cover;
+    @apply max-w-full h-auto;
   }
 
   &__off-info {

@@ -73,7 +73,7 @@ export default defineComponent({
   },
   emits: ['dismissed'],
   setup (props, { emit }) {
-    const timeout    = ref()
+    const timeout    = ref<ReturnType<typeof setTimeout>>()
     const classNames = computed(() => {
       const result: string[] = ['toast']
 

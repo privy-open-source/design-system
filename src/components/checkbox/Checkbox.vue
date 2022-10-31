@@ -148,7 +148,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .checkbox {
-  @apply inline-flex gap-2 relative cursor-pointer select-none items-baseline;
+  @apply inline-flex space-x-2 relative cursor-pointer select-none items-baseline;
 
   & > input[type="checkbox"] {
     @apply appearance-none w-0 h-0 opacity-0 absolute;

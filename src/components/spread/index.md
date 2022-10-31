@@ -15,7 +15,7 @@
 
 ### Simple Usage
 
-<preview class="flex-col gap-4">
+<preview class="flex-col space-y-4">
   <p-checkbox v-model="active">Toggle Active</p-checkbox>
   <p-spread :active="active">
     <IconFile />
