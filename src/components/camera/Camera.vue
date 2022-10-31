@@ -98,12 +98,17 @@
       </p-button>
       <!-- End Main Button -->
     </div>
+    <audio
+      ref="shutter"
+      :src="ShutterWav"
+      :muted="silent" />
 
     <slot
       :cameras="cameras"
       :preview="preview"
       :stream="stream"
       :video="video"
+      :shutter="shutter"
       :toast="toast" />
   </div>
 </template>
@@ -123,8 +128,7 @@ import pButton from '../button/Button.vue'
 import IconRotate from '@carbon/icons-vue/lib/renew/16'
 import IconCamera from '@carbon/icons-vue/lib/camera/24'
 import IconRetake from '@carbon/icons-vue/lib/reset/24'
-import shutterWav from './assets/shutter.wav'
-import { useSound } from '@vueuse/sound'
+import ShutterWav from './assets/shutter.wav'
 import { useVModel } from '../input'
 import CaptureAdapter from './adapter/capture'
 import {
@@ -202,8 +206,8 @@ export default defineComponent({
     const isTaken      = ref(false)
     const preview      = ref('')
     const message      = ref('')
-    const shutter      = useSound(shutterWav)
 
+    const shutter    = ref<HTMLAudioElement>()
     const video      = ref<HTMLVideoElement>()
     const permission = usePermission('camera', { controls: true })
     const camera     = ref(0)
@@ -265,7 +269,9 @@ export default defineComponent({
 
       await start()
 
-      // Trigger video play if browser ignore autoplays attribute
+      /* Trigger video play if browser ignore autoplays attribute */
+      /* In HappyDOM, play() is undefined, which shouldn't happen in Real Browser */
+      /* c8 ignore next 2 */
       if (typeof video.value?.play === 'function')
         await video.value.play()
     }
@@ -298,8 +304,9 @@ export default defineComponent({
       emit('result', output.result)
       emit('change', output.result)
 
-      if (!props.silent)
-        shutter.play()
+      /* c8 ignore next 2 */
+      if (typeof shutter.value?.play === 'function')
+        shutter.value.play()
     }
 
     async function retake () {
@@ -328,9 +335,11 @@ export default defineComponent({
     })
 
     return {
+      ShutterWav,
       classNames,
       cameras,
       video,
+      shutter,
       stream,
       toggle,
       isActive,

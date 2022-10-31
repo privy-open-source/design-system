@@ -2497,7 +2497,6 @@ __metadata:
     "@vitest/coverage-c8": 0.24.3
     "@vue/eslint-config-typescript": 11.0.1
     "@vueuse/core": 8.9.4
-    "@vueuse/sound": 1.1.7
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
     autoprefixer: 10.4.12
@@ -2556,7 +2555,6 @@ __metadata:
     "@popperjs/core": 2.11.6
     "@privyid/tailwind-preset": "workspace:^"
     "@vueuse/core": 8.9.4
-    "@vueuse/sound": 1.1.7
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
     buffer: 6.0.3
@@ -3650,15 +3648,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/composition-api@npm:>=1.0.0-rc.1":
-  version: 1.7.1
-  resolution: "@vue/composition-api@npm:1.7.1"
-  peerDependencies:
-    vue: ">= 2.5 < 2.7"
-  checksum: dedd90e17cc6d3577510b5439a568932862a122dcff922c52ab0a25db7ee289caea1aa2d5e43c817eb91619e1b955e5e8e9460a4435f5c3565284d39750c9d4c
-  languageName: node
-  linkType: hard
-
 "@vue/devtools-api@npm:^6.1.4":
   version: 6.2.1
   resolution: "@vue/devtools-api@npm:6.2.1"
@@ -3862,20 +3851,6 @@ __metadata:
   dependencies:
     vue-demi: "*"
   checksum: ec56d197ba0a9b984e514c99237d4a613ab480de44fd9c33c781e2b9aee8ee80ff9a3c49c0bd9cb0cfae38f75e1d72a03a9eb737b50fb46cd30e1c8090d8474e
-  languageName: node
-  linkType: hard
-
-"@vueuse/sound@npm:1.1.7":
-  version: 1.1.7
-  resolution: "@vueuse/sound@npm:1.1.7"
-  dependencies:
-    "@vue/composition-api": ">=1.0.0-rc.1"
-    howler: ^2.2.1
-    vue-demi: latest
-  dependenciesMeta:
-    "@vue/composition-api":
-      optional: true
-  checksum: 513ce86ef1ed492e14299f3436c20c81bdbe531dd1d9a3243f380532490447a75ab91559f9c2592558a2aa93042b01a53d649004c315d15c2ca1092b73f83c49
   languageName: node
   linkType: hard
 
@@ -8164,13 +8139,6 @@ __metadata:
   dependencies:
     lru-cache: ^6.0.0
   checksum: c3f87b3c2f7eb8c2748c8f49c0c2517c9a95f35d26f4bf54b2a8cba05d2e668f3753548b6ea366b18ec8dadb4e12066e19fa382a01496b0ffa0497eb23cbe461
-  languageName: node
-  linkType: hard
-
-"howler@npm:^2.2.1":
-  version: 2.2.3
-  resolution: "howler@npm:2.2.3"
-  checksum: c04ce19411f4d86f8508d411a93aea943f128c2686b3df3c61383fd4ed8f5551232c4389aba3a8d4c8b0eeb34ae51df5a9c3ccd9ba48583ac53e9bf9fcbd1ecf
   languageName: node
   linkType: hard
 
@@ -14358,7 +14326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.13.11, vue-demi@npm:latest":
+"vue-demi@npm:0.13.11":
   version: 0.13.11
   resolution: "vue-demi@npm:0.13.11"
   peerDependencies:
