@@ -2483,7 +2483,7 @@ __metadata:
     "@types/lodash-es": 4.17.6
     "@types/marked": ^4
     "@types/testing-library__jest-dom": 5.14.5
-    "@types/webfontloader": 1.6.34
+    "@types/webfontloader": 1.6.35
     "@typescript-eslint/eslint-plugin": 5.38.0
     "@typescript-eslint/parser": 5.38.0
     "@vitejs/plugin-vue": 3.1.0
@@ -2525,7 +2525,7 @@ __metadata:
     p-queue: ^7.3.0
     postcss: 8.4.16
     postcss-nested: 5.0.6
-    tabbable: 5.3.3
+    tabbable: 6.0.1
     tailwindcss: 3.1.8
     typescript: 4.8.4
     vitepress: 1.0.0-alpha.25
@@ -2562,7 +2562,7 @@ __metadata:
     lodash-es: 4.17.21
     nuxt: 3.0.0-rc.12
     postcss-custom-properties: 12.1.8
-    tabbable: 5.3.3
+    tabbable: 6.0.1
     tailwindcss: 3.2.0
     vue-demi: 0.13.11
     vuedraggable: next
@@ -3200,10 +3200,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webfontloader@npm:1.6.34":
-  version: 1.6.34
-  resolution: "@types/webfontloader@npm:1.6.34"
-  checksum: acd945cbf76f22f9f1040ed0b86aafba0b0dd1f5fe05238896208273fd4243eec9412e0349fb4991948ee62102270ddacc21e354052dcbdcd5a3278131f83277
+"@types/webfontloader@npm:1.6.35":
+  version: 1.6.35
+  resolution: "@types/webfontloader@npm:1.6.35"
+  checksum: 8a809e1f8041fc9f7ec1df82d6e841bfc51732a3aa0b56a4e3d2abab86a8abce1b0db90dc9d2c594fd0d77034e2670cae3cfb714a902a0112985fa04fd4a61c8
   languageName: node
   linkType: hard
 
@@ -13169,10 +13169,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tabbable@npm:5.3.3":
-  version: 5.3.3
-  resolution: "tabbable@npm:5.3.3"
-  checksum: 1aa56e1bb617cc10616c407f4e756f0607f3e2d30f9803664d70b85db037ca27e75918ed1c71443f3dc902e21dc9f991ce4b52d63a538c9b69b3218d3babcd70
+"tabbable@npm:6.0.1":
+  version: 6.0.1
+  resolution: "tabbable@npm:6.0.1"
+  checksum: 65e378ad69a97416f2fdce34ade11b8ff68b33d9b2d978920a9d285c77e1bb88cb35113a8f00af8c4f0163d788d451a48840a216fa918d6a3f0c554951deb984
   languageName: node
   linkType: hard
 
