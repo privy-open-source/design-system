@@ -1,6 +1,6 @@
 <template>
   <div
-    v-p-aspect-ratio="4/3"
+    v-p-aspect-ratio.fixed="4/3"
     class="camera"
     data-testid="camera"
     :data-deviceid="deviceId"
@@ -373,7 +373,7 @@ export default defineComponent({
   }
 
   &__mask-container {
-    @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full overflow-hidden pointer-events-none;
+    @apply absolute inset-0 w-full h-full overflow-hidden pointer-events-none;
   }
 
   &__mask {
@@ -384,20 +384,20 @@ export default defineComponent({
     }
 
     &--square & {
-      @apply aspect-compat-square w-1/2;
+      @apply aspect-compat-square w-[55%] md:w-1/2;
     }
 
     &--round & {
-      @apply aspect-compat-square rounded-full w-1/2;
+      @apply aspect-compat-square rounded-full w-[55%] md:w-1/2;
     }
 
     &--card & {
-      @apply aspect-compat-[85.60/53.98] w-2/3 rounded-md;
+      @apply aspect-compat-[85.60/53.98] w-3/4 rounded-md;
     }
   }
 
   &__result {
-    @apply max-w-full h-auto;
+    @apply w-full h-full object-cover absolute inset-0;
   }
 
   &__off-info {

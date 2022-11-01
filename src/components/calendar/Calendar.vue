@@ -245,10 +245,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .calendar {
-  @apply p-2 md:p-4 bg-white flex flex-col gap-2 text-sm;
+  @apply p-2 md:p-4 bg-white flex flex-col space-y-2 text-sm;
 
   &__nav {
-    @apply flex justify-between gap-2;
+    @apply flex justify-between space-x-2;
 
     &-title {
       @apply flex-grow;

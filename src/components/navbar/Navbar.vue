@@ -17,7 +17,7 @@ import {
   provide,
   toRef,
 } from 'vue-demi'
-import { StyleVariant } from '../nav/Nav.vue'
+import { StyleVariant } from '../nav'
 import {
   templateRef,
   useElementBounding,

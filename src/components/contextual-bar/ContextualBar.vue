@@ -64,7 +64,7 @@ import {
   onMounted,
   watch,
 } from 'vue-demi'
-import { AlignVariant } from '../nav/Nav.vue'
+import { AlignVariant } from '../nav'
 import { useVModel } from '../input'
 import pCaption from '../caption/Caption.vue'
 import pSubheading from '../subheading/Subheading.vue'

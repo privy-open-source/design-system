@@ -277,6 +277,10 @@ export default defineConfig({
           collapsible: true,
           items      : [
             {
+              text: 'Aspect Ratio',
+              link: '/components/aspect-ratio/',
+            },
+            {
               text: 'Markdown',
               link: '/components/markdown/',
             },

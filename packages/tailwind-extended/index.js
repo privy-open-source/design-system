@@ -40,7 +40,7 @@ module.exports = plugin(
         '@supports not (aspect-ratio: 1/1)': {
           '&::before': {
             float     : 'left',
-            paddingTop: `calc(100% * ${value})`,
+            paddingTop: `calc(100% / (${value}))`,
             content   : '""',
           },
           '&::after': {

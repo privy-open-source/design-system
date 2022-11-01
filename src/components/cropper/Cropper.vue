@@ -442,7 +442,7 @@ export default defineComponent({
 
   &__mask {
     @apply pointer-events-none touch-none select-none;
-    @apply border border-white border-dashed box-border shadow-mask absolute top-0 left-0 right-0 bottom-0 m-auto max-w-[66.666667%];
+    @apply border border-white border-dashed box-border shadow-mask absolute inset-0 m-auto max-w-[66.666667%];
   }
 
   &__image {
@@ -451,7 +451,7 @@ export default defineComponent({
     @apply touch-none h-auto origin-center object-contain select-none outline-none;
 
     &-container {
-      @apply w-full h-full absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center;
+      @apply w-full h-full absolute inset-0 flex items-center justify-center;
     }
   }
 
