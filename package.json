@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
-    "@fontsource/dm-sans": "4.5.8",
+    "@fontsource/dm-sans": "4.5.9",
     "@popperjs/core": "2.11.6",
     "@vueuse/core": "8.9.4",
     "@vueuse/sound": "1.1.7",
