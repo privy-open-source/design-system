@@ -54,7 +54,7 @@
     "eslint-plugin-varspacing": "1.2.2",
     "eslint-plugin-vue": "9.4.0",
     "flex-gap-polyfill": "^4.1.0",
-    "happy-dom": "6.0.4",
+    "happy-dom": "7.6.6",
     "husky": "8.0.1",
     "jest-extended": "3.1.0",
     "lint-staged": "13.0.3",
@@ -69,6 +69,7 @@
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
     "@fontsource/dm-sans": "4.5.9",
+    "@juggle/resize-observer": "^3.4.0",
     "@popperjs/core": "2.11.6",
     "@vueuse/core": "8.9.4",
     "@zxing/browser": "0.1.1",

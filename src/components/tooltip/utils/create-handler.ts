@@ -3,7 +3,13 @@ import TooltipContainer from '../TooltipContainer.vue'
 
 type EventAction = 'toggle' | 'show' | 'hide'
 
-export default function createHandler (eventName: string, eventAction: EventAction, prevent = false) {
+/**
+ *
+ * @param eventName Event name, only run when attr data-tooltip-action match this name
+ * @param tooltipAction Action applied to the tooltip
+ * @param prevent If true, it's will prevent default action.
+ */
+export default function createHandler (eventName: string, tooltipAction: EventAction, prevent = false) {
   return async function handler (event: MouseEvent) {
     const tooltip = await useSingleton(TooltipContainer)
     const target  = (event.target as HTMLElement)
@@ -12,7 +18,7 @@ export default function createHandler (eventName: string, eventAction: EventActi
     const action  = target.dataset.tooltipAction
 
     if (enable && action.includes(eventName)) {
-      tooltip[eventAction](id)
+      tooltip[tooltipAction](id)
 
       if (prevent)
         event.preventDefault()

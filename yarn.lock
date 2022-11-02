@@ -2125,6 +2125,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@juggle/resize-observer@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@juggle/resize-observer@npm:3.4.0"
+  checksum: 2505028c05cc2e17639fcad06218b1c4b60f932a4ebb4b41ab546ef8c157031ae377e3f560903801f6d01706dbefd4943b6c4704bf19ed86dfa1c62f1473a570
+  languageName: node
+  linkType: hard
+
 "@koa/router@npm:^9.0.1":
   version: 9.4.0
   resolution: "@koa/router@npm:9.4.0"
@@ -2477,6 +2484,7 @@ __metadata:
     "@carbon/icons-vue": 10.49.1
     "@fontsource/dm-sans": 4.5.9
     "@interactjs/types": 1.10.17
+    "@juggle/resize-observer": ^3.4.0
     "@microsoft/eslint-formatter-sarif": 3.0.0
     "@popperjs/core": 2.11.6
     "@privyid/browserslist-config": "workspace:^"
@@ -2519,7 +2527,7 @@ __metadata:
     eslint-plugin-vue: 9.4.0
     flex-gap-polyfill: ^4.1.0
     fuse.js: 6.6.2
-    happy-dom: 6.0.4
+    happy-dom: 7.6.6
     husky: 8.0.1
     interactjs: 1.10.17
     isomorphic-dompurify: ^0.23.0
@@ -8012,9 +8020,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:6.0.4":
-  version: 6.0.4
-  resolution: "happy-dom@npm:6.0.4"
+"happy-dom@npm:7.6.6":
+  version: 7.6.6
+  resolution: "happy-dom@npm:7.6.6"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -8023,7 +8031,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 4bfd97f07ab459fd48fe93f597deb903527f0ffffbc98f2ab1cacc1362ae09d11dfc21d8b166d8e0d19fc49d7c1dcc4b250c1da131d6f70e3cf2e82b39d60657
+  checksum: 5465475373a7245050b58b2564e9067712db941efb7165d645cb69721dba129bdb399c8b11e509cc9fad3e82997e8cad4fa409886c8252e67efaaaebaf67b9b0
   languageName: node
   linkType: hard
 

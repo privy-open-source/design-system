@@ -53,7 +53,7 @@
 
 ## Fixed Size
 
-Add modifier `.fixed` to enable fixed size, it's using style `height` instead of `min-height`
+Add modifier `.fixed` to enable fixed size, it'll use style `height` instead of `min-height`
 
 <preview class="space-x-3">
   <div class="p-4 text-white w-28 bg-primary" v-p-aspect-ratio="1">

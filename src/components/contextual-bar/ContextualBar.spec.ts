@@ -152,7 +152,7 @@ it('should be abble to add custom background via prop `background-url`', () => {
 
   expect(bar).toBeInTheDocument()
   expect(bar).toHaveClass('contextual-bar--background-image')
-  expect(bar).toHaveStyle({ 'background-image': 'url(\'assets/images/img-background-contextualbar.svg\')' })
+  expect(bar).toHaveStyle({ 'background-image': 'url("assets/images/img-background-contextualbar.svg")' })
 })
 
 it('should be abble to add icon via slot `icon`', () => {

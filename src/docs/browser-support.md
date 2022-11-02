@@ -9,13 +9,9 @@ _We need to keep moving forward, and savoring the journey_ 😎
 <details open>
   <summary><b>Desktop</b></summary>
 
-  | Browser | Version |
-  |---------|--------:|
-  | Chrome  |     105 |
-  | Edge    |     105 |
-  | Firefox |     104 |
-  | Safari  |    15.6 |
-  | Opera   |      90 |
+  | Chrome | Edge | Firefox | Safari | Opera |
+  |:------:|:----:|:-------:|:------:|:-----:|
+  |  105   | 105  |   104   |  15.6  |  90   |
 </details>
 
 <details open>
@@ -31,6 +27,10 @@ _We need to keep moving forward, and savoring the journey_ 😎
   | Opera Mobile        |      64 |
   | Baidu               |   13.18 |
   | QQ Browser          |    13.1 |
+
+  | Chrome Android | Firefox Android | Safari IOS | Android Browser | Samsung Internet | Opera Mobile | Baidu | QQ Browser |
+  |:--------------:|:---------------:|:----------:|:---------------:|:----------------:|:------------:|:-----:|:----------:|
+  |       84       |       84        |     63     |      14.1       |        70        |      64      | 13.18 |    13.1    |
 </details>
 
 ## Minimum
@@ -38,13 +38,9 @@ _We need to keep moving forward, and savoring the journey_ 😎
 <details>
   <summary><b>Desktop</b></summary>
 
-  | Browser | Version |
-  |---------|--------:|
-  | Chrome  |      84 |
-  | Edge    |      84 |
-  | Firefox |      63 |
-  | Safari  |    14.1 |
-  | Opera   |      70 |
+  | Chrome | Edge | Firefox | Safari | Opera |
+  |:------:|:----:|:-------:|:------:|:-----:|
+  |   84   |  84  |   63    |  14.1  |  70   |
 </details>
 
 <details>
