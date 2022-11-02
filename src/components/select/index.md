@@ -246,7 +246,7 @@ When you working with chaining select like `province` -> `city` form.
 Normally, when you select the province, it should trigger reload on city based on the province.
 To do this, you need add the province value as **watch dependencies**. It will automatically reload when `province` is changed
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-select
     v-model="province"
     placeholder="Select Province"

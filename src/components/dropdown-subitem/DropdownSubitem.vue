@@ -165,7 +165,7 @@ export default defineComponent({
 <style lang="postcss">
 .dropdown__subitem {
   &-btn {
-    @apply flex items-center gap-1;
+    @apply flex items-center space-x-1;
 
     &-back {
       @apply flex-shrink-0;

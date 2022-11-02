@@ -76,7 +76,7 @@
 ## Binding v-model
 
 <preview class="justify-center">
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col space-y-3">
     <p-radio v-model="selected" value="apple">Apple</p-radio>
     <p-radio v-model="selected" value="grape">Grape</p-radio>
     <p-radio v-model="selected" value="orange">Orange</p-radio>
@@ -100,7 +100,7 @@
 Some case, you may need some [Checkbox][checkbox] but work like a Radio. You can change the apperance via `apperance` props.
 
 <preview class="justify-center">
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col space-y-3">
     <p-radio apperance="checkbox" v-model="selected" value="apple">Apple</p-radio>
     <p-radio apperance="checkbox" v-model="selected" value="grape">Grape</p-radio>
     <p-radio apperance="checkbox" v-model="selected" value="orange">Orange</p-radio>

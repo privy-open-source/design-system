@@ -254,7 +254,7 @@ export default defineComponent({
   &&--align-right {
     .contextual-bar__wrapper {
       &--with-action {
-        @apply gap-3;
+        @apply space-gap-3;
 
         .contextual-bar__icon {
           @apply mr-0;
@@ -276,7 +276,7 @@ export default defineComponent({
   }
 
   &__action {
-    @apply flex flex-shrink-0 ml-auto gap-3;
+    @apply flex flex-shrink-0 ml-auto space-gap-3;
   }
 
   &__icon {

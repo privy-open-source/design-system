@@ -83,7 +83,7 @@ Auto adjust textarea based on text height.
 
 Show character counter with prop `show-counter`
 
-<preview class="flex-col gap-3">
+<preview class="flex-col space-y-3">
   <p-textarea show-counter />
   <p-textarea show-counter maxlength="50" />
 </preview>

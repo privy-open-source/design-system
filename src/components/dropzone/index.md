@@ -13,10 +13,6 @@
 
 <style scoped lang="postcss">
   .preview {
-    .h5 {
-      @apply mt-0;
-    }
-
     a {
       @apply underline text-primary-100 hover:text-primary-hovered;
     }
@@ -34,7 +30,7 @@
 <preview class="flex-col items-stretch">
   <p-dropzone accept="application/pdf">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded"
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded"
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconFile class="w-16 h-16 mt-5 fill-primary-100" />
@@ -63,7 +59,7 @@
 <template>
   <p-dropzone accept="application/pdf">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconFile class="w-16 h-16 mt-5 fill-primary-100" />
@@ -94,7 +90,7 @@
 <preview class="flex-col items-stretch">
   <p-dropzone accept="image/*">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -121,7 +117,7 @@
 <template>
   <p-dropzone accept="image/*">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -153,7 +149,7 @@ Add prop `multiple` to enable multi-selected upload.
 <preview class="flex-col items-stretch">
   <p-dropzone accept="image/*" multiple maxlength="5">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -184,7 +180,7 @@ Add prop `multiple` to enable multi-selected upload.
 <template>
   <p-dropzone accept="image/*" multiple maxlength="5">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -219,7 +215,7 @@ When user selecting the files, and then selecting again, the old list of files i
 <preview class="flex-col items-stretch">
   <p-dropzone accept="image/*" multiple="append" maxlength="10">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -250,7 +246,7 @@ When user selecting the files, and then selecting again, the old list of files i
 <template>
   <p-dropzone accept="image/*" multiple="append" maxlength="10">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -283,7 +279,7 @@ When user selecting the files, and then selecting again, the old list of files i
 <preview class="flex-col items-stretch">
   <p-dropzone accept="image/*" v-model="result">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -314,7 +310,7 @@ When user selecting the files, and then selecting again, the old list of files i
 <template class="flex-col items-stretch">
   <p-dropzone accept="image/*" v-model="result">
     <template #default="{ isDragover, isHovered, model, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -346,7 +342,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 <preview class="flex-col items-stretch">
   <p-dropzone accept="image/*" v-model.base64="result2">
     <template #default="{ isDragover, isHovered, rawModel, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
@@ -377,7 +373,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 <template>
   <p-dropzone accept="image/*" v-model.base64="result">
     <template #default="{ isDragover, isHovered, rawModel, browse }">
-      <div class="flex flex-col items-center justify-center w-full gap-3 p-5 border-2 border-dashed rounded "
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-primary-100" />

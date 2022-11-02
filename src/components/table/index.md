@@ -83,12 +83,12 @@
 
 ### Simple Usage
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items" />
 </preview>
 
 ```vue
-<template class="flex-col gap-2">
+<template class="flex-col space-y-2">
   <p-table :fields="fields" :items="items" />
 </template>
 
@@ -128,12 +128,12 @@ const items = ref([
 
 ### Custom Label + Formatter
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table :fields="fields2" :items="items" />
 </preview>
 
 ```vue
-<template class="flex-col gap-2">
+<template class="flex-col space-y-2">
   <p-table :fields="fields" :items="items" />
 </template>
 
@@ -185,7 +185,7 @@ const items = ref([
 
 There are 2 variants: `flexible` and `static`, default is `flexible`
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table variant="flexible" :fields="fields" :items="items" />
   <p-table variant="static" :fields="fields" :items="items" />
 </preview>
@@ -201,7 +201,7 @@ There are 2 variants: `flexible` and `static`, default is `flexible`
 
 Add prop `selectable` to enable checkbox inside table
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table selectable :fields="fields" :items="items" />
 </preview>
 
@@ -215,7 +215,7 @@ Add prop `selectable` to enable checkbox inside table
 
 The result of selected item is bind inside `v-model`
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table v-model="selected" selectable :fields="fields" :items="items" />
 </preview>
 
@@ -233,7 +233,7 @@ The result of selected item is bind inside `v-model`
 
 set `_selectable` to `false` in your items to disabled item from selection.
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table v-model="selectedA" selectable :fields="fields" :items="itemsB" />
 </preview>
 
@@ -273,7 +273,7 @@ set `_selectable` to `false` in your items to disabled item from selection.
 
 add prop `draggable` to enable drag-to-sort.
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table :fields="fields" v-model:items="items" draggable />
 </preview>
 
@@ -286,7 +286,7 @@ add prop `draggable` to enable drag-to-sort.
 
 ### Custom Cell
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items">
     <template #cell(status)="{ item }">
       <p-badge>{{ item.status ? 'active' : 'inactive' }}</p-badge>
@@ -306,7 +306,7 @@ add prop `draggable` to enable drag-to-sort.
 
 ### Custom Head
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items">
     <template #head(status)="{ label }">
       {{ label }}<p-badge class="ml-1">new</p-badge>

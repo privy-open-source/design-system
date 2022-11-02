@@ -22,7 +22,7 @@ Badges are placed before/after the label of the thing they're quantifying, such 
 ## Colors
 Badge available in 7 different colors. There are `primary`, `secondary`, `success`, `info`, `warning`, `danger` and `gold`. Default color is `primary`
 
-<preview class="gap-4">
+<preview class="flex-wrap space-gap-3">
   <p-badge color="primary">25</p-badge>
   <p-badge color="secondary">7K</p-badge>
   <p-badge color="success">999+</p-badge>
@@ -47,7 +47,7 @@ Badge available in 7 different colors. There are `primary`, `secondary`, `succes
 ## Variants
 Badge has 3 variants namely `default`, `light` and `inverse`. When variant is not set, badge will looks as a `default`
 
-<preview class="gap-4">
+<preview class="flex-wrap space-gap-3">
   <p-badge>25</p-badge>
   <p-badge variant="light">7K</p-badge>
   <p-badge variant="inverse">999+</p-badge>
