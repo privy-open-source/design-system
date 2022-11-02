@@ -10,3 +10,7 @@ Learn more about this package: https://privy-open-source.github.io/design-system
 
 - Run `npm run dev:prepare` to generate type stubs.
 - Use `npm run dev` to start [playground](./playground) in development mode.
+
+## License
+
+[MIT License](/LICENSE)

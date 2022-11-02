@@ -97,7 +97,7 @@
 
 ## Binding v-model
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center">
   <p-checkbox v-model="modelA">Checkbox Label</p-checkbox>
 </preview>
 
@@ -115,7 +115,7 @@
 
 By default, value of toggle is always `Boolean`, but you can change it with `value` and `unchecked-value`.
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center">
   <p-checkbox v-model="modelB" value="agree" unchecked-value="disagree">
     I agree with Term and Condition
   </p-checkbox>
@@ -143,7 +143,7 @@ If v-model **state** is an *array* it will append the value instead of replacing
 <Banner><strong>Warn!</strong> selected order is not guaranteed</Banner>
 
 <preview class="flex-col items-center">
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col space-y-3">
     <p-checkbox v-model="selected" value="apple">Apple</p-checkbox>
     <p-checkbox v-model="selected" value="grape">Grape</p-checkbox>
     <p-checkbox v-model="selected" value="pineapple">Pineapple</p-checkbox>
@@ -158,7 +158,7 @@ If v-model **state** is an *array* it will append the value instead of replacing
 
 ```vue
 <template>
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col space-y-3">
     <p-checkbox v-model="selected" value="apple">Apple</p-checkbox>
     <p-checkbox v-model="selected" value="grape">Grape</p-checkbox>
     <p-checkbox v-model="selected" value="pineapple">Pineapple</p-checkbox>
@@ -173,7 +173,7 @@ If v-model **state** is an *array* it will append the value instead of replacing
 Indeterminate is condition between `checked` and `unchecked`. It's usefull for case like: **selectAll** feature.
 
 <preview class="flex-col items-center">
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col space-y-3">
     <p-checkbox
       v-model="selectAll"
       :indeterminate="indeterminate">
@@ -193,7 +193,7 @@ Indeterminate is condition between `checked` and `unchecked`. It's usefull for c
 
 ```vue
 <template>
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col space-y-3">
     <p-checkbox
       v-model="selectAll"
       :indeterminate="indeterminate">

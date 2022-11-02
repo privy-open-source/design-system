@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { babel } from '@rollup/plugin-babel'
 
 export default defineConfig({
   base       : process.env.BASE_URL ?? '/design-system/',
@@ -25,7 +26,11 @@ export default defineConfig({
         {
           text       : 'Documentation',
           collapsible: true,
-          items      : [{ text: 'Instalation', link: '/docs/getting-started' }, { text: 'Editor Setup', link: '/docs/editor-setup' }],
+          items      : [
+            { text: 'Instalation', link: '/docs/getting-started' },
+            { text: 'Editor Setup', link: '/docs/editor-setup' },
+            { text: 'Browser Support', link: '/docs/browser-support' },
+          ],
         },
       ],
       '/foundation/': [
@@ -272,6 +277,10 @@ export default defineConfig({
           collapsible: true,
           items      : [
             {
+              text: 'Aspect Ratio',
+              link: '/components/aspect-ratio/',
+            },
+            {
               text: 'Markdown',
               link: '/components/markdown/',
             },
@@ -312,5 +321,22 @@ export default defineConfig({
       ],
     },
   },
-  vite: { plugins: [] },
+  vite: {
+    plugins: [
+      babel({
+        babelHelpers: 'bundled',
+        exclude     : /node_modules/,
+        presets     : [
+          [
+            '@babel/preset-env',
+            {
+              targets    : ['extends @privyid/browserslist-config'],
+              useBuiltIns: 'entry',
+              corejs     : '3.36',
+            },
+          ],
+        ],
+      }),
+    ],
+  },
 })

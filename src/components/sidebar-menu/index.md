@@ -168,7 +168,7 @@
 
 ### Basic Sidebar
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-sidebar-menu :menus="basic">
     <p-sidebar-brand>
       <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
@@ -220,7 +220,7 @@ const menus = defineMenu([
 
 ### Fixed Sidebar
 
-<preview class="flex-col gap-2 higher">
+<preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="fixed">
     <p-sidebar-brand>
       <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
@@ -324,7 +324,7 @@ const menus = defineMenu([
 
 ### Narrow Sidebar
 
-<preview class="flex-col gap-2 higher">
+<preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="narrow" type="narrow">
     <p-sidebar-brand>
       <img src="../sidebar/assets/images/logo-privy-icon.svg" alt="" />

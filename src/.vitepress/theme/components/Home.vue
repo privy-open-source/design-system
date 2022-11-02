@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col items-center justify-center gap-2 mt-10 md:flex-row">
+    <div class="flex flex-col items-center justify-center pt-10 space-gap-2 md:flex-row">
       <Button
         size="lg"
         @click="gettingStarted">

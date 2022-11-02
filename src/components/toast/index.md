@@ -60,7 +60,7 @@ toast({
 
 There available 4 type variants: `info`, `success`, `warn`, `error`. default is `info`
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <Toast type="info" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast type="success" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast type="warn" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
@@ -69,7 +69,7 @@ There available 4 type variants: `info`, `success`, `warn`, `error`. default is 
 
 **Try it:**
 
-<div class="flex flex-wrap gap-3 mt-3">
+<div class="mt-3 space-gap-3">
   <Button color="primary" @click="toast({
     type : 'info',
     title: 'Lorem ipsum',
@@ -136,7 +136,7 @@ toast({
 
 There available 2 style variant: `simple` and `filled`. default is `simple`
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <Toast variant="filled" type="info" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast variant="filled" type="success" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast variant="filled" type="warn" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
@@ -145,7 +145,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
 
 **Try it:**
 
-<div class="flex flex-wrap gap-3 mt-3">
+<div class="mt-3 space-gap-3">
   <Button color="primary" @click="toast({
     type   : 'info',
     variant: 'filled',
@@ -220,7 +220,7 @@ toast({
 
 You can add some custom class to Toast element via `toastClass`.
 
-<div class="flex gap-3 mt-3">
+<div class="mt-3">
   <Button type="" color="primary" @click="toast({
     title     : 'Lorem ipsum',
     text      : 'Lorem ipsum dolor sit amet.',

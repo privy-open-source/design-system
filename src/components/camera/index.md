@@ -59,7 +59,7 @@ If you want to keep image result un-mirrored. set prop `mirror` to `preview`. It
 
 Add mask overlay using prop `mask`. There are 3 available masks `square`, `round`, `card`.
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-camera mask="square" />
   <p-camera mask="round" />
   <p-camera mask="card" />
@@ -91,7 +91,7 @@ Add prop `silent` to disabled shutter sound.
 
 Change adapter to Liveness to perform liveness capture.
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-camera :adapter="LivenessAdapter" />
 </preview>
 
@@ -110,7 +110,7 @@ Change adapter to Liveness to perform liveness capture.
 
 This component has built-in adapter for QR Code Scanning, powered by [ZXing](https://github.com/zxing-js/library).
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-camera :adapter="QrCodeAdapter" />
 </preview>
 

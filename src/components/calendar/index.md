@@ -49,7 +49,7 @@ There 3 available mode: `date` , `month`, `year`. default is `date`. it will lim
 
 for example, mode `month` make user can only select the month, but can't select what spesific date.
 
-<preview class="flex-col items-center gap-2">
+<preview class="flex-col items-center space-y-2">
   <p-calendar
     mode="date" />
   <p-calendar
@@ -71,7 +71,7 @@ for example, mode `month` make user can only select the month, but can't select 
 
 ## Disabled State
 
-<preview class="flex-col items-center gap-2">
+<preview class="flex-col items-center space-y-2">
   <p-calendar disabled />
 </preview>
 

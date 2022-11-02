@@ -30,7 +30,7 @@
 ### Simple MD Editor
 
 <preview class="flex-col">
-  <div class="flex flex-col w-full gap-4">
+  <div class="flex flex-col w-full space-y-4">
     <p-textarea auto-grow v-model="text" />
     <div v-p-md="text" />
   </div>
@@ -38,7 +38,7 @@
 
 ```vue
 <template>
-  <div class="flex flex-col w-full gap-4">
+  <div class="flex flex-col w-full space-y-4">
     <p-textarea auto-grow v-model="text" />
     <div v-p-md="text" />
   </div>

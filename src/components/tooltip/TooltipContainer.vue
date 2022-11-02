@@ -1,5 +1,7 @@
 <template>
-  <div class="tooltip-container">
+  <div
+    class="tooltip-container"
+    data-testid="tooltip-container">
     <Tooltip
       v-for="[id, item] in items"
       :key="id"

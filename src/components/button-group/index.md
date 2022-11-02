@@ -129,7 +129,7 @@ Button Group all addon is group a series of buttons with only icon
 
 Button Group just available in 2 variants: `solid` and `outline`. You can make these variants by applying variant to each button in a group.
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <div>
     <p-button-group>
       <p-button>Button Text</p-button>
@@ -163,7 +163,7 @@ Button Group just available in 2 variants: `solid` and `outline`. You can make t
 
 ## Color
 You can change color of Button Group by applying color to every Button in a group.
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <div>
     <p-button-group>
       <p-button>Button Text</p-button>
@@ -259,7 +259,7 @@ You can change color of Button Group by applying color to every Button in a grou
 
 Instead of applying button sizing prop to every button in a group, you just can add size in Button Group. There are 4 sizes available: `xs`, `sm`, `md` and `lg`. Default is `md`
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <div>
     <p-button-group size="xs">
       <p-button>Button Text</p-button>
@@ -318,7 +318,7 @@ Instead of applying button sizing prop to every button in a group, you just can 
 
 You just add `pill` in Button Group to make button more rounded. Prop `pill` of every single Button will not working in Button Group
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <div>
     <p-button-group pill>
     <p-button>Button Text</p-button>

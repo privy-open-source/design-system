@@ -66,15 +66,15 @@ onMounted (() => {
 
 ```vue
 <template>
-  <p-contextual-bar 
-    v-model="sample" 
+  <p-contextual-bar
+    v-model="sample"
     title="Hey! This is Title Text and telling less" />
 </template>
 ```
 
 ### With Icon
 
-<preview class="preview--bar flex-col gap-3">
+<preview class="flex-col space-y-3 preview--bar">
   <p-contextual-bar title="Hey! This is Title Text and telling less">
     <template #icon>
       <IconInfo />
@@ -159,9 +159,9 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 
 ```vue
 <template>
-  <p-contextual-bar 
-    v-model="sample" 
-    title="Hey! This is Title Text" 
+  <p-contextual-bar
+    v-model="sample"
+    title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document" />
 </template>
 ```
@@ -169,7 +169,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 ### Additional Description With Action
 
 <preview class="preview--bar">
-  <p-contextual-bar 
+  <p-contextual-bar
     v-model="sample05"
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document">
@@ -181,7 +181,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 
 ```vue
 <template>
-  <p-contextual-bar 
+  <p-contextual-bar
     v-model="sample"
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document">
@@ -195,7 +195,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 ### Custom Background Image
 
 <preview class="preview--bar">
-  <p-contextual-bar 
+  <p-contextual-bar
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
     background-url="assets/images/img-background-contextualbar.svg">
@@ -207,7 +207,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 
 ```vue
 <template>
-  <p-contextual-bar 
+  <p-contextual-bar
     v-model="sample"
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
@@ -222,15 +222,15 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 ## Variants
 Contextual Bar have 2 variants: `light` and `dark`. Default is `light`
 
-<preview class="flex-col gap-4 preview--bar">
+<preview class="flex-col space-y-4 preview--bar">
   <p-contextual-bar variant="light" v-model="sample06" title="Hey! This is Title Text and telling less" />
   <p-contextual-bar variant="dark" v-model="sample07" title="Hey! This is Title Text and telling less" />
 </preview>
 
 ```vue
 <template>
-  <p-contextual-bar 
-    variant="light" 
+  <p-contextual-bar
+    variant="light"
     v-model="sample" title="Hey! This is Title Text and telling less" />
   <p-contextual-bar
     variant="dark"
@@ -241,7 +241,7 @@ Contextual Bar have 2 variants: `light` and `dark`. Default is `light`
 ## Alignments
 To align Contextual Bar content, use align prop. Available value are `left`, `right` and `center`
 
-<preview class="flex-col gap-4 preview--bar">
+<preview class="flex-col space-y-4 preview--bar">
   <p-contextual-bar align="left" v-model="sample10" title="Hey! This is Title Text" />
   <p-contextual-bar align="center" v-model="sample11" title="Hey! This is Title Text" />
   <p-contextual-bar align="right" v-model="sample12" title="Hey! This is Title Text" />
@@ -249,14 +249,14 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 
 ```vue
 <template>
-  <p-contextual-bar 
-    align="left" 
+  <p-contextual-bar
+    align="left"
     v-model="sample" title="Hey! This is Title Text" />
-  <p-contextual-bar 
-    align="center" 
+  <p-contextual-bar
+    align="center"
     v-model="sample" title="Hey! This is Title Text" />
-  <p-contextual-bar 
-    align="right" 
+  <p-contextual-bar
+    align="right"
     v-model="sample" title="Hey! This is Title Text" />
 </template>
 ```

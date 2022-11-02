@@ -62,7 +62,7 @@
 
 There available 2 type variants: `pill` and `flat`. default is `pill`
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <p-toggle variant="pill">Pill</p-toggle>
   <p-toggle variant="flat">Flat</p-toggle>
 </preview>
@@ -78,7 +78,7 @@ There available 2 type variants: `pill` and `flat`. default is `pill`
 
 You can customize toggle label with `checked-label` and `unchecked-label`
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <p-toggle variant="pill" checked-label="Y" unchecked-label="N">Text</p-toggle>
   <p-toggle variant="flat" checked-label="PM" unchecked-label="AM">Text</p-toggle>
 </preview>
@@ -92,7 +92,7 @@ You can customize toggle label with `checked-label` and `unchecked-label`
 
 You can also use `checked` and `unchecked` slot to customize the label, it allow you to use non-text label like an **icon**
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <p-toggle v-model="isDark">
     <template #checked>
       <IconDark />
@@ -131,7 +131,7 @@ You can also use `checked` and `unchecked` slot to customize the label, it allow
 
 You can hide toggle label with `no-label` prop
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <p-toggle variant="pill" no-label>Text</p-toggle>
   <p-toggle variant="flat" no-label>Text</p-toggle>
 </preview>
@@ -145,7 +145,7 @@ You can hide toggle label with `no-label` prop
 
 ## Disabled state
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <p-toggle variant="pill" disabled>Pill</p-toggle>
   <p-toggle variant="flat" disabled>Flat</p-toggle>
 </preview>
@@ -159,7 +159,7 @@ You can hide toggle label with `no-label` prop
 
 ## Readonly state
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <p-toggle readonly>Readonly False</p-toggle>
   <p-toggle readonly checked>Readonly True</p-toggle>
 </preview>
@@ -173,7 +173,7 @@ You can hide toggle label with `no-label` prop
 
 ## Binding v-model
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <p-toggle v-model="modelA">Text</p-toggle>
 </preview>
 
@@ -191,7 +191,7 @@ You can hide toggle label with `no-label` prop
 
 By default, value of toggle is always `Boolean`, but you can change it with `value` and `unchecked-value`.
 
-<preview class="flex-col items-center gap-3">
+<preview class="flex-col items-center space-y-3">
   <p-toggle v-model="modelB" value="on" unchecked-value="off">Lamp</p-toggle>
 </preview>
 
@@ -215,7 +215,7 @@ By default, value of toggle is always `Boolean`, but you can change it with `val
 Similar to [Checkbox](/components/checkbox/index), if v-model **state** is an *array* it will append the value instead of replacing it.
 
 <preview class="flex-col items-center">
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col space-y-3">
     <p-toggle v-model="selected" value="apple">Apple</p-toggle>
     <p-toggle v-model="selected" value="grape">Grape</p-toggle>
     <p-toggle v-model="selected" value="pineapple">Pineapple</p-toggle>
@@ -228,7 +228,7 @@ Similar to [Checkbox](/components/checkbox/index), if v-model **state** is an *a
 
 ```vue
 <template>
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col space-y-3">
     <p-toggle v-model="selected" value="apple">Apple</p-toggle>
     <p-toggle v-model="selected" value="grape">Grape</p-toggle>
     <p-toggle v-model="selected" value="pineapple">Pineapple</p-toggle>

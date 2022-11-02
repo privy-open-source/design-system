@@ -87,7 +87,7 @@
 
 Banner have 2 variants: `info` and `danger`, default is `info`
 
-<preview class="flex-col gap-3">
+<preview class="flex-col space-y-3">
   <p-banner variant="info">Your enterprise Privy Balance is running out. Please topup now.</p-banner>
   <p-banner variant="danger">Your enterprise Privy Balance is running out. Please topup now.</p-banner>
 </preview>

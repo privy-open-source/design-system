@@ -95,7 +95,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .filterbar {
-  @apply flex gap-2;
+  @apply flex space-x-2;
 
   &__item {
     &.filterbar--active {

@@ -218,7 +218,7 @@
     title="Hello and Happy New Year!"
     element="div"
     callout>
-    <div class="flex items-start gap-x-8">
+    <div class="flex items-start space-x-8">
       <div class="w-3/4">
         What amazing growth you achieved this year, Tarjono! You deserve
         every bit of it and we’re sure you’ll do even better next year.
@@ -241,7 +241,7 @@
     title="Hello and Happy New Year!"
     element="div"
     callout>
-    <div class="flex items-start gap-x-8">
+    <div class="flex items-start space-x-8">
       <div class="w-3/4">
         What amazing growth you achieved this year, Tarjono! You deserve
         every bit of it and we’re sure you’ll do even better next year.

@@ -108,7 +108,7 @@ export default defineComponent({
   }
 
   &__content {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col space-y-2;
   }
 
   &__point {
@@ -146,7 +146,7 @@ export default defineComponent({
     }
 
     .progress__bar {
-      @apply w-[calc(100%_-_3rem)] h-1 top-3 right-[calc(50%_+_1.5rem)];
+      @apply w-[calc(100%_-_3rem)] h-1 top-5 right-[calc(50%_+_1.5rem)];
       @apply bg-gradient-to-r bg-[length:210%_100%] bg-right;
     }
 
@@ -165,7 +165,7 @@ export default defineComponent({
     }
 
     .progress__items {
-      @apply flex-col items-center justify-between h-full;
+      @apply flex-col items-center justify-between h-full space-y-2;
     }
 
     .progress__content {

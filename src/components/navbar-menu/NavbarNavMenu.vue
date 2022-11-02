@@ -55,7 +55,7 @@ export default defineComponent({
   props     : {
     menus: {
       type   : Array as PropType<Menu[]>,
-      default: () => ([]),
+      default: () => ([] as Menu[]),
     },
   },
   setup () {},

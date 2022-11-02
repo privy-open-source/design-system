@@ -81,7 +81,7 @@ You can change popup placement via `placement` prop. Valid options is:
 - `right`
 - `left`
 
-<preview class="flex-col gap-3 md:flex-row">
+<preview class="flex-col space-gap-3 md:flex-row">
   <p-dropdown text="Auto" placement="auto">
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -145,7 +145,7 @@ You can combine placement with suffix `*-start` and `*-end` to set popup positio
 
 <Banner class="md:!hidden" :dismissable="false">Because limited screen width, maybe you can't notice the different.</Banner>
 
-<preview class="flex-col gap-3 md:flex-row">
+<preview class="flex-col space-gap-3 md:flex-row">
   <p-dropdown text="Bottom" placement="bottom">
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -336,7 +336,7 @@ Add props `no-caret` to hide caret icon
 
 You can programmatically toggle dropdown using `v-model`
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-checkbox v-model="show">Show Dropdown</p-checkbox>
   <p-dropdown
     v-model="show"

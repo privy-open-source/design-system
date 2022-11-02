@@ -294,7 +294,7 @@ export default defineComponent({
   }
 
   &__loading {
-    @apply flex justify-center items-center gap-2;
+    @apply flex justify-center items-center space-x-2;
   }
 
   &--open {

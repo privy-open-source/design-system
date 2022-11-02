@@ -1,7 +1,7 @@
 <template>
   <div class="preview">
-    <span class="preview__label">{{ label }}</span>
     <slot />
+    <span class="preview__label">{{ label }}</span>
   </div>
 </template>
 

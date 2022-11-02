@@ -64,7 +64,7 @@ import {
   onMounted,
   watch,
 } from 'vue-demi'
-import { AlignVariant } from '../nav/Nav.vue'
+import { AlignVariant } from '../nav'
 import { useVModel } from '../input'
 import pCaption from '../caption/Caption.vue'
 import pSubheading from '../subheading/Subheading.vue'
@@ -254,7 +254,7 @@ export default defineComponent({
   &&--align-right {
     .contextual-bar__wrapper {
       &--with-action {
-        @apply gap-3;
+        @apply space-gap-3;
 
         .contextual-bar__icon {
           @apply mr-0;
@@ -276,7 +276,7 @@ export default defineComponent({
   }
 
   &__action {
-    @apply flex flex-shrink-0 ml-auto gap-3;
+    @apply flex flex-shrink-0 ml-auto space-gap-3;
   }
 
   &__icon {

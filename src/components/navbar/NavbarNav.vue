@@ -13,7 +13,8 @@
 import {
   defineComponent, inject, PropType,
 } from 'vue-demi'
-import Nav, { AlignVariant } from '../nav/Nav.vue'
+import Nav from '../nav/Nav.vue'
+import { AlignVariant } from '../nav'
 import { NAVBAR_SETTINGS } from '.'
 
 export default defineComponent({

@@ -152,11 +152,11 @@ If you want to get original selected item (text and value) not value only. you c
 
 **v-model**
 
-<pre><code>{{ value }}</code></pre>
+<pre><code>{{ value || '-' }}</code></pre>
 
 **v-model:selected**
 
-<pre class="whitespace-normal"><code>{{ selected }}</code></pre>
+<pre class="whitespace-normal"><code>{{ selected || '-' }}</code></pre>
 
 ```vue
 <template>
@@ -246,7 +246,7 @@ When you working with chaining select like `province` -> `city` form.
 Normally, when you select the province, it should trigger reload on city based on the province.
 To do this, you need add the province value as **watch dependencies**. It will automatically reload when `province` is changed
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-select
     v-model="province"
     placeholder="Select Province"

@@ -35,7 +35,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 </div>
 
 ##### Default button icon text
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <Button icon><IconBee /> Button Text</Button>
   <Button icon>Button Text <IconBee /></Button>
 </div>
@@ -47,7 +47,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 </div>
 
 ##### Outline button Text
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <Button variant="outline">Button Text</Button>
 </div>
 <div class="flex pt-5 pb-8 text-sm text-body-75">
@@ -58,7 +58,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 </div>
 
 ##### Link button Text
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <Button variant="link">Button Text</Button>
 </div>
 <div class="flex pt-5 pb-8 text-sm text-body-75">
@@ -123,7 +123,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 ## Button by Size
 
 ##### Large Size button text
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <Button size="lg">Button Text</Button>
 </div>
 <div class="flex pt-5 pb-8 text-sm text-body-75">
@@ -135,7 +135,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 </div>
 
 ##### Medium Size button text
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <Button size="md">Button Text</Button>
 </div>
 <div class="flex pt-5 pb-8 text-sm text-body-75">
@@ -146,7 +146,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 </div>
 
 ##### Small Size button text
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <Button size="sm">Button Text</Button>
 </div>
 <div class="flex pt-5 pb-8 text-sm text-body-75">
@@ -157,7 +157,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 </div>
 
 ##### Xsmall Size button text
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <Button size="xs">Button Text</Button>
 </div>
 <div class="flex pt-5 pb-8 text-sm text-body-75">

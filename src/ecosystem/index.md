@@ -14,7 +14,7 @@
     element="div"
     :dismissable="false"
     callout>
-    <div class="flex items-start gap-x-8">
+    <div class="flex items-start space-x-8">
       <div class="w-3/4">
         Tailwind config presets which following our <a href="../foundation/">foundations</a>
         <div class="pt-8">
@@ -32,7 +32,7 @@
     element="div"
     :dismissable="false"
     callout>
-    <div class="flex items-start gap-x-8">
+    <div class="flex items-start space-x-8">
       <div class="w-3/4">
         Add missing tailwind utilities
         <div class="pt-8">
@@ -50,7 +50,7 @@
     element="div"
     :dismissable="false"
     callout>
-    <div class="flex items-start gap-x-8">
+    <div class="flex items-start space-x-8">
       <div class="w-3/4">
         Collection animation class for vue <code>&lt;transitions&gt;</code>
         <div class="pt-8">

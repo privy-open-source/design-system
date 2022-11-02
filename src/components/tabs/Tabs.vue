@@ -53,7 +53,11 @@ import {
   computed,
   Slots,
 } from 'vue-demi'
-import Nav, { StyleVariant as TabsStyleVariant, AlignVariant as TabsAlignVariant } from '../nav/Nav.vue'
+import Nav from '../nav/Nav.vue'
+import {
+  StyleVariant as TabsStyleVariant,
+  AlignVariant as TabsAlignVariant,
+} from '../nav'
 import NavItem from '../nav/NavItem.vue'
 import TabContent from './TabContent.vue'
 import { useVModel } from '../input'
