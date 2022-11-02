@@ -1977,10 +1977,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:4.5.8":
-  version: 4.5.8
-  resolution: "@fontsource/dm-sans@npm:4.5.8"
-  checksum: d4caf72d47fef5dfdf0c1fc96e3646e9a1cee1c7e48060964a001cdec051f0014fb27f7350f9432e60a0ac2859eacc466327e694a27d5834210aeaa5ec175001
+"@fontsource/dm-sans@npm:4.5.9":
+  version: 4.5.9
+  resolution: "@fontsource/dm-sans@npm:4.5.9"
+  checksum: fa337c59e7d532e66fa97357f77c2db557d27afe58efa154bebfef2fcae91bf2c0194ef68313c3da8fe0ced17db32afb4f28c37f54e8ff285069533adfd567d8
   languageName: node
   linkType: hard
 
@@ -2475,7 +2475,7 @@ __metadata:
     "@babel/core": ^7.19.6
     "@babel/preset-env": ^7.19.4
     "@carbon/icons-vue": 10.49.1
-    "@fontsource/dm-sans": 4.5.8
+    "@fontsource/dm-sans": 4.5.9
     "@interactjs/types": 1.10.17
     "@microsoft/eslint-formatter-sarif": 3.0.0
     "@popperjs/core": 2.11.6
