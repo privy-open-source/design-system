@@ -18,7 +18,7 @@
           :key="color.id">
           <Color :color="color">
             <template #subtitle>{{ color.subtitle }}</template>
-            <template #code>{{ color.code }}</template>
+            <template #code>{{ color.semantics ? color.semantics : color.code }}</template>
           </Color>
         </span>
       </div>

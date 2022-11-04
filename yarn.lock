@@ -2164,6 +2164,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mertasan/tailwindcss-variables@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "@mertasan/tailwindcss-variables@npm:2.5.1"
+  dependencies:
+    lodash: ^4.17.21
+  peerDependencies:
+    autoprefixer: ^10.0.2
+    postcss: ^8.0.9
+  checksum: c52123f4872a3963cbc4e9db40145f7399290909a77b9bf20319a7e29382638643766bb74eb4145d48f0d03a94f1d0f6c0ad75a45a89fe97d744558d6d014312
+  languageName: node
+  linkType: hard
+
 "@microsoft/eslint-formatter-sarif@npm:3.0.0":
   version: 3.0.0
   resolution: "@microsoft/eslint-formatter-sarif@npm:3.0.0"
@@ -2485,6 +2497,7 @@ __metadata:
     "@fontsource/dm-sans": 4.5.9
     "@interactjs/types": 1.10.17
     "@juggle/resize-observer": ^3.4.0
+    "@mertasan/tailwindcss-variables": ^2.5.1
     "@microsoft/eslint-formatter-sarif": 3.0.0
     "@popperjs/core": 2.11.6
     "@privyid/browserslist-config": "workspace:^"
