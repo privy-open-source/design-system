@@ -2542,7 +2542,7 @@ __metadata:
     tabbable: 6.0.1
     tailwindcss: 3.1.8
     typescript: 4.8.4
-    vitepress: 1.0.0-alpha.25
+    vitepress: 1.0.0-alpha.27
     vitest: 0.24.5
     vue-demi: 0.13.11
     vue-router: 4.1.5
@@ -12638,15 +12638,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki-processor@npm:^0.1.0":
-  version: 0.1.1
-  resolution: "shiki-processor@npm:0.1.1"
-  peerDependencies:
-    shiki: ^0.11.1
-  checksum: f962df11d0d19788c9b0526b62f5e83aece2a3519235061fd9808067361c790b04fa5ac26b728980eda38d28867fc446afc5ac70fe6f8911c2d77d788769a62c
-  languageName: node
-  linkType: hard
-
 "shiki@npm:^0.11.1":
   version: 0.11.1
   resolution: "shiki@npm:0.11.1"
@@ -14177,9 +14168,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-alpha.25":
-  version: 1.0.0-alpha.25
-  resolution: "vitepress@npm:1.0.0-alpha.25"
+"vitepress@npm:1.0.0-alpha.27":
+  version: 1.0.0-alpha.27
+  resolution: "vitepress@npm:1.0.0-alpha.27"
   dependencies:
     "@docsearch/css": ^3.3.0
     "@docsearch/js": ^3.3.0
@@ -14188,12 +14179,11 @@ __metadata:
     "@vueuse/core": ^9.4.0
     body-scroll-lock: 4.0.0-beta.0
     shiki: ^0.11.1
-    shiki-processor: ^0.1.0
     vite: ^3.1.8
     vue: ^3.2.41
   bin:
     vitepress: bin/vitepress.js
-  checksum: b443474b7f7e838e70e15861e5c048491ff6591a2bae4290efcfb45ac2c1bd69742080b66f2046ec15628817b0c393ac89011018b0d20f0da8a2fa4dceec5522
+  checksum: df8fd611d75dd3aca027fa3055d0255f1be8acf5154f9cf5c80d6ae9da0b6023d2d376dba6260eb29df267a6f3dc6d73966f876dc58ee6b2344b1829705ced67
   languageName: node
   linkType: hard
 
