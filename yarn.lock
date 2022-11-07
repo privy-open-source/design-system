@@ -2553,9 +2553,9 @@ __metadata:
     postcss: 8.4.16
     postcss-nested: 5.0.6
     tabbable: 6.0.1
-    tailwindcss: 3.1.8
+    tailwindcss: 3.2.2
     typescript: 4.8.4
-    vitepress: 1.0.0-alpha.25
+    vitepress: 1.0.0-alpha.27
     vitest: 0.24.5
     vue-demi: 0.13.11
     vue-router: 4.1.5
@@ -2589,7 +2589,7 @@ __metadata:
     nuxt: 3.0.0-rc.12
     postcss-custom-properties: 12.1.8
     tabbable: 6.0.1
-    tailwindcss: 3.2.0
+    tailwindcss: 3.2.2
     vue-demi: 0.13.11
     vuedraggable: next
     webfontloader: 1.6.28
@@ -11662,7 +11662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.4, postcss@npm:^8.4.17, postcss@npm:^8.4.18":
+"postcss@npm:^8.2.4, postcss@npm:^8.4.18":
   version: 8.4.18
   resolution: "postcss@npm:8.4.18"
   dependencies:
@@ -12651,15 +12651,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki-processor@npm:^0.1.0":
-  version: 0.1.1
-  resolution: "shiki-processor@npm:0.1.1"
-  peerDependencies:
-    shiki: ^0.11.1
-  checksum: f962df11d0d19788c9b0526b62f5e83aece2a3519235061fd9808067361c790b04fa5ac26b728980eda38d28867fc446afc5ac70fe6f8911c2d77d788769a62c
-  languageName: node
-  linkType: hard
-
 "shiki@npm:^0.11.1":
   version: 0.11.1
   resolution: "shiki@npm:0.11.1"
@@ -13193,7 +13184,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.1.8, tailwindcss@npm:^3.1.6":
+"tailwindcss@npm:3.2.2":
+  version: 3.2.2
+  resolution: "tailwindcss@npm:3.2.2"
+  dependencies:
+    arg: ^5.0.2
+    chokidar: ^3.5.3
+    color-name: ^1.1.4
+    detective: ^5.2.1
+    didyoumean: ^1.2.2
+    dlv: ^1.1.3
+    fast-glob: ^3.2.12
+    glob-parent: ^6.0.2
+    is-glob: ^4.0.3
+    lilconfig: ^2.0.6
+    micromatch: ^4.0.5
+    normalize-path: ^3.0.0
+    object-hash: ^3.0.0
+    picocolors: ^1.0.0
+    postcss: ^8.4.18
+    postcss-import: ^14.1.0
+    postcss-js: ^4.0.0
+    postcss-load-config: ^3.1.4
+    postcss-nested: 6.0.0
+    postcss-selector-parser: ^6.0.10
+    postcss-value-parser: ^4.2.0
+    quick-lru: ^5.1.1
+    resolve: ^1.22.1
+  peerDependencies:
+    postcss: ^8.0.9
+  bin:
+    tailwind: lib/cli.js
+    tailwindcss: lib/cli.js
+  checksum: 4f29f9d7bed74f70cd90281c4068e20903cbe79949987aae7c6cf197df9c852caa0d9884c19547f55eac09c2468dfe30c25bc8e75482e2654e24ee40d74078f9
+  languageName: node
+  linkType: hard
+
+"tailwindcss@npm:^3.1.6":
   version: 3.1.8
   resolution: "tailwindcss@npm:3.1.8"
   dependencies:
@@ -13225,41 +13252,6 @@ __metadata:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
   checksum: 86480301fc6ae1e392c2aba8264ab425bd919078176b010fda724518a7c265e950da5f4120c69c9041509c318207985fa9d680b6f5021e23f8214135a61a54b6
-  languageName: node
-  linkType: hard
-
-"tailwindcss@npm:3.2.0":
-  version: 3.2.0
-  resolution: "tailwindcss@npm:3.2.0"
-  dependencies:
-    arg: ^5.0.2
-    chokidar: ^3.5.3
-    color-name: ^1.1.4
-    detective: ^5.2.1
-    didyoumean: ^1.2.2
-    dlv: ^1.1.3
-    fast-glob: ^3.2.12
-    glob-parent: ^6.0.2
-    is-glob: ^4.0.3
-    lilconfig: ^2.0.6
-    normalize-path: ^3.0.0
-    object-hash: ^3.0.0
-    picocolors: ^1.0.0
-    postcss: ^8.4.17
-    postcss-import: ^14.1.0
-    postcss-js: ^4.0.0
-    postcss-load-config: ^3.1.4
-    postcss-nested: 6.0.0
-    postcss-selector-parser: ^6.0.10
-    postcss-value-parser: ^4.2.0
-    quick-lru: ^5.1.1
-    resolve: ^1.22.1
-  peerDependencies:
-    postcss: ^8.0.9
-  bin:
-    tailwind: lib/cli.js
-    tailwindcss: lib/cli.js
-  checksum: a5b48bba217bbc0bf3e8e644cbb4c0f91b9da048234f0b5a7bc1d9a296bc8ece7c70f7108ab9689c31539fdd716e20a39a05c5aaf11529298750ac2f1708bfe1
   languageName: node
   linkType: hard
 
@@ -14190,9 +14182,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-alpha.25":
-  version: 1.0.0-alpha.25
-  resolution: "vitepress@npm:1.0.0-alpha.25"
+"vitepress@npm:1.0.0-alpha.27":
+  version: 1.0.0-alpha.27
+  resolution: "vitepress@npm:1.0.0-alpha.27"
   dependencies:
     "@docsearch/css": ^3.3.0
     "@docsearch/js": ^3.3.0
@@ -14201,12 +14193,11 @@ __metadata:
     "@vueuse/core": ^9.4.0
     body-scroll-lock: 4.0.0-beta.0
     shiki: ^0.11.1
-    shiki-processor: ^0.1.0
     vite: ^3.1.8
     vue: ^3.2.41
   bin:
     vitepress: bin/vitepress.js
-  checksum: b443474b7f7e838e70e15861e5c048491ff6591a2bae4290efcfb45ac2c1bd69742080b66f2046ec15628817b0c393ac89011018b0d20f0da8a2fa4dceec5522
+  checksum: df8fd611d75dd3aca027fa3055d0255f1be8acf5154f9cf5c80d6ae9da0b6023d2d376dba6260eb29df267a6f3dc6d73966f876dc58ee6b2344b1829705ced67
   languageName: node
   linkType: hard
 
