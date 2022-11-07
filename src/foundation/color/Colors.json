@@ -11,7 +11,8 @@
       {
         "id" : 2,
         "subtitle" : "base.white",
-        "code" : "#FFFFFF"
+        "code" : "#FFFFFF",
+        "border": "0.05px solid #E7E7E8"
       }
     ]
   },
@@ -544,70 +545,72 @@
       {
         "id" : 1,
         "subtitle" : "black.5",
-        "code" : "rgba(0, 0, 0, 0.05)",
+        "code" : "#FFFFFF",
         "semantics" : "rgba(base.black, opacity.5)",
-        "base" : "white"
+        "overlay" : "rgba(0, 0, 0, 0.05)"
       },
       {
         "id" : 2,
         "subtitle" : "black.10",
-        "code" : "rgba(0, 0, 0, 0.1)",
+        "code" : "#FFFFFF",
         "semantics" : "rgba(base.black, opacity.10)",
-        "base" : "white"
+        "overlay" : "rgba(0, 0, 0, 0.1)"
       },
       {
         "id" : 3,
         "subtitle" : "black.20",
-        "code" : "rgba(0, 0, 0, 0.2)",
+        "code" : "#FFFFFF",
         "semantics" : "rgba(base.black, opacity.20)",
-        "base" : "white"
+        "overlay" : "rgba(0, 0, 0, 0.2)"
       },
       {
         "id" : 4,
         "subtitle" : "black.30",
-        "code" : "rgba(0, 0, 0, 0.3)",
+        "code" : "#FFFFFF",
         "semantics" : "rgba(base.black, opacity.30)",
-        "base" : "white"
+        "overlay" : "rgba(0, 0, 0, 0.3)"
       },
       {
         "id" : 5,
         "subtitle" : "black.40",
-        "code" : "rgba(0, 0, 0, 0.4)",
+        "code" : "#FFFFFF",
         "semantics" : "rgba(base.black, opacity.40)",
-        "base" : "white"
+        "overlay" : "rgba(0, 0, 0, 0.4)"
       },
       {
         "id" : 6,
         "subtitle" : "black.50",
-        "code" : "rgba(0, 0, 0, 0.5)",
+        "code" : "#FFFFFF",
         "semantics" : "rgba(base.black, opacity.50)",
-        "base" : "white"
+        "overlay" : "rgba(0, 0, 0, 0.5)"
       },
       {
         "id" : 7,
         "subtitle" : "black.60",
-        "code" : "rgba(0, 0, 0, 0.6)",
+        "code" : "#FFFFFF",
         "semantics" : "rgba(base.black, opacity.60)",
-        "base" : "white"
+        "overlay" : "rgba(0, 0, 0, 0.6)"
       },
       {
         "id" : 8,
         "subtitle" : "black.70",
-        "code" : "rgba(0, 0, 0, 0.7)",
+        "code" : "#FFFFFF",
         "semantics" : "rgba(base.black, opacity.70)",
-        "base" : "white"
+        "overlay" : "rgba(0, 0, 0, 0.7)"
       },
       {
         "id" : 9,
         "subtitle" : "black.80",
-        "code" : "rgba(0, 0, 0, 0.8)",
-        "semantics" : "rgba(base.black, opacity.80)"
+        "code" : "#FFFFFF",
+        "semantics" : "rgba(base.black, opacity.80)",
+        "overlay" : "rgba(0, 0, 0, 0.8)"
       },
       {
         "id" : 10,
         "subtitle" : "black.90",
-        "code" : "rgba(0, 0, 0, 0.9)",
-        "semantics" : "rgba(base.black, opacity.90)"
+        "code" : "#FFFFFF",
+        "semantics" : "rgba(base.black, opacity.90)",
+        "overlay" : "rgba(0, 0, 0, 0.9)"
       }
     ]
   },
@@ -619,72 +622,72 @@
       {
         "id" : 1,
         "subtitle" : "white.5",
-        "code" : "rgba(255, 255, 255, 0.05)",
+        "code" : "#0D1117",
         "semantics" : "rgba(base.white, opacity.5)",
-        "base" : "black"
+        "overlay" : "rgba(255, 255, 255, 0.05)"
       },
       {
         "id" : 2,
         "subtitle" : "white.10",
-        "code" : "rgba(255, 255, 255, 0.1)",
+        "code" : "#0D1117",
         "semantics" : "rgba(base.white, opacity.10)",
-        "base" : "black"
+        "overlay" : "rgba(255, 255, 255, 0.1)"
       },
       {
         "id" : 3,
-        "subtitle" : "black.20",
-        "code" : "rgba(255, 255, 255, 0.2)",
-        "semantics" : "rgba(base.black, opacity.20)",
-        "base" : "black"
+        "subtitle" : "white.20",
+        "code" : "#0D1117",
+        "semantics" : "rgba(base.white, opacity.20)",
+        "overlay" : "rgba(255, 255, 255, 0.2)"
       },
       {
         "id" : 4,
-        "subtitle" : "black.30",
-        "code" : "rgba(255, 255, 255, 0.3)",
-        "semantics" : "rgba(base.black, opacity.30)",
-        "base" : "black"
+        "subtitle" : "white.30",
+        "code" : "#0D1117",
+        "semantics" : "rgba(base.white, opacity.30)",
+        "overlay" : "rgba(255, 255, 255, 0.3)"
       },
       {
         "id" : 5,
-        "subtitle" : "black.40",
-        "code" : "rgba(255, 255, 255, 0.4)",
-        "semantics" : "rgba(base.black, opacity.40)",
-        "base" : "black"
+        "subtitle" : "white.40",
+        "code" : "#0D1117",
+        "semantics" : "rgba(base.white, opacity.40)",
+        "overlay" : "rgba(255, 255, 255, 0.4)"
       },
       {
         "id" : 6,
-        "subtitle" : "black.50",
-        "code" : "rgba(255, 255, 255, 0.5)",
-        "semantics" : "rgba(base.black, opacity.50)",
-        "base" : "black"
+        "subtitle" : "white.50",
+        "code" : "#0D1117",
+        "semantics" : "rgba(base.white, opacity.50)",
+        "overlay" : "rgba(255, 255, 255, 0.5)"
       },
       {
         "id" : 7,
-        "subtitle" : "black.60",
-        "code" : "rgba(255, 255, 255, 0.6)",
-        "semantics" : "rgba(base.black, opacity.60)",
-        "base" : "black"
+        "subtitle" : "white.60",
+        "code" : "#0D1117",
+        "semantics" : "rgba(base.white, opacity.60)",
+        "overlay" : "rgba(255, 255, 255, 0.6)"
       },
       {
         "id" : 8,
-        "subtitle" : "black.70",
-        "code" : "rgba(255, 255, 255, 0.7)",
-        "semantics" : "rgba(base.black, opacity.70)",
-        "base" : "black"
+        "subtitle" : "white.70",
+        "code" : "#0D1117",
+        "semantics" : "rgba(base.white, opacity.70)",
+        "overlay" : "rgba(255, 255, 255, 0.7)"
       },
       {
         "id" : 9,
-        "subtitle" : "black.80",
-        "code" : "rgba(255, 255, 255, 0.8)",
-        "semantics" : "rgba(base.black, opacity.80)",
-        "base" : "black"
+        "subtitle" : "white.80",
+        "code" : "#0D1117",
+        "semantics" : "rgba(base.white, opacity.80)",
+        "overlay" : "rgba(255, 255, 255, 0.8)"
       },
       {
         "id" : 10,
-        "subtitle" : "black.90",
-        "code" : "rgba(255, 255, 255, 0.9)",
-        "semantics" : "rgba(base.black, opacity.90)",
-        "base" : "black"
+        "subtitle" : "white.90",
+        "code" : "#0D1117",
+        "semantics" : "rgba(base.white, opacity.90)",
+        "overlay" : "rgba(255, 255, 255, 0.9)"
       }
     ]
   },
@@ -696,16 +699,24 @@
       {
         "id" : 1,
         "subtitle" : "shimmer",
-        "code" : "linear-gradient(90deg, rgba(231, 231, 232, 0.05) 0%, #DBDBDC 69.79%, rgba(231, 231, 232, 0.05) 100%)",
+        "code" : "#FFFFFF",
         "semantics" : "linear-gradient(90deg, rgba(gray.10, $opacity.5) 0%, gray.15 69.79%, rgba(gray.10, opacity.5) 100%)",
-        "base" : "white"
+        "overlay" : "linear-gradient(90deg, rgba(231, 231, 232, 0.05) 0%, #DBDBDC 69.79%, rgba(231, 231, 232, 0.05) 100%)",
+        "border": "0.05px solid #E7E7E8"
       },
       {
         "id" : 2,
         "subtitle" : "labelbg",
-        "code" : "linear-gradient(180deg, rgba(0, 0, 0, 0) 46.88%, #FFFFFF 46.88%)",
+        "code" : "transparent",
         "semantics" : "linear-gradient(180deg, transparent 46.88%, base.white 46.88%)",
-        "base" : "transparent"
+        "overlay" : "linear-gradient(180deg, rgba(0, 0, 0, 0) 46.88%, #FFFFFF 46.88%)",
+        "border": "0.05px solid #E7E7E8"
+      },
+      {
+        "id" : 3,
+        "subtitle" : "transparent",
+        "code" : "transparent",
+        "border": "0.05px solid #E7E7E8"
       }
     ]
   }
