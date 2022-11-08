@@ -6,6 +6,7 @@
     data-testid="tooltip"
     :class="classNames">
     <div
+      ref="arrow"
       class="tooltip__arrow"
       data-popper-arrow />
     <slot />
@@ -20,10 +21,20 @@ import {
   PropType,
   watch,
   computed,
+  watchEffect,
 } from 'vue-demi'
 import { ColorVariant } from '.'
-import { Placement, usePopper } from '../dropdown/utils/use-popper'
 import { useVModel } from '../input'
+import {
+  Placement,
+  autoUpdate,
+  computePosition,
+  arrow,
+  offset,
+  flip,
+  shift,
+  hide,
+} from '@floating-ui/dom'
 
 export default defineComponent({
   props: {
@@ -54,11 +65,11 @@ export default defineComponent({
     'hide',
   ],
   setup (props, { emit }) {
-    const isShow    = useVModel(props)
-    const placement = toRef(props, 'placement')
-    const target    = toRef(props, 'target')
-    const tooltip   = templateRef<HTMLDivElement>('tooltip')
-    const popper    = usePopper(target, tooltip, placement)
+    const isShow       = useVModel(props)
+    const placement    = toRef(props, 'placement')
+    const target       = toRef(props, 'target')
+    const tooltip      = templateRef<HTMLDivElement>('tooltip')
+    const tooltipArrow = templateRef<HTMLDivElement>('arrow')
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -70,13 +81,47 @@ export default defineComponent({
     })
 
     watch(isShow, (value) => {
-      if (value) {
-        popper.value?.update()
-
+      if (value)
         emit('show', target.value)
-      } else
+      else
         emit('hide', target.value)
     })
+
+    watchEffect((onCleanup) => {
+      if (tooltip.value && target.value && tooltipArrow.value) {
+        const cleanup = autoUpdate(target.value, tooltip.value, () => {
+          computePosition(target.value, tooltip.value, {
+            strategy  : 'fixed',
+            placement : placement.value,
+            middleware: [
+              flip(),
+              shift(),
+              offset(8),
+              arrow({ element: tooltipArrow.value }),
+              hide(),
+            ],
+          }).then(({ x, y, middlewareData, placement }) => {
+            if (tooltip.value) {
+              tooltip.value.dataset.popperPlacement = placement
+
+              tooltip.value.style.left = `${x || 0}px`
+              tooltip.value.style.top  = `${y || 0}px`
+
+              tooltip.value.style.visibility = middlewareData.hide.referenceHidden
+                ? 'hidden'
+                : 'visible'
+            }
+
+            if (tooltipArrow.value) {
+              tooltipArrow.value.style.left = `${middlewareData.arrow.x}px`
+              tooltipArrow.value.style.top  = `${middlewareData.arrow.y}px`
+            }
+          })
+        })
+
+        onCleanup(cleanup)
+      }
+    }, { flush: 'post' })
 
     return {
       isShow,
@@ -88,9 +133,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .tooltip {
-  @apply px-4 py-2 rounded-sm text-xs inline-block z-30;
+  @apply px-4 py-2 rounded-sm text-xs inline-block z-30 fixed;
 
   &__arrow {
+    @apply absolute;
+
     [data-popper-placement^="left"] > & {
       @apply -right-1;
     }

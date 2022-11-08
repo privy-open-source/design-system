@@ -63,7 +63,7 @@ You can change tooltip color using modifiers `.black`, `.white`, default is `bla
 
 You can change tooltip position using modifiers `.top`, `.left`, `.right`, and `.bottom`. default is `top`.
 
-<preview class="flex-col space-y-2 md:flex-row md:space-x-2">
+<preview class="flex-col space-gap-2 md:flex-row">
   <p-button v-p-tooltip.top title="Top">Top</p-button>
   <p-button v-p-tooltip.left title="Left">Left</p-button>
   <p-button v-p-tooltip.right title="Right">Right</p-button>
@@ -83,7 +83,7 @@ You can change tooltip position using modifiers `.top`, `.left`, `.right`, and `
 
 You can combine with modifier `.start` and `.end` to set tooltip align.
 
-<preview class="flex-col space-y-2 md:flex-row md:space-x-2">
+<preview class="flex-col space-gap-2 md:flex-row">
   <p-button v-p-tooltip.bottom title="Bottom">Bottom</p-button>
   <p-button v-p-tooltip.bottom.start title="Bottom Start">Start</p-button>
   <p-button v-p-tooltip.bottom.end title="Bottom End">End</p-button>
@@ -101,7 +101,7 @@ You can combine with modifier `.start` and `.end` to set tooltip align.
 
 Tooltips can be triggered (opened/closed) using modifiers `.click`, `.hover` and `.focus`. The default trigger is `hover` + `focus`.
 
-<preview class="flex-col space-y-2 md:flex-row md:space-x-2">
+<preview class="flex-col space-gap-2 md:flex-row">
   <p-button v-p-tooltip title="Hover + Focus">Default</p-button>
   <p-button v-p-tooltip.click title="Click">Click</p-button>
   <p-button v-p-tooltip.hover title="Hover">Hover</p-button>

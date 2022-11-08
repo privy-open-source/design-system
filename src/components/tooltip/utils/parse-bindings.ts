@@ -1,4 +1,4 @@
-import { BasePlacement, Placement } from '@popperjs/core'
+import { Side, Placement } from '@floating-ui/dom'
 import { DirectiveBinding } from 'vue-demi'
 import type { ColorVariant } from '..'
 
@@ -39,9 +39,9 @@ export function parsePlacement (_el: HTMLElement, { modifiers }: DirectiveBindin
 
   if (result) {
     if (modifiers.left)
-      result = `${result as BasePlacement}-start`
+      result = `${result as Side}-start`
     else if (modifiers.right)
-      result = `${result as BasePlacement}-end`
+      result = `${result as Side}-end`
   } else {
     if (modifiers.right)
       result = 'right'
@@ -53,9 +53,9 @@ export function parsePlacement (_el: HTMLElement, { modifiers }: DirectiveBindin
     result = 'top'
 
   if (modifiers.start && !result.endsWith('start'))
-    result = `${result as BasePlacement}-start`
+    result = `${result as Side}-start`
   else if (modifiers.end && !result.endsWith('end'))
-    result = `${result as BasePlacement}-end`
+    result = `${result as Side}-end`
 
   return result
 }

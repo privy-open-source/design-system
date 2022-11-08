@@ -1977,6 +1977,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@floating-ui/core@npm:1.0.1"
+  checksum: c8a5f1a491788e5bebfe747e9372df2c7cbee0d8790ddf95e25149ac91ccf1a2cca8f768029826cfd3d687617c1d0f3241b97f1648bdf2a28d421f39e79c2eee
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@floating-ui/dom@npm:1.0.4"
+  dependencies:
+    "@floating-ui/core": ^1.0.1
+  checksum: f038ad74c8c0d4e3668705396c9955018ec4fce5de4a3ebc0d2317fa10a0dbae3ff6c9d331423014ab7558864977a83a1664be2800cb1a1d57cd35647a3d4907
+  languageName: node
+  linkType: hard
+
 "@fontsource/dm-sans@npm:4.5.9":
   version: 4.5.9
   resolution: "@fontsource/dm-sans@npm:4.5.9"
@@ -2482,21 +2498,23 @@ __metadata:
     "@babel/core": ^7.19.6
     "@babel/preset-env": ^7.19.4
     "@carbon/icons-vue": 10.49.1
+    "@floating-ui/dom": ^1.0.4
     "@fontsource/dm-sans": 4.5.9
     "@interactjs/types": 1.10.17
     "@juggle/resize-observer": ^3.4.0
     "@microsoft/eslint-formatter-sarif": 3.0.0
-    "@popperjs/core": 2.11.6
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rollup/plugin-babel": ^6.0.2
     "@rushstack/eslint-patch": 1.2.0
     "@testing-library/jest-dom": 5.16.5
+    "@testing-library/user-event": ^14.4.3
     "@testing-library/vue": 6.6.0
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
     "@types/lodash-es": 4.17.6
     "@types/marked": ^4
+    "@types/scroll-into-view": ^1
     "@types/testing-library__jest-dom": 5.14.5
     "@types/webfontloader": 1.6.35
     "@typescript-eslint/eslint-plugin": 5.38.0
@@ -2504,7 +2522,8 @@ __metadata:
     "@vitejs/plugin-vue": 3.1.0
     "@vitest/coverage-c8": 0.24.3
     "@vue/eslint-config-typescript": 11.0.2
-    "@vueuse/core": 8.9.4
+    "@vueuse/core": 9.4.0
+    "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
     autoprefixer: 10.4.12
@@ -2539,6 +2558,7 @@ __metadata:
     p-queue: ^7.3.0
     postcss: 8.4.16
     postcss-nested: 5.0.6
+    scroll-into-view: ^1.16.2
     tabbable: 6.0.1
     tailwindcss: 3.1.8
     typescript: 4.8.4
@@ -2891,6 +2911,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@testing-library/user-event@npm:^14.4.3":
+  version: 14.4.3
+  resolution: "@testing-library/user-event@npm:14.4.3"
+  peerDependencies:
+    "@testing-library/dom": ">=7.21.4"
+  checksum: 852c48ea6db1c9471b18276617c84fec4320771e466cd58339a732ca3fd73ad35e5a43ae14f51af51a8d0a150dcf60fcaab049ef367871207bea8f92c4b8195e
+  languageName: node
+  linkType: hard
+
 "@testing-library/vue@npm:6.6.0":
   version: 6.6.0
   resolution: "@testing-library/vue@npm:6.6.0"
@@ -3171,6 +3200,13 @@ __metadata:
   version: 1.20.2
   resolution: "@types/resolve@npm:1.20.2"
   checksum: 61c2cad2499ffc8eab36e3b773945d337d848d3ac6b7b0a87c805ba814bc838ef2f262fc0f109bfd8d2e0898ff8bd80ad1025f9ff64f1f71d3d4294c9f14e5f6
+  languageName: node
+  linkType: hard
+
+"@types/scroll-into-view@npm:^1":
+  version: 1.16.0
+  resolution: "@types/scroll-into-view@npm:1.16.0"
+  checksum: a054dc2b574e64f6ff57cb677b73cb4e2cc2aa4b1051df1e0ade7ac9b342b46cd30ac1032b012dd059060828a95b89b6360a5e71397f6f8559c1ad8ce3a3aeac
   languageName: node
   linkType: hard
 
@@ -3779,7 +3815,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:^9.4.0":
+"@vueuse/core@npm:9.4.0, @vueuse/core@npm:^9.4.0":
   version: 9.4.0
   resolution: "@vueuse/core@npm:9.4.0"
   dependencies:
@@ -3801,6 +3837,16 @@ __metadata:
   peerDependencies:
     vue: ">=2.7 || >=3"
   checksum: 19492a5273d8c63b44303c1b40b6f91bd8ca4bc88dfb397a8624b89a9767b9bc51f32e8112aa01469421cbdf4a47dd5164f86d36edc2a4ecb07824f901665c0f
+  languageName: node
+  linkType: hard
+
+"@vueuse/math@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "@vueuse/math@npm:9.4.0"
+  dependencies:
+    "@vueuse/shared": 9.4.0
+    vue-demi: "*"
+  checksum: 8eaf7ee52378cbf4462c7ea61dfa42650868ed69b998871ce12c457b77b66bae99957863ff64a438b363638070753732e46bcd42c3dec6868d56ca78a3d5f705
   languageName: node
   linkType: hard
 
@@ -12482,6 +12528,13 @@ __metadata:
     ajv: ^6.12.5
     ajv-keywords: ^3.5.2
   checksum: fb73f3d759d43ba033c877628fe9751620a26879f6301d3dbeeb48cf2a65baec5cdf99da65d1bf3b4ff5444b2e59cbe4f81c2456b5e0d2ba7d7fd4aed5da29ce
+  languageName: node
+  linkType: hard
+
+"scroll-into-view@npm:^1.16.2":
+  version: 1.16.2
+  resolution: "scroll-into-view@npm:1.16.2"
+  checksum: 57a434ab9e31da143c43c40bdc38039be97a8eaecb852a614bb7218e34c148f6cb0beadd230742a28d3ec6c9e479161e7527b0ccf0b7311c1664c64c40814649
   languageName: node
   linkType: hard
 

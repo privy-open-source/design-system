@@ -75,18 +75,12 @@
 
 You can change popup placement via `placement` prop. Valid options is:
 
-- `auto`
 - `top`
 - `bottom`
 - `right`
 - `left`
 
 <preview class="flex-col space-gap-3 md:flex-row">
-  <p-dropdown text="Auto" placement="auto">
-    <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
-  </p-dropdown>
   <p-dropdown text="Top" placement="top">
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -111,11 +105,6 @@ You can change popup placement via `placement` prop. Valid options is:
 
 ```vue
 <template>
-  <p-dropdown text="Auto" placement="auto">
-    <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
-  </p-dropdown>
   <p-dropdown text="Top" placement="top">
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -372,7 +361,7 @@ You can programmatically toggle dropdown using `v-model`
 | `icon`       | `Boolean` |    `false`     | Enable icon mode                                                                                                                                                                                                                   |
 | `no-caret`   | `Boolean` |    `false`     | Hide caret icon                                                                                                                                                                                                                    |
 | `disabled`   | `Boolean` |    `false`     | Disable state                                                                                                                                                                                                                      |
-| `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`auto`, `auto-start`, `auto-end`,<br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
+| `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
 | `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |
 
 ### Slots

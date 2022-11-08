@@ -88,7 +88,7 @@ it('should be able to change placement via props `placement`', async () => {
   const screen = render({
     components: { Dropdown, DropdownItem },
     template  : `
-      <Dropdown placement="bottom-end" text="Hello World">
+      <Dropdown placement="top-end" text="Hello World">
         <DropdownItem text="Item1" />
         <DropdownItem text="Item2" />
       </Dropdown>
@@ -97,9 +97,9 @@ it('should be able to change placement via props `placement`', async () => {
 
   const menu = screen.queryByTestId('dropdown-menu')
 
-  await nextTick()
+  await delay(0)
 
-  expect(menu).toHaveAttribute('data-popper-placement', 'bottom-end')
+  expect(menu).toHaveAttribute('data-popper-placement', 'top-end')
 })
 
 it('should hide when `Escape` key is pressed', async () => {

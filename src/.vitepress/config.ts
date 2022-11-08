@@ -252,6 +252,10 @@ export default defineConfig({
               text: 'Toast',
               link: '/components/toast/',
             },
+            {
+              text: 'Tour',
+              link: '/components/tour/',
+            },
           ],
         },
         {
