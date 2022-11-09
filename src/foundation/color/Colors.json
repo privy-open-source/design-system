@@ -700,7 +700,7 @@
         "id" : 1,
         "subtitle" : "shimmer",
         "code" : "#FFFFFF",
-        "semantics" : "linear-gradient(90deg, rgba(gray.10, $opacity.5) 0%, gray.15 69.79%, rgba(gray.10, opacity.5) 100%)",
+        "semantics" : "linear-gradient(90deg, rgba(gray.10, opacity.5) 0%, gray.15 69.79%, rgba(gray.10, opacity.5) 100%)",
         "overlay" : "linear-gradient(90deg, rgba(231, 231, 232, 0.05) 0%, #DBDBDC 69.79%, rgba(231, 231, 232, 0.05) 100%)",
         "border": "0.05px solid #E7E7E8"
       },
