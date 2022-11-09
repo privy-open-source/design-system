@@ -20,15 +20,16 @@ export interface BaseTourOptions {
 }
 
 export abstract class AbstractTour<Options extends BaseTourOptions = any> {
-  name?: string | symbol
-  parent?: AbstractTour
-  options: Options
+  public name?: string | symbol
 
-  onNextHooks: TourActionHook[]
-  onPrevHooks: TourActionHook[]
+  protected parent?: AbstractTour
+  protected options: Options
 
-  runOnPrevHooks: TourActionHook
-  runOnNextHooks: TourActionHook
+  protected onNextHooks: TourActionHook[]
+  protected onPrevHooks: TourActionHook[]
+
+  protected runOnPrevHooks: TourActionHook
+  protected runOnNextHooks: TourActionHook
 
   constructor (options?: Options) {
     this.name        = options?.name ?? Symbol('TourID')

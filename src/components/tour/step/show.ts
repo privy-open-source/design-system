@@ -10,8 +10,12 @@ export interface ShowOptions {
   image?: string,
 }
 
-export default class BasicStep extends AbstractStep<ShowOptions> {
-  protected async mount () {
+export default class StepShow extends AbstractStep<ShowOptions> {
+  protected async dismiss () {
+    await this.parent.stop()
+  }
+
+  protected async run () {
     const options = this.getOptions()
     const tour    = await useSingleton(Tour)
     const target  = await this.waitElement(options.target, options.waitTimeout)
@@ -23,13 +27,9 @@ export default class BasicStep extends AbstractStep<ShowOptions> {
       onPrev   : this.prev.bind(this),
       onDismiss: this.dismiss.bind(this),
     }, options))
-  }
 
-  protected async unmount () {
-    await removeSingleton(Tour)
-  }
-
-  protected async dismiss () {
-    await this.parent.stop()
+    this.onCleanup(async () => {
+      await removeSingleton(Tour)
+    })
   }
 }

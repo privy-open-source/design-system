@@ -1,74 +1,23 @@
 <script setup>
-  import pTour from './TourCard.vue'
-  import { useSelector } from './utils/use-selector'
-  import { Tour } from './core/tour'
-  import Basic from './step/basic'
-  import Click from './step/click'
-  import Delay from './step/delay'
-  import { onMounted } from 'vue-demi'
+  import pButton from '../button/Button.vue'
+  import { createTour } from '.'
 
-  const target = useSelector('#sample')
-
-  const tour       = new Tour({ skipOnError: true })
-  const subTour    = new Tour()
-  const extraTour  = new Tour()
-  const extraTourB = new Tour()
-
-  subTour
-    .add(new Basic({
+  const tour = createTour()
+    .show({
       target: '#sample',
-      title : 'HEllo World',
-      text  : 'Tour 1',
-      name  : 'Tour 1',
-    }))
-    .add(new Basic({
-      target: '.VPNavBar',
-      text  : 'Tour 2',
-      name  : 'Tour 2',
-    }))
-
-  extraTour
-    .add(new Basic({
+      title : 'Step 1',
+      text  : 'Hello I\'m a Tour Guide'
+    })
+    .show({
       target: '.pager-link.prev',
-      title : 'Prev',
-      text  : 'Ini Prev',
-    }))
-    .add(new Basic({
+      title : 'Step 2',
+      text  : 'This is Prev button'
+    })
+    .show({
       target: '.pager-link.next',
-      title : 'Next',
-      text  : 'Ini Next',
-    }))
-    .add(new Click({ target: '.pager-link.next', action: 'click' }))
-    .add(new Delay())
-    .add(new Basic({
-      target: '.dropzone',
-      title : 'Dropzone',
-      text  : 'Ini Dropzone',
-    }))
-    .add(new Click({ target: '.pager-link.prev', action: 'click' }))
-    .add(new Delay())
-
-  extraTourB
-    .add(new Basic({
-      target: '.VPSidebar .link[href="/design-system/components/tooltip/"]',
-      title : 'Tooltip',
-      text  : 'Ini Tooltip',
-    }))
-    .add(new Basic({
-      target: '.VPSidebar .link[href="/design-system/components/avatar/"]',
-      title : 'Avatar',
-      text  : 'Ini Avatar',
-    }))
-
-  tour
-    .add(new Click({ target: '#nganu', action: 'clear', params: [] }))
-    .add(new Click({ target: '#nganu', action: 'type', params: ['ABCCCSS'] }))
-    .add(subTour)
-    .add(extraTour)
-    .add(new Click({ target: '.VPLocalNav > .menu', action: 'click' }))
-    .add(extraTourB)
-    .add(new Click({ target: '.VPBackdrop', action: 'click' }))
-    .add(new Basic({ target: '#tour-start', text: 'Click this to re-start the tour' }))
+      title : 'Step 3',
+      text  : 'This is Next button'
+    })
 </script>
 
 # Tour
@@ -78,12 +27,38 @@
 
 ### Simple Usage
 
-<a href="#" id="tour-start" @click.prevent="tour.start()">Start</a>
+<p-button class="mt-3" @click="tour.start()">
+  Try It
+</p-button>
 
 <input id="nganu" class="border" />
 
-<preview class="flex-col space-y-2">
+<preview class="flex-col space-y-2" label="sample">
   <div class="w-full max-w-xs overflow-y-auto h-52">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita explicabo necessitatibus eius architecto, similique quibusdam sed consequuntur? Esse, praesentium quidem. Dolorem repellendus numquam laudantium nisi labore animi. Iusto maxime exercitationem voluptatem molestias dolorum? Beatae minima deleniti tenetur quo ullam numquam, ab officiis id odio optio ipsam sed, repellendus, voluptate <span id="sample">saepe</span>.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita explicabo necessitatibus eius architecto, similique quibusdam sed consequuntur? Esse, praesentium quidem. Dolorem repellendus numquam laudantium nisi labore animi. Iusto maxime exercitationem voluptatem molestias dolorum? Beatae minima deleniti tenetur quo ullam numquam, ab officiis id odio optio ipsam sed, <span id="sample" class="text-primary-100">sample text</span>, repellendus, voluptat.
   </div>
 </preview>
+
+```ts
+import { createTour } from '@privyid/persona/core'
+
+const tour = createTour()
+  .show({
+    target: '#sample',
+    title : 'Step 1',
+    text  : 'Hello World'
+  })
+  .show({
+    target: '.pager-link.prev',
+    title : 'Step 2',
+    text  : 'Ini Prev button'
+  })
+  .show({
+    target: '.pager-link.next',
+    title : 'Step 3',
+    text  : 'Ini Next button'
+  })
+
+// Start the tour
+tour.start()
+```

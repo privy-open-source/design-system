@@ -60,15 +60,15 @@ export interface TourOptions extends BaseTourOptions {
 }
 
 export class Tour extends AbstractTour<TourOptions> {
-  index: number
-  steps: AbstractTour[]
-  onFinishedHooks: Array<() => void | Promise<void>>
-  parent?: Tour
+  protected index: number
+  protected steps: AbstractTour[]
+  protected onFinishedHooks: Array<() => void | Promise<void>>
+  protected parent?: Tour
 
   /**
    * Step direction, 1 for forward (next), -1 for backward (prev)
    */
-  direction: TourDirection
+  protected direction: TourDirection
 
   constructor (options?: Partial<TourOptions>) {
     super(options as TourOptions)
@@ -109,7 +109,7 @@ export class Tour extends AbstractTour<TourOptions> {
   /**
    * Count total step, including Sub-Tour
    */
-  public getTotalChild (): number {
+  protected getTotalChild (): number {
     let total = 0
 
     for (const step of this.steps) {
@@ -124,7 +124,7 @@ export class Tour extends AbstractTour<TourOptions> {
   /**
    * Calculate real index, including Sub-Tour
    */
-  public getRealIndex (): number {
+  protected getRealIndex (): number {
     let index = this.index
 
     for (let i = 0; i < this.index; i++) {
@@ -210,7 +210,7 @@ export class Tour extends AbstractTour<TourOptions> {
   /**
    * Finishing step
    */
-  async finish () {
+  public async finish () {
     await this.runOnFinishedHooks()
     await (this.parent ? this.parent.next() : this.stop())
   }

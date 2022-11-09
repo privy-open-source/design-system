@@ -79,6 +79,9 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
       color    : color,
     })
 
+    if (enable && bindings.value === true)
+      tooltip.show(id)
+
     if (!enable)
       tooltip.hide(id)
 

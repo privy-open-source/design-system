@@ -3,19 +3,34 @@ import { AbstractTour } from './base'
 import type { Tour, TourOptions } from './tour'
 
 type Merge<A, B> = Omit<A, keyof B> & B
-type BaseOptions = Omit<TourOptions, 'onFinished'>
+type BaseOptions = Partial<Omit<TourOptions, 'onFinished'>>
+
+export type OnCleanup = (cleanupFn: () => unknown) => unknown
 
 export abstract class AbstractStep<Opt = {}> extends AbstractTour<Merge<BaseOptions, Opt>> {
   parent?: Tour
+  cleanFns: Array<() => unknown> = []
+
+  protected async cleanUp () {
+    return await Promise.allSettled(this.cleanFns.map((clean) => clean()))
+  }
+
+  /**
+   * Run function before unmounted
+   * @param cleanFn clean function
+   */
+  protected onCleanup (cleanFn: () => unknown) {
+    this.cleanFns.push(cleanFn)
+  }
 
   public async start () {
     this.attach(this.parent)
 
-    await this.mount()
+    await this.run(this.onCleanup)
   }
 
   public async stop () {
-    await this.unmount()
+    await this.cleanUp()
 
     this.detach(this.parent)
   }
@@ -93,7 +108,5 @@ export abstract class AbstractStep<Opt = {}> extends AbstractTour<Merge<BaseOpti
     await this.parent.prev()
   }
 
-  protected abstract mount (): void | Promise<void>
-
-  protected abstract unmount (): void | Promise<void>
+  protected abstract run (onCleanup: OnCleanup): void | Promise<void>
 }
