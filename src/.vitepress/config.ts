@@ -18,6 +18,7 @@ export default defineConfig({
       { text: 'Styleguide', link: '/styleguide/badge/' },
       { text: 'Ecosystem', link: '/ecosystem/' },
     ],
+    outline    : [2, 3],
     socialLinks: [{ icon: 'github', link: 'https://github.com/privy-open-source/design-system' }],
     sidebar    : {
       '/docs/': [
@@ -65,12 +66,20 @@ export default defineConfig({
               link: '/components/button-group/',
             },
             {
+              text: 'Camera',
+              link: '/components/camera/',
+            },
+            {
               text: 'Card',
               link: '/components/card/',
             },
             {
               text: 'Chart',
               link: '/components/chart/',
+            },
+            {
+              text: 'Collapse',
+              link: '/components/collapse/',
             },
             {
               text: 'Contextual Bar',
@@ -101,6 +110,14 @@ export default defineConfig({
               link: '/components/nav/',
             },
             {
+              text: 'Progress',
+              link: '/components/progress/',
+            },
+            {
+              text: 'Navbar',
+              link: '/components/navbar/',
+            },
+            {
               text: 'Sidebar',
               link: '/components/sidebar/',
             },
@@ -119,6 +136,10 @@ export default defineConfig({
             {
               text: 'Table',
               link: '/components/table/',
+            },
+            {
+              text: 'Wizard',
+              link: '/components/wizard/',
             },
           ],
         },
@@ -235,6 +256,10 @@ export default defineConfig({
             {
               text: 'Spread',
               link: '/components/spread/',
+            },
+            {
+              text: 'Steps',
+              link: '/components/steps/',
             },
           ],
         },

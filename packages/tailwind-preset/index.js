@@ -70,7 +70,8 @@ module.exports = {
         },
       ],
     },
-    fontWeight: {
+    letterSpacing: { ...defaultTheme.letterSpacing },
+    fontWeight   : {
       inherit   : 'inherit',
       thin      : 100,
       extralight: 200,
@@ -83,123 +84,125 @@ module.exports = {
       black     : 900,
     },
     colors: {
-      base: {
-        black: '#000000',
-        white: '#ffffff',
+      inherit    : 'inherit',
+      transparent: 'transparent',
+      current    : 'currentColor',
+      base       : {
+        black: 'var(--color-base-black)',
+        white: 'var(--color-base-white)',
       },
       gray: {
-        0  : '#FAFAFA',
-        5  : '#F3F3F3',
-        10 : '#E7E7E8',
-        15 : '#DBDBDC',
-        20 : '#CFCFD1',
-        25 : '#C2C3C5',
-        30 : '#B6B8B9',
-        35 : '#AAACAE',
-        40 : '#9EA0A2',
-        45 : '#929497',
-        50 : '#86888B',
-        55 : '#7A7C7F',
-        60 : '#6E7074',
-        65 : '#626468',
-        70 : '#56585D',
-        75 : '#4A4D51',
-        80 : '#3D4145',
-        85 : '#31353A',
-        90 : '#25292E',
-        95 : '#191D23',
-        100: '#0D1117',
+        0  : 'var(--color-gray-0)',
+        5  : 'var(--color-gray-5)',
+        10 : 'var(--color-gray-10)',
+        15 : 'var(--color-gray-15)',
+        20 : 'var(--color-gray-20)',
+        25 : 'var(--color-gray-25)',
+        30 : 'var(--color-gray-30)',
+        35 : 'var(--color-gray-35)',
+        40 : 'var(--color-gray-40)',
+        45 : 'var(--color-gray-45)',
+        50 : 'var(--color-gray-50)',
+        55 : 'var(--color-gray-55)',
+        60 : 'var(--color-gray-60)',
+        65 : 'var(--color-gray-65)',
+        70 : 'var(--color-gray-70)',
+        75 : 'var(--color-gray-75)',
+        80 : 'var(--color-gray-80)',
+        85 : 'var(--color-gray-85)',
+        90 : 'var(--color-gray-90)',
+        95 : 'var(--color-gray-95)',
+        100: 'var(--color-gray-100)',
       },
       blue: {
-        0      : '#F2F7FD',
-        10     : '#BFD9F3',
-        20     : '#80B2E8',
-        30     : '#408BDD',
-        40     : '#0065D1',
-        DEFAULT: '#0065D1',
-        50     : '#0056B2',
-        60     : '#004C9D',
+        0 : 'var(--color-blue-0)',
+        10: 'var(--color-blue-10)',
+        20: 'var(--color-blue-20)',
+        30: 'var(--color-blue-30)',
+        40: 'var(--color-blue-40)',
+        50: 'var(--color-blue-50)',
+        60: 'var(--color-blue-60)',
       },
       green: {
-        0 : '#F4FBF6',
-        10: '#C8ECD0',
-        20: '#91D8A0',
-        30: '#5AC571',
-        40: '#23B242',
-        50: '#1E9738',
-        60: '#1A8531',
+        0 : 'var(--color-green-0)',
+        10: 'var(--color-green-10)',
+        20: 'var(--color-green-20)',
+        30: 'var(--color-green-30)',
+        40: 'var(--color-green-40)',
+        50: 'var(--color-green-50)',
+        60: 'var(--color-green-60)',
       },
-      lightBlue: {
-        0 : '#F2FBFC',
-        10: '#C0EBF1',
-        20: '#80D7E2',
-        30: '#41C2D4',
-        40: '#02AEC5',
-        50: '#0294A7',
-        60: '#018294',
+      lightblue: {
+        0 : 'var(--color-lightblue-0)',
+        10: 'var(--color-lightblue-10)',
+        20: 'var(--color-lightblue-20)',
+        30: 'var(--color-lightblue-30)',
+        40: 'var(--color-lightblue-40)',
+        50: 'var(--color-lightblue-50)',
+        60: 'var(--color-lightblue-60)',
       },
       orange: {
-        0 : '#FFFBF4',
-        10: '#FDE9C8',
-        20: '#FAD391',
-        30: '#F8BC5A',
-        40: '#F5A623',
-        50: '#D08D1E',
-        60: '#B87C1A',
+        0 : 'var(--color-orange-0)',
+        10: 'var(--color-orange-10)',
+        20: 'var(--color-orange-20)',
+        30: 'var(--color-orange-30)',
+        40: 'var(--color-orange-40)',
+        50: 'var(--color-orange-50)',
+        60: 'var(--color-orange-60)',
       },
       red: {
-        0 : '#FEF5F4',
-        10: '#F8CBCA',
-        20: '#F29695',
-        30: '#EB6261',
-        40: '#E42E2C',
-        50: '#C22725',
-        60: '#AB2221',
+        0 : 'var(--color-red-0)',
+        10: 'var(--color-red-10)',
+        20: 'var(--color-red-20)',
+        30: 'var(--color-red-30)',
+        40: 'var(--color-red-40)',
+        50: 'var(--color-red-50)',
+        60: 'var(--color-red-60)',
       },
       gold: {
-        0 : '#FBFAF2',
-        10: '#EDE6BF',
-        20: '#DBCC80',
-        30: '#C9B340',
-        40: '#B79A00',
-        50: '#9C8300',
-        60: '#897400',
+        0 : 'var(--color-gold-0)',
+        10: 'var(--color-gold-10)',
+        20: 'var(--color-gold-20)',
+        30: 'var(--color-gold-30)',
+        40: 'var(--color-gold-40)',
+        50: 'var(--color-gold-50)',
+        60: 'var(--color-gold-60)',
       },
       yellow: {
-        0 : '#FEFDF4',
-        10: '#FBF5CA',
-        20: '#F7EA95',
-        30: '#F3E061',
-        40: '#EFD52C',
-        50: '#CBB525',
-        60: '#B3A021',
+        0 : 'var(--color-yellow-0)',
+        10: 'var(--color-yellow-10)',
+        20: 'var(--color-yellow-20)',
+        30: 'var(--color-yellow-30)',
+        40: 'var(--color-yellow-40)',
+        50: 'var(--color-yellow-50)',
+        60: 'var(--color-yellow-60)',
       },
       lime: {
-        0 : '#FAFEF5',
-        10: '#E8F9CD',
-        20: '#D1F39A',
-        30: '#BAEC68',
-        40: '#A3E635',
-        50: '#8BC32D',
-        60: '#7AAC28',
+        0 : 'var(--color-lime-0)',
+        10: 'var(--color-lime-10)',
+        20: 'var(--color-lime-20)',
+        30: 'var(--color-lime-30)',
+        40: 'var(--color-lime-40)',
+        50: 'var(--color-lime-50)',
+        60: 'var(--color-lime-60)',
       },
       teal: {
-        0 : '#F3FBFA',
-        10: '#C4EDE6',
-        20: '#88DBCE',
-        30: '#4DCAB5',
-        40: '#12B89C',
-        50: '#0F9C85',
-        60: '#0E8A75',
+        0 : 'var(--color-teal-0)',
+        10: 'var(--color-teal-10)',
+        20: 'var(--color-teal-20)',
+        30: 'var(--color-teal-30)',
+        40: 'var(--color-teal-40)',
+        50: 'var(--color-teal-50)',
+        60: 'var(--color-teal-60)',
       },
       purple: {
-        0 : '#F7F2FD',
-        10: '#D7BFF3',
-        20: '#AE80E8',
-        30: '#8640DD',
-        40: '#5E00D1',
-        50: '#5000B2',
-        60: '#46009D',
+        0 : 'var(--color-purple-0)',
+        10: 'var(--color-purple-10)',
+        20: 'var(--color-purple-20)',
+        30: 'var(--color-purple-30)',
+        40: 'var(--color-purple-40)',
+        50: 'var(--color-purple-50)',
+        60: 'var(--color-purple-60)',
       },
       primary: {
         5      : '#F2F7FD',
@@ -256,44 +259,6 @@ module.exports = {
         focused: '#AB2221',
         hovered: '#C22725',
       },
-      // gold: {
-      //   5      : '#FBFAF2',
-      //   25     : '#EDE6BF',
-      //   50     : '#DBCC80',
-      //   75     : '#C9B340',
-      //   100    : '#B79A00',
-      //   focused: '#897400',
-      //   hovered: '#9C8300',
-      // },
-      // yellow: {
-      //   5  : '#FEFDF4',
-      //   25 : '#FBF5CA',
-      //   50 : '#F7EA95',
-      //   75 : '#F3E061',
-      //   100: '#EFD52C',
-      // },
-      // lime: {
-      //   5  : '#FAFEF5',
-      //   25 : '#E8F9CD',
-      //   50 : '#D1F39A',
-      //   75 : '#BAEC68',
-      //   100: '#A3E635',
-      // },
-      // teal: {
-      //   5  : '#F3FBFA',
-      //   25 : '#C4EDE6',
-      //   50 : '#88DBCE',
-      //   75 : '#4DCAB5',
-      //   100: '#12B89C',
-      // },
-      // purple: {
-      //   5  : '#F7F2FD',
-      //   25 : '#D7BFF3',
-      //   50 : '#AE80E8',
-      //   75 : '#8640DD',
-      //   100: '#5E00D1',
-      // },
-      inherit   : 'inherit',
       background: {
         25 : '#FDFDFD',
         50 : '#FAFAFA',
@@ -344,11 +309,10 @@ module.exports = {
         95     : '#FAFBFC',
         100    : '#FCFDFE',
       },
-      white      : '#FFFFFF',
-      transparent: 'transparent',
-      shimmer    : 'linear-gradient(90deg, rgba(249, 249, 250, 0.01) 0%, #EEEEEE 69.79%, rgba(245, 245, 245, 0.01) 100%)',
-      labelBg    : 'linear-gradient(180deg, rgba(245, 247, 249, 0) 46.88%, #FFFFFF 46.88%)',
-      subtextAlt : {
+      white     : '#FFFFFF',
+      shimmer   : 'linear-gradient(90deg, rgba(249, 249, 250, 0.01) 0%, #EEEEEE 69.79%, rgba(245, 245, 245, 0.01) 100%)',
+      labelBg   : 'linear-gradient(180deg, rgba(245, 247, 249, 0) 46.88%, #FFFFFF 46.88%)',
+      subtextAlt: {
         25 : '#E7E7E7',
         50 : '#CFCFCF',
         75 : '#B7B7B7',
@@ -418,6 +382,129 @@ module.exports = {
         background: 'linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, #F5F5F5 40.1%)',
       },
     },
+    variables: {
+      DEFAULT: {
+        color: {
+          base: {
+            black: '0 0 0', // #000000
+            white: '255 255 255', // #ffffff
+          },
+          gray: {
+            0  : '250 250 250', // #FAFAFA
+            5  : '243 243 243', // #F3F3F3
+            10 : '231 231 232', // #E7E7E8
+            15 : '219 219 220', // #DBDBDC
+            20 : '207 207 209', // #CFCFD1
+            25 : '194 195 197', // #C2C3C5
+            30 : '182 184 185', // #B6B8B9
+            35 : '170 172 174', // #AAACAE
+            40 : '158 160 162', // #9EA0A2
+            45 : '146 148 151', // #929497
+            50 : '134 136 139', // #86888B
+            55 : '122 124 127', // #7A7C7F
+            60 : '110 112 116', // #6E7074
+            65 : '98 100 104', // #626468
+            70 : '86 88 93', // #56585D
+            75 : '74 77 81', // #4A4D51
+            80 : '61 65 69', // #3D4145
+            85 : '49 53 58', // #31353A
+            90 : '37 41 46', // #25292E
+            95 : '25 29 35', // #191D23
+            100: '13 17 23', // #0D1117
+          },
+          blue: {
+            0 : '242 247 253', // #F2F7FD
+            10: '191 217 243', // #BFD9F3
+            20: '128 178 232', // #80B2E8
+            30: '64 139 221', // #408BDD
+            40: '0 101 209', // #0065D1
+            50: '0 86 178', // #0056B2
+            60: '0 76 157', // #004C9D
+          },
+          green: {
+            0 : '244 251 246', // #F4FBF6
+            10: '200 236 208', // #C8ECD0
+            20: '145 216 160', // #91D8A0
+            30: '90 197 113', // #5AC571
+            40: '35 178 66', // #23B242
+            50: '30 151 56', // #1E9738
+            60: '26 133 49', // #1A8531
+          },
+          lightblue: {
+            0 : '242 251 252', // #F2FBFC
+            10: '192 235 241', // #C0EBF1
+            20: '128 215 226', // #80D7E2
+            30: '65 194 212', // #41C2D4
+            40: '2 174 197', // #02AEC5
+            50: '2 148 167', // #0294A7
+            60: '1 130 148', // #018294
+          },
+          orange: {
+            0 : '255 251 244', // #FFFBF4
+            10: '253 233 200', // #FDE9C8
+            20: '250 211 145', // #FAD391
+            30: '248 188 90', // #F8BC5A
+            40: '245 166 35', // #F5A623
+            50: '208 141 30', // #D08D1E
+            60: '184 124 26', // #B87C1A
+          },
+          red: {
+            0 : '254 245 244', // #FEF5F4
+            10: '248 203 202', // #F8CBCA
+            20: '242 150 149', // #F29695
+            30: '235 98 97', // #EB6261
+            40: '228 46 44', // #E42E2C
+            50: '194 39 37', // #C22725
+            60: '171 34 33', // #AB2221
+          },
+          gold: {
+            0 : '251 250 242', // #FBFAF2
+            10: '237 230 191', // #EDE6BF
+            20: '219 204 128', // #DBCC80
+            30: '201 179 64', // #C9B340
+            40: '183 154 0', // #B79A00
+            50: '156 131 0', // #9C8300
+            60: '137 116 0', // #897400
+          },
+          yellow: {
+            0 : '254 253 244', // #FEFDF4
+            10: '251 245 202', // #FBF5CA
+            20: '247 234 149', // #F7EA95
+            30: '243 224 97', // #F3E061
+            40: '239 213 44', // #EFD52C
+            50: '203 181 37', // #CBB525
+            60: '179 160 33', // #B3A021
+          },
+          lime: {
+            0 : '#FAFEF5',
+            10: '#E8F9CD',
+            20: '#D1F39A',
+            30: '#BAEC68',
+            40: '#A3E635',
+            50: '#8BC32D',
+            60: '#7AAC28',
+          },
+          teal: {
+            0 : '#F3FBFA',
+            10: '#C4EDE6',
+            20: '#88DBCE',
+            30: '#4DCAB5',
+            40: '#12B89C',
+            50: '#0F9C85',
+            60: '#0E8A75',
+          },
+          purple: {
+            0 : '#F7F2FD',
+            10: '#D7BFF3',
+            20: '#AE80E8',
+            30: '#8640DD',
+            40: '#5E00D1',
+            50: '#5000B2',
+            60: '#46009D',
+          },
+        },
+      },
+    },
     borderRadius: {
       'none'   : '0rem',
       'tn'     : '0.25rem',
@@ -432,22 +519,44 @@ module.exports = {
       'full'   : '9999px',
     },
     boxShadow: {
-      'sm'     : '0 1px 2px rgba(var(--tw-shadow-color, 0, 0, 0), 0.05)',
-      'DEFAULT': '0 1px 3px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1), 0 1px 2px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06)',
-      'md'     : '0 4px 6px -1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1), 0 2px 4px -1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06)',
-      'lg'     : '0 10px 15px -3px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1), 0 4px 6px -2px rgba(var(--tw-shadow-color, 0, 0, 0), 0.05)',
-      'xl'     : '0 0 1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.15), 0 8px 10px -6px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1), 0 20px 25px -5px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1)',
-      '2xl'    : '0 25px 50px -12px rgba(var(--tw-shadow-color, 0, 0, 0), 0.25)',
-      'inner'  : 'inset 2px 0 4px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06), inset 0 4px 6px -1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06)',
-      'none'   : 'none',
-      'outline': '0 0 0 4px rgba(var(--tw-shadow-color, 220, 220, 220), 0.35)',
+      'sm'        : '0 1px 2px rgba(var(--tw-shadow-color, 0, 0, 0), 0.05)',
+      'DEFAULT'   : '0 1px 3px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1), 0 1px 2px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06)',
+      'md'        : '0 4px 6px -1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1), 0 2px 4px -1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06)',
+      'lg'        : '0 10px 15px -3px rgba(0,0,0, 0.1), 0 4px 6px -2px rgba(var(--tw-shadow-color, 0, 0, 0), 0.05)',
+      'xl'        : '0 0 1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.15), 0 8px 10px -6px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1), 0 20px 25px -5px rgba(var(--tw-shadow-color, 0, 0, 0), 0.1)',
+      '2xl'       : '0 25px 50px -12px rgba(var(--tw-shadow-color, 0, 0, 0), 0.25)',
+      'inner'     : 'inset 2px 0 4px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06), inset 0 4px 6px -1px rgba(var(--tw-shadow-color, 0, 0, 0), 0.06)',
+      'none'      : 'none',
+      'outline'   : '0 0 0 4px rgba(var(--tw-shadow-color, 220, 220, 220), 0.35)',
+      'onemphasis': '0 10px 15px -3px rgba(var(--tw-shadow-color, 220, 220, 220), 0.35)',
     },
-    extend: {
-      colors: {
-        ...defaultTheme.colors.purple,
-        purple: { 60: '#6E7074' },
-      },
+    opacity: {
+      0  : 0,
+      5  : 0.05,
+      10 : 0.1,
+      15 : 0.15,
+      20 : 0.2,
+      25 : 0.25,
+      30 : 0.3,
+      35 : 0.35,
+      40 : 0.4,
+      45 : 0.45,
+      50 : 0.5,
+      55 : 0.55,
+      60 : 0.6,
+      65 : 0.65,
+      70 : 0.7,
+      75 : 0.75,
+      80 : 0.8,
+      85 : 0.85,
+      90 : 0.9,
+      95 : 0.95,
+      100: 1,
     },
   },
-  plugins: [require('@privyid/tailwind-animation'), require('@privyid/tailwind-extended')],
+  plugins: [
+    require('@privyid/tailwind-animation'),
+    require('@privyid/tailwind-extended'),
+    require('@mertasan/tailwindcss-variables'),
+  ],
 }

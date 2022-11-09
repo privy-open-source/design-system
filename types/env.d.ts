@@ -11,9 +11,3 @@ declare module '@carbon/icons-vue/*' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
-
-declare module 'attr-accept/dist/es' {
-  export {
-    default,
-  } from 'attr-accept'
-}

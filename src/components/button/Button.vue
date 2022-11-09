@@ -111,7 +111,7 @@ export default defineComponent({
 
     &.btn {
       &--primary {
-        @apply bg-purple-60  hover:bg-primary-hovered focus:bg-primary-focused active:bg-primary-focused;
+        @apply bg-accent-emphasis  hover:bg-primary-hovered focus:bg-primary-focused active:bg-primary-focused;
       }
 
       &--secondary {
@@ -119,7 +119,7 @@ export default defineComponent({
       }
 
       &--success {
-        @apply bg-success-100 hover:bg-success-hovered focus:bg-success-focused active:bg-success-focused;
+        @apply bg-success-emphasis hover:bg-success-hovered focus:bg-success-focused active:bg-success-focused;
       }
 
       &--info {
@@ -127,15 +127,15 @@ export default defineComponent({
       }
 
       &--warning {
-        @apply bg-warning-100 hover:bg-warning-hovered focus:bg-warning-focused active:bg-warning-focused;
+        @apply bg-warning-emphasis hover:bg-warning-hovered focus:bg-warning-focused active:bg-warning-focused;
       }
 
       &--danger {
-        @apply bg-danger-100 hover:bg-danger-hovered focus:border-danger-focused active:bg-danger-focused;
+        @apply bg-danger-emphasis hover:bg-danger-hovered focus:border-danger-focused active:bg-danger-focused;
       }
 
       &--gold {
-        @apply bg-gold-100 hover:bg-gold-hovered focus:bg-gold-focused active:bg-gold-focused;
+        @apply bg-gold-40 hover:bg-gold-50 focus:bg-gold-60 active:bg-gold-60;
       }
     }
   }
@@ -179,7 +179,7 @@ export default defineComponent({
       }
 
       &--gold {
-        @apply border-gold-100 hover:border-gold-hovered active:border-gold-focused focus:border-gold-focused;
+        @apply border-gold-40 hover:border-gold-50 active:border-gold-60 focus:border-gold-60;
       }
     }
   }
@@ -200,15 +200,15 @@ export default defineComponent({
 
     &.btn {
       &--primary {
-        @apply text-primary-100 hover:text-primary-hovered active:text-primary-focused focus:text-primary-focused;
+        @apply text-accent hover:text-primary-hovered active:text-primary-focused focus:text-primary-focused;
       }
 
       &--secondary {
-        @apply text-secondary-100 hover:text-secondary-hovered active:text-secondary-focused focus:text-secondary-focused;
+        @apply text-subtle hover:text-secondary-hovered active:text-secondary-focused focus:text-secondary-focused;
       }
 
       &--success {
-        @apply text-success-100 hover:text-success-hovered active:text-success-focused focus:text-success-focused;
+        @apply text-success;
       }
 
       &--info {
@@ -216,15 +216,15 @@ export default defineComponent({
       }
 
       &--warning {
-        @apply text-warning-100 hover:text-warning-hovered active:text-warning-focused focus:text-warning-focused;
+        @apply text-warning;
       }
 
       &--danger {
-        @apply text-danger-100 hover:text-danger-hovered active:text-danger-focused focus:text-danger-focused;
+        @apply text-danger;
       }
 
       &--gold {
-        @apply text-gold-100 hover:text-gold-hovered active:text-gold-focused focus:text-gold-focused;
+        @apply text-gold-40 hover:text-gold-50 active:text-gold-60 focus:text-gold-60;
       }
     }
   }

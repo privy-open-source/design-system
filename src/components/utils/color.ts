@@ -6,7 +6,7 @@ interface RGB {
 
 /**
  * Parse hex string to R,G,B Object
- * @param color RGB Object
+ * @param color hex string color
  * @example toRGB('#6E1E62') // {R: 110, G: 30, B: 98}
  */
 export function toRGB (color: string): RGB {
@@ -19,4 +19,14 @@ export function toRGB (color: string): RGB {
     G: Number.parseInt(g, 16),
     B: Number.parseInt(b, 16),
   }
+}
+
+/**
+ * Get brightness of color
+ * @param color hex string color
+ */
+export function getBrightness (color: string): number {
+  const rgb = toRGB(color)
+
+  return ((rgb.R * 299) + (rgb.G * 587) + (rgb.B * 114) / 1000)
 }

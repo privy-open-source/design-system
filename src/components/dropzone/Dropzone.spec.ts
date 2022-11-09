@@ -1,13 +1,8 @@
 import { fireEvent, render } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { ref } from 'vue-demi'
-import { toBase64 } from './__mocks__/base64'
 import Dropzone from './Dropzone.vue'
-import { delay } from 'nanodelay'
-
-vi.mock('../utils/base64.ts', () => {
-  return { toBase64 }
-})
+import { until } from '@vueuse/core'
 
 beforeAll(() => {
   process.env.VTL_SKIP_WARN_EVENT_UPDATE = '1'
@@ -239,6 +234,7 @@ it('should format to base64 if using v-model.base64', async () => {
   const files = [file]
 
   await fireEvent.change(input, { target: { files } })
+  await until(model).changed()
 
   expect(model.value).toBe('data:text/plain;base64,YWJjZGVmZ2hpamts')
 })
@@ -283,7 +279,7 @@ it('should formal all files if props multiple set to true and using v-model.base
   const files = [file1, file2]
 
   await fireEvent.change(input, { target: { files } })
-  await delay(1)
+  await until(model).changed()
 
   expect(model.value).toStrictEqual(['data:text/plain;base64,YWJjZGVmZ2hpamts', 'data:text/plain;base64,MTIzNDU2Nzg5MDAw'])
 })

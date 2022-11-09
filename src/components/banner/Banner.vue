@@ -89,21 +89,21 @@ export default defineComponent({
 
 <style lang="postcss">
 .banner {
-  @apply p-4 flex gap-2 rounded text-body-100;
+  @apply p-4 flex gap-2 rounded text-default;
 
   &--info {
-    @apply bg-background-100;
+    @apply bg-subtle;
 
     .banner__icon {
-      @apply text-primary-100;
+      @apply text-accent;
     }
   }
 
   &--danger {
-    @apply bg-danger-5;
+    @apply bg-danger;
 
     .banner__icon {
-      @apply text-danger-100;
+      @apply text-danger;
     }
   }
 
@@ -117,7 +117,7 @@ export default defineComponent({
   }
 
   &__close {
-    @apply cursor-pointer text-black text-opacity-30 hover:text-opacity-50;
+    @apply cursor-pointer text-muted text-opacity-30 hover:text-opacity-50;
   }
 }
 </style>

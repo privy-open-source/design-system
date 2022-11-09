@@ -64,6 +64,10 @@ export default defineComponent({
   &__nav {
     &.nav--pills.nav--vertical {
       @apply pl-0 pr-0;
+
+      .nav__link {
+        @apply pr-3;
+      }
     }
 
     &&--bottom {
@@ -73,7 +77,7 @@ export default defineComponent({
 
   &&--narrow {
     .nav__link {
-      @apply flex-col justify-center text-center text-xxs;
+      @apply flex-col justify-center text-center text-tn;
 
       &__label {
         @apply ml-0 mt-3 justify-center break-all;

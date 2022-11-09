@@ -4,6 +4,8 @@
     :key="id"
     v-model="modal"
     :title="context.title"
+    :size="context.size"
+    :centered="context.centered"
     :text="context.text"
     @close="onCancel">
     <template #footer>

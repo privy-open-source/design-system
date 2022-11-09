@@ -13,6 +13,7 @@
     dialog.confirm({
       title: 'Delete Confirmation',
       text : 'Are you sure?',
+      size: 'sm',
     }).then((value) => {
       if (value === true) {
         dialog.alert({
@@ -24,7 +25,8 @@
   }
 </script>
 
-# Dialog (Instant Modal)
+# Dialog
+> Instant Modal
 
 ## Usage
 
@@ -55,6 +57,7 @@ import dialog from '@privyid/persona/dialog'
 dialog.confirm({
   title: 'Delete Confirmation',
   text : 'Are you sure?',
+  size: 'sm',
 }).then((value) => {
   if (value === true) {
     dialog.alert({

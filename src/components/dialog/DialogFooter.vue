@@ -130,11 +130,13 @@ export default defineComponent({
   }
 
   &--align {
-    &-left {
+    &-left,
+    &-start {
       @apply justify-start;
     }
 
-    &-right {
+    &-right,
+    &-end {
       @apply justify-end;
     }
 

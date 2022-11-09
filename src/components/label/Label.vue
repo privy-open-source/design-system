@@ -120,7 +120,7 @@ export default defineComponent({
   }
 
   &--xs {
-    @apply px-2 py-0 text-xxs rounded-tn;
+    @apply px-2 py-0 text-tn rounded-tn;
   }
 
   /**
@@ -156,7 +156,7 @@ export default defineComponent({
       }
 
       &--gold {
-        @apply bg-gold-100;
+        @apply bg-gold-40;
       }
     }
   }
@@ -192,7 +192,7 @@ export default defineComponent({
       }
 
       &--gold {
-        @apply bg-gold-5 text-gold-100;
+        @apply bg-gold-0 text-gold-40;
       }
     }
   }

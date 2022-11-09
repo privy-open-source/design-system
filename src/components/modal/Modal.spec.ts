@@ -210,7 +210,7 @@ it('should be able to add Modal Footer via slot "footer"', () => {
   const screen = render({
     components: { Modal, Button },
     template  : `
-      <Modal 
+      <Modal
         title="Modal Title">
         Modal Text
         <template #footer>
@@ -265,7 +265,7 @@ it('If "no-close-on-esc" props is true, Modal will not close while modal esc was
   const screen = render({
     components: { Modal },
     template  : `
-      <Modal 
+      <Modal
         v-model="model"
         no-close-on-esc
         title="Modal Title">
@@ -299,7 +299,7 @@ it('should have style `modal-body-scrollable` when props "modal-body-scrollable"
     components: { Modal },
     template  : `
       <Modal
-        title="Modal Title" 
+        title="Modal Title"
         modal-body-scrollable>
         Modal Text
       </Modal>
@@ -311,4 +311,40 @@ it('should have style `modal-body-scrollable` when props "modal-body-scrollable"
 
   expect(modal).toBeInTheDocument()
   expect(modalBody).toHaveClass('modal__body', 'modal__body--scroll')
+})
+
+it('should have style `lg` if size props set to `lg`', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        title="Modal Title"
+        size="lg">
+        Modal Text
+      </Modal>
+    `,
+  })
+
+  const modal = screen.queryByTestId('modal')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).toHaveClass('modal--lg')
+})
+
+it('should have style `center` if setting the centered prop', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        title="Modal Title"
+        centered>
+        Modal Text
+      </Modal>
+    `,
+  })
+
+  const modal = screen.queryByTestId('modal')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).toHaveClass('modal--centered')
 })

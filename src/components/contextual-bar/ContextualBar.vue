@@ -5,19 +5,45 @@
     data-testid="contextual-bar"
     class="contextual-bar"
     :class="classNames">
-    <div class="contextual-bar__wrapper">
+    <div
+      data-testid="contextual-bar-wrapper"
+      :class="[{ 'contextual-bar__wrapper--with-message' : (message || $slots.message), 'contextual-bar__wrapper--with-action' : $slots.action } ,'contextual-bar__wrapper']">
       <span
-        v-if="!message"
-        class="contextual-bar__icon"
-        data-testid="contextual-bar-icon"><IconInfo /></span>
+        v-if="$slots.icon"
+        data-testid="contextual-bar-icon"
+        class="contextual-bar__icon">
+        <slot name="icon" />
+      </span>
+      <div class="contextual-bar__content">
+        <div
+          v-if="title || $slots.title"
+          data-testid="contextual-bar-title"
+          class="contextual-bar__content__title">
+          <slot name="title">
+            <p-subheading v-if="message">
+              {{ title }}
+            </p-subheading>
+            <template v-else>
+              {{ title }}
+            </template>
+          </slot>
+        </div>
+        <div
+          v-if="message || $slots.message"
+          data-testid="contextual-bar-message"
+          class="contextual-bar__content__message">
+          <p-caption>
+            <slot name="message">
+              {{ message }}
+            </slot>
+          </p-caption>
+        </div>
+      </div>
       <div
-        class="contextual-bar__content"
-        data-testid="contextual-bar-content"
-        :class="{ 'contextual-bar__content--icon' : message }">
-        <template v-if="message">
-          {{ message }}
-        </template>
-        <slot />
+        v-if="$slots.action"
+        data-testid="contextual-bar-action"
+        class="contextual-bar__action">
+        <slot name="action" />
       </div>
     </div>
     <div
@@ -40,7 +66,8 @@ import {
 } from 'vue-demi'
 import { AlignVariant } from '../nav/Nav.vue'
 import { useVModel } from '../input/use-input'
-import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
+import pCaption from '../caption/Caption.vue'
+import pSubheading from '../subheading/Subheading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/20'
 import {
   templateRef,
@@ -48,18 +75,28 @@ import {
   useElementBounding,
 } from '@vueuse/core'
 
-type StyleVariant = 'neutral' | 'info' | 'error' | 'warning'
+type StyleVariant = 'light' | 'dark'
 
 export default defineComponent({
-  components: { IconInfo, IconClose },
-  props     : {
+  components: {
+    IconClose, pCaption, pSubheading,
+  },
+  props: {
     variant: {
       type   : String as PropType<StyleVariant>,
-      default: 'info',
+      default: 'light',
+    },
+    backgroundUrl: {
+      type   : String,
+      default: undefined,
     },
     dismissable: {
       type   : Boolean,
       default: true,
+    },
+    title: {
+      type   : String,
+      default: undefined,
     },
     message: {
       type   : String,
@@ -117,10 +154,16 @@ export default defineComponent({
       if (props.align)
         result.push(`contextual-bar--align-${props.align}`)
 
+      if (props.backgroundUrl)
+        result.push('contextual-bar--background-image')
+
       return result
     })
 
     onMounted(() => {
+      if (props.backgroundUrl)
+        contextualbar.value?.style.setProperty('background-image', `url('${props.backgroundUrl}')`)
+
       if (model.value)
         show()
       else
@@ -147,11 +190,25 @@ export default defineComponent({
 .contextual-bar {
   @apply fixed z-[1030] top-0 left-0 p-6 w-full;
 
-  &__wrapper {
-    @apply px-24 items-start flex mr-9;
+  &--background-image {
+    @apply bg-no-repeat bg-cover bg-[top_center];
+  }
 
-    .btn {
-      @apply ml-4;
+  &__wrapper {
+    @apply px-24 items-center flex mr-9;
+
+    &--with-message {
+      @apply items-start;
+    }
+
+    &--with-action {
+      @apply items-center;
+
+      &.contextual-bar__wrapper--with-message {
+        .contextual-bar__icon {
+          @apply self-start;
+        }
+      }
     }
   }
 
@@ -164,17 +221,46 @@ export default defineComponent({
   &&--align-center {
     .contextual-bar__wrapper {
       @apply justify-center text-center;
+
+      &--with-action {
+        .contextual-bar__content {
+          @apply text-left;
+        }
+      }
+    }
+
+    .contextual-bar__action {
+      @apply ml-0;
     }
   }
 
   &&--align-right {
     .contextual-bar__wrapper {
       @apply justify-end text-right;
+
+      &--with-action {
+        .contextual-bar__content {
+          @apply text-left;
+        }
+        .contextual-bar__action {
+          @apply ml-0;
+        }
+      }
     }
   }
 
   &&--align-center,
   &&--align-right {
+    .contextual-bar__wrapper {
+      &--with-action {
+        @apply gap-3;
+
+        .contextual-bar__icon {
+          @apply mr-0;
+        }
+      }
+    }
+
     .contextual-bar__content {
       @apply flex-grow-0;
     }
@@ -183,56 +269,43 @@ export default defineComponent({
   &__content {
     @apply flex-grow;
 
-    &&--icon {
-      background-image: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"%3e%3cpath fill-rule="evenodd" clip-rule="evenodd" d="M11 0.5C5.20101 0.5 0.5 5.20101 0.5 11C0.5 16.799 5.20101 21.5 11 21.5C16.799 21.5 21.5 16.799 21.5 11C21.5 8.21523 20.3938 5.54451 18.4246 3.57538C16.4555 1.60625 13.7848 0.5 11 0.5ZM11 4.25C11.6213 4.25 12.125 4.75368 12.125 5.375C12.125 5.99632 11.6213 6.5 11 6.5C10.3787 6.5 9.875 5.99632 9.875 5.375C9.875 4.75368 10.3787 4.25 11 4.25V4.25ZM14 17.09H8V15.41H10.16V10.34H8.75V8.66H11.8475V15.41H14V17.09Z" fill="%23ffffff"/%3e%3c/svg%3e');
-      @apply pl-9 bg-no-repeat bg-[left_center] bg-[length:19px_19px];
+    &__title {
+      @apply text-base;
     }
+  }
+
+  &__action {
+    @apply flex flex-shrink-0 ml-auto gap-3;
   }
 
   &__icon {
     @apply relative mr-4 flex-shrink;
+
+    img {
+      @apply max-w-[20px] w-auto;
+    }
   }
 
   &__close {
     @apply absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-black text-opacity-30 hover:text-opacity-50;
   }
 
-  &&--neutral,
-  &&--error,
-  &&--warning {
-    @apply text-white;
-  }
-
-  &&--neutral {
-    @apply bg-black;
+  &&--dark {
+    @apply bg-black text-white;
 
     .contextual-bar__close {
       @apply text-white text-opacity-40 hover:text-opacity-60;
     }
   }
 
-  &&--info {
+  &&--light {
     @apply bg-background-100 text-body-100;
 
     .contextual-bar {
       &__icon {
         @apply text-primary-100;
       }
-
-      &__content {
-        &--icon {
-          background-image: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"%3e%3cpath fill-rule="evenodd" clip-rule="evenodd" d="M11 0.5C5.20101 0.5 0.5 5.20101 0.5 11C0.5 16.799 5.20101 21.5 11 21.5C16.799 21.5 21.5 16.799 21.5 11C21.5 8.21523 20.3938 5.54451 18.4246 3.57538C16.4555 1.60625 13.7848 0.5 11 0.5ZM11 4.25C11.6213 4.25 12.125 4.75368 12.125 5.375C12.125 5.99632 11.6213 6.5 11 6.5C10.3787 6.5 9.875 5.99632 9.875 5.375C9.875 4.75368 10.3787 4.25 11 4.25V4.25ZM14 17.09H8V15.41H10.16V10.34H8.75V8.66H11.8475V15.41H14V17.09Z" fill="%230065D1"/%3e%3c/svg%3e');
-        }
-      }
     }
-  }
-
-  &&--error {
-    @apply bg-danger-100;
-  }
-
-  &&--warning {
-    @apply bg-warning-100;
   }
 }
 </style>

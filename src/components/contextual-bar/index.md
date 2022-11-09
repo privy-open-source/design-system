@@ -1,9 +1,8 @@
 <script setup>
 import pContextualBar from './ContextualBar.vue'
 import pButton from '../button/Button.vue'
-import pCaption from '../caption/Caption.vue'
-import pSubheading from '../subheading/Subheading.vue'
 import { ref, onMounted } from "vue-demi"
+import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 
 const sample1 = ref(false)
 
@@ -62,48 +61,91 @@ onMounted (() => {
 </div>
 
 <preview class="preview--bar">
-  <p-contextual-bar v-model="sample01">
-    Hey! This is Title Text and telling less You will be unable to sign or seal a document while your privy balance runs out.
+  <p-contextual-bar v-model="sample01" title="Hey! This is Title Text and telling less" />
+</preview>
+
+```vue
+<template>
+  <p-contextual-bar
+    v-model="sample"
+    title="Hey! This is Title Text and telling less" />
+</template>
+```
+
+### With Icon
+
+<preview class="preview--bar flex-col gap-3">
+  <p-contextual-bar title="Hey! This is Title Text and telling less">
+    <template #icon>
+      <IconInfo />
+    </template>
+  </p-contextual-bar>
+  <p-contextual-bar title="Hey! This is Title Text and telling less">
+    <template #icon>
+      <img src="../avatar/assets/avatar.png" />
+    </template>
   </p-contextual-bar>
 </preview>
 
 ```vue
 <template>
-  <p-contextual-bar>
-    Hey! This is Title Text and telling less
+  <p-contextual-bar v-model="sample" title="Hey! This is Title Text and telling less">
+    <template #icon>
+      <IconInfo />
+    </template>
+  </p-contextual-bar>
+  <p-contextual-bar v-model="sample" title="Hey! This is Title Text and telling less">
+    <template #icon>
+      <img src="assets/images/img-background-contextualbar.svg" />
+    </template>
   </p-contextual-bar>
 </template>
 
+<script setup>
+import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
+</script>
 ```
+
 ### With Action Button
 
 <preview class="preview--bar">
-  <p-contextual-bar message="Hey! This is Title Text" v-model="sample02">
-    <p-button size="sm" color="primary">Button text</p-button>
+  <p-contextual-bar title="Hey! This is Title Text" v-model="sample02">
+    <template #icon>
+      <IconInfo />
+    </template>
+    <template #action>
+      <p-button size="sm" color="primary">Button text</p-button>
+    </template>
   </p-contextual-bar>
 </preview>
 
 ```vue
 <template>
-  <p-contextual-bar message="Hey! This is Title Text">
-    <p-button size="sm" color="primary">Button text</p-button>
+  <p-contextual-bar v-model="sample" title="Hey! This is Title Text">
+    <template #action>
+      <p-button size="sm" color="primary">Button text</p-button>
+    </template>
   </p-contextual-bar>
 </template>
 ```
 ### With Two Action
 
 <preview class="preview--bar">
-  <p-contextual-bar message="This is Title Text" v-model="sample03">
-    <p-button size="sm" color="primary">Button</p-button>
-    <p-button size="sm" color="primary" variant="outline">Button</p-button>
+  <p-contextual-bar title="This is Title Text" v-model="sample03">
+    <template #action>
+      <p-button size="sm" color="primary">Button</p-button>
+      <p-button size="sm" color="primary" variant="outline">Button</p-button>
+    </template>
   </p-contextual-bar>
 </preview>
 
 ```vue
 <template>
   <p-contextual-bar v-model="sample" message="This is Title Text">
-    <p-button size="sm" color="primary">Button</p-button>
-    <p-button size="sm" color="primary" variant="outline">Button</p-button>
+    <template #action>
+      <p-button size="sm" color="primary">Button</p-button>
+      <p-button size="sm" color="primary" variant="outline">Button</p-button>
+    </template>
   </p-contextual-bar>
 </template>
 ```
@@ -111,85 +153,88 @@ onMounted (() => {
 ### Additional Description
 
 <preview class="preview--bar">
-  <p-contextual-bar v-model="sample04">
-    <p-subheading>Hey! This is Title Text</p-subheading>
-    <p-caption>You will be unable to sign or seal a document</p-caption>
+  <p-contextual-bar v-model="sample04" title="Hey! This is Title Text" message="You will be unable to sign or seal a document">
   </p-contextual-bar>
 </preview>
 
 ```vue
 <template>
-  <p-contextual-bar v-model="sample">
-    <p-subheading>Hey! This is Title Text</p-subheading>
-    <p-caption>You will be unable to sign or seal a document</p-caption>
-  </p-contextual-bar>
+  <p-contextual-bar
+    v-model="sample"
+    title="Hey! This is Title Text"
+    message="You will be unable to sign or seal a document" />
 </template>
 ```
 
 ### Additional Description With Action
 
 <preview class="preview--bar">
-  <p-contextual-bar v-model="sample05">
-    <div class="flex items-center justify-between">
-      <div class="flex-grow-1">
-        <p-subheading>Hey! This is Title Text</p-subheading>
-        <p-caption>You will be unable to sign or seal a document</p-caption>
-      </div>
-      <div class="flex-shrink-0">
-        <p-button color="primary" size="sm">Button</p-button>
-      </div>
-    </div>
+  <p-contextual-bar
+    v-model="sample05"
+    title="Hey! This is Title Text"
+    message="You will be unable to sign or seal a document">
+    <template #action>
+      <p-button color="primary" size="sm">Button</p-button>
+    </template>
   </p-contextual-bar>
 </preview>
 
 ```vue
 <template>
-  <p-contextual-bar v-model="sample">
-    <div class="flex items-center justify-between">
-      <div class="flex-grow-1">
-        <p-subheading>Hey! This is Title Text</p-subheading>
-        <p-caption>You will be unable to sign or seal a document</p-caption>
-      </div>
-      <div class="flex-shrink-0">
-        <p-button color="primary" size="sm">Button</p-button>
-      </div>
-    </div>
+  <p-contextual-bar
+    v-model="sample"
+    title="Hey! This is Title Text"
+    message="You will be unable to sign or seal a document">
+    <template #action>
+      <p-button color="primary" size="sm">Button</p-button>
+    </template>
+  </p-contextual-bar>
+</template>
+```
+
+### Custom Background Image
+
+<preview class="preview--bar">
+  <p-contextual-bar
+    title="Hey! This is Title Text"
+    message="You will be unable to sign or seal a document"
+    background-url="assets/images/img-background-contextualbar.svg">
+    <template #icon>
+      <img src="../avatar/assets/avatar.png" />
+    </template>
+  </p-contextual-bar>
+</preview>
+
+```vue
+<template>
+  <p-contextual-bar
+    v-model="sample"
+    title="Hey! This is Title Text"
+    message="You will be unable to sign or seal a document"
+    background-url="assets/images/img-background-contextualbar.svg">
+    <template #icon>
+      <img src="assets/images/avatar.png" />
+    </template>
   </p-contextual-bar>
 </template>
 ```
 
 ## Variants
-Contextual Bar have 4 variants: `info`, `neutral`, `warning` and `error`. Default is `info`
+Contextual Bar have 2 variants: `light` and `dark`. Default is `light`
 
 <preview class="flex-col gap-4 preview--bar">
-  <p-contextual-bar variant="info" v-model="sample06">
-    Hey! This is Title Text and telling less
-  </p-contextual-bar>
-  <p-contextual-bar variant="neutral" v-model="sample07">
-    Hey! This is Title Text and telling less
-  </p-contextual-bar>
-  <p-contextual-bar variant="warning" v-model="sample08">
-    Hey! This is Title Text and telling less
-  </p-contextual-bar>
-  <p-contextual-bar variant="error" v-model="sample09">
-    Hey! This is Title Text and telling less
-  </p-contextual-bar>
+  <p-contextual-bar variant="light" v-model="sample06" title="Hey! This is Title Text and telling less" />
+  <p-contextual-bar variant="dark" v-model="sample07" title="Hey! This is Title Text and telling less" />
 </preview>
 
 ```vue
 <template>
-  <p-contextual-bar variant="info" v-model="sample">
-    Hey! This is Title Text and telling less
-  </p-contextual-bar>
-  <p-contextual-bar variant="neutral" v-model="sample">
-    Hey! This is Title Text and telling less
-  </p-contextual-bar>
-  <p-contextual-bar variant="warning" v-model="sample">
-    Hey! This is Title Text and telling less
-  </p-contextual-bar>
-  <p-contextual-bar variant="error" v-model="sample">
-    Hey! This is Title Text and telling less
-  </p-contextual-bar>
+  <p-contextual-bar
+    variant="light"
+    v-model="sample" title="Hey! This is Title Text and telling less" />
+  <p-contextual-bar
+    variant="dark"
+    v-model="sample" title="Hey! This is Title Text and telling less" />
 </template>
 ```
 
@@ -197,33 +242,37 @@ Contextual Bar have 4 variants: `info`, `neutral`, `warning` and `error`. Defaul
 To align Contextual Bar content, use align prop. Available value are `left`, `right` and `center`
 
 <preview class="flex-col gap-4 preview--bar">
-  <p-contextual-bar align="left" v-model="sample10">
-    Hey! This is Title Text
-  </p-contextual-bar>
-  <p-contextual-bar align="center" v-model="sample11">
-    Hey! This is Title Text
-  </p-contextual-bar>
-  <p-contextual-bar align="right" v-model="sample12">
-    Hey! This is Title Text
-  </p-contextual-bar>
+  <p-contextual-bar align="left" v-model="sample10" title="Hey! This is Title Text" />
+  <p-contextual-bar align="center" v-model="sample11" title="Hey! This is Title Text" />
+  <p-contextual-bar align="right" v-model="sample12" title="Hey! This is Title Text" />
 </preview>
 
 ```vue
 <template>
-  <p-contextual-bar align="left" v-model="sample">
-    Hey! This is Title Text
-  </p-contextual-bar>
-  <p-contextual-bar align="center" v-model="sample">
-    Hey! This is Title Text
-  </p-contextual-bar>
-  <p-contextual-bar align="right" v-model="sample">
-    Hey! This is Title Text
-  </p-contextual-bar>
+  <p-contextual-bar
+    align="left"
+    v-model="sample" title="Hey! This is Title Text" />
+  <p-contextual-bar
+    align="center"
+    v-model="sample" title="Hey! This is Title Text" />
+  <p-contextual-bar
+    align="right"
+    v-model="sample" title="Hey! This is Title Text" />
 </template>
 ```
 
 <preview class="preview--hide">
-  <p-contextual-bar class="example1" color="info" message="Hey! This is Title Text and telling less as possible" v-model="sample1" align="center">
+  <p-contextual-bar color="light" v-model="sample1" title="Hey! This is Title Text and telling less as possible" background-url="assets/images/img-background-contextualbar.svg">
+    <template #icon>
+      <img src="../avatar/assets/avatar.png" />
+    </template>
+    <template #action>
+      <p-button size="sm" color="secondary" variant="link">Cancel</p-button>
+      <p-button size="sm" color="primary">Button Text</p-button>
+    </template>
+    <template #message>
+      You will be unable to sign or seal a document while your privy balance runs out.
+    </template>
   </p-contextual-bar>
 </preview>
 
@@ -233,15 +282,20 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 
 | Props                      |   Type    | Default | Description                                     |
 |----------------------------|:---------:|:-------:|-------------------------------------------------|
-| `variant`                  | `String`  | `info`  | Contextualbar variants, valid value is `neutral`, `info`, `error` and `warning`                                     |
+| `variant`                  | `String`  | `light`  | Contextualbar variants, valid value is `light` and `dark`                   |
 | `align`                    | `String`  | `left`  | Contextualbar alignment, valid value is `left`, `center` and `right`|
 | `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                      |
-| `message`                  | `String`  | -       | Content inside of Contextualbar                 |
+| `title`                    | `String`  | -       | Content or title inside of Contextualbar        |
+| `message`                  | `String`  | -       | Additional message of Contextualbar             |
+| `background-url`           | `String`  | -       | Custom background image of Contextualbar        |
 
 ### Slots
 | Name      | Description                                                  |
 |-----------|--------------------------------------------------------------|
-| `default ` | Content to place in Contextualbar                           |
+| `title `  | Title content to place in Contextualbar                      |
+| `message `| Additional message content to place in Contextualbar         |
+| `icon `   | Content to place icon in Contextualbar                       |
+| `action ` | Content to place button in Contextualbar                     |
 
 ### Events
 

@@ -55,7 +55,11 @@ import IconGithub from '@carbon/icons-vue/lib/logo--github/20'
 
 export default defineComponent({
   components: {
-    Heading, Subheading, Badge, Button, IconGithub,
+    Heading,
+    Subheading,
+    Badge,
+    Button,
+    IconGithub,
   },
   setup () {
     const router = useRouter()
