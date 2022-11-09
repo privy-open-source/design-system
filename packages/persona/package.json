@@ -58,7 +58,7 @@
     "@nuxt/module-builder": "latest",
     "@nuxt/schema": "3.0.0-rc.12",
     "del-cli": "5.0.0",
-    "nuxt": "3.0.0-rc.12"
+    "nuxt": "3.0.0-rc.13"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
