@@ -22,6 +22,7 @@
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
     "@interactjs/types": "1.10.17",
+    "@mertasan/tailwindcss-variables": "^2.5.1",
     "@microsoft/eslint-formatter-sarif": "3.0.0",
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
