@@ -7,8 +7,9 @@
         class="color-box"
         :style="{'border' : color.border, 'background' : color.code }">
         <div
+          v-if="color.overlay"
           class="color-overlay"
-          :style="{'background' : color.overlay ? color.overlay : 'transparent' }" />
+          :style="{'background' : color.overlay }" />
       </div>
       <div class="px-0.5">
         <div class="color-subtitle">
