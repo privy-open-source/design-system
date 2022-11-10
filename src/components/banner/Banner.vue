@@ -89,9 +89,23 @@ export default defineComponent({
 
 <style lang="postcss">
 .banner {
-  @apply p-4 flex gap-2 rounded text-default;
+  @apply p-4 flex gap-2 rounded text-subtle;
 
-  &--info {
+  a {
+    &:not(.btn) {
+      @apply underline decoration-solid text-accent;
+    }
+  }
+
+  .subheading {
+    &:not(&--md) {
+      @apply mb-1;
+    }
+
+    @apply mb-2;
+  }
+
+  &&--info {
     @apply bg-subtle;
 
     .banner__icon {
@@ -99,7 +113,7 @@ export default defineComponent({
     }
   }
 
-  &--danger {
+  &&--danger {
     @apply bg-danger;
 
     .banner__icon {
@@ -117,7 +131,7 @@ export default defineComponent({
   }
 
   &__close {
-    @apply cursor-pointer text-muted text-opacity-30 hover:text-opacity-50;
+    @apply cursor-pointer text-muted;
   }
 }
 </style>

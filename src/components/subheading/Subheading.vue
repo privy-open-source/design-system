@@ -1,9 +1,9 @@
 <template>
-  <p
+  <h6
     data-testid="subheading"
     :class="classNames">
     <slot />
-  </p>
+  </h6>
 </template>
 
 <script lang="ts">
@@ -49,17 +49,17 @@ export default defineComponent({
 
 <style lang="postcss">
 .subheading {
-  @apply m-0 capitalize tracking-[.009375rem];
+  @apply m-0 capitalize tracking-[.009375rem] text-default;
 
-  &.subheading--md {
+  &&--md {
     @apply text-base font-medium leading-tight;
   }
 
-  &.subheading--sm {
+  &&--sm {
     @apply text-sm font-medium leading-[1.28];
   }
 
-  &.subheading--overline {
+  &&--overline {
     &-normal,
     &-medium {
       @apply uppercase text-[0.6875rem] leading-[1.4] tracking-[0.09375rem];

@@ -34,7 +34,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .caption {
-  @apply block text-subtext-100 text-sm;
+  @apply block text-subtle text-xs tracking-wide;
+
+  &--sm {
+    @apply text-tn tracking-wider;
+  }
 
   &--bold {
     @apply font-bold;
