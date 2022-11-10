@@ -91,7 +91,7 @@ export default defineComponent({
       if (tooltip.value && target.value && tooltipArrow.value) {
         const cleanup = autoUpdate(target.value, tooltip.value, () => {
           computePosition(target.value, tooltip.value, {
-            strategy  : 'fixed',
+            strategy  : 'absolute',
             placement : placement.value,
             middleware: [
               flip(),

@@ -7,12 +7,22 @@ import './css/tailwind.css'
 import DefaultTheme from 'vitepress/theme'
 import './css/custom.css'
 import Preview from './components/Preview.vue'
-import router from './router'
+import vueRouter from './router'
+import { initAppContext } from '../../components/global/context'
 
 export default {
   ...DefaultTheme,
-  enhanceApp ({ app }) {
-    app.use(router)
+  enhanceApp ({ app, router }) {
+    app.use(vueRouter)
     app.component('Preview', Preview)
+
+    initAppContext({
+      toURL (url) {
+        return router.go(url)
+      },
+      getURL () {
+        return router.route.path
+      },
+    })
   },
 }

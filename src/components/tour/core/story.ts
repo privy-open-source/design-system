@@ -1,9 +1,15 @@
 import { Tour } from './tour'
 import { isString } from 'lodash-es'
-import ShowStep, { ShowOptions } from '../step/show'
-import StepDelay from '../step/delay'
-import StepAction, { EventType, ParamsOf } from '../step/action'
+import ShowStep from './step/show'
+import StepDelay from './step/delay'
+import StepAction from './step/action'
+import StepVisit from './step/visit'
+import type { ShowOptions } from './step/show'
+import type { EventType, ParamsOf } from './step/action'
 
+/**
+ * Tour with additional function to build a tour stories
+ */
 export class TourStory extends Tour {
   /**
    * Show tour guide card
@@ -105,5 +111,14 @@ export class TourStory extends Tour {
    */
   type (target: string, text: string) {
     return this.action(target, 'type', text)
+  }
+
+  /**
+   * Redirect to url
+   * @param url target url
+   * @param backUrl target url when back button clicked
+   */
+  visit (url: string, backUrl?: string) {
+    return this.add(new StepVisit({ url, backUrl }))
   }
 }

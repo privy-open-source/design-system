@@ -1,7 +1,7 @@
 import defu from 'defu'
-import { removeSingleton, useSingleton } from '../../global/use-singleton'
-import { AbstractStep } from '../core/step'
-import Tour from '../Tour.vue'
+import { removeSingleton, useSingleton } from '../../../global/use-singleton'
+import { AbstractStep } from '../step'
+import Tour from '../../Tour.vue'
 
 export interface ShowOptions {
   target: string,

@@ -1,5 +1,6 @@
-import { AbstractStep } from '../core/step'
 import userEvent from '@testing-library/user-event'
+import { AbstractStep } from '../step'
+import { TourDirection } from '../base'
 
 type UserEvent = ReturnType<typeof userEvent['setup']>
 type ExtractParams<F> = F extends (T: Element, ...args: infer P) => Promise<void> ? P : unknown[]
@@ -23,6 +24,6 @@ export default class StepAction<E extends EventType> extends AbstractStep<Option
     const params  = options.params ?? []
 
     await user[action].apply(undefined, [target, ...params])
-    await this.next()
+    await (this.direction === TourDirection.BACKWARD ? this.prev() : this.next())
   }
 }

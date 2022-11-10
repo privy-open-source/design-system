@@ -3,9 +3,7 @@ export type HookFn = (...args: unknown[]) => unknown | Promise<unknown>
 export async function runHook<H extends HookFn> (hook: H, ...args: Parameters<H>): Promise<boolean> {
   try {
     return (await hook(...args)) !== false
-  } catch (error) {
-    console.warn(error)
-
+  } catch {
     return false
   }
 }

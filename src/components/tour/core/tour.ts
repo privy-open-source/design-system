@@ -3,14 +3,13 @@ import { isNumber } from 'lodash-es'
 import {
   BaseTourOptions,
   AbstractTour,
+  TourDirection,
 } from './base'
 import { runAllHooks } from '../../steps/utils/hook'
 
-enum TourDirection {
-  FORWARD = 1,
-  BACKWARD = -1,
-}
-
+/**
+ * Basic Tour, it cover all basic tour functionality (prev, next, start, finish)
+ */
 export interface TourOptions extends BaseTourOptions {
   /**
    * Enable / disable highlight overlay
@@ -65,16 +64,10 @@ export class Tour extends AbstractTour<TourOptions> {
   protected onFinishedHooks: Array<() => void | Promise<void>>
   protected parent?: Tour
 
-  /**
-   * Step direction, 1 for forward (next), -1 for backward (prev)
-   */
-  protected direction: TourDirection
-
   constructor (options?: Partial<TourOptions>) {
     super(options as TourOptions)
 
     this.index           = -1
-    this.direction       = TourDirection.FORWARD
     this.steps           = []
     this.onFinishedHooks = []
     this.options         = defu(options, {
@@ -152,7 +145,7 @@ export class Tour extends AbstractTour<TourOptions> {
     const step = this.getCurrentStep()
 
     try {
-      await step.start()
+      await step.setDirection(this.direction).start()
     } catch (error) {
       if (import.meta.env.DEV)
         console.warn(error)

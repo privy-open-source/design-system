@@ -51,7 +51,7 @@ export default defineComponent({
       if (target.value && tour.value) {
         const cleanup = autoUpdate(target.value, tour.value, async () => {
           computePosition(target.value, tour.value, {
-            strategy  : 'fixed',
+            strategy  : 'absolute',
             middleware: [
               autoPlacement(),
               shift({ padding: 16 }),
@@ -100,7 +100,7 @@ export default defineComponent({
 <style lang="postcss">
 .tour {
   & > &__card {
-    @apply fixed;
+    @apply absolute;
   }
 }
 </style>

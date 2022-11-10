@@ -1,6 +1,7 @@
 <script setup>
   import pButton from '../button/Button.vue'
   import { createTour } from '.'
+  import { withBase } from 'vitepress'
 
   const tour = createTour()
     .show({
@@ -8,6 +9,13 @@
       title : 'Step 1',
       text  : 'Hello I\'m a Tour Guide'
     })
+    .visit(withBase('/components/avatar/'))
+    .show({
+      target: '.preview',
+      title : 'Step 2',
+      text  : 'This is Prev button'
+    })
+    .visit(withBase('/components/button/'))
     .show({
       target: '.pager-link.prev',
       title : 'Step 2',

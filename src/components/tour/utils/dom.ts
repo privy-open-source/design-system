@@ -1,5 +1,5 @@
 import { computePosition, hide } from '@floating-ui/dom'
-import * as scrollIntoView from 'scroll-into-view'
+import scrollIntoView from 'scroll-into-view'
 
 export async function isVisible (target: HTMLElement) {
   const div = document.createElement('div')

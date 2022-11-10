@@ -1,6 +1,9 @@
 import { focus, isVisible } from '../utils/dom'
 import { AbstractTour } from './base'
-import type { Tour, TourOptions } from './tour'
+import {
+  Tour,
+  TourOptions,
+} from './tour'
 
 type Merge<A, B> = Omit<A, keyof B> & B
 type BaseOptions = Partial<Omit<TourOptions, 'onFinished'>>
@@ -8,10 +11,10 @@ type BaseOptions = Partial<Omit<TourOptions, 'onFinished'>>
 export type OnCleanup = (cleanupFn: () => unknown) => unknown
 
 export abstract class AbstractStep<Opt = {}> extends AbstractTour<Merge<BaseOptions, Opt>> {
-  parent?: Tour
-  cleanFns: Array<() => unknown> = []
+  protected parent?: Tour
+  protected cleanFns: Array<() => unknown> = []
 
-  protected async cleanUp () {
+  protected async dispose () {
     return await Promise.allSettled(this.cleanFns.map((clean) => clean()))
   }
 
@@ -26,11 +29,11 @@ export abstract class AbstractStep<Opt = {}> extends AbstractTour<Merge<BaseOpti
   public async start () {
     this.attach(this.parent)
 
-    await this.run(this.onCleanup)
+    await this.run()
   }
 
   public async stop () {
-    await this.cleanUp()
+    await this.dispose()
 
     this.detach(this.parent)
   }
@@ -65,11 +68,12 @@ export abstract class AbstractStep<Opt = {}> extends AbstractTour<Merge<BaseOpti
         if (mutation.type === 'childList') {
           this.getElement<Element>(selector)
             .then((target) => {
-              if (target)
+              if (target) {
+                cleanup()
                 resolve(target)
+              }
             })
             .catch(reject)
-            .finally(cleanup)
         }
       })
 
@@ -92,11 +96,12 @@ export abstract class AbstractStep<Opt = {}> extends AbstractTour<Merge<BaseOpti
 
       this.getElement<Element>(selector)
         .then((target) => {
-          if (target)
+          if (target) {
+            cleanup()
             resolve(target)
+          }
         })
         .catch(reject)
-        .finally(cleanup)
     })
   }
 
@@ -108,5 +113,5 @@ export abstract class AbstractStep<Opt = {}> extends AbstractTour<Merge<BaseOpti
     await this.parent.prev()
   }
 
-  protected abstract run (onCleanup: OnCleanup): void | Promise<void>
+  protected abstract run (): void | Promise<void>
 }

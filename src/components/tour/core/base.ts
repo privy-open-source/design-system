@@ -3,6 +3,11 @@ import { runAllHooks } from '../../steps/utils/hook'
 
 export type TourActionHook = (to: AbstractTour, from: AbstractTour) => boolean | Promise<boolean>
 
+export enum TourDirection {
+  FORWARD = 1,
+  BACKWARD = -1,
+}
+
 export interface BaseTourOptions {
   /**
    * Uniq identifier, can be string or symbol
@@ -22,6 +27,11 @@ export interface BaseTourOptions {
 export abstract class AbstractTour<Options extends BaseTourOptions = any> {
   public name?: string | symbol
 
+  /**
+   * Step direction, 1 for forward (next), -1 for backward (prev)
+   */
+  protected direction: TourDirection
+
   protected parent?: AbstractTour
   protected options: Options
 
@@ -32,6 +42,7 @@ export abstract class AbstractTour<Options extends BaseTourOptions = any> {
   protected runOnNextHooks: TourActionHook
 
   constructor (options?: Options) {
+    this.direction   = TourDirection.FORWARD
     this.name        = options?.name ?? Symbol('TourID')
     this.options     = options
     this.onPrevHooks = []
@@ -66,6 +77,12 @@ export abstract class AbstractTour<Options extends BaseTourOptions = any> {
 
   public getOptions (): Options {
     return defu(this.options, this.parent?.getOptions()) as Options
+  }
+
+  public setDirection (direction: TourDirection) {
+    this.direction = direction
+
+    return this
   }
 
   public attach (parent: AbstractTour) {

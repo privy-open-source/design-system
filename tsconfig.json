@@ -11,6 +11,7 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
     "lib": ["esnext", "dom"]
   },
   "include": [
