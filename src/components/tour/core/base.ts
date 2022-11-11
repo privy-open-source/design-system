@@ -1,5 +1,5 @@
 import defu from 'defu'
-import { runAllHooks } from '../../steps/utils/hook'
+import { Hook } from '../../steps/utils/hook'
 
 export type TourActionHook = (to: AbstractTour, from: AbstractTour) => boolean | Promise<boolean>
 
@@ -24,7 +24,7 @@ export interface BaseTourOptions {
   onBeforeNext?: TourActionHook,
 }
 
-export abstract class AbstractTour<Options extends BaseTourOptions = any> {
+export abstract class AbstractTour<Options extends BaseTourOptions = BaseTourOptions> {
   public name?: string | symbol
 
   /**
@@ -35,8 +35,8 @@ export abstract class AbstractTour<Options extends BaseTourOptions = any> {
   protected parent?: AbstractTour
   protected options: Options
 
-  protected onNextHooks: TourActionHook[]
-  protected onPrevHooks: TourActionHook[]
+  protected onNextHooks: Hook<TourActionHook>
+  protected onPrevHooks: Hook<TourActionHook>
 
   protected runOnPrevHooks: TourActionHook
   protected runOnNextHooks: TourActionHook
@@ -45,62 +45,60 @@ export abstract class AbstractTour<Options extends BaseTourOptions = any> {
     this.direction   = TourDirection.FORWARD
     this.name        = options?.name ?? Symbol('TourID')
     this.options     = options
-    this.onPrevHooks = []
-    this.onNextHooks = []
+    this.onPrevHooks = new Hook()
+    this.onNextHooks = new Hook()
+
+    if (typeof options?.onBeforePrev === 'function')
+      this.onPrevHooks.add(options.onBeforePrev)
 
     if (typeof options?.onBeforeNext === 'function')
-      this.onPrevHooks.unshift(options.onBeforeNext)
+      this.onNextHooks.add(options.onBeforeNext)
 
-    if (typeof options?.onBeforeNext === 'function')
-      this.onNextHooks.unshift(options.onBeforeNext)
-
-    this.runOnPrevHooks = async (...args: Parameters<TourActionHook>) => {
-      return await runAllHooks(this.onPrevHooks, ...args)
-    }
-
-    this.runOnNextHooks = async (...args: Parameters<TourActionHook>) => {
-      return await runAllHooks(this.onNextHooks, ...args)
-    }
+    this.runOnPrevHooks = async (...args) => await this.onPrevHooks.run(...args)
+    this.runOnNextHooks = async (...args) => await this.onNextHooks.run(...args)
   }
 
-  public setParent (parent: AbstractTour<any>) {
+  public setParent (parent: AbstractTour) {
     this.parent = parent
 
     return this
   }
 
-  public setOptions (options: Options) {
-    this.options = options
-
-    return this
-  }
-
+  /**
+   * Get options with parent options as fallback
+   */
   public getOptions (): Options {
     return defu(this.options, this.parent?.getOptions()) as Options
   }
 
+  /**
+   * Set tour direction
+   * @param direction 1 for forward (next) and -1 for backward (prev)
+   */
   public setDirection (direction: TourDirection) {
     this.direction = direction
 
     return this
   }
 
+  /**
+   * Attach to parent
+   * @param parent Parent Instance
+   */
   public attach (parent: AbstractTour) {
-    parent.onPrevHooks.unshift(this.runOnPrevHooks)
-    parent.onNextHooks.unshift(this.runOnNextHooks)
+    parent.onPrevHooks.add(this.runOnPrevHooks)
+    parent.onNextHooks.add(this.runOnNextHooks)
 
     return this
   }
 
+  /**
+   * Deattach from parent
+   * @param parent Parent Instance
+   */
   public detach (parent: AbstractTour) {
-    const pi = parent.onPrevHooks.indexOf(this.runOnPrevHooks)
-    const ni = parent.onNextHooks.indexOf(this.runOnNextHooks)
-
-    if (pi > -1)
-      parent.onPrevHooks.splice(pi, 1)
-
-    if (ni > -1)
-      parent.onNextHooks.splice(ni, 1)
+    parent.onPrevHooks.remove(this.runOnPrevHooks)
+    parent.onNextHooks.remove(this.runOnNextHooks)
 
     return this
   }
@@ -108,4 +106,8 @@ export abstract class AbstractTour<Options extends BaseTourOptions = any> {
   public abstract start (): void | Promise<void>
 
   public abstract stop (): void | Promise<void>
+
+  public abstract next (): void | Promise<void>
+
+  public abstract prev (): void | Promise<void>
 }

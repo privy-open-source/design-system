@@ -1,7 +1,8 @@
 <template>
   <div
     class="tour__card"
-    :class="{ 'tour--image': image }">
+    :class="{ 'tour--image': !!image }"
+    data-testid="tour-card">
     <span
       v-if="dismissable"
       data-testid="tour-dismiss"
@@ -12,6 +13,7 @@
     <img
       v-if="image"
       class="tour__image"
+      data-testid="tour-image"
       :src="image"
       alt="tour-image"
       width="400"
@@ -20,22 +22,27 @@
       <p-subheading
         v-if="title"
         size="sm">
-        <span v-p-md="title" />
+        <span
+          v-p-md.inline="title"
+          data-testid="tour-title" />
       </p-subheading>
       <p-caption>
-        <span v-p-md="text" />
+        <span
+          v-p-md.inline="text"
+          data-testid="tour-text" />
       </p-caption>
     </div>
     <div class="tour__footer">
       <div
         v-if="totalStep > 2"
-        class="tour__meta">
+        class="tour__meta"
+        data-testid="tour-meta">
         {{ step }} / {{ totalStep }}
       </div>
       <div class="tour__controls">
         <template v-if="dismissable && step < totalStep">
           <p-button
-            data-testid="dismiss"
+            data-testid="tour-control-dismiss"
             size="xs"
             variant="ghost"
             color="primary"
@@ -46,7 +53,7 @@
         </template>
 
         <p-button
-          data-testid="prev"
+          data-testid="tour-control-prev"
           size="xs"
           variant="ghost"
           :disabled="step < 2"
@@ -56,7 +63,7 @@
 
         <p-button
           v-if="step === totalStep"
-          data-testid="finish"
+          data-testid="tour-control-finish"
           size="xs"
           variant="solid"
           @click="$emit('next', $event)">
@@ -64,7 +71,7 @@
         </p-button>
         <p-button
           v-else
-          data-testid="next"
+          data-testid="tour-control-next"
           size="xs"
           variant="solid"
           @click="$emit('next', $event)">
@@ -180,7 +187,7 @@ export default defineComponent({
   }
 
   &__dismiss {
-    @apply absolute top-3 right-3 hover:cursor-pointer z-[1061] text-white text-opacity-50 hover:text-opacity-100;
+    @apply absolute top-3 right-3 hover:cursor-pointer text-white text-opacity-50 hover:text-opacity-100;
 
     .tour--image & {
       @apply text-black hover:text-opacity-50;

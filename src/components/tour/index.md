@@ -39,8 +39,6 @@
   Try It
 </p-button>
 
-<input id="nganu" class="border" />
-
 <preview class="flex-col space-y-2" label="sample">
   <div class="w-full max-w-xs overflow-y-auto h-52">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita explicabo necessitatibus eius architecto, similique quibusdam sed consequuntur? Esse, praesentium quidem. Dolorem repellendus numquam laudantium nisi labore animi. Iusto maxime exercitationem voluptatem molestias dolorum? Beatae minima deleniti tenetur quo ullam numquam, ab officiis id odio optio ipsam sed, <span id="sample" class="text-primary-100">sample text</span>, repellendus, voluptat.

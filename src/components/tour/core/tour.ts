@@ -5,7 +5,6 @@ import {
   AbstractTour,
   TourDirection,
 } from './base'
-import { runAllHooks } from '../../steps/utils/hook'
 
 /**
  * Basic Tour, it cover all basic tour functionality (prev, next, start, finish)
@@ -82,7 +81,7 @@ export class Tour extends AbstractTour<TourOptions> {
     })
 
     if (typeof options?.onFinished === 'function')
-      this.onFinishedHooks.push(options.onFinished)
+      this.onFinishedHooks.unshift(options.onFinished)
   }
 
   /**
@@ -135,7 +134,7 @@ export class Tour extends AbstractTour<TourOptions> {
   }
 
   protected async runOnFinishedHooks () {
-    await runAllHooks(this.onFinishedHooks)
+    await Promise.allSettled(this.onFinishedHooks.map((hook) => hook()))
   }
 
   /**
@@ -150,7 +149,7 @@ export class Tour extends AbstractTour<TourOptions> {
       if (import.meta.env.DEV)
         console.warn(error)
 
-      if (this.getOptions().skipOnError || step.getOptions().skipOnError)
+      if (this.getOptions().skipOnError || (step.getOptions() as TourOptions).skipOnError)
         await (this.direction < 0 ? this.prev(true) : this.next(true))
       else if (this.parent)
         throw error

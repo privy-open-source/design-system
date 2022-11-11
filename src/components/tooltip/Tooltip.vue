@@ -133,7 +133,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .tooltip {
-  @apply px-4 py-2 rounded-sm text-xs inline-block z-30 fixed;
+  @apply px-4 py-2 rounded-sm text-xs inline-block z-30 absolute;
 
   &__arrow {
     @apply absolute;

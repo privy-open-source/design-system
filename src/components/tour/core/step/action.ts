@@ -1,6 +1,7 @@
 import userEvent from '@testing-library/user-event'
 import { AbstractStep } from '../step'
 import { TourDirection } from '../base'
+import { waitElement } from '../../utils/dom'
 
 type UserEvent = ReturnType<typeof userEvent['setup']>
 type ExtractParams<F> = F extends (T: Element, ...args: infer P) => Promise<void> ? P : unknown[]
@@ -18,7 +19,7 @@ export interface Options<E extends EventType> {
 export default class StepAction<E extends EventType> extends AbstractStep<Options<E>> {
   protected async run () {
     const options = this.getOptions()
-    const target  = await this.waitElement(options.target, options.waitTimeout)
+    const target  = await waitElement(options.target, options.waitTimeout)
     const user    = userEvent.setup({ document: document })
     const action  = options.action
     const params  = options.params ?? []
