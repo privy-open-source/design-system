@@ -24,7 +24,7 @@ export async function focus (target: HTMLElement, duration = 330): Promise<unkno
  * Get element and throw error if target not visible
  * @param selector query selector
  */
-export async function getElement<Element extends HTMLElement> (selector: string): Promise<Element> {
+export async function getVisibleElement<Element extends HTMLElement> (selector: string): Promise<Element> {
   const target = document.querySelector<Element>(selector)
 
   if (target) {
@@ -48,7 +48,7 @@ export async function waitElement<Element extends HTMLElement> (selector: string
 
     const mutation = new MutationObserver(([mutation]) => {
       if (mutation.type === 'childList') {
-        getElement<Element>(selector)
+        getVisibleElement<Element>(selector)
           .then((target) => {
             if (target) {
               cleanup()
@@ -76,7 +76,7 @@ export async function waitElement<Element extends HTMLElement> (selector: string
 
     mutation.observe(document.body, { childList: true, subtree: true })
 
-    getElement<Element>(selector)
+    getVisibleElement<Element>(selector)
       .then((target) => {
         if (target) {
           cleanup()

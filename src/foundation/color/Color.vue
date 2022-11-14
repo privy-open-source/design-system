@@ -29,17 +29,25 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps } from 'vue-demi'
+<script lang="ts" setup>
+import {
+  computed,
+  defineProps,
+  PropType,
+} from 'vue-demi'
 import { useClipboard } from '@vueuse/core'
-import { vPTooltip } from '../../directive'
-const props    = defineProps({
+import { vPTooltip } from '../../components/tooltip'
+import type { Color } from '.'
+
+const props = defineProps({
   color: {
-    type   : Object,
-    default: () => ({}),
+    type   : Object as PropType<Color>,
+    default: () => ({} as Color),
   },
 })
-const { copy } = useClipboard({ source: props.color.overlay || props.color.code })
+
+const source   = computed(() => props.color.overlay || props.color.code)
+const { copy } = useClipboard({ source })
 </script>
 
 <style lang="postcss" scoped>

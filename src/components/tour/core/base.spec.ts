@@ -11,10 +11,8 @@ describe('Hookable', () => {
       onBeforeNext,
     })
 
-    // @ts-expect-error
-    await tour.runOnPrevHooks()
-    // @ts-expect-error
-    await tour.runOnNextHooks()
+    await tour.next()
+    await tour.prev()
 
     expect(onBeforePrev).toBeCalled()
     expect(onBeforeNext).toBeCalled()
@@ -35,10 +33,8 @@ describe('Hookable', () => {
     tour.attach(parent)
     parent.attach(grantParent)
 
-    // @ts-expect-error
-    await grantParent.runOnPrevHooks()
-    // @ts-expect-error
-    await grantParent.runOnNextHooks()
+    await grantParent.next()
+    await grantParent.prev()
 
     expect(onBeforePrev).toBeCalled()
     expect(onBeforeNext).toBeCalled()
@@ -59,20 +55,16 @@ describe('Hookable', () => {
     tour.attach(parent)
     parent.attach(grantParent)
 
-    // @ts-expect-error
-    await grantParent.runOnPrevHooks()
-    // @ts-expect-error
-    await grantParent.runOnNextHooks()
+    await grantParent.next()
+    await grantParent.prev()
 
     expect(onBeforePrev).toBeCalledTimes(1)
     expect(onBeforeNext).toBeCalledTimes(1)
 
     tour.detach(parent)
 
-    // @ts-expect-error
-    await grantParent.runOnPrevHooks()
-    // @ts-expect-error
-    await grantParent.runOnNextHooks()
+    await grantParent.next()
+    await grantParent.prev()
 
     expect(onBeforePrev).toBeCalledTimes(1)
     expect(onBeforeNext).toBeCalledTimes(1)
