@@ -2601,8 +2601,8 @@ __metadata:
     eslint-plugin-vue: 9.4.0
     flex-gap-polyfill: ^4.1.0
     fuse.js: 6.6.2
-    happy-dom: 7.6.6
-    husky: 8.0.1
+    happy-dom: 7.7.0
+    husky: 8.0.2
     interactjs: 1.10.17
     isomorphic-dompurify: ^0.23.0
     jest-extended: 3.1.0
@@ -2617,7 +2617,7 @@ __metadata:
     tabbable: 6.0.1
     tailwindcss: 3.2.2
     typescript: 4.8.4
-    vitepress: 1.0.0-alpha.28
+    vitepress: 1.0.0-alpha.29
     vitest: 0.24.5
     vue-demi: 0.13.11
     vue-router: 4.1.5
@@ -8163,9 +8163,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:7.6.6":
-  version: 7.6.6
-  resolution: "happy-dom@npm:7.6.6"
+"happy-dom@npm:7.7.0":
+  version: 7.7.0
+  resolution: "happy-dom@npm:7.7.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -8174,7 +8174,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 5465475373a7245050b58b2564e9067712db941efb7165d645cb69721dba129bdb399c8b11e509cc9fad3e82997e8cad4fa409886c8252e67efaaaebaf67b9b0
+  checksum: 39badc7c6da27f459780d11acd0d0bd9a48d146d5c32588ed765c2f16b1da605670dbbcfaf11e030215a53a1036f32519a338deef77211e86a2ec2eaea3048f3
   languageName: node
   linkType: hard
 
@@ -8464,12 +8464,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:8.0.1":
-  version: 8.0.1
-  resolution: "husky@npm:8.0.1"
+"husky@npm:8.0.2":
+  version: 8.0.2
+  resolution: "husky@npm:8.0.2"
   bin:
     husky: lib/bin.js
-  checksum: 943a73a13d0201318fd30e83d299bb81d866bd245b69e6277804c3b462638dc1921694cb94c2b8c920a4a187060f7d6058d3365152865406352e934c5fff70dc
+  checksum: e101656fcb56163d610488f186448c78b132626aa427094489d886ce9374955a90274912b0f3a34af3326eaa74977883b032e5f701d7aaf4554daa5a7931be43
   languageName: node
   linkType: hard
 
@@ -14380,9 +14380,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-alpha.28":
-  version: 1.0.0-alpha.28
-  resolution: "vitepress@npm:1.0.0-alpha.28"
+"vitepress@npm:1.0.0-alpha.29":
+  version: 1.0.0-alpha.29
+  resolution: "vitepress@npm:1.0.0-alpha.29"
   dependencies:
     "@docsearch/css": ^3.3.0
     "@docsearch/js": ^3.3.0
@@ -14395,7 +14395,7 @@ __metadata:
     vue: ^3.2.41
   bin:
     vitepress: bin/vitepress.js
-  checksum: e92202bfdf23102f108e67cb8545f8a42b86d65046450895431d62548cee11fad5ead71a66193ca1fc37f22812fc20b1aaddb01401a34093ccf1f4a919a53743
+  checksum: 05f284c8ee3fe80ae6fa9688157ffa14e912ea15ae80f321073f35a1fd0326b859208cb942e6ef8690ef035d8a534b139e0c501223fe63944cda1bd453ac1e09
   languageName: node
   linkType: hard
 
