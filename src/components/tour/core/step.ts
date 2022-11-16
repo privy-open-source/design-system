@@ -10,7 +10,8 @@ type BaseOptions = Partial<Omit<TourOptions, 'onFinished'>>
 export type OnCleanup = (cleanupFn: () => unknown) => unknown
 
 export abstract class AbstractStep<Option> extends AbstractTour<Merge<BaseOptions, Option>> {
-  protected parent?: Tour
+  declare protected parent?: Tour
+
   protected cleanFns: Array<() => unknown> = []
 
   protected async dispose () {

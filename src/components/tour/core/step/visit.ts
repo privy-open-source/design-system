@@ -1,4 +1,4 @@
-import { useAppContext } from '../../../global/context'
+import { useRouter } from '../../../global/router'
 import { TourDirection } from '../base'
 import { AbstractStep } from '../step'
 
@@ -8,19 +8,19 @@ export interface VisitOptions {
 }
 
 export default class StepVisit extends AbstractStep<VisitOptions> {
-  protected lastURL: string
+  protected lastURL: string = ''
 
   protected async run () {
-    const app       = useAppContext()
+    const router    = useRouter()
     const options   = this.getOptions()
     const lastURL   = this.lastURL
     const targetURL = this.direction === TourDirection.FORWARD
       ? options.url
       : options.backUrl ?? lastURL
 
-    this.lastURL = app.getURL()
+    this.lastURL = router.getURL()
 
-    await app.toURL(targetURL)
+    await router.toURL(targetURL)
     await (this.direction === TourDirection.BACKWARD ? this.prev() : this.next())
   }
 }

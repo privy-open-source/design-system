@@ -13,4 +13,12 @@ export class MockTour extends AbstractTour {
   public prev = vi.fn(async () => {
     await this.runOnPrevHooks(this, this)
   })
+
+  public getIndex = vi.fn(() => {
+    return 0
+  })
+
+  public getTotal = vi.fn(() => {
+    return 5
+  })
 }

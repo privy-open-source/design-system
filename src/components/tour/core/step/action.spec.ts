@@ -39,7 +39,7 @@ it('should able to send user event to target and goto prev step if direction is 
 
   document.body
     .querySelector('#sample')
-    .addEventListener('click', onClick)
+    .addEventListener('click', onClick, { once: true })
 
   await step.setParent(parent).setDirection(-1).start()
 

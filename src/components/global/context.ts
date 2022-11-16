@@ -1,29 +1,30 @@
-import { shallowReactive } from 'vue-demi'
+import defu from 'defu'
+import { shallowReactive, toRef } from 'vue-demi'
+
+type Lang = 'id' | 'en'
 
 /**
- * This is context for global app.
- * Main purpose is handle cross compability for different environment.
- * example: Vitepress and Nuxt 3 have different router,
- *  in Vitepress use `router.go()`
- *  but in Nuxt 3 use `navigateTo()`
+ * Simple vuex store for global configuaration
  */
 export interface AppContext {
-  /**
-   * redirect to URL
-   */
-  toURL: (url: string) => void | Promise<void>,
-  /**
-   * Get current URL
-   */
-  getURL: () => string,
+  /* Language setting */
+  lang: Lang,
 }
 
 let appContext: AppContext
 
-export function initAppContext (context: AppContext) {
-  appContext = shallowReactive(context)
+export function initAppContext (context?: Partial<AppContext>) {
+  appContext = shallowReactive(defu(context, { lang: 'en' }) as AppContext)
 }
 
 export function useAppContext () {
   return appContext
+}
+
+export function setLang (lang: Lang) {
+  appContext.lang = lang
+}
+
+export function useLang () {
+  return toRef(appContext, 'lang')
 }

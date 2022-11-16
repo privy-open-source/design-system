@@ -1,11 +1,11 @@
-import { initAppContext, useAppContext } from '../../../global/context'
+import { installRouter, useRouter } from '../../../global/router'
 import { MockTour } from '../../__mocks__/tour'
 import StepVisit from './visit'
 
 beforeEach(() => {
   let page = '/page-1'
 
-  initAppContext({
+  installRouter({
     toURL (url) {
       page = url
     },
@@ -21,7 +21,7 @@ it('should redirect to target url', async () => {
 
   await step.setParent(parent).start()
 
-  expect(useAppContext().getURL()).toBe('/page-2')
+  expect(useRouter().getURL()).toBe('/page-2')
 })
 
 it('should redirect to backUrl if direction if backward', async () => {
@@ -30,7 +30,7 @@ it('should redirect to backUrl if direction if backward', async () => {
 
   await step.setParent(parent).setDirection(-1).start()
 
-  expect(useAppContext().getURL()).toBe('/page-404')
+  expect(useRouter().getURL()).toBe('/page-404')
 })
 
 it('should redirect to last url if direction if backward and backURL not provided', async () => {
@@ -41,5 +41,5 @@ it('should redirect to last url if direction if backward and backURL not provide
   await step.stop()
   await step.setDirection(-1).start()
 
-  expect(useAppContext().getURL()).toBe('/page-1')
+  expect(useRouter().getURL()).toBe('/page-1')
 })

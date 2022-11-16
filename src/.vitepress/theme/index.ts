@@ -9,6 +9,7 @@ import './css/custom.css'
 import Preview from './components/Preview.vue'
 import vueRouter from './router'
 import { initAppContext } from '../../components/global/context'
+import { installRouter } from '../../components/global/router'
 
 export default {
   ...DefaultTheme,
@@ -16,7 +17,8 @@ export default {
     app.use(vueRouter)
     app.component('Preview', Preview)
 
-    initAppContext({
+    initAppContext()
+    installRouter({
       toURL (url) {
         return router.go(url)
       },

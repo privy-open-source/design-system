@@ -7,7 +7,7 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs",
-      "types": "./dist/module.d.ts"
+      "types": "./dist/types.d.ts"
     },
     "./core": {
       "import": "./dist/core/index.mjs",
@@ -19,6 +19,7 @@
     }
   },
   "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
   "types": "./dist/types.d.ts",
   "files": [
     "dist"
@@ -33,7 +34,7 @@
   },
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
-    "@nuxt/kit": "3.0.0-rc.12",
+    "@nuxt/kit": "3.0.0-rc.13",
     "@nuxtjs/tailwindcss": "5.3.2",
     "@popperjs/core": "2.11.6",
     "@privyid/tailwind-preset": "workspace:^",
