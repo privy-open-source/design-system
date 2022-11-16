@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
-    "@nuxt/kit": "3.0.0-rc.12",
+    "@nuxt/kit": "3.0.0",
     "@nuxtjs/tailwindcss": "5.3.2",
     "@popperjs/core": "2.11.6",
     "@privyid/tailwind-preset": "workspace:^",
