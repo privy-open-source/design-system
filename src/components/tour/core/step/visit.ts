@@ -21,6 +21,6 @@ export default class StepVisit extends AbstractStep<VisitOptions> {
     this.lastURL = router.getURL()
 
     await router.toURL(targetURL)
-    await (this.direction === TourDirection.BACKWARD ? this.prev() : this.next())
+    await this.ahead()
   }
 }

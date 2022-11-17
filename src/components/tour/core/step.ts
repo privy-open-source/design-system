@@ -1,5 +1,5 @@
-import { AbstractTour } from './base'
-import {
+import { AbstractTour, TourDirection } from './base'
+import type {
   Tour,
   TourOptions,
 } from './tour'
@@ -26,24 +26,45 @@ export abstract class AbstractStep<Option> extends AbstractTour<Merge<BaseOption
     this.cleanFns.push(cleanFn)
   }
 
+  /**
+   * Start this step
+   */
   public async start () {
     this.attach(this.parent)
 
     await this.run()
   }
 
+  /**
+   * Stop this step
+   */
   public async stop () {
     await this.dispose()
 
     this.detach(this.parent)
   }
 
+  /**
+   * Trigger next to parent
+   */
   public async next () {
     await this.parent.next()
   }
 
+  /**
+   * Trigger prev to parent
+   */
   public async prev () {
     await this.parent.prev()
+  }
+
+  /**
+   * Trigger next or prev following the direction
+   */
+  public async ahead () {
+    return await (this.direction === TourDirection.BACKWARD
+      ? this.prev()
+      : this.next())
   }
 
   protected abstract run (): void | Promise<void>

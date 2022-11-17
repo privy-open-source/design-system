@@ -61,7 +61,8 @@ export class Tour extends AbstractTour<TourOptions> {
   protected index: number
   protected steps: AbstractTour[]
   protected onFinishedHooks: Array<() => void | Promise<void>>
-  protected parent?: Tour
+
+  declare protected parent?: Tour
 
   constructor (options?: Partial<TourOptions>) {
     super(options as TourOptions)
@@ -99,6 +100,13 @@ export class Tour extends AbstractTour<TourOptions> {
   }
 
   /**
+   * Get list of steps
+   */
+  public getSteps (): AbstractTour[] {
+    return this.steps
+  }
+
+  /**
    * Count total step, including Sub-Tour
    */
   protected getTotalChild (): number {
@@ -129,10 +137,16 @@ export class Tour extends AbstractTour<TourOptions> {
     return index
   }
 
+  /**
+   * Get current step instance
+   */
   protected getCurrentStep () {
     return this.steps.at(this.index)
   }
 
+  /**
+   * Run "on-finished" hooks
+   */
   protected async runOnFinishedHooks () {
     await Promise.allSettled(this.onFinishedHooks.map((hook) => hook()))
   }
@@ -171,7 +185,7 @@ export class Tour extends AbstractTour<TourOptions> {
     else if (skipHook || await this.runOnPrevHooks(to, from)) {
       await from.stop()
 
-      this.index     = this.index - 1
+      this.index     = toIndex
       this.direction = TourDirection.BACKWARD
 
       await this.run()
@@ -190,7 +204,7 @@ export class Tour extends AbstractTour<TourOptions> {
       if (toIndex < this.steps.length) {
         await from.stop()
 
-        this.index     = this.index + 1
+        this.index     = toIndex
         this.direction = TourDirection.FORWARD
 
         await this.run()
@@ -230,6 +244,10 @@ export class Tour extends AbstractTour<TourOptions> {
       this.detach(this.parent)
   }
 
+  /**
+   * Find index by name or by instance
+   * @param id
+   */
   protected findIndex (id: AbstractTour['name'] | AbstractTour): number {
     if (id instanceof AbstractTour)
       return this.steps.indexOf(id)

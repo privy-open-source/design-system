@@ -1,4 +1,4 @@
-import { queryByTestId } from '@testing-library/dom'
+import { fireEvent, queryByTestId } from '@testing-library/dom'
 import { MockTour } from '../../__mocks__/tour'
 import StepShow from './show'
 
@@ -30,4 +30,78 @@ it('should able to show tour-card', async () => {
   expect(title).toHaveTextContent('Hello')
   expect(text).toHaveTextContent('This is tour')
   expect(img).toHaveAttribute('src', 'http://image.com/50x50')
+})
+
+it('should hide tour-card when stopped', async () => {
+  const parent = new MockTour()
+  const step   = new StepShow({
+    target: '#sample',
+    title : 'Hello',
+    text  : 'This is tour',
+    image : 'http://image.com/50x50',
+  })
+
+  await step.setParent(parent).start()
+
+  const tour = queryByTestId(document.body, 'tour-card')
+
+  expect(tour).toBeInTheDocument()
+
+  await step.stop()
+
+  expect(tour).not.toBeInTheDocument()
+})
+
+it('should trigger to next step if card next button clicked', async () => {
+  const parent = new MockTour()
+  const step   = new StepShow({
+    target: '#sample',
+    title : 'Hello',
+    text  : 'This is tour',
+    image : 'http://image.com/50x50',
+  })
+
+  await step.setParent(parent).start()
+
+  const button = queryByTestId(document.body, 'tour-control-next')
+
+  fireEvent.click(button)
+
+  expect(parent.next).toBeCalled()
+})
+
+it('should trigger to previous step if card prev button clicked', async () => {
+  const parent = new MockTour()
+  const step   = new StepShow({
+    target: '#sample',
+    title : 'Hello',
+    text  : 'This is tour',
+    image : 'http://image.com/50x50',
+  })
+
+  await step.setParent(parent).start()
+
+  const button = queryByTestId(document.body, 'tour-control-prev')
+
+  fireEvent.click(button)
+
+  expect(parent.prev).toBeCalled()
+})
+
+it('should trigger to stop if card dismiss button clicked', async () => {
+  const parent = new MockTour()
+  const step   = new StepShow({
+    target: '#sample',
+    title : 'Hello',
+    text  : 'This is tour',
+    image : 'http://image.com/50x50',
+  })
+
+  await step.setParent(parent).start()
+
+  const button = queryByTestId(document.body, 'tour-dismiss')
+
+  fireEvent.click(button)
+
+  expect(parent.stop).toBeCalled()
 })

@@ -1,5 +1,4 @@
 import { delay } from 'nanodelay'
-import { TourDirection } from '../base'
 import { AbstractStep } from '../step'
 
 interface Options {
@@ -11,6 +10,6 @@ export default class StepDelay extends AbstractStep<Options> {
     const options = this.getOptions()
 
     await delay(options.duration)
-    await (this.direction === TourDirection.BACKWARD ? this.prev() : this.next())
+    await this.ahead()
   }
 }

@@ -1,6 +1,5 @@
 import userEvent from '@testing-library/user-event'
 import { AbstractStep } from '../step'
-import { TourDirection } from '../base'
 import { waitElement } from '../../utils/dom'
 
 type UserEvent = ReturnType<typeof userEvent['setup']>
@@ -25,6 +24,6 @@ export default class StepAction<E extends EventType> extends AbstractStep<Option
     const params  = options.params ?? []
 
     await user[action].apply(undefined, [target, ...params])
-    await (this.direction === TourDirection.BACKWARD ? this.prev() : this.next())
+    await this.ahead()
   }
 }
