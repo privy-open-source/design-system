@@ -41,7 +41,7 @@
     "@vitejs/plugin-vue": "3.2.0",
     "@vitest/coverage-c8": "0.24.5",
     "@vue/eslint-config-typescript": "11.0.2",
-    "autoprefixer": "10.4.12",
+    "autoprefixer": "10.4.13",
     "eslint": "8.23.1",
     "eslint-config-standard-with-typescript": "latest",
     "eslint-formatter-pretty": "4.1.0",
