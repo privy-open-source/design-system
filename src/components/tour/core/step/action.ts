@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event'
 import { AbstractStep } from '../step'
-import { waitElement } from '../../utils/dom'
+import { waitElement } from '../../utils/wait-element'
 
 type UserEvent = ReturnType<typeof userEvent['setup']>
 type ExtractParams<F> = F extends (T: Element, ...args: infer P) => Promise<void> ? P : unknown[]

@@ -1,32 +1,10 @@
-import { computePosition, hide } from '@floating-ui/dom'
-import scrollIntoView from 'scroll-into-view'
-
-export async function isVisible (target: HTMLElement) {
-  const div = document.createElement('div')
-
-  document.body.append(div)
-
-  const { middlewareData } = await computePosition(target, div, {
-    strategy  : 'absolute',
-    middleware: [hide()],
-  })
-
-  div.remove()
-
-  return !middlewareData.hide.referenceHidden
-}
-
-export async function focus (target: HTMLElement, duration = 330): Promise<unknown> {
-  return await new Promise((resolve) => {
-    scrollIntoView(target, { time: duration }, resolve)
-  })
-}
+import { isVisible, focus } from './is-visible'
 
 /**
  * Get element and throw error if target not visible
  * @param selector query selector
  */
-export async function getVisibleElement<Element extends HTMLElement> (selector: string): Promise<Element> {
+async function getVisibleElement<Element extends HTMLElement> (selector: string): Promise<Element> {
   const target = document.querySelector<Element>(selector)
 
   if (target) {

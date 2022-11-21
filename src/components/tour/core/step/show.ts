@@ -1,7 +1,7 @@
 import defu from 'defu'
 import { removeSingleton, useSingleton } from '../../../global/use-singleton'
 import { AbstractStep } from '../step'
-import { waitElement } from '../../utils/dom'
+import { waitElement } from '../../utils/wait-element'
 
 export interface ShowOptions {
   target: string,
