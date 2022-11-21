@@ -33,7 +33,6 @@ import {
   offset,
   flip,
   shift,
-  hide,
 } from '@floating-ui/dom'
 
 export default defineComponent({
@@ -98,7 +97,6 @@ export default defineComponent({
               shift(),
               offset(8),
               arrow({ element: tooltipArrow.value }),
-              hide(),
             ],
           }).then(({ x, y, middlewareData, placement }) => {
             if (tooltip.value) {
@@ -106,10 +104,6 @@ export default defineComponent({
 
               tooltip.value.style.left = `${x || 0}px`
               tooltip.value.style.top  = `${y || 0}px`
-
-              tooltip.value.style.visibility = middlewareData.hide.referenceHidden
-                ? 'hidden'
-                : 'visible'
             }
 
             if (tooltipArrow.value) {

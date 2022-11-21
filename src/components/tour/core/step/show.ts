@@ -1,7 +1,6 @@
 import defu from 'defu'
 import { removeSingleton, useSingleton } from '../../../global/use-singleton'
 import { AbstractStep } from '../step'
-import Tour from '../../Tour.vue'
 import { waitElement } from '../../utils/dom'
 
 export interface ShowOptions {
@@ -17,9 +16,10 @@ export default class StepShow extends AbstractStep<ShowOptions> {
   }
 
   protected async run () {
-    const options = this.getOptions()
-    const tour    = await useSingleton(Tour)
-    const target  = await waitElement(options.target, options.waitTimeout)
+    const options           = this.getOptions()
+    const { default: Tour } = await import('../../Tour.vue')
+    const tour              = await useSingleton(Tour)
+    const target            = await waitElement(options.target, options.waitTimeout)
 
     tour.show(target, defu({
       step     : this.parent.getIndex() + 1,

@@ -71,15 +71,15 @@ describe('Nesting', () => {
      * Tour (level 1):
      *   steps:
      *     - Tour (level2)
-     *       steps:
-     *         - MockStep          => index: 0th
-     *         - MockStep          => index: 1st
-     *         - Tour (level3),
-     *             steps:
-     *               - MockStep    => index: 2nd
-     *               - MockStep    => index: 3rd
-     *     - MockStep              => index: 4th
-     *     - MockStep              => index: 5th (current position)
+     *        steps:
+     *          - MockStep          => index: 0th
+     *          - MockStep          => index: 1st
+     *          - Tour (level3),
+     *              steps:
+     *                - MockStep    => index: 2nd
+     *                - MockStep    => index: 3rd
+     *     - MockStep               => index: 4th
+     *     - MockStep               => index: 5th (current position)
      */
 
     expect(level1.getIndex()).toBe(5)

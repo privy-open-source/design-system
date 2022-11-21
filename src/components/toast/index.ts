@@ -1,5 +1,4 @@
 import { useSingleton } from '../global/use-singleton'
-import ToastContainer from './ToastContainer.vue'
 
 export type ToastTypeVariant = 'info' | 'success' | 'warn' | 'error'
 
@@ -15,6 +14,8 @@ export interface ToastOption {
 }
 
 export default async function showToast (option: ToastOption) {
-  // eslint-disable-next-line unicorn/no-await-expression-member
-  (await useSingleton(ToastContainer)).add(option)
+  const { default: ToastContainer } = await import('./ToastContainer.vue')
+  const toast                       = await useSingleton(ToastContainer)
+
+  toast.add(option)
 }

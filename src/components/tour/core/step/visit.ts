@@ -8,7 +8,7 @@ export interface VisitOptions {
 }
 
 export default class StepVisit extends AbstractStep<VisitOptions> {
-  protected lastURL: string = ''
+  protected lastURL = ''
 
   protected async run () {
     const router    = useRouter()
