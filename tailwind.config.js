@@ -10,8 +10,6 @@ module.exports = {
           white: `rgb(${theme.colors.base.white})`,
           black: `rgb(${theme.colors.base.black})`,
         },
-        accent     : theme.colors.danger[100],
-        accentAlpha: `rgba(${theme.colors.danger[100]}, ${theme.opacity[65]})`,
       },
       fontSize: {
         'tn': [
@@ -86,6 +84,7 @@ module.exports = {
         ],
       },
       textColor: {
+        DEFAULT   : `rgb(${theme.colors.gray[100]})`,
         default   : `rgb(${theme.colors.gray[100]})`,
         subtle    : `rgb(${theme.colors.gray[70]})`,
         muted     : `rgb(${theme.colors.gray[40]})`,
@@ -100,10 +99,13 @@ module.exports = {
         current    : 'currentColor',
         transparent: 'transparent',
         DEFAULT    : `rgb(${theme.colors.base.white})`,
-        alpha      : `rgba(${theme.colors.gray[50]}, ${theme.opacity[5]})`, // rgba(theme.colors.gray[50], theme.opacity[5]),
-        subtle     : {
+        default    : {
+          DEFAULT: `rgb(${theme.colors.base.white})`,
+          alpha  : `rgb(${theme.colors.gray[50]}/${theme.opacity[5]})`,
+        },
+        subtle: {
           DEFAULT: `rgb(${theme.colors.gray[0]})`,
-          alpha  : `rgba(${theme.colors.gray[80]}, ${theme.opacity[10]})`,
+          alpha  : `rgb(${theme.colors.gray[80]}/${theme.opacity[10]})`,
         },
         muted   : `rgb(${theme.colors.gray[5]})`,
         inactive: `rgb(${theme.colors.gray[20]})`,
@@ -111,8 +113,8 @@ module.exports = {
           DEFAULT: `rgb(${theme.colors.gray[100]})`,
           subtle : `rgb(${theme.colors.gray[95]})`,
           alpha  : {
-            DEFAULT: `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
-            subtle : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
+            DEFAULT: `rgb(${theme.colors.gray[0]}/${theme.opacity[5]})`,
+            subtle : `rgb(${theme.colors.gray[0]}/${theme.opacity[10]})`,
           },
         },
         accent: {
@@ -134,17 +136,20 @@ module.exports = {
       },
       borderColor: {
         DEFAULT: `rgb(${theme.colors.gray[15]})`,
-        alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        subtle : {
+        default: {
+          DEFAULT: `rgb(${theme.colors.gray[15]})`,
+          alpha  : `rgb(${theme.colors.gray[100]}/${theme.opacity[5]})`,
+        },
+        subtle: {
           DEFAULT: `rgb(${theme.colors.gray[20]})`,
-          alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+          alpha  : `rgb(${theme.colors.gray[100]}/${theme.opacity[10]})`,
         },
         muted     : `rgb(${theme.colors.gray[10]})`,
         onemphasis: {
           DEFAULT: `rgb(${theme.colors.gray[70]})`,
           alpha  : {
-            DEFAULT: `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
-            subtle : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
+            DEFAULT: `rgb(${theme.colors.gray[0]}/${theme.opacity[5]})`,
+            subtle : `rgb(${theme.colors.gray[0]}/${theme.opacity[10]})`,
           },
         },
         accent: {
@@ -167,21 +172,21 @@ module.exports = {
       boxShadowColor: ({ theme }) => ({ ...theme('backgroundColor') }),
       boxShadow     : {
         'none'                : '0 0 #0000',
-        'sm'                  : `0 1px 3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 1px 2px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'md'                  : `0 4px 6px -1px rgba(${theme.colors.gray[100]}, 0.1), 0 2px 4px rgba(${theme.colors.gray[100]}, 0.05)`,
-        'DEFAULT'             : `0 4px 6px -1px rgba(${theme.colors.gray[100]}, 0.1), 0 2px 4px rgba(${theme.colors.gray[100]}, 0.05)`,
-        'lg'                  : `0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'lg-top'              : `0 -10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 -4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'lg-left'             : `-10px 0 15px -3px rgba(${theme.colors.gray[100]}, 0.1), -4px 0 6px rgba(${theme.colors.gray[100]}, 0.05)`,
-        'lg-right'            : `10px 0 15px -3px rgba(${theme.colors.gray[100]}, 0.1), 4px 0 6px rgba(${theme.colors.gray[100]}, 0.05)`,
-        'lg-onemphasis'       : `0 10px 15px -3px rgba(${theme.colors.gray[100]}, 0.35), 0 4px 6px -2px rgba(${theme.colors.gray[100]}, 0.15)`,
-        'lg-onemphasis-darker': '0 10px 15px -3px rgba(0, 0, 0, 0.85), 0 4px 6px -2px rgba(0, 0, 0, 0.65)',
-        'lg-accent'           : `0 10px 15px -3px rgba(${theme.colors.blue[40]}, 0.1), 0 4px 6px -2px rgba(${theme.colors.blue[40]}, 0.05)`,
-        'lg-success'          : `0 10px 15px -3px rgba(${theme.colors.green[40]}, 0.1), 0 4px 6px -2px rgba(${theme.colors.green[40]}, 0.05)`,
-        'lg-warning'          : `0 10px 15px -3px rgba(${theme.colors.orange[40]}, 0.05), 0 4px 6px -2px rgba(${theme.colors.orange[40]}, 0.05)`,
-        'lg-danger'           : `0 10px 15px -3px rgba(${theme.colors.red[40]}, 0.1), 0 4px 6px -2px rgba(${theme.colors.red[40]}, 0.05)`,
-        'xl'                  : `0 0 1px rgba(${theme.colors.gray[100]}, 0.15), 0 8px 10px -2px rgba(${theme.colors.gray[100]}, 0.1), 0 16px 25px -2px rgba(${theme.colors.gray[100]}, 0.1)`,
-        '2xl'                 : `0 20px 40px -8px rgba(${theme.colors.gray[100]}, 0.25)`,
+        'sm'                  : `0 1px 3px rgb(${theme.colors.gray[100]}/${theme.opacity[10]}), 0 1px 2px rgb(${theme.colors.gray[100]}/${theme.opacity[5]})`,
+        'md'                  : `0 4px 6px -1px rgb(${theme.colors.gray[100]}/${theme.opacity[10]}), 0 2px 4px rgb(${theme.colors.gray[100]}/${theme.opacity[5]})`,
+        'DEFAULT'             : `0 4px 6px -1px rgb(${theme.colors.gray[100]}/${theme.opacity[10]}), 0 2px 4px rgb(${theme.colors.gray[100]}/${theme.opacity[5]})`,
+        'lg'                  : `0 10px 15px -3px rgb(${theme.colors.gray[100]}/${theme.opacity[10]}), 0 4px 6px rgb(${theme.colors.gray[100]}/${theme.opacity[5]})`,
+        'lg-top'              : `0 -10px 15px -3px rgb(${theme.colors.gray[100]}/${theme.opacity[10]}), 0 -4px 6px rgb(${theme.colors.gray[100]}/${theme.opacity[5]})`,
+        'lg-left'             : `-10px 0 15px -3px rgb(${theme.colors.gray[100]}/${theme.opacity[10]}), -4px 0 6px rgb(${theme.colors.gray[100]}/${theme.opacity[5]})`,
+        'lg-right'            : `10px 0 15px -3px rgb(${theme.colors.gray[100]}/${theme.opacity[10]}), 4px 0 6px rgb(${theme.colors.gray[100]}/${theme.opacity[5]})`,
+        'lg-onemphasis'       : `0 10px 15px -3px rgb(${theme.colors.gray[100]}/${theme.opacity[35]}), 0 4px 6px -2px rgb(${theme.colors.gray[100]}/${theme.opacity[15]})`,
+        'lg-onemphasis-darker': `0 10px 15px -3px rgb(${theme.colors.base.black}/${theme.opacity[85]}), 0 4px 6px -2px rgb(${theme.colors.base.black}/${theme.opacity[65]})`,
+        'lg-accent'           : `0 10px 15px -3px rgb(${theme.colors.blue[40]}/${theme.opacity[10]}), 0 4px 6px -2px rgb(${theme.colors.blue[40]}/${theme.opacity[5]})`,
+        'lg-success'          : `0 10px 15px -3px rgb(${theme.colors.green[40]}/${theme.opacity[10]}), 0 4px 6px -2px rgb(${theme.colors.green[40]}/${theme.opacity[5]})`,
+        'lg-warning'          : `0 10px 15px -3px rgb(${theme.colors.orange[40]}/${theme.opacity[5]}), 0 4px 6px -2px rgb(${theme.colors.orange[40]}/${theme.opacity[5]})`,
+        'lg-danger'           : `0 10px 15px -3px rgb(${theme.colors.red[40]}/${theme.opacity[10]}), 0 4px 6px -2px rgb(${theme.colors.red[40]}/${theme.opacity[5]})`,
+        'xl'                  : `0 0 1px rgb(${theme.colors.gray[100]}/${theme.opacity[15]}), 0 8px 10px -2px rgb(${theme.colors.gray[100]}/${theme.opacity[10]}), 0 16px 25px -2px rgb(${theme.colors.gray[100]}/${theme.opacity[10]})`,
+        '2xl'                 : `0 20px 40px -8px rgb(${theme.colors.gray[100]}/${theme.opacity[25]})`,
       },
       borderRadius: {
         'none'   : 0,
@@ -195,6 +200,7 @@ module.exports = {
       },
       outlineColor: {
         DEFAULT    : `rgb(${theme.colors.gray[15]})`,
+        default    : `rgb(${theme.colors.gray[15]})`,
         inherit    : 'inherit',
         current    : 'currentColor',
         transparent: 'transparent',

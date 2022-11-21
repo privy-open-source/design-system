@@ -77,29 +77,23 @@ Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
 
 ## Colors
 
-Button available in 7 different colors `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`. default is `primary`
+Button available in 4 different colors `primary`, `success`, `warning` and `danger`.
 
 <preview>
   <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
     <p-button color="primary">Click me</p-button>
-    <p-button color="secondary">Click me</p-button>
     <p-button color="success">Click me</p-button>
-    <p-button color="info">Click me</p-button>
     <p-button color="warning">Click me</p-button>
     <p-button color="danger">Click me</p-button>
-    <p-button color="gold">Click me</p-button>
   </div>
 </preview>
 
 ```vue
 <template>
   <p-button color="primary">Click me</p-button>
-  <p-button color="secondary">Click me</p-button>
   <p-button color="success">Click me</p-button>
-  <p-button color="info">Click me</p-button>
   <p-button color="warning">Click me</p-button>
   <p-button color="danger">Click me</p-button>
-  <p-button color="gold">Click me</p-button>
 </template>
 ```
 
@@ -108,44 +102,32 @@ It's also work with other variants (except `ghost`).
 <preview label="outline variant">
   <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
     <p-button variant="outline" color="primary">Click me</p-button>
-    <p-button variant="outline" color="secondary">Click me</p-button>
     <p-button variant="outline" color="success">Click me</p-button>
-    <p-button variant="outline" color="info">Click me</p-button>
     <p-button variant="outline" color="warning">Click me</p-button>
     <p-button variant="outline" color="danger">Click me</p-button>
-    <p-button variant="outline" color="gold">Click me</p-button>
   </div>
 </preview>
 
 <preview label="link variant">
   <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
     <p-button variant="link" color="primary">Click me</p-button>
-    <p-button variant="link" color="secondary">Click me</p-button>
     <p-button variant="link" color="success">Click me</p-button>
-    <p-button variant="link" color="info">Click me</p-button>
     <p-button variant="link" color="warning">Click me</p-button>
     <p-button variant="link" color="danger">Click me</p-button>
-    <p-button variant="link" color="gold">Click me</p-button>
   </div>
 </preview>
 
 ```vue
 <template>
   <p-button variant="outline" color="primary">Click me</p-button>
-  <p-button variant="outline" color="secondary">Click me</p-button>
   <p-button variant="outline" color="success">Click me</p-button>
-  <p-button variant="outline" color="info">Click me</p-button>
   <p-button variant="outline" color="warning">Click me</p-button>
   <p-button variant="outline" color="danger">Click me</p-button>
-  <p-button variant="outline" color="gold">Click me</p-button>
 
   <p-button variant="link" color="primary">Click me</p-button>
-  <p-button variant="link" color="secondary">Click me</p-button>
   <p-button variant="link" color="success">Click me</p-button>
-  <p-button variant="link" color="info">Click me</p-button>
   <p-button variant="link" color="warning">Click me</p-button>
   <p-button variant="link" color="danger">Click me</p-button>
-  <p-button variant="link" color="gold">Click me</p-button>
 </template>
 ```
 
@@ -253,8 +235,8 @@ You can also combine with `pill` mode to make round button
 
 | Props      |   Type    |  Default  | Description                                                                                                 |
 |------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
-| `variant`  | `String`  |  `solid`  | Button style variant, valid value is `solid`, `outline`, `ghost`, `link`                                    |
-| `color`    | `String`  | `primary` | Button color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
+| `variant`  | `String`  |  `solid`  | Button style variant, valid value is `solid`, `outline`, `ghost` and `link`                                    |
+| `color`    | `String`  | `-` | Button color variant, valid value is `primary`, `success`, `warning` and `danger` |
 | `size`     | `String`  |   `md`    | Size of button, valid value is `xs`, `sm`, `md`, `lg`                                                             |
 | `pill`     | `Boolean` |  `false`  | Enable pill mode                                                                                            |
 | `icon`     | `Boolean` |  `false`  | Enable icon mode                                                                                            |

@@ -68,7 +68,7 @@
       before sign the document(s)
     </div>
     <div class="mt-3">
-      <p-button variant="outline">Top Up Balance</p-button>
+      <p-button variant="outline" size="sm">Top Up Balance</p-button>
       <p-button variant="link" color="secondary">Learn More</p-button>
     </div>
   </p-banner>
@@ -86,7 +86,7 @@
       before sign the document(s)
     </div>
     <div class="mt-3">
-      <p-button variant="outline">Top Up Balance</p-button>
+      <p-button variant="outline" size="sm">Top Up Balance</p-button>
       <p-button variant="link" color="secondary">Learn More</p-button>
     </div>
   </p-banner>

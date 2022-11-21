@@ -153,7 +153,7 @@ export default defineComponent({
   * in inverse and dot variant
   */
   &:where(.badge--variant-inverse, .badge--dot) {
-    @apply bg;
+    @apply bg-default;
   }
 
   /**
