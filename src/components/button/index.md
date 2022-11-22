@@ -236,7 +236,7 @@ You can also combine with `pill` mode to make round button
 | Props      |   Type    |  Default  | Description                                                                                                 |
 |------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
 | `variant`  | `String`  |  `solid`  | Button style variant, valid value is `solid`, `outline`, `ghost` and `link`                                    |
-| `color`    | `String`  | `-` | Button color variant, valid value is `primary`, `success`, `warning` and `danger` |
+| `color`    | `String`  | `-`       | Button color variant, valid value is `primary`, `success`, `warning` and `danger` |
 | `size`     | `String`  |   `md`    | Size of button, valid value is `xs`, `sm`, `md`, `lg`                                                             |
 | `pill`     | `Boolean` |  `false`  | Enable pill mode                                                                                            |
 | `icon`     | `Boolean` |  `false`  | Enable icon mode                                                                                            |

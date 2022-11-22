@@ -1469,6 +1469,8 @@ __metadata:
     lodash-es: 4.17.21
     nanodelay: 2.0.2
     postcss: 8.4.16
+    postcss-hexrgba: ^2.1.0
+    postcss-lighten-darken: ^0.9.0
     postcss-nested: 5.0.6
     tabbable: 5.3.3
     tailwindcss: 3.1.8
@@ -8280,6 +8282,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"loglevel@npm:^1.8.0":
+  version: 1.8.1
+  resolution: "loglevel@npm:1.8.1"
+  checksum: a1a62db40291aaeaef2f612334c49e531bff71cc1d01a2acab689ab80d59e092f852ab164a5aedc1a752fdc46b7b162cb097d8a9eb2cf0b299511106c29af61d
+  languageName: node
+  linkType: hard
+
 "loupe@npm:^2.3.1":
   version: 2.3.4
   resolution: "loupe@npm:2.3.4"
@@ -9761,6 +9770,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-hexrgba@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "postcss-hexrgba@npm:2.1.0"
+  dependencies:
+    postcss-value-parser: ^4.1.0
+  peerDependencies:
+    postcss: ^8.1.4
+  checksum: 333da92fb1b9cff4dda3db8f499573b32d85cdd7fbb28017f772ba2ab90186d3bd0afe5a3bbf0e67bd5841190f8e630178847012390ba2fc74a0b8eeae0d57cf
+  languageName: node
+  linkType: hard
+
 "postcss-import-resolver@npm:^2.0.0":
   version: 2.0.0
   resolution: "postcss-import-resolver@npm:2.0.0"
@@ -9817,6 +9837,18 @@ __metadata:
   peerDependencies:
     postcss: ^8.3.3
   checksum: 14be8a58670b4c5d037d40f179240a4f736d53530db727e2635638fa296bc4bff18149ca860928398aace422e55d07c9f5729eeccd395340944985199cdc82a5
+  languageName: node
+  linkType: hard
+
+"postcss-lighten-darken@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "postcss-lighten-darken@npm:0.9.0"
+  dependencies:
+    loglevel: ^1.8.0
+    postcss-value-parser: ^4.2.0
+  peerDependencies:
+    postcss: ^8.3.0
+  checksum: 0cb765a287b46a6cd0d171aceb2a14a9eac981dc895600a93c67492a0904888edb5b715ee6a3123ecb61377334143bc7f18dff47430fee5a64a80ed6e4620807
   languageName: node
   linkType: hard
 

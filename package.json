@@ -75,6 +75,8 @@
     "interactjs": "1.10.17",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
+    "postcss-hexrgba": "^2.1.0",
+    "postcss-lighten-darken": "^0.9.0",
     "tabbable": "5.3.3",
     "vue-demi": "0.13.11",
     "vuedraggable": "next",
