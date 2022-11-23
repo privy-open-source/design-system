@@ -122,6 +122,6 @@ export default defineComponent({
 
 <style lang="postcss">
 .chart {
-  @apply w-full aspect-video bg-white;
+  @apply w-full aspect-video bg-default;
 }
 </style>

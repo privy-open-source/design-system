@@ -160,7 +160,7 @@ export default defineComponent({
   }
 
   &__icon {
-    @apply w-5 h-5 border rounded-tn border-secondary-25 inline-flex items-center justify-center bg-white;
+    @apply w-5 h-5 border rounded-tn border-subtle inline-flex items-center justify-center bg-default;
 
     & > svg {
       @apply w-3;
@@ -170,7 +170,7 @@ export default defineComponent({
   &--checked,
   &--indeterminate {
     .checkbox__icon {
-      @apply bg-primary-100 border-primary-100;
+      @apply bg-accent-emphasis border-accent-emphasis;
     }
   }
 
@@ -179,11 +179,11 @@ export default defineComponent({
   }
 
   .dropdown__menu & {
-    @apply px-3 py-2 cursor-pointer text-body-100 w-full select-none text-left;
+    @apply px-3 py-2 cursor-pointer text-default w-full select-none text-left;
 
     &:hover,
     &:focus-visible {
-      @apply bg-background-75;
+      @apply bg-subtle;
     }
   }
 }
