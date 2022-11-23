@@ -109,7 +109,7 @@ export default defineComponent({
     },
     color: {
       type   : String as PropType<ColorVariant>,
-      default: 'primary',
+      default: 'default',
     },
     size: {
       type   : String as PropType<SizeVariant>,

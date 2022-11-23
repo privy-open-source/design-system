@@ -1,5 +1,5 @@
 <template>
-  <div
+  <Card
     data-testid="calendar"
     class="calendar"
     :viewmode="viewmode"
@@ -9,7 +9,6 @@
         data-testid="calendar-prev"
         variant="solid"
         icon
-        size="sm"
         :disabled="!canPrev"
         :readonly="disabled || readonly"
         @click="prev">
@@ -20,7 +19,6 @@
         data-testid="calendar-title"
         class="calendar__nav-title"
         variant="solid"
-        size="sm"
         :readonly="disabled || readonly"
         @click="changeMode(1)">
         {{ title }}
@@ -30,7 +28,6 @@
         data-testid="calendar-next"
         variant="solid"
         icon
-        size="sm"
         :readonly="disabled || readonly"
         :disabled="!canNext"
         @click="next">
@@ -51,7 +48,6 @@
           :key="i">
           <Button
             variant="solid"
-            icon
             data-testid="calendar-item"
             :readonly="item.readonly || disabled || readonly"
             :active="item.active"
@@ -62,11 +58,12 @@
         </template>
       </div>
     </Transition>
-  </div>
+  </Card>
 </template>
 
 <script lang="ts">
 import Button from '../button/Button.vue'
+import Card from '../card/Card.vue'
 import IconNext from '@carbon/icons-vue/lib/chevron--right/20'
 import IconBack from '@carbon/icons-vue/lib/chevron--left/20'
 import {
@@ -101,6 +98,7 @@ export default defineComponent({
   components: {
     // eslint-disable-next-line vue/no-reserved-component-names
     Button,
+    Card,
     IconNext,
     IconBack,
   },
@@ -245,43 +243,41 @@ export default defineComponent({
 
 <style lang="postcss">
 .calendar {
-  @apply p-2 md:p-4 bg-white flex flex-col gap-2 text-sm;
+  @apply flex flex-col gap-2 text-sm shadow-xl;
 
   &__nav {
-    @apply flex justify-between gap-2;
+    @apply flex justify-between gap-2 mb-2;
 
     &-title {
       @apply flex-grow;
     }
   }
 
-  .btn--solid {
-    @apply border-0 justify-center bg-transparent text-body-100;
+  .btn--variant-solid {
+    @apply justify-center;
 
-    &:hover,
-    &:focus,
-    &:active {
-      @apply text-white;
+    &.btn--default {
+      @apply border-transparent bg-transparent text-default font-normal;
+
+      &.calendar__nav-title {
+        @apply font-medium;
+      }
+
+      &[active="true"] {
+        @apply bg-accent-emphasis border-accent-emphasis text-on-emphasis cursor-default;
+      }
+
+      &[disabled][active="false"] {
+        @apply text-muted;
+      }
     }
 
     &[readonly] {
-      @apply pointer-events-none;
-    }
-
-    &[active="true"] {
-      @apply bg-primary-100 text-white;
-
-      &:active {
-        @apply bg-primary-focused;
-      }
+      @apply pointer-events-none font-medium;
     }
   }
 
   .calendar__items {
-    .btn--outline {
-      @apply font-normal;
-    }
-
     &[viewmode="date"] {
       @apply grid grid-cols-7 gap-1;
 

@@ -84,15 +84,15 @@ module.exports = {
         ],
       },
       textColor: {
-        DEFAULT   : theme.colors.gray[100],
-        default   : theme.colors.gray[100],
-        subtle    : theme.colors.gray[70],
-        muted     : theme.colors.gray[40],
-        onemphasis: theme.colors.base.white,
-        accent    : theme.colors.blue[50],
-        success   : theme.colors.green[50],
-        warning   : theme.colors.orange[50],
-        danger    : theme.colors.red[50],
+        'DEFAULT'    : theme.colors.gray[100],
+        'default'    : theme.colors.gray[100],
+        'subtle'     : theme.colors.gray[70],
+        'muted'      : theme.colors.gray[40],
+        'on-emphasis': theme.colors.base.white,
+        'accent'     : theme.colors.blue[50],
+        'success'    : theme.colors.green[50],
+        'warning'    : theme.colors.orange[50],
+        'danger'     : theme.colors.red[50],
       },
       backgroundColor: {
         inherit    : 'inherit',
@@ -135,58 +135,58 @@ module.exports = {
         },
       },
       borderColor: {
-        DEFAULT: theme.colors.gray[15],
-        default: {
+        'DEFAULT': theme.colors.gray[15],
+        'default': {
           DEFAULT: theme.colors.gray[15],
           alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
         },
-        subtle: {
+        'subtle': {
           DEFAULT: theme.colors.gray[20],
           alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
         },
-        muted     : theme.colors.gray[10],
-        onemphasis: {
+        'muted'      : theme.colors.gray[10],
+        'on-emphasis': {
           DEFAULT: theme.colors.gray[70],
           alpha  : {
             DEFAULT: `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
             subtle : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
           },
         },
-        accent: {
+        'accent': {
           DEFAULT : theme.colors.blue[10],
           emphasis: theme.colors.blue[40],
         },
-        success: {
+        'success': {
           DEFAULT : theme.colors.green[10],
           emphasis: theme.colors.green[40],
         },
-        warning: {
+        'warning': {
           DEFAULT : theme.colors.orange[10],
           emphasis: theme.colors.orange[40],
         },
-        danger: {
+        'danger': {
           DEFAULT : theme.colors.red[10],
           emphasis: theme.colors.red[40],
         },
       },
       boxShadowColor: ({ theme }) => ({ ...theme('backgroundColor') }),
       boxShadow     : {
-        'none'                : '0 0 #0000',
-        'sm'                  : `0 1px 3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 1px 2px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'md'                  : `0 4px 6px -1px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 2px 4px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'DEFAULT'             : `0 4px 6px -1px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 2px 4px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'lg'                  : `0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'lg-top'              : `0 -10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 -4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'lg-left'             : `-10px 0 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), -4px 0 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'lg-right'            : `10px 0 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 4px 0 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
-        'lg-onemphasis'       : `0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[35]}), 0 4px 6px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]})`,
-        'lg-onemphasis-darker': `0 10px 15px -3px rgba(${theme.colors.base.black}, ${theme.opacity[85]}), 0 4px 6px -2px rgba(${theme.colors.base.black}, ${theme.opacity[65]})`,
-        'lg-accent'           : `0 10px 15px -3px rgba(${theme.colors.blue[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.blue[40]}, ${theme.opacity[5]})`,
-        'lg-success'          : `0 10px 15px -3px rgba(${theme.colors.green[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.green[40]}, ${theme.opacity[5]})`,
-        'lg-warning'          : `0 10px 15px -3px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]}), 0 4px 6px -2px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]})`,
-        'lg-danger'           : `0 10px 15px -3px rgba(${theme.colors.red[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.red[40]}, ${theme.opacity[5]})`,
-        'xl'                  : `0 0 1px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]}), 0 8px 10px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 16px 25px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
-        '2xl'                 : `0 20px 40px -8px rgba(${theme.colors.gray[100]}, ${theme.opacity[25]})`,
+        'none'                 : '0 0 #0000',
+        'sm'                   : `0 1px 3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 1px 2px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'md'                   : `0 4px 6px -1px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 2px 4px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'DEFAULT'              : `0 4px 6px -1px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 2px 4px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg'                   : `0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg-top'               : `0 -10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 -4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg-left'              : `-10px 0 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), -4px 0 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg-right'             : `10px 0 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 4px 0 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg-on-emphasis'       : `0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[35]}), 0 4px 6px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]})`,
+        'lg-on-emphasis-darker': `0 10px 15px -3px rgba(${theme.colors.base.black}, ${theme.opacity[85]}), 0 4px 6px -2px rgba(${theme.colors.base.black}, ${theme.opacity[65]})`,
+        'lg-accent'            : `0 10px 15px -3px rgba(${theme.colors.blue[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.blue[40]}, ${theme.opacity[5]})`,
+        'lg-success'           : `0 10px 15px -3px rgba(${theme.colors.green[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.green[40]}, ${theme.opacity[5]})`,
+        'lg-warning'           : `0 10px 15px -3px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]}), 0 4px 6px -2px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]})`,
+        'lg-danger'            : `0 10px 15px -3px rgba(${theme.colors.red[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.red[40]}, ${theme.opacity[5]})`,
+        'xl'                   : `0 0 1px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]}), 0 8px 10px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 16px 25px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+        '2xl'                  : `0 20px 40px -8px rgba(${theme.colors.gray[100]}, ${theme.opacity[25]})`,
       },
       borderRadius: {
         'none'   : 0,

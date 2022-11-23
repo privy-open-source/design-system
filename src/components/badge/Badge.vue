@@ -59,7 +59,7 @@ export default defineComponent({
   * Set global style
   * of badge
   */
-  @apply inline-block font-bold text-xs px-2 py-0.5 text-onemphasis rounded-full;
+  @apply inline-block font-bold text-xs px-2 py-0.5 text-on-emphasis rounded-full;
 
   /**
   * Provide colors variant

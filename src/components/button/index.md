@@ -22,12 +22,12 @@
 ### Button with icon
 
 <preview>
-  <p-button icon><IconBee /></p-button>
+  <p-button color="primary" icon><IconBee /></p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button icon><IconBee /></p-button>
+  <p-button color="primary" icon><IconBee /></p-button>
 </template>
 
 <script setup>
@@ -38,14 +38,14 @@
 ### Button with icon + text
 
 <preview class="flex-col items-center gap-3 md:flex-row">
-  <p-button><IconBee /> Click Me</p-button>
-  <p-button>Click Me <IconBee /></p-button>
+  <p-button color="primary"><IconBee /> Click Me</p-button>
+  <p-button color="primary">Click Me <IconBee /></p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button><IconBee /> Click Me</p-button>
-  <p-button>Click Me <IconBee /></p-button>
+  <p-button color="primary"><IconBee /> Click Me</p-button>
+  <p-button color="primary">Click Me <IconBee /></p-button>
 </template>
 
 <script setup>
@@ -59,19 +59,19 @@ Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
 
 <preview>
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
-    <p-button variant="solid">Click me</p-button>
-    <p-button variant="outline">Click me</p-button>
+    <p-button color="primary" variant="solid">Click me</p-button>
+    <p-button color="primary" variant="outline">Click me</p-button>
     <p-button variant="ghost">Click me</p-button>
-    <p-button variant="link">Click me</p-button>
+    <p-button color="primary" variant="link">Click me</p-button>
   </div>
 </preview>
 
 ```vue
 <template>
-  <p-button variant="solid">Click me</p-button>
-  <p-button variant="outline">Click me</p-button>
+  <p-button color="primary" variant="solid">Click me</p-button>
+  <p-button color="primary" variant="outline">Click me</p-button>
   <p-button variant="ghost">Click me</p-button>
-  <p-button variant="link">Click me</p-button>
+  <p-button color="primary" variant="link">Click me</p-button>
 </template>
 ```
 
@@ -136,18 +136,18 @@ It's also work with other variants (except `ghost`).
 3 sizes you can use: `xs`, `sm`, `md`, `lg`. default is `md`
 
 <preview class="flex-col items-center gap-3 md:flex-row">
-  <p-button size="xs">Click me</p-button>
-  <p-button size="sm">Click me</p-button>
-  <p-button size="md">Click me</p-button>
-  <p-button size="lg">Click me</p-button>
+  <p-button color="primary" size="xs">Click me</p-button>
+  <p-button color="primary" size="sm">Click me</p-button>
+  <p-button color="primary" size="md">Click me</p-button>
+  <p-button color="primary" size="lg">Click me</p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button size="xs">Click me</p-button>
-  <p-button size="sm">Click me</p-button>
-  <p-button size="md">Click me</p-button>
-  <p-button size="lg">Click me</p-button>
+  <p-button color="primary" size="xs">Click me</p-button>
+  <p-button color="primary" size="sm">Click me</p-button>
+  <p-button color="primary" size="md">Click me</p-button>
+  <p-button color="primary" size="lg">Click me</p-button>
 </template>
 ```
 
@@ -156,18 +156,18 @@ It's also work with other variants (except `ghost`).
 You can add prop `pill` to make button more rounded
 
 <preview class="flex-col items-center gap-3 md:flex-row">
-  <p-button size="xs" pill>Click me</p-button>
-  <p-button size="sm" pill>Click me</p-button>
-  <p-button size="md" pill>Click me</p-button>
-  <p-button size="lg" pill>Click me</p-button>
+  <p-button color="primary" size="xs" pill>Click me</p-button>
+  <p-button color="primary" size="sm" pill>Click me</p-button>
+  <p-button color="primary" size="md" pill>Click me</p-button>
+  <p-button color="primary" size="lg" pill>Click me</p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button size="xs" pill>Click me</p-button>
-  <p-button size="sm" pill>Click me</p-button>
-  <p-button size="md" pill>Click me</p-button>
-  <p-button size="lg" pill>Click me</p-button>
+  <p-button color="primary" size="xs" pill>Click me</p-button>
+  <p-button color="primary" size="sm" pill>Click me</p-button>
+  <p-button color="primary" size="md" pill>Click me</p-button>
+  <p-button color="primary" size="lg" pill>Click me</p-button>
 </template>
 ```
 
@@ -176,36 +176,36 @@ You can add prop `pill` to make button more rounded
 You can add prop `icon` to make button more square, it's suitable for button with icon only
 
 <preview class="items-center gap-3">
-  <p-button size="xs" icon><IconBee /></p-button>
-  <p-button size="sm" icon><IconBee /></p-button>
-  <p-button size="md" icon><IconBee /></p-button>
-  <p-button size="lg" icon><IconBee /></p-button>
+  <p-button color="primary" size="xs" icon><IconBee /></p-button>
+  <p-button color="primary" size="sm" icon><IconBee /></p-button>
+  <p-button color="primary" size="md" icon><IconBee /></p-button>
+  <p-button color="primary" size="lg" icon><IconBee /></p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button size="xs" icon><IconBee /></p-button>
-  <p-button size="sm" icon><IconBee /></p-button>
-  <p-button size="md" icon><IconBee /></p-button>
-  <p-button size="lg" icon><IconBee /></p-button>
+  <p-button color="primary" size="xs" icon><IconBee /></p-button>
+  <p-button color="primary" size="sm" icon><IconBee /></p-button>
+  <p-button color="primary" size="md" icon><IconBee /></p-button>
+  <p-button color="primary" size="lg" icon><IconBee /></p-button>
 </template>
 ```
 
 You can also combine with `pill` mode to make round button
 
 <preview class="items-center gap-3">
-  <p-button size="xs" icon pill><IconBee /></p-button>
-  <p-button size="sm" icon pill><IconBee /></p-button>
-  <p-button size="md" icon pill><IconBee /></p-button>
-  <p-button size="lg" icon pill><IconBee /></p-button>
+  <p-button color="primary" size="xs" icon pill><IconBee /></p-button>
+  <p-button color="primary" size="sm" icon pill><IconBee /></p-button>
+  <p-button color="primary" size="md" icon pill><IconBee /></p-button>
+  <p-button color="primary" size="lg" icon pill><IconBee /></p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button size="xs" icon pill><IconBee /></p-button>
-  <p-button size="sm" icon pill><IconBee /></p-button>
-  <p-button size="md" icon pill><IconBee /></p-button>
-  <p-button size="lg" icon pill><IconBee /></p-button>
+  <p-button color="primary" size="xs" icon pill><IconBee /></p-button>
+  <p-button color="primary" size="sm" icon pill><IconBee /></p-button>
+  <p-button color="primary" size="md" icon pill><IconBee /></p-button>
+  <p-button color="primary" size="lg" icon pill><IconBee /></p-button>
 </template>
 ```
 
@@ -213,19 +213,19 @@ You can also combine with `pill` mode to make round button
 
 <preview label="link variant">
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
-    <p-button variant="solid" disabled>Click me</p-button>
-    <p-button variant="outline" color="gold" disabled>Click me</p-button>
+    <p-button color="primary" variant="solid" disabled>Click me</p-button>
+    <p-button color="primary" variant="outline" disabled>Click me</p-button>
     <p-button variant="ghost" disabled>Click me</p-button>
-    <p-button variant="link" disabled>Click me</p-button>
+    <p-button color="primary" variant="link" disabled>Click me</p-button>
   </div>
 </preview>
 
 ```vue
 <template>
-  <p-button variant="solid" disabled>Click me</p-button>
-  <p-button variant="outline" disabled>Click me</p-button>
+  <p-button color="primary" variant="solid" disabled>Click me</p-button>
+  <p-button color="primary" variant="outline" disabled>Click me</p-button>
   <p-button variant="ghost" disabled>Click me</p-button>
-  <p-button variant="link" disabled>Click me</p-button>
+  <p-button color="primary" variant="link" disabled>Click me</p-button>
 </template>
 ```
 

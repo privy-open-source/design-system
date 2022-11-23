@@ -85,10 +85,10 @@ export default defineComponent({
   --p-color-danger-hover: darken(theme(backgroundColor.danger.emphasis), 5%);
   --p-color-danger-focus: darken(theme(backgroundColor.danger.emphasis), 10%);
 
-  @apply inline-flex font-medium disabled:opacity-50 disabled:pointer-events-none transition-all ease-in-out duration-200;
+  @apply inline-flex align-middle font-medium disabled:opacity-50 disabled:pointer-events-none transition-all ease-in-out duration-200;
 
   > svg {
-    @apply self-baseline;
+    @apply self-center;
   }
 
   /*
@@ -116,7 +116,7 @@ export default defineComponent({
   * default style variant
   */
   &&--variant-solid {
-    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-onemphasis; /* hover:brightness-[.85] focus:brightness-75 active:brightness-75; */
+    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-on-emphasis;
 
     &.btn {
       &--default {
@@ -189,7 +189,7 @@ export default defineComponent({
   * in button link variant
   */
   &&--variant-link {
-    @apply border border-transparent underline font-normal hover:underline;
+    @apply border border-transparent font-normal hover:underline;
 
     &.btn {
       &--default {
@@ -223,19 +223,19 @@ export default defineComponent({
   */
   &&--icon {
     &.btn--xs {
-      @apply p-1;
+      @apply px-1 h-[25.88px];
     }
 
     &.btn--sm {
-      @apply p-2;
+      @apply px-2 h-[34px];
     }
 
     &.btn--md {
-      @apply p-3;
+      @apply px-3 h-[46px];
     }
 
     &.btn--lg {
-      @apply p-4;
+      @apply px-4 h-[58px];
     }
   }
 
