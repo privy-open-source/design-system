@@ -58,7 +58,6 @@
       <p-button
         v-if="cameras.length > 1 && !isTaken"
         data-testid="camera-toggle"
-        color="secondary"
         size="sm"
         icon
         pill
