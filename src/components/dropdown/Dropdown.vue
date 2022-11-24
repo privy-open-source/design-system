@@ -252,7 +252,7 @@ export default defineComponent({
   @apply relative inline-flex;
 
   &__menu {
-    @apply max-h-64 border rounded w-full min-w-[15rem] bg-white z-10 border-secondary-25 shadow-xl overflow-x-hidden overflow-y-auto relative;
+    @apply max-h-64 border rounded w-full min-w-[15rem] bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto relative;
   }
 
   &__menuContainer > .dropdown__item:first-child,

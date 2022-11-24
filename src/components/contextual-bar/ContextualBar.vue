@@ -287,23 +287,23 @@ export default defineComponent({
   }
 
   &__close {
-    @apply absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-black text-opacity-30 hover:text-opacity-50;
+    @apply absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-default text-opacity-30 hover:text-opacity-50;
   }
 
   &&--dark {
-    @apply bg-black text-white;
+    @apply bg-emphasis text-on-emphasis;
 
     .contextual-bar__close {
-      @apply text-white text-opacity-40 hover:text-opacity-60;
+      @apply text-on-emphasis text-opacity-40 hover:text-opacity-60;
     }
   }
 
   &&--light {
-    @apply bg-background-100 text-body-100;
+    @apply bg-subtle text-default;
 
     .contextual-bar {
       &__icon {
-        @apply text-primary-100;
+        @apply text-accent;
       }
     }
   }
