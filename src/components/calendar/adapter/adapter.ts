@@ -1,6 +1,7 @@
 import { Ref } from 'vue-demi'
 import { format } from 'date-fns'
-import { enUS as en, id } from 'date-fns/locale'
+import id from 'date-fns/locale/id/index'
+import en from 'date-fns/locale/en-US/index'
 import { getLang } from '../../global/context'
 
 const localePacks = { en, id }
