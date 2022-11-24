@@ -5,9 +5,9 @@
       <TourHighlight
         v-if="isShow"
         :target="target" />
-      <TourCard
+      <TourDialog
         v-if="isShow"
-        ref="card"
+        ref="dialog"
         v-bind="config" />
     </transitiongroup>
   </div>
@@ -21,7 +21,7 @@ import {
   shallowRef,
   watchEffect,
 } from 'vue-demi'
-import TourCard from './TourCard.vue'
+import TourDialog from './TourDialog.vue'
 import TourHighlight from './TourHighlight.vue'
 import {
   autoUpdate,
@@ -33,19 +33,19 @@ import {
   hide as hidden,
 } from '@floating-ui/dom'
 
-type TourCardProps = Partial<InstanceType<typeof TourCard>['$props']>
+type TourDialogProps = Partial<InstanceType<typeof TourDialog>['$props']>
 
 export default defineComponent({
   components: {
-    TourCard,
+    TourDialog,
     TourHighlight,
   },
   setup () {
     const isShow = ref(false)
-    const card   = shallowRef<InstanceType<typeof TourCard>>()
+    const dialog = shallowRef<InstanceType<typeof TourDialog>>()
     const target = shallowRef<HTMLElement>()
-    const config = shallowRef<TourCardProps>()
-    const tour   = computed(() => card.value?.$el)
+    const config = shallowRef<TourDialogProps>()
+    const tour   = computed<HTMLElement>(() => dialog.value?.$el)
 
     watchEffect((onCleanup) => {
       if (target.value && tour.value) {
@@ -53,7 +53,7 @@ export default defineComponent({
           computePosition(target.value, tour.value, {
             strategy  : 'absolute',
             middleware: [
-              autoPlacement(),
+              autoPlacement({ altBoundary: true }),
               shift({ padding: 16 }),
               inline(),
               hidden(),
@@ -61,9 +61,7 @@ export default defineComponent({
             ],
           }).then(({ x, y, middlewareData }) => {
             if (tour.value) {
-              tour.value.style.left = `${x || 0}px`
-              tour.value.style.top  = `${y || 0}px`
-
+              tour.value.style.transform  = `translate3d(${x || 0}px, ${y || 0}px, 0)`
               tour.value.style.visibility = middlewareData.hide.referenceHidden
                 ? 'hidden'
                 : 'visible'
@@ -75,7 +73,16 @@ export default defineComponent({
       }
     })
 
-    function show (targetEl: HTMLElement, options: TourCardProps) {
+    watchEffect((onCleanup) => {
+      if (isShow.value)
+        document.body.classList.add('tour--active')
+
+      onCleanup(() => {
+        document.body.classList.remove('tour--active')
+      })
+    })
+
+    function show (targetEl: HTMLElement, options: TourDialogProps) {
       target.value = targetEl
       config.value = options
       isShow.value = true
@@ -87,7 +94,7 @@ export default defineComponent({
 
     return {
       isShow,
-      card,
+      dialog,
       target,
       show,
       hide,
@@ -99,8 +106,12 @@ export default defineComponent({
 
 <style lang="postcss">
 .tour {
-  & > &__card {
-    @apply absolute;
+  & > &__dialog {
+    @apply absolute top-0 left-0;
+  }
+
+  &--active {
+    @apply overflow-hidden;
   }
 }
 </style>

@@ -1,4 +1,9 @@
 import { Ref } from 'vue-demi'
+import { format } from 'date-fns'
+import { enUS as en, id } from 'date-fns/locale'
+import { getLang } from '../../global/context'
+
+const localePacks = { en, id }
 
 export interface CalendarItem {
   value: Date,
@@ -35,4 +40,14 @@ export type CalendarMode = typeof CalendarFormat[number]
 
 export function defineAdapter (adapter: CalendarAdapter): CalendarAdapter {
   return adapter
+}
+
+/**
+ * Format date using date-fns/format,
+ * Automatically switch local following global lang setting.
+ * @param date Date
+ * @param formatStr date format
+ */
+export function formatDate (date: Date, formatStr: string): string {
+  return format(date, formatStr, { locale: localePacks[getLang()] })
 }

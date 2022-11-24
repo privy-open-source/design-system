@@ -1,19 +1,52 @@
-import { computePosition, hide } from '@floating-ui/dom'
 import scrollIntoView from 'scroll-into-view'
 
-export async function isVisible (target: HTMLElement) {
-  const div = document.createElement('div')
+export function isVisible (target: HTMLElement) {
+  if (!(target instanceof Element))
+    return false
 
-  document.body.append(div)
+  const style = getComputedStyle(target)
 
-  const { middlewareData } = await computePosition(target, div, {
-    strategy  : 'absolute',
-    middleware: [hide()],
-  })
+  if (style.display === 'none')
+    return false
 
-  div.remove()
+  if (style.visibility !== 'visible')
+    return false
 
-  return !middlewareData.hide.referenceHidden
+  if (Number.parseFloat(style.opacity) < 0.1)
+    return false
+
+  const boundaries = target.getBoundingClientRect()
+
+  if (target.offsetWidth + target.offsetHeight + boundaries.height + boundaries.width === 0)
+    return false
+
+  const elemCenter = {
+    x: boundaries.left + target.offsetWidth / 2,
+    y: boundaries.top + target.offsetHeight / 2,
+  }
+
+  if (elemCenter.x < 0)
+    return false
+
+  if (elemCenter.x > (document.documentElement.clientWidth || window.innerWidth))
+    return false
+
+  if (elemCenter.y < 0)
+    return false
+
+  if (elemCenter.y > (document.documentElement.clientHeight || window.innerHeight))
+    return false
+
+  let pointContainer = document.elementFromPoint(elemCenter.x, elemCenter.y)
+
+  do {
+    if (pointContainer === target)
+      return true
+
+    pointContainer = pointContainer.parentNode as Element
+  } while (pointContainer)
+
+  return false
 }
 
 export async function focus (target: HTMLElement, duration = 330): Promise<unknown> {

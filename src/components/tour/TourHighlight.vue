@@ -53,7 +53,7 @@ export default defineComponent({
 <style lang="postcss">
 .tour {
   &__backdrop {
-    @apply fixed inset-0 overflow-hidden w-full h-full z-50;
+    @apply fixed inset-0 overflow-hidden w-full h-full z-[100];
   }
 
   &__highlight {

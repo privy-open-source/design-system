@@ -10,7 +10,7 @@ async function getVisibleElement<Element extends HTMLElement> (selector: string)
   if (target) {
     await focus(target)
 
-    if (!(await isVisible(target)))
+    if (!isVisible(target))
       throw new Error(`Target: "${selector}" not visible`)
   }
 

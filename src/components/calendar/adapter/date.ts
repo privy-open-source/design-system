@@ -6,7 +6,6 @@ import {
   isSameMonth,
   startOfMonth,
   startOfWeek,
-  format,
   addMonths,
   subMonths,
   isAfter,
@@ -15,7 +14,11 @@ import {
   minTime,
   maxTime,
 } from 'date-fns'
-import { CalendarItem, defineAdapter } from './adapter'
+import {
+  CalendarItem,
+  defineAdapter,
+  formatDate,
+} from './adapter'
 
 function getInterval (date: Date) {
   const start = startOfWeek(startOfMonth(date), { weekStartsOn: 1 })
@@ -47,7 +50,7 @@ export default defineAdapter({
     const days: CalendarItem[] = dates.slice(0, 7).map((item) => {
       return {
         value   : item.value,
-        text    : format(item.value, 'EEEEEE'),
+        text    : formatDate(item.value, 'EEEEEE'),
         disabled: false,
         readonly: true,
         active  : false,
@@ -58,7 +61,7 @@ export default defineAdapter({
   },
 
   getTitle ({ cursor }) {
-    return format(cursor.value, 'MMMM yyyy')
+    return formatDate(cursor.value, 'MMMM yyyy')
   },
 
   getNextCursor ({ cursor }) {

@@ -2,7 +2,6 @@ import {
   addYears,
   eachMonthOfInterval,
   endOfYear,
-  format,
   isAfter,
   isBefore,
   isSameMonth,
@@ -12,7 +11,7 @@ import {
   startOfYear,
   subYears,
 } from 'date-fns'
-import { defineAdapter } from './adapter'
+import { defineAdapter, formatDate } from './adapter'
 
 function getInterval (date: Date) {
   const start = startOfYear(date)
@@ -36,7 +35,7 @@ export default defineAdapter({
 
         return {
           value   : date,
-          text    : format(date, 'MMM'),
+          text    : formatDate(date, 'MMM'),
           disabled: isDisabled,
           readonly: false,
           active  : isSameMonth(model.value, date),

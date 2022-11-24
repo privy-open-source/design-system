@@ -1,4 +1,5 @@
 import { MockStep } from '../__mocks__/step'
+import StepCondition from './step/conditional'
 import { Tour } from './tour'
 
 describe('Basic functionality tour', () => {
@@ -23,10 +24,11 @@ describe('Basic functionality tour', () => {
 })
 
 describe('Nesting', () => {
-  it('should able to return total of step, including child tour', () => {
+  it('should able to return total of step, including child tour and conditional', () => {
     const level1 = new Tour()
     const level2 = new Tour()
     const level3 = new Tour()
+    const level4 = new Tour()
 
     level1.add(new MockStep())
     level1.add(new MockStep())
@@ -36,13 +38,21 @@ describe('Nesting', () => {
 
     level3.add(new MockStep())
     level3.add(new MockStep())
+
+    level4.add(new MockStep())
+    level4.add(new MockStep())
 
     level2.add(level3) // add level3 into level2
     level1.add(level2) // add level2 into level1
 
-    expect(level1.getTotal()).toBe(6)
-    expect(level2.getTotal()).toBe(6)
-    expect(level3.getTotal()).toBe(6)
+    level1.add(new StepCondition({
+      condition: () => true,
+      tour     : level4,
+    }))
+
+    expect(level1.getTotal()).toBe(8)
+    expect(level2.getTotal()).toBe(8)
+    expect(level3.getTotal()).toBe(8)
   })
 
   it('should able return current index, including child tour', async () => {

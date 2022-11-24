@@ -1,30 +1,30 @@
 import { TourStory } from './story'
 import StepAction from './step/action'
 import StepDelay from './step/delay'
-import StepShow from './step/show'
+import StepDialog from './step/dialog'
 import StepVisit from './step/visit'
 
-it('should able to add show step instance using `.show()` (option way)', () => {
+it('should able to add show step instance using `.dialog()`', () => {
   const tour = new TourStory()
 
-  tour.show({ target: '#target', text: 'Hello' })
+  tour.dialog({ target: '#target', text: 'Hello' })
 
   const step   = tour.getSteps().at(0)
   const option = step.getOptions()
 
-  expect(step).toBeInstanceOf(StepShow)
+  expect(step).toBeInstanceOf(StepDialog)
   expect(option).toMatchObject({ target: '#target', text: 'Hello' })
 })
 
-it('should able to add show step instance using `.show()` (shortcut)', () => {
+it('should able to add show step instance using `.dialog()` (shortcut)', () => {
   const tour = new TourStory()
 
-  tour.show('#target', 'This is text', 'This is title', 'http://image.com')
+  tour.dialog('#target', 'This is text', 'This is title', 'http://image.com')
 
   const step   = tour.getSteps().at(0)
   const option = step.getOptions()
 
-  expect(step).toBeInstanceOf(StepShow)
+  expect(step).toBeInstanceOf(StepDialog)
   expect(option).toMatchObject({
     target: '#target',
     text  : 'This is text',
@@ -170,6 +170,22 @@ it('should able to add action step type `type` using `.type()`', () => {
     target: '#target',
     action: 'type',
     params: ['Hello Guys'],
+  })
+})
+
+it('should able to add action step type `clear` using `.clear()`', () => {
+  const tour = new TourStory()
+
+  tour.clear('#target')
+
+  const step   = tour.getSteps().at(0)
+  const option = step.getOptions()
+
+  expect(step).toBeInstanceOf(StepAction)
+  expect(option).toMatchObject({
+    target: '#target',
+    action: 'clear',
+    params: [],
   })
 })
 

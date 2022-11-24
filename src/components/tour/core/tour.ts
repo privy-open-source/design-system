@@ -109,12 +109,12 @@ export class Tour extends AbstractTour<TourOptions> {
   /**
    * Count total step, including Sub-Tour
    */
-  protected getTotalChild (): number {
+  public getTotalChild (): number {
     let total = 0
 
     for (const step of this.steps) {
-      total += step instanceof Tour
-        ? step.getTotalChild()
+      total += 'getTotalChild' in step
+        ? (step as Tour).getTotalChild()
         : 1
     }
 
@@ -130,8 +130,8 @@ export class Tour extends AbstractTour<TourOptions> {
     for (let i = 0; i < this.index; i++) {
       const step = this.steps[i]
 
-      if (step instanceof Tour)
-        index += (step.getTotalChild() - 1)
+      if ('getTotalChild' in step)
+        index += ((step as Tour).getTotalChild() - 1)
     }
 
     return index
@@ -161,10 +161,10 @@ export class Tour extends AbstractTour<TourOptions> {
       await step.setDirection(this.direction).start()
     } catch (error) {
       if (import.meta.env.DEV)
-        console.warn(error)
+        console.warn(error, step)
 
       if (this.getOptions().skipOnError || (step.getOptions() as TourOptions).skipOnError)
-        await (this.direction < 0 ? this.prev(true) : this.next(true))
+        await (this.direction === TourDirection.BACKWARD ? this.prev(true) : this.next(true))
       else if (this.parent)
         throw error
       else
@@ -182,7 +182,7 @@ export class Tour extends AbstractTour<TourOptions> {
 
     if (toIndex < 0 && this.parent)
       await this.parent.prev()
-    else if (skipHook || await this.runOnPrevHooks(to, from)) {
+    else if (toIndex > -1 && (skipHook || await this.runOnPrevHooks(to, from))) {
       await from.stop()
 
       this.index     = toIndex
@@ -224,9 +224,9 @@ export class Tour extends AbstractTour<TourOptions> {
   /**
    * Show and start the tour
    */
-  public async start () {
-    this.index     = 0
-    this.direction = TourDirection.FORWARD
+  public async start (index = 0, direction = TourDirection.FORWARD) {
+    this.index     = index
+    this.direction = direction
 
     if (this.parent)
       this.attach(this.parent)

@@ -1,8 +1,8 @@
 <template>
   <div
-    class="tour__card"
+    class="tour__dialog"
     :class="{ 'tour--image': !!image }"
-    data-testid="tour-card">
+    data-testid="tour-dialog">
     <span
       v-if="dismissable"
       data-testid="tour-dismiss"
@@ -157,8 +157,8 @@ export default defineComponent({
 
 <style lang="postcss">
 .tour {
-  &__card {
-    @apply rounded bg-blackWhite-95 text-white w-full max-w-xs z-50 overflow-hidden relative shadow-sm;
+  &__dialog {
+    @apply rounded bg-blackWhite-95 text-white w-full max-w-xs z-[100] overflow-hidden relative shadow-sm;
   }
 
   &__image {

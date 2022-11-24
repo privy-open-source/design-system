@@ -2,6 +2,8 @@ import { vi } from 'vitest'
 import StepAction from './action'
 import { MockTour } from '../../__mocks__/tour'
 
+vi.mock('../../utils/is-visible.ts')
+
 beforeEach(() => {
   const sample = document.createElement('div')
   const input  = document.createElement('input')

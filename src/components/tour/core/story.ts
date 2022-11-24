@@ -1,10 +1,12 @@
 import { Tour } from './tour'
 import { isString } from 'lodash-es'
-import ShowStep from './step/show'
+import StepDialog from './step/dialog'
 import StepDelay from './step/delay'
 import StepAction from './step/action'
 import StepVisit from './step/visit'
-import type { ShowOptions } from './step/show'
+import StepCondition from './step/conditional'
+import type { ConditionalOptions } from './step/conditional'
+import type { DialogOptions } from './step/dialog'
 import type { EventType, ParamsOf } from './step/action'
 
 /**
@@ -12,22 +14,22 @@ import type { EventType, ParamsOf } from './step/action'
  */
 export class TourStory extends Tour {
   /**
-   * Show tour guide card
+   * Show tour guide dialog
    * @param options options
    */
-  show (options: ShowOptions): this
+  dialog (options: DialogOptions): this
   /**
-   * Show tour guide card
+   * Show tour guide dialog
    * @param target target querySelector
    * @param text body text
    * @param title title text
    * @param image url image
    */
-  show (target: string, text: string, title?: string, image?: string): this
-  show (targetOrOption: string | ShowOptions, text = '', title?: string, image?: string): this {
+  dialog (target: string, text: string, title?: string, image?: string): this
+  dialog (targetOrOption: string | DialogOptions, text = '', title?: string, image?: string): this {
     return !isString(targetOrOption)
-      ? this.add(new ShowStep(targetOrOption))
-      : this.add(new ShowStep({
+      ? this.add(new StepDialog(targetOrOption))
+      : this.add(new StepDialog({
         target: targetOrOption,
         text,
         title,
@@ -114,11 +116,39 @@ export class TourStory extends Tour {
   }
 
   /**
+   * Clear input text
+   * @param target Target querySelector
+   */
+  clear (target: string) {
+    return this.action(target, 'clear')
+  }
+
+  /**
    * Redirect to url
    * @param url target url
    * @param backUrl target url when back button clicked
    */
   visit (url: string, backUrl?: string) {
     return this.add(new StepVisit({ url, backUrl }))
+  }
+
+  /**
+   * Run steps only when condition meet, skip if not
+   * @param condition Ref or Function to check
+   * @param buildFn
+   * @example
+   * tour.runIf(() => window.matchMedia("(max-width: 700px)").matches, (tour) => {
+   *    return tour
+   *      .click('#mobile-only')
+   *      .dialog('#mobile-only', 'Hello World')
+   * })
+   */
+  runIf (condition: ConditionalOptions['condition'], buildFn: (tour: TourStory) => TourStory | undefined) {
+    const tour = new TourStory()
+
+    return this.add(new StepCondition({
+      condition: condition,
+      tour     : buildFn(tour) ?? tour,
+    }))
   }
 }

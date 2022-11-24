@@ -5,7 +5,7 @@ import { waitElement } from '../../utils/wait-element'
 type UserEvent = ReturnType<typeof userEvent['setup']>
 type ExtractParams<F> = F extends (T: Element, ...args: infer P) => Promise<void> ? P : unknown[]
 
-export type EventType = 'click' | 'dblClick' | 'tripleClick' | 'type' | 'hover' | 'unhover'
+export type EventType = 'click' | 'dblClick' | 'tripleClick' | 'type' | 'hover' | 'unhover' | 'clear'
 
 export type ParamsOf<E extends EventType> = ExtractParams<UserEvent[E]>
 

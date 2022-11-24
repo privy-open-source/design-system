@@ -1,22 +1,22 @@
 import { fireEvent, render } from '@testing-library/vue'
 import { vi } from 'vitest'
-import TourCard from './TourCard.vue'
+import TourDialog from './TourDialog.vue'
 
 it('should render properly', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card />',
+    components: { TourDialog },
+    template  : '<tour-dialog />',
   })
 
-  const tour = screen.queryByTestId('tour-card')
+  const tour = screen.queryByTestId('tour-dialog')
 
   expect(tour).toBeInTheDocument()
 })
 
 it('should able to set title using prop `title`', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card title="Hello World" />',
+    components: { TourDialog },
+    template  : '<tour-dialog title="Hello World" />',
   })
 
   const title = screen.queryByTestId('tour-title')
@@ -27,8 +27,8 @@ it('should able to set title using prop `title`', () => {
 
 it('should able to set text using prop `text`', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card text="Hello World" />',
+    components: { TourDialog },
+    template  : '<tour-dialog text="Hello World" />',
   })
 
   const text = screen.queryByTestId('tour-text')
@@ -39,8 +39,8 @@ it('should able to set text using prop `text`', () => {
 
 it('should show an image if prop `image` was provided', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card image="http://image.com/50x50" />',
+    components: { TourDialog },
+    template  : '<tour-dialog image="http://image.com/50x50" />',
   })
 
   const image = screen.queryByTestId('tour-image')
@@ -51,8 +51,8 @@ it('should show an image if prop `image` was provided', () => {
 
 it('should hide title if prop `title` not provided', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card />',
+    components: { TourDialog },
+    template  : '<tour-dialog />',
   })
 
   const title = screen.queryByTestId('tour-title')
@@ -62,8 +62,8 @@ it('should hide title if prop `title` not provided', () => {
 
 it('should hide image if prop `image` not provided', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card />',
+    components: { TourDialog },
+    template  : '<tour-dialog />',
   })
 
   const image = screen.queryByTestId('tour-image')
@@ -73,8 +73,8 @@ it('should hide image if prop `image` not provided', () => {
 
 it('should meta total steps if prop `totalPage` less than 2', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card :step="1" :totalStep="2" />',
+    components: { TourDialog },
+    template  : '<tour-dialog :step="1" :totalStep="2" />',
   })
 
   const meta = screen.queryByTestId('tour-meta')
@@ -84,8 +84,8 @@ it('should meta total steps if prop `totalPage` less than 2', () => {
 
 it('should meta total steps if prop `totalPage` more than 2', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card :step="1" :totalStep="5" />',
+    components: { TourDialog },
+    template  : '<tour-dialog :step="1" :totalStep="5" />',
   })
 
   const meta = screen.queryByTestId('tour-meta')
@@ -96,8 +96,8 @@ it('should meta total steps if prop `totalPage` more than 2', () => {
 
 it('should disabled prev button if on page 1', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card :step="1" :totalStep="5" />',
+    components: { TourDialog },
+    template  : '<tour-dialog :step="1" :totalStep="5" />',
   })
 
   const prev = screen.queryByTestId('tour-control-prev')
@@ -108,8 +108,8 @@ it('should disabled prev button if on page 1', () => {
 
 it('should enable prev button if on page greater than 1', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card :step="2" :totalStep="5" />',
+    components: { TourDialog },
+    template  : '<tour-dialog :step="2" :totalStep="5" />',
   })
 
   const prev = screen.queryByTestId('tour-control-prev')
@@ -120,8 +120,8 @@ it('should enable prev button if on page greater than 1', () => {
 
 it('should show dismiss button if not last step', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card :step="1" :totalStep="5" />',
+    components: { TourDialog },
+    template  : '<tour-dialog :step="1" :totalStep="5" />',
   })
 
   const dismiss = screen.queryByTestId('tour-control-dismiss')
@@ -131,8 +131,8 @@ it('should show dismiss button if not last step', () => {
 
 it('should show finish button on last step', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card :step="5" :totalStep="5" />',
+    components: { TourDialog },
+    template  : '<tour-dialog :step="5" :totalStep="5" />',
   })
 
   const next    = screen.queryByTestId('tour-control-next')
@@ -144,8 +144,8 @@ it('should show finish button on last step', () => {
 
 it('should hide finish button when not the last step', () => {
   const screen = render({
-    components: { TourCard },
-    template  : '<tour-card :step="1" :totalStep="5" />',
+    components: { TourDialog },
+    template  : '<tour-dialog :step="1" :totalStep="5" />',
   })
 
   const next    = screen.queryByTestId('tour-control-next')
@@ -157,9 +157,9 @@ it('should hide finish button when not the last step', () => {
 
 it('should hide dismis button if prop `dismissable` set to false', () => {
   const screen = render({
-    components: { TourCard },
+    components: { TourDialog },
     template  : `
-      <tour-card
+      <tour-dialog
         :step="3"
         :totalStep="5"
         :dismissable="false" />
@@ -176,9 +176,9 @@ it('should hide dismis button if prop `dismissable` set to false', () => {
 it('should emit `next` if next button clicked', async () => {
   const onNext = vi.fn()
   const screen = render({
-    components: { TourCard },
+    components: { TourDialog },
     template  : `
-      <tour-card
+      <tour-dialog
         :step="3"
         :totalStep="5"
         @next="onNext" />
@@ -198,9 +198,9 @@ it('should emit `next` if next button clicked', async () => {
 it('should emit `next` if finish button clicked', async () => {
   const onNext = vi.fn()
   const screen = render({
-    components: { TourCard },
+    components: { TourDialog },
     template  : `
-      <tour-card
+      <tour-dialog
         :step="5"
         :totalStep="5"
         @next="onNext" />
@@ -220,9 +220,9 @@ it('should emit `next` if finish button clicked', async () => {
 it('should emit `prev` if prev button clicked', async () => {
   const onPrev = vi.fn()
   const screen = render({
-    components: { TourCard },
+    components: { TourDialog },
     template  : `
-      <tour-card
+      <tour-dialog
         :step="3"
         :totalStep="5"
         @prev="onPrev" />
@@ -242,9 +242,9 @@ it('should emit `prev` if prev button clicked', async () => {
 it('should emit `dismiss` if dismiss button clicked', async () => {
   const onDismiss = vi.fn()
   const screen    = render({
-    components: { TourCard },
+    components: { TourDialog },
     template  : `
-      <tour-card
+      <tour-dialog
         :step="3"
         :totalStep="5"
         @dismiss="onDismiss" />

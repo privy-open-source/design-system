@@ -34,6 +34,7 @@
         Get Started
       </Button>
       <Button
+        data-tour="github"
         size="lg"
         variant="ghost"
         @click="openGithub">

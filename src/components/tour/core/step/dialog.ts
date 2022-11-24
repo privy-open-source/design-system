@@ -3,14 +3,14 @@ import { removeSingleton, useSingleton } from '../../../global/use-singleton'
 import { AbstractStep } from '../step'
 import { waitElement } from '../../utils/wait-element'
 
-export interface ShowOptions {
+export interface DialogOptions {
   target: string,
   title?: string,
   text: string,
   image?: string,
 }
 
-export default class StepShow extends AbstractStep<ShowOptions> {
+export default class StepDialog extends AbstractStep<DialogOptions> {
   protected async dismiss () {
     await this.parent.stop()
   }

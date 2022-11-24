@@ -1,8 +1,11 @@
 import { fireEvent, queryByTestId } from '@testing-library/dom'
+import { vi } from 'vitest'
 import { MockTour } from '../../__mocks__/tour'
-import StepShow from './show'
+import StepDialog from './dialog'
 
-beforeEach(() => {
+vi.mock('../../utils/is-visible.ts')
+
+beforeAll(() => {
   const sample = document.createElement('div')
 
   sample.id = 'sample'
@@ -10,9 +13,9 @@ beforeEach(() => {
   document.body.append(sample)
 })
 
-it('should able to show tour-card', async () => {
+it('should able to show tour-dialog', async () => {
   const parent = new MockTour()
-  const step   = new StepShow({
+  const step   = new StepDialog({
     target: '#sample',
     title : 'Hello',
     text  : 'This is tour',
@@ -21,7 +24,7 @@ it('should able to show tour-card', async () => {
 
   await step.setParent(parent).start()
 
-  const tour  = queryByTestId(document.body, 'tour-card')
+  const tour  = queryByTestId(document.body, 'tour-dialog')
   const title = queryByTestId(document.body, 'tour-title')
   const text  = queryByTestId(document.body, 'tour-text')
   const img   = queryByTestId(document.body, 'tour-image')
@@ -32,9 +35,9 @@ it('should able to show tour-card', async () => {
   expect(img).toHaveAttribute('src', 'http://image.com/50x50')
 })
 
-it('should hide tour-card when stopped', async () => {
+it('should hide tour-dialog when stopped', async () => {
   const parent = new MockTour()
-  const step   = new StepShow({
+  const step   = new StepDialog({
     target: '#sample',
     title : 'Hello',
     text  : 'This is tour',
@@ -43,7 +46,7 @@ it('should hide tour-card when stopped', async () => {
 
   await step.setParent(parent).start()
 
-  const tour = queryByTestId(document.body, 'tour-card')
+  const tour = queryByTestId(document.body, 'tour-dialog')
 
   expect(tour).toBeInTheDocument()
 
@@ -54,7 +57,7 @@ it('should hide tour-card when stopped', async () => {
 
 it('should trigger to next step if card next button clicked', async () => {
   const parent = new MockTour()
-  const step   = new StepShow({
+  const step   = new StepDialog({
     target: '#sample',
     title : 'Hello',
     text  : 'This is tour',
@@ -72,7 +75,7 @@ it('should trigger to next step if card next button clicked', async () => {
 
 it('should trigger to previous step if card prev button clicked', async () => {
   const parent = new MockTour()
-  const step   = new StepShow({
+  const step   = new StepDialog({
     target: '#sample',
     title : 'Hello',
     text  : 'This is tour',
@@ -90,7 +93,7 @@ it('should trigger to previous step if card prev button clicked', async () => {
 
 it('should trigger to stop if card dismiss button clicked', async () => {
   const parent = new MockTour()
-  const step   = new StepShow({
+  const step   = new StepDialog({
     target: '#sample',
     title : 'Hello',
     text  : 'This is tour',
