@@ -179,7 +179,7 @@ export default defineComponent({
   }
 
   .dropdown__menu & {
-    @apply px-3 py-2 cursor-pointer text-default w-full select-none text-left;
+    @apply px-4 py-[14px] cursor-pointer text-default w-full select-none text-left border-b border-subtle-alpha last:border-b-0;
 
     &:hover,
     &:focus-visible {

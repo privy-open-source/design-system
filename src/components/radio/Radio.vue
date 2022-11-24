@@ -47,7 +47,7 @@
 
 <script lang="ts">
 import { useVModel } from './use-radio'
-import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/16'
+import IconCheck from '@carbon/icons-vue/lib/checkmark/16'
 import {
   computed,
   defineComponent,
@@ -156,7 +156,7 @@ export default defineComponent({
   }
 
   &__icon {
-    @apply w-5 h-5 border rounded-full border-secondary-25 inline-flex items-center justify-center bg-white;
+    @apply w-5 h-5 border rounded-full border-subtle inline-flex items-center justify-center bg-default;
 
     & > svg {
       @apply w-3;
@@ -169,7 +169,7 @@ export default defineComponent({
 
   &--checked {
     .radio__icon {
-      @apply bg-primary-100 border-primary-100;
+      @apply bg-accent-emphasis border-accent-emphasis;
     }
   }
 
@@ -194,17 +194,17 @@ export default defineComponent({
 
     &.radio--checked {
       .radio__icon {
-        @apply text-primary-100 visible;
+        @apply text-accent visible;
       }
     }
   }
 
   .dropdown__menu & {
-    @apply px-3 py-2 cursor-pointer text-body-100 w-full select-none text-left;
+    @apply px-4 py-[10px] cursor-pointer text-default w-full select-none text-left border-b border-subtle-alpha last:border-0;
 
     &:hover,
     &:focus-visible {
-      @apply bg-background-75;
+      @apply bg-subtle;
     }
   }
 }

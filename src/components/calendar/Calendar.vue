@@ -2,6 +2,7 @@
   <Card
     data-testid="calendar"
     class="calendar"
+    element="div"
     :viewmode="viewmode"
     :class="classNames">
     <div class="calendar__nav">
@@ -243,7 +244,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .calendar {
-  @apply flex flex-col gap-2 text-sm shadow-xl;
+  @apply flex flex-col gap-2 text-sm shadow-xl border-transparent;
 
   &__nav {
     @apply flex justify-between gap-2 mb-2;
@@ -301,6 +302,10 @@ export default defineComponent({
 
   &--disabled {
     @apply opacity-50;
+  }
+
+  .dropdown__subitem & {
+    @apply shadow-none;
   }
 }
 </style>

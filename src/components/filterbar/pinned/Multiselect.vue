@@ -2,12 +2,13 @@
   <Dropdown
     v-model="isOpen"
     variant="input"
-    class="filterbar__multiselect-badge"
+    size="sm"
+    class="filterbar__multiselect"
     :class="{'filterbar--active': selected.length > 0 }"
     caret>
     <template #button-content>
       <template v-if="selected.length > 1">
-        {{ schema.label }}:
+        {{ schema.label }}
         <Badge class="filterbar__multiselect-badge">
           {{ selected.length }}
         </Badge>
@@ -21,7 +22,8 @@
     </template>
 
     <Caption
-      class="px-3 py-2"
+      class="px-4 pt-4 pb-1"
+      uppercase
       bold>
       {{ schema.label }}
     </Caption>
@@ -110,8 +112,14 @@ export default defineComponent({
 
 <style lang="postcss">
 .filterbar__multiselect {
-  &-badge.badge--primary {
-    @apply bg-white bg-opacity-20;
+  > .btn {
+    @apply items-center;
+  }
+
+  &-badge {
+    &.badge--variant-default.badge--default {
+      @apply bg-default/20;
+    }
   }
 }
 </style>

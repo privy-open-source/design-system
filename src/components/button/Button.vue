@@ -215,7 +215,7 @@ export default defineComponent({
   }
 
   &&--variant-input {
-    @apply border border-solid border-muted text-default bg-default hover:border-subtle focus:border-subtle active:outline-default;
+    @apply border border-solid border-muted text-subtle font-normal bg-default hover:border-subtle focus:border-subtle active:outline-default;
   }
 
   /**

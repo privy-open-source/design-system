@@ -2,6 +2,7 @@
   <Dropdown
     v-model="isOpen"
     variant="input"
+    size="sm"
     class="filterbar__date"
     :class="{'filterbar--active': !!value }"
     caret>
@@ -9,7 +10,8 @@
       {{ value ? value : schema.label }}
     </template>
     <Caption
-      class="px-3 py-2"
+      class="px-4 pt-4 pb-1"
+      uppercase
       bold>
       {{ schema.label }}
     </Caption>

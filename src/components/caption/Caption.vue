@@ -15,6 +15,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    uppercase: {
+      type   : Boolean,
+      default: false,
+    },
   },
 
   setup (props) {
@@ -23,6 +27,9 @@ export default defineComponent({
 
       if (props.bold)
         result.push('caption--bold')
+
+      if (props.uppercase)
+        result.push('caption--uppercase')
 
       return result
     })
@@ -42,6 +49,10 @@ export default defineComponent({
 
   &--bold {
     @apply font-bold;
+  }
+
+  &--uppercase {
+    @apply uppercase;
   }
 }
 </style>

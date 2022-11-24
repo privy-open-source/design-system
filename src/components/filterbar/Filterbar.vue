@@ -14,7 +14,9 @@
       </slot>
     </template>
     <Button
+      size="sm"
       variant="link"
+      color="primary"
       @click="reset">
       Reset
     </Button>
@@ -95,13 +97,13 @@ export default defineComponent({
 
 <style lang="postcss">
 .filterbar {
-  @apply flex gap-2;
+  @apply flex gap-2 items-center;
 
   &__item {
     &.filterbar--active {
-      &.btn--input,
-      & .dropdown__activator.btn--input {
-        @apply bg-body-100 text-white;
+      &.btn--default,
+      & .dropdown__activator.btn--default {
+        @apply bg-emphasis-subtle text-on-emphasis border-on-emphasis;
       }
     }
   }
