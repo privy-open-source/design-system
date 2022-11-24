@@ -1,7 +1,7 @@
 import { ref } from 'vue-demi'
 import { MockStep } from '../../__mocks__/step'
 import { Tour } from '../tour'
-import StepCondition from './conditional'
+import StepCondition, { ConditionalType } from './conditional'
 
 it('should run the subtour when condition is true', async () => {
   const tour    = new Tour()
@@ -97,4 +97,31 @@ it('should not run if condition is a function and thrown an error', async () => 
 
   expect(subStep.hit).not.toBeCalled()
   expect(lastStep.hit).toBeCalled()
+})
+
+it('should run next routine, if first routine false', async () => {
+  const tour     = new Tour()
+  const subTour  = new Tour()
+  const subStep  = new MockStep()
+  const subTour2 = new Tour()
+  const subStep2 = new MockStep()
+  const lastStep = new MockStep()
+  const step     = new StepCondition({
+    condition: () => false,
+    tour     : subTour.add(subStep),
+  })
+
+  step.chain({
+    type     : ConditionalType.ELSE_IF,
+    condition: () => true,
+    tour     : subTour2.add(subStep2),
+  })
+
+  tour.add(step).add(lastStep)
+
+  await tour.start()
+
+  expect(subStep.hit).not.toBeCalled()
+  expect(subStep2.hit).toBeCalled()
+  expect(lastStep.hit).not.toBeCalled()
 })

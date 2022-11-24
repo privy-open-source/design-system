@@ -3,6 +3,7 @@ import StepAction from './step/action'
 import StepDelay from './step/delay'
 import StepDialog from './step/dialog'
 import StepVisit from './step/visit'
+import StepCondition, { ConditionalOptions } from './step/conditional'
 
 it('should able to add show step instance using `.dialog()`', () => {
   const tour = new TourStory()
@@ -199,4 +200,24 @@ it('should able to add action step type `visit` using `.visit()`', () => {
 
   expect(step).toBeInstanceOf(StepVisit)
   expect(option).toMatchObject({ url: '/redirect-to' })
+})
+
+it('should able to add conditional step using `.runIf()`', () => {
+  const tour      = new TourStory()
+  const condition = () => true
+  const builder   = (tour: TourStory) => {
+    tour.dialog('#target', 'message')
+  }
+
+  tour.runIf(condition, builder)
+
+  const step      = tour.getSteps().at(0)
+  const option    = step.getOptions() as ConditionalOptions
+  const subStep   = option.tour.getSteps().at(0)
+  const subOption = subStep.getOptions()
+
+  expect(step).toBeInstanceOf(StepCondition)
+  expect(option).toMatchObject({ condition })
+  expect(subStep).toBeInstanceOf(StepDialog)
+  expect(subOption).toMatchObject({ target: '#target', text: 'message' })
 })

@@ -9,7 +9,31 @@ export interface ConditionalOptions {
   tour: Tour,
 }
 
+export enum ConditionalType {
+  IF = 1,
+  ELSE_IF = 2,
+  ELSE = 3,
+}
+
+interface Routine extends ConditionalOptions {
+  type: ConditionalType,
+}
+
 export default class StepCondition extends AbstractStep<ConditionalOptions> {
+  protected routines: Routine[]
+
+  constructor (options: ConditionalOptions) {
+    super(options)
+
+    this.routines = [
+      {
+        type     : ConditionalType.IF,
+        condition: options.condition,
+        tour     : options.tour,
+      },
+    ]
+  }
+
   protected async checkCondition () {
     try {
       const options   = this.getOptions()
@@ -26,23 +50,54 @@ export default class StepCondition extends AbstractStep<ConditionalOptions> {
     }
   }
 
+  public canChain () {
+    return this.routines.at(-1).type !== ConditionalType.ELSE
+  }
+
+  public chain (routine: Routine) {
+    this.routines.push(routine)
+
+    return this
+  }
+
   public getTotalChild () {
-    return this.getOptions().tour.getTotalChild()
+    return Math.max(...this.routines.map((routine) => routine.tour.getTotalChild()))
   }
 
   protected async run () {
-    if (await this.checkCondition()) {
-      const tour  = this.getOptions().tour
-      const index = this.direction === TourDirection.BACKWARD
-        ? tour.getSteps().length - 1
-        : 0
+    let result = false
 
-      await tour.setParent(this.parent).start(index, this.direction)
+    for (const routine of this.routines) {
+      const condition = unref(routine.condition)
 
-      this.onCleanup(async () => {
-        await tour.stop()
-      })
-    } else
+      try {
+        result = typeof condition === 'function'
+          ? await condition()
+          : condition
+      } catch (error) {
+        if (import.meta.env.DEV)
+          console.warn(error)
+
+        result = false
+      }
+
+      if (result) {
+        const tour  = routine.tour
+        const index = this.direction === TourDirection.BACKWARD
+          ? tour.getSteps().length - 1
+          : 0
+
+        await tour.setParent(this.parent).start(index, this.direction)
+
+        this.onCleanup(async () => {
+          await tour.stop()
+        })
+
+        break
+      }
+    }
+
+    if (!result)
       await this.ahead()
   }
 }

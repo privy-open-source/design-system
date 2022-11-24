@@ -4,10 +4,12 @@ import StepDialog from './step/dialog'
 import StepDelay from './step/delay'
 import StepAction from './step/action'
 import StepVisit from './step/visit'
-import StepCondition from './step/conditional'
+import StepCondition, { ConditionalType } from './step/conditional'
 import type { ConditionalOptions } from './step/conditional'
 import type { DialogOptions } from './step/dialog'
 import type { EventType, ParamsOf } from './step/action'
+
+type TourBuilderCallback = ((tour: TourStory) => TourStory) | ((tour: TourStory) => void)
 
 /**
  * Tour with additional function to build a tour stories
@@ -135,7 +137,7 @@ export class TourStory extends Tour {
   /**
    * Run steps only when condition meet, skip if not
    * @param condition Ref or Function to check
-   * @param buildFn
+   * @param buildTour
    * @example
    * tour.runIf(() => window.matchMedia("(max-width: 700px)").matches, (tour) => {
    *    return tour
@@ -143,12 +145,46 @@ export class TourStory extends Tour {
    *      .dialog('#mobile-only', 'Hello World')
    * })
    */
-  runIf (condition: ConditionalOptions['condition'], buildFn: (tour: TourStory) => TourStory | undefined) {
+  runIf (condition: ConditionalOptions['condition'], buildTour: TourBuilderCallback) {
     const tour = new TourStory()
 
     return this.add(new StepCondition({
       condition: condition,
-      tour     : buildFn(tour) ?? tour,
+      tour     : buildTour(tour) ?? tour,
     }))
+  }
+
+  runElseIf (condition: ConditionalOptions['condition'], buildTour: TourBuilderCallback) {
+    const step = this.steps.at(-1)
+
+    if (!(step instanceof StepCondition) || !step.canChain())
+      throw new Error('.runElseIf only can be use after .runIf or .runElseIf')
+
+    const tour = new TourStory()
+
+    step.chain({
+      type     : ConditionalType.ELSE_IF,
+      condition: condition,
+      tour     : buildTour(tour) ?? tour,
+    })
+
+    return this
+  }
+
+  runElse (buildTour: (tour: TourStory) => TourStory | undefined) {
+    const step = this.steps.at(-1)
+
+    if (!(step instanceof StepCondition) || !step.canChain())
+      throw new Error('.runElse only can be use after .runIf or .runElseIf')
+
+    const tour = new TourStory()
+
+    step.chain({
+      type     : ConditionalType.ELSE,
+      condition: true,
+      tour     : buildTour(tour) ?? tour,
+    })
+
+    return this
   }
 }

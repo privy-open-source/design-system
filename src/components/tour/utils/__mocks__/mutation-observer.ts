@@ -1,3 +1,5 @@
+import { vi } from 'vitest'
+
 const handlers = []
 
 export default class MutationObserver {
@@ -5,9 +7,9 @@ export default class MutationObserver {
     handlers.push(callback)
   }
 
-  observe () {}
+  public observe = vi.fn()
 
-  disconnect () {}
+  public disconnect = vi.fn()
 }
 
 export function triggerMutation () {

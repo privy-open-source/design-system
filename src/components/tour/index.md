@@ -73,14 +73,21 @@
     .visit(withBase('/'))
     .dialog('[data-tour="github"]', 'Don\'t forget to hit the star on Github')
 
-  const isActive = ref(true)
+  const number = ref(5)
 
   const tourIf = createTour()
-    .runIf(() => isActive.value, (tour) => {
+    .runIf(() => number.value >= 5, (tour) => {
       return tour
-        .dialog('[data-tour="if-dialog-1"]', 'This only run if checkbox was checked')
+        .dialog('[data-tour="if-more-than-5"]', 'This only run if number >= 5')
     })
-    .dialog('[data-tour="if-dialog-2"]', 'This step 2')
+    .runElseIf(() => number.value >= 3, (tour) => {
+      return tour
+        .dialog('[data-tour="if-more-than-3"]', 'This only run if number >= 3 and <= 5')
+    })
+    .runElse((tour) => {
+      return tour
+        .dialog('[data-tour="if-less-than-3"]', 'This only run if number < 3')
+    })
 </script>
 
 # Tour
@@ -251,29 +258,36 @@ const tour = createTour()
   .dialog('[data-tour="github"]', 'Don\'t forget to hit the star on Github')
 ```
 
-## Conditional Run
+## Conditional Step
 
-If you want run only on some condition, you can use `.runIf`.
+If you want run some steps only on some conditions, you can use `.runIf`, `runElseIf`, and `.runElse`
 
 <p-button class="mt-3" @click="tourIf.start()">
   Try It
 </p-button>
 
 <preview class="flex-col space-y-2" label="sample">
-  <p-checkbox v-model="isActive">Need Reset</p-checkbox>
-
-  <div class="space-gap-5">
-    <span data-tour="if-dialog-1">Step 1</span>
-    <span data-tour="if-dialog-2">Step 2</span>
+  <div class="space-gap-3">
+    <p-input v-model="number" />
+    <span data-tour="if-more-than-5">&ge;5</span>
+    <span data-tour="if-more-than-3">&ge;3</span>
+    <span data-tour="if-less-than-3">&lt;3</span>
   </div>
 </preview>
 
 ```ts
-const isActive = ref(false)
-const tour     = createTour()
-  .runIf(() => isActive.value, (tour) => {
+const number = ref(5)
+const tour   = createTour()
+  .runIf(() => number.value >= 5, (tour) => {
     return tour
-      .dialog('[data-tour="if-dialog-1"]', 'This only run if checkbox was checked')
+      .dialog('[data-tour="if-more-than-5"]', 'This only run if number >= 5')
   })
-  .dialog('[data-tour="if-dialog-2"]', 'This step 2')
+  .runElseIf(() => number.value >= 3, (tour) => {
+    return tour
+      .dialog('[data-tour="if-more-than-3"]', 'This only run if number >= 3 and <= 5')
+  })
+  .runElse((tour) => {
+    return tour
+      .dialog('[data-tour="if-less-than-3"]', 'This only run if number < 3')
+  })
 ```
