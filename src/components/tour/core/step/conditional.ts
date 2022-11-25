@@ -64,6 +64,10 @@ export default class StepCondition extends AbstractStep<ConditionalOptions> {
     return Math.max(...this.routines.map((routine) => routine.tour.getTotalChild()))
   }
 
+  public getRoutines () {
+    return this.routines
+  }
+
   protected async run () {
     let result = false
 

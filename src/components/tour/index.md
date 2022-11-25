@@ -255,12 +255,12 @@ Step for redirecting to some page.
 ```ts
 const tour = createTour()
   .visit('/design-system/')
-  .dialog('[data-tour="github"]', 'Don\'t forget to hit the star on Github')
+  .dialog('[data-tour="github"]', 'Don\'t forget to give me star on Github')
 ```
 
 ## Conditional Step
 
-If you want run some steps only on some conditions, you can use `.runIf`, `runElseIf`, and `.runElse`
+If you want run some steps only on some conditions, you can use `.runIf`, `.runElseIf`, and `.runElse`
 
 <p-button class="mt-3" @click="tourIf.start()">
   Try It

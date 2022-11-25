@@ -20,24 +20,18 @@ export function isVisible (target: HTMLElement) {
   if (target.offsetWidth + target.offsetHeight + boundaries.height + boundaries.width === 0)
     return false
 
-  const elemCenter = {
-    x: boundaries.left + target.offsetWidth / 2,
-    y: boundaries.top + target.offsetHeight / 2,
-  }
+  const posX         = boundaries.left + boundaries.width / 2
+  const posY         = boundaries.top + boundaries.height / 2
+  const screenWidth  = (document.documentElement.clientWidth || window.innerWidth)
+  const screenHeight = (document.documentElement.clientHeight || window.innerHeight)
 
-  if (elemCenter.x < 0)
+  if (posX < 0 || posY < 0)
     return false
 
-  if (elemCenter.x > (document.documentElement.clientWidth || window.innerWidth))
+  if (posX > screenWidth || posY > screenHeight)
     return false
 
-  if (elemCenter.y < 0)
-    return false
-
-  if (elemCenter.y > (document.documentElement.clientHeight || window.innerHeight))
-    return false
-
-  let pointContainer = document.elementFromPoint(elemCenter.x, elemCenter.y)
+  let pointContainer = document.elementFromPoint(posX, posY)
 
   do {
     if (pointContainer === target)

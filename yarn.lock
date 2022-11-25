@@ -2108,6 +2108,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jspm/core@npm:2.0.0-beta.24":
+  version: 2.0.0-beta.24
+  resolution: "@jspm/core@npm:2.0.0-beta.24"
+  checksum: c3a986d523a61522794c26b809d1fb40b1404a45a5661ba476b5d529e9c15c4c0dc51983c95168532bcc7455a387f0eceeed06f4b386aa219173535fa53a0a62
+  languageName: node
+  linkType: hard
+
 "@juggle/resize-observer@npm:^3.4.0":
   version: 3.4.0
   resolution: "@juggle/resize-observer@npm:3.4.0"
@@ -2401,6 +2408,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@polka/url@npm:^1.0.0-next.20":
+  version: 1.0.0-next.21
+  resolution: "@polka/url@npm:1.0.0-next.21"
+  checksum: c7654046d38984257dd639eab3dc770d1b0340916097b2fac03ce5d23506ada684e05574a69b255c32ea6a144a957c8cd84264159b545fca031c772289d88788
+  languageName: node
+  linkType: hard
+
 "@popperjs/core@npm:2.11.6":
   version: 2.11.6
   resolution: "@popperjs/core@npm:2.11.6"
@@ -2443,6 +2457,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 5.44.0
     "@typescript-eslint/parser": 5.44.0
     "@vitejs/plugin-vue": 3.2.0
+    "@vitest/browser": ^0.25.3
     "@vitest/coverage-c8": 0.24.5
     "@vue/eslint-config-typescript": 11.0.2
     "@vueuse/core": 9.4.0
@@ -2628,6 +2643,19 @@ __metadata:
     rollup:
       optional: true
   checksum: bd203a6e6fbcdc523f5d47a8a9e6b719f853270fbfa608c636124c213ec4b2a15026121e1e4faa820f52546425050f4c833bbf6bc58959909025cbc99c6d5df3
+  languageName: node
+  linkType: hard
+
+"@rollup/plugin-inject@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "@rollup/plugin-inject@npm:4.0.4"
+  dependencies:
+    "@rollup/pluginutils": ^3.1.0
+    estree-walker: ^2.0.1
+    magic-string: ^0.25.7
+  peerDependencies:
+    rollup: ^1.20.0 || ^2.0.0
+  checksum: 22a1847372a96296a5b176af3d5b23ac7b48143a32c77ec4efed38daf4b0d1399a3cd144496d65731299984c5f98c9e00dc6a7f53d0fe87bd4aab2d4bd7b8289
   languageName: node
   linkType: hard
 
@@ -3574,6 +3602,19 @@ __metadata:
     vite: ^3.0.0
     vue: ^3.2.25
   checksum: 64774f770e0e21ce7eb36743d614e3f197a35f5b67b2d3800c61766e649f43dc497bb037738ffafd607eb488064ab132c23766190e7ab557a0b88c0051f7a794
+  languageName: node
+  linkType: hard
+
+"@vitest/browser@npm:^0.25.3":
+  version: 0.25.3
+  resolution: "@vitest/browser@npm:0.25.3"
+  dependencies:
+    local-pkg: ^0.4.2
+    mlly: ^1.0.0
+    modern-node-polyfills: 0.0.9
+    rollup-plugin-node-polyfills: ^0.2.1
+    sirv: ^2.0.2
+  checksum: 1e56ec1671d8c02270086a46adeabb709b04637342db108e0ad7067366b26722b5ee98c1a774e72ed11a1fc2fcb2ff1ab6f2ac4ff71b52b852fb29b1b7a66afb
   languageName: node
   linkType: hard
 
@@ -9394,7 +9435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"local-pkg@npm:^0.4.2":
+"local-pkg@npm:^0.4.1, local-pkg@npm:^0.4.2":
   version: 0.4.2
   resolution: "local-pkg@npm:0.4.2"
   checksum: 22be451353c25c4411b552bf01880ebc9e995b93574b2facc7757968d888356df59199cacada14162ab53bbc9da055bb692c907b4171f008dbce45a2afc777c1
@@ -9612,7 +9653,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.25.7":
+"magic-string@npm:^0.25.3, magic-string@npm:^0.25.7":
   version: 0.25.9
   resolution: "magic-string@npm:0.25.9"
   dependencies:
@@ -10077,10 +10118,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"modern-node-polyfills@npm:0.0.9":
+  version: 0.0.9
+  resolution: "modern-node-polyfills@npm:0.0.9"
+  dependencies:
+    "@jspm/core": 2.0.0-beta.24
+    "@rollup/plugin-inject": ^4.0.4
+    acorn: ^8.8.0
+    esbuild: ^0.14.47
+    local-pkg: ^0.4.1
+    rollup: ^2.75.7
+  checksum: 673bc35a99a3acf3188c953aa81c0aef1ca3bb9d813c0305f9db98e531141126519ce074bad9561307774be85919f5086210639938279f4d6b0849b0874629e1
+  languageName: node
+  linkType: hard
+
 "mri@npm:^1.2.0":
   version: 1.2.0
   resolution: "mri@npm:1.2.0"
   checksum: 83f515abbcff60150873e424894a2f65d68037e5a7fcde8a9e2b285ee9c13ac581b63cfc1e6826c4732de3aeb84902f7c1e16b7aff46cd3f897a0f757a894e85
+  languageName: node
+  linkType: hard
+
+"mrmime@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "mrmime@npm:1.0.1"
+  checksum: cc979da44bbbffebaa8eaf7a45117e851f2d4cb46a3ada6ceb78130466a04c15a0de9a9ce1c8b8ba6f6e1b8618866b1352992bf1757d241c0ddca558b9f28a77
   languageName: node
   linkType: hard
 
@@ -12285,6 +12347,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rollup-plugin-inject@npm:^3.0.0":
+  version: 3.0.2
+  resolution: "rollup-plugin-inject@npm:3.0.2"
+  dependencies:
+    estree-walker: ^0.6.1
+    magic-string: ^0.25.3
+    rollup-pluginutils: ^2.8.1
+  checksum: a014972c80fe34b8c8154056fa2533a8440066a31de831e3793fc21b15d108d92c22d8f7f472397bd5783d7c5e04d8cbf112fb72c5a26e997726e4eb090edad1
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-node-polyfills@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "rollup-plugin-node-polyfills@npm:0.2.1"
+  dependencies:
+    rollup-plugin-inject: ^3.0.0
+  checksum: e84645212c443aca3cfae2ba69f01c6d8c5c250f0bf651416b69a4572b60aae9da7cdd687de3ab9b903f7a1ab96b06b71f0c4927d1b02a37485360d2b563937b
+  languageName: node
+  linkType: hard
+
 "rollup-plugin-terser@npm:^7.0.2":
   version: 7.0.2
   resolution: "rollup-plugin-terser@npm:7.0.2"
@@ -12317,7 +12399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-pluginutils@npm:^2.8.2":
+"rollup-pluginutils@npm:^2.8.1, rollup-pluginutils@npm:^2.8.2":
   version: 2.8.2
   resolution: "rollup-pluginutils@npm:2.8.2"
   dependencies:
@@ -12340,7 +12422,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.79.1":
+"rollup@npm:^2.75.7, rollup@npm:^2.79.1":
   version: 2.79.1
   resolution: "rollup@npm:2.79.1"
   dependencies:
@@ -12638,6 +12720,17 @@ __metadata:
   version: 3.0.7
   resolution: "signal-exit@npm:3.0.7"
   checksum: a2f098f247adc367dffc27845853e9959b9e88b01cb301658cfe4194352d8d2bb32e18467c786a7fe15f1d44b233ea35633d076d5e737870b7139949d1ab6318
+  languageName: node
+  linkType: hard
+
+"sirv@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "sirv@npm:2.0.2"
+  dependencies:
+    "@polka/url": ^1.0.0-next.20
+    mrmime: ^1.0.0
+    totalist: ^3.0.0
+  checksum: 6982f8ecee9392d246d7eeea8144e50334fe1b46a4fa942995a844ea88c2d518b17cce781bb09926c9a5692a7002a207d18dfd67af2aa538a15e733dc2042298
   languageName: node
   linkType: hard
 
@@ -13329,6 +13422,13 @@ __metadata:
   version: 1.0.1
   resolution: "toidentifier@npm:1.0.1"
   checksum: 952c29e2a85d7123239b5cfdd889a0dde47ab0497f0913d70588f19c53f7e0b5327c95f4651e413c74b785147f9637b17410ac8c846d5d4a20a5a33eb6dc3a45
+  languageName: node
+  linkType: hard
+
+"totalist@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "totalist@npm:3.0.0"
+  checksum: ec499bddfc73d5b6c73f8ff68afd7bed286705797f928a11177fee5d1ee80e9052ffcb434638437702e16864bd5490f437a54f79bfea9564e875d34ed3254bca
   languageName: node
   linkType: hard
 

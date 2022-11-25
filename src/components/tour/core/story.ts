@@ -9,7 +9,7 @@ import type { ConditionalOptions } from './step/conditional'
 import type { DialogOptions } from './step/dialog'
 import type { EventType, ParamsOf } from './step/action'
 
-type TourBuilderCallback = ((tour: TourStory) => TourStory) | ((tour: TourStory) => void)
+type TourBuilderCallback = (tour: TourStory) => unknown
 
 /**
  * Tour with additional function to build a tour stories
@@ -150,10 +150,25 @@ export class TourStory extends Tour {
 
     return this.add(new StepCondition({
       condition: condition,
-      tour     : buildTour(tour) ?? tour,
+      tour     : buildTour(tour) as TourStory ?? tour,
     }))
   }
 
+  /**
+   * Run else if, this must be used after runIf.
+   * @param condition
+   * @param buildTour
+   * @example
+   * tour.runIf(() => window.matchMedia("(max-width: 700px)").matches, (tour) => {
+   *    return tour
+   *      .click('#mobile-only')
+   *      .dialog('#mobile-only', 'Hello World')
+   * }).runElseIf(() => window.matchMedia("(max-width: 1000px), (tour) => {
+   *    return tour
+   *      .click('#tablet-only')
+   *      .dialog('#tablet-only', 'Hello World')*
+   * })
+   */
   runElseIf (condition: ConditionalOptions['condition'], buildTour: TourBuilderCallback) {
     const step = this.steps.at(-1)
 
@@ -165,13 +180,27 @@ export class TourStory extends Tour {
     step.chain({
       type     : ConditionalType.ELSE_IF,
       condition: condition,
-      tour     : buildTour(tour) ?? tour,
+      tour     : buildTour(tour) as TourStory ?? tour,
     })
 
     return this
   }
 
-  runElse (buildTour: (tour: TourStory) => TourStory | undefined) {
+  /**
+   * Run else condition, this must be used after runElse
+   * @param buildTour
+   * @example
+   * tour.runIf(() => window.matchMedia("(max-width: 700px)").matches, (tour) => {
+   *    return tour
+   *      .click('#mobile-only')
+   *      .dialog('#mobile-only', 'Hello World')
+   * }).runElse((tour) => {
+   *    return tour
+   *      .click('#not-mobile')
+   *      .dialog('#not-mobile', 'Hello World')*
+   * })
+   */
+  runElse (buildTour: TourBuilderCallback) {
     const step = this.steps.at(-1)
 
     if (!(step instanceof StepCondition) || !step.canChain())
@@ -182,7 +211,7 @@ export class TourStory extends Tour {
     step.chain({
       type     : ConditionalType.ELSE,
       condition: true,
-      tour     : buildTour(tour) ?? tour,
+      tour     : buildTour(tour) as TourStory ?? tour,
     })
 
     return this
