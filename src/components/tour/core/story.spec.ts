@@ -49,6 +49,26 @@ it('should able to add delay step using `.delay()`', () => {
 it('should able to add action step using `.action()`', () => {
   const tour = new TourStory()
 
+  tour.action({
+    target: '#target',
+    action: 'type',
+    params: ['Hello World'],
+  })
+
+  const step   = tour.getSteps().at(0)
+  const option = step.getOptions()
+
+  expect(step).toBeInstanceOf(StepAction)
+  expect(option).toMatchObject({
+    target: '#target',
+    action: 'type',
+    params: ['Hello World'],
+  })
+})
+
+it('should able to add action step using `.action()` (shorhcut)', () => {
+  const tour = new TourStory()
+
   tour.action('#target', 'type', 'Hello World')
 
   const step   = tour.getSteps().at(0)

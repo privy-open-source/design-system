@@ -7,7 +7,11 @@ import StepVisit from './step/visit'
 import StepCondition, { ConditionalType } from './step/conditional'
 import type { ConditionalOptions } from './step/conditional'
 import type { DialogOptions } from './step/dialog'
-import type { EventType, ParamsOf } from './step/action'
+import type {
+  ActionOptions,
+  EventType,
+  ParamsOf,
+} from './step/action'
 
 type TourBuilderCallback = (tour: TourStory) => unknown
 
@@ -49,16 +53,24 @@ export class TourStory extends Tour {
 
   /**
    * Trigger action to target element
+   * @param options ActionOptions
+   */
+  action<E extends EventType>(options: ActionOptions<E>): this
+  /**
+   * Trigger action to target element
    * @param target Target querySelector
    * @param action Action name, ex: 'click', 'type'
    * @param params Action parameters
    */
-  action<E extends EventType> (target: string, action: E, ...params: ParamsOf<E>): this {
-    return this.add(new StepAction({
-      target,
-      action,
-      params,
-    }))
+  action<E extends EventType> (target: string, action: E, ...params: ParamsOf<E>): this
+  action<E extends EventType> (targetOrOption: string | ActionOptions<E>, action?: E, ...params: ParamsOf<E>): this {
+    return !isString(targetOrOption)
+      ? this.add(new StepAction(targetOrOption))
+      : this.add(new StepAction({
+        target: targetOrOption,
+        action,
+        params,
+      }))
   }
 
   /**

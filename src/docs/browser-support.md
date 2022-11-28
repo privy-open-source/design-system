@@ -1,60 +1,99 @@
+<script setup>
+  import { ref } from 'vue-demi'
+  import pTable from '../components/table/Table.vue'
+  import pLabel from '../components/label/Label.vue'
+  import { defineTable } from '../components/table'
+  import { withBase } from 'vitepress'
+
+  const fields = defineTable([
+    { key: 'browser' },
+    {
+      key    : 'version',
+      label  : 'Min Version',
+      width  : 25,
+      tdClass: 'text-end',
+      thClass: 'text-end',
+    },
+  ])
+
+  const items = ref([
+    {
+      browser: 'Chrome',
+      icon   : 'chrome',
+      version: '62',
+    },
+    {
+      browser: 'Firefox',
+      icon   : 'firefox',
+      version: '102',
+    },
+    {
+      browser: 'Edge',
+      icon   : 'edge',
+      version: '105',
+    },
+    {
+      browser: 'Opera',
+      icon   : 'opera',
+      version: '90',
+    },
+    {
+      browser: 'Safari',
+      icon   : 'safari',
+      version: '15.6',
+    },
+    {
+      browser: 'Safari on iOS',
+      icon   : 'ios_saf',
+      version: '14.0',
+    },
+    {
+      browser: 'Samsung Internet',
+      icon   : 'samsung',
+      version: '17.0',
+    },
+    {
+      browser: 'Opera Mobile',
+      icon   : 'op_mob',
+      version: '64',
+    },
+    {
+      browser: 'Android Browser',
+      icon   : 'android',
+      version: '107',
+    },
+    {
+      browser: 'UC Browser',
+      icon   : 'and_uc',
+      version: '13.4',
+    },
+    {
+      browser: 'QQ Browser',
+      icon   : 'and_qq',
+      version: '13.1',
+    },
+  ])
+</script>
+
 # Browser Support
 > Browser Compability and recommendation
 
 We try our best to support many browsers as possible but technologies always grow with very fast speed.
 _We need to keep moving forward, and savoring the journey_ 😎
 
-## Recommended
+## Support List
 
-<details open>
-  <summary><b>Desktop</b></summary>
-
-  | Chrome | Edge | Firefox | Safari | Opera |
-  |:------:|:----:|:-------:|:------:|:-----:|
-  |  105   | 105  |   104   |  15.6  |  90   |
-</details>
-
-<details open>
-  <summary><b>Mobile</b></summary>
-
-  | Browser             | Version |
-  |---------------------|--------:|
-  | Chrome for Android  |     106 |
-  | Firefox for Android |     105 |
-  | Safari on IOS       |    15.6 |
-  | Android Browser     |     106 |
-  | Samsung Internet    |      18 |
-  | Opera Mobile        |      64 |
-  | Baidu               |   13.18 |
-  | QQ Browser          |    13.1 |
-
-  | Chrome Android | Firefox Android | Safari IOS | Android Browser | Samsung Internet | Opera Mobile | Baidu | QQ Browser |
-  |:--------------:|:---------------:|:----------:|:---------------:|:----------------:|:------------:|:-----:|:----------:|
-  |       84       |       84        |     63     |      14.1       |        70        |      64      | 13.18 |    13.1    |
-</details>
-
-## Minimum
-
-<details>
-  <summary><b>Desktop</b></summary>
-
-  | Chrome | Edge | Firefox | Safari | Opera |
-  |:------:|:----:|:-------:|:------:|:-----:|
-  |   84   |  84  |   63    |  14.1  |  70   |
-</details>
-
-<details>
-  <summary><b>Mobile</b></summary>
-
-  | Browser             | Version |
-  |---------------------|--------:|
-  | Chrome for Android  |     105 |
-  | Firefox for Android |     104 |
-  | Safari on IOS       |    14.5 |
-  | Android Browser     |     105 |
-  | Samsung Internet    |      14 |
-  | Opera Mobile        |      64 |
-  | Baidu               |   13.18 |
-  | QQ Browser          |    13.1 |
-
-</details>
+<p-table variant="static" :fields="fields" :items="items">
+  <template #cell(browser)="{ item }">
+    <img
+      class="inline mr-2"
+      width="24"
+      height="24"
+      :src="withBase(`assets/images/browsers-logos/${item.icon}.svg`)"
+      :alt="item.browser">
+    {{ item.browser }}
+  </template>
+  <template #cell(version)="{ item }">
+    <p-label size="sm" variant="light">{{ item.version }}</p-label>
+  </template>
+</p-table>

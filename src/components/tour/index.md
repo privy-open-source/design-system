@@ -291,3 +291,83 @@ const tour   = createTour()
       .dialog('[data-tour="if-less-than-3"]', 'This only run if number < 3')
   })
 ```
+
+## API
+
+### createTour
+
+`createTour(options?: TourOptions): TourStory`
+
+| Options        |    Type    |  Default   | Description                                           |
+|----------------|:----------:|:----------:|-------------------------------------------------------|
+| `dismissable`  | `Boolean`  |   `true`   | Enable dismiss button                                 |
+| `prevLabel`    |  `String`  | `Previous` | Tour previous button label                            |
+| `nextLabel`    |  `String`  |   `Next`   | Tour next button label                                |
+| `dismissLabel` |  `String`  | `Dismiss`  | Tour dismiss button label                             |
+| `finishLabel`  |  `String`  |  `Finish`  | Tour finish button label                              |
+| `waitTimeout`  |  `Number`  |   `3000`   | Timeout for waiting target element appear             |
+| `skipOnError`  | `Boolean`  |  `false`   | If true, skip to next step of got an error or timeout |
+| `onFinished`   | `Function` |     -      | Hook when tour finished                               |
+
+### .dialog
+
+`.dialog(options: DialogOption): TourStory`
+
+| Options        |   Type    |  Default   | Description                                                                   |
+|----------------|:---------:|:----------:|-------------------------------------------------------------------------------|
+| `target`       | `String`  |     -      | Target query selector, **required**                                           |
+| `text`         | `String`  |     -      | Tour dialog body text, **required**                                           |
+| `title`        | `String`  |     -      | Tour dialog title                                                             |
+| `image`        | `String`  |     -      | Tour dialog image url                                                         |
+
+#### Shortcut
+
+`.dialog(target: string, text: string, title?: string, image?: string)`
+
+### .action
+
+`.action(options: ActionOption): TourStory`
+
+| Options  |   Type   | Default | Description                                                                                       |
+|----------|:--------:|:-------:|---------------------------------------------------------------------------------------------------|
+| `target` | `String` |    -    | Target query selector, **required**                                                               |
+| `action` | `String` |    -    | Tour action, valid value: `click`, `dblClick`, `tripleClick`, `type`, `hover`, `unhover`, `clear` |
+| `params` | `Array`  |    -    | Action Parameters                                                                                 |
+
+#### Shortcut
+
+`.action(target: string, text: string, ...params: any[]): TourStory`
+
+`.click(target: string): TourStory`
+
+`.dblClick(target: string): TourStory`
+
+`.tripleClick(target: string): TourStory`
+
+`.hover(target: string): TourStory`
+
+`.unhover(target: string): TourStory`
+
+`.clear(target: string): TourStory`
+
+`.type(target: string, text: string): TourStory`
+
+### .delay
+
+`.delay(duration: number): TourStory`
+
+### .visit
+
+`.visit(url: number, backURL?: string): TourStory`
+
+### .runIf
+
+`.runIf(condition: () => boolean | Promise<boolean>, tourCallback: (tour: TourStory) => TourStory): TourStory`
+
+### .runElseIf
+
+`.runElseIf(condition: () => boolean | Promise<boolean>, tourCallback: (tour: TourStory) => TourStory): TourStory`
+
+### .runElse
+
+`.runElseIf(tourCallback: (tour: TourStory) => TourStory): TourStory`

@@ -11,11 +11,6 @@ import {
  */
 export interface TourOptions extends BaseTourOptions {
   /**
-   * Enable / disable highlight overlay
-   * @default true
-   */
-  highlight: boolean,
-  /**
    * Enable / disable dismiss button
    * @default true
    */
@@ -41,12 +36,12 @@ export interface TourOptions extends BaseTourOptions {
    */
   finishLabel: string,
   /**
-   * Timeout for waiting target appear
+   * Timeout for waiting target element appear
    * @default 3000
    */
   waitTimeout: number,
   /**
-   * If true, skip to next step of got an error
+   * If true, skip to next step of got an error or timeout
    * If false, Tour will stop immediately
    * @default false
    */

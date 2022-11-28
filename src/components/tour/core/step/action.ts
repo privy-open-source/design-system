@@ -9,13 +9,13 @@ export type EventType = 'click' | 'dblClick' | 'tripleClick' | 'type' | 'hover' 
 
 export type ParamsOf<E extends EventType> = ExtractParams<UserEvent[E]>
 
-export interface Options<E extends EventType> {
+export interface ActionOptions<E extends EventType> {
   target: string,
   action: E,
   params: ParamsOf<E>,
 }
 
-export default class StepAction<E extends EventType> extends AbstractStep<Options<E>> {
+export default class StepAction<E extends EventType> extends AbstractStep<ActionOptions<E>> {
   protected async run () {
     const options = this.getOptions()
     const target  = await waitElement(options.target, options.waitTimeout)

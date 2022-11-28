@@ -1,6 +1,7 @@
 import Adapter from './date'
 import { ref } from 'vue-demi'
 import { CalendarContext, CalendarItem } from './adapter'
+import { initAppContext, setLang } from '../../global/context'
 
 export function createMockContext (
   minDate?: Date,
@@ -18,6 +19,10 @@ export function createMockContext (
     max,
   }
 }
+
+beforeEach(() => {
+  initAppContext()
+})
 
 describe('getItems', () => {
   /****************************
@@ -170,5 +175,26 @@ describe('canNext', () => {
     const result  = Adapter.canNext(context)
 
     expect(result).toBe(true)
+  })
+})
+
+describe('Localization', () => {
+  it('should respect global lang setting', () => {
+    setLang('id')
+
+    const context = createMockContext()
+    const items   = Adapter.getItems(context).slice(0, 7).map((i) => i.text)
+
+    const expected = [
+      'Sen',
+      'Sel',
+      'Rab',
+      'Kam',
+      'Jum',
+      'Sab',
+      'Min',
+    ]
+
+    expect(items).toStrictEqual(expected)
   })
 })
