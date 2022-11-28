@@ -1,0 +1,1 @@
+import{u as t}from"./use-loading.43c80df0.js";import{i as o}from"../app.9fa2f258.js";const a="/design-system/assets/icon-white.a83336af.svg",r=o({props:{icon:{type:String,default:a}},setup(){const e=t({elapsed:!1});function s(){e.value=!0}function n(){e.value=!1}return{show:s,hide:n,loading:e}}});export{r as _};
