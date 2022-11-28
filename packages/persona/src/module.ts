@@ -4,9 +4,10 @@ import preset from '@privyid/tailwind-preset'
 
 export interface ModuleOptions {
   /**
-   * Include font, default: true
+   * Include font
+   * @default true
    */
-  font: boolean,
+  font?: boolean,
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -29,7 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.alias['@carbon/icons-vue/lib'] = '@carbon/icons-vue/es'
 
     if (options.font) {
-      nuxt.options.head.link.push(
+      nuxt.options.app.head.link?.push(
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         {
           rel        : 'preconnect',

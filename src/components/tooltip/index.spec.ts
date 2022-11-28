@@ -3,6 +3,11 @@ import { delay } from 'nanodelay'
 import { ref } from 'vue-demi'
 import { pTooltip, vPTooltip } from '.'
 
+beforeAll(async () => {
+  /* pre-load module TooltipContainer */
+  await import('./TooltipContainer.vue')
+})
+
 it('should able render the tooltip', async () => {
   const screen = render({
     directives: { PTooltip: pTooltip },

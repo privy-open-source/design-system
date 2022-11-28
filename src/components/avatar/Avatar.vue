@@ -99,6 +99,7 @@ export default defineComponent({
       loadImage(props.src)
         .then(() => {
           imageSrc.value = props.src
+
           emit('imgloaded', props.src)
         })
         .catch((error) => {

@@ -10,4 +10,13 @@
   "volar.autoCompleteRefs": false,
   "volar.vueserver.useSecondServer": true,
   "C_Cpp.dimInactiveRegions": false,
+  "eslint.options": {
+    "overrideConfig": {
+      "rules": {
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/promise-function-async": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+      }
+    }
+  },
 }

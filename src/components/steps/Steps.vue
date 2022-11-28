@@ -26,7 +26,8 @@ import {
   FinishedHook,
   STEPS_CONTEXT,
 } from '.'
-import { syncRef, useClamp } from '@vueuse/core'
+import { syncRef } from '@vueuse/core'
+import { useClamp } from '@vueuse/math'
 import { runAllHooks } from './utils/hook'
 import { noop } from 'lodash-es'
 

@@ -111,9 +111,9 @@
 <script lang="ts">
 import {
   templateRef,
-  useClamp,
   watchDebounced,
 } from '@vueuse/core'
+import { useClamp } from '@vueuse/math'
 import {
   computed,
   defineComponent,

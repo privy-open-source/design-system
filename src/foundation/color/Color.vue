@@ -9,6 +9,7 @@
         <div
           v-if="color.overlay"
           class="color-overlay"
+          data-testid="color-overlay"
           :style="{'background' : color.overlay }" />
       </div>
       <div class="px-0.5">
@@ -21,25 +22,40 @@
       </div>
     </div>
     <div
-      v-p-tooltip.focus
+      v-p-tooltip.focus="copied"
       title="Copied"
       class="color-copied"
+      data-testid="color-copy"
       tabindex="0"
       @click="copy()" />
   </div>
 </template>
 
-<script setup>
-import { defineProps } from 'vue-demi'
+<script lang="ts">
+import {
+  computed,
+  defineComponent,
+  PropType,
+} from 'vue-demi'
 import { useClipboard } from '@vueuse/core'
-import { vPTooltip } from '../../directive'
-const props    = defineProps({
-  color: {
-    type   : Object,
-    default: () => ({}),
+import { pTooltip } from '../../components/tooltip'
+import type { Color } from '.'
+
+export default defineComponent({
+  directives: { pTooltip },
+  props     : {
+    color: {
+      type   : Object as PropType<Color>,
+      default: () => ({} as Color),
+    },
+  },
+  setup (props) {
+    const source           = computed(() => props.color.overlay || props.color.code)
+    const { copy, copied } = useClipboard({ source })
+
+    return { copy, copied }
   },
 })
-const { copy } = useClipboard({ source: props.color.overlay || props.color.code })
 </script>
 
 <style lang="postcss" scoped>
@@ -63,7 +79,7 @@ const { copy } = useClipboard({ source: props.color.overlay || props.color.code 
   }
 
   &-copied {
-    @apply w-full h-full absolute top-0 left-0;
+    @apply w-full h-full absolute inset-0;
   }
 }
 </style>

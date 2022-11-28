@@ -54,7 +54,7 @@
 
 There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is `md`
 
-<preview class="flex-col items-center space-y-3 lg:flex-row">
+<preview class="flex-col items-center space-gap-3 lg:flex-row">
   <p-avatar src="https://picsum.photos/24" size="xs" />
   <p-avatar src="https://picsum.photos/32" size="sm" />
   <p-avatar src="https://picsum.photos/40" size="md" />

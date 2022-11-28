@@ -149,7 +149,7 @@ export default defineComponent({
   @apply inline-flex cursor-pointer relative items-center space-x-3 select-none;
 
   &__switch {
-    @apply relative;
+    @apply relative mr-2;
   }
 
   &__pointer {

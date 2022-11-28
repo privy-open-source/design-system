@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import type { Placement } from '@popperjs/core'
+import type { Placement } from '@floating-ui/dom'
 import { Directive } from 'vue-demi'
 import { useSingleton } from '../global/use-singleton'
-import TooltipContainer from './TooltipContainer.vue'
 import createHandler from './utils/create-handler'
 import {
   parsePlacement,
@@ -32,12 +31,13 @@ const handleBlur       = createHandler('focus', 'hide')
 
 export const pTooltip: Directive<HTMLElement, string | boolean> = {
   async mounted (el, bindings) {
-    const tooltip   = await useSingleton(TooltipContainer)
-    const action    = parseAction(el, bindings)
-    const color     = parseColor(el, bindings)
-    const text      = parseText(el, bindings)
-    const placement = parsePlacement(el, bindings)
-    const enable    = bindings.value !== false && !!text
+    const { default: TooltipContainer } = await import('./TooltipContainer.vue')
+    const tooltip                       = await useSingleton(TooltipContainer)
+    const action                        = parseAction(el, bindings)
+    const color                         = parseColor(el, bindings)
+    const text                          = parseText(el, bindings)
+    const placement                     = parsePlacement(el, bindings)
+    const enable                        = bindings.value !== false && !!text
 
     const id = tooltip.add({
       target   : el,
@@ -60,13 +60,14 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
   },
 
   async updated (el, bindings) {
-    const tooltip   = await useSingleton(TooltipContainer)
-    const id        = el.dataset.tooltipId
-    const action    = parseAction(el, bindings)
-    const color     = parseColor(el, bindings)
-    const text      = parseText(el, bindings)
-    const placement = parsePlacement(el, bindings)
-    const enable    = bindings.value !== false && !!text
+    const { default: TooltipContainer } = await import('./TooltipContainer.vue')
+    const tooltip                       = await useSingleton(TooltipContainer)
+    const id                            = el.dataset.tooltipId
+    const action                        = parseAction(el, bindings)
+    const color                         = parseColor(el, bindings)
+    const text                          = parseText(el, bindings)
+    const placement                     = parsePlacement(el, bindings)
+    const enable                        = bindings.value !== false && !!text
 
     el.dataset.tooltipAction = action
     el.dataset.tooltipText   = text
@@ -79,6 +80,9 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
       color    : color,
     })
 
+    if (enable && bindings.value === true)
+      tooltip.show(id)
+
     if (!enable)
       tooltip.hide(id)
 
@@ -86,9 +90,10 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
   },
 
   async beforeUnmount (el, bindings) {
-    const tooltip = await useSingleton(TooltipContainer)
-    const id      = el.dataset.tooltipId
-    const text    = parseText(el, bindings)
+    const { default: TooltipContainer } = await import('./TooltipContainer.vue')
+    const tooltip                       = await useSingleton(TooltipContainer)
+    const id                            = el.dataset.tooltipId
+    const text                          = parseText(el, bindings)
 
     tooltip.remove(id)
 
