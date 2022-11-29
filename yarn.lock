@@ -2486,7 +2486,7 @@ __metadata:
     happy-dom: 7.7.0
     husky: 8.0.2
     interactjs: 1.10.17
-    isomorphic-dompurify: ^0.23.0
+    isomorphic-dompurify: ^0.24.0
     jest-extended: 3.2.0
     lint-staged: 13.0.4
     lodash-es: 4.17.21
@@ -6062,10 +6062,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "dompurify@npm:2.4.0"
-  checksum: c93ea73cf8e3ba044588450198563e56ce6902e36d0e16e3699df2fa59e82c4fdd11d4ad04ef5024569ce96a35b46f29d0bbea522516add33cd39a7f56a8a675
+"dompurify@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "dompurify@npm:2.4.1"
+  checksum: 1169177465b3cbb25a44322937fba549f6c4e1a91b83245d144471be26619c835cccf0f8e20aa78c25ac11a06efd17cc1b9db9cacadceb78a4c08a1029eafee5
   languageName: node
   linkType: hard
 
@@ -9000,14 +9000,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isomorphic-dompurify@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "isomorphic-dompurify@npm:0.23.0"
+"isomorphic-dompurify@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "isomorphic-dompurify@npm:0.24.0"
   dependencies:
     "@types/dompurify": ^2.3.4
-    dompurify: ^2.4.0
+    dompurify: ^2.4.1
     jsdom: ^20.0.1
-  checksum: bcd5a99fb7cfae6c63446b31a0787ec79a629e42459a0eae99f222949b7ffbcbb0d6d524f105eca21939b4308fdf112e1c2fa7fc915b352cf5d938e11923e95c
+  checksum: f57f9f0eb3d80cec4b3fb861976b07fbe5163667b6241f21f5849df7b5e56c633327ac1b23602878b5aa1e088cc7f335cfb7109d1eaa0f6492d2902ef14fa0e6
   languageName: node
   linkType: hard
 
