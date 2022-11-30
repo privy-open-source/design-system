@@ -1,5 +1,5 @@
 <template>
-  <hr class="divider">
+  <div class="divider" />
 </template>
 
 <style lang="postcss">

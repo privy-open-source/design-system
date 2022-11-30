@@ -1,8 +1,5 @@
 <script setup>
-  import Input from "./Input.vue"
-  import InputGroup from "./InputGroup.vue"
-  import Button from "../button/Button.vue"
-  import Select from "../select/Select.vue"
+  import pInput from "./Input.vue"
   import { ref } from "vue-demi"
 
   const value = ref('')
@@ -14,32 +11,65 @@
 
 ### Simple Usage
 <preview>
-  <Input v-model="value" placeholder="Input Here" />
+  <p-input v-model.number="value" placeholder="Input Here" />
 </preview>
 
 ```vue
 <template>
-  <Input v-model="value" placeholder="Input Here" />
+  <p-input v-model="value" placeholder="Input Here" />
 </template>
 ```
 
-### Input Group
-<preview>
-  <InputGroup>
-    <Select v-model="value" :options="['A', 'B', 'C']" placeholder="Select" />
-    <Input v-model="value" placeholder="Input Here" />
-    <Input v-model="value" placeholder="Input Here" />
-    <Button variant="input">Search</Button>
-  </InputGroup>
+## Sizing
+
+<preview class="flex-col space-gap-3">
+  <p-input size="xs" />
+  <p-input size="sm" />
+  <p-input size="md" />
+  <p-input size="lg" />
 </preview>
 
 ```vue
 <template>
-  <InputGroup>
-    <Select v-model="value" :options="['A', 'B', 'C']" />
-    <Input v-model="value" placeholder="Input Here" />
-    <Input v-model="value" placeholder="Input Here" />
-    <Button variant="input">Search</Button>
-  </InputGroup>
+  <p-input size="xs" />
+  <p-input size="sm" />
+  <p-input size="md" />
+  <p-input size="lg" />
+</template>
+```
+
+## Disabled state
+
+<preview class="flex-col space-gap-3">
+  <p-input disabled />
+</preview>
+
+```vue
+<template>
+  <p-input disabled />
+</template>
+```
+
+## Readonly state
+
+<preview class="flex-col space-gap-3">
+  <p-input readonly />
+</preview>
+
+```vue
+<template>
+  <p-input readonly />
+</template>
+```
+
+## Error state
+
+<preview class="flex-col space-gap-3">
+  <p-input error />
+</preview>
+
+```vue
+<template>
+  <p-input error />
 </template>
 ```

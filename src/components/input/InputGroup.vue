@@ -18,7 +18,15 @@
     }
 
     &:not(:last-child) {
-      @apply rounded-r-none;
+      @apply rounded-r-none border-r-0;
+    }
+  }
+
+  > .divider {
+    @apply block my-0 py-3 border-y border-secondary-25;
+
+    &::before {
+      @apply content-[''] bg-secondary-25 w-[1px] h-full;
     }
   }
 }
