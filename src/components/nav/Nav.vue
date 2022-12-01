@@ -104,6 +104,10 @@ export default defineComponent({
   */
   @apply pl-2 list-none flex flex-wrap mb-0;
 
+  &:not(.nav--vertical) .nav__item {
+    @apply mr-[10px] last:mr-0;
+  }
+
   /*
   * Navigation variant:
   * Lines
@@ -315,9 +319,9 @@ export default defineComponent({
         }
       }
 
-      &.nav--pills {
+      /* &.nav--pills {
         @apply pl-2 pr-0;
-      }
+      } */
     }
   }
 

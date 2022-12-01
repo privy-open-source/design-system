@@ -83,7 +83,7 @@ export default defineComponent({
       }
 
       .nav__link__caret {
-        @apply absolute right-0 rotate-180 origin-center ease-in-out duration-150;
+        @apply absolute right-3 rotate-180 origin-center ease-in-out duration-150;
       }
 
       &.nav__subitem--collapsed {

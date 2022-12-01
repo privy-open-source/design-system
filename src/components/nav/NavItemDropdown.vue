@@ -57,11 +57,5 @@ export default defineComponent({
       }
     }
   }
-
-  /* &bar--pills  &__item--dropdown {
-    .btn--default {
-      @apply hover:bg-subtle hover:shadow-none hover:border-transparent;
-    }
-  } */
 }
 </style>
