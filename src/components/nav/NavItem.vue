@@ -99,6 +99,8 @@ export default defineComponent({
 <style lang="postcss">
 .nav {
   &__item {
+    @apply mr-[10px] last:mr-0;
+
     &&--no-label {
       .nav__link__label {
         @apply hidden;

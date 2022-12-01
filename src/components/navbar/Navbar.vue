@@ -97,11 +97,11 @@ export default defineComponent({
   }
 
   &&--light {
-    @apply bg-white;
+    @apply bg-default;
   }
 
   &&--dark {
-    @apply bg-black;
+    @apply bg-emphasis;
   }
 
   &&--shadow {
