@@ -92,7 +92,7 @@
     "scroll-into-view": "^1.16.2",
     "tabbable": "6.0.1",
     "vue-demi": "0.13.11",
-    "vue-router": "4.1.5",
+    "vue-router": "4.1.6",
     "vuedraggable": "next",
     "webfontloader": "1.6.28"
   },
