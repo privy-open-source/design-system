@@ -25,7 +25,7 @@ import {
 import Dot from '../dot/Dot.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'
 
-type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
+type ColorVariant = 'default' | 'primary' | 'success' | 'warning' | 'danger'
 type StyleVariant = 'default' | 'light' | 'dot'
 type SizeVariant = 'lg' | 'md' | 'sm' | 'xs'
 
@@ -34,7 +34,7 @@ export default defineComponent({
   props     : {
     color: {
       type   : String as PropType<ColorVariant>,
-      default: 'primary',
+      default: 'default',
     },
     variant: {
       type   : String as PropType<StyleVariant>,
@@ -62,7 +62,7 @@ export default defineComponent({
         result.push(`label--${props.color}`)
 
       if (props.variant)
-        result.push(`label--${props.variant}`)
+        result.push(`label--variant-${props.variant}`)
 
       // eslint-disable-next-line unicorn/explicit-length-check
       if (props.size)
@@ -99,8 +99,14 @@ export default defineComponent({
   * Add dismiss button
   */
   &__dismiss {
-    @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-black border-opacity-10 text-black text-opacity-30;
+    @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-black/10 text-default/30 hover:text-default/50;
   }
+
+  /* &:not(&--default) {
+    .label__dismiss {
+      @apply border-black/10 text-default/30;
+    }
+  } */
 
   /**
   * Provide size of label
@@ -127,36 +133,32 @@ export default defineComponent({
   * Set default label with
   * color variant
   */
-  &--default {
-    @apply text-white;
+  &--variant-default {
+    @apply text-on-emphasis;
 
     &.label {
-      &--primary {
-        @apply bg-primary-100;
+      &--default {
+        @apply bg-emphasis-subtle;
+
+        .label__dismiss {
+          @apply border-white/10 text-on-emphasis/30 hover:text-on-emphasis/50;
+        }
       }
 
-      &--secondary {
-        @apply bg-secondary-100;
+      &--primary {
+        @apply bg-accent-emphasis;
       }
 
       &--success {
-        @apply bg-success-100;
-      }
-
-      &--info {
-        @apply bg-info-100;
+        @apply bg-success-emphasis;
       }
 
       &--warning {
-        @apply bg-warning-100;
+        @apply bg-warning-emphasis;
       }
 
       &--danger {
-        @apply bg-danger-100;
-      }
-
-      &--gold {
-        @apply bg-gold-40;
+        @apply bg-danger-emphasis;
       }
     }
   }
@@ -165,34 +167,26 @@ export default defineComponent({
   * Provide light variant
   * in all color
   */
-  &--light {
+  &--variant-light {
     &.label {
-      &--primary {
-        @apply bg-primary-5 text-primary-100;
+      &--default {
+        @apply bg-base-black/5 text-subtle;
       }
 
-      &--secondary {
-        @apply bg-secondary-5 text-secondary-100;
+      &--primary {
+        @apply bg-accent text-accent;
       }
 
       &--success {
-        @apply bg-success-5 text-success-100;
-      }
-
-      &--info {
-        @apply bg-info-5 text-info-100;
+        @apply bg-success text-success;
       }
 
       &--warning {
-        @apply bg-warning-5 text-warning-100;
+        @apply bg-warning text-warning;
       }
 
       &--danger {
-        @apply bg-danger-5 text-danger-100;
-      }
-
-      &--gold {
-        @apply bg-gold-0 text-gold-40;
+        @apply bg-danger text-danger;
       }
     }
   }
@@ -201,12 +195,12 @@ export default defineComponent({
   * Provide dot variant
   * in all color
   */
-  &--dot {
+  &--variant-dot {
     /**
     * Dot variant have
     * white background and bordered
     */
-    @apply bg-white text-body-100 border-black border-opacity-10;
+    @apply bg-default text-default border-default;
 
     &.label {
       &--lg,

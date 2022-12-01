@@ -117,7 +117,7 @@ export default defineComponent({
   }
 
   &__link {
-    @apply block p-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-body-50 hover:text-body-100;
+    @apply block py-[10px] px-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-body-50 hover:text-body-100;
 
     &--active {
       @apply text-body-100 cursor-default;

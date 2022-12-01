@@ -69,7 +69,7 @@
     </div>
     <div class="mt-3">
       <p-button variant="outline" size="sm">Top Up Balance</p-button>
-      <p-button variant="link" color="secondary">Learn More</p-button>
+      <p-button variant="link">Learn More</p-button>
     </div>
   </p-banner>
 </preview>
@@ -87,7 +87,7 @@
     </div>
     <div class="mt-3">
       <p-button variant="outline" size="sm">Top Up Balance</p-button>
-      <p-button variant="link" color="secondary">Learn More</p-button>
+      <p-button variant="link">Learn More</p-button>
     </div>
   </p-banner>
 </template>

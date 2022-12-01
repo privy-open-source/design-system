@@ -9,12 +9,11 @@
     <template #button-content>
       {{ selected ? selected.text : schema.label }}
     </template>
-    <Caption
+    <Subheading
       class="px-4 pt-4 pb-1"
-      uppercase
-      bold>
+      overline="medium">
       {{ schema.label }}
-    </Caption>
+    </Subheading>
     <template
       v-for="(item, i) in items"
       :key="i">
@@ -36,7 +35,7 @@ import {
   PropType,
   ref,
 } from 'vue-demi'
-import Caption from '../../caption/Caption.vue'
+import Subheading from '../../subheading/Subheading.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
 import Radio from '../../radio/Radio.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
@@ -47,7 +46,7 @@ import { SelectItem } from '../../select/use-select'
 
 export default defineComponent({
   components: {
-    Caption,
+    Subheading,
     Dropdown,
     Radio,
   },

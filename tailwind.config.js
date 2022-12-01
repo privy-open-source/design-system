@@ -209,6 +209,7 @@ module.exports = {
         warning    : theme.colors.warning[40],
         danger     : theme.colors.danger[40],
       },
+      ringColor: ({ theme }) => ({ ...theme('borderColor') }),
     },
   },
 }

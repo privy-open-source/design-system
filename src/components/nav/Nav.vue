@@ -217,12 +217,6 @@ export default defineComponent({
       }
     }
 
-    &:not(.nav--fill) {
-      .nav__link {
-        @apply pr-32;
-      }
-    }
-
     /**
     * Remove background of
     * active state in

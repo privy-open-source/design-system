@@ -49,20 +49,20 @@ export default defineComponent({
 
 <style lang="postcss">
 .subheading {
-  @apply m-0 capitalize tracking-[.009375rem] text-default;
+  @apply m-0 capitalize tracking-normal text-default;
 
   &&--md {
-    @apply text-base font-medium leading-tight;
+    @apply text-base font-medium;
   }
 
   &&--sm {
-    @apply text-sm font-medium leading-[1.28];
+    @apply text-sm font-medium leading-[1.42];
   }
 
   &&--overline {
     &-normal,
     &-medium {
-      @apply uppercase text-[0.6875rem] leading-[1.4] tracking-[0.09375rem];
+      @apply uppercase text-tn tracking-widest text-subtle;
     }
 
     &-normal {

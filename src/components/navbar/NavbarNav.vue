@@ -37,7 +37,7 @@ export default defineComponent({
 <style lang="postcss">
 .navbar {
   &__nav {
-    @apply flex flex-row;
+    @apply flex flex-row items-center;
 
     &.nav--align-center {
       @apply mx-auto;
@@ -51,7 +51,7 @@ export default defineComponent({
       &__activator {
         @apply relative;
         &.btn {
-          @apply pl-3 pr-32 border-transparent shadow-none rounded font-normal text-body-50 hover:text-body-100 hover:bg-transparent;
+          @apply pl-3 pr-10 border-transparent shadow-none rounded font-normal text-body-50 hover:text-body-100 hover:bg-transparent;
         }
 
         .dropdown__caret {
@@ -89,10 +89,6 @@ export default defineComponent({
     }
 
     &.nav--lines {
-      .nav__link {
-        @apply pr-32;
-      }
-
       .dropdown {
         &__activator {
           &.btn {

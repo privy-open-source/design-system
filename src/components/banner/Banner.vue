@@ -89,7 +89,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .banner {
-  @apply p-4 flex gap-2 rounded text-subtle;
+  @apply p-4 flex gap-3 rounded text-subtle;
 
   a {
     &:not(.btn) {
@@ -122,7 +122,7 @@ export default defineComponent({
   }
 
   &__body {
-    @apply flex-grow;
+    @apply flex-grow text-sm;
   }
 
   &__icon,

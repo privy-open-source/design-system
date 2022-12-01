@@ -21,12 +21,11 @@
       </template>
     </template>
 
-    <Caption
+    <Subheading
       class="px-4 pt-4 pb-1"
-      uppercase
-      bold>
+      overline="medium">
       {{ schema.label }}
-    </Caption>
+    </Subheading>
     <template
       v-for="(item, i) in items"
       :key="i">
@@ -48,7 +47,7 @@ import {
   ref,
 } from 'vue-demi'
 import Badge from '../../badge/Badge.vue'
-import Caption from '../../caption/Caption.vue'
+import Subheading from '../../subheading/Subheading.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
 import Checkbox from '../../checkbox/Checkbox.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
@@ -60,7 +59,7 @@ import { SelectItem } from '../../select/use-select'
 export default defineComponent({
   components: {
     Badge,
-    Caption,
+    Subheading,
     Dropdown,
     Checkbox,
   },
