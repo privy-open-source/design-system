@@ -112,16 +112,16 @@ export default defineComponent({
   }
 
   &__point {
-    @apply w-7 h-7 rounded-full bg-secondary-25 flex items-center justify-center;
+    @apply w-7 h-7 rounded-full bg-muted flex items-center justify-center text-default;
   }
 
   &__bar {
     @apply absolute rounded-tn transition-[background-position] ease-linear duration-150;
-    @apply from-[theme(colors.primary.100)_50%] to-[theme(colors.secondary.25)_50%];
+    @apply from-[theme(backgroundColor.accent.emphasis)_50%] to-[theme(backgroundColor.muted)_50%];
   }
 
   &__title {
-    @apply truncate text-sm text-center w-full;
+    @apply truncate text-sm text-center w-full text-default;
   }
 
   & > .progress__title {
@@ -130,7 +130,7 @@ export default defineComponent({
 
   &--active {
     .progress__point {
-      @apply bg-primary-100 text-white;
+      @apply bg-accent-emphasis text-on-emphasis;
     }
   }
 
@@ -186,7 +186,7 @@ export default defineComponent({
 
   &--dot {
     .progress__point-item {
-      @apply w-3 h-3 rounded-full bg-white;
+      @apply w-3 h-3 rounded-full bg-default;
     }
   }
 
