@@ -110,5 +110,57 @@ export default defineComponent({
       @apply ring-danger-25 border-danger-100;
     }
   }
+
+  /* Custom Input Range */
+  &[type="range"] {
+    @apply p-0 appearance-none border-0 bg-white h-2 my-4;
+
+    &:focus {
+      @apply ring-0;
+    }
+
+    /* Chrome and Safari */
+    &::-webkit-slider-thumb {
+      @apply appearance-none w-4 h-4 rounded-full shadow cursor-pointer bg-white;
+
+      &:hover {
+        @apply bg-primary-100;
+      }
+
+      &:active {
+        @apply ring ring-primary-25;
+      }
+    }
+
+    &::-webkit-slider-runnable-track {
+      @apply appearance-none bg-primary-100;
+    }
+
+    /* Firefox */
+    &::-moz-range-thumb {
+      @apply appearance-none w-4 h-4 rounded-full shadow cursor-pointer bg-white border-0;
+
+      &:hover {
+        @apply bg-primary-100;
+      }
+
+      &:active {
+        @apply ring ring-primary-25 h-2;
+      }
+    }
+
+    /* IE */
+    &::-ms-thumb {
+      @apply appearance-none w-4 h-4 rounded-full shadow cursor-pointer bg-white;
+
+      &:hover {
+        @apply bg-primary-100;
+      }
+
+      &:active {
+        @apply ring ring-primary-25;
+      }
+    }
+  }
 }
 </style>

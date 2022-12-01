@@ -32,7 +32,7 @@ export default defineComponent({
     function add (options: TooltipOptions): string {
       const id = uniqueId('tooltip_')
 
-      items.value.set(id, reactive({ ...options, isShow: false }))
+      items.value.set(id, reactive({ ...options, isShow: false }) as TooltipItem)
 
       return id
     }

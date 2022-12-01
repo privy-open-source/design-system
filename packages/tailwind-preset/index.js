@@ -576,6 +576,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('@privyid/tailwind-animation'),
     require('@privyid/tailwind-extended'),
     require('@mertasan/tailwindcss-variables'),

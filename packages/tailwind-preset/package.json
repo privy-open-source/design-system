@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@privyid/tailwind-animation": "workspace:^",
-    "@privyid/tailwind-extended": "workspace:^"
+    "@privyid/tailwind-extended": "workspace:^",
+    "@tailwindcss/forms": "^0.5.3"
   }
 }
