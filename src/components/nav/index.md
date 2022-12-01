@@ -356,7 +356,7 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
 Navigation by default appear on horizontal line. You can stack navigation by setting `vertical` prop.
 
 <preview>
-  <p-nav vertical class="w-80">
+  <p-nav vertical class="w-80" variant="tabs">
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
     <p-nav-item>Auditrail</p-nav-item>

@@ -19,11 +19,11 @@ it('should rendered properly without any props', () => {
   expect(text).toBeInTheDocument()
 })
 
-it('should have style "bold" if props `bold` is set to true', () => {
+it('should have style "bold" if props `weight` is set to bold', () => {
   const screen = render({
     components: { Caption },
     template  : `
-      <Caption bold>
+      <Caption weight="bold">
         Caption Text
       </Caption>
     `,
@@ -37,11 +37,11 @@ it('should have style "bold" if props `bold` is set to true', () => {
   expect(text).toBeInTheDocument()
 })
 
-it('should have style "uppercase" if props `uppercase` is set to true', () => {
+it('should have style "uppercase" if props `transform` is set to uppercase', () => {
   const screen = render({
     components: { Caption },
     template  : `
-      <Caption uppercase>
+      <Caption transform="uppercase">
         Caption Text
       </Caption>
     `,
@@ -52,5 +52,23 @@ it('should have style "uppercase" if props `uppercase` is set to true', () => {
 
   expect(caption).toBeInTheDocument()
   expect(caption).toHaveClass('caption', 'caption--uppercase')
+  expect(text).toBeInTheDocument()
+})
+
+it('should have style "tiny" if props `size` is set to tn', () => {
+  const screen = render({
+    components: { Caption },
+    template  : `
+      <Caption size="tn">
+        Caption Text
+      </Caption>
+    `,
+  })
+
+  const caption = screen.queryByTestId('caption')
+  const text    = screen.queryByText('Caption Text')
+
+  expect(caption).toBeInTheDocument()
+  expect(caption).toHaveClass('caption', 'caption--tn')
   expect(text).toBeInTheDocument()
 })

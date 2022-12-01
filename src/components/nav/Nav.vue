@@ -5,7 +5,9 @@
     <li
       v-if="title"
       class="nav__title">
-      <Caption bold>
+      <Caption
+        weight="bold"
+        transform="capitalize">
         {{ title }}
       </Caption>
     </li>
@@ -121,7 +123,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-b-body-100;
+          @apply border-b-on-emphasis;
         }
       }
     }
@@ -136,7 +138,7 @@ export default defineComponent({
 
         &--active {
           &:not(.nav__link--disabled) {
-            @apply border-r border-r-body-100 rounded-tr-none;
+            @apply border-r border-r-on-emphasis rounded-tr-none;
           }
         }
       }
@@ -147,7 +149,7 @@ export default defineComponent({
 
           &--active {
             &:not(.nav__link--disabled) {
-              @apply border-l border-l-body-100 rounded-tl-none;
+              @apply border-l border-l-on-emphasis rounded-tl-none;
             }
           }
         }
@@ -168,7 +170,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-t-secondary-25/50 border-x-secondary-25/50 bg-white;
+          @apply border-t-default border-x-default bg-subtle;
         }
       }
     }
@@ -181,7 +183,7 @@ export default defineComponent({
       .nav__link {
         &--active {
           &:not(.nav__link--disabled) {
-            @apply border-l-secondary-25/50 border-y-secondary-25/50 border-r-transparent bg-white rounded-l rounded-r-none;
+            @apply border-l-default border-y-default border-r-transparent bg-subtle rounded-l rounded-r-none;
           }
         }
       }
@@ -190,7 +192,7 @@ export default defineComponent({
         .nav__link {
           &--active {
             &:not(.nav__link--disabled) {
-              @apply border-r-secondary-25/50 border-y-secondary-25/50 border-l-transparent rounded-r rounded-l-none;
+              @apply border-r-default border-y-default border-l-transparent rounded-r rounded-l-none;
             }
           }
         }
@@ -212,7 +214,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply bg-secondary-5 rounded-b;
+          @apply bg-subtle rounded-b;
         }
       }
     }
@@ -330,7 +332,7 @@ export default defineComponent({
     @apply absolute left-5 top-0 text-base inline-block;
 
     .caption {
-      @apply text-body-75;
+      @apply text-subtle;
     }
   }
 }
