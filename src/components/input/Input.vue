@@ -35,7 +35,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .input {
-  @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted placeholder:text-muted w-full outline-none bg-default;
+  @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none bg-default;
 
   &:disabled,
   &--disabled {
