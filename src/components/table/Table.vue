@@ -108,7 +108,7 @@ import {
 import { TableField } from './use-table'
 import Checkbox from '../checkbox/Checkbox.vue'
 import { useVModel } from '../input/use-input'
-import IconDrag from '@carbon/icons-vue/lib/draggable/16'
+import IconDrag from '@carbon/icons-vue/lib/draggable/24'
 import Draggable from 'vuedraggable'
 import defu from 'defu'
 
@@ -215,11 +215,15 @@ export default defineComponent({
   @apply flex flex-col w-full;
 
   &__headers {
-    @apply flex px-4 py-3 gap-2 bg-white;
+    @apply flex pt-4 gap-2 bg-default;
+
+    > .datatable__header {
+      @apply px-3;
+    }
   }
 
   .datatable__header {
-    @apply text-subtext-100 text-sm font-bold;
+    @apply text-subtle text-xs font-bold pb-3;
 
     &.datatable__checkbox,
     &.datatable__drag {
@@ -232,10 +236,12 @@ export default defineComponent({
   }
 
   &__row {
-    @apply flex px-4 py-2 gap-2 w-full items-center bg-white;
+    @apply flex gap-2 w-full items-center bg-default;
   }
 
   &__cell {
+    @apply py-4 px-3 text-sm text-default;
+
     & > .datatable__header {
       @apply text-xs;
     }
@@ -245,8 +251,14 @@ export default defineComponent({
       @apply flex-shrink-0 flex-grow-0;
     }
 
+    &.datatable__checkbox {
+      > .checkbox {
+        @apply px-3 gap-0;
+      }
+    }
+
     &.datatable__drag {
-      @apply cursor-grabbing;
+      @apply cursor-grabbing mx-3;
     }
   }
 
@@ -260,13 +272,13 @@ export default defineComponent({
     }
 
     .datatable__row {
-      @apply rounded border border-secondary-25;
+      @apply rounded border border-default;
     }
   }
 
   &--static {
     .datatable__body {
-      @apply divide-y divide-secondary-25;
+      @apply border-b border-b-default divide-y divide-default;
     }
   }
 }
