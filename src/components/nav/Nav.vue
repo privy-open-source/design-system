@@ -105,7 +105,7 @@ export default defineComponent({
   @apply pl-2 list-none flex flex-wrap mb-0;
 
   &:not(.nav--vertical) .nav__item {
-    @apply mr-[10px] last:mr-0;
+    @apply first:ml-2 mr-2 last:mr-0;
   }
 
   /*
@@ -318,10 +318,6 @@ export default defineComponent({
           @apply -ml-[1px] mr-0;
         }
       }
-
-      /* &.nav--pills {
-        @apply pl-2 pr-0;
-      } */
     }
   }
 

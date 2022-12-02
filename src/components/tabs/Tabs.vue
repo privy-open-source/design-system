@@ -162,7 +162,7 @@ export default defineComponent({
   * for navigation
   */
   .nav {
-    @apply border-b border-b-secondary-25/50;
+    @apply border-b border-b-default;
 
     &__link {
       .badge {
@@ -171,7 +171,7 @@ export default defineComponent({
     }
 
     &--vertical {
-      @apply pb-2 border-b-0 border-r border-r-secondary-25/50;
+      @apply pb-2 border-b-0 border-r border-r-default;
     }
   }
 
@@ -202,7 +202,11 @@ export default defineComponent({
     @apply flex-row-reverse;
 
     .nav {
-      @apply border-b-0 border-r-0 border-l border-l-secondary-25/50;
+      @apply border-b-0 border-r-0 border-l border-l-default;
+
+      &.nav--pills {
+        @apply pl-2 pr-0;
+      }
     }
   }
 }
