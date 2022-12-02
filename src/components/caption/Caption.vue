@@ -10,8 +10,9 @@
 import {
   computed, defineComponent, PropType,
 } from 'vue-demi'
-type WeightVariant = 'normal' | 'medium' | 'bold'
-type TransformVariant = 'normalcase' | 'lowercase' | 'capitalize' | 'uppercase'
+import { WeightVariant, TransformVariant } from '../heading/Heading.vue'
+// type WeightVariant = 'normal' | 'medium' | 'bold'
+// type TransformVariant = 'normalcase' | 'lowercase' | 'capitalize' | 'uppercase'
 type SizeVariant = 'xs' | 'tn'
 
 export default defineComponent({
