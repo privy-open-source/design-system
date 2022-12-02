@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue-demi'
+  import { ref, onMounted } from 'vue-demi'
   import pTable from '../components/table/Table.vue'
   import pLabel from '../components/label/Label.vue'
   import { defineTable } from '../components/table'
@@ -80,6 +80,8 @@
 
 We try our best to support many browsers as possible but technologies always grow with very fast speed.
 _We need to keep moving forward, and savoring the journey_ 😎
+
+{{ isSupport }}
 
 ## Support List
 

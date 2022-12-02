@@ -2443,6 +2443,7 @@ __metadata:
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rollup/plugin-babel": ^6.0.2
+    "@rollup/plugin-replace": ^5.0.1
     "@rushstack/eslint-patch": 1.2.0
     "@testing-library/jest-dom": 5.16.5
     "@testing-library/user-event": ^14.4.3

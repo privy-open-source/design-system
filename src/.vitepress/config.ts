@@ -195,6 +195,10 @@ export default defineConfig({
               link: '/components/input/',
             },
             {
+              text: 'Input Range',
+              link: '/components/input-range/',
+            },
+            {
               text: 'Radio',
               link: '/components/radio/',
             },
