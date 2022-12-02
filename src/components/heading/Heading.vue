@@ -83,7 +83,8 @@ export default defineComponent({
 
   &eading {
     /**
-    * Weight variant of heading
+    * Weight variant
+    * of heading
     */
     &--normal {
       @apply font-normal;
@@ -99,7 +100,7 @@ export default defineComponent({
 
     /**
     * Text transform
-    * of caption
+    * of heading
     */
     &--normalcase {
       @apply normal-case;

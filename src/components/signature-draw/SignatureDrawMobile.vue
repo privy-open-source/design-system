@@ -182,11 +182,11 @@ export default defineComponent({
 <style lang="postcss">
   .signature-draw {
     &--mobile {
-      @apply border rounded border-dashed max-w-full text-center flex items-center justify-center bg-white;
+      @apply border rounded border-dashed max-w-full text-center flex items-center justify-center bg-default;
     }
 
     &__modal {
-      @apply fixed w-full h-full top-0 left-0 bg-white z-50 flex items-center justify-center gap-4 flex-col p-5;
+      @apply fixed w-full h-full top-0 left-0 bg-default z-50 flex items-center justify-center gap-4 flex-col p-5;
     }
 
     &--rotate {

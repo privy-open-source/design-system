@@ -269,7 +269,7 @@ export default defineComponent({
   }
 
   &__caret {
-    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-secondary-75 pointer-events-none;
+    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-subtle pointer-events-none;
   }
 
   &__option {
@@ -280,7 +280,7 @@ export default defineComponent({
     }
 
     &-checked {
-      @apply flex-shrink-0 text-primary-100 invisible;
+      @apply flex-shrink-0 text-accent invisible;
 
       .selected & {
         @apply visible;
@@ -290,7 +290,7 @@ export default defineComponent({
 
   &__empty,
   &__loading {
-    @apply px-3 py-2 text-body-100 text-center;
+    @apply px-3 py-2 text-default text-center;
   }
 
   &__loading {
