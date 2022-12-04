@@ -1,7 +1,7 @@
 import { useSingleton } from '../global/use-singleton'
 import ToastContainer from './ToastContainer.vue'
 
-export type ToastTypeVariant = 'info' | 'success' | 'warn' | 'error'
+export type ToastTypeVariant = 'info' | 'success' | 'warning' | 'error'
 
 export type ToastStyleVariant = 'simple' | 'filled'
 
