@@ -192,7 +192,7 @@ You can hide toggle label with `no-label` prop
 By default, value of toggle is always `Boolean`, but you can change it with `value` and `unchecked-value`.
 
 <preview class="flex-col items-center gap-3">
-  <p-toggle v-model="modelB" value="on" unchecked-value="off">Lamp</p-toggle>
+  <p-toggle v-model="modelB" value="PM" unchecked-value="AM">Lamp</p-toggle>
 </preview>
 
 **Result :**

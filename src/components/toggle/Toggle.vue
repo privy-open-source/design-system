@@ -149,20 +149,20 @@ export default defineComponent({
   @apply inline-flex cursor-pointer relative items-center gap-3 select-none;
 
   &__switch {
-    @apply relative;
+    @apply flex items-center justify-center relative bg-inactive border-subtle;
   }
 
   &__pointer {
-    @apply appearance-none cursor-pointer will-change-transform;
+    @apply block absolute appearance-none cursor-pointer will-change-transform transition-transform -translate-x-1/2 bg-default;
   }
 
   &--disabled {
     @apply opacity-50 pointer-events-none;
   }
 
-  &--pill {
+  &&--pill {
     .toggle__switch {
-      @apply w-9 h-5 rounded-full bg-secondary-50 text-[0.6rem] text-white flex items-center justify-center;
+      @apply w-9 h-5 rounded-full text-[0.5rem] text-on-emphasis border;
     }
 
     .toggle__label {
@@ -170,12 +170,12 @@ export default defineComponent({
     }
 
     .toggle__pointer {
-      @apply w-4 h-4 rounded-full bg-white block absolute transition-transform -translate-x-1/2;
+      @apply w-4 h-4 rounded-full shadow-md;
     }
 
     &.toggle--checked {
       .toggle__switch {
-        @apply bg-primary-100;
+        @apply bg-accent-emphasis border-accent-emphasis;
       }
 
       .toggle__pointer {
@@ -184,34 +184,30 @@ export default defineComponent({
     }
   }
 
-  &--flat {
+  &&--flat {
     .toggle__switch {
-      @apply bg-secondary-25 flex flex-row-reverse items-center justify-center border-2 border-secondary-25 min-h-[1.5rem] min-w-[2.5rem];
+      @apply flex-row-reverse border-2 rounded-xs min-h-[1.5rem] min-w-[2.5rem];
     }
 
     .toggle__label {
-      @apply p-1 z-[2] relative text-sm rounded-none;
+      @apply px-1 z-[2] relative text-sm rounded-none;
     }
 
     .toggle__checked-label {
-      @apply text-body-50;
-    }
-
-    .toggle__unchecked-label {
-      @apply text-body-100;
+      @apply text-muted;
     }
 
     .toggle__pointer {
-      @apply w-1/2 h-full bg-white absolute z-[1]  transition-transform -translate-x-1/2;
+      @apply w-1/2 h-full rounded-tn z-[1];
     }
 
     &.toggle--checked {
       .toggle__checked-label {
-        @apply text-body-100;
+        @apply text-default;
       }
 
       .toggle__unchecked-label {
-        @apply text-body-50;
+        @apply text-muted;
       }
 
       .toggle__pointer {
@@ -221,11 +217,11 @@ export default defineComponent({
   }
 
   .dropdown__menu & {
-    @apply px-3 py-2 cursor-pointer text-body-100 w-full select-none text-left flex justify-between items-center flex-row-reverse;
+    @apply px-3 py-2 cursor-pointer text-default w-full select-none text-left flex justify-between items-center flex-row-reverse;
 
     &:hover,
     &:focus-visible {
-      @apply bg-background-75;
+      @apply bg-inactive;
     }
   }
 }
