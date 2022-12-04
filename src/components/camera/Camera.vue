@@ -58,6 +58,7 @@
       <p-button
         v-if="cameras.length > 1 && !isTaken"
         data-testid="camera-toggle"
+        color="danger"
         size="sm"
         icon
         pill
@@ -70,6 +71,7 @@
         v-if="!isActive && !isTaken"
         data-testid="camera-turn-on"
         class="camera__main-control"
+        color="danger"
         icon
         pill
         @click="turnOn()">
@@ -79,6 +81,7 @@
         v-else-if="isActive && !isTaken"
         data-testid="camera-take"
         class="camera__main-control"
+        color="danger"
         icon
         pill
         :disabled="isProcessing"
@@ -89,6 +92,7 @@
         v-else
         data-testid="camera-retake"
         class="camera__main-control"
+        color="danger"
         icon
         pill
         @click="retake()">
@@ -340,7 +344,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .camera {
-  @apply bg-black w-full flex flex-col aspect-video select-none relative;
+  @apply bg-emphasis w-full flex flex-col aspect-video select-none relative;
 
   &__video {
     @apply flex-grow min-h-full max-w-full h-auto;
@@ -381,7 +385,7 @@ export default defineComponent({
   }
 
   &__off-info {
-    @apply absolute bottom-20 text-white left-0 right-0 text-center text-sm;
+    @apply absolute bottom-20 text-on-emphasis left-0 right-0 text-center text-sm;
   }
 
   &__controls {
@@ -389,10 +393,10 @@ export default defineComponent({
   }
 
   &__toast {
-    @apply absolute bottom-20 left-0 right-0 text-center text-white px-4;
+    @apply absolute bottom-20 left-0 right-0 text-center text-on-emphasis px-4;
 
     &-text {
-      @apply bg-black bg-opacity-80 px-4 py-1 text-sm rounded shadow-md inline-block max-w-full truncate;
+      @apply bg-emphasis bg-opacity-80 px-4 py-1 text-sm rounded shadow-md inline-block max-w-full truncate;
     }
   }
 }

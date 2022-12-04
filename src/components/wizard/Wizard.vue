@@ -78,11 +78,11 @@ export default defineComponent({
 .wizard {
   @apply flex flex-col w-full gap-3;
 
-  .wizard__header {
+  &__header {
     @apply flex-shrink-0;
   }
 
-  .wizard__body {
+  &__body {
     @apply flex-grow;
   }
 }

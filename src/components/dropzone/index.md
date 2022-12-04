@@ -51,9 +51,9 @@
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>PDF, DOC & DOCX up to 25MB each</p-caption>
+        <p-caption weight="bold">PDF, DOC & DOCX up to 25MB each</p-caption>
         <p-caption>10 documents max for multiple upload</p-caption>
-        <p-caption class="mt-16 text-sm">PDF file format is recommended for a faster uploading process.</p-caption>
+        <p-caption class="mt-16">PDF file format is recommended for a faster uploading process.</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -80,7 +80,7 @@
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>PDF, DOC & DOCX up to 25MB each</p-caption>
+        <p-caption weight="bold">PDF, DOC & DOCX up to 25MB each</p-caption>
         <p-caption>10 documents max for multiple upload</p-caption>
         <p-caption class="mt-16 text-sm">PDF file format is recommended for a faster uploading process.</p-caption>
       </div>
@@ -111,7 +111,7 @@
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -138,7 +138,7 @@
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -174,7 +174,7 @@ Add prop `multiple` to enable multi-selected upload.
             </ol>
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -205,7 +205,7 @@ Add prop `multiple` to enable multi-selected upload.
             </ol>
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -240,7 +240,7 @@ When user selecting the files, and then selecting again, the old list of files i
             </ol>
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -271,7 +271,7 @@ When user selecting the files, and then selecting again, the old list of files i
             </ol>
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -300,7 +300,7 @@ When user selecting the files, and then selecting again, the old list of files i
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -331,7 +331,7 @@ When user selecting the files, and then selecting again, the old list of files i
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -363,7 +363,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
             {{ rawModel.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -394,7 +394,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
             {{ rawModel.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
