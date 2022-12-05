@@ -147,7 +147,8 @@ module.exports = {
         },
         'muted'      : theme.colors.gray[10],
         'on-emphasis': {
-          DEFAULT: theme.colors.gray[70],
+          DEFAULT: theme.colors.gray[90],
+          subtle : theme.colors.gray[70],
           alpha  : {
             DEFAULT: `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
             subtle : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
@@ -197,8 +198,8 @@ module.exports = {
         transparent: 'transparent',
         accent     : theme.colors.blue[40],
         success    : theme.colors.green[40],
-        warning    : theme.colors.warning[40],
-        danger     : theme.colors.danger[40],
+        warning    : theme.colors.orange[40],
+        danger     : theme.colors.red[40],
       },
       ringColor: ({ theme }) => ({ ...theme('borderColor') }),
     },

@@ -19,7 +19,7 @@
           Official
         </Badge>
         <Heading class="mt-2">
-          <span class="text-primary-100">Persona</span> Design System
+          <span class="text-accent">Persona</span> Design System
         </Heading>
         <Subheading>
           By PrivyID
