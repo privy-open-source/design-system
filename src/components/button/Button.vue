@@ -96,7 +96,7 @@ export default defineComponent({
   * eg: xs, sm, md, and lg
   */
   &&--xs {
-    @apply px-2 py-[2px] gap-1 text-sm rounded-xs;
+    @apply px-2 py-[2px] gap-1 text-sm rounded-[6px];
   }
 
   &&--sm {

@@ -102,12 +102,6 @@ export default defineComponent({
     @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-black/10 text-default/30 hover:text-default/50;
   }
 
-  /* &:not(&--default) {
-    .label__dismiss {
-      @apply border-black/10 text-default/30;
-    }
-  } */
-
   /**
   * Provide size of label
   * There are lg, md,
@@ -118,15 +112,15 @@ export default defineComponent({
   }
 
   &--md {
-    @apply text-sm px-3 py-1 rounded-sm;
+    @apply text-sm px-3 py-1 rounded-[7px];
   }
 
   &--sm {
-    @apply text-xs px-2 py-[0.125rem] rounded-xs;
+    @apply text-xs px-2 py-[0.125rem] rounded-[6px];
   }
 
   &--xs {
-    @apply px-2 py-0 text-tn rounded-tn;
+    @apply px-2 py-0 text-tn rounded-sm;
   }
 
   /**

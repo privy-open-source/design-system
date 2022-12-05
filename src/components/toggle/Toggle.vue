@@ -186,7 +186,7 @@ export default defineComponent({
 
   &&--flat {
     .toggle__switch {
-      @apply flex-row-reverse border-2 rounded-xs min-h-[1.5rem] min-w-[2.5rem];
+      @apply flex-row-reverse border-2 rounded-[6px] min-h-[1.5rem] min-w-[2.5rem];
     }
 
     .toggle__label {
@@ -198,7 +198,7 @@ export default defineComponent({
     }
 
     .toggle__pointer {
-      @apply w-1/2 h-full rounded-tn z-[1];
+      @apply w-1/2 h-full rounded-sm z-[1];
     }
 
     &.toggle--checked {

@@ -210,7 +210,7 @@ export default defineComponent({
   * in white
   */
   &__content {
-    @apply my-8 bg-default rounded-md relative shadow-2xl;
+    @apply my-8 bg-default rounded relative shadow-2xl;
 
     .modal__dismiss {
       @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[1061] text-default/30 hover:text-default/50;

@@ -116,7 +116,7 @@ export default defineComponent({
   }
 
   &__bar {
-    @apply absolute rounded-tn transition-[background-position] ease-linear duration-150;
+    @apply absolute rounded-full transition-[background-position] ease-linear duration-150;
     @apply from-[theme(backgroundColor.accent.emphasis)_50%] to-[theme(backgroundColor.muted)_50%];
   }
 

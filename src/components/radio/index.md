@@ -101,7 +101,7 @@ Some case, you may need some [Checkbox][checkbox] but work like a Radio. You can
 
 <preview class="justify-center">
   <div class="flex flex-col gap-3">
-    <p-radio apperance="checkbox" v-model="selected" value="apple">Apple</p-radio>
+    <p-radio apperance="checkbox" disabled v-model="selected" value="apple">Apple</p-radio>
     <p-radio apperance="checkbox" v-model="selected" value="grape">Grape</p-radio>
     <p-radio apperance="checkbox" v-model="selected" value="orange">Orange</p-radio>
   </div>

@@ -5,10 +5,12 @@
   import pDropdownItem from "./DropdownItem.vue"
   import Banner from '../banner/Banner.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
+  import pRadio from '../radio/Radio.vue'
   import pCaption from '../caption/Caption.vue'
   import { ref } from "vue-demi"
 
   const show = ref(false)
+  const selected = ref('')
 </script>
 
 # Dropdown
@@ -18,9 +20,9 @@
 ### Simple Usage
 <preview>
   <p-dropdown text="Click Here">
-    <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item><p-checkbox disabled v-model="selected" value="apple">Apple</p-checkbox></p-dropdown-item>
+    <p-dropdown-item><p-checkbox v-model="selected" value="mango">Mango</p-checkbox></p-dropdown-item>
+    <p-dropdown-item><p-checkbox v-model="selected" value="apple">Apple</p-checkbox></p-dropdown-item>
   </p-dropdown>
 </preview>
 

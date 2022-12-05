@@ -134,6 +134,7 @@ module.exports = {
           emphasis: theme.colors.red[40],
         },
       },
+      fill       : ({ theme }) => ({ ...theme('backgroundColor') }),
       borderColor: {
         'DEFAULT': theme.colors.gray[15],
         'default': {

@@ -133,7 +133,7 @@ export default defineComponent({
 * Last Update   : May 23, 2022
 */
 .card {
-  @apply border bg-default border-default rounded-md;
+  @apply border bg-default border-default rounded;
 
   /*
   * Card Body & Card Header

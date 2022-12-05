@@ -376,7 +376,7 @@ export default defineComponent({
     }
 
     &--card & {
-      @apply aspect-[85.60/53.98] w-2/3 rounded-md;
+      @apply aspect-[85.60/53.98] w-2/3 rounded;
     }
   }
 

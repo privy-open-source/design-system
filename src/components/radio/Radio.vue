@@ -21,8 +21,7 @@
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
-          d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z"
-          fill="white" />
+          d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z" />
       </svg>
 
       <svg
@@ -35,8 +34,7 @@
         <circle
           cx="7"
           cy="7"
-          r="6.25"
-          fill="white" />
+          r="6.25" />
       </svg>
     </span>
     <span class="radio__label">
@@ -158,28 +156,50 @@ export default defineComponent({
   &__icon {
     @apply w-5 h-5 border rounded-full border-subtle inline-flex items-center justify-center bg-default;
 
-    & > svg {
-      @apply w-3;
+    > svg {
+      @apply w-3 fill-default;
     }
   }
 
-  &--disabled {
-    @apply opacity-50;
+  &__label {
+    @apply text-default;
   }
 
-  &--checked {
+  &&--disabled {
+    @apply opacity-50;
+
+    &:not(.radio--checked) {
+      .radio__icon {
+        @apply bg-inactive border-subtle;
+
+        > svg {
+          @apply fill-inactive;
+        }
+      }
+    }
+  }
+
+  &&--checked {
     .radio__icon {
       @apply bg-accent-emphasis border-accent-emphasis;
     }
-  }
 
-  &--checkbox {
-    .radio__icon {
-      @apply rounded-tn;
+    &.radio--checkbox {
+      .radio__icon {
+        > svg {
+          @apply fill-default;
+        }
+      }
     }
   }
 
-  &--option {
+  &&--checkbox {
+    .radio__icon {
+      @apply rounded-sm;
+    }
+  }
+
+  &&--option {
     .radio__icon {
       @apply order-2 border-none invisible bg-transparent;
 
@@ -200,7 +220,7 @@ export default defineComponent({
   }
 
   .dropdown__menu & {
-    @apply px-4 py-[10px] cursor-pointer text-default w-full select-none text-left border-b border-subtle-alpha last:border-0;
+    @apply py-[2px] w-full select-none;
 
     &:hover,
     &:focus-visible {
