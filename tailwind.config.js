@@ -189,16 +189,6 @@ module.exports = {
         'xl'                   : `0 0 1px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]}), 0 8px 10px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 16px 25px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
         '2xl'                  : `0 20px 40px -8px rgba(${theme.colors.gray[100]}, ${theme.opacity[25]})`,
       },
-      borderRadius: {
-        'none'   : 0,
-        'sm'     : '4px',
-        'md'     : '8px',
-        'DEFAULT': '8px',
-        'lg'     : '12px',
-        'xl'     : '16px',
-        '2xl'    : '22px',
-        'full'   : '999999px',
-      },
       outlineColor: {
         DEFAULT    : theme.colors.gray[15],
         default    : theme.colors.gray[15],
