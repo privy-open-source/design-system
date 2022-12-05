@@ -3,73 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   darkMode: 'class',
   theme   : {
-    fontFamily: { sans: ['DM Sans', ...defaultTheme.fontFamily.sans] },
-    fontSize  : {
-      'xxs': [
-        '0.6875rem',
-        {
-          lineHeight   : '1.36',
-          letterSpacing: '0.025rem',
-        },
-      ],
-      'xs': [
-        '0.75rem',
-        {
-          lineHeight   : '1.33',
-          letterSpacing: '0.025rem',
-        },
-      ],
-      'sm': [
-        '0.875rem',
-        {
-          lineHeight   : '1.4',
-          letterSpacing: '0.015625rem',
-        },
-      ],
-      'base': [
-        '1rem',
-        {
-          lineHeight   : '1.25',
-          letterSpacing: '0.03125rem',
-        },
-      ],
-      'xl': [
-        '1.25rem',
-        {
-          lineHeight   : '1.3',
-          letterSpacing: '0.01375rem',
-        },
-      ],
-      '2xl': [
-        '1.5rem',
-        {
-          lineHeight   : '1.3',
-          letterSpacing: '0.009375rem',
-        },
-      ],
-      '4xl': ['2.25rem', '1.3'],
-      '5xl': [
-        '3rem',
-        {
-          lineHeight   : '1.3',
-          letterSpacing: '-0.009375rem', // -0.15px
-        },
-      ],
-      '6xl': [
-        '3.75rem',
-        {
-          lineHeight   : '1.3',
-          letterSpacing: '-0.01375rem', // -0.22px
-        },
-      ],
-      '7xl': [
-        '4.5rem',
-        {
-          lineHeight   : '1.3',
-          letterSpacing: '-0.01875rem', // -0.3px
-        },
-      ],
-    },
+    fontFamily   : { sans: ['DM Sans', ...defaultTheme.fontFamily.sans] },
     letterSpacing: { ...defaultTheme.letterSpacing },
     fontWeight   : {
       inherit   : 'inherit',

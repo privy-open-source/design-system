@@ -144,7 +144,7 @@ export default defineComponent({
     }
 
     &__label {
-      @apply flex;
+      @apply flex items-center;
     }
   }
 
