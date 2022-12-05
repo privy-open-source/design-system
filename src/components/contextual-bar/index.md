@@ -74,7 +74,7 @@ onMounted (() => {
 
 ### With Icon
 
-<preview class="preview--bar flex-col gap-3">
+<preview class="flex-col space-y-3 preview--bar">
   <p-contextual-bar title="Hey! This is Title Text and telling less">
     <template #icon>
       <IconInfo />
@@ -222,7 +222,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 ## Variants
 Contextual Bar have 2 variants: `light` and `dark`. Default is `light`
 
-<preview class="flex-col gap-4 preview--bar">
+<preview class="flex-col space-y-4 preview--bar">
   <p-contextual-bar variant="light" v-model="sample06" title="Hey! This is Title Text and telling less" />
   <p-contextual-bar variant="dark" v-model="sample07" title="Hey! This is Title Text and telling less" />
 </preview>
@@ -241,7 +241,7 @@ Contextual Bar have 2 variants: `light` and `dark`. Default is `light`
 ## Alignments
 To align Contextual Bar content, use align prop. Available value are `left`, `right` and `center`
 
-<preview class="flex-col gap-4 preview--bar">
+<preview class="flex-col space-y-4 preview--bar">
   <p-contextual-bar align="left" v-model="sample10" title="Hey! This is Title Text" />
   <p-contextual-bar align="center" v-model="sample11" title="Hey! This is Title Text" />
   <p-contextual-bar align="right" v-model="sample12" title="Hey! This is Title Text" />

@@ -17,6 +17,12 @@ import useLoading from './utils/use-loading'
 import Icon from './assets/icon-white.svg'
 
 export default defineComponent({
+  props: {
+    icon: {
+      type   : String,
+      default: Icon,
+    },
+  },
   setup () {
     const loading = useLoading({ elapsed: false })
 
@@ -32,7 +38,6 @@ export default defineComponent({
       show,
       hide,
       loading,
-      icon: Icon,
     }
   },
 })

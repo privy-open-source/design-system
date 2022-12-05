@@ -1,3 +1,4 @@
+import PQueue from 'p-queue'
 import {
   DefineComponent,
   Ref,
@@ -9,17 +10,27 @@ import {
   shallowRef,
   triggerRef,
   nextTick,
+  InjectionKey,
 } from 'vue-demi'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
 export type Component = DefineComponent<{}, {}, any>
 export type ComponentInstance<C extends Component> = InstanceType<C>
 
+export interface GlobalInstance<C extends Component> { component: C, ref: Ref<ComponentInstance<C>> }
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-let instances: Ref<Map<Component, Ref<ComponentInstance<any>>>>
+let instances: Ref<Map<InjectionKey<Component>, GlobalInstance<any>>>
 let container: App<Element>
 
-export async function useSingleton<C extends Component> (component: C): Promise<ComponentInstance<C>> {
+const queue = new PQueue({ concurrency: 1 })
+
+/**
+ * Create global instance of component, It's will not create the instance if id exist
+ * @param id Map's key indentifier
+ * @param component Component class contructor
+ */
+async function createInstance<C extends Component> (id: InjectionKey<C>, component: C): Promise<ComponentInstance<C>> {
   if (!instances)
     instances = shallowRef(new Map())
 
@@ -28,9 +39,9 @@ export async function useSingleton<C extends Component> (component: C): Promise<
     const app    = createApp({
       name  : 'GlobalContainer',
       render: () => {
-        return [...instances.value.entries()]
-          .map(([element, cRef]) => {
-            return h(element, { ref: cRef })
+        return [...instances.value.values()]
+          .map((item) => {
+            return h(item.component, { ref: item.ref })
           })
       },
     })
@@ -42,23 +53,27 @@ export async function useSingleton<C extends Component> (component: C): Promise<
     container = app
   }
 
-  let instance = instances.value.get(component)
+  let instance = instances.value.get(id)
 
   if (!instance) {
-    instance = ref()
-    instances.value.set(component, instance)
+    instance = { component, ref: ref() }
+    instances.value.set(id, instance)
 
     triggerRef(instances)
 
     await nextTick()
   }
 
-  return unref(instance)
+  return unref(instance.ref)
 }
 
-export async function removeSingleton<C extends Component> (component: C): Promise<void> {
+/**
+ * Remove component instance by id
+ * @param id Map's key indentifier
+ */
+async function removeInstance<C extends Component> (id: InjectionKey<C>) {
   if (instances && container) {
-    instances.value.delete(component)
+    instances.value.delete(id)
 
     triggerRef(instances)
 
@@ -66,7 +81,10 @@ export async function removeSingleton<C extends Component> (component: C): Promi
   }
 }
 
-export async function resetSingleton () {
+/**
+ * Reset all instances
+ */
+export async function resetInstance () {
   if (instances) {
     instances.value.clear()
 
@@ -74,4 +92,22 @@ export async function resetSingleton () {
 
     await nextTick()
   }
+}
+
+/**
+ * Create global component, return one if component is exist
+ * @param component Vue Component
+ */
+export async function useSingleton<C extends Component> (component: C): Promise<ComponentInstance<C>> {
+  // eslint-disable-next-line @typescript-eslint/promise-function-async
+  return await queue.add(() => createInstance(component as unknown as InjectionKey<C>, component))
+}
+
+/**
+ * Remove global component
+ * @param component Vue Component
+ */
+export async function removeSingleton<C extends Component> (component: C): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/promise-function-async
+  return await queue.add(() => removeInstance(component as unknown as InjectionKey<C>))
 }

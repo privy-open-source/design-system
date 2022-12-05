@@ -26,12 +26,11 @@
 
 <script lang="ts">
 import {
+  AnchorHTMLAttributes,
   computed,
   defineComponent,
   PropType,
 } from 'vue-demi'
-
-type TargetVariant = '_blank' | '_self' | '_parent' | '_top'
 
 export default defineComponent({
   props: {
@@ -48,7 +47,7 @@ export default defineComponent({
       default: undefined,
     },
     target: {
-      type   : String as PropType<TargetVariant>,
+      type   : String as PropType<AnchorHTMLAttributes['target']>,
       default: '_self',
     },
   },

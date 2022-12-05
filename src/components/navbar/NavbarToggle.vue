@@ -16,16 +16,21 @@
 
 <script lang="ts">
 import {
-  defineComponent, inject, ref, computed,
+  defineComponent,
+  inject,
+  ref,
+  computed,
 } from 'vue-demi'
 import Button from '../button/Button.vue'
 import IconMenu from '@carbon/icons-vue/lib/menu/20'
 import IconClose from '@carbon/icons-vue/lib/close/20'
-import { NAVBAR_SETTINGS } from './use-navbar'
+import { NAVBAR_SETTINGS } from '.'
 
 export default defineComponent({
   components: {
-    Button, IconMenu, IconClose,
+    Button,
+    IconMenu,
+    IconClose,
   },
   setup () {
     const expand     = ref(false)

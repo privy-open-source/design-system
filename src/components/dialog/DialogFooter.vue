@@ -32,14 +32,14 @@ import {
 import type {
   StyleVariant as FooterButtonStyleVariant,
   ColorVariant as FooterButtonColorVariant,
-} from '../button/Button.vue'
+} from '../button'
 
 export type FooterAlignVariant = 'start' | 'end'
 
 export type {
   StyleVariant as FooterButtonStyleVariant,
   ColorVariant as FooterButtonColorVariant,
-} from '../button/Button.vue'
+} from '../button'
 
 export default defineComponent({
   components: { Button },

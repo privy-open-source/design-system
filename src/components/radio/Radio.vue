@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import { useVModel } from './use-radio'
+import { useVModel } from '.'
 import IconCheck from '@carbon/icons-vue/lib/checkmark/16'
 import {
   computed,
@@ -147,7 +147,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .radio {
-  @apply inline-flex gap-2 relative cursor-pointer select-none items-baseline;
+  @apply inline-flex space-x-2 relative cursor-pointer select-none items-baseline;
 
   & > input[type="radio"] {
     @apply appearance-none w-0 h-0 opacity-0 absolute;

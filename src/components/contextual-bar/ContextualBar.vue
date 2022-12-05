@@ -64,8 +64,8 @@ import {
   onMounted,
   watch,
 } from 'vue-demi'
-import { AlignVariant } from '../nav/Nav.vue'
-import { useVModel } from '../input/use-input'
+import { AlignVariant } from '../nav'
+import { useVModel } from '../input'
 import pCaption from '../caption/Caption.vue'
 import pSubheading from '../subheading/Subheading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/20'
@@ -74,12 +74,13 @@ import {
   until,
   useElementBounding,
 } from '@vueuse/core'
-
-type StyleVariant = 'light' | 'dark'
+import { StyleVariant } from '.'
 
 export default defineComponent({
   components: {
-    IconClose, pCaption, pSubheading,
+    IconClose,
+    pCaption,
+    pSubheading,
   },
   props: {
     variant: {
@@ -253,7 +254,7 @@ export default defineComponent({
   &&--align-right {
     .contextual-bar__wrapper {
       &--with-action {
-        @apply gap-3;
+        @apply space-gap-3;
 
         .contextual-bar__icon {
           @apply mr-0;
@@ -275,7 +276,7 @@ export default defineComponent({
   }
 
   &__action {
-    @apply flex flex-shrink-0 ml-auto gap-3;
+    @apply flex flex-shrink-0 ml-auto space-gap-3;
   }
 
   &__icon {

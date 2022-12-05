@@ -31,8 +31,7 @@ import {
   ref,
   computed,
 } from 'vue-demi'
-
-type StyleVariant = 'info' | 'danger'
+import { StyleVariant } from '.'
 
 const BannerIcons = {
   danger: IconDanger,
@@ -89,7 +88,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .banner {
-  @apply p-4 flex gap-3 rounded text-subtle;
+  @apply p-4 flex space-x-2 rounded text-subtle;
 
   a {
     &:not(.btn) {

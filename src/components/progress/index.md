@@ -60,7 +60,7 @@
 ## Variants
 There are 2 variants, `dot` and `counter`, default is `dot`
 
-<preview class="flex-col gap-4">
+<preview class="flex-col space-y-4">
   <p-progress variant="dot">
     <p-progress-item title="Step 1" />
     <p-progress-item title="Step 2" />
@@ -96,7 +96,7 @@ There are 2 variants, `dot` and `counter`, default is `dot`
 
 There are 2 label's variants, `specific` and `general`, default is `specific`
 
-<preview class="flex-col gap-4">
+<preview class="flex-col space-y-4">
   <p-progress title-variant="specific">
     <p-progress-item title="Step 1" active />
     <p-progress-item title="Step 2" active />
@@ -131,7 +131,7 @@ There are 2 label's variants, `specific` and `general`, default is `specific`
 ## Custom Icon
 You can customize progress point with icon with slot `icon`.
 
-<preview class="flex-col gap-4">
+<preview class="flex-col space-y-4">
   <p-progress variant="dot">
     <p-progress-item title="Step 1" />
     <p-progress-item title="Step 2" active>

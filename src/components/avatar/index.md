@@ -54,7 +54,7 @@
 
 There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is `md`
 
-<preview class="flex-col items-center gap-3 lg:flex-row">
+<preview class="flex-col items-center space-gap-3 lg:flex-row">
   <p-avatar src="https://picsum.photos/24" size="xs" />
   <p-avatar src="https://picsum.photos/32" size="sm" />
   <p-avatar src="https://picsum.photos/40" size="md" />
@@ -76,7 +76,7 @@ There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is
 
 Avatar has 2 style variant: `image` and `alias`
 
-<preview class="gap-3">
+<preview class="space-x-3">
   <p-avatar variant="image" src="https://picsum.photos/40" />
   <p-avatar variant="alias" name="Tarjono Smith" />
 </preview>
@@ -108,7 +108,7 @@ If prop `variant` not set, it will detect the variant with some caveats:
 
 **Result**:
 
-<preview class="gap-3">
+<preview class="space-x-3">
   <p-avatar variant="image" src="https://picsum.photos/40" />
   <p-avatar variant="alias" name="Tarjono Smith" />
   <p-avatar />

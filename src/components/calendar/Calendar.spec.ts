@@ -62,7 +62,7 @@ it('should disabled the date if "min" props is provided', () => {
   const date = screen.getByText('13')
 
   expect(date).toBeInTheDocument()
-  expect(date).toHaveAttribute('disabled', 'true')
+  expect(date).toBeDisabled()
 })
 
 it('should disabled the date if "max" props is provided', () => {

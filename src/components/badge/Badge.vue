@@ -12,9 +12,7 @@ import {
   PropType,
   computed,
 } from 'vue-demi'
-
-type ColorVariant = 'default' | 'primary' | 'success' | 'warning' | 'danger'
-type StyleVariant = 'default' | 'light' | 'inverse'
+import { ColorVariant, StyleVariant } from '.'
 
 export default defineComponent({
   props: {

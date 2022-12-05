@@ -29,9 +29,7 @@ import {
   dummyAvatar,
 } from './utils/create-image'
 import loadImage from './utils/load-image'
-
-type TypeVariant = 'image' | 'alias'
-type SizeVariant = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+import { TypeVariant, SizeVariant } from '.'
 
 export default defineComponent({
   props: {
@@ -101,6 +99,7 @@ export default defineComponent({
       loadImage(props.src)
         .then(() => {
           imageSrc.value = props.src
+
           emit('imgloaded', props.src)
         })
         .catch((error) => {

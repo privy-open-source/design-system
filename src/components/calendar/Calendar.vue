@@ -85,7 +85,7 @@ import DateAdapter from './adapter/date'
 import MonthAdapter from './adapter/month'
 import YearAdapter from './adapter/year'
 import { startOfMonth } from 'date-fns'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 
 const Adapters: Record<CalendarMode, CalendarAdapter> = {
   date : DateAdapter,
@@ -244,10 +244,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .calendar {
-  @apply flex flex-col gap-2 text-sm shadow-xl border-transparent;
+  @apply flex flex-col space-y-2 text-sm shadow-xl border-transparent;
 
   &__nav {
-    @apply flex justify-between gap-2 mb-2;
+    @apply flex justify-between space-y-2 mb-2;
 
     &-title {
       @apply flex-grow;

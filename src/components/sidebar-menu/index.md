@@ -2,7 +2,7 @@
   import pSidebarMenu from './SidebarMenu.vue'
   import { ref } from 'vue-demi'
   import pSidebarBrand from '../sidebar/SidebarBrand.vue'
-  import { defineMenu } from './use-sidebar-menu'
+  import { defineMenu } from '.'
   import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
   import IconDocument from '@carbon/icons-vue/lib/document/20'
   import IconUsers from '@carbon/icons-vue/lib/group/20'
@@ -168,7 +168,7 @@
 
 ### Basic Sidebar
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-sidebar-menu :menus="basic">
     <p-sidebar-brand>
       <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
@@ -220,7 +220,7 @@ const menus = defineMenu([
 
 ### Fixed Sidebar
 
-<preview class="flex-col gap-2 higher">
+<preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="fixed">
     <p-sidebar-brand>
       <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
@@ -324,7 +324,7 @@ const menus = defineMenu([
 
 ### Narrow Sidebar
 
-<preview class="flex-col gap-2 higher">
+<preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="narrow" type="narrow">
     <p-sidebar-brand>
       <img src="../sidebar/assets/images/logo-privy-icon.svg" alt="" />

@@ -16,7 +16,7 @@ A button group displays multiple buttons together that gives user access to simi
 ## Button by Style
 
 ##### Default button
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <ButtonGroup>
     <Button>Button Text</Button>
     <Button icon><IconChevronDown /></Button>
@@ -30,7 +30,7 @@ A button group displays multiple buttons together that gives user access to simi
 </div>
 
 ##### Outline button
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <ButtonGroup>
     <Button variant="outline">Button Text</Button>
     <Button variant="outline" icon><IconChevronDown /></Button>
@@ -45,8 +45,8 @@ A button group displays multiple buttons together that gives user access to simi
 ## Button by Quantity
 
 ##### Two Button
-<div class="flex gap-3">
-  <div class="flex gap-3">
+<div class="flex space-x-3">
+  <div class="flex space-x-3">
     <ButtonGroup>
       <Button>Button Text</Button>
       <Button icon><IconChevronDown /></Button>
@@ -66,7 +66,7 @@ A button group displays multiple buttons together that gives user access to simi
 </div>
 
 ##### Three Button
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <ButtonGroup>
     <Button>Button Text</Button>
     <Button>Button Text</Button>
@@ -82,7 +82,7 @@ A button group displays multiple buttons together that gives user access to simi
 </div>
 
 ##### Four Button
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <ButtonGroup>
     <Button>Button Text</Button>
     <Button>Button Text</Button>
@@ -102,11 +102,12 @@ A button group displays multiple buttons together that gives user access to simi
 ## Button by Addon
 
 ##### Button Addon Right
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <ButtonGroup>
     <Button>Button Text</Button>
     <Dropdown
-      icon>
+      icon
+      no-caret>
       <template #button-content>
         <IconChevronDown />
       </template>
@@ -124,7 +125,7 @@ A button group displays multiple buttons together that gives user access to simi
 </div>
 
 ##### Button Both Addon
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <ButtonGroup>
     <Button icon><IconChevronLeft /></Button>
     <Button icon><IconChevronRight /></Button>
@@ -138,9 +139,10 @@ A button group displays multiple buttons together that gives user access to simi
 </div>
 
 ##### Button Addon Left
-<div class="flex gap-3">
+<div class="flex space-x-3">
   <ButtonGroup>
     <Dropdown
+      no-caret
       icon>
       <template #button-content>
         <IconChevronDown />

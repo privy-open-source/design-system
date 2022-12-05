@@ -12,8 +12,8 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue-demi'
 import Button from '../../button/Button.vue'
-import { useVModel } from '../../checkbox/use-checkbox'
-import { FilterToggle } from '../use-filterbar'
+import { useVModel } from '../../checkbox'
+import { FilterToggle } from '..'
 
 export default defineComponent({
   components: { Button },

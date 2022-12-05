@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue-demi'
-import { ToastOption } from './use-toast'
+import { ToastOption } from '.'
 import Toast from './Toast.vue'
 
 interface ToastItem extends ToastOption {
@@ -53,7 +53,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .toast-container {
-  @apply fixed top-0 right-0 z-40 flex flex-col gap-2 max-h-screen overflow-visible;
+  @apply fixed top-0 right-0 z-40 flex flex-col space-y-2 max-h-screen overflow-visible;
 }
 
 .toast {

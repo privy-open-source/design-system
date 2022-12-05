@@ -2,7 +2,6 @@
   import Colors from './Colors.vue'
   import { ref, computed } from "vue-demi"
   import items from './Colors.json'
-
 </script>
 
 # Color
@@ -10,7 +9,7 @@
 <div class="p-0 mt-8">
   <template v-for="item of items">
     <Colors :item="item">
-      {{item.title}}
+      {{ item.title }}
     </Colors>
   </template>
 </div>

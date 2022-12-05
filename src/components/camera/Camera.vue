@@ -1,5 +1,6 @@
 <template>
   <div
+    v-p-aspect-ratio.fixed="4/3"
     class="camera"
     data-testid="camera"
     :data-deviceid="deviceId"
@@ -10,8 +11,8 @@
       data-testid="camera-video"
       :srcObject.prop="stream"
       class="camera__video"
-      muted
       autoplay
+      muted
       playsinline
       @play="onStart" />
 
@@ -100,12 +101,17 @@
       </p-button>
       <!-- End Main Button -->
     </div>
+    <audio
+      ref="shutter"
+      :src="ShutterWav"
+      :muted="silent" />
 
     <slot
       :cameras="cameras"
       :preview="preview"
       :stream="stream"
       :video="video"
+      :shutter="shutter"
       :toast="toast" />
   </div>
 </template>
@@ -125,9 +131,8 @@ import pButton from '../button/Button.vue'
 import IconRotate from '@carbon/icons-vue/lib/renew/16'
 import IconCamera from '@carbon/icons-vue/lib/camera/24'
 import IconRetake from '@carbon/icons-vue/lib/reset/24'
-import shutterWav from './assets/shutter.wav'
-import { useSound } from '@vueuse/sound'
-import { useVModel } from '../input/use-input'
+import ShutterWav from './assets/shutter.wav'
+import { useVModel } from '../input'
 import CaptureAdapter from './adapter/capture'
 import {
   Adapter,
@@ -141,8 +146,9 @@ import {
   useUserMedia,
   until,
 } from '@vueuse/core'
-import * as dialog from '../dialog/use-dialog'
+import * as dialog from '../dialog'
 import defu from 'defu'
+import { pAspectRatio } from '../aspect-ratio'
 
 export default defineComponent({
   components: {
@@ -151,7 +157,8 @@ export default defineComponent({
     IconRetake,
     IconRotate,
   },
-  props: {
+  directives: { pAspectRatio },
+  props     : {
     modelValue: {
       type: [
         globalThis.File,
@@ -202,8 +209,8 @@ export default defineComponent({
     const isTaken      = ref(false)
     const preview      = ref('')
     const message      = ref('')
-    const shutter      = useSound(shutterWav)
 
+    const shutter    = ref<HTMLAudioElement>()
     const video      = ref<HTMLVideoElement>()
     const permission = usePermission('camera', { controls: true })
     const camera     = ref(0)
@@ -216,7 +223,10 @@ export default defineComponent({
       }, props.adapter.meta, { autoStart: false })
     })
 
-    const { videoInputs: cameras } = useDevicesList({ constraints: { video: { facingMode: meta.value.facingMode } } })
+    const { videoInputs: cameras } = useDevicesList({
+      requestPermissions: false,
+      constraints       : { video: { facingMode: meta.value.facingMode } },
+    })
 
     const deviceId = computed(() => {
       return cameras.value?.at(camera.value)?.deviceId
@@ -261,6 +271,12 @@ export default defineComponent({
       }
 
       await start()
+
+      /* Trigger video play if browser ignore autoplays attribute */
+      /* In HappyDOM, play() is undefined, which shouldn't happen in Real Browser */
+      /* c8 ignore next 2 */
+      if (typeof video.value?.play === 'function')
+        await video.value.play()
     }
 
     function toggle () {
@@ -291,8 +307,9 @@ export default defineComponent({
       emit('result', output.result)
       emit('change', output.result)
 
-      if (!props.silent)
-        shutter.play()
+      /* c8 ignore next 2 */
+      if (typeof shutter.value?.play === 'function')
+        shutter.value.play()
     }
 
     async function retake () {
@@ -310,10 +327,10 @@ export default defineComponent({
     }
 
     onMounted(async () => {
-      if (permission.isSupported)
+      if (permission.isSupported) {
         await until(permission.state).not.toBeUndefined()
-
-      await turnOn()
+        await turnOn()
+      }
     })
 
     onBeforeUnmount(() => {
@@ -321,9 +338,11 @@ export default defineComponent({
     })
 
     return {
+      ShutterWav,
       classNames,
       cameras,
       video,
+      shutter,
       stream,
       toggle,
       isActive,
@@ -344,10 +363,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .camera {
-  @apply bg-emphasis w-full flex flex-col aspect-video select-none relative;
+  @apply bg-emphasis w-full flex flex-col select-none relative overflow-hidden;
 
   &__video {
-    @apply flex-grow min-h-full max-w-full h-auto;
+    @apply flex-grow min-h-full max-w-full h-auto object-cover;
   }
 
   &--mirror {
@@ -357,31 +376,31 @@ export default defineComponent({
   }
 
   &__mask-container {
-    @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full overflow-hidden pointer-events-none;
+    @apply absolute inset-0 w-full h-full overflow-hidden pointer-events-none;
   }
 
   &__mask {
-    @apply absolute top-1/2 left-1/2 shadow-[0_0_0_999px_rgba(0,0,0,0.5)] -translate-x-1/2 -translate-y-1/2;
+    @apply absolute top-1/2 left-1/2 shadow-mask -translate-x-1/2 -translate-y-1/2;
 
     &--none &-container {
       @apply hidden;
     }
 
     &--square & {
-      @apply aspect-square w-2/3 md:w-1/2;
+      @apply aspect-compat-square w-[55%] md:w-1/2;
     }
 
     &--round & {
-      @apply aspect-square rounded-full w-1/2;
+      @apply aspect-compat-square rounded-full w-[55%] md:w-1/2;
     }
 
     &--card & {
-      @apply aspect-[85.60/53.98] w-2/3 rounded;
+      @apply aspect-compat-[85.60/53.98] w-3/4 rounded;
     }
   }
 
   &__result {
-    @apply max-w-full h-auto;
+    @apply w-full h-full object-cover absolute inset-0;
   }
 
   &__off-info {
@@ -389,7 +408,7 @@ export default defineComponent({
   }
 
   &__controls {
-    @apply py-3 flex w-full flex-shrink-0 justify-center items-center absolute bottom-0 gap-3;
+    @apply py-3 flex w-full flex-shrink-0 justify-center items-center absolute bottom-0 space-x-3;
   }
 
   &__toast {

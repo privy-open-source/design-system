@@ -1,5 +1,6 @@
 <template>
   <div
+    v-p-aspect-ratio="width / height"
     class="signature-draw signature-draw--mobile"
     data-testid="signature-draw-mobile"
     :class="classNames"
@@ -43,6 +44,7 @@
           :height="mode === 'rotate' ? width : height"
           :reset-label="resetLabel" />
         <Button
+          class="signature-draw__close"
           data-testid="signature-draw-close"
           @click="close">
           <span>{{ closeDrawLabel }}</span>
@@ -62,10 +64,11 @@ import {
   watch,
 } from 'vue-demi'
 import Button from '../button/Button.vue'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 import rotateImage from './utils/rotate-image'
 import IconEdit from '@carbon/icons-vue/lib/edit/20'
+import { pAspectRatio } from '../aspect-ratio'
 
 export default defineComponent({
   components: {
@@ -73,7 +76,8 @@ export default defineComponent({
     IconEdit,
     SignatureDrawDesktop,
   },
-  props: {
+  directives: { pAspectRatio },
+  props     : {
     modelValue: {
       type   : String,
       default: '',
@@ -186,12 +190,20 @@ export default defineComponent({
     }
 
     &__modal {
-      @apply fixed w-full h-full top-0 left-0 bg-default z-50 flex items-center justify-center gap-4 flex-col p-5;
+      @apply fixed w-full h-full top-0 left-0 bg-default z-50 flex items-center justify-center flex-col p-5;
+    }
+
+    &__close {
+      @apply mt-4;
     }
 
     &--rotate {
       & * {
         @apply vertical-lr;
+      }
+
+      .signature-draw__close {
+        @apply mr-4 mt-0;
       }
 
       .signature-draw__modal {
@@ -202,11 +214,11 @@ export default defineComponent({
         }
 
         .btn--xs {
-          @apply py-2 px-1;
+          @apply py-2 px-1 pi-1;
         }
 
         .btn--md {
-          @apply py-5 px-3;
+          @apply py-5 px-3 pi-3;
         }
       }
     }

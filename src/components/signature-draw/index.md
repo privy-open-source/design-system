@@ -50,7 +50,7 @@
 
 Set pen color with prop `color`, default is `#000000`
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-signature-draw color="#73185E" />
 </preview>
 
@@ -64,7 +64,7 @@ Set pen color with prop `color`, default is `#000000`
 
 Result of drawing image is store in `v-model` value. It's encoded in [base64-dataURI][data-uri] format.
 
-<preview class="flex-col gap-2">
+<preview class="flex-col space-y-2">
   <p-signature-draw v-model="result" />
 </preview>
 

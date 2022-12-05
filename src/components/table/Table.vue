@@ -105,9 +105,9 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { TableField } from './use-table'
+import { TableField } from '.'
 import Checkbox from '../checkbox/Checkbox.vue'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import IconDrag from '@carbon/icons-vue/lib/draggable/24'
 import Draggable from 'vuedraggable'
 import defu from 'defu'
@@ -215,7 +215,7 @@ export default defineComponent({
   @apply flex flex-col w-full;
 
   &__headers {
-    @apply flex pt-4 gap-2 bg-default;
+    @apply flex pt-4 space-x-2 bg-default;
 
     > .datatable__header {
       @apply px-3;
@@ -236,7 +236,7 @@ export default defineComponent({
   }
 
   &__row {
-    @apply flex gap-2 w-full items-center bg-default;
+    @apply flex space-x-2 w-full items-center bg-default;
   }
 
   &__cell {
@@ -268,7 +268,7 @@ export default defineComponent({
 
   &--flexible {
     .datatable__body {
-      @apply gap-3;
+      @apply space-y-3;
     }
 
     .datatable__row {

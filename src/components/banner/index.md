@@ -97,7 +97,7 @@
 
 Banner have 2 variants: `info` and `danger`, default is `info`
 
-<preview class="flex-col gap-3">
+<preview class="flex-col space-y-3">
   <p-banner variant="info">
     Every sign will requires privy balance.
     Please make sure you have enough privy balance

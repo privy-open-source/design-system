@@ -48,14 +48,14 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import NavbarNav from '../navbar/NavbarNav.vue'
-import { Menu } from './use-navbar-menu'
+import { Menu } from '../sidebar-menu'
 
 export default defineComponent({
   components: { NavbarNav },
   props     : {
     menus: {
       type   : Array as PropType<Menu[]>,
-      default: () => ([]),
+      default: () => ([] as Menu[]),
     },
   },
   setup () {},

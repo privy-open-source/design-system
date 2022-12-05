@@ -3,6 +3,20 @@ import loadImage from '../../avatar/utils/load-image'
 import { toRGB } from '../../utils/color'
 
 /**
+ * Create canvas element
+ * @param width width
+ * @param height height
+ */
+export function createCanvas (width: number, height: number): HTMLCanvasElement {
+  const canvas = document.createElement('canvas')
+
+  canvas.width  = width
+  canvas.height = height
+
+  return canvas
+}
+
+/**
  * Fill and replace color of image
  * @param canvas Target canvas
  * @param color new Color

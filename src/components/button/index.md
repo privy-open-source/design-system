@@ -37,7 +37,7 @@
 
 ### Button with icon + text
 
-<preview class="flex-col items-center gap-3 md:flex-row">
+<preview class="flex-col items-center space-gap-3 md:flex-row">
   <p-button color="primary"><IconBee /> Click Me</p-button>
   <p-button color="primary">Click Me <IconBee /></p-button>
 </preview>

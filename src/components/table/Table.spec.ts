@@ -2,7 +2,7 @@ import Draggable from './__mocks__/vuedraggable'
 import { vi } from 'vitest'
 import { fireEvent, render } from '@testing-library/vue'
 import { ref } from 'vue-demi'
-import { defineTable } from './use-table'
+import { defineTable } from '.'
 import Table from './Table.vue'
 
 vi.mock('vuedraggable', () => ({ default: Draggable }))

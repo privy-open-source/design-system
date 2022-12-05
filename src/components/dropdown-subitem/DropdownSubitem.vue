@@ -61,7 +61,7 @@ import {
   computed,
   watch,
 } from 'vue-demi'
-import { DropdownContext, DROPDOWN_TREE } from './use-dropdown-subitem'
+import { DropdownContext, DROPDOWN_TREE } from '.'
 
 export default defineComponent({
   components: {
@@ -165,7 +165,7 @@ export default defineComponent({
 <style lang="postcss">
 .dropdown__subitem {
   &-btn {
-    @apply flex items-center gap-1;
+    @apply flex items-center space-x-1;
 
     &-back {
       @apply flex-shrink-0;

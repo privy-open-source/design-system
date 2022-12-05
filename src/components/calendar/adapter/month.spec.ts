@@ -1,6 +1,11 @@
+import { initAppContext, setLang } from '../../global/context'
 import { CalendarItem } from './adapter'
 import { createMockContext } from './date.spec'
 import Adapter from './month'
+
+beforeEach(() => {
+  initAppContext()
+})
 
 describe('getItems', () => {
   it('should be able to return list of monts in one years', () => {
@@ -126,5 +131,31 @@ describe('canNext', () => {
     const result  = Adapter.canNext(context)
 
     expect(result).toBe(true)
+  })
+})
+
+describe('Localization', () => {
+  it('should respect global lang setting', () => {
+    setLang('id')
+
+    const context = createMockContext()
+    const items   = Adapter.getItems(context).slice(0, 12).map((i) => i.text)
+
+    const expected = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'Mei',
+      'Jun',
+      'Jul',
+      'Agt',
+      'Sep',
+      'Okt',
+      'Nov',
+      'Des',
+    ]
+
+    expect(items).toStrictEqual(expected)
   })
 })

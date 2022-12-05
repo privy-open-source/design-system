@@ -49,12 +49,11 @@
 <script lang="ts">
 import {
   defineComponent,
-  InjectionKey,
   PropType,
   provide,
-  Ref,
   watch,
   toRef,
+  watchEffect,
 } from 'vue-demi'
 import {
   templateRef,
@@ -64,25 +63,24 @@ import {
 import Button from '../button/Button.vue'
 import DropdownGroup from '../dropdown-subitem/DropdownSubitem.vue'
 import { useFocus } from './utils/use-focus'
-import { usePopper, Placement } from './utils/use-popper'
-import { useVModel } from '../input/use-input'
+import {
+  Placement,
+  autoUpdate,
+  computePosition,
+  offset,
+  flip,
+  shift,
+} from '@floating-ui/dom'
+import { useVModel } from '../input'
 import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
 import type {
   StyleVariant,
   ColorVariant,
   SizeVariant,
-} from '../button/Button.vue'
+} from '../button'
+import { DROPDOWN_CONTEXT } from '.'
 
 type DropdownSubitemElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
-
-interface DropdownContext {
-  close: () => void,
-  open: () => void,
-  toggle: () => void,
-  isOpen: Ref<boolean>,
-}
-
-export const DROPDOWN_CONTEXT: InjectionKey<DropdownContext> = Symbol('DROPDOWN_CONTEXT')
 
 export default defineComponent({
   components: {
@@ -146,7 +144,6 @@ export default defineComponent({
     const menu      = templateRef<HTMLDivElement>('menu')
     const wizard    = templateRef<DropdownSubitemElement>('wizard')
     const placement = toRef(props, 'placement')
-    const popper    = usePopper(target, menu, placement)
     const isOpen    = useVModel(props)
 
     const { next: nextFocus, prev: prevFocus } = useFocus(menu)
@@ -223,10 +220,33 @@ export default defineComponent({
       }
     })
 
+    watchEffect((onCleanup) => {
+      if (target.value && menu.value) {
+        const cleanup = autoUpdate(target.value, menu.value, () => {
+          computePosition(target.value, menu.value, {
+            strategy  : 'absolute',
+            placement : placement.value,
+            middleware: [
+              flip(),
+              shift(),
+              offset(8),
+            ],
+          }).then(({ x, y, placement }) => {
+            if (menu.value) {
+              menu.value.dataset.popperPlacement = placement
+
+              menu.value.style.left = `${x || 0}px`
+              menu.value.style.top  = `${y || 0}px`
+            }
+          })
+        })
+
+        onCleanup(cleanup)
+      }
+    }, { flush: 'post' })
+
     watch(isOpen, (value) => {
-      if (value && popper.value)
-        popper.value.update()
-      else if (wizard.value)
+      if (!value && wizard.value)
         wizard.value.reset()
     }, { immediate: true })
 
@@ -252,7 +272,7 @@ export default defineComponent({
   @apply relative inline-flex;
 
   &__menu {
-    @apply max-h-64 border rounded w-full min-w-[15rem] bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto relative;
+    @apply max-h-64 border rounded w-full min-w-[15rem] bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
   }
 
   &__menu-container > .dropdown__item:first-child,

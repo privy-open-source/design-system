@@ -14,7 +14,7 @@
 <script lang="ts">
 import { useMediaQuery } from '@vueuse/core'
 import { computed, defineComponent } from 'vue-demi'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import SignatureDrawMobile from './SignatureDrawMobile.vue'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 

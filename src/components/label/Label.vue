@@ -20,7 +20,10 @@
 
 <script lang="ts">
 import {
-  defineComponent, PropType, computed, ref,
+  defineComponent,
+  PropType,
+  computed,
+  ref,
 } from 'vue-demi'
 import Dot from '../dot/Dot.vue'
 import IconClose from '@carbon/icons-vue/lib/close/16'

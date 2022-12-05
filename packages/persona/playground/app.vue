@@ -8,7 +8,7 @@
   </p-sidebar-menu>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { defineMenu } from '@privyid/persona/core'
 import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
 import IconDocument from '@carbon/icons-vue/lib/document/20'

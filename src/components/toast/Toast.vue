@@ -33,7 +33,7 @@ import {
   onMounted,
   onUnmounted,
 } from 'vue-demi'
-import { ToastStyleVariant, ToastTypeVariant } from './use-toast'
+import { ToastStyleVariant, ToastTypeVariant } from '.'
 import IconInfo from '@carbon/icons-vue/lib/information--filled/24'
 import IconSuccess from '@carbon/icons-vue/lib/checkmark/24'
 import IconWarning from '@carbon/icons-vue/lib/warning--filled/24'
@@ -73,7 +73,7 @@ export default defineComponent({
   },
   emits: ['dismissed'],
   setup (props, { emit }) {
-    const timeout    = ref()
+    const timeout    = ref<ReturnType<typeof setTimeout>>()
     const classNames = computed(() => {
       const result: string[] = ['toast']
 
@@ -138,7 +138,7 @@ export default defineComponent({
   }
 
   .toast__body {
-    @apply py-4 pr-4 flex-grow gap-2 flex flex-col;
+    @apply py-4 pr-4 flex-grow space-y-2 flex flex-col;
   }
 
   .toast__title {

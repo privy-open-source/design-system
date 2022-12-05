@@ -51,10 +51,10 @@ import Subheading from '../../subheading/Subheading.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
 import Checkbox from '../../checkbox/Checkbox.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
-import { useVModel } from '../../input/use-input'
+import { useVModel } from '../../input'
 import { isEqual } from '../../utils/value'
-import { FilterSelect } from '../use-filterbar'
-import { SelectItem } from '../../select/use-select'
+import { FilterSelect } from '..'
+import { SelectItem } from '../../select'
 
 export default defineComponent({
   components: {

@@ -36,7 +36,7 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { useVModel } from '../checkbox/use-checkbox'
+import { useVModel } from '../checkbox'
 
 type StyleVariant = 'pill' | 'flat'
 
@@ -146,7 +146,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .toggle {
-  @apply inline-flex cursor-pointer relative items-center gap-3 select-none;
+  @apply inline-flex cursor-pointer relative items-center space-x-3 select-none;
 
   &__switch {
     @apply flex items-center justify-center relative bg-inactive border-subtle;

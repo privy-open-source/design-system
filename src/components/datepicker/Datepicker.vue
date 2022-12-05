@@ -44,7 +44,7 @@ import {
   ref,
 } from 'vue-demi'
 import { CalendarMode } from '../calendar/adapter/adapter'
-import { useVModel } from '../input/use-input'
+import { useVModel } from '../input'
 import IconCalendar from '@carbon/icons-vue/lib/calendar/16'
 
 export default defineComponent({
