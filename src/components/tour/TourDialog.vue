@@ -158,11 +158,11 @@ export default defineComponent({
 <style lang="postcss">
 .tour {
   &__dialog {
-    @apply rounded bg-blackWhite-95 text-white w-full max-w-xs z-[100] overflow-hidden relative shadow-sm;
+    @apply rounded bg-emphasis text-on-emphasis w-full max-w-xs z-[100] overflow-hidden relative shadow-sm;
   }
 
   &__image {
-    @apply max-w-full h-auto object-cover bg-white;
+    @apply max-w-full h-auto object-cover bg-default;
   }
 
   &__body {
@@ -174,7 +174,7 @@ export default defineComponent({
   }
 
   &__meta {
-    @apply text-xs text-blackWhite-75 flex-shrink-0;
+    @apply text-xs text-muted flex-shrink-0;
   }
 
   &__controls {
@@ -182,15 +182,15 @@ export default defineComponent({
 
     /* TODO: Change this when color token was released */
     > .btn--ghost {
-      @apply text-white hover:text-opacity-50;
+      @apply text-on-emphasis hover:text-on-emphasis/50;
     }
   }
 
   &__dismiss {
-    @apply absolute top-3 right-3 hover:cursor-pointer text-white text-opacity-50 hover:text-opacity-100;
+    @apply absolute top-3 right-3 hover:cursor-pointer text-on-emphasis/30 hover:text-on-emphasis/50;
 
     .tour--image & {
-      @apply text-black hover:text-opacity-50;
+      @apply text-default/30 hover:text-default/50;
     }
   }
 }

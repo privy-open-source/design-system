@@ -67,7 +67,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .sidebar {
-  @apply bg-white px-2 py-4;
+  @apply bg-default px-2 py-4;
 
   &:not(.sidebar--narrow) {
     @apply w-[230px];
@@ -92,7 +92,7 @@ export default defineComponent({
   }
 
   &&--tabs {
-    @apply pr-0 border-r border-r-secondary-25/50;
+    @apply pr-0 border-r border-r-default;
   }
 
   &&--lines {

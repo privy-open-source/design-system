@@ -230,7 +230,7 @@ export default defineComponent({
     }
 
     &__dismiss {
-      @apply text-subtle hover:cursor-pointer;
+      @apply text-default/30 hover:text-default/50 hover:cursor-pointer;
     }
   }
 

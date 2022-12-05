@@ -189,6 +189,7 @@ module.exports = {
         'lg-danger'            : `0 10px 15px -3px rgba(${theme.colors.red[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.red[40]}, ${theme.opacity[5]})`,
         'xl'                   : `0 0 1px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]}), 0 8px 10px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 16px 25px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
         '2xl'                  : `0 20px 40px -8px rgba(${theme.colors.gray[100]}, ${theme.opacity[25]})`,
+        'mask'                 : '0 0 0 9999px rgba(0,0,0,0.5)',
       },
       outlineColor: {
         DEFAULT    : theme.colors.gray[15],

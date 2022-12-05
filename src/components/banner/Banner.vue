@@ -130,7 +130,7 @@ export default defineComponent({
   }
 
   &__close {
-    @apply cursor-pointer text-muted;
+    @apply cursor-pointer text-default/30 hover:text-default/50;
   }
 }
 </style>

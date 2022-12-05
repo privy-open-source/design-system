@@ -88,10 +88,6 @@ export default defineComponent({
 
     .nav--pills {
       .nav__link {
-        /* .nav__link__icon {
-          @apply
-        } */
-
         &:is(.nav__link--icon) {
           @apply p-0;
 
@@ -104,10 +100,10 @@ export default defineComponent({
           }
 
           &.nav__link--active {
-            @apply bg-transparent text-body-100;
+            @apply bg-transparent text-default;
 
             .nav__link__icon {
-              @apply bg-secondary-5;
+              @apply bg-subtle;
             }
           }
         }
@@ -127,10 +123,10 @@ export default defineComponent({
         }
 
         &--active {
-          @apply bg-transparent text-body-100;
+          @apply bg-transparent text-default;
 
           .nav__link__icon {
-            @apply bg-secondary-5;
+            @apply bg-subtle;
           }
         }
 
@@ -145,7 +141,7 @@ export default defineComponent({
         @apply px-0;
 
         &--active {
-          @apply bg-white;
+          @apply bg-default;
         }
 
         &__label {

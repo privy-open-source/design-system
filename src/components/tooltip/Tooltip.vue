@@ -154,18 +154,18 @@ export default defineComponent({
   }
 
   &--black {
-    @apply bg-black text-white shadow-sm;
+    @apply bg-base-black text-on-emphasis shadow-sm;
 
     .tooltip__arrow::after {
-      @apply bg-black;
+      @apply bg-base-black;
     }
   }
 
   &--white {
-    @apply bg-white text-body-100 shadow;
+    @apply bg-default text-subtle shadow;
 
     .tooltip__arrow::after {
-      @apply bg-white;
+      @apply bg-default;
     }
   }
 }
