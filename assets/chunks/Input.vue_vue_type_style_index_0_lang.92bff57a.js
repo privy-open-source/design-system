@@ -1,1 +1,0 @@
-import{u as o}from"./index.4a38b074.js";import{i as t}from"../app.b1379ff1.js";const n=t({props:{modelValue:{type:[String,Number],default:""},disabled:{type:Boolean},readonly:{type:Boolean}},models:{prop:"modelValue",event:"update:modelValue"},emits:["update:modelValue"],setup(e){return{value:o(e)}}});export{n as _};
