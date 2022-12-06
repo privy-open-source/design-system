@@ -1,11 +1,20 @@
 <template>
-  <input
-    v-model="value"
-    :disabled="disabled"
-    :readonly="readonly"
-    data-testid="input"
-    class="input"
-    :class="classNames">
+  <div class="input">
+    <slot name="prepend" />
+    <input
+      v-model="model"
+      class="input__form"
+      data-testid="input"
+      :disabled="disabled"
+      :readonly="readonly"
+      :class="classNames"
+      v-bind="$attrs">
+    <IconClear
+      v-show="(clearable && model)"
+      class="input__clear"
+      @click="clear" />
+    <slot name="append" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -16,9 +25,12 @@ import {
 } from 'vue-demi'
 import { useVModel } from '.'
 import { SizeVariant } from '../button'
+import IconClear from '@carbon/icons-vue/lib/close--filled/16'
 
 export default defineComponent({
-  props: {
+  components  : { IconClear },
+  inheritAttrs: false,
+  props       : {
     modelValue: {
       type   : [String, Number],
       default: '',
@@ -27,17 +39,30 @@ export default defineComponent({
       type   : String as PropType<SizeVariant>,
       default: 'md',
     },
-    disabled: { type: Boolean },
-    readonly: { type: Boolean },
-    error   : { type: Boolean },
+    disabled: {
+      type   : Boolean,
+      default: false,
+    },
+    readonly: {
+      type   : Boolean,
+      default: false,
+    },
+    error: {
+      type   : Boolean,
+      default: false,
+    },
+    clearable: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['update:modelValue'],
-  setup (props) {
-    const value = useVModel(props)
+  emits: ['update:modelValue', 'clear'],
+  setup (props, { emit }) {
+    const model = useVModel(props)
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -55,12 +80,22 @@ export default defineComponent({
       if (props.error)
         result.push('input--error', 'state--error')
 
+      if (props.clearable)
+        result.push('input--clearable')
+
       return result
     })
 
+    function clear () {
+      model.value = ''
+
+      emit('clear')
+    }
+
     return {
       classNames,
-      value,
+      model,
+      clear,
     }
   },
 })
@@ -68,21 +103,18 @@ export default defineComponent({
 
 <style lang="postcss">
 .input {
-  @apply text-base rounded-sm border border-secondary-25 border-solid placeholder:text-subtext-75 w-full outline-none bg-white;
+  @apply w-full relative;
 
-  &:disabled,
-  &--disabled {
-    @apply opacity-50 pointer-events-none;
-  }
+  &__form {
+    @apply text-base rounded-sm border border-secondary-25 border-solid placeholder:text-subtext-75 w-full outline-none bg-white;
 
-  &:focus {
-    @apply border-secondary-75 ring ring-secondary-25 ring-opacity-30;
-  }
+    &:disabled,
+    &--disabled {
+      @apply opacity-50 pointer-events-none;
+    }
 
-  &[type="number"] {
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      @apply appearance-none m-0;
+    &:focus {
+      @apply border-secondary-75 ring ring-secondary-25 ring-opacity-30;
     }
   }
 
@@ -102,12 +134,23 @@ export default defineComponent({
     @apply px-3 py-4;
   }
 
-  &--error,
-  &.state--error {
+  &--error {
     @apply border-danger-100;
 
     &:focus {
       @apply ring-danger-25 border-danger-100;
+    }
+  }
+
+  .input__clear {
+    @apply cursor-pointer hover:text-danger-hovered;
+  }
+
+  &--clearable {
+    @apply pr-9;
+
+    + .input__clear {
+      @apply absolute right-3 top-1/2 -translate-y-1/2;
     }
   }
 }

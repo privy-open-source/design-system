@@ -22,6 +22,8 @@ vi.mock('./utils/crop-image.ts', () => ({ cropImage }))
 
 vi.mock('./utils/use-pinch.ts', () => ({ usePinch }))
 
+vi.mock('../input-range/utils/use-drag.ts', () => ({ default: vi.fn() }))
+
 afterEach(() => {
   vi.restoreAllMocks()
 })
@@ -72,23 +74,6 @@ it('should able to zoomIn if button zoomIn clicked', async () => {
   await fireEvent.click(zoomIn)
 
   expect(preview).toHaveStyle({ transform: 'rotate(0deg) translate(0px, 0px) scale(1.1)' })
-})
-
-it('should able control zoom using slider (input range)', async () => {
-  const screen = render({
-    components: { Cropper },
-    template  : '<Cropper :src="img" />',
-    setup () {
-      return { img }
-    },
-  })
-
-  const zoomSlider = screen.getByTestId('cropper-zoom-slider')
-  const preview    = screen.getByTestId('cropper-preview')
-
-  await fireEvent.update(zoomSlider, '1.5')
-
-  expect(preview).toHaveStyle({ transform: 'rotate(0deg) translate(0px, 0px) scale(1.5)' })
 })
 
 it('should able to rotate counter-clockwise if rotate left is clicked', async () => {

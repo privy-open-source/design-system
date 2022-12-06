@@ -77,7 +77,7 @@ export default defineComponent({
 * Last Update   : June 20, 2022
 */
 .btn {
-  @apply inline-flex font-medium disabled:opacity-50 disabled:pointer-events-none;
+  @apply inline-flex font-medium disabled:opacity-50 disabled:pointer-events-none items-center;
 
   > svg {
     @apply self-baseline;

@@ -7,7 +7,7 @@ import {
   shallowRef,
 } from 'vue-demi'
 
-export default function useDraw (target: Ref<HTMLElement>, handler: (event: InteractEvent) => void) {
+export default function useDrag (target: Ref<HTMLElement>, handler: (event: InteractEvent) => void) {
   const instance = shallowRef<Interactable>()
 
   onMounted(async () => {

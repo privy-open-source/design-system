@@ -11,7 +11,9 @@
 
 <script lang="ts">
 import {
-  defineComponent, inject, PropType,
+  defineComponent,
+  inject,
+  PropType,
 } from 'vue-demi'
 import Nav from '../nav/Nav.vue'
 import { AlignVariant } from '../nav'

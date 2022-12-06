@@ -21,7 +21,7 @@
 
 # Dropzone
 
-> Headless component for Drag'n'Drop or Upload files.
+> Headless component for Drag'n'Drop Files Upload.
 
 ## Usage
 
@@ -397,16 +397,76 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 </template>
 ```
 
+### Clear on cancel
+
+By default, if you browse the file and cancel it, this component keep the last selected file as value for v-model.
+If you want reset the value when canceling, use `clearOnCancel` prop to reset the value.
+
+<preview class="flex-col items-stretch">
+  <p-dropzone accept="image/*" v-model.base64="result2" clear-on-cancel>
+    <template #default="{ isDragover, isHovered, rawModel, browse }">
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
+        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        <p-spread :active="isDragover || isHovered">
+          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+        </p-spread>
+        <p-heading element="h5">
+          Add Photo
+        </p-heading>
+        <p-heading element="h6">
+          <template v-if="!rawModel">
+            Drag your document here or click
+            <a href="#" @click.prevent="browse">Browse</a>
+          </template>
+          <template v-else>
+            {{ rawModel.name }}
+          </template>
+        </p-heading>
+        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+      </div>
+    </template>
+  </p-dropzone>
+</preview>
+
+```vue
+<template>
+  <p-dropzone accept="image/*" v-model.base64="result2" clear-on-cancel>
+    <template #default="{ isDragover, isHovered, rawModel, browse }">
+      <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
+        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        <p-spread :active="isDragover || isHovered">
+          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+        </p-spread>
+        <p-heading element="h5">
+          Add Photo
+        </p-heading>
+        <p-heading element="h6">
+          <template v-if="!rawModel">
+            Drag your document here or click
+            <a href="#" @click.prevent="browse">Browse</a>
+          </template>
+          <template v-else>
+            {{ rawModel.name }}
+          </template>
+        </p-heading>
+        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+      </div>
+    </template>
+  </p-dropzone>
+</template>
+```
+
 ## API
 
 ### Props
 
-| Props        |        Type         | Default | Description                                                                    |
-|--------------|:-------------------:|:-------:|--------------------------------------------------------------------------------|
-| `multiple`   | `Boolean`, `String` | `false` | Enable multiple mode, set to `append` to [appening values](#appending-values)  |
-| `maxlength`  |      `Number`       |   `-`   | Maxlength selected files, only work on multiple mode                           |
-| `accept`     |      `String`       |   `-`   | Limitting file type can be selected, see [HTML attribute: accept][attr-accept] |
-| `modelValue` |       `File`        |   `-`   | v-model value                                                                  |
+| Props          |        Type         | Default | Description                                                                    |
+|----------------|:-------------------:|:-------:|--------------------------------------------------------------------------------|
+| `multiple`     | `Boolean`, `String` | `false` | Enable multiple mode, set to `append` to [appening values](#appending-values)  |
+| `maxlength`    |      `Number`       |   `-`   | Maxlength selected files, only work on multiple mode                           |
+| `accept`       |      `String`       |   `-`   | Limitting file type can be selected, see [HTML attribute: accept][attr-accept] |
+| `clearOnCanel` |      `Boolean`      | `false` | Clear v-model when user cancel the browse file                                 |
+| `modelValue`   |       `File`        |   `-`   | v-model value                                                                  |
 
 ### Slots
 

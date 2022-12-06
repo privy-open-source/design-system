@@ -100,3 +100,17 @@
   <p-input error />
 </template>
 ```
+
+## Clearable
+
+Add clear button to input with prop `clearable`.
+
+<preview class="flex-col space-gap-3">
+  <p-input clearable />
+</preview>
+
+```vue
+<template>
+  <p-input clearable />
+</template>
+```

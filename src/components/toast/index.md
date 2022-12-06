@@ -28,7 +28,7 @@ toast({
 })
 ```
 
-### Complex Usage
+### Advance Usage
 
 <div class="flex mt-3">
   <Button @click="toast({

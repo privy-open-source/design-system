@@ -16,6 +16,7 @@
       type="file"
       :multiple="multiple !== false"
       :accept="accept"
+      :disabled="(disabled || readonly)"
       v-bind="$attrs"
       @change="onChange">
     <slot
@@ -23,7 +24,8 @@
       :is-hovered="isHovered"
       :model="model"
       :raw-model="rawModel"
-      :browse="browse" />
+      :browse="browse"
+      :clear="clear" />
   </label>
 </template>
 
@@ -69,6 +71,18 @@ export default defineComponent({
       type   : String,
       default: '',
     },
+    clearOnCancel: {
+      type   : Boolean,
+      default: false,
+    },
+    disabled: {
+      type   : Boolean,
+      default: false,
+    },
+    readonly: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -97,19 +111,34 @@ export default defineComponent({
       if (isHovered.value)
         result.push('dropzone--hover')
 
+      if (props.disabled)
+        result.push('dropzone--disabled')
+
+      if (props.readonly)
+        result.push('dropzone--readonly')
+
       return result
     })
 
     function browse () {
+      input.value.value = ''
       input.value.click()
     }
 
+    function clear () {
+      input.value.value = ''
+      rawModel.value    = undefined
+      model.value       = undefined
+    }
+
     function onDrop (event: DragEvent) {
-      const files = event.dataTransfer.files
+      if (!props.disabled && !props.readonly) {
+        const files = event.dataTransfer.files
 
-      isDragover.value = false
+        isDragover.value = false
 
-      handleFiles(files)
+        handleFiles(files)
+      }
     }
 
     function onChange (event: Event) {
@@ -158,13 +187,18 @@ export default defineComponent({
 
         model.value = value
         emit('change', value)
-      } else
+      } else {
+        if (props.clearOnCancel)
+          clear()
+
         emit('cancel')
+      }
     }
 
     return {
       classNames,
       browse,
+      clear,
       isDragover,
       isHovered,
       model,
@@ -186,6 +220,11 @@ export default defineComponent({
 
   * {
     @apply pointer-events-none;
+  }
+
+  &:disabled,
+  &--disabled {
+    @apply opacity-50 pointer-events-none;
   }
 
   a,
