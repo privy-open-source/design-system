@@ -93,9 +93,6 @@ Label has dismiss feature. It can be show or hide by `dismissable` props. If `di
   <p-label color="primary" :dismissable="true">Label</p-label>
   <p-label color="primary" variant="light" :dismissable="true">Label</p-label>
   <p-label color="primary" variant="dot" :dismissable="true">Label</p-label>
-  <p-label :dismissable="true">Label</p-label>
-  <p-label variant="light" :dismissable="true">Label</p-label>
-  <p-label variant="dot" :dismissable="true">Label</p-label>
 </preview>
 
 ```vue

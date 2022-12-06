@@ -129,7 +129,7 @@ export default defineComponent({
       }
 
       &--default {
-        @apply bg-emphasis-subtle;
+        @apply bg-base-black/5;
       }
 
       &--success {

@@ -95,7 +95,7 @@ export default defineComponent({
             middleware: [
               flip(),
               shift(),
-              offset(8),
+              offset(12),
               arrow({ element: tooltipArrow.value }),
             ],
           }).then(({ x, y, middlewareData, placement }) => {
@@ -127,45 +127,41 @@ export default defineComponent({
 
 <style lang="postcss">
 .tooltip {
-  @apply px-4 py-2 rounded-sm text-xs inline-block z-30 absolute;
+  @apply px-4 py-3 rounded text-xs inline-block z-30 absolute drop-shadow-sm;
 
   &__arrow {
-    @apply absolute;
+    @apply absolute after:w-4 after:h-4 after:block after:rounded-[3px] after:rotate-45 after:left-0 after:content-[''] after:z-0;
 
     [data-popper-placement^="left"] > & {
-      @apply -right-1;
+      @apply -right-[6px];
     }
 
     [data-popper-placement^="right"] > & {
-      @apply -left-1;
+      @apply -left-[6px];
     }
 
     [data-popper-placement^="bottom"] > & {
-      @apply -top-1;
+      @apply -top-[6px];
     }
 
     [data-popper-placement^="top"] > & {
-      @apply -bottom-1;
-    }
-
-    &::after {
-      @apply w-2 h-2 block rotate-45 left-0 content-[''] z-0;
+      @apply -bottom-[6px];
     }
   }
 
   &--black {
-    @apply bg-base-black text-on-emphasis shadow-sm;
+    @apply bg-base-black text-on-emphasis;
 
-    .tooltip__arrow::after {
-      @apply bg-base-black;
+    .tooltip__arrow {
+      @apply after:bg-base-black;
     }
   }
 
   &--white {
-    @apply bg-default text-subtle shadow;
+    @apply bg-default text-subtle;
 
-    .tooltip__arrow::after {
-      @apply bg-default;
+    .tooltip__arrow {
+      @apply after:bg-default;
     }
   }
 }

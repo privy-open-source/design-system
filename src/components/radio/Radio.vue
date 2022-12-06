@@ -219,7 +219,11 @@ export default defineComponent({
     }
   }
 
-  .dropdown__menu & {
+  .dropdown__menu > .dropdown__subitem > .dropdown__item & {
+    @apply py-[2px] w-full select-none;
+  }
+
+  .dropdown__menu > .dropdown__subitem & {
     @apply py-[2px] w-full select-none;
 
     &:hover,
