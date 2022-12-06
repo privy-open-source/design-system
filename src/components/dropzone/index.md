@@ -480,6 +480,8 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
 | `change` | Files     | Event when value changed              |
 | `cancel` | -         | Event when user cancel selecting file |
 
+### See Also
+
 [file]: https://developer.mozilla.org/en-US/docs/Web/API/File
 [data-uri]: https://en.wikipedia.org/wiki/Data_URI_scheme
 [attr-accept]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept

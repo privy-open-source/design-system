@@ -100,6 +100,7 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: [
+    'change',
     'update:modelValue',
     'update:end',
     'update:start',
@@ -245,10 +246,13 @@ export default defineComponent({
       localStart.value = startVal
       localEnd.value   = endVal
 
-      if (props.multiple)
+      if (props.multiple) {
         emit('update:modelValue', [startVal, endVal])
-      else
+        emit('change', [startVal, endVal])
+      } else {
         emit('update:modelValue', endVal)
+        emit('change', endVal)
+      }
     })
 
     return {

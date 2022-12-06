@@ -133,8 +133,12 @@ export default defineComponent({
     }
   }
 
-  &:hover .input-file__button > span {
-    @apply bg-alphablack-10 border-alphablack-10;
+  &:hover {
+    &:not([class*="disabled"]):not([class*="readonly"]) {
+      .input-file__button > span {
+        @apply bg-alphablack-10 border-alphablack-10;
+      }
+    }
   }
 }
 </style>

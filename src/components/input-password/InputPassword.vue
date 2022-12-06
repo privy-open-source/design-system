@@ -6,11 +6,11 @@
       <IconHide
         v-if="isShow"
         class="input-password__toggle"
-        @click.prevent="toggle" />
+        @click.prevent.stop="toggle" />
       <IconShow
         v-else
         class="input-password__toggle"
-        @click.prevent="toggle" />
+        @click.prevent.stop="toggle" />
     </template>
   </p-input>
 </template>
