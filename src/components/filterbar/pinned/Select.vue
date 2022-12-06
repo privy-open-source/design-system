@@ -11,7 +11,8 @@
     </template>
     <Subheading
       class="px-4 pt-4 pb-1"
-      overline="medium">
+      weight="medium"
+      overline>
       {{ schema.label }}
     </Subheading>
     <template
@@ -19,7 +20,7 @@
       :key="i">
       <Radio
         v-model="model"
-        apperance="option"
+        appearance="option"
         :value="item.value"
         @click="close">
         {{ item.text }}

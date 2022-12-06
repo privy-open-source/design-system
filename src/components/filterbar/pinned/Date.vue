@@ -11,7 +11,8 @@
     </template>
     <Subheading
       class="px-4 pt-4 pb-1"
-      overline="medium">
+      weight="medium"
+      overline>
       {{ schema.label }}
     </Subheading>
 

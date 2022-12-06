@@ -20,9 +20,9 @@
 ### Simple Usage
 <preview>
   <p-dropdown text="Click Here">
-    <p-dropdown-item><p-checkbox disabled v-model="selected" value="apple">Apple</p-checkbox></p-dropdown-item>
-    <p-dropdown-item><p-checkbox v-model="selected" value="mango">Mango</p-checkbox></p-dropdown-item>
-    <p-dropdown-item><p-checkbox v-model="selected" value="apple">Apple</p-checkbox></p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
   </p-dropdown>
 </preview>
 

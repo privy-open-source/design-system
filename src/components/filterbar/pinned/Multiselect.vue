@@ -9,7 +9,7 @@
     <template #button-content>
       <template v-if="selected.length > 1">
         {{ schema.label }}
-        <Badge class="filterbar__multiselect-badge">
+        <Badge variant="inverse">
           {{ selected.length }}
         </Badge>
       </template>
@@ -23,7 +23,8 @@
 
     <Subheading
       class="px-4 pt-4 pb-1"
-      overline="medium">
+      weight="medium"
+      overline>
       {{ schema.label }}
     </Subheading>
     <template
@@ -31,7 +32,7 @@
       :key="i">
       <Checkbox
         v-model="model"
-        apperance="option"
+        appearance="option"
         :value="item.value">
         {{ item.text }}
       </Checkbox>
@@ -113,12 +114,6 @@ export default defineComponent({
 .filterbar__multiselect {
   > .btn {
     @apply items-center;
-  }
-
-  &-badge {
-    &.badge--variant-default.badge--default {
-      @apply bg-default/20;
-    }
   }
 }
 </style>

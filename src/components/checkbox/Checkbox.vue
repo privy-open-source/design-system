@@ -189,8 +189,25 @@ export default defineComponent({
     }
   }
 
-  .dropdown__menu & {
-    @apply py-[2px] w-full select-none;
+  .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
+  .dropdown__menu > .dropdown__subitem > & {
+    @apply w-full select-none;
+
+    .checkbox__icon {
+      @apply ml-0;
+    }
+  }
+
+  .dropdown__menu > .dropdown__subitem > .dropdown__item > & {
+    @apply py-[2px];
+  }
+
+  .dropdown__menu > .dropdown__subitem > & {
+    @apply px-4 py-[10px];
+
+    .checkbox__label {
+      @apply ml-4;
+    }
 
     &:hover,
     &:focus-visible {

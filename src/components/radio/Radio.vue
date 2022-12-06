@@ -10,9 +10,9 @@
       :name="name"
       :disabled="disabled || readonly">
     <span class="radio__icon">
-      <IconCheck v-if="apperance === 'option'" />
+      <IconCheck v-if="appearance === 'option'" />
       <svg
-        v-else-if="apperance === 'checkbox'"
+        v-else-if="appearance === 'checkbox'"
         width="10"
         height="10"
         viewBox="0 0 14 10"
@@ -57,7 +57,7 @@ export interface ChangedInteface {
   state: boolean,
 }
 
-type ApperanceType = 'radio' | 'checkbox' | 'option'
+type AppearanceType = 'radio' | 'checkbox' | 'option'
 
 export default defineComponent({
   components: { IconCheck },
@@ -100,8 +100,8 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
-    apperance: {
-      type   : String as PropType<ApperanceType>,
+    appearance: {
+      type   : String as PropType<AppearanceType>,
       default: 'radio',
     },
   },
@@ -125,8 +125,8 @@ export default defineComponent({
       if (props.disabled)
         result.push('radio--disabled')
 
-      if (props.apperance)
-        result.push(`radio--${props.apperance}`)
+      if (props.appearance)
+        result.push(`radio--${props.appearance}`)
 
       return result
     })
@@ -203,7 +203,7 @@ export default defineComponent({
     .radio__icon {
       @apply order-2 border-none invisible bg-transparent;
 
-      & > svg {
+      > svg {
         @apply w-4;
       }
     }
@@ -212,19 +212,44 @@ export default defineComponent({
       @apply flex-grow;
     }
 
+    .dropdown__menu > .dropdown__subitem > & {
+      .radio__label {
+        @apply ml-0;
+      }
+    }
+
     &.radio--checked {
       .radio__icon {
         @apply text-accent visible;
+
+        > svg {
+          @apply fill-accent-emphasis;
+        }
       }
     }
   }
 
-  .dropdown__menu > .dropdown__subitem > .dropdown__item & {
-    @apply py-[2px] w-full select-none;
+  .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
+  .dropdown__menu > .dropdown__subitem > & {
+    @apply w-full select-none;
+
+    .radio__icon {
+      @apply ml-0;
+    }
   }
 
-  .dropdown__menu > .dropdown__subitem & {
-    @apply py-[2px] w-full select-none;
+  .dropdown__menu > .dropdown__subitem > .dropdown__item > & {
+    @apply py-[2px];
+  }
+
+  .dropdown__menu > .dropdown__subitem > & {
+    @apply px-4 py-[10px];
+
+    &:not(.radio--option) {
+      .radio__label {
+        @apply ml-4;
+      }
+    }
 
     &:hover,
     &:focus-visible {

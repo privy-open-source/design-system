@@ -15,7 +15,7 @@
 ### Simple Usage
 
 <preview class="flex-col">
-  <p-button class="mb-5" @click="sample = !sample">Collapse</p-button>
+  <p-button class="mb-5" @click="sample = !sample" color="primary">Collapse</p-button>
   <p-collapse v-model="sample">
     But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
   </p-collapse>
@@ -23,7 +23,7 @@
 
 ```vue
 <template>
-  <p-button class="mb-5" @click="sample = !sample">Collapse</p-button>
+  <p-button class="mb-5" @click="sample = !sample"color="primary">Collapse</p-button>
   <p-collapse v-model="sample">
     But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
   </p-collapse>
@@ -33,7 +33,7 @@
 ### With Card
 
 <preview class="flex-col">
-  <p-button class="mb-5" @click="sample2 = !sample2">Collapse</p-button>
+  <p-button class="mb-5" @click="sample2 = !sample2" color="primary">Collapse</p-button>
   <p-collapse v-model="sample2">
     <p-card>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born</p-card>
   </p-collapse>
@@ -41,7 +41,7 @@
 
 ```vue
 <template>
-  <p-button class="mb-5" @click="sample = !sample">Collapse</p-button>
+  <p-button class="mb-5" @click="sample = !sample" color="primary">Collapse</p-button>
   <p-collapse v-model="sample">
     <p-card>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born</p-card>
   </p-collapse>

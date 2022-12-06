@@ -59,11 +59,11 @@ it('should have disabled style if `disabled` props is provided', () => {
   expect(radio).toHaveClass('radio--disabled')
 })
 
-it('should have style checkbox if `apperance` set to "checkbox"', () => {
+it('should have style checkbox if `appearance` set to "checkbox"', () => {
   const screen = render({
     components: { Radio },
     template  : `
-      <Radio apperance="checkbox" />
+      <Radio appearance="checkbox" />
     `,
   })
 
