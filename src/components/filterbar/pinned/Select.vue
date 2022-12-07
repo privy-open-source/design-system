@@ -5,6 +5,7 @@
     size="sm"
     class="filterbar__select"
     :class="{'filterbar--active': selected !== undefined }"
+    divider
     caret>
     <template #button-content>
       {{ selected ? selected.text : schema.label }}

@@ -11,10 +11,10 @@
         <DropdownItem
           key="btn-back"
           data-testid="dropdown-back"
-          class="dropdown__subitem-btn dropdown__subitem-btn-back"
+          class="dropdown__subitem__btn dropdown__subitem__btn--back"
           @click.prevent="back()">
           <slot name="button-back">
-            <IconBack class="dropdown__subitem-next" />
+            <IconBack class="dropdown__subitem__next" />
             <div class="dropdown__group-content" />
           </slot>
         </DropdownItem>
@@ -23,9 +23,9 @@
       <template v-if="!isRoot">
         <DropdownItem
           key="btn-next"
-          class="dropdown__subitem-btn"
+          class="dropdown__subitem__btn"
           @click.prevent="handleOnClick">
-          <div class="dropdown__subitem-content">
+          <div class="dropdown__subitem__content">
             <slot
               name="button-content"
               :next="next"
@@ -36,7 +36,7 @@
           <IconNext
             v-if="!noCaret"
             data-testid="dropdown-subitem-next"
-            class="dropdown__subitem-next" />
+            class="dropdown__subitem__next" />
         </DropdownItem>
       </template>
 
@@ -164,20 +164,20 @@ export default defineComponent({
 
 <style lang="postcss">
 .dropdown__subitem {
-  &-btn {
+  &__btn {
     @apply flex items-center space-x-1;
 
-    &-back {
+    &--back {
       @apply flex-shrink-0;
     }
   }
 
-  &-content {
+  &__content {
     @apply flex-grow;
   }
 
-  &-next,
-  &-back {
+  &__next,
+  &__back {
     @apply flex-shrink-0;
   }
 }
