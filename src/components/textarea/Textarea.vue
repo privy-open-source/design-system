@@ -164,7 +164,7 @@ export default defineComponent({
   }
 
   &__counter {
-    @apply text-right text-muted text-xs absolute bottom-1 right-1 pointer-events-none;
+    @apply text-right text-muted text-xs absolute bottom-1 right-1 pointer-events-none z-1;
   }
 }
 

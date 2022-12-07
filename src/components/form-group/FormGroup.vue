@@ -82,7 +82,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .form-group {
-  @apply flex flex-col;
+  @apply flex flex-col mb-4;
 
   &__label {
     @apply font-bold text-xs mb-2 relative;

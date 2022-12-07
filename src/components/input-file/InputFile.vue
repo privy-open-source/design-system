@@ -153,6 +153,14 @@ export default defineComponent({
     }
   }
 
+  &--disabled,
+  &:disabled {
+    .input-group__addon,
+    .input-group .input__form {
+      @apply bg-muted border-muted text-muted;
+    }
+  }
+
   &:hover {
     .input-group__addon,
     .input-group .input__form {

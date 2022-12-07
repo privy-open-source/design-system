@@ -96,6 +96,6 @@ _We need to keep moving forward, and savoring the journey_ 😎
     {{ item.browser }}
   </template>
   <template #cell(version)="{ item }">
-    <p-label size="sm" variant="light">{{ item.version }}</p-label>
+    <p-label size="sm">{{ item.version }}</p-label>
   </template>
 </p-table>
