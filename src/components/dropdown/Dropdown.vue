@@ -38,7 +38,7 @@
         class="dropdown__menu">
         <DropdownGroup
           ref="wizard"
-          class="dropdown__menuContainer">
+          class="dropdown__menu-container">
           <slot />
         </DropdownGroup>
       </div>
@@ -107,7 +107,7 @@ export default defineComponent({
     },
     color: {
       type   : String as PropType<ColorVariant>,
-      default: 'primary',
+      default: 'default',
     },
     size: {
       type   : String as PropType<SizeVariant>,
@@ -272,16 +272,16 @@ export default defineComponent({
   @apply relative inline-flex;
 
   &__menu {
-    @apply max-h-64 border rounded w-full min-w-[15rem] bg-white z-10 border-secondary-25 shadow-xl overflow-x-hidden overflow-y-auto absolute;
+    @apply max-h-64 border rounded w-full min-w-[15rem] bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
   }
 
-  &__menuContainer > .dropdown__item:first-child,
-  &__menuContainer > .dropdown__subitem:first-child .dropdown__item {
+  &__menu-container > .dropdown__item:first-child,
+  &__menu-container > .dropdown__subitem:first-child .dropdown__item {
     @apply rounded-t;
   }
 
-  &__menuContainer > .dropdown__item:last-child,
-  &__menuContainer > .dropdown__subitem:last-child .dropdown__item {
+  &__menu-container > .dropdown__item:last-child,
+  &__menu-container > .dropdown__subitem:last-child .dropdown__item {
     @apply rounded-b;
   }
 

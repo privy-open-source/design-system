@@ -1,3 +1,3 @@
-export type ColorVariant = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'gold'
+export type ColorVariant = 'default' | 'primary' | 'success' | 'warning' | 'danger'
 
 export type StyleVariant = 'default' | 'light' | 'inverse'

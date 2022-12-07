@@ -7,13 +7,25 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue-demi'
+import {
+  computed, defineComponent, PropType,
+} from 'vue-demi'
+import { WeightVariant, TransformVariant } from '../heading/Heading.vue'
+type SizeVariant = 'xs' | 'tn'
 
 export default defineComponent({
   props: {
-    bold: {
-      type   : Boolean,
-      default: false,
+    weight: {
+      type   : String as PropType<WeightVariant>,
+      default: 'normal',
+    },
+    transform: {
+      type   : String as PropType<TransformVariant>,
+      default: 'normalcase',
+    },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'xs',
     },
   },
 
@@ -21,8 +33,15 @@ export default defineComponent({
     const classNames = computed(() => {
       const result: string[] = ['caption']
 
-      if (props.bold)
-        result.push('caption--bold')
+      if (props.transform)
+        result.push(`caption--${props.transform}`)
+
+      if (props.weight)
+        result.push(`caption--${props.weight}`)
+
+      // eslint-disable-next-line unicorn/explicit-length-check
+      if (props.size)
+        result.push(`caption--${props.size}`)
 
       return result
     })
@@ -34,10 +53,48 @@ export default defineComponent({
 
 <style lang="postcss">
 .caption {
-  @apply block text-subtext-100 text-sm;
+  @apply block text-subtle text-xs tracking-wide;
+
+  /**
+  * Caption in tiny size
+  */
+  &--tn {
+    @apply text-tn tracking-wider;
+  }
+
+  /**
+  * Weight of caption
+  */
+  &--normal {
+    @apply font-normal;
+  }
+
+  &--medium {
+    @apply font-medium;
+  }
 
   &--bold {
     @apply font-bold;
+  }
+
+  /**
+  * Text transform
+  * of caption
+  */
+  &--normalcase {
+    @apply normal-case;
+  }
+
+  &--lowercase {
+    @apply lowercase;
+  }
+
+  &--capitalize {
+    @apply capitalize;
+  }
+
+  &--uppercase {
+    @apply uppercase;
   }
 }
 </style>

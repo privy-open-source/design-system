@@ -54,8 +54,8 @@
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 1</div>
           <div class="space-x-2">
-            <p-button disabled>Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button disabled color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -65,8 +65,8 @@
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 2</div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -76,8 +76,8 @@
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 3</div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -96,8 +96,8 @@
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 1</div>
           <div class="space-x-2">
-            <p-button disabled>Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button disabled color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -107,8 +107,8 @@
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 2</div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -118,8 +118,8 @@
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 3</div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -141,8 +141,8 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 1</div>
           <div class="space-x-2">
-            <p-button disabled>Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button disabled color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -152,8 +152,8 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 2</div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -163,8 +163,8 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 3</div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -182,8 +182,8 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 1</div>
           <div class="space-x-2">
-            <p-button disabled>Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button disabled color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -193,8 +193,8 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 2</div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -204,8 +204,8 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
         <div class="flex flex-col h-52">
           <div class="flex-grow">Step 3</div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -230,8 +230,8 @@ All hooks from [Steps](/components/steps/) like `on-before-next`, `on-before-pre
             <p-input v-model="form.name" placeholder="Fill to next" />
           </div>
           <div class="space-x-2">
-            <p-button disabled>Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button disabled color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -244,8 +244,8 @@ All hooks from [Steps](/components/steps/) like `on-before-next`, `on-before-pre
             <p-input v-model="form.email" placeholder="Fill to next" />
           </div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -266,8 +266,8 @@ All hooks from [Steps](/components/steps/) like `on-before-next`, `on-before-pre
             <p-input v-model="form.name" placeholder="Fill to next" />
           </div>
           <div class="space-x-2">
-            <p-button disabled>Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button disabled color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>
@@ -280,8 +280,8 @@ All hooks from [Steps](/components/steps/) like `on-before-next`, `on-before-pre
             <p-input v-model="form.email" placeholder="Fill to next" />
           </div>
           <div class="space-x-2">
-            <p-button @click="prev">Prev</p-button>
-            <p-button @click="next">Next</p-button>
+            <p-button @click="prev" color="primary">Prev</p-button>
+            <p-button @click="next" color="primary">Next</p-button>
           </div>
         </div>
       </template>

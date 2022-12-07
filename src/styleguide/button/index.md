@@ -18,7 +18,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div>
   <Button>Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Use to highlight the most important actions in any experience. Don’t use more than one default button in a section or screen.
   </div>
@@ -28,7 +28,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div>
   <Button icon><IconBee /></Button>
 </div>
-<div class="flex pt-5 pb-6 text-sm text-body-75">
+<div class="flex pt-5 pb-6 text-sm text-default">
   <div class="w-3/4">
     Usage : Use to highlight the most important actions in any experience. Icon button usually replacing button text to fill small space and choosen icon that resemble the function of the button.
   </div>
@@ -39,7 +39,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
   <Button icon><IconBee /> Button Text</Button>
   <Button icon>Button Text <IconBee /></Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Use to highlight the most important actions in any experience.
     This button will be displayed before or after the text
@@ -50,7 +50,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div class="flex space-x-3">
   <Button variant="outline">Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Used most in the interface. Only use another style
     if a button requires more or less visual weight.
@@ -61,7 +61,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div class="flex space-x-3">
   <Button variant="link">Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Use a link button to navigate to another page.
     These should open in the same window unless information may be
@@ -77,7 +77,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div>
   <Button>Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Use for default state of the button.
   </div>
@@ -88,7 +88,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div>
   <Button>Hover Me</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Use for actions that currently being hovered.
     The button will remain at hovering state until user move the crusor to another area.
@@ -100,7 +100,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div>
   <Button>Press Me</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Use for actions that currently being pressed.
     The button will remail pressed until user release current button.
@@ -112,7 +112,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div>
   <Button disabled>Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Use for actions that aren’t currently available.
     The surrounding interface should make it clear why the button is
@@ -126,7 +126,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div class="flex space-x-3">
   <Button size="lg">Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Use for actions that aren’t currently available.
     The surrounding interface should make it clear why the button is
@@ -138,7 +138,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div class="flex space-x-3">
   <Button size="md">Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Default size button that used in all over component.
     Used in component that have a big space.
@@ -149,7 +149,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div class="flex space-x-3">
   <Button size="sm">Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Small size button usually used in component that
     have smaller space like contextual bar, empty state and else
@@ -160,7 +160,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 <div class="flex space-x-3">
   <Button size="xs">Button Text</Button>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Xsmall size button usually used in component
     that have smallest space like table and else.

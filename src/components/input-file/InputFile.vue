@@ -3,6 +3,7 @@
     ref="dropzone"
     v-model="model"
     class="input-file"
+    :class="classNames"
     :model-modifiers="modelModifiers"
     :multiple="multiple"
     :maxlength="maxlength"
@@ -15,11 +16,14 @@
         :disabled="disabled"
         :error="error"
         :size="size">
-        <button
-          class="input-file__button"
-          @click="browse">
-          <span>{{ browseLabel }}</span>
-        </button>
+        <p-input-group-addon>
+          <p-button
+            :disabled="disabled"
+            :readonly="readonly"
+            @click="browse">
+            {{ browseLabel }}
+          </p-button>
+        </p-input-group-addon>
         <p-input
           readonly
           :model-value="getFileNames(rawModel)"
@@ -31,6 +35,7 @@
 
 <script lang="ts">
 import {
+  computed,
   defineComponent,
   PropType,
 } from 'vue-demi'
@@ -38,6 +43,8 @@ import { useVModel } from '../input'
 import pDropzone from '../dropzone/Dropzone.vue'
 import pInput from '../input/Input.vue'
 import pInputGroup from '../input-group/InputGroup.vue'
+import pInputGroupAddon from '../input-group/InputGroupAddon.vue'
+import pButton from '../button/Button.vue'
 import { ModelModifier, MultipleType } from '../dropzone'
 import { SizeVariant } from '../button'
 
@@ -46,7 +53,8 @@ export default defineComponent({
     pDropzone,
     pInput,
     pInputGroup,
-
+    pInputGroupAddon,
+    pButton,
   },
   props: {
     modelValue: {
@@ -105,6 +113,21 @@ export default defineComponent({
   setup (props) {
     const model = useVModel(props)
 
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (props.readonly)
+        result.push('input-file--readonly')
+
+      if (props.disabled)
+        result.push('input-file--disabled')
+
+      if (props.error)
+        result.push('input-file--error')
+
+      return result
+    })
+
     function getFileNames (files: Array<globalThis.File> | globalThis.File) {
       return Array.isArray(files)
         ? files.map((file) => file.name).join(', ')
@@ -113,6 +136,7 @@ export default defineComponent({
 
     return {
       model,
+      classNames,
       getFileNames,
     }
   },
@@ -121,23 +145,25 @@ export default defineComponent({
 
 <style lang="postcss">
 .input-file {
-  &__button {
-    @apply rounded-l-xs border border-solid border-secondary-25 flex-shrink-0 p-1 bg-white border-r-0;
+  > .input-group > .input-group__addon {
+    @apply p-1;
 
-    > span {
-      @apply flex items-center font-medium h-full px-3 rounded bg-alphablack-5 border-alphablack-5;
-    }
-
-    .input-group--error & {
-      @apply border-danger-100;
+    > .btn {
+      @apply py-0 px-3 h-full items-center;
     }
   }
 
   &:hover {
-    &:not([class*="disabled"]):not([class*="readonly"]) {
-      .input-file__button > span {
-        @apply bg-alphablack-10 border-alphablack-10;
-      }
+    .input-group__addon,
+    .input-group .input__form {
+      @apply border-subtle;
+    }
+  }
+
+  &&--error {
+    .input-group__addon,
+    .input-group .input__form {
+      @apply border-danger-emphasis;
     }
   }
 }

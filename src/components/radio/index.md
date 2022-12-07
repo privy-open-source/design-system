@@ -95,15 +95,15 @@
 </template>
 ```
 
-## Apperance
+## Appearance
 
-Some case, you may need some [Checkbox][checkbox] but work like a Radio. You can change the apperance via `apperance` props.
+Some case, you may need some [Checkbox][checkbox] but work like a Radio. You can change the appearance via `appearance` props.
 
 <preview class="justify-center">
   <div class="flex flex-col space-y-3">
-    <p-radio apperance="checkbox" v-model="selected" value="apple">Apple</p-radio>
-    <p-radio apperance="checkbox" v-model="selected" value="grape">Grape</p-radio>
-    <p-radio apperance="checkbox" v-model="selected" value="orange">Orange</p-radio>
+    <p-radio appearance="checkbox" v-model="selected" value="apple">Apple</p-radio>
+    <p-radio appearance="checkbox" v-model="selected" value="grape">Grape</p-radio>
+    <p-radio appearance="checkbox" v-model="selected" value="orange">Orange</p-radio>
   </div>
 </preview>
 
@@ -113,9 +113,9 @@ Some case, you may need some [Checkbox][checkbox] but work like a Radio. You can
 
 ```vue
 <template>
-  <p-radio apperance="checkbox" v-model="selected" value="apple">Apple</p-radio>
-  <p-radio apperance="checkbox" v-model="selected" value="grape">Grape</p-radio>
-  <p-radio apperance="checkbox" v-model="selected" value="orange">Orange</p-radio>
+  <p-radio appearance="checkbox" v-model="selected" value="apple">Apple</p-radio>
+  <p-radio appearance="checkbox" v-model="selected" value="grape">Grape</p-radio>
+  <p-radio appearance="checkbox" v-model="selected" value="orange">Orange</p-radio>
 </template>
 ```
 
@@ -129,7 +129,7 @@ Some case, you may need some [Checkbox][checkbox] but work like a Radio. You can
 | `value`      |   `Any`   | `true`  | Checked value                                                           |
 | `disabled`   | `Boolean` | `false` | Disable state                                                           |
 | `readonly`   | `Boolean` | `false` | Readonly state                                                          |
-| `apperance`  | `String`  | `radio` | Radio apperance, valid value is: `radio`, `checkbox`                    |
+| `appearance` | `String`  | `radio` | Radio appearance, valid value is: `radio`, `checkbox`                    |
 | `modelValue` |   `Any`   |   `-`   | `v-model` value                                                         |
 
 ### Slots

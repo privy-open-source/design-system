@@ -14,7 +14,8 @@
 <style scoped lang="postcss">
   .preview {
     a {
-      @apply underline text-primary-100 hover:text-primary-hovered;
+      --p-color-primary-hover: darken(theme(textColor.accent), 5%);
+      @apply underline text-accent hover:text-[color:var(--p-color-primary-hover)];
     }
   }
 </style>
@@ -31,9 +32,9 @@
   <p-dropzone accept="application/pdf">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded"
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconFile class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Upload Document
@@ -47,9 +48,9 @@
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>PDF, DOC & DOCX up to 25MB each</p-caption>
+        <p-caption weight="bold">PDF, DOC & DOCX up to 25MB each</p-caption>
         <p-caption>10 documents max for multiple upload</p-caption>
-        <p-caption class="mt-16 text-sm">PDF file format is recommended for a faster uploading process.</p-caption>
+        <p-caption class="mt-16">PDF file format is recommended for a faster uploading process.</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -60,9 +61,9 @@
   <p-dropzone accept="application/pdf">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconFile class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Upload Document
@@ -76,7 +77,7 @@
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>PDF, DOC & DOCX up to 25MB each</p-caption>
+        <p-caption weight="bold">PDF, DOC & DOCX up to 25MB each</p-caption>
         <p-caption>10 documents max for multiple upload</p-caption>
         <p-caption class="mt-16 text-sm">PDF file format is recommended for a faster uploading process.</p-caption>
       </div>
@@ -91,9 +92,9 @@
   <p-dropzone accept="image/*">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -107,7 +108,7 @@
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -118,9 +119,9 @@
   <p-dropzone accept="image/*">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -134,7 +135,7 @@
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -150,9 +151,9 @@ Add prop `multiple` to enable multi-selected upload.
   <p-dropzone accept="image/*" multiple maxlength="5">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -170,7 +171,7 @@ Add prop `multiple` to enable multi-selected upload.
             </ol>
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -181,9 +182,9 @@ Add prop `multiple` to enable multi-selected upload.
   <p-dropzone accept="image/*" multiple maxlength="5">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -201,7 +202,7 @@ Add prop `multiple` to enable multi-selected upload.
             </ol>
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -216,9 +217,9 @@ When user selecting the files, and then selecting again, the old list of files i
   <p-dropzone accept="image/*" multiple="append" maxlength="10">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -236,7 +237,7 @@ When user selecting the files, and then selecting again, the old list of files i
             </ol>
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -247,9 +248,9 @@ When user selecting the files, and then selecting again, the old list of files i
   <p-dropzone accept="image/*" multiple="append" maxlength="10">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -267,7 +268,7 @@ When user selecting the files, and then selecting again, the old list of files i
             </ol>
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -280,9 +281,9 @@ When user selecting the files, and then selecting again, the old list of files i
   <p-dropzone accept="image/*" v-model="result">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -296,7 +297,7 @@ When user selecting the files, and then selecting again, the old list of files i
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -311,9 +312,9 @@ When user selecting the files, and then selecting again, the old list of files i
   <p-dropzone accept="image/*" v-model="result">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -327,7 +328,7 @@ When user selecting the files, and then selecting again, the old list of files i
             {{ model.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -343,9 +344,9 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
   <p-dropzone accept="image/*" v-model.base64="result2">
     <template #default="{ isDragover, isHovered, rawModel, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -359,7 +360,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
             {{ rawModel.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>
@@ -374,9 +375,9 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
   <p-dropzone accept="image/*" v-model.base64="result">
     <template #default="{ isDragover, isHovered, rawModel, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -390,7 +391,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
             {{ rawModel.name }}
           </template>
         </p-heading>
-        <p-caption bold>JPG & PNG up to 5MB</p-caption>
+        <p-caption weight="bold">JPG & PNG up to 5MB</p-caption>
       </div>
     </template>
   </p-dropzone>

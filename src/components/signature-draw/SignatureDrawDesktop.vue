@@ -150,7 +150,7 @@ export default defineComponent({
 
     &--desktop {
       .signature-draw__canvas {
-        @apply bg-white touch-none cursor-crosshair border rounded border-dashed;
+        @apply bg-default touch-none cursor-crosshair border rounded border-dashed;
       }
     }
 
@@ -159,7 +159,7 @@ export default defineComponent({
     }
 
     &__reset {
-      @apply absolute right-1 top-1 bg-white;
+      @apply absolute right-1 top-1 bg-default;
     }
   }
   </style>

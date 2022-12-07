@@ -44,8 +44,7 @@
           <p-button
             data-testid="tour-control-dismiss"
             size="xs"
-            variant="ghost"
-            color="primary"
+            variant="link"
             @click="$emit('dismiss', $event)">
             {{ dismissLabel }}
           </p-button>
@@ -55,7 +54,7 @@
         <p-button
           data-testid="tour-control-prev"
           size="xs"
-          variant="ghost"
+          variant="link"
           :disabled="step < 2"
           @click="$emit('prev', $event)">
           {{ prevLabel }}
@@ -66,6 +65,7 @@
           data-testid="tour-control-finish"
           size="xs"
           variant="solid"
+          color="primary"
           @click="$emit('next', $event)">
           {{ finishLabel }}
         </p-button>
@@ -74,6 +74,7 @@
           data-testid="tour-control-next"
           size="xs"
           variant="solid"
+          color="primary"
           @click="$emit('next', $event)">
           {{ nextLabel }}
         </p-button>
@@ -158,15 +159,19 @@ export default defineComponent({
 <style lang="postcss">
 .tour {
   &__dialog {
-    @apply rounded bg-blackWhite-95 text-white w-full max-w-xs z-[100] overflow-hidden relative shadow-sm;
+    @apply rounded bg-emphasis w-full max-w-xs z-[100] overflow-hidden relative shadow-sm;
   }
 
   &__image {
-    @apply max-w-full h-auto object-cover bg-white;
+    @apply max-w-full h-auto object-cover bg-default;
   }
 
   &__body {
     @apply p-4 space-y-3;
+
+    > * {
+      @apply text-on-emphasis;
+    }
   }
 
   &__footer {
@@ -174,23 +179,26 @@ export default defineComponent({
   }
 
   &__meta {
-    @apply text-xs text-blackWhite-75 flex-shrink-0;
+    @apply text-xs text-muted flex-shrink-0;
   }
 
   &__controls {
     @apply flex-grow flex space-x-2 justify-end items-center;
 
-    /* TODO: Change this when color token was released */
-    > .btn--ghost {
-      @apply text-white hover:text-opacity-50;
+    > .btn--variant-link.btn--default {
+      @apply text-on-emphasis hover:text-on-emphasis focus:text-on-emphasis;
+    }
+
+    > .tour__divider {
+      @apply text-on-emphasis;
     }
   }
 
   &__dismiss {
-    @apply absolute top-3 right-3 hover:cursor-pointer text-white text-opacity-50 hover:text-opacity-100;
+    @apply absolute top-3 right-3 hover:cursor-pointer text-on-emphasis/30 hover:text-on-emphasis/50;
 
     .tour--image & {
-      @apply text-black hover:text-opacity-50;
+      @apply text-default/30 hover:text-default/50;
     }
   }
 }

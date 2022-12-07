@@ -88,7 +88,7 @@ export default defineComponent({
     @apply font-bold text-xs mb-2 relative;
 
     > sup {
-      @apply text-danger-100;
+      @apply text-danger;
     }
   }
 
@@ -97,11 +97,11 @@ export default defineComponent({
   }
 
   &__error {
-    @apply text-xs text-danger-100;
+    @apply text-xs text-danger;
   }
 
   &__hint {
-    @apply absolute bottom-0 right-0 text-primary-100 cursor-pointer focus:outline-none;
+    @apply absolute bottom-0 right-0 text-accent cursor-pointer focus:outline-none;
   }
 }
 </style>

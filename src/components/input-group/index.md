@@ -34,7 +34,7 @@
 </template>
 ```
 
-### with Addon and Divider
+### With Addon and Divider
 
 <preview>
   <p-input-group>

@@ -8,6 +8,7 @@ Badges are placed before/after the label of the thing they're quantifying, such 
 ## Usage
 
 ### Basic Usage
+Default color of badge are black.
 
 <preview>
   <p-badge>25</p-badge>
@@ -20,27 +21,21 @@ Badges are placed before/after the label of the thing they're quantifying, such 
 ```
 
 ## Colors
-Badge available in 7 different colors. There are `primary`, `secondary`, `success`, `info`, `warning`, `danger` and `gold`. Default color is `primary`
+Badge available in 4 different colors. There are `primary`, `success`, `warning` and `danger`.
 
 <preview class="flex-wrap space-gap-3">
   <p-badge color="primary">25</p-badge>
-  <p-badge color="secondary">7K</p-badge>
   <p-badge color="success">999+</p-badge>
-  <p-badge color="info">25</p-badge>
   <p-badge color="warning">7K</p-badge>
-  <p-badge color="danger">999+</p-badge>
-  <p-badge color="gold">25</p-badge>
+  <p-badge color="danger">6</p-badge>
 </preview>
 
 ```vue
 <template>
   <p-badge color="primary">25</p-badge>
-  <p-badge color="secondary">7K</p-badge>
   <p-badge color="success">999+</p-badge>
-  <p-badge color="info">25</p-badge>
   <p-badge color="warning">7K</p-badge>
-  <p-badge color="danger">999+</p-badge>
-  <p-badge color="gold">25</p-badge>
+  <p-badge color="danger">6</p-badge>
 </template>
 ```
 
@@ -60,6 +55,40 @@ Badge has 3 variants namely `default`, `light` and `inverse`. When variant is no
   <p-badge variant="inverse">999+</p-badge>
 </template>
 ```
+### Sample Light Variant
+
+<preview class="gap-4">
+  <p-badge variant="light" color="primary">25</p-badge>
+  <p-badge variant="light" color="success">7K</p-badge>
+  <p-badge variant="light" color="warning">999+</p-badge>
+  <p-badge variant="light" color="danger">6</p-badge>
+</preview>
+
+```vue
+<template>
+  <p-badge variant="light" color="primary">25</p-badge>
+  <p-badge variant="light" color="success">7K</p-badge>
+  <p-badge variant="light" color="warning">999+</p-badge>
+  <p-badge variant="light" color="danger">6</p-badge>
+</template>
+```
+### Sample Inverse Variant
+
+<preview class="gap-4">
+  <p-badge variant="inverse" color="primary">25</p-badge>
+  <p-badge variant="inverse" color="success">7K</p-badge>
+  <p-badge variant="inverse" color="warning">999+</p-badge>
+  <p-badge variant="inverse" color="danger">6</p-badge>
+</preview>
+
+```vue
+<template>
+  <p-badge variant="inverse" color="primary">25</p-badge>
+  <p-badge variant="inverse" color="success">7K</p-badge>
+  <p-badge variant="inverse" color="warning">999+</p-badge>
+  <p-badge variant="inverse" color="danger">6</p-badge>
+</template>
+```
 
 ## API
 
@@ -67,7 +96,7 @@ Badge has 3 variants namely `default`, `light` and `inverse`. When variant is no
 
 | Props     |   Type   |  Default  | Description                                                                                                                                          |
 |-----------|:--------:|:---------:|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `color`   | `String` | `primary` | Badge color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`                                           |
+| `color`   | `String` | `-` | Badge color variant, valid value is `primary`, `success`, `warning` and `danger`                                           |
 | `variant` | `String` | `default` | Badge variant, valid value is `default`, `light` and `inverse`. If need badge in `default` variant, just leave badge without setting up the variant. |
 
 ### Slots

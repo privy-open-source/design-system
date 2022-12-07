@@ -97,13 +97,13 @@
 
 ### Simple Usage
 
-<p-button class="mt-3" @click="simpleTour.start()">
+<p-button class="mt-3" @click="simpleTour.start()" color="primary">
   Try It
 </p-button>
 
 <preview class="flex-col space-y-2" label="sample">
   <div class="w-full max-w-xs overflow-y-auto h-52">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita explicabo necessitatibus eius architecto, similique quibusdam sed consequuntur? Esse, praesentium quidem. Dolorem repellendus numquam laudantium nisi labore animi. Iusto maxime exercitationem voluptatem molestias dolorum? Beatae minima deleniti tenetur quo ullam numquam, ab officiis id odio optio ipsam sed, <span id="sample" class="text-primary-100">sample text</span>, repellendus, voluptat.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita explicabo necessitatibus eius architecto, similique quibusdam sed consequuntur? Esse, praesentium quidem. Dolorem repellendus numquam laudantium nisi labore animi. Iusto maxime exercitationem voluptatem molestias dolorum? Beatae minima deleniti tenetur quo ullam numquam, ab officiis id odio optio ipsam sed, <span id="sample" class="text-accent">sample text</span>, repellendus, voluptat.
   </div>
 </preview>
 
@@ -133,7 +133,7 @@ tour.start()
 
 ### Advance Usage
 
-<p-button class="mt-3" @click="advanceTour.start()" data-tour="start-advance">
+<p-button class="mt-3" @click="advanceTour.start()" data-tour="start-advance" color="primary">
   Try It
 </p-button>
 
@@ -168,7 +168,7 @@ You need define stories before can run the tour. There many kind of step you can
 
 Step for showing tour dialog to specific target.
 
-<p-button class="mt-3" @click="tourDialog.start()" data-tour="sample-dialog">
+<p-button class="mt-3" @click="tourDialog.start()" data-tour="sample-dialog" color="primary">
   Try It
 </p-button>
 
@@ -188,7 +188,7 @@ const tour = createTour()
 
 Step for trigger event to target element. Available action `click`, `dblClick`, `tripleClick`, `type`, `hover`, `unhover`.
 
-<p-button class="mt-3" @click="tourAction.start()">
+<p-button class="mt-3" @click="tourAction.start()" color="primary">
   Try It
 </p-button>
 
@@ -221,7 +221,7 @@ const tour = createTour()
 
 Add delay in millisecond before run to next step.
 
-<p-button class="mt-3" @click="tourDelay.start()">
+<p-button class="mt-3" @click="tourDelay.start()" color="primary">
   Try It
 </p-button>
 
@@ -248,7 +248,7 @@ const tour = createTour()
 
 Step for redirecting to some page.
 
-<p-button class="mt-3" @click="tourVisit.start()">
+<p-button class="mt-3" @click="tourVisit.start()" color="primary">
   Try It
 </p-button>
 
@@ -262,7 +262,7 @@ const tour = createTour()
 
 If you want run some steps only on some conditions, you can use `.runIf`, `.runElseIf`, and `.runElse`
 
-<p-button class="mt-3" @click="tourIf.start()">
+<p-button class="mt-3" @click="tourIf.start()" color="primary">
   Try It
 </p-button>
 

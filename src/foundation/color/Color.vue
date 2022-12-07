@@ -63,11 +63,11 @@ export default defineComponent({
   @apply w-full h-full relative cursor-pointer;
 
   &-box {
-    @apply w-full h-10 rounded dark:ring-1 dark:ring-inset dark:ring-white/10;
+    @apply w-full h-10 rounded dark:ring-1 dark:ring-inset dark:ring-on-emphasis-alpha-subtle;
   }
 
   &-subtitle {
-    @apply text-xs tracking-tight dark:text-white;
+    @apply text-xs tracking-tight dark:text-on-emphasis;
   }
 
   &-code {

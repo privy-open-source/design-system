@@ -22,7 +22,7 @@ A button group displays multiple buttons together that gives user access to simi
     <Button icon><IconChevronDown /></Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Default group button style that will used on many area.
     This style will use to highligth most important action in any experience.
@@ -36,7 +36,7 @@ A button group displays multiple buttons together that gives user access to simi
     <Button variant="outline" icon><IconChevronDown /></Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Outline group button style will used if an action need less visual weight.
   </div>
@@ -57,7 +57,7 @@ A button group displays multiple buttons together that gives user access to simi
     </ButtonGroup>
   </div>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Button group that consist of two component button can
     be classified as two type. Two button group text and
@@ -73,7 +73,7 @@ A button group displays multiple buttons together that gives user access to simi
     <Button>Button Text</Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Three button group usually used when similar actions
     have to be shown together, and have the same level of importance.
@@ -90,7 +90,7 @@ A button group displays multiple buttons together that gives user access to simi
     <Button>Button Text</Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Four button group is the maximum quantity of button
     group with text. Have the same function like before which is
@@ -117,7 +117,7 @@ A button group displays multiple buttons together that gives user access to simi
     </Dropdown>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Button with addon usually used to simplify many actions
     into one group button, the other action can be hidened inside the addon.
@@ -131,7 +131,7 @@ A button group displays multiple buttons together that gives user access to simi
     <Button icon><IconChevronRight /></Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Button all addon usually used when the button group
     consist of two up to six button with only icon.
@@ -154,7 +154,7 @@ A button group displays multiple buttons together that gives user access to simi
     <Button>Button Text</Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-body-75">
+<div class="flex pt-5 pb-8 text-sm text-default">
   <div class="w-3/4">
     Usage : Button with addon usually used to simplify many actions
     into one group button, the other action can be hidened inside the addon.

@@ -77,20 +77,20 @@ export default defineComponent({
 <style lang="postcss">
 .nav {
   &__subitem {
-    @apply block text-base text-body-50;
+    @apply block text-base text-subtle;
 
     &&--collapsible {
       .nav__subitem__parent {
-        @apply cursor-pointer text-body-100 relative;
+        @apply cursor-pointer text-default relative;
       }
 
       .nav__link__caret {
-        @apply absolute right-0 rotate-180 origin-center ease-in-out duration-150;
+        @apply absolute right-3 rotate-180 origin-center ease-in-out duration-150;
       }
 
       &.nav__subitem--collapsed {
         .nav__subitem__parent {
-          @apply text-body-50;
+          @apply text-subtle hover:text-default;
         }
 
         > .sidebar__nav,

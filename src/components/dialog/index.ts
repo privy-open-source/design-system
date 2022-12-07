@@ -47,9 +47,10 @@ export async function confirm (options: DialogOptions): Promise<boolean> {
       },
       options,
       {
-        title  : 'Confirm',
-        confirm: {},
-        cancel : {},
+        title   : 'Confirm',
+        confirm : {},
+        cancel  : {},
+        centered: true,
       },
     ))
   })

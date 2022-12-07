@@ -2,17 +2,19 @@
   <Dropdown
     v-model="isOpen"
     variant="input"
+    size="sm"
     class="filterbar__date"
     :class="{'filterbar--active': !!value }"
     caret>
     <template #button-content>
       {{ value ? value : schema.label }}
     </template>
-    <Caption
-      class="px-3 py-2"
-      bold>
+    <Subheading
+      class="px-4 pt-4 pb-1"
+      weight="medium"
+      overline>
       {{ schema.label }}
-    </Caption>
+    </Subheading>
 
     <Calendar
       v-model="model"
@@ -30,7 +32,7 @@ import {
   PropType,
   ref,
 } from 'vue-demi'
-import Caption from '../../caption/Caption.vue'
+import Subheading from '../../subheading/Subheading.vue'
 import Calendar from '../../calendar/Calendar.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
 import { useVModel } from '../../input'
@@ -40,7 +42,7 @@ import { isDate, format as formatDate } from 'date-fns'
 
 export default defineComponent({
   components: {
-    Caption,
+    Subheading,
     Dropdown,
     Calendar,
   },

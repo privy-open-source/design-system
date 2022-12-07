@@ -116,14 +116,14 @@ export default defineComponent({
   }
 
   &__link {
-    @apply block p-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-body-50 hover:text-body-100;
+    @apply block py-[10px] px-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-subtle hover:text-default;
 
     &--active {
-      @apply text-body-100 cursor-default;
+      @apply text-default cursor-default;
     }
 
     &--disabled {
-      @apply text-subtext-50 hover:text-subtext-50 focus:text-subtext-50 active:text-subtext-50 cursor-default pointer-events-none;
+      @apply text-muted hover:text-muted focus:text-muted active:text-muted cursor-default pointer-events-none;
     }
 
     &--icon {
@@ -143,7 +143,7 @@ export default defineComponent({
     }
 
     &__label {
-      @apply flex;
+      @apply flex items-center;
     }
   }
 

@@ -429,7 +429,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .cropper {
-  @apply bg-white w-full aspect-compat-square;
+  @apply bg-default w-full aspect-compat-square;
 
   &__canvas {
     @apply hidden;
@@ -443,7 +443,7 @@ export default defineComponent({
 
   &__mask {
     @apply pointer-events-none touch-none select-none;
-    @apply border border-white border-dashed box-border shadow-mask absolute inset-0 m-auto max-w-[66.666667%];
+    @apply border border-default border-dashed box-border shadow-mask absolute inset-0 m-auto max-w-[66.666667%];
   }
 
   &__image {

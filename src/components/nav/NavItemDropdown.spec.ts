@@ -54,7 +54,7 @@ it('should be able to change to icon mode via `icon` prop', () => {
 
   const button = screen.queryByTestId('dropdown-activator')
 
-  expect(button).toHaveClass('btn--ghost', 'btn--icon')
+  expect(button).toHaveClass('btn--variant-ghost', 'btn--icon')
 })
 
 it('should be able to hide dropdown caret with `no-caret` prop', () => {

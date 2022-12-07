@@ -2,13 +2,14 @@
   <Dropdown
     v-model="isOpen"
     variant="input"
-    class="filterbar__multiselect-badge"
+    size="sm"
+    class="filterbar__multiselect"
     :class="{'filterbar--active': selected.length > 0 }"
     caret>
     <template #button-content>
       <template v-if="selected.length > 1">
-        {{ schema.label }}:
-        <Badge class="filterbar__multiselect-badge">
+        {{ schema.label }}
+        <Badge variant="inverse">
           {{ selected.length }}
         </Badge>
       </template>
@@ -20,17 +21,18 @@
       </template>
     </template>
 
-    <Caption
-      class="px-3 py-2"
-      bold>
+    <Subheading
+      class="px-4 pt-4 pb-1"
+      weight="medium"
+      overline>
       {{ schema.label }}
-    </Caption>
+    </Subheading>
     <template
       v-for="(item, i) in items"
       :key="i">
       <Checkbox
         v-model="model"
-        apperance="option"
+        appearance="option"
         :value="item.value">
         {{ item.text }}
       </Checkbox>
@@ -46,7 +48,7 @@ import {
   ref,
 } from 'vue-demi'
 import Badge from '../../badge/Badge.vue'
-import Caption from '../../caption/Caption.vue'
+import Subheading from '../../subheading/Subheading.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
 import Checkbox from '../../checkbox/Checkbox.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
@@ -58,7 +60,7 @@ import { SelectItem } from '../../select'
 export default defineComponent({
   components: {
     Badge,
-    Caption,
+    Subheading,
     Dropdown,
     Checkbox,
   },
@@ -110,8 +112,8 @@ export default defineComponent({
 
 <style lang="postcss">
 .filterbar__multiselect {
-  &-badge.badge--primary {
-    @apply bg-white bg-opacity-20;
+  > .btn {
+    @apply items-center;
   }
 }
 </style>

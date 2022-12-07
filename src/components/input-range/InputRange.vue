@@ -279,7 +279,7 @@ export default defineComponent({
     @apply h-2 rounded;
 
     &-active {
-      @apply bg-primary-100 relative text-center;
+      @apply bg-accent-emphasis relative text-center;
     }
 
     &-upper {
@@ -288,12 +288,12 @@ export default defineComponent({
   }
 
   &__thumb {
-    @apply w-4 h-4 rounded-full bg-white shadow absolute top-1/2 bottom-0 -translate-y-1/2 border border-gray-25;
+    @apply w-4 h-4 rounded-full bg-default shadow absolute top-1/2 bottom-0 -translate-y-1/2 border border-gray-25;
     @apply touch-none select-none;
 
     &:hover,
     &:active {
-      @apply ring ring-primary-25 bg-primary-100;
+      @apply ring ring-accent border-accent-emphasis;
     }
 
     &-start {

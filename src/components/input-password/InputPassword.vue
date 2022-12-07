@@ -47,7 +47,7 @@ export default defineComponent({
   @apply pr-9;
 
   &__toggle {
-    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hover:text-secondary-hovered;
+    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer z-1;
   }
 
   &.input--clearable {

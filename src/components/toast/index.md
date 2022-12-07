@@ -11,7 +11,7 @@
 ### Simple Usage
 
 <div class="flex mt-3">
-  <Button @click="toast({
+  <Button color="primary" @click="toast({
     title: 'Lorem ipsum',
     text : 'Lorem ipsum dolor sit amet.',
   })">
@@ -31,7 +31,7 @@ toast({
 ### Advance Usage
 
 <div class="flex mt-3">
-  <Button @click="toast({
+  <Button color="primary" @click="toast({
     type      : 'error',
     title     : 'Lorem ipsum',
     text      : 'Lorem ipsum dolor sit amet.',
@@ -58,12 +58,12 @@ toast({
 
 ## Type Variant
 
-There available 4 type variants: `info`, `success`, `warn`, `error`. default is `info`
+There available 4 type variants: `info`, `success`, `warning`, `error`. default is `info`
 
 <preview class="flex-col items-center space-y-3">
   <Toast type="info" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast type="success" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-  <Toast type="warn" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
+  <Toast type="warning" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast type="error" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
 </preview>
 
@@ -85,11 +85,11 @@ There available 4 type variants: `info`, `success`, `warn`, `error`. default is 
     Success
   </Button>
   <Button color="warning" @click="toast({
-    type : 'warn',
+    type : 'warning',
     title: 'Lorem ipsum',
     text : 'Lorem ipsum dolor sit amet.',
   })">
-    Warn
+    Warning
   </Button>
   <Button color="danger" @click="toast({
     type : 'error',
@@ -117,9 +117,9 @@ toast({
   text : 'Lorem ipsum dolor sit amet.',
 })
 
-// warn
+// warning
 toast({
-  type : 'warn',
+  type : 'warning',
   title: 'Lorem ipsum',
   text : 'Lorem ipsum dolor sit amet.',
 })
@@ -139,7 +139,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
 <preview class="flex-col items-center space-y-3">
   <Toast variant="filled" type="info" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast variant="filled" type="success" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-  <Toast variant="filled" type="warn" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
+  <Toast variant="filled" type="warning" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
   <Toast variant="filled" type="error" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
 </preview>
 
@@ -163,12 +163,12 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
     Success
   </Button>
   <Button color="warning" @click="toast({
-    type   : 'warn',
+    type   : 'warning',
     variant: 'filled',
     title  : 'Lorem ipsum',
     text   : 'Lorem ipsum dolor sit amet.',
   })">
-    Warn
+    Warning
   </Button>
   <Button color="danger" @click="toast({
     type   : 'error',
@@ -199,9 +199,9 @@ toast({
   text   : 'Lorem ipsum dolor sit amet.',
 })
 
-// warn
+// warning
 toast({
-  type   : 'warn',
+  type   : 'warning',
   variant: 'filled',
   title  : 'Lorem ipsum',
   text   : 'Lorem ipsum dolor sit amet.',
@@ -224,7 +224,7 @@ You can add some custom class to Toast element via `toastClass`.
   <Button type="" color="primary" @click="toast({
     title     : 'Lorem ipsum',
     text      : 'Lorem ipsum dolor sit amet.',
-    toastClass: 'rounded-full',
+    toastClass: 'mt-4 mr-4',
   })">
     Rounded Toast
   </Button>
@@ -236,7 +236,7 @@ import { toast } from '@privyid/persona/core'
 toast({
   title     : 'Lorem ipsum',
   text      : 'Lorem ipsum dolor sit amet.',
-  toastClass: 'rounded-full',
+  toastClass: 'mt-4 mr-4',
 })
 ```
 
@@ -248,7 +248,7 @@ toast({
 
 | Options      |   Type   | Default  | Description                                                               |
 |--------------|:--------:|:--------:|---------------------------------------------------------------------------|
-| `type`       | `String` |  `info`  | Toast type variant, valid value is `info`, `success`, `warn`, `error`     |
+| `type`       | `String` |  `info`  | Toast type variant, valid value is `info`, `success`, `warning`, `error`     |
 | `title`      | `String` |    -     | Toast title message, **required**                                         |
 | `text`       | `String` |    -     | Toast text message, **required**                                          |
 | `variant`    | `String` | `simple` | Toast style variant, valid value is `simple`, `filled`                    |

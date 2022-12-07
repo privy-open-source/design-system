@@ -7,7 +7,7 @@
 <style lang="postcss">
 .input-group {
   &__addon {
-    @apply flex items-center bg-white text-base rounded-sm border border-secondary-25 border-solid text-gray-30;
+    @apply flex items-center text-base rounded border border-solid border-muted outline-none bg-default;
   }
 
   &--xs > .input-group__addon {

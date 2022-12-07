@@ -379,7 +379,7 @@ it('should be able to change button variant via `variant` prop', () => {
 
   const button = screen.queryByTestId('dropdown-activator')
 
-  expect(button).toHaveClass('btn--outline')
+  expect(button).toHaveClass('btn--variant-outline')
 })
 
 it('should be able to change button color via `color` prop', () => {

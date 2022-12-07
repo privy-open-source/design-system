@@ -103,10 +103,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .input {
-  @apply w-full relative;
+  @apply w-full relative bg-default;
 
   &__form {
-    @apply text-base rounded-sm border border-secondary-25 border-solid placeholder:text-subtext-75 w-full outline-none bg-white;
+    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none ;
 
     &:disabled,
     &--disabled {
@@ -114,12 +114,8 @@ export default defineComponent({
     }
 
     &:focus {
-      @apply border-secondary-75 ring ring-secondary-25 ring-opacity-30;
+      @apply border-subtle ring-4 ring-subtle/10 z-[1];
     }
-  }
-
-  &--xs {
-    @apply text-xs px-3 py-2;
   }
 
   &--sm {
@@ -135,15 +131,15 @@ export default defineComponent({
   }
 
   &--error {
-    @apply border-danger-100;
+    @apply border-danger-emphasis hover:border-danger-emphasis;
 
     &:focus {
-      @apply ring-danger-25 border-danger-100;
+      @apply ring-danger border-danger-emphasis;
     }
   }
 
   .input__clear {
-    @apply cursor-pointer hover:text-danger-hovered;
+    @apply cursor-pointer hover:text-danger z-1;
   }
 
   &--clearable {

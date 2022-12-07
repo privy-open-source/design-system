@@ -86,7 +86,7 @@ export default defineComponent({
 <style lang="postcss">
 .collapse {
   &&--show {
-    @apply block;
+    @apply block visible;
   }
 
   &:not(.collapse--show) {

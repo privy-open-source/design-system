@@ -19,6 +19,8 @@
 ## Usage
 
 ### Basic Usage
+Default color of label is `black`
+
 <preview>
   <p-label>Label</p-label>
 </preview>
@@ -30,27 +32,21 @@
 ```
 
 ## Colors
-Label available in 7 different colors. There are `primary`, `secondary`, `success`, `info`, `warning`, `danger` and `gold`. Default color is `primary`
+Label available in 4 different colors. There are `primary`, `success`, `warning`, and `danger`.
 
 <preview>
   <p-label color="primary">Label</p-label>
-  <p-label color="secondary">Label</p-label>
   <p-label color="success">Label</p-label>
-  <p-label color="info">Label</p-label>
   <p-label color="warning">Label</p-label>
   <p-label color="danger">Label</p-label>
-  <p-label color="gold">Label</p-label>
 </preview>
 
 ```vue
 <template>
   <p-label color="primary">Label</p-label>
-  <p-label color="secondary">Label</p-label>
   <p-label color="success">Label</p-label>
-  <p-label color="info">Label</p-label>
   <p-label color="warning">Label</p-label>
   <p-label color="danger">Label</p-label>
-  <p-label color="gold">Label</p-label>
 </template>
 ```
 
@@ -75,18 +71,18 @@ Label has 3 variants namely `default`, `light` and `dot`. When variant is not se
 Label has 4 size, namely `lg`, `md`, `sm` and `xs`. When size is not set, default label is `md`
 
 <preview>
-  <p-label size="lg">Label</p-label>
-  <p-label size="md">Label</p-label>
-  <p-label size="sm">Label</p-label>
-  <p-label size="xs">Label</p-label>
+  <p-label color="primary" size="lg">Label</p-label>
+  <p-label color="primary" size="md">Label</p-label>
+  <p-label color="primary" size="sm">Label</p-label>
+  <p-label color="primary" size="xs">Label</p-label>
 </preview>
 
 ```vue
 <template>
-  <p-label size="lg">Label</p-label>
-  <p-label size="md">Label</p-label>
-  <p-label size="sm">Label</p-label>
-  <p-label size="xs">Label</p-label>
+  <p-label color="primary" size="lg">Label</p-label>
+  <p-label color="primary" size="md">Label</p-label>
+  <p-label color="primary" size="sm">Label</p-label>
+  <p-label color="primary" size="xs">Label</p-label>
 </template>
 ```
 
@@ -94,16 +90,16 @@ Label has 4 size, namely `lg`, `md`, `sm` and `xs`. When size is not set, defaul
 Label has dismiss feature. It can be show or hide by `dismissable` props. If `dismissable` set to `true`, dismiss button will show.
 
 <preview>
-  <p-label :dismissable="true">Label</p-label>
-  <p-label variant="light" :dismissable="true">Label</p-label>
-  <p-label variant="dot" :dismissable="true">Label</p-label>
+  <p-label color="primary" :dismissable="true">Label</p-label>
+  <p-label color="primary" variant="light" :dismissable="true">Label</p-label>
+  <p-label color="primary" variant="dot" :dismissable="true">Label</p-label>
 </preview>
 
 ```vue
 <template>
-  <p-label :dismissable="true">Label</p-label>
-  <p-label variant="light" :dismissable="true">Label</p-label>
-  <p-label variant="dot" :dismissable="true">Label</p-label>
+  <p-label color="primary" :dismissable="true">Label</p-label>
+  <p-label color="primary" variant="light" :dismissable="true">Label</p-label>
+  <p-label color="primary" variant="dot" :dismissable="true">Label</p-label>
 </template>
 ```
 
@@ -112,11 +108,11 @@ Label has dismiss feature. It can be show or hide by `dismissable` props. If `di
 ### Props
 
 | Props         |   Type    |  Default  | Description                                                                                                |
-|---------------|:---------:|:---------:|------------------------------------------------------------------------------------------------------------|
-| `color`       | `String`  | `primary` | Label color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
-| `variant`     | `String`  | `default` | Label variant, valid value is `default`, `light` and `dot`.                                                |
-| `size`        | `String`  |   `md`    | Label variant, valid value is `lg`, `md`, `sm` and `xs`.                                                   |
-| `dismissable` | `Boolean` |  `false`  | Show / Hide dismiss button                                                                                 |
+|---------------|:---------:|:---------:|---------------------------------------------------------------------------------------------------------------------|
+| `color`       | `String`  | `-` | Label color variant, valid value is `primary`, `success`, `warning` and `danger` |
+| `variant`     | `String`  | `default` | Label variant, valid value is `default`, `light` and `dot`.                |
+| `size`        | `String`  |   `md`    | Label variant, valid value is `lg`, `md`, `sm` and `xs`.                   |
+| `dismissable` | `Boolean` |  `false`  | Show / Hide dismiss button                                                 |
 
 ### Slots
 

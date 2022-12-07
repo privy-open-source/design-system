@@ -2,23 +2,25 @@
   <Dropdown
     v-model="isOpen"
     variant="input"
+    size="sm"
     class="filterbar__select"
     :class="{'filterbar--active': selected !== undefined }"
     caret>
     <template #button-content>
       {{ selected ? selected.text : schema.label }}
     </template>
-    <Caption
-      class="px-3 py-2"
-      bold>
+    <Subheading
+      class="px-4 pt-4 pb-1"
+      weight="medium"
+      overline>
       {{ schema.label }}
-    </Caption>
+    </Subheading>
     <template
       v-for="(item, i) in items"
       :key="i">
       <Radio
         v-model="model"
-        apperance="option"
+        appearance="option"
         :value="item.value"
         @click="close">
         {{ item.text }}
@@ -34,7 +36,7 @@ import {
   PropType,
   ref,
 } from 'vue-demi'
-import Caption from '../../caption/Caption.vue'
+import Subheading from '../../subheading/Subheading.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
 import Radio from '../../radio/Radio.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
@@ -45,7 +47,7 @@ import { SelectItem } from '../../select'
 
 export default defineComponent({
   components: {
-    Caption,
+    Subheading,
     Dropdown,
     Radio,
   },

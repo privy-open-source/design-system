@@ -13,14 +13,25 @@ import {
   computed,
   PropType,
 } from 'vue-demi'
-
-type ElementVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+import {
+  ElementVariant,
+  TransformVariant,
+  WeightVariant,
+} from '.'
 
 export default defineComponent({
   props: {
     element: {
       type   : String as PropType<ElementVariant>,
       default: 'h3',
+    },
+    weight: {
+      type   : String as PropType<WeightVariant>,
+      default: 'normal',
+    },
+    transform: {
+      type   : String as PropType<TransformVariant>,
+      default: 'normalcase',
     },
   },
 
@@ -31,6 +42,12 @@ export default defineComponent({
 
     const classNames = computed(() => {
       const result: string[] = [`${props.element}`]
+
+      if (props.transform)
+        result.push(`heading--${props.transform}`)
+
+      if (props.weight)
+        result.push(`heading--${props.weight}`)
 
       return result
     })
@@ -63,6 +80,44 @@ export default defineComponent({
   }
   &6 {
     @apply text-xl;
+  }
+
+  &eading {
+    /**
+    * Weight variant
+    * of heading
+    */
+    &--normal {
+      @apply font-normal;
+    }
+
+    &--medium {
+      @apply font-medium;
+    }
+
+    &--bold {
+      @apply font-bold;
+    }
+
+    /**
+    * Text transform
+    * of heading
+    */
+    &--normalcase {
+      @apply normal-case;
+    }
+
+    &--lowercase {
+      @apply lowercase;
+    }
+
+    &--capitalize {
+      @apply capitalize;
+    }
+
+    &--uppercase {
+      @apply uppercase;
+    }
   }
 }
 </style>

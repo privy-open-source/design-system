@@ -78,16 +78,16 @@ export default defineComponent({
   }
 
   > .divider {
-    @apply flex items-center my-0 py-3 border-y border-secondary-25 bg-transparent;
+    @apply flex items-center my-0 py-3 border-y border-subtle bg-transparent;
 
     &::before {
-      @apply content-[''] bg-secondary-25 w-[1px] h-full;
+      @apply content-[''] bg-subtle-alpha w-[1px] h-full;
     }
   }
 
-  &--error {
+  &&--error {
     > .divider {
-      @apply border-danger-100;
+      @apply border-danger-emphasis;
     }
   }
 
@@ -95,27 +95,27 @@ export default defineComponent({
     @apply flex-shrink-0;
   }
 
-  &--xs {
+  &&--xs {
     .input > .input__form {
       @apply text-xs px-3 py-2;
     }
 
     .btn {
-      @apply px-2 py-1 gap-1 text-sm rounded-xs;
+      @apply px-2 py-1 gap-1 text-sm rounded;
     }
   }
 
-  &--sm {
+  &&--sm {
     .input > .input__form {
       @apply px-3 py-2;
     }
 
     .btn {
-      @apply px-4 py-2 gap-2 text-base rounded-sm;
+      @apply px-4 py-2 gap-2 text-base rounded;
     }
   }
 
-  &--md {
+  &&--md {
     .input > .input__form {
       @apply px-3 py-3;
     }
@@ -125,7 +125,7 @@ export default defineComponent({
     }
   }
 
-  &--lg {
+  &&--lg {
     .input > .input__form {
       @apply px-3 py-4;
     }
@@ -135,12 +135,12 @@ export default defineComponent({
     }
   }
 
-  &--error {
+  &&--error {
     .input > .input__form {
-      @apply border-danger-100;
+      @apply border-danger-emphasis;
 
       &:focus {
-        @apply ring-danger-25 border-danger-100;
+        @apply ring-danger border-danger-emphasis;
       }
     }
   }
