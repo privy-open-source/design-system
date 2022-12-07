@@ -547,3 +547,17 @@ it('should hide caret icon if props `no-caret` is provided', () => {
 
   expect(caret).not.toBeInTheDocument()
 })
+
+it('should have style "divider" if props `divider` has provided', () => {
+  const screen = render({
+    components: { Dropdown },
+    template  : `
+      <Dropdown divider />
+    `,
+  })
+
+  const dropdown = screen.queryByTestId('dropdown')
+
+  expect(dropdown).toBeInTheDocument()
+  expect(dropdown).toHaveClass('dropdown--divider')
+})

@@ -2,7 +2,7 @@
   <div
     ref="dropdown"
     class="dropdown"
-    :class="{ 'dropdown--open': isOpen }"
+    :class="[{ 'dropdown--open': isOpen }, classNames]"
     data-testid="dropdown">
     <slot
       name="activator"
@@ -54,6 +54,7 @@ import {
   watch,
   toRef,
   watchEffect,
+  computed,
 } from 'vue-demi'
 import {
   templateRef,
@@ -129,6 +130,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    divider: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -147,6 +152,15 @@ export default defineComponent({
     const isOpen    = useVModel(props)
 
     const { next: nextFocus, prev: prevFocus } = useFocus(menu)
+
+    const classNames = computed(() => {
+      const result: string[] = ['']
+
+      if (props.divider)
+        result.push('dropdown--divider')
+
+      return result
+    })
 
     function toggle () {
       if (!props.disabled) {
@@ -259,6 +273,7 @@ export default defineComponent({
 
     return {
       isOpen,
+      classNames,
       toggle,
       open,
       close,
@@ -273,20 +288,34 @@ export default defineComponent({
 
   &__menu {
     @apply max-h-64 border rounded w-full min-w-[15rem] bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
-  }
 
-  &__menu-container > .dropdown__item:first-child,
-  &__menu-container > .dropdown__subitem:first-child .dropdown__item {
-    @apply rounded-t;
-  }
+    &-container {
+      > .dropdown__item {
+        &:first-child,
+        .dropdown__subitem:first-child & {
+          @apply rounded-t-[7px];
+        }
 
-  &__menu-container > .dropdown__item:last-child,
-  &__menu-container > .dropdown__subitem:last-child .dropdown__item {
-    @apply rounded-b;
+        &:last-child,
+        .dropdown__subitem:last-child & {
+          @apply rounded-b-[7px];
+        }
+      }
+    }
   }
 
   &__activator > &__caret {
-    @apply self-center;
+    @apply self-center -mr-[3px];
+  }
+
+  &&--divider {
+    .dropdown {
+      &__menu {
+        :where(.checkbox, .radio) {
+          @apply border-b border-solid border-b-subtle-alpha last:border-b-0;
+        }
+      }
+    }
   }
 }
 </style>
