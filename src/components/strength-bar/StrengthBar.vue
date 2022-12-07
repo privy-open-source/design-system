@@ -1,0 +1,103 @@
+<template>
+  <div
+    class="strength-bar"
+    :data-status="status">
+    <div
+      v-for="(active, i) in items"
+      :key="i"
+      class="strength-bar__bar"
+      :class="{ 'strength-bar--active': active }" />
+  </div>
+</template>
+
+<script lang="ts">
+import { useToNumber } from '@vueuse/core'
+import {
+  computed,
+  defineComponent,
+  toRef,
+} from 'vue-demi'
+
+export default defineComponent({
+  props: {
+    length: {
+      type   : [Number, String],
+      default: 6,
+    },
+    value: {
+      type   : [Number, String],
+      default: 0,
+    },
+    min: {
+      type   : [Number, String],
+      default: 0,
+    },
+    max: {
+      type   : [Number, String],
+      default: 6,
+    },
+  },
+  setup (props) {
+    const min    = useToNumber(toRef(props, 'min'), { nanToZero: true })
+    const max    = useToNumber(toRef(props, 'max'), { nanToZero: true })
+    const value  = useToNumber(toRef(props, 'value'), { nanToZero: true })
+    const length = useToNumber(toRef(props, 'length'), { nanToZero: true })
+
+    const strength = computed(() => {
+      return (value.value - min.value) / (max.value - min.value)
+    })
+
+    const items = computed(() => {
+      return Array.from({ length: length.value })
+        .map((_, i) => {
+          return Math.round(strength.value * length.value) >= (i + 1)
+        })
+    })
+
+    const status = computed(() => {
+      const val = strength.value * 3
+
+      if (val > 2)
+        return 'high'
+      else if (val > 1)
+        return 'mid'
+      else
+        return 'low'
+    })
+
+    return {
+      strength,
+      items,
+      status,
+    }
+  },
+})
+</script>
+
+<style lang="postcss">
+.strength-bar {
+  @apply flex w-full space-x-4;
+
+  &__bar {
+    @apply rounded-full h-1 bg-subtle-alpha flex-grow;
+  }
+
+  &[data-status="low"] {
+    .strength-bar--active {
+      @apply bg-danger-emphasis;
+    }
+  }
+
+  &[data-status="mid"] {
+    .strength-bar--active {
+      @apply bg-warning-emphasis;
+    }
+  }
+
+  &[data-status="high"] {
+    .strength-bar--active {
+      @apply bg-success-emphasis;
+    }
+  }
+}
+</style>

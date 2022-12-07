@@ -6,6 +6,9 @@
   import pDivider from '../divider/Divider.vue'
   import pSelect from '../select/Select.vue'
   import IconEmail from '@carbon/icons-vue/lib/at/16'
+  import { ref } from 'vue-demi'
+
+  const select = ref()
 </script>
 
 # Input Group
@@ -60,6 +63,24 @@
     <p-button variant="input">
       Submit
     </p-button>
+  </p-input-group>
+</template>
+```
+
+### Input and Select
+
+<preview>
+  <p-input-group>
+    <p-select v-model="select" :options="['A', 'B', 'C']" />
+    <p-input />
+  </p-input-group>
+</preview>
+
+```vue
+<template>
+  <p-input-group>
+    <p-select :options="['A', 'B', 'C']" />
+    <p-input />
   </p-input-group>
 </template>
 ```

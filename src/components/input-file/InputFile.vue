@@ -160,6 +160,12 @@ export default defineComponent({
     }
   }
 
+  &&--disabled {
+    > .input-group > .input-group__addon > .btn {
+      @apply opacity-100;
+    }
+  }
+
   &&--error {
     .input-group__addon,
     .input-group .input__form {

@@ -2456,6 +2456,7 @@ __metadata:
     "@types/scroll-into-view": ^1
     "@types/testing-library__jest-dom": 5.14.5
     "@types/webfontloader": 1.6.35
+    "@types/zxcvbn": ^4
     "@typescript-eslint/eslint-plugin": 5.45.0
     "@typescript-eslint/parser": 5.45.0
     "@vitejs/plugin-vue": 3.2.0
@@ -2511,6 +2512,7 @@ __metadata:
     vue-tsc: ^1.0.11
     vuedraggable: next
     webfontloader: 1.6.28
+    zxcvbn: ^4.4.2
   languageName: unknown
   linkType: soft
 
@@ -3218,6 +3220,13 @@ __metadata:
   version: 1.6.35
   resolution: "@types/webfontloader@npm:1.6.35"
   checksum: 8a809e1f8041fc9f7ec1df82d6e841bfc51732a3aa0b56a4e3d2abab86a8abce1b0db90dc9d2c594fd0d77034e2670cae3cfb714a902a0112985fa04fd4a61c8
+  languageName: node
+  linkType: hard
+
+"@types/zxcvbn@npm:^4":
+  version: 4.4.1
+  resolution: "@types/zxcvbn@npm:4.4.1"
+  checksum: 71c484f1aa049921997ee6471604725a7fb00b9899e7753c6e94275a2b135e1088ed3f2f2ba77d189715d1ec61bed65b06899ba03e061b07ffc32c2a9296501b
   languageName: node
   linkType: hard
 
@@ -14899,5 +14908,12 @@ __metadata:
     compress-commons: ^4.1.0
     readable-stream: ^3.6.0
   checksum: 4a73da856738b0634700b52f4ab3fe0bf0a532bea6820ad962d0bda0163d2d5525df4859f89a7238e204a378384e12551985049790c1894c3ac191866e85887f
+  languageName: node
+  linkType: hard
+
+"zxcvbn@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "zxcvbn@npm:4.4.2"
+  checksum: 76ab32c066082ac73491b7cd7f93ad0595c59b6d45ae80a0745e9e1661237388beb2f0c2ba0ae3dc330ca3ecdb87edcb7a21e0c09137ab81d5b32e584cda1e5d
   languageName: node
   linkType: hard

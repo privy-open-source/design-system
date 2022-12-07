@@ -24,7 +24,7 @@
 </template>
 ```
 
-### with Min, Max & Step
+### With min, max & step
 
 <preview class="flex-col">
   <p-input-range min="0" max="100" step="25" />

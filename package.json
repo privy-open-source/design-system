@@ -38,6 +38,7 @@
     "@types/scroll-into-view": "^1",
     "@types/testing-library__jest-dom": "5.14.5",
     "@types/webfontloader": "1.6.35",
+    "@types/zxcvbn": "^4",
     "@typescript-eslint/eslint-plugin": "5.45.0",
     "@typescript-eslint/parser": "5.45.0",
     "@vitejs/plugin-vue": "3.2.0",
@@ -101,7 +102,8 @@
     "vue-demi": "0.13.11",
     "vue-router": "4.1.6",
     "vuedraggable": "next",
-    "webfontloader": "1.6.28"
+    "webfontloader": "1.6.28",
+    "zxcvbn": "^4.4.2"
   },
   "lint-staged": {
     "*.(js|ts|vue)": [

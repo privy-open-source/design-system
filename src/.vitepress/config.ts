@@ -127,6 +127,10 @@ export default defineConfig({
               link: '/components/spinner/',
             },
             {
+              text: 'Strength Bar',
+              link: '/components/strength-bar/',
+            },
+            {
               text: 'Tabs',
               link: '/components/tabs/',
             },

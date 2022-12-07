@@ -52,20 +52,23 @@ export default defineComponent({
   > .input-group__addon:not(:first-child),
   > .input:not(:first-child) > .input__form,
   > .select:not(:first-child) > .input > .input__form {
-    @apply rounded-l-none;
-
-    &:not(:focus) {
-      @apply border-l-0;
-    }
+    @apply rounded-l-none border-l-0;
   }
 
   > .input-group__addon:not(:last-child),
   > .input:not(:last-child) > .input__form,
   > .select:not(:last-child) > .input > .input__form {
-    @apply rounded-r-none;
+    @apply rounded-r-none border-r-0;
 
-    &:not(:focus) {
-      @apply border-r-0;
+  }
+
+  .input,
+  .select > .input {
+    &:focus,
+    &:hover {
+      > .input__form {
+        @apply border-r border-l;
+      }
     }
   }
 
@@ -101,7 +104,7 @@ export default defineComponent({
     }
 
     .btn {
-      @apply px-2 py-1 gap-1 text-sm rounded;
+      @apply px-2 py-1 gap-1 text-sm;
     }
   }
 
@@ -111,7 +114,7 @@ export default defineComponent({
     }
 
     .btn {
-      @apply px-4 py-2 gap-2 text-base rounded;
+      @apply px-4 py-2 gap-2 text-base;
     }
   }
 
@@ -121,7 +124,7 @@ export default defineComponent({
     }
 
     .btn {
-      @apply px-5 py-3 gap-3 text-base rounded;
+      @apply px-5 py-3 gap-3 text-base;
     }
   }
 
@@ -131,7 +134,7 @@ export default defineComponent({
     }
 
     .btn {
-      @apply px-8 py-4 gap-4 text-base rounded;
+      @apply px-8 py-4 gap-4 text-base;
     }
   }
 
