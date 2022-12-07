@@ -2539,7 +2539,7 @@ __metadata:
     interactjs: 1.10.17
     lodash-es: 4.17.21
     nuxt: 3.0.0
-    postcss-custom-properties: 12.1.10
+    postcss-custom-properties: 12.1.11
     tabbable: 6.0.1
     tailwindcss: 3.2.4
     vue-demi: 0.13.11
@@ -11305,14 +11305,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-custom-properties@npm:12.1.10":
-  version: 12.1.10
-  resolution: "postcss-custom-properties@npm:12.1.10"
+"postcss-custom-properties@npm:12.1.11":
+  version: 12.1.11
+  resolution: "postcss-custom-properties@npm:12.1.11"
   dependencies:
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.2
-  checksum: 8460d52a493ae7806f30d821f13ae56024e30169f6cb625197752fdde5bce39fb54870733a63b250996b9063214c9ef4dfa01e56de34123a0614069ee71ebcba
+  checksum: 421f9d8d6b9c9066919f39251859232efc4dc5dd406c01e62e08734319a6ccda6d03dd6b46063ba0971053ac6ad3f7abade56d67650b3e370851b2291e8e45e6
   languageName: node
   linkType: hard
 
