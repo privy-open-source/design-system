@@ -5,6 +5,7 @@
     size="sm"
     class="filterbar__multiselect"
     :class="{'filterbar--active': selected.length > 0 }"
+    divider
     caret>
     <template #button-content>
       <template v-if="selected.length > 1">
