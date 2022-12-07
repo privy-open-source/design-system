@@ -11,7 +11,7 @@
 
 ### Simple Usage
 <preview>
-  <p-input v-model.number="value" placeholder="Input Here" />
+  <p-input v-model="value" placeholder="Input Here" />
 </preview>
 
 ```vue
@@ -22,7 +22,7 @@
 
 ## Sizing
 
-<preview class="flex-col space-gap-3">
+<preview class="flex-col space-y-3">
   <p-input size="xs" />
   <p-input size="sm" />
   <p-input size="md" />
@@ -40,7 +40,7 @@
 
 ## Disabled state
 
-<preview class="flex-col space-gap-3">
+<preview class="flex-col space-y-3">
   <p-input disabled />
 </preview>
 
@@ -52,7 +52,7 @@
 
 ## Readonly state
 
-<preview class="flex-col space-gap-3">
+<preview class="flex-col space-y-3">
   <p-input readonly />
 </preview>
 
@@ -64,7 +64,7 @@
 
 ## Error state
 
-<preview class="flex-col space-gap-3">
+<preview class="flex-col space-y-3">
   <p-input error />
 </preview>
 
@@ -78,7 +78,7 @@
 
 Add clear button to input with prop `clearable`.
 
-<preview class="flex-col space-gap-3">
+<preview class="flex-col space-y-3">
   <p-input clearable />
 </preview>
 

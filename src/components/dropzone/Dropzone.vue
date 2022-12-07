@@ -224,7 +224,7 @@ export default defineComponent({
 
   &:disabled,
   &--disabled {
-    @apply opacity-50 pointer-events-none;
+    @apply pointer-events-none;
   }
 
   a,

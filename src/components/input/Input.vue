@@ -110,12 +110,16 @@ export default defineComponent({
 
     &:disabled,
     &--disabled {
-      @apply opacity-50 pointer-events-none;
+      @apply bg-muted border-muted pointer-events-none text-muted;
     }
 
     &:focus {
       @apply border-subtle ring-4 ring-subtle/10 z-[1];
     }
+  }
+
+  &--xs {
+    @apply text-xs px-3 py-2;
   }
 
   &--sm {

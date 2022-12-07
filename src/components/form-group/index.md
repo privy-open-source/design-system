@@ -1,6 +1,7 @@
 <script setup>
   import pFormGroup from './FormGroup.vue'
   import pInput from '../input/Input.vue'
+  import pCheckbox from '../checkbox/Checkbox.vue'
 </script>
 
 # Form Group
@@ -118,13 +119,22 @@ Add decription note below the form input using `description` prop.
 
 Error message from validation can be add in here using prop `error`. Note, it'll replace `description` message.
 
-<preview>
-  <p-form-group
-    label="First Name"
-    description="Lorem Ipsum dolor sitar"
-    error="Please fill this field">
-    <p-input />
-  </p-form-group>
+<preview class="flex-col space-y-4">
+  <div>
+    <p-form-group
+      label="First Name"
+      description="Lorem Ipsum dolor sitar"
+      error="Please fill this field">
+      <p-input />
+    </p-form-group>
+    <p-form-group
+      label="First Name"
+      description="Lorem Ipsum dolor sitar"
+      error="Please fill this field">
+      <p-checkbox>Female</p-checkbox>
+      <p-checkbox>Male</p-checkbox>
+    </p-form-group>
+  </div>
 </preview>
 
 ```vue
