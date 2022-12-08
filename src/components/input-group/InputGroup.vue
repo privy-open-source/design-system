@@ -21,6 +21,14 @@ export default defineComponent({
       type   : String as PropType<SizeVariant>,
       default: 'md',
     },
+    disabled: {
+      type   : Boolean,
+      default: false,
+    },
+    readonly: {
+      type   : Boolean,
+      default: false,
+    },
     error: {
       type   : Boolean,
       default: false,
@@ -33,6 +41,12 @@ export default defineComponent({
       // eslint-disable-next-line unicorn/explicit-length-check
       if (props.size)
         result.push(`input-group--${props.size}`)
+
+      if (props.disabled)
+        result.push('input-group--disabled', 'state--disabled')
+
+      if (props.readonly)
+        result.push('input-group--readonly')
 
       if (props.error)
         result.push('input-group--error', 'state--error')
@@ -64,9 +78,9 @@ export default defineComponent({
 
   .input,
   .select > .input {
-    &:focus,
-    &:hover {
-      > .input__form {
+    > .input__form {
+      &:focus,
+      &:hover {
         @apply border-r border-l;
       }
     }
@@ -78,20 +92,6 @@ export default defineComponent({
 
   > .btn:not(:last-child) {
     @apply rounded-r-none;
-  }
-
-  > .divider {
-    @apply flex items-center my-0 py-3 border-y border-subtle bg-transparent;
-
-    &::before {
-      @apply content-[''] bg-subtle-alpha w-[1px] h-full;
-    }
-  }
-
-  &&--error {
-    > .divider {
-      @apply border-danger-emphasis;
-    }
   }
 
   &__addon {
@@ -135,16 +135,6 @@ export default defineComponent({
 
     .btn {
       @apply px-8 py-4 gap-4 text-base;
-    }
-  }
-
-  &&--error {
-    .input > .input__form {
-      @apply border-danger-emphasis;
-
-      &:focus {
-        @apply ring-danger border-danger-emphasis;
-      }
     }
   }
 }

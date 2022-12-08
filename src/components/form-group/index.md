@@ -127,13 +127,6 @@ Error message from validation can be add in here using prop `error`. Note, it'll
       error="Please fill this field">
       <p-input />
     </p-form-group>
-    <p-form-group
-      label="First Name"
-      description="Lorem Ipsum dolor sitar"
-      error="Please fill this field">
-      <p-checkbox>Female</p-checkbox>
-      <p-checkbox>Male</p-checkbox>
-    </p-form-group>
   </div>
 </preview>
 

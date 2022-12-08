@@ -184,9 +184,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 ## See Also
 
 - [Input](/components/input/)
-- [Input Range](/components/input-range/)
 - [Input Group](/components/input-group/)
-- [Input Password](/components/input-password/)
 - [Dropzone](/components/dropzone/)
 
 [file]: https://developer.mozilla.org/en-US/docs/Web/API/File

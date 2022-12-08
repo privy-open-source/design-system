@@ -75,6 +75,10 @@ export default defineComponent({
       type   : Boolean,
       default: undefined,
     },
+    error: {
+      type   : Boolean,
+      default: undefined,
+    },
     max: {
       type   : Date,
       default: undefined,
@@ -114,6 +118,9 @@ export default defineComponent({
 
       if (props.readonly)
         result.push('datepicker--readonly')
+
+      if (props.error)
+        result.push('datepicker--error', 'state--error')
 
       return result
     })

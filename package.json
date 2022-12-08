@@ -108,9 +108,6 @@
   "lint-staged": {
     "*.(js|ts|vue)": [
       "eslint --fix"
-    ],
-    "*.spec.ts": [
-      "vitest run related"
     ]
   },
   "workspaces": [

@@ -181,6 +181,4 @@ You can specific binding the value using `v-model:start` or `v-model:end`
 ## See Also
 
 - [Input](/components/input/)
-- [Input File](/components/input-file/)
-- [Input Group](/components/input-group/)
-- [Input Password](/components/input-password/)
+- [Strengthbar](/components/strengthbar/)

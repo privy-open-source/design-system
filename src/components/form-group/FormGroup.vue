@@ -103,13 +103,5 @@ export default defineComponent({
   &__hint {
     @apply absolute bottom-0 right-0 text-accent cursor-pointer focus:outline-none;
   }
-
-  &--error .input > .input__form {
-    @apply border-danger-emphasis hover:border-danger-emphasis;
-
-    &:focus {
-      @apply ring-danger border-danger-emphasis;
-    }
-  }
 }
 </style>

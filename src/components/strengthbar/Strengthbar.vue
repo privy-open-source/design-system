@@ -1,12 +1,12 @@
 <template>
   <div
-    class="strength-bar"
+    class="strengthbar"
     :data-status="status">
     <div
       v-for="(active, i) in items"
       :key="i"
-      class="strength-bar__bar"
-      :class="{ 'strength-bar--active': active }" />
+      class="strengthbar__bar"
+      :class="{ 'strengthbar--active': active }" />
   </div>
 </template>
 
@@ -75,27 +75,27 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-.strength-bar {
+.strengthbar {
   @apply flex w-full space-x-4;
 
   &__bar {
-    @apply rounded-full h-1 bg-subtle-alpha flex-grow;
+    @apply rounded-full h-1 bg-subtle-alpha flex-grow transition-colors duration-150;
   }
 
-  &[data-status="low"] {
-    .strength-bar--active {
+  &&[data-status="low"] {
+    .strengthbar--active {
       @apply bg-danger-emphasis;
     }
   }
 
-  &[data-status="mid"] {
-    .strength-bar--active {
+  &&[data-status="mid"] {
+    .strengthbar--active {
       @apply bg-warning-emphasis;
     }
   }
 
-  &[data-status="high"] {
-    .strength-bar--active {
+  &&[data-status="high"] {
+    .strengthbar--active {
       @apply bg-success-emphasis;
     }
   }

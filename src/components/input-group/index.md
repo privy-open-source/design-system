@@ -85,47 +85,186 @@
 </template>
 ```
 
-## Sizing
+### Multiple Input
 
-<preview class="flex-col space-gap-3">
-  <p-input-group size="xs">
-    <p-input-group-addon>
-      <IconEmail />
-    </p-input-group-addon>
+<preview>
+  <p-input-group>
+    <p-input />
     <p-divider />
     <p-input />
+    <p-divider />
+    <p-input />
+  </p-input-group>
+</preview>
+
+```vue
+<template>
+  <p-input-group>
+    <p-input />
+    <p-divider />
+    <p-input />
+    <p-divider />
+    <p-input />
+  </p-input-group>
+</template>
+```
+
+## Sizing
+
+Input Group also has 4 variants size: `xs`, `sm`, `md`, `lg`, default is `md`.
+
+<preview class="flex-col space-y-3">
+  <p-input-group size="xs">
+    <p-input />
     <p-button variant="input">
-      Search
+      Submit
     </p-button>
   </p-input-group>
   <p-input-group size="sm">
-    <p-input-group-addon>
-      <IconEmail />
-    </p-input-group-addon>
-    <p-divider />
     <p-input />
     <p-button variant="input">
-      Search
+      Submit
     </p-button>
   </p-input-group>
   <p-input-group size="md">
-    <p-input-group-addon>
-      <IconEmail />
-    </p-input-group-addon>
-    <p-divider />
     <p-input />
     <p-button variant="input">
-      Search
+      Submit
     </p-button>
   </p-input-group>
   <p-input-group size="lg">
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+</preview>
+
+```vue
+<template>
+  <p-input-group size="xs">
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+  <p-input-group size="sm">
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+  <p-input-group size="md">
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+  <p-input-group size="lg">
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+</template>
+```
+
+## Disabled State
+
+Adding prop `disabled` to Input Group to unified input into disabled state
+
+<preview>
+  <p-input-group disabled>
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
     <p-divider />
     <p-input />
     <p-button variant="input">
-      Search
+      Submit
     </p-button>
   </p-input-group>
 </preview>
+
+```vue
+<template>
+  <p-input-group disabled>
+    <p-input-group-addon>
+      <IconEmail />
+    </p-input-group-addon>
+    <p-divider />
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+</template>
+```
+
+## Error State
+
+Adding prop `error` to Input Group to unified input into error state
+
+<preview>
+  <p-input-group error>
+    <p-input-group-addon>
+      <IconEmail />
+    </p-input-group-addon>
+    <p-divider />
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+</preview>
+
+```vue
+<template>
+  <p-input-group error>
+    <p-input-group-addon>
+      <IconEmail />
+    </p-input-group-addon>
+    <p-divider />
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+</template>
+```
+
+## API
+
+### Props
+
+| Props      |   Type    | Default | Description                                             |
+|------------|:---------:|:-------:|---------------------------------------------------------|
+| `size`     | `String`  |  `md`   | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
+| `disabled` | `Boolean` | `false` | Disabled state                                          |
+| `readonly` | `Boolean` | `false` | Readonly state                                          |
+| `error`    | `Boolean` | `false` | Error state                                             |
+
+### Slots
+
+| Name      | Description                   |
+|-----------|-------------------------------|
+| `default` | Content to place a form input |
+
+### Events
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no props here</td>
+    </tr>
+  </tbody>
+</table>
+
+## See Also

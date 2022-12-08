@@ -109,7 +109,8 @@ export default defineComponent({
     @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none ;
 
     &:disabled,
-    &--disabled {
+    &--disabled,
+    .state--disabled & {
       @apply bg-muted border-muted pointer-events-none text-muted;
     }
 
@@ -134,6 +135,7 @@ export default defineComponent({
     @apply px-3 py-4;
   }
 
+  .state--error &__form,
   &--error {
     @apply border-danger-emphasis hover:border-danger-emphasis;
 

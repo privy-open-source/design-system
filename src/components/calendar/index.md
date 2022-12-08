@@ -176,3 +176,7 @@ Example:
 | Name     | Arguments          | Description              |
 |----------|--------------------|--------------------------|
 | `change` | Native Date object | Event when date selected |
+
+## See Also
+
+- [Datepicker](/components/datepicker/)

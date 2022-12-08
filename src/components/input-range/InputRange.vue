@@ -142,7 +142,7 @@ export default defineComponent({
         if (Array.isArray(props.modelValue))
           return props.modelValue[1]
 
-        if (props.modelValue)
+        if (Number.isFinite(props.modelValue))
           return props.modelValue
 
         return props.end ?? max.value
@@ -269,7 +269,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .input-range {
-  @apply p-2 w-full;
+  @apply py-2 w-full;
 
   &__tracks {
     @apply relative flex w-full bg-subtle cursor-pointer overflow-visible rounded;

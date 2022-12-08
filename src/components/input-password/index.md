@@ -115,3 +115,33 @@ Like other input, input value can be binding with `v-model`.
 | `disabled`     |      `Boolean`      | `false` | Disabled state                                                                 |
 | `readonly`     |      `Boolean`      | `false` | Readonly state                                                                 |
 | `error`        |      `Boolean`      | `false` | Error state                                                                    |
+
+### Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" class="text-center">There no slots here</td>
+    </tr>
+  </tbody>
+</table>
+
+### Events
+
+| Name     | Arguments | Description                     |
+|----------|-----------|---------------------------------|
+| `change` | `String`  | Event when value changed        |
+| `clear`  | `-`       | Event when clear button clicked |
+
+
+## See Also
+
+- [Input](/components/input/)
+- [Input Group](/components/input-group/)
+- [Strengthbar](/components/strengthbar/)

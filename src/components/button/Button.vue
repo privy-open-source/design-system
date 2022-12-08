@@ -218,6 +218,18 @@ export default defineComponent({
 
   &&--variant-input {
     @apply border border-solid border-muted text-subtle font-normal bg-default hover:border-subtle focus:border-subtle active:outline-default;
+
+    .state--disabled & {
+      @apply bg-muted border-muted pointer-events-none text-muted;
+    }
+
+    .state--error & {
+      @apply border-danger-emphasis;
+
+      &:focus {
+        @apply ring-danger border-danger-emphasis;
+      }
+    }
   }
 
   /**

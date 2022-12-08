@@ -8,22 +8,36 @@
 .input-group {
   &__addon {
     @apply flex items-center text-muted rounded border border-solid border-muted outline-none bg-default;
-  }
 
-  &--xs > .input-group__addon {
-    @apply text-xs px-3 py-2;
-  }
+    .input-group--xs > & {
+      @apply text-xs px-3 py-2;
+    }
 
-  &--sm > .input-group__addon {
-    @apply px-3 py-2;
-  }
+    .input-group--sm > & {
+      @apply px-3 py-2;
+    }
 
-  &--md > .input-group__addon {
-    @apply px-3 py-3;
-  }
+    .input-group--md > & {
+      @apply px-3 py-3;
+    }
 
-  &--lg > .input-group__addon {
-    @apply px-3 py-4;
+    .input-group--lg > & {
+      @apply px-3 py-4;
+    }
+
+    .state--error &,
+    .input-group--error & {
+      @apply border-danger-emphasis;
+
+      &:focus {
+        @apply ring-danger border-danger-emphasis;
+      }
+    }
+
+    .state--disabled &,
+    .input-group--disabled & {
+      @apply bg-muted border-muted pointer-events-none text-muted;
+    }
   }
 }
 </style>
