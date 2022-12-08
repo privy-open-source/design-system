@@ -9,7 +9,7 @@ export default defineNuxtPlugin(() => {
     getURL () {
       return router.currentRoute.value.fullPath
     },
-    toURL (url) {
+    toURL (url: string) {
       return router.push(url)
     },
   })

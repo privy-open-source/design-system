@@ -102,7 +102,7 @@ Add clear button to input with prop `clearable`.
 | `readonly`    | `Boolean` | `false` | Readonly state                                          |
 | `error`       | `Boolean` | `false` | Error state                                             |
 | `clearable`   | `Boolean` | `false` | Enable clear button                                     |
-| `modelValue`  | `Number`  |   `-`   | v-model value                                           |
+| `modelValue`  | `String`  |   `-`   | v-model value                                           |
 
 ### Slots
 

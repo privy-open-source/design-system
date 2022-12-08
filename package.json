@@ -88,6 +88,7 @@
     "core-js": "3",
     "date-fns": "2.29.3",
     "defu": "6.1.1",
+    "fast-equals": "^4.0.3",
     "fuse.js": "6.6.2",
     "interactjs": "1.10.17",
     "isomorphic-dompurify": "^0.24.0",

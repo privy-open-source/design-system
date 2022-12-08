@@ -1,5 +1,6 @@
 <template>
   <div
+    data-testid="input-range"
     class="input-range"
     :class="classNames">
     <div
@@ -8,24 +9,29 @@
       <!-- Lower Track -->
       <div
         v-show="multiple"
+        data-testid="track-lower"
         class="input-range__track input-range__track-lower"
         :style="lowerStyle"
         @click="onClickLowerTrack" />
       <!-- Active Track -->
       <div
+        data-testid="track-active"
         class="input-range__track input-range__track-active"
         :style="upperStyle"
         @click="onClickActiveTrack">
         <div
           v-show="multiple"
           ref="thumb-start"
+          data-testid="thumb-start"
           class="input-range__thumb input-range__thumb-start" />
         <div
           ref="thumb-end"
+          data-testid="thumb-end"
           class="input-range__thumb input-range__thumb-end" />
       </div>
       <!-- Upper Track -->
       <div
+        data-testid="track-upper"
         class="input-range__track input-range__track-upper"
         @click="onClickUpperTrack" />
     </div>

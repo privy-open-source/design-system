@@ -178,7 +178,7 @@ it('should passing prop `max` into Calendar component', () => {
   expect(CalendarStub).toBeCalledWith(props, null)
 })
 
-it('should passing prop `max` into Calendar component', () => {
+it('should passing prop `mode` into Calendar component', () => {
   render({
     components: { Datepicker },
     template  : `
@@ -190,4 +190,17 @@ it('should passing prop `max` into Calendar component', () => {
 
   // eslint-disable-next-line unicorn/no-null
   expect(CalendarStub).toBeCalledWith(props, null)
+})
+
+it('should have error style if prop error was provided', () => {
+  const screen = render({
+    components: { Datepicker },
+    template  : `
+      <Datepicker error />
+    `,
+  })
+
+  const datepicker = screen.queryByTestId('datepicker')
+
+  expect(datepicker).toHaveClass('datepicker--error', 'state--error')
 })

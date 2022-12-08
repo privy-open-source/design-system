@@ -20,4 +20,5 @@
       }
     }
   },
+  "volar.vueserver.vitePress.processMdFile": true,
 }

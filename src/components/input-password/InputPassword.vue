@@ -48,6 +48,10 @@ export default defineComponent({
 
   &__toggle {
     @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer z-1;
+
+    .input--disabled ~ & {
+      @apply pointer-events-none text-muted;
+    }
   }
 
   &.input--clearable {

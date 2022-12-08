@@ -1,5 +1,7 @@
 <template>
-  <div class="input">
+  <div
+    class="input"
+    data-testid="input-container">
     <slot name="prepend" />
     <input
       v-model="model"
@@ -12,6 +14,7 @@
     <IconClear
       v-show="(clearable && model)"
       class="input__clear"
+      data-testid="input-clear"
       @click="clear" />
     <slot name="append" />
   </div>

@@ -66,7 +66,7 @@
 
 ## Min and Max
 
-You can set lowest value and highest value for the value with prop `min` and `max`. It usefull when you combine it with [Input Range](/components/input-range).
+You can set lowest value and highest value for the value with prop `min` and `max`. It usefull when you combine it with [Input Range](/components/input-range/).
 Default is `0` and `6`
 
 <preview class="flex-col space-y-4">

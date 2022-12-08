@@ -109,12 +109,15 @@ Like other input, input value can be binding with `v-model`.
 
 ### Props
 
-| Props          |        Type         | Default | Description                                                                    |
-|----------------|:-------------------:|:-------:|--------------------------------------------------------------------------------|
-| `size`         |      `String`       |  `md`   | Input size, valid value: `xs`, `sm`, `md`, `lg`                                |
-| `disabled`     |      `Boolean`      | `false` | Disabled state                                                                 |
-| `readonly`     |      `Boolean`      | `false` | Readonly state                                                                 |
-| `error`        |      `Boolean`      | `false` | Error state                                                                    |
+| Props         |   Type    | Default | Description                                             |
+|---------------|:---------:|:-------:|---------------------------------------------------------|
+| `size`        | `String`  |  `md`   | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
+| `placeholder` | `String`  |   `-`   | Input placeholder                                       |
+| `disabled`    | `Boolean` | `false` | Disabled state                                          |
+| `readonly`    | `Boolean` | `false` | Readonly state                                          |
+| `error`       | `Boolean` | `false` | Error state                                             |
+| `clearable`   | `Boolean` | `false` | Enable clear button                                     |
+| `modelValue`  | `String`  |   `-`   | v-model value                                           |
 
 ### Slots
 
