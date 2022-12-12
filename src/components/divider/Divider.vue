@@ -4,6 +4,6 @@
 
 <style lang="postcss">
 .divider {
-  @apply border-black border-opacity-10 my-2;
+  @apply border-subtle-alpha my-2;
 }
 </style>

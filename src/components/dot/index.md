@@ -20,6 +20,7 @@ Dot is a sub-component used for [Badge][badge] and Label
 ## Usage
 
 ### Basic Usage
+The default color of dot are black.
 
 <preview>
   <p-dot />
@@ -32,38 +33,53 @@ Dot is a sub-component used for [Badge][badge] and Label
 ```
 
 ## Colors
-Dot available in 7 different colors `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`. default is `primary`
+Dot available in 4 different colors: `primary`, `success`, `warning` and `danger`.
 
 <preview>
   <p-dot color="primary" />
-  <p-dot color="secondary" />
   <p-dot color="success" />
-  <p-dot color="info" />
   <p-dot color="warning" />
   <p-dot color="danger" />
-  <p-dot color="gold" />
 </preview>
 
 ```vue
 <template>
   <p-dot color="primary" />
-  <p-dot color="secondary" />
   <p-dot color="success" />
-  <p-dot color="info" />
   <p-dot color="warning" />
   <p-dot color="danger" />
-  <p-dot color="gold" />
 </template>
 ```
 
+## Variant
+Dot also available with variant `pills`. When variant is not set, dot will looks as a `default`
+
+<preview>
+  <p-dot variant="pills" />
+  <p-dot color="primary" variant="pills" />
+  <p-dot color="success" variant="pills" />
+  <p-dot color="warning" variant="pills" />
+  <p-dot color="danger" variant="pills" />
+</preview>
+
+```vue
+<template>
+  <p-dot variant="pills" />
+  <p-dot color="primary" variant="pills" />
+  <p-dot color="success" variant="pills" />
+  <p-dot color="warning" variant="pills" />
+  <p-dot color="danger" variant="pills" />
+</template>
+```
 
 ## API
 
 ### Props
 
 | Props   |   Type   |  Default  | Description                                                                                              |
-|---------|:--------:|:---------:|----------------------------------------------------------------------------------------------------------|
-| `color` | `String` | `primary` | Dot color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold` |
+|---------|:--------:|:---------:|--------------------------------------------------------------------------------------------------------------|
+| `color`   | `String` | `-` | Dot color variant, valid value is `primary`, `success`, `warning` and `danger` |
+| `variant` | `String` | `-` | Dot style variant, valid value is `pills`                                      |
 
 ### Slots
 

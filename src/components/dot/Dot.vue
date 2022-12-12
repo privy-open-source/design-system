@@ -10,13 +10,17 @@ import {
   PropType,
   computed,
 } from 'vue-demi'
-import { ColorVariant } from '.'
+import { ColorVariant, StyleVariant } from '.'
 
 export default defineComponent({
   props: {
     color: {
       type   : String as PropType<ColorVariant>,
-      default: 'primary',
+      default: 'default',
+    },
+    variant: {
+      type   : String as PropType<StyleVariant>,
+      default: 'default',
     },
   },
 
@@ -26,6 +30,9 @@ export default defineComponent({
 
       if (props.color)
         result.push(`dot--${props.color}`)
+
+      if (props.variant)
+        result.push(`dot--variant-${props.variant}`)
 
       return result
     })
@@ -55,36 +62,37 @@ export default defineComponent({
 
   /**
   * Provide colors variant
-  * 7 colors variant available
-  * primary, secondary, success
-  * info, warning, danger, & gold
+  * default and 4 colors
+  * variant available
+  * primary, success
+  * warning & danger
   */
-  &--primary {
-    @apply bg-primary-100;
+  &&--default {
+    @apply bg-emphasis-subtle;
   }
 
-  &--secondary {
-    @apply bg-secondary-100;
+  &&--primary {
+    @apply bg-accent-emphasis;
   }
 
-  &--success {
-    @apply bg-success-100;
+  &&--success {
+    @apply bg-success-emphasis;
   }
 
-  &--info {
-    @apply bg-info-100;
+  &&--warning {
+    @apply bg-warning-emphasis;
   }
 
-  &--warning {
-    @apply bg-warning-100;
+  &&--danger {
+    @apply bg-danger-emphasis;
   }
 
-  &--danger {
-    @apply bg-danger-100;
-  }
-
-  &--gold {
-    @apply bg-gold-100;
+  /**
+  * Set width of badge
+  * in pills variant
+  */
+  &&--variant-pills {
+    @apply w-12;
   }
 }
 </style>

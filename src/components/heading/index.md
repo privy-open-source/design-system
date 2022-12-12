@@ -4,7 +4,6 @@
 
 <style scoped lang="postcss">
   .preview {
-    @apply block;
 
     h1, h2, h3, h4, h5, h6 {
       @apply mt-0;
@@ -20,7 +19,7 @@
 Headings are used as the titles of each major section of a page in the interface.
 
 ## Usage
-Use for the title of each top-level page section. The default element of heading are `h2`
+Use for the title of each top-level page section. The default element of heading are `h3`
 
 ### Basic Usage
 
@@ -40,7 +39,7 @@ Use for the title of each top-level page section. The default element of heading
 
 ## Setting The Element
 
-<preview>
+<preview class="flex-col gap-3">
   <p-heading element="h1">
     Heading 1
   </p-heading>
@@ -84,13 +83,78 @@ Use for the title of each top-level page section. The default element of heading
 </template>
 ```
 
+## Weight
+Heading have 3 weights variant, there are `normal`, `medium` and `bold`. Default weight is `normal`.
+
+<preview class="flex-col gap-3">
+  <p-heading weight="normal">
+    Normal heading title
+  </p-heading>
+  <p-heading weight="medium">
+    Medium heading title
+  </p-heading>
+  <p-heading weight="bold">
+    Bold heading title
+  </p-heading>
+</preview>
+
+```vue
+<template>
+  <p-heading weight="normal">
+    Normal heading title
+  </p-heading>
+  <p-heading weight="medium">
+    Medium heading title
+  </p-heading>
+  <p-heading weight="bold">
+    Bold heading title
+  </p-heading>
+</template>
+```
+
+## Transform
+Heading have 4 transforms variant, there are `normalcase`, `lowercase`, `capitalize` and `uppercase`. Default transform is `normalcase`.
+<preview class="flex-col gap-3">
+  <p-heading transform="normalcase">
+    Normalcase heading title
+  </p-heading>
+  <p-heading transform="lowercase">
+    Lowercase heading title
+  </p-heading>
+  <p-heading transform="capitalize">
+    Capitalize heading title
+  </p-heading>
+  <p-heading transform="uppercase">
+    Uppercase heading title
+  </p-heading>
+</preview>
+
+```vue
+<template>
+  <p-heading transform="normalcase">
+    Normalcase heading title
+  </p-heading>
+  <p-heading transform="lowercase">
+    Lowercase heading title
+  </p-heading>
+  <p-heading transform="capitalize">
+    Capitalize heading title
+  </p-heading>
+  <p-heading transform="uppercase">
+    Uppercase heading title
+  </p-heading>
+</template>
+```
+
 ## API
 
 ### Props
 
-| Props     |   Type   | Default | Description                                  |
-|-----------|:--------:|:-------:|----------------------------------------------|
-| `element` | `String` |  `h3`   | Heading element, valid value is `h1` to `h6` |
+| Props       |   Type   | Default      | Description                                  |
+|-------------|:--------:|:------------:|----------------------------------------------|
+| `element`   | `String` |  `h3`        | Heading element, valid value is `h1` to `h6` |
+| `weight`    | `String` | `normal`     | Weight of subheading, valid value is `normal`, `medium` and `bold` |
+| `transform` | `String` | `normalcase` | Transform of subheading, valid value is `normalcase`, `lowercase`, `capitalize` and `uppercase`   |
 
 ### Slots
 

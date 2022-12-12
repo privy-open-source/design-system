@@ -2440,6 +2440,7 @@ __metadata:
     "@interactjs/types": 1.10.17
     "@juggle/resize-observer": ^3.4.0
     "@mertasan/tailwindcss-variables": ^2.5.1
+    "@popperjs/core": 2.11.6
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rollup/plugin-babel": ^6.0.2
@@ -2462,6 +2463,7 @@ __metadata:
     "@vue/eslint-config-typescript": 11.0.2
     "@vueuse/core": 9.6.0
     "@vueuse/math": ^9.4.0
+    "@vueuse/sound": 1.1.7
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
     autoprefixer: 10.4.13
@@ -2494,6 +2496,8 @@ __metadata:
     nanodelay: 2.0.2
     p-queue: ^7.3.0
     postcss: 8.4.19
+    postcss-hexrgba: ^2.1.0
+    postcss-lighten-darken: ^0.9.0
     postcss-nested: 5.0.6
     scroll-into-view: ^1.16.2
     tabbable: 6.0.1
@@ -3802,6 +3806,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/composition-api@npm:>=1.0.0-rc.1":
+  version: 1.7.1
+  resolution: "@vue/composition-api@npm:1.7.1"
+  peerDependencies:
+    vue: ">= 2.5 < 2.7"
+  checksum: dedd90e17cc6d3577510b5439a568932862a122dcff922c52ab0a25db7ee289caea1aa2d5e43c817eb91619e1b955e5e8e9460a4435f5c3565284d39750c9d4c
+  languageName: node
+  linkType: hard
+
 "@vue/devtools-api@npm:^6.4.5":
   version: 6.4.5
   resolution: "@vue/devtools-api@npm:6.4.5"
@@ -4037,6 +4050,20 @@ __metadata:
   dependencies:
     vue-demi: "*"
   checksum: 33be07a571ba607500f3115c9c4c3cc411644ad62da8241bf9a48b7a2eaadc2523520f4ba65bb87d6db15db8a43bce1599b5fac757d4f6653cacf99927eda280
+  languageName: node
+  linkType: hard
+
+"@vueuse/sound@npm:1.1.7":
+  version: 1.1.7
+  resolution: "@vueuse/sound@npm:1.1.7"
+  dependencies:
+    "@vue/composition-api": ">=1.0.0-rc.1"
+    howler: ^2.2.1
+    vue-demi: latest
+  dependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  checksum: 513ce86ef1ed492e14299f3436c20c81bdbe531dd1d9a3243f380532490447a75ab91559f9c2592558a2aa93042b01a53d649004c315d15c2ca1092b73f83c49
   languageName: node
   linkType: hard
 
@@ -8268,6 +8295,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"howler@npm:^2.2.1":
+  version: 2.2.3
+  resolution: "howler@npm:2.2.3"
+  checksum: c04ce19411f4d86f8508d411a93aea943f128c2686b3df3c61383fd4ed8f5551232c4389aba3a8d4c8b0eeb34ae51df5a9c3ccd9ba48583ac53e9bf9fcbd1ecf
+  languageName: node
+  linkType: hard
+
 "html-encoding-sniffer@npm:^3.0.0":
   version: 3.0.0
   resolution: "html-encoding-sniffer@npm:3.0.0"
@@ -9686,6 +9720,13 @@ __metadata:
     slice-ansi: ^4.0.0
     wrap-ansi: ^6.2.0
   checksum: ae2f85bbabc1906034154fb7d4c4477c79b3e703d22d78adee8b3862fa913942772e7fa11713e3d96fb46de4e3cabefbf5d0a544344f03b58d3c4bff52aa9eb2
+  languageName: node
+  linkType: hard
+
+"loglevel@npm:^1.8.0":
+  version: 1.8.1
+  resolution: "loglevel@npm:1.8.1"
+  checksum: a1a62db40291aaeaef2f612334c49e531bff71cc1d01a2acab689ab80d59e092f852ab164a5aedc1a752fdc46b7b162cb097d8a9eb2cf0b299511106c29af61d
   languageName: node
   linkType: hard
 
@@ -11321,6 +11362,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-hexrgba@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "postcss-hexrgba@npm:2.1.0"
+  dependencies:
+    postcss-value-parser: ^4.1.0
+  peerDependencies:
+    postcss: ^8.1.4
+  checksum: 333da92fb1b9cff4dda3db8f499573b32d85cdd7fbb28017f772ba2ab90186d3bd0afe5a3bbf0e67bd5841190f8e630178847012390ba2fc74a0b8eeae0d57cf
+  languageName: node
+  linkType: hard
+
 "postcss-import-resolver@npm:^2.0.0":
   version: 2.0.0
   resolution: "postcss-import-resolver@npm:2.0.0"
@@ -11377,6 +11429,18 @@ __metadata:
   peerDependencies:
     postcss: ^8.3.3
   checksum: 14be8a58670b4c5d037d40f179240a4f736d53530db727e2635638fa296bc4bff18149ca860928398aace422e55d07c9f5729eeccd395340944985199cdc82a5
+  languageName: node
+  linkType: hard
+
+"postcss-lighten-darken@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "postcss-lighten-darken@npm:0.9.0"
+  dependencies:
+    loglevel: ^1.8.0
+    postcss-value-parser: ^4.2.0
+  peerDependencies:
+    postcss: ^8.3.0
+  checksum: 0cb765a287b46a6cd0d171aceb2a14a9eac981dc895600a93c67492a0904888edb5b715ee6a3123ecb61377334143bc7f18dff47430fee5a64a80ed6e4620807
   languageName: node
   linkType: hard
 
@@ -14377,7 +14441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.13.11":
+"vue-demi@npm:0.13.11, vue-demi@npm:latest":
   version: 0.13.11
   resolution: "vue-demi@npm:0.13.11"
   peerDependencies:

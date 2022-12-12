@@ -379,7 +379,7 @@ it('should be able to change button variant via `variant` prop', () => {
 
   const button = screen.queryByTestId('dropdown-activator')
 
-  expect(button).toHaveClass('btn--outline')
+  expect(button).toHaveClass('btn--variant-outline')
 })
 
 it('should be able to change button color via `color` prop', () => {
@@ -546,4 +546,18 @@ it('should hide caret icon if props `no-caret` is provided', () => {
   const caret = screen.queryByTestId('dropdown-caret')
 
   expect(caret).not.toBeInTheDocument()
+})
+
+it('should have style "divider" if props `divider` has provided', () => {
+  const screen = render({
+    components: { Dropdown },
+    template  : `
+      <Dropdown divider />
+    `,
+  })
+
+  const dropdown = screen.queryByTestId('dropdown')
+
+  expect(dropdown).toBeInTheDocument()
+  expect(dropdown).toHaveClass('dropdown--divider')
 })

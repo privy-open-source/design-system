@@ -21,8 +21,7 @@
           xmlns="http://www.w3.org/2000/svg">
           <rect
             width="14"
-            height="2"
-            fill="white" />
+            height="2" />
         </svg>
       </template>
       <template v-else>
@@ -35,8 +34,7 @@
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
-            d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z"
-            fill="white" />
+            d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z" />
         </svg>
       </template>
     </span>
@@ -150,35 +148,70 @@ export default defineComponent({
 .checkbox {
   @apply inline-flex space-x-2 relative cursor-pointer select-none items-baseline;
 
-  & > input[type="checkbox"] {
+  > input[type="checkbox"] {
     @apply appearance-none w-0 h-0 opacity-0 absolute;
   }
 
   &__icon {
-    @apply w-5 h-5 border rounded-tn border-secondary-25 inline-flex items-center justify-center bg-white;
+    @apply w-5 h-5 border rounded-sm border-subtle inline-flex items-center justify-center bg-default;
 
-    & > svg {
-      @apply w-3;
+    > svg {
+      @apply w-3 fill-default;
     }
+  }
+
+  &__label {
+    @apply text-default;
   }
 
   &--checked,
   &--indeterminate {
     .checkbox__icon {
-      @apply bg-primary-100 border-primary-100;
+      @apply bg-accent-emphasis border-accent-emphasis;
+
+      > svg {
+        @apply fill-default;
+      }
     }
   }
 
   &--disabled {
     @apply opacity-50;
+
+    &:not(.checkbox--checked, .checkbox--indeterminate) {
+      .checkbox__icon {
+        @apply bg-inactive border-subtle;
+
+        > svg {
+          @apply fill-inactive;
+        }
+      }
+    }
   }
 
-  .dropdown__menu & {
-    @apply px-3 py-2 cursor-pointer text-body-100 w-full select-none text-left;
+  .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
+  .dropdown__menu > .dropdown__subitem > & {
+    @apply w-full select-none;
+
+    .checkbox__icon {
+      @apply ml-0;
+    }
+  }
+
+  .dropdown__menu > .dropdown__subitem > .dropdown__item > & {
+    @apply py-[2px];
+  }
+
+  .dropdown__menu > .dropdown__subitem > & {
+    @apply px-4 py-[10px];
+
+    .checkbox__label {
+      @apply ml-4;
+    }
 
     &:hover,
     &:focus-visible {
-      @apply bg-background-75;
+      @apply bg-subtle;
     }
   }
 }

@@ -1,9 +1,9 @@
 <template>
-  <p
+  <h6
     data-testid="subheading"
     :class="classNames">
     <slot />
-  </p>
+  </h6>
 </template>
 
 <script lang="ts">
@@ -12,9 +12,9 @@ import {
   PropType,
   computed,
 } from 'vue-demi'
+import { WeightVariant, TransformVariant } from '../heading/Heading.vue'
 
 type SizeVariant = 'sm' | 'md'
-type OverlineVariant = 'normal' | 'medium'
 
 export default defineComponent({
   props: {
@@ -22,8 +22,16 @@ export default defineComponent({
       type   : String as PropType<SizeVariant>,
       default: 'md',
     },
+    weight: {
+      type   : String as PropType<WeightVariant>,
+      default: 'normal',
+    },
+    transform: {
+      type   : String as PropType<TransformVariant>,
+      default: 'normalcase',
+    },
     overline: {
-      type   : String as PropType<OverlineVariant>,
+      type   : Boolean,
       default: undefined,
     },
   },
@@ -33,11 +41,17 @@ export default defineComponent({
       const result: String[] = ['subheading']
 
       if (props.overline)
-        result.push(`subheading--overline-${props.overline}`)
+        result.push('subheading--overline')
 
       // eslint-disable-next-line unicorn/explicit-length-check
       else if (props.size)
         result.push(`subheading--${props.size}`)
+
+      if (props.transform)
+        result.push(`subheading--${props.transform}`)
+
+      if (props.weight)
+        result.push(`subheading--${props.weight}`)
 
       return result
     })
@@ -49,29 +63,62 @@ export default defineComponent({
 
 <style lang="postcss">
 .subheading {
-  @apply m-0 capitalize tracking-[.009375rem];
+  @apply m-0 capitalize tracking-normal text-default;
 
-  &.subheading--md {
-    @apply text-base font-medium leading-tight;
+  /**
+  * Weight variant
+  * of subheading
+  */
+  &&--normal {
+    @apply font-normal;
   }
 
-  &.subheading--sm {
-    @apply text-sm font-medium leading-[1.28];
+  &&--medium {
+    @apply font-medium;
   }
 
-  &.subheading--overline {
-    &-normal,
-    &-medium {
-      @apply uppercase text-[0.6875rem] leading-[1.4] tracking-[0.09375rem];
-    }
+  &&--bold {
+    @apply font-bold;
+  }
 
-    &-normal {
-      @apply font-normal;
-    }
+  /**
+  * Text transform
+  * of subheading
+  */
+  &&--normalcase {
+    @apply normal-case;
+  }
 
-    &-medium {
-      @apply font-medium;
-    }
+  &&--lowercase {
+    @apply lowercase;
+  }
+
+  &&--capitalize {
+    @apply capitalize;
+  }
+
+  &&--uppercase {
+    @apply uppercase;
+  }
+
+  /**
+  * Size variant
+  * of subheading
+  */
+  &&--md {
+    @apply text-base;
+  }
+
+  &&--sm {
+    @apply text-sm leading-[1.42];
+  }
+
+  /**
+  * Overline variant
+  * of subheading
+  */
+  &&--overline {
+    @apply uppercase text-tn tracking-widest text-subtle;
   }
 }
 </style>

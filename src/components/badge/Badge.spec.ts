@@ -13,7 +13,7 @@ it('should render properly without any props', () => {
   const text  = screen.queryByText('25')
 
   expect(badge).toBeInTheDocument()
-  expect(badge).toHaveClass('badge', 'badge--default', 'badge--primary')
+  expect(badge).toHaveClass('badge', 'badge--variant-default', 'badge--default')
   expect(text).toBeInTheDocument()
 })
 
@@ -46,7 +46,7 @@ it('should have style "light" if variant props set to "light"', () => {
   const text  = screen.queryByText('999+')
 
   expect(badge).toBeInTheDocument()
-  expect(badge).toHaveClass('badge', 'badge--warning', 'badge--light')
-  expect(badge).not.toHaveClass('badge--default')
+  expect(badge).toHaveClass('badge', 'badge--warning', 'badge--variant-light')
+  expect(badge).not.toHaveClass('badge--variant-default')
   expect(text).toBeInTheDocument()
 })

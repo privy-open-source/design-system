@@ -33,7 +33,7 @@
 ### Alert
 
 <div class="flex mt-5">
-  <Button @click="example1">Show Alert</Button>
+  <Button @click="example1" color="primary">Show Alert</Button>
 </div>
 
 ```ts
@@ -48,7 +48,7 @@ dialog.alert({
 ### Confirm
 
 <div class="flex mt-5">
-  <Button @click="example2">Show Confirm</Button>
+  <Button @click="example2" color="primary">Show Confirm</Button>
 </div>
 
 ```ts

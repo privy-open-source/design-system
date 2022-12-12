@@ -132,7 +132,7 @@
     <p-card-section
       title="Subtitle supposedly here">
       <template #action>
-        <a href="#" class="underline text-primary-100 hover:text-primary-hovered">Edit</a>
+        <a href="#" class="underline text-accent">Edit</a>
       </template>
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
@@ -178,7 +178,7 @@
     <p-card-section
       title="Subtitle supposedly here">
       <template #action>
-        <a href="#" class="underline text-primary-100 hover:text-primary-hovered">Edit</a>
+        <a href="#" class="underline text-accent">Edit</a>
       </template>
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to

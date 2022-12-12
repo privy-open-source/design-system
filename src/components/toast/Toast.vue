@@ -36,14 +36,14 @@ import {
 import { ToastStyleVariant, ToastTypeVariant } from '.'
 import IconInfo from '@carbon/icons-vue/lib/information--filled/24'
 import IconSuccess from '@carbon/icons-vue/lib/checkmark/24'
-import IconWarn from '@carbon/icons-vue/lib/warning--filled/24'
+import IconWarning from '@carbon/icons-vue/lib/warning--filled/24'
 import IconError from '@carbon/icons-vue/lib/warning--alt--filled/24'
 import IconClose from '@carbon/icons-vue/lib/close/16'
 
 const ToastIcons = {
   info   : IconInfo,
   success: IconSuccess,
-  warn   : IconWarn,
+  warning: IconWarning,
   error  : IconError,
 }
 
@@ -118,15 +118,27 @@ export default defineComponent({
 
 <style lang="postcss">
 .toast {
-  @apply flex shadow-xl w-72 md:w-96 overflow-hidden;
+  /**
+  * global style
+  * of toast
+  */
+  @apply flex shadow-xl rounded w-72 md:w-96 overflow-hidden;
 
   .toast__icon,
   .toast__close {
-    @apply flex-shrink-0;
+    @apply flex-shrink-0 p-4;
+  }
+
+  .toast__icon {
+    @apply flex items-center justify-center;
+  }
+
+  .toast__close {
+    @apply cursor-pointer text-default/30 hover:text-default/50;
   }
 
   .toast__body {
-    @apply flex-grow space-y-2 flex flex-col;
+    @apply py-4 pr-4 flex-grow space-y-2 flex flex-col;
   }
 
   .toast__title {
@@ -136,105 +148,123 @@ export default defineComponent({
   .toast__text {
     @apply text-xs;
   }
-}
 
-.toast--simple {
-  @apply bg-white;
-
-  .toast__icon {
-    @apply px-3 flex items-center justify-center;
-  }
-
-  .toast__body {
-    @apply p-3;
-  }
-
-  .toast__text {
-    @apply text-subtext-100;
-  }
-
-  .toast__close {
-    @apply p-3 text-secondary-50 cursor-pointer hover:text-secondary-100;
-  }
-
-  &.toast--info {
-    .toast__icon {
-      @apply bg-background-100 text-primary-100;
+  /**
+  * Give padding-left when
+  * toast variant is not filled
+  */
+  &:not(.toast--filled) {
+    .toast__body {
+      @apply pl-4;
     }
+  }
 
+  /**
+  * set toast info title
+  * and text color
+  */
+  &:is(.toast--info) {
     .toast__title {
-      @apply text-body-100;
-    }
-  }
-
-  &.toast--error {
-    .toast__icon {
-      @apply bg-danger-100 text-white;
-    }
-
-    .toast__title {
-      @apply text-danger-100;
-    }
-  }
-
-  &.toast--success {
-    .toast__icon {
-      @apply bg-success-100 text-white;
-    }
-
-    .toast__title {
-      @apply text-success-100;
-    }
-  }
-
-  &.toast--warn {
-    .toast__icon {
-      @apply bg-warning-100 text-white;
-    }
-
-    .toast__title {
-      @apply text-warning-100;
-    }
-  }
-}
-
-.toast--filled {
-  @apply p-3 space-x-3 items-start;
-
-  .toast__close {
-    @apply text-white cursor-pointer hover:text-subtext-100;
-  }
-
-  &.toast--info {
-    @apply bg-background-100;
-
-    .toast__icon {
-      @apply text-primary-100;
-    }
-
-    .toast__title {
-      @apply text-body-100;
+      @apply text-default;
     }
 
     .toast__text {
-      @apply text-subtext-100;
-    }
-
-    .toast__close {
-      @apply text-subtext-100 cursor-pointer hover:text-secondary-100;
+      @apply text-subtle;
     }
   }
 
-  &.toast--error {
-    @apply text-white bg-danger-100;
+  /**
+  * set toast info icon color.
+  * provide background when
+  * variant is filled
+  */
+  &&--info {
+    .toast__icon,
+    &.toast--filled {
+      @apply bg-subtle text-accent;
+    }
   }
 
-  &.toast--success {
-    @apply text-white bg-success-100;
+  /**
+  * provide title color
+  * in simple variant.
+  * set toast icon color and background.
+  * provide background color when
+  * variant is filled
+  */
+  &&--error {
+    &.toast--simple {
+      .toast__title {
+        @apply text-danger;
+      }
+    }
+
+    .toast__icon,
+    &.toast--filled {
+      @apply bg-danger-emphasis;
+    }
   }
 
-  &.toast--warn {
-    @apply text-white bg-warning-100;
+  &&--success {
+    &.toast--simple {
+      .toast__title {
+        @apply text-success;
+      }
+    }
+
+    .toast__icon,
+    &.toast--filled {
+      @apply bg-success-emphasis;
+    }
+  }
+
+  &&--warning {
+    &.toast--simple {
+      .toast__title {
+        @apply text-warning;
+      }
+    }
+
+    .toast__icon,
+    &.toast--filled {
+      @apply bg-warning-emphasis;
+    }
+  }
+
+  /**
+  * set global style
+  * of toast in simple
+  * variant
+  */
+  &&--simple {
+    @apply bg-default;
+
+    .toast__text {
+      @apply text-subtle;
+    }
+
+    &:not(.toast--info) {
+      .toast__icon {
+        @apply text-on-emphasis;
+      }
+    }
+  }
+
+  /**
+  * aligning toast icon
+  * when variant is filled.
+  * provide text color
+  * when toast color isn't info
+  */
+  &&--filled {
+    .toast__icon {
+      @apply items-start;
+    }
+
+    &:not(.toast--info) {
+      @apply text-on-emphasis;
+    }
   }
 }
+
 </style>

@@ -35,7 +35,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .input {
-  @apply p-3 text-base rounded-sm border border-secondary-25 border-solid placeholder:text-subtext-75 w-full outline-none bg-white;
+  @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none bg-default;
 
   &:disabled,
   &--disabled {
@@ -43,7 +43,7 @@ export default defineComponent({
   }
 
   &:focus {
-    @apply border-secondary-75 ring ring-secondary-25 ring-opacity-30;
+    @apply border-subtle ring-4 ring-subtle/10 z-[1];
   }
 
   &[type="number"] {

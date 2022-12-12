@@ -42,7 +42,7 @@
 **Try it:**
 
 <div>
-  <Button @click="onClick">
+  <Button @click="onClick" color="primary">
     Show
   </Button>
 </div>

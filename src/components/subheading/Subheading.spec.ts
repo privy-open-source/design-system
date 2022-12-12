@@ -36,11 +36,11 @@ it('should have style "sm" if size set to "sm"', () => {
   expect(subheading).not.toHaveClass('subheading--md')
 })
 
-it('should have style "overline normal" if overline normal is provided', () => {
+it('should have style "overline" if overline prop is provided', () => {
   const screen = render({
     components: { Subheading },
     template  : `
-      <Subheading overline="normal">
+      <Subheading overline>
         Title
       </Subheading>
     `,
@@ -49,10 +49,42 @@ it('should have style "overline normal" if overline normal is provided', () => {
   const subheading = screen.queryByTestId('subheading')
 
   expect(subheading).toBeInTheDocument()
-  expect(subheading).toHaveClass('subheading', 'subheading--overline-normal')
-  expect(subheading).not.toHaveClass(
-    'subheading--md',
-    'subheading--sm',
-    'subheading--overline-medium',
-  )
+  expect(subheading).toHaveClass('subheading', 'subheading--overline')
+  expect(subheading).not.toHaveClass('subheading--md', 'subheading--sm')
+})
+
+it('should have style "bold" if props `weight` is set to bold', () => {
+  const screen = render({
+    components: { Subheading },
+    template  : `
+      <Subheading weight="bold">
+        Subheading Text
+      </Subheading>
+    `,
+  })
+
+  const subheading = screen.queryByTestId('subheading')
+  const text       = screen.queryByText('Subheading Text')
+
+  expect(subheading).toBeInTheDocument()
+  expect(subheading).toHaveClass('subheading--bold')
+  expect(text).toBeInTheDocument()
+})
+
+it('should have style "uppercase" if props `transform` is set to uppercase', () => {
+  const screen = render({
+    components: { Subheading },
+    template  : `
+      <Subheading transform="uppercase">
+        Subheading Text
+      </Subheading>
+    `,
+  })
+
+  const subheading = screen.queryByTestId('subheading')
+  const text       = screen.queryByText('Subheading Text')
+
+  expect(subheading).toBeInTheDocument()
+  expect(subheading).toHaveClass('subheading--uppercase')
+  expect(text).toBeInTheDocument()
 })
