@@ -15,6 +15,7 @@
         @click="onClickLowerTrack" />
       <!-- Active Track -->
       <div
+        ref="track-active"
         data-testid="track-active"
         class="input-range__track input-range__track-active"
         :style="upperStyle"
@@ -49,7 +50,6 @@ import { useClamp } from '@vueuse/math'
 import {
   computed,
   defineComponent,
-  getCurrentInstance,
   PropType,
   ref,
   StyleValue,
@@ -78,7 +78,7 @@ export default defineComponent({
     },
     min: {
       type   : [String, Number],
-      default: 1,
+      default: 0,
     },
     max: {
       type   : [String, Number],
@@ -111,7 +111,7 @@ export default defineComponent({
     'update:end',
     'update:start',
   ],
-  setup (props) {
+  setup (props, { emit }) {
     const track      = templateRef<HTMLDivElement>('track')
     const thumbStart = templateRef<HTMLDivElement>('thumb-start')
     const thumbEnd   = templateRef<HTMLDivElement>('thumb-end')
@@ -127,9 +127,10 @@ export default defineComponent({
     const minDrag = computed(() => props.multiple ? localStart.value + step.value : min.value)
     const maxDrag = computed(() => props.multiple ? localEnd.value - step.value : max.value)
 
-    const start    = useClamp(localStart.value, min, maxDrag)
-    const end      = useClamp(localEnd.value, minDrag, max)
-    const { emit } = getCurrentInstance()
+    const start = useClamp(localStart.value, min, maxDrag)
+    const end   = useClamp(localEnd.value, minDrag, max)
+
+    const { width, left } = useElementBounding(track)
 
     const startValue = computed({
       get () {
@@ -159,15 +160,11 @@ export default defineComponent({
     })
 
     const startPercentage = computed(() => {
-      const value = (start.value - min.value) / (max.value - min.value)
-
-      return Number.isFinite(value) ? value : 0
+      return (start.value - min.value) / (max.value - min.value) * 100
     })
 
     const endPercentage = computed(() => {
-      const value = (end.value - min.value) / (max.value - min.value)
-
-      return Number.isFinite(value) ? value : 1
+      return (end.value - min.value) / (max.value - min.value) * 100
     })
 
     const classNames = computed(() => {
@@ -185,14 +182,12 @@ export default defineComponent({
       return result
     })
 
-    const { width, left } = useElementBounding(track)
-
     const lowerStyle = computed<StyleValue>(() => {
-      return { width: `${startPercentage.value * 100}%` }
+      return { width: `${startPercentage.value}%` }
     })
 
     const upperStyle = computed<StyleValue>(() => {
-      return { width: `${(endPercentage.value - startPercentage.value) * 100}%` }
+      return { width: `${(endPercentage.value - startPercentage.value)}%` }
     })
 
     function getValue (event: { pageX: number }): number {
@@ -221,12 +216,14 @@ export default defineComponent({
            * if clicked near thumbStart, it changed the start value
            * If not, change the end value
            */
-          if (ds < de)
+          if (ds < de) {
             start.value = value
-          else
-            end.value = value
-        } else
-          end.value = value
+
+            return
+          }
+        }
+
+        end.value = value
       }
     }
 

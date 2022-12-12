@@ -124,11 +124,11 @@ You can specific binding the value using `v-model:start` or `v-model:end`
 
 **start:**
 
-<pre class="truncate"><code>{{ start || '-' }}</code></pre>
+<pre class="truncate"><code>{{ start ?? '-' }}</code></pre>
 
 **end:**
 
-<pre class="truncate"><code>{{ end || '-' }}</code></pre>
+<pre class="truncate"><code>{{ end ?? '-' }}</code></pre>
 
 ```vue
 <template>

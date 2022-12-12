@@ -130,4 +130,4 @@ Add clear button to input with prop `clearable`.
 ## See Also
 
 - [Form Group](/components/form-group/)
-- [Input Group](/components/group-group/)
+- [Input Group](/components/input-group/)

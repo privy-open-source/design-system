@@ -19,6 +19,5 @@
         "@typescript-eslint/no-floating-promises": "off",
       }
     }
-  },
-  "volar.vueserver.vitePress.processMdFile": true,
+  }
 }
