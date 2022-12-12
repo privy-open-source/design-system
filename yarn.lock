@@ -2480,7 +2480,7 @@ __metadata:
     eslint-plugin-import: 2.26.0
     eslint-plugin-n: 15.6.0
     eslint-plugin-node: 11.1.0
-    eslint-plugin-promise: 6.0.1
+    eslint-plugin-promise: 6.1.1
     eslint-plugin-unicorn: 43.0.2
     eslint-plugin-varspacing: 1.2.2
     eslint-plugin-vue: 9.8.0
@@ -2502,7 +2502,7 @@ __metadata:
     scroll-into-view: ^1.16.2
     tabbable: 6.0.1
     tailwindcss: 3.2.4
-    typescript: 4.9.3
+    typescript: 4.9.4
     vitepress: 1.0.0-alpha.30
     vitest: 0.24.5
     vue-demi: 0.13.11
@@ -7194,12 +7194,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:6.0.1":
-  version: 6.0.1
-  resolution: "eslint-plugin-promise@npm:6.0.1"
+"eslint-plugin-promise@npm:6.1.1":
+  version: 6.1.1
+  resolution: "eslint-plugin-promise@npm:6.1.1"
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
-  checksum: c1bb3c2e591787e97133dcaf764f908420a3a1959a3132e199db8f14d70dfa79fc9caf991ca60a4b60ae5f1f9823bc96c2e52304828a4278ef2f3964fe121de9
+  checksum: 46b9a4f79dae5539987922afc27cc17cbccdecf4f0ba19c0ccbf911b0e31853e9f39d9959eefb9637461b52772afa1a482f1f87ff16c1ba38bdb6fcf21897e9a
   languageName: node
   linkType: hard
 
@@ -13741,13 +13741,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.9.3":
-  version: 4.9.3
-  resolution: "typescript@npm:4.9.3"
+"typescript@npm:4.9.4":
+  version: 4.9.4
+  resolution: "typescript@npm:4.9.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 17b8f816050b412403e38d48eef0e893deb6be522d6dc7caf105e54a72e34daf6835c447735fd2b28b66784e72bfbf87f627abb4818a8e43d1fa8106396128dc
+  checksum: e782fb9e0031cb258a80000f6c13530288c6d63f1177ed43f770533fdc15740d271554cdae86701c1dd2c83b082cea808b07e97fd68b38a172a83dbf9e0d0ef9
   languageName: node
   linkType: hard
 
@@ -13761,13 +13761,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.9.3#~builtin<compat/typescript>":
-  version: 4.9.3
-  resolution: "typescript@patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=d73830"
+"typescript@patch:typescript@4.9.4#~builtin<compat/typescript>":
+  version: 4.9.4
+  resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 67ca21a387c0572f1c04936e638dde7782c5aa520c3754aadc7cc9b7c915da9ebc3e27c601bfff4ccb7d7264e82dce6d277ada82ec09dc75024349e0ef64926d
+  checksum: 37f6e2c3c5e2aa5934b85b0fddbf32eeac8b1bacf3a5b51d01946936d03f5377fe86255d4e5a4ae628fd0cd553386355ad362c57f13b4635064400f3e8e05b9d
   languageName: node
   linkType: hard
 
