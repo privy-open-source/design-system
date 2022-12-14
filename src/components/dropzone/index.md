@@ -407,9 +407,9 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
   <p-dropzone accept="image/*" v-model.base64="result2" clear-on-cancel>
     <template #default="{ isDragover, isHovered, rawModel, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-accent border-accent-emphasis' : 'bg-subtle border-secondary-25']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-accent-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo

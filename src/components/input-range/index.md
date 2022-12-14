@@ -81,7 +81,7 @@
 
 **result:**
 
-<pre class="truncate"><code>{{ result || '-' }}</code></pre>
+<pre class="truncate"><code>{{ result ?? '-' }}</code></pre>
 
 ```vue
 <template>
@@ -103,7 +103,7 @@ You can use basic `v-model` to handle multiple range input, The value will be tu
 
 **result:**
 
-<pre class="truncate"><code>{{ result2 || '-' }}</code></pre>
+<pre class="truncate"><code>{{ result2 ?? '-' }}</code></pre>
 
 ```vue
 <template>

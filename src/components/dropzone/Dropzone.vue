@@ -22,6 +22,8 @@
     <slot
       :is-dragover="isDragover"
       :is-hovered="isHovered"
+      :disabled="disabled"
+      :readonly="readonly"
       :model="model"
       :raw-model="rawModel"
       :browse="browse"

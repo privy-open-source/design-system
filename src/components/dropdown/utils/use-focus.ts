@@ -1,11 +1,13 @@
+import { clamp } from 'lodash-es'
 import { focusable } from 'tabbable'
 import type { Ref } from 'vue-demi'
 
-export function useFocus (target: Ref<HTMLElement>) {
+export function useFocus (target: Ref<HTMLElement>, repeat = true) {
   function travel (step: number) {
     const elements    = focusable(target.value)
     const index       = elements.indexOf(document.activeElement as HTMLElement)
-    const targetFocus = elements.at((index + step) % elements.length)
+    const nextIndex   = repeat ? ((index + step) % elements.length) : clamp(index + step, 0, elements.length - 1)
+    const targetFocus = elements.at(nextIndex)
 
     if (targetFocus !== undefined)
       targetFocus.focus()

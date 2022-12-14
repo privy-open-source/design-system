@@ -203,6 +203,10 @@ export default defineConfig({
               link: '/components/input-password/',
             },
             {
+              text: 'Input Pin',
+              link: '/components/input-pin/',
+            },
+            {
               text: 'Input Range',
               link: '/components/input-range/',
             },

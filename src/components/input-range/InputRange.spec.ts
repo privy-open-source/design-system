@@ -221,3 +221,23 @@ it('should able to set value using click on trackbar', async () => {
 
   expect(model.value).toStrictEqual([40, 80])
 })
+
+it('should goto nearest value of step', async () => {
+  const model = ref(100)
+
+  const screen = render({
+    components: { InputRange },
+    template  : '<input-range v-model="model" step="25" />',
+    setup () {
+      return { model }
+    },
+  })
+
+  await delay(0)
+
+  const thumbEnd = screen.queryByTestId('thumb-end')
+
+  await triggerDrag(thumbEnd, 60)
+
+  expect(model.value).toBe(50)
+})
