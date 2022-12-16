@@ -52,6 +52,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    error: {
+      type   : Boolean,
+      default: false,
+    },
     autoGrow: {
       type   : Boolean,
       default: false,
@@ -97,6 +101,9 @@ export default defineComponent({
 
       if (props.readonly)
         results.push('textarea--readonly')
+
+      if (props.error)
+        results.push('textarea--error', 'state--error')
 
       return results
     })
@@ -161,10 +168,19 @@ export default defineComponent({
     .textarea--autogrow & {
       @apply overflow-hidden;
     }
+
+    .state--error &,
+    .textarea--error & {
+      @apply border-danger-emphasis hover:border-danger-emphasis;
+
+      &:focus {
+        @apply ring-danger border-danger-emphasis;
+      }
+    }
   }
 
   &__counter {
-    @apply text-right text-muted text-xs absolute bottom-1 right-1 pointer-events-none;
+    @apply text-right text-muted text-xs absolute bottom-1 right-1 pointer-events-none z-1;
   }
 }
 

@@ -146,6 +146,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    error: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -201,6 +205,9 @@ export default defineComponent({
 
       if (props.readonly)
         result.push('select--readonly')
+
+      if (props.error)
+        result.push('select--error', 'state--error')
 
       return result
     })

@@ -371,3 +371,15 @@ const tour   = createTour()
 ### .runElse
 
 `.runElseIf(tourCallback: (tour: TourStory) => TourStory): TourStory`
+
+### .start
+
+Start the tour
+
+`.start(): Promise<void>`
+
+### .stop
+
+Stop the tour
+
+`.stop(): Promise<void>`

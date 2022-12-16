@@ -1,5 +1,5 @@
 import { InjectionKey, Ref } from 'vue-demi'
-import { StyleVariant } from '../nav/Nav.vue'
+import { StyleVariant } from '../nav'
 
 export type ColorVariant = 'light' | 'dark'
 export type ToggleableVariant = 'sm' | 'md' | 'lg'

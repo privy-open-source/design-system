@@ -206,9 +206,9 @@ module.exports = {
         'lg-warning'           : [`0 10px 15px -3px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]})`, `0 4px 6px -2px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]})`],
         'lg-danger'            : [`0 10px 15px -3px rgba(${theme.colors.red[40]}, ${theme.opacity[10]})`, `0 4px 6px -2px rgba(${theme.colors.red[40]}, ${theme.opacity[5]})`],
         'xl'                   : [
-`0 0 1px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]})`,
-`0 8px 10px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
-`0 16px 25px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+          `0 0 1px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]})`,
+          `0 8px 10px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+          `0 16px 25px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
         ],
         '2xl': `0 20px 40px -8px rgba(${theme.colors.gray[100]}, ${theme.opacity[25]})`,
       },
@@ -224,6 +224,7 @@ module.exports = {
         danger     : theme.colors.red[40],
       },
       ringColor: ({ theme }) => ({ ...theme('borderColor') }),
+      zIndex   : { 1: 1 },
     },
   },
 }

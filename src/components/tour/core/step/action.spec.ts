@@ -16,7 +16,7 @@ beforeEach(() => {
 })
 
 it('should able to send user event to target and goto next step', async () => {
-  const input  = document.querySelector('#input') as HTMLInputElement
+  const input  = document.querySelector<HTMLInputElement>('#input')
   const parent = new MockTour()
   const step   = new StepAction({
     target: '#input',

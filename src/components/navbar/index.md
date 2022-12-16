@@ -9,7 +9,7 @@
   import pDropdownItem from '../dropdown/DropdownItem.vue'
   import pNavForm from '../nav/NavForm.vue'
   import pInput from '../input/Input.vue'
-  import pInputGroup from '../input/InputGroup.vue'
+  import pInputGroup from '../input-group/InputGroup.vue'
   import pButton from '../button/Button.vue'
   import pAvatar from '../avatar/Avatar.vue'
   import pCollapse from '../collapse/Collapse.vue'

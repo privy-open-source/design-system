@@ -1,5 +1,4 @@
 import { defineAdapter } from './adapter'
-import { BrowserQRCodeReader } from '@zxing/browser'
 import { takePicture } from '../utils/take-picture'
 
 export default defineAdapter({
@@ -9,11 +8,12 @@ export default defineAdapter({
     autoStart : true,
   },
   async run ({ video, toast, meta }) {
-    const isMirrored = !!(meta.value.mirror && meta.value.mirror !== 'preview')
-    const reader     = new BrowserQRCodeReader()
-    const result     = await reader.decodeOnceFromVideoElement(video.value)
-    const image      = takePicture(video.value, isMirrored)
-    const text       = result.getText()
+    const isMirrored              = !!(meta.value.mirror && meta.value.mirror !== 'preview')
+    const { BrowserQRCodeReader } = await import('@zxing/browser')
+    const reader                  = new BrowserQRCodeReader()
+    const result                  = await reader.decodeOnceFromVideoElement(video.value)
+    const image                   = takePicture(video.value, isMirrored)
+    const text                    = result.getText()
 
     toast(text)
 

@@ -1,11 +1,9 @@
 <script setup>
-  import Input from "./Input.vue"
-  import InputGroup from "./InputGroup.vue"
-  import Button from "../button/Button.vue"
-  import Select from "../select/Select.vue"
+  import pInput from "./Input.vue"
   import { ref } from "vue-demi"
 
-  const value = ref('')
+  const value  = ref('')
+  const result = ref('')
 </script>
 
 # Input
@@ -14,32 +12,141 @@
 
 ### Simple Usage
 <preview>
-  <Input v-model="value" placeholder="Input Here" />
+  <p-input v-model="value" placeholder="Input Here" />
 </preview>
 
 ```vue
 <template>
-  <Input v-model="value" placeholder="Input Here" />
+  <p-input v-model="value" placeholder="Input Here" />
 </template>
 ```
 
-### Input Group
+## Sizing
+Input has 4 variants size: `xs`, `sm`, `md`, `lg`, default is `md`.
+
+<preview class="flex-col space-y-3">
+  <p-input size="xs" />
+  <p-input size="sm" />
+  <p-input size="md" />
+  <p-input size="lg" />
+</preview>
+
+```vue
+<template>
+  <p-input size="xs" />
+  <p-input size="sm" />
+  <p-input size="md" />
+  <p-input size="lg" />
+</template>
+```
+
+## Disabled state
+
+<preview class="flex-col space-y-3">
+  <p-input disabled />
+</preview>
+
+```vue
+<template>
+  <p-input disabled />
+</template>
+```
+
+## Readonly state
+
+<preview class="flex-col space-y-3">
+  <p-input readonly />
+</preview>
+
+```vue
+<template>
+  <p-input readonly />
+</template>
+```
+
+## Error state
+
+<preview class="flex-col space-y-3">
+  <p-input error />
+</preview>
+
+```vue
+<template>
+  <p-input error />
+</template>
+```
+
+## Clearable
+
+Add clear button to input with prop `clearable`.
+
+<preview class="flex-col space-y-3">
+  <p-input clearable />
+</preview>
+
+```vue
+<template>
+  <p-input clearable />
+</template>
+```
+
+## Binding v-model
+
+Input value can be binding with `v-model`.
+
 <preview>
-  <InputGroup>
-    <Select v-model="value" :options="['A', 'B', 'C']" placeholder="Select" />
-    <Input v-model="value" placeholder="Input Here" />
-    <Input v-model="value" placeholder="Input Here" />
-    <Button variant="input">Search</Button>
-  </InputGroup>
+  <p-input v-model="result" />
 </preview>
+
+**result:**
+
+<pre class="truncate"><code>{{ result || '-' }}</code></pre>
 
 ```vue
 <template>
-  <InputGroup>
-    <Select v-model="value" :options="['A', 'B', 'C']" />
-    <Input v-model="value" placeholder="Input Here" />
-    <Input v-model="value" placeholder="Input Here" />
-    <Button variant="input">Search</Button>
-  </InputGroup>
+  <p-input v-model="result" />
 </template>
 ```
+
+## API
+
+### Props
+
+| Props         |   Type    | Default | Description                                             |
+|---------------|:---------:|:-------:|---------------------------------------------------------|
+| `type`        | `String`  | `text`  | Input type                                              |
+| `size`        | `String`  |  `md`   | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
+| `placeholder` | `String`  |   `-`   | Input placeholder                                       |
+| `disabled`    | `Boolean` | `false` | Disabled state                                          |
+| `readonly`    | `Boolean` | `false` | Readonly state                                          |
+| `error`       | `Boolean` | `false` | Error state                                             |
+| `clearable`   | `Boolean` | `false` | Enable clear button                                     |
+| `modelValue`  | `String`  |   `-`   | v-model value                                           |
+
+### Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" class="text-center">There no slots here</td>
+    </tr>
+  </tbody>
+</table>
+
+### Events
+
+| Name     | Arguments | Description                     |
+|----------|-----------|---------------------------------|
+| `change` | `String`  | Event when value changed        |
+| `clear`  | `-`       | Event when clear button clicked |
+
+## See Also
+
+- [Form Group](/components/form-group/)
+- [Input Group](/components/input-group/)

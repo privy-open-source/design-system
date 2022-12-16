@@ -67,3 +67,7 @@ export {
   useRouter,
   installRouter,
 } from '../components/global/router'
+
+export {
+  usePasswordStrength,
+} from '../components/input-password'

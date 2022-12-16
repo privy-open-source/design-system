@@ -247,7 +247,7 @@ export default defineComponent({
   @apply flex flex-col space-y-2 text-sm shadow-xl border-transparent;
 
   &__nav {
-    @apply flex justify-between space-y-2 mb-2;
+    @apply flex justify-between space-x-2 mb-2;
 
     &-title {
       @apply flex-grow;

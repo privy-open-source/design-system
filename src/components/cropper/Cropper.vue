@@ -49,14 +49,13 @@
           @click="zoomOut()">
           <IconZoomOut />
         </p-button>
-        <input
+        <p-input-range
           v-model="scale"
           data-testid="cropper-zoom-slider"
           class="cropper__slider"
           min="0.5"
           max="2"
-          step="0.1"
-          type="range">
+          step="0.1" />
         <p-button
           data-testid="cropper-zoom-in"
           size="xs"
@@ -127,6 +126,7 @@ import {
 } from 'vue-demi'
 import { usePinch } from './utils/use-pinch'
 import pButton from '../button/Button.vue'
+import pInputRange from '../input-range/InputRange.vue'
 import IconRotateLeft from '@carbon/icons-vue/lib/rotate--counterclockwise/16'
 import IconRotateRight from '@carbon/icons-vue/lib/rotate--clockwise/16'
 import IconZoomIn from '@carbon/icons-vue/lib/zoom--in/16'
@@ -147,6 +147,7 @@ export default defineComponent({
   directives: { pAspectRatio },
   components: {
     pButton,
+    pInputRange,
     IconRotateLeft,
     IconRotateRight,
     IconZoomIn,

@@ -12,9 +12,8 @@ import {
   PropType,
   computed,
 } from 'vue-demi'
-import { WeightVariant, TransformVariant } from '../heading/Heading.vue'
-
-type SizeVariant = 'sm' | 'md'
+import { SizeVariant } from '.'
+import { WeightVariant, TransformVariant } from '../heading'
 
 export default defineComponent({
   props: {
