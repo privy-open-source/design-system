@@ -90,7 +90,8 @@ export default defineComponent({
     })
 
     function clear () {
-      model.value = ''
+      if (!props.disabled && !props.readonly)
+        model.value = ''
 
       emit('clear')
     }

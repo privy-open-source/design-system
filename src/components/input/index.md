@@ -2,7 +2,8 @@
   import pInput from "./Input.vue"
   import { ref } from "vue-demi"
 
-  const value = ref('')
+  const value  = ref('')
+  const result = ref('')
 </script>
 
 # Input
@@ -86,6 +87,24 @@ Add clear button to input with prop `clearable`.
 ```vue
 <template>
   <p-input clearable />
+</template>
+```
+
+## Binding v-model
+
+Input value can be binding with `v-model`.
+
+<preview>
+  <p-input v-model="result" />
+</preview>
+
+**result:**
+
+<pre class="truncate"><code>{{ result || '-' }}</code></pre>
+
+```vue
+<template>
+  <p-input v-model="result" />
 </template>
 ```
 

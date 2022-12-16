@@ -15,9 +15,12 @@
         :placeholder="placeholder"
         :disabled="disabled"
         readonly
-        @focus="onFocus" />
-      <IconCalendar
-        class="datepicker__icon" />
+        @focus="onFocus">
+        <template #append>
+          <IconCalendar
+            class="datepicker__icon" />
+        </template>
+      </Input>
     </template>
 
     <Calendar

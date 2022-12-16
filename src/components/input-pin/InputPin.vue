@@ -1,13 +1,19 @@
 <template>
   <div
     ref="root"
-    class="input-pin">
+    data-testid="input-pin"
+    class="input-pin"
+    :class="classNames">
     <p-input
       v-for="i in num"
       :key="i"
       maxlength="1"
       v-bind="$attrs"
       :model-value="getValue(i - 1)"
+      :clearable="false"
+      :readonly="readonly"
+      :disabled="disabled"
+      :error="error"
       @input="setValue(i - 1, $event)"
       @focus.passive="onFocus"
       @keyup.delete.passive="onDelete"
@@ -44,6 +50,18 @@ export default defineComponent({
       type   : [Number, String],
       default: 5,
     },
+    disabled: {
+      type   : Boolean,
+      default: false,
+    },
+    readonly: {
+      type   : Boolean,
+      default: false,
+    },
+    error: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -54,6 +72,21 @@ export default defineComponent({
     const root       = templateRef<HTMLDivElement>('root')
     const num        = useToNumber(toRef(props, 'length'))
     const localModel = ref<string[]>([...props.modelValue].slice(0, num.value).map((val) => val.trim()))
+
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (props.disabled)
+        result.push('input-pin--disabled')
+
+      if (props.readonly)
+        result.push('input-pin--readonly')
+
+      if (props.error)
+        result.push('input-pin--error', 'state--error')
+
+      return result
+    })
 
     const { next: nextFocus, prev: prevFocus } = useFocus(root, false)
 
@@ -104,6 +137,7 @@ export default defineComponent({
     }
 
     return {
+      classNames,
       num,
       localModel,
       getValue,
@@ -123,6 +157,8 @@ export default defineComponent({
   @apply flex flex-row space-x-4;
 
   .input__form {
+    -webkit-touch-callout: none;
+
     @apply text-center;
   }
 }
