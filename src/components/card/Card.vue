@@ -36,7 +36,9 @@
 
     <div
       v-if="!sectioned"
-      class="card__body">
+      data-testid="card-body"
+      class="card__body"
+      :class="bodyClass">
       <slot />
     </div>
     <slot v-else />
@@ -87,6 +89,10 @@ export default defineComponent({
     dismissable: {
       type   : Boolean,
       default: true,
+    },
+    bodyClass: {
+      type   : [String, Array],
+      default: undefined,
     },
   },
   emits: ['dismissed'],
