@@ -133,7 +133,7 @@ It's also work with other variants (except `ghost`).
 
 ## Sizing
 
-3 sizes you can use: `xs`, `sm`, `md`, `lg`. default is `md`
+There are 4 size variants that can be use: `xs`, `sm`, `md`, `lg`. default is `md`
 
 <preview class="flex-col items-center gap-3 md:flex-row">
   <p-button color="primary" size="xs">Click me</p-button>

@@ -119,24 +119,16 @@ export default defineConfig({
               link: '/components/nav/',
             },
             {
-              text: 'Navbar',
-              link: '/components/navbar/',
-            },
-            {
               text: 'Progress',
               link: '/components/progress/',
             },
             {
-              text: 'Sidebar',
-              link: '/components/sidebar/',
-            },
-            {
-              text: 'Sidebar Menu',
-              link: '/components/sidebar-menu/',
-            },
-            {
               text: 'Spinner',
               link: '/components/spinner/',
+            },
+            {
+              text: 'Strengthbar',
+              link: '/components/strengthbar/',
             },
             {
               text: 'Tabs',
@@ -191,8 +183,32 @@ export default defineConfig({
               link: '/components/datepicker/',
             },
             {
+              text: 'Form Group',
+              link: '/components/form-group/',
+            },
+            {
               text: 'Input',
               link: '/components/input/',
+            },
+            {
+              text: 'Input File',
+              link: '/components/input-file/',
+            },
+            {
+              text: 'Input Group',
+              link: '/components/input-group/',
+            },
+            {
+              text: 'Input Password',
+              link: '/components/input-password/',
+            },
+            {
+              text: 'Input Pin',
+              link: '/components/input-pin/',
+            },
+            {
+              text: 'Input Range',
+              link: '/components/input-range/',
             },
             {
               text: 'Radio',
@@ -219,6 +235,18 @@ export default defineConfig({
             {
               text: 'Filterbar',
               link: '/components/filterbar/',
+            },
+            {
+              text: 'Navbar',
+              link: '/components/navbar/',
+            },
+            {
+              text: 'Sidebar',
+              link: '/components/sidebar/',
+            },
+            {
+              text: 'Sidebar Menu',
+              link: '/components/sidebar-menu/',
             },
           ],
         },

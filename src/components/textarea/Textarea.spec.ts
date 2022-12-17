@@ -63,6 +63,19 @@ it('should have style readonly if props `readonly` is provided', () => {
   expect(input).toHaveAttribute('readonly')
 })
 
+it('should have style error if props `error` is provided', () => {
+  const screen = render({
+    components: { Textarea },
+    template  : `
+      <Textarea error />
+    `,
+  })
+
+  const textarea = screen.queryByTestId('textarea')
+
+  expect(textarea).toHaveClass('textarea', 'textarea--error', 'state--error')
+})
+
 it('should enable resize if props `resize` is provided', () => {
   const screen = render({
     components: { Textarea },

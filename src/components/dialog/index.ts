@@ -1,5 +1,4 @@
 import { useSingleton } from '../global/use-singleton'
-import Dialog from './Dialog.vue'
 import defu from 'defu'
 import type {
   FooterAlignVariant,
@@ -38,8 +37,9 @@ export interface DialogContext extends DialogOptions {
 }
 
 export async function confirm (options: DialogOptions): Promise<boolean> {
-  const modal  = await useSingleton(Dialog)
-  const result = await new Promise<boolean>((resolve) => {
+  const { default: Dialog } = await import('./Dialog.vue')
+  const modal               = await useSingleton(Dialog)
+  const result              = await new Promise<boolean>((resolve) => {
     modal.show(defu(
       {
         onConfirm: () => resolve(true),
@@ -47,9 +47,10 @@ export async function confirm (options: DialogOptions): Promise<boolean> {
       },
       options,
       {
-        title  : 'Confirm',
-        confirm: {},
-        cancel : {},
+        title   : 'Confirm',
+        confirm : {},
+        cancel  : {},
+        centered: true,
       },
     ))
   })

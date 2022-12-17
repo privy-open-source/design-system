@@ -130,6 +130,17 @@ for example, mode `month` make user can only select the month, but can't select 
 </template>
 ```
 
+## Error state
+<preview>
+  <p-datepicker error />
+</preview>
+
+```vue
+<template>
+  <p-datepicker error />
+</template>
+```
+
 ## Binding v-model
 
 <preview>
@@ -157,6 +168,7 @@ for example, mode `month` make user can only select the month, but can't select 
 | `format`      | `String`  | `dd/MM/yyyy` | Date format                                        |
 | `disabled`    | `Boolean` |   `false`    | Disabled state                                     |
 | `readonly`    | `Boolean` |   `false`    | Readonly state                                     |
+| `error`       | `Boolean` |   `false`    | Error state                                        |
 | `mode`        | `String`  |     `-`      | Calendar mode valid value: `date`, `month`, `year` |
 | `max`         |  `Date`   |     `-`      | Maximum date can be selected                       |
 | `min`         |  `Date`   |     `-`      | Minimum date can be selected                       |
@@ -182,3 +194,7 @@ for example, mode `month` make user can only select the month, but can't select 
 | Name     | Arguments          | Description              |
 |----------|--------------------|--------------------------|
 | `change` | Native Date object | Event when date selected |
+
+## See Also
+
+- [Datepicker](/components/datepicker/)

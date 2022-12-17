@@ -76,10 +76,10 @@ Dot also available with variant `pills`. When variant is not set, dot will looks
 
 ### Props
 
-| Props   |   Type   |  Default  | Description                                                                                              |
-|---------|:--------:|:---------:|--------------------------------------------------------------------------------------------------------------|
-| `color`   | `String` | `-` | Dot color variant, valid value is `primary`, `success`, `warning` and `danger` |
-| `variant` | `String` | `-` | Dot style variant, valid value is `pills`                                      |
+| Props     |   Type   | Default | Description                                                                    |
+|-----------|:--------:|:-------:|--------------------------------------------------------------------------------|
+| `color`   | `String` |   `-`   | Dot color variant, valid value is `primary`, `success`, `warning` and `danger` |
+| `variant` | `String` |   `-`   | Dot style variant, valid value is `pills`                                      |
 
 ### Slots
 
