@@ -40,10 +40,6 @@ export default defineComponent({
 .dropdown__item {
   @apply px-3 py-2 cursor-pointer text-default w-full select-none text-left;
 
-  .caption {
-    @apply text-muted;
-  }
-
   &:hover,
   &:focus-visible {
     @apply bg-default-alpha;

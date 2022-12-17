@@ -68,7 +68,7 @@ it('should be able to add Card Header Action via slot `action`', () => {
   const screen = render({
     components: { Card, Button },
     template  : `
-      <Card 
+      <Card
         title="Any title should here">
         <template #action>
           <Button color="primary" variant="link">Button Text</Button>
@@ -140,7 +140,7 @@ it('should emit event "dismissed" if close button clicked', async () => {
   const screen = render({
     components: { Card },
     template  : `
-      <Card 
+      <Card
         title="Callout Title"
         @dismissed="onDismissed" callout>
         Content
@@ -175,4 +175,20 @@ it('should have no close button if props "dismissable" set to false', () => {
   const dismiss = screen.queryByTestId('card-callout-dismiss')
 
   expect(dismiss).not.toBeInTheDocument()
+})
+
+it('should have custom body class via "body-class" props', () => {
+  const screen = render({
+    components: { Card },
+    template  : `
+      <Card body-class="bg-accent">
+        Content
+      </Card>
+    `,
+  })
+
+  const body = screen.queryByTestId('card-body')
+
+  expect(body).toBeInTheDocument()
+  expect(body).toHaveClass('bg-accent')
 })

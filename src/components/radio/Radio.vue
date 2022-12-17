@@ -4,11 +4,6 @@
     class="radio"
     :class="classNames"
     @click.prevent="toggle">
-    <input
-      type="radio"
-      :value="model"
-      :name="name"
-      :disabled="disabled || readonly">
     <span class="radio__icon">
       <IconCheck v-if="appearance === 'option'" />
       <svg
@@ -40,6 +35,11 @@
     <span class="radio__label">
       <slot />
     </span>
+    <input
+      type="radio"
+      :value="model"
+      :name="name"
+      :disabled="disabled || readonly">
   </label>
 </template>
 
@@ -57,7 +57,7 @@ export interface ChangedInteface {
   state: boolean,
 }
 
-type AppearanceType = 'radio' | 'checkbox' | 'option'
+type AppearanceType = 'radio' | 'checkbox' | 'option' | 'none'
 
 export default defineComponent({
   components: { IconCheck },
@@ -229,13 +229,21 @@ export default defineComponent({
     }
   }
 
+  &&--none {
+    .radio__icon {
+      @apply hidden;
+    }
+
+    &.radio--disabled {
+      .card {
+        @apply bg-subtle hover:shadow-none hover:cursor-default;
+      }
+    }
+  }
+
   .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
   .dropdown__menu > .dropdown__subitem > & {
     @apply w-full select-none;
-
-    .radio__icon {
-      @apply ml-0;
-    }
   }
 
   .dropdown__menu > .dropdown__subitem > .dropdown__item > & {

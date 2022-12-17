@@ -53,7 +53,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .caption {
-  @apply block text-subtle text-xs tracking-wide;
+  @apply block text-muted text-xs tracking-wide;
 
   /**
   * Caption in tiny size

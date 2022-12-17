@@ -101,7 +101,6 @@ Tooltips can be triggered (opened/closed) using modifiers `.click`, `.hover` and
 <preview class="flex-col space-gap-2 md:flex-row">
   <p-button v-p-tooltip title="Hover + Focus">Default</p-button>
   <p-button v-p-tooltip.click title="Click">Click</p-button>
-  <p-button v-p-tooltip.click.white title="Click">Click</p-button>
   <p-button v-p-tooltip.hover title="Hover">Hover</p-button>
   <p-button v-p-tooltip.focus title="Focus">Focus</p-button>
 </preview>

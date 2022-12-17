@@ -3,7 +3,6 @@
     class="navbar__toggle"
     data-testid="navbar-toggle"
     variant="outline"
-    color="secondary"
     :class="classNames"
     icon
     @click="expanded">
