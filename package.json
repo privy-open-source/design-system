@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "packageManager": "yarn@3.3.0",
   "private": true,
   "scripts": {
@@ -81,7 +81,6 @@
     "@testing-library/user-event": "^14.4.3",
     "@vueuse/core": "9.6.0",
     "@vueuse/math": "^9.4.0",
-    "@vueuse/sound": "1.1.7",
     "@zxing/browser": "0.1.1",
     "@zxing/library": "0.19.1",
     "buffer": "6.0.3",
