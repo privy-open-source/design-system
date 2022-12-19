@@ -33,14 +33,14 @@ export class TourStory extends Tour {
    */
   dialog (target: string, text: string, title?: string, image?: string): this
   dialog (targetOrOption: string | DialogOptions, text = '', title?: string, image?: string): this {
-    return !isString(targetOrOption)
-      ? this.add(new StepDialog(targetOrOption))
-      : this.add(new StepDialog({
+    return isString(targetOrOption)
+      ? this.add(new StepDialog({
         target: targetOrOption,
         text,
         title,
         image,
       }))
+      : this.add(new StepDialog(targetOrOption))
   }
 
   /**
@@ -64,13 +64,13 @@ export class TourStory extends Tour {
    */
   action<E extends EventType> (target: string, action: E, ...params: ParamsOf<E>): this
   action<E extends EventType> (targetOrOption: string | ActionOptions<E>, action?: E, ...params: ParamsOf<E>): this {
-    return !isString(targetOrOption)
-      ? this.add(new StepAction(targetOrOption))
-      : this.add(new StepAction({
+    return isString(targetOrOption)
+      ? this.add(new StepAction({
         target: targetOrOption,
         action,
         params,
       }))
+      : this.add(new StepAction(targetOrOption))
   }
 
   /**

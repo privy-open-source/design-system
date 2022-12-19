@@ -19,7 +19,7 @@ module.exports = plugin(
         transitionTimingFunction: 'cubic-bezier(0.2, 0, 0.38, 0.9)',
         willChange              : 'opacity, transform',
       },
-      '.fade-enter, .fade-enter-from, .fade-leave-to'                                               : { opacity: 0 },
+      '.fade-enter, .fade-enter-from, .fade-leave-to': { opacity: 0 },
       '.zoom-in-enter-active, .zoom-out-enter-active, .zoom-in-leave-active, .zoom-out-leave-active':
         {
           transitionDuration      : '150ms',
