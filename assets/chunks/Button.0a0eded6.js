@@ -1,0 +1,1 @@
+import{_ as t}from"./Button.vue_vue_type_style_index_0_lang.1acbb6e8.js";import{f as a,o as e,c as o,g as r,n}from"../app.20e38cb1.js";function c(s,p,l,f,m,d){return e(),o("button",{"data-testid":"btn",class:n(s.classNames)},[r(s.$slots,"default")],2)}const u=a(t,[["render",c]]);export{u as p};
