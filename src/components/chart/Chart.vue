@@ -76,7 +76,7 @@ export default defineComponent({
           plugins: {
             legend: {
               display : legend.value !== 'none',
-              position: legend.value !== 'none' ? legend.value : undefined,
+              position: legend.value === 'none' ? undefined : legend.value,
               labels  : {
                 color: '#9CA3AF',
                 font : {

@@ -1,304 +1,230 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const { theme } = require('./basic')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  theme   : {
-    fontFamily   : { sans: ['DM Sans', ...defaultTheme.fontFamily.sans] },
-    letterSpacing: { ...defaultTheme.letterSpacing },
-    fontWeight   : {
-      inherit   : 'inherit',
-      thin      : 100,
-      extralight: 200,
-      light     : 300,
-      normal    : 400,
-      medium    : 500,
-      semibold  : 600,
-      bold      : 700,
-      extrabold : 800,
-      black     : 900,
-    },
-    colors: {
-      inherit    : 'inherit',
-      transparent: 'transparent',
-      current    : 'currentColor',
-      base       : {
-        black: '#000000',
-        white: '#ffffff',
-      },
-      gray: {
-        0  : '#FAFAFA',
-        5  : '#F3F3F3',
-        10 : '#E7E7E8',
-        15 : '#DBDBDC',
-        20 : '#CFCFD1',
-        25 : '#C2C3C5',
-        30 : '#B6B8B9',
-        35 : '#AAACAE',
-        40 : '#9EA0A2',
-        45 : '#929497',
-        50 : '#86888B',
-        55 : '#7A7C7F',
-        60 : '#6E7074',
-        65 : '#626468',
-        70 : '#56585D',
-        75 : '#4A4D51',
-        80 : '#3D4145',
-        85 : '#31353A',
-        90 : '#25292E',
-        95 : '#191D23',
-        100: '#0D1117',
-      },
-      blue: {
-        0 : '#F2F7FD',
-        10: '#BFD9F3',
-        20: '#80B2E8',
-        30: '#408BDD',
-        40: '#0065D1',
-        50: '#0056B2',
-        60: '#004C9D',
-      },
-      green: {
-        0 : '#F4FBF6',
-        10: '#C8ECD0',
-        20: '#91D8A0',
-        30: '#5AC571',
-        40: '#23B242',
-        50: '#1E9738',
-        60: '#1A8531',
-      },
-      lightblue: {
-        0 : '#F2FBFC',
-        10: '#C0EBF1',
-        20: '#80D7E2',
-        30: '#41C2D4',
-        40: '#02AEC5',
-        50: '#0294A7',
-        60: '#018294',
-      },
-      orange: {
-        0 : '#FFFBF4',
-        10: '#FDE9C8',
-        20: '#FAD391',
-        30: '#F8BC5A',
-        40: '#F5A623',
-        50: '#D08D1E',
-        60: '#B87C1A',
-      },
-      red: {
-        0 : '#FEF5F4',
-        10: '#F8CBCA',
-        20: '#F29695',
-        30: '#EB6261',
-        40: '#E42E2C',
-        50: '#C22725',
-        60: '#AB2221',
-      },
-      gold: {
-        0 : '#FBFAF2',
-        10: '#EDE6BF',
-        20: '#DBCC80',
-        30: '#C9B340',
-        40: '#B79A00',
-        50: '#9C8300',
-        60: '#897400',
-      },
-      yellow: {
-        0 : '#FEFDF4',
-        10: '#FBF5CA',
-        20: '#F7EA95',
-        30: '#F3E061',
-        40: '#EFD52C',
-        50: '#CBB525',
-        60: '#B3A021',
-      },
-      lime: {
-        0 : '#FAFEF5',
-        10: '#E8F9CD',
-        20: '#D1F39A',
-        30: '#BAEC68',
-        40: '#A3E635',
-        50: '#8BC32D',
-        60: '#7AAC28',
-      },
-      teal: {
-        0 : '#F3FBFA',
-        10: '#C4EDE6',
-        20: '#88DBCE',
-        30: '#4DCAB5',
-        40: '#12B89C',
-        50: '#0F9C85',
-        60: '#0E8A75',
-      },
-      purple: {
-        0 : '#F7F2FD',
-        10: '#D7BFF3',
-        20: '#AE80E8',
-        30: '#8640DD',
-        40: '#5E00D1',
-        50: '#5000B2',
-        60: '#46009D',
-      },
-    },
-    variables: {
-      DEFAULT: {
-        color: {
-          base: {
-            black: '#000000', // '0 0 0'
-            white: '#ffffff', // '255 255 255'
-          },
-          gray: {
-            0  : '#FAFAFA', // '250 250 250'
-            5  : '#F3F3F3', // '243 243 243'
-            10 : '#E7E7E8', // '231 231 232'
-            15 : '#DBDBDC', // '219 219 220'
-            20 : '#CFCFD1', // '207 207 209'
-            25 : '#C2C3C5', // '194 195 197'
-            30 : '#B6B8B9', // '182 184 185'
-            35 : '#AAACAE', // '170 172 174'
-            40 : '#9EA0A2', // '158 160 162'
-            45 : '#929497', // '146 148 151'
-            50 : '#86888B', // '134 136 139'
-            55 : '#7A7C7F', // '122 124 127'
-            60 : '#6E7074', // '110 112 116'
-            65 : '#626468', // '98 100 104'
-            70 : '#56585D', // '86 88 93'
-            75 : '#4A4D51', // '74 77 81'
-            80 : '#3D4145', // '61 65 69'
-            85 : '#31353A', // '49 53 58'
-            90 : '#25292E', // '37 41 46'
-            95 : '#191D23', // '25 29 35'
-            100: '#0D1117', // '13 17 23'
-          },
-          blue: {
-            0 : '#F2F7FD', // '242 247 253'
-            10: '#BFD9F3', // '191 217 243'
-            20: '#80B2E8', // '128 178 232'
-            30: '#408BDD', // '64 139 221'
-            40: '#0065D1', // '0 101 209'
-            50: '#0056B2', // '0 86 178'
-            60: '#004C9D', // '0 76 157'
-          },
-          green: {
-            0 : '#F4FBF6', // '244 251 246'
-            10: '#C8ECD0', // '200 236 208'
-            20: '#91D8A0', // '145 216 160'
-            30: '#5AC571', // '90 197 113'
-            40: '#23B242', // '35 178 66'
-            50: '#1E9738', // '30 151 56'
-            60: '#1A8531', // '26 133 49'
-          },
-          lightblue: {
-            0 : '#F2FBFC', // '242 251 252'
-            10: '#C0EBF1', // '192 235 241'
-            20: '#80D7E2', // '128 215 226'
-            30: '#41C2D4', // '65 194 212'
-            40: '#02AEC5', // '2 174 197'
-            50: '#0294A7', // '2 148 167'
-            60: '#018294', // '1 130 148'
-          },
-          orange: {
-            0 : '#FFFBF4', // '255 251 244'
-            10: '#FDE9C8', // '253 233 200'
-            20: '#FAD391', // '250 211 145'
-            30: '#F8BC5A', // '248 188 90'
-            40: '#F5A623', // '245 166 35'
-            50: '#D08D1E', // '208 141 30'
-            60: '#B87C1A', // '184 124 26'
-          },
-          red: {
-            0 : '#FEF5F4', // '254 245 244'
-            10: '#F8CBCA', // '248 203 202'
-            20: '#F29695', // '242 150 149'
-            30: '#EB6261', // '235 98 97'
-            40: '#E42E2C', // '228 46 44'
-            50: '#C22725', // '194 39 37'
-            60: '#AB2221', // '171 34 33'
-          },
-          gold: {
-            0 : '#FBFAF2', // '251 250 242'
-            10: '#EDE6BF', // '237 230 191'
-            20: '#DBCC80', // '219 204 128'
-            30: '#C9B340', // '201 179 64'
-            40: '#B79A00', // '183 154 0'
-            50: '#9C8300', // '156 131 0'
-            60: '#897400', // '137 116 0'
-          },
-          yellow: {
-            0 : '#FEFDF4', // '254 253 244'
-            10: '#FBF5CA', // '251 245 202'
-            20: '#F7EA95', // '247 234 149'
-            30: '#F3E061', // '243 224 97'
-            40: '#EFD52C', // '239 213 44'
-            50: '#CBB525', // '203 181 37'
-            60: '#B3A021', // '179 160 33'
-          },
-          lime: {
-            0 : '#FAFEF5', // '250 254 245'
-            10: '#E8F9CD', // '232 249 205'
-            20: '#D1F39A', // '209 243 154'
-            30: '#BAEC68', // '186 236 104'
-            40: '#A3E635', // '163 230 53'
-            50: '#8BC32D', // '139 195 45'
-            60: '#7AAC28', // '122 172 40'
-          },
-          teal: {
-            0 : '#F3FBFA', // '243 251 250'
-            10: '#C4EDE6', // '196 237 230'
-            20: '#88DBCE', // '136 219 206'
-            30: '#4DCAB5', // '77 202 181'
-            40: '#12B89C', // '18 184 156'
-            50: '#0F9C85', // '15 156 133'
-            60: '#0E8A75', // '14 138 117'
-          },
-          purple: {
-            0 : '#F7F2FD', // '247 242 253'
-            10: '#D7BFF3', // '215 191 243'
-            20: '#AE80E8', // '174 128 232'
-            30: '#8640DD', // '134 64 221'
-            40: '#5E00D1', // '94 0 209'
-            50: '#5000B2', // '80 0 178'
-            60: '#46009D', // '70 0 157'
-          },
+  presets: [require('./basic')],
+  theme  : {
+    extend: {
+      colors: {
+        base: {
+          white: theme.colors.base.white,
+          black: theme.colors.base.black,
         },
       },
-    },
-    borderRadius: {
-      'none'   : 0,
-      'sm'     : '4px',
-      'md'     : '8px',
-      'DEFAULT': '8px',
-      'lg'     : '12px',
-      'xl'     : '16px',
-      '2xl'    : '22px',
-      'full'   : '999999px',
-    },
-    opacity: {
-      0  : 0,
-      5  : 0.05,
-      10 : 0.1,
-      15 : 0.15,
-      20 : 0.2,
-      25 : 0.25,
-      30 : 0.3,
-      35 : 0.35,
-      40 : 0.4,
-      45 : 0.45,
-      50 : 0.5,
-      55 : 0.55,
-      60 : 0.6,
-      65 : 0.65,
-      70 : 0.7,
-      75 : 0.75,
-      80 : 0.8,
-      85 : 0.85,
-      90 : 0.9,
-      95 : 0.95,
-      100: 1,
+      fontSize: {
+        'tn': [
+          '11px',
+          {
+            lineHeight   : '1.45',
+            letterSpacing: theme.letterSpacing.wider,
+          },
+        ],
+        'xs': [
+          '12px',
+          {
+            lineHeight   : '1.33',
+            letterSpacing: theme.letterSpacing.wide,
+          },
+        ],
+        'sm': [
+          '14px',
+          {
+            lineHeight   : '1.42',
+            letterSpacing: theme.letterSpacing.normal,
+          },
+        ],
+        'base': [
+          '16px',
+          {
+            lineHeight   : '1.5',
+            letterSpacing: theme.letterSpacing.normal,
+          },
+        ],
+        'xl': [
+          '20px',
+          {
+            lineHeight   : '1.3',
+            letterSpacing: theme.letterSpacing.normal,
+          },
+        ],
+        '2xl': [
+          '24px',
+          {
+            lineHeight   : '1.3',
+            letterSpacing: theme.letterSpacing.normal,
+          },
+        ],
+        '4xl': [
+          '36px',
+          {
+            lineHeight   : '1.3',
+            letterSpacing: theme.letterSpacing.normal,
+          },
+        ],
+        '5xl': [
+          '48px',
+          {
+            lineHeight   : '1.3',
+            letterSpacing: theme.letterSpacing.normal,
+          },
+        ],
+        '6xl': [
+          '60px',
+          {
+            lineHeight   : '1.3',
+            letterSpacing: theme.letterSpacing.tight,
+          },
+        ],
+        '7xl': [
+          '72px',
+          {
+            lineHeight   : '1.36',
+            letterSpacing: theme.letterSpacing.tight,
+          },
+        ],
+      },
+      textColor: {
+        'DEFAULT'    : theme.colors.gray[100],
+        'default'    : theme.colors.gray[100],
+        'subtle'     : theme.colors.gray[70],
+        'muted'      : theme.colors.gray[40],
+        'on-emphasis': theme.colors.base.white,
+        'accent'     : theme.colors.blue[50],
+        'success'    : theme.colors.green[50],
+        'warning'    : theme.colors.orange[50],
+        'danger'     : theme.colors.red[50],
+      },
+      backgroundColor: {
+        inherit    : 'inherit',
+        current    : 'currentColor',
+        transparent: 'transparent',
+        DEFAULT    : theme.colors.base.white,
+        default    : {
+          DEFAULT: theme.colors.base.white,
+          alpha  : `rgba(${theme.colors.gray[50]}, ${theme.opacity[5]})`,
+        },
+        subtle: {
+          DEFAULT: theme.colors.gray[0],
+          alpha  : `rgba(${theme.colors.gray[80]}, ${theme.opacity[10]})`,
+        },
+        muted   : theme.colors.gray[5],
+        inactive: theme.colors.gray[20],
+        emphasis: {
+          DEFAULT: theme.colors.gray[100],
+          subtle : theme.colors.gray[95],
+          alpha  : {
+            DEFAULT: `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
+            subtle : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
+          },
+        },
+        accent: {
+          DEFAULT : theme.colors.blue[0],
+          emphasis: theme.colors.blue[40],
+        },
+        success: {
+          DEFAULT : theme.colors.green[0],
+          emphasis: theme.colors.green[40],
+        },
+        warning: {
+          DEFAULT : theme.colors.orange[0],
+          emphasis: theme.colors.orange[40],
+        },
+        danger: {
+          DEFAULT : theme.colors.red[0],
+          emphasis: theme.colors.red[40],
+        },
+      },
+      fill       : ({ theme }) => ({ ...theme('backgroundColor') }),
+      borderColor: {
+        'DEFAULT': theme.colors.gray[15],
+        'default': {
+          DEFAULT: theme.colors.gray[15],
+          alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        },
+        'subtle': {
+          DEFAULT: theme.colors.gray[20],
+          alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+        },
+        'muted'      : theme.colors.gray[10],
+        'on-emphasis': {
+          DEFAULT: theme.colors.gray[90],
+          subtle : theme.colors.gray[70],
+          alpha  : {
+            DEFAULT: `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
+            subtle : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
+          },
+        },
+        'accent': {
+          DEFAULT : theme.colors.blue[10],
+          emphasis: theme.colors.blue[40],
+        },
+        'success': {
+          DEFAULT : theme.colors.green[10],
+          emphasis: theme.colors.green[40],
+        },
+        'warning': {
+          DEFAULT : theme.colors.orange[10],
+          emphasis: theme.colors.orange[40],
+        },
+        'danger': {
+          DEFAULT : theme.colors.red[10],
+          emphasis: theme.colors.red[40],
+        },
+      },
+      boxShadowColor: ({ theme }) => ({ ...theme('backgroundColor') }),
+      boxShadow     : {
+        'none'                 : '0 0 #0000',
+        'sm'                   : `0 1px 3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 1px 2px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'md'                   : `0 4px 6px -1px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 2px 4px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'DEFAULT'              : `0 4px 6px -1px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 2px 4px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg'                   : `0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg-top'               : `0 -10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 -4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg-left'              : `-10px 0 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), -4px 0 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg-right'             : `10px 0 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 4px 0 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'lg-on-emphasis'       : `0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[35]}), 0 4px 6px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]})`,
+        'lg-on-emphasis-darker': `0 10px 15px -3px rgba(${theme.colors.base.black}, ${theme.opacity[85]}), 0 4px 6px -2px rgba(${theme.colors.base.black}, ${theme.opacity[65]})`,
+        'lg-accent'            : `0 10px 15px -3px rgba(${theme.colors.blue[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.blue[40]}, ${theme.opacity[5]})`,
+        'lg-success'           : `0 10px 15px -3px rgba(${theme.colors.green[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.green[40]}, ${theme.opacity[5]})`,
+        'lg-warning'           : `0 10px 15px -3px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]}), 0 4px 6px -2px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]})`,
+        'lg-danger'            : `0 10px 15px -3px rgba(${theme.colors.red[40]}, ${theme.opacity[10]}), 0 4px 6px -2px rgba(${theme.colors.red[40]}, ${theme.opacity[5]})`,
+        'xl'                   : `0 0 1px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]}), 0 8px 10px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]}), 0 16px 25px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+        '2xl'                  : `0 20px 40px -8px rgba(${theme.colors.gray[100]}, ${theme.opacity[25]})`,
+        'mask'                 : `0 0 0 9999px rgba(${theme.colors.base.black}, ${theme.opacity[50]})`,
+      },
+      dropShadow: {
+        'sm'                   : [`0 1px 3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`, `0 1px 2px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`],
+        'md'                   : [`0 4px 6px -1px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`, `0 2px 4px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`],
+        'DEFAULT'              : [`0 4px 6px -1px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`, `0 2px 4px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`],
+        'lg'                   : [`0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`, `0 4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`],
+        'lg-top'               : [`0 -10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`, `0 -4px 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`],
+        'lg-left'              : [`-10px 0 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`, `-4px 0 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`],
+        'lg-right'             : [`10px 0 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`, `4px 0 6px rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`],
+        'lg-on-emphasis'       : [`0 10px 15px -3px rgba(${theme.colors.gray[100]}, ${theme.opacity[35]})`, `0 4px 6px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]})`],
+        'lg-on-emphasis-darker': [`0 10px 15px -3px rgba(${theme.colors.base.black}, ${theme.opacity[85]})`, `0 4px 6px -2px rgba(${theme.colors.base.black}, ${theme.opacity[65]})`],
+        'lg-accent'            : [`0 10px 15px -3px rgba(${theme.colors.blue[40]}, ${theme.opacity[10]})`, `0 4px 6px -2px rgba(${theme.colors.blue[40]}, ${theme.opacity[5]})`],
+        'lg-success'           : [`0 10px 15px -3px rgba(${theme.colors.green[40]}, ${theme.opacity[10]})`, `0 4px 6px -2px rgba(${theme.colors.green[40]}, ${theme.opacity[5]})`],
+        'lg-warning'           : [`0 10px 15px -3px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]})`, `0 4px 6px -2px rgba(${theme.colors.orange[40]}, ${theme.opacity[5]})`],
+        'lg-danger'            : [`0 10px 15px -3px rgba(${theme.colors.red[40]}, ${theme.opacity[10]})`, `0 4px 6px -2px rgba(${theme.colors.red[40]}, ${theme.opacity[5]})`],
+        'xl'                   : [
+          `0 0 1px rgba(${theme.colors.gray[100]}, ${theme.opacity[15]})`,
+          `0 8px 10px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+          `0 16px 25px -2px rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+        ],
+        '2xl': `0 20px 40px -8px rgba(${theme.colors.gray[100]}, ${theme.opacity[25]})`,
+      },
+      outlineColor: {
+        DEFAULT    : theme.colors.gray[15],
+        default    : theme.colors.gray[15],
+        inherit    : 'inherit',
+        current    : 'currentColor',
+        transparent: 'transparent',
+        accent     : theme.colors.blue[40],
+        success    : theme.colors.green[40],
+        warning    : theme.colors.orange[40],
+        danger     : theme.colors.red[40],
+      },
+      ringColor: ({ theme }) => ({ ...theme('borderColor') }),
+      zIndex   : { 1: 1 },
     },
   },
-  plugins: [
-    require('@privyid/tailwind-animation'),
-    require('@privyid/tailwind-extended'),
-    require('@mertasan/tailwindcss-variables'),
-  ],
 }

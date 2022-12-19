@@ -5,6 +5,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "strict": false,
+    "strictNullChecks": true,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,

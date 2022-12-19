@@ -168,7 +168,7 @@ export default defineComponent({
       if (fileList.length > 0) {
         // eslint-disable-next-line unicorn/prefer-spread
         const files = accept(props.accept, Array.from(fileList))
-        const file  = props.multiple !== false ? files : files.at(0)
+        const file  = props.multiple === false ? files.at(0) : files
 
         let value: typeof props.modelValue = file
 
