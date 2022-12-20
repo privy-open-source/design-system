@@ -13,5 +13,8 @@
   "dependencies": {
     "@privyid/tailwind-animation": "workspace:^",
     "@privyid/tailwind-extended": "workspace:^"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

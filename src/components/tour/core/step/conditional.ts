@@ -34,22 +34,6 @@ export default class StepCondition extends AbstractStep<ConditionalOptions> {
     ]
   }
 
-  protected async checkCondition () {
-    try {
-      const options   = this.getOptions()
-      const condition = unref(options.condition)
-
-      return typeof condition === 'function'
-        ? await condition()
-        : condition
-    } catch (error) {
-      if (import.meta.env.DEV)
-        console.warn(error)
-
-      return false
-    }
-  }
-
   public canChain () {
     return this.routines.at(-1).type !== ConditionalType.ELSE
   }

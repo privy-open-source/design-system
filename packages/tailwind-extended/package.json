@@ -6,5 +6,8 @@
   "types": "./index.d.ts",
   "peerDependencies": {
     "tailwind": ">= 3.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

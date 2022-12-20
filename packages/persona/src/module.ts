@@ -1,5 +1,10 @@
-import { fileURLToPath } from 'node:url'
-import { defineNuxtModule, installModule } from '@nuxt/kit'
+import {
+  defineNuxtModule,
+  installModule,
+  createResolver,
+  addPlugin,
+  addComponentsDir,
+} from '@nuxt/kit'
 import preset from '@privyid/tailwind-preset'
 
 export interface ModuleOptions {
@@ -8,6 +13,11 @@ export interface ModuleOptions {
    * @default true
    */
   font?: boolean,
+  /**
+   * Component prefix
+   * @default 'p'
+   */
+  prefix?: string,
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -15,20 +25,31 @@ export default defineNuxtModule<ModuleOptions>({
     name     : '@privyid/persona',
     configKey: 'persona',
   },
-  defaults: { font: true },
+  defaults: { font: true, prefix: 'p' },
   hooks   : {
-    'components:dirs' (dirs) {
-      // Add ./components dir to the list
-      dirs.push({
-        path      : fileURLToPath(new URL('components', import.meta.url)),
-        prefix    : 'p',
-        extensions: ['vue'],
-      })
+    'vite:extendConfig' (config) {
+      config.optimizeDeps?.exclude?.push('@privyid/persona')
+      config.optimizeDeps?.include?.push(
+        'scroll-into-view',
+        'isomorphic-dompurify',
+        '@testing-library/user-event',
+      )
     },
   },
   async setup (options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
+
+    // Add alias to unsupported ESM package
     nuxt.options.alias['@carbon/icons-vue/lib'] = '@carbon/icons-vue/es'
 
+    // Registering postcss plugin
+    nuxt.options.postcss.plugins['postcss-hexrgba']        = nuxt.options.postcss.plugins['postcss-hexrgba'] ?? {}
+    nuxt.options.postcss.plugins['tailwindcss/nesting']    = nuxt.options.postcss.plugins['tailwindcss/nesting'] ?? {}
+    nuxt.options.postcss.plugins.tailwindcss               = nuxt.options.postcss.plugins.tailwindcss ?? {}
+    nuxt.options.postcss.plugins['postcss-lighten-darken'] = nuxt.options.postcss.plugins['postcss-lighten-darken'] ?? {}
+    nuxt.options.postcss.plugins.autoprefixer              = nuxt.options.postcss.plugins.autoprefixer ?? {}
+
+    // Add font CDN
     if (options.font) {
       nuxt.options.app.head.link?.push(
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -41,6 +62,17 @@ export default defineNuxtModule<ModuleOptions>({
       )
     }
 
+    // Install tailwindcss
     await installModule('@nuxtjs/tailwindcss', { config: { presets: [preset] } })
+
+    // Add Plugin
+    addPlugin({ src: resolve('./runtime/plugin') })
+
+    // Add Components
+    await addComponentsDir({
+      path      : resolve('./components'),
+      prefix    : options.prefix,
+      extensions: ['vue'],
+    })
   },
 })

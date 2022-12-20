@@ -6,5 +6,8 @@
   "types": "./index.d.ts",
   "files": [
     "./browserslist-stats.json"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
