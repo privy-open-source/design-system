@@ -45,11 +45,8 @@
   "dependencies": {
     "@carbon/icons-vue": "10.49.1",
     "@floating-ui/dom": "^1.0.4",
-    "@fontsource/dm-sans": "4.5.9",
     "@juggle/resize-observer": "^3.4.0",
     "@nuxt/kit": "^3.0.0",
-    "@nuxtjs/tailwindcss": "^6.1.3",
-    "@privyid/tailwind-preset": "workspace:^",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/user-event": "^14.4.3",
     "@vueuse/core": "9.6.0",
@@ -67,22 +64,32 @@
     "lodash-es": "4.17.21",
     "marked": "^4.1.1",
     "nanodelay": "2.0.2",
-    "postcss-custom-properties": "^12.1.11",
-    "postcss-hexrgba": "^2.1.0",
-    "postcss-lighten-darken": "^0.9.0",
     "scroll-into-view": "^1.16.2",
     "tabbable": "6.0.1",
     "vue-demi": "0.13.11",
-    "vue-router": "4.1.6",
     "vuedraggable": "next",
     "webfontloader": "1.6.28",
     "zxcvbn": "^4.4.2"
   },
+  "peerDependencies": {
+    "@privyid/tailwind-preset": "workspace:^",
+    "postcss-custom-properties": "^12.1.11",
+    "postcss-hexrgba": "^2.1.0",
+    "postcss-lighten-darken": "^0.9.0",
+    "tailwind": ">= 3.0.0",
+    "vue-router": ">=4.0.0"
+  },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxt/schema": "3.0.0",
+    "@nuxtjs/tailwindcss": "^6.2.0",
+    "@privyid/tailwind-preset": "workspace:^",
     "del-cli": "5.0.0",
-    "nuxt": "3.0.0"
+    "nuxt": "3.0.0",
+    "postcss-custom-properties": "^12.1.11",
+    "postcss-hexrgba": "^2.1.0",
+    "postcss-lighten-darken": "^0.9.0",
+    "tailwind": "^4.0.0"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"

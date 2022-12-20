@@ -1,11 +1,12 @@
 <template>
-  <p-sidebar-menu :menus="menus">
-    <p-sidebar-brand>
+  <p-navbar>
+    <p-navbar-brand>
       <img
         src="https://privy-design-system.vercel.app/assets/images/logo.svg"
-        alt="persona-icon">
-    </p-sidebar-brand>
-  </p-sidebar-menu>
+        alt="persona-icon"> Persona
+    </p-navbar-brand>
+  </p-navbar>
+  <p-sidebar-menu :menus="menus" />
 </template>
 
 <script lang="ts" setup>

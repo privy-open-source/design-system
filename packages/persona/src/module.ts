@@ -1,11 +1,10 @@
 import {
   defineNuxtModule,
-  installModule,
   createResolver,
   addPlugin,
   addComponentsDir,
+  extendViteConfig,
 } from '@nuxt/kit'
-import preset from '@privyid/tailwind-preset'
 
 export interface ModuleOptions {
   /**
@@ -22,32 +21,16 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name     : '@privyid/persona',
-    configKey: 'persona',
+    name         : '@privyid/persona',
+    configKey    : 'persona',
+    compatibility: { nuxt: '>=3.0.0' },
   },
   defaults: { font: true, prefix: 'p' },
-  hooks   : {
-    'vite:extendConfig' (config) {
-      config.optimizeDeps?.exclude?.push('@privyid/persona')
-      config.optimizeDeps?.include?.push(
-        'scroll-into-view',
-        'isomorphic-dompurify',
-        '@testing-library/user-event',
-      )
-    },
-  },
   async setup (options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
     // Add alias to unsupported ESM package
     nuxt.options.alias['@carbon/icons-vue/lib'] = '@carbon/icons-vue/es'
-
-    // Registering postcss plugin
-    nuxt.options.postcss.plugins['postcss-hexrgba']        = nuxt.options.postcss.plugins['postcss-hexrgba'] ?? {}
-    nuxt.options.postcss.plugins['tailwindcss/nesting']    = nuxt.options.postcss.plugins['tailwindcss/nesting'] ?? {}
-    nuxt.options.postcss.plugins.tailwindcss               = nuxt.options.postcss.plugins.tailwindcss ?? {}
-    nuxt.options.postcss.plugins['postcss-lighten-darken'] = nuxt.options.postcss.plugins['postcss-lighten-darken'] ?? {}
-    nuxt.options.postcss.plugins.autoprefixer              = nuxt.options.postcss.plugins.autoprefixer ?? {}
 
     // Add font CDN
     if (options.font) {
@@ -62,17 +45,27 @@ export default defineNuxtModule<ModuleOptions>({
       )
     }
 
-    // Install tailwindcss
-    await installModule('@nuxtjs/tailwindcss', { config: { presets: [preset] } })
-
-    // Add Plugin
-    addPlugin({ src: resolve('./runtime/plugin') })
-
     // Add Components
     await addComponentsDir({
       path      : resolve('./components'),
       prefix    : options.prefix,
       extensions: ['vue'],
+    })
+
+    // Add Plugin
+    addPlugin({ src: resolve('./runtime/plugin') })
+
+    // Extend vite config
+    extendViteConfig((config) => {
+      config.optimizeDeps?.exclude?.push('@privyid/persona')
+      config.optimizeDeps?.include?.push(
+        '@testing-library/user-event',
+        'interactjs',
+        'isomorphic-dompurify',
+        'scroll-into-view',
+        'webfontloader',
+        'zxcvbn',
+      )
     })
   },
 })

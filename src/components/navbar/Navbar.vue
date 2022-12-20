@@ -12,10 +12,10 @@
 import {
   computed,
   defineComponent,
-  onMounted,
   PropType,
   provide,
   toRef,
+  watchEffect,
 } from 'vue-demi'
 import { StyleVariant } from '../nav'
 import {
@@ -82,8 +82,14 @@ export default defineComponent({
       return result
     })
 
-    onMounted(() => {
-      document.body?.style.setProperty('padding-top', `${height?.value}px`)
+    watchEffect((onCleanup) => {
+      if (typeof document !== 'undefined' && document.body && props.fixed) {
+        document.body.style.setProperty('padding-top', `${height.value}px`)
+
+        onCleanup(() => {
+          document.body.style.removeProperty('padding-top')
+        })
+      }
     })
 
     return {
