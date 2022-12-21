@@ -8,10 +8,12 @@
 
 <script lang="ts">
 import {
-  computed, defineComponent, PropType,
+  computed,
+  defineComponent,
+  PropType,
 } from 'vue-demi'
-import { WeightVariant, TransformVariant } from '../heading/Heading.vue'
-type SizeVariant = 'xs' | 'tn'
+import { WeightVariant, TransformVariant } from '../heading'
+import { SizeVariant } from '.'
 
 export default defineComponent({
   props: {

@@ -10,7 +10,7 @@
     "docs:build": "vitepress build src",
     "docs:serve": "vitepress serve src",
     "test": "vitest --reporter=dot",
-    "typecheck": "vue-tsc --noEmit",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.check.json",
     "lint:ci": "yarn lint",
     "lint": "eslint . --ext .js,.vue,.ts --format pretty",
     "fix": "yarn lint --fix",
