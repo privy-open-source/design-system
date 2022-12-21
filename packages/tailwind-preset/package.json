@@ -1,6 +1,6 @@
 {
   "name": "@privyid/tailwind-preset",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "packageManager": "yarn@3.3.0",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -13,5 +13,8 @@
   "dependencies": {
     "@privyid/tailwind-animation": "workspace:^",
     "@privyid/tailwind-extended": "workspace:^"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

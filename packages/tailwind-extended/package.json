@@ -1,10 +1,13 @@
 {
   "name": "@privyid/tailwind-extended",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "packageManager": "yarn@3.3.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "peerDependencies": {
     "tailwind": ">= 3.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

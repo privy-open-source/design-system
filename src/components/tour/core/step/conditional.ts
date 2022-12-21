@@ -1,6 +1,5 @@
 import { MaybeRef } from '@vueuse/shared'
 import { unref } from 'vue-demi'
-import { TourDirection } from '../base'
 import { AbstractStep } from '../step'
 import { Tour } from '../tour'
 
@@ -32,22 +31,6 @@ export default class StepCondition extends AbstractStep<ConditionalOptions> {
         tour     : options.tour,
       },
     ]
-  }
-
-  protected async checkCondition () {
-    try {
-      const options   = this.getOptions()
-      const condition = unref(options.condition)
-
-      return typeof condition === 'function'
-        ? await condition()
-        : condition
-    } catch (error) {
-      if (import.meta.env.DEV)
-        console.warn(error)
-
-      return false
-    }
   }
 
   public canChain () {
@@ -86,12 +69,12 @@ export default class StepCondition extends AbstractStep<ConditionalOptions> {
       }
 
       if (result) {
-        const tour  = routine.tour
-        const index = this.direction === TourDirection.BACKWARD
-          ? tour.getSteps().length - 1
-          : 0
+        const tour = routine.tour
 
-        await tour.setParent(this.parent).start(index, this.direction)
+        await tour
+          .setParent(this.parent)
+          .setDirection(this.direction)
+          .start()
 
         this.onCleanup(async () => {
           await tour.stop()

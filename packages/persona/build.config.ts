@@ -18,5 +18,5 @@ export default defineBuildConfig({
       outDir : './dist/directive',
     },
   ],
-  externals: ['node:url'],
+  externals: [],
 })

@@ -1,11 +1,14 @@
 {
   "extends": "./tsconfig.json",
-  "types": [
-    "vitest",
-    "vite/client",
-    "jest-extended",
-    "interactjs"
-  ],
+  "compilerOptions": {
+    "strictNullChecks": false,
+    "types": [
+      "vitest",
+      "vite/client",
+      "jest-extended",
+      "interactjs"
+    ]
+  },
   "include": [
     "src/**/*.vue",
     "src/**/*.ts"

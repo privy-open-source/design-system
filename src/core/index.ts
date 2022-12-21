@@ -69,5 +69,9 @@ export {
 } from '../components/global/router'
 
 export {
+  createTour,
+} from '../components/tour'
+
+export {
   usePasswordStrength,
 } from '../components/input-password'

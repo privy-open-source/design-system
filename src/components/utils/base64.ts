@@ -1,7 +1,3 @@
-import { format } from 'date-fns'
-// eslint-disable-next-line unicorn/prefer-node-protocol
-import { Buffer } from 'buffer'
-
 // eslint-disable-next-line @typescript-eslint/promise-function-async
 export function toBase64 (file: globalThis.File): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -34,10 +30,10 @@ export function toBase64 (file: globalThis.File): Promise<string> {
  * @param mimeType output's mimeType
  */
 export function fromBase64 (dataurl: string, filename?: string, mimeType?: string): globalThis.File {
-  const name         = filename ?? format(new Date(), 'yyyyMMddHHmmss')
+  const name         = filename ?? (new Date()).toISOString()
   const [meta, body] = dataurl.split(',')
   const mime         = mimeType ?? meta.match(/:(.*?);/)[1]
-  const buffer       = Buffer.from(body, 'base64')
+  const buffer       = window.atob(body)
 
   return new globalThis.File([buffer], name, { type: mime })
 }
