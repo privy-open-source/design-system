@@ -1,5 +1,6 @@
 import { ref } from 'vue-demi'
 import { MockStep } from '../../__mocks__/step'
+import { TourDirection } from '../base'
 import { Tour } from '../tour'
 import StepCondition, { ConditionalType } from './conditional'
 
@@ -7,17 +8,24 @@ it('should run the subtour when condition is true', async () => {
   const tour    = new Tour()
   const subTour = new Tour()
   const subStep = new MockStep()
-  const step    = new StepCondition({
+  const step    = new MockStep()
+  const ifStep  = new StepCondition({
     condition: true,
     tour     : subTour,
   })
 
   subTour.add(subStep)
-  tour.add(step)
+  tour.add(ifStep).add(step)
 
   await tour.start()
 
   expect(subStep.hit).toBeCalled()
+  expect(subTour.isRunning()).toBe(true)
+
+  await tour.next()
+
+  expect(step.hit).toBeCalled()
+  expect(subTour.isRunning()).toBe(false)
 })
 
 it('should run the subtour when condition is false', async () => {
@@ -53,7 +61,7 @@ it('should run the subtour on last step if `prev` called', async () => {
   subTour.add(subStep).add(subStep2)
   tour.add(step).add(lastStep)
 
-  await tour.start(1)
+  await tour.setDirection(TourDirection.BACKWARD).start()
   await tour.prev()
 
   expect(lastStep.hit).toBeCalled()

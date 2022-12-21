@@ -56,12 +56,14 @@ export class Tour extends AbstractTour<TourOptions> {
   protected index: number
   protected steps: AbstractTour[]
   protected onFinishedHooks: Array<() => void | Promise<void>>
+  protected running: boolean
 
   declare protected parent?: Tour
 
   constructor (options?: Partial<TourOptions>) {
     super(options as TourOptions)
 
+    this.running         = false
     this.index           = -1
     this.steps           = []
     this.onFinishedHooks = []
@@ -99,6 +101,13 @@ export class Tour extends AbstractTour<TourOptions> {
    */
   public getSteps (): AbstractTour[] {
     return this.steps
+  }
+
+  /**
+   * Get running status
+   */
+  public isRunning () {
+    return this.running
   }
 
   /**
@@ -219,9 +228,11 @@ export class Tour extends AbstractTour<TourOptions> {
   /**
    * Show and start the tour
    */
-  public async start (index = 0, direction = TourDirection.FORWARD) {
-    this.index     = index
-    this.direction = direction
+  public async start () {
+    this.running = true
+    this.index   = this.direction === TourDirection.BACKWARD
+      ? this.steps.length - 1
+      : 0
 
     if (this.parent)
       this.attach(this.parent)
@@ -237,6 +248,8 @@ export class Tour extends AbstractTour<TourOptions> {
 
     if (this.parent)
       this.detach(this.parent)
+
+    this.running = false
   }
 
   /**
