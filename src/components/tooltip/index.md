@@ -1,9 +1,6 @@
-<script setup>
+<script setup lang="ts">
   import { vPTooltip } from '.'
   import pButton from '../button/Button.vue'
-  import { ref } from 'vue-demi'
-
-  const title = ref('Hello World')
 </script>
 
 # Tooltip

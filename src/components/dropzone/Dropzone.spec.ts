@@ -376,3 +376,54 @@ it('should limiting files if maxlength provided', async () => {
     file1,
   ])
 })
+
+it('should has style disabled if prop `disabled` was given', () => {
+  const screen = render({
+    components: { Dropzone },
+    template  : '<Dropzone disabled />',
+  })
+
+  const dropzone = screen.getByTestId('dropzone')
+  const input    = screen.getByTestId('dropzone-input')
+
+  expect(dropzone).toHaveClass('dropzone--disabled')
+  expect(input).toBeDisabled()
+})
+
+it('should has style disabled if prop `disabled` was given', () => {
+  const screen = render({
+    components: { Dropzone },
+    template  : '<Dropzone readonly />',
+  })
+
+  const dropzone = screen.getByTestId('dropzone')
+  const input    = screen.getByTestId('dropzone-input')
+
+  expect(dropzone).toHaveClass('dropzone--readonly')
+  expect(input).toBeDisabled()
+})
+
+it('should reset v-model on cancel if prop `clearOnReset` set to true', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Dropzone },
+    template  : `
+      <Dropzone v-model="model" clear-on-cancel />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('dropzone-input')
+  const file1 = new File(['12345679'], 'notes.png', { type: 'image/png' })
+  const files = [file1]
+
+  await fireEvent.change(input, { target: { files } })
+
+  expect(model.value).toStrictEqual(file1)
+
+  await fireEvent.change(input, { target: { files: [] } })
+
+  expect(model.value).toBeUndefined()
+})

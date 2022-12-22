@@ -38,11 +38,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .dropdown__item {
-  @apply px-3 py-2 cursor-pointer text-body-100 w-full select-none text-left;
+  @apply px-3 py-2 cursor-pointer text-default w-full select-none text-left;
 
   &:hover,
   &:focus-visible {
-    @apply bg-background-75;
+    @apply bg-default-alpha;
   }
 }
 </style>

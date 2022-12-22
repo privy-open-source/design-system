@@ -121,6 +121,17 @@ You can set input placeholder via `placeholder` props
 </template>
 ```
 
+## Error State
+<preview>
+  <p-select error />
+</preview>
+
+```vue
+<template>
+  <p-select error />
+</template>
+```
+
 ## Binding v-model
 
 <preview>
@@ -302,6 +313,7 @@ To do this, you need add the province value as **watch dependencies**. It will a
 | `placeholder` | `String`  |      `-`      | Input placeholder                  |
 | `disabled`    | `Boolean` |    `false`    | Disabled state                     |
 | `readonly`    | `Boolean` |    `false`    | Readonly state                     |
+| `error`       | `Boolean` |    `false`    | Error state                        |
 | `emptyText`   | `String`  |   `No Data`   | Label when options is empty        |
 | `loadingText` | `String`  | `Loading...`  | Label when loading                 |
 | `adapter`     | `Adapter` | `BaseAdapter` | Adapter for loading option's items |

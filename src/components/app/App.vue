@@ -15,14 +15,15 @@
   * Hyperlink
   */
   a {
-    @apply underline text-primary-100 hover:text-primary-hovered;
+    --p-color-primary-hover: darken(theme(backgroundColor.accent.emphasis), 5%);
+    @apply underline text-accent hover:bg-[color:var(--p-color-primary-hover)];
   }
 
   /**
   * Caption
   */
   caption {
-    @apply text-xs text-subtext-100;
+    @apply text-xs text-muted;
   }
 
 }

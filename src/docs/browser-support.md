@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue-demi'
+  import { ref, onMounted } from 'vue-demi'
   import pTable from '../components/table/Table.vue'
   import pLabel from '../components/label/Label.vue'
   import { defineTable } from '../components/table'
@@ -81,6 +81,8 @@
 We try our best to support many browsers as possible but technologies always grow with very fast speed.
 _We need to keep moving forward, and savoring the journey_ 😎
 
+{{ isSupport }}
+
 ## Support List
 
 <p-table variant="static" :fields="fields" :items="items">
@@ -94,6 +96,6 @@ _We need to keep moving forward, and savoring the journey_ 😎
     {{ item.browser }}
   </template>
   <template #cell(version)="{ item }">
-    <p-label size="sm" variant="light">{{ item.version }}</p-label>
+    <p-label size="sm">{{ item.version }}</p-label>
   </template>
 </p-table>

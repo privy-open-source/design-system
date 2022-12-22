@@ -43,3 +43,35 @@ it('should be able travel focus on elements', () => {
   expect(itemA).toHaveFocus()
   expect(itemB).not.toHaveFocus()
 })
+
+it('should stop focus on last item if repeat set to false', () => {
+  const div = document.createElement('div')
+
+  div.innerHTML = `
+    <button data-testid="1">A</button>
+    <button data-testid="2">B</button>
+  `
+
+  document.body.append(div)
+
+  const target   = shallowRef(div)
+  const { next } = useFocus(target, false)
+
+  const itemA = queryByTestId(div, '1')
+  const itemB = queryByTestId(div, '2')
+
+  next()
+
+  expect(itemA).toHaveFocus()
+  expect(itemB).not.toHaveFocus()
+
+  next()
+
+  expect(itemA).not.toHaveFocus()
+  expect(itemB).toHaveFocus()
+
+  next()
+
+  expect(itemA).not.toHaveFocus()
+  expect(itemB).toHaveFocus()
+})

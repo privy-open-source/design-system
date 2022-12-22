@@ -1,6 +1,6 @@
 import { useSingleton } from '../global/use-singleton'
 
-export type ToastTypeVariant = 'info' | 'success' | 'warn' | 'error'
+export type ToastTypeVariant = 'info' | 'success' | 'warning' | 'error'
 
 export type ToastStyleVariant = 'simple' | 'filled'
 

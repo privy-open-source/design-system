@@ -52,6 +52,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    error: {
+      type   : Boolean,
+      default: false,
+    },
     autoGrow: {
       type   : Boolean,
       default: false,
@@ -97,6 +101,9 @@ export default defineComponent({
 
       if (props.readonly)
         results.push('textarea--readonly')
+
+      if (props.error)
+        results.push('textarea--error', 'state--error')
 
       return results
     })
@@ -144,31 +151,36 @@ export default defineComponent({
   @apply flex flex-auto relative;
 
   &__input {
-    @apply p-3 rounded-sm border border-secondary-25 border-solid placeholder:text-subtext-75 w-full outline-none bg-white resize-none min-h-[46px];
+    @apply p-3 rounded border border-solid border-muted hover:border-subtle focus:border-subtle placeholder:text-muted w-full outline-none text-default bg-default resize-none min-h-[46px] focus:ring-4 focus:ring-subtle/10 focus:z-[1];
 
-    &:focus {
-      @apply border-secondary-75 ring ring-secondary-25 ring-opacity-30;
+    .textarea--readonly & {
+      @apply hover:border-muted focus:border-muted focus:ring-0 focus:z-0;
+    }
+
+    .textarea--disabled & {
+      @apply bg-muted border-muted pointer-events-none text-muted;
+    }
+
+    .textarea--resize & {
+      @apply resize-y;
+    }
+
+    .textarea--autogrow & {
+      @apply overflow-hidden;
+    }
+
+    .state--error &,
+    .textarea--error & {
+      @apply border-danger-emphasis hover:border-danger-emphasis;
+
+      &:focus {
+        @apply ring-danger border-danger-emphasis;
+      }
     }
   }
 
   &__counter {
-    @apply text-right text-subtext-50 text-xs absolute bottom-1 right-1 pointer-events-none;
-  }
-
-  &--autogrow {
-    .textarea__input {
-      @apply overflow-hidden;
-    }
-  }
-
-  &--resize {
-    .textarea__input {
-      @apply resize-y;
-    }
-  }
-
-  &--disabled {
-    @apply bg-secondary-5 pointer-events-none text-body-50;
+    @apply text-right text-muted text-xs absolute bottom-1 right-1 pointer-events-none z-1;
   }
 }
 

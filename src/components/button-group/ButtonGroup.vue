@@ -48,87 +48,179 @@ export default defineComponent({
 
 <style lang="postcss">
 .btn-group {
-  @apply inline-flex items-center;
+  @apply relative inline-flex items-center;
 
-  &--xs {
-    .btn {
-      &:not(.btn--icon),
-      .dropdown > & {
-        @apply px-2 py-1 gap-1 text-sm;
-      }
+  > .btn {
+    @apply relative flex-auto;
 
-      &:first-child,
-      .dropdown:first-child {
-        @apply rounded-l-xs;
-      }
+    /**
+    * Set right radius to 0 when button is
+    * not the last child
+    */
+    &:not(:last-child) {
+      @apply rounded-r-none;
+    }
 
-      &:last-child {
-        @apply rounded-r-xs;
+    /**
+    * Set left radius to 0 when button is:
+    * - the third or more child
+    * - not the first child
+    * - the next button are dropdown
+    */
+    &:nth-child(n + 3),
+    &:not(:first-child),
+    + .dropdown > .btn {
+      @apply rounded-l-none;
+    }
+
+    /**
+    * Bring the hover, focus, and active button
+    * to the front to overlay borders
+    */
+    &:is(:hover, :focus, :active, .active) {
+      @apply z-[1];
+    }
+
+    /**
+    * Prevent double borders
+    * when buttons are next to each other
+    * and give darken color of left border
+    * to separate each other
+    */
+    &:not(:first-child) {
+      @apply ml-[-1px];
+
+      &.btn--primary,
+      &.btn--success,
+      &.btn--warning,
+      &.btn--danger {
+        @apply border-l-subtle-alpha;
       }
     }
   }
 
-  &--sm {
+  /**
+  * Right radius should be 0 when dropdown
+  * is not the last child
+  * Left radius should be 0 if dropdown is
+  * not the first child
+  */
+  > .dropdown {
+    &:not(:last-child) {
+      .btn {
+        @apply rounded-r-none;
+      }
+    }
+
+    /**
+    * Prevent double borders
+    * when dropdowns are next to each other
+    * Give darken color of left border
+    * to separate each other
+    */
+    &:not(:first-child) {
+      .btn {
+        @apply ml-[-1px] rounded-l-none border-l-subtle-alpha;
+      }
+    }
+  }
+
+  /**
+  * Sizing the button group
+  * and overwrite the default size
+  * of buttons
+  */
+  &&--xs:not(&--pill) {
     .btn {
       &:not(.btn--icon),
       .dropdown .btn {
-        @apply px-4 py-2 gap-2 text-base;
+        @apply px-2 py-[2px] gap-1 text-sm;
 
         &:first-child {
-          @apply rounded-l-sm;
+          @apply rounded-l-[6px];
         }
 
         &:last-child {
-          @apply rounded-r-sm;
+          @apply rounded-r-[6px];
+        }
+      }
+
+      &:is(.btn--icon) {
+        @apply h-[25.88px] px-1;
+      }
+    }
+  }
+
+  &&--sm:not(&--pill) {
+    .btn {
+      &:not(.btn--icon),
+      .dropdown .btn {
+        @apply px-4 py-1 gap-2 text-base;
+
+        &:first-child {
+          @apply rounded-l-[7px];
+        }
+
+        &:last-child {
+          @apply rounded-r-[7px];
+        }
+      }
+
+      &:is(.btn--icon) {
+        @apply h-[34px] px-2;
+      }
+    }
+  }
+
+  &&--md:not(&--pill),
+  &&--lg:not(&--pill) {
+    .btn {
+      &:not(.btn--icon),
+      .dropdown .btn {
+        &:first-child {
+          @apply rounded-l;
+        }
+
+        &:last-child {
+          @apply rounded-r;
         }
       }
     }
   }
 
-  &--md {
-    .btn {
-      &:not(.btn--icon),
-      .dropdown > .btn {
-        @apply px-5 py-3 gap-3 text-base;
-      }
-    }
-  }
-
-  &--lg {
+  &&--md {
     .btn {
       &:not(.btn--icon),
       .dropdown .btn {
-        @apply px-8 py-5 gap-4 text-base;
+        @apply px-5 py-[10px] gap-3 text-base;
+      }
+
+      &:is(.btn--icon) {
+        @apply h-[46] px-3;
       }
     }
   }
 
-  &--md,
-  &--lg {
+  &&--lg:not(&--pill) {
     .btn {
-      &:first-child {
-        @apply rounded-l;
+      &:not(.btn--icon),
+      .dropdown .btn {
+        @apply px-8 py-4 gap-4 text-base;
       }
 
-      &:last-child {
-        @apply rounded-r;
-      }
-    }
-
-    .dropdown {
-      &:first-child > .btn {
-        @apply rounded-l;
-      }
-
-      &:last-child > .btn {
-        @apply rounded-r;
+      &:is(.btn--icon) {
+        @apply px-4 h-[58px];
       }
     }
   }
 
-  &--pill {
-    .btn,
-    .dropdown .btn {
+  /**
+  * The left radius of first child and
+  * the right radius of the last child
+  * should be fully rounded in pill variant
+  */
+  &&--pill {
+    > .btn {
       &:first-child {
         @apply rounded-l-full;
       }
@@ -138,34 +230,5 @@ export default defineComponent({
       }
     }
   }
-
-  .btn {
-    @apply rounded-none;
-
-    &--solid,
-    &--ghost {
-      &:not(:last-child) {
-        &.btn--primary,
-        &.btn--secondary,
-        &.btn--success,
-        &.btn--warning,
-        &.btn--info,
-        &.btn--danger,
-        &.btn--gold {
-          @apply border-r-black border-opacity-10;
-        }
-      }
-    }
-
-    &--outline,
-    &--ghost {
-      @apply ml-[-1px];
-    }
-  }
-
-  .dropdown > .btn {
-    @apply rounded-none;
-  }
-
 }
 </style>

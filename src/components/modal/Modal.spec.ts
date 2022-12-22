@@ -348,3 +348,21 @@ it('should have style `center` if setting the centered prop', () => {
   expect(modal).toBeInTheDocument()
   expect(modal).toHaveClass('modal--centered')
 })
+
+it('should have style `banner` if setting the banner prop', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        title="Modal Title"
+        banner>
+        Modal Text
+      </Modal>
+    `,
+  })
+
+  const modal = screen.queryByTestId('modal')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).toHaveClass('modal--banner')
+})

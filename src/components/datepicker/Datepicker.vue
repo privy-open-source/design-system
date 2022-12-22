@@ -15,9 +15,12 @@
         :placeholder="placeholder"
         :disabled="disabled"
         readonly
-        @focus="onFocus" />
-      <IconCalendar
-        class="datepicker__icon" />
+        @focus="onFocus">
+        <template #append>
+          <IconCalendar
+            class="datepicker__icon" />
+        </template>
+      </Input>
     </template>
 
     <Calendar
@@ -75,6 +78,10 @@ export default defineComponent({
       type   : Boolean,
       default: undefined,
     },
+    error: {
+      type   : Boolean,
+      default: undefined,
+    },
     max: {
       type   : Date,
       default: undefined,
@@ -115,6 +122,9 @@ export default defineComponent({
       if (props.readonly)
         result.push('datepicker--readonly')
 
+      if (props.error)
+        result.push('datepicker--error', 'state--error')
+
       return result
     })
 
@@ -148,7 +158,7 @@ export default defineComponent({
   }
 
   &__icon {
-    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-secondary-75 pointer-events-none;
+    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-muted pointer-events-none;
   }
 
   > .dropdown__menu {

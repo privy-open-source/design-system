@@ -101,6 +101,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    banner: {
+      type   : Boolean,
+      default: false,
+    },
     noCloseOnBackdrop: {
       type   : Boolean,
       default: false,
@@ -130,6 +134,9 @@ export default defineComponent({
 
       if (props.centered)
         result.push('modal--centered')
+
+      if (props.banner)
+        result.push('modal--banner')
 
       return result
     })
@@ -180,7 +187,7 @@ export default defineComponent({
   /**
   * Set modal backdrop
   */
-  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-black bg-opacity-30 z-[1060] overscroll-contain;
+  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-emphasis bg-opacity-30 z-[1060] overscroll-contain;
 
   &--banner {
     .modal {
@@ -203,10 +210,10 @@ export default defineComponent({
   * in white
   */
   &__content {
-    @apply my-8 bg-white rounded-md relative;
+    @apply my-8 bg-default rounded relative shadow-2xl;
 
     .modal__dismiss {
-      @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[1061] text-black text-opacity-30;
+      @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[1061] text-default/30 hover:text-default/50;
     }
   }
 

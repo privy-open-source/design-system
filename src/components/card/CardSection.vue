@@ -13,7 +13,8 @@
       v-else-if="title"
       class="card__header card__header--default">
       <Subheading
-        overline="medium">
+        weight="medium"
+        overline>
         {{ title }}
       </Subheading>
 

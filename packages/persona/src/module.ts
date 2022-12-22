@@ -1,6 +1,10 @@
-import { fileURLToPath } from 'node:url'
-import { defineNuxtModule, installModule } from '@nuxt/kit'
-import preset from '@privyid/tailwind-preset'
+import {
+  defineNuxtModule,
+  createResolver,
+  addPlugin,
+  addComponentsDir,
+  extendViteConfig,
+} from '@nuxt/kit'
 
 export interface ModuleOptions {
   /**
@@ -8,27 +12,27 @@ export interface ModuleOptions {
    * @default true
    */
   font?: boolean,
+  /**
+   * Component prefix
+   * @default 'p'
+   */
+  prefix?: string,
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name     : '@privyid/persona',
-    configKey: 'persona',
+    name         : '@privyid/persona',
+    configKey    : 'persona',
+    compatibility: { nuxt: '>=3.0.0' },
   },
-  defaults: { font: true },
-  hooks   : {
-    'components:dirs' (dirs) {
-      // Add ./components dir to the list
-      dirs.push({
-        path      : fileURLToPath(new URL('components', import.meta.url)),
-        prefix    : 'p',
-        extensions: ['vue'],
-      })
-    },
-  },
+  defaults: { font: true, prefix: 'p' },
   async setup (options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
+
+    // Add alias to unsupported ESM package
     nuxt.options.alias['@carbon/icons-vue/lib'] = '@carbon/icons-vue/es'
 
+    // Add font CDN
     if (options.font) {
       nuxt.options.app.head.link?.push(
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -41,6 +45,27 @@ export default defineNuxtModule<ModuleOptions>({
       )
     }
 
-    await installModule('@nuxtjs/tailwindcss', { config: { presets: [preset] } })
+    // Add Components
+    await addComponentsDir({
+      path      : resolve('./components'),
+      prefix    : options.prefix,
+      extensions: ['vue'],
+    })
+
+    // Add Plugin
+    addPlugin({ src: resolve('./runtime/plugin') })
+
+    // Extend vite config
+    extendViteConfig((config) => {
+      config.optimizeDeps?.exclude?.push('@privyid/persona')
+      config.optimizeDeps?.include?.push(
+        '@testing-library/user-event',
+        'interactjs',
+        'isomorphic-dompurify',
+        'scroll-into-view',
+        'webfontloader',
+        'zxcvbn',
+      )
+    })
   },
 })

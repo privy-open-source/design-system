@@ -4,15 +4,10 @@
     class="radio"
     :class="classNames"
     @click.prevent="toggle">
-    <input
-      type="radio"
-      :value="model"
-      :name="name"
-      :disabled="disabled || readonly">
     <span class="radio__icon">
-      <IconCheck v-if="apperance === 'option'" />
+      <IconCheck v-if="appearance === 'option'" />
       <svg
-        v-else-if="apperance === 'checkbox'"
+        v-else-if="appearance === 'checkbox'"
         width="10"
         height="10"
         viewBox="0 0 14 10"
@@ -21,8 +16,7 @@
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
-          d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z"
-          fill="white" />
+          d="M3.81581 8.48528L5.23002 9.8995L6.64423 8.48528L13.7153 1.41421L12.3011 0L5.23002 7.07107L1.69449 3.53553L0.280273 4.94975L3.81581 8.48528Z" />
       </svg>
 
       <svg
@@ -35,19 +29,23 @@
         <circle
           cx="7"
           cy="7"
-          r="6.25"
-          fill="white" />
+          r="6.25" />
       </svg>
     </span>
     <span class="radio__label">
       <slot />
     </span>
+    <input
+      type="radio"
+      :value="model"
+      :name="name"
+      :disabled="disabled || readonly">
   </label>
 </template>
 
 <script lang="ts">
 import { useVModel } from '.'
-import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/16'
+import IconCheck from '@carbon/icons-vue/lib/checkmark/16'
 import {
   computed,
   defineComponent,
@@ -59,7 +57,7 @@ export interface ChangedInteface {
   state: boolean,
 }
 
-type ApperanceType = 'radio' | 'checkbox' | 'option'
+type AppearanceType = 'radio' | 'checkbox' | 'option' | 'none'
 
 export default defineComponent({
   components: { IconCheck },
@@ -102,8 +100,8 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
-    apperance: {
-      type   : String as PropType<ApperanceType>,
+    appearance: {
+      type   : String as PropType<AppearanceType>,
       default: 'radio',
     },
   },
@@ -127,8 +125,8 @@ export default defineComponent({
       if (props.disabled)
         result.push('radio--disabled')
 
-      if (props.apperance)
-        result.push(`radio--${props.apperance}`)
+      if (props.appearance)
+        result.push(`radio--${props.appearance}`)
 
       return result
     })
@@ -156,34 +154,56 @@ export default defineComponent({
   }
 
   &__icon {
-    @apply w-5 h-5 border rounded-full border-secondary-25 inline-flex items-center justify-center bg-white;
+    @apply w-5 h-5 border rounded-full border-subtle inline-flex items-center justify-center bg-default;
 
-    & > svg {
-      @apply w-3;
+    > svg {
+      @apply w-3 fill-default;
     }
   }
 
-  &--disabled {
+  &__label {
+    @apply text-default;
+  }
+
+  &&--disabled {
     @apply opacity-50;
-  }
 
-  &--checked {
-    .radio__icon {
-      @apply bg-primary-100 border-primary-100;
+    &:not(.radio--checked) {
+      .radio__icon {
+        @apply bg-inactive border-subtle;
+
+        > svg {
+          @apply fill-inactive;
+        }
+      }
     }
   }
 
-  &--checkbox {
+  &&--checked {
     .radio__icon {
-      @apply rounded-tn;
+      @apply bg-accent-emphasis border-accent-emphasis;
+    }
+
+    &.radio--checkbox {
+      .radio__icon {
+        > svg {
+          @apply fill-default;
+        }
+      }
     }
   }
 
-  &--option {
+  &&--checkbox {
+    .radio__icon {
+      @apply rounded-sm;
+    }
+  }
+
+  &&--option {
     .radio__icon {
       @apply order-2 border-none invisible bg-transparent;
 
-      & > svg {
+      > svg {
         @apply w-4;
       }
     }
@@ -192,19 +212,56 @@ export default defineComponent({
       @apply flex-grow;
     }
 
+    .dropdown__menu > .dropdown__subitem > & {
+      .radio__label {
+        @apply ml-0;
+      }
+    }
+
     &.radio--checked {
       .radio__icon {
-        @apply text-primary-100 visible;
+        @apply text-accent visible;
+
+        > svg {
+          @apply fill-accent-emphasis;
+        }
       }
     }
   }
 
-  .dropdown__menu & {
-    @apply px-3 py-2 cursor-pointer text-body-100 w-full select-none text-left;
+  &&--none {
+    .radio__icon {
+      @apply hidden;
+    }
+
+    &.radio--disabled {
+      .card {
+        @apply bg-subtle hover:shadow-none hover:cursor-default;
+      }
+    }
+  }
+
+  .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
+  .dropdown__menu > .dropdown__subitem > & {
+    @apply w-full select-none;
+  }
+
+  .dropdown__menu > .dropdown__subitem > .dropdown__item > & {
+    @apply py-[2px];
+  }
+
+  .dropdown__menu > .dropdown__subitem > & {
+    @apply px-4 py-[10px];
+
+    &:not(.radio--option) {
+      .radio__label {
+        @apply ml-4;
+      }
+    }
 
     &:hover,
     &:focus-visible {
-      @apply bg-background-75;
+      @apply bg-subtle;
     }
   }
 }

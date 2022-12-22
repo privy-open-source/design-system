@@ -1,11 +1,9 @@
 import PersonaModule from '..'
 import { fileURLToPath } from 'node:url'
 import { defineNuxtConfig } from 'nuxt/config'
+import preset from '@privyid/tailwind-preset'
 
 export default defineNuxtConfig({
-  modules: [PersonaModule],
-  alias  : {
-    '@privyid/persona/core'     : fileURLToPath(new URL('../../../src/core/', import.meta.url)),
-    '@privyid/persona/directive': fileURLToPath(new URL('../../../src/directive/', import.meta.url)),
-  },
+  modules: [['@nuxtjs/tailwindcss', { config: { presets: [preset] } }], PersonaModule],
+  alias  : { '@privyid/persona': fileURLToPath(new URL('../dist/', import.meta.url)) },
 })

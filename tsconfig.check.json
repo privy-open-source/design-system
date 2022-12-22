@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strictNullChecks": false,
+    "types": [
+      "vitest",
+      "vite/client",
+      "jest-extended",
+      "interactjs"
+    ]
+  },
+  "include": [
+    "src/**/*.vue",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/__mocks__/**",
+    "coverage",
+    "dist",
+    ".nuxt"
+  ]
+}

@@ -1,4 +1,4 @@
-import PQueue from 'p-queue'
+import PQueue from './utils/queue'
 import {
   DefineComponent,
   Ref,
@@ -23,7 +23,7 @@ export interface GlobalInstance<C extends Component> { component: C, ref: Ref<Co
 let instances: Ref<Map<InjectionKey<Component>, GlobalInstance<any>>>
 let container: App<Element>
 
-const queue = new PQueue({ concurrency: 1 })
+const queue = new PQueue()
 
 /**
  * Create global instance of component, It's will not create the instance if id exist

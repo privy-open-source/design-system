@@ -1,6 +1,8 @@
 <script setup>
   import pBanner from './Banner.vue'
   import pButton from '../button/Button.vue'
+  import pCaption from '../caption/Caption.vue'
+  import pSubheading from '../subheading/Subheading.vue'
 </script>
 
 # Banner
@@ -11,27 +13,31 @@
 
 <preview class="flex-col">
   <p-banner>
-    Your enterprise Privy Balance is running out. Please topup now.
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
   </p-banner>
 </preview>
 
 ```vue
 <template>
   <p-banner>
-    Your enterprise Privy Balance is running out. Please topup now.
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
   </p-banner>
 </template>
 ```
 
-### with Title
+### With title
 
 <preview class="flex-col">
   <p-banner>
-    <div class="font-semibold">
-      Your enterprise Privy Balance is running out. Please topup now.
-    </div>
+    <p-subheading>
+      Your enterprise Privy Balance is running out.
+    </p-subheading>
     <div class="text-sm">
-      Your enterprise Privy Balance is running out. Please topup now.
+      Every sign will requires privy balance. Please make sure you have enough privy balance before sign the document(s)
     </div>
   </p-banner>
 </preview>
@@ -39,29 +45,31 @@
 ```vue
 <template>
   <p-banner>
-    <div class="font-semibold">
-      Your enterprise Privy Balance is running out. Please topup now.
-    </div>
+    <p-subheading>
+      Your enterprise Privy Balance is running out.
+    </p-subheading>
     <div class="text-sm">
-      Your enterprise Privy Balance is running out. Please topup now.
+      Every sign will requires privy balance. Please make sure you have enough privy balance before sign the document(s)
     </div>
   </p-banner>
 </template>
 ```
 
-### with Title + Button
+### With title and button
 
 <preview class="flex-col">
   <p-banner>
-    <div class="font-semibold">
-      Your enterprise Privy Balance is running out. Please topup now.
-    </div>
+    <p-subheading>
+      Your enterprise Privy Balance is running out.
+    </p-subheading>
     <div class="text-sm">
-      Your enterprise Privy Balance is running out. Please topup now.
+      Every sign will requires privy balance.
+      Please make sure you have enough privy balance
+      before sign the document(s)
     </div>
     <div class="mt-3">
-      <p-button variant="outline">Top Up Balance</p-button>
-      <p-button variant="link" color="secondary">Learn More</p-button>
+      <p-button variant="outline" size="sm">Top Up Balance</p-button>
+      <p-button variant="link">Learn More</p-button>
     </div>
   </p-banner>
 </preview>
@@ -69,15 +77,17 @@
 ```vue
 <template>
   <p-banner>
-    <div class="font-semibold">
-      Your enterprise Privy Balance is running out. Please topup now.
-    </div>
+    <p-subheading>
+      Your enterprise Privy Balance is running out.
+    </p-subheading>
     <div class="text-sm">
-      Your enterprise Privy Balance is running out. Please topup now.
+      Every sign will requires privy balance.
+      Please make sure you have enough privy balance
+      before sign the document(s)
     </div>
     <div class="mt-3">
-      <p-button variant="outline">Top Up Balance</p-button>
-      <p-button variant="link" color="secondary">Learn More</p-button>
+      <p-button variant="outline" size="sm">Top Up Balance</p-button>
+      <p-button variant="link">Learn More</p-button>
     </div>
   </p-banner>
 </template>
@@ -88,17 +98,29 @@
 Banner have 2 variants: `info` and `danger`, default is `info`
 
 <preview class="flex-col space-y-3">
-  <p-banner variant="info">Your enterprise Privy Balance is running out. Please topup now.</p-banner>
-  <p-banner variant="danger">Your enterprise Privy Balance is running out. Please topup now.</p-banner>
+  <p-banner variant="info">
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
+  </p-banner>
+  <p-banner variant="danger">
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
+  </p-banner>
 </preview>
 
 ```vue
 <template>
   <p-banner variant="info">
-    Your enterprise Privy Balance is running out. Please topup now.
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
   </p-banner>
   <p-banner variant="danger">
-    Your enterprise Privy Balance is running out. Please topup now.
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
   </p-banner>
 </template>
 ```
@@ -108,13 +130,19 @@ Banner have 2 variants: `info` and `danger`, default is `info`
 You can hide close button with `dismissable` set to `false`
 
 <preview class="flex-col">
-  <p-banner :dismissable="false">Your enterprise Privy Balance is running out. Please topup now.</p-banner>
+  <p-banner :dismissable="false">
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
+  </p-banner>
 </preview>
 
 ```vue
 <template>
   <p-banner :dismissable="false">
-    Your enterprise Privy Balance is running out. Please topup now.
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
   </p-banner>
 </template>
 ```

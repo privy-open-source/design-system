@@ -1,10 +1,13 @@
 {
   "name": "@privyid/browserslist-config",
-  "version": "0.5.0",
-  "packageManager": "yarn@3.3.0",
+  "version": "0.6.0",
+  "packageManager": "yarn@3.3.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "files": [
     "./browserslist-stats.json"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

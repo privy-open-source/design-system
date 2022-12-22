@@ -52,6 +52,17 @@
 </template>
 ```
 
+## Error State
+<preview>
+  <p-textarea error />
+</preview>
+
+```vue
+<template>
+  <p-textarea error />
+</template>
+```
+
 ## Resizeable
 Enable resize button via prop `resize`
 
@@ -104,6 +115,7 @@ Show character counter with prop `show-counter`
 | `placeholder`  | `String`  |   `-`   | Input's placeholder    |
 | `disabled`     | `Boolean` | `false` | Disable state          |
 | `readonly`     | `Boolean` | `false` | Readonly state         |
+| `error`        | `Boolean` | `false` | Error state            |
 | `autogrow`     | `Boolean` | `false` | Enable auto-resize     |
 | `resize`       | `Boolean` | `false` | Enable resize          |
 | `show-counter` | `Boolean` | `false` | Show character counter |

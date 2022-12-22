@@ -1,18 +1,18 @@
 :root {
   --vp-font-family-base: theme(fontFamily.sans);
-  --vp-c-brand: theme(colors.primary.100);
-  --vp-c-brand-light: theme(colors.primary.75);
-  --vp-c-brand-dark: theme(colors.primary.hovered);
-  --c-text-light-1: theme(colors.body.100);
-  --c-text-light-2: theme(colors.body.75);
-  --c-text-light-3: theme(colors.body.50);
+  --vp-c-brand: theme(colors.blue.40);
+  --vp-c-brand-light: theme(colors.blue.50);
+  --vp-c-brand-dark: darken(theme(colors.blue.40), 5%);
+  --c-text-light-1: theme(colors.gray.100);
+  --c-text-light-2: theme(colors.gray.75);
+  --c-text-light-3: theme(colors.gray.45);
   --code-bg-color: #0b2138;
 }
 
 :root.dark {
-  --c-text-light-1: theme(colors.white);
-  --c-text-light-2: theme(colors.body.25);
-  --c-text-light-3: theme(colors.body.50);
+  --c-text-light-1: theme(colors.base.white);
+  --c-text-light-2: theme(colors.gray.25);
+  --c-text-light-3: theme(colors.gray.45);
   --c-bg: #0b1a28;
   --code-bg-color: #132739;
   --code-inline-bg-color: #132739;
@@ -72,12 +72,12 @@
   }
 
   th, td {
-    @apply border-primary-25 dark:border-dark-default;
+    @apply border-accent dark:border-on-emphasis-subtle;
   }
 
   thead > tr:first-child,
   tr:nth-child(2n) {
-    @apply bg-primary-5 dark:bg-dark-90;
+    @apply bg-accent dark:bg-emphasis-subtle;
   }
 
   .token.attr-name {

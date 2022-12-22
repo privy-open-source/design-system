@@ -9,7 +9,7 @@
   import pDropdownItem from '../dropdown/DropdownItem.vue'
   import pNavForm from '../nav/NavForm.vue'
   import pInput from '../input/Input.vue'
-  import pInputGroup from '../input/InputGroup.vue'
+  import pInputGroup from '../input-group/InputGroup.vue'
   import pButton from '../button/Button.vue'
   import pAvatar from '../avatar/Avatar.vue'
   import pCollapse from '../collapse/Collapse.vue'
@@ -46,7 +46,9 @@
       <img src="../../public/assets/images/icon-privy.svg" />
     </p-navbar-brand>
     <p-navbar-nav>
-      <p-nav-item>Label</p-nav-item>
+      <p-nav-item active>Home</p-nav-item>
+      <p-nav-item>Products</p-nav-item>
+      <p-nav-item>Solutions</p-nav-item>
     </p-navbar-nav>
   </p-navbar>
 </preview>
@@ -58,6 +60,8 @@
       <img src="assets/images/icon-privy.svg" />
     </p-navbar-brand>
     <p-navbar-nav>
+      <p-nav-item active>Label</p-nav-item>
+      <p-nav-item>Label</p-nav-item>
       <p-nav-item>Label</p-nav-item>
     </p-navbar-nav>
   </p-navbar>
@@ -112,7 +116,8 @@ Navbar brand is used for company, product, or project name. You can add permalin
       <img src="../../public/assets/images/logo.svg" />
     </p-navbar-brand>
     <p-navbar-nav>
-      <p-nav-item active>Label</p-nav-item>
+      <p-nav-item active>Home</p-nav-item>
+      <p-nav-item>Products</p-nav-item>
     </p-navbar-nav>
   </p-navbar>
 </preview>
@@ -124,7 +129,8 @@ Navbar brand is used for company, product, or project name. You can add permalin
       <img src="assets/images/logo.svg" />
     </p-navbar-brand>
     <p-navbar-nav>
-      <p-nav-item active>Label</p-nav-item>
+      <p-nav-item active>Home</p-nav-item>
+      <p-nav-item>Products</p-nav-item>
     </p-navbar-nav>
   </p-navbar>
 </template>

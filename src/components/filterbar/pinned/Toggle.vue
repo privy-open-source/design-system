@@ -2,6 +2,7 @@
   <Button
     class="filterbar__item filterbar--pinned"
     variant="input"
+    size="sm"
     :class="{ 'filterbar--active': model }"
     @click="toggle">
     {{ schema.label }}

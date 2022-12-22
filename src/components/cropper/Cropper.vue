@@ -49,14 +49,13 @@
           @click="zoomOut()">
           <IconZoomOut />
         </p-button>
-        <input
+        <p-input-range
           v-model="scale"
           data-testid="cropper-zoom-slider"
           class="cropper__slider"
           min="0.5"
           max="2"
-          step="0.1"
-          type="range">
+          step="0.1" />
         <p-button
           data-testid="cropper-zoom-in"
           size="xs"
@@ -127,6 +126,7 @@ import {
 } from 'vue-demi'
 import { usePinch } from './utils/use-pinch'
 import pButton from '../button/Button.vue'
+import pInputRange from '../input-range/InputRange.vue'
 import IconRotateLeft from '@carbon/icons-vue/lib/rotate--counterclockwise/16'
 import IconRotateRight from '@carbon/icons-vue/lib/rotate--clockwise/16'
 import IconZoomIn from '@carbon/icons-vue/lib/zoom--in/16'
@@ -147,6 +147,7 @@ export default defineComponent({
   directives: { pAspectRatio },
   components: {
     pButton,
+    pInputRange,
     IconRotateLeft,
     IconRotateRight,
     IconZoomIn,
@@ -428,7 +429,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .cropper {
-  @apply bg-white w-full aspect-compat-square;
+  @apply bg-default w-full aspect-compat-square;
 
   &__canvas {
     @apply hidden;
@@ -442,7 +443,7 @@ export default defineComponent({
 
   &__mask {
     @apply pointer-events-none touch-none select-none;
-    @apply border border-white border-dashed box-border shadow-mask absolute inset-0 m-auto max-w-[66.666667%];
+    @apply border border-default border-dashed box-border shadow-mask absolute inset-0 m-auto max-w-[66.666667%];
   }
 
   &__image {

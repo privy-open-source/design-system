@@ -36,7 +36,9 @@
 
     <div
       v-if="!sectioned"
-      class="card__body">
+      data-testid="card-body"
+      class="card__body"
+      :class="bodyClass">
       <slot />
     </div>
     <slot v-else />
@@ -88,6 +90,10 @@ export default defineComponent({
       type   : Boolean,
       default: true,
     },
+    bodyClass: {
+      type   : [String, Array],
+      default: undefined,
+    },
   },
   emits: ['dismissed'],
   setup (props, { emit }) {
@@ -135,7 +141,7 @@ export default defineComponent({
 * Last Update   : May 23, 2022
 */
 .card {
-  @apply border bg-white border-secondary-5 rounded-md;
+  @apply border bg-default border-default rounded;
 
   /*
   * Card Body & Card Header
@@ -154,7 +160,7 @@ export default defineComponent({
     }
 
     .card__section {
-      @apply border-b border-black border-opacity-10;
+      @apply border-b border-subtle-alpha;
 
       /**
       * Adding border-top in the first element
@@ -196,11 +202,11 @@ export default defineComponent({
   }
 
   /**
-  * Give background background-100 (#f5f5f5)
+  * Give background muted
   * If Card disabled
   */
   &&--disabled {
-    @apply bg-background-100;
+    @apply bg-muted;
   }
 
   /**
@@ -230,12 +236,12 @@ export default defineComponent({
     }
 
     &__dismiss {
-      @apply text-secondary-50 hover:text-secondary-100 hover:cursor-pointer;
+      @apply text-default/30 hover:text-default/50 hover:cursor-pointer;
     }
   }
 
   &__section {
-    @apply border-b border-black border-opacity-10;
+    @apply border-b border-subtle-alpha;
 
     &:last-child {
       @apply border-b-0;
@@ -243,7 +249,7 @@ export default defineComponent({
 
     &&--disabled,
     &.card--disabled {
-      @apply bg-background-100;
+      @apply bg-muted;
     }
 
     &.card--disabled {

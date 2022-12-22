@@ -88,26 +88,40 @@ export default defineComponent({
 
 <style lang="postcss">
 .banner {
-  @apply p-4 flex space-x-2 rounded text-body-100;
+  @apply p-4 flex space-x-2 rounded text-subtle;
 
-  &--info {
-    @apply bg-background-100;
-
-    .banner__icon {
-      @apply text-primary-100;
+  a {
+    &:not(.btn) {
+      @apply underline decoration-solid text-accent;
     }
   }
 
-  &--danger {
-    @apply bg-danger-5;
+  .subheading {
+    &:not(&--md) {
+      @apply mb-1;
+    }
+
+    @apply mb-2;
+  }
+
+  &&--info {
+    @apply bg-subtle;
 
     .banner__icon {
-      @apply text-danger-100;
+      @apply text-accent;
+    }
+  }
+
+  &&--danger {
+    @apply bg-danger;
+
+    .banner__icon {
+      @apply text-danger;
     }
   }
 
   &__body {
-    @apply flex-grow;
+    @apply flex-grow text-sm;
   }
 
   &__icon,
@@ -116,7 +130,7 @@ export default defineComponent({
   }
 
   &__close {
-    @apply cursor-pointer text-black text-opacity-30 hover:text-opacity-50;
+    @apply cursor-pointer text-default/30 hover:text-default/50;
   }
 }
 </style>

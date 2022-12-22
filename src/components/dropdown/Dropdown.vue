@@ -2,7 +2,7 @@
   <div
     ref="dropdown"
     class="dropdown"
-    :class="{ 'dropdown--open': isOpen }"
+    :class="[{ 'dropdown--open': isOpen }, classNames]"
     data-testid="dropdown">
     <slot
       name="activator"
@@ -38,7 +38,7 @@
         class="dropdown__menu">
         <DropdownGroup
           ref="wizard"
-          class="dropdown__menuContainer">
+          class="dropdown__menu-container">
           <slot />
         </DropdownGroup>
       </div>
@@ -54,6 +54,7 @@ import {
   watch,
   toRef,
   watchEffect,
+  computed,
 } from 'vue-demi'
 import {
   templateRef,
@@ -107,7 +108,7 @@ export default defineComponent({
     },
     color: {
       type   : String as PropType<ColorVariant>,
-      default: 'primary',
+      default: 'default',
     },
     size: {
       type   : String as PropType<SizeVariant>,
@@ -129,6 +130,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    divider: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -147,6 +152,15 @@ export default defineComponent({
     const isOpen    = useVModel(props)
 
     const { next: nextFocus, prev: prevFocus } = useFocus(menu)
+
+    const classNames = computed(() => {
+      const result: string[] = ['']
+
+      if (props.divider)
+        result.push('dropdown--divider')
+
+      return result
+    })
 
     function toggle () {
       if (!props.disabled) {
@@ -259,6 +273,7 @@ export default defineComponent({
 
     return {
       isOpen,
+      classNames,
       toggle,
       open,
       close,
@@ -272,21 +287,35 @@ export default defineComponent({
   @apply relative inline-flex;
 
   &__menu {
-    @apply max-h-64 border rounded w-full min-w-[15rem] bg-white z-10 border-secondary-25 shadow-xl overflow-x-hidden overflow-y-auto absolute;
-  }
+    @apply max-h-64 border rounded w-full min-w-[15rem] bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
 
-  &__menuContainer > .dropdown__item:first-child,
-  &__menuContainer > .dropdown__subitem:first-child .dropdown__item {
-    @apply rounded-t;
-  }
+    &-container {
+      > .dropdown__item {
+        &:first-child,
+        .dropdown__subitem:first-child & {
+          @apply rounded-t-[7px];
+        }
 
-  &__menuContainer > .dropdown__item:last-child,
-  &__menuContainer > .dropdown__subitem:last-child .dropdown__item {
-    @apply rounded-b;
+        &:last-child,
+        .dropdown__subitem:last-child & {
+          @apply rounded-b-[7px];
+        }
+      }
+    }
   }
 
   &__activator > &__caret {
-    @apply self-center;
+    @apply self-center -mr-[3px];
+  }
+
+  &&--divider {
+    .dropdown {
+      &__menu {
+        :where(.checkbox, .radio) {
+          @apply border-b border-solid border-b-subtle-alpha last:border-b-0;
+        }
+      }
+    }
   }
 }
 </style>

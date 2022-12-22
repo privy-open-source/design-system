@@ -262,3 +262,16 @@ it('should re-focus to search input if user start typing while focus on items', 
 
   expect(input).toHaveFocus()
 })
+
+it('should have style error if `error` prop was provided', () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select error />
+    `,
+  })
+
+  const select = screen.queryByTestId('select')
+
+  expect(select).toHaveClass('select--error', 'state--error')
+})

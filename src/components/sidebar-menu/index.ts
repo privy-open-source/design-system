@@ -1,4 +1,5 @@
 import { Component } from '../global/use-singleton'
+import { AlignVariant } from '../nav'
 
 export interface SubMenu {
   name: string,
@@ -20,6 +21,7 @@ export interface Menu {
   bottom?: boolean,
   condensed?: boolean,
   items?: MenuItem[],
+  align?: AlignVariant,
 }
 
 export function defineMenu (menus: Menu[]): Menu[] {

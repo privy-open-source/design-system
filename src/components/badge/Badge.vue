@@ -18,7 +18,7 @@ export default defineComponent({
   props: {
     color: {
       type   : String as PropType<ColorVariant>,
-      default: 'primary',
+      default: 'default',
     },
     variant: {
       type   : String as PropType<StyleVariant>,
@@ -34,7 +34,7 @@ export default defineComponent({
         result.push(`badge--${props.color}`)
 
       if (props.variant)
-        result.push(`badge--${props.variant}`)
+        result.push(`badge--variant-${props.variant}`)
 
       return result
     })
@@ -57,42 +57,34 @@ export default defineComponent({
   * Set global style
   * of badge
   */
-  @apply inline-block font-bold text-xs px-2 py-0.5 text-white rounded-full;
+  @apply inline-block font-bold text-xs px-2 py-0.5 text-on-emphasis rounded-full;
 
   /**
   * Provide colors variant
-  * 7 colors variant available
-  * primary, secondary, success
-  * info, warning, danger, & gold
+  * 4 colors variant available
+  * primary, success, warning
+  * & danger
   */
-  &--default {
+  &&--variant-default {
     &.badge {
-      &--primary {
-        @apply bg-primary-100;
+      &--default {
+        @apply bg-emphasis-subtle;
       }
 
-      &--secondary {
-        @apply bg-secondary-100;
+      &--primary {
+        @apply bg-accent-emphasis;
       }
 
       &--success {
-        @apply bg-success-100;
-      }
-
-      &--info {
-        @apply bg-info-100;
+        @apply bg-success-emphasis;
       }
 
       &--warning {
-        @apply bg-warning-100;
+        @apply bg-warning-emphasis;
       }
 
       &--danger {
-        @apply bg-danger-100;
-      }
-
-      &--gold {
-        @apply bg-gold-100;
+        @apply bg-danger-emphasis;
       }
     }
   }
@@ -101,35 +93,27 @@ export default defineComponent({
   * Set color of Badge
   * in light and inverse variant
   */
-  &--light,
-  &--inverse {
+  &&--variant-light,
+  &&--variant-inverse {
     &.badge {
-      &--primary {
-        @apply text-primary-100;
+      &--default {
+        @apply text-subtle;
       }
 
-      &--secondary {
-        @apply text-body-75;
+      &--primary {
+        @apply text-accent;
       }
 
       &--success {
-        @apply text-success-100;
-      }
-
-      &--info {
-        @apply text-info-100;
+        @apply text-success;
       }
 
       &--warning {
-        @apply text-warning-100;
+        @apply text-warning;
       }
 
       &--danger {
-        @apply text-danger-100;
-      }
-
-      &--gold {
-        @apply text-gold-100;
+        @apply text-danger;
       }
     }
   }
@@ -138,34 +122,26 @@ export default defineComponent({
   * Set background
   * in light variant
   */
-  &--light {
+  &--variant-light {
     &.badge {
       &--primary {
-        @apply bg-primary-5;
+        @apply bg-accent;
       }
 
-      &--secondary {
-        @apply bg-secondary-5;
+      &--default {
+        @apply bg-base-black/5;
       }
 
       &--success {
-        @apply bg-success-5;
-      }
-
-      &--info {
-        @apply bg-info-5;
+        @apply bg-success;
       }
 
       &--warning {
-        @apply bg-warning-5;
+        @apply bg-warning;
       }
 
       &--danger {
-        @apply bg-danger-5;
-      }
-
-      &--gold {
-        @apply bg-gold-5;
+        @apply bg-danger;
       }
     }
   }
@@ -174,16 +150,15 @@ export default defineComponent({
   * Remove background
   * in inverse and dot variant
   */
-  &--inverse,
-  &--dot {
-    @apply bg-transparent;
+  &:where(.badge--variant-inverse, .badge--dot) {
+    @apply bg-default;
   }
 
   /**
   * Reset box-model of
   * dot variant
   */
-  &--dot {
+  &&--dot {
     @apply p-0 m-0 tracking-[0];
 
     .dot {

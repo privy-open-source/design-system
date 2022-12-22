@@ -11,7 +11,9 @@
 
 <script lang="ts">
 import {
-  defineComponent, inject, PropType,
+  defineComponent,
+  inject,
+  PropType,
 } from 'vue-demi'
 import Nav from '../nav/Nav.vue'
 import { AlignVariant } from '../nav'
@@ -38,7 +40,7 @@ export default defineComponent({
 <style lang="postcss">
 .navbar {
   &__nav {
-    @apply flex flex-row;
+    @apply flex flex-row items-center;
 
     &.nav--align-center {
       @apply mx-auto;
@@ -52,7 +54,7 @@ export default defineComponent({
       &__activator {
         @apply relative;
         &.btn {
-          @apply pl-3 pr-32 border-transparent shadow-none rounded font-normal text-body-50 hover:text-body-100 hover:bg-transparent;
+          @apply pl-3 pr-10 border-transparent bg-transparent shadow-none rounded font-normal text-subtle hover:text-default hover:shadow-none hover:border-transparent;
         }
 
         .dropdown__caret {
@@ -63,7 +65,7 @@ export default defineComponent({
       &--open {
         .dropdown__activator {
           &.btn {
-            @apply text-body-100 cursor-default bg-transparent hover:bg-transparent;
+            @apply text-default cursor-default border-transparent bg-transparent hover:bg-transparent;
           }
         }
       }
@@ -76,7 +78,7 @@ export default defineComponent({
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply bg-secondary-5 hover:bg-secondary-5;
+              @apply bg-subtle hover:bg-subtle;
             }
           }
         }
@@ -84,16 +86,12 @@ export default defineComponent({
 
       &.nav--condensed {
         .nav__link--active {
-          @apply bg-secondary-5;
+          @apply bg-subtle;
         }
       }
     }
 
     &.nav--lines {
-      .nav__link {
-        @apply pr-32;
-      }
-
       .dropdown {
         &__activator {
           &.btn {
@@ -104,7 +102,7 @@ export default defineComponent({
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply border-b-body-100;
+              @apply border-b-on-emphasis;
             }
           }
         }

@@ -14,7 +14,7 @@ it('should render properly without any props', () => {
   const text  = screen.queryByText('Label')
 
   expect(label).toBeInTheDocument()
-  expect(label).toHaveClass('label', 'label--default', 'label--md')
+  expect(label).toHaveClass('label', 'label--default', 'label--variant-default', 'label--md')
   expect(text).toBeInTheDocument()
 })
 
@@ -32,8 +32,8 @@ it('should have style "success" if color props set to "success"', () => {
   const text  = screen.queryByText('Label')
 
   expect(label).toBeInTheDocument()
-  expect(label).toHaveClass('label', 'label--default', 'label--success')
-  expect(label).not.toHaveClass('label--primary')
+  expect(label).toHaveClass('label', 'label--variant-default', 'label--success')
+  expect(label).not.toHaveClass('label--default')
   expect(text).toBeInTheDocument()
 })
 
@@ -41,7 +41,7 @@ it('should have style "light" if variant props set to "light"', () => {
   const screen = render({
     components: { Label },
     template  : `
-      <Label color="warning" variant="light">
+      <Label variant="light">
         Label
       </Label>
     `,
@@ -51,8 +51,8 @@ it('should have style "light" if variant props set to "light"', () => {
   const text  = screen.queryByText('Label')
 
   expect(label).toBeInTheDocument()
-  expect(label).toHaveClass('label', 'label--warning', 'label--light')
-  expect(label).not.toHaveClass('label--default', 'label--primary')
+  expect(label).toHaveClass('label', 'label--variant-light')
+  expect(label).not.toHaveClass('label--variant-default')
   expect(text).toBeInTheDocument()
 })
 
@@ -71,8 +71,8 @@ it('should have style "lg" if size props set to "lg"', () => {
   const text  = screen.queryByText('Label')
 
   expect(label).toBeInTheDocument()
-  expect(label).toHaveClass('label', 'label--danger', 'label--dot', 'label--lg')
-  expect(label).not.toHaveClass('label--default', 'label--primary', 'label--md')
+  expect(label).toHaveClass('label', 'label--danger', 'label--variant-dot', 'label--lg')
+  expect(label).not.toHaveClass('label--variant-default', 'label--default', 'label--md')
   expect(dot).toBeInTheDocument()
   expect(dot).toHaveClass('dot', 'dot--danger')
   expect(text).toBeInTheDocument()

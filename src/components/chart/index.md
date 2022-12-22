@@ -207,7 +207,7 @@ You can set position of label using prop `legend`, valid value is `top`, `left`,
 Default is `bottom`.
 
 <preview>
-  <div class="grid grid-cols-2 gap-2">
+  <div class="grid w-full grid-cols-2 gap-2">
     <p-chart variant="pie" legend="left">
       <p-chart-set name="Gender">
         <p-chart-val name="male" value="49" color="#408bdd" />
@@ -225,7 +225,7 @@ Default is `bottom`.
 
 ```vue
 <template>
-  <div class="grid grid-cols-2 gap-2">
+  <div class="grid w-full grid-cols-2 gap-2">
     <p-chart variant="pie" legend="left">
       <p-chart-set name="Gender">
         <p-chart-val name="male" value="49" color="#408bdd" />

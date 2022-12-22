@@ -12,6 +12,7 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
+
 import {
   ColorVariant,
   SizeVariant,
@@ -26,7 +27,7 @@ export default defineComponent({
     },
     color: {
       type   : String as PropType<ColorVariant>,
-      default: 'primary',
+      default: 'default',
     },
     size: {
       type   : String as PropType<SizeVariant>,
@@ -49,7 +50,7 @@ export default defineComponent({
         result.push(`btn--${props.color}`)
 
       if (props.variant)
-        result.push(`btn--${props.variant}`)
+        result.push(`btn--variant-${props.variant}`)
 
       // eslint-disable-next-line unicorn/explicit-length-check
       if (props.size)
@@ -74,76 +75,77 @@ export default defineComponent({
 * Component Name: Button
 * Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=291%3A3945
 * Date Created  : Feb 01, 2022
-* Last Update   : June 20, 2022
+* Last Update   : Nov 21, 2022
 */
 .btn {
-  @apply inline-flex font-medium disabled:opacity-50 disabled:pointer-events-none;
+  --p-color-primary-hover: darken(theme(backgroundColor.accent.emphasis), 5%);
+  --p-color-primary-focus: darken(theme(backgroundColor.accent.emphasis), 10%);
+  --p-color-success-hover: darken(theme(backgroundColor.success.emphasis), 5%);
+  --p-color-success-focus: darken(theme(backgroundColor.success.emphasis), 10%);
+  --p-color-warning-hover: darken(theme(backgroundColor.warning.emphasis), 5%);
+  --p-color-warning-focus: darken(theme(backgroundColor.warning.emphasis), 10%);
+  --p-color-danger-hover: darken(theme(backgroundColor.danger.emphasis), 5%);
+  --p-color-danger-focus: darken(theme(backgroundColor.danger.emphasis), 10%);
+
+  @apply inline-flex align-middle font-medium disabled:opacity-50 disabled:pointer-events-none transition-all ease-in-out duration-200;
 
   > svg {
-    @apply self-baseline;
+    @apply self-center;
   }
 
   /*
   * Button has 4 different sizing
   * eg: xs, sm, md, and lg
   */
-  &--xs {
-    @apply px-2 py-1 gap-1 text-sm rounded-xs;
+  &&--xs {
+    @apply px-2 py-[2px] gap-1 text-sm rounded-[6px];
   }
 
-  &--sm {
-    @apply px-4 py-2 gap-2 text-base rounded-sm;
+  &&--sm {
+    @apply px-4 py-1 gap-2 text-base rounded-[7px];
   }
 
-  &--md {
-    @apply px-5 py-3 gap-3 text-base rounded;
+  &&--md {
+    @apply px-5 py-[10px] gap-3 text-base rounded;
   }
 
-  &--lg {
-    @apply px-8 py-5 gap-4 text-base rounded;
+  &&--lg {
+    @apply px-8 py-4 gap-4 text-base rounded;
   }
 
   /*
   * Button solid is the
   * default style variant
   */
-  &--solid {
-    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-white;
+  &&--variant-solid {
+    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-on-emphasis;
 
     &.btn {
-      &--primary {
-        @apply bg-primary-100 hover:bg-primary-hovered focus:bg-primary-focused active:bg-primary-focused;
+      &--default {
+        @apply bg-default-alpha hover:bg-subtle-alpha focus:bg-subtle-alpha active:bg-subtle-alpha text-subtle hover:text-default focus:text-default;
       }
 
-      &--secondary {
-        @apply bg-secondary-100 hover:bg-secondary-hovered focus:bg-secondary-focused active:bg-secondary-focused;
+      &--primary {
+        @apply bg-accent-emphasis hover:bg-[color:var(--p-color-primary-hover)] focus:bg-[color:var(--p-color-primary-focus)] active:bg-[color:var(--p-color-primary-focus)];
       }
 
       &--success {
-        @apply bg-success-100 hover:bg-success-hovered focus:bg-success-focused active:bg-success-focused;
-      }
-
-      &--info {
-        @apply bg-info-100 hover:bg-info-hovered focus:bg-info-focused active:bg-info-focused;
+        @apply bg-success-emphasis hover:bg-[color:var(--p-color-success-hover)] focus:bg-[color:var(--p-color-success-focus)] active:bg-[color:var(--p-color-success-focus)];
       }
 
       &--warning {
-        @apply bg-warning-100 hover:bg-warning-hovered focus:bg-warning-focused active:bg-warning-focused;
+        @apply bg-warning-emphasis hover:bg-[color:var(--p-color-warning-hover)] focus:bg-[color:var(--p-color-warning-focus)] active:bg-[color:var(--p-color-warning-focus)];
       }
 
       &--danger {
-        @apply bg-danger-100 hover:bg-danger-hovered focus:border-danger-focused active:bg-danger-focused;
-      }
-
-      &--gold {
-        @apply bg-gold-100 hover:bg-gold-hovered focus:bg-gold-focused active:bg-gold-focused;
+        @apply bg-danger-emphasis hover:bg-[color:var(--p-color-danger-hover)] focus:bg-[color:var(--p-color-danger-focus)] active:bg-[color:var(--p-color-danger-focus)];
       }
     }
   }
 
-  &--outline,
-  &--ghost {
-    @apply border border-solid text-body-75 hover:text-body-100 hover:shadow-lg focus:shadow-none active:shadow-none focus:text-body-100 active:text-body-100;
+  &&--variant-outline,
+  &&--variant-ghost {
+    @apply border border-solid text-subtle hover:text-default hover:shadow-lg focus:shadow-none active:shadow-none focus:text-default active:text-default;
   }
 
   /**
@@ -152,35 +154,27 @@ export default defineComponent({
   * and border colors for
   * solid variant
   */
-  &--solid,
-  &--outline {
+  &&--variant-solid,
+  &&--variant-outline {
     &.btn {
-      &--primary {
-        @apply border-primary-100 hover:border-primary-hovered active:border-primary-focused focus:border-primary-focused;
+      &--default {
+        @apply border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
       }
 
-      &--secondary {
-        @apply border-secondary-100 hover:border-secondary-hovered active:border-secondary-focused focus:border-secondary-focused;
+      &--primary {
+        @apply border-accent-emphasis hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
       }
 
       &--success {
-        @apply border-success-100 hover:border-success-hovered active:border-success-focused focus:border-success-focused;
-      }
-
-      &--info {
-        @apply border-info-100 hover:border-info-hovered active:border-info-focused focus:border-info-focused;
+        @apply border-success-emphasis hover:border-[color:var(--p-color-success-hover)] focus:border-[color:var(--p-color-success-focus)] active:border-[color:var(--p-color-success-focus)];
       }
 
       &--warning {
-        @apply border-warning-100 hover:border-warning-hovered active:border-warning-focused focus:border-warning-focused;
+        @apply border-warning-emphasis hover:border-[color:var(--p-color-warning-hover)] focus:border-[color:var(--p-color-warning-focus)] active:border-[color:var(--p-color-warning-focus)];
       }
 
       &--danger {
-        @apply border-danger-100 hover:border-danger-hovered active:border-danger-focused focus:border-danger-focused;
-      }
-
-      &--gold {
-        @apply border-gold-100 hover:border-gold-hovered active:border-gold-focused focus:border-gold-focused;
+        @apply border-danger-emphasis hover:border-[color:var(--p-color-danger-hover)] focus:border-[color:var(--p-color-danger-focus)] active:border-[color:var(--p-color-danger-focus)];
       }
     }
   }
@@ -188,74 +182,78 @@ export default defineComponent({
   /**
   * Button ghost variant
   */
-  &--ghost {
-    @apply border-transparent bg-transparent hover:border-black hover:border-opacity-5 hover:bg-black hover:bg-opacity-5 active:bg-black active:bg-opacity-5 active:border-black active:border-opacity-5 focus:bg-black focus:bg-opacity-5 focus:border-black focus:border-opacity-5;
+  &&--variant-ghost {
+    @apply border-transparent bg-transparent hover:border-default-alpha hover:bg-default-alpha active:bg-default-alpha focus:bg-default-alpha active:border-default-alpha focus:border-default-alpha;
   }
 
   /**
   * Provide text colors
   * in button link variant
   */
-  &--link {
-    @apply border border-transparent underline hover:underline;
+  &&--variant-link {
+    @apply border border-transparent font-normal hover:underline;
 
     &.btn {
-      &--primary {
-        @apply text-primary-100 hover:text-primary-hovered active:text-primary-focused focus:text-primary-focused;
+      &--default {
+        @apply text-subtle hover:text-default focus:text-default active:text-default;
       }
 
-      &--secondary {
-        @apply text-secondary-100 hover:text-secondary-hovered active:text-secondary-focused focus:text-secondary-focused;
+      &--primary {
+        @apply text-accent hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
       }
 
       &--success {
-        @apply text-success-100 hover:text-success-hovered active:text-success-focused focus:text-success-focused;
-      }
-
-      &--info {
-        @apply text-info-100 hover:text-info-hovered active:text-info-focused focus:text-info-focused;
+        @apply text-success hover:text-[color:var(--p-color-success-hover)] focus:text-[color:var(--p-color-success-focus)] active:text-[color:var(--p-color-success-focus)];
       }
 
       &--warning {
-        @apply text-warning-100 hover:text-warning-hovered active:text-warning-focused focus:text-warning-focused;
+        @apply text-warning hover:text-[color:var(--p-color-warning-hover)] focus:text-[color:var(--p-color-warning-focus)] active:text-[color:var(--p-color-warning-focus)];
       }
 
       &--danger {
-        @apply text-danger-100 hover:text-danger-hovered active:text-danger-focused focus:text-danger-focused;
-      }
-
-      &--gold {
-        @apply text-gold-100 hover:text-gold-hovered active:text-gold-focused focus:text-gold-focused;
+        @apply text-danger hover:text-[color:var(--p-color-danger-hover)] focus:text-[color:var(--p-color-danger-focus)] active:text-[color:var(--p-color-danger-focus)];
       }
     }
   }
 
-  &--input {
-    @apply border border-solid border-secondary-25 text-subtext-75 bg-white hover:bg-secondary-25 hover:text-body-75 focus:bg-secondary-25 focus:text-body-75 active:border-secondary-75 active:ring active:ring-secondary-25 active:ring-opacity-30;
+  &&--variant-input {
+    @apply border border-solid border-muted text-subtle font-normal bg-default hover:border-subtle focus:border-subtle active:outline-default;
+
+    .state--disabled & {
+      @apply bg-muted border-muted pointer-events-none text-muted;
+    }
+
+    .state--error & {
+      @apply border-danger-emphasis;
+
+      &:focus {
+        @apply ring-danger border-danger-emphasis;
+      }
+    }
   }
 
   /**
   * Button icon variant
   */
-  &--icon {
+  &&--icon {
     &.btn--xs {
-      @apply p-1;
+      @apply px-1 h-[25.88px];
     }
 
     &.btn--sm {
-      @apply p-2;
+      @apply px-2 h-[34px];
     }
 
     &.btn--md {
-      @apply p-3;
+      @apply px-3 h-[46px];
     }
 
     &.btn--lg {
-      @apply p-4;
+      @apply px-4 h-[58px];
     }
   }
 
-  &--pill {
+  &&--pill {
     @apply rounded-full;
   }
 }

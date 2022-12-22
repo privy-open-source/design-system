@@ -16,7 +16,7 @@ it('should render properly without any props', () => {
   const text   = screen.queryByText('Hello')
 
   expect(button).toBeInTheDocument()
-  expect(button).toHaveClass('btn', 'btn--solid', 'btn--md', 'btn--primary')
+  expect(button).toHaveClass('btn', 'btn--variant-solid', 'btn--md', 'btn--default')
   expect(text).toBeInTheDocument()
 })
 
@@ -33,7 +33,7 @@ it('should have style "outline" if variant props set to "outline"', () => {
   const button = screen.queryByTestId('btn')
 
   expect(button).toBeInTheDocument()
-  expect(button).toHaveClass('btn', 'btn--outline', 'btn--primary')
+  expect(button).toHaveClass('btn', 'btn--variant-outline', 'btn--default')
   expect(button).not.toHaveClass('btn--solid')
 })
 
@@ -50,7 +50,7 @@ it('should have style "secondary" if color props set to "secondary"', () => {
   const button = screen.queryByTestId('btn')
 
   expect(button).toBeInTheDocument()
-  expect(button).toHaveClass('btn', 'btn--solid', 'btn--secondary')
+  expect(button).toHaveClass('btn', 'btn--variant-solid', 'btn--secondary')
   expect(button).not.toHaveClass('btn--primary')
 })
 
@@ -67,7 +67,7 @@ it('should have style "lg" if size props set to "lg"', () => {
   const button = screen.queryByTestId('btn')
 
   expect(button).toBeInTheDocument()
-  expect(button).toHaveClass('btn', 'btn--solid', 'btn--lg')
+  expect(button).toHaveClass('btn', 'btn--variant-solid', 'btn--lg')
   expect(button).not.toHaveClass('btn--md')
 })
 
