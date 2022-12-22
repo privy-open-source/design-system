@@ -2632,7 +2632,7 @@ __metadata:
     "@types/zxcvbn": ^4
     "@typescript-eslint/eslint-plugin": 5.47.0
     "@typescript-eslint/parser": 5.47.0
-    "@vitejs/plugin-vue": 3.2.0
+    "@vitejs/plugin-vue": 4.0.0
     "@vitest/browser": ^0.25.3
     "@vitest/coverage-c8": 0.24.5
     "@vue/eslint-config-typescript": 11.0.2
@@ -3808,23 +3808,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:3.2.0, @vitejs/plugin-vue@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@vitejs/plugin-vue@npm:3.2.0"
-  peerDependencies:
-    vite: ^3.0.0
-    vue: ^3.2.25
-  checksum: 64774f770e0e21ce7eb36743d614e3f197a35f5b67b2d3800c61766e649f43dc497bb037738ffafd607eb488064ab132c23766190e7ab557a0b88c0051f7a794
-  languageName: node
-  linkType: hard
-
-"@vitejs/plugin-vue@npm:^4.0.0":
+"@vitejs/plugin-vue@npm:4.0.0, @vitejs/plugin-vue@npm:^4.0.0":
   version: 4.0.0
   resolution: "@vitejs/plugin-vue@npm:4.0.0"
   peerDependencies:
     vite: ^4.0.0
     vue: ^3.2.25
   checksum: 5a53414912db644ca7a663d87c8d4838841dbf794772105c9b3bc3fb10214fc86c2f1f1a47350f264370e9a5fd2475f3b6882778b2440b5085d3fe7550ced542
+  languageName: node
+  linkType: hard
+
+"@vitejs/plugin-vue@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@vitejs/plugin-vue@npm:3.2.0"
+  peerDependencies:
+    vite: ^3.0.0
+    vue: ^3.2.25
+  checksum: 64774f770e0e21ce7eb36743d614e3f197a35f5b67b2d3800c61766e649f43dc497bb037738ffafd607eb488064ab132c23766190e7ab557a0b88c0051f7a794
   languageName: node
   linkType: hard
 
