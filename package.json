@@ -78,7 +78,7 @@
     "@fontsource/dm-sans": "4.5.9",
     "@juggle/resize-observer": "^3.4.0",
     "@testing-library/user-event": "^14.4.3",
-    "@vueuse/core": "9.6.0",
+    "@vueuse/core": "9.9.0",
     "@vueuse/math": "^9.4.0",
     "@zxing/browser": "0.1.1",
     "@zxing/library": "0.19.1",
