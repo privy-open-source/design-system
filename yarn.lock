@@ -2643,7 +2643,7 @@ __metadata:
     "@vitest/browser": ^0.25.3
     "@vitest/coverage-c8": 0.24.5
     "@vue/eslint-config-typescript": 11.0.2
-    "@vueuse/core": 9.6.0
+    "@vueuse/core": 9.9.0
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
@@ -2729,7 +2729,7 @@ __metadata:
     "@privyid/tailwind-preset": "workspace:^"
     "@testing-library/dom": ^8.19.0
     "@testing-library/user-event": ^14.4.3
-    "@vueuse/core": 9.6.0
+    "@vueuse/core": 9.9.0
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
@@ -4083,15 +4083,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:9.6.0":
-  version: 9.6.0
-  resolution: "@vueuse/core@npm:9.6.0"
+"@vueuse/core@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@vueuse/core@npm:9.9.0"
   dependencies:
     "@types/web-bluetooth": ^0.0.16
-    "@vueuse/metadata": 9.6.0
-    "@vueuse/shared": 9.6.0
+    "@vueuse/metadata": 9.9.0
+    "@vueuse/shared": 9.9.0
     vue-demi: "*"
-  checksum: 2831931d71824f6a02f49cc42bc454a59a24b83a29e7902bbd9fce7e814947d466dbced2dad364c51a352c387869a6a44f2e38bd2ec2b38989158377dc7730d6
+  checksum: a3edc33994515a2d91fe84767a5230d51debcf7f4a53afc9c56c3793d4f47771fbcf43d32f3e33b1db316267a7607a60d31de068ef86d8fb77e7c4e050e29b36
   languageName: node
   linkType: hard
 
@@ -4131,17 +4131,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:9.6.0":
-  version: 9.6.0
-  resolution: "@vueuse/metadata@npm:9.6.0"
-  checksum: 6873032389f73571396478d37dad37a9164df5ad487e08b338135fcfd2bbdcc519351a08d4b3b4b54ea8a90de06f9d01b5fd351332a26b5ed5cf8322cb9ce9ab
-  languageName: node
-  linkType: hard
-
 "@vueuse/metadata@npm:9.8.2":
   version: 9.8.2
   resolution: "@vueuse/metadata@npm:9.8.2"
   checksum: f9fe9eb20343af4591afd5a4e9d490927e7db88e6f52ce0e8c000a5baaf905872ff51d8ad8bfe904a5ea12abfdfe0e8ddd535beb27f59ca919e0cf04f53558e6
+  languageName: node
+  linkType: hard
+
+"@vueuse/metadata@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@vueuse/metadata@npm:9.9.0"
+  checksum: d0dd631f79d515c4650eb35671a38b282cf9458f3b86768a97a5d74fb1836440db1e0fed178d084d5174c926aa586509ed31597f0b062240ce268e6fe1f6c6fd
   languageName: node
   linkType: hard
 
@@ -4154,21 +4154,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:9.6.0":
-  version: 9.6.0
-  resolution: "@vueuse/shared@npm:9.6.0"
-  dependencies:
-    vue-demi: "*"
-  checksum: 33be07a571ba607500f3115c9c4c3cc411644ad62da8241bf9a48b7a2eaadc2523520f4ba65bb87d6db15db8a43bce1599b5fac757d4f6653cacf99927eda280
-  languageName: node
-  linkType: hard
-
 "@vueuse/shared@npm:9.8.2":
   version: 9.8.2
   resolution: "@vueuse/shared@npm:9.8.2"
   dependencies:
     vue-demi: "*"
   checksum: 1bfc6d20be49d588897e4e5cd93c164cd69ec6bee2ad16a6a298af47b585256688cb6e04224b377e550050124db688f64d132668e7cf19c9e9a44b4cd13d9ae1
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@vueuse/shared@npm:9.9.0"
+  dependencies:
+    vue-demi: "*"
+  checksum: 590ffe76c883f7c53acecd1dfa34eea148d88a4bd17642bbaef10f8aed2b558cb50dbeeb1e07827f589a6b96a2bb2cc57dab576b20c34a6e5ab4b517d47b7b9d
   languageName: node
   linkType: hard
 
