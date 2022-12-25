@@ -1,0 +1,32 @@
+{
+  "name": "@privyid/eslint-config-persona",
+  "version": "0.6.0",
+  "packageManager": "yarn@3.3.1",
+  "main": "./index.js",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=5.47.0",
+    "@typescript-eslint/parser": ">=5.47.0",
+    "@vue/eslint-config-typescript": ">=11.0.2",
+    "eslint": ">=8.30.0",
+    "eslint-config-standard-with-typescript": ">=24.0.0",
+    "eslint-formatter-pretty": ">=4.1.0",
+    "eslint-plugin-align-assignments": ">=1.1.2",
+    "eslint-plugin-import": ">=2.26.0",
+    "eslint-plugin-n": ">=15.6.0",
+    "eslint-plugin-node": ">=11.1.0",
+    "eslint-plugin-promise": ">=6.1.1",
+    "eslint-plugin-unicorn": ">=45.0.2",
+    "eslint-plugin-varspacing": ">=1.2.2",
+    "eslint-plugin-vue": ">=9.8.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "vue",
+    "nuxt"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

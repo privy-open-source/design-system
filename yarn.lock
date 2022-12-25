@@ -2327,6 +2327,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kurkle/color@npm:^0.3.0":
+  version: 0.3.1
+  resolution: "@kurkle/color@npm:0.3.1"
+  checksum: e6be5c081bf5acfd4a1803dcd5a0733caf450e73148d5f02dc536b1ff0c60c959c23472a26c9c3c6c78ada04fb6a53c9202db9b2de8ea56f6eeec381f9cc3a1a
+  languageName: node
+  linkType: hard
+
 "@mapbox/node-pre-gyp@npm:^1.0.5":
   version: 1.0.9
   resolution: "@mapbox/node-pre-gyp@npm:1.0.9"
@@ -2613,6 +2620,7 @@ __metadata:
     "@interactjs/types": 1.10.17
     "@juggle/resize-observer": ^3.4.0
     "@privyid/browserslist-config": "workspace:^"
+    "@privyid/eslint-config-persona": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rollup/plugin-babel": ^6.0.2
     "@rollup/plugin-inject": ^5.0.3
@@ -2631,17 +2639,17 @@ __metadata:
     "@types/zxcvbn": ^4
     "@typescript-eslint/eslint-plugin": 5.47.0
     "@typescript-eslint/parser": 5.47.0
-    "@vitejs/plugin-vue": 3.2.0
+    "@vitejs/plugin-vue": 4.0.0
     "@vitest/browser": ^0.25.3
     "@vitest/coverage-c8": 0.24.5
     "@vue/eslint-config-typescript": 11.0.2
-    "@vueuse/core": 9.6.0
+    "@vueuse/core": 9.9.0
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
     autoprefixer: 10.4.13
     browserslist-useragent-regexp: ^4.0.0
-    chart.js: 3.9.1
+    chart.js: 4.1.1
     core-js: 3
     date-fns: 2.29.3
     defu: 6.1.1
@@ -2658,7 +2666,7 @@ __metadata:
     eslint-plugin-vue: 9.8.0
     fast-equals: ^4.0.3
     fuse.js: 6.6.2
-    happy-dom: 8.1.0
+    happy-dom: 8.1.1
     husky: 8.0.2
     interactjs: 1.10.17
     isomorphic-dompurify: ^0.24.0
@@ -2670,7 +2678,7 @@ __metadata:
     postcss: 8.4.20
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
-    postcss-nested: 5.0.6
+    postcss-nested: 6.0.0
     scroll-into-view: ^1.16.2
     tabbable: 6.0.1
     tailwindcss: 3.2.4
@@ -2683,6 +2691,27 @@ __metadata:
     vuedraggable: next
     webfontloader: 1.6.28
     zxcvbn: ^4.4.2
+  languageName: unknown
+  linkType: soft
+
+"@privyid/eslint-config-persona@workspace:^, @privyid/eslint-config-persona@workspace:packages/eslint-config-persona":
+  version: 0.0.0-use.local
+  resolution: "@privyid/eslint-config-persona@workspace:packages/eslint-config-persona"
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ">=5.47.0"
+    "@typescript-eslint/parser": ">=5.47.0"
+    "@vue/eslint-config-typescript": ">=11.0.2"
+    eslint: ">=8.30.0"
+    eslint-config-standard-with-typescript: ">=24.0.0"
+    eslint-formatter-pretty: ">=4.1.0"
+    eslint-plugin-align-assignments: ">=1.1.2"
+    eslint-plugin-import: ">=2.26.0"
+    eslint-plugin-n: ">=15.6.0"
+    eslint-plugin-node: ">=11.1.0"
+    eslint-plugin-promise: ">=6.1.1"
+    eslint-plugin-unicorn: ">=45.0.2"
+    eslint-plugin-varspacing: ">=1.2.2"
+    eslint-plugin-vue: ">=9.8.0"
   languageName: unknown
   linkType: soft
 
@@ -2700,11 +2729,11 @@ __metadata:
     "@privyid/tailwind-preset": "workspace:^"
     "@testing-library/dom": ^8.19.0
     "@testing-library/user-event": ^14.4.3
-    "@vueuse/core": 9.6.0
+    "@vueuse/core": 9.9.0
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
-    chart.js: 3.9.1
+    chart.js: 4.1.1
     core-js: 3
     date-fns: 2.29.3
     defu: 6.1.1
@@ -3786,23 +3815,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:3.2.0, @vitejs/plugin-vue@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@vitejs/plugin-vue@npm:3.2.0"
-  peerDependencies:
-    vite: ^3.0.0
-    vue: ^3.2.25
-  checksum: 64774f770e0e21ce7eb36743d614e3f197a35f5b67b2d3800c61766e649f43dc497bb037738ffafd607eb488064ab132c23766190e7ab557a0b88c0051f7a794
-  languageName: node
-  linkType: hard
-
-"@vitejs/plugin-vue@npm:^4.0.0":
+"@vitejs/plugin-vue@npm:4.0.0, @vitejs/plugin-vue@npm:^4.0.0":
   version: 4.0.0
   resolution: "@vitejs/plugin-vue@npm:4.0.0"
   peerDependencies:
     vite: ^4.0.0
     vue: ^3.2.25
   checksum: 5a53414912db644ca7a663d87c8d4838841dbf794772105c9b3bc3fb10214fc86c2f1f1a47350f264370e9a5fd2475f3b6882778b2440b5085d3fe7550ced542
+  languageName: node
+  linkType: hard
+
+"@vitejs/plugin-vue@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@vitejs/plugin-vue@npm:3.2.0"
+  peerDependencies:
+    vite: ^3.0.0
+    vue: ^3.2.25
+  checksum: 64774f770e0e21ce7eb36743d614e3f197a35f5b67b2d3800c61766e649f43dc497bb037738ffafd607eb488064ab132c23766190e7ab557a0b88c0051f7a794
   languageName: node
   linkType: hard
 
@@ -4054,15 +4083,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:9.6.0":
-  version: 9.6.0
-  resolution: "@vueuse/core@npm:9.6.0"
+"@vueuse/core@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@vueuse/core@npm:9.9.0"
   dependencies:
     "@types/web-bluetooth": ^0.0.16
-    "@vueuse/metadata": 9.6.0
-    "@vueuse/shared": 9.6.0
+    "@vueuse/metadata": 9.9.0
+    "@vueuse/shared": 9.9.0
     vue-demi: "*"
-  checksum: 2831931d71824f6a02f49cc42bc454a59a24b83a29e7902bbd9fce7e814947d466dbced2dad364c51a352c387869a6a44f2e38bd2ec2b38989158377dc7730d6
+  checksum: a3edc33994515a2d91fe84767a5230d51debcf7f4a53afc9c56c3793d4f47771fbcf43d32f3e33b1db316267a7607a60d31de068ef86d8fb77e7c4e050e29b36
   languageName: node
   linkType: hard
 
@@ -4102,17 +4131,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:9.6.0":
-  version: 9.6.0
-  resolution: "@vueuse/metadata@npm:9.6.0"
-  checksum: 6873032389f73571396478d37dad37a9164df5ad487e08b338135fcfd2bbdcc519351a08d4b3b4b54ea8a90de06f9d01b5fd351332a26b5ed5cf8322cb9ce9ab
-  languageName: node
-  linkType: hard
-
 "@vueuse/metadata@npm:9.8.2":
   version: 9.8.2
   resolution: "@vueuse/metadata@npm:9.8.2"
   checksum: f9fe9eb20343af4591afd5a4e9d490927e7db88e6f52ce0e8c000a5baaf905872ff51d8ad8bfe904a5ea12abfdfe0e8ddd535beb27f59ca919e0cf04f53558e6
+  languageName: node
+  linkType: hard
+
+"@vueuse/metadata@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@vueuse/metadata@npm:9.9.0"
+  checksum: d0dd631f79d515c4650eb35671a38b282cf9458f3b86768a97a5d74fb1836440db1e0fed178d084d5174c926aa586509ed31597f0b062240ce268e6fe1f6c6fd
   languageName: node
   linkType: hard
 
@@ -4125,21 +4154,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:9.6.0":
-  version: 9.6.0
-  resolution: "@vueuse/shared@npm:9.6.0"
-  dependencies:
-    vue-demi: "*"
-  checksum: 33be07a571ba607500f3115c9c4c3cc411644ad62da8241bf9a48b7a2eaadc2523520f4ba65bb87d6db15db8a43bce1599b5fac757d4f6653cacf99927eda280
-  languageName: node
-  linkType: hard
-
 "@vueuse/shared@npm:9.8.2":
   version: 9.8.2
   resolution: "@vueuse/shared@npm:9.8.2"
   dependencies:
     vue-demi: "*"
   checksum: 1bfc6d20be49d588897e4e5cd93c164cd69ec6bee2ad16a6a298af47b585256688cb6e04224b377e550050124db688f64d132668e7cf19c9e9a44b4cd13d9ae1
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@vueuse/shared@npm:9.9.0"
+  dependencies:
+    vue-demi: "*"
+  checksum: 590ffe76c883f7c53acecd1dfa34eea148d88a4bd17642bbaef10f8aed2b558cb50dbeeb1e07827f589a6b96a2bb2cc57dab576b20c34a6e5ab4b517d47b7b9d
   languageName: node
   linkType: hard
 
@@ -5260,10 +5289,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chart.js@npm:3.9.1":
-  version: 3.9.1
-  resolution: "chart.js@npm:3.9.1"
-  checksum: 9ab0c0ac01215af0b3f020f2e313030fd6e347b48ed17d5484ee9c4e8ead45e78ae71bea16c397621c386b409ce0b14bf17f9f6c2492cd15b56c0f433efdfff6
+"chart.js@npm:4.1.1":
+  version: 4.1.1
+  resolution: "chart.js@npm:4.1.1"
+  dependencies:
+    "@kurkle/color": ^0.3.0
+  checksum: e195abc7b1271a0d4f616b90ac56465b639bffef8e965d26bf1fd65050011bf359fdc25e43dac1576420c1173dc1430c576fd0f953ae8b62bf257ec571424882
   languageName: node
   linkType: hard
 
@@ -8729,9 +8760,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:8.1.0":
-  version: 8.1.0
-  resolution: "happy-dom@npm:8.1.0"
+"happy-dom@npm:8.1.1":
+  version: 8.1.1
+  resolution: "happy-dom@npm:8.1.1"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -8739,7 +8770,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 7de0b8d90ccfb76e22ca35a5b53100f911b2f04abb9c8784a65015fce8452e14c9700ee72487f3e9df5066771260c6539e3d825af548abae3cefd445b37af22a
+  checksum: f41c54476e6b7242187185c6d7dee5b9ec385df7739d335cdd73c029a880c162d6932ed7751bac99b59695a23ed90071c0ce9c7c3445da18e295eb66cc7a0f13
   languageName: node
   linkType: hard
 
@@ -12427,17 +12458,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nested@npm:5.0.6":
-  version: 5.0.6
-  resolution: "postcss-nested@npm:5.0.6"
-  dependencies:
-    postcss-selector-parser: ^6.0.6
-  peerDependencies:
-    postcss: ^8.2.14
-  checksum: dbcbfd11e514f485ac0d2b649b32bcbd855665a88a76f697f8be6c5017aa0260954ecccd2475bbd5865a5d248eae9a4e6e10d2d51927621d05430381aa37e43b
-  languageName: node
-  linkType: hard
-
 "postcss-nested@npm:6.0.0":
   version: 6.0.0
   resolution: "postcss-nested@npm:6.0.0"
@@ -12612,16 +12632,6 @@ __metadata:
     cssesc: ^3.0.0
     util-deprecate: ^1.0.2
   checksum: 0b01aa9c2d2c8dbeb51e9b204796b678284be9823abc8d6d40a8b16d4149514e922c264a8ed4deb4d6dbced564b9be390f5942c058582d8656351516d6c49cde
-  languageName: node
-  linkType: hard
-
-"postcss-selector-parser@npm:^6.0.6":
-  version: 6.0.9
-  resolution: "postcss-selector-parser@npm:6.0.9"
-  dependencies:
-    cssesc: ^3.0.0
-    util-deprecate: ^1.0.2
-  checksum: f8161ab4d3e5c76b8467189c6d164ba0f6b6e74677435f29e34caa1df01e052b582b4ae4f7468b2243c4befdd8bdcdb7685542d1b2fca8deae21b3e849c78802
   languageName: node
   linkType: hard
 
