@@ -21,7 +21,12 @@ export default defineConfig({
     ],
     outline    : [2, 3],
     socialLinks: [{ icon: 'github', link: 'https://github.com/privy-open-source/design-system' }],
-    sidebar    : {
+    algolia    : {
+      appId    : 'IN7GY0AJ4A',
+      apiKey   : '1673185db732493ea95c98feea2259f0',
+      indexName: 'design-system',
+    },
+    sidebar: {
       '/docs/': [
         {
           text       : 'Documentation',
