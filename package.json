@@ -48,7 +48,7 @@
     "@vue/eslint-config-typescript": "11.0.2",
     "autoprefixer": "10.4.13",
     "browserslist-useragent-regexp": "^4.0.0",
-    "eslint": "8.30.0",
+    "eslint": "8.31.0",
     "eslint-config-standard-with-typescript": "latest",
     "eslint-formatter-pretty": "4.1.0",
     "eslint-plugin-align-assignments": "1.1.2",
