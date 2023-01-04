@@ -23,7 +23,7 @@
 */
 .sidebar {
   @media (min-width: 960px) {
-    width: 15rem;
+    @apply w-60;
   }
 }
 
@@ -37,16 +37,16 @@
 .content {
   h1 {
     img {
-      @apply inline-block mr-8;
+      @apply inline-block mr-7;
 
       + .header-anchor {
-        @apply mt-7;
+        @apply mt-7 -ml-7;
       }
     }
   }
 
   h2 {
-    border-bottom-color: transparent;
+    @apply border-b-transparent;
   }
 
 
@@ -85,6 +85,8 @@
   }
 }
 
-a.header-anchor {
-  margin-left: -1.25em;
+.vp-doc {
+  .header-anchor {
+    @apply pr-0 -ml-6;
+  }
 }

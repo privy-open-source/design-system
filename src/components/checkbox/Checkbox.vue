@@ -4,12 +4,6 @@
     class="checkbox"
     :class="classNames"
     @click.prevent="toggle">
-    <input
-      type="checkbox"
-      :checked="model"
-      :name="name"
-      :disabled="disabled || readonly"
-      :value="value">
     <span class="checkbox__icon">
       <!-- checked icon -->
       <template v-if="indeterminate">
@@ -41,6 +35,12 @@
     <span class="checkbox__label">
       <slot />
     </span>
+    <input
+      type="checkbox"
+      :checked="model"
+      :name="name"
+      :disabled="disabled || readonly"
+      :value="value">
   </label>
 </template>
 
@@ -148,10 +148,18 @@ export default defineComponent({
 .checkbox {
   @apply inline-flex space-x-2 relative cursor-pointer select-none items-baseline;
 
+  /**
+  * hide default appearance
+  * checkbox
+  */
   > input[type="checkbox"] {
     @apply appearance-none w-0 h-0 opacity-0 absolute;
   }
 
+  /**
+  * replace default appearance
+  * with custom icon
+  */
   &__icon {
     @apply w-5 h-5 border rounded-sm border-subtle inline-flex items-center justify-center bg-default;
 
@@ -160,10 +168,39 @@ export default defineComponent({
     }
   }
 
+  /**
+  * active checkbox with
+  * wtf-you-want custom appearance
+  */
+  &[appearance="none"] {
+    &.checkbox {
+      &--checked {
+        .card {
+          @apply border-accent-emphasis;
+        }
+      }
+    }
+
+    > .checkbox__icon {
+      @apply hidden;
+    }
+
+    > .checkbox__label {
+      @apply ml-0;
+    }
+  }
+
+  /**
+  * give color of checkbox label
+  */
   &__label {
     @apply text-default;
   }
 
+  /**
+  * give accent background and
+  * white checked icon
+  */
   &--checked,
   &--indeterminate {
     .checkbox__icon {
@@ -175,6 +212,9 @@ export default defineComponent({
     }
   }
 
+  /**
+  * disable checkbox
+  */
   &--disabled {
     @apply opacity-50;
 
@@ -189,13 +229,12 @@ export default defineComponent({
     }
   }
 
+  /**
+  * checkbox in dropdown menu
+  */
   .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
   .dropdown__menu > .dropdown__subitem > & {
     @apply w-full select-none;
-
-    .checkbox__icon {
-      @apply ml-0;
-    }
   }
 
   .dropdown__menu > .dropdown__subitem > .dropdown__item > & {

@@ -63,39 +63,80 @@ export default defineComponent({
 .input-group {
   @apply flex w-full;
 
-  > .input-group__addon:not(:first-child),
-  > .input:not(:first-child) > .input__form,
-  > .select:not(:first-child) > .input > .input__form {
+  &:has(:first-child:is(.input-group__addon):nth-last-child(2)) {
+    @apply rounded bg-default focus-within:ring-4 focus-within:ring-subtle/10 hover:border hover:border-subtle focus-within:border focus-within:border-subtle;
+
+    .input {
+      @apply bg-transparent;
+    }
+
+    &:hover,
+    &:focus-within {
+      .input > .input__form,
+      .input-group__addon {
+        @apply border-0;
+      }
+    }
+
+    .input > .input__form {
+      @apply focus:ring-0;
+    }
+  }
+
+  & > .input-group__addon:not(:first-child),
+  & > .input:not(:first-child) > .input__form,
+  & > .select:not(:first-child) > .input > .input__form {
     @apply rounded-l-none border-l-0;
   }
 
-  > .input-group__addon:not(:last-child),
-  > .input:not(:last-child) > .input__form,
-  > .select:not(:last-child) > .input > .input__form {
+  & > .input-group__addon:not(:last-child),
+  & > .input:not(:last-child) > .input__form {
     @apply rounded-r-none border-r-0;
+  }
 
+  & > .select:not(:last-child) > .input > .input__form {
+    @apply rounded-r-none;
+  }
+
+  & > .input-group__addon,
+  & > .input,
+  & > .select,
+  & > .divider {
+    &:not(:first-child) {
+      @apply -ml-[1px];
+    }
   }
 
   .input,
   .select > .input {
     > .input__form {
-      &:focus,
-      &:hover {
-        @apply border-r border-l;
+      &:hover,
+      &:focus {
+        @apply z-[2] border-l border-r;
       }
     }
   }
 
-  > .btn:not(:first-child) {
-    @apply rounded-l-none;
+  & > .btn {
+    @apply z-[1];
+
+    &:not(:first-child) {
+      @apply rounded-l-none -ml-[1px];
+    }
+
+    &:not(:last-child) {
+      @apply rounded-r-none;
+    }
   }
 
-  > .btn:not(:last-child) {
-    @apply rounded-r-none;
-  }
-
-  &__addon {
+  &:is(&--xs, &--sm, &--md, &--lg) > &__addon {
     @apply flex-shrink-0;
+
+    + .input {
+      > .input__form {
+        @apply pl-0;
+      }
+    }
   }
 
   &&--xs {

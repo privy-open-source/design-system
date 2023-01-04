@@ -8,13 +8,21 @@
   import pNavItemDropdown from '../nav/NavItemDropdown.vue'
   import pDropdownItem from '../dropdown/DropdownItem.vue'
   import pNavForm from '../nav/NavForm.vue'
+  import pNavText from '../nav/NavForm.vue'
   import pInput from '../input/Input.vue'
   import pInputGroup from '../input-group/InputGroup.vue'
+  import pInputGroupAddon from '../input-group/InputGroupAddon.vue'
+  import pDivider from '../divider/divider.vue'
   import pButton from '../button/Button.vue'
   import pAvatar from '../avatar/Avatar.vue'
   import pCollapse from '../collapse/Collapse.vue'
+  import pCaption from '../caption/Caption.vue'
+  import pCard from '../card/Card.vue'
   import IconBee from '@carbon/icons-vue/lib/bee/20'
-  import IconView from '@carbon/icons-vue/lib/view/20'
+  import IconUser from '@carbon/icons-vue/lib/events/16'
+  import IconChevron from '@carbon/icons-vue/lib/chevron--sort/20'
+  import IconNotif from '@carbon/icons-vue/lib/notification/20'
+  import IconSearch from '@carbon/icons-vue/lib/search/20'
 
   const menu = ref(false)
 </script>
@@ -465,6 +473,84 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 
   const menu = ref(false)
 </script>
+```
+
+## Custom
+<preview class="flex-grow">
+  <p-navbar>
+    <p-navbar-nav>
+      <p-input-group>
+        <p-input-group-addon>
+          <IconSearch />
+        </p-input-group-addon>
+        <p-input placeholder="Search" />
+      </p-input-group>
+    </p-navbar-nav>
+     <p-navbar-nav align="right">
+      <p-nav-item>
+        <template #icon>
+          <IconNotif />
+        </template>
+      </p-nav-item>
+      <p-nav-item-dropdown no-caret size="xs" variant="outline">
+        <template #button-content>
+          <span class="flex items-center space-x-2">
+            <p-avatar size="xs">
+              <IconUser />
+            </p-avatar>
+            <span class="block text-left">
+              <span class="text-sm">Tarjono Sujono</span>
+              <p-caption size="xs">Personal Account</p-caption>
+            </span>
+            <IconChevron />
+          </span>
+        </template>
+        <p-dropdown-item>Edit Profile</p-dropdown-item>
+        <p-dropdown-item>Preference</p-dropdown-item>
+        <p-dropdown-item>Sign out</p-dropdown-item>
+      </p-nav-item-dropdown>
+      <p-nav-text>
+        <p-avatar src="https://picsum.photos/50" />
+      </p-nav-text>
+    </p-navbar-nav>
+  </p-navbar>
+</preview>
+
+```vue
+<template>
+  <p-navbar>
+    <p-navbar-brand>
+      <img src="../../public/assets/images/logo.svg" />
+    </p-navbar-brand>
+      <p-navbar-nav align="right">
+      <p-nav-item>
+        <template #icon>
+          <IconNotif />
+        </template>
+      </p-nav-item>
+      <p-nav-item-dropdown no-caret size="xs" variant="outline">
+        <template #button-content>
+          <span class="flex items-center space-x-2">
+            <p-avatar size="xs">
+              <IconUser />
+            </p-avatar>
+            <span class="block text-left">
+              <span class="text-sm">Tarjono Sujono</span>
+              <p-caption size="xs">Personal Account</p-caption>
+            </span>
+            <IconChevron />
+          </span>
+        </template>
+        <p-dropdown-item>Edit Profile</p-dropdown-item>
+        <p-dropdown-item>Preference</p-dropdown-item>
+        <p-dropdown-item>Sign out</p-dropdown-item>
+      </p-nav-item-dropdown>
+      <p-nav-form>
+        <p-avatar src="https://picsum.photos/50" />
+      </p-nav-form>
+    </p-navbar-nav>
+  </p-navbar>
+</template>
 ```
 
 ## API

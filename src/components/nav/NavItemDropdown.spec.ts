@@ -10,8 +10,7 @@ it('should rendered properly without any props', () => {
     },
     template: `
       <Nav>
-        <NavItemDropdown>
-        </NavItemDropdown>
+        <NavItemDropdown />
       </Nav>
     `,
   })
@@ -29,8 +28,7 @@ it('should be able to change button text via props `text`', () => {
     },
     template: `
       <Nav>
-        <NavItemDropdown text="text">
-        </NavItemDropdown>
+        <NavItemDropdown text="text" />
       </Nav>
     `,
   })
@@ -46,8 +44,7 @@ it('should be able to change to icon mode via `icon` prop', () => {
     },
     template: `
       <Nav>
-        <NavItemDropdown icon>
-        </NavItemDropdown>
+        <NavItemDropdown icon />
       </Nav>
     `,
   })
@@ -64,8 +61,7 @@ it('should be able to hide dropdown caret with `no-caret` prop', () => {
     },
     template: `
       <Nav>
-        <NavItemDropdown no-caret>
-        </NavItemDropdown>
+        <NavItemDropdown no-caret />
       </Nav>
     `,
   })
@@ -75,4 +71,22 @@ it('should be able to hide dropdown caret with `no-caret` prop', () => {
 
   expect(button).toBeInTheDocument()
   expect(caret).not.toBeInTheDocument()
+})
+
+it('should be able to set size of dropdown with `size` prop', () => {
+  const screen = render({
+    components: {
+      Nav, NavItem, NavItemDropdown,
+    },
+    template: `
+      <Nav>
+        <NavItemDropdown size="sm" />
+      </Nav>
+    `,
+  })
+
+  const button = screen.queryByTestId('dropdown-activator')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveClass('btn--sm')
 })

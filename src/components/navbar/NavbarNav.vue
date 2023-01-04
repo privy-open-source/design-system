@@ -52,14 +52,17 @@ export default defineComponent({
 
     .dropdown {
       &__activator {
-        @apply relative;
+        &.btn {
+          @apply px-3 border-transparent bg-transparent shadow-none rounded font-normal text-subtle hover:text-default hover:shadow-none hover:border-transparent;
+        }
+        /* @apply relative;
         &.btn {
           @apply pl-3 pr-10 border-transparent bg-transparent shadow-none rounded font-normal text-subtle hover:text-default hover:shadow-none hover:border-transparent;
         }
 
         .dropdown__caret {
           @apply absolute right-3;
-        }
+        } */
       }
 
       &--open {
