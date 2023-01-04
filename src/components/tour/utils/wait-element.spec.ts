@@ -3,7 +3,9 @@ import { isVisible, focus } from './__mocks__/is-visible'
 import MutationObserver, { triggerMutation } from './__mocks__/mutation-observer'
 import { waitElement } from './wait-element'
 
-vi.mock('./is-visible.ts', () => ({ isVisible, focus }))
+vi.mock('./is-visible.ts', () => ({ isVisible }))
+
+vi.mock('./focus.ts', () => ({ focus }))
 
 vi.stubGlobal('MutationObserver', MutationObserver)
 

@@ -69,26 +69,23 @@ export default defineComponent({
       if (instance.value)
         instance.value.destroy()
 
-      instance.value = await createChart(
-        canvas.value,
-        variant.value,
-        data.value, {
-          plugins: {
-            legend: {
-              display : legend.value !== 'none',
-              position: legend.value === 'none' ? undefined : legend.value,
-              labels  : {
-                color: '#9CA3AF',
-                font : {
-                  family: 'DM Sans',
-                  size  : 12,
-                  weight: '600',
-                },
+      instance.value = await createChart(canvas.value, variant.value, data.value, {
+        plugins: {
+          legend: {
+            display : legend.value !== 'none',
+            position: legend.value === 'none' ? undefined : legend.value,
+            labels  : {
+              color: '#9CA3AF',
+              font : {
+                family: 'DM Sans',
+                size  : 12,
+                weight: '600',
               },
             },
           },
-          ...getAdapter(variant.value).getStyle(),
         },
+        ...getAdapter(variant.value).getStyle(),
+      },
       )
     }
 

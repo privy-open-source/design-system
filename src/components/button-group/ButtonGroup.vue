@@ -196,7 +196,7 @@ export default defineComponent({
       }
 
       &:is(.btn--icon) {
-        @apply h-[46] px-3;
+        @apply h-[46px] px-3;
       }
     }
   }

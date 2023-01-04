@@ -32,3 +32,4 @@ See [Contributing Guide](/CONTRIBUTING.md)
 ## License
 
 [MIT](/LICENSE) License (c) 2022 Privy Identitas Digital
+

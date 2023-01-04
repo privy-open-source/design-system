@@ -16,8 +16,8 @@
       data-testid="tour-image"
       :src="image"
       alt="tour-image"
-      width="400"
-      height="225">
+      width="320"
+      height="195">
     <div class="tour__body">
       <p-subheading
         v-if="title"

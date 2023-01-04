@@ -1,5 +1,3 @@
-import scrollIntoView from 'scroll-into-view'
-
 export function isVisible (target: HTMLElement) {
   if (!(target instanceof Element))
     return false
@@ -41,10 +39,4 @@ export function isVisible (target: HTMLElement) {
   } while (pointContainer)
 
   return false
-}
-
-export async function focus (target: HTMLElement, duration = 330): Promise<unknown> {
-  return await new Promise((resolve) => {
-    scrollIntoView(target, { time: duration }, resolve)
-  })
 }
