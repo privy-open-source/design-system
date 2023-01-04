@@ -60,7 +60,7 @@
     "eslint-plugin-varspacing": "1.2.2",
     "eslint-plugin-vue": "9.8.0",
     "happy-dom": "8.1.1",
-    "husky": "8.0.2",
+    "husky": "8.0.3",
     "jest-extended": "3.2.1",
     "lint-staged": "13.1.0",
     "nanodelay": "2.0.2",
