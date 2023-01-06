@@ -59,7 +59,7 @@
     "eslint-plugin-unicorn": "45.0.2",
     "eslint-plugin-varspacing": "1.2.2",
     "eslint-plugin-vue": "9.8.0",
-    "happy-dom": "8.1.1",
+    "happy-dom": "8.1.3",
     "husky": "8.0.3",
     "jest-extended": "3.2.1",
     "lint-staged": "13.1.0",
