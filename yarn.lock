@@ -2643,7 +2643,7 @@ __metadata:
     "@vitest/browser": ^0.25.3
     "@vitest/coverage-c8": 0.24.5
     "@vue/eslint-config-typescript": 11.0.2
-    "@vueuse/core": 9.9.0
+    "@vueuse/core": 9.10.0
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
@@ -2729,7 +2729,7 @@ __metadata:
     "@privyid/tailwind-preset": "workspace:^"
     "@testing-library/dom": ^8.19.0
     "@testing-library/user-event": ^14.4.3
-    "@vueuse/core": 9.9.0
+    "@vueuse/core": 9.10.0
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
@@ -4083,7 +4083,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:9.9.0, @vueuse/core@npm:^9.9.0":
+"@vueuse/core@npm:9.10.0":
+  version: 9.10.0
+  resolution: "@vueuse/core@npm:9.10.0"
+  dependencies:
+    "@types/web-bluetooth": ^0.0.16
+    "@vueuse/metadata": 9.10.0
+    "@vueuse/shared": 9.10.0
+    vue-demi: "*"
+  checksum: 9e3b0c0baa1e3daf3ae508f76acf4e73ec80a2089d420f5de7c203e9fecd8cd4596a5e4635bbf09a762e0bba022f26806ee23b69d5d01a5d0e4b76e2ad2878a4
+  languageName: node
+  linkType: hard
+
+"@vueuse/core@npm:^9.9.0":
   version: 9.9.0
   resolution: "@vueuse/core@npm:9.9.0"
   dependencies:
@@ -4119,10 +4131,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vueuse/metadata@npm:9.10.0":
+  version: 9.10.0
+  resolution: "@vueuse/metadata@npm:9.10.0"
+  checksum: ef9b4970cc1795e197279b59cfd82c7475323c17ae02701e5a6be26df1258330d4fafb7c05d005dfa7af97277509a8589d62467925319e1c5c17715805554bb7
+  languageName: node
+  linkType: hard
+
 "@vueuse/metadata@npm:9.9.0":
   version: 9.9.0
   resolution: "@vueuse/metadata@npm:9.9.0"
   checksum: d0dd631f79d515c4650eb35671a38b282cf9458f3b86768a97a5d74fb1836440db1e0fed178d084d5174c926aa586509ed31597f0b062240ce268e6fe1f6c6fd
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:9.10.0":
+  version: 9.10.0
+  resolution: "@vueuse/shared@npm:9.10.0"
+  dependencies:
+    vue-demi: "*"
+  checksum: 1481ad7273eb8835a42fd49805d32ae97465188d260ddb28fdffebda7bedea5943bf49c3bd128121b32719307eaf1cb69b37b60fa1195c10a555e7aec3d78c22
   languageName: node
   linkType: hard
 
