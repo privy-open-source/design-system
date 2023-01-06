@@ -4,7 +4,7 @@
     v-p-aspect-ratio="layout === 'fixed' ? 210/297 : 16/9"
     class="pdf">
     <div
-      class="shadow-xl pdf__navbar">
+      class="pdf__navbar">
       <slot
         name="navbar"
         :page="page"
@@ -29,9 +29,24 @@
         <div
           ref="viewer"
           class="pdf__viewer pdfViewer" />
-        <slot />
+        <slot
+          :page="page"
+          :scale="scale"
+          :total-page="totalPage"
+          :zoom-in="zoomIn"
+          :zoom-out="zoomOut"
+          :doc="pdfDoc" />
       </div>
       <!-- Minimum PDFJS Viewer end -->
+
+      <slot
+        container="container"
+        :page="page"
+        :scale="scale"
+        :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :doc="pdfDoc" />
 
       <transition name="slide-up">
         <PdfNavigation
@@ -72,7 +87,7 @@ import type {
   EventBus,
 } from 'pdfjs-dist/web/pdf_viewer'
 import { pAspectRatio } from '../aspect-ratio'
-import { templateRef } from '@vueuse/core'
+import { templateRef, watchDebounced } from '@vueuse/core'
 import { clamp } from 'lodash'
 import { LayoutVariant, PDF_VIEWER_CONTEXT } from '.'
 import { useSticky } from './utils/use-sticky'
@@ -250,9 +265,9 @@ export default defineComponent({
       zoom(-0.1)
     }
 
-    watch(() => [props.src, props.password], ([src, password]) => {
+    watchDebounced(() => [props.src, props.password], ([src, password]) => {
       openDoc(src, password)
-    })
+    }, { debounce: 500 })
 
     watch(() => props.layout, (layout) => {
       enableSticky.value = layout === 'fit'
@@ -346,8 +361,12 @@ export default defineComponent({
     }
   }
 
+  &__navbar {
+    @apply z-1 bg-default shadow-lg;
+  }
+
   &__footer {
-    @apply bg-default;
+    @apply z-1 bg-default shadow-lg-top;
   }
 }
 </style>

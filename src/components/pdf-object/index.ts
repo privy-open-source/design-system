@@ -1,4 +1,4 @@
-import { MaybeRef } from '@vueuse/shared'
+import { MaybeRef, syncRef } from '@vueuse/shared'
 import {
   computed,
   inject,
@@ -6,7 +6,6 @@ import {
   onBeforeUnmount,
   reactive,
   Ref,
-  toRefs,
   unref,
   ref,
   watch,
@@ -16,8 +15,8 @@ import { PdfViewerContext } from '../pdf-viewer'
 import { useSelector } from './utils/use-selector'
 import { debounce } from 'lodash-es'
 import { focus as focus_ } from '../tour/utils/focus'
-
-export const focus = debounce(focus_, 100)
+import { useVModel } from '@vueuse/core'
+import { useClamp } from '@vueuse/math'
 
 export interface PdfObject {
   id: symbol,
@@ -35,35 +34,29 @@ export interface PdfObjects extends PdfViewerContext {
 
 export const PDF_OBJECTS_CONTEXT: InjectionKey<PdfObjects> = Symbol('PDFObjects')
 
-export interface PdfObjectProp extends Omit<PdfObject, 'id'> {
+export interface PdfObjectSize {
+  width: number,
+  height: number,
   minWidth?: number,
   minHeight?: number,
   maxWidth?: number,
   maxHeight?: number,
 }
 
-export function useObjectModel (props: PdfObjectProp) {
-  const {
-    objects,
-    page,
-  } = inject(PDF_OBJECTS_CONTEXT)
+export type PdfObjectProp = PdfObjectSize & Omit<PdfObject, 'id'>
 
-  const object = reactive<PdfObject>({
-    id    : Symbol('PDFObject'),
-    page  : props.page,
-    x     : props.x,
-    y     : props.y,
-    width : props.width,
-    height: props.height,
-  })
-
-  objects.set(object.id, object)
+export function useObjectSize (props: PdfObjectSize) {
+  const vWidth  = useVModel(props, 'width')
+  const vHeight = useVModel(props, 'height')
 
   const ratio     = computed(() => props.width / props.height)
   const minWidth  = ref(props.minWidth ?? props.width * 0.5)
-  const minHeight = ref(props.minHeight ?? props.height * 0.5)
   const maxWidth  = ref(props.maxWidth ?? props.width * 2)
+  const minHeight = ref(props.minHeight ?? props.height * 0.5)
   const maxHeight = ref(props.maxHeight ?? props.height * 2)
+
+  const width  = useClamp(props.width, minWidth, maxWidth)
+  const height = useClamp(props.height, minHeight, maxHeight)
 
   watch(() => props.minWidth, (value) => {
     if (Number.isFinite(value))
@@ -85,17 +78,78 @@ export function useObjectModel (props: PdfObjectProp) {
       maxHeight.value = value
   })
 
+  syncRef(width, vWidth)
+  syncRef(height, vHeight)
+
+  return {
+    ratio,
+    width,
+    height,
+    minWidth,
+    maxWidth,
+    minHeight,
+    maxHeight,
+  }
+}
+
+/**
+ * V-model for PDF Object
+ * @param props PDF Object props
+ */
+export function useObjectModel (props: PdfObjectProp) {
+  const {
+    objects,
+    page: currentPage,
+  } = inject(PDF_OBJECTS_CONTEXT)
+
+  const vX    = useVModel(props, 'x')
+  const vY    = useVModel(props, 'y')
+  const vPage = useVModel(props, 'page')
+
+  const page = ref(props.page ?? currentPage.value)
+  const x    = ref(props.x)
+  const y    = ref(props.y)
+  const id   = Symbol('PDFObject')
+
+  const {
+    width,
+    height,
+    minWidth,
+    maxWidth,
+    minHeight,
+    maxHeight,
+    ratio,
+  } = useObjectSize(props)
+
+  objects.set(id, reactive({
+    id,
+    page,
+    x,
+    y,
+    width,
+    height,
+  }))
+
   onBeforeMount(async () => {
-    if (!Number.isFinite(object.page))
-      object.page = page.value
+    if (!Number.isFinite(page.value))
+      page.value = currentPage.value
   })
 
   onBeforeUnmount(() => {
-    objects.delete(object.id)
+    objects.delete(id)
   })
 
+  syncRef(x, vX)
+  syncRef(y, vY)
+  syncRef(page, vPage)
+
   return {
-    ...toRefs(object),
+    id,
+    x,
+    y,
+    page,
+    width,
+    height,
     minWidth,
     minHeight,
     maxWidth,
@@ -111,3 +165,5 @@ export function usePage (page: MaybeRef<number>) {
 
   return pageEl
 }
+
+export const focus = debounce(focus_, 100)

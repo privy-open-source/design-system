@@ -8,10 +8,20 @@
     class="pdf-object-text"
     :moveable="!isEdit"
     :min-width="minWidth"
-    :min-height="minHeight"
     :max-width="maxWidth"
+    :min-height="minHeight"
     :max-height="maxHeight">
-    <Textarea v-model="vText" />
+    <p-textarea
+      v-if="isEdit"
+      v-model="vText"
+      :placeholder="placeholder"
+      @blur="isEdit = false"
+      @keydown.esc.passive="isEdit = false" />
+    <img
+      v-else
+      class="pdf-object-text__result"
+      :src="image"
+      alt="pdf-object-text result">
   </PdfObject>
 </template>
 
@@ -19,15 +29,19 @@
 import { useVModel } from '@vueuse/core'
 import {
   defineComponent,
+  inject,
   ref,
   watch,
 } from 'vue-demi'
+import { PDF_OBJECTS_CONTEXT, useObjectSize } from '../pdf-object'
 import PdfObject from '../pdf-object/PdfObject.vue'
-import Textarea from '../textarea/Textarea.vue'
-import { getTextWidth } from './utils/text-to-image'
+import pTextarea from '../textarea/Textarea.vue'
+import { getTextWidth, toImage } from './utils/text-to-image'
+
+const OBJECT_PADDING = 12 + 1 // 0.75rem padding + 1px border
 
 export default defineComponent({
-  components: { PdfObject, Textarea },
+  components: { PdfObject, pTextarea },
   props     : {
     x: {
       type   : Number,
@@ -73,6 +87,14 @@ export default defineComponent({
       type   : String,
       default: '',
     },
+    placeholder: {
+      type   : String,
+      default: '(Double Click To Edit)',
+    },
+    editable: {
+      type   : Boolean,
+      default: true,
+    },
   },
   emits: [
     'update:x',
@@ -84,25 +106,54 @@ export default defineComponent({
     'update:src',
   ],
   setup (props) {
-    const vX      = useVModel(props, 'x')
-    const vY      = useVModel(props, 'y')
-    const vPage   = useVModel(props, 'page')
-    const vWidth  = useVModel(props, 'width')
-    const vHeight = useVModel(props, 'height')
-    const vText   = useVModel(props, 'text')
+    const vX    = useVModel(props, 'x')
+    const vY    = useVModel(props, 'y')
+    const vPage = useVModel(props, 'page')
+    const vText = useVModel(props, 'text')
+
+    const { scale } = inject(PDF_OBJECTS_CONTEXT)
+    const {
+      ratio,
+      width : vWidth,
+      height: vHeight,
+    } = useObjectSize(props)
 
     const isEdit = ref(true)
+    const image  = ref('')
 
-    watch(vText, (value) => {
+    watch(vText, (text) => {
       const textWidth = getTextWidth({
-        text  : value,
         width : vWidth.value,
         height: vHeight.value,
+        text  : text,
       })
 
-      if (vWidth.value <= textWidth)
-        vWidth.value = textWidth
+      if (vWidth.value - (OBJECT_PADDING * 2) <= textWidth) {
+        const width  = textWidth + (OBJECT_PADDING * 2)
+        const height = width / ratio.value
+
+        vWidth.value  = width
+        vHeight.value = height
+      }
     })
+
+    // eslint-disable-next-line array-bracket-newline, array-element-newline
+    watch([vWidth, vHeight, vText], ([width, height, text]) => {
+      image.value = toImage({
+        text      : text || props.placeholder,
+        height    : height,
+        width     : width,
+        scale     : scale.value,
+        padding   : OBJECT_PADDING,
+        fontSize  : 16,
+        lineHeight: 1.5,
+      })
+    }, { immediate: true })
+
+    function edit () {
+      if (props.editable)
+        isEdit.value = true
+    }
 
     return {
       isEdit,
@@ -112,6 +163,8 @@ export default defineComponent({
       vWidth,
       vHeight,
       vText,
+      image,
+      edit,
     }
   },
 })
@@ -119,12 +172,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf-object-text {
-  .textarea {
-    @apply w-full h-full;
-  }
-
+  &__result,
+  .textarea,
   .textarea__input {
-    @apply pointer-events-auto;
+    @apply w-full h-full border-0;
   }
 }
 </style>

@@ -8,10 +8,10 @@
     :data-page="page"
     :data-width="width"
     :data-height="height"
-    @keydown.up.prevent="move(0, -1)"
-    @keydown.down.prevent="move(0, 1)"
-    @keydown.left.prevent="move(-1, 0)"
-    @keydown.right.prevent="move(1, 0)">
+    @keydown.up.passive="move(0, -1)"
+    @keydown.down.passive="move(0, 1)"
+    @keydown.left.passive="move(-1, 0)"
+    @keydown.right.passive="move(1, 0)">
     <div class="pdf-object__container">
       <slot />
     </div>
@@ -27,7 +27,6 @@ import {
   syncRef,
   templateRef,
   until,
-  useVModel,
 } from '@vueuse/core'
 import {
   defineComponent,
@@ -117,12 +116,6 @@ export default defineComponent({
       scale,
       objects,
     } = inject(PDF_OBJECTS_CONTEXT)
-
-    const vX      = useVModel(props, 'x')
-    const vY      = useVModel(props, 'y')
-    const vPage   = useVModel(props, 'page')
-    const vWidth  = useVModel(props, 'width')
-    const vHeight = useVModel(props, 'height')
 
     const {
       id,
@@ -232,13 +225,15 @@ export default defineComponent({
     })
 
     function move (dx: number, dy: number) {
-      x.value += dx
-      y.value += dy
+      if (props.moveable) {
+        x.value += dx
+        y.value += dy
+      }
     }
 
     function autoPosition () {
       const otherObjects = [...objects.values()].filter((obj) => {
-        return obj.id !== id.value
+        return obj.id !== id
           && Number.isFinite(obj.x)
           && Number.isFinite(obj.y)
           && obj.page === page.value
@@ -263,12 +258,6 @@ export default defineComponent({
       x.value = center.x
       y.value = center.y
     }
-
-    syncRef(vX, x)
-    syncRef(vY, y)
-    syncRef(vPage, page)
-    syncRef(vWidth, width)
-    syncRef(vHeight, height)
 
     syncRef(moveable, toRef(props, 'moveable'), { direction: 'rtl', immediate: true })
     syncRef(resizeable, toRef(props, 'resizeable'), { direction: 'rtl', immediate: true })
@@ -298,6 +287,13 @@ export default defineComponent({
     &,
     & > * {
       @apply touch-none pointer-events-none;
+    }
+
+    button,
+    input,
+    textarea,
+    a {
+      @apply pointer-events-auto;
     }
   }
 

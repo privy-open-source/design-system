@@ -96,6 +96,11 @@ interface ToImage {
    * @default 12
    */
   padding?: number,
+  /**
+   * Render scale
+   * @default 1
+   */
+  scale?: number,
 }
 
 export function toImage (options: ToImage) {
@@ -107,9 +112,9 @@ export function toImage (options: ToImage) {
   const fontSize   = options.fontSize ?? 16
   const lineHeight = options.lineHeight ?? 1.65
   const padding    = options.padding ?? 12
-  const color      = options.color ?? '#4a5362'
+  const color      = options.color ?? '#0D1117'
 
-  context.font         = `${fontSize}px "${fontFamily}"`
+  context.font         = `${fontSize}px ${JSON.stringify(fontFamily)}`
   context.fillStyle    = color
   context.textBaseline = 'top'
 
@@ -118,7 +123,7 @@ export function toImage (options: ToImage) {
     text,
     padding,
     padding,
-    width - (padding * 2),
+    width - (padding * 2) - 2,
     fontSize * lineHeight,
   )
 
@@ -131,12 +136,11 @@ export function getTextWidth (options: ToImage): number {
   const text       = options.text
   const fontFamily = options.fontFamily ?? 'DM Sans'
   const fontSize   = options.fontSize ?? 16
-  const padding    = options.padding ?? 12
-  const color      = options.color ?? '#4a5362'
+  const color      = options.color ?? '#0D1117'
 
-  context.font         = `${fontSize}px "${fontFamily}"`
+  context.font         = `${fontSize}px ${JSON.stringify(fontFamily)}`
   context.fillStyle    = color
   context.textBaseline = 'top'
 
-  return context.measureText(text).width + (padding * 2)
+  return Math.max(...text.split('\n').map((p) => context.measureText(p).width))
 }
