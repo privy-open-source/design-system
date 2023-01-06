@@ -110,7 +110,7 @@ export default defineComponent({
   @apply w-full relative bg-default;
 
   &__form {
-    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none ;
+    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none;
 
     &:disabled,
     &--disabled,

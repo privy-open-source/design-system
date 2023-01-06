@@ -97,6 +97,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .nav {
+
   &__item {
     &&--no-label {
       .nav__link__label {

@@ -39,6 +39,19 @@ export default defineComponent({
 
 <style lang="postcss">
 .navbar {
+  --p-navbar-dropdown-link-color: theme(textColor.subtle);
+  --p-navbar-dropdown-link-color-hover: theme(textColor.default);
+  --p-navbar-dropdown-link-bgcolor: theme(backgroundColor.transparent);
+  --p-navbar-dropdown-link-bgcolor-active: theme(backgroundColor.subtle.DEFAULT);
+  --p-navbar-dropdown-variant-line-border-color: theme(borderColor.on-emphasis.DEFAULT);
+
+  &&--dark {
+    --p-navbar-dropdown-link-color: theme(textColor.muted);
+    --p-navbar-dropdown-link-color-hover: theme(textColor.on-emphasis);
+    --p-navbar-dropdown-link-bgcolor-active: theme(backgroundColor.emphasis.alpha.DEFAULT);
+    --p-navbar-dropdown-variant-line-border-color: theme(borderColor.default.DEFAULT);
+  }
+
   &__nav {
     @apply flex flex-row items-center;
 
@@ -53,22 +66,14 @@ export default defineComponent({
     .dropdown {
       &__activator {
         &.btn {
-          @apply px-3 border-transparent bg-transparent shadow-none rounded font-normal text-subtle hover:text-default hover:shadow-none hover:border-transparent;
+          @apply px-3 border-transparent bg-[color:var(--p-navbar-dropdown-bgcolor)] hover:bg-[color:var(--p-navbar-dropdown-bgcolor)] shadow-none rounded font-normal text-[color:var(--p-navbar-dropdown-link-color)] hover:text-[color:var(--p-navbar-dropdown-link-color-hover)] hover:shadow-none hover:border-transparent;
         }
-        /* @apply relative;
-        &.btn {
-          @apply pl-3 pr-10 border-transparent bg-transparent shadow-none rounded font-normal text-subtle hover:text-default hover:shadow-none hover:border-transparent;
-        }
-
-        .dropdown__caret {
-          @apply absolute right-3;
-        } */
       }
 
       &--open {
         .dropdown__activator {
           &.btn {
-            @apply text-default cursor-default border-transparent bg-transparent hover:bg-transparent;
+            @apply text-[color:var(--p-navbar-dropdown-link-color-hover)] cursor-default border-transparent bg-[color:var(--p-navbar-dropdown-bgcolor)] hover:bg-[color:var(--p-navbar-dropdown-bgcolor)];
           }
         }
       }
@@ -81,7 +86,7 @@ export default defineComponent({
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply bg-subtle hover:bg-subtle;
+              @apply bg-[color:var(--p-navbar-dropdown-link-bgcolor-active)] hover:bg-[color:var(--p-navbar-dropdown-link-bgcolor-active)];
             }
           }
         }
@@ -89,7 +94,7 @@ export default defineComponent({
 
       &.nav--condensed {
         .nav__link--active {
-          @apply bg-subtle;
+          @apply bg-[color:var(--p-navbar-dropdown-link-bgcolor-active)];
         }
       }
     }
@@ -105,7 +110,7 @@ export default defineComponent({
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply border-b-on-emphasis;
+              @apply border-b-[color:var(--p-navbar-dropdown-variant-line-border-color)];
             }
           }
         }

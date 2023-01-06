@@ -103,18 +103,20 @@ export default defineComponent({
 
 <style lang="postcss">
 .navbar {
-  @apply relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  --p-navbar-bgcolor: theme(backgroundColor.transparent);
+
+  @apply bg-[color:var(--p-navbar-bgcolor)] relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
 
   &&--fixed {
     @apply fixed left-0 top-0 w-full z-[1030];
   }
 
   &&--light {
-    @apply bg-default;
+    --p-navbar-bgcolor: theme(backgroundColor.default.DEFAULT);
   }
 
   &&--dark {
-    @apply bg-emphasis;
+    --p-navbar-bgcolor: theme(backgroundColor.emphasis.subtle);
   }
 
   &&--shadow {

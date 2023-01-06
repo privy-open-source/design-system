@@ -64,18 +64,15 @@ export default defineComponent({
   @apply flex w-full;
 
   &:has(:first-child:is(.input-group__addon):nth-last-child(2)) {
-    @apply rounded bg-default focus-within:ring-4 focus-within:ring-subtle/10 hover:border hover:border-subtle focus-within:border focus-within:border-subtle;
+    @apply rounded bg-default focus-within:ring-4 focus-within:ring-subtle/10 border border-solid border-muted hover:border-subtle focus-within:border-subtle;
 
     .input {
       @apply bg-transparent;
     }
 
-    &:hover,
-    &:focus-within {
-      .input > .input__form,
-      .input-group__addon {
-        @apply border-0;
-      }
+    .input > .input__form,
+    .input-group__addon {
+      @apply border-0;
     }
 
     .input > .input__form {
@@ -86,12 +83,12 @@ export default defineComponent({
   & > .input-group__addon:not(:first-child),
   & > .input:not(:first-child) > .input__form,
   & > .select:not(:first-child) > .input > .input__form {
-    @apply rounded-l-none border-l-0;
+    @apply rounded-l-none border-l-transparent;
   }
 
   & > .input-group__addon:not(:last-child),
   & > .input:not(:last-child) > .input__form {
-    @apply rounded-r-none border-r-0;
+    @apply rounded-r-none border-r-transparent;
   }
 
   & > .select:not(:last-child) > .input > .input__form {
@@ -112,7 +109,7 @@ export default defineComponent({
     > .input__form {
       &:hover,
       &:focus {
-        @apply z-[2] border-l border-r;
+        @apply z-[2] border-l-subtle border-r-subtle;
       }
     }
   }
