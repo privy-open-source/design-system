@@ -1,1 +1,0 @@
-import{f as o,o as n,c as t,g as s}from"../app.98882f81.js";const _={},r={class:"input-group__addon"};function c(e,d){return n(),t("div",r,[s(e.$slots,"default")])}const a=o(_,[["render",c]]);export{a as p};
