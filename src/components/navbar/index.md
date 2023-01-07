@@ -12,7 +12,7 @@
   import pInput from '../input/Input.vue'
   import pInputGroup from '../input-group/InputGroup.vue'
   import pInputGroupAddon from '../input-group/InputGroupAddon.vue'
-  import pDivider from '../divider/divider.vue'
+  import pDivider from '../divider/Divider.vue'
   import pButton from '../button/Button.vue'
   import pAvatar from '../avatar/Avatar.vue'
   import pCollapse from '../collapse/Collapse.vue'
@@ -487,7 +487,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 <preview class="flex-grow">
   <p-navbar>
     <div class="flex flex-row">
-      <div class="basis-2/4 focus-within:basis-full transition-all ease-in-out duration-200">
+      <div class="transition-all duration-200 ease-in-out basis-2/4 focus-within:basis-full">
         <p-navbar-nav>
           <p-input-group>
             <p-input-group-addon>
@@ -532,7 +532,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 <template>
   <p-navbar>
     <div class="flex flex-row">
-      <div class="basis-2/4 focus-within:basis-full transition-all ease-in-out duration-200">
+      <div class="transition-all duration-200 ease-in-out basis-2/4 focus-within:basis-full">
         <p-navbar-nav>
           <p-input-group>
             <p-input-group-addon>
@@ -597,7 +597,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 <template>
   <p-navbar>
     <div class="flex flex-row">
-      <div class="basis-2/4 focus-within:basis-full transition-all ease-in-out duration-200">
+      <div class="transition-all duration-200 ease-in-out basis-2/4 focus-within:basis-full">
         <p-navbar-nav>
           <p-input-group>
             <p-input-group-addon>
