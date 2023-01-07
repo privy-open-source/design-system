@@ -55,5 +55,5 @@ export function useSticky (target: Ref<HTMLElement>, options?: Partial<StickyOpt
     }
   })
 
-  return { enable }
+  return enable
 }

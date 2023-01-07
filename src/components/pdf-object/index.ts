@@ -1,4 +1,6 @@
-import { MaybeRef, syncRef } from '@vueuse/shared'
+import {
+  MaybeRef, syncRef, until,
+} from '@vueuse/shared'
 import {
   computed,
   inject,
@@ -131,8 +133,11 @@ export function useObjectModel (props: PdfObjectProp) {
   }))
 
   onBeforeMount(async () => {
-    if (!Number.isFinite(page.value))
+    if (!Number.isFinite(page.value)) {
+      await until(currentPage).toBeTruthy()
+
       page.value = currentPage.value
+    }
   })
 
   onBeforeUnmount(() => {

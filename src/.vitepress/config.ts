@@ -278,6 +278,10 @@ export default defineConfig({
               text: 'PDF Viewer',
               link: '/components/pdf-viewer/',
             },
+            {
+              text: 'PDF Object',
+              link: '/components/pdf-object/',
+            },
           ],
         },
         {

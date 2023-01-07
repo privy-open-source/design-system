@@ -4,9 +4,9 @@
     v-p-aspect-ratio="layout === 'fixed' ? 210/297 : 16/9"
     class="pdf">
     <div
-      class="pdf__navbar">
+      class="pdf__header">
       <slot
-        name="navbar"
+        name="header"
         :page="page"
         :scale="scale"
         :total-page="totalPage"
@@ -40,7 +40,7 @@
       <!-- Minimum PDFJS Viewer end -->
 
       <slot
-        container="container"
+        name="container"
         :page="page"
         :scale="scale"
         :total-page="totalPage"
@@ -52,6 +52,15 @@
         <PdfNavigation
           v-show="!idle" />
       </transition>
+
+      <slot
+        name="body"
+        :page="page"
+        :scale="scale"
+        :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :doc="pdfDoc" />
     </PdfObjects>
     <div class="pdf__footer">
       <slot
@@ -87,7 +96,11 @@ import type {
   EventBus,
 } from 'pdfjs-dist/web/pdf_viewer'
 import { pAspectRatio } from '../aspect-ratio'
-import { templateRef, watchDebounced } from '@vueuse/core'
+import {
+  templateRef,
+  useToNumber,
+  watchDebounced,
+} from '@vueuse/core'
 import { clamp } from 'lodash'
 import { LayoutVariant, PDF_VIEWER_CONTEXT } from '.'
 import { useSticky } from './utils/use-sticky'
@@ -121,7 +134,7 @@ export default defineComponent({
       default: 'fixed',
     },
     offsetTop: {
-      type   : Number,
+      type   : [Number, String],
       default: 0,
     },
   },
@@ -150,8 +163,8 @@ export default defineComponent({
     const error   = ref<Error>()
     const idle    = useIdle(container)
 
-    const offsetTop                = toRef(props, 'offsetTop')
-    const { enable: enableSticky } = useSticky(root, { offsetTop })
+    const offsetTop    = useToNumber(toRef(props, 'offsetTop'), { nanToZero: true })
+    const enableSticky = useSticky(root, { offsetTop: offsetTop })
 
     async function openDoc (url: string, password?: string) {
       loading.value = true
@@ -361,7 +374,7 @@ export default defineComponent({
     }
   }
 
-  &__navbar {
+  &__header {
     @apply z-1 bg-default shadow-lg;
   }
 

@@ -146,10 +146,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .toggle {
-  @apply inline-flex cursor-pointer relative items-center space-x-3 select-none;
+  @apply inline-flex cursor-pointer relative items-center select-none;
 
   &__switch {
-    @apply flex items-center justify-center relative bg-inactive border-subtle;
+    @apply flex items-center justify-center relative bg-inactive border-subtle mr-4;
   }
 
   &__pointer {
