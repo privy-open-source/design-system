@@ -2683,7 +2683,7 @@ __metadata:
     tabbable: 6.0.1
     tailwindcss: 3.2.4
     typescript: 4.9.4
-    vitepress: 1.0.0-alpha.34
+    vitepress: 1.0.0-alpha.35
     vitest: 0.24.5
     vue-demi: 0.13.11
     vue-router: 4.1.6
@@ -15316,9 +15316,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "vite@npm:4.0.3"
+"vite@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "vite@npm:4.0.4"
   dependencies:
     esbuild: ^0.16.3
     fsevents: ~2.3.2
@@ -15350,7 +15350,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 7df71d955f78cbe0dd8e1eb0851fc75070346a0426b8e3e913bf2e05d1053ca8a50619d550fab4f1ed52c68dfcc2921e6421504e9669fc5ed77497a77f84e33e
+  checksum: eb86c8cdfe8dcb6644005486b31cb60bc596f2aa683cb194abb5c0afca7c2a5dfdb02bbc7f83f419ad170227ac9c3b898f4406a6d1433105fb61d79d78e47d52
   languageName: node
   linkType: hard
 
@@ -15392,9 +15392,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-alpha.34":
-  version: 1.0.0-alpha.34
-  resolution: "vitepress@npm:1.0.0-alpha.34"
+"vitepress@npm:1.0.0-alpha.35":
+  version: 1.0.0-alpha.35
+  resolution: "vitepress@npm:1.0.0-alpha.35"
   dependencies:
     "@docsearch/css": ^3.3.1
     "@docsearch/js": ^3.3.1
@@ -15403,11 +15403,11 @@ __metadata:
     "@vueuse/core": ^9.9.0
     body-scroll-lock: 4.0.0-beta.0
     shiki: ^0.12.1
-    vite: ^4.0.3
+    vite: ^4.0.4
     vue: ^3.2.45
   bin:
     vitepress: bin/vitepress.js
-  checksum: e3f70797cab93e3a525634a2d669011a4526832653e2a10f0c2cb71e478afd2101baf043df7dd75deaf2b86e7b863d12d54899bdfbce56927072c0b128c635cb
+  checksum: 3501e66002272ef0e291fc84a4b0f0d5828a6803d130bdbdb894cdeef586884c211f2fdc4baae07713e09bea2554806478c23ac2acd1a75dd0a389b8fe2c5ec6
   languageName: node
   linkType: hard
 
