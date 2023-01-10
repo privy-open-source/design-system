@@ -51,9 +51,10 @@ export default function useDrag (target: Ref<HTMLElement>, hooks?: DragHooks) {
             }),
             Interact.modifiers.restrictRect({
               endOnly    : true,
-              restriction: (_x, _y, _element) => {
+              restriction: () => {
                 if (hoverzone.value)
                   return Interact.getElementRect(hoverzone.value)
+
                 // fallback
                 return {
                   top   : 0,

@@ -52,7 +52,7 @@ export function useResize (target: Ref<HTMLElement>, options: ResizeOptions = {}
               ratio    : unref(options.ratio) ?? 'preserve',
               modifiers: [
                 Interact.modifiers.restrictSize({
-                  min: (_x, _y, element) => {
+                  min: (x, y, element) => {
                     const scale = unref(options.scale) ?? 1
 
                     return {
@@ -61,7 +61,7 @@ export function useResize (target: Ref<HTMLElement>, options: ResizeOptions = {}
                       height: unref(options.minHeight) * scale,
                     }
                   },
-                  max: (_x, _y, element) => {
+                  max: (x, y, element) => {
                     const scale = unref(options.scale) ?? 1
 
                     return {
@@ -72,7 +72,7 @@ export function useResize (target: Ref<HTMLElement>, options: ResizeOptions = {}
                   },
                 }),
                 Interact.modifiers.restrictSize({
-                  max: (_x, _y, element) => {
+                  max: (x, y, element) => {
                     const reference = unref(options.reference)
 
                     if (reference) {

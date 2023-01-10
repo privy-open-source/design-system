@@ -8,10 +8,10 @@
     :data-page="page"
     :data-width="width"
     :data-height="height"
-    @keydown.up.passive="move(0, -1)"
-    @keydown.down.passive="move(0, 1)"
-    @keydown.left.passive="move(-1, 0)"
-    @keydown.right.passive="move(1, 0)">
+    @keydown.up.stop.prevent="move(0, -1)"
+    @keydown.down.stop.prevent="move(0, 1)"
+    @keydown.left.stop.prevent="move(-1, 0)"
+    @keydown.right.stop.prevent="move(1, 0)">
     <div class="pdf-object__container">
       <slot />
       <PdfObjectDebugger v-if="debug" />
@@ -292,7 +292,10 @@ export default defineComponent({
       ratio,
     })
 
-    return { move }
+    return {
+      move,
+      focus,
+    }
   },
 })
 </script>

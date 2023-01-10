@@ -254,12 +254,13 @@ export default defineComponent({
         pdfEventBus.value    = bus
         pdfLinkService.value = new PDFLinkService({ eventBus: pdfEventBus.value })
         pdfViewer.value      = new PDFViewer({
-          container     : container.value,
-          viewer        : viewer.value,
-          eventBus      : pdfEventBus.value,
-          linkService   : pdfLinkService.value,
-          l10n          : NullL10n,
-          useOnlyCssZoom: true,
+          container        : container.value,
+          viewer           : viewer.value,
+          eventBus         : pdfEventBus.value,
+          linkService      : pdfLinkService.value,
+          l10n             : NullL10n,
+          useOnlyCssZoom   : true,
+          removePageBorders: true,
         })
 
         pdfLinkService.value.setViewer(pdfViewer.value)
