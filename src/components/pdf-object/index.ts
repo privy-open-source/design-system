@@ -20,7 +20,7 @@ import { useSelector } from './utils/use-selector'
 import { focus as focus_ } from '../tour/utils/focus'
 import { useVModel } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'
-import { debounce } from 'lodash'
+import { debounce } from 'lodash-es'
 
 export interface PdfObject {
   id: symbol,
