@@ -33,7 +33,7 @@ import {
   ref,
   watch,
 } from 'vue-demi'
-import { PDF_OBJECTS_CONTEXT, useObjectSize } from '../pdf-object'
+import { PDF_OBJECTS_CONTEXT, useSizeModel } from '../pdf-object'
 import PdfObject from '../pdf-object/PdfObject.vue'
 import pTextarea from '../textarea/Textarea.vue'
 import { getTextWidth, toImage } from './utils/text-to-image'
@@ -116,7 +116,7 @@ export default defineComponent({
       ratio,
       width : vWidth,
       height: vHeight,
-    } = useObjectSize(props)
+    } = useSizeModel(props)
 
     const isEdit = ref(true)
     const image  = ref('')

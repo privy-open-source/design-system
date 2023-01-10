@@ -25,7 +25,7 @@ export default function useDrag (target: Ref<HTMLElement>, hooks?: DragHooks) {
     if (target.value) {
       const { default: Interact } = await import('interactjs')
 
-      Interact.dynamicDrop(true)
+      // Interact.dynamicDrop(true)
 
       instance.value = Interact(target.value)
         .draggable({

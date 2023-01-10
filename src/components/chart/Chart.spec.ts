@@ -156,7 +156,7 @@ it('should re-render if data changed', async () => {
             weight: '600',
           },
         },
-        grid: { borderColor: '#BFBFBF' },
+        border: { color: '#BFBFBF' },
       },
       y: {
         ticks: {
@@ -167,10 +167,7 @@ it('should re-render if data changed', async () => {
             weight: '600',
           },
         },
-        grid: {
-          borderColor: '#BFBFBF',
-          borderDash : [4],
-        },
+        border: { color: '#BFBFBF', dash: [4] },
       },
     },
   })
@@ -265,7 +262,7 @@ it('should re-render if variant changed', async () => {
             weight: '600',
           },
         },
-        grid: { borderColor: '#BFBFBF' },
+        border: { color: '#BFBFBF' },
       },
       y: {
         ticks: {
@@ -276,10 +273,7 @@ it('should re-render if variant changed', async () => {
             weight: '600',
           },
         },
-        grid: {
-          borderColor: '#BFBFBF',
-          borderDash : [4],
-        },
+        border: { color: '#BFBFBF', dash: [4] },
       },
     },
   })
@@ -382,7 +376,7 @@ it('should re-render if variant changed', async () => {
             weight: '600',
           },
         },
-        grid: { borderColor: '#BFBFBF' },
+        border: { color: '#BFBFBF' },
       },
       y: {
         ticks: {
@@ -393,10 +387,7 @@ it('should re-render if variant changed', async () => {
             weight: '600',
           },
         },
-        grid: {
-          borderColor: '#BFBFBF',
-          borderDash : [4],
-        },
+        border: { color: '#BFBFBF', dash: [4] },
       },
     },
   })
@@ -446,7 +437,7 @@ it('should re-render if variant changed', async () => {
             weight: '600',
           },
         },
-        grid: { borderColor: '#BFBFBF' },
+        border: { color: '#BFBFBF' },
       },
       y: {
         ticks: {
@@ -457,10 +448,7 @@ it('should re-render if variant changed', async () => {
             weight: '600',
           },
         },
-        grid: {
-          borderColor: '#BFBFBF',
-          borderDash : [4],
-        },
+        border: { color: '#BFBFBF', dash: [4] },
       },
     },
   })

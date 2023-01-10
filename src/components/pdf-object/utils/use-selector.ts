@@ -25,8 +25,8 @@ export function useSelector<E extends HTMLElement> (selector: MaybeRef<string>, 
     getElement()
   })
 
-  useMutationObserver(container, ([mutation]) => {
-    if (mutation.type === 'childList')
+  useMutationObserver(container, (mutations) => {
+    if (mutations.some((mutation) => mutation.type === 'childList'))
       getElement()
   }, { childList: true, subtree: true })
 

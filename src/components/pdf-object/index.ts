@@ -1,5 +1,7 @@
 import {
-  MaybeRef, syncRef, until,
+  MaybeRef,
+  syncRef,
+  until,
 } from '@vueuse/shared'
 import {
   computed,
@@ -15,10 +17,10 @@ import {
 } from 'vue-demi'
 import { PdfViewerContext } from '../pdf-viewer'
 import { useSelector } from './utils/use-selector'
-import { debounce } from 'lodash-es'
 import { focus as focus_ } from '../tour/utils/focus'
 import { useVModel } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'
+import { debounce } from 'lodash'
 
 export interface PdfObject {
   id: symbol,
@@ -34,8 +36,6 @@ export interface PdfObjects extends PdfViewerContext {
   objects: Map<symbol, PdfObject>,
 }
 
-export const PDF_OBJECTS_CONTEXT: InjectionKey<PdfObjects> = Symbol('PDFObjects')
-
 export interface PdfObjectSize {
   width: number,
   height: number,
@@ -47,7 +47,11 @@ export interface PdfObjectSize {
 
 export type PdfObjectProp = PdfObjectSize & Omit<PdfObject, 'id'>
 
-export function useObjectSize (props: PdfObjectSize) {
+export const PDF_OBJECTS_CONTEXT: InjectionKey<PdfObjects> = Symbol('PDFObjects')
+
+export const PDF_OBJECT_CONTEXT: InjectionKey<ReturnType<typeof useObjectModel>> = Symbol('PDFObjects')
+
+export function useSizeModel (props: PdfObjectSize) {
   const vWidth  = useVModel(props, 'width')
   const vHeight = useVModel(props, 'height')
 
@@ -121,7 +125,7 @@ export function useObjectModel (props: PdfObjectProp) {
     minHeight,
     maxHeight,
     ratio,
-  } = useObjectSize(props)
+  } = useSizeModel(props)
 
   objects.set(id, reactive({
     id,
@@ -172,3 +176,5 @@ export function usePage (page: MaybeRef<number>) {
 }
 
 export const focus = debounce(focus_, 100)
+
+export type AddonPositionVariant = 'top' | 'left' | 'right' | 'bottpm'

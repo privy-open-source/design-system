@@ -4,6 +4,7 @@
 
   # Persona Design System
 
+  ![npm (scoped)](https://img.shields.io/npm/v/@privyid/persona)
   [![Build CI](https://github.com/privy-open-source/design-system/actions/workflows/node.js.yml/badge.svg)](https://github.com/privy-open-source/design-system/actions/workflows/node.js.yml)
   [![CodeQL](https://github.com/privy-open-source/design-system/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/privy-open-source/design-system/actions/workflows/codeql-analysis.yml)
   [![Coverage Status](https://coveralls.io/repos/github/privy-open-source/design-system/badge.svg?branch=main)](https://coveralls.io/github/privy-open-source/design-system?branch=main)

@@ -37,7 +37,8 @@ export function useResize (target: Ref<HTMLElement>, options: ResizeOptions = {}
 
       instance.value = Interact(target.value)
         .resizable({
-          edges: {
+          enabled: enable.value,
+          edges  : {
             left  : false,
             top   : false,
             bottom: options.handleSelector ?? '.resize-handle',

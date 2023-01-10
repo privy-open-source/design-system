@@ -2,6 +2,7 @@ import type {
   Interactable,
   InteractEvent,
 } from '@interactjs/types'
+import { useMutationObserver } from '@vueuse/core'
 import {
   InjectionKey,
   onScopeDispose,
@@ -9,7 +10,7 @@ import {
   ref,
   Ref,
   shallowRef,
-  watch,
+
 } from 'vue-demi'
 
 export interface DropzoneContext {
@@ -20,6 +21,7 @@ export interface DropzoneContext {
 export const DROPZONE_CONTEXT_SYMBOL: InjectionKey<DropzoneContext> = Symbol('DropzoneContext')
 
 export default function useDrop (target: Ref<HTMLElement>, dropTarget: Ref<string>) {
+  const enable   = shallowRef(true)
   const instance = shallowRef<Interactable>()
 
   const dropzone  = ref<HTMLElement>()
@@ -31,12 +33,17 @@ export default function useDrop (target: Ref<HTMLElement>, dropTarget: Ref<strin
     if (target.value) {
       const { default: Interact } = await import('interactjs')
 
-      Interact.dynamicDrop(true)
+      // Interact.dynamicDrop(true)
 
       instance.value = Interact(dropTarget.value, { context: target.value })
         .dropzone({
           accept : '.pdf-object',
           overlap: 0.95,
+          enabled: enable.value,
+          checker (dragEvent, event, dropped, dropzone, dropzoneElement, draggable, draggableElement) {
+            // Check only child of this target can dropped in here
+            return dropped && target.value.contains(draggableElement)
+          },
           ondragenter (event: InteractEvent) {
             hoverzone.value = event.target as HTMLElement
 
@@ -60,13 +67,21 @@ export default function useDrop (target: Ref<HTMLElement>, dropTarget: Ref<strin
       instance.value.unset()
   }
 
-  watch([target, dropTarget], async () => {
-    await init()
-  })
+  useMutationObserver(target, (mutations) => {
+    const isChildChanged = mutations.some((mutation) => {
+      return mutation.type === 'childList'
+        && (mutation.target as HTMLElement).matches(dropTarget.value)
+    })
+
+    if (isChildChanged)
+      void init()
+  }, { subtree: true, childList: true })
 
   onScopeDispose(() => {
     destroy()
   })
 
   provide(DROPZONE_CONTEXT_SYMBOL, { dropzone, hoverzone })
+
+  return enable
 }

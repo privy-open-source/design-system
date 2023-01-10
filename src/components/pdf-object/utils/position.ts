@@ -45,7 +45,7 @@ interface GetPosition {
  * @param element Element to search
  * @param container Maximum search element
  */
-function findRelativeParent (element: HTMLElement, container: HTMLElement = document.body) {
+export function findRelativeParent (element: HTMLElement, container: HTMLElement = document.body) {
   let parent = element.parentElement
 
   do {

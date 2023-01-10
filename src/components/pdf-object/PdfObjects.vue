@@ -32,9 +32,9 @@ export default defineComponent({
     const dropTarget = toRef(props, 'dropTarget')
 
     provide(PDF_OBJECTS_CONTEXT, {
+      ...pdfContext,
       objects,
       root,
-      ...pdfContext,
     })
 
     useDrop(root, dropTarget)

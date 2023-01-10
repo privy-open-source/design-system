@@ -14,9 +14,10 @@
     @keydown.right.passive="move(1, 0)">
     <div class="pdf-object__container">
       <slot />
+      <PdfObjectDebugger v-if="debug" />
     </div>
     <div
-      v-show="resizeable"
+      v-show="resizable"
       class="pdf-object__resize resize-handle" />
   </div>
 </template>
@@ -32,6 +33,7 @@ import {
   defineComponent,
   inject,
   onMounted,
+  provide,
   ref,
   toRef,
   watchEffect,
@@ -39,6 +41,7 @@ import {
 import useDrag from './utils/use-drag'
 import {
   PDF_OBJECTS_CONTEXT,
+  PDF_OBJECT_CONTEXT,
   useObjectModel,
   usePage,
   focus,
@@ -46,9 +49,11 @@ import {
 import { computePosition, getPosition } from './utils/position'
 import { getEmptyPosition, ObjectPosition } from './utils/overlap'
 import { useResize } from './utils/use-resize'
+import PdfObjectDebugger from './PdfObjectDebugger.vue'
 
 export default defineComponent({
-  props: {
+  components: { PdfObjectDebugger },
+  props     : {
     x: {
       type   : Number,
       default: undefined,
@@ -85,21 +90,21 @@ export default defineComponent({
       type   : Number,
       default: undefined,
     },
-    ratio: {
-      type   : Number,
-      default: undefined,
-    },
     moveable: {
       type   : Boolean,
       default: true,
     },
-    resizeable: {
+    resizable: {
       type   : Boolean,
       default: true,
     },
     autofocus: {
       type   : Boolean,
-      default: true,
+      default: false,
+    },
+    debug: {
+      type   : Boolean,
+      default: false,
     },
   },
   emits: [
@@ -175,7 +180,7 @@ export default defineComponent({
       },
     })
 
-    const resizeable = useResize(object, {
+    const resizable = useResize(object, {
       minHeight: minHeight,
       minWidth : minWidth,
       maxHeight: maxHeight,
@@ -260,7 +265,7 @@ export default defineComponent({
     }
 
     syncRef(moveable, toRef(props, 'moveable'), { direction: 'rtl', immediate: true })
-    syncRef(resizeable, toRef(props, 'resizeable'), { direction: 'rtl', immediate: true })
+    syncRef(resizable, toRef(props, 'resizable'), { direction: 'rtl', immediate: true })
 
     onMounted(async () => {
       await until(pageEl).toBeTruthy()
@@ -270,6 +275,21 @@ export default defineComponent({
 
       if (props.autofocus)
         focus(object.value)
+    })
+
+    // Provide some data for debug
+    provide(PDF_OBJECT_CONTEXT, {
+      id,
+      x,
+      y,
+      page,
+      width,
+      height,
+      minHeight,
+      minWidth,
+      maxHeight,
+      maxWidth,
+      ratio,
     })
 
     return { move }

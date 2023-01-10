@@ -15,7 +15,8 @@
         :doc="pdfDoc" />
     </div>
 
-    <PdfObjects class="pdf__wrapper">
+    <PdfObjects
+      class="pdf__wrapper">
       <!-- Minimum PDFJS Viewer -->
       <div
         ref="container"
@@ -101,7 +102,7 @@ import {
   useToNumber,
   watchDebounced,
 } from '@vueuse/core'
-import { clamp } from 'lodash'
+import { clamp } from 'lodash-es'
 import { LayoutVariant, PDF_VIEWER_CONTEXT } from '.'
 import { useSticky } from './utils/use-sticky'
 import PdfNavigation from './PdfNavigation.vue'
@@ -160,6 +161,7 @@ export default defineComponent({
     const page      = useClamp(1, 1, totalPage)
 
     const loading = useLoading()
+    const ready   = ref(false)
     const error   = ref<Error>()
     const idle    = useIdle(container)
 
@@ -237,6 +239,8 @@ export default defineComponent({
 
         bus.on('pagesinit', () => {
           pdfViewer.value.currentScaleValue = 'page-width'
+          pdfViewer.value.currentPageNumber = page.value
+          ready.value                       = true
         })
 
         bus.on('pagechanging', (event: { pageNumber: number }) => {
@@ -299,13 +303,13 @@ export default defineComponent({
     watch([container, viewer], ([container_, viewer_]) => {
       if (pdfViewer.value) {
         if (container_ && viewer_) {
-          pdfViewer.value.container         = container_
-          pdfViewer.value.viewer            = viewer_
-          pdfViewer.value.currentPageNumber = page.value
-          pdfViewer.value.update()
+          pdfViewer.value.container = container_
+          pdfViewer.value.viewer    = viewer_
 
           if (pdfDoc.value)
             pdfViewer.value.setDocument(pdfDoc.value)
+
+          pdfViewer.value.update()
         }
       } else
         initPdfViewer()
@@ -342,6 +346,7 @@ export default defineComponent({
       pdfJS,
       idle,
       loading,
+      ready,
       error,
     }
   },
@@ -350,7 +355,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf {
-  @apply relative overflow-hidden w-full flex flex-col bg-subtle;
+  @apply relative overflow-hidden w-full flex flex-col bg-subtle z-1;
 
   &__wrapper {
     @apply relative h-full w-full flex-grow;
