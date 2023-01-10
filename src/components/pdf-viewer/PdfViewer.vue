@@ -259,7 +259,7 @@ export default defineComponent({
           eventBus         : pdfEventBus.value,
           linkService      : pdfLinkService.value,
           l10n             : NullL10n,
-          useOnlyCssZoom   : true,
+          useOnlyCssZoom   : false,
           removePageBorders: true,
         })
 
