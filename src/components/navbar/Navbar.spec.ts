@@ -16,7 +16,7 @@ it('should rendered properly without any props', () => {
   const navbar = screen.queryByTestId('navbar')
 
   expect(navbar).toBeInTheDocument()
-  expect(navbar).toHaveClass('navbar', 'navbar--light')
+  expect(navbar).toHaveClass('navbar')
 })
 
 it('should be abble to change variant via prop `variant`', () => {
@@ -55,21 +55,6 @@ it('should be able to make navbar fixed via prop `fixed`', () => {
 
   expect(navbar).toBeInTheDocument()
   expect(navbar).toHaveClass('navbar', 'navbar--fixed')
-})
-
-it('should be able to change color via prop `color`', () => {
-  const screen = render({
-    components: { Navbar },
-    template  : `
-      <Navbar color="dark">
-      </Navbar>
-    `,
-  })
-
-  const navbar = screen.queryByTestId('navbar')
-
-  expect(navbar).toBeInTheDocument()
-  expect(navbar).toHaveClass('navbar', 'navbar--dark')
 })
 
 it('should be able to make content automatically expand via prop `toggleable`', () => {

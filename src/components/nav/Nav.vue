@@ -98,10 +98,6 @@ export default defineComponent({
 * Last Update   : Aug 03, 2022
 */
 .nav {
-  --p-nav-link-color: theme(textColor.subtle);
-  --p-nav-link-variant-pills-bgcolor-active: theme(backgroundColor.subtle.DEFAULT);
-  --p-nav-link-variant-lines-border-active: theme(borderColor.on-emphasis.DEFAULT);
-
   /**
   * Default navigation
   * is horizontal
@@ -114,19 +110,11 @@ export default defineComponent({
 
   & > &__item {
     .nav__link {
-      @apply text-[color:var(--p-nav-link-color)];
-
-      [class*="--dark"] > & {
-        --p-nav-link-color: theme(textColor.muted);
-      }
+      @apply text-subtle dark:text-muted;
 
       &:hover,
       &--active {
-        --p-nav-link-color: theme(textColor.default);
-
-        [class*="--dark"] > & {
-          --p-nav-link-color: theme(textColor.on-emphasis);
-        }
+        @apply text-default dark:text-on-emphasis;
       }
     }
   }
@@ -150,11 +138,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-b-[color:var(--p-nav-link-variant-lines-border-active)];
-
-          [class*="--dark"] > & {
-            --p-nav-link-variant-lines-border-active: theme(borderColor.default.DEFAULT);
-          }
+          @apply border-b-on-emphasis dark:border-b-default;
         }
       }
     }
@@ -245,11 +229,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply bg-[color:var(--p-nav-link-variant-pills-bgcolor-active)] rounded-b;
-
-          [class*="--dark"] > & {
-            --p-nav-link-variant-pills-bgcolor-active: theme(backgroundColor.emphasis.alpha.DEFAULT);
-          }
+          @apply bg-subtle dark:bg-emphasis-alpha rounded-b;
         }
       }
     }

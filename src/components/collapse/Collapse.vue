@@ -89,7 +89,7 @@ export default defineComponent({
     @apply block visible;
   }
 
-  &:not(.collapse--show) {
+  &:not(&--show) {
     @apply hidden;
   }
 }

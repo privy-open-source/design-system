@@ -19,6 +19,7 @@
   import pCaption from '../caption/Caption.vue'
   import pCard from '../card/Card.vue'
   import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import IconView from '@carbon/icons-vue/lib/view/20'
   import IconUser from '@carbon/icons-vue/lib/events/16'
   import IconChevron from '@carbon/icons-vue/lib/chevron--sort/20'
   import IconNotif from '@carbon/icons-vue/lib/notification/20'
@@ -432,7 +433,7 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
 ## Responsive
 Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with available value `lg`, `md` and `sm`. Then `<p-navbar-toggle>` used with `<p-collapse is-nav>` component.
 
-<preview class="flex-grow">
+<preview>
   <p-navbar toggleable="lg">
     <p-navbar-brand>
       <img src="../../public/assets/images/logo.svg" />

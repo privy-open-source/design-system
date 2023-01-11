@@ -25,7 +25,6 @@ import {
 } from '@vueuse/core'
 import {
   ToggleableVariant,
-  ColorVariant,
   NAVBAR_SETTINGS,
 } from '.'
 
@@ -42,10 +41,6 @@ export default defineComponent({
     fixed: {
       type   : Boolean,
       default: false,
-    },
-    color: {
-      type   : String as PropType<ColorVariant>,
-      default: 'light',
     },
     condensed: {
       type   : Boolean,
@@ -66,9 +61,6 @@ export default defineComponent({
 
     const classNames = computed(() => {
       const result: string[] = ['']
-
-      if (props.color)
-        result.push(`navbar--${props.color}`)
 
       if (props.fixed)
         result.push('navbar--fixed')
@@ -103,20 +95,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .navbar {
-  --p-navbar-bgcolor: theme(backgroundColor.transparent);
-
-  @apply bg-[color:var(--p-navbar-bgcolor)] relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  @apply bg-default dark:bg-emphasis-subtle relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
 
   &&--fixed {
     @apply fixed left-0 top-0 w-full z-[1030];
-  }
-
-  &&--light {
-    --p-navbar-bgcolor: theme(backgroundColor.default.DEFAULT);
-  }
-
-  &&--dark {
-    --p-navbar-bgcolor: theme(backgroundColor.emphasis.subtle);
   }
 
   &&--shadow {
@@ -134,7 +116,11 @@ export default defineComponent({
 
     &-lg {
       .navbar__nav {
-        @apply lg:flex-row lg:items-center;
+        @apply lg:flex-row;
+      }
+
+      & > .collapse {
+        @apply lg:visible;
       }
 
       .navbar--collapse {
@@ -144,7 +130,11 @@ export default defineComponent({
 
     &-md {
       .navbar__nav {
-        @apply md:flex-row md:items-center;
+        @apply md:flex-row;
+      }
+
+      & > .collapse {
+        @apply md:visible;
       }
 
       .navbar--collapse {
@@ -154,7 +144,11 @@ export default defineComponent({
 
     &-sm {
       .navbar__nav {
-        @apply sm:flex-row sm:items-center;
+        @apply sm:flex-row;
+      }
+
+      & > .collapse {
+        @apply sm:visible;
       }
 
       .navbar--collapse {

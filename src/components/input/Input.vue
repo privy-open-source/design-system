@@ -107,7 +107,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .input {
-  @apply w-full relative bg-default;
+  @apply w-full relative bg-default rounded-tl rounded-bl;
 
   &__form {
     @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none;
