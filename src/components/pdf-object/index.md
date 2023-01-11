@@ -148,8 +148,7 @@ You can add additional element like action button using `<p-object-addon>` compo
       v-model:x="object.x"
       v-model:y="object.y"
       v-model:width="object.width"
-      v-model:height="object.height"
-      autofocus>
+      v-model:height="object.height">
       <img class="w-full h-full rounded" src="https://via.placeholder.com/430x230/23B242/ffffff" />
       <p-pdf-object-addon>
         <p-button size="sm" icon color="danger" @click="remove(i)">
@@ -228,8 +227,7 @@ You can also change addon position using prop `position`. valid value is: `left`
       :x="100"
       :y="100"
       :width="198"
-      :height="106"
-      autofocus>
+      :height="106">
       <img class="w-full h-full rounded" src="https://via.placeholder.com/198x106/23B242/ffffff" />
       <p-pdf-object-addon position="left">
         This is Addon
@@ -257,8 +255,7 @@ You can also change addon position using prop `position`. valid value is: `left`
       :x="100"
       :y="100"
       :width="198"
-      :height="106"
-      autofocus>
+      :height="106">
       <img class="w-full h-full rounded" src="https://via.placeholder.com/198x106/23B242/ffffff" />
       <p-pdf-object-addon position="left">
         This is Addon

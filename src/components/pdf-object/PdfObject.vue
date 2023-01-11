@@ -244,21 +244,21 @@ export default defineComponent({
           && obj.page === page.value
       })
 
-      const objectBoundary = {
+      const size = {
         width : width.value,
         height: height.value,
       }
 
-      const pageBoundary = {
+      const offside = {
         width : pageEl.value.clientWidth / scale.value,
         height: pageEl.value.clientHeight / scale.value,
       }
 
-      const center = getEmptyPosition(
-        objectBoundary,
-        pageBoundary,
-        otherObjects as ObjectPosition[],
-      )
+      const center = getEmptyPosition({
+        size   : size,
+        offside: offside,
+        objects: otherObjects as ObjectPosition[],
+      })
 
       x.value = center.x
       y.value = center.y

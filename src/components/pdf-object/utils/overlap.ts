@@ -1,5 +1,5 @@
 
-import { round } from 'lodash-es'
+import { memoize, round } from 'lodash-es'
 
 export interface ObjectSize {
   width: number,
@@ -11,14 +11,33 @@ export interface ObjectPosition {
   y: number,
 }
 
-export type ObjectSnapshot = Map<number, Map<number, ObjectPosition>>
+export type CheckOverlapFn = (object: ObjectPosition, objects: Iterable<ObjectPosition>) => boolean
+
+export interface GetEmptyPositionOptions {
+  /**
+   * Other objects position
+   */
+  objects: Iterable<ObjectPosition>,
+  /**
+   * Object size
+   */
+  size: ObjectSize,
+  /**
+   * Offside size
+   */
+  offside: ObjectSize,
+  /**
+   * Function to check overlap
+   */
+  checkOverlap?: CheckOverlapFn,
+}
 
 /**
  * Check center position of reference
  * @param object Object which want to place
  * @param reference Reference place
  */
-function getCenter (object: ObjectSize, reference: ObjectSize) {
+export function getCenter (object: ObjectSize, reference: ObjectSize) {
   return {
     x: (reference.width - object.width) / 2,
     y: (reference.height - object.height) / 2,
@@ -26,57 +45,51 @@ function getCenter (object: ObjectSize, reference: ObjectSize) {
 }
 
 /**
- * Check if object colide (overlap) with other objects
- * @param object
- * @param objects
- */
-function checkOverlap (object: ObjectPosition, objects: ObjectSnapshot) {
-  const x = round(object.x, -1)
-  const y = round(object.y, -1)
-
-  return objects.get(x)?.get(y) !== undefined
-}
-
-/**
  * Check object is outside from reference
  * @param object
  * @param reference
  */
-function isOffside (object: ObjectSize & ObjectPosition, reference: ObjectSize) {
+export function isOffside (object: ObjectSize & ObjectPosition, reference: ObjectSize) {
   return object.x + object.width >= reference.width
     || object.y + object.height >= reference.height
 }
 
+type MapSnapshot = Map<number, Map<number, ObjectPosition>>
+
 /**
- * Create snapshot index for faster search
- * @param objects Array of object
+ * Check Overlap Fn using Map as Cache Keys
+ * @param objects
  */
-function createSnapshot (objects: Iterable<ObjectPosition>) {
-  const xMap: ObjectSnapshot = new Map()
+export function useMapSnapshot (objects: Iterable<ObjectPosition>): CheckOverlapFn {
+  const xMap: MapSnapshot = new Map()
+  const mRound            = memoize(round)
 
   for (const object of objects) {
-    const x    = round(object.x, -1)
-    const y    = round(object.y, -1)
+    const x    = mRound(object.x, -1)
+    const y    = mRound(object.y, -1)
     const yMap = xMap.get(x) ?? new Map<number, ObjectPosition>()
 
     yMap.set(y, object)
     xMap.set(x, yMap)
   }
 
-  return xMap
+  return (object) => {
+    const x = mRound(object.x, -1)
+    const y = mRound(object.y, -1)
+
+    return xMap.get(x)?.get(y) !== undefined
+  }
 }
 
 /**
  * Get empty position which not colide with other objects and not outside the reference place
- * @param object Object which want to place
- * @param objects Other objects in same reference
- * @param reference The reference place
  */
-export function getEmptyPosition (object: ObjectSize, reference: ObjectSize, objects: Iterable<ObjectPosition>): ObjectPosition {
-  const snapshot = createSnapshot(objects)
-  const position = {
-    ...object,
-    ...getCenter(object, reference),
+export function getEmptyPosition (options: GetEmptyPositionOptions): ObjectPosition {
+  const checkOverlap = options.checkOverlap ?? useMapSnapshot(options.objects)
+  const center       = getCenter(options.size, options.offside)
+  const position     = {
+    ...options.size,
+    ...center,
   }
 
   let found  = true
@@ -86,17 +99,15 @@ export function getEmptyPosition (object: ObjectSize, reference: ObjectSize, obj
   do {
     found = true
 
-    if (isOffside(position, reference)) {
-      const { x, y } = getCenter(object, reference)
-
-      position.y = y + deltaY
-      position.x = x
+    if (isOffside(position, options.offside)) {
+      position.y = center.y + deltaY
+      position.x = center.x
       deltaY    += 15
 
       found = false
     }
 
-    if (checkOverlap(position, snapshot)) {
+    if (checkOverlap(position, options.objects)) {
       position.x += 15
       position.y += 15
 
