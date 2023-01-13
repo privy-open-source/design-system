@@ -167,6 +167,5 @@ Subheading have 4 transforms variant, there are `normalcase`, `lowercase`, `capi
 
 ## See Also
 
-- [Heading Guide](/styleguide/heading/index)
 - [Heading](/components/heading/index)
 
