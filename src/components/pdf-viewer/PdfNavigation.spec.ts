@@ -1,6 +1,8 @@
 import { render, fireEvent } from '@testing-library/vue'
 import PdfNavigation from './PdfNavigation.vue'
-import { provide, ref } from 'vue-demi'
+import {
+  nextTick, provide, ref,
+} from 'vue-demi'
 import { PDF_VIEWER_CONTEXT } from '.'
 
 function createContext () {
@@ -74,4 +76,28 @@ it('should changed page value if Next or Prev button clicked', async () => {
   await fireEvent.click(prevbtn)
 
   expect(context.page.value).toBe(2)
+})
+
+it('should changed page value if page selection was selected', async () => {
+  const context = createContext()
+  const screen  = render({
+    components: { PdfNavigation },
+    template  : '<PdfNavigation />',
+    setup () {
+      provide(PDF_VIEWER_CONTEXT, context)
+
+      return {}
+    },
+  })
+
+  const input = screen.queryByTestId('select-search')
+
+  input.focus()
+  await nextTick()
+
+  const items = screen.queryAllByTestId('select-item')
+
+  await fireEvent.click(items.at(2))
+
+  expect(context.page.value).toBe(3)
 })
