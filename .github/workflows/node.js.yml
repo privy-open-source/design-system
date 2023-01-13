@@ -48,6 +48,7 @@ jobs:
           cache: "yarn"
 
       - run: yarn install --immutable
+      - run: yarn typecheck
       - run: yarn docs:build
       - run: yarn coverage
 

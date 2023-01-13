@@ -1,5 +1,5 @@
 
-import { memoize, round } from 'lodash-es'
+import { memoize } from 'lodash-es'
 
 export interface ObjectSize {
   width: number,
@@ -62,11 +62,11 @@ type MapSnapshot = Map<number, Map<number, ObjectPosition>>
  */
 export function useMapSnapshot (objects: Iterable<ObjectPosition>): CheckOverlapFn {
   const xMap: MapSnapshot = new Map()
-  const mRound            = memoize(round)
+  const round             = memoize((value) => Math.round(value / 10) * 10)
 
   for (const object of objects) {
-    const x    = mRound(object.x, -1)
-    const y    = mRound(object.y, -1)
+    const x    = round(object.x)
+    const y    = round(object.y)
     const yMap = xMap.get(x) ?? new Map<number, ObjectPosition>()
 
     yMap.set(y, object)
@@ -74,10 +74,10 @@ export function useMapSnapshot (objects: Iterable<ObjectPosition>): CheckOverlap
   }
 
   return (object) => {
-    const x = mRound(object.x, -1)
-    const y = mRound(object.y, -1)
+    const x = round(object.x)
+    const y = round(object.y)
 
-    return xMap.get(x)?.get(y) !== undefined
+    return xMap.get(x)?.has(y)
   }
 }
 

@@ -1,11 +1,9 @@
 <script setup>
-  import pPdfViewer from './PdfViewer.vue'
-  import pPdfObject from '../pdf-object/PdfObject.vue'
-  import pPdfObjectText from '../pdf-object-text/PdfObjectText.vue'
-  import FILE from './assets/Calibrator-v3.pdf?url'
-  import FILE2 from './assets/sample.pdf?url'
+  import pPdfViewer from '../pdf-viewer/PdfViewer.vue'
+  import pPdfObject from './PdfObject.vue'
+  import FILE from '../pdf-viewer/assets/Calibrator-v3.pdf?url'
+  import FILE2 from '../pdf-viewer/assets/sample.pdf?url'
   import { reactive, ref } from 'vue-demi'
-  import { delay } from 'nanodelay'
 
   const src   = ref(FILE)
   const items = reactive([

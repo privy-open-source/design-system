@@ -137,6 +137,27 @@ function useObject (objects: Iterable<ObjectPosition>): CheckOverlapFn {
   }
 }
 
+function useMapMemoizeNoLodash (objects: Iterable<ObjectPosition>): CheckOverlapFn {
+  const xMap: Map<number, Map<number, ObjectPosition>> = new Map()
+  const mRound                                         = memoize((value) => Math.round(value / 10) * 10)
+
+  for (const object of objects) {
+    const x    = mRound(object.x)
+    const y    = mRound(object.y)
+    const yMap = xMap.get(x) ?? new Map<number, ObjectPosition>()
+
+    yMap.set(y, object)
+    xMap.set(x, yMap)
+  }
+
+  return (object) => {
+    const x = mRound(object.x)
+    const y = mRound(object.y)
+
+    return xMap.get(x)?.get(y) !== undefined
+  }
+}
+
 describe('checkOverlap', () => {
   const object: ObjectPosition = {
     x: random(0, 1500, false),
@@ -268,6 +289,15 @@ describe('getEmptyPosition', () => {
       size,
       objects,
       checkOverlap: useObject(objects),
+    })
+  })
+
+  bench('using map + memoize round native', () => {
+    getEmptyPosition({
+      offside,
+      size,
+      objects,
+      checkOverlap: useMapMemoizeNoLodash(objects),
     })
   })
 })
