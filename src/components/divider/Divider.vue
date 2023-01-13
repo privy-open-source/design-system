@@ -1,5 +1,6 @@
 <template>
   <div
+    data-testid="divider"
     class="divider"
     :class="classNames" />
 </template>
