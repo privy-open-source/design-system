@@ -94,7 +94,7 @@ function useMapMemoize (objects: Iterable<ObjectPosition>): CheckOverlapFn {
 }
 
 function useHash (objects: Iterable<ObjectPosition>): CheckOverlapFn {
-  const hashes = new Set<BigInt>()
+  const hashes = new Set<bigint>()
   const mRound = memoize(round)
 
   for (const object of objects) {
