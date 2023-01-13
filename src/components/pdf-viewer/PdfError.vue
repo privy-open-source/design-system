@@ -1,5 +1,6 @@
 <template>
   <div
+    data-testid="pdf-error"
     class="pdf__error">
     <h3 class="text-danger">
       Failed to load PDF

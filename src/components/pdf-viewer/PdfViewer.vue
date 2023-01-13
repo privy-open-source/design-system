@@ -2,7 +2,9 @@
   <div
     ref="root"
     v-p-aspect-ratio="layout === 'fixed' ? 210/297 : 16/9"
-    class="pdf">
+    data-testid="pdf-viewer"
+    class="pdf"
+    :class="classNames">
     <div
       class="pdf__header">
       <slot
@@ -77,41 +79,28 @@
 </template>
 
 <script lang="ts">
-import 'pdfjs-dist/web/pdf_viewer.css'
 import {
   computed,
   defineComponent,
-  onBeforeUnmount,
   onMounted,
   PropType,
-  provide,
-  ref,
-  shallowRef,
   toRef,
   watch,
 } from 'vue-demi'
-import type * as PDFJS from 'pdfjs-dist'
-import type {
-  PDFViewer,
-  PDFLinkService,
-  EventBus,
-} from 'pdfjs-dist/web/pdf_viewer'
 import { pAspectRatio } from '../aspect-ratio'
 import {
   templateRef,
   useToNumber,
   watchDebounced,
 } from '@vueuse/core'
-import { clamp } from 'lodash-es'
-import { LayoutVariant, PDF_VIEWER_CONTEXT } from '.'
+import { LayoutVariant } from '.'
 import { useSticky } from './utils/use-sticky'
 import PdfNavigation from './PdfNavigation.vue'
 import PdfLoading from './PdfLoading.vue'
 import PdfError from './PdfError.vue'
-import { useClamp } from '@vueuse/math'
 import { useIdle } from './utils/use-idle'
-import useLoading from '../overlay/utils/use-loading'
 import PdfObjects from '../pdf-object/PdfObjects.vue'
+import { useViewer } from './utils/use-viewer'
 
 export default defineComponent({
   directives: { pAspectRatio },
@@ -148,140 +137,35 @@ export default defineComponent({
     const root      = templateRef<HTMLDivElement>('root')
     const container = templateRef<HTMLDivElement>('container')
     const viewer    = templateRef<HTMLDivElement>('viewer')
-
-    const pdfDoc         = shallowRef<PDFJS.PDFDocumentProxy>()
-    const pdfEventBus    = shallowRef<EventBus>()
-    const pdfViewer      = shallowRef<PDFViewer>()
-    const pdfLoadingTask = shallowRef<PDFJS.PDFDocumentLoadingTask>()
-    const pdfLinkService = shallowRef<PDFLinkService>()
-    const pdfJS          = shallowRef<typeof PDFJS>()
-
-    const totalPage = computed(() => pdfDoc.value?.numPages ?? 0)
-    const scale     = useClamp(1, 0.1, 2)
-    const page      = useClamp(1, 1, totalPage)
-
-    const loading = useLoading()
-    const ready   = ref(false)
-    const error   = ref<Error>()
-    const idle    = useIdle(container)
+    const idle      = useIdle(container)
 
     const offsetTop    = useToNumber(toRef(props, 'offsetTop'), { nanToZero: true })
     const enableSticky = useSticky(root, { offsetTop: offsetTop })
 
-    async function openDoc (url: string, password?: string) {
-      loading.value = true
-      error.value   = undefined
+    const classNames = computed(() => {
+      const result: string[] = []
 
-      try {
-        pdfJS.value = await import('pdfjs-dist')
+      if (props.layout)
+        result.push(`pdf-viewer--layout-${props.layout}`)
 
-        if (typeof window !== 'undefined' && 'Worker' in window)
-          pdfJS.value.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfJS.value.version}/build/pdf.worker.min.js`
+      return result
+    })
 
-        // Close previouse document
-        await closeDoc()
-
-        if (url) {
-          // Open new document
-          pdfLoadingTask.value = pdfJS.value.getDocument({
-            url          : url,
-            password     : password,
-            cMapUrl      : `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfJS.value.version}/cmaps/`,
-            cMapPacked   : true,
-            disableStream: false,
-          })
-
-          pdfDoc.value = await pdfLoadingTask.value.promise
-
-          pdfViewer.value.setDocument(pdfDoc.value)
-          pdfLinkService.value.setDocument(pdfDoc.value)
-
-          emit('loaded', pdfDoc.value)
-        }
-      } catch (error_) {
-        if (error_ instanceof Error) {
-          error.value = error_
-
-          if (error_.name === 'PasswordException')
-            emit('error-password', error_)
-          else
-            emit('error', error_)
-        }
-      } finally {
-        loading.value = false
-      }
-    }
-
-    async function closeDoc () {
-      if (pdfLoadingTask.value && !pdfLoadingTask.value.destroyed) {
-        await pdfLoadingTask.value.destroy()
-
-        pdfDoc.value         = undefined
-        pdfLoadingTask.value = undefined
-
-        // eslint-disable-next-line unicorn/no-null
-        pdfViewer.value.setDocument(null)
-        // eslint-disable-next-line unicorn/no-null
-        pdfLinkService.value.setDocument(null)
-      }
-    }
-
-    async function initPdfViewer () {
-      if (typeof navigator !== 'undefined' && container.value && viewer.value) {
-        const {
-          NullL10n,
-          PDFLinkService,
-          PDFViewer,
-          EventBus,
-        } = await import('pdfjs-dist/web/pdf_viewer')
-
-        const bus = new EventBus()
-
-        bus.on('pagesinit', () => {
-          pdfViewer.value.currentScaleValue = 'page-width'
-          pdfViewer.value.currentPageNumber = page.value
-          ready.value                       = true
-        })
-
-        bus.on('pagechanging', (event: { pageNumber: number }) => {
-          page.value = event.pageNumber
-        })
-
-        bus.on('scalechanging', (event: { scale: number }) => {
-          scale.value = event.scale
-        })
-
-        pdfEventBus.value    = bus
-        pdfLinkService.value = new PDFLinkService({ eventBus: pdfEventBus.value })
-        pdfViewer.value      = new PDFViewer({
-          container        : container.value,
-          viewer           : viewer.value,
-          eventBus         : pdfEventBus.value,
-          linkService      : pdfLinkService.value,
-          l10n             : NullL10n,
-          useOnlyCssZoom   : false,
-          removePageBorders: true,
-        })
-
-        pdfLinkService.value.setViewer(pdfViewer.value)
-      }
-    }
-
-    function zoom (increment: number) {
-      if (pdfViewer.value) {
-        const newScale = (Math.round(pdfViewer.value.currentScale / 0.1) * 0.1) + increment
-
-        pdfViewer.value.currentScale = clamp(newScale, 0.1, 2)
-      }
-    }
-
-    function zoomIn () {
-      zoom(0.1)
-    }
-
-    function zoomOut () {
-      zoom(-0.1)
-    }
+    const {
+      page,
+      scale,
+      totalPage,
+      openDoc,
+      closeDoc,
+      pdfDoc,
+      pdfJS,
+      loading,
+      error,
+      zoomIn,
+      zoomOut,
+      onLoaded,
+      onError,
+    } = useViewer(container, viewer)
 
     watchDebounced(() => [props.src, props.password], ([src, password]) => {
       openDoc(src, password)
@@ -291,51 +175,24 @@ export default defineComponent({
       enableSticky.value = layout === 'fit'
     }, { immediate: true })
 
-    watch(page, (value) => {
-      if (pdfViewer.value && value !== pdfViewer.value.currentPageNumber)
-        pdfViewer.value.currentPageNumber = value
-    })
-
-    watch(scale, (value) => {
-      if (pdfViewer.value && value !== pdfViewer.value.currentScale)
-        pdfViewer.value.currentScale = value
-    })
-
-    watch([container, viewer], ([container_, viewer_]) => {
-      if (pdfViewer.value) {
-        if (container_ && viewer_) {
-          pdfViewer.value.container = container_
-          pdfViewer.value.viewer    = viewer_
-
-          if (pdfDoc.value)
-            pdfViewer.value.setDocument(pdfDoc.value)
-
-          pdfViewer.value.update()
-        }
-      } else
-        initPdfViewer()
-    })
-
     onMounted(async () => {
       if (props.src)
         openDoc(props.src, props.password)
     })
 
-    onBeforeUnmount(() => {
-      pdfViewer.value.cleanup()
-
-      closeDoc()
+    onLoaded((doc) => {
+      emit('loaded', doc)
     })
 
-    provide(PDF_VIEWER_CONTEXT, {
-      page,
-      scale,
-      totalPage,
-      zoomIn,
-      zoomOut,
+    onError((error_) => {
+      if (error_.name === 'PasswordException')
+        emit('error-password', error_)
+      else
+        emit('error', error_)
     })
 
     return {
+      classNames,
       page,
       scale,
       totalPage,
@@ -347,7 +204,6 @@ export default defineComponent({
       pdfJS,
       idle,
       loading,
-      ready,
       error,
     }
   },

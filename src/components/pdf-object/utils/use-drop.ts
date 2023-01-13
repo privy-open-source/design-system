@@ -42,7 +42,7 @@ export default function useDrop (target: Ref<HTMLElement>, dropTarget: Ref<strin
           enabled: enable.value,
           checker (dragEvent, event, dropped, dropzone, dropzoneElement, draggable, draggableElement) {
             // Check only child of this target can dropped in here
-            return dropped && target.value.contains(draggableElement)
+            return dropped && (target.value.contains(draggableElement) || draggableElement.classList.contains('pdf-object--external'))
           },
           ondragenter (event: InteractEvent) {
             hoverzone.value = event.target as HTMLElement
