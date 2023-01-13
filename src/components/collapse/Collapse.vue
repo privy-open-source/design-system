@@ -97,6 +97,10 @@ export default defineComponent({
 .navbar {
   &--collapse {
     @apply basis-full flex-grow items-center;
+
+    &.collapse--show {
+      @apply pt-3;
+    }
   }
 }
 </style>

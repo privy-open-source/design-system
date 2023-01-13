@@ -104,7 +104,7 @@ export default defineComponent({
   */
   @apply pl-2 list-none flex flex-wrap mb-0;
 
-  &:not(.nav--vertical) .nav__item {
+  &:not(.nav--vertical):not(.navbar__nav) .nav__item {
     @apply first:ml-2 mr-2 last:mr-0;
   }
 
@@ -115,6 +115,10 @@ export default defineComponent({
       &:hover,
       &--active {
         @apply text-default dark:text-on-emphasis;
+      }
+
+      &--disabled {
+        @apply text-muted hover:text-muted focus:text-muted active:text-muted;
       }
     }
   }

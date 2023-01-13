@@ -8,7 +8,7 @@
   import pNavItemDropdown from '../nav/NavItemDropdown.vue'
   import pDropdownItem from '../dropdown/DropdownItem.vue'
   import pNavForm from '../nav/NavForm.vue'
-  import pNavText from '../nav/NavForm.vue'
+  import pNavText from '../nav/NavText.vue'
   import pInput from '../input/Input.vue'
   import pInputGroup from '../input-group/InputGroup.vue'
   import pInputGroupAddon from '../input-group/InputGroupAddon.vue'
@@ -17,7 +17,6 @@
   import pAvatar from '../avatar/Avatar.vue'
   import pCollapse from '../collapse/Collapse.vue'
   import pCaption from '../caption/Caption.vue'
-  import pCard from '../card/Card.vue'
   import IconBee from '@carbon/icons-vue/lib/bee/20'
   import IconView from '@carbon/icons-vue/lib/view/20'
   import IconUser from '@carbon/icons-vue/lib/events/16'
@@ -183,53 +182,6 @@ Navbar has 2 variant of nav type: `pills` and `lines`.
     </p-navbar-brand>
     <p-navbar-nav>
       <p-nav-item active>Label</p-nav-item>
-    </p-navbar-nav>
-  </p-navbar>
-</template>
-```
-
-## Colors
-Navbar has 2 colors, `light` and `dark`.
-
-<preview class="flex-grow">
-  <p-navbar color="light" class="mb-5">
-    <p-navbar-brand>
-      <img src="../../public/assets/images/logo.svg" />
-    </p-navbar-brand>
-    <p-navbar-nav>
-      <p-nav-item active>Label</p-nav-item>
-      <p-nav-item>Label</p-nav-item>
-    </p-navbar-nav>
-  </p-navbar>
-  <p-navbar color="dark">
-    <p-navbar-brand>
-      <img src="../../public/assets/images/logo.svg" />
-    </p-navbar-brand>
-    <p-navbar-nav>
-      <p-nav-item active>Label</p-nav-item>
-      <p-nav-item>Label</p-nav-item>
-    </p-navbar-nav>
-  </p-navbar>
-</preview>
-
-```vue
-<template>
-  <p-navbar color="light" class="mb-5">
-    <p-navbar-brand>
-      <img src="../../public/assets/images/logo.svg" />
-    </p-navbar-brand>
-    <p-navbar-nav>
-      <p-nav-item active>Label</p-nav-item>
-      <p-nav-item>Label</p-nav-item>
-    </p-navbar-nav>
-  </p-navbar>
-  <p-navbar color="dark">
-    <p-navbar-brand>
-      <img src="../../public/assets/images/logo.svg" />
-    </p-navbar-brand>
-    <p-navbar-nav>
-      <p-nav-item active>Label</p-nav-item>
-      <p-nav-item>Label</p-nav-item>
     </p-navbar-nav>
   </p-navbar>
 </template>
@@ -646,7 +598,6 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 | Props          |   Type    | Default     | Description                                                       |
 |----------------|:---------:|:-----------:|-------------------------------------------------------------------|
 | `variant`      | `String`  | `pills`     | Navbar variant, valid value is `pills` and `lines`                |
-| `color`        | `String`  | `light`     | Navbar color, valid value is `light` and `dark`                   |
 | `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
 | `fixed`        | `Boolean` | `false`     | Activate fixed Navbar                                             |
 | `toggleable`   | `String`  | -           | automatically expand navigation with desired breakpoint           |

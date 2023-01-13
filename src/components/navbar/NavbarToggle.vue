@@ -62,7 +62,14 @@ export default defineComponent({
 .navbar {
   &__toggle {
     @apply inline-flex;
-    /* @apply inline-flex absolute right-5; */
+
+    &:is(.btn--variant-outline, .btn--default) {
+      @apply bg-emphasis-alpha dark:border-on-emphasis-alpha-subtle hover:shadow-none text-subtle dark:text-muted;
+    }
+
+    &&--all {
+      @apply flex;
+    }
 
     &&--lg {
       @apply lg:hidden;

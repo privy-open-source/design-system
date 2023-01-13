@@ -89,4 +89,32 @@
   .header-anchor {
     @apply pr-0 -ml-6;
   }
+
+  a {
+    @apply font-inherit text-inherit;
+  }
+
+  .nav__link__icon {
+    img {
+      @apply max-w-none;
+    }
+  }
+
+  ul {
+    &:where(.nav) {
+      @apply p-0 m-0;
+    }
+  }
+
+  .nav {
+    li::marker {
+      content: '';
+    }
+  }
+
+  .navbar {
+    li + li {
+      @apply mt-0;
+    }
+  }
 }

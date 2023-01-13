@@ -106,11 +106,17 @@ export default defineComponent({
   }
 
   &&--expand {
-    :is(&-lg, &-md, &-sm) {
+    :is(&-all, &-lg, &-md, &-sm) {
       @apply justify-between;
 
       .navbar__nav {
         @apply flex-col;
+      }
+    }
+
+    &-all {
+      & > .collapse {
+        @apply visible;
       }
     }
 

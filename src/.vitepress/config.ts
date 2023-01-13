@@ -354,8 +354,8 @@ export default defineConfig({
               link: '/styleguide/checkbox-radio/',
             },
             {
-              text: 'Heading',
-              link: '/styleguide/heading/',
+              text: 'Navbar',
+              link: '/styleguide/navbar/',
             },
           ],
         },
