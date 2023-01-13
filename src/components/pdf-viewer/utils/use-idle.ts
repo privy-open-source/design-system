@@ -1,5 +1,8 @@
-import { useEventListener } from '@vueuse/core'
-import { ref, Ref } from 'vue-demi'
+import {
+  MaybeRef,
+  useEventListener,
+} from '@vueuse/core'
+import { ref } from 'vue-demi'
 
 const TRACK_EVENTS = [
   'mousemove',
@@ -9,7 +12,7 @@ const TRACK_EVENTS = [
   'scroll',
 ]
 
-export function useIdle (target: Ref<HTMLElement>, timeout = 5000) {
+export function useIdle (target: MaybeRef<HTMLElement>, timeout = 5000) {
   const idle = ref(false)
 
   let timer: ReturnType<typeof setTimeout>

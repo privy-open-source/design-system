@@ -1,7 +1,10 @@
 <template>
-  <div class="pdf__navigation">
+  <div
+    data-testid="pdf-navigation"
+    class="pdf__navigation">
     <div class="pdf__navigation-container">
       <p-button
+        data-testid="pdf-zoom-out"
         variant="ghost"
         size="xs"
         icon
@@ -12,6 +15,7 @@
         {{ (scale * 100).toFixed(0) }}%
       </span>
       <p-button
+        data-testid="pdf-zoom-in"
         variant="ghost"
         size="xs"
         icon
@@ -24,8 +28,11 @@
         class="w-16"
         :options="pages"
         size="xs" />
-      <span class="flex-shrink-0">of {{ totalPage }}</span>
+      <span
+        data-testid="pdf-total"
+        class="flex-shrink-0">of {{ totalPage }}</span>
       <p-button
+        data-testid="pdf-prev"
         variant="ghost"
         size="xs"
         icon
@@ -33,6 +40,7 @@
         <IconPrev />
       </p-button>
       <p-button
+        data-testid="pdf-next"
         variant="ghost"
         size="xs"
         icon
@@ -47,9 +55,8 @@
 import {
   computed,
   defineComponent,
-  inject,
 } from 'vue-demi'
-import { PDF_VIEWER_CONTEXT } from '.'
+import { usePdfContext } from '.'
 import IconZoomIn from '@carbon/icons-vue/lib/zoom--in/16'
 import IconZoomOut from '@carbon/icons-vue/lib/zoom--out/16'
 import IconPrev from '@carbon/icons-vue/lib/chevron--up/16'
@@ -74,9 +81,7 @@ export default defineComponent({
       page,
       scale,
       totalPage,
-      zoomIn,
-      zoomOut,
-    } = inject(PDF_VIEWER_CONTEXT)
+    } = usePdfContext()
 
     const pages = computed<SelectItem[]>(() => {
       return Array.from({ length: totalPage.value }).map((_, i) => {
@@ -86,6 +91,14 @@ export default defineComponent({
         }
       })
     })
+
+    function zoomIn () {
+      scale.value = (Math.round(scale.value / 0.1) * 0.1) + 0.1
+    }
+
+    function zoomOut () {
+      scale.value = (Math.round(scale.value / 0.1) * 0.1) - 0.1
+    }
 
     function next () {
       page.value++

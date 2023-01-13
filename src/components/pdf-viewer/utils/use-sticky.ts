@@ -11,11 +11,11 @@ export interface StickyOptions {
   offsetTop: MaybeRef<number>,
 }
 
-export function useSticky (target: Ref<HTMLElement>, options?: Partial<StickyOptions>) {
+export function useSticky (target: Ref<HTMLElement>, options: Partial<StickyOptions> = {}) {
   const enable = ref(false)
 
   const offsetTop = computed(() => unref(options.offsetTop) ?? 0)
-  const parent    = computed(() => target.value?.parentElement)
+  const parent    = computed(() => unref(target)?.parentElement)
 
   const {
     top,

@@ -1,11 +1,7 @@
 import type * as PDFJS from 'pdfjs-dist'
 import { vi } from 'vitest'
 import { createEventHook } from '@vueuse/core'
-import {
-  provide,
-  reactive,
-  toRefs,
-} from 'vue-demi'
+import { reactive, toRefs } from 'vue-demi'
 
 export const loadEvent = createEventHook<PDFJS.PDFDocumentProxy>()
 
@@ -25,10 +21,6 @@ export const context = reactive({
   pdfLinkService: undefined,
   pdfJS         : undefined,
 })
-
-export const zoomIn = vi.fn()
-
-export const zoomOut = vi.fn()
 
 export const openDoc = vi.fn((src: string, password?: string) => {
   if (src) {
@@ -58,23 +50,9 @@ export const openDoc = vi.fn((src: string, password?: string) => {
 
 export const closeDoc = vi.fn()
 
-export const PDF_VIEWER_CONTEXT = Symbol('PdfViewer')
-
 export function useViewer () {
-  const refs = toRefs(context)
-
-  provide(PDF_VIEWER_CONTEXT, {
-    page     : refs.page,
-    scale    : refs.scale,
-    totalPage: refs.totalPage,
-    zoomIn   : zoomIn,
-    zoomOut  : zoomOut,
-  })
-
   return {
-    ...refs,
-    zoomIn,
-    zoomOut,
+    ...toRefs(context),
     openDoc,
     closeDoc,
     onLoaded: loadEvent.on,

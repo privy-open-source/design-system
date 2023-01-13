@@ -12,8 +12,6 @@
         :page="page"
         :scale="scale"
         :total-page="totalPage"
-        :zoom-in="zoomIn"
-        :zoom-out="zoomOut"
         :doc="pdfDoc" />
     </div>
 
@@ -36,8 +34,6 @@
           :page="page"
           :scale="scale"
           :total-page="totalPage"
-          :zoom-in="zoomIn"
-          :zoom-out="zoomOut"
           :doc="pdfDoc" />
       </div>
       <!-- Minimum PDFJS Viewer end -->
@@ -47,8 +43,6 @@
         :page="page"
         :scale="scale"
         :total-page="totalPage"
-        :zoom-in="zoomIn"
-        :zoom-out="zoomOut"
         :doc="pdfDoc" />
 
       <transition name="slide-up">
@@ -61,8 +55,6 @@
         :page="page"
         :scale="scale"
         :total-page="totalPage"
-        :zoom-in="zoomIn"
-        :zoom-out="zoomOut"
         :doc="pdfDoc" />
     </PdfObjects>
     <div class="pdf__footer">
@@ -71,8 +63,6 @@
         :page="page"
         :scale="scale"
         :total-page="totalPage"
-        :zoom-in="zoomIn"
-        :zoom-out="zoomOut"
         :doc="pdfDoc" />
     </div>
   </div>
@@ -84,6 +74,7 @@ import {
   defineComponent,
   onMounted,
   PropType,
+  provide,
   toRef,
   watch,
 } from 'vue-demi'
@@ -93,7 +84,7 @@ import {
   useToNumber,
   watchDebounced,
 } from '@vueuse/core'
-import { LayoutVariant } from '.'
+import { LayoutVariant, PDF_VIEWER_CONTEXT } from '.'
 import { useSticky } from './utils/use-sticky'
 import PdfNavigation from './PdfNavigation.vue'
 import PdfLoading from './PdfLoading.vue'
@@ -161,8 +152,6 @@ export default defineComponent({
       pdfJS,
       loading,
       error,
-      zoomIn,
-      zoomOut,
       onLoaded,
       onError,
     } = useViewer(container, viewer)
@@ -191,6 +180,12 @@ export default defineComponent({
         emit('error', error_)
     })
 
+    provide(PDF_VIEWER_CONTEXT, {
+      page,
+      scale,
+      totalPage,
+    })
+
     return {
       classNames,
       page,
@@ -198,8 +193,6 @@ export default defineComponent({
       totalPage,
       openDoc,
       closeDoc,
-      zoomIn,
-      zoomOut,
       pdfDoc,
       pdfJS,
       idle,

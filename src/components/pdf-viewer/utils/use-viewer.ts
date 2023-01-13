@@ -1,9 +1,7 @@
 import 'pdfjs-dist/web/pdf_viewer.css'
 import {
   computed,
-  InjectionKey,
   onBeforeUnmount,
-  provide,
   Ref,
   shallowRef,
   watch,
@@ -17,17 +15,6 @@ import type {
 import useLoading from '../../overlay/utils/use-loading'
 import { useClamp } from '@vueuse/math'
 import { createEventHook } from '@vueuse/core'
-
-export interface PdfViewerContext {
-  page: Ref<number>,
-  scale: Ref<number>,
-  totalPage: Readonly<Ref<number>>,
-
-  zoomIn: () => void,
-  zoomOut: () => void,
-}
-
-export const PDF_VIEWER_CONTEXT: InjectionKey<PdfViewerContext> = Symbol('PdfViewer')
 
 export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivElement>) {
   const pdfDoc         = shallowRef<PDFJS.PDFDocumentProxy>()
@@ -168,26 +155,10 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
       pdfViewer.value.currentScale = value
   })
 
-  function zoomIn () {
-    scale.value = (Math.round(scale.value / 0.1) * 0.1) + 0.1
-  }
-
-  function zoomOut () {
-    scale.value = (Math.round(scale.value / 0.1) * 0.1) - 0.1
-  }
-
   onBeforeUnmount(async () => {
     pdfViewer.value?.cleanup()
 
     await closeDoc()
-  })
-
-  provide(PDF_VIEWER_CONTEXT, {
-    page,
-    scale,
-    totalPage,
-    zoomIn,
-    zoomOut,
   })
 
   return {
@@ -205,8 +176,6 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
     pdfLoadingTask: pdfLoadingTask,
     pdfLinkService: pdfLinkService,
     pdfJS         : pdfJS,
-    zoomIn        : zoomIn,
-    zoomOut       : zoomOut,
     onLoaded      : loadEvent.on,
     onError       : errorEvent.on,
   }
