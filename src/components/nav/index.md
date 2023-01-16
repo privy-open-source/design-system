@@ -531,6 +531,54 @@ When you need title for grouping navigation, you can add navigation title by usi
 | `default`        | Content to place in the nav item                        |
 | `icon`           | Content to place icon in nav item                       |
 
+### Props `<p-nav-form>`
+
+<table>
+  <thead>
+    <tr>
+      <th>Props</th>
+      <th style="text-align:center;">Type</th>
+      <th style="text-align:center;">Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="4" class="text-center">There no props here</td>
+    </tr>
+  </tbody>
+</table>
+
+### Slots `<p-nav-form>`
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| `default`        | Content to place form input in the navigation             |
+
+### Props `<p-nav-text>`
+
+<table>
+  <thead>
+    <tr>
+      <th>Props</th>
+      <th style="text-align:center;">Type</th>
+      <th style="text-align:center;">Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="4" class="text-center">There no props here</td>
+    </tr>
+  </tbody>
+</table>
+
+### Slots `<p-nav-text>`
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| `default`        | Content to place text or image in the navigation        |
+
 ### Props `<p-nav-sub-item>`
 
 | Props          |   Type     | Default      | Description                                  |

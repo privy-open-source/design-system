@@ -77,9 +77,22 @@ export default defineComponent({
 <style lang="postcss">
 .nav {
   &__subitem {
-    @apply block text-base text-subtle;
+    /**
+    * there is some tricky here.
+    * default text is set with muted color
+    * (used for disabled state)
+    * in the future, when all sub-item
+    * is disabled, parent menu
+    * will disabled too
+    */
+    @apply block text-base text-muted;
 
     &&--collapsible {
+      /**
+      * when menu is collapsible,
+      * parent menu is set to
+      * active state
+      */
       .nav__subitem__parent {
         @apply cursor-pointer text-default relative;
       }
@@ -89,10 +102,6 @@ export default defineComponent({
       }
 
       &.nav__subitem--collapsed {
-        .nav__subitem__parent {
-          @apply text-subtle hover:text-default;
-        }
-
         > .sidebar__nav,
         > .nav {
           @apply hidden;
@@ -131,6 +140,29 @@ export default defineComponent({
         .badge {
           @apply ml-auto;
         }
+      }
+    }
+
+    /**
+    * when all of sub-item has no
+    * disabled state, set text color
+    * of parent with default color
+    * (used for active or hover state)
+    */
+    &:has(ul > li:not(.nav__item--disabled)) {
+      .nav__subitem__parent {
+        @apply text-default;
+      }
+    }
+
+    /**
+    * when menu is set to collapsible
+    * and its collapsed, then styling parent
+    * with normal state
+    */
+    &:is(&--collapsible&--collapsed):has(ul > li:not(.nav__item--disabled)) {
+      .nav__subitem__parent {
+        @apply text-subtle hover:text-default;
       }
     }
   }

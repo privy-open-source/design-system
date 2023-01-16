@@ -91,8 +91,9 @@ export default defineComponent({
     @apply w-[60px];
   }
 
-  &&--tabs {
-    @apply pr-0 border-r border-r-default;
+  &&--tabs,
+  &&--lines {
+    @apply pr-0 py-2 border-r border-r-default;
   }
 
   &&--lines {

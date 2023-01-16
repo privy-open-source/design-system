@@ -37,9 +37,35 @@
 </template>
 ```
 
+### With Addon
+
+<preview class="flex-col space-y-3">
+  <p-input-group>
+    <p-input-group-addon>
+      <IconEmail />
+    </p-input-group-addon>
+    <p-input />
+  </p-input-group>
+</preview>
+
+```vue
+<template>
+  <p-input-group>
+    <p-input-group-addon>
+      <IconEmail />
+    </p-input-group-addon>
+    <p-divider />
+    <p-input />
+    <p-button variant="input">
+      Submit
+    </p-button>
+  </p-input-group>
+</template>
+```
+
 ### With Addon and Divider
 
-<preview>
+<preview class="flex-col space-y-3">
   <p-input-group>
     <p-input-group-addon>
       <IconEmail />

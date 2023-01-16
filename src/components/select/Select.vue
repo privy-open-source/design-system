@@ -278,7 +278,7 @@ export default defineComponent({
 <style lang="postcss">
 .select {
   &__search {
-    @apply pr-8 truncate;
+    @apply pr-8 truncate hover:cursor-default focus:cursor-text;
   }
 
   &__caret {

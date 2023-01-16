@@ -2,7 +2,7 @@
   <div
     ref="dropdown"
     class="dropdown"
-    :class="[{ 'dropdown--open': isOpen }, classNames]"
+    :class="[{ 'dropdown--open': isOpen, 'dropdown--no-caret' : noCaret }, classNames]"
     data-testid="dropdown">
     <slot
       name="activator"

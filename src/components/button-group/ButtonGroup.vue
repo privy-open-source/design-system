@@ -88,7 +88,7 @@ export default defineComponent({
     * to separate each other
     */
     &:not(:first-child) {
-      @apply ml-[-1px];
+      @apply -ml-[1px];
 
       &.btn--primary,
       &.btn--success,
