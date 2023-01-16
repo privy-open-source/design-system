@@ -145,7 +145,9 @@ If your document is require a password to open, you can pass the password to pro
 
 Set `layout` prop to `fit` to enable layout fit mode. It will adapt the viewer height with viewport, best for combining with [PDFObject](/components/pdf-object/).
 
-<img class="w-full" :src="IMG_FIXED_FIT" alt="fixed-vs-fit-ilustration" />
+<a :href="IMG_FIXED_FIT" target="_blank">
+  <img class="w-full" :src="IMG_FIXED_FIT" alt="fixed-vs-fit-ilustration" />
+</a>
 
 **Try it**
 
@@ -197,3 +199,8 @@ Set `layout` prop to `fit` to enable layout fit mode. It will adapt the viewer h
 | `loaded`         | -         | Event when document loaded                                 |
 | `error`          | Error     | Event when got error when loading the document             |
 | `error-password` | Error     | Event when document require a password or password invalid |
+
+## See Also
+
+- [PDF Object](/components/pdf-object/)
+- <a :href="FILE" target="_blank" download>Download Calibrator v3.0.0</a>

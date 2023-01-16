@@ -28,6 +28,7 @@ import {
   syncRef,
   templateRef,
   until,
+  useVModel,
 } from '@vueuse/core'
 import {
   defineComponent,
@@ -121,6 +122,12 @@ export default defineComponent({
       scale,
       objects,
     } = inject(PDF_OBJECTS_CONTEXT)
+
+    const vX      = useVModel(props, 'x')
+    const vY      = useVModel(props, 'y')
+    const vPage   = useVModel(props, 'page')
+    const vWidth  = useVModel(props, 'width')
+    const vHeight = useVModel(props, 'height')
 
     const {
       id,
@@ -263,6 +270,12 @@ export default defineComponent({
       x.value = center.x
       y.value = center.y
     }
+
+    syncRef(x, vX)
+    syncRef(y, vY)
+    syncRef(page, vPage)
+    syncRef(width, vWidth)
+    syncRef(height, vHeight)
 
     syncRef(moveable, toRef(props, 'moveable'), { direction: 'rtl', immediate: true })
     syncRef(resizable, toRef(props, 'resizable'), { direction: 'rtl', immediate: true })

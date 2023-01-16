@@ -1,12 +1,13 @@
 <template>
   <div
     ref="target"
+    data-testid="pdf-debugger"
     class="pdf-object__debugger">
-    <pre>x: {{ x }}</pre>
-    <pre>y: {{ y }}</pre>
-    <pre>page: {{ page }}</pre>
-    <pre>width: {{ width }}</pre>
-    <pre>height: {{ height }}</pre>
+    <pre data-testid="debug-x">x: {{ x }}</pre>
+    <pre data-testid="debug-y">y: {{ y }}</pre>
+    <pre data-testid="debug-page">page: {{ page }}</pre>
+    <pre data-testid="debug-width">width: {{ width }}</pre>
+    <pre data-testid="debug-height">height: {{ height }}</pre>
   </div>
 </template>
 

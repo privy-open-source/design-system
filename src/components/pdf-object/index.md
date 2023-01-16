@@ -247,7 +247,7 @@ You can also change addon position using prop `position`. valid value is: `left`
   </p-pdf-viewer>
 </preview>
 
-```vue{11-24}
+```vue
 <template>
   <p-pdf-viewer :src="FILE">
     <p-pdf-object
@@ -456,3 +456,7 @@ To disable object resize, set prop `resizable` to `false`.
 | Name      | Description                                        |
 |-----------|----------------------------------------------------|
 | `default` | Content to place inside the `<p-pdf-object-addon>` |
+
+## See Also
+
+- [PDF Viewer](/components/pdf-viewer/)

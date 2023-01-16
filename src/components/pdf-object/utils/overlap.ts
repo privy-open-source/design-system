@@ -50,8 +50,8 @@ export function getCenter (object: ObjectSize, reference: ObjectSize) {
  * @param reference
  */
 export function isOffside (object: ObjectSize & ObjectPosition, reference: ObjectSize) {
-  return object.x + object.width >= reference.width
-    || object.y + object.height >= reference.height
+  return object.x + object.width > reference.width
+    || object.y + object.height > reference.height
 }
 
 type MapSnapshot = Map<number, Map<number, ObjectPosition>>
@@ -62,7 +62,7 @@ type MapSnapshot = Map<number, Map<number, ObjectPosition>>
  */
 export function useMapSnapshot (objects: Iterable<ObjectPosition>): CheckOverlapFn {
   const xMap: MapSnapshot = new Map()
-  const round             = memoize((value) => Math.round(value / 10) * 10)
+  const round             = memoize((value) => Math.round(value / 15) * 15)
 
   for (const object of objects) {
     const x    = round(object.x)
@@ -77,7 +77,7 @@ export function useMapSnapshot (objects: Iterable<ObjectPosition>): CheckOverlap
     const x = round(object.x)
     const y = round(object.y)
 
-    return xMap.get(x)?.has(y)
+    return xMap.get(x)?.get(y) !== undefined
   }
 }
 
@@ -115,6 +115,9 @@ export function getEmptyPosition (options: GetEmptyPositionOptions): ObjectPosit
     }
   } while (!found && ++loop <= 500)
 
+  // Too heavy to test, only happen if objects has more than 300 items,
+  // We should not have that much objects in single page
+  /* c8 ignore next 3 */
   if (!found)
     console.warn('Cannot find empty position, max iteration reach')
 

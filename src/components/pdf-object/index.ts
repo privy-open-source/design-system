@@ -1,26 +1,24 @@
 import {
   MaybeRef,
-  syncRef,
+  tryOnBeforeMount,
+  tryOnBeforeUnmount,
   until,
-} from '@vueuse/shared'
+} from '@vueuse/core'
 import {
   computed,
   inject,
   InjectionKey,
-  onBeforeUnmount,
   reactive,
   Ref,
   unref,
   ref,
   watch,
-  onBeforeMount,
 } from 'vue-demi'
 import { PdfViewerContext } from '../pdf-viewer'
 import { useSelector } from './utils/use-selector'
 import { focus as focus_ } from '../tour/utils/focus'
-import { useVModel } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'
-import { debounce } from 'lodash-es'
+import { debounce, round } from 'lodash-es'
 
 export interface PdfObject {
   id: symbol,
@@ -52,10 +50,7 @@ export const PDF_OBJECTS_CONTEXT: InjectionKey<PdfObjects> = Symbol('PDFObjects'
 export const PDF_OBJECT_CONTEXT: InjectionKey<ReturnType<typeof useObjectModel>> = Symbol('PDFObjects')
 
 export function useSizeModel (props: PdfObjectSize) {
-  const vWidth  = useVModel(props, 'width')
-  const vHeight = useVModel(props, 'height')
-
-  const ratio     = computed(() => props.width / props.height)
+  const ratio     = computed(() => round(props.width / props.height, 2))
   const minWidth  = ref(props.minWidth ?? props.width * 0.5)
   const maxWidth  = ref(props.maxWidth ?? props.width * 2)
   const minHeight = ref(props.minHeight ?? props.height * 0.5)
@@ -84,9 +79,6 @@ export function useSizeModel (props: PdfObjectSize) {
       maxHeight.value = value
   })
 
-  syncRef(width, vWidth)
-  syncRef(height, vHeight)
-
   return {
     ratio,
     width,
@@ -107,10 +99,6 @@ export function useObjectModel (props: PdfObjectProp) {
     objects,
     page: currentPage,
   } = inject(PDF_OBJECTS_CONTEXT)
-
-  const vX    = useVModel(props, 'x')
-  const vY    = useVModel(props, 'y')
-  const vPage = useVModel(props, 'page')
 
   const page = ref(props.page ?? currentPage.value)
   const x    = ref(props.x)
@@ -136,21 +124,18 @@ export function useObjectModel (props: PdfObjectProp) {
     height,
   }))
 
-  onBeforeMount(async () => {
+  tryOnBeforeMount(() => {
     if (!Number.isFinite(page.value)) {
-      await until(currentPage).toBeTruthy()
-
-      page.value = currentPage.value
+      until(currentPage).toBeTruthy()
+        .then(() => {
+          page.value = currentPage.value
+        })
     }
   })
 
-  onBeforeUnmount(() => {
+  tryOnBeforeUnmount(() => {
     objects.delete(id)
   })
-
-  syncRef(x, vX)
-  syncRef(y, vY)
-  syncRef(page, vPage)
 
   return {
     id,

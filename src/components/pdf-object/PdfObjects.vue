@@ -10,12 +10,11 @@
 import { templateRef } from '@vueuse/core'
 import {
   defineComponent,
-  inject,
   provide,
   toRef,
 } from 'vue-demi'
 import { PDF_OBJECTS_CONTEXT } from '.'
-import { PDF_VIEWER_CONTEXT } from '../pdf-viewer'
+import { usePdfContext } from '../pdf-viewer'
 import useDrop from './utils/use-drop'
 
 export default defineComponent({
@@ -28,7 +27,7 @@ export default defineComponent({
   setup (props) {
     const objects    = new Map()
     const root       = templateRef<HTMLDivElement>('root')
-    const pdfContext = inject(PDF_VIEWER_CONTEXT)
+    const pdfContext = usePdfContext()
     const dropTarget = toRef(props, 'dropTarget')
 
     provide(PDF_OBJECTS_CONTEXT, {

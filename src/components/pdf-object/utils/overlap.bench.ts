@@ -210,13 +210,13 @@ describe('checkOverlap', () => {
 
 describe('getEmptyPosition', () => {
   const offside = {
-    width : 198,
-    height: 106,
+    width : 793,
+    height: 1122,
   }
 
   const size = {
-    width : 793,
-    height: 1122,
+    width : 198,
+    height: 106,
   }
 
   const objects: ObjectPosition[] = []
