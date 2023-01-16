@@ -181,5 +181,4 @@ Heading have 4 transforms variant, there are `normalcase`, `lowercase`, `capital
 
 ## See Also
 
-- [Heading Guide](/styleguide/heading/index)
 - [Subheading](/components/subheading/index)

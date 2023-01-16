@@ -149,10 +149,18 @@ export default defineComponent({
 .radio {
   @apply inline-flex space-x-2 relative cursor-pointer select-none items-baseline;
 
+  /**
+  * hide default appearance
+  * radio
+  */
   & > input[type="radio"] {
     @apply appearance-none w-0 h-0 opacity-0 absolute;
   }
 
+  /**
+  * replace default appearance
+  * with custom icon
+  */
   &__icon {
     @apply w-5 h-5 border rounded-full border-subtle inline-flex items-center justify-center bg-default;
 
@@ -161,10 +169,16 @@ export default defineComponent({
     }
   }
 
+  /**
+  * give color of checkbox label
+  */
   &__label {
     @apply text-default;
   }
 
+  /**
+  * disable radio
+  */
   &&--disabled {
     @apply opacity-50;
 
@@ -179,6 +193,10 @@ export default defineComponent({
     }
   }
 
+  /**
+  * give accent background and
+  * white checked icon
+  */
   &&--checked {
     .radio__icon {
       @apply bg-accent-emphasis border-accent-emphasis;
@@ -193,12 +211,18 @@ export default defineComponent({
     }
   }
 
+  /**
+  * radio with checkbox appearance
+  */
   &&--checkbox {
     .radio__icon {
       @apply rounded-sm;
     }
   }
 
+  /**
+  * radio with option appearance
+  */
   &&--option {
     .radio__icon {
       @apply order-2 border-none invisible bg-transparent;
@@ -229,9 +253,16 @@ export default defineComponent({
     }
   }
 
+  /**
+  * radio with appearance none
+  */
   &&--none {
     .radio__icon {
       @apply hidden;
+
+      + .radio__label {
+        @apply ml-0;
+      }
     }
 
     &.radio--disabled {
@@ -241,6 +272,9 @@ export default defineComponent({
     }
   }
 
+  /**
+  * checkbox in dropdown menu
+  */
   .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
   .dropdown__menu > .dropdown__subitem > & {
     @apply w-full select-none;

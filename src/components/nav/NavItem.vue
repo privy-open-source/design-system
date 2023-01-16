@@ -74,6 +74,9 @@ export default defineComponent({
       if (props.active)
         result.push('nav__item--active')
 
+      if (props.disabled)
+        result.push('nav__item--disabled')
+
       return result
     })
 
@@ -97,6 +100,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .nav {
+
   &__item {
     &&--no-label {
       .nav__link__label {
@@ -116,14 +120,14 @@ export default defineComponent({
   }
 
   &__link {
-    @apply block py-[10px] px-3 -mb-[1px] border border-transparent rounded-t text-base cursor-pointer hover:no-underline text-subtle hover:text-default;
+    @apply block py-[10px] px-3 -mb-[1px] border border-transparent rounded-t text-base font-normal cursor-pointer hover:no-underline text-subtle hover:text-default;
 
-    &--active {
+    &&--active {
       @apply text-default cursor-default;
     }
 
-    &--disabled {
-      @apply text-muted hover:text-muted focus:text-muted active:text-muted cursor-default pointer-events-none;
+    &&--disabled {
+      @apply cursor-default pointer-events-none;
     }
 
     &--icon {

@@ -7,7 +7,7 @@
   @apply bg-subtle-alpha my-2 w-[1px];
 
   .input-group > & {
-    @apply flex items-center my-0 py-3 border-y border-subtle bg-transparent;
+    @apply flex items-center my-0 py-3 border-subtle bg-transparent z-1;
 
     &::before {
       @apply content-[''] bg-subtle-alpha w-[1px] h-full;

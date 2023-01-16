@@ -5,8 +5,9 @@
     <Dropdown
       :text="text"
       :icon="icon"
+      :variant="variant"
+      :size="size"
       placement="bottom-end"
-      variant="ghost"
       :no-caret="noCaret">
       <template #button-content>
         <slot name="button-content">
@@ -20,8 +21,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue-demi'
+import { defineComponent, PropType } from 'vue-demi'
 import Dropdown from '../dropdown/Dropdown.vue'
+import type {
+  SizeVariant,
+  StyleVariant,
+} from '../button'
 
 export default defineComponent({
   components: { Dropdown },
@@ -33,6 +38,14 @@ export default defineComponent({
     icon: {
       type   : Boolean,
       default: false,
+    },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
+    },
+    variant: {
+      type   : String as PropType<StyleVariant>,
+      default: 'ghost',
     },
     noCaret: {
       type   : Boolean,

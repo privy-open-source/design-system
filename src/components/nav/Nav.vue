@@ -104,8 +104,23 @@ export default defineComponent({
   */
   @apply pl-2 list-none flex flex-wrap mb-0;
 
-  &:not(.nav--vertical) .nav__item {
+  &:not(.nav--vertical):not(.navbar__nav) .nav__item {
     @apply first:ml-2 mr-2 last:mr-0;
+  }
+
+  & > &__item {
+    .nav__link {
+      @apply text-subtle dark:text-muted;
+
+      &:hover,
+      &--active {
+        @apply text-default dark:text-on-emphasis;
+      }
+
+      &--disabled {
+        @apply text-muted hover:text-muted focus:text-muted active:text-muted;
+      }
+    }
   }
 
   /*
@@ -127,7 +142,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-b-on-emphasis;
+          @apply border-b-on-emphasis dark:border-b-default;
         }
       }
     }
@@ -218,7 +233,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply bg-subtle rounded-b;
+          @apply bg-subtle dark:bg-emphasis-alpha rounded-b;
         }
       }
     }

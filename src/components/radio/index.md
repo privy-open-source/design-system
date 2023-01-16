@@ -431,7 +431,7 @@ Also, apart from the `appearance` variants that have been provided, you can expl
       <template #default>
         <p-card
           element="div"
-          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('../../public/assets/images/img-radio-picker-01.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
+          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-01.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : selected === 'image 01' }"
           sectioned>
           <IconCheck
@@ -444,7 +444,7 @@ Also, apart from the `appearance` variants that have been provided, you can expl
       <template #default>
         <p-card
           element="div"
-          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('../../public/assets/images/img-radio-picker-02.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
+          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-02.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : selected === 'image 02' }"
           sectioned>
           <IconCheck
@@ -457,7 +457,7 @@ Also, apart from the `appearance` variants that have been provided, you can expl
       <template #default>
         <p-card
           element="div"
-          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('../../public/assets/images/img-radio-picker-03.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
+          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-03.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : selected === 'image 03' }"
           sectioned>
           <IconCheck
@@ -480,7 +480,7 @@ Also, apart from the `appearance` variants that have been provided, you can expl
       <template #default>
         <p-card
           element="div"
-          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('../../public/assets/images/img-radio-picker-01.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
+          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-01.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : selected === 'image 01' }"
           sectioned>
           <IconCheck
@@ -493,7 +493,7 @@ Also, apart from the `appearance` variants that have been provided, you can expl
       <template #default>
         <p-card
           element="div"
-          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('../../public/assets/images/img-radio-picker-02.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
+          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-02.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : selected === 'image 02' }"
           sectioned>
           <IconCheck
@@ -506,7 +506,7 @@ Also, apart from the `appearance` variants that have been provided, you can expl
       <template #default>
         <p-card
           element="div"
-          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('../../public/assets/images/img-radio-picker-03.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
+          class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-03.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : selected === 'image 03' }"
           sectioned>
           <IconCheck

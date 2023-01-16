@@ -89,7 +89,7 @@ export default defineComponent({
     @apply block visible;
   }
 
-  &:not(.collapse--show) {
+  &:not(&--show) {
     @apply hidden;
   }
 }
@@ -97,6 +97,10 @@ export default defineComponent({
 .navbar {
   &--collapse {
     @apply basis-full flex-grow items-center;
+
+    &.collapse--show {
+      @apply pt-3;
+    }
   }
 }
 </style>

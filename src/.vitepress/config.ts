@@ -350,8 +350,12 @@ export default defineConfig({
               link: '/styleguide/button-group/',
             },
             {
-              text: 'Heading',
-              link: '/styleguide/heading/',
+              text: 'Checkbox & Radio',
+              link: '/styleguide/checkbox-radio/',
+            },
+            {
+              text: 'Navbar',
+              link: '/styleguide/navbar/',
             },
           ],
         },

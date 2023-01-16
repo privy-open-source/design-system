@@ -2,6 +2,8 @@
   import Banner from "../banner/Banner.vue"
   import pCheckbox from "./Checkbox.vue"
   import pCaption from "../caption/Caption.vue"
+  import pCard from "../card/Card.vue"
+  import IconBee from '@carbon/icons-vue/lib/bee/20'
   import { ref, computed } from "vue-demi"
 
   const value    = ref(false)
@@ -227,6 +229,122 @@ Indeterminate is condition between `checked` and `unchecked`. It's usefull for c
       && result.value.length < items.value.length
   })
 </script>
+```
+
+## Custom Appearance
+
+It's possible to create checkbox with custom appearance. If don't wanna see "check-appearance", don't forget to add value `none` in prop `appearance`.
+
+<preview class="justify-center">
+  <div class="flex flex-col space-y-3">
+    <p-checkbox appearance="none" v-model="selected" value="Olivia Withness">
+      <template #default>
+        <p-card
+          element="div"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          sectioned>
+          <div class="flex items-center space-x-3">
+            <IconBee class="text-muted" />
+            <div>
+              Olivia Withness
+              <p-caption>olivia@eth.com</p-caption>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-checkbox>
+    <p-checkbox appearance="none" v-model="selected" value="Hyuga Kojiro">
+      <template #default>
+        <p-card
+          element="div"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          sectioned>
+          <div class="flex items-center space-x-3">
+            <IconBee class="text-muted" />
+            <div>
+              Hyuga Kojiro
+              <p-caption>hyuga@gmail.com</p-caption>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-checkbox>
+    <p-checkbox appearance="none" v-model="selected" value="Marsha Timoty" disabled>
+      <template #default>
+        <p-card
+          element="div"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          sectioned>
+          <div class="flex items-center space-x-3">
+            <IconBee class="text-muted" />
+            <div>
+              Marsha Timoty
+              <p-caption>timoty@marsha.com</p-caption>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-checkbox>
+  </div>
+</preview>
+
+**Selected :**
+
+<pre><code>{{ selected }}</code></pre>
+
+```vue
+<template>
+  <div class="flex flex-col space-y-3">
+    <p-checkbox appearance="none" v-model="selected" value="Olivia Withness">
+      <template #default>
+        <p-card
+          element="div"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          sectioned>
+          <div class="flex items-center space-x-3">
+            <IconBee class="text-muted" />
+            <div>
+              Olivia Withness
+              <p-caption>olivia@eth.com</p-caption>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-checkbox>
+    <p-checkbox appearance="none" v-model="selected" value="Hyuga Kojiro">
+      <template #default>
+        <p-card
+          element="div"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          sectioned>
+          <div class="flex items-center space-x-3">
+            <IconBee class="text-muted" />
+            <div>
+              Hyuga Kojiro
+              <p-caption>hyuga@gmail.com</p-caption>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-checkbox>
+    <p-checkbox appearance="none" v-model="selected" value="Marsha Timoty" disabled>
+      <template #default>
+        <p-card
+          element="div"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          sectioned>
+          <div class="flex items-center space-x-3">
+            <IconBee class="text-muted" />
+            <div>
+              Marsha Timoty
+              <p-caption>timoty@marsha.com</p-caption>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-checkbox>
+  </div>
+</template>
 ```
 
 ## API

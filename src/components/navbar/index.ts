@@ -1,8 +1,7 @@
 import { InjectionKey, Ref } from 'vue-demi'
 import { StyleVariant } from '../nav'
 
-export type ColorVariant = 'light' | 'dark'
-export type ToggleableVariant = 'sm' | 'md' | 'lg'
+export type ToggleableVariant = 'sm' | 'md' | 'lg' | 'all'
 
 export interface NavbarSettings {
   variant: Ref<StyleVariant>,
