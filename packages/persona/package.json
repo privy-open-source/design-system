@@ -60,7 +60,7 @@
     "fast-equals": "^4.0.3",
     "fuse.js": "6.6.2",
     "interactjs": "1.10.17",
-    "isomorphic-dompurify": "^0.24.0",
+    "isomorphic-dompurify": "^0.26.0",
     "lodash-es": "4.17.21",
     "marked": "^4.1.1",
     "nanodelay": "2.0.2",
