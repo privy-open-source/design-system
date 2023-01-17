@@ -23,7 +23,7 @@ export interface ResizeOptions {
   ratio?: MaybeRef<number>,
 }
 
-export function useResize (target: Ref<HTMLElement>, options: ResizeOptions = {}) {
+export default function useResize (target: Ref<HTMLElement>, options: ResizeOptions = {}) {
   const enable   = shallowRef(true)
   const instance = shallowRef<Interactable>()
 
@@ -33,7 +33,7 @@ export function useResize (target: Ref<HTMLElement>, options: ResizeOptions = {}
     if (target.value) {
       const { default: Interact } = await import('interactjs')
 
-      Interact.dynamicDrop(true)
+      // Interact.dynamicDrop(true)
 
       instance.value = Interact(target.value)
         .resizable({

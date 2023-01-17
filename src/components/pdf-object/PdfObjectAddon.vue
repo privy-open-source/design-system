@@ -1,5 +1,6 @@
 <template>
   <div
+    data-testid="pdf-object-addon"
     class="pdf-object__addon"
     :class="classNames">
     <slot />

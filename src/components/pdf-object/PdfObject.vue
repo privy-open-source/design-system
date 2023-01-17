@@ -1,6 +1,7 @@
 <template>
   <div
     ref="object"
+    data-testid="pdf-object"
     class="pdf-object"
     tabindex="0"
     :data-x="x"
@@ -40,6 +41,7 @@ import {
   watchEffect,
 } from 'vue-demi'
 import useDrag from './utils/use-drag'
+import useResize from './utils/use-resize'
 import {
   PDF_OBJECTS_CONTEXT,
   PDF_OBJECT_CONTEXT,
@@ -49,7 +51,6 @@ import {
 } from '.'
 import { computePosition, getPosition } from './utils/position'
 import { getEmptyPosition, ObjectPosition } from './utils/overlap'
-import { useResize } from './utils/use-resize'
 import PdfObjectDebugger from './PdfObjectDebugger.vue'
 
 export default defineComponent({

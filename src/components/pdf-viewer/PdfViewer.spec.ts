@@ -5,6 +5,8 @@ import { vi } from 'vitest'
 import { delay } from 'nanodelay'
 import { nextTick, ref } from 'vue-demi'
 
+vi.mock('../pdf-object/utils/use-drop.ts', () => ({ default: vi.fn(() => ref(true)) }))
+
 vi.mock('./utils/use-viewer.ts', () => useViewer)
 
 it('should rendery properly', () => {

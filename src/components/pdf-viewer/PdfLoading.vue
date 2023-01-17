@@ -1,5 +1,6 @@
 <template>
   <div
+    data-testid="pdf-loading"
     class="pdf__loading">
     <img
       :src="PDF_LOADING_IMG"

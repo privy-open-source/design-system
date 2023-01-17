@@ -1,7 +1,9 @@
 import { render, fireEvent } from '@testing-library/vue'
 import PdfNavigation from './PdfNavigation.vue'
 import {
-  nextTick, provide, ref,
+  nextTick,
+  provide,
+  ref,
 } from 'vue-demi'
 import { PDF_VIEWER_CONTEXT } from '.'
 
