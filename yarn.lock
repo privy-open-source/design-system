@@ -2704,7 +2704,7 @@ __metadata:
     tabbable: 6.0.1
     tailwindcss: 3.2.4
     typescript: 4.9.4
-    vitepress: 1.0.0-alpha.35
+    vitepress: 1.0.0-alpha.36
     vitest: 0.24.5
     vue-content-loader: ^2.0.1
     vue-demi: 0.13.11
@@ -15562,9 +15562,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-alpha.35":
-  version: 1.0.0-alpha.35
-  resolution: "vitepress@npm:1.0.0-alpha.35"
+"vitepress@npm:1.0.0-alpha.36":
+  version: 1.0.0-alpha.36
+  resolution: "vitepress@npm:1.0.0-alpha.36"
   dependencies:
     "@docsearch/css": ^3.3.1
     "@docsearch/js": ^3.3.1
@@ -15577,7 +15577,7 @@ __metadata:
     vue: ^3.2.45
   bin:
     vitepress: bin/vitepress.js
-  checksum: 3501e66002272ef0e291fc84a4b0f0d5828a6803d130bdbdb894cdeef586884c211f2fdc4baae07713e09bea2554806478c23ac2acd1a75dd0a389b8fe2c5ec6
+  checksum: 0a8f370924c333283be508c39238e7026bedfab895abf8b799d5ceaf215710e70f6b275d81c5ff06c44879f005e134b3a107abcad5a97b4aa2f04a362985ad0c
   languageName: node
   linkType: hard
 
