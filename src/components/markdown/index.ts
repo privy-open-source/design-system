@@ -1,6 +1,6 @@
 import { Directive } from 'vue-demi'
 import { marked } from 'marked'
-import * as DOMPurify from 'isomorphic-dompurify'
+import sanitizeHtml from 'sanitize-html'
 
 export interface MarkdownOption {
   /**
@@ -25,7 +25,7 @@ export function markdown (text = '', options: Partial<MarkdownOption> = {}) {
     : marked.parse(text)
 
   if (html && !options.unsecure)
-    return DOMPurify.sanitize(html)
+    return sanitizeHtml(html)
 
   return html
 }

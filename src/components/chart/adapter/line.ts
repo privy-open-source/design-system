@@ -50,7 +50,7 @@ export default defineAdapter({
               weight: '600',
             },
           },
-          grid: { borderColor: '#BFBFBF' },
+          border: { color: '#BFBFBF' },
         },
         y: {
           ticks: {
@@ -61,9 +61,9 @@ export default defineAdapter({
               weight: '600',
             },
           },
-          grid: {
-            borderColor: '#BFBFBF',
-            borderDash : [4],
+          border: {
+            color: '#BFBFBF',
+            dash : [4],
           },
         },
       },

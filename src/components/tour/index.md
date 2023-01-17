@@ -180,7 +180,7 @@ const tour = createTour()
     text  : 'This is text',
     image : 'https://picsum.photos/400/225',
   })
-  // This also can written like this (shortcut)
+  // It can also write like this (shortcut)
   .dialog('#sample', 'This is text', 'This is title', 'https://picsum.photos/400/225')
 ```
 

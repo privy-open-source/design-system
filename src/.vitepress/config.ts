@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { Plugin } from 'vite'
 import { babel } from '@rollup/plugin-babel'
 
 export default defineConfig({
@@ -270,6 +271,20 @@ export default defineConfig({
           ],
         },
         {
+          text       : 'PDF',
+          collapsible: true,
+          items      : [
+            {
+              text: 'PDF Viewer',
+              link: '/components/pdf-viewer/',
+            },
+            {
+              text: 'PDF Object',
+              link: '/components/pdf-object/',
+            },
+          ],
+        },
+        {
           text       : 'Non-Component',
           collapsible: true,
           items      : [
@@ -377,7 +392,7 @@ export default defineConfig({
             },
           ],
         ],
-      }),
+      }) as unknown as Plugin,
     ],
   },
 })

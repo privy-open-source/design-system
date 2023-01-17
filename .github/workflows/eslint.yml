@@ -47,3 +47,6 @@ jobs:
 
       - name: Run ESLint
         run: yarn lint:ci
+
+      - name: Run Typecheck
+        run: yarn typecheck

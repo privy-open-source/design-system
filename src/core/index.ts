@@ -1,4 +1,10 @@
 export {
+  useSingleton,
+  removeSingleton,
+  resetInstance,
+} from '../components/global/use-singleton'
+
+export {
   hideOverlay,
   showOverlay,
 } from '../components/overlay'

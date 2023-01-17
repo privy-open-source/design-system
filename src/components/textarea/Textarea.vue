@@ -35,7 +35,8 @@ import {
 import { templateRef } from '@vueuse/core'
 
 export default defineComponent({
-  props: {
+  inheritAttrs: false,
+  props       : {
     modelValue: {
       type   : String,
       default: '',

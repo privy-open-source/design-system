@@ -11,6 +11,7 @@
         v-model="search"
         data-testid="select-search"
         class="select__search"
+        :size="size"
         :placeholder="placeholder"
         :disabled="disabled"
         :readonly="readonly"
@@ -87,6 +88,7 @@ import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
 import { tryOnMounted } from '@vueuse/shared'
 import { onStartTyping } from '@vueuse/core'
+import { SizeVariant } from '../button'
 
 export default defineComponent({
   components: {
@@ -149,6 +151,10 @@ export default defineComponent({
     error: {
       type   : Boolean,
       default: false,
+    },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
     },
   },
   models: {

@@ -32,12 +32,11 @@ export default class Queue {
       }
 
       this.enqueue(queue)
-
-      void this.run()
+      this.run()
     })
   }
 
-  protected async run () {
+  protected run () {
     if (this.queue.length > 0 && !this.running) {
       this.running = true
 
@@ -48,8 +47,7 @@ export default class Queue {
         .catch(job.reject)
         .finally(() => {
           this.running = false
-
-          void this.run()
+          this.run()
         })
     }
   }
