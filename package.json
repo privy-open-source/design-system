@@ -18,7 +18,8 @@
     "coverage": "vitest run --coverage --reporter=dot",
     "postinstall": "husky install",
     "packages:prepare": "yarn workspaces foreach -vt run prepare",
-    "packages:build": "yarn workspaces foreach -vt run build"
+    "packages:build": "yarn workspaces foreach -vt run build",
+    "release:prepare": "yarn workspaces foreach -vt version minor --deferred"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
