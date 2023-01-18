@@ -237,19 +237,19 @@ export default defineComponent({
   */
   &&--icon {
     &.btn--xs {
-      @apply px-1 h-[25.88px];
+      @apply px-[2px];
     }
 
     &.btn--sm {
-      @apply px-2 h-[34px];
+      @apply px-1;
     }
 
     &.btn--md {
-      @apply px-3 h-[46px];
+      @apply px-[10px];
     }
 
     &.btn--lg {
-      @apply px-4 h-[58px];
+      @apply px-4;
     }
   }
 
