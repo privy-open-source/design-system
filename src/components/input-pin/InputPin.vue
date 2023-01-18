@@ -16,9 +16,9 @@
       :error="error"
       @input="setValue(i - 1, $event)"
       @focus.passive="onFocus"
-      @keyup.delete.passive="onDelete"
-      @keyup.left.passive="prevFocus"
-      @keyup.right.passive="nextFocus"
+      @keyup.delete.stop.prevent="onDelete"
+      @keyup.left.stop.prevent="prevFocus"
+      @keyup.right.stop.prevent="nextFocus"
       @paste.passive="onPaste" />
   </div>
 </template>
