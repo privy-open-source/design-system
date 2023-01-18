@@ -1,21 +1,13 @@
 import { vi } from 'vitest'
 import { fireEvent, render } from '@testing-library/vue'
 import { delay } from 'nanodelay'
-import { ref, nextTick } from 'vue-demi'
-import { useElementBounding, simulateHeightChanged } from './__mocks__/use-element-bounding'
+import {
+  ref,
+  nextTick,
+} from 'vue-demi'
 import pContextualBar from './ContextualBar.vue'
 import pButton from '../button/Button.vue'
-import type * as VueUse from '@vueuse/core'
 import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
-
-vi.mock('@vueuse/core', async () => {
-  const core = await vi.importActual('@vueuse/core')
-
-  return {
-    ...core as typeof VueUse,
-    useElementBounding,
-  }
-})
 
 afterEach(() => {
   vi.restoreAllMocks()
@@ -271,24 +263,34 @@ it('should have style attribute `display: none` when contextual bar is hide', as
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar v-model="model" title="hello" />
+      <p-contextual-bar
+        v-model="model"
+        title="hello"
+        :style="{ transitionDuration: '1ms' }" />
     `,
     setup () {
       return { model }
     },
-  })
+  }, { global: { stubs: { transition: false } } })
 
-  await simulateHeightChanged(0) // Simulate heigth changing
+  const bar = screen.queryByTestId('contextual-bar') as HTMLDivElement
 
-  let bar = screen.queryByTestId('contextual-bar')
-  expect(bar).toHaveStyle({ transform: 'translateY(-0px)', display: 'none' })
+  expect(bar).not.toBeVisible()
+  expect(document.body).toHaveClass('contextual-bar__body')
 
   model.value = true
+
+  await delay(0)
   await nextTick()
 
-  await simulateHeightChanged(42)
+  expect(bar).toBeVisible()
+  expect(document.body).toHaveClass('contextual-bar__body--active')
 
-  bar = screen.queryByTestId('contextual-bar')
-  expect(bar).toHaveStyle({ transform: 'translateY(-42px)' })
-  expect(document.body).toHaveStyle({ transform: 'translateY(42px)' })
+  model.value = false
+
+  await delay(4)
+  await nextTick()
+
+  expect(bar).not.toBeVisible()
+  expect(document.body).not.toHaveClass('contextual-bar__body--active')
 })
