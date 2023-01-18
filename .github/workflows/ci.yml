@@ -160,10 +160,11 @@ jobs:
 
     strategy:
       fail-fast: false
-      os:
-        - ubuntu-latest
       matrix:
-        language: ["javascript"]
+        os:
+          - ubuntu-latest
+        language:
+          - javascript
 
     steps:
       - name: Git Checkout
