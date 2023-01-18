@@ -161,7 +161,7 @@ jobs:
     strategy:
       fail-fast: false
       os:
-          - ubuntu-latest
+        - ubuntu-latest
       matrix:
         language: ["javascript"]
 
