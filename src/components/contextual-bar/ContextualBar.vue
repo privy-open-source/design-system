@@ -121,7 +121,12 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['update:modelValue', 'close'],
+  emits: [
+    'update:modelValue',
+    'close',
+    'show',
+    'hide',
+  ],
 
   setup (props, { emit }) {
     const model = useVModel(props)
@@ -153,12 +158,17 @@ export default defineComponent({
 
       document.body.classList.add('contextual-bar__body--active')
       document.body.style.setProperty('transform', `translateY(${target.clientHeight}px)`)
+
+      emit('show')
     }
 
     function onLeave (target: HTMLDivElement) {
       target.style.setProperty('transform', 'translateY(0px)')
+
       document.body.classList.remove('contextual-bar__body--active')
       document.body.style.removeProperty('transform')
+
+      emit('hide')
     }
 
     onMounted(() => {
