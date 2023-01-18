@@ -1,3 +1,8 @@
+---
+title: Dropdown · Components
+description: Base dropdown button, suit for action menus
+---
+
 <script setup>
   import IconBee from '@carbon/icons-vue/lib/bee/20'
   import pInput from "../input/Input.vue"
@@ -14,6 +19,8 @@
 </script>
 
 # Dropdown
+
+> Base dropdown button, suit for action menus
 
 ## Usage
 

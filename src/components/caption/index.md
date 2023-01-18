@@ -1,10 +1,18 @@
+---
+title: Caption · Components
+description: Take picture from user's camera
+---
+
 <script setup>
   import pCaption from './Caption.vue'
 </script>
 
 # Caption
 
+> Small additional title.
+
 ## Usage
+
 ### Basic Usage
 
 <preview>

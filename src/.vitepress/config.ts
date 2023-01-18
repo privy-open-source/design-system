@@ -5,7 +5,7 @@ import { babel } from '@rollup/plugin-babel'
 export default defineConfig({
   base       : process.env.BASE_URL ?? '/design-system/',
   title      : 'Persona',
-  description: 'Persona - PrivyID\'s Design System',
+  description: 'Persona - PrivyID\'s Design System, built on top Nuxt3, Typescript and Tailwind',
   head       : [
     [
       'link',

@@ -1,3 +1,8 @@
+---
+title: Collapse · Components
+description: Show and hide content.
+---
+
 <script setup>
   import { ref } from 'vue-demi'
   import pCollapse from './Collapse.vue'
@@ -9,6 +14,8 @@
 </script>
 
 # Collapse
+
+> Show and hide content.
 
 ## Usage
 

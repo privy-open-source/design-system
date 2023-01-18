@@ -1,5 +1,10 @@
+---
+title: Heading · Components
+description: Titles of each major section of a page in the interface.
+---
+
 <script setup>
-    import pHeading from './Heading.vue'
+  import pHeading from './Heading.vue'
 </script>
 
 <style scoped lang="postcss">
@@ -15,7 +20,11 @@
     }
   }
 </style>
+
 # Heading
+
+> Titles of each major section of a page in the interface.
+
 Headings are used as the titles of each major section of a page in the interface.
 
 ## Usage

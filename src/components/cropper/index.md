@@ -1,3 +1,8 @@
+---
+title: Cropper · Components
+description: Preview and crop image
+---
+
 <script setup>
 import pButton from '../button/Button.vue'
 import pCropper from './Cropper.vue'
@@ -19,6 +24,7 @@ function doCrop () {
 </script>
 
 # Cropper
+
 > Preview and crop image
 
 ## Usage

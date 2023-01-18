@@ -1,3 +1,8 @@
+---
+title: Checkbox · Components
+description: Base checkbox form
+---
+
 <script setup>
   import Banner from "../banner/Banner.vue"
   import pCheckbox from "./Checkbox.vue"
@@ -32,6 +37,8 @@
 </script>
 
 # Checkbox
+
+> Base checkbox form
 
 ## Usage
 

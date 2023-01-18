@@ -1,3 +1,8 @@
+---
+title: Camera · Components
+description: Take picture from user's camera
+---
+
 <script setup>
   import pCamera from './Camera.vue'
   import pBanner from '../banner/Banner.vue'

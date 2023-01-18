@@ -1,5 +1,5 @@
 ---
-title: Components > PDF Objects
+title: PDF Objects · Components
 description: Add object to PDF Viewer
 ---
 

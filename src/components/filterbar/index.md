@@ -1,3 +1,8 @@
+---
+title: Filterbar · Components
+description: Add filter to your datatable easy-way.
+---
+
 <script setup>
   import { ref } from 'vue-demi'
   import pFilterbar from './Filterbar.vue'
@@ -58,6 +63,8 @@
 </script>
 
 # Filterbar
+
+> Add filter to your datatable easy-way.
 
 ## Usage
 

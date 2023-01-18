@@ -1,3 +1,8 @@
+---
+title: Input · Components
+description: Base text-input form.
+---
+
 <script setup>
   import pInput from "./Input.vue"
   import { ref } from "vue-demi"
@@ -8,9 +13,12 @@
 
 # Input
 
+> Base text-input form.
+
 ## Usage
 
 ### Simple Usage
+
 <preview>
   <p-input v-model="value" placeholder="Input Here" />
 </preview>

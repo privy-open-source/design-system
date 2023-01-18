@@ -1,9 +1,15 @@
+---
+title: Badge · Components
+description: Label of the thing they're quantifying, such as the number of notification/document received.
+---
+
 <script setup>
   import pBadge from './Badge.vue'
 </script>
 
 # Badge
-Badges are placed before/after the label of the thing they're quantifying, such as the number of notification/document received.
+
+> Label of the thing they're quantifying, such as the number of notification/document received.
 
 ## Usage
 

@@ -52,6 +52,8 @@ onMounted (() => {
 
 # Contextual Bar
 
+> App-level notification bar.
+
 ## Usage
 
 ### Simple Usage

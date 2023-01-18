@@ -1,3 +1,8 @@
+---
+title: Card · Components
+description: Take picture from user's camera
+---
+
 <script setup>
   import pCard from './Card.vue'
   import pButton from '../button/Button.vue'
@@ -28,6 +33,8 @@
 </style>
 
 # Card
+
+> Base card container
 
 ## Usage
 

@@ -1,3 +1,8 @@
+---
+title: Spread · Components
+description: Sub-component for creating spread animation.
+---
+
 <script setup>
   import pSpread from './Spread.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
@@ -9,7 +14,7 @@
 
 # Spread
 
-> Component for creating spread animation.
+> Sub-component for creating spread animation.
 
 ## Usage
 

@@ -1,3 +1,8 @@
+---
+title: Input File · Components
+description: Base file-input form.
+---
+
 <script setup>
   import pInputFile from "./InputFile.vue"
   import { ref } from "vue-demi"
@@ -7,6 +12,8 @@
 </script>
 
 # Input File
+
+> Base file-input form.
 
 ## Usage
 

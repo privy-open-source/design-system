@@ -1,3 +1,8 @@
+---
+title: Input Range · Components
+description: Range input slider.
+---
+
 <script setup>
   import pInputRange from './InputRange.vue'
   import { ref } from 'vue-demi'
@@ -9,6 +14,8 @@
 </script>
 
 # Input Range
+
+> Range input slider.
 
 ## Usage
 
