@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "yarn docs:dev",
     "prod": "yarn docs:build && yarn docs:serve",
+    "build": "yarn docs:build",
     "docs:dev": "vitepress dev src --port 3000",
     "docs:build": "vitepress build src",
     "docs:serve": "vitepress serve src",

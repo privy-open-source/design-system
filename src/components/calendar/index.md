@@ -15,7 +15,7 @@ description: Sub-component for Datepicker
 
 # Calendar
 
-> Sub-component for [Datepicker](/components/datepicker)
+> Sub-component for [Datepicker](/components/datepicker/)
 
 ## Usage
 
