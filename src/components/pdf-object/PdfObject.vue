@@ -227,7 +227,7 @@ export default defineComponent({
 
               object.value.style.position  = 'absolute'
               object.value.style.transform = `translate(${left}px, ${top}px) scale(${scale.value})`
-              object.value.style.zIndex    = 'auto'
+              object.value.style.zIndex    = '10'
             }, { ancestorScroll: false })
 
             onCleanup(cleanup)
