@@ -1,3 +1,8 @@
+---
+title: Banner · Components
+description: Alert to convey information or actions
+---
+
 <script setup>
   import pBanner from './Banner.vue'
   import pButton from '../button/Button.vue'
@@ -6,6 +11,8 @@
 </script>
 
 # Banner
+
+> Alert to convey information or actions
 
 ## Usage
 

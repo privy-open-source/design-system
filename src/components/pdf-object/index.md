@@ -1,5 +1,5 @@
 ---
-title: Components > PDF Objects
+title: PDF Objects · Components
 description: Add object to PDF Viewer
 ---
 
@@ -451,7 +451,7 @@ To disable object resize, set prop `resizable` to `false`.
 |------------|:--------:|:-------:|---------------------------------------------------------------|
 | `position` | `String` | `right` | Addon position, valid value: `left`, `right`, `top`, `bottom` |
 
-### Slots `<p-pdf-object>`
+### Slots `<p-pdf-object-addon>`
 
 | Name      | Description                                        |
 |-----------|----------------------------------------------------|

@@ -1,3 +1,8 @@
+---
+title: Input Password · Components
+description: One at time input form.
+---
+
 <script setup>
   import pInputPin from './InputPin.vue'
   import { ref } from 'vue-demi'

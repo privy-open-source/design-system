@@ -1,9 +1,16 @@
+---
+title: Spinner · Components
+description: Loading spinner.
+---
+
 <script setup>
   import pSpinner from "./Spinner.vue"
   import pSpinnerRing from "./SpinnerRing.vue"
 </script>
 
 # Spinner
+
+> Loading spinner.
 
 ## Usage
 

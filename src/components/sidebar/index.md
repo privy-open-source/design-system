@@ -1,3 +1,8 @@
+---
+title: Sidebar · Components
+description: Base dashboard sidebar menu.
+---
+
 <script setup>
   import pSidebar from './Sidebar.vue'
   import pSidebarNav from './SidebarNav.vue'
@@ -23,7 +28,10 @@
 
 # Sidebar
 
+> Base dashboard sidebar menu
+
 ## Usage
+
 ### Basic Sidebar
 
 <preview>

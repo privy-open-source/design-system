@@ -1,3 +1,8 @@
+---
+title: Strengthbar · Components
+description: Component for displaying measurment.
+---
+
 <script setup>
   import pStrengthbar from './Strengthbar.vue'
   import pInputPassword from '../input-password/InputPassword.vue'
@@ -15,6 +20,8 @@
 </script>
 
 # Strengthbar
+
+> Component for displaying measurment.
 
 ## Usage
 

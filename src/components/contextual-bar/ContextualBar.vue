@@ -1,59 +1,67 @@
 <template>
-  <div
-    v-show="model"
-    ref="contextualbar"
-    data-testid="contextual-bar"
-    class="contextual-bar"
-    :class="classNames">
+  <transition
+    name="fade"
+    appear
+    @enter="onEnter"
+    @after-leave="onLeave">
     <div
-      data-testid="contextual-bar-wrapper"
-      :class="[{ 'contextual-bar__wrapper--with-message' : (message || $slots.message), 'contextual-bar__wrapper--with-action' : $slots.action } ,'contextual-bar__wrapper']">
-      <span
-        v-if="$slots.icon"
-        data-testid="contextual-bar-icon"
-        class="contextual-bar__icon">
-        <slot name="icon" />
-      </span>
-      <div class="contextual-bar__content">
-        <div
-          v-if="title || $slots.title"
-          data-testid="contextual-bar-title"
-          class="contextual-bar__content__title">
-          <slot name="title">
-            <p-subheading v-if="message">
-              {{ title }}
-            </p-subheading>
-            <template v-else>
-              {{ title }}
-            </template>
-          </slot>
+      v-show="model"
+      ref="contextualbar"
+      data-testid="contextual-bar"
+      class="contextual-bar"
+      v-bind="$attrs"
+      :class="classNames"
+      :style="{ 'background-image': backgroundUrl ? `url('${backgroundUrl}')`: 'none' }">
+      <div
+        data-testid="contextual-bar-wrapper"
+        :class="[{ 'contextual-bar__wrapper--with-message' : (message || $slots.message), 'contextual-bar__wrapper--with-action' : $slots.action } ,'contextual-bar__wrapper']">
+        <span
+          v-if="$slots.icon"
+          data-testid="contextual-bar-icon"
+          class="contextual-bar__icon">
+          <slot name="icon" />
+        </span>
+        <div class="contextual-bar__content">
+          <div
+            v-if="title || $slots.title"
+            data-testid="contextual-bar-title"
+            class="contextual-bar__content__title">
+            <slot name="title">
+              <p-subheading v-if="message">
+                {{ title }}
+              </p-subheading>
+              <template v-else>
+                {{ title }}
+              </template>
+            </slot>
+          </div>
+          <div
+            v-if="message || $slots.message"
+            data-testid="contextual-bar-message"
+            class="contextual-bar__content__message">
+            <p-caption>
+              <slot name="message">
+                {{ message }}
+              </slot>
+            </p-caption>
+          </div>
         </div>
         <div
-          v-if="message || $slots.message"
-          data-testid="contextual-bar-message"
-          class="contextual-bar__content__message">
-          <p-caption>
-            <slot name="message">
-              {{ message }}
-            </slot>
-          </p-caption>
+          v-if="$slots.action"
+          data-testid="contextual-bar-action"
+          class="contextual-bar__action">
+          <slot name="action" />
         </div>
       </div>
       <div
-        v-if="$slots.action"
-        data-testid="contextual-bar-action"
-        class="contextual-bar__action">
-        <slot name="action" />
+        v-if="dismissable"
+        data-testid="contextual-bar-close"
+        class="contextual-bar__close"
+        @click="close">
+        <IconClose />
       </div>
     </div>
-    <div
-      v-if="dismissable"
-      data-testid="contextual-bar-close"
-      class="contextual-bar__close"
-      @click="close">
-      <IconClose />
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script lang="ts">
@@ -62,18 +70,13 @@ import {
   defineComponent,
   PropType,
   onMounted,
-  watch,
+  onBeforeUnmount,
 } from 'vue-demi'
 import { AlignVariant } from '../nav'
 import { useVModel } from '../input'
 import pCaption from '../caption/Caption.vue'
 import pSubheading from '../subheading/Subheading.vue'
 import IconClose from '@carbon/icons-vue/lib/close/20'
-import {
-  templateRef,
-  until,
-  useElementBounding,
-} from '@vueuse/core'
 import { StyleVariant } from '.'
 
 export default defineComponent({
@@ -82,7 +85,8 @@ export default defineComponent({
     pCaption,
     pSubheading,
   },
-  props: {
+  inheritAttrs: false,
+  props       : {
     variant: {
       type   : String as PropType<StyleVariant>,
       default: 'light',
@@ -117,27 +121,15 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['update:modelValue', 'close'],
+  emits: [
+    'update:modelValue',
+    'close',
+    'show',
+    'hide',
+  ],
 
   setup (props, { emit }) {
-    const model         = useVModel(props)
-    const contextualbar = templateRef<HTMLDivElement>('contextualbar')
-    const { height }    = useElementBounding(contextualbar)
-
-    async function show () {
-      await until(height).changed()
-
-      document.body?.style.setProperty('transform', `translateY(${height.value}px)`)
-      document.body?.style.setProperty('transition', 'transform 0.15s ease-in-out')
-      contextualbar.value?.style.setProperty('transform', `translateY(-${height.value}px)`)
-      contextualbar.value?.style.setProperty('transition', 'transform 0.15s ease-in-out')
-    }
-
-    async function hide () {
-      contextualbar.value?.style.setProperty('transform', 'translateY(-0px)')
-      contextualbar.value?.style.setProperty('transition', 'transform 0.15s ease-in-out')
-      document.body?.style.removeProperty('transform')
-    }
+    const model = useVModel(props)
 
     function close (event: Event) : void {
       emit('close', event)
@@ -161,27 +153,38 @@ export default defineComponent({
       return result
     })
 
-    onMounted(() => {
-      if (props.backgroundUrl)
-        contextualbar.value?.style.setProperty('background-image', `url('${props.backgroundUrl}')`)
+    function onEnter (target: HTMLDivElement) {
+      target.style.setProperty('transform', `translateY(-${target.clientHeight}px)`)
 
-      if (model.value)
-        show()
-      else
-        hide()
+      document.body.classList.add('contextual-bar__body--active')
+      document.body.style.setProperty('transform', `translateY(${target.clientHeight}px)`)
+
+      emit('show')
+    }
+
+    function onLeave (target: HTMLDivElement) {
+      target.style.setProperty('transform', 'translateY(0px)')
+
+      document.body.classList.remove('contextual-bar__body--active')
+      document.body.style.removeProperty('transform')
+
+      emit('hide')
+    }
+
+    onMounted(() => {
+      document.body.classList.add('contextual-bar__body')
     })
 
-    watch(model, (value) => {
-      if (value)
-        show()
-      else
-        hide()
+    onBeforeUnmount(() => {
+      document.body.classList.remove('contextual-bar__body')
     })
 
     return {
       model,
       classNames,
       close,
+      onEnter,
+      onLeave,
     }
   },
 })
@@ -189,7 +192,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .contextual-bar {
-  @apply fixed z-[1030] top-0 left-0 p-6 w-full;
+  @apply fixed z-50 top-0 left-0 p-6 w-full max-w-[100vw];
+
+  &__body {
+    @apply transition-transform;
+  }
 
   &--background-image {
     @apply bg-no-repeat bg-cover bg-[top_center];

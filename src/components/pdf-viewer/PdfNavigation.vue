@@ -25,7 +25,6 @@
       <p-divider vertical />
       <p-select
         v-model="page"
-        class="w-16"
         :options="pages"
         size="xs" />
       <span
@@ -125,7 +124,7 @@ export default defineComponent({
 <style lang="postcss">
 .pdf {
   &__navigation {
-    @apply absolute bottom-4 inset-x-0 justify-center items-center flex w-80 mx-auto;
+    @apply absolute bottom-4 inset-x-0 justify-center items-center flex w-80 mx-auto z-10;
 
     &-container {
       @apply flex bg-gray-70 text-gray-30 rounded p-2 space-x-1 items-center;
@@ -134,11 +133,15 @@ export default defineComponent({
         @apply text-gray-30;
       }
 
-      > .select > .input {
-        @apply bg-emphasis-subtle;
+      > .select {
+        @apply w-16;
 
-        > .input__form {
-          @apply border-on-emphasis-subtle;
+        > .input {
+          @apply bg-emphasis-subtle;
+
+          > .input__form {
+            @apply border-on-emphasis-subtle bg-emphasis-subtle;
+          }
         }
       }
 

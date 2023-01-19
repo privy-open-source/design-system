@@ -1,3 +1,8 @@
+---
+title: Dropzone · Components
+description: Headless component for Drag'n'Drop Files Upload.
+---
+
 <script setup>
   import pDropzone from './Dropzone.vue'
   import pHeading from '../heading/Heading.vue'

@@ -1,8 +1,15 @@
+---
+title: Textarea · Components
+description: Base textarea form input.
+---
+
 <script setup>
   import pTextarea from './Textarea.vue'
 </script>
 
 # Textarea
+
+> Base textarea form input
 
 ## Usage
 

@@ -1,3 +1,8 @@
+---
+title: Signature Text · Components
+description: Generate text to signature image
+---
+
 <script setup>
   import pInput from '../input/Input.vue'
   import pSignatureText from './SignatureText.vue'
@@ -7,6 +12,8 @@
 </script>
 
 # Signature Text
+
+> Generate text to signature image
 
 ## Usage
 

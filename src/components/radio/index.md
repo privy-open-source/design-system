@@ -1,3 +1,8 @@
+---
+title: Radio · Components
+description: Base radio form input.
+---
+
 <script setup>
   import pRadio from "./Radio.vue"
   import pCaption from "../caption/Caption.vue"
@@ -15,6 +20,8 @@
 </script>
 
 # Radio
+
+> Base radio form input
 
 ## Usage
 

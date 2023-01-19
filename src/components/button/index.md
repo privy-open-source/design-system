@@ -1,9 +1,16 @@
+---
+title: Button · Components
+description: Base button component
+---
+
 <script setup>
   import pButton from './Button.vue'
   import IconBee from '@carbon/icons-vue/lib/bee/20'
 </script>
 
 # Button
+
+> Base button component
 
 ## Usage
 

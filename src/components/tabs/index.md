@@ -1,3 +1,8 @@
+---
+title: Tabs · Components
+description: Base tab menus.
+---
+
 <script setup>
   import pTabs from './Tabs.vue'
   import pTab from './Tab.vue'
@@ -14,6 +19,8 @@
 </style>
 
 # Tabs
+
+> Base tab menus.
 
 ## Usage
 

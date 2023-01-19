@@ -1,3 +1,8 @@
+---
+title: Steps · Components
+description: Headless Wizard.
+---
+
 <script setup>
   import pSteps from './Steps.vue'
   import pStep from './Step.vue'
