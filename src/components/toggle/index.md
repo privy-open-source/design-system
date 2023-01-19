@@ -1,3 +1,8 @@
+---
+title: Toggle · Components
+description: Base input toggle.
+---
+
 <script setup>
   import pToggle from "./Toggle.vue"
   import IconLight from "@carbon/icons-vue/lib/light/16"
@@ -12,6 +17,8 @@
 </script>
 
 # Toggle
+
+> Base input toggle.
 
 ## Usage
 

@@ -1,21 +1,14 @@
 import { vi } from 'vitest'
 import { fireEvent, render } from '@testing-library/vue'
 import { delay } from 'nanodelay'
-import { ref, nextTick } from 'vue-demi'
-import { useElementBounding, simulateHeightChanged } from './__mocks__/use-element-bounding'
+import {
+  ref,
+  nextTick,
+} from 'vue-demi'
 import pContextualBar from './ContextualBar.vue'
 import pButton from '../button/Button.vue'
-import type * as VueUse from '@vueuse/core'
 import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
-
-vi.mock('@vueuse/core', async () => {
-  const core = await vi.importActual('@vueuse/core')
-
-  return {
-    ...core as typeof VueUse,
-    useElementBounding,
-  }
-})
+import { until } from '@vueuse/core'
 
 afterEach(() => {
   vi.restoreAllMocks()
@@ -268,27 +261,38 @@ it('should have no close button if props `dismissable` set to false', () => {
 
 it('should have style attribute `display: none` when contextual bar is hide', async () => {
   const model  = ref(false)
+  const isShow = ref(false)
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar v-model="model" title="hello" />
+      <p-contextual-bar
+        v-model="model"
+        title="hello"
+        :style="{ transitionDuration: '1ms' }"
+        @show="isShow = true"
+        @hide="isShow = false" />
     `,
     setup () {
-      return { model }
+      return { model, isShow }
     },
-  })
+  }, { global: { stubs: { transition: false } } })
 
-  await simulateHeightChanged(0) // Simulate heigth changing
+  const bar = screen.queryByTestId('contextual-bar') as HTMLDivElement
 
-  let bar = screen.queryByTestId('contextual-bar')
-  expect(bar).toHaveStyle({ transform: 'translateY(-0px)', display: 'none' })
+  expect(bar).not.toBeVisible()
+  expect(document.body).toHaveClass('contextual-bar__body')
 
   model.value = true
-  await nextTick()
 
-  await simulateHeightChanged(42)
+  await until(isShow).toBe(true)
 
-  bar = screen.queryByTestId('contextual-bar')
-  expect(bar).toHaveStyle({ transform: 'translateY(-42px)' })
-  expect(document.body).toHaveStyle({ transform: 'translateY(42px)' })
+  expect(bar).toBeVisible()
+  expect(document.body).toHaveClass('contextual-bar__body--active')
+
+  model.value = false
+
+  await until(isShow).toBe(false)
+
+  expect(bar).not.toBeVisible()
+  expect(document.body).not.toHaveClass('contextual-bar__body--active')
 })

@@ -1,8 +1,5 @@
 import { vi } from 'vitest'
-import { focus as scrollIntoView } from './__mocks__/is-visible'
-import { isVisible, focus } from './is-visible'
-
-vi.mock('scroll-into-view', () => ({ default: scrollIntoView }))
+import { isVisible } from './is-visible'
 
 describe('isVisible', () => {
   const elementFromPoint = vi.fn()
@@ -161,15 +158,5 @@ describe('isVisible', () => {
     elementFromPoint.mockReturnValueOnce(target)
 
     expect(isVisible(target)).toBe(true)
-  })
-})
-
-describe('focus', () => {
-  it('should call scroll-into-view', () => {
-    const target = document.createElement('div')
-
-    focus(target)
-
-    expect(scrollIntoView).toBeCalled()
   })
 })

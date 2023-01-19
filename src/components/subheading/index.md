@@ -1,9 +1,15 @@
+---
+title: Subheading · Components
+description: Subheadings are used for the title of any sub-sections
+---
+
 <script setup>
   import pSubheading from './Subheading.vue'
 </script>
 
 # Subheading
-Subheadings are used for the title of any sub-sections
+
+> Subheadings are used for the title of any sub-sections
 
 ## Usage
 Used for the title of any sub-sections

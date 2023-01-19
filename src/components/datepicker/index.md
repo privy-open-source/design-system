@@ -1,3 +1,8 @@
+---
+title: Datepicker · Components
+description: Base button component
+---
+
 <script setup>
   import pDatepicker from './Datepicker.vue'
   import Banner from '../banner/Banner.vue'
@@ -7,6 +12,8 @@
 </script>
 
 # Datepicker
+
+> Base input type date
 
 ## Usage
 

@@ -1,3 +1,7 @@
+---
+title: Signature Draw · Components
+description: Draw signature like using real pen
+---
 <script setup>
   import pSignatureDraw from './SignatureDraw.vue'
   import pButton from '../button/Button.vue'
@@ -8,6 +12,8 @@
 </script>
 
 # Signature Draw
+
+> Draw signature like using real pen
 
 ## Usage
 

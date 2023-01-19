@@ -61,10 +61,12 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps?.include?.push(
         '@testing-library/user-event',
         'interactjs',
-        'isomorphic-dompurify',
+        'sanitize-html',
         'scroll-into-view',
         'webfontloader',
         'zxcvbn',
+        'pdfjs-dist',
+        'pdfjs-dist/web/pdf_viewer',
       )
     })
   },

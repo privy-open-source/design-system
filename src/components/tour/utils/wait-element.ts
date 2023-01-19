@@ -1,4 +1,5 @@
-import { isVisible, focus } from './is-visible'
+import { isVisible } from './is-visible'
+import { focus } from './focus'
 
 /**
  * Get element and throw error if target not visible

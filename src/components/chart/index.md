@@ -1,3 +1,8 @@
+---
+title: Chart · Components
+description: Show chart data, Powered by ChartJS
+---
+
 <script setup>
   import pChart from './Chart.vue'
   import pChartSet from './ChartSet.vue'
@@ -6,10 +11,11 @@
 
 # Chart
 
+> Show chart data, Powered by [ChartJS](https://chartjs.org)
+
 ## Usage
 
 ### Simple Usage
-
 
 <preview>
   <p-chart>

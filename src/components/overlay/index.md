@@ -1,3 +1,8 @@
+---
+title: Navbar · Components
+description: Block user for interacting when loading is in progress.
+---
+
 <script setup>
   import { ref, onMounted } from 'vue-demi'
   import { showOverlay, hideOverlay } from '.'
@@ -30,6 +35,8 @@
 </style>
 
 # Overlay
+
+> Block user for interacting when loading is in progress.
 
 ## Usage
 

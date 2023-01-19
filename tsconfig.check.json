@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "strictNullChecks": false,
+    "skipLibCheck": true,
     "types": [
       "vitest",
       "vite/client",
@@ -16,6 +17,7 @@
   "exclude": [
     "node_modules",
     "**/*.spec.ts",
+    "**/*.bench.ts",
     "**/__mocks__/**",
     "coverage",
     "dist",

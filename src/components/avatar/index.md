@@ -1,9 +1,16 @@
+---
+title: Avatar · Components
+description: Show user's avatar, using name or image
+---
+
 <script setup>
   import pAvatar from './Avatar.vue'
   import IconUser from '@carbon/icons-vue/lib/events/20'
 </script>
 
 # Avatar
+
+> Show user's avatar, using name or image
 
 ## Usage
 
