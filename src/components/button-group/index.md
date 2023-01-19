@@ -43,23 +43,7 @@ Place one add-on on either side of a Button. You may also make Button all addon.
 <preview class="flex-col space-y-2">
   <p-button-group>
     <p-button icon color="primary"><IconChevronLeft /></p-button>
-    <p-button color="primary">Button Text default</p-button>
-  </p-button-group>
-  <p-button-group size="xs">
-    <p-button icon color="primary"><IconChevronLeft /></p-button>
-    <p-button color="primary">Button Text xs</p-button>
-  </p-button-group>
-  <p-button-group size="sm">
-    <p-button icon color="primary"><IconChevronLeft /></p-button>
-    <p-button color="primary">Button Text sm</p-button>
-  </p-button-group>
-  <p-button-group size="md">
-    <p-button icon color="primary"><IconChevronLeft /></p-button>
-    <p-button color="primary">Button Text md</p-button>
-  </p-button-group>
-  <p-button-group size="lg">
-    <p-button icon color="primary"><IconChevronLeft /></p-button>
-    <p-button color="primary">Button Text lg</p-button>
+    <p-button color="primary">Button Text</p-button>
   </p-button-group>
 </preview>
 

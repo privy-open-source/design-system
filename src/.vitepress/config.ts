@@ -44,8 +44,8 @@ export default defineConfig({
           collapsible: true,
           items      : [
             {
-              text: 'Color',
-              link: '/foundation/color/',
+              text: 'Colors',
+              link: '/foundation/colors/',
             },
           ],
         },

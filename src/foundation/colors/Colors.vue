@@ -2,20 +2,27 @@
   <div
     data-testid="colors"
     class="colors">
-    <div class="colors-title">
+    <div class="colors__title">
       <slot />
     </div>
     <div
-      class="colors-items"
-      :class="item.grid === 2 ? 'grid-cols-2': 'grid-cols-5'">
-      <span
+      class="colors__items"
+      :class="item.grid === 2 ? 'grid-cols-2': 'grid-cols-4'">
+      <div
         v-for="color of item.data"
         :key="color.id">
         <Color :color="color">
-          <template #subtitle>{{ color.subtitle }}</template>
-          <template #code>{{ color.semantics ? color.semantics : color.code }}</template>
+          <template #token>
+            {{ color.token }}
+          </template>
+          <template #figma>
+            {{ color.figma }}
+          </template>
+          <template #hex>
+            {{ color.parentToken ? color.parentToken : color.hex }}
+          </template>
         </Color>
-      </span>
+      </div>
     </div>
   </div>
 </template>
@@ -37,14 +44,14 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
 .colors {
-  @apply flex flex-col space-y-3 sm:flex-row text-xs sm:space-y-0 sm:space-x-4 mb-7;
+  @apply flex flex-col space-y-3 sm:flex-row text-xs sm:space-y-0 sm:space-x-4 mb-8 pt-8;
 
-  &-title {
+  &__title {
     @apply w-20 shrink-0 h-10 flex flex-col justify-center text-sm font-semibold;
   }
 
-  &-items {
-    @apply min-w-0 flex-1 grid gap-x-4 gap-y-3 2xl:gap-x-2;
+  &__items {
+    @apply min-w-0 flex-1 grid gap-x-4 gap-y-6 2xl:gap-x-2;
   }
 }
 </style>

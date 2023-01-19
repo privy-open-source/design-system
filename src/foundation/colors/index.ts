@@ -1,7 +1,8 @@
 export interface Color {
   id: number,
-  subtitle: string,
-  code: string,
+  token: string,
+  figma: string,
+  hex: string,
   semantics?: string,
   overlay?: string,
   border?: string,

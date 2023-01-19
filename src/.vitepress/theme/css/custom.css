@@ -35,7 +35,7 @@
 * CONTENT
 */
 .content {
-  h1 {
+  h1:not(.h1,.h2,.h3,.h4,.h5,.h6) {
     img {
       @apply inline-block mr-7;
 
@@ -45,16 +45,16 @@
     }
   }
 
-  h2 {
+  h2:not(.h1, .h2, .h3, .h4, .h5, .h6) {
     @apply border-b-transparent;
   }
 
 
-  h4 {
+  h4:not(.h1, .h2, .h3, .h4, .h5, .h6) {
     @apply mt-6;
   }
 
-  h5 {
+  h5:not(.h1, .h2, .h3, .h4, .h5, .h6) {
     @apply mt-12 mb-4;
 
     + p {
