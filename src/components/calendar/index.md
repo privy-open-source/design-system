@@ -1,3 +1,8 @@
+---
+title: Calendar · Components
+description: Sub-component for Datepicker
+---
+
 <script setup>
   import pCalendar from "./Calendar.vue"
   import Banner from "../banner/Banner.vue"
@@ -9,6 +14,8 @@
 
 
 # Calendar
+
+> Sub-component for [Datepicker](/components/datepicker/)
 
 ## Usage
 

@@ -1,3 +1,8 @@
+---
+title: Label · Components
+description: Label for status and state of something.
+---
+
 <script setup>
   import pLabel from './Label.vue'
 </script>
@@ -16,9 +21,12 @@
 
 # Label
 
+> Label for status and state of something.
+
 ## Usage
 
 ### Basic Usage
+
 Default color of label is `black`
 
 <preview>

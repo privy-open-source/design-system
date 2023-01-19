@@ -1,3 +1,8 @@
+---
+title: Select · Components
+description: Base form input.
+---
+
 <script setup>
   import pSelect from "./Select.vue"
   import FuzzyAdapter from "../select/adapter/fuzzy-adapter"
@@ -42,6 +47,8 @@
 
 
 # Select
+
+> Base form select.
 
 ## Usage
 

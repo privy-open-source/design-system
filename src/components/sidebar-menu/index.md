@@ -1,3 +1,8 @@
+---
+title: Sidebar Menu · Components
+description: Define sidebar using JSON
+---
+
 <script setup>
   import pSidebarMenu from './SidebarMenu.vue'
   import { ref } from 'vue-demi'
@@ -163,6 +168,8 @@
 </style>
 
 # Sidebar Menu
+
+> Define sidebar using JSON
 
 ## Usage
 

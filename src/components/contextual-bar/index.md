@@ -52,6 +52,8 @@ onMounted (() => {
 
 # Contextual Bar
 
+> App-level notification bar.
+
 ## Usage
 
 ### Simple Usage
@@ -280,25 +282,27 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 
 ### Props
 
-| Props                      |   Type    | Default | Description                                     |
-|----------------------------|:---------:|:-------:|-------------------------------------------------|
-| `variant`                  | `String`  | `light`  | Contextualbar variants, valid value is `light` and `dark`                   |
-| `align`                    | `String`  | `left`  | Contextualbar alignment, valid value is `left`, `center` and `right`|
-| `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                      |
-| `title`                    | `String`  | -       | Content or title inside of Contextualbar        |
-| `message`                  | `String`  | -       | Additional message of Contextualbar             |
-| `background-url`           | `String`  | -       | Custom background image of Contextualbar        |
+| Props            |   Type    | Default | Description                                                          |
+|------------------|:---------:|:-------:|----------------------------------------------------------------------|
+| `variant`        | `String`  | `light` | Contextualbar variants, valid value is `light` and `dark`            |
+| `align`          | `String`  | `left`  | Contextualbar alignment, valid value is `left`, `center` and `right` |
+| `dismissable`    | `Boolean` | `true`  | Show / Hide dismiss button                                           |
+| `title`          | `String`  |    -    | Content or title inside of Contextualbar                             |
+| `message`        | `String`  |    -    | Additional message of Contextualbar                                  |
+| `background-url` | `String`  |    -    | Custom background image of Contextualbar                             |
 
 ### Slots
-| Name      | Description                                                  |
-|-----------|--------------------------------------------------------------|
-| `title `  | Title content to place in Contextualbar                      |
-| `message `| Additional message content to place in Contextualbar         |
-| `icon `   | Content to place icon in Contextualbar                       |
-| `action ` | Content to place button in Contextualbar                     |
+| Name       | Description                                          |
+|------------|------------------------------------------------------|
+| `title `   | Title content to place in Contextualbar              |
+| `message ` | Additional message content to place in Contextualbar |
+| `icon `    | Content to place icon in Contextualbar               |
+| `action `  | Content to place button in Contextualbar             |
 
 ### Events
 
-| Name        | Arguments | Description                     |
-|-------------|-----------|---------------------------------|
-| `close`     | -         | Event when close button clicked |
+| Name    | Arguments | Description                     |
+|---------|-----------|---------------------------------|
+| `close` | -         | Event when close button clicked |
+| `show`  | -         | Event Contextualbar shown       |
+| `hide`  | -         | Event Contextualbar hidden      |

@@ -1,3 +1,8 @@
+---
+title: Markdown · Components
+description: Like v-html but support markdown syntax.
+---
+
 <script setup>
   import { vPMd } from '.'
   import pTextarea from '../textarea/Textarea.vue'
@@ -8,7 +13,7 @@
 
 # Markdown
 
-> v-html but for markdown
+> Like v-html but support markdown syntax
 
 ## Usage
 

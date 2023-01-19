@@ -1,11 +1,13 @@
 import { defineConfig } from 'vitepress'
 import { Plugin } from 'vite'
 import { babel } from '@rollup/plugin-babel'
+import head from './head'
 
 export default defineConfig({
   base       : process.env.BASE_URL ?? '/design-system/',
   title      : 'Persona',
-  description: 'Persona - PrivyID\'s Design System',
+  description: 'Persona - PrivyID\'s Design System, built on top Nuxt3, Typescript and Tailwind',
+  head       : head,
   themeConfig: {
     logo    : './assets/images/logo.svg',
     editLink: { pattern: 'https://github.com/privy-open-source/design-system/edit/main/src/:path' },

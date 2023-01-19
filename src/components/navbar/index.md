@@ -1,3 +1,8 @@
+---
+title: Navbar · Components
+description: Base dashboard navbar.
+---
+
 <script setup>
   import { ref } from 'vue-demi'
   import pNavbar from './Navbar.vue'
@@ -43,10 +48,11 @@
 
 # Navbar
 
+> Base dashboard navbar.
+
 ## Usage
 
 ### Simple Navbar
-
 
 <preview class="flex-grow">
   <p-navbar>

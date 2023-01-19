@@ -1,3 +1,8 @@
+---
+title: Dot · Components
+description: Sub-component used for Badge and Label
+---
+
 <script setup>
   import pDot from './Dot.vue'
 </script>
@@ -15,6 +20,9 @@
 </style>
 
 # Dot
+
+> Sub-component used for [Badge][badge] and Label
+
 Dot is a sub-component used for [Badge][badge] and Label
 
 ## Usage

@@ -1,3 +1,8 @@
+---
+title: Dialog · Components
+description: Instant Modal, alternative of window.alert or window.confirm
+---
+
 <script setup>
   import Button from '../button/Button.vue'
   import * as dialog from '.'
@@ -25,7 +30,8 @@
 </script>
 
 # Dialog
-> Instant Modal
+
+> Instant Modal, alternative of window.alert or window.confirm
 
 ## Usage
 

@@ -1,11 +1,12 @@
 {
   "name": "@privyid/design-system",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "packageManager": "yarn@3.3.1",
   "private": true,
   "scripts": {
     "dev": "yarn docs:dev",
     "prod": "yarn docs:build && yarn docs:serve",
+    "build": "yarn docs:build",
     "docs:dev": "vitepress dev src --port 3000",
     "docs:build": "vitepress build src",
     "docs:serve": "vitepress serve src",
@@ -17,7 +18,8 @@
     "coverage": "vitest run --coverage --reporter=dot",
     "postinstall": "husky install",
     "packages:prepare": "yarn workspaces foreach -vt run prepare",
-    "packages:build": "yarn workspaces foreach -vt run build"
+    "packages:build": "yarn workspaces foreach -vt run build",
+    "release:prepare": "yarn workspaces foreach -vt version minor --deferred"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",

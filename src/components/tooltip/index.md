@@ -1,9 +1,16 @@
+---
+title: Tooltip · Components
+description: Directive for add tooltip to element.
+---
+
 <script setup lang="ts">
   import { vPTooltip } from '.'
   import pButton from '../button/Button.vue'
 </script>
 
 # Tooltip
+
+> Directive for add tooltip to element.
 
 ## Usage
 

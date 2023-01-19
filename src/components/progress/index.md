@@ -1,3 +1,8 @@
+---
+title: Progress · Components
+description: Sub-component for Wizard and Timeline.
+---
+
 <script setup>
   import pProgress from './Progress.vue'
   import pProgressItem from './ProgressItem.vue'
@@ -5,7 +10,8 @@
 </script>
 
 # Progress
-> Sub-component for Wizard and Timeline
+
+> Sub-component for Wizard and Timeline.
 
 ## Usage
 

@@ -1,3 +1,8 @@
+---
+title: Tour · Components
+description: Give a tour for new user.
+---
+
 <script setup>
   import pButton from '../button/Button.vue'
   import pInput from '../input/Input.vue'
@@ -91,7 +96,8 @@
 </script>
 
 # Tour
-> Give the tour for new user.
+
+> Give a tour for new user.
 
 ## Usage
 

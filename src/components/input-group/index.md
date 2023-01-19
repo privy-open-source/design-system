@@ -1,3 +1,8 @@
+---
+title: Input Group · Components
+description: Combine multiple input in singleline.
+---
+
 <script setup>
   import pInput from '../input/Input.vue'
   import pInputGroup from './InputGroup.vue'
@@ -12,6 +17,8 @@
 </script>
 
 # Input Group
+
+> Combine multiple input in singleline.
 
 ## Usage
 

@@ -1,3 +1,8 @@
+---
+title: Modal · Components
+description: ase component for modal dialog.
+---
+
 <script setup>
   import { ref } from 'vue-demi'
   import pButton from '../button/Button.vue'
@@ -51,6 +56,8 @@
 </style>
 
 # Modal
+
+> Base component for modal dialog.
 
 ## Usage
 

@@ -1,3 +1,8 @@
+---
+title: Nav · Components
+description: Sub-components for Navbar, Sidebar, and Tabs.
+---
+
 <script setup>
 import pNav from './Nav.vue'
 import pNavItem from './NavItem.vue'
@@ -17,7 +22,9 @@ import pDropdownItem from '../dropdown/DropdownItem.vue'
   }
 </style>
 
-# Navigations
+# Nav
+
+> Sub-components for [Navbar](/components/navbar/), [Sidebar](/components/sidebar/), and [Tabs](/components/tabs/).
 
 ## Usage
 

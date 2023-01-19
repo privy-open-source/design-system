@@ -1,3 +1,8 @@
+---
+title: Dropdown Subitem · Components
+description: Sub-component of Dropdown for nesting dropdown item.
+---
+
 <script setup>
   import IconBee from '@carbon/icons-vue/lib/bee/20'
   import Badge from '../badge/Badge.vue'
@@ -13,6 +18,8 @@
 </script>
 
 # Dropdown Subitem
+
+> Sub-component of [Dropdown](/components/dropdown/) for nesting dropdown item.
 
 ## Usage
 

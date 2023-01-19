@@ -1,5 +1,5 @@
 ---
-title: Components > PDF Viewer
+title: PDF Viewer · Components
 description: Open and View PDF Document
 ---
 <script setup>

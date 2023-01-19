@@ -1,7 +1,7 @@
 <template>
   <div
     ref="root"
-    v-p-aspect-ratio="layout === 'fixed' ? 210/297 : 16/9"
+    v-p-aspect-ratio="layout === 'fixed' ? ratio : 16/9"
     data-testid="pdf-viewer"
     class="pdf"
     :class="classNames">
@@ -113,6 +113,10 @@ export default defineComponent({
     layout: {
       type   : String as PropType<LayoutVariant>,
       default: 'fixed',
+    },
+    ratio: {
+      type   : [Number, String],
+      default: 210 / 297,
     },
     offsetTop: {
       type   : [Number, String],
