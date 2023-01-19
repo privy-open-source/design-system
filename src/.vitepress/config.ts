@@ -125,6 +125,10 @@ export default defineConfig({
               link: '/components/nav/',
             },
             {
+              text: 'Pagination',
+              link: '/components/pagination/',
+            },
+            {
               text: 'Progress',
               link: '/components/progress/',
             },
