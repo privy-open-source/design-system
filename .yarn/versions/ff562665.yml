@@ -1,8 +1,0 @@
-releases:
-  "@privyid/browserslist-config": minor
-  "@privyid/design-system": minor
-  "@privyid/eslint-config-persona": minor
-  "@privyid/persona": minor
-  "@privyid/tailwind-animation": minor
-  "@privyid/tailwind-extended": minor
-  "@privyid/tailwind-preset": minor
