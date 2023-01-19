@@ -54,12 +54,6 @@ jobs:
       - name: Run Test
         run: yarn coverage
 
-      - name: Upload to Coveralls
-        uses: coverallsapp/github-action@1.1.3
-        if: matrix.node-version == 16 && matrix.os == 'ubuntu-latest'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Upload to Codecov
         uses: codecov/codecov-action@v3
         if: matrix.node-version == 16 && matrix.os == 'ubuntu-latest'
