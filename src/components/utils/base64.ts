@@ -29,11 +29,17 @@ export function toBase64 (file: globalThis.File): Promise<string> {
  * @param filename output's filename
  * @param mimeType output's mimeType
  */
-export function fromBase64 (dataurl: string, filename?: string, mimeType?: string): globalThis.File {
-  const name         = filename ?? (new Date()).toISOString()
-  const [meta, body] = dataurl.split(',')
-  const mime         = mimeType ?? meta.match(/:(.*?);/)[1]
-  const buffer       = window.atob(body)
+export function fromBase64 (dataurl: string, filename?: string, mimeType?: string): globalThis.File | undefined {
+  try {
+    const name         = filename ?? (new Date()).toISOString()
+    const [meta, body] = dataurl.split(',')
+    const mime         = mimeType ?? meta.match(/:(.*?);/)[1]
+    const buffer       = window.atob(body)
+    const u8int        = new Uint8Array(buffer.length)
 
-  return new globalThis.File([buffer], name, { type: mime })
+    for (let i = 0; i < buffer.length; i++)
+      u8int[i] = buffer.codePointAt(i)
+
+    return new globalThis.File([u8int], name, { type: mime })
+  } catch {}
 }

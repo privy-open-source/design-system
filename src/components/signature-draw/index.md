@@ -71,7 +71,7 @@ Set pen color with prop `color`, default is `#000000`
 Result of drawing image is store in `v-model` value. It's encoded in [base64-dataURI][data-uri] format.
 
 <preview class="flex-col space-y-2">
-  <p-signature-draw v-model="result" />
+  <p-signature-draw v-model.base64="result" />
 </preview>
 
 **result**
@@ -81,7 +81,7 @@ Result of drawing image is store in `v-model` value. It's encoded in [base64-dat
 
 ```vue
 <template>
-  <p-signature-draw v-model="result" />
+  <p-signature-draw v-model.base64="result" />
 </template>
 
 <script setup>

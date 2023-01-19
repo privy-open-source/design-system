@@ -14,17 +14,25 @@ import {
   defineComponent,
   onMounted,
   watch,
+  PropType,
 } from 'vue-demi'
 import { useVModel } from '../input'
 import { createSpinner } from '../avatar/utils/create-image'
 import { formatName } from './utils/formatter'
 import generate from './utils/generate-text'
+import { usePreview } from '../cropper/utils/use-preview'
+import { ModelModifier } from '../dropzone'
+import { fromBase64 } from '../utils/base64'
 
 export default defineComponent({
   props: {
     modelValue: {
-      type   : String,
-      default: undefined,
+      type   : [String, globalThis.File],
+      default: '',
+    },
+    modelModifiers: {
+      type   : Object as PropType<ModelModifier>,
+      default: () => ({} as ModelModifier),
     },
     width: {
       type   : Number,
@@ -52,14 +60,15 @@ export default defineComponent({
     },
   },
   setup (props) {
-    const ready = ref(false)
-    const model = useVModel(props)
+    const ready   = ref(false)
+    const model   = useVModel(props)
+    const preview = usePreview(model)
 
     const src = computed(() => {
       if (!ready.value)
         return createSpinner(props.width, props.height)
 
-      return model.value
+      return preview.value
     })
 
     const name = computed(() => {
@@ -102,14 +111,21 @@ export default defineComponent({
       }
 
       generate(options)
-        .then((base64Encoded) => {
-          model.value = base64Encoded
+        .then((result) => {
+          const value = props.modelModifiers.base64
+            ? result
+            : fromBase64(result)
+
+          model.value = value
           ready.value = true
         })
         .catch(console.error)
     }
 
-    return { src }
+    return {
+      src,
+      preview,
+    }
   },
 })
 </script>

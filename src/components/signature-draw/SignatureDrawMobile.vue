@@ -8,7 +8,7 @@
     <div class="signature-draw__preview">
       <template v-if="model">
         <img
-          :src="model"
+          :src="preview"
           alt="signature-draw-preview"
           data-testid="signature-draw-preview"
           @click="open()">
@@ -25,7 +25,7 @@
       <template v-else>
         <Button
           data-testid="signature-draw-open"
-          @click="open">
+          @click="open()">
           {{ openDrawLabel }}
         </Button>
       </template>
@@ -36,7 +36,7 @@
         class="signature-draw__modal"
         data-testid="signature-draw-modal">
         <SignatureDrawDesktop
-          v-model="rawModel"
+          v-model.base64="rawModel"
           :class="classNames"
           :placeholder="placeholder"
           :color="color"
@@ -45,8 +45,9 @@
           :reset-label="resetLabel" />
         <Button
           class="signature-draw__close"
+          nganu="1311"
           data-testid="signature-draw-close"
-          @click="close">
+          @click="close()">
           <span>{{ closeDrawLabel }}</span>
         </Button>
       </div>
@@ -59,6 +60,7 @@ import { useWindowSize } from '@vueuse/core'
 import {
   computed,
   defineComponent,
+  PropType,
   ref,
   StyleValue,
   watch,
@@ -69,6 +71,9 @@ import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 import rotateImage from './utils/rotate-image'
 import IconEdit from '@carbon/icons-vue/lib/edit/20'
 import { pAspectRatio } from '../aspect-ratio'
+import { ModelModifier } from '../dropzone'
+import { usePreview } from '../cropper/utils/use-preview'
+import { fromBase64 } from '../utils/base64'
 
 export default defineComponent({
   components: {
@@ -79,8 +84,12 @@ export default defineComponent({
   directives: { pAspectRatio },
   props     : {
     modelValue: {
-      type   : String,
+      type   : [String, globalThis.File],
       default: '',
+    },
+    modelModifiers: {
+      type   : Object as PropType<ModelModifier>,
+      default: () => ({} as ModelModifier),
     },
     width: {
       type   : Number,
@@ -118,6 +127,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup (props) {
     const model    = useVModel(props)
+    const preview  = usePreview(model, '')
     const rawModel = ref('')
     const isOpen   = ref(false)
     const screen   = useWindowSize()
@@ -145,9 +155,9 @@ export default defineComponent({
     })
 
     async function open () {
-      const result = model.value && mode.value === 'rotate'
-        ? await rotateImage(model.value, 90)
-        : model.value
+      const result = preview.value && mode.value === 'rotate'
+        ? await rotateImage(preview.value, 90)
+        : preview.value
 
       rawModel.value = result
       isOpen.value   = true
@@ -158,7 +168,11 @@ export default defineComponent({
         ? await rotateImage(rawModel.value, -90)
         : rawModel.value
 
-      model.value  = result
+      const value = props.modelModifiers.base64
+        ? result
+        : fromBase64(result)
+
+      model.value  = value
       isOpen.value = false
     }
 
@@ -173,6 +187,7 @@ export default defineComponent({
       classNames,
       style,
       rawModel,
+      preview,
       model,
       isOpen,
       mode,

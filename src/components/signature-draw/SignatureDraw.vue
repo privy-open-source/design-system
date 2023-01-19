@@ -2,6 +2,7 @@
   <component
     :is="view"
     v-model="model"
+    :model-modifiers="modelModifiers"
     :width="width"
     :height="height"
     :color="color"
@@ -13,16 +14,25 @@
 
 <script lang="ts">
 import { useMediaQuery } from '@vueuse/core'
-import { computed, defineComponent } from 'vue-demi'
+import {
+  computed,
+  defineComponent,
+  PropType,
+} from 'vue-demi'
 import { useVModel } from '../input'
 import SignatureDrawMobile from './SignatureDrawMobile.vue'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
+import { ModelModifier } from '../dropzone'
 
 export default defineComponent({
   props: {
     modelValue: {
-      type   : String,
+      type   : [String, globalThis.File],
       default: '',
+    },
+    modelModifiers: {
+      type   : Object as PropType<ModelModifier>,
+      default: () => ({} as ModelModifier),
     },
     width: {
       type   : Number,
