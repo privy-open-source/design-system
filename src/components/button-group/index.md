@@ -47,7 +47,7 @@ Place one add-on on either side of a Button. You may also make Button all addon.
 
 #### Addon Left
 
-<preview>
+<preview class="flex-col space-y-2">
   <p-button-group>
     <p-button icon color="primary"><IconChevronLeft /></p-button>
     <p-button color="primary">Button Text</p-button>
