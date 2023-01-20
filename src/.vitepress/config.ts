@@ -50,6 +50,10 @@ export default defineConfig({
               text: 'Colors',
               link: '/foundation/colors/',
             },
+            {
+              text: 'Typography',
+              link: '/foundation/typography/',
+            },
           ],
         },
       ],
