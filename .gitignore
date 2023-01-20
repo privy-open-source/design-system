@@ -142,3 +142,6 @@ Temporary Items
 
 # Eslint Github
 eslint-results.sarif
+
+# Vim configuration
+.vim
