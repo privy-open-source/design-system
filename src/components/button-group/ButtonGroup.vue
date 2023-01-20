@@ -120,7 +120,7 @@ export default defineComponent({
     */
     &:not(:first-child) {
       .btn {
-        @apply ml-[-1px] rounded-l-none border-l-subtle-alpha;
+        @apply -ml-[1px] rounded-l-none border-l-subtle-alpha;
       }
     }
   }
@@ -146,7 +146,7 @@ export default defineComponent({
       }
 
       &:is(.btn--icon) {
-        @apply h-[25.88px] px-1;
+        @apply p-[.1rem];
       }
     }
   }
@@ -167,7 +167,7 @@ export default defineComponent({
       }
 
       &:is(.btn--icon) {
-        @apply h-[34px] px-2;
+        @apply p-[6px];
       }
     }
   }
@@ -196,7 +196,7 @@ export default defineComponent({
       }
 
       &:is(.btn--icon) {
-        @apply h-[46px] px-3;
+        @apply p-[12px];
       }
     }
   }
@@ -209,7 +209,7 @@ export default defineComponent({
       }
 
       &:is(.btn--icon) {
-        @apply px-4 h-[58px];
+        @apply p-[18px];
       }
     }
   }

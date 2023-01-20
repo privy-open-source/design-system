@@ -36,34 +36,23 @@ it('should render color', () => {
     components: { Color },
     template  : `
       <Color>
-        <template #subtitle>Title</template>
-        <template #code>#FFFFFF</template>
+        <template #token>blue.50</template>
+        <template #figma>main/blue/50</template>
+        <template #hex>#0065D1</template>
       </Color>
     `,
   })
 
   const color = screen.queryByTestId('color')
-  const title = screen.queryByText('Title')
-  const code  = screen.queryByText('#FFFFFF')
+  const token = screen.queryByText('blue.50')
+  const figma = screen.queryByText('main/blue/50')
+  const hex   = screen.queryByText('#0065D1')
 
   expect(color).toBeInTheDocument()
   expect(color).toHaveClass('color')
-  expect(title).toBeInTheDocument()
-  expect(code).toBeInTheDocument()
-})
-
-it('should show overlay background if color object has overlay data', () => {
-  const screen = render({
-    components: { Color },
-    template  : `
-      <Color :color="{ overlay: '#663399' }" />
-    `,
-  })
-
-  const overlay = screen.queryByTestId('color-overlay')
-
-  expect(overlay).toBeInTheDocument()
-  expect(overlay).toHaveStyle({ background: '#663399' })
+  expect(token).toBeInTheDocument()
+  expect(figma).toBeInTheDocument()
+  expect(hex).toBeInTheDocument()
 })
 
 it('should copy color code when color clicked', async () => {
