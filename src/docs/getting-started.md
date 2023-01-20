@@ -13,10 +13,10 @@ The fastest way to use Persona is using starter template, There various themes t
 
 ```bash
 # Install current folder
-yarn dlx degit privy-open-source/persona-starter#dashboard
+npx degit privy-open-source/persona-starter#dashboard
 
 # Install in new folder
-yarn dlx degit privy-open-source/persona-starter#dashboard my_dashboard
+npx degit privy-open-source/persona-starter#dashboard my_dashboard
 ```
 
 #### Try Online
@@ -34,10 +34,10 @@ yarn dlx degit privy-open-source/persona-starter#dashboard my_dashboard
 
 ```bash
 # Install current folder
-yarn dlx degit privy-open-source/persona-starter#docs
+npx degit privy-open-source/persona-starter#docs
 
 # Install in new folder
-yarn dlx degit privy-open-source/persona-starter#docs my_docs
+npx degit privy-open-source/persona-starter#docs my_docs
 ```
 
 #### Try Online

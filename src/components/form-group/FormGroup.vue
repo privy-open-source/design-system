@@ -92,12 +92,12 @@ export default defineComponent({
     }
   }
 
-  &__description {
-    @apply text-xs;
+  & > &__description {
+    @apply text-xs my-2;
   }
 
-  &__error {
-    @apply text-xs text-danger;
+  & > &__error {
+    @apply text-xs text-danger my-2;
   }
 
   &__hint {

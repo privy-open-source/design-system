@@ -1,3 +1,8 @@
+---
+title: Tour · Components
+description: Give a tour for new user.
+---
+
 <script setup>
   import pButton from '../button/Button.vue'
   import pInput from '../input/Input.vue'
@@ -91,7 +96,8 @@
 </script>
 
 # Tour
-> Give the tour for new user.
+
+> Give a tour for new user.
 
 ## Usage
 
@@ -180,7 +186,7 @@ const tour = createTour()
     text  : 'This is text',
     image : 'https://picsum.photos/400/225',
   })
-  // This also can written like this (shortcut)
+  // It can also write like this (shortcut)
   .dialog('#sample', 'This is text', 'This is title', 'https://picsum.photos/400/225')
 ```
 

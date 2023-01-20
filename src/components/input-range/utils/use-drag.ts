@@ -2,26 +2,30 @@ import type { InteractEvent, Interactable } from '@interactjs/types'
 import { throttle } from 'lodash-es'
 import {
   onBeforeUnmount,
-  onMounted,
   Ref,
   shallowRef,
+  watch,
 } from 'vue-demi'
 
 export default function useDrag (target: Ref<HTMLElement>, handler: (event: InteractEvent) => void) {
   const instance = shallowRef<Interactable>()
 
-  onMounted(async () => {
-    if (target.value) {
+  watch(target, async (element) => {
+    if (instance.value)
+      instance.value.unset()
+
+    if (element) {
       const { default: Interact } = await import('interactjs')
       const onmove                = throttle(handler, 1000 / 120 /* limit 120fps */)
 
-      instance.value = Interact(target.value)
+      instance.value = Interact(element)
         .styleCursor(false)
         .draggable({ onmove: onmove })
     }
   })
 
   onBeforeUnmount(async () => {
-    instance.value?.unset()
+    if (instance.value)
+      instance.value.unset()
   })
 }

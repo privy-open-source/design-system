@@ -1,3 +1,8 @@
+---
+title: Wizard · Components
+description: Fancy form wizard.
+---
+
 <script setup>
   import pWizard from './Wizard.vue'
   import pWizardStep from './WizardStep.vue'
@@ -38,6 +43,7 @@
 </script>
 
 # Wizard
+
 > Fancy form wizard
 
 ## Usage

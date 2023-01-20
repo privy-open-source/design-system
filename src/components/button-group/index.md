@@ -1,3 +1,8 @@
+---
+title: Button Group · Components
+description: Collection of buttons consisting of at least 2 buttons in single line
+---
+
 <script setup>
   import { ref } from "vue-demi"
   import pButtonGroup from './ButtonGroup.vue'
@@ -11,6 +16,8 @@
 </script>
 
 # Button Group
+
+> Collection of buttons consisting of at least 2 buttons in single line
 
 Button Group is a collection of buttons consisting of at least 2 buttons in single line.
 Therefore, the Button Group is very dependent on the [Button][button] component. But it should be underlined that not all props on the Button can work here.

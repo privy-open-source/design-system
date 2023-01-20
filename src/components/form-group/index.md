@@ -1,3 +1,8 @@
+---
+title: Form Group · Components
+description: Form label, caption, and other stuff.
+---
+
 <script setup>
   import pFormGroup from './FormGroup.vue'
   import pInput from '../input/Input.vue'
@@ -5,6 +10,8 @@
 </script>
 
 # Form Group
+
+> Form label, caption, and other stuff.
 
 ## Usage
 

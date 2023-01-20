@@ -1,3 +1,8 @@
+---
+title: Toast · Components
+description: Simple notification pop-up.
+---
+
 <script setup>
   import Button from '../button/Button.vue'
   import Toast from './Toast.vue'
@@ -5,6 +10,8 @@
 </script>
 
 # Toast
+
+> Simple notification pop-up.
 
 ## Usage
 

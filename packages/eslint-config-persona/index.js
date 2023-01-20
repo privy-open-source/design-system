@@ -112,6 +112,14 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'no-undef'                       : 'off',
+        'comma-dangle'                   : 'off',
+        '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
+      },
+    },
+    {
       files: [
         '**/*.spec.js',
         '**/*.spec.ts',

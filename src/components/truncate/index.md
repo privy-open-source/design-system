@@ -1,8 +1,15 @@
+---
+title: Truncate · Components
+description: Limiting long text.
+---
+
 <script setup>
   import pTruncate from './Truncate.vue'
 </script>
 
 # Truncate
+
+> Limiting long text.
 
 ## Usage
 

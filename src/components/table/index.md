@@ -1,3 +1,8 @@
+---
+title: Table · Components
+description: Delightful datatables.
+---
+
 <script setup>
   import pTable from './Table.vue'
   import pBadge from '../badge/Badge.vue'
@@ -78,6 +83,8 @@
 </script>
 
 # Table
+
+> Delightful datatables.
 
 ## Usage
 

@@ -33,7 +33,7 @@
       </svg>
     </span>
     <span class="radio__label">
-      <slot />
+      <slot :is-checked="model" />
     </span>
     <input
       type="radio"

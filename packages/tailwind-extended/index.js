@@ -34,6 +34,18 @@ module.exports = plugin(
 
     // Aspect Ratio
     matchUtilities({
+      'aspect-old': (value) => ({
+        '&::before': {
+          float     : 'left',
+          paddingTop: `calc(100% / (${value}))`,
+          content   : '""',
+        },
+        '&::after': {
+          display: 'block',
+          content: '""',
+          clear  : 'both',
+        },
+      }),
       'aspect-compat': (value) => ({
         'aspect-ratio': value,
 

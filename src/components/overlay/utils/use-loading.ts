@@ -1,3 +1,4 @@
+import defu from 'defu'
 import { tryOnMounted } from '@vueuse/shared'
 import { computed, ref } from 'vue-demi'
 
@@ -6,7 +7,7 @@ export interface LoadingOptions {
 }
 
 export default function useLoading (options_?: LoadingOptions) {
-  const options = { elapsed: true, ...options_ }
+  const options = defu(options_, { elapsed: true })
   const counter = ref(0)
   const elapsed = ref(options.elapsed !== false)
   const loading = computed({
