@@ -1,12 +1,14 @@
 import { HeadConfig } from 'vitepress'
+import { joinURL } from 'ufo'
 
+const baseURL            = process.env.BASE_URL ?? '/design-system/'
 const head: HeadConfig[] = [
   [
     'link',
     {
       rel  : 'apple-touch-icon',
       sizes: '180x180',
-      href : '/apple-touch-icon.png',
+      href : joinURL(baseURL, '/apple-touch-icon.png'),
     },
   ],
   [
@@ -15,7 +17,7 @@ const head: HeadConfig[] = [
       rel  : 'icon',
       type : 'image/png',
       sizes: '32x32',
-      href : '/favicon-32x32.png',
+      href : joinURL(baseURL, '/favicon-32x32.png'),
     },
   ],
   [
@@ -24,21 +26,21 @@ const head: HeadConfig[] = [
       rel  : 'icon',
       type : 'image/png',
       sizes: '16x16',
-      href : '/favicon-16x16.png',
+      href : joinURL(baseURL, '/favicon-16x16.png'),
     },
   ],
   [
     'link',
     {
       rel : 'manifest',
-      href: '/site.webmanifest',
+      href: joinURL(baseURL, '/site.webmanifest'),
     },
   ],
   [
     'link',
     {
       rel  : 'mask-icon',
-      href : '/safari-pinned-tab.svg',
+      href : joinURL(baseURL, '/safari-pinned-tab.svg'),
       color: '#0065d1',
     },
   ],

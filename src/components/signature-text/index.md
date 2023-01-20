@@ -8,7 +8,8 @@ description: Generate text to signature image
   import pSignatureText from './SignatureText.vue'
   import { ref } from 'vue-demi'
 
-  const result = ref('')
+  const result    = ref()
+  const resultB64 = ref()
 </script>
 
 # Signature Text
@@ -93,15 +94,33 @@ Truncate the text by word, default is `2`
 
 ## Binding v-model
 
-Result of generated image is store in `v-model` value. It's encoded in [base64-dataURI][data-uri] format.
+You can bind the generated result with `v-model`.
 
 <preview class="flex-col">
   <p-signature-text text="Lorem ipsum" v-model="result" />
 </preview>
 
+```vue
+<template>
+  <p-signature-text v-model="result" />
+</template>
+```
+
 **result**
 
 <pre class="truncate"><code>{{ result }}</code></pre>
+
+### Encode to base64
+
+If you prefer [base64-dataURI][data-uri] format, add modifier `.base64` to your `v-model`.
+
+<preview class="flex-col">
+  <p-signature-text text="Lorem ipsum" v-model.base64="resultB64" />
+</preview>
+
+**result**
+
+<pre class="truncate"><code>{{ resultB64 }}</code></pre>
 
 ```vue
 <template>

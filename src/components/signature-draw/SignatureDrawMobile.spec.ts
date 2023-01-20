@@ -26,6 +26,11 @@ vi.mock('@vueuse/core', async () => {
 
 beforeEach(() => {
   setWindow(375, 667)
+
+  vi.spyOn(window.URL, 'createObjectURL')
+    .mockImplementation((file: File) => {
+      return `blob://${file.name}`
+    })
 })
 
 afterEach(() => {
@@ -56,6 +61,7 @@ it('should open modal drawing if button `click to draw` clicked', async () => {
   expect(open).toBeInTheDocument()
 
   await fireEvent.click(open)
+  await delay(0)
 
   const modal      = screen.queryByTestId('signature-draw-modal')
   const drawCanvas = screen.queryByTestId('signature-draw-desktop')
@@ -81,6 +87,7 @@ it('should go to rotate mode if screen width too small', async () => {
   expect(draw).not.toHaveClass('signature-draw--normal')
 
   await fireEvent.click(open)
+  await delay(0)
 
   const desktop    = screen.queryByTestId('signature-draw-desktop')
   const drawCanvas = screen.queryByTestId('signature-draw-canvas')
@@ -143,7 +150,7 @@ it('should modify state in v-model', async () => {
   const model  = ref('')
   const screen = render({
     components: { SignatureDrawMobile },
-    template  : '<SignatureDrawMobile v-model="model" />',
+    template  : '<SignatureDrawMobile v-model.base64="model" />',
     setup () {
       return { model }
     },

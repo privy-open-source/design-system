@@ -81,3 +81,7 @@ export {
 export {
   usePasswordStrength,
 } from '../components/input-password'
+
+export {
+  usePreview,
+} from '../components/cropper/'

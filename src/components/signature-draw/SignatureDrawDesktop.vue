@@ -35,6 +35,7 @@ import { templateRef } from '@vueuse/core'
 import {
   defineComponent,
   onMounted,
+  PropType,
   ref,
   watch,
 } from 'vue-demi'
@@ -50,13 +51,20 @@ import { useVModel } from '../input'
 import { createLines } from './utils/smooth-line'
 import Caption from '../caption/Caption.vue'
 import Button from '../button/Button.vue'
+import { ModelModifier } from '../dropzone'
+import { usePreview } from '../cropper'
+import { fromBase64 } from '../utils/base64'
 
 export default defineComponent({
   components: { Caption, Button },
   props     : {
     modelValue: {
-      type   : String,
+      type   : [String, globalThis.File],
       default: '',
+    },
+    modelModifiers: {
+      type   : Object as PropType<ModelModifier>,
+      default: () => ({} as ModelModifier),
     },
     width: {
       type   : Number,
@@ -86,6 +94,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup (props) {
     const model   = useVModel(props)
+    const preview = usePreview(model, '')
     const isBlank = ref(true)
 
     const canvas = templateRef<HTMLCanvasElement>('canvas')
@@ -121,14 +130,17 @@ export default defineComponent({
           drawLine(canvas.value, coordinate, options)
         }
 
+        const result = toDataURL(canvas.value)
+        const value  = props.modelModifiers.base64 ? result : fromBase64(result)
+
         isBlank.value = false
-        model.value   = toDataURL(canvas.value)
+        model.value   = value
       },
     })
 
     onMounted(() => {
-      if (model.value && model.value.startsWith('data:image/png')) {
-        placeImage(canvas.value, model.value)
+      if (model.value && preview.value) {
+        placeImage(canvas.value, preview.value)
 
         isBlank.value = false
       }
