@@ -138,7 +138,7 @@ import {
   useRatioWidth,
 } from './utils/use-ratio'
 import { pAspectRatio } from '../aspect-ratio'
-import { usePreview } from './utils/use-preview'
+import { usePreview } from '.'
 
 export default defineComponent({
   directives: { pAspectRatio },

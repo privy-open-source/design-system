@@ -72,7 +72,7 @@ import rotateImage from './utils/rotate-image'
 import IconEdit from '@carbon/icons-vue/lib/edit/20'
 import { pAspectRatio } from '../aspect-ratio'
 import { ModelModifier } from '../dropzone'
-import { usePreview } from '../cropper/utils/use-preview'
+import { usePreview } from '../cropper'
 import { fromBase64 } from '../utils/base64'
 
 export default defineComponent({

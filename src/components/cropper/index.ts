@@ -1,4 +1,4 @@
-import { createSpinner } from '../../avatar/utils/create-image'
+import { createSpinner } from '../avatar/utils/create-image'
 import {
   MaybeRef,
   tryOnMounted,

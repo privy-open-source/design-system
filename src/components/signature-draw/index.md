@@ -8,7 +8,8 @@ description: Draw signature like using real pen
   import { ref } from 'vue-demi'
   import EMPTY_IMG from './assets/empty-img.png'
 
-  const result = ref('')
+  const result    = ref()
+  const resultB64 = ref()
 </script>
 
 # Signature Draw
@@ -68,20 +69,43 @@ Set pen color with prop `color`, default is `#000000`
 
 ## Binding v-model
 
-Result of drawing image is store in `v-model` value. It's encoded in [base64-dataURI][data-uri] format.
+You can bind the result of drawing's image with `v-model`
 
 <preview class="flex-col space-y-2">
-  <p-signature-draw v-model.base64="result" />
+  <p-signature-draw v-model="result" />
 </preview>
 
 **result**
 
 <pre class="truncate"><code>{{ result }}</code></pre>
-<img class="mt-2 border" :src="result || EMPTY_IMG" width="430" height="230" alt="Result Image" />
 
 ```vue
 <template>
-  <p-signature-draw v-model.base64="result" />
+  <p-signature-draw v-model="result" />
+</template>
+
+<script setup>
+const result = ref()
+</script>
+```
+
+### Encode to base64
+
+By default, this component keep v-model value as [File][file] object.
+If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to your `v-model`.
+
+<preview class="flex-col space-y-2">
+  <p-signature-draw v-model.base64="resultB64" />
+</preview>
+
+**result**
+
+<pre class="truncate"><code>{{ resultB64 }}</code></pre>
+<img class="mt-2 border" :src="resultB64 || EMPTY_IMG" width="430" height="230" alt="Result Image" />
+
+```vue
+<template>
+  <p-signature-draw v-model.base64="resultB64" />
 </template>
 
 <script setup>
@@ -137,4 +161,5 @@ const result = ref('')
   </tbody>
 </table>
 
+[file]: https://developer.mozilla.org/en-US/docs/Web/API/File
 [data-uri]: https://en.wikipedia.org/wiki/Data_URI_scheme

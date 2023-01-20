@@ -24,12 +24,15 @@ export function toBase64 (file: globalThis.File): Promise<string> {
 }
 
 /**
- * Convert base64 data-uri to File
+ * Convert base64 data-uri to File, return undefine if failed to decode
  * @param dataurl data base64
  * @param filename output's filename
  * @param mimeType output's mimeType
  */
 export function fromBase64 (dataurl: string, filename?: string, mimeType?: string): globalThis.File | undefined {
+  if (!dataurl)
+    return
+
   try {
     const name         = filename ?? (new Date()).toISOString()
     const [meta, body] = dataurl.split(',')
@@ -41,5 +44,8 @@ export function fromBase64 (dataurl: string, filename?: string, mimeType?: strin
       u8int[i] = buffer.codePointAt(i)
 
     return new globalThis.File([u8int], name, { type: mime })
-  } catch {}
+  } catch (error) {
+    if (import.meta.env.DEV)
+      console.warn(error)
+  }
 }

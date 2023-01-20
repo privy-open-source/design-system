@@ -52,7 +52,7 @@ import { createLines } from './utils/smooth-line'
 import Caption from '../caption/Caption.vue'
 import Button from '../button/Button.vue'
 import { ModelModifier } from '../dropzone'
-import { usePreview } from '../cropper/utils/use-preview'
+import { usePreview } from '../cropper'
 import { fromBase64 } from '../utils/base64'
 
 export default defineComponent({
