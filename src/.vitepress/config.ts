@@ -15,7 +15,7 @@ export default defineConfig({
     nav: [
       { text: 'Docs', link: '/docs/getting-started' },
       { text: 'Components', link: '/components/avatar/' },
-      { text: 'Foundation', link: '/foundation/color/' },
+      { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
       { text: 'Ecosystem', link: '/ecosystem/' },
     ],
