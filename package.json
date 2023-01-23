@@ -56,7 +56,7 @@
     "eslint-formatter-pretty": "4.1.0",
     "eslint-plugin-align-assignments": "1.1.2",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-n": "15.6.0",
+    "eslint-plugin-n": "15.6.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-unicorn": "45.0.2",
