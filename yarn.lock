@@ -2669,7 +2669,7 @@ __metadata:
     "@zxing/library": 0.19.1
     autoprefixer: 10.4.13
     browserslist-useragent-regexp: ^4.0.0
-    chart.js: 4.1.2
+    chart.js: 4.2.0
     core-js: 3
     date-fns: 2.29.3
     defu: 6.1.1
@@ -2757,7 +2757,7 @@ __metadata:
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
-    chart.js: 4.1.2
+    chart.js: 4.2.0
     core-js: 3
     date-fns: 2.29.3
     defu: 6.1.1
@@ -5288,12 +5288,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chart.js@npm:4.1.2":
-  version: 4.1.2
-  resolution: "chart.js@npm:4.1.2"
+"chart.js@npm:4.2.0":
+  version: 4.2.0
+  resolution: "chart.js@npm:4.2.0"
   dependencies:
     "@kurkle/color": ^0.3.0
-  checksum: 938ac88baf04eb8d784a8d89064696375bc12545421186f5ec9b69ba9b6f7b7da960754f351b59b1df2b1c314dfa848aab44267076888e664d5253bc6a4059dd
+  checksum: 281b023c013de8700a5208a45d35248b02119fadb574d0c104c7e0720605e085195ce546fd3aa27625e9db1188fdd5f7491a411463b9c30b7654a5f4b13d8d80
   languageName: node
   linkType: hard
 
