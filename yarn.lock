@@ -2678,7 +2678,7 @@ __metadata:
     eslint-formatter-pretty: 4.1.0
     eslint-plugin-align-assignments: 1.1.2
     eslint-plugin-import: 2.26.0
-    eslint-plugin-n: 15.6.0
+    eslint-plugin-n: 15.6.1
     eslint-plugin-node: 11.1.0
     eslint-plugin-promise: 6.1.1
     eslint-plugin-unicorn: 45.0.2
@@ -2695,7 +2695,7 @@ __metadata:
     marked: ^4.1.1
     nanodelay: 2.0.2
     pdfjs-dist: ^3.1.81
-    postcss: 8.4.20
+    postcss: 8.4.21
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
     postcss-nested: 6.0.0
@@ -2705,7 +2705,7 @@ __metadata:
     tailwindcss: 3.2.4
     typescript: 4.9.4
     ufo: ^1.0.1
-    vitepress: 1.0.0-alpha.36
+    vitepress: 1.0.0-alpha.40
     vitest: 0.24.5
     vue-content-loader: ^2.0.1
     vue-demi: 0.13.11
@@ -7578,9 +7578,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-n@npm:15.6.0":
-  version: 15.6.0
-  resolution: "eslint-plugin-n@npm:15.6.0"
+"eslint-plugin-n@npm:15.6.1":
+  version: 15.6.1
+  resolution: "eslint-plugin-n@npm:15.6.1"
   dependencies:
     builtins: ^5.0.1
     eslint-plugin-es: ^4.1.0
@@ -7592,7 +7592,7 @@ __metadata:
     semver: ^7.3.8
   peerDependencies:
     eslint: ">=7.0.0"
-  checksum: 629dc3e8c83010cf8aced555f4d36f6fceeea65b0c580123ca36e44b7cb6a19a71718c30168a506a569d205b1f961a74ebe9e44148c33ed923116180b04be45b
+  checksum: 269d6f28967acadaaf6b6bb362d564bf5772545b1990053fb2a3c18f8683f9ffe708cda8c0de3dfddb4e86b63e738ab93634915b84649f51d3bb1783253d4b91
   languageName: node
   linkType: hard
 
@@ -12557,14 +12557,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.20, postcss@npm:^8.2.15, postcss@npm:^8.3.11, postcss@npm:^8.4.20":
-  version: 8.4.20
-  resolution: "postcss@npm:8.4.20"
+"postcss@npm:8.4.21":
+  version: 8.4.21
+  resolution: "postcss@npm:8.4.21"
   dependencies:
     nanoid: ^3.3.4
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 1a5609ea1c1b204f9c2974a0019ae9eef2d99bf645c2c9aac675166c4cb1005be7b5e2ba196160bc771f5d9ac896ed883f236f888c891e835e59d28fff6651aa
+  checksum: e39ac60ccd1542d4f9d93d894048aac0d686b3bb38e927d8386005718e6793dbbb46930f0a523fe382f1bbd843c6d980aaea791252bf5e176180e5a4336d9679
   languageName: node
   linkType: hard
 
@@ -12576,6 +12576,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: 248e3d0f9bbb8efaafcfda7f91627a29bdc9a19f456896886330beb28c5abea0e14c7901b35191928602e2eccbed496b1e94097d27a0b2a980854cd00c7a835f
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.2.15, postcss@npm:^8.3.11, postcss@npm:^8.4.20":
+  version: 8.4.20
+  resolution: "postcss@npm:8.4.20"
+  dependencies:
+    nanoid: ^3.3.4
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 1a5609ea1c1b204f9c2974a0019ae9eef2d99bf645c2c9aac675166c4cb1005be7b5e2ba196160bc771f5d9ac896ed883f236f888c891e835e59d28fff6651aa
   languageName: node
   linkType: hard
 
@@ -15225,9 +15236,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-alpha.36":
-  version: 1.0.0-alpha.36
-  resolution: "vitepress@npm:1.0.0-alpha.36"
+"vitepress@npm:1.0.0-alpha.40":
+  version: 1.0.0-alpha.40
+  resolution: "vitepress@npm:1.0.0-alpha.40"
   dependencies:
     "@docsearch/css": ^3.3.1
     "@docsearch/js": ^3.3.1
@@ -15240,7 +15251,7 @@ __metadata:
     vue: ^3.2.45
   bin:
     vitepress: bin/vitepress.js
-  checksum: 0a8f370924c333283be508c39238e7026bedfab895abf8b799d5ceaf215710e70f6b275d81c5ff06c44879f005e134b3a107abcad5a97b4aa2f04a362985ad0c
+  checksum: 7748d8bfcaa45c3360a3c00dffd9b4083587af243fdc5fd70cc2b85e119a60e31560e5730748d465f7698d56fc6e6d74b6cdd077e54ea9933a74a0bfedc25f10
   languageName: node
   linkType: hard
 
