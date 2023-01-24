@@ -180,7 +180,7 @@ Set `layout` prop to `fit` to enable layout fit mode. It will adapt the viewer h
 | Props       |   Type   | Default | Description                                       |
 |-------------|:--------:|:-------:|---------------------------------------------------|
 | `src`       | `String` |   `-`   | Document source URL                               |
-| `paddword`  | `String` |   `-`   | Document password                                 |
+| `password`  | `String` |   `-`   | Document password                                 |
 | `layout`    | `String` | `fixed` | Viewer layout sizing, valid value: `fixed`, `fit` |
 | `offsetTop` | `Number` |   `0`   | Margin top when using layout `fit`                |
 

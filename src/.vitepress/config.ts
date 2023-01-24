@@ -4,6 +4,7 @@ import { babel } from '@rollup/plugin-babel'
 import head from './head'
 
 export default defineConfig({
+  appearance : false, // Disabled for a moment
   base       : process.env.BASE_URL ?? '/design-system/',
   title      : 'Persona',
   description: 'Persona - PrivyID\'s Design System, built on top Nuxt3, Typescript and Tailwind',
@@ -133,6 +134,10 @@ export default defineConfig({
             {
               text: 'Progress',
               link: '/components/progress/',
+            },
+            {
+              text: 'Sheet',
+              link: '/components/sheet/',
             },
             {
               text: 'Spinner',

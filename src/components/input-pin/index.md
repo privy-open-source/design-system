@@ -94,8 +94,6 @@ Like other input, input value can be binding with `v-model`.
 </template>
 ```
 
-## Binding v-model
-
 ## API
 
 ### Props

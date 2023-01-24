@@ -162,4 +162,4 @@ export function usePage (page: MaybeRef<number>) {
 
 export const focus = debounce(focus_, 100)
 
-export type AddonPositionVariant = 'top' | 'left' | 'right' | 'bottpm'
+export type PositionVariant = 'top' | 'left' | 'right' | 'bottom'

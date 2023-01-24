@@ -186,7 +186,7 @@ const tour = createTour()
     text  : 'This is text',
     image : 'https://picsum.photos/400/225',
   })
-  // It can also write like this (shortcut)
+  // It can also write like this (Shorthand)
   .dialog('#sample', 'This is text', 'This is title', 'https://picsum.photos/400/225')
 ```
 
@@ -326,7 +326,7 @@ const tour   = createTour()
 | `title`        | `String`  |     -      | Tour dialog title                                                             |
 | `image`        | `String`  |     -      | Tour dialog image url                                                         |
 
-#### Shortcut
+#### Shorthand
 
 `.dialog(target: string, text: string, title?: string, image?: string)`
 
@@ -340,7 +340,7 @@ const tour   = createTour()
 | `action` | `String` |    -    | Tour action, valid value: `click`, `dblClick`, `tripleClick`, `type`, `hover`, `unhover`, `clear` |
 | `params` | `Array`  |    -    | Action Parameters                                                                                 |
 
-#### Shortcut
+#### Shorthand
 
 `.action(target: string, text: string, ...params: any[]): TourStory`
 

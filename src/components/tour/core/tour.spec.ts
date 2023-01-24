@@ -279,8 +279,8 @@ describe('Nesting', () => {
     /**
      * steo1 (subTourA) => skip
      * step2 (stepC1)   => running
-     * step3 (subTourB) => error -> should tour stopped
-     * step4 (stepC2)   => neve  -> should never run
+     * step3 (subTourB) => error  -> should tour stopped
+     * step4 (stepC2)   => never  -> should never run
      */
 
     await mainTour.start()

@@ -36,11 +36,11 @@
         ref="menu"
         data-testid="dropdown-menu"
         class="dropdown__menu">
-        <DropdownGroup
+        <DropdownSubitem
           ref="wizard"
           class="dropdown__menu-container">
           <slot />
-        </DropdownGroup>
+        </DropdownSubitem>
       </div>
     </Transition>
   </div>
@@ -62,7 +62,7 @@ import {
   onKeyStroke,
 } from '@vueuse/core'
 import Button from '../button/Button.vue'
-import DropdownGroup from '../dropdown-subitem/DropdownSubitem.vue'
+import DropdownSubitem from '../dropdown-subitem/DropdownSubitem.vue'
 import { useFocus } from './utils/use-focus'
 import {
   Placement,
@@ -81,12 +81,12 @@ import type {
 } from '../button'
 import { DROPDOWN_CONTEXT } from '.'
 
-type DropdownSubitemElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
+type DropdownSubitemElement = InstanceType<typeof DropdownSubitem> & HTMLDivElement
 
 export default defineComponent({
   components: {
     Button,
-    DropdownGroup,
+    DropdownSubitem,
     IconArrow,
   },
   props: {

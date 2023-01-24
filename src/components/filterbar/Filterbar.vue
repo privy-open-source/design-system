@@ -1,18 +1,23 @@
 <template>
   <div class="filterbar">
-    <template
-      v-for="item in pinnedItems"
-      :key="item.key">
-      <slot :name="`cell(${item.key})`">
-        <component
-          :is="item.type"
-          class="filterbar__item"
-          :schema="item"
-          :model-value="getValue(item.key)"
-          v-bind="item"
-          @update:model-value="setValue(item.key, $event)" />
-      </slot>
-    </template>
+    <transition-group
+      name="fade"
+      mode="out-in">
+      <template
+        v-for="item in pinnedItems"
+        :key="item.key">
+        <slot :name="`cell(${item.key})`">
+          <component
+            :is="item.type"
+            :key="item.key"
+            class="filterbar__item"
+            :schema="item"
+            :model-value="getValue(item.key)"
+            v-bind="item"
+            @update:model-value="setValue(item.key, $event)" />
+        </slot>
+      </template>
+    </transition-group>
     <Button
       size="sm"
       variant="link"
@@ -28,6 +33,7 @@ import {
   computed,
   defineComponent,
   PropType,
+  reactive,
 } from 'vue-demi'
 import { FilterItem } from '.'
 import Dropdown from '../dropdown/Dropdown.vue'
@@ -36,10 +42,13 @@ import Select from './pinned/Select.vue'
 import Toggle from './pinned/Toggle.vue'
 import Multiselect from './pinned/Multiselect.vue'
 import Date from './pinned/Date.vue'
+import Divider from '../divider/Divider.vue'
 import { useVModel } from '../input'
+import { isFilled } from './utils/sorter'
 
 export default defineComponent({
   components: {
+    Divider,
     Button,
     Dropdown,
     Date,
@@ -70,6 +79,13 @@ export default defineComponent({
         .filter((item) => {
           return item.pinned !== false
         })
+        .map((object) => reactive(object))
+        .sort((a, b) => {
+          const aIndex = isFilled(a, model.value) ? 10 : 1
+          const bIndex = isFilled(b, model.value) ? 10 : 1
+
+          return bIndex - aIndex
+        })
     })
 
     function getValue (key: string) {
@@ -97,7 +113,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .filterbar {
-  @apply flex space-x-2 items-center;
+  @apply flex flex-wrap space-gap-2 items-center;
 
   &__item {
     &.filterbar--active {

@@ -116,5 +116,9 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/privy-open-source/design-system"
+  }
 }

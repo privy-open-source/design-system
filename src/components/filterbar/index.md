@@ -4,11 +4,17 @@ description: Add filter to your datatable easy-way.
 ---
 
 <script setup>
-  import { ref } from 'vue-demi'
+  import { ref, computed } from 'vue-demi'
   import pFilterbar from './Filterbar.vue'
   import { defineFilter } from '.'
 
   const query = ref({})
+
+  const status = computed(() => {
+    return query.value.is_active
+      ? ['Draft', 'Pending', 'Completed']
+      : ['Inactive']
+  })
 
   const schema = defineFilter([
     {
@@ -19,14 +25,19 @@ description: Add filter to your datatable easy-way.
       type: 'date',
       key : 'created_at',
     },
+        {
+      type   : 'select',
+      key    : 'location',
+      options: [
+        'Jakarta',
+        'Bandung',
+        'Yogyakarta',
+      ],
+    },
     {
       type   : 'multiselect',
       key    : 'status',
-      options: [
-        'Draft',
-        'Pending',
-        'Completed',
-      ],
+      options: status,
     },
   ])
 
@@ -53,11 +64,7 @@ description: Add filter to your datatable easy-way.
     {
       type   : 'multiselect',
       key    : 'status',
-      options: [
-        'Draft',
-        'Pending',
-        'Completed',
-      ],
+      options: status,
     },
   ])
 </script>
@@ -68,7 +75,12 @@ description: Add filter to your datatable easy-way.
 
 ## Usage
 
+<pre>{{ query }}</pre>
+
+<pre>{{ status }}</pre>
+
 ### Simple Usage
+
 <preview>
   <p-filterbar :schema="schema" v-model="query" />
 </preview>

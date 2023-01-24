@@ -13,12 +13,12 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { AddonPositionVariant } from '.'
+import { PositionVariant } from '.'
 
 export default defineComponent({
   props: {
     position: {
-      type   : String as PropType<AddonPositionVariant>,
+      type   : String as PropType<PositionVariant>,
       default: 'right',
     },
   },
