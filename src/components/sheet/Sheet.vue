@@ -1,18 +1,21 @@
 <template>
   <div
     class="sheet"
+    data-testid="sheet"
     :class="classNames"
     :style="{ zIndex: zIndex }">
     <transition name="fade">
       <div
         v-show="model"
+        data-testid="sheet-backdrop"
         class="sheet__backdrop"
-        @click="close" />
+        @click="onClickBackdrop" />
     </transition>
     <transition :name="transition">
       <div
         v-if="model"
         ref="target"
+        data-testid="sheet-content"
         class="sheet__content"
         v-bind="$attrs">
         <slot />
@@ -26,7 +29,6 @@ import {
   computed,
   defineComponent,
   PropType,
-  watch,
 } from 'vue-demi'
 import { useVModel } from '../input'
 import { PositionVariant } from '../pdf-object'
@@ -41,19 +43,24 @@ export default defineComponent({
       type   : String as PropType<PositionVariant>,
       default: 'left',
     },
-    open: {
-      type   : Boolean,
-      default: false,
-    },
     zIndex: {
       type   : Number,
-      default: 50,
+      default: 20,
+    },
+    noCloseOnBackdrop: {
+      type   : Boolean,
+      default: false,
     },
   },
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
+  emits: [
+    'update:modelValue',
+    'hide',
+    'show',
+  ],
   setup (props) {
     const model = useVModel(props)
 
@@ -70,19 +77,16 @@ export default defineComponent({
       return `sheet--${props.position}`
     })
 
-    watch(() => props.open, (open) => {
-      model.value = open
-    }, { immediate: true })
-
-    function close () {
-      model.value = false
+    function onClickBackdrop () {
+      if (!props.noCloseOnBackdrop)
+        model.value = false
     }
 
     return {
       model,
       transition,
       classNames,
-      close,
+      onClickBackdrop,
     }
   },
 })
@@ -102,7 +106,7 @@ export default defineComponent({
 
   &--left {
     .sheet__content {
-      @apply left-0 top-0 h-full w-1/3 min-w-[250px] max-w-sm shadow-lg-right;
+      @apply left-0 top-0 h-full w-2/3 md:w-1/3 lg:w-1/4 xl:w-1/6 min-w-[250px] shadow-lg-right;
     }
 
     &-enter-active,
@@ -118,7 +122,7 @@ export default defineComponent({
 
   &--right {
     .sheet__content {
-      @apply right-0 top-0 h-full w-1/3 min-w-[250px] max-w-sm shadow-lg-left;
+      @apply right-0 top-0 h-full w-2/3 md:w-1/3 lg:w-1/4 xl:w-1/6 min-w-[250px] shadow-lg-left;
     }
 
     &-enter-active,
@@ -134,7 +138,7 @@ export default defineComponent({
 
   &--top {
     .sheet__content {
-      @apply right-0 top-0 w-full h-1/3 min-h-[250px] shadow-lg;
+      @apply right-0 top-0 w-full h-1/4 min-h-[250px] shadow-lg;
     }
 
     &-enter-active,
@@ -150,7 +154,7 @@ export default defineComponent({
 
   &--bottom {
     .sheet__content {
-      @apply right-0 bottom-0 w-full h-1/3 min-h-[250px] shadow-lg-top;
+      @apply right-0 bottom-0 w-full h-1/4 min-h-[250px] shadow-lg-top;
     }
 
     &-enter-active,
