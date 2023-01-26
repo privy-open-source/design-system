@@ -15,70 +15,70 @@ module.exports = {
         'tn': [
           '11px',
           {
-            lineHeight   : '1.45',
+            lineHeight   : theme.lineHeight.tight,
             letterSpacing: theme.letterSpacing.wider,
           },
         ],
         'xs': [
           '12px',
           {
-            lineHeight   : '1.33',
+            lineHeight   : theme.lineHeight.tightest,
             letterSpacing: theme.letterSpacing.wide,
           },
         ],
         'sm': [
           '14px',
           {
-            lineHeight   : '1.42',
-            letterSpacing: theme.letterSpacing.normal,
+            lineHeight   : theme.lineHeight.tighter,
+            letterSpacing: theme.letterSpacing.wider,
           },
         ],
         'base': [
           '16px',
           {
-            lineHeight   : '1.5',
-            letterSpacing: theme.letterSpacing.normal,
+            lineHeight   : theme.lineHeight.normal,
+            letterSpacing: theme.letterSpacing.wide,
           },
         ],
         'xl': [
           '20px',
           {
-            lineHeight   : '1.3',
+            lineHeight   : theme.lineHeight.wide,
             letterSpacing: theme.letterSpacing.normal,
           },
         ],
         '2xl': [
           '24px',
           {
-            lineHeight   : '1.3',
+            lineHeight   : theme.lineHeight.wide,
             letterSpacing: theme.letterSpacing.normal,
           },
         ],
         '4xl': [
           '36px',
           {
-            lineHeight   : '1.3',
+            lineHeight   : theme.lineHeight.wide,
             letterSpacing: theme.letterSpacing.normal,
           },
         ],
         '5xl': [
           '48px',
           {
-            lineHeight   : '1.3',
+            lineHeight   : theme.lineHeight.wide,
             letterSpacing: theme.letterSpacing.normal,
           },
         ],
         '6xl': [
           '60px',
           {
-            lineHeight   : '1.3',
+            lineHeight   : theme.lineHeight.wide,
             letterSpacing: theme.letterSpacing.tight,
           },
         ],
         '7xl': [
           '72px',
           {
-            lineHeight   : '1.36',
+            lineHeight   : theme.lineHeight.wide,
             letterSpacing: theme.letterSpacing.tight,
           },
         ],

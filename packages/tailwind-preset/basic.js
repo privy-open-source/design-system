@@ -5,8 +5,23 @@ module.exports = {
   darkMode: 'class',
   theme   : {
     fontFamily   : { sans: ['DM Sans', ...defaultTheme.fontFamily.sans] },
-    letterSpacing: { ...defaultTheme.letterSpacing },
-    fontWeight   : {
+    letterSpacing: {
+      tighter: '-0.4px',
+      tight  : '-0.2px',
+      normal : '0',
+      wide   : '0.2px',
+      wider  : '0.4px',
+      widest : '0.8px',
+    },
+    lineHeight: {
+      none    : 1,
+      tightest: 1.33,
+      tighter : 1.42,
+      tight   : 1.45,
+      normal  : 1.5,
+      wide    : 'normal',
+    },
+    fontWeight: {
       inherit   : 'inherit',
       thin      : 100,
       extralight: 200,

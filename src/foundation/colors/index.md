@@ -1,3 +1,8 @@
+---
+title: Colors · Foundation
+description: Collections of colors library
+---
+
 <script setup>
   import Colors from './Colors.vue'
   import pCaption from '../../components/caption/Caption.vue'
@@ -7,7 +12,7 @@
 </script>
 
 # Colors
-Persona uses design tokens to collaborate between UI/UX designers and engineers. Token design is a way to manage user interface data such as color, spacing, shadow, etc. by storing it in a variable. The goal is to build a cross platform user interface.
+Persona uses design tokens to collaborate between UI/UX designers and engineers. Design token is a way to manage user interface data such as color, spacing, shadow, etc. by storing it in a variable. The goal is to build a cross platform user interface.
 
 ## Colors Tokens
 
