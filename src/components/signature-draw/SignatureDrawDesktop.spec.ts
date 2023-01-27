@@ -9,6 +9,13 @@ vi.mock('./utils/use-draw.ts', () => ({ default: useDraw }))
 
 vi.mock('./utils/canvas.ts', () => canvas)
 
+beforeEach(() => {
+  vi.spyOn(window.URL, 'createObjectURL')
+    .mockImplementation((file: File) => {
+      return `blob://${file.name}`
+    })
+})
+
 afterEach(() => {
   vi.restoreAllMocks()
 })
@@ -165,7 +172,7 @@ it('should modify state in v-model', async () => {
   const model  = ref('')
   const screen = render({
     components: { SignatureDrawDesktop },
-    template  : '<SignatureDrawDesktop v-model="model" />',
+    template  : '<SignatureDrawDesktop v-model.base64="model" />',
     setup () {
       return { model }
     },

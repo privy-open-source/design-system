@@ -6,7 +6,7 @@
 
   [![npm (scoped)](https://img.shields.io/npm/v/@privyid/persona?style=for-the-badge)](https://www.npmjs.com/package/@privyid/persona)
   [![CI](https://img.shields.io/github/actions/workflow/status/privy-open-source/design-system/ci.yml?style=for-the-badge)](https://github.com/privy-open-source/design-system/actions/workflows/ci.yml)
-  [![Codecov](https://img.shields.io/codecov/c/github/privy-open-source/design-system?style=for-the-badge)](https://coveralls.io/github/privy-open-source/design-system?branch=main)
+  [![Codecov](https://img.shields.io/codecov/c/github/privy-open-source/design-system?style=for-the-badge)](https://codecov.io/gh/privy-open-source/design-system)
   [![CodeFactor](https://img.shields.io/codefactor/grade/github/privy-open-source/design-system/main?style=for-the-badge)](https://www.codefactor.io/repository/github/privy-open-source/design-system)
 
   [Installation](https://privy-open-source.github.io/design-system/docs/getting-started.html) •

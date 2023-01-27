@@ -9,6 +9,13 @@ vi.mock('./utils/generate-text.ts', () => {
   return { default: generate }
 })
 
+beforeEach(() => {
+  vi.spyOn(window.URL, 'createObjectURL')
+    .mockImplementation((file: File) => {
+      return `blob://${file.name}`
+    })
+})
+
 afterEach(() => {
   vi.restoreAllMocks()
 })
@@ -143,7 +150,7 @@ it('should passing result data-uri to v-model', async () => {
   const model  = ref('')
   const screen = render({
     components: { SignatureText },
-    template  : '<SignatureText v-model="model" />',
+    template  : '<SignatureText v-model.base64="model" />',
     setup () {
       return { model }
     },
