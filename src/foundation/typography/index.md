@@ -1,3 +1,8 @@
+---
+title: Typography · Foundation
+description: Collections of typography library
+---
+
 <script setup>
   import pCaption from '../../components/caption/Caption.vue'
   import pHeading from '../../components/heading/Heading.vue'
