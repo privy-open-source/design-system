@@ -19,6 +19,11 @@ vi.mock('@vueuse/core', async () => {
   }
 })
 
+vi.spyOn(window.URL, 'createObjectURL')
+  .mockImplementation((file: File) => {
+    return `blob://${file.name}`
+  })
+
 afterEach(() => {
   vi.resetAllMocks()
 })

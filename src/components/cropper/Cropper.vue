@@ -116,13 +116,10 @@ import { useClamp } from '@vueuse/math'
 import {
   computed,
   defineComponent,
-  onBeforeUnmount,
-  onMounted,
   PropType,
   ref,
   StyleValue,
   toRef,
-  watch,
 } from 'vue-demi'
 import { usePinch } from './utils/use-pinch'
 import pButton from '../button/Button.vue'
@@ -141,7 +138,7 @@ import {
   useRatioWidth,
 } from './utils/use-ratio'
 import { pAspectRatio } from '../aspect-ratio'
-import { createSpinner } from '../avatar/utils/create-image'
+import { usePreview } from '.'
 
 export default defineComponent({
   directives: { pAspectRatio },
@@ -223,12 +220,12 @@ export default defineComponent({
     const y       = ref(0)
     const angle   = ref(0)
     const scale   = useClamp(1, 0.5, 2)
-    const preview = ref(createSpinner(512, 512))
     const ratio   = useRatio(props)
     const width   = useRatioWidth(props)
     const height  = useRatioHeight(props)
     const rounded = toRef(props, 'rounded')
     const src     = toRef(props, 'src')
+    const preview = usePreview(src)
     const canvas  = templateRef<HTMLCanvasElement>('canvas')
     const parent  = templateRef<HTMLDivElement>('parent')
     const target  = templateRef<HTMLImageElement>('target')
@@ -368,15 +365,6 @@ export default defineComponent({
       },
     })
 
-    watch(src, (value) => {
-      if (preview.value && preview.value.startsWith('blob'))
-        window.URL.revokeObjectURL(preview.value)
-
-      preview.value = value instanceof globalThis.File
-        ? window.URL.createObjectURL(value)
-        : (value ?? createSpinner(512, 512))
-    })
-
     watchDebounced([
       src,
       width,
@@ -391,19 +379,6 @@ export default defineComponent({
       if (!props.noCrop && !props.noAutocrop)
         crop()
     }, { debounce: 500 })
-
-    onMounted(() => {
-      if (props.src) {
-        preview.value = props.src instanceof globalThis.File
-          ? window.URL.createObjectURL(props.src)
-          : props.src
-      }
-    })
-
-    onBeforeUnmount(() => {
-      if (preview.value && preview.value.startsWith('blob'))
-        window.URL.revokeObjectURL(preview.value)
-    })
 
     return {
       classNames,
