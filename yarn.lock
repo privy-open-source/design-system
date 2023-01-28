@@ -2686,7 +2686,7 @@ __metadata:
     eslint-plugin-vue: 9.8.0
     fast-equals: ^4.0.3
     fuse.js: 6.6.2
-    happy-dom: 8.1.3
+    happy-dom: 8.2.0
     husky: 8.0.3
     interactjs: 1.10.17
     jest-extended: 3.2.3
@@ -8694,9 +8694,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:8.1.3":
-  version: 8.1.3
-  resolution: "happy-dom@npm:8.1.3"
+"happy-dom@npm:8.2.0":
+  version: 8.2.0
+  resolution: "happy-dom@npm:8.2.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -8704,7 +8704,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: aba08125f4c972872bc2432f69e55720bb03134f09db4efa23e2d27e13253bb380500ed0550bec5d3a253af8400d7d0f8aa867df29315d0c41b223065b52e3e2
+  checksum: 0800a77febf9f2d2fa1478febf891371b51ff07be2787ee664bc52c9f9521f79a5bae9f137e2b74754fa7e415c6884f1dab8b0463f84c56aff8815a5b6a61041
   languageName: node
   linkType: hard
 
