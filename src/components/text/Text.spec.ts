@@ -40,7 +40,7 @@ it('should have style "hyperlink" if props `hyperlink` is provided', () => {
   const screen = render({
     components: { Text },
     template  : `
-      <Text hyperlink>
+      <Text href="https://privy.id">
         Some hyperlink
       </Text>
     `,
@@ -58,7 +58,7 @@ it('should have font weight "medium" if props `hyperlink` is provided in `captio
   const screen = render({
     components: { Text },
     template  : `
-      <Text variant="caption" hyperlink>
+      <Text variant="caption" href="https://privy.id">
         Caption hyperlink
       </Text>
     `,
@@ -68,6 +68,6 @@ it('should have font weight "medium" if props `hyperlink` is provided in `captio
   const content = screen.queryByText('Caption hyperlink')
 
   expect(text).toBeInTheDocument()
-  expect(text).toHaveClass('freetext--medium')
+  expect(text).toHaveClass('freetext--hyperlink', 'freetext--medium')
   expect(content).toBeInTheDocument()
 })

@@ -28,15 +28,15 @@ Default style of `Text` is a body text
 ```
 
 ## Hyperlink
-You can add `hyperlink` prop to make permalink.
+You can add `href` prop to make permalink.
 
 <preview>
-  <p-text href="https://privy.id" hyperlink>This should be a hyperlink</p-text>
+  <p-text href="https://privy.id">This should be a hyperlink</p-text>
 </preview>
 
 ```vue
 <template>
-  <p-text href="https://privy.id" hyperlink>This should be a hyperlink</p-text>
+  <p-text href="https://privy.id">This should be a hyperlink</p-text>
 </template>
 ```
 
@@ -91,8 +91,8 @@ Text have 7 style variant, there are `heading`, `subheading`, `body`, `button`, 
   <ul class="!list-disc">
     <li><p-text variant="body2">Body list 2</p-text></li>
   </ul>
-  <p-text variant="body" href="#" hyperlink>Hyperlink (text)</p-text>
-  <p-text variant="body2" href="#" hyperlink>Hyperlink (subtext)</p-text>
+  <p-text variant="body" href="#">Hyperlink (text)</p-text>
+  <p-text variant="body2" href="#">Hyperlink (subtext)</p-text>
 </preview>
 
 ```vue
@@ -105,8 +105,8 @@ Text have 7 style variant, there are `heading`, `subheading`, `body`, `button`, 
   <ul>
     <li><p-text variant="body2">Body list 2</p-text></li>
   </ul>
-  <p-text variant="body" href="#" hyperlink>Hyperlink (text)</p-text>
-  <p-text variant="body2" href="#" hyperlink>Hyperlink (subtext)</p-text>
+  <p-text variant="body" href="#">Hyperlink (text)</p-text>
+  <p-text variant="body2" href="#">Hyperlink (subtext)</p-text>
 </template>
 ```
 
@@ -123,8 +123,8 @@ Text have 7 style variant, there are `heading`, `subheading`, `body`, `button`, 
 <template>
   <p-text variant="btn">button 1</p-text>
   <p-text variant="btn2">button 2</p-text>
-  <p-text variant="btn" href="#" hyperlink>button Link 1</p-text>
-  <p-text variant="btn2" href="#" hyperlink>button Link 2</p-text>
+  <p-text variant="btn" href="#">button Link 1</p-text>
+  <p-text variant="btn2" href="#">button Link 2</p-text>
 </template>
 ```
 
@@ -133,16 +133,16 @@ Text have 7 style variant, there are `heading`, `subheading`, `body`, `button`, 
 <preview class="flex-col space-y-2">
   <p-text variant="caption">Caption</p-text>
   <p-text variant="caption2">Caption 2 (known as small text)</p-text>
-  <p-text variant="caption" href="#" hyperlink>Hyperlink (caption)</p-text>
-  <p-text variant="caption2" href="#" hyperlink>Hyperlink (caption 2)</p-text>
+  <p-text variant="caption" href="#">Hyperlink (caption)</p-text>
+  <p-text variant="caption2" href="#">Hyperlink (caption 2)</p-text>
 </preview>
 
 ```vue
 <template>
   <p-text variant="caption">Caption</p-text>
   <p-text variant="caption2">Caption 2 (known as small text)</p-text>
-  <p-text variant="caption" href="#" hyperlink>Hyperlink (caption)</p-text>
-  <p-text variant="caption2" href="#" hyperlink>Hyperlink (caption 2)</p-text>
+  <p-text variant="caption" href="#">Hyperlink (caption)</p-text>
+  <p-text variant="caption2" href="#">Hyperlink (caption 2)</p-text>
 </template>
 ```
 
@@ -179,8 +179,7 @@ Text have 7 style variant, there are `heading`, `subheading`, `body`, `button`, 
 | Props               |   Type    | Default     | Description                                                            |
 |---------------------|:---------:|:-----------:|------------------------------------------------------------------------|
 | `variant`           | `String`  | `body`      | Text variant, valid value is `heading`, `subheading`, `body`, `button`, `caption`, `formlabel` and `overline`    |
-| `hyperlink`         | `Boolean` | `false`     | Activate hyperlink in the Text                                         |
-| `href`              | `String`  | `-`         | Text permalink when hyperlink is `true`                                |
+| `href`              | `String`  | `-`         | Provide hyperlink in the text                                          |
 
 ### Slots
 

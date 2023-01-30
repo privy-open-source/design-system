@@ -1,10 +1,10 @@
 <template>
   <component
-    :is="isHyperlink"
+    :is="hyperlink"
     data-testid="freetext"
     class="freetext"
     :class="classNames"
-    :href="permalink">
+    :href="href">
     <slot />
   </component>
 </template>
@@ -23,10 +23,6 @@ export default defineComponent({
       type   : String as PropType<StyleVariant>,
       default: 'body',
     },
-    hyperlink: {
-      type   : Boolean,
-      default: false,
-    },
     href: {
       type   : String,
       default: undefined,
@@ -34,15 +30,10 @@ export default defineComponent({
   },
 
   setup (props) {
-    const isHyperlink = computed(() => {
-      const tag : String = props.hyperlink ? 'a' : 'span'
+    const hyperlink = computed(() => {
+      const tag : String = props.href ? 'a' : 'span'
 
       return tag
-    })
-
-    const permalink = computed(() => {
-      if (props.hyperlink)
-        return props.href
     })
 
     const classNames = computed(() => {
@@ -51,18 +42,17 @@ export default defineComponent({
       if (props.variant)
         result.push(`freetext--${props.variant}`)
 
-      if (props.hyperlink)
+      if (props.href)
         result.push('freetext--hyperlink')
 
-      if (props.hyperlink && (props.variant === 'caption' || props.variant === 'caption2'))
+      if (props.href && (props.variant === 'caption' || props.variant === 'caption2'))
         result.push('freetext--medium')
 
       return result
     })
 
     return {
-      isHyperlink,
-      permalink,
+      hyperlink,
       classNames,
     }
   },
