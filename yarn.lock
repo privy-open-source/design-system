@@ -2663,7 +2663,7 @@ __metadata:
     "@vitest/browser": ^0.25.3
     "@vitest/coverage-c8": 0.24.5
     "@vue/eslint-config-typescript": 11.0.2
-    "@vueuse/core": 9.10.0
+    "@vueuse/core": 9.11.1
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
@@ -2686,7 +2686,7 @@ __metadata:
     eslint-plugin-vue: 9.8.0
     fast-equals: ^4.0.3
     fuse.js: 6.6.2
-    happy-dom: 8.1.3
+    happy-dom: 8.2.0
     husky: 8.0.3
     interactjs: 1.10.17
     jest-extended: 3.2.3
@@ -2753,7 +2753,7 @@ __metadata:
     "@testing-library/dom": ^8.19.0
     "@testing-library/user-event": ^14.4.3
     "@types/sanitize-html": ^2
-    "@vueuse/core": 9.10.0
+    "@vueuse/core": 9.11.1
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.1
@@ -4101,15 +4101,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:9.10.0":
-  version: 9.10.0
-  resolution: "@vueuse/core@npm:9.10.0"
+"@vueuse/core@npm:9.11.1":
+  version: 9.11.1
+  resolution: "@vueuse/core@npm:9.11.1"
   dependencies:
     "@types/web-bluetooth": ^0.0.16
-    "@vueuse/metadata": 9.10.0
-    "@vueuse/shared": 9.10.0
+    "@vueuse/metadata": 9.11.1
+    "@vueuse/shared": 9.11.1
     vue-demi: "*"
-  checksum: 9e3b0c0baa1e3daf3ae508f76acf4e73ec80a2089d420f5de7c203e9fecd8cd4596a5e4635bbf09a762e0bba022f26806ee23b69d5d01a5d0e4b76e2ad2878a4
+  checksum: c9b4d65d50441d19d452dfebe4e13c8b56a8ea296b31b9cd93b5a52ee1b461c40ebc530415d3869083852eb874c99d5742311fd8bf750d405f4d52a768aebaa3
   languageName: node
   linkType: hard
 
@@ -4149,10 +4149,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:9.10.0":
-  version: 9.10.0
-  resolution: "@vueuse/metadata@npm:9.10.0"
-  checksum: ef9b4970cc1795e197279b59cfd82c7475323c17ae02701e5a6be26df1258330d4fafb7c05d005dfa7af97277509a8589d62467925319e1c5c17715805554bb7
+"@vueuse/metadata@npm:9.11.1":
+  version: 9.11.1
+  resolution: "@vueuse/metadata@npm:9.11.1"
+  checksum: d4025257dc891b4ae3712a68b881409e7a58517f7b96f8949a74a99cec5e46f202fc2c326765eed9bffc8fbde6417ee737d3c2ac650799dd9e99fa5a7f9c2363
   languageName: node
   linkType: hard
 
@@ -4163,12 +4163,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:9.10.0":
-  version: 9.10.0
-  resolution: "@vueuse/shared@npm:9.10.0"
+"@vueuse/shared@npm:9.11.1":
+  version: 9.11.1
+  resolution: "@vueuse/shared@npm:9.11.1"
   dependencies:
     vue-demi: "*"
-  checksum: 1481ad7273eb8835a42fd49805d32ae97465188d260ddb28fdffebda7bedea5943bf49c3bd128121b32719307eaf1cb69b37b60fa1195c10a555e7aec3d78c22
+  checksum: 373a725ba87dd84eec3882cef4dc92706f28b53256f1c23a800444c12de675c71c1773c254def5d9c3096e54b9830154d13540264c1f017770395f04b07d789f
   languageName: node
   linkType: hard
 
@@ -8694,9 +8694,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:8.1.3":
-  version: 8.1.3
-  resolution: "happy-dom@npm:8.1.3"
+"happy-dom@npm:8.2.0":
+  version: 8.2.0
+  resolution: "happy-dom@npm:8.2.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -8704,7 +8704,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: aba08125f4c972872bc2432f69e55720bb03134f09db4efa23e2d27e13253bb380500ed0550bec5d3a253af8400d7d0f8aa867df29315d0c41b223065b52e3e2
+  checksum: 0800a77febf9f2d2fa1478febf891371b51ff07be2787ee664bc52c9f9521f79a5bae9f137e2b74754fa7e415c6884f1dab8b0463f84c56aff8815a5b6a61041
   languageName: node
   linkType: hard
 
