@@ -102,15 +102,15 @@ export default defineComponent({
   }
 
   &&--sm {
-    @apply px-4 py-1 gap-2 text-base rounded-[7px];
+    @apply px-4 py-1 gap-2 text-base tracking-wider rounded-[7px];
   }
 
   &&--md {
-    @apply px-5 py-[10px] gap-3 text-base rounded;
+    @apply px-5 py-[10px] gap-3 text-base tracking-wider rounded;
   }
 
   &&--lg {
-    @apply px-8 py-4 gap-4 text-base rounded;
+    @apply px-8 py-4 gap-4 text-base tracking-wider rounded;
   }
 
   /*

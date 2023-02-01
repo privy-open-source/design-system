@@ -91,7 +91,62 @@
   }
 
   a {
-    @apply font-inherit text-inherit;
+    @apply text-inherit;
+
+    &:not(.freetext--medium) {
+      @apply font-inherit;
+    }
+
+    &:where(.freetext--hyperlink) {
+      @apply decoration-solid;
+    }
+  }
+
+  h1 {
+    &:is(.h1) {
+      @apply mt-0 text-7xl;
+    }
+  }
+
+  h2 {
+    &:is(.h2) {
+      @apply m-0 border-t-0 pt-0 text-6xl;
+    }
+  }
+
+  h3 {
+    &:is(.h3) {
+      @apply mt-0 text-5xl;
+    }
+  }
+
+  p {
+    
+    &.lh {
+      &-none {
+        @apply leading-none;
+      }
+
+      &-tightest {
+        @apply leading-tightest;
+      }
+
+      &-tighter {
+        @apply leading-tighter;
+      }
+
+      &-tight {
+        @apply leading-tight;
+      }
+
+      &-normal {
+        @apply leading-normal;
+      }
+
+      &-wide {
+        @apply leading-wide;
+      }
+    }
   }
 
   .nav__link__icon {
