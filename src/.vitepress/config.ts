@@ -50,6 +50,10 @@ export default defineConfig({
               text: 'Colors',
               link: '/foundation/colors/',
             },
+            {
+              text: 'Typography',
+              link: '/foundation/typography/',
+            },
           ],
         },
       ],
@@ -171,6 +175,10 @@ export default defineConfig({
             {
               text: 'Subheading',
               link: '/components/subheading/',
+            },
+            {
+              text: 'Text',
+              link: '/components/text/',
             },
             {
               text: 'Truncate',
