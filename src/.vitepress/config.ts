@@ -54,6 +54,10 @@ export default defineConfig({
               text: 'Typography',
               link: '/foundation/typography/',
             },
+            {
+              text: 'Borders',
+              link: '/foundation/borders/',
+            },
           ],
         },
       ],
