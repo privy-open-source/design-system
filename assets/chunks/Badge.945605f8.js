@@ -1,0 +1,1 @@
+import{_ as a}from"./Badge.vue_vue_type_style_index_0_lang.2a079cd5.js";import{k as e,o,c as r,l as t,n}from"../app.8aab0a2c.js";function c(s,l,p,d,m,f){return o(),r("span",{"data-testid":"badge",class:n(s.classNames)},[t(s.$slots,"default")],2)}const $=e(a,[["render",c]]);export{$ as B};
