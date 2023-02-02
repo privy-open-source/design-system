@@ -2666,7 +2666,7 @@ __metadata:
     "@vueuse/core": 9.11.1
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
-    "@zxing/library": 0.19.1
+    "@zxing/library": 0.19.2
     autoprefixer: 10.4.13
     browserslist-useragent-regexp: ^4.0.0
     chart.js: 4.2.0
@@ -2756,7 +2756,7 @@ __metadata:
     "@vueuse/core": 9.11.1
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
-    "@zxing/library": 0.19.1
+    "@zxing/library": 0.19.2
     chart.js: 4.2.0
     core-js: 3
     date-fns: 2.29.3
@@ -4211,16 +4211,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zxing/library@npm:0.19.1":
-  version: 0.19.1
-  resolution: "@zxing/library@npm:0.19.1"
+"@zxing/library@npm:0.19.2":
+  version: 0.19.2
+  resolution: "@zxing/library@npm:0.19.2"
   dependencies:
     "@zxing/text-encoding": ~0.9.0
     ts-custom-error: ^3.0.0
   dependenciesMeta:
     "@zxing/text-encoding":
       optional: true
-  checksum: ed650e4afc74560950efad3d1479f4bcd9878b6baadd4ac9280cec45bdbeba957bb1185cde7858e49493b3f0052d25bd0be3a1c277433e4e09e1f29018aec2f3
+  checksum: 080e4780135d1b424f7fe6fe5d6c168c16f0dfa165ba546e66de738947421aba13ff62de105b721198cb58db77a0a9c377774baf75a169f4f412360f1c3898bf
   languageName: node
   linkType: hard
 
