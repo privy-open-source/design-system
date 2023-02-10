@@ -9,8 +9,8 @@ export default defineNuxtPlugin(() => {
     getURL () {
       return router.currentRoute.value.fullPath
     },
-    toURL (url: string) {
-      return router.push(url)
+    async toURL (url: string) {
+      return await router.push(url)
     },
   })
 })

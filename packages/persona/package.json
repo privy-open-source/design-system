@@ -1,6 +1,6 @@
 {
   "name": "@privyid/persona",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -16,7 +16,8 @@
     "./directive": {
       "import": "./dist/directive/index.mjs",
       "types": "./dist/directive/index.d.ts"
-    }
+    },
+    "./components/": "./dist/components/"
   },
   "typesVersions": {
     "*": {

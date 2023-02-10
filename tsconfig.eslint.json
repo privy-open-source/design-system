@@ -1,13 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "src/**/*.vue",
-    "src/**/*.ts",
+    "src",
     "src/.vitepress/**/*.ts",
     "src/.vitepress/**/*.vue",
-    "packages/**/*.ts",
-    "packages/**/*.js",
-    "packages/**/*.vue",
     "cypress/**/*.ts",
     "types/**/*.d.ts",
     ".eslintrc.js",
