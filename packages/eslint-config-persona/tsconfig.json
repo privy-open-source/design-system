@@ -18,5 +18,5 @@
   "include": [
     "index.js",
     "index.d.ts"
-  ],
+  ]
 }

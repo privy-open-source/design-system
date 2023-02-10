@@ -1,8 +1,14 @@
 {
   "extends": "./playground/.nuxt/tsconfig.json",
   "include": [
-    "src/",
-    "playground/",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "playground/**/*.ts",
+    "playground/**/*.d.ts",
+    "playground/**/*.tsx",
+    "playground/**/*.vue",
     "./build.config.ts"
   ]
 }

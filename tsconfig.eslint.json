@@ -1,7 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "src",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
     "src/.vitepress/**/*.ts",
     "src/.vitepress/**/*.vue",
     "cypress/**/*.ts",

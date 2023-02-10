@@ -37,6 +37,7 @@
   ],
   "scripts": {
     "prepack": "yarn build && yarn cleanup",
+    "prepare": "yarn dev:prepare",
     "build": "nuxt-module-build",
     "cleanup": "del-cli dist/**/*.{spec,bench}.{d.ts,mjs} dist/**/__mocks__ dist/**/demo dist/**/*.md",
     "dev": "nuxi dev playground",
