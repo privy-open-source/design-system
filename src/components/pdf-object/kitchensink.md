@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 <script setup>
   import pPdfViewer from '../pdf-viewer/PdfViewer.vue'
   import pPdfObject from './PdfObject.vue'
@@ -146,7 +150,7 @@
 ### Simple Usage
 
 <preview>
-  <p-pdf-viewer :src="src" layout="fit" :offset-top="72">
+  <p-pdf-viewer layout="fit" :offset-top="72">
     <template #navbar>
       <button @click="toggle">NGanu</button>
       <button @click="add">Add ({{ items.length }})</button>

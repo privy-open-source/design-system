@@ -124,6 +124,7 @@ export default defineComponent({
     },
   },
   emits: [
+    'ready',
     'loaded',
     'error',
     'error-password',
@@ -158,6 +159,7 @@ export default defineComponent({
       error,
       onLoaded,
       onError,
+      onReady,
     } = useViewer(container, viewer)
 
     watchDebounced(() => [props.src, props.password], ([src, password]) => {
@@ -182,6 +184,10 @@ export default defineComponent({
         emit('error-password', error_)
       else
         emit('error', error_)
+    })
+
+    onReady((pdfViewer) => {
+      emit('ready', pdfViewer)
     })
 
     provide(PDF_VIEWER_CONTEXT, {
