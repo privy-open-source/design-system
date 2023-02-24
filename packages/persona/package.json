@@ -1,6 +1,6 @@
 {
   "name": "@privyid/persona",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -16,7 +16,8 @@
     "./directive": {
       "import": "./dist/directive/index.mjs",
       "types": "./dist/directive/index.d.ts"
-    }
+    },
+    "./components/": "./dist/components/"
   },
   "typesVersions": {
     "*": {
@@ -36,6 +37,7 @@
   ],
   "scripts": {
     "prepack": "yarn build && yarn cleanup",
+    "prepare": "yarn dev:prepare",
     "build": "nuxt-module-build",
     "cleanup": "del-cli dist/**/*.{spec,bench}.{d.ts,mjs} dist/**/__mocks__ dist/**/demo dist/**/*.md",
     "dev": "nuxi dev playground",
@@ -52,11 +54,11 @@
     "@vueuse/core": "9.11.1",
     "@vueuse/math": "^9.4.0",
     "@zxing/browser": "0.1.1",
-    "@zxing/library": "0.19.1",
+    "@zxing/library": "0.19.2",
     "chart.js": "4.2.0",
     "core-js": "3",
     "date-fns": "2.29.3",
-    "defu": "6.1.1",
+    "defu": "6.1.2",
     "fast-equals": "^4.0.3",
     "fuse.js": "6.6.2",
     "interactjs": "1.10.17",

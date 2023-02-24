@@ -85,3 +85,7 @@ export {
 export {
   usePreview,
 } from '../components/cropper/'
+
+export {
+  usePdfContext,
+} from '../components/pdf-viewer'
