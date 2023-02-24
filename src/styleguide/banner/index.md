@@ -1,3 +1,7 @@
+---
+title: Banner · Style guide
+description: Banner style guide
+---
 <script setup>
   import Banner from '../../components/banner/Banner.vue'
   import Button from '../../components/button/Button.vue'
