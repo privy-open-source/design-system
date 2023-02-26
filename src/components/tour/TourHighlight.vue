@@ -57,7 +57,7 @@ export default defineComponent({
   }
 
   &__highlight {
-    @apply absolute shadow-mask cursor-pointer rounded-sm;
+    @apply absolute shadow-mask cursor-pointer rounded-tn;
   }
 }
 </style>

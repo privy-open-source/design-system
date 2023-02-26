@@ -1,3 +1,8 @@
+---
+title: Button · Style guide
+description: Button style guide
+---
+
 <script setup>
   import Button from '../../components/button/Button.vue'
   import IconBee from '@carbon/icons-vue/lib/bee/20'

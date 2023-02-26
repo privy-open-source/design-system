@@ -161,7 +161,7 @@ export default defineComponent({
   * with custom icon
   */
   &__icon {
-    @apply w-5 h-5 border rounded-sm border-subtle inline-flex items-center justify-center bg-default;
+    @apply w-5 h-5 border rounded-tn border-subtle inline-flex items-center justify-center bg-default;
 
     > svg {
       @apply w-3 fill-default;

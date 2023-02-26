@@ -1,3 +1,8 @@
+---
+title: Checkbox & Radio · Style guide
+description: Checkbox & radio style guide
+---
+
 <script setup>
   import Radio from '../../components/radio/Radio.vue'
   import Checkbox from '../../components/checkbox/Checkbox.vue'

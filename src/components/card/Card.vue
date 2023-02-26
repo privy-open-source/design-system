@@ -214,7 +214,7 @@ export default defineComponent({
   * Card Callout is enable
   */
   &&--callout {
-    @apply shadow;
+    @apply shadow-sm;
   }
 
   &__header {

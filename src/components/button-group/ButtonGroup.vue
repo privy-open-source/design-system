@@ -137,11 +137,11 @@ export default defineComponent({
         @apply px-2 py-[2px] gap-1 text-sm;
 
         &:first-child {
-          @apply rounded-l-[6px];
+          @apply rounded-l-xs;
         }
 
         &:last-child {
-          @apply rounded-r-[6px];
+          @apply rounded-r-xs;
         }
       }
 
@@ -158,11 +158,11 @@ export default defineComponent({
         @apply px-4 py-1 gap-2 text-base;
 
         &:first-child {
-          @apply rounded-l-[7px];
+          @apply rounded-l-sm;
         }
 
         &:last-child {
-          @apply rounded-r-[7px];
+          @apply rounded-r-sm;
         }
       }
 
