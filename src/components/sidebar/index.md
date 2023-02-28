@@ -14,6 +14,10 @@ description: Base dashboard sidebar menu.
   import IconDataStructured from '@carbon/icons-vue/lib/data--structured/20'
   import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
   import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
+  import pCheckbox from '../checkbox/Checkbox.vue'
+  import { ref } from "vue-demi"
+
+  const modelA   = ref(false)
 </script>
 
 <style scoped>
@@ -35,7 +39,10 @@ description: Base dashboard sidebar menu.
 ### Basic Sidebar
 
 <preview>
-  <p-sidebar>
+  <div class="flex justify-end mt-10">{{ modelA }}
+    <p-checkbox v-model="modelA">Checkbox Label</p-checkbox>
+  </div>
+  <p-sidebar v-model="modelA" toggleable="md" fixed>
     <p-sidebar-brand>
       <img src="./assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>

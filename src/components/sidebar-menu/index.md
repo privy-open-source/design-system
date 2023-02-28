@@ -14,6 +14,8 @@ description: Define sidebar using JSON
   import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
   import IconEN from './assets/images/img-flag.svg'
 
+  const modelA   = ref(false)
+
   const basic = defineMenu([
     {
       items: [

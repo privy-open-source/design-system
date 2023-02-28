@@ -1,22 +1,38 @@
 <template>
-  <div class="app">
+  <main class="main">
     <slot />
-  </div>
+  </main>
 </template>
 
 <style lang="postcss">
-/**
-* Global Styling
-*
-*
- */
-.app {
+.main {
   /**
-  * Hyperlink
+  * Permalink
   */
   a {
     --p-color-primary-hover: darken(theme(backgroundColor.accent.emphasis), 5%);
     @apply underline text-accent hover:bg-[color:var(--p-color-primary-hover)];
+  }
+
+  /**
+  * Paragraph
+  */
+  p {
+    @apply text-base;
+  }
+
+  /**
+  * Small
+  */
+  small {
+    @apply text-tn;
+  }
+
+  /**
+  * Strong
+  */
+  strong {
+    @apply font-bold;
   }
 
   /**
@@ -25,6 +41,5 @@
   caption {
     @apply text-xs text-muted;
   }
-
 }
 </style>
