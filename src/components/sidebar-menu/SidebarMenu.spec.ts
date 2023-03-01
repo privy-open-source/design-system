@@ -157,3 +157,18 @@ it('should be able to make sidebar fixed via prop `fixed`', () => {
   expect(sidebar).toBeInTheDocument()
   expect(sidebar).toHaveClass('sidebar--fixed')
 })
+
+it('should be able to make sidebar expand automatically via prop `toggleable`', () => {
+  const screen = render({
+    components: { SidebarMenu },
+    template  : `
+      <SidebarMenu toggleable="md">
+      </SidebarMenu>
+    `,
+  })
+
+  const sidebar = screen.queryByTestId('sidebar-menu')
+
+  expect(sidebar).toBeInTheDocument()
+  expect(sidebar).toHaveClass('sidebar--toggleable', 'sidebar--toggleable-md')
+})
