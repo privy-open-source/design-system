@@ -273,6 +273,10 @@ export default defineConfig({
               link: '/components/navbar/',
             },
             {
+              text: 'Page',
+              link: '/components/page/',
+            },
+            {
               text: 'Sidebar',
               link: '/components/sidebar/',
             },
