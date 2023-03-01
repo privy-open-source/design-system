@@ -88,14 +88,26 @@ export default defineComponent({
 
     &&-lg {
       @apply lg:pl-[230px];
+
+      &:not(.page--type-narrow) {
+        @apply lg:pl-[60px];
+      }
     }
 
     &&-md {
       @apply md:pl-[230px];
+
+      &:not(.page--type-narrow) {
+        @apply md:pl-[60px];
+      }
     }
 
     &&-sm {
       @apply sm:pl-[230px];
+
+      &:not(.page--type-narrow) {
+        @apply sm:pl-[60px];
+      }
     }
   }
 }
