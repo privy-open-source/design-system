@@ -115,15 +115,15 @@ export default defineComponent({
   }
 
   &--md {
-    @apply text-sm px-3 py-1 rounded-[7px];
+    @apply text-sm px-3 py-1 rounded-sm;
   }
 
   &--sm {
-    @apply text-xs px-2 py-[0.125rem] rounded-[6px];
+    @apply text-xs px-2 py-[0.125rem] rounded-xs;
   }
 
   &--xs {
-    @apply px-2 py-0 text-tn rounded-sm;
+    @apply px-2 py-0 text-tn rounded-tn;
   }
 
   /**

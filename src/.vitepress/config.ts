@@ -47,16 +47,24 @@ export default defineConfig({
           collapsible: true,
           items      : [
             {
+              text: 'Borders',
+              link: '/foundation/borders/',
+            },
+            {
               text: 'Colors',
               link: '/foundation/colors/',
+            },
+            {
+              text: 'Shadows',
+              link: '/foundation/shadows/',
             },
             {
               text: 'Typography',
               link: '/foundation/typography/',
             },
             {
-              text: 'Borders',
-              link: '/foundation/borders/',
+              text: 'Variables',
+              link: '/foundation/variables/',
             },
           ],
         },
@@ -263,6 +271,10 @@ export default defineConfig({
             {
               text: 'Navbar',
               link: '/components/navbar/',
+            },
+            {
+              text: 'Page',
+              link: '/components/page/',
             },
             {
               text: 'Sidebar',

@@ -3,6 +3,7 @@
     data-testid="sidebar-menu"
     :type="type"
     :fixed="fixed"
+    :toggleable="toggleable"
     :align="align">
     <slot />
     <SidebarNav
@@ -68,6 +69,7 @@ import NavItem from '../nav/NavItem.vue'
 import NavSubItem from '../nav/NavSubItem.vue'
 import { Menu } from '.'
 import { AlignVariant } from '../nav'
+import { ToggleableVariant } from '../navbar'
 
 export default defineComponent({
   components: {
@@ -89,6 +91,10 @@ export default defineComponent({
     align: {
       type   : String as PropType<AlignVariant>,
       default: 'left',
+    },
+    toggleable: {
+      type   : String as PropType<ToggleableVariant>,
+      default: undefined,
     },
   },
 })

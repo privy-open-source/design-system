@@ -293,12 +293,12 @@ export default defineComponent({
       > .dropdown__item {
         &:first-child,
         .dropdown__subitem:first-child & {
-          @apply rounded-t-[7px];
+          @apply rounded-t-sm;
         }
 
         &:last-child,
         .dropdown__subitem:last-child & {
-          @apply rounded-b-[7px];
+          @apply rounded-b-sm;
         }
       }
     }

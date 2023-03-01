@@ -93,16 +93,20 @@ export default defineComponent({
     @apply self-center;
   }
 
+  > * {
+    @apply relative z-[2];
+  }
+
   /*
   * Button has 4 different sizing
   * eg: xs, sm, md, and lg
   */
   &&--xs {
-    @apply px-2 py-[2px] gap-1 text-sm rounded-[6px];
+    @apply px-2 py-[2px] gap-1 text-sm rounded-xs;
   }
 
   &&--sm {
-    @apply px-4 py-1 gap-2 text-base tracking-wider rounded-[7px];
+    @apply px-4 py-1 gap-2 text-base tracking-wider rounded-sm;
   }
 
   &&--md {
@@ -122,7 +126,7 @@ export default defineComponent({
 
     &.btn {
       &--default {
-        @apply bg-default-alpha hover:bg-subtle-alpha focus:bg-subtle-alpha active:bg-subtle-alpha text-subtle hover:text-default focus:text-default;
+        @apply bg-default-alpha focus:bg-subtle-alpha active:bg-subtle-alpha text-subtle hover:text-default focus:text-default;
       }
 
       &--primary {

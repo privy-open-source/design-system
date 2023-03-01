@@ -1,3 +1,8 @@
+---
+title: Navbar · Style guide
+description: Navbar style guide
+---
+
 <script setup>
   import Heading from '../../components/heading/Heading.vue'
   import { ref } from 'vue-demi'
