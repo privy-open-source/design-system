@@ -33,6 +33,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
 
   const loadEvent  = createEventHook<PDFJS.PDFDocumentProxy>()
   const errorEvent = createEventHook<Error>()
+  const readyEvent = createEventHook<PDFViewer>()
 
   async function openDoc (url: string, password?: string) {
     loading.value = true
@@ -101,9 +102,13 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
       const bus = new EventBus()
 
       bus.on('pagesinit', () => {
-        pdfViewer.value.currentScaleValue = 'page-width'
+        const isWide = viewer.value.clientWidth >= 793
+
+        pdfViewer.value.currentScaleValue = isWide ? '1' : 'page-width'
         pdfViewer.value.currentPageNumber = page.value
         ready.value                       = true
+
+        readyEvent.trigger(pdfViewer.value)
       })
 
       bus.on('pagechanging', (event: { pageNumber: number }) => {
@@ -178,5 +183,6 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
     pdfJS         : pdfJS,
     onLoaded      : loadEvent.on,
     onError       : errorEvent.on,
+    onReady       : readyEvent.on,
   }
 }

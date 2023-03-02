@@ -9,8 +9,8 @@
       class="pdf__header">
       <slot
         name="header"
-        :page="page"
-        :scale="scale"
+        :page="pdfPage"
+        :scale="pdfScale"
         :total-page="totalPage"
         :doc="pdfDoc" />
     </div>
@@ -31,8 +31,8 @@
           ref="viewer"
           class="pdf__viewer pdfViewer" />
         <slot
-          :page="page"
-          :scale="scale"
+          :page="pdfPage"
+          :scale="pdfScale"
           :total-page="totalPage"
           :doc="pdfDoc" />
       </div>
@@ -40,8 +40,8 @@
 
       <slot
         name="container"
-        :page="page"
-        :scale="scale"
+        :page="pdfPage"
+        :scale="pdfScale"
         :total-page="totalPage"
         :doc="pdfDoc" />
 
@@ -52,16 +52,16 @@
 
       <slot
         name="body"
-        :page="page"
-        :scale="scale"
+        :page="pdfPage"
+        :scale="pdfScale"
         :total-page="totalPage"
         :doc="pdfDoc" />
     </PdfObjects>
     <div class="pdf__footer">
       <slot
         name="footer"
-        :page="page"
-        :scale="scale"
+        :page="pdfPage"
+        :scale="pdfScale"
         :total-page="totalPage"
         :doc="pdfDoc" />
     </div>
@@ -82,7 +82,9 @@ import { pAspectRatio } from '../aspect-ratio'
 import {
   templateRef,
   useToNumber,
+  useVModel,
   watchDebounced,
+  syncRef,
 } from '@vueuse/core'
 import { LayoutVariant, PDF_VIEWER_CONTEXT } from '.'
 import { useSticky } from './utils/use-sticky'
@@ -106,6 +108,14 @@ export default defineComponent({
       type   : String,
       default: '',
     },
+    page: {
+      type   : Number,
+      default: 1,
+    },
+    scale: {
+      type   : Number,
+      default: 1,
+    },
     password: {
       type   : String,
       default: undefined,
@@ -124,15 +134,21 @@ export default defineComponent({
     },
   },
   emits: [
+    'ready',
     'loaded',
     'error',
     'error-password',
+    'update:page',
+    'update:scale',
   ],
   setup (props, { emit }) {
     const root      = templateRef<HTMLDivElement>('root')
     const container = templateRef<HTMLDivElement>('container')
     const viewer    = templateRef<HTMLDivElement>('viewer')
     const idle      = useIdle(container)
+
+    const vPage  = useVModel(props, 'page')
+    const vScale = useVModel(props, 'scale')
 
     const offsetTop    = useToNumber(toRef(props, 'offsetTop'), { nanToZero: true })
     const enableSticky = useSticky(root, { offsetTop: offsetTop })
@@ -147,8 +163,8 @@ export default defineComponent({
     })
 
     const {
-      page,
-      scale,
+      page: pdfPage,
+      scale: pdfScale,
       totalPage,
       openDoc,
       closeDoc,
@@ -158,6 +174,7 @@ export default defineComponent({
       error,
       onLoaded,
       onError,
+      onReady,
     } = useViewer(container, viewer)
 
     watchDebounced(() => [props.src, props.password], ([src, password]) => {
@@ -184,16 +201,23 @@ export default defineComponent({
         emit('error', error_)
     })
 
+    onReady((pdfViewer) => {
+      emit('ready', pdfViewer)
+    })
+
     provide(PDF_VIEWER_CONTEXT, {
-      page,
-      scale,
+      page : pdfPage,
+      scale: pdfScale,
       totalPage,
     })
 
+    syncRef(pdfPage, vPage)
+    syncRef(pdfScale, vScale)
+
     return {
+      pdfPage,
+      pdfScale,
       classNames,
-      page,
-      scale,
       totalPage,
       openDoc,
       closeDoc,
