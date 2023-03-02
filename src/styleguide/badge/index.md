@@ -1,3 +1,7 @@
+---
+title: Badge · Style guide
+description: Badge style guide
+---
 <script setup>
   import Badge from '../../components/badge/Badge.vue'
 </script>

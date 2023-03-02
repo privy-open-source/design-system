@@ -306,12 +306,42 @@ The borders and also rings colors of Persona is based on [semantics borders colo
   </div>
 
   <div class="space-y-4">
+    <div class="w-28 h-28 border border-default rounded-tn"></div>
+    <div class="space-y-1">
+      <p-caption size="tn" class="!text-default">tiny</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderRadius.tn</p-caption>
+      <p-caption size="tn" class="!text-subtle">rounded-tn</p-caption>
+      <p-caption size="tn" class="!text-subtle" weight="bold">4px</p-caption>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <div class="w-28 h-28 border border-default rounded-xs"></div>
+    <div class="space-y-1">
+      <p-caption size="tn" class="!text-default">xsmall</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderRadius.xs</p-caption>
+      <p-caption size="tn" class="!text-subtle">rounded-xs</p-caption>
+      <p-caption size="tn" class="!text-subtle" weight="bold">6px</p-caption>
+    </div>
+  </div>
+
+  <div class="space-y-4">
     <div class="w-28 h-28 border border-default rounded-sm"></div>
     <div class="space-y-1">
       <p-caption size="tn" class="!text-default">small</p-caption>
       <p-caption size="tn" class="!text-lightblue-50">borderRadius.sm</p-caption>
       <p-caption size="tn" class="!text-subtle">rounded-sm</p-caption>
-      <p-caption size="tn" class="!text-subtle" weight="bold">4px</p-caption>
+      <p-caption size="tn" class="!text-subtle" weight="bold">7px</p-caption>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <div class="w-28 h-28 border border-default rounded"></div>
+    <div class="space-y-1">
+      <p-caption size="tn" class="!text-default">DEFAULT</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderRadius.DEFAULT</p-caption>
+      <p-caption size="tn" class="!text-subtle">rounded</p-caption>
+      <p-caption size="tn" class="!text-subtle" weight="bold">8px</p-caption>
     </div>
   </div>
   
@@ -321,7 +351,7 @@ The borders and also rings colors of Persona is based on [semantics borders colo
       <p-caption size="tn" class="!text-default">medium</p-caption>
       <p-caption size="tn" class="!text-lightblue-50">borderRadius.md</p-caption>
       <p-caption size="tn" class="!text-subtle">rounded-md</p-caption>
-      <p-caption size="tn" class="!text-subtle" weight="bold">8px</p-caption>
+      <p-caption size="tn" class="!text-subtle" weight="bold">12px</p-caption>
     </div>
   </div>
   
@@ -331,7 +361,7 @@ The borders and also rings colors of Persona is based on [semantics borders colo
       <p-caption size="tn" class="!text-default">large</p-caption>
       <p-caption size="tn" class="!text-lightblue-50">borderRadius.lg</p-caption>
       <p-caption size="tn" class="!text-subtle">rounded-lg</p-caption>
-      <p-caption size="tn" class="!text-subtle" weight="bold">12px</p-caption>
+      <p-caption size="tn" class="!text-subtle" weight="bold">14px</p-caption>
     </div>
   </div>
   
@@ -351,6 +381,16 @@ The borders and also rings colors of Persona is based on [semantics borders colo
       <p-caption size="tn" class="!text-default">2xlarge</p-caption>
       <p-caption size="tn" class="!text-lightblue-50">borderRadius.2xl</p-caption>
       <p-caption size="tn" class="!text-subtle">rounded-2xl</p-caption>
+      <p-caption size="tn" class="!text-subtle" weight="bold">20px</p-caption>
+    </div>
+  </div>
+  
+  <div class="space-y-4">
+    <div class="w-28 h-28 border border-default rounded-3xl"></div>
+    <div class="space-y-1">
+      <p-caption size="tn" class="!text-default">3xlarge</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderRadius.3xl</p-caption>
+      <p-caption size="tn" class="!text-subtle">rounded-3xl</p-caption>
       <p-caption size="tn" class="!text-subtle" weight="bold">22px</p-caption>
     </div>
   </div>

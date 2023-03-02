@@ -216,7 +216,7 @@ export default defineComponent({
   */
   &&--checkbox {
     .radio__icon {
-      @apply rounded-sm;
+      @apply rounded-tn;
     }
   }
 

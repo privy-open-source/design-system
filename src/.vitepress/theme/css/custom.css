@@ -83,6 +83,26 @@
   .token.attr-name {
     @apply text-[#cc99cd];
   }
+
+  .table-list {
+    @apply mt-4 p-3 rounded border shadow-sm;
+
+    table {
+      @apply table w-full my-0;
+
+      tr {
+        @apply border-t-0 bg-transparent;
+      }
+
+      th {
+        @apply border-0 bg-transparent font-bold text-default;
+      }
+
+      td {
+        @apply border-0 border-t border-[color:var(--vp-c-divider)];
+      }
+    }
+  }
 }
 
 .vp-doc {

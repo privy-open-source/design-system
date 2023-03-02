@@ -1,3 +1,8 @@
+---
+title: Button Group · Style guide
+description: Button group style guide
+---
+
 <script setup>
   import ButtonGroup from '../../components/button-group/ButtonGroup.vue'
   import Button from '../../components/button/Button.vue'
