@@ -1,0 +1,100 @@
+<svg
+  role="img"
+  width="595"
+  height="842"
+  aria-labelledby="loading-aria"
+  viewBox="0 0 595 842"
+  preserveAspectRatio="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id="loading-aria">Loading...</title>
+  <rect
+    x="0"
+    y="0"
+    width="100%"
+    height="100%"
+    clip-path="url(#clip-path)"
+    style='fill: url("#fill");'
+  ></rect>
+  <defs>
+    <clipPath id="clip-path">
+      <rect x="44" y="64" width="191" height="14" rx="2.06766" />
+      <rect x="44" y="94" width="140" height="14" rx="2.06766" />
+      <rect x="44" y="152" width="507" height="14" rx="7" />
+      <rect x="44" y="182" width="507" height="14" rx="7" />
+      <rect x="44" y="212" width="507" height="14" rx="7" />
+      <rect x="44" y="242" width="507" height="14" rx="7" />
+      <rect x="44" y="272" width="507" height="14" rx="7" />
+      <rect x="44" y="302" width="507" height="14" rx="7" />
+      <rect x="44" y="332" width="349" height="14" rx="7" />
+      <rect x="44" y="390" width="507" height="14" rx="7" />
+      <rect x="44" y="420" width="507" height="14" rx="7" />
+      <rect x="44" y="450" width="507" height="14" rx="7" />
+      <rect x="44" y="480" width="507" height="14" rx="7" />
+      <rect x="44" y="510" width="507" height="14" rx="7" />
+      <rect x="44" y="540" width="507" height="14" rx="7" />
+      <rect x="44" y="570" width="183" height="14" rx="7" />
+      <rect x="360" y="628" width="191" height="14" rx="2.06766" />
+      <rect x="411" y="678" width="140" height="14" rx="2.06766" />
+      <rect x="44" y="64" width="191" height="14" rx="2.06766" />
+      <rect x="44" y="94" width="140" height="14" rx="2.06766" />
+      <rect x="44" y="152" width="507" height="14" rx="7" />
+      <rect x="44" y="182" width="507" height="14" rx="7" />
+      <rect x="44" y="212" width="507" height="14" rx="7" />
+      <rect x="44" y="242" width="507" height="14" rx="7" />
+      <rect x="44" y="272" width="507" height="14" rx="7" />
+      <rect x="44" y="302" width="507" height="14" rx="7" />
+      <rect x="44" y="332" width="349" height="14" rx="7" />
+      <rect x="44" y="390" width="507" height="14" rx="7" />
+      <rect x="44" y="420" width="507" height="14" rx="7" />
+      <rect x="44" y="450" width="507" height="14" rx="7" />
+      <rect x="44" y="480" width="507" height="14" rx="7" />
+      <rect x="44" y="510" width="507" height="14" rx="7" />
+      <rect x="44" y="540" width="507" height="14" rx="7" />
+      <rect x="44" y="570" width="183" height="14" rx="7" />
+      <rect x="360" y="628" width="191" height="14" rx="2.06766" />
+      <rect x="411" y="678" width="140" height="14" rx="2.06766" />
+    </clipPath>
+    <linearGradient id="fill">
+      <stop
+        offset="0.599964"
+        stop-color="#E7E7E8"
+        stop-opacity="1"
+      >
+        <animate
+          attributeName="offset"
+          values="-2; -2; 1"
+          keyTimes="0; 0.25; 1"
+          dur="2s"
+          repeatCount="indefinite"
+        ></animate>
+      </stop>
+      <stop
+        offset="1.59996"
+        stop-color="#CFCFD1"
+        stop-opacity="1"
+      >
+        <animate
+          attributeName="offset"
+          values="-1; -1; 2"
+          keyTimes="0; 0.25; 1"
+          dur="2s"
+          repeatCount="indefinite"
+        ></animate>
+      </stop>
+      <stop
+        offset="2.59996"
+        stop-color="#E7E7E8"
+        stop-opacity="1"
+      >
+        <animate
+          attributeName="offset"
+          values="0; 0; 3"
+          keyTimes="0; 0.25; 1"
+          dur="2s"
+          repeatCount="indefinite"
+        ></animate>
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
