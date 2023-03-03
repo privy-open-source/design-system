@@ -1,6 +1,6 @@
 {
   "name": "@privyid/persona",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -74,6 +74,9 @@
     "webfontloader": "1.6.28",
     "zxcvbn": "^4.4.2"
   },
+  "browserslist": [
+    "extends @privyid/browserslist-config"
+  ],
   "peerDependencies": {
     "@privyid/tailwind-preset": "workspace:^",
     "postcss-custom-properties": "^12.1.11",
@@ -86,8 +89,10 @@
     "@nuxt/module-builder": "latest",
     "@nuxt/schema": "3.0.0",
     "@nuxtjs/tailwindcss": "^6.2.0",
+    "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@types/sanitize-html": "^2",
+    "browserslist-to-esbuild": "^1.2.0",
     "del-cli": "5.0.0",
     "nuxt": "3.0.0",
     "postcss-custom-properties": "^12.1.11",
