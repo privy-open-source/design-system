@@ -313,6 +313,10 @@ export default defineConfig({
               text: 'PDF Object',
               link: '/components/pdf-object/',
             },
+            {
+              text: 'PDF Helipad',
+              link: '/components/pdf-helipad/',
+            },
           ],
         },
         {

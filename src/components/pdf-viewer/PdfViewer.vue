@@ -4,6 +4,8 @@
     v-p-aspect-ratio="layout === 'fixed' ? ratio : 16/9"
     data-testid="pdf-viewer"
     class="pdf"
+    :data-page="pdfPage"
+    :data-scale="pdfScale"
     :class="classNames">
     <div
       class="pdf__header">
