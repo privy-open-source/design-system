@@ -27,11 +27,6 @@ description: Base dropdown button, suit for action menus
 
 ### Simple Usage
 <preview>
-  <p-dropdown text="Show more" no-caret>
-    <div class="p-3"><p-truncate
-    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iste."
-    length="25" /></div>
-  </p-dropdown>
   <p-dropdown text="Click Here">
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
