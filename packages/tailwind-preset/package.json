@@ -1,7 +1,14 @@
 {
   "name": "@privyid/tailwind-preset",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "packageManager": "yarn@3.3.1",
+  "license": "MIT",
+  "repository": "https://github.com/privy-open-source/design-system",
+  "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",
+  "bugs": {
+    "url": "https://github.com/privy-open-source/design-system/issues"
+  },
+  "homepage": "https://privy-open-source.github.io/design-system/",
   "main": "./index.js",
   "types": "./index.d.ts",
   "files": [

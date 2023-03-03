@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { Plugin } from 'vite'
 import { babel } from '@rollup/plugin-babel'
+import getTarget from 'browserslist-to-esbuild'
 import head from './head'
 
 export default defineConfig({
@@ -32,9 +33,9 @@ export default defineConfig({
     sidebar: {
       '/docs/': [
         {
-          text       : 'Documentation',
-          collapsible: true,
-          items      : [
+          text     : 'Documentation',
+          collapsed: true,
+          items    : [
             { text: 'Instalation', link: '/docs/getting-started' },
             { text: 'Editor Setup', link: '/docs/editor-setup' },
             { text: 'Browser Support', link: '/docs/browser-support' },
@@ -43,9 +44,9 @@ export default defineConfig({
       ],
       '/foundation/': [
         {
-          text       : 'Foundation',
-          collapsible: true,
-          items      : [
+          text     : 'Foundation',
+          collapsed: true,
+          items    : [
             {
               text: 'Borders',
               link: '/foundation/borders/',
@@ -71,9 +72,9 @@ export default defineConfig({
       ],
       '/components/': [
         {
-          text       : 'Base',
-          collapsible: true,
-          items      : [
+          text     : 'Base',
+          collapsed: true,
+          items    : [
             {
               text: 'Avatar',
               link: '/components/avatar/',
@@ -173,9 +174,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Typography',
-          collapsible: true,
-          items      : [
+          text     : 'Typography',
+          collapsed: true,
+          items    : [
             {
               text: 'Caption',
               link: '/components/caption/',
@@ -199,9 +200,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Form',
-          collapsible: true,
-          items      : [
+          text     : 'Form',
+          collapsed: true,
+          items    : [
             {
               text: 'Calendar',
               link: '/components/calendar/',
@@ -261,9 +262,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Dashboard',
-          collapsible: true,
-          items      : [
+          text     : 'Dashboard',
+          collapsed: true,
+          items    : [
             {
               text: 'Filterbar',
               link: '/components/filterbar/',
@@ -287,9 +288,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Signature',
-          collapsible: true,
-          items      : [
+          text     : 'Signature',
+          collapsed: true,
+          items    : [
             {
               text: 'Signature Draw',
               link: '/components/signature-draw/',
@@ -301,9 +302,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'PDF',
-          collapsible: true,
-          items      : [
+          text     : 'PDF',
+          collapsed: true,
+          items    : [
             {
               text: 'PDF Viewer',
               link: '/components/pdf-viewer/',
@@ -315,9 +316,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Non-Component',
-          collapsible: true,
-          items      : [
+          text     : 'Non-Component',
+          collapsed: true,
+          items    : [
             {
               text: 'Dialog',
               link: '/components/dialog/',
@@ -337,9 +338,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Headless',
-          collapsible: true,
-          items      : [
+          text     : 'Headless',
+          collapsed: true,
+          items    : [
             {
               text: 'Dropzone',
               link: '/components/dropzone/',
@@ -355,9 +356,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Directive',
-          collapsible: true,
-          items      : [
+          text     : 'Directive',
+          collapsed: true,
+          items    : [
             {
               text: 'Aspect Ratio',
               link: '/components/aspect-ratio/',
@@ -375,9 +376,9 @@ export default defineConfig({
       ],
       '/styleguide/': [
         {
-          text       : 'Guide',
-          collapsible: true,
-          items      : [
+          text     : 'Guide',
+          collapsed: true,
+          items    : [
             {
               text: 'Badge',
               link: '/styleguide/badge/',
@@ -408,6 +409,7 @@ export default defineConfig({
     },
   },
   vite: {
+    build  : { target: getTarget('extends @privyid/browserslist-config') },
     plugins: [
       babel({
         babelHelpers: 'bundled',
