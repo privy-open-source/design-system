@@ -20,7 +20,7 @@
     {
       browser: 'Chrome',
       icon   : 'chrome',
-      version: '80',
+      version: '62',
     },
     {
       browser: 'Firefox',
