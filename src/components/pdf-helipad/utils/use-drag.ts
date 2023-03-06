@@ -6,15 +6,28 @@ import {
   watch,
 } from 'vue-demi'
 
-export interface DragHooks {
+export interface DragOptions {
+  scale: Ref<number>,
+  width: Ref<number>,
+  height: Ref<number>,
+
   onstart?: (event: InteractEvent) => void,
   onmove?: (event: InteractEvent) => void,
   onend?: (event: InteractEvent) => void,
 }
 
-export default function useDrag (target: Ref<HTMLElement>, hooks?: DragHooks) {
+export default function useDrag (target: Ref<HTMLElement>, options?: DragOptions) {
   const enable   = shallowRef(true)
   const instance = shallowRef<Interactable>()
+
+  const {
+    // width,
+    // height,
+    // scale,
+    onstart,
+    onmove,
+    onend,
+  } = options
 
   async function init () {
     destroy()
@@ -22,26 +35,28 @@ export default function useDrag (target: Ref<HTMLElement>, hooks?: DragHooks) {
     if (target.value) {
       const { default: Interact } = await import('interactjs')
 
-      // Interact.dynamicDrop(true)
-
       instance.value = Interact(target.value)
         .draggable({
-          inertia  : true,
-          enabled  : enable.value,
-          onstart  : hooks.onstart,
-          onmove   : hooks.onmove,
-          onend    : hooks.onend,
-          modifiers: [
-            Interact.modifiers.restrict({
-              restriction: 'body',
-              elementRect: {
-                top   : 0,
-                left  : 0,
-                bottom: 1,
-                right : 1,
-              },
-            }),
-          ],
+          inertia   : true,
+          enabled   : enable.value,
+          autoScroll: true,
+          onstart   : onstart,
+          onmove    : onmove,
+          onend     : onend,
+          // modifiers : [
+          // Interact.modifiers.restrictRect({
+          //   restriction: () => {
+          //     // const rect = Interact.getElementRect(target.value)
+
+          //     return {
+          //       top   : 0,
+          //       left  : 0,
+          //       right :  window.innerWidth,
+          //       bottom: window.scrollY + window.innerHeight,
+          //     }
+          //   },
+          // }),
+          // ],
         })
     }
   }

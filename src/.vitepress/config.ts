@@ -10,7 +10,7 @@ export default defineConfig({
   description: 'Persona - PrivyID\'s Design System, built on top Nuxt3, Typescript and Tailwind',
   head       : head,
   themeConfig: {
-    logo    : './assets/images/logo.svg',
+    logo    : '/assets/images/logo.svg',
     editLink: { pattern: 'https://github.com/privy-open-source/design-system/edit/main/src/:path' },
     footer  : {
       message  : 'Released under the MIT License.',

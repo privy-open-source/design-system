@@ -6,7 +6,9 @@
       ref="object"
       class="pdf-object pdf-object--external"
       :style="{ width: `${width}px`, height: `${height}px` }">
-      <slot />
+      <div class="pdf-object__container">
+        <slot />
+      </div>
     </div>
     <div
       class="pdf-helipad__shadow"
@@ -46,12 +48,17 @@ export default defineComponent({
   setup (props, { emit }) {
     const object = templateRef<HTMLDivElement>('object')
     const scale  = toRef(props, 'scale')
+    const width  = toRef(props, 'width')
+    const height = toRef(props, 'height')
 
     const isDragged = ref(false)
     const x         = ref(0)
     const y         = ref(0)
 
     useDrag(object, {
+      scale,
+      width,
+      height,
       onstart () {
         const { left, top } = object.value.getBoundingClientRect()
 
@@ -60,8 +67,8 @@ export default defineComponent({
         y.value         = top
       },
       onmove (event) {
-        x.value += event.dx
-        y.value += event.dy
+        x.value = event.clientX
+        y.value = event.clientY
       },
       onend (event) {
         isDragged.value = false
@@ -89,7 +96,7 @@ export default defineComponent({
           object.value.style.zIndex    = '50'
         } else {
           object.value.style.position  = 'absolute'
-          object.value.style.transform = ''
+          object.value.style.transform = 'translate(0px, 0px)'
           object.value.style.zIndex    = '2'
         }
       }
@@ -102,14 +109,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf-helipad {
-  @apply relative;
-
-  .pdf-object {
-    @apply top-0 left-0 border-2 border-dashed border-subtle rounded;
-  }
+  @apply relative inline-block;
 
   &__shadow {
-    @apply opacity-25 z-1;
+    @apply opacity-25 z-1 touch-none pointer-events-none;
   }
 }
 </style>
