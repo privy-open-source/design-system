@@ -1,9 +1,11 @@
 <template>
-  <button
+  <component
+    :is="tagName"
+    :href="href"
     data-testid="btn"
     :class="classNames">
     <slot />
-  </button>
+  </component>
 </template>
 
 <script lang="ts">
@@ -17,6 +19,7 @@ import {
   ColorVariant,
   SizeVariant,
   StyleVariant,
+  TagVariant,
 } from '.'
 
 export default defineComponent({
@@ -40,6 +43,10 @@ export default defineComponent({
     pill: {
       type   : Boolean,
       default: false,
+    },
+    href: {
+      type   : String,
+      default: undefined,
     },
   },
   setup (props) {
@@ -65,7 +72,16 @@ export default defineComponent({
       return result
     })
 
-    return { classNames }
+    const tagName = computed(() => {
+      let tag: TagVariant = 'button'
+
+      if (props.href)
+        tag = 'a'
+
+      return tag
+    })
+
+    return { classNames, tagName }
   },
 })
 </script>

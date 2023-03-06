@@ -3,30 +3,29 @@
     data-testid="breadcrumbs-item"
     class="breadcrumbs__item"
     :class="classNames">
-    <span v-if="active">
+    <component
+      :is="tagName"
+      :href="permalink">
       <slot />
-    </span>
-    <a
-      v-else
-      :href="href">
-      <slot />
-    </a>
+    </component>
     <IconChevron
       v-if="!active"
-      class="breadcrumbs__icon" />
+      data-testid="breadcrumbs-icon"
+      class="breadcrumbs__item__icon" />
   </li>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue-demi'
 import IconChevron from '@carbon/icons-vue/lib/chevron--right/16'
+import { TagVariant } from '.'
 
 export default defineComponent({
   components: { IconChevron },
   props     : {
     href: {
       type   : String,
-      default: undefined,
+      default: '#',
     },
     active: {
       type   : Boolean,
@@ -44,7 +43,25 @@ export default defineComponent({
       return result
     })
 
-    return { classNames }
+    const tagName = computed(() => {
+      let tag: TagVariant = 'a'
+
+      if (props.active)
+        tag = 'span'
+
+      return tag
+    })
+
+    const permalink = computed(() => {
+      if (props.active)
+        return
+
+      return props.href
+    })
+
+    return {
+      classNames, tagName, permalink,
+    }
   },
 })
 </script>
@@ -54,8 +71,14 @@ export default defineComponent({
   &__item {
     @apply inline-flex text-sm items-center;
 
+    &:last-child {
+      & > .breadcrumbs__item__icon {
+        @apply hidden;
+      }
+    }
+
     &:not(:last-child) {
-      .breadcrumbs__icon {
+      & > .breadcrumbs__item__icon {
         @apply inline-flex ml-3;
       }
     }

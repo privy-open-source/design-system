@@ -2,18 +2,33 @@
   <ul
     class="breadcrumbs"
     data-testid="breadcrumbs">
-    <template v-if="items">
+    <slot>
       <template
         v-for="(item, id) in items"
         :key="id">
-        <breadcrumb-item
+        <BreadcrumbItemDropdown
+          v-if="item.subitem"
+          :text="item.text"
+          :active="item.active"
+          :href="item.href">
+          <template
+            v-for="(subitem, idx) in item.subitem"
+            :key="idx">
+            <DropdownItem
+              :active="subitem.active"
+              :href="subitem.href">
+              {{ subitem.text }}
+            </DropdownItem>
+          </template>
+        </BreadcrumbItemDropdown>
+        <BreadcrumbItem
+          v-else
           :active="item.active"
           :href="item.href">
           {{ item.text }}
-        </breadcrumb-item>
+        </BreadcrumbItem>
       </template>
-    </template>
-    <slot v-else />
+    </slot>
   </ul>
 </template>
 
@@ -21,10 +36,14 @@
 import { defineComponent } from 'vue-demi'
 import { BreadcrumbItems } from '.'
 import BreadcrumbItem from './BreadcrumbItem.vue'
+import BreadcrumbItemDropdown from './BreadcrumbItemDropdown.vue'
+import DropdownItem from '../dropdown/DropdownItem.vue'
 
 export default defineComponent({
-  components: { BreadcrumbItem },
-  props     : {
+  components: {
+    BreadcrumbItem, BreadcrumbItemDropdown, DropdownItem,
+  },
+  props: {
     items: {
       type   : Array<BreadcrumbItems>,
       default: () => {},

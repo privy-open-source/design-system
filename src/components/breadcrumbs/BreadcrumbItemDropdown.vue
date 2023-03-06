@@ -1,7 +1,7 @@
 <template>
   <li
     data-testid="breadcrumbs-dropdown"
-    class="breadcrumbs__item breadcrumbs__item--dropdown"
+    class="breadcrumbs__item"
     :class="classNames">
     <Dropdown
       :text="text"
@@ -9,15 +9,20 @@
       size="xs">
       <slot />
     </Dropdown>
+    <IconChevron
+      v-if="!active"
+      data-testid="breadcrumbs-icon"
+      class="breadcrumbs__item__icon" />
   </li>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue-demi'
 import Dropdown from '../dropdown/Dropdown.vue'
+import IconChevron from '@carbon/icons-vue/lib/chevron--right/16'
 
 export default defineComponent({
-  components: { Dropdown },
+  components: { Dropdown, IconChevron },
   props     : {
     text: {
       type   : String,
@@ -31,10 +36,11 @@ export default defineComponent({
 
   setup (props) {
     const classNames = computed(() => {
-      const result: string[] = ['']
+      const result: string[] = ['breadcrumbs__item--dropdown']
 
       if (props.active)
         result.push('breadcrumbs__item--active')
+
       return result
     })
 
@@ -47,7 +53,7 @@ export default defineComponent({
 .breadcrumbs__item {
   &&--dropdown {
     .dropdown__activator {
-      @apply text-subtle bg-transparent border-transparent hover:shadow-none hover:border-transparent hover:bg-transparent focus:shadow-none focus:border-transparent focus:bg-transparent;
+      @apply px-0 text-subtle bg-transparent border-transparent hover:shadow-none hover:border-transparent hover:bg-transparent focus:shadow-none focus:border-transparent focus:bg-transparent;
     }
   }
 
