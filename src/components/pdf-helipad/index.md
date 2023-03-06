@@ -125,3 +125,42 @@ description: Add object to PDF Viewer with Drag'n'Drop
   }
 </script>
 ```
+
+## Disabled State
+
+<preview>
+  <p-pdf-helipad disabled>
+    <img class="w-full h-full" :src="IMG_HELICOPTER" />
+  </p-pdf-helipad>
+</preview>
+
+```vue
+<template>
+  <p-pdf-helipad disabled>
+    <img class="w-full h-full" :src="IMG_HELICOPTER" />
+  </p-pdf-helipad>
+</template>
+```
+
+## API
+
+### Props
+
+| Props      |   Type    | Default | Description    |
+|------------|:---------:|:-------:|----------------|
+| `scale`    | `Number`  |   `1`   | Object scale   |
+| `width`    | `Number`  |  `198`  | Object width   |
+| `height`   | `Number`  |  `106`  | Object height  |
+| `disabled` | `Boolean` | `false` | Disabled state |
+
+### Slots
+
+| Name      | Description                                   |
+|-----------|-----------------------------------------------|
+| `default` | Content to place inside the `<p-pdf-helipad>` |
+
+### Events
+
+| Name     | Arguments        | Description                       |
+|----------|------------------|-----------------------------------|
+| `landed` | PdfHelipadResult | Event object successfully dropped |

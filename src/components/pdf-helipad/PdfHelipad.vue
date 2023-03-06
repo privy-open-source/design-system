@@ -1,7 +1,7 @@
 <template>
   <div
-    ref="root"
-    class="pdf-helipad">
+    class="pdf-helipad"
+    :class="classNames">
     <div
       ref="object"
       class="pdf-object pdf-object--external"
@@ -23,9 +23,11 @@
 <script lang="ts">
 import { templateRef } from '@vueuse/core'
 import {
+  computed,
   defineComponent,
   ref,
   toRef,
+  watch,
   watchEffect,
 } from 'vue-demi'
 import { getPosition } from '../pdf-object/utils/position'
@@ -61,7 +63,16 @@ export default defineComponent({
     const x         = ref(0)
     const y         = ref(0)
 
-    useDrag(object, {
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (props.disabled)
+        result.push('pdf-helipad--disabled')
+
+      return result
+    })
+
+    const draggable = useDrag(object, {
       onstart () {
         const { left, top } = object.value.getBoundingClientRect()
 
@@ -109,7 +120,11 @@ export default defineComponent({
       }
     })
 
-    return {}
+    watch(() => props.disabled, (isDisabled) => {
+      draggable.value = !isDisabled
+    }, { immediate: true })
+
+    return { classNames }
   },
 })
 </script>
@@ -120,6 +135,10 @@ export default defineComponent({
 
   &__ghost {
     @apply opacity-25 z-1 touch-none pointer-events-none;
+  }
+
+  &&--disabled {
+    @apply opacity-50;
   }
 }
 </style>
