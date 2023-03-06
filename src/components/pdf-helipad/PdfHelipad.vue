@@ -11,9 +11,11 @@
       </div>
     </div>
     <div
-      class="pdf-helipad__shadow"
+      class="pdf-object pdf-object--external pdf-helipad__ghost"
       :style="{ width: `${width}px`, height: `${height}px` }">
-      <slot />
+      <div class="pdf-object__container">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +45,10 @@ export default defineComponent({
       type   : Number,
       default: 106,
     },
+    disabled: {
+      type   : Boolean,
+      default: false,
+    },
   },
   emits: ['landed'],
   setup (props, { emit }) {
@@ -56,9 +62,6 @@ export default defineComponent({
     const y         = ref(0)
 
     useDrag(object, {
-      scale,
-      width,
-      height,
       onstart () {
         const { left, top } = object.value.getBoundingClientRect()
 
@@ -67,12 +70,10 @@ export default defineComponent({
         y.value         = top
       },
       onmove (event) {
-        x.value = event.clientX
-        y.value = event.clientY
+        x.value = event.clientX - (event.rect.width * scale.value / 2)
+        y.value = event.clientY - (event.rect.height * scale.value / 2)
       },
       onend (event) {
-        isDragged.value = false
-
         if (event.relatedTarget) {
           const reference = event.relatedTarget
           const container = reference.closest('.pdf__container')
@@ -83,8 +84,14 @@ export default defineComponent({
             scale    : scale.value,
           })
 
-          emit('landed', result)
+          emit('landed', {
+            ...result,
+            witdh : width.value,
+            height: height.value,
+          })
         }
+
+        isDragged.value = false
       },
     })
 
@@ -111,7 +118,7 @@ export default defineComponent({
 .pdf-helipad {
   @apply relative inline-block;
 
-  &__shadow {
+  &__ghost {
     @apply opacity-25 z-1 touch-none pointer-events-none;
   }
 }

@@ -112,7 +112,7 @@ description: Add object to PDF Viewer
 <script setup lang="ts">
   import FILE from '~/assets/Calibrator-v3.pdf?url'
 
-  interface PDFObject {
+  interface PdfObject {
     page?: number,
     x?: number,
     y?: number,
@@ -120,7 +120,7 @@ description: Add object to PDF Viewer
     height?: number,
   }
 
-  const object = reactive<PDFObject>({
+  const object = reactive<PdfObject>({
     page  : undefined,
     x     : undefined,
     y     : undefined,
