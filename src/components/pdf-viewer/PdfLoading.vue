@@ -22,7 +22,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf__loading {
-  @apply shadow-lg mb-4 p-4 bg-base-white;
+  @apply shadow-lg mb-4 p-4 bg-base-white max-w-[793px] mx-auto;
 
   > img {
     @apply max-w-full object-contain h-auto;

@@ -2668,8 +2668,9 @@ __metadata:
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.2
     autoprefixer: 10.4.13
+    browserslist-to-esbuild: ^1.2.0
     browserslist-useragent-regexp: ^4.0.0
-    chart.js: 4.2.0
+    chart.js: 4.2.1
     core-js: 3
     date-fns: 2.29.3
     defu: 6.1.2
@@ -2749,6 +2750,7 @@ __metadata:
     "@nuxt/module-builder": latest
     "@nuxt/schema": 3.0.0
     "@nuxtjs/tailwindcss": ^6.2.0
+    "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@testing-library/dom": ^8.19.0
     "@testing-library/user-event": ^14.4.3
@@ -2757,7 +2759,8 @@ __metadata:
     "@vueuse/math": ^9.4.0
     "@zxing/browser": 0.1.1
     "@zxing/library": 0.19.2
-    chart.js: 4.2.0
+    browserslist-to-esbuild: ^1.2.0
+    chart.js: 4.2.1
     core-js: 3
     date-fns: 2.29.3
     defu: 6.1.2
@@ -4955,6 +4958,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist-to-esbuild@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "browserslist-to-esbuild@npm:1.2.0"
+  dependencies:
+    browserslist: ^4.17.3
+  checksum: a6c1adc2ad8da0db23aa4f0b3c71e13561cbf61599e9acedc7890793d79aca250edb0f599095042e81587c88e87569bf3a1a68633026e81e4ac7548eb1c71b49
+  languageName: node
+  linkType: hard
+
 "browserslist-useragent-regexp@npm:^4.0.0":
   version: 4.0.0
   resolution: "browserslist-useragent-regexp@npm:4.0.0"
@@ -4984,6 +4996,20 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: ff512a7bcca1c530e2854bbdfc7be2791d0fb524097a6340e56e1d5924164c7e4e0a9b070de04cdc4c149d15cb4d4275cb7c626ebbce954278a2823aaad2452a
+  languageName: node
+  linkType: hard
+
+"browserslist@npm:^4.17.3":
+  version: 4.21.5
+  resolution: "browserslist@npm:4.21.5"
+  dependencies:
+    caniuse-lite: ^1.0.30001449
+    electron-to-chromium: ^1.4.284
+    node-releases: ^2.0.8
+    update-browserslist-db: ^1.0.10
+  bin:
+    browserslist: cli.js
+  checksum: 9755986b22e73a6a1497fd8797aedd88e04270be33ce66ed5d85a1c8a798292a65e222b0f251bafa1c2522261e237d73b08b58689d4920a607e5a53d56dc4706
   languageName: node
   linkType: hard
 
@@ -5224,6 +5250,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"caniuse-lite@npm:^1.0.30001449":
+  version: 1.0.30001458
+  resolution: "caniuse-lite@npm:1.0.30001458"
+  checksum: 258cc5a25babbbfe483bf788c6f321a19400ff80b2bf156b360bac09a6f9f4da44516350d187a30395667cb142c682d9ea96577ea0df236d35f76234b07ccb41
+  languageName: node
+  linkType: hard
+
 "canvas@npm:^2.10.2, canvas@npm:^2.11.0":
   version: 2.11.0
   resolution: "canvas@npm:2.11.0"
@@ -5314,12 +5347,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chart.js@npm:4.2.0":
-  version: 4.2.0
-  resolution: "chart.js@npm:4.2.0"
+"chart.js@npm:4.2.1":
+  version: 4.2.1
+  resolution: "chart.js@npm:4.2.1"
   dependencies:
     "@kurkle/color": ^0.3.0
-  checksum: 281b023c013de8700a5208a45d35248b02119fadb574d0c104c7e0720605e085195ce546fd3aa27625e9db1188fdd5f7491a411463b9c30b7654a5f4b13d8d80
+  checksum: 7319fdfd1e29812e87bbc07737e8c9072ff659bbc09ade8dd262f83424cd7e48f89afe5220e11e002c9f236883fae3f3adb8adc16acb4682b0ddcc0b661c3af9
   languageName: node
   linkType: hard
 
@@ -6514,6 +6547,13 @@ __metadata:
   version: 1.4.256
   resolution: "electron-to-chromium@npm:1.4.256"
   checksum: 878ca8e33a05165808a662b52ac332a42a5fcf842540de38c4cdde462e4c2cb2f2c10c4864cd44c486f8470f88818f42d275774865666aad424e1e4f500d91e8
+  languageName: node
+  linkType: hard
+
+"electron-to-chromium@npm:^1.4.284":
+  version: 1.4.317
+  resolution: "electron-to-chromium@npm:1.4.317"
+  checksum: 7b7765cdc28fe107f40c21952efd2dd62952d625a28b0700b7302b53b347f5f3c22ab7fae56088b6e32af0de4512a430bd5b1fd2edcc25fd7c5a7619987b38c8
   languageName: node
   linkType: hard
 
@@ -11228,6 +11268,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-releases@npm:^2.0.8":
+  version: 2.0.10
+  resolution: "node-releases@npm:2.0.10"
+  checksum: d784ecde25696a15d449c4433077f5cce620ed30a1656c4abf31282bfc691a70d9618bae6868d247a67914d1be5cc4fde22f65a05f4398cdfb92e0fc83cadfbc
+  languageName: node
+  linkType: hard
+
 "node-rsa@npm:0.4.2":
   version: 0.4.2
   resolution: "node-rsa@npm:0.4.2"
@@ -14935,6 +14982,20 @@ __metadata:
     "@babel/types": ^7.20.2
     scule: ^1.0.0
   checksum: 79359734c6fa02565339f15f4afba0397b18709a7cc6fb9884eba9d63c8362382d8788844e6b19f0a938ac88ad6ed2bbe1dd51842cadeca6e1ec95e3e0aa6c51
+  languageName: node
+  linkType: hard
+
+"update-browserslist-db@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "update-browserslist-db@npm:1.0.10"
+  dependencies:
+    escalade: ^3.1.1
+    picocolors: ^1.0.0
+  peerDependencies:
+    browserslist: ">= 4.21.0"
+  bin:
+    browserslist-lint: cli.js
+  checksum: 12db73b4f63029ac407b153732e7cd69a1ea8206c9100b482b7d12859cd3cd0bc59c602d7ae31e652706189f1acb90d42c53ab24a5ba563ed13aebdddc5561a0
   languageName: node
   linkType: hard
 

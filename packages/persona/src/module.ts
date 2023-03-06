@@ -67,6 +67,7 @@ export default defineNuxtModule<ModuleOptions>({
         'zxcvbn',
         'pdfjs-dist',
         'pdfjs-dist/web/pdf_viewer',
+        'vuedraggable',
       )
     })
   },

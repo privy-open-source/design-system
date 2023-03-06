@@ -1,5 +1,6 @@
 <template>
   <div
+    v-p-aspect-ratio="1122/793"
     data-testid="pdf-error"
     class="pdf__error">
     <h3 class="text-danger">
@@ -28,10 +29,12 @@
 
 <script lang="ts">
 import type * as PDFJS from 'pdfjs-dist'
+import { pAspectRatio } from '../aspect-ratio'
 import { defineComponent, PropType } from 'vue-demi'
 
 export default defineComponent({
-  props: {
+  directives: { pAspectRatio },
+  props     : {
     url: {
       type   : String,
       default: '',
@@ -53,6 +56,6 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf__error {
-  @apply shadow-lg mb-4 p-6 bg-danger w-full h-full;
+  @apply shadow-lg mb-4 p-6 bg-danger w-full h-full max-w-[793px] mx-auto;
 }
 </style>

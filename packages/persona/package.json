@@ -1,7 +1,13 @@
 {
   "name": "@privyid/persona",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "license": "MIT",
+  "repository": "https://github.com/privy-open-source/design-system",
+  "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",
+  "bugs": {
+    "url": "https://github.com/privy-open-source/design-system/issues"
+  },
+  "homepage": "https://privy-open-source.github.io/design-system/",
   "type": "module",
   "exports": {
     ".": {
@@ -55,7 +61,7 @@
     "@vueuse/math": "^9.4.0",
     "@zxing/browser": "0.1.1",
     "@zxing/library": "0.19.2",
-    "chart.js": "4.2.0",
+    "chart.js": "4.2.1",
     "core-js": "3",
     "date-fns": "2.29.3",
     "defu": "6.1.2",
@@ -74,6 +80,9 @@
     "webfontloader": "1.6.28",
     "zxcvbn": "^4.4.2"
   },
+  "browserslist": [
+    "extends @privyid/browserslist-config"
+  ],
   "peerDependencies": {
     "@privyid/tailwind-preset": "workspace:^",
     "postcss-custom-properties": "^12.1.11",
@@ -86,8 +95,10 @@
     "@nuxt/module-builder": "latest",
     "@nuxt/schema": "3.0.0",
     "@nuxtjs/tailwindcss": "^6.2.0",
+    "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@types/sanitize-html": "^2",
+    "browserslist-to-esbuild": "^1.2.0",
     "del-cli": "5.0.0",
     "nuxt": "3.0.0",
     "postcss-custom-properties": "^12.1.11",

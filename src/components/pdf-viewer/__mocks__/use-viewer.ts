@@ -7,6 +7,8 @@ export const loadEvent = createEventHook<PDFJS.PDFDocumentProxy>()
 
 export const errorEvent = createEventHook<Error>()
 
+export const readyEvent = createEventHook()
+
 export const context = reactive({
   page          : 1,
   scale         : 1,
@@ -41,6 +43,7 @@ export const openDoc = vi.fn((src: string, password?: string) => {
         context.totalPage = 5
 
         loadEvent.trigger({} as unknown as PDFJS.PDFDocumentProxy)
+        readyEvent.trigger({})
       }
 
       context.loading = false
@@ -57,5 +60,6 @@ export function useViewer () {
     closeDoc,
     onLoaded: loadEvent.on,
     onError : errorEvent.on,
+    onReady : readyEvent.on,
   }
 }

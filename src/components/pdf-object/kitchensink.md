@@ -1,9 +1,16 @@
+---
+layout: home
+---
+
 <script setup>
+  import pButton from '../button/Button.vue'
   import pPdfViewer from '../pdf-viewer/PdfViewer.vue'
   import pPdfObject from './PdfObject.vue'
   import FILE from '../pdf-viewer/assets/Calibrator-v3.pdf?url'
   import FILE2 from '../pdf-viewer/assets/sample.pdf?url'
   import { reactive, ref } from 'vue-demi'
+
+  const scale = ref(1)
 
   const src   = ref(FILE)
   const items = reactive([
@@ -137,6 +144,10 @@
       fixed : false,
     })
   }
+
+  function setZoom (delta) {
+    scale.value += delta
+  }
 </script>
 
 # PDF Viewer
@@ -145,8 +156,15 @@
 
 ### Simple Usage
 
+<p-button @click="setZoom(0.1)">
+  Zoom In
+</p-button>
+<p-button @click="setZoom(-0.1)">
+  Zoom Out
+</p-button>
+
 <preview>
-  <p-pdf-viewer :src="src" layout="fit" :offset-top="72">
+  <p-pdf-viewer layout="fit" :offset-top="72" :src="FILE" v-model:scale="scale">
     <template #navbar>
       <button @click="toggle">NGanu</button>
       <button @click="add">Add ({{ items.length }})</button>
