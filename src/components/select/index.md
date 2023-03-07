@@ -105,6 +105,26 @@ You can set input placeholder via `placeholder` props
 </template>
 ```
 
+## Sizing
+
+You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`, `xs`. Default size is `md`.
+
+<preview class="flex-col space-y-3">
+  <p-select size="xs" v-model="value" :options="optionsA" placeholder="Size xs" />
+  <p-select size="sm" v-model="value" :options="optionsA" placeholder="Size sm" />
+  <p-select size="md" v-model="value" :options="optionsA" placeholder="Size md" />
+  <p-select size="lg" v-model="value" :options="optionsA" placeholder="Size lg" />
+</preview>
+
+```vue
+<template>
+  <p-select size="xs" v-model="value" :options="options" placeholder="Size xs" />
+  <p-select size="sm" v-model="value" :options="options" placeholder="Size sm" />
+  <p-select size="md" v-model="value" :options="options" placeholder="Size md" />
+  <p-select size="lg" v-model="value" :options="options" placeholder="Size lg" />
+</template>
+```
+
 ## Disabled State
 
 <preview>

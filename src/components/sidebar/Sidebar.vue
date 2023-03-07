@@ -116,7 +116,7 @@ export default defineComponent({
   * Fixed sidebar
   */
   &&--fixed {
-    @apply fixed top-0 h-full;
+    @apply fixed top-0 h-full shadow-lg;
 
     &:not(.sidebar--right) {
       @apply left-0;
