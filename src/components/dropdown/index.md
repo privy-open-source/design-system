@@ -12,6 +12,7 @@ description: Base dropdown button, suit for action menus
   import pCheckbox from '../checkbox/Checkbox.vue'
   import pRadio from '../radio/Radio.vue'
   import pCaption from '../caption/Caption.vue'
+  import pTruncate from '../truncate/Truncate.vue'
   import { ref } from "vue-demi"
 
   const show = ref(false)
