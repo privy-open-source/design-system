@@ -88,10 +88,6 @@ export default defineConfig({
               link: '/components/banner/',
             },
             {
-              text: 'Breadcrumbs',
-              link: '/components/breadcrumbs/',
-            },
-            {
               text: 'Button',
               link: '/components/button/',
             },
@@ -269,6 +265,10 @@ export default defineConfig({
           text     : 'Dashboard',
           collapsed: true,
           items    : [
+            {
+              text: 'Breadcrumbs',
+              link: '/components/breadcrumbs/',
+            },
             {
               text: 'Filterbar',
               link: '/components/filterbar/',
