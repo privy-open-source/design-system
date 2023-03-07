@@ -5,7 +5,8 @@ description: Delightful datatables.
 
 <script setup>
   import pTable from './Table.vue'
-  import pBadge from '../badge/Badge.vue'
+  import pAvatar from '../avatar/Avatar.vue'
+  import pLabel from '../label/Label.vue'
   import { defineTable } from '.'
   import { ref }from 'vue-demi'
 
@@ -39,17 +40,17 @@ description: Delightful datatables.
     },
     {
       id    : 2,
-      name  : 'Tarjono',
+      name  : 'Renatta',
       status: false,
     },
     {
       id    : 3,
-      name  : 'Tarjono',
+      name  : 'Jonathan Smith',
       status: true,
     },
     {
       id    : 4,
-      name  : 'Tarjono',
+      name  : 'Arch Brown',
       status: true,
     },
   ])
@@ -295,8 +296,14 @@ add prop `draggable` to enable drag-to-sort.
 
 <preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items">
+    <template #cell(name)="{ item }">
+      <div class="flex items-center space-x-2">
+        <p-avatar size="sm" :name="item.name" />
+        <span>{{ item.name }}</span>
+      </div>
+    </template>
     <template #cell(status)="{ item }">
-      <p-badge>{{ item.status ? 'active' : 'inactive' }}</p-badge>
+      <p-label variant="light" color="primary" size="sm">{{ item.status ? 'active' : 'inactive' }}</p-label>
     </template>
   </p-table>
 </preview>
@@ -304,8 +311,16 @@ add prop `draggable` to enable drag-to-sort.
 ```vue
 <template>
   <p-table :fields="fields" :items="items">
+    <template #cell(name)="{ item }">
+      <div class="flex items-center space-x-2">
+        <p-avatar size="sm" :name="item.name" />
+        <span>{{ item.name }}</span>
+      </div>
+    </template>
     <template #cell(status)="{ item }">
-      <p-badge>{{ item.status ? 'active' : 'inactive' }}</p-badge>
+      <p-label variant="light" color="primary" size="sm">
+        {{ item.status ? 'active' : 'inactive' }}
+      </p-label>
     </template>
   </p-table>
 </template>
@@ -316,7 +331,7 @@ add prop `draggable` to enable drag-to-sort.
 <preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items">
     <template #head(status)="{ label }">
-      {{ label }}<p-badge class="ml-1">new</p-badge>
+      {{ label }}<p-label size="xs" class="ml-1">new</p-label>
     </template>
   </p-table>
 </preview>
@@ -325,7 +340,7 @@ add prop `draggable` to enable drag-to-sort.
 <template>
   <p-table :fields="fields" :items="items">
     <template #head(status)="{ label }">
-      {{ label }}<p-badge class="ml-1">new</p-badge>
+      {{ label }}<p-label size="xs" class="ml-1">new</p-label>
     </template>
   </p-table>
 </template>

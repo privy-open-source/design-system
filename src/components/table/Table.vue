@@ -236,11 +236,11 @@ export default defineComponent({
   }
 
   &__row {
-    @apply flex space-x-2 w-full items-center bg-default;
+    @apply flex space-x-2 w-full items-start bg-default;
   }
 
   &__cell {
-    @apply py-4 px-3 text-sm text-default;
+    @apply py-4 px-3 text-sm text-default break-all;
 
     & > .datatable__header {
       @apply text-xs;
@@ -248,7 +248,7 @@ export default defineComponent({
 
     &.datatable__checkbox,
     &.datatable__drag {
-      @apply flex-shrink-0 flex-grow-0;
+      @apply flex-shrink-0 flex-grow-0 self-center;
     }
 
     &.datatable__checkbox {
@@ -277,6 +277,9 @@ export default defineComponent({
   }
 
   &--static {
+    .datatable__headers {
+      @apply border-b border-b-default;
+    }
     .datatable__body {
       @apply border-b border-b-default divide-y divide-default;
     }
