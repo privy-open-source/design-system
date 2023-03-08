@@ -248,6 +248,7 @@ You can also combine with `pill` mode to make round button
 | `pill`     | `Boolean` |  `false`  | Enable pill mode                                                                                            |
 | `icon`     | `Boolean` |  `false`  | Enable icon mode                                                                                            |
 | `disabled` | `Boolean` |  `false`  | Disable state                                                                                               |
+| `href` | `String` |  `-`  | Place url in the button to make button-like permalink |
 
 ### Slots
 
