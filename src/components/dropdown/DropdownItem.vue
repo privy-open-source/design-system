@@ -1,23 +1,37 @@
 <template>
-  <button
+  <component
+    :is="tagName"
     data-testid="dropdown-item"
     class="dropdown__item"
+    :class="classNames"
+    :href="href"
     @click="handleOnClick">
     <slot>
       {{ text }}
     </slot>
-  </button>
+  </component>
 </template>
 
 <script lang="ts">
-import { defineComponent, inject } from 'vue-demi'
+import {
+  defineComponent, inject, computed,
+} from 'vue-demi'
 import { DROPDOWN_CONTEXT } from '.'
+import { TagVariant } from '../button'
 
 export default defineComponent({
   props: {
     text: {
       type   : String,
       default: '',
+    },
+    href: {
+      type   : String,
+      default: undefined,
+    },
+    active: {
+      type   : Boolean,
+      default: false,
     },
   },
   emits: ['click'],
@@ -27,22 +41,46 @@ export default defineComponent({
     function handleOnClick (event: Event) {
       emit('click', event)
 
-      if (context?.close && !event.defaultPrevented)
+      if ((context?.close && !event.defaultPrevented) || (event.defaultPrevented && props.href))
         context.close()
     }
 
-    return { handleOnClick }
+    const classNames = computed(() => {
+      const result: string[] = ['']
+
+      if (props.active)
+        result.push('dropdown__item--active')
+
+      return result
+    })
+
+    const tagName = computed(() => {
+      let tag: TagVariant = 'button'
+
+      if (props.href)
+        tag = 'a'
+
+      return tag
+    })
+
+    return {
+      handleOnClick, classNames, tagName,
+    }
   },
 })
 </script>
 
 <style lang="postcss">
 .dropdown__item {
-  @apply px-3 py-2 cursor-pointer text-default w-full select-none text-left;
+  @apply px-3 py-2 block cursor-pointer text-default w-full select-none text-left;
 
   &:hover,
   &:focus-visible {
     @apply bg-default-alpha;
+  }
+
+  &&--active {
+    @apply bg-default-alpha cursor-default;
   }
 }
 </style>

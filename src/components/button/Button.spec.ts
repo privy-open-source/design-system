@@ -121,3 +121,19 @@ it('should emit "click" when button is clicked', async () => {
 
   expect(spy).toBeCalled()
 })
+
+it('should be an anchor when button have `href` props', async () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button href="#">
+        Hello
+      </Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toHaveAttribute('href')
+  expect(button).toContainHTML('a')
+})
