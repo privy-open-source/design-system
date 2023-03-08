@@ -10,7 +10,6 @@ import {
   ref,
   Ref,
   shallowRef,
-
 } from 'vue-demi'
 
 export interface DropzoneContext {

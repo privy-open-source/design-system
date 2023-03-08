@@ -317,6 +317,10 @@ export default defineConfig({
               text: 'PDF Helipad',
               link: '/components/pdf-helipad/',
             },
+            {
+              text: 'PDF Text',
+              link: '/components/pdf-text/',
+            },
           ],
         },
         {
