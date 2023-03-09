@@ -282,7 +282,7 @@ export default defineComponent({
 
   &--static {
     .datatable__headers {
-      @apply border-b-2 border-b-default;
+      @apply border-b border-b-default;
     }
 
     .datatable__body {
