@@ -266,6 +266,10 @@ export default defineConfig({
           collapsed: true,
           items    : [
             {
+              text: 'Breadcrumbs',
+              link: '/components/breadcrumbs/',
+            },
+            {
               text: 'Filterbar',
               link: '/components/filterbar/',
             },
