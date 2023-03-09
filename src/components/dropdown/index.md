@@ -12,6 +12,7 @@ description: Base dropdown button, suit for action menus
   import pCheckbox from '../checkbox/Checkbox.vue'
   import pRadio from '../radio/Radio.vue'
   import pCaption from '../caption/Caption.vue'
+  import pTruncate from '../truncate/Truncate.vue'
   import { ref } from "vue-demi"
 
   const show = ref(false)
@@ -370,6 +371,7 @@ You can programmatically toggle dropdown using `v-model`
 | `icon`       | `Boolean` |    `false`     | Enable icon mode                                                                                                                                                                                                                   |
 | `no-caret`   | `Boolean` |    `false`     | Hide caret icon                                                                                                                                                                                                                    |
 | `disabled`   | `Boolean` |    `false`     | Disable state                                                                                                                                                                                                                      |
+| `href`   | `String` |    `-`     | Place url permalink in the `dropdown-item` |
 | `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
 | `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |
 
