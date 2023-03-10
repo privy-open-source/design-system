@@ -231,7 +231,7 @@ export default defineComponent({
     }
 
     &.datatable__drag {
-      @apply invisible;
+      @apply invisible mx-3;
     }
   }
 
