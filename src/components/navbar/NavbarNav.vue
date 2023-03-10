@@ -57,7 +57,13 @@ export default defineComponent({
     .dropdown {
       &__activator {
         &.btn {
-          @apply px-3 border-transparent bg-transparent hover:bg-transparent shadow-none rounded font-normal text-subtle dark:text-muted hover:text-default dark:hover:text-on-emphasis hover:shadow-none hover:border-transparent;
+          @apply px-3 bg-transparent hover:bg-transparent shadow-none rounded font-normal text-subtle dark:text-muted hover:text-default dark:hover:text-on-emphasis hover:shadow-none;
+        }
+
+        &:not(.btn--variant-outline) {
+          &.btn {
+            @apply border-transparent hover:border-transparent;
+          }
         }
       }
 

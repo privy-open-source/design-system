@@ -220,6 +220,10 @@ export default defineComponent({
     > .datatable__header {
       @apply px-3;
     }
+
+    + .datatable__body {
+      @apply pt-2;
+    }
   }
 
   .datatable__header {
@@ -236,7 +240,7 @@ export default defineComponent({
   }
 
   &__row {
-    @apply flex space-x-2 w-full items-start bg-default;
+    @apply flex space-x-2 w-full items-start;
   }
 
   &__cell {
@@ -272,7 +276,7 @@ export default defineComponent({
     }
 
     .datatable__row {
-      @apply rounded border border-default;
+      @apply rounded border border-default bg-default;
     }
   }
 
@@ -280,8 +284,9 @@ export default defineComponent({
     .datatable__headers {
       @apply border-b border-b-default;
     }
+
     .datatable__body {
-      @apply border-b border-b-default divide-y divide-default;
+      @apply border-b border-b-default divide-y divide-default bg-default;
     }
   }
 }
