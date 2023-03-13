@@ -384,6 +384,10 @@ export default defineConfig({
           collapsed: true,
           items    : [
             {
+              text: 'Avatar',
+              link: '/styleguide/avatar/',
+            },
+            {
               text: 'Badge',
               link: '/styleguide/badge/',
             },
