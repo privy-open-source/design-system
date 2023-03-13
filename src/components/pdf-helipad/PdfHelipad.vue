@@ -1,9 +1,11 @@
 <template>
   <div
+    data-testid="pdf-helipad"
     class="pdf-helipad"
     :class="classNames">
     <div
       ref="object"
+      data-testid="pdf-helipad-object"
       class="pdf-object pdf-object--external"
       :style="{ width: `${width}px`, height: `${height}px` }">
       <div class="pdf-object__container">

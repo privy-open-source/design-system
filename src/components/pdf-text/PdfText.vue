@@ -47,23 +47,23 @@ export default defineComponent({
       type   : String,
       default: '#4a5362',
     },
-    fontSize: {
+    size: {
       type   : Number,
       default: 16,
     },
-    minFontSize: {
+    minSize: {
       type   : Number,
       default: 11,
     },
-    maxFontSize: {
+    maxSize: {
       type   : Number,
       default: 72,
     },
-    autofit: {
+    fixedSize: {
       type   : Boolean,
       default: false,
     },
-    fontFamily: {
+    font: {
       type   : String,
       default: 'DM Sans',
     },
@@ -85,9 +85,9 @@ export default defineComponent({
       props.width,
       props.height,
       props.color,
-      props.fontSize,
-      props.autofit,
-      props.fontFamily,
+      props.size,
+      props.fixedSize,
+      props.font,
       props.lineHeight,
       props.padding,
     ], () => {

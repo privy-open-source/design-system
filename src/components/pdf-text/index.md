@@ -7,8 +7,11 @@ description: Generate text for Pdf Object
   import pPdfText from './PdfText.vue'
   import pPdfViewer from '../pdf-viewer/PdfViewer.vue'
   import pPdfObject from '../pdf-object/PdfObject.vue'
-  import { reactive } from 'vue-demi'
+  import { reactive, ref } from 'vue-demi'
   import FILE from '../pdf-viewer/assets/Calibrator-v3.pdf?url'
+
+  const result    = ref()
+  const resultB64 = ref()
 
   const object1 = reactive({
     src   : undefined,
@@ -28,7 +31,7 @@ description: Generate text for Pdf Object
 
 ### Simple Usage
 
-<preview>
+<preview class="flex-col">
   <p-pdf-text
     text="Lorem ipsum dolor sit amet consectetur adipisicing" />
 </preview>
@@ -52,8 +55,8 @@ description: Generate text for Pdf Object
       v-model:height="object1.height">
       <p-pdf-text
         v-model.base64="object1.src"
-        :width="430"
-        :height="230"
+        :width="object1.width"
+        :height="object1.height"
         text="Lorem ipsum dolor sit amet consectetur adipisicing" />
     </p-pdf-object>
   </p-pdf-viewer>
@@ -70,8 +73,8 @@ description: Generate text for Pdf Object
       v-model:height="object.height">
       <p-pdf-text
         v-model="object.src"
-        :width="430"
-        :height="230"
+        :width="object.width"
+        :height="object.height">
         text="Lorem ipsum dolor sit amet consectetur adipisicing" />
     </p-pdf-object>
   </p-pdf-viewer>
@@ -99,3 +102,82 @@ description: Generate text for Pdf Object
   })
 </script>
 ```
+
+## Change Font
+
+You can the font using prop `font`, it importing font from [Google Font][google-font], default is `DM Sans`
+
+<preview class="flex-col">
+  <p-pdf-text font="Indie Flower" text="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+  <p-pdf-text font="Satisfy" text="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+</preview>
+
+```vue
+<template>
+  <p-pdf-text font="Indie Flower" text="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+  <p-pdf-text font="Satisfy" text="Lorem ipsum dolor sit amet consectetur adipisicing"/>
+</template>
+```
+
+## Change Color
+
+<preview class="flex-col">
+  <p-pdf-text color="#004C9D" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+  <p-pdf-text color="#23B242" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+  <p-pdf-text color="#E42E2C" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+</preview>
+
+```vue
+<template>
+  <p-pdf-text color="#004C9D" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+  <p-pdf-text color="#23B242" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+  <p-pdf-text color="#E42E2C" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+</template>
+```
+
+## Binding v-model
+
+You can bind the generated result with `v-model`.
+
+<preview class="flex-col">
+  <p-pdf-text text="Lorem ipsum dolor sit amet consectetur adipisicing" v-model="result" />
+</preview>
+
+```vue
+<template>
+  <p-pdf-text v-model="result" />
+</template>
+
+<script lang="ts" setup>
+const result = ref<File>()
+</script>
+```
+
+**result**
+
+<pre class="truncate"><code>{{ result }}</code></pre>
+
+### Encode to base64
+
+If you prefer [base64-dataURI][data-uri] format, add modifier `.base64` to your `v-model`.
+
+<preview class="flex-col">
+  <p-pdf-text text="Lorem ipsum dolor sit amet consectetur adipisicing" v-model.base64="resultB64" />
+</preview>
+
+**result**
+
+<pre class="truncate"><code>{{ resultB64 }}</code></pre>
+
+```vue
+<template>
+  <p-pdf-text text="Lorem ipsum dolor sit amet consectetur adipisicing" v-model="result" />
+</template>
+
+<script lang="ts" setup>
+const result = ref('')
+</script>
+```
+
+[google-font]: https://fonts.google.com/
+[data-uri]: https://en.wikipedia.org/wiki/Data_URI_scheme

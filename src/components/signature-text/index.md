@@ -104,6 +104,10 @@ You can bind the generated result with `v-model`.
 <template>
   <p-signature-text v-model="result" />
 </template>
+
+<script lang="ts" setup>
+const result = ref<File>()
+</script>
 ```
 
 **result**
@@ -127,7 +131,7 @@ If you prefer [base64-dataURI][data-uri] format, add modifier `.base64` to your 
   <p-signature-text text="Lorem ipsum" v-model="result" />
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const result = ref('')
 </script>
 ```

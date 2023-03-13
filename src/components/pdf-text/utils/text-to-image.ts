@@ -26,23 +26,23 @@ interface GenerateOptions {
   /**
    * Text font size
    */
-  fontSize: number,
+  size: number,
   /**
    * Minimum font size
    */
-  minFontSize: number,
+  minSize: number,
   /**
    * Maximum font size
    */
-  maxFontSize: number,
+  maxSize: number,
   /**
    * Autofit mode
    */
-  autofit: boolean,
+  fixedSize: boolean,
   /**
    * Text font family
    */
-  fontFamily: string,
+  font: string,
   /**
    * Text line height
    */
@@ -106,15 +106,16 @@ export default async function generate (options: GenerateOptions) {
     text,
     color,
     padding,
-    fontFamily,
+    font,
     height,
     width,
-    minFontSize,
-    maxFontSize,
-    autofit,
+    size,
+    minSize,
+    maxSize,
+    fixedSize,
   } = options
 
-  await loadFont(fontFamily)
+  await loadFont(font)
 
   const canvas    = options.canvas ?? createCanvas(width, height)
   const context   = canvas.getContext('2d')
@@ -122,26 +123,26 @@ export default async function generate (options: GenerateOptions) {
   const maxHeight = height - (padding * 2)
 
   if (text) {
-    let fontSize   = options.fontSize
+    let fontSize   = size
     let lineHeight = fontSize * options.lineHeight
     let lines      = wrapText(
       context,
       text,
       fontSize,
       lineHeight,
-      fontFamily,
+      font,
       maxWidth,
     )
 
-    if (autofit) {
+    if (!fixedSize) {
       let textHeight = (lines.length * lineHeight)
       let count      = 0
 
       do {
         const newFontSize = clamp(
           Math.round(((maxHeight / textHeight * fontSize) + fontSize) / 2),
-          minFontSize,
-          maxFontSize,
+          minSize,
+          maxSize,
         )
 
         if (newFontSize === fontSize)
@@ -154,7 +155,7 @@ export default async function generate (options: GenerateOptions) {
           text,
           fontSize,
           lineHeight,
-          fontFamily,
+          font,
           maxWidth,
         )
 
@@ -162,7 +163,7 @@ export default async function generate (options: GenerateOptions) {
       } while (textHeight > maxHeight && ++count < 5)
     }
 
-    context.font         = `${fontSize}px ${JSON.stringify(fontFamily)}`
+    context.font         = `${fontSize}px ${JSON.stringify(font)}`
     context.textBaseline = 'top'
     context.textAlign    = 'start'
     context.fillStyle    = color
