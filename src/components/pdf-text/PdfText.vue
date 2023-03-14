@@ -75,6 +75,22 @@ export default defineComponent({
       type   : Number,
       default: 12,
     },
+    label: {
+      type   : String,
+      default: '',
+    },
+    labelColor: {
+      type   : String,
+      default: '#9EA0A2',
+    },
+    labelFont: {
+      type   : String,
+      default: undefined,
+    },
+    labelSize: {
+      type   : Number,
+      default: 12,
+    },
   },
   setup (props) {
     const model   = useVModel(props)
@@ -90,6 +106,10 @@ export default defineComponent({
       props.font,
       props.lineHeight,
       props.padding,
+      props.label,
+      props.labelColor,
+      props.labelFont,
+      props.labelSize,
     ], () => {
       load()
     }, { debounce: 300 })

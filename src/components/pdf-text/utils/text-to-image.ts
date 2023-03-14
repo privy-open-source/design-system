@@ -51,6 +51,22 @@ interface GenerateOptions {
    * Text box padding
    */
   padding: number,
+  /**
+   * Label text
+   */
+  label?: string,
+  /**
+   * Label color
+   */
+  labelColor?: string,
+  /**
+   * Label font family
+   */
+  labelFont?: string,
+  /**
+   * Label font size
+   */
+  labelSize?: number,
 }
 
 function wrapText (context: CanvasRenderingContext2D, text: string, fontSize: number, lineHeight: number, fontFamily: string, maxWidth: number): string[] {
@@ -113,16 +129,36 @@ export default async function generate (options: GenerateOptions) {
     minSize,
     maxSize,
     fixedSize,
+    label,
   } = options
 
   await loadFont(font)
 
-  const canvas    = options.canvas ?? createCanvas(width, height)
-  const context   = canvas.getContext('2d')
-  const maxWidth  = width - (padding * 2)
-  const maxHeight = height - (padding * 2)
+  const canvas  = options.canvas ?? createCanvas(width, height)
+  const context = canvas.getContext('2d')
+
+  let y = padding
+
+  if (label) {
+    const labelSize  = options.labelSize ?? size
+    const labelFont  = options.labelFont ?? font
+    const labelColor = options.labelColor ?? color
+
+    context.font         = `${labelSize}px ${JSON.stringify(labelFont)}`
+    context.textBaseline = 'top'
+    context.textAlign    = 'start'
+    context.fillStyle    = labelColor
+
+    context.fillText(label, padding, y)
+
+    // eslint-disable-next-line unicorn/consistent-destructuring
+    y += (labelSize * options.lineHeight)
+  }
 
   if (text) {
+    const maxWidth  = width - (padding * 2)
+    const maxHeight = height - (y + padding)
+
     let fontSize   = size
     let lineHeight = fontSize * options.lineHeight
     let lines      = wrapText(
@@ -160,7 +196,7 @@ export default async function generate (options: GenerateOptions) {
         )
 
         textHeight = (lines.length * lineHeight)
-      } while (textHeight > maxHeight && ++count < 5)
+      } while (textHeight > maxHeight && ++count < 5 /* to avoid infinite loop */)
     }
 
     context.font         = `${fontSize}px ${JSON.stringify(font)}`
@@ -168,8 +204,16 @@ export default async function generate (options: GenerateOptions) {
     context.textAlign    = 'start'
     context.fillStyle    = color
 
-    for (const [i, line] of lines.entries())
-      context.fillText(line, padding, (i * lineHeight) + padding)
+    context.font         = `${fontSize}px ${JSON.stringify(font)}`
+    context.textBaseline = 'top'
+    context.textAlign    = 'start'
+    context.fillStyle    = color
+
+    for (const line of lines) {
+      context.fillText(line, padding, y)
+
+      y += lineHeight
+    }
   }
 
   return canvas.toDataURL('image/png')
