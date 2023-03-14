@@ -102,7 +102,7 @@ export default defineComponent({
   }
 
   &&--shadow {
-    @apply shadow-sm transition-shadow duration-150 ease-in-out;
+    @apply shadow-lg transition-shadow duration-150 ease-in-out;
   }
 
   &&--expand {

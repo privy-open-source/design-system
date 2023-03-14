@@ -401,11 +401,11 @@ export default defineConfig({
             },
             {
               text: 'Checkbox & Radio',
-              link: '/styleguide/checkbox-radio/',
+              link: '/styleguide/check-radio/',
             },
             {
-              text: 'Navbar',
-              link: '/styleguide/navbar/',
+              text: 'Navigation',
+              link: '/styleguide/navigation/',
             },
             {
               text: 'Table',
