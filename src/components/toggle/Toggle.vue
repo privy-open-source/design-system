@@ -109,7 +109,7 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: ['update:modelValue', 'change'],
-  setup (props) {
+  setup (props, { slots }) {
     const model = useVModel(props)
 
     const classNames = computed(() => {
@@ -126,6 +126,9 @@ export default defineComponent({
 
       if (props.readonly)
         result.push('toggle--readonly')
+
+      if (slots.default)
+        result.push('toggle--labeled')
 
       return result
     })
@@ -149,7 +152,7 @@ export default defineComponent({
   @apply inline-flex cursor-pointer relative items-center select-none;
 
   &__switch {
-    @apply flex items-center justify-center relative bg-inactive border-subtle mr-4;
+    @apply flex items-center justify-center relative bg-inactive border-subtle;
   }
 
   &__pointer {
@@ -222,6 +225,12 @@ export default defineComponent({
     &:hover,
     &:focus-visible {
       @apply bg-inactive;
+    }
+  }
+
+  &&--labeled {
+    .toggle__switch {
+      @apply mr-4;
     }
   }
 }
