@@ -15,9 +15,9 @@ description: Generate text for Pdf Object
 
   const object1 = reactive({
     src   : undefined,
-    page  : undefined,
-    x     : undefined,
-    y     : undefined,
+    page  : 1,
+    x     : 100,
+    y     : 200,
     width : undefined,
     height: undefined,
   })
@@ -94,9 +94,9 @@ description: Generate text for Pdf Object
 
   const object = reactive<PdfObject>({
     src   : undefined,
-    page  : undefined,
-    x     : undefined,
-    y     : undefined,
+    page  : 1,
+    x     : 100,
+    y     : 200,
     width : undefined,
     height: undefined,
   })
@@ -132,6 +132,73 @@ You can the font using prop `font`, it importing font from [Google Font][google-
   <p-pdf-text color="#004C9D" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
   <p-pdf-text color="#23B242" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
   <p-pdf-text color="#E42E2C" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+</template>
+```
+
+## Label
+
+You can add label text using prop `label`.
+
+<preview class="flex-col">
+  <p-pdf-text
+    label="Noted from Tarjono (TR001)"
+    text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+</preview>
+
+```vue
+<template>
+  <p-pdf-text
+    label="Noted from Tarjono (TR001)"
+    text="Lorem ipsum dolor sit amet consectetur adipisicing" />
+</template>
+```
+
+## Fixed Font Size
+
+By default, font-size will automatically adjusted to fit the image size and text length.
+If you want keep font-size fixed all time, add prop `fixed-size`.
+
+<preview>
+  <div class="grid grid-cols-2 grid-rows-2 gap-4">
+    <p-pdf-text
+      label="Fixed Size"
+      text="Lorem ipsum dolor adipisicing"
+      fixed-size />
+    <p-pdf-text
+      label="Default"
+      text="Lorem ipsum dolor adipisicing"
+    />
+    <p-pdf-text
+      label="Fixed Size (long text)"
+      text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, maxime. Amet enim soluta?"
+      fixed-size />
+    <p-pdf-text
+      label="Default (long text)"
+      text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, maxime. Amet enim soluta?"
+    />
+  </div>
+</preview>
+
+```vue
+<template>
+  <div class="grid grid-cols-2 grid-rows-2 gap-4">
+    <p-pdf-text
+      label="Fixed Size"
+      text="Lorem ipsum dolor adipisicing"
+      fixed-size />
+    <p-pdf-text
+      label="Default"
+      text="Lorem ipsum dolor adipisicing"
+    />
+    <p-pdf-text
+      label="Fixed Size (long text)"
+      text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, maxime. Amet enim soluta?"
+      fixed-size />
+    <p-pdf-text
+      label="Default (long text)"
+      text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, maxime. Amet enim soluta?"
+    />
+  </div>
 </template>
 ```
 
@@ -171,13 +238,68 @@ If you prefer [base64-dataURI][data-uri] format, add modifier `.base64` to your 
 
 ```vue
 <template>
-  <p-pdf-text text="Lorem ipsum dolor sit amet consectetur adipisicing" v-model="result" />
+  <p-pdf-text text="Lorem ipsum dolor sit amet consectetur adipisicing" v-model.base64="result" />
 </template>
 
 <script lang="ts" setup>
 const result = ref('')
 </script>
 ```
+## API
+
+### Props
+
+| Props        |   Type    |  Default  | Description                                                |
+|--------------|:---------:|:---------:|------------------------------------------------------------|
+| `width`      | `Number`  |   `198`   | Image's width                                              |
+| `height`     | `Number`  |   `106`   | Image's width                                              |
+| `text`       | `String`  |    `-`    | Image's text                                               |
+| `font`       | `String`  | `DM Sans` | Text font family, imported from [Google Font][google-font] |
+| `color`      | `Number`  | `#4a5362` | Text color                                                 |
+| `minSize`    | `Number`  |   `11`    | Minimum font size when auto-resize                         |
+| `maxSize`    | `Number`  |   `72`    | Maximum font size when auto-resize                         |
+| `size`       | `Number`  |   `16`    | Text font size, only work on `fixed-size` mode             |
+| `fixedSize`  | `Boolean` |  `false`  | Enable fixed-size mode                                     |
+| `lineHeight` | `Number`  |   `1.5`   | Text line height                                           |
+| `padding`    | `Number`  |   `12`    | Text padding                                               |
+| `label`      | `String`  |    `-`    | Add label text                                             |
+| `labelSize`  | `String`  |   `12`    | Label's font size                                          |
+| `labelColor` | `String`  | `#9EA0A2` | Label's text color                                         |
+| `labelFont`  | `String`  |    `-`    | Label's font family                                        |
+| `modelValue` | `String`  |    `-`    | Result of generated image                                  |
+
+### Slots
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" class="text-center">There no slots here</td>
+    </tr>
+  </tbody>
+</table>
+
+### Events
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" class="text-center">There no props here</td>
+    </tr>
+  </tbody>
+</table>
 
 [google-font]: https://fonts.google.com/
 [data-uri]: https://en.wikipedia.org/wiki/Data_URI_scheme
