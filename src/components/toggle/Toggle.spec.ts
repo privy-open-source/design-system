@@ -296,3 +296,16 @@ it('should trigger event "change", when clicked', async () => {
 
   expect(onChange).toBeCalledWith(false)
 })
+
+it('should trigger event "change", when clicked', () => {
+  const screen = render({
+    components: { Toggle },
+    template  : `
+      <Toggle>Apple</Toggle>
+    `,
+  })
+
+  const toggle = screen.queryByTestId('toggle')
+
+  expect(toggle).toHaveClass('toggle', 'toggle--labeled')
+})

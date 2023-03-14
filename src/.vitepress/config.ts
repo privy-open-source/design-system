@@ -407,6 +407,10 @@ export default defineConfig({
               text: 'Navigation',
               link: '/styleguide/navigation/',
             },
+            {
+              text: 'Table',
+              link: '/styleguide/table/',
+            },
           ],
         },
       ],
