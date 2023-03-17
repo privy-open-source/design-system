@@ -38,7 +38,7 @@
         class="dropdown__menu">
         <DropdownGroup
           ref="wizard"
-          class="dropdown__menu-container">
+          class="dropdown__menu__container">
           <slot />
         </DropdownGroup>
       </div>
@@ -289,7 +289,7 @@ export default defineComponent({
   &__menu {
     @apply max-h-64 border rounded w-full min-w-[15rem] bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
 
-    &-container {
+    &__container {
       > .dropdown__item {
         &:first-child,
         .dropdown__subitem:first-child & {
@@ -311,7 +311,7 @@ export default defineComponent({
   &&--divider {
     .dropdown {
       &__menu {
-        :where(.checkbox, .radio) {
+        :where(.checkbox, .radio, .dropdown__item) {
           @apply border-b border-solid border-b-subtle-alpha last:border-b-0;
         }
       }

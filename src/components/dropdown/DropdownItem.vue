@@ -72,7 +72,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .dropdown__item {
-  @apply px-3 py-2 block cursor-pointer text-default w-full select-none text-left;
+  @apply px-4 py-2 block cursor-pointer text-default w-full select-none text-left;
+
+  &:is(a) {
+    @apply hover:text-default;
+  }
 
   &:hover,
   &:focus-visible {

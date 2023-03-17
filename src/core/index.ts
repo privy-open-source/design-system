@@ -89,3 +89,7 @@ export {
 export {
   usePdfContext,
 } from '../components/pdf-viewer'
+
+export {
+  defineNavigation,
+} from '../components/breadcrumbs'

@@ -61,7 +61,7 @@ description: Combine multiple input in singleline.
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider />
+    <p-divider vertical />
     <p-input />
     <p-button variant="input">
       Submit
@@ -77,7 +77,7 @@ description: Combine multiple input in singleline.
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider />
+    <p-divider vertical />
     <p-input />
     <p-button variant="input">
       Submit
@@ -91,7 +91,7 @@ description: Combine multiple input in singleline.
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider />
+    <p-divider vertical />
     <p-input />
     <p-button variant="input">
       Submit
@@ -123,9 +123,9 @@ description: Combine multiple input in singleline.
 <preview>
   <p-input-group>
     <p-input />
-    <p-divider />
+    <p-divider vertical />
     <p-input />
-    <p-divider />
+    <p-divider vertical />
     <p-input />
   </p-input-group>
 </preview>
@@ -134,9 +134,9 @@ description: Combine multiple input in singleline.
 <template>
   <p-input-group>
     <p-input />
-    <p-divider />
+    <p-divider vertical />
     <p-input />
-    <p-divider />
+    <p-divider vertical />
     <p-input />
   </p-input-group>
 </template>
@@ -211,7 +211,7 @@ Adding prop `disabled` to Input Group to unified input into disabled state
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider />
+    <p-divider vertical />
     <p-input />
     <p-button variant="input">
       Submit
@@ -225,7 +225,7 @@ Adding prop `disabled` to Input Group to unified input into disabled state
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider />
+    <p-divider vertical />
     <p-input />
     <p-button variant="input">
       Submit
@@ -243,7 +243,7 @@ Adding prop `error` to Input Group to unified input into error state
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider />
+    <p-divider vertical />
     <p-input />
     <p-button variant="input">
       Submit
@@ -257,7 +257,7 @@ Adding prop `error` to Input Group to unified input into error state
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider />
+    <p-divider vertical />
     <p-input />
     <p-button variant="input">
       Submit
