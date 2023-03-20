@@ -201,7 +201,7 @@ it('should moving position when dragged', async () => {
   expect(model.x).toBe(100)
   expect(model.y).toBe(400)
 
-  await triggerDragMove(300, 300)
+  await triggerDragMove({ dx: 300, dy: 300 })
 
   expect(object).toHaveStyle({
     position : 'fixed',
@@ -296,7 +296,7 @@ it('should revert the last position if droped wrong place', async () => {
   expect(model.x).toBe(100)
   expect(model.y).toBe(400)
 
-  await triggerDragMove(300, 300)
+  await triggerDragMove({ dx: 300, dy: 300 })
 
   expect(object).toHaveStyle({
     position : 'fixed',

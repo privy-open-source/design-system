@@ -89,7 +89,7 @@ export default defineComponent({
       onend (event) {
         if (event.relatedTarget) {
           const reference = event.relatedTarget
-          const container = reference.closest('.pdf__container')
+          const container = reference.closest('.pdf-objects')
           const result    = getPosition({
             reference: reference as HTMLDivElement,
             container: container as HTMLDivElement,
@@ -99,7 +99,7 @@ export default defineComponent({
 
           emit('landed', {
             ...result,
-            witdh : width.value,
+            width : width.value,
             height: height.value,
           })
         }
