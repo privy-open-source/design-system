@@ -1,0 +1,1 @@
+import{u as e}from"./utils-6ba05f5b.12a1aafc.js";var t=e,r=t.createSVGComponent(r,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 32 32",fill:"currentColor",width:20,height:20},[{elem:"circle",attrs:{cx:"8",cy:"16",r:"2"}},{elem:"circle",attrs:{cx:"16",cy:"16",r:"2"}},{elem:"circle",attrs:{cx:"24",cy:"16",r:"2"}}]),c=r;const o=c;export{o as I};
