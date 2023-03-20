@@ -481,7 +481,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
           <div class="flex items-center space-x-3">
             <IconBee class="text-muted" />
             <div>
-              Toggle Sidebar <IconCheck class="text-accent inline" v-if="model" /> <IconClose class="text-danger inline" v-else />
+              Toggle Sidebar <IconCheck class="text-info inline" v-if="model" /> <IconClose class="text-danger inline" v-else />
               <p-caption>just works in under lg screen</p-caption>
             </div>
           </div>
@@ -532,7 +532,7 @@ It's possible to make sidebar toggle-hide by default to make fullwidth page with
           <div class="flex items-center space-x-3">
             <IconBee class="text-muted" />
             <div>
-              Toggle Sidebar <IconCheck class="text-accent inline" v-if="modelA" /> <IconClose class="text-danger inline" v-else />
+              Toggle Sidebar <IconCheck class="text-info inline" v-if="modelA" /> <IconClose class="text-danger inline" v-else />
               <p-caption>works in all screen</p-caption>
             </div>
           </div>

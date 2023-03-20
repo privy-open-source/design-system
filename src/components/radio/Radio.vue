@@ -244,10 +244,10 @@ export default defineComponent({
 
     &.radio--checked {
       .radio__icon {
-        @apply text-accent visible;
+        @apply text-info visible;
 
         > svg {
-          @apply fill-accent-emphasis;
+          @apply fill-info-emphasis;
         }
       }
     }

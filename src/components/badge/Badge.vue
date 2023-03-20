@@ -101,7 +101,7 @@ export default defineComponent({
       }
 
       &--primary {
-        @apply text-accent;
+        @apply text-info;
       }
 
       &--success {

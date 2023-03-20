@@ -139,7 +139,7 @@ description: Take picture from user's camera
     <p-card-section
       title="Subtitle supposedly here">
       <template #action>
-        <a href="#" class="underline text-accent">Edit</a>
+        <a href="#" class="underline text-link">Edit</a>
       </template>
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to
@@ -185,7 +185,7 @@ description: Take picture from user's camera
     <p-card-section
       title="Subtitle supposedly here">
       <template #action>
-        <a href="#" class="underline text-accent">Edit</a>
+        <a href="#" class="underline text-link">Edit</a>
       </template>
       While here you will see the content of cards, everything goes here.
       If you need custom cards, take the component which more represent to

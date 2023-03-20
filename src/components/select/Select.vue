@@ -293,7 +293,7 @@ export default defineComponent({
     }
 
     &-checked {
-      @apply flex-shrink-0 text-accent invisible;
+      @apply flex-shrink-0 text-info invisible;
 
       .selected & {
         @apply visible;

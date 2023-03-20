@@ -181,7 +181,7 @@ export default defineComponent({
   &&--info {
     .toast__icon,
     &.toast--filled {
-      @apply bg-subtle text-accent;
+      @apply bg-subtle text-info;
     }
   }
 

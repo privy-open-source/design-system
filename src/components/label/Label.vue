@@ -171,7 +171,7 @@ export default defineComponent({
       }
 
       &--primary {
-        @apply bg-accent text-accent;
+        @apply bg-info text-info;
       }
 
       &--success {

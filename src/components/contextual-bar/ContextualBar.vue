@@ -311,7 +311,7 @@ export default defineComponent({
 
     .contextual-bar {
       &__icon {
-        @apply text-accent;
+        @apply text-info;
       }
     }
   }
