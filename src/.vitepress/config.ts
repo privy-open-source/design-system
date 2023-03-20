@@ -416,6 +416,10 @@ export default defineConfig({
               link: '/styleguide/check-radio/',
             },
             {
+              text: 'Dropdown',
+              link: '/styleguide/dropdown/',
+            },
+            {
               text: 'Navigation',
               link: '/styleguide/navigation/',
             },

@@ -135,7 +135,7 @@ description: Table style guide
   }
 </style>
 
-# ![navigation](/assets/images/img-guide-data-table.svg) Data Table
+# ![data table](/assets/images/img-guide-data-table.svg) Data Table
 
 ## Data Table
 

@@ -166,12 +166,6 @@ module.exports = {
       'xl'     : '16px',
       '2xl'    : '20px',
       '3xl'    : '22px',
-      // 'sm'     : '4px',
-      // 'md'     : '8px',
-      // 'DEFAULT': '8px',
-      // 'lg'     : '12px',
-      // 'xl'     : '16px',
-      // '2xl'    : '22px',
       'full'   : '999999px',
     },
     opacity: {
