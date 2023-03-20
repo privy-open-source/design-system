@@ -8,7 +8,7 @@ description: Delightful datatables.
   import pAvatar from '../avatar/Avatar.vue'
   import pLabel from '../label/Label.vue'
   import { defineTable } from '.'
-  import { ref }from 'vue-demi'
+  import { ref } from 'vue-demi'
 
   const fields = defineTable([
     'id',

@@ -392,6 +392,10 @@ export default defineConfig({
           collapsed: true,
           items    : [
             {
+              text: 'Avatar',
+              link: '/styleguide/avatar/',
+            },
+            {
               text: 'Badge',
               link: '/styleguide/badge/',
             },
@@ -409,11 +413,15 @@ export default defineConfig({
             },
             {
               text: 'Checkbox & Radio',
-              link: '/styleguide/checkbox-radio/',
+              link: '/styleguide/check-radio/',
             },
             {
-              text: 'Navbar',
-              link: '/styleguide/navbar/',
+              text: 'Navigation',
+              link: '/styleguide/navigation/',
+            },
+            {
+              text: 'Table',
+              link: '/styleguide/table/',
             },
           ],
         },
