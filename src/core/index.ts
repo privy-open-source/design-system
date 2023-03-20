@@ -84,7 +84,7 @@ export {
 
 export {
   usePreview,
-} from '../components/cropper/'
+} from '../components/cropper'
 
 export {
   usePdfContext,
@@ -93,3 +93,7 @@ export {
 export {
   defineNavigation,
 } from '../components/breadcrumbs'
+
+export type {
+  PdfHelipadResult,
+} from '../components/pdf-helipad'

@@ -84,8 +84,8 @@ You can bind the result of drawing's image with `v-model`
   <p-signature-draw v-model="result" />
 </template>
 
-<script setup>
-const result = ref()
+<script lang="ts" setup>
+const result = ref<File>()
 </script>
 ```
 
@@ -105,10 +105,10 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 
 ```vue
 <template>
-  <p-signature-draw v-model.base64="resultB64" />
+  <p-signature-draw v-model.base64="result" />
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const result = ref('')
 </script>
 ```
@@ -117,16 +117,16 @@ const result = ref('')
 
 ### Props
 
-| Props            |   Type   |     Default     | Description                                         |
-|------------------|:--------:|:---------------:|-----------------------------------------------------|
-| `width`          | `Number` |      `430`      | Canvas's width                                      |
-| `height`         | `Number` |      `230`      | Canvas's width                                      |
-| `placeholder`    | `String` |       `-`       | Canvas's placeholder                                |
-| `color`          | `String` |    `#000000`    | Pencil color                                        |
-| `modelValue`     | `String` |       `-`       | Result of draw image, in [base64-dataURI][data-uri] |
-| `resetLabel`     | `String` |     `Reset`     | Reset button's label                                |
-| `openDrawLabel`  | `String` | `Click to Draw` | Start draw button's label (in mobile-view)          |
-| `closeDrawLabel` | `String` |     `Save`      | Save draw button's label (in mobile-view)           |
+| Props            |   Type   |     Default     | Description                                |
+|------------------|:--------:|:---------------:|--------------------------------------------|
+| `width`          | `Number` |      `430`      | Canvas's width                             |
+| `height`         | `Number` |      `230`      | Canvas's width                             |
+| `placeholder`    | `String` |       `-`       | Canvas's placeholder                       |
+| `color`          | `String` |    `#000000`    | Pencil color                               |
+| `modelValue`     | `String` |       `-`       | Result of draw image                       |
+| `resetLabel`     | `String` |     `Reset`     | Reset button's label                       |
+| `openDrawLabel`  | `String` | `Click to Draw` | Start draw button's label (in mobile-view) |
+| `closeDrawLabel` | `String` |     `Save`      | Save draw button's label (in mobile-view)  |
 
 ### Slots
 
