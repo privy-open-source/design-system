@@ -84,8 +84,12 @@ export {
 
 export {
   usePreview,
-} from '../components/cropper/'
+} from '../components/cropper'
 
 export {
   usePdfContext,
 } from '../components/pdf-viewer'
+
+export type {
+  PdfHelipadResult,
+} from '../components/pdf-helipad'

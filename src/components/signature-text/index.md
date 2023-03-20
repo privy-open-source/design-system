@@ -104,6 +104,10 @@ You can bind the generated result with `v-model`.
 <template>
   <p-signature-text v-model="result" />
 </template>
+
+<script lang="ts" setup>
+const result = ref<File>()
+</script>
 ```
 
 **result**
@@ -124,10 +128,10 @@ If you prefer [base64-dataURI][data-uri] format, add modifier `.base64` to your 
 
 ```vue
 <template>
-  <p-signature-text text="Lorem ipsum" v-model="result" />
+  <p-signature-text text="Lorem ipsum" v-model.base64="result" />
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const result = ref('')
 </script>
 ```
@@ -136,15 +140,15 @@ const result = ref('')
 
 ### Props
 
-| Props        |   Type   |        Default         | Description                                              |
-|--------------|:--------:|:----------------------:|----------------------------------------------------------|
-| `width`      | `Number` |         `430`          | Image's width                                            |
-| `height`     | `Number` |         `230`          | Image's width                                            |
-| `text`       | `String` |          `-`           | Image's text                                             |
-| `limit`      | `Number` |          `2`           | Maximal word to be generated                             |
-| `font`       | `String` | `Herr Von Muellerhoff` | Text font, imported from [Google Font][google-font]      |
-| `color`      | `String` |       `#000000`        | Text color                                               |
-| `modelValue` | `String` |          `-`           | Result of generated image, in [base64-dataURI][data-uri] |
+| Props        |   Type   |        Default         | Description                                         |
+|--------------|:--------:|:----------------------:|-----------------------------------------------------|
+| `width`      | `Number` |         `430`          | Image's width                                       |
+| `height`     | `Number` |         `230`          | Image's width                                       |
+| `text`       | `String` |          `-`           | Image's text                                        |
+| `limit`      | `Number` |          `2`           | Maximal word to be generated                        |
+| `font`       | `String` | `Herr Von Muellerhoff` | Text font, imported from [Google Font][google-font] |
+| `color`      | `String` |       `#000000`        | Text color                                          |
+| `modelValue` | `String` |          `-`           | Result of generated image                           |
 
 ### Slots
 

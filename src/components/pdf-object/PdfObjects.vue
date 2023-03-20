@@ -1,6 +1,7 @@
 <template>
   <div
     ref="root"
+    class="pdf-objects"
     data-testid="pdf-objects">
     <slot />
   </div>
