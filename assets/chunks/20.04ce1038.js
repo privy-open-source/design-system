@@ -1,1 +1,0 @@
-import{u as r}from"./utils-6ba05f5b.2a3610bb.js";var e=r,t=e.createSVGComponent(t,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 20 20",fill:"currentColor",width:20,height:20},[{elem:"path",attrs:{d:"M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"}}]),o=t;const n=o;export{n as I};
