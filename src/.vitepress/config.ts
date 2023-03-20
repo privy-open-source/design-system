@@ -424,6 +424,10 @@ export default defineConfig({
               link: '/styleguide/navigation/',
             },
             {
+              text: 'Progress',
+              link: '/styleguide/progress/',
+            },
+            {
               text: 'Table',
               link: '/styleguide/table/',
             },
