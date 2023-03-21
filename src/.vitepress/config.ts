@@ -431,6 +431,10 @@ export default defineConfig({
               text: 'Table',
               link: '/styleguide/table/',
             },
+            {
+              text: 'Toggle',
+              link: '/styleguide/toggle/',
+            },
           ],
         },
       ],
