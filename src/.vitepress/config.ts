@@ -424,6 +424,10 @@ export default defineConfig({
               link: '/styleguide/navigation/',
             },
             {
+              text: 'Pagination',
+              link: '/styleguide/pagination/',
+            },
+            {
               text: 'Progress',
               link: '/styleguide/progress/',
             },
