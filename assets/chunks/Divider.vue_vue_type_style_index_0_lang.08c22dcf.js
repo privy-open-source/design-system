@@ -1,0 +1,1 @@
+import{f as t,h as a}from"../app.68f3df29.js";const o=t({props:{vertical:{type:Boolean,default:!1}},setup(s){return{classNames:a(()=>{const e=[];return s.vertical?e.push("divider--vertical"):e.push("divider--horizontal"),e})}}});export{o as _};
