@@ -19,6 +19,7 @@ yarn add --dev \
   eslint-plugin-unicorn \
   eslint-plugin-varspacing \
   eslint-plugin-vue \
+  typescript \
   @vue/eslint-config-typescript \
   @typescript-eslint/eslint-plugin \
   @typescript-eslint/parser \
@@ -41,8 +42,8 @@ Optional, add this to `package.json` script's:
   // ...
   "scripts": {
     // ...
-    "lint:js": "eslint . --ext .js,.vue,.ts --format pretty",
-    "fix:js": "yarn lint:js --fix",
+    "lint": "eslint . --ext .js,.vue,.ts --format pretty",
+    "fix": "yarn lint:js --fix",
     // ...
   }
   // ...
