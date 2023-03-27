@@ -70,7 +70,7 @@ export default defineComponent({
 <style lang="postcss">
 .pdf-object {
   &__debugger {
-    @apply grid grid-cols-1 p-4 bg-emphasis text-on-emphasis absolute rounded w-[198px];
+    @apply grid grid-cols-1 p-4 bg-inverse text-on-emphasis absolute rounded w-[198px];
 
     > pre {
       @apply truncate;

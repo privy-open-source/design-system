@@ -157,7 +157,7 @@ export default defineComponent({
   &:disabled {
     .input-group__addon,
     .input-group .input__form {
-      @apply bg-muted border-muted text-muted;
+      @apply bg-subtle border-muted text-muted;
     }
   }
 

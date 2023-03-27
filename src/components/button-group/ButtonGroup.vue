@@ -91,6 +91,7 @@ export default defineComponent({
       @apply -ml-[1px];
 
       &.btn--primary,
+      &.btn--info,
       &.btn--success,
       &.btn--warning,
       &.btn--danger {

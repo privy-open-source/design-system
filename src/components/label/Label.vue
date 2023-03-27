@@ -26,11 +26,9 @@ import {
   ref,
 } from 'vue-demi'
 import Dot from '../dot/Dot.vue'
+import { StyleVariant } from '.'
+import { ColorVariant, SizeVariant } from '../button'
 import IconClose from '@carbon/icons-vue/lib/close/16'
-
-type ColorVariant = 'default' | 'primary' | 'success' | 'warning' | 'danger'
-type StyleVariant = 'default' | 'light' | 'dot'
-type SizeVariant = 'lg' | 'md' | 'sm' | 'xs'
 
 export default defineComponent({
   components: { Dot, IconClose },
@@ -135,7 +133,7 @@ export default defineComponent({
 
     &.label {
       &--default {
-        @apply bg-emphasis-subtle;
+        @apply bg-inverse;
 
         .label__dismiss {
           @apply border-base-white/10 text-on-emphasis/30 hover:text-on-emphasis/50;
@@ -143,7 +141,11 @@ export default defineComponent({
       }
 
       &--primary {
-        @apply bg-accent-emphasis;
+        @apply bg-brand-accent;
+      }
+
+      &--info {
+        @apply bg-info-emphasis;
       }
 
       &--success {

@@ -36,7 +36,7 @@
 
     .state--disabled &,
     .input-group--disabled & {
-      @apply bg-muted border-muted pointer-events-none text-muted;
+      @apply bg-subtle border-muted pointer-events-none text-muted;
     }
   }
 }

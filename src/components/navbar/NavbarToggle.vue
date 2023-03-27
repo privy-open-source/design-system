@@ -64,7 +64,7 @@ export default defineComponent({
     @apply inline-flex;
 
     &:is(.btn--variant-outline, .btn--default) {
-      @apply bg-emphasis-alpha dark:border-on-emphasis-alpha-subtle hover:shadow-none text-subtle dark:text-muted;
+      @apply bg-subtle dark:border-subtle-alpha hover:shadow-none text-subtle dark:text-muted;
     }
 
     &&--all {

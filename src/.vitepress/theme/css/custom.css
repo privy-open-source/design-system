@@ -72,12 +72,12 @@
   }
 
   th, td {
-    @apply border-accent dark:border-on-emphasis-subtle;
+    @apply border-info dark:border-subtle;
   }
 
   thead > tr:first-child,
   tr:nth-child(2n) {
-    @apply bg-accent dark:bg-emphasis-subtle;
+    @apply bg-info dark:bg-inverse;
   }
 
   .token.attr-name {

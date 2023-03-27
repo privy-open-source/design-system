@@ -12,7 +12,8 @@ import {
   PropType,
   computed,
 } from 'vue-demi'
-import { ColorVariant, StyleVariant } from '.'
+import { StyleVariant } from '.'
+import { ColorVariant } from '../button'
 
 export default defineComponent({
   props: {
@@ -57,6 +58,7 @@ export default defineComponent({
   * Set global style
   * of badge
   */
+  --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
   @apply inline-block font-bold text-xs px-2 py-0.5 text-on-emphasis rounded-full;
 
   /**
@@ -68,11 +70,15 @@ export default defineComponent({
   &&--variant-default {
     &.badge {
       &--default {
-        @apply bg-emphasis-subtle;
+        @apply bg-inverse;
       }
 
       &--primary {
-        @apply bg-accent-emphasis;
+        @apply bg-brand-accent;
+      }
+
+      &--info {
+        @apply bg-info-emphasis;
       }
 
       &--success {
@@ -101,6 +107,10 @@ export default defineComponent({
       }
 
       &--primary {
+        @apply text-brand-accent;
+      }
+
+      &--info {
         @apply text-info;
       }
 
@@ -125,7 +135,11 @@ export default defineComponent({
   &--variant-light {
     &.badge {
       &--primary {
-        @apply bg-accent;
+        @apply bg-[color:var(--p-color-primary-light)];
+      }
+
+      &--info {
+        @apply bg-info;
       }
 
       &--default {

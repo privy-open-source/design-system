@@ -184,22 +184,22 @@ export default defineComponent({
 
     &:not(.radio--checked) {
       .radio__icon {
-        @apply bg-inactive border-subtle;
+        @apply bg-subtle border-subtle;
 
         > svg {
-          @apply fill-inactive;
+          @apply fill-subtle;
         }
       }
     }
   }
 
   /**
-  * give accent background and
+  * give info background and
   * white checked icon
   */
   &&--checked {
     .radio__icon {
-      @apply bg-accent-emphasis border-accent-emphasis;
+      @apply bg-info-emphasis border-info-emphasis;
     }
 
     &.radio--checkbox {

@@ -178,7 +178,7 @@ export default defineComponent({
 
     &.toggle--checked {
       .toggle__switch {
-        @apply bg-accent-emphasis border-accent-emphasis;
+        @apply bg-info-emphasis border-info-emphasis;
       }
 
       .toggle__pointer {
@@ -224,7 +224,7 @@ export default defineComponent({
 
     &:hover,
     &:focus-visible {
-      @apply bg-inactive;
+      @apply bg-subtle;
     }
   }
 

@@ -105,7 +105,7 @@ export default defineComponent({
   }
 
   &&--info {
-    @apply bg-subtle;
+    @apply bg-base;
 
     .banner__icon {
       @apply text-info;

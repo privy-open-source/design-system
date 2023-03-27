@@ -185,9 +185,19 @@ export default defineComponent({
 */
 .modal {
   /**
+  * modal sizing variables
+  */
+  --p-modal-size-xl: 960px;
+  --p-modal-size-lg: 800px;
+  --p-modal-size-md: 600px;
+  --p-modal-size-sm: 400px;
+  --p-modal-z-index: 1060;
+  --p-modal-dismiss-z-index: calc(var(--p-modal-z-index) + 1);
+
+  /**
   * Set modal backdrop
   */
-  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-emphasis bg-opacity-30 z-[1060] overscroll-contain;
+  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-inverse/30 z-[var(--p-modal-z-index)] overscroll-contain;
 
   &--banner {
     .modal {
@@ -213,7 +223,7 @@ export default defineComponent({
     @apply my-8 bg-default rounded relative shadow-2xl;
 
     .modal__dismiss {
-      @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[1061] text-default/30 hover:text-default/50;
+      @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[var(--p-modal-dismiss-z-index)] text-default/30 hover:text-default/50;
     }
   }
 
@@ -262,25 +272,25 @@ export default defineComponent({
   */
   &&--xl {
     .modal__content {
-      @apply w-[960px];
+      @apply w-[var(--p-modal-size-xl)];
     }
   }
 
   &&--lg {
     .modal__content {
-      @apply w-[800px];
+      @apply w-[var(--p-modal-size-lg)];
     }
   }
 
   &&--md {
     .modal__content {
-      @apply w-[600px];
+      @apply w-[var(--p-modal-size-md)];
     }
   }
 
   &&--sm {
     .modal__content {
-      @apply w-[400px];
+      @apply w-[var(--p-modal-size-sm)];
     }
   }
 

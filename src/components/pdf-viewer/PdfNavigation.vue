@@ -137,10 +137,10 @@ export default defineComponent({
         @apply w-16;
 
         > .input {
-          @apply bg-emphasis-subtle;
+          @apply bg-inverse;
 
           > .input__form {
-            @apply border-on-emphasis-subtle bg-emphasis-subtle;
+            @apply border-subtle bg-inverse;
           }
         }
       }

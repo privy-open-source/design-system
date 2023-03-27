@@ -69,7 +69,7 @@ description: Take picture from user's camera
   <p-card
     title="Any Title Should Here">
     <template #action>
-      <p-button color="primary" variant="link">Button Text</p-button>
+      <p-button color="info" variant="link">Button Text</p-button>
     </template>
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
@@ -88,7 +88,7 @@ description: Take picture from user's camera
   <p-card
     title="Any Title Should Here">
     <template #action>
-      <p-button color="primary" variant="link">Button Text</p-button>
+      <p-button color="info" variant="link">Button Text</p-button>
     </template>
     While here you will see the content of cards, everything goes here.
     If you need custom cards, take the component which more represent to
@@ -105,8 +105,8 @@ description: Take picture from user's camera
     If you need custom cards, take the component which more represent to
     what you need and detach it.
     <template #footer>
-      <p-button variant="outline" color="primary">Enable Sample Button</p-button>
-      <p-button variant="link" color="primary">Button Text</p-button>
+      <p-button variant="outline" color="info">Enable Sample Button</p-button>
+      <p-button variant="link" color="info">Button Text</p-button>
     </template>
   </p-card>
 </preview>
@@ -119,8 +119,8 @@ description: Take picture from user's camera
     If you need custom cards, take the component which more represent to
     what you need and detach it.
     <template #footer>
-      <p-button variant="outline" color="primary">Enable Sample Button</p-button>
-      <p-button variant="link" color="primary">Button Text</p-button>
+      <p-button variant="outline" color="info">Enable Sample Button</p-button>
+      <p-button variant="link" color="info">Button Text</p-button>
     </template>
   </p-card>
 </template>
@@ -151,7 +151,7 @@ description: Take picture from user's camera
     title="Card with Sub-Section"
     sectioned>
     <template #action>
-      <p-button variant="link" color="primary">Button Text</p-button>
+      <p-button variant="link" color="info">Button Text</p-button>
     </template>
     <p-card-section>
       While here you will see the content of cards, everything goes here.
@@ -197,7 +197,7 @@ description: Take picture from user's camera
     title="Card Sub-Section"
     sectioned>
     <template #action>
-      <p-button variant="link" color="primary">Button Text</p-button>
+      <p-button variant="link" color="info">Button Text</p-button>
     </template>
     <p-card-section>
       While here you will see the content of cards, everything goes here.
@@ -232,7 +232,7 @@ description: Take picture from user's camera
         There’s a 30% membership renewal discount waiting for you when you come back.
         <div class="pt-8">
           <p-button variant="outline" color="secondary">Collect Discount</p-button>
-          <p-button variant="link" color="primary">Learn More</p-button>
+          <p-button variant="link" color="info">Learn More</p-button>
         </div>
       </div>
       <div class="w-1/4">
@@ -255,7 +255,7 @@ description: Take picture from user's camera
         There’s a 30% membership renewal discount waiting for you when you come back.
         <div class="pt-8">
           <p-button variant="outline" color="secondary">Collect Discount</p-button>
-          <p-button variant="link" color="primary">Learn More</p-button>
+          <p-button variant="link" color="info">Learn More</p-button>
         </div>
       </div>
       <div class="w-1/4">

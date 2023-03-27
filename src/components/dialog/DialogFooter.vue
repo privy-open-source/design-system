@@ -78,7 +78,7 @@ export default defineComponent({
     },
     confirmColor: {
       type   : String as PropType<FooterButtonColorVariant>,
-      default: 'primary',
+      default: 'info',
     },
     confirmVariant: {
       type   : String as PropType<FooterButtonStyleVariant>,

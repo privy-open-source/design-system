@@ -159,7 +159,7 @@ export default defineComponent({
 <style lang="postcss">
 .tour {
   &__dialog {
-    @apply rounded bg-emphasis w-full max-w-xs z-[100] overflow-hidden relative shadow-sm;
+    @apply rounded bg-inverse w-full max-w-xs z-[100] overflow-hidden relative shadow-sm;
   }
 
   &__image {

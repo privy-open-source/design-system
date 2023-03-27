@@ -252,7 +252,7 @@ export default defineComponent({
       @apply shadow-lg mb-4 mt-0 border;
 
       &.hover {
-        @apply ring-accent ring;
+        @apply ring-info ring;
       }
     }
   }

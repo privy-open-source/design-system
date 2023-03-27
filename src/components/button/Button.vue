@@ -94,8 +94,10 @@ export default defineComponent({
 * Last Update   : Nov 21, 2022
 */
 .btn {
-  --p-color-info-hover: darken(theme(backgroundColor.accent.emphasis), 5%);
-  --p-color-info-focus: darken(theme(backgroundColor.accent.emphasis), 10%);
+  --p-color-primary-hover: darken(theme(colors.brand.accent), 5%);
+  --p-color-primary-focus: darken(theme(colors.brand.accent), 10%);
+  --p-color-info-hover: darken(theme(backgroundColor.info.emphasis), 5%);
+  --p-color-info-focus: darken(theme(backgroundColor.info.emphasis), 10%);
   --p-color-success-hover: darken(theme(backgroundColor.success.emphasis), 5%);
   --p-color-success-focus: darken(theme(backgroundColor.success.emphasis), 10%);
   --p-color-warning-hover: darken(theme(backgroundColor.warning.emphasis), 5%);
@@ -145,8 +147,12 @@ export default defineComponent({
         @apply bg-default-alpha focus:bg-subtle-alpha active:bg-subtle-alpha text-subtle hover:text-default focus:text-default;
       }
 
+      &--primary {
+        @apply bg-brand-accent hover:bg-[color:var(--p-color-primary-hover)] focus:bg-[color:var(--p-color-primary-focus)] active:bg-[color:var(--p-color-primary-focus)];
+      }
+
       &--info {
-        @apply bg-accent-emphasis hover:bg-[color:var(--p-color-info-hover)] focus:bg-[color:var(--p-color-info-focus)] active:bg-[color:var(--p-color-info-focus)];
+        @apply bg-info-emphasis hover:bg-[color:var(--p-color-info-hover)] focus:bg-[color:var(--p-color-info-focus)] active:bg-[color:var(--p-color-info-focus)];
       }
 
       &--success {
@@ -181,8 +187,12 @@ export default defineComponent({
         @apply border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
       }
 
+      &--primary {
+        @apply border-brand-accent hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
+      }
+
       &--info {
-        @apply border-accent-emphasis hover:border-[color:var(--p-color-info-hover)] focus:border-[color:var(--p-color-info-focus)] active:border-[color:var(--p-color-info-focus)];
+        @apply border-info-emphasis hover:border-[color:var(--p-color-info-hover)] focus:border-[color:var(--p-color-info-focus)] active:border-[color:var(--p-color-info-focus)];
       }
 
       &--success {
@@ -218,6 +228,10 @@ export default defineComponent({
         @apply text-subtle hover:text-default focus:text-default active:text-default;
       }
 
+      &--primary {
+        @apply text-brand-accent hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
+      }
+
       &--info {
         @apply text-info hover:text-[color:var(--p-color-info-hover)] focus:text-[color:var(--p-color-info-focus)] active:text-[color:var(--p-color-info-focus)];
       }
@@ -240,7 +254,7 @@ export default defineComponent({
     @apply border border-solid border-muted text-subtle font-normal bg-default hover:border-subtle focus:border-subtle active:outline-default;
 
     .state--disabled & {
-      @apply bg-muted border-muted pointer-events-none text-muted;
+      @apply bg-subtle border-muted pointer-events-none text-muted;
     }
 
     .state--error & {

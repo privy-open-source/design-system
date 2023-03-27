@@ -282,7 +282,7 @@ export default defineComponent({
     @apply h-2 rounded;
 
     &-active {
-      @apply bg-accent-emphasis relative text-center;
+      @apply bg-info-emphasis relative text-center;
     }
 
     &-upper {
@@ -296,7 +296,7 @@ export default defineComponent({
 
     &:hover,
     &:active {
-      @apply ring ring-accent border-accent-emphasis;
+      @apply ring ring-info border-info-emphasis;
     }
 
     &-start {

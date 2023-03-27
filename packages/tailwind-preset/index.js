@@ -123,29 +123,23 @@ module.exports = {
         'inherit'    : 'inherit',
         'current'    : 'currentColor',
         'transparent': 'transparent',
-        'base'       : theme.colors.gray[5],
-        'DEFAULT'    : theme.colors.gray[0],
-        'layer-1'    : theme.colors.gray[0],
-        'layer-2'    : theme.colors.gray[0],
-        'default'    : {
+        'base'       : {
+          DEFAULT: theme.colors.gray[5],
+          black  : theme.colors.base.black,
+          white  : theme.colors.base.white,
+        },
+        'DEFAULT': theme.colors.gray[0],
+        'layer-1': theme.colors.gray[0],
+        'layer-2': theme.colors.gray[0],
+        'default': {
           DEFAULT: theme.colors.gray[0],
           alpha  : `rgba(${theme.colors.gray[50]}, ${theme.opacity[5]})`,
         },
         'inverse': theme.colors.gray[100],
         'subtle' : {
-          DEFAULT: theme.colors.gray[5],
+          DEFAULT: theme.colors.gray[10],
           alpha  : `rgba(${theme.colors.gray[80]}, ${theme.opacity[10]})`,
         },
-        // muted   : theme.colors.gray[5],
-        // inactive: theme.colors.gray[20],
-        // emphasis: {
-        //   DEFAULT: theme.colors.gray[100],
-        //   subtle : theme.colors.gray[95],
-        //   alpha  : {
-        //     DEFAULT: `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
-        //     subtle : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
-        //   },
-        // },
         'info': {
           DEFAULT : theme.colors.blue[0],
           emphasis: theme.colors.blue[40],
@@ -206,14 +200,6 @@ module.exports = {
           alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
         },
         muted: theme.colors.gray[10],
-        // 'on-emphasis': {
-        //   DEFAULT: theme.colors.gray[90],
-        //   subtle : theme.colors.gray[70],
-        //   alpha  : {
-        //     DEFAULT: `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
-        //     subtle : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
-        //   },
-        // },
         info : {
           DEFAULT : theme.colors.blue[10],
           emphasis: theme.colors.blue[40],

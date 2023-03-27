@@ -10,7 +10,7 @@
   * Permalink
   */
   a {
-    --p-color-info-hover: darken(theme(backgroundColor.accent.emphasis), 5%);
+    --p-color-info-hover: darken(theme(backgroundColor.info.emphasis), 5%);
     @apply underline text-info hover:bg-[color:var(--p-color-info-hover)];
   }
 

@@ -265,7 +265,7 @@ export default defineComponent({
       }
 
       &[active="true"] {
-        @apply bg-accent-emphasis border-accent-emphasis text-on-emphasis cursor-default;
+        @apply bg-info-emphasis border-info-emphasis text-on-emphasis cursor-default;
       }
 
       &[disabled][active="false"] {

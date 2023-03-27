@@ -391,7 +391,7 @@ export default defineComponent({
       @apply bg-transparent hover:bg-subtle focus:bg-subtle border-transparent focus:border-default hover:border-default text-default font-normal focus:outline-none;
 
       &[active="true"] {
-        @apply bg-accent-emphasis border-accent-emphasis text-on-emphasis cursor-default;
+        @apply bg-info-emphasis border-info-emphasis text-on-emphasis cursor-default;
       }
 
       &[readonly] {

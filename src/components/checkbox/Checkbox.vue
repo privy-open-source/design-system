@@ -176,7 +176,7 @@ export default defineComponent({
     &.checkbox {
       &--checked {
         .card {
-          @apply border-accent-emphasis;
+          @apply border-info-emphasis;
         }
       }
     }
@@ -198,13 +198,13 @@ export default defineComponent({
   }
 
   /**
-  * give accent background and
+  * give info background and
   * white checked icon
   */
   &--checked,
   &--indeterminate {
     .checkbox__icon {
-      @apply bg-accent-emphasis border-accent-emphasis;
+      @apply bg-info-emphasis border-info-emphasis;
 
       > svg {
         @apply fill-default;
@@ -220,10 +220,10 @@ export default defineComponent({
 
     &:not(.checkbox--checked, .checkbox--indeterminate) {
       .checkbox__icon {
-        @apply bg-inactive border-subtle;
+        @apply bg-subtle border-subtle;
 
         > svg {
-          @apply fill-inactive;
+          @apply fill-subtle;
         }
       }
     }

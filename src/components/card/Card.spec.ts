@@ -181,7 +181,7 @@ it('should have custom body class via "body-class" props', () => {
   const screen = render({
     components: { Card },
     template  : `
-      <Card body-class="bg-accent">
+      <Card body-class="bg-info">
         Content
       </Card>
     `,
@@ -190,5 +190,5 @@ it('should have custom body class via "body-class" props', () => {
   const body = screen.queryByTestId('card-body')
 
   expect(body).toBeInTheDocument()
-  expect(body).toHaveClass('bg-accent')
+  expect(body).toHaveClass('bg-info')
 })
