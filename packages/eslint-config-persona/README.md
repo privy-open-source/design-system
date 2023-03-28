@@ -1,6 +1,6 @@
 # eslint-config-persona
 
-> Eslint shareable config for Persona peroject
+> Eslint shareable config for Persona project
 
 ## Installation
 
