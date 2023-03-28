@@ -173,6 +173,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 | `maxlength`    |      `Number`       |   `-`   | Maxlength selected files, only work on multiple mode                           |
 | `accept`       |      `String`       |   `-`   | Limitting file type can be selected, see [HTML attribute: accept][attr-accept] |
 | `clearOnCanel` |      `Boolean`      | `false` | Clear v-model when user cancel the browse file                                 |
+| `clearable`    |      `Boolean`      | `false` | Enable clear button                                                            |
 | `modelValue`   |       `File`        |   `-`   | v-model value                                                                  |
 
 ### Slots

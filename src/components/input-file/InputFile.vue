@@ -26,8 +26,10 @@
         </p-input-group-addon>
         <p-input
           readonly
+          :clearable="clearable"
           :model-value="getFileNames(rawModel)"
-          :placeholder="placeholder" />
+          :placeholder="placeholder"
+          @clear.stop.prevent="clear" />
       </p-input-group>
     </template>
   </p-dropzone>
@@ -47,6 +49,7 @@ import pInputGroupAddon from '../input-group/InputGroupAddon.vue'
 import pButton from '../button/Button.vue'
 import { ModelModifier, MultipleType } from '../dropzone'
 import { SizeVariant } from '../button'
+import { templateRef } from '@vueuse/core'
 
 export default defineComponent({
   components: {
@@ -81,6 +84,10 @@ export default defineComponent({
       type   : String,
       default: '',
     },
+    clearable: {
+      type   : Boolean,
+      default: false,
+    },
     clearOnCancel: {
       type   : Boolean,
       default: false,
@@ -110,8 +117,15 @@ export default defineComponent({
       default: 'md',
     },
   },
-  setup (props) {
-    const model = useVModel(props)
+  emits: [
+    'update:modelValue',
+    'clear',
+    'change',
+    'cancel',
+  ],
+  setup (props, { emit }) {
+    const model    = useVModel(props)
+    const dropzone = templateRef<InstanceType<typeof pDropzone>>('dropzone')
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -134,10 +148,20 @@ export default defineComponent({
         : files?.name ?? ''
     }
 
+    function clear () {
+      const event = new Event('clear')
+
+      emit('clear', event)
+
+      if (!props.disabled && !props.readonly && !event.defaultPrevented)
+        dropzone.value.clear()
+    }
+
     return {
       model,
       classNames,
       getFileNames,
+      clear,
     }
   },
 })
@@ -149,8 +173,12 @@ export default defineComponent({
     @apply p-1;
 
     > .btn {
-      @apply py-0 px-3 h-full items-center;
+      @apply py-0 px-3 h-full items-center mr-4;
     }
+  }
+
+  .input__clear {
+    @apply pointer-events-auto;
   }
 
   &--disabled,
