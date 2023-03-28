@@ -1,7 +1,7 @@
 <template>
   <div
     ref="root"
-    v-p-aspect-ratio="layout === 'fixed' ? ratio : 16/9"
+    v-p-aspect-ratio="layout === 'fixed' ? ratio : false"
     data-testid="pdf-viewer"
     class="pdf"
     :data-page="pdfPage"
