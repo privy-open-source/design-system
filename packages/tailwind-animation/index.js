@@ -1,8 +1,8 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = plugin(
-  function ({ addUtilities }) {
-    addUtilities({
+  function ({ addComponents }) {
+    addComponents({
       '.slide-up-enter-active, .slide-up-leave-active': {
         transitionDuration      : '150ms',
         transitionProperty      : 'opacity, transform',

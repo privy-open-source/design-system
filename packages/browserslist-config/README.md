@@ -1,5 +1,5 @@
 # browserslist-config
-> Browserslist shareable config
+> Browserslist shareable config for Persona project
 
 ## Installation
 
