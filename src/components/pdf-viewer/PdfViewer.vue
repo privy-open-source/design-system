@@ -233,6 +233,8 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf {
+  --p-pdf-container-width: 793px;
+
   @apply relative overflow-hidden w-full flex flex-col bg-subtle z-1;
 
   &__wrapper {

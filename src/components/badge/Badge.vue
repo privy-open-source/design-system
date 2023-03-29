@@ -143,7 +143,7 @@ export default defineComponent({
       }
 
       &--default {
-        @apply bg-base-black/5;
+        @apply bg-inverse;
       }
 
       &--success {

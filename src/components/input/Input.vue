@@ -24,11 +24,13 @@
 import {
   computed,
   defineComponent,
+  inject,
   PropType,
 } from 'vue-demi'
 import { useVModel } from '.'
 import { SizeVariant } from '../button'
 import IconClear from '@carbon/icons-vue/lib/close--filled/16'
+import { INPUTGROUP_SETTING } from '../input-group'
 
 export default defineComponent({
   components  : { IconClear },
@@ -65,13 +67,17 @@ export default defineComponent({
   },
   emits: ['update:modelValue', 'clear'],
   setup (props, { emit }) {
-    const model = useVModel(props)
+    const model   = useVModel(props)
+    const setting = inject(INPUTGROUP_SETTING, undefined, false)
 
     const classNames = computed(() => {
       const result: string[] = []
 
       // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
+      if (setting?.size.value)
+        result.push(`input--${setting?.size.value}`)
+      // eslint-disable-next-line unicorn/explicit-length-check
+      else if (props.size)
         result.push(`input--${props.size}`)
 
       if (props.disabled)
@@ -115,7 +121,7 @@ export default defineComponent({
     &:disabled,
     &--disabled,
     .state--disabled & {
-      @apply bg-subtle border-muted pointer-events-none text-muted;
+      @apply bg-subtle border-subtle pointer-events-none text-muted;
     }
 
     &:focus {
@@ -124,32 +130,29 @@ export default defineComponent({
   }
 
   &--xs {
-    @apply text-xs px-3 py-2;
+    @apply text-sm py-[2px] rounded-xs;
   }
 
   &--sm {
-    @apply px-3 py-2;
+    @apply py-[4px] rounded-sm;
   }
 
   &--md {
-    @apply px-3 py-3;
+    @apply py-[10px];
   }
 
   &--lg {
-    @apply px-3 py-4;
+    @apply py-4;
   }
 
-  .state--error &__form,
-  &--error {
-    @apply border-danger-emphasis hover:border-danger-emphasis;
-
-    &:focus {
-      @apply ring-danger border-danger-emphasis;
-    }
+  .state--error,
+  &--error,
+  &-group--error.input-group .input > .input__form {
+    @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
   }
 
   .input__clear {
-    @apply cursor-pointer hover:text-danger z-1;
+    @apply text-default/30 cursor-pointer hover:text-danger z-1;
   }
 
   &--clearable {

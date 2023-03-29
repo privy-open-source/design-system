@@ -52,6 +52,10 @@ Place one add-on on either side of a Button. You may also make Button all addon.
     <p-button icon color="info"><IconChevronLeft /></p-button>
     <p-button color="info">Button Text</p-button>
   </p-button-group>
+  <p-button-group size="xs">
+    <p-button icon color="info"><IconChevronLeft /></p-button>
+    <p-button color="info">Button Text</p-button>
+  </p-button-group>
 </preview>
 
 ```vue

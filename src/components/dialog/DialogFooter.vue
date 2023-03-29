@@ -58,7 +58,7 @@ export default defineComponent({
     },
     cancelColor: {
       type   : String as PropType<FooterButtonColorVariant>,
-      default: 'secondary',
+      default: 'default',
     },
     cancelVariant: {
       type   : String as PropType<FooterButtonStyleVariant>,

@@ -37,7 +37,7 @@ description: Headless component for Drag'n'Drop Files Upload.
   <p-dropzone accept="application/pdf">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded"
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconFile class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -66,7 +66,7 @@ description: Headless component for Drag'n'Drop Files Upload.
   <p-dropzone accept="application/pdf">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconFile class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -97,7 +97,7 @@ description: Headless component for Drag'n'Drop Files Upload.
   <p-dropzone accept="image/*">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -124,7 +124,7 @@ description: Headless component for Drag'n'Drop Files Upload.
   <p-dropzone accept="image/*">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -156,7 +156,7 @@ Add prop `multiple` to enable multi-selected upload.
   <p-dropzone accept="image/*" multiple maxlength="5">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -187,7 +187,7 @@ Add prop `multiple` to enable multi-selected upload.
   <p-dropzone accept="image/*" multiple maxlength="5">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -222,7 +222,7 @@ When user selecting the files, and then selecting again, the old list of files i
   <p-dropzone accept="image/*" multiple="append" maxlength="10">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -253,7 +253,7 @@ When user selecting the files, and then selecting again, the old list of files i
   <p-dropzone accept="image/*" multiple="append" maxlength="10">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -286,7 +286,7 @@ When user selecting the files, and then selecting again, the old list of files i
   <p-dropzone accept="image/*" v-model="result">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -317,7 +317,7 @@ When user selecting the files, and then selecting again, the old list of files i
   <p-dropzone accept="image/*" v-model="result">
     <template #default="{ isDragover, isHovered, model, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -349,7 +349,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
   <p-dropzone accept="image/*" v-model.base64="result2">
     <template #default="{ isDragover, isHovered, rawModel, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -380,7 +380,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
   <p-dropzone accept="image/*" v-model.base64="result">
     <template #default="{ isDragover, isHovered, rawModel, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-default']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -412,7 +412,7 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
   <p-dropzone accept="image/*" v-model.base64="result2" clear-on-cancel>
     <template #default="{ isDragover, isHovered, rawModel, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-subtle border-secondary-25']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
           <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
@@ -439,9 +439,9 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
   <p-dropzone accept="image/*" v-model.base64="result2" clear-on-cancel>
     <template #default="{ isDragover, isHovered, rawModel, browse }">
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
-        :class="[isDragover ? 'bg-primary-5 border-primary-100' : 'bg-background-100 border-secondary-25']">
+        :class="[isDragover ? 'bg-info border-info-emphasis' : 'bg-default border-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconImage class="w-16 h-16 mt-5 fill-primary-100" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo

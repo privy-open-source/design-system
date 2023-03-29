@@ -100,7 +100,7 @@ export default defineComponent({
   * Add dismiss button
   */
   &__dismiss {
-    @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-base-black/10 text-default/30 hover:text-default/50;
+    @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-subtle-alpha text-default/30 hover:text-default/50;
   }
 
   /**
@@ -136,7 +136,7 @@ export default defineComponent({
         @apply bg-inverse;
 
         .label__dismiss {
-          @apply border-base-white/10 text-on-emphasis/30 hover:text-on-emphasis/50;
+          @apply border-default/30 text-on-emphasis/30 hover:text-on-emphasis/50;
         }
       }
 
@@ -169,7 +169,7 @@ export default defineComponent({
   &--variant-light {
     &.label {
       &--default {
-        @apply bg-base-black/5 text-subtle;
+        @apply bg-inverse text-subtle;
       }
 
       &--primary {

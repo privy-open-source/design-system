@@ -146,7 +146,7 @@ export default defineComponent({
 <style lang="postcss">
 .input-file {
   > .input-group > .input-group__addon {
-    @apply p-1;
+    @apply py-1 pl-1 pr-2;
 
     > .btn {
       @apply py-0 px-3 h-full items-center;
@@ -157,7 +157,15 @@ export default defineComponent({
   &:disabled {
     .input-group__addon,
     .input-group .input__form {
-      @apply bg-subtle border-muted text-muted;
+      @apply bg-subtle text-muted;
+    }
+
+    .input-group__addon {
+      @apply rounded-l-sm;
+
+      + .input {
+        @apply rounded-r-sm;
+      }
     }
   }
 

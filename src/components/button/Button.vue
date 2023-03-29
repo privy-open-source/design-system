@@ -13,6 +13,7 @@ import {
   computed,
   defineComponent,
   PropType,
+  inject,
 } from 'vue-demi'
 
 import {
@@ -21,6 +22,9 @@ import {
   StyleVariant,
   TagVariant,
 } from '.'
+import { BUTTONGROUP_SETTING } from '../button-group'
+
+import { INPUTGROUP_SETTING } from '../input-group'
 
 export default defineComponent({
   props: {
@@ -50,6 +54,9 @@ export default defineComponent({
     },
   },
   setup (props) {
+    const inputSetting  = inject(INPUTGROUP_SETTING, undefined, false)
+    const buttonSetting = inject(BUTTONGROUP_SETTING, undefined, false)
+
     const classNames = computed(() => {
       const result: string[] = ['btn']
 
@@ -60,7 +67,13 @@ export default defineComponent({
         result.push(`btn--variant-${props.variant}`)
 
       // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
+      if (inputSetting?.size.value)
+        result.push(`btn--${inputSetting?.size.value}`)
+      // eslint-disable-next-line unicorn/explicit-length-check
+      else if (buttonSetting?.size.value)
+        result.push(`btn--${buttonSetting?.size.value}`)
+      // eslint-disable-next-line unicorn/explicit-length-check
+      else if (props.size)
         result.push(`btn--${props.size}`)
 
       if (props.icon)

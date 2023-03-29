@@ -199,8 +199,9 @@ module.exports = {
           DEFAULT: theme.colors.gray[25],
           alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
         },
-        muted: theme.colors.gray[10],
-        info : {
+        muted  : theme.colors.gray[10],
+        inverse: theme.colors.gray[100],
+        info   : {
           DEFAULT : theme.colors.blue[10],
           emphasis: theme.colors.blue[40],
         },
@@ -226,8 +227,9 @@ module.exports = {
             DEFAULT: theme.colors.gray[80],
             alpha  : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
           },
-          muted: theme.colors.gray[85],
-          info : {
+          muted  : theme.colors.gray[85],
+          inverse: theme.colors.gray[0],
+          info   : {
             DEFAULT : theme.colors.blue[100],
             emphasis: theme.colors.blue[30],
           },

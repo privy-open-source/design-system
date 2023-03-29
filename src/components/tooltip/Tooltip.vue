@@ -150,10 +150,10 @@ export default defineComponent({
   }
 
   &--black {
-    @apply bg-base-black text-on-emphasis;
+    @apply bg-inverse text-on-emphasis;
 
     .tooltip__arrow {
-      @apply after:bg-base-black;
+      @apply after:bg-inverse;
     }
   }
 

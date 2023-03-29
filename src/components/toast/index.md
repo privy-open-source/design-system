@@ -18,7 +18,7 @@ description: Simple notification pop-up.
 ### Simple Usage
 
 <div class="flex mt-3">
-  <Button color="primary" @click="toast({
+  <Button color="info" @click="toast({
     title: 'Lorem ipsum',
     text : 'Lorem ipsum dolor sit amet.',
   })">
@@ -38,7 +38,7 @@ toast({
 ### Advance Usage
 
 <div class="flex mt-3">
-  <Button color="primary" @click="toast({
+  <Button color="info" @click="toast({
     type      : 'error',
     title     : 'Lorem ipsum',
     text      : 'Lorem ipsum dolor sit amet.',
@@ -77,7 +77,7 @@ There available 4 type variants: `info`, `success`, `warning`, `error`. default 
 **Try it:**
 
 <div class="mt-3 space-gap-3">
-  <Button color="primary" @click="toast({
+  <Button color="info" @click="toast({
     type : 'info',
     title: 'Lorem ipsum',
     text : 'Lorem ipsum dolor sit amet.',
@@ -153,7 +153,7 @@ There available 2 style variant: `simple` and `filled`. default is `simple`
 **Try it:**
 
 <div class="mt-3 space-gap-3">
-  <Button color="primary" @click="toast({
+  <Button color="info" @click="toast({
     type   : 'info',
     variant: 'filled',
     title  : 'Lorem ipsum',
@@ -228,7 +228,7 @@ toast({
 You can add some custom class to Toast element via `toastClass`.
 
 <div class="mt-3">
-  <Button type="" color="primary" @click="toast({
+  <Button type="" color="info" @click="toast({
     title     : 'Lorem ipsum',
     text      : 'Lorem ipsum dolor sit amet.',
     toastClass: 'mt-4 mr-4',

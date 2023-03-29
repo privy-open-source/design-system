@@ -275,7 +275,7 @@ export default defineComponent({
   @apply py-2 w-full;
 
   &__tracks {
-    @apply relative flex w-full bg-subtle cursor-pointer overflow-visible rounded;
+    @apply relative flex w-full bg-base cursor-pointer overflow-visible rounded;
   }
 
   &__track {
@@ -291,7 +291,7 @@ export default defineComponent({
   }
 
   &__thumb {
-    @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-gray-25;
+    @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-muted;
     @apply touch-none select-none;
 
     &:hover,

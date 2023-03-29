@@ -93,7 +93,7 @@ export default defineComponent({
   }
 
   & > &__description {
-    @apply text-xs my-2;
+    @apply text-xs my-2 text-subtle;
   }
 
   & > &__error {

@@ -124,7 +124,7 @@ If you prefer [base64-dataURI][data-uri] format, add modifier `.base64` to your 
 
 ```vue
 <template>
-  <p-signature-text text="Lorem ipsum" v-model="result" />
+  <p-signature-text text="Lorem ipsum" v-model.base64="result" />
 </template>
 
 <script setup>

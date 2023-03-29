@@ -127,26 +127,26 @@ export default defineComponent({
     @apply absolute bottom-4 inset-x-0 justify-center items-center flex w-80 mx-auto z-10;
 
     &-container {
-      @apply flex bg-gray-70 text-gray-30 rounded p-2 space-x-1 items-center;
+      @apply flex bg-inverse text-subtlest rounded p-2 space-x-1 items-center;
 
       > .btn {
-        @apply text-gray-30;
+        @apply text-subtlest hover:text-muted;
       }
 
       > .select {
         @apply w-16;
 
         > .input {
-          @apply bg-inverse;
+          @apply bg-default-alpha;
 
           > .input__form {
-            @apply border-subtle bg-inverse;
+            @apply border-subtle-alpha bg-default-alpha;
           }
         }
       }
 
       > .divider {
-        @apply border-none bg-gray-50;
+        @apply border-none bg-default-alpha;
       }
     }
 

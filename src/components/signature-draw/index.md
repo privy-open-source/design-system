@@ -105,7 +105,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 
 ```vue
 <template>
-  <p-signature-draw v-model.base64="resultB64" />
+  <p-signature-draw v-model.base64="result" />
 </template>
 
 <script setup>

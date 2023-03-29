@@ -388,7 +388,7 @@ export default defineComponent({
     @apply justify-center items-center hover:shadow-none;
 
     &.btn--default {
-      @apply bg-transparent hover:bg-subtle focus:bg-subtle border-transparent focus:border-default hover:border-default text-default font-normal focus:outline-none;
+      @apply bg-transparent hover:bg-base focus:bg-base border-transparent focus:border-default hover:border-default text-default font-normal focus:outline-none;
 
       &[active="true"] {
         @apply bg-info-emphasis border-info-emphasis text-on-emphasis cursor-default;

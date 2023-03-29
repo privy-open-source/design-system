@@ -181,7 +181,7 @@ export default defineComponent({
   &&--info {
     .toast__icon,
     &.toast--filled {
-      @apply bg-subtle text-info;
+      @apply bg-base text-info;
     }
   }
 

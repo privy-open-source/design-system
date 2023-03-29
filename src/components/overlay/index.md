@@ -49,7 +49,7 @@ description: Block user for interacting when loading is in progress.
 **Try it:**
 
 <div>
-  <Button @click="onClick" color="primary">
+  <Button @click="onClick" color="info">
     Show
   </Button>
 </div>
