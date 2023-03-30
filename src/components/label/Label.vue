@@ -94,6 +94,8 @@ export default defineComponent({
 */
 
 .label {
+  --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
+
   @apply inline-flex items-center border border-transparent;
 
   /**
@@ -169,10 +171,14 @@ export default defineComponent({
   &--variant-light {
     &.label {
       &--default {
-        @apply bg-inverse text-subtle;
+        @apply bg-subtle-alpha text-subtle;
       }
 
       &--primary {
+        @apply bg-[color:var(--p-color-primary-light)] text-brand-accent;
+      }
+
+      &--info {
         @apply bg-info text-info;
       }
 

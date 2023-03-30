@@ -77,6 +77,46 @@ Label has 3 variants namely `default`, `light` and `dot`. When variant is not se
 </template>
 ```
 
+### Sample Light Variant
+
+<preview>
+  <p-label color="primary" variant="light">Label</p-label>
+  <p-label color="info" variant="light">Label</p-label>
+  <p-label color="warning" variant="light">Label</p-label>
+  <p-label color="success" variant="light">Label</p-label>
+  <p-label color="danger" variant="light">Label</p-label>
+</preview>
+
+```vue
+<template>
+  <p-label color="primary" variant="light">Label</p-label>
+  <p-label color="info" variant="light">Label</p-label>
+  <p-label color="warning" variant="light">Label</p-label>
+  <p-label color="success" variant="light">Label</p-label>
+  <p-label color="danger" variant="light">Label</p-label>
+</template>
+```
+
+### Sample Dot Variant
+
+<preview>
+  <p-label color="primary" variant="dot">Label</p-label>
+  <p-label color="info" variant="dot">Label</p-label>
+  <p-label color="warning" variant="dot">Label</p-label>
+  <p-label color="success" variant="dot">Label</p-label>
+  <p-label color="danger" variant="dot">Label</p-label>
+</preview>
+
+```vue
+<template>
+  <p-label color="primary" variant="dot">Label</p-label>
+  <p-label color="info" variant="dot">Label</p-label>
+  <p-label color="warning" variant="dot">Label</p-label>
+  <p-label color="success" variant="dot">Label</p-label>
+  <p-label color="danger" variant="dot">Label</p-label>
+</template>
+```
+
 ## Sizing
 Label has 4 size, namely `lg`, `md`, `sm` and `xs`. When size is not set, default label is `md`
 

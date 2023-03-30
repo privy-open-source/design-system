@@ -70,7 +70,8 @@ export default defineComponent({
   &&--variant-default {
     &.badge {
       &--default {
-        @apply bg-inverse;
+        --p-bg-variant-default: theme(backgroundColor.inverse);
+        @apply bg-[color:var(--p-bg-variant-default)];
       }
 
       &--primary {
@@ -103,7 +104,8 @@ export default defineComponent({
   &&--variant-inverse {
     &.badge {
       &--default {
-        @apply text-subtle;
+        --p-color-variant-light: theme(textColor.subtle);
+        @apply text-[color:var(--p-color-variant-light)];
       }
 
       &--primary {
@@ -134,16 +136,17 @@ export default defineComponent({
   */
   &--variant-light {
     &.badge {
+      &--default {
+        --p-bg-variant-light: theme(backgroundColor.subtle.alpha);
+        @apply bg-[color:var(--p-bg-variant-light)];
+      }
+
       &--primary {
         @apply bg-[color:var(--p-color-primary-light)];
       }
 
       &--info {
         @apply bg-info;
-      }
-
-      &--default {
-        @apply bg-inverse;
       }
 
       &--success {

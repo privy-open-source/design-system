@@ -223,7 +223,7 @@ The navigation component is used to display the primary navigation in the sideba
     <p-navbar-nav align="right">
       <p-nav-form>
         <p-button href="#" variant="link">Login</p-button>
-        <p-button href="#" color="primary">Create Free Account</p-button>
+        <p-button href="#" color="info">Create Free Account</p-button>
       </p-nav-form>
     </p-navbar-nav>
   </p-navbar>
@@ -531,7 +531,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
     <p-navbar-nav align="right">
       <p-nav-form>
         <p-button href="#" variant="link">Login</p-button>
-        <p-button href="#" color="primary">Create Free Account</p-button>
+        <p-button href="#" color="info">Create Free Account</p-button>
       </p-nav-form>
     </p-navbar-nav>
   </p-navbar>
@@ -553,7 +553,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
           <p-navbar-nav align="right">
             <p-nav-form>
               <p-button href="#" variant="link">Login</p-button>
-              <p-button href="#" color="primary">Create Free Account</p-button>
+              <p-button href="#" color="info">Create Free Account</p-button>
             </p-nav-form>
           </p-navbar-nav>
         </p-collapse>

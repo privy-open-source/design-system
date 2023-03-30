@@ -296,6 +296,7 @@ module.exports = {
         danger     : theme.colors.red[40],
         dark       : {
           DEFAULT: theme.colors.gray[90],
+          default: theme.colors.gray[90],
           info   : theme.colors.blue[30],
           success: theme.colors.green[30],
           warning: theme.colors.orange[30],

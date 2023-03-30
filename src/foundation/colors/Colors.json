@@ -1307,58 +1307,58 @@
         {
           "id" : 1,
           "token" : "border.info",
-          "figma" : "main/blue/10",
-          "hex"   : "#A8CBEF",
-          "parentToken" : "$blue.10"
+          "figma" : "main/blue/100",
+          "hex"   : "#000F1F",
+          "parentToken" : "$blue.100"
         },
         {
           "id" : 2,
           "token" : "border.infoEmphasis",
-          "figma" : "main/blue/40",
-          "hex"   : "#0065D1",
-          "parentToken" : "$blue.40"
+          "figma" : "main/blue/30",
+          "hex"   : "#3887DB",
+          "parentToken" : "$blue.30"
         },
         {
           "id" : 3,
           "token" : "border.success",
-          "figma" : "main/green/10",
-          "hex"   : "#B4E5BF",
-          "parentToken" : "$green.10"
+          "figma" : "main/green/100",
+          "hex"   : "#051B0A",
+          "parentToken" : "$green.100"
         },
         {
           "id" : 4,
           "token" : "border.successEmphasis",
-          "figma" : "main/green/40",
-          "hex"   : "#23B242",
-          "parentToken" : "$green.40"
+          "figma" : "main/green/30",
+          "hex"   : "#53C36C",
+          "parentToken" : "$green.30"
         },
         {
           "id" : 5,
           "token" : "border.warning",
-          "figma" : "main/orange/10",
-          "hex"   : "#FCE1B4",
-          "parentToken" : "$orange.10"
+          "figma" : "main/orange/100",
+          "hex"   : "#251905",
+          "parentToken" : "$orange.100"
         },
         {
           "id" : 6,
           "token" : "border.warningEmphasis",
-          "figma" : "main/orange/40",
-          "hex"   : "#F5A623",
-          "parentToken" : "$orange.40"
+          "figma" : "main/orange/30",
+          "hex"   : "#F7BA53",
+          "parentToken" : "$orange.30"
         },
         {
           "id" : 7,
           "token" : "border.danger",
-          "figma" : "main/red/10",
-          "hex"   : "#F6B8B7",
-          "parentToken" : "$red.10"
+          "figma" : "main/red/100",
+          "hex"   : "#220707",
+          "parentToken" : "$red.100"
         },
         {
           "id" : 8,
           "token" : "border.dangerEmphasis",
-          "figma" : "main/red/40",
-          "hex"   : "#E42E2C",
-          "parentToken" : "$red.40"
+          "figma" : "main/red/30",
+          "hex"   : "#EA5C5A",
+          "parentToken" : "$red.30"
         }
       ]
     }
