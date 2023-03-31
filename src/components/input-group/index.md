@@ -61,7 +61,6 @@ description: Combine multiple input in singleline.
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider vertical />
     <p-input />
   </p-input-group>
 </template>

@@ -197,7 +197,7 @@ export default defineComponent({
   /**
   * Set modal backdrop
   */
-  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-emphasis/30 z-[1060] overscroll-contain;
+  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-inverse/30 z-[1060] overscroll-contain;
 
   &--banner {
     .modal {
