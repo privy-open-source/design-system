@@ -29,6 +29,7 @@
 
     <div class="flex flex-col items-center justify-center pt-10 space-gap-2 md:flex-row">
       <Button
+        color="primary"
         size="lg"
         @click="gettingStarted">
         Get Started

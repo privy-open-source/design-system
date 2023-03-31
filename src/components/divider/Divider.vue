@@ -34,7 +34,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .divider {
-  @apply bg-subtle-alpha my-2 w-[1px];
+  @apply bg-subtle-alpha my-2;
+
+  &&--horizontal {
+    @apply w-full h-[1px];
+  }
 
   &&--vertical,
   .input-group > & {

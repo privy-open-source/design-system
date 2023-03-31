@@ -11,7 +11,7 @@ description: Headless Wizard.
   import pInput from '../input/Input.vue'
   import pBanner from '../banner/Banner.vue'
   import { reactive, ref } from 'vue-demi'
-  import { dialog } from '../../core/'
+  import * as dialog from '../dialog'
 
   const step = ref(1)
 

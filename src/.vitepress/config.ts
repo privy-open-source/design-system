@@ -10,7 +10,7 @@ export default defineConfig({
   description: 'Persona - PrivyID\'s Design System, built on top Nuxt3, Typescript and Tailwind',
   head       : head,
   themeConfig: {
-    logo    : './assets/images/logo.svg',
+    logo    : '/assets/images/logo.svg',
     editLink: { pattern: 'https://github.com/privy-open-source/design-system/edit/main/src/:path' },
     footer  : {
       message  : 'Released under the MIT License.',
@@ -317,6 +317,14 @@ export default defineConfig({
               text: 'PDF Object',
               link: '/components/pdf-object/',
             },
+            {
+              text: 'PDF Helipad',
+              link: '/components/pdf-helipad/',
+            },
+            {
+              text: 'PDF Text',
+              link: '/components/pdf-text/',
+            },
           ],
         },
         {
@@ -408,12 +416,28 @@ export default defineConfig({
               link: '/styleguide/check-radio/',
             },
             {
+              text: 'Dropdown',
+              link: '/styleguide/dropdown/',
+            },
+            {
               text: 'Navigation',
               link: '/styleguide/navigation/',
             },
             {
+              text: 'Pagination',
+              link: '/styleguide/pagination/',
+            },
+            {
+              text: 'Progress',
+              link: '/styleguide/progress/',
+            },
+            {
               text: 'Table',
               link: '/styleguide/table/',
+            },
+            {
+              text: 'Toggle',
+              link: '/styleguide/toggle/',
             },
           ],
         },

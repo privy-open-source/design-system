@@ -415,7 +415,7 @@ export default defineComponent({
     @apply absolute bottom-20 left-0 right-0 text-center text-on-emphasis px-4;
 
     &-text {
-      @apply bg-inverse bg-opacity-80 px-4 py-1 text-sm rounded shadow-md inline-block max-w-full truncate;
+      @apply bg-emphasis/80 px-4 py-1 text-sm rounded shadow-md inline-block max-w-full truncate;
     }
   }
 }

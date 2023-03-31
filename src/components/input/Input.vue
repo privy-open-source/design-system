@@ -95,11 +95,11 @@ export default defineComponent({
       return result
     })
 
-    function clear () {
-      if (!props.disabled && !props.readonly)
-        model.value = ''
+    function clear (event: MouseEvent) {
+      emit('clear', event)
 
-      emit('clear')
+      if (!props.disabled && !props.readonly && !event.defaultPrevented)
+        model.value = ''
     }
 
     return {

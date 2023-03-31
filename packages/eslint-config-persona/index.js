@@ -117,6 +117,7 @@ module.exports = {
         'no-undef'                       : 'off',
         'comma-dangle'                   : 'off',
         '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
+        '@typescript-eslint/key-spacing' : 'off',
       },
     },
     {

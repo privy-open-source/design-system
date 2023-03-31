@@ -22,8 +22,8 @@ export async function triggerDragStart () {
   await nextTick()
 }
 
-export async function triggerDragMove (dx: number, dy: number) {
-  options.onmove({ dx, dy } as unknown as InteractEvent)
+export async function triggerDragMove (event: Partial<InteractEvent>) {
+  options.onmove(event as InteractEvent)
 
   await nextTick()
   await nextTick()

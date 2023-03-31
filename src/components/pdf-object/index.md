@@ -112,7 +112,7 @@ description: Add object to PDF Viewer
 <script setup lang="ts">
   import FILE from '~/assets/Calibrator-v3.pdf?url'
 
-  interface PDFObject {
+  interface PdfObject {
     page?: number,
     x?: number,
     y?: number,
@@ -120,7 +120,7 @@ description: Add object to PDF Viewer
     height?: number,
   }
 
-  const object = reactive<PDFObject>({
+  const object = reactive<PdfObject>({
     page  : undefined,
     x     : undefined,
     y     : undefined,
@@ -188,7 +188,7 @@ You can add additional element like action button using `<p-object-addon>` compo
 <script setup lang="ts">
   import FILE from '~/assets/Calibrator-v3.pdf?url'
 
-  interface PDFObject {
+  interface PdfObject {
     _id: symbol,
     page?: number,
     x?: number,
@@ -197,7 +197,7 @@ You can add additional element like action button using `<p-object-addon>` compo
     height?: number,
   }
 
-  const objects = reactive<PDFObject[]>([])
+  const objects = reactive<PdfObject[]>([])
 
   function add () {
     objects.push({

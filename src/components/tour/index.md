@@ -31,13 +31,9 @@ description: Give a tour for new user.
 
   const advanceTour = createTour()
     .visit(withBase('/docs/getting-started'))
-    .click('[data-tour="theme-dashboard"] > summary')
     .dialog('[data-tour="theme-dashboard"]', 'This is tutorial for install persona dashboard theme')
-    .click('[data-tour="theme-dashboard"] > summary')
     .delay(100)
-    .click('[data-tour="theme-docs"] > summary')
     .dialog('[data-tour="theme-docs"]', 'This is tutorial for install persona docs theme')
-    .click('[data-tour="theme-docs"] > summary')
     .delay(100)
     .visit(withBase('/components/tour/'))
     .delay(100)
@@ -146,13 +142,9 @@ tour.start()
 ```ts
 const tour = createTour()
   .visit('/design-system/docs/getting-started')
-  .click('[data-tour="theme-dashboard"] > summary')
   .dialog('[data-tour="theme-dashboard"]', 'This is tutorial for install persona dashboard theme')
-  .click('[data-tour="theme-dashboard"] > summary')
   .delay(100)
-  .click('[data-tour="theme-docs"] > summary')
   .dialog('[data-tour="theme-docs"]', 'This is tutorial for install persona docs theme')
-  .click('[data-tour="theme-docs"] > summary')
   .delay(100)
   .visit('/design-system/components/tour/')
   .delay(100)
@@ -186,7 +178,7 @@ const tour = createTour()
     text  : 'This is text',
     image : 'https://picsum.photos/400/225',
   })
-  // It can also write like this (shortcut)
+  // It can also write like this (Shorthand)
   .dialog('#sample', 'This is text', 'This is title', 'https://picsum.photos/400/225')
 ```
 
@@ -326,7 +318,7 @@ const tour   = createTour()
 | `title`        | `String`  |     -      | Tour dialog title                                                             |
 | `image`        | `String`  |     -      | Tour dialog image url                                                         |
 
-#### Shortcut
+#### Shorthand
 
 `.dialog(target: string, text: string, title?: string, image?: string)`
 
@@ -340,7 +332,7 @@ const tour   = createTour()
 | `action` | `String` |    -    | Tour action, valid value: `click`, `dblClick`, `tripleClick`, `type`, `hover`, `unhover`, `clear` |
 | `params` | `Array`  |    -    | Action Parameters                                                                                 |
 
-#### Shortcut
+#### Shorthand
 
 `.action(target: string, text: string, ...params: any[]): TourStory`
 
