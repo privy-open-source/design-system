@@ -1,0 +1,1 @@
+import{_ as a}from"./Caption.vue_vue_type_style_index_0_lang.6244a345.js";import{_ as e,o,c as t,r,n}from"./framework.76afac0a.js";function p(s,c,l,i,m,_){return o(),t("span",{"data-testid":"caption",class:n(s.classNames)},[r(s.$slots,"default")],2)}const $=e(a,[["render",p]]);export{$ as p};
