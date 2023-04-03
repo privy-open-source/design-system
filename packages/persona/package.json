@@ -100,7 +100,7 @@
     "@types/sanitize-html": "^2",
     "browserslist-to-esbuild": "^1.2.0",
     "del-cli": "5.0.0",
-    "nuxt": "3.3.2",
+    "nuxt": "3.3.3",
     "postcss-custom-properties": "^12.1.11",
     "postcss-hexrgba": "^2.1.0",
     "postcss-lighten-darken": "^0.9.0",
