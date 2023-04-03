@@ -135,7 +135,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .avatar {
-  @apply rounded-full inline-flex items-center justify-center overflow-hidden text-subtle bg-subtle;
+  @apply rounded-full inline-flex items-center justify-center overflow-hidden text-subtle dark:text-dark-subtle bg-subtle dark:bg-dark-subtle;
 
   &__image {
     @apply w-full h-full object-cover;
