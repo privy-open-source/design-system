@@ -59,7 +59,7 @@ export default defineComponent({
   * of badge
   */
   --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
-  --p-color-primary-dark: lighten(theme(colors.dark.brand.accent), 40%)
+  --p-color-dark-primary-light: lighten(theme(colors.dark.brand.accent), 40%);
 
   @apply inline-block font-bold text-xs px-2 py-0.5 text-on-emphasis dark:text-dark-on-emphasis rounded-full;
 
@@ -73,8 +73,8 @@ export default defineComponent({
     &.badge {
       &--default {
         --p-bg-variant-default: theme(backgroundColor.inverse);
-        --p-bg-variant-default-dark: theme(backgroundColor.dark.inverse);
-        @apply bg-[color:var(--p-bg-variant-default)] dark:bg-[color:var(--p-bg-variant-default-dark))];
+        --p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
+        @apply bg-[color:var(--p-bg-variant-default)] dark:bg-[color:var(--p-bg-dark-variant-default)];
       }
 
       &--primary {
@@ -108,8 +108,8 @@ export default defineComponent({
     &.badge {
       &--default {
         --p-color-variant-inverse: theme(textColor.subtle);
-        --p-color-variant-inverse-dark: theme(textColor.dark.subtle)
-        @apply text-[color:var(--p-color-variant-inverse)] dark:text-[color:var(var(--p-color-variant-inverse-dark))];
+        --p-color-dark-variant-inverse: theme(textColor.dark.subtle);
+        @apply text-[color:var(--p-color-variant-inverse)] dark:text-[color:var(--p-color-dark-variant-inverse)];
       }
 
       &--primary {
@@ -142,12 +142,12 @@ export default defineComponent({
     &.badge {
       &--default {
         --p-bg-variant-light: theme(backgroundColor.subtle.alpha);
-        --p-bg-variant-dark: theme(backgroundColor.dark.subtle.alpha);
-        @apply bg-[color:var(--p-bg-variant-light)] dark:bg-[color:var(--p-bg-variant-dark)];
+        --p-bg-dark-variant-light: theme(backgroundColor.dark.subtle.alpha);
+        @apply bg-[color:var(--p-bg-variant-light)] dark:bg-[color:var(--p-bg-dark-variant-light)];
       }
 
       &--primary {
-        @apply bg-[color:var(--p-color-primary-light)] dark:bg-[color:var(--p-color-primary-dark)];
+        @apply bg-[color:var(--p-color-primary-light)] dark:bg-[color:var(--p-color-dark-primary-light)];
       }
 
       &--info {
