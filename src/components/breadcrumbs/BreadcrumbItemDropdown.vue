@@ -53,16 +53,16 @@ export default defineComponent({
 .breadcrumbs__item {
   &&--dropdown {
     .dropdown__activator {
-      @apply px-0 text-subtle bg-transparent border-transparent hover:shadow-none hover:border-transparent hover:bg-transparent focus:shadow-none focus:border-transparent focus:bg-transparent;
+      @apply px-0 text-subtle dark:text-dark-subtle bg-transparent border-transparent hover:shadow-none hover:border-transparent hover:bg-transparent focus:shadow-none focus:border-transparent focus:bg-transparent;
     }
   }
 
   &&--active {
     .dropdown__activator {
-      @apply text-default;
+      @apply text-default dark:text-dark-default;
 
       & > .dropdown__caret {
-        @apply text-subtle;
+        @apply text-subtle dark:text-dark-subtle;
       }
     }
   }
