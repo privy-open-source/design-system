@@ -7,6 +7,7 @@ description: Collections of colors library
   import Colors from './Colors.vue'
   import pCaption from '../../components/caption/Caption.vue'
   import pHeading from '../../components/heading/Heading.vue'
+  import pText from '../../components/text/Text.vue'
   import { ref, computed } from "vue-demi"
   import items from './Colors.json'
 </script>
@@ -40,11 +41,50 @@ Persona uses design tokens to collaborate between UI/UX designers and engineers.
   <p-caption class="!text-subtle" weight="bold">parent-token-name</p-caption>
 </div>
 
+### Brand
+Mostly used on logo and button cta
+
+<p-text variant="subheading" class="block ml-24 pt-8">
+  Light
+</p-text>
+<div class="pb-8">
+  <template v-for="item of items.brandlight">
+    <Colors :item="item">
+      {{ item.title }}
+    </Colors>
+  </template>
+</div>
+
+<p-text variant="subheading" class="block ml-24 pt-8">
+  Dark
+</p-text>
+<div class="pb-8">
+  <template v-for="item of items.branddark">
+    <Colors :item="item">
+      {{ item.title }}
+    </Colors>
+  </template>
+</div>
+
 ### Foregrounds
 Mostly used on text and icons
 
-<div class="pb-8 mt-8">
+<p-text variant="subheading" class="block ml-24 pt-8">
+  Light
+</p-text>
+<div class="pb-8">
   <template v-for="item of items.foregrounds">
+    <Colors :item="item">
+      {{ item.title }}
+    </Colors>
+  </template>
+</div>
+
+<p-text variant="subheading" class="block ml-24 pt-8">
+  Dark
+</p-text>
+<div class="pb-8">
+  <template v-for="item of items.foregroundsdark">
     <Colors :item="item">
       {{ item.title }}
     </Colors>
@@ -54,8 +94,22 @@ Mostly used on text and icons
 ### Backgrounds
 Mostly used on cards or overlay
 
-<div class="pb-8 mt-8">
+<p-text variant="subheading" class="block ml-24 pt-8">
+  Light
+</p-text>
+<div class="pb-8">
   <template v-for="item of items.backgrounds">
+    <Colors :item="item">
+      {{ item.title }}
+    </Colors>
+  </template>
+</div>
+
+<p-text variant="subheading" class="block ml-24 pt-8">
+  Dark
+</p-text>
+<div class="pb-8">
+  <template v-for="item of items.backgroundsdark">
     <Colors :item="item">
       {{ item.title }}
     </Colors>
@@ -65,8 +119,22 @@ Mostly used on cards or overlay
 ### Borders
 Mostly used on cards and form OR as divider beetween section such as data table
 
+<p-text variant="subheading" class="block ml-24 pt-8">
+  Light
+</p-text>
 <div class="pb-8 mt-8">
   <template v-for="item of items.borders">
+    <Colors :item="item">
+      {{ item.title }}
+    </Colors>
+  </template>
+</div>
+
+<p-text variant="subheading" class="block ml-24 pt-8">
+  Dark
+</p-text>
+<div class="pb-8 mt-8">
+  <template v-for="item of items.bordersdark">
     <Colors :item="item">
       {{ item.title }}
     </Colors>

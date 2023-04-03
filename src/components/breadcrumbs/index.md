@@ -7,9 +7,10 @@ description: The current page's location within a navigational hierarchy
   import pBreadcrumb from './Breadcrumb.vue'
   import pBreadcrumbItem from './BreadcrumbItem.vue'
   import pBreadcrumbItemDropdown from './BreadcrumbItemDropdown.vue'
+  import { defineNavigation } from '.'
   import pDropdownItem from '../dropdown/DropdownItem.vue'
 
-  const items = [
+  const items = defineNavigation([
     {
       text: 'Dashboard',
       href: '/'
@@ -18,9 +19,9 @@ description: The current page's location within a navigational hierarchy
       text: 'All Documents',
       active: true
     }
-  ]
+  ])
 
-  const itemsB = [
+  const itemsB = defineNavigation([
     {
       text: 'Dashboard',
       href: '#',
@@ -44,7 +45,7 @@ description: The current page's location within a navigational hierarchy
         }
       ]
     },
-  ]
+  ])
 </script>
 
 # Breadcrumbs
@@ -62,7 +63,9 @@ Items of breadcrumbs are rendered using `items` prop. It can be an array of obje
 
 ```vue
 <script>
-  const items = [
+  import { defineNavigation } from '@privyid/persona/core'
+
+  const items = defineNavigation([
     {
       text: 'Dashboard',
       href: '/'
@@ -71,7 +74,7 @@ Items of breadcrumbs are rendered using `items` prop. It can be an array of obje
       text: 'All Documents',
       active: true
     }
-  ]
+  ])
 </script>
 
 <template>
@@ -121,7 +124,9 @@ Individual `<p-breadcrumb-item>` can be placed manually in the default slot of `
 ```vue
 <template>
   <script>
-    const items = [
+    import { defineNavigation } from '@privyid/persona/core'
+
+    const items = defineNavigation([
       {
         text: 'Dashboard',
         href: '#',
@@ -145,7 +150,7 @@ Individual `<p-breadcrumb-item>` can be placed manually in the default slot of `
           }
         ]
       },
-    ]
+    ])
   </script>
 
   <p-breadcrumb :items="items" />

@@ -16,7 +16,7 @@
     <Button
       size="sm"
       variant="link"
-      color="primary"
+      color="info"
       @click="reset">
       Reset
     </Button>
@@ -103,7 +103,7 @@ export default defineComponent({
     &.filterbar--active {
       &.btn--default,
       & .dropdown__activator.btn--default {
-        @apply bg-emphasis-subtle text-on-emphasis border-on-emphasis;
+        @apply bg-inverse text-on-emphasis border-inverse;
       }
     }
   }

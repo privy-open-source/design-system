@@ -61,11 +61,7 @@ description: Combine multiple input in singleline.
     <p-input-group-addon>
       <IconEmail />
     </p-input-group-addon>
-    <p-divider vertical />
     <p-input />
-    <p-button variant="input">
-      Submit
-    </p-button>
   </p-input-group>
 </template>
 ```
@@ -103,7 +99,7 @@ description: Combine multiple input in singleline.
 ### Input and Select
 
 <preview>
-  <p-input-group>
+  <p-input-group size="lg">
     <p-select v-model="select" :options="['A', 'B', 'C']" />
     <p-input />
   </p-input-group>

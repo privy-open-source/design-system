@@ -159,7 +159,7 @@ export default defineComponent({
     }
 
     .textarea--disabled & {
-      @apply bg-muted border-muted pointer-events-none text-muted;
+      @apply bg-subtle border-subtle pointer-events-none text-muted;
     }
 
     .textarea--resize & {
@@ -172,11 +172,7 @@ export default defineComponent({
 
     .state--error &,
     .textarea--error & {
-      @apply border-danger-emphasis hover:border-danger-emphasis;
-
-      &:focus {
-        @apply ring-danger border-danger-emphasis;
-      }
+      @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
     }
   }
 

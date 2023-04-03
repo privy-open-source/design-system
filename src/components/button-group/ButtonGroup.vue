@@ -11,7 +11,10 @@ import {
   defineComponent,
   PropType,
   computed,
+  provide,
+  toRef,
 } from 'vue-demi'
+import { BUTTONGROUP_SETTING } from '.'
 import type { SizeVariant } from '../button'
 
 export default defineComponent({
@@ -27,6 +30,8 @@ export default defineComponent({
   },
 
   setup (props) {
+    provide(BUTTONGROUP_SETTING, { size: toRef(props, 'size') })
+
     const classNames = computed(() => {
       const result: string[] = ['btn-group']
 
@@ -91,6 +96,7 @@ export default defineComponent({
       @apply -ml-[1px];
 
       &.btn--primary,
+      &.btn--info,
       &.btn--success,
       &.btn--warning,
       &.btn--danger {
@@ -126,16 +132,14 @@ export default defineComponent({
   }
 
   /**
-  * Sizing the button group
-  * and overwrite the default size
-  * of buttons
+  * Sizing the button group,
+  * and set rounded of first
+  * & last button in each size
   */
   &&--xs:not(&--pill) {
     .btn {
       &:not(.btn--icon),
       .dropdown .btn {
-        @apply px-2 py-[2px] gap-1 text-sm;
-
         &:first-child {
           @apply rounded-l-xs;
         }
@@ -155,8 +159,6 @@ export default defineComponent({
     .btn {
       &:not(.btn--icon),
       .dropdown .btn {
-        @apply px-4 py-1 gap-2 text-base;
-
         &:first-child {
           @apply rounded-l-sm;
         }
@@ -190,11 +192,6 @@ export default defineComponent({
 
   &&--md {
     .btn {
-      &:not(.btn--icon),
-      .dropdown .btn {
-        @apply px-5 py-[10px] gap-3 text-base;
-      }
-
       &:is(.btn--icon) {
         @apply p-[12px];
       }
@@ -203,11 +200,6 @@ export default defineComponent({
 
   &&--lg:not(&--pill) {
     .btn {
-      &:not(.btn--icon),
-      .dropdown .btn {
-        @apply px-8 py-4 gap-4 text-base;
-      }
-
       &:is(.btn--icon) {
         @apply p-[18px];
       }

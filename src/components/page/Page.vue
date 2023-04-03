@@ -65,6 +65,9 @@ export default defineComponent({
 
 <style lang="postcss">
 .page {
+  --p-page-type-wide: 60px;
+  --p-page-type-narrow: 230px;
+
   @apply w-full;
 
   &&--expand {
@@ -73,11 +76,11 @@ export default defineComponent({
         @apply transition-[padding] ease-out delay-75;
 
         &.page--type-wide {
-          @apply pl-[60px];
+          @apply pl-[var(--p-page-type-wide)];
         }
 
         &.page--type-narrow {
-          @apply pl-[230px];
+          @apply pl-[var(--p-page-type-narrow)];
         }
       }
     }
@@ -87,26 +90,26 @@ export default defineComponent({
     }
 
     &&-lg {
-      @apply lg:pl-[230px];
+      @apply lg:pl-[var(--p-page-type-narrow)];
 
       &:not(.page--type-narrow) {
-        @apply lg:pl-[60px];
+        @apply lg:pl-[var(--p-page-type-wide)];
       }
     }
 
     &&-md {
-      @apply md:pl-[230px];
+      @apply md:pl-[var(--p-page-type-narrow)];
 
       &:not(.page--type-narrow) {
-        @apply md:pl-[60px];
+        @apply md:pl-[var(--p-page-type-wide)];
       }
     }
 
     &&-sm {
-      @apply sm:pl-[230px];
+      @apply sm:pl-[var(--p-page-type-narrow)];
 
       &:not(.page--type-narrow) {
-        @apply sm:pl-[60px];
+        @apply sm:pl-[var(--p-page-type-wide)];
       }
     }
   }

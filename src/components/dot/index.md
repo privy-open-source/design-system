@@ -41,10 +41,11 @@ The default color of dot are black.
 ```
 
 ## Colors
-Dot available in 4 different colors: `primary`, `success`, `warning` and `danger`.
+Dot available in 4 different colors: `primary`, `info`, `success`, `warning` and `danger`.
 
 <preview>
   <p-dot color="primary" />
+  <p-dot color="info" />
   <p-dot color="success" />
   <p-dot color="warning" />
   <p-dot color="danger" />
@@ -53,6 +54,7 @@ Dot available in 4 different colors: `primary`, `success`, `warning` and `danger
 ```vue
 <template>
   <p-dot color="primary" />
+  <p-dot color="info" />
   <p-dot color="success" />
   <p-dot color="warning" />
   <p-dot color="danger" />
@@ -65,6 +67,7 @@ Dot also available with variant `pills`. When variant is not set, dot will looks
 <preview>
   <p-dot variant="pills" />
   <p-dot color="primary" variant="pills" />
+  <p-dot color="info" variant="pills" />
   <p-dot color="success" variant="pills" />
   <p-dot color="warning" variant="pills" />
   <p-dot color="danger" variant="pills" />
@@ -74,6 +77,7 @@ Dot also available with variant `pills`. When variant is not set, dot will looks
 <template>
   <p-dot variant="pills" />
   <p-dot color="primary" variant="pills" />
+  <p-dot color="info" variant="pills" />
   <p-dot color="success" variant="pills" />
   <p-dot color="warning" variant="pills" />
   <p-dot color="danger" variant="pills" />
@@ -86,7 +90,7 @@ Dot also available with variant `pills`. When variant is not set, dot will looks
 
 | Props     |   Type   | Default | Description                                                                    |
 |-----------|:--------:|:-------:|--------------------------------------------------------------------------------|
-| `color`   | `String` |   `-`   | Dot color variant, valid value is `primary`, `success`, `warning` and `danger` |
+| `color`   | `String` |   `-`   | Dot color variant, valid value is `primary`, `info`, `success`, `warning` and `danger` |
 | `variant` | `String` |   `-`   | Dot style variant, valid value is `pills`                                      |
 
 ### Slots

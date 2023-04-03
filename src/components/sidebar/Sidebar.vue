@@ -93,6 +93,9 @@ export default defineComponent({
 
 <style lang="postcss">
 .sidebar {
+  --p-sidebar-size-narrow: 60px;
+  --p-sidebar-size-wide: 230px;
+
   @apply bg-default px-2 py-4;
 
   /**
@@ -100,7 +103,7 @@ export default defineComponent({
   * 230px width
   */
   &:not(.sidebar--narrow) {
-    @apply w-[230px];
+    @apply w-[var(--p-sidebar-size-wide)];
   }
 
   /**
@@ -162,7 +165,7 @@ export default defineComponent({
   * is 60px width
   */
   &&--narrow {
-    @apply w-[60px];
+    @apply w-[var(--p-sidebar-size-narrow)];
   }
 
   /**

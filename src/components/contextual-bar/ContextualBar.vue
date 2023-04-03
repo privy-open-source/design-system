@@ -277,6 +277,12 @@ export default defineComponent({
   &__content {
     @apply flex-grow;
 
+    &__message {
+      .caption {
+        @apply text-subtle;
+      }
+    }
+
     &__title {
       @apply text-base;
     }
@@ -299,7 +305,7 @@ export default defineComponent({
   }
 
   &&--dark {
-    @apply bg-emphasis text-on-emphasis;
+    @apply bg-inverse text-on-emphasis;
 
     .contextual-bar__close {
       @apply text-on-emphasis/30 hover:text-on-emphasis/50;
@@ -307,11 +313,11 @@ export default defineComponent({
   }
 
   &&--light {
-    @apply bg-subtle text-default;
+    @apply bg-base text-default;
 
     .contextual-bar {
       &__icon {
-        @apply text-accent;
+        @apply text-info;
       }
     }
   }

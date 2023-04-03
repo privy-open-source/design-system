@@ -47,7 +47,7 @@ export default defineComponent({
   @apply pr-9;
 
   &__toggle {
-    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer z-1;
+    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer z-1 text-default/30 hover:text-subtle;
 
     .input--disabled ~ & {
       @apply pointer-events-none text-muted;

@@ -235,6 +235,8 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf {
+  --p-pdf-container-width: 793px;
+
   @apply relative overflow-hidden w-full flex flex-col bg-subtle z-1;
 
   &__wrapper {
@@ -254,7 +256,7 @@ export default defineComponent({
       @apply shadow-lg mb-4 mt-0 border;
 
       &.hover {
-        @apply ring-accent ring;
+        @apply ring-info ring;
       }
     }
   }

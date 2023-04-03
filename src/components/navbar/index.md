@@ -288,6 +288,8 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
       <img src="../../public/assets/images/logo.svg" />
     </p-navbar-brand>
     <p-navbar-nav>
+      <p-nav-item active>Label</p-nav-item>
+      <p-nav-item>Label</p-nav-item>
       <p-nav-form>
         <p-input-group>
           <p-input placeholder="Search" />

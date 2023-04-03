@@ -129,7 +129,7 @@ Example:
 <preview>
   <div>
     <p-calendar v-model="value" />
-    <div>
+    <div class="mt-4">
       Result: {{ value && format(value, 'dd-MM-yyyy') }}
     </div>
   </div>

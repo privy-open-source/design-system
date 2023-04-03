@@ -56,6 +56,6 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf__error {
-  @apply shadow-lg mb-4 p-6 bg-danger w-full h-full max-w-[793px] mx-auto;
+  @apply shadow-lg mb-4 p-6 bg-danger w-full h-full max-w-[var(--p-pdf-container-width)] mx-auto;
 }
 </style>

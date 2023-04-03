@@ -60,8 +60,8 @@ description: Headless Wizard.
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 1</div>
             <div class="space-gap-2">
-              <p-button disabled color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -73,8 +73,8 @@ description: Headless Wizard.
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 2</div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -86,9 +86,9 @@ description: Headless Wizard.
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 3</div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Finish</p-button>
-              <p-button @click="toStep(1)" color="primary">To Step 1</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Finish</p-button>
+              <p-button @click="toStep(1)" color="info">To Step 1</p-button>
             </div>
           </div>
         </p-card>
@@ -106,8 +106,8 @@ description: Headless Wizard.
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 1</div>
             <div class="space-gap-2">
-              <p-button disabled color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -119,8 +119,8 @@ description: Headless Wizard.
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 2</div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -132,9 +132,9 @@ description: Headless Wizard.
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 3</div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Finish</p-button>
-              <p-button @click="to(1)" color="primary">To Step 1</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Finish</p-button>
+              <p-button @click="to(1)" color="info">To Step 1</p-button>
             </div>
           </div>
         </p-card>
@@ -161,8 +161,8 @@ This hook ran when `next` function was called, suit for form validation.
               <p-input v-model="form.name" placeholder="Fill to next" />
             </div>
             <div class="space-gap-2">
-              <p-button disabled color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -177,8 +177,8 @@ This hook ran when `next` function was called, suit for form validation.
               <p-input v-model="form.email" placeholder="Fill to next" />
             </div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -199,8 +199,8 @@ This hook ran when `next` function was called, suit for form validation.
               <p-input v-model="form.name" placeholder="Fill to next" />
             </div>
             <div class="space-x-2">
-              <p-button disabled color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -215,8 +215,8 @@ This hook ran when `next` function was called, suit for form validation.
               <p-input v-model="form.email" placeholder="Fill to next" />
             </div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -277,8 +277,8 @@ This hook run when `next` function called in **last step**, and after `on-before
               <p-input v-model="form.name" placeholder="Fill to next" />
             </div>
             <div class="space-gap-2">
-              <p-button disabled color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -293,8 +293,8 @@ This hook run when `next` function called in **last step**, and after `on-before
               <p-input v-model="form.email" placeholder="Fill to next" />
             </div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -317,8 +317,8 @@ This hook run when `next` function called in **last step**, and after `on-before
               <p-input v-model="form.name" placeholder="Fill to next" />
             </div>
             <div class="space-gap-2">
-              <p-button disabled color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -333,8 +333,8 @@ This hook run when `next` function called in **last step**, and after `on-before
               <p-input v-model="form.email" placeholder="Fill to next" />
             </div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -376,8 +376,8 @@ You can binding current step with v-model
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 1</div>
             <div class="space-gap-2">
-              <p-button disabled color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -389,8 +389,8 @@ You can binding current step with v-model
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 2</div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Next</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
             </div>
           </div>
         </p-card>
@@ -402,8 +402,8 @@ You can binding current step with v-model
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 3</div>
             <div class="space-gap-2">
-              <p-button @click="prev" color="primary">Prev</p-button>
-              <p-button @click="next" color="primary">Finish</p-button>
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Finish</p-button>
             </div>
           </div>
         </p-card>

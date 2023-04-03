@@ -10,7 +10,8 @@ import {
   PropType,
   computed,
 } from 'vue-demi'
-import { ColorVariant, StyleVariant } from '.'
+import { StyleVariant } from '.'
+import { ColorVariant } from '../button'
 
 export default defineComponent({
   props: {
@@ -68,11 +69,15 @@ export default defineComponent({
   * warning & danger
   */
   &&--default {
-    @apply bg-emphasis-subtle;
+    @apply bg-inverse;
   }
 
   &&--primary {
-    @apply bg-accent-emphasis;
+    @apply bg-brand-accent;
+  }
+
+  &&--info {
+    @apply bg-info-emphasis;
   }
 
   &&--success {
