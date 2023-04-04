@@ -64,6 +64,26 @@ description: Base button component
 
 Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
 
+### Without Color
+<preview>
+  <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+    <p-button variant="solid">Click me</p-button>
+    <p-button variant="outline">Click me</p-button>
+    <p-button variant="ghost">Click me</p-button>
+    <p-button variant="link">Click me</p-button>
+  </div>
+</preview>
+
+```vue
+<template>
+  <p-button variant="solid">Click me</p-button>
+  <p-button variant="outline">Click me</p-button>
+  <p-button variant="ghost">Click me</p-button>
+  <p-button variant="link">Click me</p-button>
+</template>
+```
+
+### With Color
 <preview>
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
     <p-button color="info" variant="solid">Click me</p-button>

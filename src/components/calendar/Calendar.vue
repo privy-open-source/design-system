@@ -258,18 +258,18 @@ export default defineComponent({
     @apply justify-center;
 
     &.btn--default {
-      @apply border-transparent bg-transparent text-default font-normal;
+      @apply border-transparent bg-transparent text-default dark:text-dark-on-emphasis hover:dark:text-dark-on-emphasis font-normal;
 
       &.calendar__nav-title {
         @apply font-medium;
       }
 
       &[active="true"] {
-        @apply bg-info-emphasis border-info-emphasis text-on-emphasis cursor-default;
+        @apply bg-info-emphasis dark:bg-dark-info-emphasis border-info-emphasis dark:border-dark-info-emphasis text-state-emphasis dark:text-dark-state-emphasis cursor-default;
       }
 
       &[disabled][active="false"] {
-        @apply text-muted;
+        @apply text-muted dark:text-dark-muted;
       }
     }
 

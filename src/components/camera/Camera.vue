@@ -363,7 +363,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .camera {
-  @apply bg-inverse w-full flex flex-col select-none relative overflow-hidden;
+  @apply bg-inverse dark:bg-dark-inverse w-full flex flex-col select-none relative overflow-hidden;
 
   &__video {
     @apply flex-grow min-h-full max-w-full h-auto object-cover;
@@ -404,7 +404,7 @@ export default defineComponent({
   }
 
   &__off-info {
-    @apply absolute bottom-20 text-on-emphasis left-0 right-0 text-center text-sm;
+    @apply absolute bottom-20 text-on-emphasis dark:text-dark-on-emphasis left-0 right-0 text-center text-sm;
   }
 
   &__controls {
@@ -412,10 +412,10 @@ export default defineComponent({
   }
 
   &__toast {
-    @apply absolute bottom-20 left-0 right-0 text-center text-on-emphasis px-4;
+    @apply absolute bottom-20 left-0 right-0 text-center text-on-emphasis dark:text-dark-on-emphasis px-4;
 
     &-text {
-      @apply bg-inverse/80 px-4 py-1 text-sm rounded shadow-md inline-block max-w-full truncate;
+      @apply bg-inverse/80 dark:bg-dark-inverse/80 px-4 py-1 text-sm rounded shadow-md inline-block max-w-full truncate;
     }
   }
 }

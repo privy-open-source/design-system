@@ -163,7 +163,7 @@ export default defineComponent({
   * default style variant
   */
   &&--variant-solid {
-    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-on-emphasis;
+    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-state-emphasis dark:text-dark-state-emphasis;
 
     &.btn {
       &--default {
