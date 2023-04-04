@@ -141,7 +141,7 @@ export default defineComponent({
 * Last Update   : May 23, 2022
 */
 .card {
-  @apply border bg-default dark:bg-dark-default border-default dark:border-dark-default rounded;
+  @apply border bg-default dark:bg-dark-default border-default dark:border-dark-default text-default dark:text-dark-default rounded;
 
   /*
   * Card Body & Card Header

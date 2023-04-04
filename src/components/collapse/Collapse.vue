@@ -86,7 +86,7 @@ export default defineComponent({
 <style lang="postcss">
 .collapse {
   &&--show {
-    @apply block visible;
+    @apply block visible text-default dark:text-dark-default;
   }
 
   &:not(&--show) {

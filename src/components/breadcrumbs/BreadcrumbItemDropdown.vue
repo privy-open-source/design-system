@@ -53,7 +53,7 @@ export default defineComponent({
 .breadcrumbs__item {
   &&--dropdown {
     .dropdown__activator {
-      @apply px-0 text-subtle dark:text-dark-subtle bg-transparent border-transparent hover:shadow-none hover:border-transparent hover:bg-transparent focus:shadow-none focus:border-transparent focus:bg-transparent;
+      @apply px-0 text-subtle dark:text-dark-subtle bg-transparent dark:bg-transparent border-transparent dark:border-transparent hover:shadow-none hover:border-transparent hover:dark:border-transparent hover:bg-transparent hover:dark:bg-transparent focus:shadow-none focus:border-transparent focus:dark:border-transparent focus:bg-transparent focus:dark:bg-transparent;
     }
   }
 

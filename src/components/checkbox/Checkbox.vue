@@ -161,10 +161,10 @@ export default defineComponent({
   * with custom icon
   */
   &__icon {
-    @apply w-5 h-5 border rounded-tn border-subtle inline-flex items-center justify-center bg-default;
+    @apply w-5 h-5 border rounded-tn border-subtle dark:border-dark-subtle inline-flex items-center justify-center bg-default dark:bg-dark-default;
 
     > svg {
-      @apply w-3 fill-default;
+      @apply w-3 fill-default dark:fill-dark-default;
     }
   }
 
@@ -176,7 +176,7 @@ export default defineComponent({
     &.checkbox {
       &--checked {
         .card {
-          @apply border-info-emphasis;
+          @apply border-info-emphasis dark:border-dark-info-emphasis;
         }
       }
     }
@@ -194,7 +194,7 @@ export default defineComponent({
   * give color of checkbox label
   */
   &__label {
-    @apply text-default;
+    @apply text-default dark:text-dark-default;
   }
 
   /**
@@ -204,10 +204,10 @@ export default defineComponent({
   &--checked,
   &--indeterminate {
     .checkbox__icon {
-      @apply bg-info-emphasis border-info-emphasis;
+      @apply bg-info-emphasis dark:bg-dark-info-emphasis border-info-emphasis dark:border-dark-info-emphasis;
 
       > svg {
-        @apply fill-default;
+        @apply fill-default dark:fill-dark-inverse;
       }
     }
   }
@@ -220,10 +220,10 @@ export default defineComponent({
 
     &:not(.checkbox--checked, .checkbox--indeterminate) {
       .checkbox__icon {
-        @apply bg-subtle border-subtle;
+        @apply bg-subtle dark:bg-dark-subtle border-subtle dark:border-dark-subtle;
 
         > svg {
-          @apply fill-subtle;
+          @apply fill-subtle dark:fill-dark-subtle;
         }
       }
     }
@@ -250,7 +250,7 @@ export default defineComponent({
 
     &:hover,
     &:focus-visible {
-      @apply bg-subtle;
+      @apply bg-subtle dark:bg-dark-subtle;
     }
   }
 }

@@ -142,7 +142,9 @@ You can disabled it using prop `no-autocrop`. And to trigger the cropping, you c
 
 <preview class="flex-col">
   <p-cropper ref="cropper" :src="img" v-model.base64="result2" no-autocrop />
-  <p-button @click="doCrop">Do Crop</p-button>
+  <div class="mt-4">
+    <p-button @click="doCrop">Do Crop</p-button>
+  </div>
 </preview>
 
 **result:**

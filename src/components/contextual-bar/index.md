@@ -45,7 +45,7 @@ onMounted (() => {
     }
 
     &--hide {
-      @apply border-transparent bg-transparent bg-none;
+      @apply border-transparent dark:border-transparent bg-transparent dark:bg-transparent bg-none;
     }
   }
 </style>

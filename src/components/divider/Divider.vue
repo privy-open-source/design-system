@@ -34,7 +34,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .divider {
-  @apply bg-subtle-alpha my-2;
+  @apply bg-subtle-alpha dark:bg-dark-subtle-alpha my-2;
 
   &&--horizontal {
     @apply w-full h-[1px];
@@ -42,23 +42,23 @@ export default defineComponent({
 
   &&--vertical,
   .input-group > & {
-    @apply flex items-center my-0 py-3 border-subtle bg-transparent z-1;
+    @apply flex items-center my-0 py-3 border-subtle dark:border-dark-subtle bg-transparent dark:bg-dark-transparent z-1;
 
     &::before {
-      @apply content-[''] bg-subtle-alpha w-[1px] h-full;
+      @apply content-[''] bg-subtle-alpha dark:bg-dark-subtle-alpha w-[1px] h-full;
     }
   }
 
   .state--error & {
-    @apply border-danger-emphasis;
+    @apply border-danger-emphasis dark:border-dark-danger-emphasis;
 
     &::before {
-      @apply bg-danger-emphasis;
+      @apply bg-danger-emphasis dark:bg-dark-danger-emphasis;
     }
   }
 
   .state--disabled & {
-    @apply bg-subtle border-subtle pointer-events-none text-muted;
+    @apply bg-subtle dark:bg-dark-subtle border-subtle dark:border-dark-subtle pointer-events-none text-muted dark:text-dark-muted;
   }
 }
 </style>

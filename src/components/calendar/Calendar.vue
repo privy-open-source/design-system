@@ -244,7 +244,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .calendar {
-  @apply flex flex-col space-y-2 text-sm shadow-xl border-transparent;
+  @apply flex flex-col space-y-2 text-sm shadow-xl border-transparent dark:border-transparent;
 
   &__nav {
     @apply flex justify-between space-x-2 mb-2;
@@ -258,7 +258,7 @@ export default defineComponent({
     @apply justify-center;
 
     &.btn--default {
-      @apply border-transparent bg-transparent text-default dark:text-dark-on-emphasis hover:dark:text-dark-on-emphasis font-normal;
+      @apply border-transparent bg-transparent dark:border-transparent dark:bg-transparent text-default dark:text-dark-subtle hover:dark:text-dark-default font-normal;
 
       &.calendar__nav-title {
         @apply font-medium;

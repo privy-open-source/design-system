@@ -279,7 +279,7 @@ export default defineComponent({
 
     &__message {
       .caption {
-        @apply text-subtle;
+        @apply text-subtle dark:text-dark-subtle;
       }
     }
 
@@ -301,23 +301,23 @@ export default defineComponent({
   }
 
   &__close {
-    @apply absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-default/30 hover:text-default/50;
+    @apply absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-default/30 dark:text-dark-default/30 hover:text-default/50 hover:dark:text-dark-default/50;
   }
 
   &&--dark {
-    @apply bg-inverse text-on-emphasis;
+    @apply bg-inverse dark:bg-dark-inverse text-on-emphasis dark:text-dark-on-emphasis;
 
     .contextual-bar__close {
-      @apply text-on-emphasis/30 hover:text-on-emphasis/50;
+      @apply text-on-emphasis/30 dark:text-dark-on-emphasis/30 hover:text-on-emphasis/50 hover:dark:text-dark-on-emphasis/50;
     }
   }
 
   &&--light {
-    @apply bg-base text-default;
+    @apply bg-base dark:bg-dark-base text-default dark:text-dark-default;
 
     .contextual-bar {
       &__icon {
-        @apply text-info;
+        @apply text-info dark:text-dark-info;
       }
     }
   }

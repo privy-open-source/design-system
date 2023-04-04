@@ -69,27 +69,27 @@ export default defineComponent({
   * warning & danger
   */
   &&--default {
-    @apply bg-inverse;
+    @apply bg-inverse dark:bg-dark-inverse;
   }
 
   &&--primary {
-    @apply bg-brand-accent;
+    @apply bg-brand-accent dark:bg-dark-brand-accent;
   }
 
   &&--info {
-    @apply bg-info-emphasis;
+    @apply bg-info-emphasis dark:bg-dark-info-emphasis;
   }
 
   &&--success {
-    @apply bg-success-emphasis;
+    @apply bg-success-emphasis dark:bg-dark-success-emphasis;
   }
 
   &&--warning {
-    @apply bg-warning-emphasis;
+    @apply bg-warning-emphasis dark:bg-dark-warning-emphasis;
   }
 
   &&--danger {
-    @apply bg-danger-emphasis;
+    @apply bg-danger-emphasis dark:bg-dark-danger-emphasis;
   }
 
   /**

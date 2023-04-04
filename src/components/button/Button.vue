@@ -236,7 +236,7 @@ export default defineComponent({
   * Button ghost variant
   */
   &&--variant-ghost {
-    @apply border-transparent bg-transparent hover:border-default-alpha hover:dark:border-dark-default-alpha hover:bg-default-alpha hover:dark:bg-dark-default-alpha active:bg-default-alpha active:dark:bg-dark-default-alpha focus:bg-default-alpha focus:dark:bg-dark-default-alpha active:border-default-alpha active:dark:border-dark-default-alpha focus:border-default-alpha focus:dark:border-dark-default-alpha;
+    @apply border-transparent dark:border-transparent bg-transparent dark:bg-transparent hover:border-default-alpha hover:dark:border-dark-default-alpha hover:bg-default-alpha hover:dark:bg-dark-default-alpha active:bg-default-alpha active:dark:bg-dark-default-alpha focus:bg-default-alpha focus:dark:bg-dark-default-alpha active:border-default-alpha active:dark:border-dark-default-alpha focus:border-default-alpha focus:dark:border-dark-default-alpha;
   }
 
   /**

@@ -89,7 +89,7 @@ export default defineComponent({
     */
 
     :where(&--normal, &--medium, &--bold) {
-      @apply text-default;
+      @apply text-default dark:text-dark-default;
     }
 
     &--normal {

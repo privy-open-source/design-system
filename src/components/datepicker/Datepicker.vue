@@ -158,7 +158,7 @@ export default defineComponent({
   }
 
   &__icon {
-    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-muted pointer-events-none;
+    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-muted dark:text-dark-muted pointer-events-none;
   }
 
   > .dropdown__menu {

@@ -62,7 +62,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .subheading {
-  @apply m-0 capitalize tracking-normal text-default;
+  @apply m-0 capitalize tracking-normal text-default dark:text-dark-default;
 
   /**
   * Weight variant
