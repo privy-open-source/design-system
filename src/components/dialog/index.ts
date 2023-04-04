@@ -7,28 +7,22 @@ import type {
 } from './DialogFooter.vue'
 import type { SizeVariant } from '../modal/Modal.vue'
 
+interface DialogButton {
+  text?: string,
+  visible?: boolean,
+  className?: string,
+  closeModal?: boolean,
+  color?: FooterButtonColorVariant,
+  variant?: FooterButtonStyleVariant,
+}
 export interface DialogOptions {
   title: string,
   text?: string,
   size?: SizeVariant,
   centered?: boolean,
   footerAlign?: FooterAlignVariant,
-  cancel?: {
-    text?: string,
-    visible?: boolean,
-    className?: string,
-    closeModal?: boolean,
-    color?: FooterButtonColorVariant,
-    variant?: FooterButtonStyleVariant,
-  },
-  confirm?: {
-    text?: string,
-    visible?: boolean,
-    className?: string,
-    closeModal?: boolean,
-    color?: FooterButtonColorVariant,
-    variant?: FooterButtonStyleVariant,
-  },
+  cancel?: DialogButton,
+  confirm?: DialogButton,
 }
 
 export interface DialogContext extends DialogOptions {

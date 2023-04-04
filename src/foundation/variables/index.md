@@ -54,10 +54,10 @@ Table-list regarding the use of foundation
 Button has 3 radius variant. `default` radius is used for button size `lg` and `md`. `sm` radius is used for button size `sm` and `xs` radius is for button size `xs`.
 
 <preview class="flex-col space-y-4">
-  <p-button color="primary" size="lg">default</p-button>
-  <p-button color="primary">default</p-button>
-  <p-button color="primary" size="sm">sm</p-button>
-  <p-button color="primary" size="xs">xs</p-button>
+  <p-button color="info" size="lg">default</p-button>
+  <p-button color="info">default</p-button>
+  <p-button color="info" size="sm">sm</p-button>
+  <p-button color="info" size="xs">xs</p-button>
 </preview>
 
 <div class="table-list w-2/4">
@@ -76,10 +76,10 @@ Button has 3 radius variant. `default` radius is used for button size `lg` and `
 Label has 4 radius variant. `default` radius is used form label size `lg`, `sm` radius is used for label size `md`, `xs` radius is used for label size `sm` and `tn` radius is for label size `tn`.
 
 <preview class="flex-col space-y-4">
-  <p-label variant="dot" color="primary" size="lg">default</p-label>
-  <p-label variant="dot" color="primary">sm</p-label>
-  <p-label variant="dot" color="primary" size="sm">xs</p-label>
-  <p-label variant="dot" color="primary" size="xs">tn</p-label>
+  <p-label variant="dot" color="info" size="lg">default</p-label>
+  <p-label variant="dot" color="info">sm</p-label>
+  <p-label variant="dot" color="info" size="sm">xs</p-label>
+  <p-label variant="dot" color="info" size="xs">tn</p-label>
 </preview>
 
 <div class="table-list w-2/3">
@@ -97,7 +97,7 @@ Label has 4 radius variant. `default` radius is used form label size `lg`, `sm` 
 Badge use `full` radius.
 
 <preview class="flex-col">
-  <p-badge color="primary">full</p-badge>
+  <p-badge color="info">full</p-badge>
 </preview>
 
 <div class="table-list w-1/3">
@@ -164,10 +164,10 @@ Avatar has 5 size variant, there are `xl`, `lg`, `md`, `sm` and `xs`. Default si
 Button has 4 size variant, there are `lg`, `md`, `sm` and `xs`. Default button size is `md`
 
 <preview class="flex-row space-x-4">
-  <p-button color="primary" size="lg">lg</p-button>
-  <p-button color="primary" size="md">md</p-button>
-  <p-button color="primary" size="sm">sm</p-button>
-  <p-button color="primary" size="xs">xs</p-button>
+  <p-button color="info" size="lg">lg</p-button>
+  <p-button color="info" size="md">md</p-button>
+  <p-button color="info" size="sm">sm</p-button>
+  <p-button color="info" size="xs">xs</p-button>
 </preview>
 
 <div class="table-list w-1/3">
@@ -185,10 +185,10 @@ Button has 4 size variant, there are `lg`, `md`, `sm` and `xs`. Default button s
 Label has 4 size variant, there are `lg`, `md`, `sm` and `xs`. The default size of label is `md`
 
 <preview class="flex-row space-x-4">
-  <p-label variant="dot" color="primary" size="lg">lg</p-label>
-  <p-label variant="dot" color="primary" size="md">md</p-label>
-  <p-label variant="dot" color="primary" size="sm">sm</p-label>
-  <p-label variant="dot" color="primary" size="xs">xs</p-label>
+  <p-label variant="dot" color="info" size="lg">lg</p-label>
+  <p-label variant="dot" color="info" size="md">md</p-label>
+  <p-label variant="dot" color="info" size="sm">sm</p-label>
+  <p-label variant="dot" color="info" size="xs">xs</p-label>
 </preview>
 
 <div class="table-list w-1/3">
@@ -206,10 +206,10 @@ Label has 4 size variant, there are `lg`, `md`, `sm` and `xs`. The default size 
 Modal has 4 different size, namely `lg`, `md`, `sm` and `xs`. Default modal size is `md`
 
 <preview class="flex-row space-x-4 modal-container">
-  <p-button color="primary" @click="showModal('lg')">Modal Large</p-button>
-  <p-button color="primary" @click="showModal('md')">Modal Medium</p-button>
-  <p-button color="primary" @click="showModal('sm')">Modal Small</p-button>
-  <p-button color="primary" @click="showModal('xs')">Modal Xsmall</p-button>
+  <p-button color="info" @click="showModal('lg')">Modal Large</p-button>
+  <p-button color="info" @click="showModal('md')">Modal Medium</p-button>
+  <p-button color="info" @click="showModal('sm')">Modal Small</p-button>
+  <p-button color="info" @click="showModal('xs')">Modal Xsmall</p-button>
 </preview>
 
 <p-modal 

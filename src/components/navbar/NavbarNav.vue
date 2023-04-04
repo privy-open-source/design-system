@@ -83,7 +83,7 @@ export default defineComponent({
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply bg-subtle dark:bg-emphasis-alpha hover:bg-subtle dark:bg-emphasis-alpha;
+              @apply bg-subtle dark:bg-dark-subtle-alpha hover:bg-subtle hover:dark:bg-dark-subtle-alpha;
             }
           }
         }
@@ -91,7 +91,7 @@ export default defineComponent({
 
       &.nav--condensed {
         .nav__link--active {
-          @apply bg-subtle dark:bg-emphasis-alpha;
+          @apply bg-subtle dark:bg-dark-default-alpha;
         }
       }
     }
@@ -107,7 +107,7 @@ export default defineComponent({
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply border-b-on-emphasis dark:border-b-default;
+              @apply border-b-inverse dark:border-b-dark-default;
             }
           }
         }

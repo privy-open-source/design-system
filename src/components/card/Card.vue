@@ -206,7 +206,7 @@ export default defineComponent({
   * If Card disabled
   */
   &&--disabled {
-    @apply bg-muted;
+    @apply bg-subtle;
   }
 
   /**
@@ -249,7 +249,7 @@ export default defineComponent({
 
     &&--disabled,
     &.card--disabled {
-      @apply bg-muted;
+      @apply bg-subtle;
     }
 
     &.card--disabled {

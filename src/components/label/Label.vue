@@ -26,11 +26,9 @@ import {
   ref,
 } from 'vue-demi'
 import Dot from '../dot/Dot.vue'
+import { StyleVariant } from '.'
+import { ColorVariant, SizeVariant } from '../button'
 import IconClose from '@carbon/icons-vue/lib/close/16'
-
-type ColorVariant = 'default' | 'primary' | 'success' | 'warning' | 'danger'
-type StyleVariant = 'default' | 'light' | 'dot'
-type SizeVariant = 'lg' | 'md' | 'sm' | 'xs'
 
 export default defineComponent({
   components: { Dot, IconClose },
@@ -96,13 +94,15 @@ export default defineComponent({
 */
 
 .label {
+  --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
+
   @apply inline-flex items-center border border-transparent;
 
   /**
   * Add dismiss button
   */
   &__dismiss {
-    @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-base-black/10 text-default/30 hover:text-default/50;
+    @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-subtle-alpha text-default/30 hover:text-default/50;
   }
 
   /**
@@ -135,15 +135,19 @@ export default defineComponent({
 
     &.label {
       &--default {
-        @apply bg-emphasis-subtle;
+        @apply bg-inverse;
 
         .label__dismiss {
-          @apply border-base-white/10 text-on-emphasis/30 hover:text-on-emphasis/50;
+          @apply border-default/30 text-on-emphasis/30 hover:text-on-emphasis/50;
         }
       }
 
       &--primary {
-        @apply bg-accent-emphasis;
+        @apply bg-brand-accent;
+      }
+
+      &--info {
+        @apply bg-info-emphasis;
       }
 
       &--success {
@@ -167,11 +171,15 @@ export default defineComponent({
   &--variant-light {
     &.label {
       &--default {
-        @apply bg-base-black/5 text-subtle;
+        @apply bg-subtle-alpha text-subtle;
       }
 
       &--primary {
-        @apply bg-accent text-accent;
+        @apply bg-[color:var(--p-color-primary-light)] text-brand-accent;
+      }
+
+      &--info {
+        @apply bg-info text-info;
       }
 
       &--success {

@@ -13,6 +13,7 @@ import {
   computed,
   defineComponent,
   PropType,
+  inject,
 } from 'vue-demi'
 
 import {
@@ -21,6 +22,9 @@ import {
   StyleVariant,
   TagVariant,
 } from '.'
+import { BUTTONGROUP_SETTING } from '../button-group'
+
+import { INPUTGROUP_SETTING } from '../input-group'
 
 export default defineComponent({
   props: {
@@ -50,6 +54,9 @@ export default defineComponent({
     },
   },
   setup (props) {
+    const inputSetting  = inject(INPUTGROUP_SETTING, undefined, false)
+    const buttonSetting = inject(BUTTONGROUP_SETTING, undefined, false)
+
     const classNames = computed(() => {
       const result: string[] = ['btn']
 
@@ -60,7 +67,13 @@ export default defineComponent({
         result.push(`btn--variant-${props.variant}`)
 
       // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
+      if (inputSetting?.size.value)
+        result.push(`btn--${inputSetting?.size.value}`)
+      // eslint-disable-next-line unicorn/explicit-length-check
+      else if (buttonSetting?.size.value)
+        result.push(`btn--${buttonSetting?.size.value}`)
+      // eslint-disable-next-line unicorn/explicit-length-check
+      else if (props.size)
         result.push(`btn--${props.size}`)
 
       if (props.icon)
@@ -94,8 +107,10 @@ export default defineComponent({
 * Last Update   : Nov 21, 2022
 */
 .btn {
-  --p-color-primary-hover: darken(theme(backgroundColor.accent.emphasis), 5%);
-  --p-color-primary-focus: darken(theme(backgroundColor.accent.emphasis), 10%);
+  --p-color-primary-hover: darken(theme(colors.brand.accent), 5%);
+  --p-color-primary-focus: darken(theme(colors.brand.accent), 10%);
+  --p-color-info-hover: darken(theme(backgroundColor.info.emphasis), 5%);
+  --p-color-info-focus: darken(theme(backgroundColor.info.emphasis), 10%);
   --p-color-success-hover: darken(theme(backgroundColor.success.emphasis), 5%);
   --p-color-success-focus: darken(theme(backgroundColor.success.emphasis), 10%);
   --p-color-warning-hover: darken(theme(backgroundColor.warning.emphasis), 5%);
@@ -146,7 +161,11 @@ export default defineComponent({
       }
 
       &--primary {
-        @apply bg-accent-emphasis hover:bg-[color:var(--p-color-primary-hover)] focus:bg-[color:var(--p-color-primary-focus)] active:bg-[color:var(--p-color-primary-focus)];
+        @apply bg-brand-accent hover:bg-[color:var(--p-color-primary-hover)] focus:bg-[color:var(--p-color-primary-focus)] active:bg-[color:var(--p-color-primary-focus)];
+      }
+
+      &--info {
+        @apply bg-info-emphasis hover:bg-[color:var(--p-color-info-hover)] focus:bg-[color:var(--p-color-info-focus)] active:bg-[color:var(--p-color-info-focus)];
       }
 
       &--success {
@@ -182,7 +201,11 @@ export default defineComponent({
       }
 
       &--primary {
-        @apply border-accent-emphasis hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
+        @apply border-brand-accent hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
+      }
+
+      &--info {
+        @apply border-info-emphasis hover:border-[color:var(--p-color-info-hover)] focus:border-[color:var(--p-color-info-focus)] active:border-[color:var(--p-color-info-focus)];
       }
 
       &--success {
@@ -219,7 +242,11 @@ export default defineComponent({
       }
 
       &--primary {
-        @apply text-accent hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
+        @apply text-brand-accent hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
+      }
+
+      &--info {
+        @apply text-info hover:text-[color:var(--p-color-info-hover)] focus:text-[color:var(--p-color-info-focus)] active:text-[color:var(--p-color-info-focus)];
       }
 
       &--success {
@@ -240,7 +267,7 @@ export default defineComponent({
     @apply border border-solid border-muted text-subtle font-normal bg-default hover:border-subtle focus:border-subtle active:outline-default;
 
     .state--disabled & {
-      @apply bg-muted border-muted pointer-events-none text-muted;
+      @apply bg-subtle border-muted pointer-events-none text-muted;
     }
 
     .state--error & {

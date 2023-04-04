@@ -178,7 +178,7 @@ Table is used to organize and display information from a data set.
     <template #cell(status)="{ item }">
       <span>
         {{ item.name }}
-        <p-label variant="light" color="primary" size="xs">Label</p-label>
+        <p-label variant="light" color="info" size="xs">Label</p-label>
       </span>
       <p-caption>Caption</p-caption>
     </template>
@@ -223,7 +223,7 @@ Table is used to organize and display information from a data set.
 <div class="py-4 table-noborder">
   <p-table :fields="fields2" :items="items1">
     <template #cell(label)="{ item }">
-      <p-label variant="light" color="primary" size="sm">Label</p-label>
+      <p-label variant="light" color="info" size="sm">Label</p-label>
     </template>
   </p-table>
 </div>
@@ -342,7 +342,7 @@ Table is used to organize and display information from a data set.
       <span class="flex flex-col">
         <span>
           {{ item.name }}
-          <p-label size="xs" variant="light" color="primary">Label</p-label>
+          <p-label size="xs" variant="light" color="info">Label</p-label>
         </span>
         <p-caption>Caption</p-caption>
       </span>
@@ -377,7 +377,7 @@ Table is used to organize and display information from a data set.
       <span class="flex flex-col">
         <span>
           {{ item.name }}
-          <p-label size="xs" variant="light" color="primary">Label</p-label>
+          <p-label size="xs" variant="light" color="info">Label</p-label>
         </span>
         <p-caption>Caption</p-caption>
       </span>
@@ -413,7 +413,7 @@ Table is used to organize and display information from a data set.
       <span class="flex flex-col">
         <span>
           {{ item.name }}
-          <p-label size="xs" variant="light" color="primary">Label</p-label>
+          <p-label size="xs" variant="light" color="info">Label</p-label>
         </span>
         <p-caption>Caption</p-caption>
       </span>

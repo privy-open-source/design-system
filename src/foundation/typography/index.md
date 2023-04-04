@@ -11,6 +11,10 @@ description: Collections of typography library
   import { ref, computed } from "vue-demi"
 </script>
 
+<style lang="postcss">
+
+</style>
+
 # Typography
 
 <div class="flex">
@@ -217,39 +221,39 @@ description: Collections of typography library
 <div class="grid grid-cols-1 gap-y-8 py-8">
   <div class="w-full">
     <p-heading class="!text-default py-4" element="h1">Heading 1</p-heading>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">72px / Auto / -0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-7xl</span> • leading-wide • tracking-tight</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">72px / Auto / -0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-7xl</span> • leading-wide • tracking-tight</p-caption>
   </div>
   <div class="w-full">
     <p-heading class="!text-default py-4" element="h2">Heading 2</p-heading>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">72px / Auto / -0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-7xl</span> • leading-wide • tracking-tight</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">72px / Auto / -0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-7xl</span> • leading-wide • tracking-tight</p-caption>
   </div>
   <div class="w-full">
     <p-heading class="!text-default py-4" element="h3">Heading 3</p-heading>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">48px / Auto / 0px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-5xl</span> • leading-wide • tracking-normal</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">48px / Auto / 0px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-5xl</span> • leading-wide • tracking-normal</p-caption>
   </div>
   <div class="w-full">
     <p-heading class="!text-default py-4" element="h4">Heading 4</p-heading>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">36px / Auto / 0px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-4xl</span> • leading-wide • tracking-normal</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">36px / Auto / 0px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-4xl</span> • leading-wide • tracking-normal</p-caption>
   </div>
   <div class="w-full">
     <p-heading class="!text-default py-4" element="h5" weight="medium">Heading 5</p-heading>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">24px / Auto / 0px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-2xl</span> • leading-wide • tracking-normal</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">24px / Auto / 0px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-2xl</span> • leading-wide • tracking-normal</p-caption>
   </div>
   <div class="w-full">
     <p-heading class="!text-default py-4" element="h6" weight="medium">Heading 6</p-heading>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">20px / Auto / 0px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-xl</span> • leading-wide • tracking-normal</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">20px / Auto / 0px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-xl</span> • leading-wide • tracking-normal</p-caption>
   </div>
 </div>
 
@@ -258,15 +262,15 @@ description: Collections of typography library
 <div class="grid grid-cols-1 gap-y-8 py-8">
   <div class="w-full">
     <p-subheading class="!text-default py-4" size="md" weight="medium">Sub Heading 1</p-subheading>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">16px / 1.5 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">16px / 1.5 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wide</p-caption>
   </div>
   <div class="w-full">
     <p-subheading class="!text-default py-4" size="sm" weight="medium">Sub Heading 2</p-subheading>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">14px / 1.42 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">14px / 1.42 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wide</p-caption>
   </div>
 </div>
 
@@ -275,43 +279,43 @@ description: Collections of typography library
 <div class="grid grid-cols-1 gap-y-8 py-8">
   <div class="w-full">
     <p-text class="!text-default block py-4" variant="body">Body 1</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">16px / 1.5 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">16px / 1.5 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wide</p-caption>
   </div>
   <div class="w-full">
     <p-text class="!text-default block py-4" variant="body2">Body 2</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">14px / 1.42 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">14px / 1.42 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wide</p-caption>
   </div>
   <div class="w-full">
     <ul class="!my-0 py-4">
       <li><p-text class="!text-default" variant="body">Body List 1</p-text></li>
     </ul>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">16px / 1.5 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">16px / 1.5 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wide</p-caption>
   </div>
   <div class="w-full">
     <ul class="!my-0 py-4">
       <li><p-text class="!text-default" variant="body2">Body List 2</p-text></li>
     </ul>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">14px / 1.42 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">14px / 1.42 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wide</p-caption>
   </div>
   <div class="w-full">
     <p-text class="!text-default block py-4" variant="body" hyperlink>Hyperlink (text)</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">16px / 1.5 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">16px / 1.5 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wide</p-caption>
   </div>
   <div class="w-full">
     <p-text class="!text-default block py-4" variant="body2" hyperlink>Hyperlink (subtext)</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">14px / 1.42 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">14px / 1.42 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wide</p-caption>
   </div>
 </div>
 
@@ -319,27 +323,27 @@ description: Collections of typography library
 <div class="grid grid-cols-1 gap-y-8 py-8">
   <div class="w-full">
     <p-text class="!text-default py-4" variant="btn">button 1</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">16px / 1.5 / 0.4px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wider</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">16px / 1.5 / 0.4px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wider</p-caption>
   </div>
   <div class="w-full">
     <p-text class="!text-default py-4" variant="btn2">button 2</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">14px / 1.42 / 0.4px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wider</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">14px / 1.42 / 0.4px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wider</p-caption>
   </div>
   <div class="w-full">
     <p-text class="!text-default py-4" variant="btn" hyperlink>button Link 1</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">16px / 1.5 / 0.4px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wider</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">16px / 1.5 / 0.4px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-base</span> • leading-normal • tracking-wider</p-caption>
   </div>
   <div class="w-full">
     <p-text class="!text-default py-4" variant="btn2" hyperlink>button Link 2</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">14px / 1.42 / 0.4px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wider</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">14px / 1.42 / 0.4px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-sm</span> • leading-tighter • tracking-wider</p-caption>
   </div>
 </div>
 
@@ -348,27 +352,27 @@ description: Collections of typography library
 <div class="grid grid-cols-1 gap-y-8 py-8">
   <div class="w-full">
     <p-caption class="!text-default py-4" size="xs">Caption</p-caption>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">12px / 1.33 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-xs</span> • leading-tightest • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">12px / 1.33 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-xs</span> • leading-tightest • tracking-wide</p-caption>
   </div>
   <div class="w-full">
     <p-caption class="!text-default py-4" size="tn">Caption 2 (known as small text)</p-caption>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">11px / 1.45 / 0.4px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-tn</span> • leading-tight • tracking-wider</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">11px / 1.45 / 0.4px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-tn</span> • leading-tight • tracking-wider</p-caption>
   </div>
   <div class="w-full">
     <p-text class="!text-default block py-4" variant="caption" hyperlink>Hyperlink (caption)</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">12px / 1.33 / 0.2px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-xs</span> • leading-tightest • tracking-wide</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">12px / 1.33 / 0.2px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-xs</span> • leading-tightest • tracking-wide</p-caption>
   </div>
   <div class="w-full">
     <p-text class="!text-default block py-4" variant="caption2" hyperlink>Hyperlink (caption 2)</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Medium</p-caption>
-    <p-caption size="tn" class="my-1">11px / 1.45 / 0.4px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-tn</span> • leading-tight • tracking-wider</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Medium</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">11px / 1.45 / 0.4px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-tn</span> • leading-tight • tracking-wider</p-caption>
   </div>
 </div>
 
@@ -377,8 +381,8 @@ description: Collections of typography library
 <div class="grid grid-cols-1 gap-y-8 py-8">
   <div class="w-full">
     <p-text class="!text-default block py-4" variant="overline">Overline</p-text>
-    <p-caption size="tn" weight="bold" class="mt-2">DM Sans Regular</p-caption>
-    <p-caption size="tn" class="my-1">11px / 1.45 / 0.8px</p-caption>
-    <p-caption size="tn"><span class="!text-lightblue-50">text-tn</span> • leading-tight • tracking-widest</p-caption>
+    <p-caption size="tn" weight="bold" class="mt-2 !text-subtle">DM Sans Regular</p-caption>
+    <p-caption size="tn" class="my-1 !text-subtle">11px / 1.45 / 0.8px</p-caption>
+    <p-caption size="tn" class="!text-subtle"><span class="!text-lightblue-50">text-tn</span> • leading-tight • tracking-widest</p-caption>
   </div>
 </div>

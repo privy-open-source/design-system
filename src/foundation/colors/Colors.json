@@ -632,6 +632,66 @@
     }
   ],
 
+  "brandlight": [
+    {
+      "id": 1,
+      "title": "Brand",
+      "data": [
+        {
+          "id" : 1,
+          "token" : "brand.logo",
+          "figma" : "main/red/40",
+          "hex"   : "#E42E2C",
+          "parentToken" : "$red.40"
+        },
+        {
+          "id" : 2,
+          "token" : "brand.action",
+          "figma" : "main/red/40",
+          "hex"   : "#E42E2C",
+          "parentToken" : "$red.40"
+        },
+        {
+          "id" : 3,
+          "token" : "brand.accent",
+          "figma" : "main/red/40",
+          "hex"   : "#E42E2C",
+          "parentToken" : "$red.40"
+        }
+      ]
+    }
+  ],
+
+  "branddark": [
+    {
+      "id": 1,
+      "title": "Brand",
+      "data": [
+        {
+          "id" : 1,
+          "token" : "brand.logo",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        },
+        {
+          "id" : 2,
+          "token" : "brand.action",
+          "figma" : "main/red/30",
+          "hex"   : "#EA5C5A",
+          "parentToken" : "$red.30"
+        },
+        {
+          "id" : 3,
+          "token" : "brand.accent",
+          "figma" : "main/red/30",
+          "hex"   : "#EA5C5A",
+          "parentToken" : "$red.30"
+        }
+      ]
+    }
+  ],
+
   "foregrounds": [
     {
       "id"    : 1,
@@ -647,23 +707,44 @@
         {
           "id" : 2,
           "token" : "fg.subtle",
-          "figma" : "main/gray/70",
-          "hex"   : "#56585D",
-          "parentToken" : "$gray.70"
+          "figma" : "main/gray/60",
+          "hex"   : "#6E7074",
+          "parentToken" : "$gray.60"
         },
         {
           "id" : 3,
-          "token" : "fg.muted",
-          "figma" : "main/gray/40",
-          "hex"   : "#9EA0A2",
-          "parentToken" : "$gray.40"
+          "token" : "fg.subtles",
+          "figma" : "main/gray/35",
+          "hex"   : "#AAACAE",
+          "parentToken" : "$gray.35"
         },
         {
           "id" : 4,
+          "token" : "fg.muted",
+          "figma" : "main/gray/25",
+          "hex"   : "#C2C3C5",
+          "parentToken" : "$gray.25"
+        },
+        {
+          "id" : 5,
+          "token" : "fg.link",
+          "figma" : "main/blue/50",
+          "hex"   : "#0057B4",
+          "parentToken" : "$blue.50"
+        },
+        {
+          "id" : 6,
           "token" : "fg.onEmphasis",
-          "figma" : "main/base/white",
-          "hex"   : "#FFFFFF",
-          "parentToken" : "$base.white"
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        },
+        {
+          "id" : 7,
+          "token" : "fg.stateEmphasis",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
         }
       ]
     },
@@ -673,31 +754,123 @@
       "data" : [
         {
           "id" : 1,
-          "token" : "fg.accent",
-          "figma" : "main/blue/50",
-          "hex"   : "#0056B2",
-          "parentToken" : "$blue.50"
+          "token" : "fg.info",
+          "figma" : "main/blue/60",
+          "hex"   : "#004996",
+          "parentToken" : "$blue.60"
         },
         {
           "id" : 2,
           "token" : "fg.success",
-          "figma" : "main/green/50",
-          "hex"   : "#1E9738",
-          "parentToken" : "$green.50"
+          "figma" : "main/green/60",
+          "hex"   : "#198030",
+          "parentToken" : "$green.60"
         },
         {
           "id" : 3,
           "token" : "fg.warning",
-          "figma" : "main/orange/50",
-          "hex"   : "#D08D1E",
-          "parentToken" : "$orange.50"
+          "figma" : "main/orange/70",
+          "hex"   : "#8E6014",
+          "parentToken" : "$orange.70"
         },
         {
           "id" : 4,
           "token" : "fg.danger",
-          "figma" : "main/red/50",
-          "hex"   : "#C22725",
-          "parentToken" : "$red.50"
+          "figma" : "main/red/60",
+          "hex"   : "#A42120",
+          "parentToken" : "$red.60"
+        }
+      ]
+    }
+  ],
+
+  "foregroundsdark": [
+    {
+      "id"    : 1,
+      "title" : "Base",
+      "data" : [
+        {
+          "id" : 1,
+          "token" : "fg.default",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        },
+        {
+          "id" : 2,
+          "token" : "fg.subtle",
+          "figma" : "main/gray/40",
+          "hex"   : "#9EA0A2",
+          "parentToken" : "$gray.40"
+        },
+        {
+          "id" : 3,
+          "token" : "fg.subtles",
+          "figma" : "main/gray/60",
+          "hex"   : "#6E7074",
+          "parentToken" : "$gray.60"
+        },
+        {
+          "id" : 4,
+          "token" : "fg.muted",
+          "figma" : "main/gray/75",
+          "hex"   : "#4A4D51",
+          "parentToken" : "$gray.75"
+        },
+        {
+          "id" : 5,
+          "token" : "fg.link",
+          "figma" : "main/blue/30",
+          "hex"   : "#3887DB",
+          "parentToken" : "$blue.30"
+        },
+        {
+          "id" : 6,
+          "token" : "fg.onEmphasis",
+          "figma" : "main/gray/100",
+          "hex"   : "#0D1117",
+          "parentToken" : "$gray.100"
+        },
+        {
+          "id" : 7,
+          "token" : "fg.stateEmphasis",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        }
+      ]
+    },
+    {
+      "id"    : 2,
+      "title" : "Roles",
+      "data" : [
+        {
+          "id" : 1,
+          "token" : "fg.info",
+          "figma" : "main/blue/20",
+          "hex"   : "#70A9E5",
+          "parentToken" : "$blue.20"
+        },
+        {
+          "id" : 2,
+          "token" : "fg.success",
+          "figma" : "main/green/20",
+          "hex"   : "#84D495",
+          "parentToken" : "$green.20"
+        },
+        {
+          "id" : 3,
+          "token" : "fg.warning",
+          "figma" : "main/orange/20",
+          "hex"   : "#F9CD84",
+          "parentToken" : "$orange.20"
+        },
+        {
+          "id" : 4,
+          "token" : "fg.danger",
+          "figma" : "main/red/20",
+          "hex"   : "#F08A89",
+          "parentToken" : "$red.20"
         }
       ]
     }
@@ -710,13 +883,34 @@
       "data" : [
         {
           "id" : 1,
-          "token" : "bg.default",
-          "figma" : "main/base/white",
-          "hex"   : "#FFFFFF",
-          "parentToken" : "$base.white"
+          "token" : "bg.base",
+          "figma" : "main/gray/5",
+          "hex"   : "#F3F3F3",
+          "parentToken" : "$gray.5"
         },
         {
           "id" : 2,
+          "token" : "bg.default",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        },
+        {
+          "id" : 3,
+          "token" : "bg.layer1",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        },
+        {
+          "id" : 4,
+          "token" : "bg.layer2",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        },
+        {
+          "id" : 5,
           "token" : "bg.defaultAlpha",
           "figma" : "rgba(main/gray/50, 0.05)",
           "hex"   : "#FFFFFF",
@@ -724,63 +918,26 @@
           "overlay": "rgba(134, 136, 139, 0.05)"
         },
         {
-          "id" : 3,
-          "token" : "bg.subtle",
-          "figma" : "main/gray/0",
-          "hex"   : "#FAFAFA",
-          "parentToken" : "$gray.0"
-        },
-        {
-          "id" : 4,
-          "token" : "bg.subtleAlpha",
-          "figma" : "rgba(main/gray/80, 0.1)",
-          "hex"   : "#FFFFFF",
-          "parentToken" : "rgba($gray.80, $opacity.10)",
-          "overlay": "rgba(61, 65, 69, 0.1)"
-        },
-        {
-          "id" : 5,
-          "token" : "bg.muted",
-          "figma" : "main/gray/5",
-          "hex"   : "#F3F3F3",
-          "parentToken" : "$gray.5"
-        },
-        {
           "id" : 6,
-          "token" : "bg.inactive",
-          "figma" : "main/gray/20",
-          "hex"   : "#CFCFD1",
-          "parentToken" : "$gray.20"
-        },
-        {
-          "id" : 7,
-          "token" : "bg.emphasis",
+          "token" : "bg.inverse",
           "figma" : "main/gray/100",
           "hex"   : "#0D1117",
           "parentToken" : "$gray.100"
         },
         {
+          "id" : 7,
+          "token" : "bg.subtle",
+          "figma" : "main/gray/10",
+          "hex"   : "#F3F3F3",
+          "parentToken" : "$gray.10"
+        },
+        {
           "id" : 8,
-          "token" : "bg.emphasisAlpha",
-          "figma" : "rgba(main/gray/0, 0.05)",
+          "token" : "bg.subtleAlpha",
+          "figma" : "rgba(main/gray/80, 0.1)",
           "hex"   : "#FFFFFF",
-          "parentToken" : "rgba($gray.0, $opacity.5)",
-          "overlay": "rgba(250, 250, 250, 0.05)"
-        },
-        {
-          "id" : 9,
-          "token" : "bg.emphasisSubtle",
-          "figma" : "main/gray/0",
-          "hex"   : "#191D23",
-          "parentToken" : "$gray.0"
-        },
-        {
-          "id" : 10,
-          "token" : "bg.emphasisSubtle",
-          "figma" : "rgba(main/gray/0, 0.1)",
-          "hex"   : "#FFFFFF",
-          "parentToken" : "rgba($gray.0, $opacity.10)",
-          "overlay": "rgba(250, 250, 250, 0.1)"
+          "parentToken" : "rgba($gray.80, $opacity.10)",
+          "overlay": "rgba(61, 65, 69, 0.1)"
         }
       ]
     },
@@ -790,59 +947,188 @@
       "data" : [
         {
           "id" : 1,
-          "token" : "bg.accent",
+          "token" : "bg.info",
           "figma" : "main/blue/0",
-          "hex"   : "#F2F7FD",
+          "hex"   : "#E5F0FA",
           "parentToken" : "$blue.0"
         },
         {
           "id" : 2,
-          "token" : "bg.accentEmphasis",
-          "figma" : "main/blue/50",
-          "hex"   : "#0056B2",
-          "parentToken" : "$blue.50"
+          "token" : "bg.infoEmphasis",
+          "figma" : "main/blue/40",
+          "hex"   : "#0065D1",
+          "parentToken" : "$blue.40"
         },
         {
           "id" : 3,
           "token" : "bg.success",
           "figma" : "main/green/0",
-          "hex"   : "#F4FBF6",
+          "hex"   : "#E9F7EC",
           "parentToken" : "$green.0"
         },
         {
           "id" : 4,
           "token" : "bg.successEmphasis",
-          "figma" : "main/green/50",
-          "hex"   : "#1E9738",
-          "parentToken" : "$green.50"
+          "figma" : "main/green/40",
+          "hex"   : "#23B242",
+          "parentToken" : "$green.40"
         },
         {
           "id" : 5,
           "token" : "bg.warning",
           "figma" : "main/orange/0",
-          "hex"   : "#FFFBF4",
+          "hex"   : "#FEF6E9",
           "parentToken" : "$orange.0"
         },
         {
           "id" : 6,
           "token" : "bg.warningEmphasis",
-          "figma" : "main/orange/50",
-          "hex"   : "#D08D1E",
-          "parentToken" : "$orange.50"
+          "figma" : "main/orange/40",
+          "hex"   : "#F5A623",
+          "parentToken" : "$orange.40"
         },
         {
           "id" : 7,
           "token" : "bg.danger",
           "figma" : "main/red/0",
-          "hex"   : "#FEF5F4",
+          "hex"   : "#FCEAEA",
           "parentToken" : "$red.0"
         },
         {
           "id" : 8,
           "token" : "bg.dangerEmphasis",
-          "figma" : "main/red/50",
-          "hex"   : "#C22725",
-          "parentToken" : "$red.50"
+          "figma" : "main/red/40",
+          "hex"   : "#E42E2C",
+          "parentToken" : "$red.40"
+        }
+      ]
+    }
+  ],
+
+  "backgroundsdark": [
+    {
+      "id"    : 1,
+      "title" : "Base",
+      "data" : [
+        {
+          "id" : 1,
+          "token" : "bg.base",
+          "figma" : "main/gray/100",
+          "hex"   : "#0D1117",
+          "parentToken" : "$gray.100"
+        },
+        {
+          "id" : 2,
+          "token" : "bg.default",
+          "figma" : "main/gray/95",
+          "hex"   : "#14181E",
+          "parentToken" : "$gray.95"
+        },
+        {
+          "id" : 3,
+          "token" : "bg.layer1",
+          "figma" : "main/gray/90",
+          "hex"   : "#20242A",
+          "parentToken" : "$gray.90"
+        },
+        {
+          "id" : 4,
+          "token" : "bg.layer2",
+          "figma" : "main/gray/85",
+          "hex"   : "#2A2E33",
+          "parentToken" : "$gray.85"
+        },
+        {
+          "id" : 5,
+          "token" : "bg.defaultAlpha",
+          "figma" : "rgba(main/gray/80, 0.1)",
+          "hex"   : "#FFFFFF",
+          "parentToken" : "rgba($gray.80, $opacity.10)",
+          "overlay": "rgba(61, 65, 69, 0.1)"
+        },
+        {
+          "id" : 6,
+          "token" : "bg.inverse",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        },
+        {
+          "id" : 7,
+          "token" : "bg.subtle",
+          "figma" : "main/gray/100",
+          "hex"   : "#0D1117",
+          "parentToken" : "$gray.100"
+        },
+        {
+          "id" : 8,
+          "token" : "bg.subtleAlpha",
+          "figma" : "rgba(main/gray/70, 0.1)",
+          "hex"   : "#FFFFFF",
+          "parentToken" : "rgba($gray.70, $opacity.10)",
+          "overlay": "rgba(86, 88, 93, 0.1)"
+        }
+      ]
+    },
+    {
+      "id"    : 2,
+      "title" : "Roles",
+      "data" : [
+        {
+          "id" : 1,
+          "token" : "bg.info",
+          "figma" : "main/blue/90",
+          "hex"   : "#001E3F",
+          "parentToken" : "$blue.90"
+        },
+        {
+          "id" : 2,
+          "token" : "bg.infoEmphasis",
+          "figma" : "main/blue/30",
+          "hex"   : "#3887DB",
+          "parentToken" : "$blue.30"
+        },
+        {
+          "id" : 3,
+          "token" : "bg.success",
+          "figma" : "main/green/90",
+          "hex"   : "#0B3514",
+          "parentToken" : "$green.90"
+        },
+        {
+          "id" : 4,
+          "token" : "bg.successEmphasis",
+          "figma" : "main/green/30",
+          "hex"   : "#53C36C",
+          "parentToken" : "$green.30"
+        },
+        {
+          "id" : 5,
+          "token" : "bg.warning",
+          "figma" : "main/orange/90",
+          "hex"   : "#4A320B",
+          "parentToken" : "$orange.90"
+        },
+        {
+          "id" : 6,
+          "token" : "bg.warningEmphasis",
+          "figma" : "main/orange/30",
+          "hex"   : "#F7BA53",
+          "parentToken" : "$orange.30"
+        },
+        {
+          "id" : 7,
+          "token" : "bg.danger",
+          "figma" : "main/red/90",
+          "hex"   : "#440E0D",
+          "parentToken" : "$red.90"
+        },
+        {
+          "id" : 8,
+          "token" : "bg.dangerEmphasis",
+          "figma" : "main/red/30",
+          "hex"   : "#EA5C5A",
+          "parentToken" : "$red.30"
         }
       ]
     }
@@ -871,9 +1157,9 @@
         {
           "id" : 3,
           "token" : "border.subtle",
-          "figma" : "main/gray/20",
-          "hex"   : "#CFCFD1",
-          "parentToken" : "$gray.20"
+          "figma" : "main/gray/25",
+          "hex"   : "#C2C3C5",
+          "parentToken" : "$gray.25"
         },
         {
           "id" : 4,
@@ -892,33 +1178,10 @@
         },
         {
           "id" : 6,
-          "token" : "border.onEmphasis",
-          "figma" : "main/gray/90",
-          "hex"   : "#25292E",
-          "parentToken" : "$gray.90"
-        },
-        {
-          "id" : 7,
-          "token" : "border.onEmphasisSubtle",
-          "figma" : "main/gray/70",
-          "hex"   : "#56585D",
-          "parentToken" : "$gray.70"
-        },
-        {
-          "id" : 8,
-          "token" : "border.onEmphasisAlpha",
-          "figma" : "rgba(main/gray/0, 0.05)",
-          "hex"   : "#FFFFFF",
-          "parentToken" : "rgba($gray.0, $opacity.5)",
-          "overlay": "rgba(250, 250, 250, 0.05)"
-        },
-        {
-          "id" : 9,
-          "token" : "border.onEmphasisAlphaSubtle",
-          "figma" : "rgba(main/gray/0, 0.1)",
-          "hex"   : "#FFFFFF",
-          "parentToken" : "rgba($gray.0, $opacity.10)",
-          "overlay": "rgba(250, 250, 250, 0.1)"
+          "token" : "border.inverse",
+          "figma" : "main/gray/100",
+          "hex"   : "#0D1117",
+          "parentToken" : "$gray.100"
         }
       ]
     },
@@ -928,14 +1191,14 @@
       "data" : [
         {
           "id" : 1,
-          "token" : "border.accent",
+          "token" : "border.info",
           "figma" : "main/blue/10",
-          "hex"   : "#BFD9F3",
+          "hex"   : "#A8CBEF",
           "parentToken" : "$blue.10"
         },
         {
           "id" : 2,
-          "token" : "border.accentEmphasis",
+          "token" : "border.infoEmphasis",
           "figma" : "main/blue/40",
           "hex"   : "#0065D1",
           "parentToken" : "$blue.40"
@@ -944,7 +1207,7 @@
           "id" : 3,
           "token" : "border.success",
           "figma" : "main/green/10",
-          "hex"   : "#C8ECD0",
+          "hex"   : "#B4E5BF",
           "parentToken" : "$green.10"
         },
         {
@@ -958,7 +1221,7 @@
           "id" : 5,
           "token" : "border.warning",
           "figma" : "main/orange/10",
-          "hex"   : "#FDE9C8",
+          "hex"   : "#FCE1B4",
           "parentToken" : "$orange.10"
         },
         {
@@ -972,7 +1235,7 @@
           "id" : 7,
           "token" : "border.danger",
           "figma" : "main/red/10",
-          "hex"   : "#F8CBCA",
+          "hex"   : "#F6B8B7",
           "parentToken" : "$red.10"
         },
         {
@@ -981,6 +1244,121 @@
           "figma" : "main/red/40",
           "hex"   : "#E42E2C",
           "parentToken" : "$red.40"
+        }
+      ]
+    }
+  ],
+
+  "bordersdark": [
+    {
+      "id"    : 1,
+      "title" : "Base",
+      "data" : [
+        {
+          "id" : 1,
+          "token" : "border.default",
+          "figma" : "main/gray/90",
+          "hex"   : "#20242A",
+          "parentToken" : "$gray.90"
+        },
+        {
+          "id" : 2,
+          "token" : "border.defaultAlpha",
+          "figma" : "rgba(main/gray/0, 0.05)",
+          "hex"   : "#FFFFFF",
+          "parentToken" : "rgba($gray.0, $opacity.5)",
+          "overlay": "rgba(253, 253, 253, 0.05)"
+        },
+        {
+          "id" : 3,
+          "token" : "border.subtle",
+          "figma" : "main/gray/80",
+          "hex"   : "#3D4145",
+          "parentToken" : "$gray.80"
+        },
+        {
+          "id" : 4,
+          "token" : "border.subtleAlpha",
+          "figma" : "rgba(main/gray/0, 0.1)",
+          "hex"   : "#FFFFFF",
+          "parentToken" : "rgba($gray.0, $opacity.10)",
+          "overlay": "rgba(253, 253, 253, 0.1)"
+        },
+        {
+          "id" : 5,
+          "token" : "border.muted",
+          "figma" : "main/gray/85",
+          "hex"   : "#2A2E33",
+          "parentToken" : "$gray.85"
+        },
+        {
+          "id" : 6,
+          "token" : "border.inverse",
+          "figma" : "main/gray/0",
+          "hex"   : "#FDFDFD",
+          "parentToken" : "$gray.0"
+        }
+      ]
+    },
+    {
+      "id"    : 2,
+      "title" : "Roles",
+      "data" : [
+        {
+          "id" : 1,
+          "token" : "border.info",
+          "figma" : "main/blue/100",
+          "hex"   : "#000F1F",
+          "parentToken" : "$blue.100"
+        },
+        {
+          "id" : 2,
+          "token" : "border.infoEmphasis",
+          "figma" : "main/blue/30",
+          "hex"   : "#3887DB",
+          "parentToken" : "$blue.30"
+        },
+        {
+          "id" : 3,
+          "token" : "border.success",
+          "figma" : "main/green/100",
+          "hex"   : "#051B0A",
+          "parentToken" : "$green.100"
+        },
+        {
+          "id" : 4,
+          "token" : "border.successEmphasis",
+          "figma" : "main/green/30",
+          "hex"   : "#53C36C",
+          "parentToken" : "$green.30"
+        },
+        {
+          "id" : 5,
+          "token" : "border.warning",
+          "figma" : "main/orange/100",
+          "hex"   : "#251905",
+          "parentToken" : "$orange.100"
+        },
+        {
+          "id" : 6,
+          "token" : "border.warningEmphasis",
+          "figma" : "main/orange/30",
+          "hex"   : "#F7BA53",
+          "parentToken" : "$orange.30"
+        },
+        {
+          "id" : 7,
+          "token" : "border.danger",
+          "figma" : "main/red/100",
+          "hex"   : "#220707",
+          "parentToken" : "$red.100"
+        },
+        {
+          "id" : 8,
+          "token" : "border.dangerEmphasis",
+          "figma" : "main/red/30",
+          "hex"   : "#EA5C5A",
+          "parentToken" : "$red.30"
         }
       ]
     }

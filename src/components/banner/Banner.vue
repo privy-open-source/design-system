@@ -92,7 +92,7 @@ export default defineComponent({
 
   a {
     &:not(.btn) {
-      @apply underline decoration-solid text-accent;
+      @apply underline decoration-solid text-info;
     }
   }
 
@@ -105,10 +105,10 @@ export default defineComponent({
   }
 
   &&--info {
-    @apply bg-subtle;
+    @apply bg-base;
 
     .banner__icon {
-      @apply text-accent;
+      @apply text-info;
     }
   }
 

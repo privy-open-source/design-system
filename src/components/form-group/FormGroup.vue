@@ -93,7 +93,7 @@ export default defineComponent({
   }
 
   & > &__description {
-    @apply text-xs my-2;
+    @apply text-xs my-2 text-subtle;
   }
 
   & > &__error {
@@ -101,7 +101,7 @@ export default defineComponent({
   }
 
   &__hint {
-    @apply absolute bottom-0 right-0 text-accent cursor-pointer focus:outline-none;
+    @apply absolute bottom-0 right-0 text-info cursor-pointer focus:outline-none;
   }
 }
 </style>

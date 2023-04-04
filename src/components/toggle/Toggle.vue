@@ -152,7 +152,7 @@ export default defineComponent({
   @apply inline-flex cursor-pointer relative items-center select-none;
 
   &__switch {
-    @apply flex items-center justify-center relative bg-inactive border-subtle;
+    @apply flex items-center justify-center relative bg-subtle border-default;
   }
 
   &__pointer {
@@ -178,7 +178,7 @@ export default defineComponent({
 
     &.toggle--checked {
       .toggle__switch {
-        @apply bg-accent-emphasis border-accent-emphasis;
+        @apply bg-info-emphasis border-info-emphasis;
       }
 
       .toggle__pointer {
@@ -189,7 +189,7 @@ export default defineComponent({
 
   &&--flat {
     .toggle__switch {
-      @apply flex-row-reverse border-2 rounded-xs min-h-[1.5rem] min-w-[2.5rem];
+      @apply flex-row-reverse border-2 rounded-sm min-h-[1.5rem] min-w-[2.5rem];
     }
 
     .toggle__label {
@@ -201,7 +201,7 @@ export default defineComponent({
     }
 
     .toggle__pointer {
-      @apply w-1/2 h-full rounded-sm z-[1];
+      @apply w-1/2 h-full rounded-xs z-[1];
     }
 
     &.toggle--checked {
@@ -224,7 +224,7 @@ export default defineComponent({
 
     &:hover,
     &:focus-visible {
-      @apply bg-inactive;
+      @apply bg-subtle;
     }
   }
 

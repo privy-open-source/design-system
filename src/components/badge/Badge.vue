@@ -12,7 +12,8 @@ import {
   PropType,
   computed,
 } from 'vue-demi'
-import { ColorVariant, StyleVariant } from '.'
+import { StyleVariant } from '.'
+import { ColorVariant } from '../button'
 
 export default defineComponent({
   props: {
@@ -57,6 +58,7 @@ export default defineComponent({
   * Set global style
   * of badge
   */
+  --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
   @apply inline-block font-bold text-xs px-2 py-0.5 text-on-emphasis rounded-full;
 
   /**
@@ -68,11 +70,16 @@ export default defineComponent({
   &&--variant-default {
     &.badge {
       &--default {
-        @apply bg-emphasis-subtle;
+        --p-bg-variant-default: theme(backgroundColor.inverse);
+        @apply bg-[color:var(--p-bg-variant-default)];
       }
 
       &--primary {
-        @apply bg-accent-emphasis;
+        @apply bg-brand-accent;
+      }
+
+      &--info {
+        @apply bg-info-emphasis;
       }
 
       &--success {
@@ -97,11 +104,16 @@ export default defineComponent({
   &&--variant-inverse {
     &.badge {
       &--default {
-        @apply text-subtle;
+        --p-color-variant-light: theme(textColor.subtle);
+        @apply text-[color:var(--p-color-variant-light)];
       }
 
       &--primary {
-        @apply text-accent;
+        @apply text-brand-accent;
+      }
+
+      &--info {
+        @apply text-info;
       }
 
       &--success {
@@ -124,12 +136,17 @@ export default defineComponent({
   */
   &--variant-light {
     &.badge {
-      &--primary {
-        @apply bg-accent;
+      &--default {
+        --p-bg-variant-light: theme(backgroundColor.subtle.alpha);
+        @apply bg-[color:var(--p-bg-variant-light)];
       }
 
-      &--default {
-        @apply bg-base-black/5;
+      &--primary {
+        @apply bg-[color:var(--p-color-primary-light)];
+      }
+
+      &--info {
+        @apply bg-info;
       }
 
       &--success {

@@ -107,7 +107,7 @@ it('should be able to add Header Action via slot `action`', () => {
       <Card sectioned>
         <Card-Section title="Any title should here">
           <template #action>
-            <a href="#" class="text-accent underline">Edit</a>
+            <a href="#" class="text-link underline">Edit</a>
           </template>
           Content
         </Card-Section>

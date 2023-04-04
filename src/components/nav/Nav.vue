@@ -142,7 +142,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-b-on-emphasis dark:border-b-default;
+          @apply border-b-inverse dark:border-b-default;
         }
       }
     }
@@ -157,7 +157,7 @@ export default defineComponent({
 
         &--active {
           &:not(.nav__link--disabled) {
-            @apply border-r border-r-on-emphasis rounded-tr-none;
+            @apply border-r border-r-inverse rounded-tr-none;
           }
         }
       }
@@ -168,7 +168,7 @@ export default defineComponent({
 
           &--active {
             &:not(.nav__link--disabled) {
-              @apply border-l border-l-on-emphasis rounded-tl-none;
+              @apply border-l border-l-inverse rounded-tl-none;
             }
           }
         }
@@ -189,7 +189,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-t-default border-x-default bg-subtle;
+          @apply border-t-default border-x-default bg-base;
         }
       }
     }
@@ -202,7 +202,7 @@ export default defineComponent({
       .nav__link {
         &--active {
           &:not(.nav__link--disabled) {
-            @apply border-l-default border-y-default border-r-transparent bg-subtle rounded-l rounded-r-none;
+            @apply border-l-default border-y-default border-r-transparent bg-base rounded-l rounded-r-none;
           }
         }
       }
@@ -233,7 +233,7 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply bg-subtle dark:bg-emphasis-alpha rounded-b;
+          @apply bg-base dark:bg-dark-default-alpha rounded-b;
         }
       }
     }

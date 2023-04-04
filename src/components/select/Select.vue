@@ -279,6 +279,11 @@ export default defineComponent({
 .select {
   &__search {
     @apply pr-8 truncate hover:cursor-default focus:cursor-text;
+
+    .state--error &,
+    .select--error & {
+        @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
+    }
   }
 
   &__caret {
@@ -293,7 +298,7 @@ export default defineComponent({
     }
 
     &-checked {
-      @apply flex-shrink-0 text-accent invisible;
+      @apply flex-shrink-0 text-info invisible;
 
       .selected & {
         @apply visible;

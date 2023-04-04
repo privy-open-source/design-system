@@ -10,8 +10,8 @@
   * Permalink
   */
   a {
-    --p-color-primary-hover: darken(theme(backgroundColor.accent.emphasis), 5%);
-    @apply underline text-accent hover:bg-[color:var(--p-color-primary-hover)];
+    --p-color-info-hover: darken(theme(backgroundColor.info.emphasis), 5%);
+    @apply underline text-info hover:bg-[color:var(--p-color-info-hover)];
   }
 
   /**

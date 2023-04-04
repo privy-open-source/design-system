@@ -12,8 +12,11 @@ import {
   computed,
   defineComponent,
   PropType,
+  provide,
+  toRef,
 } from 'vue-demi'
 import { SizeVariant } from '../button'
+import { INPUTGROUP_SETTING } from '.'
 
 export default defineComponent({
   props: {
@@ -35,6 +38,8 @@ export default defineComponent({
     },
   },
   setup (props) {
+    provide(INPUTGROUP_SETTING, { size: toRef(props, 'size') })
+
     const classNames = computed(() => {
       const result: string[] = []
 
@@ -78,6 +83,15 @@ export default defineComponent({
     .input > .input__form {
       @apply focus:ring-0;
     }
+
+    &.input-group--disabled {
+      @apply border-subtle;
+    }
+
+    &.state--error,
+    &.input-group--error {
+      @apply border-danger-emphasis hover:border-danger-emphasis focus-within:ring-danger focus-within:border-danger-emphasis;
+    }
   }
 
   & > .input-group__addon:not(:first-child),
@@ -92,7 +106,7 @@ export default defineComponent({
   }
 
   & > .select:not(:last-child) > .input > .input__form {
-    @apply rounded-r-none;
+    @apply rounded-r-none z-1;
   }
 
   & > .input-group__addon,
@@ -106,6 +120,16 @@ export default defineComponent({
 
   .input,
   .select > .input {
+    @apply rounded-none;
+
+    &:first-child {
+      @apply rounded-l;
+    }
+
+    &:last-child {
+      @apply rounded-r;
+    }
+
     > .input__form {
       &:hover,
       &:focus {
@@ -115,7 +139,7 @@ export default defineComponent({
   }
 
   & > .btn {
-    @apply z-[1];
+    @apply z-1;
 
     &:not(:first-child) {
       @apply rounded-l-none -ml-[1px];
@@ -126,6 +150,27 @@ export default defineComponent({
     }
   }
 
+  &&--disabled {
+    @apply border-subtle border-solid border rounded;
+
+    > .input > .input__form,
+    > .input-group__addon {
+      @apply border-transparent;
+    }
+
+    > .input:first-child .input__form,
+    > .input-group__addon:first-child,
+    > .btn:first-child {
+      @apply rounded-l-sm;
+    }
+
+    > .input:last-child .input__form,
+    > .input-group__addon:last-child,
+    > .btn:last-child {
+      @apply rounded-r-sm;
+    }
+  }
+
   &:is(&--xs, &--sm, &--md, &--lg) > &__addon {
     @apply flex-shrink-0;
 
@@ -133,46 +178,6 @@ export default defineComponent({
       > .input__form {
         @apply pl-0;
       }
-    }
-  }
-
-  &&--xs {
-    .input > .input__form {
-      @apply text-xs px-3 py-2;
-    }
-
-    .btn {
-      @apply px-2 py-1 gap-1 text-sm;
-    }
-  }
-
-  &&--sm {
-    .input > .input__form {
-      @apply px-3 py-2;
-    }
-
-    .btn {
-      @apply px-4 py-2 gap-2 text-base;
-    }
-  }
-
-  &&--md {
-    .input > .input__form {
-      @apply px-3 py-3;
-    }
-
-    .btn {
-      @apply px-5 py-3 gap-3 text-base;
-    }
-  }
-
-  &&--lg {
-    .input > .input__form {
-      @apply px-3 py-4;
-    }
-
-    .btn {
-      @apply px-8 py-4 gap-4 text-base;
     }
   }
 }
