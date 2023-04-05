@@ -183,8 +183,8 @@ Set `layout` prop to `fit` to enable layout fit mode. It will adapt the viewer h
 | `paddword`  | `String` |   `-`   | Document password                                 |
 | `layout`    | `String` | `fixed` | Viewer layout sizing, valid value: `fixed`, `fit` |
 | `offsetTop` | `Number` |   `0`   | Margin top when using layout `fit`                |
-| `page`      | `Number` |   `1`   | v-model:page value                                |
-| `scale`     | `Number` |   `1`   | v-model:scale value                               |
+| `page`      | `Number` |   `1`   | `v-model:page` value                              |
+| `scale`     | `Number` |   `1`   | `v-model:scale` value                             |
 
 ### Slots
 

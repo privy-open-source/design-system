@@ -71,7 +71,7 @@ export default defineComponent({
   setup (props, { emit }) {
     const root       = templateRef<HTMLDivElement>('root')
     const num        = useToNumber(toRef(props, 'length'))
-    const localModel = ref<string[]>([...props.modelValue].slice(0, num.value).map((val) => val.trim()))
+    const localModel = ref<string[]>([...props.modelValue.padEnd(num.value)].slice(0, num.value))
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -92,8 +92,7 @@ export default defineComponent({
 
     const model = computed<string[]>({
       get () {
-        return [...props.modelValue]
-          .slice(0, num.value)
+        return [...props.modelValue.padEnd(num.value)].slice(0, num.value)
       },
       set (value: string[]) {
         const text = value.map((val) => val || ' ').join('').trimEnd()
@@ -127,7 +126,7 @@ export default defineComponent({
     }
 
     function onDelete (event: InputEvent) {
-      if (root.value && !(event.target as HTMLInputElement).value)
+      if (root.value && !(event.target as HTMLInputElement).value.trim())
         prevFocus()
     }
 
