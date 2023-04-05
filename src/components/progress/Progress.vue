@@ -95,6 +95,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .progress {
+  --p-bg-bar-active-state: theme(backgroundColor.info.emphasis);
+  --p-bg-bar-normal-state: theme(backgroundColor.subtle.DEFAULT);
+  --p-bg-dark-bar-active-state: theme(backgroundColor.dark.info.emphasis);
+  --p-bg-dark-bar-normal-state: theme(backgroundColor.dark.subtle.DEFAULT);
+
   &__items {
     @apply flex overflow-hidden;
   }
@@ -113,15 +118,18 @@ export default defineComponent({
 
   &__point {
     @apply w-7 h-7 rounded-full bg-subtle flex items-center justify-center text-default;
+    @apply dark:bg-dark-subtle dark:text-dark-default;
   }
 
   &__bar {
     @apply absolute rounded-full transition-[background-position] ease-linear duration-150;
-    @apply from-[theme(backgroundColor.info.emphasis)_50%] to-[theme(backgroundColor.subtle.DEFAULT)_50%];
+    @apply from-[var(--p-bg-bar-active-state)_50%] to-[var(--p-bg-bar-normal-state)_50%];
+    @apply dark:from-[var(--p-bg-dark-bar-active-state)_50%] dark:to-[var(--p-bg-dark-bar-normal-state)_50%];
   }
 
   &__title {
     @apply truncate text-sm text-center w-full text-default;
+    @apply dark:text-dark-default;
   }
 
   & > .progress__title {
@@ -131,6 +139,7 @@ export default defineComponent({
   &--active {
     .progress__point {
       @apply bg-info-emphasis text-on-emphasis;
+      @apply dark:bg-dark-info-emphasis dark:text-dark-on-emphasis;
     }
   }
 
@@ -146,8 +155,7 @@ export default defineComponent({
     }
 
     .progress__bar {
-      @apply w-[calc(100%_-_3rem)] h-1 top-5 right-[calc(50%_+_1.5rem)];
-      @apply bg-gradient-to-r bg-[length:210%_100%] bg-right;
+      @apply w-[calc(100%_-_3rem)] h-1 top-5 right-[calc(50%_+_1.5rem)] bg-gradient-to-r bg-[length:210%_100%] bg-right;
     }
 
     .progress--active + .progress--active {
@@ -173,8 +181,7 @@ export default defineComponent({
     }
 
     .progress__bar {
-      @apply h-[calc(100%_-_4.25rem)] w-1 bottom-[calc(50%_+_2.25rem)] left-1/2 -translate-x-1/2;
-      @apply bg-gradient-to-b bg-bottom bg-[length:100%_210%];
+      @apply h-[calc(100%_-_4.25rem)] w-1 bottom-[calc(50%_+_2.25rem)] left-1/2 -translate-x-1/2 bg-gradient-to-b bg-bottom bg-[length:100%_210%];
     }
 
     .progress--active + .progress--active {
@@ -187,6 +194,7 @@ export default defineComponent({
   &--dot {
     .progress__point-item {
       @apply w-3 h-3 rounded-full bg-default;
+      @apply dark:bg-dark-default;
     }
   }
 

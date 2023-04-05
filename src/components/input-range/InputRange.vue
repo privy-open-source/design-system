@@ -276,6 +276,7 @@ export default defineComponent({
 
   &__tracks {
     @apply relative flex w-full bg-base cursor-pointer overflow-visible rounded;
+    @apply dark:bg-dark-base;
   }
 
   &__track {
@@ -283,6 +284,7 @@ export default defineComponent({
 
     &-active {
       @apply bg-info-emphasis relative text-center;
+      @apply dark:bg-dark-info-emphasis;
     }
 
     &-upper {
@@ -291,12 +293,13 @@ export default defineComponent({
   }
 
   &__thumb {
-    @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-muted;
-    @apply touch-none select-none;
+    @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-muted touch-none select-none;
+    @apply dark:bg-dark-default dark:border-dark-muted;
 
     &:hover,
     &:active {
       @apply ring ring-info border-info-emphasis;
+      @apply dark:ring-dark-info dark:border-dark-info-emphasis;
     }
 
     &-start {

@@ -57,7 +57,8 @@ export default defineComponent({
     .dropdown {
       &__activator {
         &.btn {
-          @apply px-3 bg-transparent hover:bg-transparent shadow-none rounded font-normal text-subtle dark:text-muted hover:text-default dark:hover:text-on-emphasis hover:shadow-none;
+          @apply px-3 bg-transparent hover:bg-transparent shadow-none rounded font-normal text-subtle hover:text-default hover:shadow-none;
+          @apply dark:bg-transparent hover:dark:bg-transparent dark:text-dark-subtle hover:dark:text-dark-default;
         }
 
         &:not(.btn--variant-outline) {
@@ -70,7 +71,8 @@ export default defineComponent({
       &--open {
         .dropdown__activator {
           &.btn {
-            @apply text-default dark:text-on-emphasis cursor-default border-transparent bg-transparent hover:bg-transparent;
+            @apply text-default cursor-default border-transparent bg-transparent hover:bg-transparent;
+            @apply dark:text-dark-default dark:bg-transparent hover:dark:bg-transparent;
           }
         }
       }
@@ -83,7 +85,8 @@ export default defineComponent({
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply bg-subtle dark:bg-dark-subtle-alpha hover:bg-subtle hover:dark:bg-dark-subtle-alpha;
+              @apply bg-subtle hover:bg-subtle;
+              @apply dark:bg-dark-subtle hover:dark:bg-dark-subtle;
             }
           }
         }
@@ -91,7 +94,8 @@ export default defineComponent({
 
       &.nav--condensed {
         .nav__link--active {
-          @apply bg-subtle dark:bg-dark-default-alpha;
+          @apply bg-subtle;
+          @apply dark:bg-dark-subtle;
         }
       }
     }
@@ -107,7 +111,8 @@ export default defineComponent({
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply border-b-inverse dark:border-b-dark-default;
+              @apply border-b-inverse;
+              @apply dark:border-b-dark-inverse;
             }
           }
         }

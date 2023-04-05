@@ -128,9 +128,11 @@ export default defineComponent({
 
     &-container {
       @apply flex bg-inverse text-subtlest rounded p-2 space-x-1 items-center;
+      @apply dark:text-dark-default;
 
       > .btn {
         @apply text-subtlest hover:text-muted;
+        @apply dark:text-dark-subtle hover:dark:text-dark-default;
       }
 
       > .select {
@@ -138,15 +140,17 @@ export default defineComponent({
 
         > .input {
           @apply bg-default-alpha;
+          @apply dark:bg-dark-default-alpha;
 
           > .input__form {
-            @apply border-subtle-alpha bg-default-alpha;
+            @apply border-subtle-alpha bg-default-alpha text-state-emphasis;
+            @apply dark:border-dark-subtle-alpha dark:bg-dark-default-alpha dark:text-dark-state-emphasis;
           }
         }
       }
 
       > .divider {
-        @apply border-none bg-default-alpha;
+        @apply border-none bg-dark-subtle-alpha;
       }
     }
 

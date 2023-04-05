@@ -95,10 +95,13 @@ export default defineComponent({
 
 <style lang="postcss">
 .navbar {
-  @apply bg-default dark:bg-dark-subtle relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  --p-navbar-z-index: 1030;
+
+  @apply bg-default relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  @apply dark:bg-dark-default;
 
   &&--fixed {
-    @apply fixed left-0 top-0 w-full z-[1030];
+    @apply fixed left-0 top-0 w-full z-[var(--p-navbar-z-index)];
   }
 
   &&--shadow {

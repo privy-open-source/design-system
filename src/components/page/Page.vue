@@ -68,7 +68,8 @@ export default defineComponent({
   --p-page-type-wide: 60px;
   --p-page-type-narrow: 230px;
 
-  @apply w-full;
+  @apply w-full text-default;
+  @apply dark:text-dark-default;
 
   &&--expand {
     &:where(&&-all, &&-lg, &&-md, &&-sm) {

@@ -114,18 +114,22 @@ export default defineComponent({
 <style lang="postcss">
 .input {
   @apply w-full relative bg-default rounded;
+  @apply dark:bg-dark-default;
 
   &__form {
-    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none;
+    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle text-default placeholder:text-muted w-full outline-none;
+    @apply dark:border-dark-muted hover:dark:border-dark-subtle dark:text-dark-default placeholder:dark:text-dark-muted;
 
     &:disabled,
     &--disabled,
     .state--disabled & {
       @apply bg-subtle border-subtle pointer-events-none text-muted;
+      @apply dark:bg-dark-subtle dark:border-dark-subtle  dark:text-dark-muted;
     }
 
     &:focus {
       @apply border-subtle ring-4 ring-subtle/10 z-[1];
+      @apply dark:border-dark-subtle dark:ring-dark-subtle/10;
     }
   }
 
@@ -149,10 +153,12 @@ export default defineComponent({
   &--error,
   &-group--error.input-group .input > .input__form {
     @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
+    @apply dark:border-dark-danger-emphasis hover:dark:border-dark-danger-emphasis focus:dark:ring-dark-danger focus:dark:border-dark-danger-emphasis;
   }
 
   .input__clear {
     @apply text-default/30 cursor-pointer hover:text-danger z-1;
+    @apply dark:text-dark-default/30 hover:dark:text-dark-danger;
   }
 
   &--clearable {

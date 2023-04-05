@@ -10,15 +10,18 @@
   * Permalink
   */
   a {
-    --p-color-info-hover: darken(theme(backgroundColor.info.emphasis), 5%);
-    @apply underline text-info hover:bg-[color:var(--p-color-info-hover)];
+    --p-color-link-hover: darken(theme(textColor.link), 5%);
+    --p-color-dark-link-hover: darken(theme(textColor.link), 5%);
+    @apply underline text-link hover:text-[color:var(--p-color-info-hover)];
+    @apply dark:text-dark-link hover:dark:text-[color:var(--p-color-dark-info-hover)];
   }
 
   /**
   * Paragraph
   */
   p {
-    @apply text-base;
+    @apply text-base text-default;
+    @apply dark:text-dark-default;
   }
 
   /**
@@ -40,6 +43,7 @@
   */
   caption {
     @apply text-xs text-muted;
+    @apply dark:text-dark-muted;
   }
 }
 </style>

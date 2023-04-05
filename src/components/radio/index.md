@@ -146,11 +146,11 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
-          :class="{ '!border-info-emphasis' : isChecked }"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis' : isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Olivia Withness
               <p-caption>olivia@eth.com</p-caption>
@@ -163,11 +163,11 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
-          :class="{ '!border-info-emphasis' : isChecked }"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis' : isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Hyuga Kojiro
               <p-caption>hyuga@gmail.com</p-caption>
@@ -180,11 +180,11 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
-          :class="{ '!border-info-emphasis' : isChecked }"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis' : isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Marsha Timoty
               <p-caption>timoty@marsha.com</p-caption>
@@ -207,11 +207,11 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Olivia Withness
               <p-caption>olivia@eth.com</p-caption>
@@ -224,11 +224,11 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Hyuga Kojiro
               <p-caption>hyuga@gmail.com</p-caption>
@@ -241,11 +241,11 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Marsha Timoty
               <p-caption>timoty@marsha.com</p-caption>
@@ -266,8 +266,8 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <IconBee />
         </p-card>
@@ -277,8 +277,8 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <IconBug />
         </p-card>
@@ -288,8 +288,8 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
             <IconBeeBat />
         </p-card>
@@ -309,8 +309,8 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <IconBee />
         </p-card>
@@ -320,8 +320,8 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <IconBug />
         </p-card>
@@ -331,8 +331,8 @@ Just set `appearance` to `none`, can create your own radio's appearance.
       <template #default="{ isChecked }">
         <p-card
           element="div"
-          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
-          :class="{ '!border-info-emphasis': isChecked }"
+          class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
+          :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
             <IconBeeBat />
         </p-card>
@@ -353,7 +353,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#0065D1] !border-[#0065D1]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis"
+            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -365,7 +365,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#F5A623] !border-[#F5A623]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis"
+            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -377,7 +377,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#23B242] !border-[#23B242]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis"
+            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -399,7 +399,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#0065D1] !border-[#0065D1]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis"
+            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -411,7 +411,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#F5A623] !border-[#F5A623]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis"
+            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -423,7 +423,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#23B242] !border-[#23B242]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis"
+            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -444,7 +444,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 01' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -457,7 +457,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 02' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -470,7 +470,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 03' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -493,7 +493,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 01' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -506,7 +506,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 02' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -519,7 +519,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 03' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>

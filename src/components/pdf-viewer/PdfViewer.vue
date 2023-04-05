@@ -238,6 +238,7 @@ export default defineComponent({
   --p-pdf-container-width: 793px;
 
   @apply relative overflow-hidden w-full flex flex-col bg-subtle z-1;
+  @apply dark:bg-dark-subtle;
 
   &__wrapper {
     @apply relative h-full w-full flex-grow;
@@ -257,16 +258,19 @@ export default defineComponent({
 
       &.hover {
         @apply ring-info ring;
+        @apply dark:ring-dark-info;
       }
     }
   }
 
   &__header {
     @apply z-1 bg-default shadow-lg;
+    @apply dark:bg-dark-default;
   }
 
   &__footer {
     @apply z-1 bg-default shadow-lg-top;
+    @apply dark:bg-dark-default;
   }
 }
 </style>

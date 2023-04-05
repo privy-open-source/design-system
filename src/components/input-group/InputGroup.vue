@@ -70,9 +70,11 @@ export default defineComponent({
 
   &:has(:first-child:is(.input-group__addon):nth-last-child(2)) {
     @apply rounded bg-default focus-within:ring-4 focus-within:ring-subtle/10 border border-solid border-muted hover:border-subtle focus-within:border-subtle;
+    @apply dark:bg-dark-default focus-within:dark:ring-dark-subtle/10 dark:border-dark-muted hover:dark:border-dark-subtle focus-within:dark:border-dark-subtle;
 
     .input {
       @apply bg-transparent;
+      @apply dark:bg-transparent;
     }
 
     .input > .input__form,
@@ -86,11 +88,13 @@ export default defineComponent({
 
     &.input-group--disabled {
       @apply border-subtle;
+      @apply dark:border-dark-subtle;
     }
 
     &.state--error,
     &.input-group--error {
       @apply border-danger-emphasis hover:border-danger-emphasis focus-within:ring-danger focus-within:border-danger-emphasis;
+      @apply dark:border-dark-danger-emphasis hover:dark:border-dark-danger-emphasis focus-within:dark:ring-dark-danger focus-within:dark:border-dark-danger-emphasis;
     }
   }
 
@@ -98,11 +102,13 @@ export default defineComponent({
   & > .input:not(:first-child) > .input__form,
   & > .select:not(:first-child) > .input > .input__form {
     @apply rounded-l-none border-l-transparent;
+    @apply dark:border-l-transparent;
   }
 
   & > .input-group__addon:not(:last-child),
   & > .input:not(:last-child) > .input__form {
     @apply rounded-r-none border-r-transparent;
+    @apply dark:border-r-transparent;
   }
 
   & > .select:not(:last-child) > .input > .input__form {
@@ -134,6 +140,7 @@ export default defineComponent({
       &:hover,
       &:focus {
         @apply z-[2] border-l-subtle border-r-subtle;
+        @apply dark:border-l-dark-subtle dark:border-r-dark-subtle;
       }
     }
   }
@@ -152,10 +159,13 @@ export default defineComponent({
 
   &&--disabled {
     @apply border-subtle border-solid border rounded;
+    @apply dark:border-dark-subtle;
 
     > .input > .input__form,
-    > .input-group__addon {
+    > .input-group__addon,
+    > .btn.btn--variant-input {
       @apply border-transparent;
+      @apply dark:border-transparent;
     }
 
     > .input:first-child .input__form,

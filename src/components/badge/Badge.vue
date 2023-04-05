@@ -59,7 +59,7 @@ export default defineComponent({
   * of badge
   */
   --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
-  --p-color-dark-primary-light: lighten(theme(colors.dark.brand.accent), 40%);
+  --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent), 40%);
 
   @apply inline-block font-bold text-xs px-2 py-0.5 text-on-emphasis dark:text-dark-on-emphasis rounded-full;
 
@@ -74,27 +74,33 @@ export default defineComponent({
       &--default {
         --p-bg-variant-default: theme(backgroundColor.inverse);
         --p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
-        @apply bg-[color:var(--p-bg-variant-default)] dark:bg-[color:var(--p-bg-dark-variant-default)];
+        @apply bg-[color:var(--p-bg-variant-default)];
+        @apply dark:bg-[color:var(--p-bg-dark-variant-default)];
       }
 
       &--primary {
-        @apply bg-brand-accent dark:bg-dark-brand-accent;
+        @apply bg-brand-accent;
+        @apply dark:bg-dark-brand-accent;
       }
 
       &--info {
-        @apply bg-info-emphasis dark:bg-dark-info-emphasis;
+        @apply bg-info-emphasis;
+        @apply dark:bg-dark-info-emphasis;
       }
 
       &--success {
-        @apply bg-success-emphasis dark:bg-dark-success-emphasis;
+        @apply bg-success-emphasis;
+        @apply dark:bg-dark-success-emphasis;
       }
 
       &--warning {
-        @apply bg-warning-emphasis dark:bg-dark-warning-emphasis;
+        @apply bg-warning-emphasis;
+        @apply dark:bg-dark-warning-emphasis;
       }
 
       &--danger {
-        @apply bg-danger-emphasis dark:bg-dark-danger-emphasis;
+        @apply bg-danger-emphasis;
+        @apply dark:bg-dark-danger-emphasis;
       }
     }
   }
@@ -109,27 +115,33 @@ export default defineComponent({
       &--default {
         --p-color-variant-inverse: theme(textColor.subtle);
         --p-color-dark-variant-inverse: theme(textColor.dark.subtle);
-        @apply text-[color:var(--p-color-variant-inverse)] dark:text-[color:var(--p-color-dark-variant-inverse)];
+        @apply text-[color:var(--p-color-variant-inverse)];
+        @apply dark:text-[color:var(--p-color-dark-variant-inverse)];
       }
 
       &--primary {
-        @apply text-brand-accent dark:text-dark-brand-accent;
+        @apply text-brand-accent;
+        @apply dark:text-dark-brand-accent;
       }
 
       &--info {
-        @apply text-info dark:text-dark-info;
+        @apply text-info;
+        @apply dark:text-dark-info;
       }
 
       &--success {
-        @apply text-success dark:text-dark-success;
+        @apply text-success;
+        @apply dark:text-dark-success;
       }
 
       &--warning {
-        @apply text-warning dark:text-dark-warning;
+        @apply text-warning;
+        @apply dark:text-dark-warning;
       }
 
       &--danger {
-        @apply text-danger dark:text-dark-danger;
+        @apply text-danger;
+        @apply dark:text-dark-danger;
       }
     }
   }
@@ -143,27 +155,33 @@ export default defineComponent({
       &--default {
         --p-bg-variant-light: theme(backgroundColor.subtle.alpha);
         --p-bg-dark-variant-light: theme(backgroundColor.dark.subtle.alpha);
-        @apply bg-[color:var(--p-bg-variant-light)] dark:bg-[color:var(--p-bg-dark-variant-light)];
+        @apply bg-[color:var(--p-bg-variant-light)];
+        @apply dark:bg-[color:var(--p-bg-dark-variant-light)];
       }
 
       &--primary {
-        @apply bg-[color:var(--p-color-primary-light)] dark:bg-[color:var(--p-color-dark-primary-light)];
+        @apply bg-[color:var(--p-color-primary-light)];
+        @apply dark:bg-[color:var(--p-color-dark-primary-light)];
       }
 
       &--info {
-        @apply bg-info dark:bg-dark-info;
+        @apply bg-info;
+        @apply dark:bg-dark-info;
       }
 
       &--success {
-        @apply bg-success dark:bg-dark-success;
+        @apply bg-success;
+        @apply dark:bg-dark-success;
       }
 
       &--warning {
-        @apply bg-warning dark:bg-dark-warning;
+        @apply bg-warning;
+        @apply dark:bg-dark-warning;
       }
 
       &--danger {
-        @apply bg-danger dark:bg-dark-danger;
+        @apply bg-danger;
+        @apply dark:bg-dark-danger;
       }
     }
   }
@@ -173,7 +191,8 @@ export default defineComponent({
   * in inverse and dot variant
   */
   &:where(.badge--variant-inverse, .badge--dot) {
-    @apply bg-default dark:bg-dark-default;
+    @apply bg-default;
+    @apply dark:bg-dark-default;
   }
 
   /**

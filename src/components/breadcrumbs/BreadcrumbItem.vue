@@ -84,7 +84,8 @@ export default defineComponent({
     }
 
     & > a {
-      @apply text-subtle dark:text-dark-subtle cursor-pointer underline decoration-solid hover:no-underline;
+      @apply text-subtle cursor-pointer underline decoration-solid hover:no-underline;
+      @apply dark:text-dark-subtle;
     }
 
     & > span {
