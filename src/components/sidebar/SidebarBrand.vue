@@ -23,7 +23,8 @@ export default defineComponent({
 <style lang="postcss">
 .sidebar {
   &__brand {
-    @apply block text-center mx-auto font-semibold hover:no-underline pb-4;
+    @apply block text-center mx-auto font-semibold no-underline pb-4 text-default;
+    @apply dark:text-dark-default;
 
     img {
       @apply max-w-full h-auto;

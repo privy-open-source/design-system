@@ -4,6 +4,7 @@
     mode="out-in">
     <span
       :key="`${expand}`"
+      class="truncate"
       data-testid="truncate">
       {{ viewText }}
       <template v-if="expandable && text.length > maxLength">
@@ -79,3 +80,10 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="postcss">
+.truncate {
+  @apply text-default;
+  @apply dark:text-dark-default;
+}
+</style>

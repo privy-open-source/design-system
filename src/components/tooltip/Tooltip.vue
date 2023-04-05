@@ -151,17 +151,21 @@ export default defineComponent({
 
   &--black {
     @apply bg-inverse text-on-emphasis;
+    @apply dark:bg-dark-inverse dark:text-dark-on-emphasis;
 
     .tooltip__arrow {
       @apply after:bg-inverse;
+      @apply dark:after:bg-dark-inverse;
     }
   }
 
   &--white {
     @apply bg-default text-subtle;
+    @apply dark:bg-dark-default dark:text-dark-subtle;
 
     .tooltip__arrow {
       @apply after:bg-default;
+      @apply dark:after:bg-dark-default;
     }
   }
 }

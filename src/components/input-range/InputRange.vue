@@ -294,7 +294,7 @@ export default defineComponent({
 
   &__thumb {
     @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-muted touch-none select-none;
-    @apply dark:bg-dark-default dark:border-dark-muted;
+    @apply dark:bg-dark-layer-2 dark:border-dark-subtle;
 
     &:hover,
     &:active {

@@ -106,6 +106,10 @@
 }
 
 .vp-doc {
+  .preview {
+    @apply text-default dark:text-dark-default;
+  }
+  
   .header-anchor {
     @apply pr-0 -ml-6;
   }
@@ -117,7 +121,7 @@
       @apply text-inherit;
     }
 
-    &:not(.nav__link, .btn, .navbar__brand) {
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand) {
       @apply underline decoration-solid hover:no-underline;
     }
 

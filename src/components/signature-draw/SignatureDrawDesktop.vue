@@ -163,15 +163,18 @@ export default defineComponent({
     &--desktop {
       .signature-draw__canvas {
         @apply bg-default touch-none cursor-crosshair border rounded border-dashed;
+        @apply dark:bg-dark-layer-2;
       }
     }
 
     &__placeholder {
-      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center;
+      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center text-muted;
+      @apply dark:text-dark-default;
     }
 
     &__reset {
       @apply absolute right-1 top-1 bg-default;
+      @apply dark:bg-dark-default;
     }
   }
   </style>

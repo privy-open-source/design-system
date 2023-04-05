@@ -202,10 +202,12 @@ export default defineComponent({
   .signature-draw {
     &--mobile {
       @apply border rounded border-dashed max-w-full text-center flex items-center justify-center bg-default;
+      @apply dark:bg-dark-layer-2;
     }
 
     &__modal {
       @apply fixed w-full h-full top-0 left-0 bg-default z-50 flex items-center justify-center flex-col p-5;
+      @apply dark:bg-dark-default;
     }
 
     &__close {

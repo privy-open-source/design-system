@@ -41,7 +41,7 @@
         <NavItem
           v-else
           :href="item.url"
-          :class="{ 'nav__item--no-label' : !item.label }">
+          :class="{ 'nav__item--no-label' : !item.label, 'nav__item--no-icon' : !item.icon }">
           <template
             #icon>
             <template v-if="item.icon && typeof item.icon === 'string'">

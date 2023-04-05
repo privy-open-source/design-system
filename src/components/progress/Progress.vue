@@ -138,8 +138,8 @@ export default defineComponent({
 
   &--active {
     .progress__point {
-      @apply bg-info-emphasis text-on-emphasis;
-      @apply dark:bg-dark-info-emphasis dark:text-dark-on-emphasis;
+      @apply bg-info-emphasis text-state-emphasis;
+      @apply dark:bg-dark-info-emphasis dark:text-dark-state-emphasis;
     }
   }
 

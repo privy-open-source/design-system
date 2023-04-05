@@ -160,10 +160,12 @@ export default defineComponent({
 .tour {
   &__dialog {
     @apply rounded bg-inverse w-full max-w-xs z-[100] overflow-hidden relative shadow-sm;
+    @apply dark:bg-dark-inverse;
   }
 
   &__image {
     @apply max-w-full h-auto object-cover bg-default;
+    @apply dark:bg-dark-default;
   }
 
   &__body {
@@ -171,6 +173,7 @@ export default defineComponent({
 
     > * {
       @apply text-on-emphasis;
+      @apply dark:text-dark-on-emphasis;
     }
   }
 
@@ -180,6 +183,7 @@ export default defineComponent({
 
   &__meta {
     @apply text-xs text-muted flex-shrink-0;
+    @apply dark:text-dark-muted;
   }
 
   &__controls {
@@ -187,18 +191,22 @@ export default defineComponent({
 
     > .btn--variant-link.btn--default {
       @apply text-on-emphasis hover:text-on-emphasis focus:text-on-emphasis;
+      @apply dark:text-dark-on-emphasis hover:dark:text-dark-on-emphasis focus:dark:text-dark-on-emphasis;
     }
 
     > .tour__divider {
       @apply text-on-emphasis;
+      @apply dark:text-dark-on-emphasis;
     }
   }
 
   &__dismiss {
     @apply absolute top-3 right-3 hover:cursor-pointer text-on-emphasis/30 hover:text-on-emphasis/50;
+    @apply dark:text-dark-on-emphasis/30 hover:dark:text-dark-on-emphasis/50;
 
     .tour--image & {
       @apply text-default/30 hover:text-default/50;
+      @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
     }
   }
 }

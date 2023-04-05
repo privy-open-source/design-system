@@ -97,6 +97,7 @@ export default defineComponent({
   --p-sidebar-size-wide: 230px;
 
   @apply bg-default px-2 py-4;
+  @apply dark:bg-dark-default;
 
   /**
   * Default sidebar has
@@ -175,6 +176,7 @@ export default defineComponent({
   &&--tabs,
   &&--lines {
     @apply pr-0 py-2 border-r border-r-default;
+    @apply dark:border-r-dark-default;
   }
 
   &&--lines {
