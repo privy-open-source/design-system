@@ -286,13 +286,13 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
   <p-tabs>
     <p-tab>
       <template #title>
-        To Sign <p-badge color="primary">25</p-badge>
+        To Sign <p-badge color="info">25</p-badge>
       </template>
       But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
     </p-tab>
     <p-tab>
       <template #title>
-        To Review <p-badge color="primary">25</p-badge>
+        To Review <p-badge color="info">25</p-badge>
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed
     </p-tab>
@@ -304,14 +304,14 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
   <p-tabs>
     <p-tab>
       <template #title>
-        To Sign <p-badge color="primary">25</p-badge>
+        To Sign <p-badge color="info">25</p-badge>
       </template>
       But I must explain to you how all this mistaken idea
       of denouncing pleasure and praising pain was born
     </p-tab>
     <p-tab>
       <template #title>
-        To Review <p-badge color="primary">25</p-badge>
+        To Review <p-badge color="info">25</p-badge>
       </template>
       One morning, when Gregor Samsa woke from troubled dreams,
       he found himself transformed
@@ -327,7 +327,7 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
         <IconEdit />
       </template>
       <template #title>
-        To Sign <p-badge color="primary" variant="light">25</p-badge>
+        To Sign <p-badge color="info" variant="light">25</p-badge>
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed
     </p-tab>
@@ -336,7 +336,7 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
         <IconView />
       </template>
       <template #title>
-        To Review <p-badge color="primary" variant="light">25</p-badge>
+        To Review <p-badge color="info" variant="light">25</p-badge>
       </template>
       A wonderful serenity has taken possession of my entire soul, like these sweet mornings
     </p-tab>
@@ -351,7 +351,7 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
         <IconEdit />
       </template>
       <template #title>
-        To Sign <p-badge color="primary" variant="light">25</p-badge>
+        To Sign <p-badge color="info" variant="light">25</p-badge>
       </template>
       One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed
     </p-tab>
@@ -360,7 +360,7 @@ To align Tabs, use `align` prop. Available value are `left`, `right` and `center
         <IconView />
       </template>
       <template #title>
-        To Review <p-badge color="primary" variant="light">25</p-badge>
+        To Review <p-badge color="info" variant="light">25</p-badge>
       </template>
       A wonderful serenity has taken possession of my entire soul, like these sweet mornings
     </p-tab>

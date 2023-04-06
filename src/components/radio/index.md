@@ -353,7 +353,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#0065D1] !border-[#0065D1]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
+            class="duration-200 ease-in-out text-state-emphasis dark:text-dark-state-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -365,7 +365,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#F5A623] !border-[#F5A623]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
+            class="duration-200 ease-in-out text-state-emphasis dark:text-dark-state-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -377,7 +377,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#23B242] !border-[#23B242]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
+            class="duration-200 ease-in-out text-state-emphasis dark:text-dark-state-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -399,7 +399,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#0065D1] !border-[#0065D1]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
+            class="duration-200 ease-in-out text-state-emphasis dark:text-dark-state-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -411,7 +411,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#F5A623] !border-[#F5A623]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
+            class="duration-200 ease-in-out text-state-emphasis dark:text-dark-state-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -423,7 +423,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-3 hover:shadow-md ease-in-out duration-200 !bg-[#23B242] !border-[#23B242]"
           sectioned>
           <IconCheck
-            class="duration-200 ease-in-out text-on-emphasis dark:text-dark-on-emphasis"
+            class="duration-200 ease-in-out text-state-emphasis dark:text-dark-state-emphasis"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -444,7 +444,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 01' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-state-emphasis dark:text-dark-state-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -457,7 +457,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 02' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-state-emphasis dark:text-dark-state-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
@@ -470,7 +470,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-inverse/50 after:z-[1]' : selected === 'image 03' }"
           sectioned>
           <IconCheck
-            class="ease-in-out duration-200 text-on-emphasis dark:text-dark-on-emphasis relative z-[2]"
+            class="ease-in-out duration-200 text-state-emphasis dark:text-dark-state-emphasis relative z-[2]"
             :class="[isChecked ? 'opacity-100' : 'opacity-0']" />
         </p-card>
       </template>
