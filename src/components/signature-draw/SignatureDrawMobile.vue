@@ -202,7 +202,6 @@ export default defineComponent({
   .signature-draw {
     &--mobile {
       @apply border rounded border-dashed max-w-full text-center flex items-center justify-center bg-default;
-      @apply dark:bg-dark-layer-2;
     }
 
     &__modal {
@@ -242,6 +241,10 @@ export default defineComponent({
 
     &__preview {
       @apply w-full flex items-center justify-center;
+
+      .btn--variant-solid.btn--default {
+        @apply dark:text-dark-subtlest hover:dark:text-dark-on-emphasis;
+      }
 
       & > img {
         @apply max-w-full h-auto;

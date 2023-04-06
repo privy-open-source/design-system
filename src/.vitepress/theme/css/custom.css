@@ -72,12 +72,18 @@
   }
 
   th, td {
-    @apply border-info dark:border-subtle;
+    @apply border-info dark:border-dark-default dark:bg-dark-default;
   }
 
   thead > tr:first-child,
   tr:nth-child(2n) {
-    @apply bg-info dark:bg-inverse;
+    @apply bg-info;
+  }
+
+  thead > tr:first-child {
+    th, td {
+      @apply dark:bg-dark-base;
+    }
   }
 
   .token.attr-name {
@@ -85,18 +91,19 @@
   }
 
   .table-list {
-    @apply mt-4 p-3 rounded border shadow-sm;
+    @apply mt-4 p-3 rounded border shadow-sm dark:border-dark-subtle;
 
     table {
       @apply table w-full my-0;
 
-      thead > tr:first-child,
-      tr:nth-child(2n) {
-        @apply dark:bg-transparent;
+      thead > tr:first-child {
+        th, td {
+          @apply dark:bg-transparent;
+        }
       }
 
       tr {
-        @apply border-t-0 bg-transparent;
+        @apply border-t-0 bg-transparent dark:bg-transparent;
       }
 
       th {
@@ -104,7 +111,7 @@
       }
 
       td {
-        @apply border-0 border-t border-[color:var(--vp-c-divider)];
+        @apply border-0 border-t border-[color:var(--vp-c-divider)] dark:bg-transparent;
       }
     }
   }
@@ -120,7 +127,7 @@
   }
 
   a {
-    @apply text-link;
+    @apply text-link dark:text-dark-link;
 
     &:is(.freetext, .nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
       @apply text-inherit;
