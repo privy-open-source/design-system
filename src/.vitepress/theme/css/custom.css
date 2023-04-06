@@ -122,11 +122,11 @@
   a {
     @apply text-link;
 
-    &:is(.freetext) {
+    &:is(.freetext, .nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
       @apply text-inherit;
     }
 
-    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand) {
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
       @apply underline decoration-solid hover:no-underline;
     }
 

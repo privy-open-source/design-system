@@ -464,7 +464,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
 <div class="flex flex-row">
   <div class="w-1/2">
     <div class="relative h-64 flex my-6">
-      <p-sidebar variant="pills" type="narrow" class="border-r" fixed>
+      <p-sidebar variant="pills" type="narrow" class="border-r border-r-default dark:border-r-dark-default" fixed>
         <p-sidebar-nav>
           <p-nav-item active>
             <template #icon>
@@ -487,7 +487,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
   </div>
   <div class="w-1/2">
     <div class="relative h-64 flex my-6">
-      <p-sidebar variant="pills" class="border-r" fixed>
+      <p-sidebar variant="pills" class="border-r border-r-default dark:border-r-dark-default" fixed>
         <p-sidebar-nav>
           <p-nav-item active>
             <template #icon>

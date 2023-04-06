@@ -8,6 +8,7 @@ description: Button group style guide
   import Button from '../../components/button/Button.vue'
   import Dropdown from '../../components/dropdown/Dropdown.vue'
   import DropdownItem from '../../components/dropdown/DropdownItem.vue'
+  import Caption from '../../components/caption/Caption.vue'
   import IconChevronDown from '@carbon/icons-vue/lib/chevron--down/20'
   import IconChevronLeft from '@carbon/icons-vue/lib/chevron--left/20'
   import IconChevronRight from '@carbon/icons-vue/lib/chevron--right/20'
@@ -27,10 +28,12 @@ A button group displays multiple buttons together that gives user access to simi
     <Button icon><IconChevronDown /></Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-default">
+<div class="flex pt-5 pb-8">
   <div class="w-3/4">
+    <Caption class="!text-subtle dark:!text-dark-subtle">
     Usage : Default group button style that will used on many area.
     This style will use to highligth most important action in any experience.
+    </Caption>
   </div>
 </div>
 
@@ -41,9 +44,11 @@ A button group displays multiple buttons together that gives user access to simi
     <Button variant="outline" icon><IconChevronDown /></Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-default">
+<div class="flex pt-5 pb-8">
   <div class="w-3/4">
+    <Caption class="!text-subtle dark:!text-dark-subtle">
     Usage : Outline group button style will used if an action need less visual weight.
+    </Caption>
   </div>
 </div>
 
@@ -62,11 +67,13 @@ A button group displays multiple buttons together that gives user access to simi
     </ButtonGroup>
   </div>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-default">
+<div class="flex pt-5 pb-8">
   <div class="w-3/4">
+    <Caption class="!text-subtle dark:!text-dark-subtle">
     Usage : Button group that consist of two component button can
     be classified as two type. Two button group text and
     addon & Two button group double text.
+    </Caption>
   </div>
 </div>
 
@@ -78,11 +85,13 @@ A button group displays multiple buttons together that gives user access to simi
     <Button>Button Text</Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-default">
+<div class="flex pt-5 pb-8">
   <div class="w-3/4">
+    <Caption class="!text-subtle dark:!text-dark-subtle">
     Usage : Three button group usually used when similar actions
     have to be shown together, and have the same level of importance.
     Three button text usually using text only without icon.
+    </Caption>
   </div>
 </div>
 
@@ -95,12 +104,14 @@ A button group displays multiple buttons together that gives user access to simi
     <Button>Button Text</Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-default">
+<div class="flex pt-5 pb-8">
   <div class="w-3/4">
+    <Caption class="!text-subtle dark:!text-dark-subtle">
     Usage : Four button group is the maximum quantity of button
     group with text. Have the same function like before which is
     used when similar actions have to be shown together,
     and have the same level of importance.
+    </Caption>
   </div>
 </div>
 
@@ -122,10 +133,12 @@ A button group displays multiple buttons together that gives user access to simi
     </Dropdown>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-default">
+<div class="flex pt-5 pb-8">
   <div class="w-3/4">
+    <Caption class="!text-subtle dark:!text-dark-subtle">
     Usage : Button with addon usually used to simplify many actions
     into one group button, the other action can be hidened inside the addon.
+    </Caption>
   </div>
 </div>
 
@@ -136,10 +149,12 @@ A button group displays multiple buttons together that gives user access to simi
     <Button icon><IconChevronRight /></Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-default">
+<div class="flex pt-5 pb-8">
   <div class="w-3/4">
+    <Caption class="!text-subtle dark:!text-dark-subtle">
     Usage : Button all addon usually used when the button group
     consist of two up to six button with only icon.
+    </Caption>
   </div>
 </div>
 
@@ -159,9 +174,11 @@ A button group displays multiple buttons together that gives user access to simi
     <Button>Button Text</Button>
   </ButtonGroup>
 </div>
-<div class="flex pt-5 pb-8 text-sm text-default">
+<div class="flex pt-5 pb-8">
   <div class="w-3/4">
+    <Caption class="!text-subtle dark:!text-dark-subtle">
     Usage : Button with addon usually used to simplify many actions
     into one group button, the other action can be hidened inside the addon.
+    </Caption>
   </div>
 </div>

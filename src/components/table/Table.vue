@@ -292,7 +292,7 @@ export default defineComponent({
 
     .datatable__body {
       @apply border-b border-b-default divide-y divide-default bg-default;
-      @apply dark:border-b-default dark:divide-dark-default dark:bg-dark-default;
+      @apply dark:border-b-dark-default dark:divide-dark-default dark:bg-dark-default;
     }
   }
 }
