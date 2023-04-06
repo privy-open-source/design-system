@@ -94,6 +94,25 @@ it('should combine all value from all input into single v-model', async () => {
   expect(model.value).toBe('123 3')
 })
 
+it('should not trim space in begining of v-model result text', async () => {
+  const model  = ref('')
+  const screen = render({
+    components: { InputPin },
+    template  : '<input-pin v-model="model" />',
+    setup () {
+      return { model }
+    },
+  })
+
+  const inputs = screen.queryAllByTestId('input')
+
+  await fireEvent.update(inputs.at(2), '1')
+  await fireEvent.update(inputs.at(3), '2')
+  await fireEvent.update(inputs.at(4), '3')
+
+  expect(model.value).toBe('  123')
+})
+
 it('should handle value from clipboard (paste)', async () => {
   const model  = ref('')
   const screen = render({
