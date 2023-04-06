@@ -20,8 +20,8 @@ Persona uses design tokens to collaborate between UI/UX designers and engineers.
 <div class="pb-8 pt-20 space-y-1">
   <p-heading element="h5" class="mb-0">Main</p-heading>
   <p-caption class="!text-lightblue-50">token-name</p-caption>
-  <p-caption class="!text-subtle">figma-style-name</p-caption>
-  <p-caption class="!text-subtle" weight="bold">hex</p-caption>
+  <p-caption class="!text-subtle dark:!text-dark-subtle">figma-style-name</p-caption>
+  <p-caption class="!text-subtle dark:!text-dark-subtle" weight="bold">hex</p-caption>
 </div>
 
 <div class="pb-8 mt-8">
@@ -37,8 +37,8 @@ Persona uses design tokens to collaborate between UI/UX designers and engineers.
 <div class="pb-8 pt-20 space-y-1">
   <p-heading element="h5" class="mb-0">Semantics</p-heading>
   <p-caption class="!text-lightblue-50">token-name</p-caption>
-  <p-caption class="!text-subtle">figma-style-name</p-caption>
-  <p-caption class="!text-subtle" weight="bold">parent-token-name</p-caption>
+  <p-caption class="!text-subtle dark:!text-dark-subtle">figma-style-name</p-caption>
+  <p-caption class="!text-subtle dark:!text-dark-subtle" weight="bold">parent-token-name</p-caption>
 </div>
 
 ### Brand

@@ -90,12 +90,17 @@
     table {
       @apply table w-full my-0;
 
+      thead > tr:first-child,
+      tr:nth-child(2n) {
+        @apply dark:bg-transparent;
+      }
+
       tr {
         @apply border-t-0 bg-transparent;
       }
 
       th {
-        @apply border-0 bg-transparent font-bold text-default;
+        @apply border-0 bg-transparent dark:bg-transparent font-bold text-default dark:text-dark-default ;
       }
 
       td {
