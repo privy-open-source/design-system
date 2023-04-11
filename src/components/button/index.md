@@ -71,7 +71,6 @@ Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
     <p-button variant="outline">Click me</p-button>
     <p-button variant="ghost">Click me</p-button>
     <p-button variant="link">Click me</p-button>
-    <p-button variant="input" disabled>Click me</p-button>
   </div>
 </preview>
 

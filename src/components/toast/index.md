@@ -231,9 +231,9 @@ You can add some custom class to Toast element via `toastClass`.
   <Button type="" color="info" @click="toast({
     title     : 'Lorem ipsum',
     text      : 'Lorem ipsum dolor sit amet.',
-    toastClass: 'mt-4 mr-4',
+    toastClass: 'mt-28 mr-10',
   })">
-    Rounded Toast
+    Custom Toast
   </Button>
 </div>
 
@@ -243,7 +243,7 @@ import { toast } from '@privyid/persona/core'
 toast({
   title     : 'Lorem ipsum',
   text      : 'Lorem ipsum dolor sit amet.',
-  toastClass: 'mt-4 mr-4',
+  toastClass: 'mt-28 mr-10',
 })
 ```
 
