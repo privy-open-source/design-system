@@ -44,9 +44,11 @@ description: Base button component
 
 ### Button with icon + text
 
-<preview class="flex-col items-center space-gap-3 md:flex-row">
-  <p-button color="info"><IconBee /> Click Me</p-button>
-  <p-button color="info">Click Me <IconBee /></p-button>
+<preview>
+  <div class="flex flex-col items-center space-gap-3 md:flex-row">
+    <p-button color="info"><IconBee /> Click Me</p-button>
+    <p-button color="info">Click Me <IconBee /></p-button>
+  </div>
 </preview>
 
 ```vue
@@ -65,6 +67,7 @@ description: Base button component
 Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
 
 ### Without Color
+
 <preview>
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
     <p-button variant="solid">Click me</p-button>
