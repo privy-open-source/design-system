@@ -2730,27 +2730,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/schema@npm:3.3.2":
-  version: 3.3.2
-  resolution: "@nuxt/schema@npm:3.3.2"
-  dependencies:
-    c12: ^1.2.0
-    create-require: ^1.1.1
-    defu: ^6.1.2
-    hookable: ^5.5.0
-    jiti: ^1.18.2
-    pathe: ^1.1.0
-    pkg-types: ^1.0.2
-    postcss-import-resolver: ^2.0.0
-    scule: ^1.0.0
-    std-env: ^3.3.2
-    ufo: ^1.1.1
-    unimport: ^3.0.4
-    untyped: ^1.2.2
-  checksum: e8d8777386f3b1b59dacd89297e221f6972e65e606df31f995633c6dc98fb1753cea93b4faac04ee1930d6bca5ac7d6471758d904f38884e56f1c3a56c66c7fa
-  languageName: node
-  linkType: hard
-
 "@nuxt/schema@npm:3.3.3":
   version: 3.3.3
   resolution: "@nuxt/schema@npm:3.3.3"
@@ -2769,6 +2748,27 @@ __metadata:
     unimport: ^3.0.4
     untyped: ^1.3.2
   checksum: 78b432fdb5a6c874aff8a46f8aa1c0b7880af47786c5339c1c37f8c1723e773b50548bc543d5718ec0e132803a1fc8d94eecd881fd3a4f2e5469243001ee2ba1
+  languageName: node
+  linkType: hard
+
+"@nuxt/schema@npm:3.4.0":
+  version: 3.4.0
+  resolution: "@nuxt/schema@npm:3.4.0"
+  dependencies:
+    c12: ^1.2.0
+    create-require: ^1.1.1
+    defu: ^6.1.2
+    hookable: ^5.5.3
+    jiti: ^1.18.2
+    pathe: ^1.1.0
+    pkg-types: ^1.0.2
+    postcss-import-resolver: ^2.0.0
+    scule: ^1.0.0
+    std-env: ^3.3.2
+    ufo: ^1.1.1
+    unimport: ^3.0.6
+    untyped: ^1.3.2
+  checksum: c519b3a13d827a88ef613183679376740afe6c9f357ad3cd66ab3d883ac663320622c11427bf7e0672a6e7d3510c295bb4e149d9387aaf86315a458b5204256b
   languageName: node
   linkType: hard
 
@@ -3009,7 +3009,7 @@ __metadata:
     "@juggle/resize-observer": ^3.4.0
     "@nuxt/kit": ^3.3.2
     "@nuxt/module-builder": ^0.2.1
-    "@nuxt/schema": 3.3.2
+    "@nuxt/schema": 3.4.0
     "@nuxtjs/tailwindcss": ^6.2.0
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
@@ -8985,7 +8985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hookable@npm:^5.5.0, hookable@npm:^5.5.1":
+"hookable@npm:^5.5.1":
   version: 5.5.2
   resolution: "hookable@npm:5.5.2"
   checksum: 048dc68fc93a134d2c3725aedf1beff8e0272a3ef5edf758c645f6820355617801be31294f07c48f44c9d7e2cf191f0421bc291512f40cbe1dcd3999c3133ffe
@@ -14904,6 +14904,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unimport@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "unimport@npm:3.0.6"
+  dependencies:
+    "@rollup/pluginutils": ^5.0.2
+    escape-string-regexp: ^5.0.0
+    fast-glob: ^3.2.12
+    local-pkg: ^0.4.3
+    magic-string: ^0.30.0
+    mlly: ^1.2.0
+    pathe: ^1.1.0
+    pkg-types: ^1.0.2
+    scule: ^1.0.0
+    strip-literal: ^1.0.1
+    unplugin: ^1.3.1
+  checksum: 033bf11aa2c58281eee4ad952a7db3bfde4fd09dbc79c7f6d5d8e4e4f667c4a5bad80c3dd5fe23cb71653cae52ba3fb288690e3c81f08774805a622e1ad86c9c
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^1.1.1":
   version: 1.1.1
   resolution: "unique-filename@npm:1.1.1"
@@ -14994,23 +15013,6 @@ __metadata:
   version: 3.0.3
   resolution: "untildify@npm:3.0.3"
   checksum: 1c42352a37d9663090f126f343f1ee0a0b90c0a4bd7991229a6f474fa0ab856880f0e8798c15fa12c13e64c5345f63dd428e4b6ac2073d594839548025a4bed9
-  languageName: node
-  linkType: hard
-
-"untyped@npm:^1.2.2":
-  version: 1.3.0
-  resolution: "untyped@npm:1.3.0"
-  dependencies:
-    "@babel/core": ^7.21.3
-    "@babel/standalone": ^7.21.3
-    "@babel/types": ^7.21.3
-    defu: ^6.1.2
-    jiti: ^1.18.2
-    mri: ^1.2.0
-    scule: ^1.0.0
-  bin:
-    untyped: dist/cli.mjs
-  checksum: 7758a5319ccd3c7848a254fdab973806f060ed2aad86cb2878c64f3e6e750e31506bb628ad7e684c3681a368021d27146b1d46264b77cbcb2630b22ce6baeaf3
   languageName: node
   linkType: hard
 
