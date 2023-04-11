@@ -70,26 +70,32 @@ export default defineComponent({
   */
   &&--default {
     @apply bg-inverse;
+    @apply dark:bg-dark-inverse;
   }
 
   &&--primary {
     @apply bg-brand-accent;
+    @apply dark:bg-dark-brand-accent;
   }
 
   &&--info {
     @apply bg-info-emphasis;
+    @apply dark:bg-dark-info-emphasis;
   }
 
   &&--success {
     @apply bg-success-emphasis;
+    @apply dark:bg-dark-success-emphasis;
   }
 
   &&--warning {
     @apply bg-warning-emphasis;
+    @apply dark:bg-dark-warning-emphasis;
   }
 
   &&--danger {
     @apply bg-danger-emphasis;
+    @apply dark:bg-dark-danger-emphasis;
   }
 
   /**

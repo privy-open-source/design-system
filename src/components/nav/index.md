@@ -253,21 +253,21 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
 ### Badge
 <preview>
   <p-nav fill>
-    <p-nav-item active>To Sign <p-badge color="secondary" variant="light">25</p-badge></p-nav-item>
-    <p-nav-item>To Review <p-badge color="secondary" variant="light">25</p-badge></p-nav-item>
+    <p-nav-item active>To Sign <p-badge variant="light">25</p-badge></p-nav-item>
+    <p-nav-item>To Review <p-badge variant="light">25</p-badge></p-nav-item>
   </p-nav>
   <p-nav fill>
     <p-nav-item active>
       <template #icon>
         <IconView />
       </template>
-      To Sign <p-badge color="secondary" variant="light">25</p-badge>
+      To Sign <p-badge variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       <template #icon>
         <IconView />
       </template>
-      To Review <p-badge color="secondary" variant="light">25</p-badge>
+      To Review <p-badge variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
 </preview>
@@ -277,11 +277,11 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
   <p-nav fill>
     <p-nav-item active>
       To Sign
-      <p-badge color="secondary" variant="light">25</p-badge>
+      <p-badge variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       To Review
-      <p-badge color="secondary" variant="light">25</p-badge>
+      <p-badge variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
   <p-nav fill>
@@ -289,13 +289,13 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
       <template #icon>
         <IconView />
       </template>
-      To Sign <p-badge color="secondary" variant="light">25</p-badge>
+      To Sign <p-badge variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       <template #icon>
         <IconView />
       </template>
-      To Review <p-badge color="secondary" variant="light">25</p-badge>
+      To Review <p-badge variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
 </template>

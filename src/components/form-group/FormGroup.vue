@@ -85,23 +85,28 @@ export default defineComponent({
   @apply flex flex-col mb-4;
 
   &__label {
-    @apply font-bold text-xs mb-2 relative;
+    @apply font-bold text-xs mb-2 relative text-default;
+    @apply dark:text-dark-default;
 
     > sup {
       @apply text-danger;
+      @apply dark:text-dark-danger;
     }
   }
 
   & > &__description {
     @apply text-xs my-2 text-subtle;
+    @apply dark:text-dark-subtle;
   }
 
   & > &__error {
-    @apply text-xs text-danger my-2;
+    @apply text-xs text-danger;
+    @apply dark:text-dark-danger my-2;
   }
 
   &__hint {
     @apply absolute bottom-0 right-0 text-info cursor-pointer focus:outline-none;
+    @apply dark:text-dark-info;
   }
 }
 </style>

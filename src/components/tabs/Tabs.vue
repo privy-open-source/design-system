@@ -21,7 +21,7 @@
           data-testid="tab"
           :disabled="tab.disabled"
           :active="i === active"
-          :class="[{ 'nav__item--no-icon' : (!tab.slots.icon) }, { 'nav__item--no-label' : (!tab.title && !tab.slots.title) }]"
+          :class="{ 'nav__item--no-icon' : (!tab.slots.icon), 'nav__item--no-label' : (!tab.title && !tab.slots.title) }"
           @click="selectTab(i, tab)">
           <template #icon>
             <template v-if="tab.slots.icon">
@@ -167,6 +167,7 @@ export default defineComponent({
   */
   .nav {
     @apply border-b border-b-default;
+    @apply dark:border-b-dark-default;
 
     &__link {
       .badge {
@@ -176,6 +177,7 @@ export default defineComponent({
 
     &--vertical {
       @apply pb-2 border-b-0 border-r border-r-default;
+      @apply dark:border-r-dark-default;
     }
   }
 
@@ -207,6 +209,7 @@ export default defineComponent({
 
     .nav {
       @apply border-b-0 border-r-0 border-l border-l-default;
+      @apply dark:border-l-dark-default;
 
       &.nav--pills {
         @apply pl-2 pr-0;

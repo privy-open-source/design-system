@@ -72,12 +72,18 @@
   }
 
   th, td {
-    @apply border-info dark:border-subtle;
+    @apply border-info dark:border-dark-default dark:bg-dark-default;
   }
 
   thead > tr:first-child,
   tr:nth-child(2n) {
-    @apply bg-info dark:bg-inverse;
+    @apply bg-info;
+  }
+
+  thead > tr:first-child {
+    th, td {
+      @apply dark:bg-dark-base;
+    }
   }
 
   .token.attr-name {
@@ -85,39 +91,49 @@
   }
 
   .table-list {
-    @apply mt-4 p-3 rounded border shadow-sm;
+    @apply mt-4 p-3 rounded border shadow-sm dark:border-dark-subtle;
 
     table {
       @apply table w-full my-0;
 
+      thead > tr:first-child {
+        th, td {
+          @apply dark:bg-transparent;
+        }
+      }
+
       tr {
-        @apply border-t-0 bg-transparent;
+        @apply border-t-0 bg-transparent dark:bg-transparent;
       }
 
       th {
-        @apply border-0 bg-transparent font-bold text-default;
+        @apply border-0 bg-transparent dark:bg-transparent font-bold text-default dark:text-dark-default ;
       }
 
       td {
-        @apply border-0 border-t border-[color:var(--vp-c-divider)];
+        @apply border-0 border-t border-[color:var(--vp-c-divider)] dark:bg-transparent;
       }
     }
   }
 }
 
 .vp-doc {
+  .preview {
+    @apply text-default dark:text-dark-default;
+  }
+  
   .header-anchor {
     @apply pr-0 -ml-6;
   }
 
   a {
-    @apply text-link;
+    @apply text-link dark:text-dark-link;
 
-    &:is(.freetext) {
+    &:is(.freetext, .nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
       @apply text-inherit;
     }
 
-    &:not(.nav__link, .btn, .navbar__brand) {
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
       @apply underline decoration-solid hover:no-underline;
     }
 

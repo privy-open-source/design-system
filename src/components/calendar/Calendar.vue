@@ -245,6 +245,7 @@ export default defineComponent({
 <style lang="postcss">
 .calendar {
   @apply flex flex-col space-y-2 text-sm shadow-xl border-transparent;
+  @apply dark:border-transparent;
 
   &__nav {
     @apply flex justify-between space-x-2 mb-2;
@@ -259,17 +260,20 @@ export default defineComponent({
 
     &.btn--default {
       @apply border-transparent bg-transparent text-default font-normal;
+      @apply dark:border-transparent dark:bg-transparent dark:text-dark-subtle hover:dark:text-dark-default;
 
       &.calendar__nav-title {
         @apply font-medium;
       }
 
       &[active="true"] {
-        @apply bg-info-emphasis border-info-emphasis text-on-emphasis cursor-default;
+        @apply bg-info-emphasis border-info-emphasis text-state-emphasis cursor-default;
+        @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis dark:text-dark-state-emphasis;
       }
 
       &[disabled][active="false"] {
         @apply text-muted;
+        @apply dark:text-dark-muted;
       }
     }
 

@@ -320,6 +320,7 @@ export default defineComponent({
 
   &__container {
     @apply overflow-visible relative border-2 border-dashed border-subtle rounded w-full h-full;
+    @apply dark:border-dark-subtle;
 
     &,
     & > * {
@@ -335,7 +336,8 @@ export default defineComponent({
   }
 
   &__resize {
-    @apply absolute w-3 h-3 bottom-0 right-0 translate-x-1/2 translate-y-1/2 bg-subtle-alpha rounded-full;
+    @apply absolute w-3 h-3 bottom-0 right-0 translate-x-1/2 translate-y-1/2 bg-subtle rounded-full;
+    @apply dark:bg-dark-subtle;
   }
 }
 </style>

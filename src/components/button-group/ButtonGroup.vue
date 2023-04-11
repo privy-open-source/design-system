@@ -101,6 +101,7 @@ export default defineComponent({
       &.btn--warning,
       &.btn--danger {
         @apply border-l-subtle-alpha;
+        @apply dark:border-l-dark-subtle-alpha;
       }
     }
   }
@@ -127,6 +128,7 @@ export default defineComponent({
     &:not(:first-child) {
       .btn {
         @apply -ml-[1px] rounded-l-none border-l-subtle-alpha;
+        @apply dark:border-l-dark-subtle-alpha;
       }
     }
   }

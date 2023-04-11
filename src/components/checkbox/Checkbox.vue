@@ -162,9 +162,11 @@ export default defineComponent({
   */
   &__icon {
     @apply w-5 h-5 border rounded-tn border-subtle inline-flex items-center justify-center bg-default;
+    @apply dark:border-dark-subtle dark:bg-dark-default;
 
     > svg {
       @apply w-3 fill-default;
+      @apply dark:fill-dark-default;
     }
   }
 
@@ -177,6 +179,7 @@ export default defineComponent({
       &--checked {
         .card {
           @apply border-info-emphasis;
+          @apply dark:border-dark-info-emphasis;
         }
       }
     }
@@ -195,6 +198,7 @@ export default defineComponent({
   */
   &__label {
     @apply text-default;
+    @apply dark:text-dark-default;
   }
 
   /**
@@ -205,9 +209,11 @@ export default defineComponent({
   &--indeterminate {
     .checkbox__icon {
       @apply bg-info-emphasis border-info-emphasis;
+      @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis;
 
       > svg {
         @apply fill-default;
+        @apply dark:fill-dark-inverse;
       }
     }
   }
@@ -221,9 +227,11 @@ export default defineComponent({
     &:not(.checkbox--checked, .checkbox--indeterminate) {
       .checkbox__icon {
         @apply bg-subtle border-subtle;
+        @apply dark:bg-dark-subtle dark:border-dark-subtle;
 
         > svg {
           @apply fill-subtle;
+          @apply dark:fill-dark-subtle;
         }
       }
     }
@@ -251,6 +259,7 @@ export default defineComponent({
     &:hover,
     &:focus-visible {
       @apply bg-subtle;
+      @apply dark:bg-dark-subtle;
     }
   }
 }

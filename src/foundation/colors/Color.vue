@@ -98,7 +98,7 @@ export default defineComponent({
     }
 
     &__name {
-      @apply text-subtle;
+      @apply text-subtle dark:text-dark-subtle;
     }
   }
 

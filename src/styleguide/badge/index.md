@@ -15,9 +15,9 @@ Badges are placed before/after the label of the thing they're quantifying, such 
 ### Example
 <div class="space-x-2 pb-8">
   <Badge>25</Badge>
-  <Badge style="--p-bg-variant-default: #B79A00;">7K</Badge>
+  <Badge style="--p-bg-variant-default: #B79A00;--p-bg-dark-variant-default: #B79A00;">7K</Badge>
   <Badge variant="light" color="success">999+</Badge>
-  <span class="inline-block bg-inverse py-1 px-2 leading-none">
+  <span class="inline-block bg-inverse dark:bg-dark-inverse py-1 px-2 leading-none">
     <Badge variant="inverse" class="!text-warning">999+</Badge>
   </span>
   <Dot color="info" />

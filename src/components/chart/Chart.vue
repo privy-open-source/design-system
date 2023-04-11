@@ -122,5 +122,6 @@ export default defineComponent({
 <style lang="postcss">
 .chart {
   @apply w-full bg-default p-4;
+  @apply dark:bg-dark-default;
 }
 </style>

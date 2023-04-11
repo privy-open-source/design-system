@@ -104,6 +104,7 @@ export default defineComponent({
       &.btn--default,
       & .dropdown__activator.btn--default {
         @apply bg-inverse text-on-emphasis border-inverse;
+        @apply dark:bg-dark-inverse dark:text-dark-on-emphasis dark:border-dark-inverse;
       }
     }
   }

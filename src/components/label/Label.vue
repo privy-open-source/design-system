@@ -95,6 +95,7 @@ export default defineComponent({
 
 .label {
   --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
+  --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent), 40%);
 
   @apply inline-flex items-center border border-transparent;
 
@@ -103,6 +104,7 @@ export default defineComponent({
   */
   &__dismiss {
     @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-subtle-alpha text-default/30 hover:text-default/50;
+    @apply dark:border-dark-subtle-alpha dark:text-dark-default/30 hover:dark:text-dark-default/50;
   }
 
   /**
@@ -131,35 +133,43 @@ export default defineComponent({
   * color variant
   */
   &--variant-default {
-    @apply text-on-emphasis;
+    @apply text-state-emphasis;
+    @apply dark:text-dark-state-emphasis;
 
     &.label {
       &--default {
         @apply bg-inverse;
+        @apply dark:bg-dark-inverse dark:text-dark-on-emphasis;
 
         .label__dismiss {
           @apply border-default/30 text-on-emphasis/30 hover:text-on-emphasis/50;
+          @apply dark:border-dark-default/30 dark:text-dark-on-emphasis/30 hover:dark:text-dark-on-emphasis/50;
         }
       }
 
       &--primary {
         @apply bg-brand-accent;
+        @apply dark:bg-dark-brand-accent;
       }
 
       &--info {
         @apply bg-info-emphasis;
+        @apply dark:bg-dark-info-emphasis;
       }
 
       &--success {
         @apply bg-success-emphasis;
+        @apply dark:bg-dark-success-emphasis;
       }
 
       &--warning {
         @apply bg-warning-emphasis;
+        @apply dark:bg-dark-warning-emphasis;
       }
 
       &--danger {
         @apply bg-danger-emphasis;
+        @apply dark:bg-dark-danger-emphasis;
       }
     }
   }
@@ -172,26 +182,32 @@ export default defineComponent({
     &.label {
       &--default {
         @apply bg-subtle-alpha text-subtle;
+        @apply dark:bg-dark-subtle-alpha dark:text-dark-subtle;
       }
 
       &--primary {
         @apply bg-[color:var(--p-color-primary-light)] text-brand-accent;
+        @apply dark:bg-[color:var(--p-color-dark-primary-light)] dark:text-dark-brand-accent;
       }
 
       &--info {
         @apply bg-info text-info;
+        @apply dark:bg-dark-info dark:text-dark-info;
       }
 
       &--success {
         @apply bg-success text-success;
+        @apply dark:bg-dark-success dark:text-dark-success;
       }
 
       &--warning {
         @apply bg-warning text-warning;
+        @apply dark:bg-dark-warning dark:text-dark-warning;
       }
 
       &--danger {
         @apply bg-danger text-danger;
+        @apply dark:bg-dark-danger dark:text-dark-danger;
       }
     }
   }
@@ -206,6 +222,7 @@ export default defineComponent({
     * white background and bordered
     */
     @apply bg-default text-default border-default;
+    @apply dark:bg-dark-default dark:text-dark-default dark:border-dark-default;
 
     &.label {
       &--lg,

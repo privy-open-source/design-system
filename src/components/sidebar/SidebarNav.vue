@@ -101,9 +101,11 @@ export default defineComponent({
 
           &.nav__link--active {
             @apply bg-transparent text-default;
+            @apply dark:bg-transparent dark:text-dark-default;
 
             .nav__link__icon {
               @apply bg-subtle;
+              @apply dark:bg-dark-subtle;
             }
           }
         }
@@ -117,22 +119,6 @@ export default defineComponent({
             @apply mt-0;
           }
         }
-
-        /* &__icon {
-          @apply rounded p-3 inline-block;
-        }
-
-        &--active {
-          @apply bg-transparent text-default;
-
-          .nav__link__icon {
-            @apply bg-subtle;
-          }
-        }
-
-        &__label {
-          @apply mt-0 px-1 pb-3;
-        } */
       }
     }
 
@@ -142,6 +128,7 @@ export default defineComponent({
 
         &--active {
           @apply bg-default;
+          @apply dark:bg-dark-default;
         }
 
         &__label {

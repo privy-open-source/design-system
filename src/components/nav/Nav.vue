@@ -110,15 +110,18 @@ export default defineComponent({
 
   & > &__item {
     .nav__link {
-      @apply text-subtle dark:text-muted;
+      @apply text-subtle;
+      @apply dark:text-dark-subtle;
 
       &:hover,
       &--active {
-        @apply text-default dark:text-on-emphasis;
+        @apply text-default;
+        @apply dark:text-dark-default;
       }
 
       &--disabled {
         @apply text-muted hover:text-muted focus:text-muted active:text-muted;
+        @apply dark:text-dark-muted hover:dark:text-dark-muted focus:dark:text-dark-muted active:dark:text-dark-muted;
       }
     }
   }
@@ -142,7 +145,8 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-b-inverse dark:border-b-default;
+          @apply border-b-inverse;
+          @apply dark:border-b-dark-inverse;
         }
       }
     }
@@ -158,6 +162,7 @@ export default defineComponent({
         &--active {
           &:not(.nav__link--disabled) {
             @apply border-r border-r-inverse rounded-tr-none;
+            @apply dark:border-r-dark-inverse;
           }
         }
       }
@@ -169,6 +174,7 @@ export default defineComponent({
           &--active {
             &:not(.nav__link--disabled) {
               @apply border-l border-l-inverse rounded-tl-none;
+              @apply dark:border-l-dark-inverse;
             }
           }
         }
@@ -190,6 +196,7 @@ export default defineComponent({
       &--active {
         &:not(.nav__link--disabled) {
           @apply border-t-default border-x-default bg-base;
+          @apply dark:border-t-dark-default dark:border-x-dark-default dark:bg-dark-base;
         }
       }
     }
@@ -203,6 +210,7 @@ export default defineComponent({
         &--active {
           &:not(.nav__link--disabled) {
             @apply border-l-default border-y-default border-r-transparent bg-base rounded-l rounded-r-none;
+            @apply dark:border-l-dark-default dark:border-y-dark-default dark:border-r-transparent dark:bg-dark-base;
           }
         }
       }
@@ -212,6 +220,7 @@ export default defineComponent({
           &--active {
             &:not(.nav__link--disabled) {
               @apply border-r-default border-y-default border-l-transparent rounded-r rounded-l-none;
+              @apply dark:border-r-dark-default dark:border-y-dark-default dark:border-l-transparent;
             }
           }
         }
@@ -233,7 +242,8 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply bg-base dark:bg-dark-default-alpha rounded-b;
+          @apply bg-base rounded-b;
+          @apply dark:bg-dark-base;
         }
       }
     }
@@ -247,6 +257,7 @@ export default defineComponent({
       .nav__link {
         &--active {
           @apply bg-transparent;
+          @apply dark:bg-transparent;
         }
       }
     }
@@ -316,6 +327,10 @@ export default defineComponent({
     .nav {
       @apply flex-col;
 
+      .nav__item {
+        @apply first:mx-0;
+      }
+
       &__link {
         @apply mb-0 -mr-[1px];
       }
@@ -348,6 +363,7 @@ export default defineComponent({
 
     .caption {
       @apply text-subtle;
+      @apply dark:text-dark-subtle;
     }
   }
 }

@@ -206,6 +206,7 @@ export default defineComponent({
 
     &__modal {
       @apply fixed w-full h-full top-0 left-0 bg-default z-50 flex items-center justify-center flex-col p-5;
+      @apply dark:bg-dark-default;
     }
 
     &__close {
@@ -240,6 +241,10 @@ export default defineComponent({
 
     &__preview {
       @apply w-full flex items-center justify-center;
+
+      .btn--variant-solid.btn--default {
+        @apply dark:text-dark-subtlest hover:dark:text-dark-on-emphasis;
+      }
 
       & > img {
         @apply max-w-full h-auto;

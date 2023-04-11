@@ -73,18 +73,22 @@ export default defineComponent({
 <style lang="postcss">
 .dropdown__item {
   @apply px-4 py-2 block cursor-pointer text-default w-full select-none text-left;
+  @apply dark:text-dark-default;
 
   &:is(a) {
     @apply hover:text-default;
+    @apply hover:dark:text-dark-default;
   }
 
   &:hover,
   &:focus-visible {
     @apply bg-default-alpha;
+    @apply dark:bg-dark-default-alpha;
   }
 
   &&--active {
-    @apply bg-default-alpha cursor-default;
+    @apply bg-default-alpha;
+    @apply dark:bg-dark-default-alpha cursor-default;
   }
 }
 </style>

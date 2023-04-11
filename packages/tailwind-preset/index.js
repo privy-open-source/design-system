@@ -168,7 +168,7 @@ module.exports = {
           'inverse': theme.colors.gray[0],
           'subtle' : {
             DEFAULT: theme.colors.gray[100],
-            alpha  : `rgba(${theme.colors.gray[70]}, ${theme.opacity[10]})`,
+            alpha  : `rgba(${theme.colors.gray[20]}, ${theme.opacity[10]})`,
           },
           'info': {
             DEFAULT : theme.colors.blue[90],

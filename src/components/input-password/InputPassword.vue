@@ -48,9 +48,11 @@ export default defineComponent({
 
   &__toggle {
     @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer z-1 text-default/30 hover:text-subtle;
+    @apply dark:text-dark-default/30 hover:dark:text-dark-subtle;
 
     .input--disabled ~ & {
       @apply pointer-events-none text-muted;
+      @apply dark:text-dark-muted;
     }
   }
 

@@ -216,6 +216,7 @@ export default defineComponent({
 
   &__headers {
     @apply flex pt-4 space-x-2 bg-default;
+    @apply dark:bg-dark-default;
 
     > .datatable__header {
       @apply px-3;
@@ -228,6 +229,7 @@ export default defineComponent({
 
   .datatable__header {
     @apply text-subtle text-xs font-bold pb-3;
+    @apply dark:text-dark-subtle;
 
     &.datatable__checkbox,
     &.datatable__drag {
@@ -245,6 +247,7 @@ export default defineComponent({
 
   &__cell {
     @apply py-4 px-3 text-sm text-default break-all;
+    @apply dark:text-dark-default;
 
     & > .datatable__header {
       @apply text-xs;
@@ -277,16 +280,19 @@ export default defineComponent({
 
     .datatable__row {
       @apply rounded border border-default bg-default;
+      @apply dark:border-dark-default dark:bg-dark-default;
     }
   }
 
   &--static {
     .datatable__headers {
       @apply border-b border-b-default;
+      @apply dark:border-b-dark-default;
     }
 
     .datatable__body {
       @apply border-b border-b-default divide-y divide-default bg-default;
+      @apply dark:border-b-dark-default dark:divide-dark-default dark:bg-dark-default;
     }
   }
 }

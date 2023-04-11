@@ -248,10 +248,10 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
       <template #default>
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Olivia Withness
               <p-caption>olivia@eth.com</p-caption>
@@ -264,10 +264,10 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
       <template #default>
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Hyuga Kojiro
               <p-caption>hyuga@gmail.com</p-caption>
@@ -280,10 +280,10 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
       <template #default>
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Marsha Timoty
               <p-caption>timoty@marsha.com</p-caption>
@@ -306,10 +306,10 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
       <template #default>
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Olivia Withness
               <p-caption>olivia@eth.com</p-caption>
@@ -322,10 +322,10 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
       <template #default>
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Hyuga Kojiro
               <p-caption>hyuga@gmail.com</p-caption>
@@ -338,10 +338,10 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
       <template #default>
         <p-card
           element="div"
-          class="px-4 py-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
+          class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
+            <IconBee class="text-muted dark:text-dark-muted" />
             <div>
               Marsha Timoty
               <p-caption>timoty@marsha.com</p-caption>

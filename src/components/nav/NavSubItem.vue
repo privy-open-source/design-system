@@ -86,6 +86,7 @@ export default defineComponent({
     * will disabled too
     */
     @apply block text-base text-muted;
+    @apply dark:text-dark-muted;
 
     &&--collapsible {
       /**
@@ -95,6 +96,7 @@ export default defineComponent({
       */
       .nav__subitem__parent {
         @apply cursor-pointer text-default relative;
+        @apply dark:text-dark-default;
       }
 
       .nav__link__caret {
@@ -152,6 +154,7 @@ export default defineComponent({
     &:has(ul > li:not(.nav__item--disabled)) {
       .nav__subitem__parent {
         @apply text-default;
+        @apply dark:text-dark-default;
       }
     }
 
@@ -163,6 +166,7 @@ export default defineComponent({
     &:is(&--collapsible&--collapsed):has(ul > li:not(.nav__item--disabled)) {
       .nav__subitem__parent {
         @apply text-subtle hover:text-default;
+        @apply dark:text-dark-subtle hover:dark:text-dark-default;
       }
     }
   }

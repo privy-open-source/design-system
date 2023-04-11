@@ -59,7 +59,9 @@ export default defineComponent({
   * of badge
   */
   --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
-  @apply inline-block font-bold text-xs px-2 py-0.5 text-on-emphasis rounded-full;
+  --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent), 40%);
+
+  @apply inline-block font-bold text-xs px-2 py-0.5 text-state-emphasis dark:text-dark-state-emphasis rounded-full;
 
   /**
   * Provide colors variant
@@ -71,27 +73,34 @@ export default defineComponent({
     &.badge {
       &--default {
         --p-bg-variant-default: theme(backgroundColor.inverse);
+        --p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
         @apply bg-[color:var(--p-bg-variant-default)];
+        @apply dark:bg-[color:var(--p-bg-dark-variant-default)] dark:text-dark-on-emphasis;
       }
 
       &--primary {
         @apply bg-brand-accent;
+        @apply dark:bg-dark-brand-accent;
       }
 
       &--info {
         @apply bg-info-emphasis;
+        @apply dark:bg-dark-info-emphasis;
       }
 
       &--success {
         @apply bg-success-emphasis;
+        @apply dark:bg-dark-success-emphasis;
       }
 
       &--warning {
         @apply bg-warning-emphasis;
+        @apply dark:bg-dark-warning-emphasis;
       }
 
       &--danger {
         @apply bg-danger-emphasis;
+        @apply dark:bg-dark-danger-emphasis;
       }
     }
   }
@@ -104,28 +113,35 @@ export default defineComponent({
   &&--variant-inverse {
     &.badge {
       &--default {
-        --p-color-variant-light: theme(textColor.subtle);
-        @apply text-[color:var(--p-color-variant-light)];
+        --p-color-variant-inverse: theme(textColor.subtle);
+        --p-color-dark-variant-inverse: theme(textColor.dark.subtle);
+        @apply text-[color:var(--p-color-variant-inverse)];
+        @apply dark:text-[color:var(--p-color-dark-variant-inverse)];
       }
 
       &--primary {
         @apply text-brand-accent;
+        @apply dark:text-dark-brand-accent;
       }
 
       &--info {
         @apply text-info;
+        @apply dark:text-dark-info;
       }
 
       &--success {
         @apply text-success;
+        @apply dark:text-dark-success;
       }
 
       &--warning {
         @apply text-warning;
+        @apply dark:text-dark-warning;
       }
 
       &--danger {
         @apply text-danger;
+        @apply dark:text-dark-danger;
       }
     }
   }
@@ -138,27 +154,34 @@ export default defineComponent({
     &.badge {
       &--default {
         --p-bg-variant-light: theme(backgroundColor.subtle.alpha);
+        --p-bg-dark-variant-light: theme(backgroundColor.dark.subtle.alpha);
         @apply bg-[color:var(--p-bg-variant-light)];
+        @apply dark:bg-[color:var(--p-bg-dark-variant-light)];
       }
 
       &--primary {
         @apply bg-[color:var(--p-color-primary-light)];
+        @apply dark:bg-[color:var(--p-color-dark-primary-light)];
       }
 
       &--info {
         @apply bg-info;
+        @apply dark:bg-dark-info;
       }
 
       &--success {
         @apply bg-success;
+        @apply dark:bg-dark-success;
       }
 
       &--warning {
         @apply bg-warning;
+        @apply dark:bg-dark-warning;
       }
 
       &--danger {
         @apply bg-danger;
+        @apply dark:bg-dark-danger;
       }
     }
   }
@@ -169,6 +192,7 @@ export default defineComponent({
   */
   &:where(.badge--variant-inverse, .badge--dot) {
     @apply bg-default;
+    @apply dark:bg-dark-default;
   }
 
   /**

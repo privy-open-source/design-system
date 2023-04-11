@@ -197,7 +197,8 @@ export default defineComponent({
   /**
   * Set modal backdrop
   */
-  @apply w-full h-full overflow-y-auto fixed left-0 top-0 bg-inverse/30 z-[1060] overscroll-contain;
+  @apply z-[var(--p-modal-z-index)] w-full h-full overflow-y-auto fixed left-0 top-0 bg-inverse/30 text-default overscroll-contain;
+  @apply dark:bg-dark-inverse/30 dark:text-dark-default;
 
   &--banner {
     .modal {
@@ -221,9 +222,11 @@ export default defineComponent({
   */
   &__content {
     @apply my-8 bg-default rounded relative shadow-2xl;
+    @apply dark:bg-dark-default;
 
     .modal__dismiss {
       @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[var(--p-modal-dismiss-z-index)] text-default/30 hover:text-default/50;
+      @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
     }
   }
 
