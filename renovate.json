@@ -1,5 +1,5 @@
 {
   "extends": [
-    "config:base"
+    "github>privy-open-source/renovate-config"
   ]
 }
