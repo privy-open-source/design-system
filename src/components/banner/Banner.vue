@@ -4,9 +4,11 @@
     data-testid="banner"
     :class="classNames">
     <div class="banner__icon">
-      <component
-        :is="icon"
-        v-if="icon" />
+      <slot name="icon">
+        <component
+          :is="icon"
+          v-if="icon" />
+      </slot>
     </div>
     <div class="banner__body">
       <slot :close="close" />
