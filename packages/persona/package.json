@@ -1,8 +1,12 @@
 {
   "name": "@privyid/persona",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "license": "MIT",
-  "repository": "https://github.com/privy-open-source/design-system",
+  "repository": {
+    "url": "https://github.com/privy-open-source/design-system.git",
+    "type": "git",
+    "directory": "packages/persona"
+  },
   "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",
   "bugs": {
     "url": "https://github.com/privy-open-source/design-system/issues"
