@@ -125,6 +125,7 @@ Badge has 3 variants namely `default`, `light` and `inverse`. When variant is no
 | `default` | Content to place in badge |
 
 ### Events
+
 <table>
   <thead>
     <tr>

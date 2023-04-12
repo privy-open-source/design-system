@@ -47,7 +47,7 @@ description: Base dashboard sidebar menu.
 <preview>
   <p-sidebar>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav title="Main">
       <p-nav-item active>Documents</p-nav-item>
@@ -61,7 +61,7 @@ description: Base dashboard sidebar menu.
 <template>
   <p-sidebar>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>Documents</p-nav-item>
@@ -76,7 +76,7 @@ description: Base dashboard sidebar menu.
 <preview>
   <p-sidebar fixed>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>Documents</p-nav-item>
@@ -90,7 +90,7 @@ description: Base dashboard sidebar menu.
 <template>
   <p-sidebar fixed>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>Documents</p-nav-item>
@@ -106,7 +106,7 @@ To align Sidebar, use align prop. Available value are `left` and `right`
 <preview>
 <p-sidebar fixed align="right">
   <p-sidebar-brand>
-    <img src="./assets/images/logo-privy.svg" alt="" />
+    <img src="/assets/images/logo-privy.svg" alt="" />
   </p-sidebar-brand>
   <p-sidebar-nav>
     <p-nav-item active>Documents</p-nav-item>
@@ -120,7 +120,7 @@ To align Sidebar, use align prop. Available value are `left` and `right`
 <template>
   <p-sidebar fixed align="right">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>Documents</p-nav-item>
@@ -136,7 +136,7 @@ When you need less space/padding of sidebar navigation, you can set by using `co
 <preview>
 <p-sidebar fixed>
   <p-sidebar-brand>
-    <img src="./assets/images/logo-privy.svg" alt="" />
+    <img src="/assets/images/logo-privy.svg" alt="" />
   </p-sidebar-brand>
   <p-sidebar-nav condensed>
     <p-nav-item active>Documents</p-nav-item>
@@ -150,7 +150,7 @@ When you need less space/padding of sidebar navigation, you can set by using `co
 <template>
   <p-sidebar fixed>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav condensed>
       <p-nav-item active>Documents</p-nav-item>
@@ -168,7 +168,7 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 <preview>
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>
@@ -194,7 +194,7 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 <template>
   <p-sidebar fixed variant="narrow">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>
@@ -221,7 +221,7 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 <preview>
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>
@@ -250,7 +250,7 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 <template>
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>
@@ -282,7 +282,7 @@ If you need to place menus in the bottom, you just add `bottom` prop in your `<p
 <preview>
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav bottom>
       <p-nav-item>
@@ -292,7 +292,7 @@ If you need to place menus in the bottom, you just add `bottom` prop in your `<p
       </p-nav-item>
       <p-nav-item>
         <template #icon>
-          <img src="./assets/images/icon-flag.svg"/>
+          <img src="/assets/images/icon-flag.svg"/>
         </template>
         ENG
       </p-nav-item>
@@ -304,7 +304,7 @@ If you need to place menus in the bottom, you just add `bottom` prop in your `<p
 <template>
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav bottom>
       <p-nav-item active>
@@ -314,7 +314,7 @@ If you need to place menus in the bottom, you just add `bottom` prop in your `<p
       </p-nav-item>
       <p-nav-item>
         <template #icon>
-          <img src="./assets/images/icon-flag.svg"/>
+          <img src="/assets/images/icon-flag.svg"/>
         </template>
         ENG
       </p-nav-item>
@@ -331,7 +331,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 <preview>
 <p-sidebar fixed>
   <p-sidebar-brand>
-    <img src="./assets/images/logo-privy.svg" alt="" />
+    <img src="/assets/images/logo-privy.svg" alt="" />
   </p-sidebar-brand>
   <p-sidebar-nav>
     <p-nav-item active>
@@ -364,7 +364,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 <template>
   <p-sidebar fixed>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>
@@ -399,7 +399,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 <preview>
 <p-sidebar fixed>
   <p-sidebar-brand>
-    <img src="./assets/images/logo-privy.svg" alt="" />
+    <img src="/assets/images/logo-privy.svg" alt="" />
   </p-sidebar-brand>
   <p-sidebar-nav>
     <p-nav-item active>
@@ -432,7 +432,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 <template>
   <p-sidebar fixed>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>
@@ -481,7 +481,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
           <div class="flex items-center space-x-3">
             <IconBee class="text-muted" />
             <div>
-              Toggle Sidebar <IconCheck class="text-info inline" v-if="model" /> <IconClose class="text-danger inline" v-else />
+              Toggle Sidebar <IconCheck class="inline text-info" v-if="model" /> <IconClose class="inline text-danger" v-else />
               <p-caption>just works in under lg screen</p-caption>
             </div>
           </div>
@@ -491,7 +491,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
   </div>
   <p-sidebar v-model="model" toggleable="lg" fixed>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav title="Main">
       <p-nav-item active>Documents</p-nav-item>
@@ -505,7 +505,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
 <template>
   <p-sidebar v-model="model" toggleable="lg" fixed>
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav title="Main">
       <p-nav-item active>Documents</p-nav-item>
@@ -532,7 +532,7 @@ It's possible to make sidebar toggle-hide by default to make fullwidth page with
           <div class="flex items-center space-x-3">
             <IconBee class="text-muted" />
             <div>
-              Toggle Sidebar <IconCheck class="text-info inline" v-if="modelA" /> <IconClose class="text-danger inline" v-else />
+              Toggle Sidebar <IconCheck class="inline text-info" v-if="modelA" /> <IconClose class="inline text-danger" v-else />
               <p-caption>works in all screen</p-caption>
             </div>
           </div>
@@ -542,7 +542,7 @@ It's possible to make sidebar toggle-hide by default to make fullwidth page with
   </div>
   <p-sidebar v-model="modelA" toggleable="all" fixed type="narrow">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>
@@ -568,7 +568,7 @@ It's possible to make sidebar toggle-hide by default to make fullwidth page with
 <template>
   <p-sidebar v-model="model" toggleable="all" fixed type="narrow">
     <p-sidebar-brand>
-      <img src="./assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
     <p-sidebar-nav>
       <p-nav-item active>

@@ -46,10 +46,9 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "yarn build && yarn cleanup",
+    "prepack": "yarn build",
     "prepare": "yarn dev:prepare",
     "build": "nuxt-module-build",
-    "cleanup": "del-cli dist/**/*.{spec,bench}.{d.ts,mjs} dist/**/__mocks__ dist/**/demo dist/**/*.md",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
@@ -96,14 +95,13 @@
     "vue-router": ">=4.0.0"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.2.1",
-    "@nuxt/schema": "3.3.2",
+    "@nuxt/module-builder": "^0.3.0",
+    "@nuxt/schema": "3.3.3",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@types/sanitize-html": "^2",
     "browserslist-to-esbuild": "^1.2.0",
-    "del-cli": "5.0.0",
     "nuxt": "3.3.3",
     "postcss-custom-properties": "^12.1.11",
     "postcss-hexrgba": "^2.1.0",

@@ -6,6 +6,13 @@ export default defineBuildConfig({
       builder: 'mkdist',
       input  : '../../src/components/',
       outDir : './dist/components',
+      pattern: [
+        '**/*',
+        '!(**/*.md)',
+        '!(**/*.{spec,bench}.ts)',
+        '!(**/__mocks__/**)',
+        '!(**/demo/**)',
+      ],
     },
     {
       builder: 'mkdist',

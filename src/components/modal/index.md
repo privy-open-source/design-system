@@ -444,7 +444,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
     no-close-on-esc
     no-close-on-backdrop
     banner>
-    <img src="./assets/images/img-modal-banner-sheet.jpg">
+    <img src="/assets/images/img-modal-banner-sheet.jpg">
     <div class="p-6">
       <p-heading element="h6">Give Me Title Here</p-heading>
       <p>
@@ -471,7 +471,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
     v-model="modalBanner"
     :dismissable="false"
     banner>
-    <img src="./assets/images/img-modal-banner-sheet.jpg">
+    <img src="/assets/images/img-modal-banner-sheet.jpg">
     <div class="p-6 text-center">
       <p-heading element="h6">Give Me Title Here</p-heading>
       <p>
@@ -497,7 +497,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
   v-model="previewBanner"
   size="sm"
   banner>
-  <img src="./assets/images/img-modal-banner-sheet.jpg">
+  <img src="/assets/images/img-modal-banner-sheet.jpg">
     <div class="p-6">
       <p-heading element="h6">Modal Title</p-heading>
       <p>
