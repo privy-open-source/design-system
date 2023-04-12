@@ -96,13 +96,7 @@ description: Delightful datatables.
 ### Simple Usage
 
 <preview class="flex-col space-y-2">
-  <!-- <p-table :fields="fields" :items="items" /> -->
-  <p-table :fields="fields" :items="itemsC" variant="static" />
-  <p-table :fields="fields" :items="itemsC">
-    <template #empty>
-      hehe
-    </template>
-  </p-table>
+  <p-table :fields="fields" :items="items" />
 </preview>
 
 ```vue
