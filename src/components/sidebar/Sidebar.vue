@@ -1,6 +1,7 @@
 <template>
   <aside
     data-testid="sidebar"
+    class="sidebar"
     :class="classNames">
     <slot />
   </aside>
@@ -63,7 +64,7 @@ export default defineComponent({
     const model = useVModel(props)
 
     const classNames = computed(() => {
-      const result: string[] = ['sidebar']
+      const result: string[] = ['']
 
       if (props.type)
         result.push(`sidebar--${props.type}`)
@@ -120,7 +121,7 @@ export default defineComponent({
   * Fixed sidebar
   */
   &&--fixed {
-    @apply fixed top-0 h-full shadow-lg;
+    @apply fixed top-0 h-full shadow-lg overflow-y-auto;
 
     &:not(.sidebar--right) {
       @apply left-0;

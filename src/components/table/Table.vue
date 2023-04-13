@@ -39,6 +39,7 @@
     </div>
 
     <Draggable
+      v-if="items.length > 0"
       v-model="rows"
       class="datatable__body"
       handle=".datatable__drag"
@@ -96,6 +97,45 @@
         </div>
       </template>
     </Draggable>
+
+    <div
+      v-else
+      class="datatable__body">
+      <div
+        class="datatable__row">
+        <template v-if="variant === 'flexible'">
+          <div
+            v-for="field in fields"
+            :key="field.key"
+            class="datatable__cell datatable__cell--empty"
+            data-testid="datatable-cell-empty"
+            :class="field.tdClass"
+            :style="field.width ? { width: `${field.width}%` } : { flex: '1 1 0%' }"
+            :data-cell="field.key">
+            <div
+              class="datatable__header"
+              :class="field.thClass">
+              <slot
+                :name="`head(${field.key})`"
+                :label="field.label"
+                :field="field"
+                :data-header="field.key">
+                {{ field.label }}
+              </slot>
+            </div>
+          </div>
+        </template>
+        <div
+          data-testid="datatable-empty"
+          class="datatable__cell datatable__cell--empty datatable__state-empty">
+          <slot name="empty">
+            <span class="flex justify-center items-center text-subtle dark:text-dark-subtle">
+              {{ emptyLabel }}
+            </span>
+          </slot>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -144,6 +184,10 @@ export default defineComponent({
     draggable: {
       type   : Boolean,
       default: false,
+    },
+    emptyLabel: {
+      type   : String,
+      default: 'There are no records to show',
     },
   },
   models: {
@@ -242,7 +286,13 @@ export default defineComponent({
   }
 
   &__row {
-    @apply flex space-x-2 w-full items-start;
+    @apply flex space-x-2 w-full items-start flex-wrap;
+
+    & > :not([hidden]) {
+      ~ .basis-full {
+        @apply ml-0;
+      }
+    }
   }
 
   &__cell {
@@ -267,6 +317,18 @@ export default defineComponent({
     &.datatable__drag {
       @apply cursor-grabbing mx-3;
     }
+
+    &--empty {
+      @apply pt-4 pb-0 px-3 text-sm text-default;
+
+      &.basis-full {
+        @apply pb-4;
+      }
+    }
+  }
+
+  &__state-empty {
+    @apply basis-full flex-1;
   }
 
   &__body {
