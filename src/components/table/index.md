@@ -81,12 +81,6 @@ description: Delightful datatables.
     },
   ])
 
-  const fields3 = defineTable([
-    {
-      key: 'id',
-      width: '1',
-    }
-  ])
   const itemsC = ref([])
 
   const selected = ref([])
@@ -203,7 +197,7 @@ const items = ref([
 Empty state label customization can be done through the `empty-label` prop.
 #### Default
 <preview class="flex-col space-y-2">
-  <p-table :fields="fields3" :items="itemsC" />
+  <p-table :fields="fields" :items="itemsC" />
 </preview>
 
 ```vue
