@@ -1,6 +1,7 @@
 import { vi } from 'vitest'
 import { fireEvent, render } from '@testing-library/vue'
 import Banner from './Banner.vue'
+import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/20'
 
 it('should rendered properly without any props', () => {
   const screen = render({
@@ -128,4 +129,24 @@ it('sould be able to dimissed via slot-scope "close" function', async () => {
 
   expect(banner).not.toBeInTheDocument()
   expect(text).not.toBeInTheDocument()
+})
+
+it('should be able to add custom icon via slot `icon`', () => {
+  const screen = render({
+    components: { Banner, IconCheck },
+    template  : `
+    <Banner>
+      <template #icon>
+        <IconCheck class="text-success" />
+      </template>
+    </Banner>
+    `,
+  })
+
+  const banner = screen.queryByTestId('banner')
+  const icon   = screen.queryByTestId('banner-icon')
+
+  expect(banner).toBeInTheDocument()
+  expect(icon).toBeInTheDocument()
+  expect(icon).toHaveClass('banner__icon--custom')
 })

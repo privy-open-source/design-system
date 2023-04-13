@@ -8,6 +8,7 @@ description: Alert to convey information or actions
   import pButton from '../button/Button.vue'
   import pCaption from '../caption/Caption.vue'
   import pSubheading from '../subheading/Subheading.vue'
+  import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/20'
 </script>
 
 # Banner
@@ -100,6 +101,36 @@ description: Alert to convey information or actions
 </template>
 ```
 
+### Custom Icon
+
+<preview class="flex-col">
+  <p-banner>
+    <template #icon>
+      <IconCheck class="text-success" />
+    </template>
+    <span>
+      Great! Your Privy ID and NPWP are verified.
+    </span>
+  </p-banner>
+</preview>
+
+```vue
+<template>
+  <p-banner>
+    <template #icon>
+      <IconCheck class="text-success" />
+    </template>
+    <span>
+      Great! Your Privy ID and NPWP are verified.
+    </span>
+  </p-banner>
+
+  <script setup>
+  import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/20'
+  </script>
+</template>
+```
+
 ## Variants
 
 Banner have 2 variants: `info` and `danger`, default is `info`
@@ -168,6 +199,7 @@ You can hide close button with `dismissable` set to `false`
 | Name      | Description                |
 |-----------|----------------------------|
 | `default` | Content to place in banner |
+| `icon`    | Content to place icon in banner |
 
 ### Events
 
