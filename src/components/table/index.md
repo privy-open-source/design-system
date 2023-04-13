@@ -81,6 +81,12 @@ description: Delightful datatables.
     },
   ])
 
+  const fields3 = defineTable([
+    {
+      key: 'id',
+      width: '1',
+    }
+  ])
   const itemsC = ref([])
 
   const selected = ref([])
@@ -191,6 +197,32 @@ const items = ref([
   },
 ])
 </script>
+```
+
+### Custom Empty Label
+Empty state label customization can be done through the `empty-label` prop.
+#### Default
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields3" :items="itemsC" />
+</preview>
+
+```vue
+<template>
+  <p-table :fields="fields" :items="items" />
+</template>
+```
+
+#### Custom
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="itemsC" empty-label="There’s nothing to show here" />
+</preview>
+
+```vue
+<template>
+  <p-table 
+    :fields="fields" :items="items" 
+    empty-label="There’s nothing to show here" />
+</template>
 ```
 
 ## Variants
@@ -357,18 +389,6 @@ add prop `draggable` to enable drag-to-sort.
 ### Custom Empty
 Table has default empty state, but it's be able to customize by own via slot `empty`.
 
-#### Default
-<preview class="flex-col space-y-2">
-  <p-table :fields="fields" :items="itemsC" />
-</preview>
-
-```vue
-<template>
-  <p-table :fields="fields" :items="items" />
-</template>
-```
-
-#### Custom
 <preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="itemsC">
     <template #empty>
@@ -409,6 +429,7 @@ Table has default empty state, but it's be able to customize by own via slot `em
 | `selectable` | `Boolean` |  `false`   | Enable checkbox                                          |
 | `draggable`  | `Boolean` |  `false`   | Enable draggable                                         |
 | `modelValue` |  `Array`  |    `-`     | `v-model` for selected value                             |
+| `empty-label` | `String` |  `There are no records to show`   | Table empty state label            |
 
 ### Slots
 

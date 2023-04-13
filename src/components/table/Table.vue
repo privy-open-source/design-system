@@ -108,7 +108,7 @@
             v-for="field in fields"
             :key="field.key"
             class="datatable__cell datatable__cell--empty"
-            data-testid="datatable-cell"
+            data-testid="datatable-cell-empty"
             :class="field.tdClass"
             :style="field.width ? { width: `${field.width}%` } : { flex: '1 1 0%' }"
             :data-cell="field.key">
@@ -125,9 +125,13 @@
             </div>
           </div>
         </template>
-        <div class="datatable__cell datatable__cell--empty datatable__state-empty">
+        <div
+          data-testid="datatable-empty"
+          class="datatable__cell datatable__cell--empty datatable__state-empty">
           <slot name="empty">
-            <span class="flex justify-center items-center text-subtle dark:text-dark-subtle">There are no records to show</span>
+            <span class="flex justify-center items-center text-subtle dark:text-dark-subtle">
+              {{ emptyLabel }}
+            </span>
           </slot>
         </div>
       </div>
@@ -180,6 +184,10 @@ export default defineComponent({
     draggable: {
       type   : Boolean,
       default: false,
+    },
+    emptyLabel: {
+      type   : String,
+      default: 'There are no records to show',
     },
   },
   models: {
