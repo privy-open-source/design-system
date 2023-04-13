@@ -1,5 +1,6 @@
 <template>
   <Nav
+    class="sidebar__nav"
     data-testid="sidebar-nav"
     :title="title"
     vertical
@@ -43,7 +44,7 @@ export default defineComponent({
     const align    = settings?.align
 
     const classNames = computed(() => {
-      const result: string[] = ['sidebar__nav']
+      const result: string[] = ['']
 
       if (props.bottom)
         result.push('sidebar__nav--bottom')
