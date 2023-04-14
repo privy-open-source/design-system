@@ -204,4 +204,4 @@ for example, mode `month` make user can only select the month, but can't select 
 
 ## See Also
 
-- [Datepicker](/components/datepicker/)
+- [Calendar](/components/calendar/)
