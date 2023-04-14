@@ -255,7 +255,7 @@ export default defineComponent({
     }
   }
 
-  .btn--variant-solid {
+  .btn.btn--variant-solid {
     @apply justify-center;
 
     &.btn--default {
