@@ -12,7 +12,7 @@ description: Define sidebar using JSON
   import IconDocument from '@carbon/icons-vue/lib/document/20'
   import IconUsers from '@carbon/icons-vue/lib/group/20'
   import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconEN from './assets/images/img-flag.svg'
+  import IconEN from '../../public/assets/images/img-flag.svg'
 
   const modelA   = ref(false)
 
@@ -180,7 +180,7 @@ description: Define sidebar using JSON
 <preview class="flex-col space-y-2">
   <p-sidebar-menu :menus="basic">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </preview>
@@ -189,7 +189,7 @@ description: Define sidebar using JSON
 <template>
   <p-sidebar-menu :menus="menus">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </template>
@@ -232,7 +232,7 @@ const menus = defineMenu([
 <preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="fixed">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </preview>
@@ -241,7 +241,7 @@ const menus = defineMenu([
 <template>
   <p-sidebar-menu fixed :menus="menus">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </template>
@@ -336,7 +336,7 @@ const menus = defineMenu([
 <preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="narrow" type="narrow">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </preview>
@@ -345,7 +345,7 @@ const menus = defineMenu([
 <template>
   <p-sidebar-menu fixed :menus="menus" type="narrow">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </template>
@@ -389,7 +389,7 @@ const menus = defineMenu([
         name : 'language',
         label: 'ENG',
         url  : '/',
-        icon : './assets/images/img-flag.svg'
+        icon : '/assets/images/img-flag.svg'
       }
     ]
   }

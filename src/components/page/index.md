@@ -16,7 +16,7 @@ description: Page with toggle expand for responsive purpose
   import IconUsers from '@carbon/icons-vue/lib/group/20'
   import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
   import IconMenu from '@carbon/icons-vue/lib/menu/20'
-  import IconEN from '../sidebar-menu/assets/images/img-flag.svg'
+  import IconEN from '../../public/assets/images/img-flag.svg'
   import { defineMenu } from '../sidebar-menu'
   import { ref } from 'vue-demi'
 
@@ -195,16 +195,16 @@ The page component is used in combination with the sidebar component. It can be 
   <div class="flex h-full min-h-screen">
     <p-sidebar-menu :menus="menu" fixed toggleable="lg" v-model="model" class="shadow-lg">
       <p-sidebar-brand>
-        <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+        <img src="/assets/images/logo-privy.svg" alt="" />
       </p-sidebar-brand>
     </p-sidebar-menu>
     <p-page expand="lg" v-model="model">
-      <div class="mb-5 visible lg:invisible">
+      <div class="visible mb-5 lg:invisible">
         <p-checkbox appearance="none" v-model="model">
           <template #default>
             <p-card
               element="div"
-              class="p-2 hover:shadow-md hover:border-subtle ease-in-out duration-200"
+              class="p-2 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
               sectioned>
               <span class="flex items-center space-x-2">
                 <IconMenu class="text-muted" />
@@ -263,17 +263,16 @@ The page component is used in combination with the sidebar component. It can be 
 <template>
   <p-sidebar-menu :menus="menu" fixed toggleable="lg" v-model="model">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
   <p-page expand="lg" v-model="model">
-    <div class="mb-5 visible lg:invisible">
+    <div class="visible mb-5 lg:invisible">
       <p-checkbox appearance="none" v-model="model">
         <template #default>
           <p-card
             element="div"
-            class="p-2 hover:shadow-md hover:border-subtle ease-in-out 
-            duration-200"
+            class="p-2 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
             sectioned>
             <span class="flex items-center space-x-2">
               <IconMenu class="text-muted" />
@@ -287,8 +286,8 @@ The page component is used in combination with the sidebar component. It can be 
       A wonderful serenity has taken possession
     </p-heading>
     <p>
-      My <em>entire</em> soul, <small>like</small> these sweet mornings 
-      of spring <strong>which I enjoy</strong> with my whole heart. 
+      My <em>entire</em> soul, <small>like</small> these sweet mornings
+      of spring <strong>which I enjoy</strong> with my whole heart.
       I am alone...
     </p>
   </p-page>
@@ -302,7 +301,7 @@ Now is very simple when need full-width page with toggle-slide sidebar menu. Jus
   <div class="flex h-full min-h-screen">
     <p-sidebar-menu :menus="menu" fixed toggleable="all" v-model="modelB" class="shadow-lg">
       <p-sidebar-brand>
-        <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+        <img src="/assets/images/logo-privy.svg" alt="" />
       </p-sidebar-brand>
     </p-sidebar-menu>
     <p-page expand="all" v-model="modelB">
@@ -311,7 +310,7 @@ Now is very simple when need full-width page with toggle-slide sidebar menu. Jus
           <template #default>
             <p-card
               element="div"
-              class="p-2 hover:shadow-md hover:border-subtle ease-in-out duration-200"
+              class="p-2 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
               sectioned>
               <span class="flex items-center space-x-2">
                 <IconMenu class="text-muted" />
@@ -352,17 +351,16 @@ Page component has 2 type variant, `wide` and `narrow`. Default type is `narrow`
   <div class="flex h-full min-h-screen">
     <p-sidebar-menu :menus="narrow" type="narrow" fixed toggleable="lg" v-model="modelA">
       <p-sidebar-brand>
-        <img src="../sidebar/assets/images/logo-privy-icon.svg" alt="" />
+        <img src="/assets/images/logo-privy-icon.svg" alt="" />
       </p-sidebar-brand>
     </p-sidebar-menu>
     <p-page expand="lg" type="wide" v-model="modelA">
-      <div class="mb-5 visible lg:invisible">
+      <div class="visible mb-5 lg:invisible">
         <p-checkbox appearance="none" v-model="modelA">
           <template #default>
             <p-card
               element="div"
-              class="p-2 hover:shadow-md hover:border-subtle ease-in-out 
-              duration-200"
+              class="p-2 duration-200 ease-in-out hover:shadow-md hover:border-subtle"
               sectioned>
               <span class="flex items-center space-x-2">
                 <IconMenu class="text-muted" />
@@ -434,12 +432,12 @@ Page component has 2 type variant, `wide` and `narrow`. Default type is `narrow`
 </script>
 
 <template>
-  <p-sidebar-menu :menus="menu" type="narrow" fixed toggleable="lg" 
+  <p-sidebar-menu :menus="menu" type="narrow" fixed toggleable="lg"
     v-model="model">
     ...
   </p-sidebar-menu>
   <p-page expand="lg" type="wide" v-model="model">
-    <div class="mb-5 visible lg:invisible">
+    <div class="visible mb-5 lg:invisible">
       ...
     </div>
     ...

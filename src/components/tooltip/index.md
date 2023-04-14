@@ -87,10 +87,12 @@ You can change tooltip position using modifiers `.top`, `.left`, `.right`, and `
 
 You can combine with modifier `.start` and `.end` to set tooltip align.
 
-<preview class="flex-col space-gap-2 md:flex-row">
-  <p-button v-p-tooltip.bottom title="Bottom">Bottom</p-button>
-  <p-button v-p-tooltip.bottom.start title="Bottom Start">Start</p-button>
-  <p-button v-p-tooltip.bottom.end title="Bottom End">End</p-button>
+<preview>
+  <div class="flex flex-col space-gap-2 md:flex-row">
+    <p-button v-p-tooltip.bottom title="Bottom">Bottom</p-button>
+    <p-button v-p-tooltip.bottom.start title="Bottom Start">Start</p-button>
+    <p-button v-p-tooltip.bottom.end title="Bottom End">End</p-button>
+  </div>
 </preview>
 
 ```vue
@@ -105,11 +107,13 @@ You can combine with modifier `.start` and `.end` to set tooltip align.
 
 Tooltips can be triggered (opened/closed) using modifiers `.click`, `.hover` and `.focus`. The default trigger is `hover` + `focus`.
 
-<preview class="flex-col space-gap-2 md:flex-row">
-  <p-button v-p-tooltip title="Hover + Focus">Default</p-button>
-  <p-button v-p-tooltip.click title="Click">Click</p-button>
-  <p-button v-p-tooltip.hover title="Hover">Hover</p-button>
-  <p-button v-p-tooltip.focus title="Focus">Focus</p-button>
+<preview>
+  <div class="flex flex-col space-gap-2 md:flex-row">
+    <p-button v-p-tooltip title="Hover + Focus">Default</p-button>
+    <p-button v-p-tooltip.click title="Click">Click</p-button>
+    <p-button v-p-tooltip.hover title="Hover">Hover</p-button>
+    <p-button v-p-tooltip.focus title="Focus">Focus</p-button>
+  </div>
 </preview>
 
 ```vue

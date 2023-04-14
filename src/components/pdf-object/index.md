@@ -8,7 +8,7 @@ description: Add object to PDF Viewer
   import pPdfObject from './PdfObject.vue'
   import pPdfObjectAddon from './PdfObjectAddon.vue'
   import pButton from '../button/Button.vue'
-  import FILE from '../pdf-viewer/assets/Calibrator-v3.pdf?url'
+  import FILE from '../../public/assets/pdf/Calibrator-v3.pdf?url'
   import IconClose from '@carbon/icons-vue/lib/close/16'
   import { reactive, ref, nextTick } from 'vue-demi'
   import { random } from 'lodash-es'

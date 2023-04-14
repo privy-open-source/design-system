@@ -15,7 +15,7 @@ import { nextTick, ref } from 'vue-demi'
 import { createSpinner } from '../avatar/utils/create-image'
 
 // eslint-disable-next-line unicorn/prefer-module
-const blob = readFileSync(resolve(__dirname, './assets/sample-1.jpg'))
+const blob = readFileSync(resolve(__dirname, '../../public/assets/images/img-sample-crop.jpg'))
 const file = new globalThis.File([blob], 'image.jpg', { type: 'image/jpeg' })
 
 vi.mock('./utils/crop-image.ts', () => ({ cropImage }))

@@ -32,7 +32,7 @@ onMounted (() => {
 })
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .preview {
     &--bar {
       .contextual-bar {
@@ -45,7 +45,11 @@ onMounted (() => {
     }
 
     &--hide {
-      @apply border-transparent dark:border-transparent bg-transparent dark:bg-transparent bg-none;
+      @apply border-transparent dark:border-transparent bg-transparent dark:bg-transparent bg-none p-0;
+
+      :deep(.preview__label) {
+        @apply hidden;
+      }
     }
   }
 </style>
@@ -98,7 +102,7 @@ onMounted (() => {
   </p-contextual-bar>
   <p-contextual-bar v-model="sample" title="Hey! This is Title Text and telling less">
     <template #icon>
-      <img src="assets/images/img-background-contextualbar.svg" />
+      <img src="../avatar/assets/avatar.png" />
     </template>
   </p-contextual-bar>
 </template>
@@ -200,7 +204,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
   <p-contextual-bar
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
-    background-url="../../public/assets/images/img-contextualbar-bg.svg">
+    background-url="/assets/images/img-bg-contextualbar.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
@@ -213,9 +217,9 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
     v-model="sample"
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
-    background-url="assets/images/img-contextualbar-bg.svg">
+    background-url="/assets/images/img-bg-contextualbar.svg">
     <template #icon>
-      <img src="assets/images/avatar.png" />
+      <img src="../avatar/assets/avatar.png" />
     </template>
   </p-contextual-bar>
 </template>
@@ -264,7 +268,7 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 ```
 
 <preview class="preview--hide">
-  <p-contextual-bar color="light" v-model="sample1" title="Hey! This is Title Text and telling less as possible" background-url="../../public/assets/images/img-contextualbar-bg.svg">
+  <p-contextual-bar color="light" v-model="sample1" title="Hey! This is Title Text and telling less as possible" background-url="/assets/images/img-bg-contextualbar.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>

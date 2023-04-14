@@ -236,7 +236,7 @@ description: Take picture from user's camera
         </div>
       </div>
       <div class="w-1/4">
-        <img src="./assets/images/img-card-callout-01.svg">
+        <img src="/assets/images/img-card-callout-01.svg">
       </div>
     </div>
   </p-card>
@@ -259,7 +259,7 @@ description: Take picture from user's camera
         </div>
       </div>
       <div class="w-1/4">
-        <img src="./assets/images/img-card-callout-01.svg">
+        <img src="/assets/images/img-card-callout-01.svg">
       </div>
     </div>
   </p-card>

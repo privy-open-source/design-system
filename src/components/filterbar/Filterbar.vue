@@ -32,10 +32,10 @@ import {
 import { FilterItem } from '.'
 import Dropdown from '../dropdown/Dropdown.vue'
 import Button from '../button/Button.vue'
-import Select from './pinned/Select.vue'
-import Toggle from './pinned/Toggle.vue'
-import Multiselect from './pinned/Multiselect.vue'
-import Date from './pinned/Date.vue'
+import Select from './pinned/PinnedSelect.vue'
+import Toggle from './pinned/PinnedToggle.vue'
+import Multiselect from './pinned/PinnedMultiselect.vue'
+import Date from './pinned/PinnedDate.vue'
 import { useVModel } from '../input'
 
 export default defineComponent({
