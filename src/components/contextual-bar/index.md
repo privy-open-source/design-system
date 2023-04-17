@@ -204,7 +204,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
   <p-contextual-bar
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
-    background-url="/assets/images/img-bg-contextualbar.svg">
+    background-url="/assets/images/img-contextualbar-bg.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
@@ -217,7 +217,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
     v-model="sample"
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
-    background-url="/assets/images/img-bg-contextualbar.svg">
+    background-url="/assets/images/img-contextualbar-bg.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
@@ -268,7 +268,11 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 ```
 
 <preview class="preview--hide">
-  <p-contextual-bar color="light" v-model="sample1" title="Hey! This is Title Text and telling less as possible" background-url="/assets/images/img-bg-contextualbar.svg">
+  <p-contextual-bar
+    v-model="sample1"
+    color="light"
+    title="Hey! This is Title Text and telling less as possible"
+    background-url="/assets/images/img-contextualbar-bg.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>

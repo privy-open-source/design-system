@@ -89,10 +89,8 @@ export default defineComponent({
       onend (event) {
         if (event.relatedTarget) {
           const reference = event.relatedTarget
-          const container = reference.closest('.pdf-objects')
           const result    = getPosition({
             reference: reference as HTMLDivElement,
-            container: container as HTMLDivElement,
             object   : object.value,
             scale    : scale.value,
           })

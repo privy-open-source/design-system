@@ -25,7 +25,7 @@ interface GetPosition {
   /**
    * Root container element
    */
-  container: HTMLElement,
+  container?: HTMLElement,
   /**
    * Reference element where the object should be placed
    */
