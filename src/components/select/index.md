@@ -364,5 +364,5 @@ To do this, you need add the province value as **watch dependencies**. It will a
 
 ## See Also
 - [Input](/components/input/index)
-- Input Group
+- [Input Group](/components/input-group/index)
 - [Dropdown](/components/dropdown/index)
