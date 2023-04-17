@@ -58,21 +58,35 @@ You can the font using prop `font`, it importing font from [Google Font][google-
 </template>
 ```
 
-## Limit Word
+## Max Words
 
-Truncate the text by word, default is `2`
+Limit the text word using `maxwords`, default is `2`
 
 <preview class="flex-col">
-  <p-signature-text text="Lorem ipsum dolor sit amet" :limit="3" />
-  <p-signature-text text="Lorem ipsum dolor sit amet" :limit="2" />
-  <p-signature-text text="Lorem ipsum dolor sit amet" :limit="1" />
+  <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="3" />
+  <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="2" />
+  <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="1" />
 </preview>
 
 ```vue
 <template>
-  <p-signature-text text="Lorem ipsum dolor sit amet" :limit="3" />
-  <p-signature-text text="Lorem ipsum dolor sit amet" :limit="2" />
-  <p-signature-text text="Lorem ipsum dolor sit amet" :limit="1" />
+  <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="3" />
+  <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="2" />
+  <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="1" />
+</template>
+```
+
+## Max Length
+
+Limit the text length using `maxlength`, default is `50`
+
+<preview class="flex-col">
+  <p-signature-text text="Lorem Aaaaaaaaaaaaaaaaaaaaaaaaaaaaa" maxlength="15" />
+</preview>
+
+```vue
+<template>
+  <p-signature-text text="Lorem Aaaaaaaaaaaaaaaaaaaaaaaaaaaaa" maxlength="15" />
 </template>
 ```
 
@@ -145,7 +159,8 @@ const result = ref('')
 | `width`      | `Number` |         `430`          | Image's width                                       |
 | `height`     | `Number` |         `230`          | Image's width                                       |
 | `text`       | `String` |          `-`           | Image's text                                        |
-| `limit`      | `Number` |          `2`           | Maximal word to be generated                        |
+| `maxlimit`   | `Number` |          `2`           | Maximal word to be generated                        |
+| `maxlength`  | `Number` |          `50`          | Maximal text length                                 |
 | `font`       | `String` | `Herr Von Muellerhoff` | Text font, imported from [Google Font][google-font] |
 | `color`      | `String` |       `#000000`        | Text color                                          |
 | `modelValue` | `String` |          `-`           | Result of generated image                           |

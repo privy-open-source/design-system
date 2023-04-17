@@ -46,9 +46,13 @@ export default defineComponent({
       type   : String,
       default: '',
     },
-    limit: {
-      type   : Number,
+    maxwords: {
+      type   : [Number, String],
       default: 2,
+    },
+    maxlength: {
+      type   : [Number, String],
+      default: 50,
     },
     font: {
       type   : String,
@@ -79,8 +83,9 @@ export default defineComponent({
         String(props.text)
           .split(' ')
           .filter(Boolean)
-          .slice(0, props.limit)
-          .join(' '),
+          .slice(0, Number.parseInt(`${props.maxwords}`))
+          .join(' ')
+          .slice(0, Number.parseInt(`${props.maxlength}`)),
       )
     })
 
@@ -90,7 +95,8 @@ export default defineComponent({
       props.color,
       props.width,
       props.height,
-      props.limit,
+      props.maxwords,
+      props.maxlength,
     ], () => {
       load()
     })

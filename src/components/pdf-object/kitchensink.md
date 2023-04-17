@@ -6,8 +6,8 @@ layout: home
   import pButton from '../button/Button.vue'
   import pPdfViewer from '../pdf-viewer/PdfViewer.vue'
   import pPdfObject from './PdfObject.vue'
-  import FILE from '../pdf-viewer/assets/Calibrator-v3.pdf?url'
-  import FILE2 from '../pdf-viewer/assets/sample.pdf?url'
+  import FILE from '../../public/assets/pdf/Calibrator-v3.pdf?url'
+  import FILE2 from '../../public/assets/pdf/sample.pdf?url'
   import { reactive, ref } from 'vue-demi'
 
   const scale = ref(1)

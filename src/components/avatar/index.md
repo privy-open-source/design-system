@@ -39,6 +39,7 @@ description: Show user's avatar, using name or image
 ```
 
 ### Using icon
+
 <preview>
   <p-avatar>
     <IconUser />
@@ -59,14 +60,16 @@ description: Show user's avatar, using name or image
 
 ## Sizing
 
-There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is `md`
+There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is `md`.
 
-<preview class="flex-col items-center space-gap-3 lg:flex-row">
-  <p-avatar src="https://picsum.photos/24" size="xs" />
-  <p-avatar src="https://picsum.photos/32" size="sm" />
-  <p-avatar src="https://picsum.photos/40" size="md" />
-  <p-avatar src="https://picsum.photos/56" size="lg" />
-  <p-avatar src="https://picsum.photos/96" size="xl" />
+<preview>
+  <div class="flex flex-col items-center space-gap-3 lg:flex-row">
+    <p-avatar src="https://picsum.photos/24" size="xs" />
+    <p-avatar src="https://picsum.photos/32" size="sm" />
+    <p-avatar src="https://picsum.photos/40" size="md" />
+    <p-avatar src="https://picsum.photos/56" size="lg" />
+    <p-avatar src="https://picsum.photos/96" size="xl" />
+  </div>
 </preview>
 
 ```vue

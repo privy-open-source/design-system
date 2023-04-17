@@ -14,6 +14,7 @@ description: Label of the thing they're quantifying, such as the number of notif
 ## Usage
 
 ### Basic Usage
+
 Default color of badge are black.
 
 <preview>
@@ -27,14 +28,17 @@ Default color of badge are black.
 ```
 
 ## Colors
+
 Badge available in 4 different colors. There are `primary`, `info`, `success`, `warning` and `danger`.
 
-<preview class="flex-wrap space-gap-3">
-  <p-badge color="primary">25</p-badge>
-  <p-badge color="info">1</p-badge>
-  <p-badge color="success">999+</p-badge>
-  <p-badge color="warning">7K</p-badge>
-  <p-badge color="danger">6</p-badge>
+<preview>
+  <div class="flex flex-wrap space-gap-3">
+    <p-badge color="primary">25</p-badge>
+    <p-badge color="info">1</p-badge>
+    <p-badge color="success">999+</p-badge>
+    <p-badge color="warning">7K</p-badge>
+    <p-badge color="danger">6</p-badge>
+  </div>
 </preview>
 
 ```vue
@@ -48,12 +52,15 @@ Badge available in 4 different colors. There are `primary`, `info`, `success`, `
 ```
 
 ## Variants
+
 Badge has 3 variants namely `default`, `light` and `inverse`. When variant is not set, badge will looks as a `default`
 
-<preview class="flex-wrap space-gap-3">
-  <p-badge>25</p-badge>
-  <p-badge variant="light">7K</p-badge>
-  <p-badge variant="inverse">999+</p-badge>
+<preview>
+  <div class="flex flex-wrap space-gap-3">
+    <p-badge>25</p-badge>
+    <p-badge variant="light">7K</p-badge>
+    <p-badge variant="inverse">999+</p-badge>
+  </div>
 </preview>
 
 ```vue
@@ -118,6 +125,7 @@ Badge has 3 variants namely `default`, `light` and `inverse`. When variant is no
 | `default` | Content to place in badge |
 
 ### Events
+
 <table>
   <thead>
     <tr>

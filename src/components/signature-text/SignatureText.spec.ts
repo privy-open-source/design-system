@@ -128,10 +128,28 @@ it('should change color if prop `color` was provided', () => {
   })
 })
 
-it('should limit text following `limit`\'s prop', () => {
+it('should limit text following `maxwords`\'s prop', () => {
   const screen = render({
     components: { SignatureText },
-    template  : '<SignatureText text="lorem ipsum dolor" :limit="1" />',
+    template  : '<SignatureText text="lorem ipsum dolor" :maxwords="1" />',
+  })
+
+  const signature = screen.queryByTestId('signature-text')
+
+  expect(signature).toBeInTheDocument()
+  expect(generate).toBeCalledWith({
+    text  : 'Lorem',
+    font  : 'Herr Von Muellerhoff',
+    width : 430,
+    height: 230,
+    color : '#000000',
+  })
+})
+
+it('should limit text following `maxlength`\'s prop', () => {
+  const screen = render({
+    components: { SignatureText },
+    template  : '<SignatureText text="loremmmmmmmmmmm" :maxlength="5" />',
   })
 
   const signature = screen.queryByTestId('signature-text')
@@ -329,12 +347,12 @@ it('should re-render if `color` changed', async () => {
   })
 })
 
-it('should re-render if `limit` changed', async () => {
-  const limit  = ref(3)
-  const screen = render({
+it('should re-render if `maxwords` changed', async () => {
+  const maxwords = ref(3)
+  const screen   = render({
     components: { SignatureText },
-    template  : '<SignatureText text="lorem ipsum dolor" :limit="limit" />',
-    setup () { return { limit } },
+    template  : '<SignatureText text="lorem ipsum dolor" :maxwords="maxwords" />',
+    setup () { return { maxwords } },
   })
 
   const signature = screen.queryByTestId('signature-text')
@@ -349,12 +367,45 @@ it('should re-render if `limit` changed', async () => {
     color : '#000000',
   })
 
-  limit.value = 1
+  maxwords.value = 1
   await nextTick()
 
   expect(generate).toBeCalledTimes(2)
   expect(generate).toBeCalledWith({
     text  : 'Lorem',
+    font  : 'Herr Von Muellerhoff',
+    width : 430,
+    height: 230,
+    color : '#000000',
+  })
+})
+
+it('should re-render if `maxlength` changed', async () => {
+  const maxlength = ref(5)
+  const screen    = render({
+    components: { SignatureText },
+    template  : '<SignatureText text="abcdefghijklmno" :maxlength="maxlength" />',
+    setup () { return { maxlength } },
+  })
+
+  const signature = screen.queryByTestId('signature-text')
+
+  expect(signature).toBeInTheDocument()
+  expect(generate).toBeCalledTimes(1)
+  expect(generate).toBeCalledWith({
+    text  : 'Abcde',
+    font  : 'Herr Von Muellerhoff',
+    width : 430,
+    height: 230,
+    color : '#000000',
+  })
+
+  maxlength.value = 10
+  await nextTick()
+
+  expect(generate).toBeCalledTimes(2)
+  expect(generate).toBeCalledWith({
+    text  : 'Abcdefghij',
     font  : 'Herr Von Muellerhoff',
     width : 430,
     height: 230,

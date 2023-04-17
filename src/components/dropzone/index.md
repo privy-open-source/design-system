@@ -100,7 +100,7 @@ description: Headless component for Drag'n'Drop Files Upload.
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -127,7 +127,7 @@ description: Headless component for Drag'n'Drop Files Upload.
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -159,7 +159,7 @@ Add prop `multiple` to enable multi-selected upload.
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -190,7 +190,7 @@ Add prop `multiple` to enable multi-selected upload.
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -225,7 +225,7 @@ When user selecting the files, and then selecting again, the old list of files i
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -256,7 +256,7 @@ When user selecting the files, and then selecting again, the old list of files i
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -289,7 +289,7 @@ When user selecting the files, and then selecting again, the old list of files i
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -320,7 +320,7 @@ When user selecting the files, and then selecting again, the old list of files i
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -352,7 +352,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -383,7 +383,7 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -415,7 +415,7 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo
@@ -442,7 +442,7 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
       <div class="flex flex-col items-center justify-center w-full p-5 space-y-3 border-2 border-dashed rounded "
         :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
         <p-spread :active="isDragover || isHovered">
-          <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+          <IconImage class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
         </p-spread>
         <p-heading element="h5">
           Add Photo

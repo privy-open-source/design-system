@@ -127,14 +127,14 @@ description: Headless Wizard.
       </template>
     </p-step>
     <p-step>
-      <template #default="{ next, prev, to }">
+      <template #default="{ next, prev, toStep }">
         <p-card>
           <div class="flex flex-col h-52">
             <div class="flex-grow">Step 3</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Finish</p-button>
-              <p-button @click="to(1)" color="info">To Step 1</p-button>
+              <p-button @click="toStep(1)" color="info">To Step 1</p-button>
             </div>
           </div>
         </p-card>
@@ -482,6 +482,7 @@ You can binding current step with v-model
 </table>
 
 ## See Also
+
 - [Wizard](/components/wizard/)
 - [Progress](/components/progress/)
 
