@@ -41,6 +41,7 @@ export default defineComponent({
 .pdf-object {
   &__addon {
     @apply absolute;
+    @apply dark:text-default;
 
     &--right {
       @apply top-0 left-full pl-2;
