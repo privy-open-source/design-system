@@ -65,7 +65,7 @@
           data-testid="tour-control-finish"
           size="xs"
           variant="solid"
-          color="primary"
+          color="info"
           @click="$emit('next', $event)">
           {{ finishLabel }}
         </p-button>
@@ -74,7 +74,7 @@
           data-testid="tour-control-next"
           size="xs"
           variant="solid"
-          color="primary"
+          color="info"
           @click="$emit('next', $event)">
           {{ nextLabel }}
         </p-button>
