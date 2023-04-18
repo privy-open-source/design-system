@@ -120,6 +120,14 @@
 .vp-doc {
   .preview {
     @apply text-default dark:text-dark-default;
+
+    h1, h2, h3, h4, h5, h6 {
+      @apply mt-0 pt-0;
+    }
+
+    h5 {
+      @apply mb-2;
+    }
   }
   
   .header-anchor {
