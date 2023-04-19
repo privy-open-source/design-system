@@ -3,18 +3,18 @@
     data-testid="nav-item-dropdown"
     class="nav__item nav__item--dropdown">
     <Dropdown
+      v-model="model"
       :text="text"
       :icon="icon"
       :variant="variant"
       :size="size"
-      placement="bottom-end"
+      :placement="placement"
       :no-caret="noCaret">
       <template #button-content>
         <slot name="button-content">
           {{ text }}
         </slot>
       </template>
-
       <slot />
     </Dropdown>
   </li>
@@ -23,14 +23,20 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue-demi'
 import Dropdown from '../dropdown/Dropdown.vue'
+import { Placement } from '@floating-ui/core'
 import type {
   SizeVariant,
   StyleVariant,
 } from '../button'
+import { useVModel } from '../input'
 
 export default defineComponent({
   components: { Dropdown },
   props     : {
+    modelValue: {
+      type   : Boolean,
+      default: false,
+    },
     text: {
       type   : String,
       default: '',
@@ -51,6 +57,21 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    placement: {
+      type   : String as PropType<Placement>,
+      default: 'bottom-end',
+    },
+  },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
+  emits: ['update:modelValue'],
+
+  setup (props) {
+    const model = useVModel(props)
+
+    return { model }
   },
 })
 </script>
