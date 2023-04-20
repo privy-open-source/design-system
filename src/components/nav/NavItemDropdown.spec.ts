@@ -1,14 +1,14 @@
 import { render } from '@testing-library/vue'
+import { delay } from 'nanodelay'
+import { ref, nextTick } from 'vue-demi'
 import Nav from './Nav.vue'
-import NavItem from './NavItem.vue'
+// import NavItem from './NavItem.vue'
 import NavItemDropdown from './NavItemDropdown.vue'
 
 it('should rendered properly without any props', () => {
   const screen = render({
-    components: {
-      Nav, NavItem, NavItemDropdown,
-    },
-    template: `
+    components: { Nav, NavItemDropdown },
+    template  : `
       <Nav>
         <NavItemDropdown />
       </Nav>
@@ -23,10 +23,8 @@ it('should rendered properly without any props', () => {
 
 it('should be able to change button text via props `text`', () => {
   const screen = render({
-    components: {
-      Nav, NavItem, NavItemDropdown,
-    },
-    template: `
+    components: { Nav, NavItemDropdown },
+    template  : `
       <Nav>
         <NavItemDropdown text="text" />
       </Nav>
@@ -39,10 +37,8 @@ it('should be able to change button text via props `text`', () => {
 
 it('should be able to change to icon mode via `icon` prop', () => {
   const screen = render({
-    components: {
-      Nav, NavItem, NavItemDropdown,
-    },
-    template: `
+    components: { Nav, NavItemDropdown },
+    template  : `
       <Nav>
         <NavItemDropdown icon />
       </Nav>
@@ -56,10 +52,8 @@ it('should be able to change to icon mode via `icon` prop', () => {
 
 it('should be able to hide dropdown caret with `no-caret` prop', () => {
   const screen = render({
-    components: {
-      Nav, NavItem, NavItemDropdown,
-    },
-    template: `
+    components: { Nav, NavItemDropdown },
+    template  : `
       <Nav>
         <NavItemDropdown no-caret />
       </Nav>
@@ -75,10 +69,8 @@ it('should be able to hide dropdown caret with `no-caret` prop', () => {
 
 it('should be able to set size of dropdown with `size` prop', () => {
   const screen = render({
-    components: {
-      Nav, NavItem, NavItemDropdown,
-    },
-    template: `
+    components: { Nav, NavItemDropdown },
+    template  : `
       <Nav>
         <NavItemDropdown size="sm" />
       </Nav>
@@ -89,4 +81,44 @@ it('should be able to set size of dropdown with `size` prop', () => {
 
   expect(button).toBeInTheDocument()
   expect(button).toHaveClass('btn--sm')
+})
+
+it('should be able to set placement of dropdown with `placement` prop', async () => {
+  const screen = render({
+    components: { Nav, NavItemDropdown },
+    template  : `
+      <Nav>
+        <NavItemDropdown placement="bottom-start" />
+      </Nav>
+    `,
+  })
+
+  const dropdown = screen.queryByTestId('dropdown-menu')
+  await delay(0)
+
+  expect(dropdown).toHaveAttribute('data-popper-placement', 'bottom-start')
+})
+
+it('should be able to toggle dropdown via v-model', async () => {
+  const model  = ref(false)
+  const screen = render({
+    components: { Nav, NavItemDropdown },
+    template  : `
+      <Nav>
+        <NavItemDropdown v-model="model" />
+      </Nav>
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  let dropdown = screen.queryByTestId('dropdown-menu')
+  expect(dropdown).not.toBeVisible()
+
+  model.value = true
+  await nextTick()
+
+  dropdown = screen.queryByTestId('dropdown-menu')
+  expect(dropdown).toBeVisible()
 })
