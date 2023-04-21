@@ -66,7 +66,7 @@
     "happy-dom": "8.9.0",
     "husky": "8.0.3",
     "jest-extended": "3.2.4",
-    "lint-staged": "13.1.0",
+    "lint-staged": "13.2.1",
     "nanodelay": "2.0.2",
     "postcss": "8.4.21",
     "postcss-nested": "6.0.0",
