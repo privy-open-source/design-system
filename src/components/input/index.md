@@ -198,19 +198,10 @@ Input value can be binding with `v-model`.
 
 ### Slots
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2" class="text-center">There no slots here</td>
-    </tr>
-  </tbody>
-</table>
+| Name      | Description                                         |
+|-----------|-----------------------------------------------------|
+| `prepend` | Content to place icon inside of prepend input field |
+| `append`  | Content to place icon inside of append input field   |
 
 ### Events
 
