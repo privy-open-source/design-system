@@ -1,5 +1,6 @@
 import pInput from './Input.vue'
 import pInputGroup from '../input-group/InputGroup.vue'
+import IconEmail from '@carbon/icons-vue/lib/email/16'
 import { fireEvent, render } from '@testing-library/vue'
 import { ref } from 'vue-demi'
 
@@ -128,4 +129,36 @@ it('should automatically add size of input via `size` props of input-group', () 
 
   expect(inputGroup).toBeInTheDocument()
   expect(input).toHaveClass('input--lg')
+})
+
+it('should able to add input prepend via `prepend` slots', () => {
+  const screen = render({
+    components: { pInput, IconEmail },
+    template  : `
+      <p-input>
+        <template #prepend>
+          <IconEmail />
+        </template>
+      </p-input>
+    `,
+  })
+
+  const input = screen.queryByTestId('input')
+  expect(input).toHaveClass('input--has-prepend')
+})
+
+it('should able to add input append via `append` slots', () => {
+  const screen = render({
+    components: { pInput, IconEmail },
+    template  : `
+      <p-input>
+        <template #append>
+          <IconEmail />
+        </template>
+      </p-input>
+    `,
+  })
+
+  const input = screen.queryByTestId('input')
+  expect(input).toHaveClass('input--has-append')
 })

@@ -158,7 +158,7 @@ export default defineComponent({
   }
 
   &__icon {
-    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-muted pointer-events-none;
+    @apply transition-transform duration-150 text-muted pointer-events-none;
     @apply dark:text-dark-muted;
   }
 

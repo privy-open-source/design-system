@@ -2,7 +2,11 @@
   <div
     class="input"
     data-testid="input-container">
-    <slot name="prepend" />
+    <span
+      v-if="$slots.prepend"
+      class="input__prepend">
+      <slot name="prepend" />
+    </span>
     <input
       v-model="model"
       class="input__form"
@@ -16,7 +20,11 @@
       class="input__clear"
       data-testid="input-clear"
       @click="clear" />
-    <slot name="append" />
+    <span
+      v-if="$slots.append"
+      class="input__append">
+      <slot name="append" />
+    </span>
   </div>
 </template>
 
@@ -66,7 +74,7 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: ['update:modelValue', 'clear'],
-  setup (props, { emit }) {
+  setup (props, { emit, slots }) {
     const model   = useVModel(props)
     const setting = inject(INPUTGROUP_SETTING, undefined, false)
 
@@ -91,6 +99,12 @@ export default defineComponent({
 
       if (props.clearable)
         result.push('input--clearable')
+
+      if (slots.prepend)
+        result.push('input--has-prepend')
+
+      if (slots.append)
+        result.push('input--has-append')
 
       return result
     })
@@ -166,6 +180,35 @@ export default defineComponent({
 
     + .input__clear {
       @apply absolute right-3 top-1/2 -translate-y-1/2;
+    }
+
+    &:where(.input--has-append) {
+      + .input__clear {
+        @apply right-10;
+      }
+    }
+  }
+
+  &__prepend,
+  &__append {
+    @apply absolute top-0 h-full flex items-center;
+  }
+
+  &__prepend {
+    @apply left-3;
+  }
+
+  &__append {
+    @apply right-3;
+  }
+
+  &--has {
+    &-prepend {
+      @apply pl-9;
+    }
+
+    &-append {
+      @apply pr-9;
     }
   }
 }
