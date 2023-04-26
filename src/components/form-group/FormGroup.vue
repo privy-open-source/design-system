@@ -105,7 +105,7 @@ export default defineComponent({
   }
 
   &__hint {
-    @apply absolute bottom-0 right-0 text-info cursor-pointer focus:outline-none;
+    @apply absolute right-0 text-info cursor-pointer focus:outline-none;
     @apply dark:text-dark-info;
   }
 }
