@@ -19,7 +19,11 @@ description: Form label, caption, and other stuff.
 
 <preview>
   <p-form-group label="First Name">
-    <p-input />
+    <!-- <p-input /> -->
+  <p-checkbox>
+    Checklist Label
+    <p-caption>If you are not the company's primary director, you may be asked to attach a power of attorney document.</p-caption>
+  </p-checkbox>
   </p-form-group>
 </preview>
 

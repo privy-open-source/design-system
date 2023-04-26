@@ -107,7 +107,7 @@ Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
 
 ## Colors
 
-Button available in 4 different colors `primary`, `info`, `success`, `warning` and `danger`.
+Button available in 5 different colors `primary`, `info`, `success`, `warning` and `danger`.
 
 <preview>
   <div class="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-5">
