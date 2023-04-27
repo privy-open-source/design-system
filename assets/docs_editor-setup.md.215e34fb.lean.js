@@ -1,0 +1,1 @@
+import{_ as a,o as e,c as s,R as t}from"./chunks/framework.e03f6a99.js";const y=JSON.parse('{"title":"Editor Setup","description":"","frontmatter":{},"headers":[],"relativePath":"docs/editor-setup.md"}'),l={name:"docs/editor-setup.md"},n=t("",12),o=[n];function i(r,p,h,d,c,u){return e(),s("div",null,o)}const b=a(l,[["render",i]]);export{y as __pageData,b as default};
