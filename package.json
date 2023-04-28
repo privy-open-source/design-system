@@ -48,7 +48,7 @@
     "@vitejs/plugin-vue": "4.0.0",
     "@vitest/browser": "^0.25.3",
     "@vitest/coverage-c8": "0.24.5",
-    "@vue/eslint-config-typescript": "11.0.2",
+    "@vue/eslint-config-typescript": "11.0.3",
     "autoprefixer": "10.4.14",
     "browserslist-to-esbuild": "^1.2.0",
     "browserslist-useragent-regexp": "^4.0.0",
