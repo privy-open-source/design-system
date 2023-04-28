@@ -17,6 +17,7 @@
 - **[@privyid/browserslist-config][browserslist-config]** - Browserslist shareable config for Persona project
 - **[@privyid/nhp][nhp]** - Nuxt HTTP Proxy Module
 - **[@privyid/nuauth][nuauth]** - Oauth2 Client for Nuxt
+- **[@privyid/nuapi][nuapi]** - Nuxt HTTP Client module
 
 [tailwind-preset]: https://www.npmjs.com/package/@privyid/tailwind-preset
 [tailwind-extended]: https://www.npmjs.com/package/@privyid/tailwind-extended
@@ -25,3 +26,4 @@
 [browserslist-config]: https://www.npmjs.com/package/@privyid/browserslist-config
 [nhp]: https://www.npmjs.com/package/@privyid/nhp
 [nuauth]: https://www.npmjs.com/package/@privyid/nuauth
+[nuapi]: https://www.npmjs.com/package/@privyid/nuapi
