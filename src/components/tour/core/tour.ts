@@ -152,7 +152,7 @@ export class Tour extends AbstractTour<TourOptions> {
    * Run "on-finished" hooks
    */
   protected async runOnFinishedHooks () {
-    await Promise.allSettled(this.onFinishedHooks.map((hook) => hook()))
+    await Promise.allSettled(this.onFinishedHooks.map(async (hook) => await hook()))
   }
 
   /**
