@@ -71,3 +71,37 @@ it('should have font weight "medium" if props `hyperlink` is provided in `captio
   expect(text).toHaveClass('freetext--hyperlink', 'freetext--medium')
   expect(content).toBeInTheDocument()
 })
+
+it('should have weight "bold" if `weight` props set to bold', () => {
+  const screen = render({
+    components: { Text },
+    template  : `
+      <Text weight="bold">
+        Some text
+      </Text>
+    `,
+  })
+
+  const text = screen.queryByTestId('freetext')
+
+  expect(text).toBeInTheDocument()
+  expect(text).toHaveClass('freetext--bold')
+  expect(text).not.toHaveClass('freetext--normal')
+})
+
+it('should have text-transform "uppercase" if `transform` props set to uppercase', () => {
+  const screen = render({
+    components: { Text },
+    template  : `
+      <Text transform="uppercase">
+        Some text
+      </Text>
+    `,
+  })
+
+  const text = screen.queryByTestId('freetext')
+
+  expect(text).toBeInTheDocument()
+  expect(text).toHaveClass('freetext--uppercase')
+  expect(text).not.toHaveClass('freetext--normalcase')
+})
