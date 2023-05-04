@@ -1,0 +1,2903 @@
+[
+  {
+    "name": "user-wait",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-verified",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-transfer",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-square",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-settings",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-plus",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-multiple",
+    "category": "user",
+    "aliases": [
+      "recipients"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-multiple-edit",
+    "category": "user",
+    "aliases": [
+      "group-edit",
+      "member-edit"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-minus",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-logs",
+    "category": "user",
+    "aliases": [
+      "user-detail"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-groups",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-find",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-exclamation",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-event",
+    "category": "user",
+    "aliases": [
+      "forum"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-cross",
+    "category": "user",
+    "aliases": [
+      "user-disabled"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-circle",
+    "category": "user",
+    "aliases": [
+      "avatar"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-checkmark",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "user-biometric",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "system-administrator",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "profile",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "group-contact",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "employee-tree",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "collaboration",
+    "category": "user",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "view",
+    "category": "toggle",
+    "aliases": [
+      "eye",
+      "show"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "view-off",
+    "category": "toggle",
+    "aliases": [
+      "eye-off",
+      "hide"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "unlock",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "two-grid-view",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "sun",
+    "category": "toggle",
+    "aliases": [
+      "day-mode",
+      "light-mode"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "star-favorite",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "one-grid-view",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "notification",
+    "category": "toggle",
+    "aliases": [
+      "bell"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "notification-off",
+    "category": "toggle",
+    "aliases": [
+      "bell-off"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "moon",
+    "category": "toggle",
+    "aliases": [
+      "night-mode",
+      "dark-mode"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "love-favorite",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "lock",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "list-view",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "grid-view",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "flash-on",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "flash-off",
+    "category": "toggle",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "call",
+    "category": "toggle",
+    "aliases": [
+      "phone"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "call-off",
+    "category": "toggle",
+    "aliases": [
+      "phone-off"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "translates",
+    "category": "technology",
+    "aliases": [
+      "language"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "smartphone",
+    "category": "technology",
+    "aliases": [
+      "mobile"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "scan",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "rocket",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "qr-code-scan",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "qr-code",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "qr-code",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "otp-requested",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "ocr-scan",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "multiple-window",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "location",
+    "category": "technology",
+    "aliases": [
+      "map-mark"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "internet",
+    "category": "technology",
+    "aliases": [
+      "worldwide",
+      "globe"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "fingerprint-scan",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "file-network",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "faq",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "face-recognition-scan",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "dashboard",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "computer",
+    "category": "technology",
+    "aliases": [
+      "monitor"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "code",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "cloud",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "camera",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "blog",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "apps",
+    "category": "technology",
+    "aliases": [
+      "features"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "api",
+    "category": "technology",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "question-circle-filled",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "question-circle",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "information-circle-filled",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "information-circle",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "exclamation-triangle-filled",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "exclamation-triangle",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "exclamation-circle-filled",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "exclamation-circle",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "cross-circle",
+    "category": "status",
+    "aliases": [
+      "clear-circle",
+      "remove-circle",
+      "close-circle"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "cross-circle-filled",
+    "category": "status",
+    "aliases": [
+      "clear-circle-filled",
+      "remove-circle-filled",
+      "close-circle-filled"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "checkmark-verified-filled",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "checkmark-verified",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "checkmark-double",
+    "category": "status",
+    "aliases": [
+      "read"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "checkmark-circle-filled",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "checkmark-circle",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "checkmark",
+    "category": "status",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "banned-filled",
+    "category": "status",
+    "aliases": [
+      "reject-filled"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "banned-circle",
+    "category": "status",
+    "aliases": [
+      "reject"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "time",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "template",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "stopwatch",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "shield",
+    "category": "other",
+    "aliases": [
+      "protection"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "shield-on",
+    "category": "other",
+    "aliases": [
+      "protection-on"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "shield-off",
+    "category": "other",
+    "aliases": [
+      "protection-off"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "sad-face",
+    "category": "other",
+    "aliases": [
+      "dissapointed-face"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "repair",
+    "category": "other",
+    "aliases": [
+      "settings",
+      "wrench"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "puzzle",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "package-box",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "onsite",
+    "category": "other",
+    "aliases": [
+      "pin"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "megaphone",
+    "category": "other",
+    "aliases": [
+      "horn"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "medal",
+    "category": "other",
+    "aliases": [
+      "certificate"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "map",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "layer",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "lamp",
+    "category": "other",
+    "aliases": [
+      "idea",
+      "bulb"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "ktp",
+    "category": "other",
+    "aliases": [
+      "id-card"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "key",
+    "category": "other",
+    "aliases": [
+      "password"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "happy-face",
+    "category": "other",
+    "aliases": [
+      "smiley-face"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "fingerprint",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "envelope",
+    "category": "other",
+    "aliases": [
+      "mail",
+      "postcard"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "education",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "calculator-check",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "archive-box",
+    "category": "other",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "address",
+    "category": "other",
+    "aliases": [
+      "at"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "trash",
+    "category": "operation",
+    "aliases": [
+      "delete"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "tag",
+    "category": "operation",
+    "aliases": [
+      "label"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "tag-all",
+    "category": "operation",
+    "aliases": [
+      "label-all"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "sign-out",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "sign-in",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "settings",
+    "category": "operation",
+    "aliases": [
+      "cog"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "send",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "search",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "restart",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "reset",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "reply",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "refresh",
+    "category": "operation",
+    "aliases": [
+      "reload"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "privy-balance",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "minimize",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "maximize",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "inbox",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "home",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "history",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "forwards",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "expand",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-sort",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "caret-sort",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "calendar-history",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "calendar",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "bookmark",
+    "category": "operation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "adjust",
+    "category": "operation",
+    "aliases": [
+      "settings"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "zoom-out",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "zoom-in",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "plus-circle",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "plus",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "minus-circle",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "minus",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "menu-vertical",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "menu-horizontal",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "cross",
+    "category": "navigation",
+    "aliases": [
+      "close",
+      "dismiss",
+      "clear",
+      "remove"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevrons-up",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevrons-right",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevrons-left",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevrons-down",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-up",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-right",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-left",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-down",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-circle-up",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-circle-right",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-circle-left",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chevron-circle-down",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "caret-up",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "caret-right",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "caret-left",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "caret-down",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "arrow-up",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "arrow-right",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "arrow-left",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "arrow-down",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "arrow-circle-up",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "arrow-circle-right",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "arrow-circle-left",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "arrow-circle-down",
+    "category": "navigation",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "wallet",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "ticket",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "spoon-and-fork",
+    "category": "life-style",
+    "aliases": [
+      "dinner",
+      "lunch",
+      "breakfast"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "shopping-bag",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "shop",
+    "category": "life-style",
+    "aliases": [
+      "store",
+      "merchant"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "receipt-history",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "receipt",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "gift",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "gala-dinner",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "flight-departure",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "flight-arrival",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "diamond",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "credit-card",
+    "category": "life-style",
+    "aliases": [
+      "debit-card"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "cart",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "bus",
+    "category": "life-style",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "building",
+    "category": "life-style",
+    "aliases": [
+      "office"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "stetoscop",
+    "category": "health",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "people-insurance",
+    "category": "health",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "medicines",
+    "category": "health",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "hospital",
+    "category": "health",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "health-facility",
+    "category": "health",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "cross",
+    "category": "health",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "blood-drop",
+    "category": "health",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "unlink",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "signature-text",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "signature-manage",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "signature-draw",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "signature",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "rotate-right",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "rotate-left",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "print",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "pallete",
+    "category": "formatting",
+    "aliases": [
+      "theme",
+      "style"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "no-image",
+    "category": "formatting",
+    "aliases": [
+      "broken-image"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "link",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "image",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "edit-square",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "edit",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "crop",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "clipboard-check",
+    "category": "formatting",
+    "aliases": [
+      "to-do-list"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "clipboard",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "clip",
+    "category": "formatting",
+    "aliases": [
+      "attachment"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "brush",
+    "category": "formatting",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "note",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "folder",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-verified",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-signed",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-search",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-seal",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-review",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-question",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-protected",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-information",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-import",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-history",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-filled",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-export",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-exclamation",
+    "category": "files",
+    "aliases": [
+      "document-warning"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-empty",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-draft",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-copy",
+    "category": "files",
+    "aliases": [
+      "duplicate"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "document-check",
+    "category": "files",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "report-statistics",
+    "category": "data",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "pie-graph",
+    "category": "data",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "line-graph",
+    "category": "data",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "database",
+    "category": "data",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "data-structure",
+    "category": "data",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "data-branch",
+    "category": "data",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "bar-graph",
+    "category": "data",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "activity",
+    "category": "data",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "message",
+    "category": "communication",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "email-user",
+    "category": "communication",
+    "aliases": [
+      "request-only"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "email-upload",
+    "category": "communication",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "email-signature",
+    "category": "communication",
+    "aliases": [
+      "sign-and-request"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "email-invitation",
+    "category": "communication",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "email-download",
+    "category": "communication",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "email",
+    "category": "communication",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "customer-service",
+    "category": "communication",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "chat",
+    "category": "communication",
+    "aliases": [
+      "discussions"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "upload",
+    "category": "actions",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "share",
+    "category": "actions",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "download",
+    "category": "actions",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "cloud-upload",
+    "category": "actions",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "cloud-download",
+    "category": "actions",
+    "aliases": [],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  },
+  {
+    "name": "broom",
+    "category": "actions",
+    "aliases": [
+      "clean"
+    ],
+    "files": [
+      "16",
+      "20",
+      "24",
+      "32"
+    ]
+  }
+]

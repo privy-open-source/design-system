@@ -21,6 +21,7 @@ export default defineConfig({
       { text: 'Components', link: '/components/avatar/' },
       { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
+      { text: 'Icons', link: '/icons/' },
       { text: 'Ecosystem', link: '/ecosystem/' },
     ],
     outline    : [2, 3],
