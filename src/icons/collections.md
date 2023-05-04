@@ -36,17 +36,18 @@ function getURL (icon) {
 <p-input placeholder="Search..." v-model="keyword" clearable />
 
 <template v-for="(items, category) in icons">
-  <h3 class="capitalize">{{ category }}</h3>
-
-  <div class="grid grid-cols-4 gap-4 mt-8">
-    <template v-for="icon in items">
-      <div class="flex flex-col items-center justify-center py-5 border rounded">
-        <img :src="getURL(icon)" />
-        <p-caption class="mt-4 text-center">
-          {{ icon.name }}
-        </p-caption>
-      </div>
-    </template>
-  </div>
+    <h3 class="capitalize">{{ category }}</h3>
+    <div class="grid grid-cols-4 gap-4 mt-8">
+      <template v-for="icon in items">
+        <div class="flex flex-col items-center justify-center py-5 border rounded">
+          <client-only>
+            <img :src="getURL(icon)" />
+          </client-only>
+          <p-caption class="mt-4 text-center">
+            {{ icon.name }}
+          </p-caption>
+        </div>
+      </template>
+    </div>
 </template>
 
