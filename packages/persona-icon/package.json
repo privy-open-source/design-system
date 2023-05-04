@@ -1,5 +1,6 @@
 {
   "name": "@privyid/persona-icon",
+  "version": "0.13.0",
   "packageManager": "yarn@3.3.1",
   "main": "./icons/meta.json",
   "license": "MIT",

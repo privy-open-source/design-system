@@ -82,6 +82,7 @@
     "@floating-ui/dom": "^1.0.4",
     "@fontsource/dm-sans": "4.5.9",
     "@juggle/resize-observer": "^3.4.0",
+    "@privyid/persona-icon": "workspace:^",
     "@testing-library/user-event": "^14.4.3",
     "@vueuse/core": "9.11.1",
     "@vueuse/math": "^9.4.0",

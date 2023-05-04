@@ -2981,6 +2981,7 @@ __metadata:
     "@juggle/resize-observer": ^3.4.0
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/eslint-config-persona": "workspace:^"
+    "@privyid/persona-icon": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rollup/plugin-babel": ^6.0.2
     "@rollup/plugin-inject": ^5.0.3
@@ -3080,7 +3081,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@privyid/persona-icon@workspace:packages/persona-icon":
+"@privyid/persona-icon@workspace:^, @privyid/persona-icon@workspace:packages/persona-icon":
   version: 0.0.0-use.local
   resolution: "@privyid/persona-icon@workspace:packages/persona-icon"
   dependencies:

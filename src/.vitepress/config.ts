@@ -21,7 +21,7 @@ export default defineConfig({
       { text: 'Components', link: '/components/avatar/' },
       { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
-      { text: 'Icons', link: '/icons/' },
+      { text: 'Icons', link: '/icons/getting-started' },
       { text: 'Ecosystem', link: '/ecosystem/' },
     ],
     outline    : [2, 3],
@@ -441,6 +441,13 @@ export default defineConfig({
               link: '/styleguide/toggle/',
             },
           ],
+        },
+      ],
+      '/icons/': [
+        {
+          text     : 'Icons',
+          collapsed: true,
+          items    : [{ text: 'Instalation', link: '/icons/getting-started' }, { text: 'Collections', link: '/icons/collections' }],
         },
       ],
     },
