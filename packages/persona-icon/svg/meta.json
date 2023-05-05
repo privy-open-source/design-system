@@ -1,0 +1,54 @@
+[
+  {
+    "name": "broom",
+    "aliases": [
+      "clean"
+    ],
+    "category": "actions",
+    "folder": "broom",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "broom/16",
+        "path": "broom/16.svg"
+      },
+      {
+        "name": "broom/20",
+        "path": "broom/20.svg"
+      },
+      {
+        "name": "broom/32",
+        "path": "broom/32.svg"
+      },
+      {
+        "name": "broom/24",
+        "path": "broom/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "cloud-download",
+    "aliases": [],
+    "category": "actions",
+    "folder": "cloud-download",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "cloud-download/24",
+        "path": "cloud-download/24.svg"
+      },
+      {
+        "name": "cloud-download/32",
+        "path": "cloud-download/32.svg"
+      },
+      {
+        "name": "cloud-download/16",
+        "path": "cloud-download/16.svg"
+      },
+      {
+        "name": "cloud-download/20",
+        "path": "cloud-download/20.svg"
+      }
+    ]
+  }
+]

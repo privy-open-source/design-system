@@ -2,7 +2,9 @@
 /* eslint-disable unicorn/prefer-top-level-await */
 
 import 'dotenv/config'
-import { Api, Node } from 'figma-api'
+import { EOL } from 'node:os'
+import { Api } from 'figma-api'
+import type { ComponentMetadata } from 'figma-api/lib/api-types'
 import {
   writeFile,
   ensureFile,
@@ -13,52 +15,45 @@ import { resolve, join } from 'node:path'
 import { kebabCase, chunk } from 'lodash-es'
 import { optimize } from 'svgo'
 import download from 'download'
-import ohash from 'ohash'
 import ora from 'ora'
 import { ObjectData, MetaData } from './types'
 
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
 const FILE_ID    = process.env.FIGMA_FILE_ID ?? ''
-const CANVAS_ID  = process.env.FIGMA_CANVAS_ID ?? ''
-const OUT_DIR    = resolve(__dirname, '../icons')
-const META_FILE  = resolve(OUT_DIR, 'meta.json')
+const SVG_DIR    = resolve(__dirname, '../svg')
+const VUE_DIR    = resolve(__dirname, '../vue')
+const META_FILE  = resolve(SVG_DIR, 'meta.json')
 const CHUNK_SIZE = 300
 
 const api     = new Api({ personalAccessToken: TOKEN })
 const spinner = ora()
 
-function getObjectData (composets: Array<Node<'COMPONENT_SET'>>): Map<string, ObjectData> {
+function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData> {
   const result: Map<string, ObjectData> = new Map()
 
-  for (const node of composets) {
-    const split    = node.name.split('/')
-    const names    = split[2].split(',')
-    const variant  = kebabCase(split[0])
-    const category = kebabCase(split[1])
+  for (const component of components) {
+    const split    = component.containing_frame?.name.split('/') ?? []
+    const names    = split[1].split(',')
+    const variant  = kebabCase(component.containing_frame?.pageName)
+    const category = kebabCase(split[0])
     const name     = kebabCase(names[0])
     const aliases  = names.slice(1).map((alias) => kebabCase(alias))
-    const folder   = join(variant, name)
-    const icons    = node.children as Array<Node<'COMPONENT'>>
+    const folder   = variant === 'outline' ? name : `${name}-${variant}`
+    const id       = component.node_id
+    const [,size]  = component.name.split('=')
+    const filename = join(folder, size)
+    const filepath = `${filename}.svg`
 
-    for (const icon of icons) {
-      const id       = icon.id
-      const hash     = ohash.hash(icon)
-      const [,size]  = icon.name.split('=')
-      const filename = join(folder, size)
-      const filepath = `${filename}.svg`
-
-      result.set(id, {
-        id,
-        hash,
-        name,
-        folder,
-        variant,
-        category,
-        filename,
-        filepath,
-        aliases,
-      })
-    }
+    result.set(id, {
+      id,
+      name,
+      folder,
+      variant,
+      category,
+      filename,
+      filepath,
+      aliases,
+    })
   }
 
   return result
@@ -97,16 +92,19 @@ function getMetadata (objects: Iterable<ObjectData>): MetaData[] {
   return [...map.values()]
 }
 
+function toVue (svg: string): string {
+  return `<template>${EOL}${svg.replace('<svg', '<svg class="icon"')}${EOL}</template>${EOL}`
+}
+
 async function main () {
   spinner.start('Opening figma files')
 
-  const figma    = await api.getFile(FILE_ID, { ids: [CANVAS_ID] })
-  const canvas   = figma.document.children.find((node) => node.id === CANVAS_ID) as Node<'CANVAS'>
-  const compsets = canvas.children.filter((node) => node.type === 'COMPONENT_SET') as Array<Node<'COMPONENT_SET'>>
+  const response   = await api.getFileComponents(FILE_ID)
+  const components = response.meta?.components ?? []
 
   spinner.start('Get Object data')
 
-  const objects = getObjectData(compsets)
+  const objects = getObjectData(components)
 
   spinner.start('Get Download URL')
 
@@ -130,7 +128,9 @@ async function main () {
 
   let count = 0
 
-  await remove(OUT_DIR)
+  await remove(SVG_DIR)
+  await remove(VUE_DIR)
+
   await Promise.all(
     urls.map(async ([id, url]) => {
       const object = objects.get(id)
@@ -141,8 +141,11 @@ async function main () {
         const buffer = await download(url)
         const svg    = optimize(buffer.toString()).data
 
-        await ensureFile(resolve(OUT_DIR, object.filepath))
-        await writeFile(resolve(OUT_DIR, object.filepath), svg)
+        await ensureFile(resolve(SVG_DIR, object.filepath))
+        await writeFile(resolve(SVG_DIR, object.filepath), svg)
+
+        await ensureFile(resolve(VUE_DIR, `${object.filename}.vue`))
+        await writeFile(resolve(VUE_DIR, `${object.filename}.vue`), toVue(svg))
 
         spinner.start(`[${++count}/${total}] - Success ${object.filename}`)
       }

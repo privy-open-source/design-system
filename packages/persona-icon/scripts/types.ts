@@ -13,7 +13,6 @@ export interface MetaData {
 export interface ObjectData {
   id: string,
   name: string,
-  hash: string,
   folder: string,
   variant: string,
   aliases: string[],

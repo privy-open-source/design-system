@@ -2,7 +2,7 @@
   "name": "@privyid/persona-icon",
   "version": "0.13.0",
   "packageManager": "yarn@3.3.1",
-  "main": "./icons/meta.json",
+  "main": "./svg/meta.json",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
@@ -15,8 +15,8 @@
   },
   "homepage": "https://privy-open-source.github.io/design-system/",
   "files": [
-    "icons",
-    "sync.lock"
+    "svg",
+    "vue"
   ],
   "scripts": {
     "sync": "jiti scripts/sync.ts"
@@ -26,17 +26,12 @@
     "@types/download": "^8",
     "@types/fs-extra": "^11",
     "@types/signale": "^1.4.4",
-    "cli-progress": "^3.12.0",
-    "close-with-grace": "^1.2.0",
     "dotenv": "^16.0.3",
     "download": "^8.0.0",
     "figma-api": "^1.11.0",
     "fs-extra": "^11.1.1",
     "jiti": "^1.18.2",
-    "ohash": "^1.1.2",
     "ora": "^6.3.0",
-    "signale": "^1.4.0",
-    "svgo": "^3.0.2",
-    "yaml": "^2.2.2"
+    "svgo": "^3.0.2"
   }
 }
