@@ -1,5 +1,5 @@
 <script setup>
-import IconURL from '@privyid/persona-icon/icons/actions/broom/20.svg'
+import IconURL from '@privyid/persona-icon/icons/outline/broom/32.svg'
 </script>
 
 # Icons
@@ -26,6 +26,6 @@ yarn add @privyid/persona-icon
 </template>
 
 <script setup lang="ts">
-import IconURL from '@privyid/persona-icon/icons/actions/broom/20.svg'
+import IconURL from '@privyid/persona-icon/icons/outline/broom/32.svg'
 </script>
 ```

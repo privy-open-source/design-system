@@ -1,2903 +1,6419 @@
 [
   {
-    "name": "user-wait",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-verified",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-transfer",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-square",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-settings",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-plus",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-multiple",
-    "category": "user",
-    "aliases": [
-      "recipients"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-multiple-edit",
-    "category": "user",
-    "aliases": [
-      "group-edit",
-      "member-edit"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-minus",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-logs",
-    "category": "user",
-    "aliases": [
-      "user-detail"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-groups",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-find",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-exclamation",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-event",
-    "category": "user",
-    "aliases": [
-      "forum"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-cross",
-    "category": "user",
-    "aliases": [
-      "user-disabled"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-circle",
-    "category": "user",
-    "aliases": [
-      "avatar"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-checkmark",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "user-biometric",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "system-administrator",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "profile",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "group-contact",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "employee-tree",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "collaboration",
-    "category": "user",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "view",
-    "category": "toggle",
-    "aliases": [
-      "eye",
-      "show"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "view-off",
-    "category": "toggle",
-    "aliases": [
-      "eye-off",
-      "hide"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "unlock",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "two-grid-view",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "sun",
-    "category": "toggle",
-    "aliases": [
-      "day-mode",
-      "light-mode"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "star-favorite",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "one-grid-view",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "notification",
-    "category": "toggle",
-    "aliases": [
-      "bell"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "notification-off",
-    "category": "toggle",
-    "aliases": [
-      "bell-off"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "moon",
-    "category": "toggle",
-    "aliases": [
-      "night-mode",
-      "dark-mode"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "love-favorite",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "lock",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "list-view",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "grid-view",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "flash-on",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "flash-off",
-    "category": "toggle",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "call",
-    "category": "toggle",
-    "aliases": [
-      "phone"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "call-off",
-    "category": "toggle",
-    "aliases": [
-      "phone-off"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "translates",
-    "category": "technology",
-    "aliases": [
-      "language"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "smartphone",
-    "category": "technology",
-    "aliases": [
-      "mobile"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "scan",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "rocket",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "qr-code-scan",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "qr-code",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "qr-code",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "otp-requested",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "ocr-scan",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "multiple-window",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "location",
-    "category": "technology",
-    "aliases": [
-      "map-mark"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "internet",
-    "category": "technology",
-    "aliases": [
-      "worldwide",
-      "globe"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "fingerprint-scan",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "file-network",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "faq",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "face-recognition-scan",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "dashboard",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "computer",
-    "category": "technology",
-    "aliases": [
-      "monitor"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "code",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "cloud",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "camera",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "blog",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "apps",
-    "category": "technology",
-    "aliases": [
-      "features"
-    ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "api",
-    "category": "technology",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "question-circle-filled",
-    "category": "status",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
     "name": "question-circle",
-    "category": "status",
     "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "information-circle-filled",
     "category": "status",
-    "aliases": [],
+    "folder": "solid/question-circle",
+    "variant": "solid",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "solid/question-circle/16",
+        "path": "solid/question-circle/16.svg"
+      },
+      {
+        "name": "solid/question-circle/20",
+        "path": "solid/question-circle/20.svg"
+      },
+      {
+        "name": "solid/question-circle/24",
+        "path": "solid/question-circle/24.svg"
+      },
+      {
+        "name": "solid/question-circle/32",
+        "path": "solid/question-circle/32.svg"
+      }
     ]
   },
   {
     "name": "information-circle",
-    "category": "status",
     "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "exclamation-triangle-filled",
     "category": "status",
-    "aliases": [],
+    "folder": "solid/information-circle",
+    "variant": "solid",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "solid/information-circle/16",
+        "path": "solid/information-circle/16.svg"
+      },
+      {
+        "name": "solid/information-circle/20",
+        "path": "solid/information-circle/20.svg"
+      },
+      {
+        "name": "solid/information-circle/24",
+        "path": "solid/information-circle/24.svg"
+      },
+      {
+        "name": "solid/information-circle/32",
+        "path": "solid/information-circle/32.svg"
+      }
     ]
   },
   {
     "name": "exclamation-triangle",
-    "category": "status",
     "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "exclamation-circle-filled",
     "category": "status",
-    "aliases": [],
+    "folder": "solid/exclamation-triangle",
+    "variant": "solid",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "solid/exclamation-triangle/16",
+        "path": "solid/exclamation-triangle/16.svg"
+      },
+      {
+        "name": "solid/exclamation-triangle/20",
+        "path": "solid/exclamation-triangle/20.svg"
+      },
+      {
+        "name": "solid/exclamation-triangle/24",
+        "path": "solid/exclamation-triangle/24.svg"
+      },
+      {
+        "name": "solid/exclamation-triangle/32",
+        "path": "solid/exclamation-triangle/32.svg"
+      }
     ]
   },
   {
     "name": "exclamation-circle",
-    "category": "status",
     "aliases": [],
+    "category": "status",
+    "folder": "solid/exclamation-circle",
+    "variant": "solid",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "solid/exclamation-circle/16",
+        "path": "solid/exclamation-circle/16.svg"
+      },
+      {
+        "name": "solid/exclamation-circle/20",
+        "path": "solid/exclamation-circle/20.svg"
+      },
+      {
+        "name": "solid/exclamation-circle/24",
+        "path": "solid/exclamation-circle/24.svg"
+      },
+      {
+        "name": "solid/exclamation-circle/32",
+        "path": "solid/exclamation-circle/32.svg"
+      }
     ]
   },
   {
-    "name": "cross-circle",
-    "category": "status",
+    "name": "close-circle",
     "aliases": [
       "clear-circle",
-      "remove-circle",
-      "close-circle"
+      "dismiss-circle"
     ],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "cross-circle-filled",
     "category": "status",
-    "aliases": [
-      "clear-circle-filled",
-      "remove-circle-filled",
-      "close-circle-filled"
-    ],
+    "folder": "solid/close-circle",
+    "variant": "solid",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "checkmark-verified-filled",
-    "category": "status",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "solid/close-circle/16",
+        "path": "solid/close-circle/16.svg"
+      },
+      {
+        "name": "solid/close-circle/20",
+        "path": "solid/close-circle/20.svg"
+      },
+      {
+        "name": "solid/close-circle/24",
+        "path": "solid/close-circle/24.svg"
+      },
+      {
+        "name": "solid/close-circle/32",
+        "path": "solid/close-circle/32.svg"
+      }
     ]
   },
   {
     "name": "checkmark-verified",
-    "category": "status",
     "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "checkmark-double",
     "category": "status",
-    "aliases": [
-      "read"
-    ],
+    "folder": "solid/checkmark-verified",
+    "variant": "solid",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "checkmark-circle-filled",
-    "category": "status",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "solid/checkmark-verified/16",
+        "path": "solid/checkmark-verified/16.svg"
+      },
+      {
+        "name": "solid/checkmark-verified/20",
+        "path": "solid/checkmark-verified/20.svg"
+      },
+      {
+        "name": "solid/checkmark-verified/24",
+        "path": "solid/checkmark-verified/24.svg"
+      },
+      {
+        "name": "solid/checkmark-verified/32",
+        "path": "solid/checkmark-verified/32.svg"
+      }
     ]
   },
   {
     "name": "checkmark-circle",
-    "category": "status",
     "aliases": [],
+    "category": "status",
+    "folder": "solid/checkmark-circle",
+    "variant": "solid",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "solid/checkmark-circle/16",
+        "path": "solid/checkmark-circle/16.svg"
+      },
+      {
+        "name": "solid/checkmark-circle/20",
+        "path": "solid/checkmark-circle/20.svg"
+      },
+      {
+        "name": "solid/checkmark-circle/24",
+        "path": "solid/checkmark-circle/24.svg"
+      },
+      {
+        "name": "solid/checkmark-circle/32",
+        "path": "solid/checkmark-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "banned",
+    "aliases": [
+      "reject"
+    ],
+    "category": "status",
+    "folder": "solid/banned",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "solid/banned/16",
+        "path": "solid/banned/16.svg"
+      },
+      {
+        "name": "solid/banned/20",
+        "path": "solid/banned/20.svg"
+      },
+      {
+        "name": "solid/banned/24",
+        "path": "solid/banned/24.svg"
+      },
+      {
+        "name": "solid/banned/32",
+        "path": "solid/banned/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-wait",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-wait",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-wait/16",
+        "path": "outline/user-wait/16.svg"
+      },
+      {
+        "name": "outline/user-wait/20",
+        "path": "outline/user-wait/20.svg"
+      },
+      {
+        "name": "outline/user-wait/24",
+        "path": "outline/user-wait/24.svg"
+      },
+      {
+        "name": "outline/user-wait/32",
+        "path": "outline/user-wait/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-verified",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-verified",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-verified/16",
+        "path": "outline/user-verified/16.svg"
+      },
+      {
+        "name": "outline/user-verified/20",
+        "path": "outline/user-verified/20.svg"
+      },
+      {
+        "name": "outline/user-verified/24",
+        "path": "outline/user-verified/24.svg"
+      },
+      {
+        "name": "outline/user-verified/32",
+        "path": "outline/user-verified/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-transfer",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-transfer",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-transfer/16",
+        "path": "outline/user-transfer/16.svg"
+      },
+      {
+        "name": "outline/user-transfer/20",
+        "path": "outline/user-transfer/20.svg"
+      },
+      {
+        "name": "outline/user-transfer/24",
+        "path": "outline/user-transfer/24.svg"
+      },
+      {
+        "name": "outline/user-transfer/32",
+        "path": "outline/user-transfer/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-square",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-square",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-square/16",
+        "path": "outline/user-square/16.svg"
+      },
+      {
+        "name": "outline/user-square/20",
+        "path": "outline/user-square/20.svg"
+      },
+      {
+        "name": "outline/user-square/24",
+        "path": "outline/user-square/24.svg"
+      },
+      {
+        "name": "outline/user-square/32",
+        "path": "outline/user-square/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-settings",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-settings",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-settings/16",
+        "path": "outline/user-settings/16.svg"
+      },
+      {
+        "name": "outline/user-settings/20",
+        "path": "outline/user-settings/20.svg"
+      },
+      {
+        "name": "outline/user-settings/24",
+        "path": "outline/user-settings/24.svg"
+      },
+      {
+        "name": "outline/user-settings/32",
+        "path": "outline/user-settings/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-plus",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-plus",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-plus/16",
+        "path": "outline/user-plus/16.svg"
+      },
+      {
+        "name": "outline/user-plus/20",
+        "path": "outline/user-plus/20.svg"
+      },
+      {
+        "name": "outline/user-plus/24",
+        "path": "outline/user-plus/24.svg"
+      },
+      {
+        "name": "outline/user-plus/32",
+        "path": "outline/user-plus/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-multiple",
+    "aliases": [
+      "recipients"
+    ],
+    "category": "user",
+    "folder": "outline/user-multiple",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-multiple/16",
+        "path": "outline/user-multiple/16.svg"
+      },
+      {
+        "name": "outline/user-multiple/20",
+        "path": "outline/user-multiple/20.svg"
+      },
+      {
+        "name": "outline/user-multiple/24",
+        "path": "outline/user-multiple/24.svg"
+      },
+      {
+        "name": "outline/user-multiple/32",
+        "path": "outline/user-multiple/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-multiple-edit",
+    "aliases": [
+      "group-edit",
+      "member-edit"
+    ],
+    "category": "user",
+    "folder": "outline/user-multiple-edit",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-multiple-edit/16",
+        "path": "outline/user-multiple-edit/16.svg"
+      },
+      {
+        "name": "outline/user-multiple-edit/20",
+        "path": "outline/user-multiple-edit/20.svg"
+      },
+      {
+        "name": "outline/user-multiple-edit/24",
+        "path": "outline/user-multiple-edit/24.svg"
+      },
+      {
+        "name": "outline/user-multiple-edit/32",
+        "path": "outline/user-multiple-edit/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-minus",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-minus",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-minus/16",
+        "path": "outline/user-minus/16.svg"
+      },
+      {
+        "name": "outline/user-minus/20",
+        "path": "outline/user-minus/20.svg"
+      },
+      {
+        "name": "outline/user-minus/24",
+        "path": "outline/user-minus/24.svg"
+      },
+      {
+        "name": "outline/user-minus/32",
+        "path": "outline/user-minus/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-logs",
+    "aliases": [
+      "user-detail"
+    ],
+    "category": "user",
+    "folder": "outline/user-logs",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-logs/16",
+        "path": "outline/user-logs/16.svg"
+      },
+      {
+        "name": "outline/user-logs/20",
+        "path": "outline/user-logs/20.svg"
+      },
+      {
+        "name": "outline/user-logs/24",
+        "path": "outline/user-logs/24.svg"
+      },
+      {
+        "name": "outline/user-logs/32",
+        "path": "outline/user-logs/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-groups",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-groups",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-groups/16",
+        "path": "outline/user-groups/16.svg"
+      },
+      {
+        "name": "outline/user-groups/20",
+        "path": "outline/user-groups/20.svg"
+      },
+      {
+        "name": "outline/user-groups/24",
+        "path": "outline/user-groups/24.svg"
+      },
+      {
+        "name": "outline/user-groups/32",
+        "path": "outline/user-groups/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-find",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-find",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-find/16",
+        "path": "outline/user-find/16.svg"
+      },
+      {
+        "name": "outline/user-find/20",
+        "path": "outline/user-find/20.svg"
+      },
+      {
+        "name": "outline/user-find/24",
+        "path": "outline/user-find/24.svg"
+      },
+      {
+        "name": "outline/user-find/32",
+        "path": "outline/user-find/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-exclamation",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-exclamation",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-exclamation/16",
+        "path": "outline/user-exclamation/16.svg"
+      },
+      {
+        "name": "outline/user-exclamation/20",
+        "path": "outline/user-exclamation/20.svg"
+      },
+      {
+        "name": "outline/user-exclamation/24",
+        "path": "outline/user-exclamation/24.svg"
+      },
+      {
+        "name": "outline/user-exclamation/32",
+        "path": "outline/user-exclamation/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-event",
+    "aliases": [
+      "forum"
+    ],
+    "category": "user",
+    "folder": "outline/user-event",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-event/16",
+        "path": "outline/user-event/16.svg"
+      },
+      {
+        "name": "outline/user-event/20",
+        "path": "outline/user-event/20.svg"
+      },
+      {
+        "name": "outline/user-event/24",
+        "path": "outline/user-event/24.svg"
+      },
+      {
+        "name": "outline/user-event/32",
+        "path": "outline/user-event/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-cross",
+    "aliases": [
+      "user-disabled"
+    ],
+    "category": "user",
+    "folder": "outline/user-cross",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-cross/16",
+        "path": "outline/user-cross/16.svg"
+      },
+      {
+        "name": "outline/user-cross/20",
+        "path": "outline/user-cross/20.svg"
+      },
+      {
+        "name": "outline/user-cross/24",
+        "path": "outline/user-cross/24.svg"
+      },
+      {
+        "name": "outline/user-cross/32",
+        "path": "outline/user-cross/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-circle",
+    "aliases": [
+      "avatar"
+    ],
+    "category": "user",
+    "folder": "outline/user-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-circle/16",
+        "path": "outline/user-circle/16.svg"
+      },
+      {
+        "name": "outline/user-circle/20",
+        "path": "outline/user-circle/20.svg"
+      },
+      {
+        "name": "outline/user-circle/24",
+        "path": "outline/user-circle/24.svg"
+      },
+      {
+        "name": "outline/user-circle/32",
+        "path": "outline/user-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-checkmark",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-checkmark",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-checkmark/16",
+        "path": "outline/user-checkmark/16.svg"
+      },
+      {
+        "name": "outline/user-checkmark/20",
+        "path": "outline/user-checkmark/20.svg"
+      },
+      {
+        "name": "outline/user-checkmark/24",
+        "path": "outline/user-checkmark/24.svg"
+      },
+      {
+        "name": "outline/user-checkmark/32",
+        "path": "outline/user-checkmark/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-biometric",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/user-biometric",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/user-biometric/16",
+        "path": "outline/user-biometric/16.svg"
+      },
+      {
+        "name": "outline/user-biometric/20",
+        "path": "outline/user-biometric/20.svg"
+      },
+      {
+        "name": "outline/user-biometric/24",
+        "path": "outline/user-biometric/24.svg"
+      },
+      {
+        "name": "outline/user-biometric/32",
+        "path": "outline/user-biometric/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "system-administrator",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/system-administrator",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/system-administrator/16",
+        "path": "outline/system-administrator/16.svg"
+      },
+      {
+        "name": "outline/system-administrator/20",
+        "path": "outline/system-administrator/20.svg"
+      },
+      {
+        "name": "outline/system-administrator/24",
+        "path": "outline/system-administrator/24.svg"
+      },
+      {
+        "name": "outline/system-administrator/32",
+        "path": "outline/system-administrator/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/profile",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/profile/16",
+        "path": "outline/profile/16.svg"
+      },
+      {
+        "name": "outline/profile/20",
+        "path": "outline/profile/20.svg"
+      },
+      {
+        "name": "outline/profile/24",
+        "path": "outline/profile/24.svg"
+      },
+      {
+        "name": "outline/profile/32",
+        "path": "outline/profile/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "group-contact",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/group-contact",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/group-contact/16",
+        "path": "outline/group-contact/16.svg"
+      },
+      {
+        "name": "outline/group-contact/20",
+        "path": "outline/group-contact/20.svg"
+      },
+      {
+        "name": "outline/group-contact/24",
+        "path": "outline/group-contact/24.svg"
+      },
+      {
+        "name": "outline/group-contact/32",
+        "path": "outline/group-contact/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "employee-tree",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/employee-tree",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/employee-tree/16",
+        "path": "outline/employee-tree/16.svg"
+      },
+      {
+        "name": "outline/employee-tree/20",
+        "path": "outline/employee-tree/20.svg"
+      },
+      {
+        "name": "outline/employee-tree/24",
+        "path": "outline/employee-tree/24.svg"
+      },
+      {
+        "name": "outline/employee-tree/32",
+        "path": "outline/employee-tree/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "collaboration",
+    "aliases": [],
+    "category": "user",
+    "folder": "outline/collaboration",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/collaboration/16",
+        "path": "outline/collaboration/16.svg"
+      },
+      {
+        "name": "outline/collaboration/20",
+        "path": "outline/collaboration/20.svg"
+      },
+      {
+        "name": "outline/collaboration/24",
+        "path": "outline/collaboration/24.svg"
+      },
+      {
+        "name": "outline/collaboration/32",
+        "path": "outline/collaboration/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "view",
+    "aliases": [
+      "eye",
+      "show"
+    ],
+    "category": "toggle",
+    "folder": "outline/view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/view/16",
+        "path": "outline/view/16.svg"
+      },
+      {
+        "name": "outline/view/20",
+        "path": "outline/view/20.svg"
+      },
+      {
+        "name": "outline/view/24",
+        "path": "outline/view/24.svg"
+      },
+      {
+        "name": "outline/view/32",
+        "path": "outline/view/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "view-off",
+    "aliases": [
+      "eye-off",
+      "hide"
+    ],
+    "category": "toggle",
+    "folder": "outline/view-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/view-off/16",
+        "path": "outline/view-off/16.svg"
+      },
+      {
+        "name": "outline/view-off/20",
+        "path": "outline/view-off/20.svg"
+      },
+      {
+        "name": "outline/view-off/24",
+        "path": "outline/view-off/24.svg"
+      },
+      {
+        "name": "outline/view-off/32",
+        "path": "outline/view-off/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "unlock",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/unlock",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/unlock/16",
+        "path": "outline/unlock/16.svg"
+      },
+      {
+        "name": "outline/unlock/20",
+        "path": "outline/unlock/20.svg"
+      },
+      {
+        "name": "outline/unlock/24",
+        "path": "outline/unlock/24.svg"
+      },
+      {
+        "name": "outline/unlock/32",
+        "path": "outline/unlock/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "two-grid-view",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/two-grid-view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/two-grid-view/16",
+        "path": "outline/two-grid-view/16.svg"
+      },
+      {
+        "name": "outline/two-grid-view/20",
+        "path": "outline/two-grid-view/20.svg"
+      },
+      {
+        "name": "outline/two-grid-view/24",
+        "path": "outline/two-grid-view/24.svg"
+      },
+      {
+        "name": "outline/two-grid-view/32",
+        "path": "outline/two-grid-view/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "sun",
+    "aliases": [
+      "day-mode",
+      "light-mode"
+    ],
+    "category": "toggle",
+    "folder": "outline/sun",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/sun/16",
+        "path": "outline/sun/16.svg"
+      },
+      {
+        "name": "outline/sun/20",
+        "path": "outline/sun/20.svg"
+      },
+      {
+        "name": "outline/sun/24",
+        "path": "outline/sun/24.svg"
+      },
+      {
+        "name": "outline/sun/32",
+        "path": "outline/sun/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "star-favorite",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/star-favorite",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/star-favorite/16",
+        "path": "outline/star-favorite/16.svg"
+      },
+      {
+        "name": "outline/star-favorite/20",
+        "path": "outline/star-favorite/20.svg"
+      },
+      {
+        "name": "outline/star-favorite/24",
+        "path": "outline/star-favorite/24.svg"
+      },
+      {
+        "name": "outline/star-favorite/32",
+        "path": "outline/star-favorite/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "one-grid-view",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/one-grid-view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/one-grid-view/16",
+        "path": "outline/one-grid-view/16.svg"
+      },
+      {
+        "name": "outline/one-grid-view/20",
+        "path": "outline/one-grid-view/20.svg"
+      },
+      {
+        "name": "outline/one-grid-view/24",
+        "path": "outline/one-grid-view/24.svg"
+      },
+      {
+        "name": "outline/one-grid-view/32",
+        "path": "outline/one-grid-view/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "notification",
+    "aliases": [
+      "bell"
+    ],
+    "category": "toggle",
+    "folder": "outline/notification",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/notification/16",
+        "path": "outline/notification/16.svg"
+      },
+      {
+        "name": "outline/notification/20",
+        "path": "outline/notification/20.svg"
+      },
+      {
+        "name": "outline/notification/24",
+        "path": "outline/notification/24.svg"
+      },
+      {
+        "name": "outline/notification/32",
+        "path": "outline/notification/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "notification-off",
+    "aliases": [
+      "bell-off"
+    ],
+    "category": "toggle",
+    "folder": "outline/notification-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/notification-off/16",
+        "path": "outline/notification-off/16.svg"
+      },
+      {
+        "name": "outline/notification-off/20",
+        "path": "outline/notification-off/20.svg"
+      },
+      {
+        "name": "outline/notification-off/24",
+        "path": "outline/notification-off/24.svg"
+      },
+      {
+        "name": "outline/notification-off/32",
+        "path": "outline/notification-off/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "moon",
+    "aliases": [
+      "night-mode",
+      "dark-mode"
+    ],
+    "category": "toggle",
+    "folder": "outline/moon",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/moon/16",
+        "path": "outline/moon/16.svg"
+      },
+      {
+        "name": "outline/moon/20",
+        "path": "outline/moon/20.svg"
+      },
+      {
+        "name": "outline/moon/24",
+        "path": "outline/moon/24.svg"
+      },
+      {
+        "name": "outline/moon/32",
+        "path": "outline/moon/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "love-favorite",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/love-favorite",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/love-favorite/16",
+        "path": "outline/love-favorite/16.svg"
+      },
+      {
+        "name": "outline/love-favorite/20",
+        "path": "outline/love-favorite/20.svg"
+      },
+      {
+        "name": "outline/love-favorite/24",
+        "path": "outline/love-favorite/24.svg"
+      },
+      {
+        "name": "outline/love-favorite/32",
+        "path": "outline/love-favorite/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "lock",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/lock",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/lock/16",
+        "path": "outline/lock/16.svg"
+      },
+      {
+        "name": "outline/lock/20",
+        "path": "outline/lock/20.svg"
+      },
+      {
+        "name": "outline/lock/24",
+        "path": "outline/lock/24.svg"
+      },
+      {
+        "name": "outline/lock/32",
+        "path": "outline/lock/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "list-view",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/list-view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/list-view/16",
+        "path": "outline/list-view/16.svg"
+      },
+      {
+        "name": "outline/list-view/20",
+        "path": "outline/list-view/20.svg"
+      },
+      {
+        "name": "outline/list-view/24",
+        "path": "outline/list-view/24.svg"
+      },
+      {
+        "name": "outline/list-view/32",
+        "path": "outline/list-view/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "grid-view",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/grid-view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/grid-view/16",
+        "path": "outline/grid-view/16.svg"
+      },
+      {
+        "name": "outline/grid-view/20",
+        "path": "outline/grid-view/20.svg"
+      },
+      {
+        "name": "outline/grid-view/24",
+        "path": "outline/grid-view/24.svg"
+      },
+      {
+        "name": "outline/grid-view/32",
+        "path": "outline/grid-view/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "flash-on",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/flash-on",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/flash-on/16",
+        "path": "outline/flash-on/16.svg"
+      },
+      {
+        "name": "outline/flash-on/20",
+        "path": "outline/flash-on/20.svg"
+      },
+      {
+        "name": "outline/flash-on/24",
+        "path": "outline/flash-on/24.svg"
+      },
+      {
+        "name": "outline/flash-on/32",
+        "path": "outline/flash-on/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "flash-off",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "outline/flash-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/flash-off/16",
+        "path": "outline/flash-off/16.svg"
+      },
+      {
+        "name": "outline/flash-off/20",
+        "path": "outline/flash-off/20.svg"
+      },
+      {
+        "name": "outline/flash-off/24",
+        "path": "outline/flash-off/24.svg"
+      },
+      {
+        "name": "outline/flash-off/32",
+        "path": "outline/flash-off/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "call",
+    "aliases": [
+      "phone"
+    ],
+    "category": "toggle",
+    "folder": "outline/call",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/call/16",
+        "path": "outline/call/16.svg"
+      },
+      {
+        "name": "outline/call/20",
+        "path": "outline/call/20.svg"
+      },
+      {
+        "name": "outline/call/24",
+        "path": "outline/call/24.svg"
+      },
+      {
+        "name": "outline/call/32",
+        "path": "outline/call/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "call-off",
+    "aliases": [
+      "phone-off"
+    ],
+    "category": "toggle",
+    "folder": "outline/call-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/call-off/16",
+        "path": "outline/call-off/16.svg"
+      },
+      {
+        "name": "outline/call-off/20",
+        "path": "outline/call-off/20.svg"
+      },
+      {
+        "name": "outline/call-off/24",
+        "path": "outline/call-off/24.svg"
+      },
+      {
+        "name": "outline/call-off/32",
+        "path": "outline/call-off/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "translates",
+    "aliases": [
+      "language"
+    ],
+    "category": "technology",
+    "folder": "outline/translates",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/translates/16",
+        "path": "outline/translates/16.svg"
+      },
+      {
+        "name": "outline/translates/20",
+        "path": "outline/translates/20.svg"
+      },
+      {
+        "name": "outline/translates/24",
+        "path": "outline/translates/24.svg"
+      },
+      {
+        "name": "outline/translates/32",
+        "path": "outline/translates/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "smartphone",
+    "aliases": [
+      "mobile"
+    ],
+    "category": "technology",
+    "folder": "outline/smartphone",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/smartphone/16",
+        "path": "outline/smartphone/16.svg"
+      },
+      {
+        "name": "outline/smartphone/20",
+        "path": "outline/smartphone/20.svg"
+      },
+      {
+        "name": "outline/smartphone/24",
+        "path": "outline/smartphone/24.svg"
+      },
+      {
+        "name": "outline/smartphone/32",
+        "path": "outline/smartphone/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/scan/16",
+        "path": "outline/scan/16.svg"
+      },
+      {
+        "name": "outline/scan/20",
+        "path": "outline/scan/20.svg"
+      },
+      {
+        "name": "outline/scan/24",
+        "path": "outline/scan/24.svg"
+      },
+      {
+        "name": "outline/scan/32",
+        "path": "outline/scan/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "rocket",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/rocket",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/rocket/16",
+        "path": "outline/rocket/16.svg"
+      },
+      {
+        "name": "outline/rocket/20",
+        "path": "outline/rocket/20.svg"
+      },
+      {
+        "name": "outline/rocket/24",
+        "path": "outline/rocket/24.svg"
+      },
+      {
+        "name": "outline/rocket/32",
+        "path": "outline/rocket/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "qr-code-scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/qr-code-scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/qr-code-scan/16",
+        "path": "outline/qr-code-scan/16.svg"
+      },
+      {
+        "name": "outline/qr-code-scan/20",
+        "path": "outline/qr-code-scan/20.svg"
+      },
+      {
+        "name": "outline/qr-code-scan/24",
+        "path": "outline/qr-code-scan/24.svg"
+      },
+      {
+        "name": "outline/qr-code-scan/32",
+        "path": "outline/qr-code-scan/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "qr-code",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/qr-code",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/qr-code/16",
+        "path": "outline/qr-code/16.svg"
+      },
+      {
+        "name": "outline/qr-code/20",
+        "path": "outline/qr-code/20.svg"
+      },
+      {
+        "name": "outline/qr-code/24",
+        "path": "outline/qr-code/24.svg"
+      },
+      {
+        "name": "outline/qr-code/32",
+        "path": "outline/qr-code/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "otp-requested",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/otp-requested",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/otp-requested/16",
+        "path": "outline/otp-requested/16.svg"
+      },
+      {
+        "name": "outline/otp-requested/20",
+        "path": "outline/otp-requested/20.svg"
+      },
+      {
+        "name": "outline/otp-requested/24",
+        "path": "outline/otp-requested/24.svg"
+      },
+      {
+        "name": "outline/otp-requested/32",
+        "path": "outline/otp-requested/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "ocr-scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/ocr-scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/ocr-scan/16",
+        "path": "outline/ocr-scan/16.svg"
+      },
+      {
+        "name": "outline/ocr-scan/20",
+        "path": "outline/ocr-scan/20.svg"
+      },
+      {
+        "name": "outline/ocr-scan/24",
+        "path": "outline/ocr-scan/24.svg"
+      },
+      {
+        "name": "outline/ocr-scan/32",
+        "path": "outline/ocr-scan/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "multiple-window",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/multiple-window",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/multiple-window/16",
+        "path": "outline/multiple-window/16.svg"
+      },
+      {
+        "name": "outline/multiple-window/20",
+        "path": "outline/multiple-window/20.svg"
+      },
+      {
+        "name": "outline/multiple-window/24",
+        "path": "outline/multiple-window/24.svg"
+      },
+      {
+        "name": "outline/multiple-window/32",
+        "path": "outline/multiple-window/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "location",
+    "aliases": [
+      "map-mark"
+    ],
+    "category": "technology",
+    "folder": "outline/location",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/location/16",
+        "path": "outline/location/16.svg"
+      },
+      {
+        "name": "outline/location/20",
+        "path": "outline/location/20.svg"
+      },
+      {
+        "name": "outline/location/24",
+        "path": "outline/location/24.svg"
+      },
+      {
+        "name": "outline/location/32",
+        "path": "outline/location/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "internet",
+    "aliases": [
+      "worldwide",
+      "globe"
+    ],
+    "category": "technology",
+    "folder": "outline/internet",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/internet/16",
+        "path": "outline/internet/16.svg"
+      },
+      {
+        "name": "outline/internet/20",
+        "path": "outline/internet/20.svg"
+      },
+      {
+        "name": "outline/internet/24",
+        "path": "outline/internet/24.svg"
+      },
+      {
+        "name": "outline/internet/32",
+        "path": "outline/internet/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "fingerprint-scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/fingerprint-scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/fingerprint-scan/16",
+        "path": "outline/fingerprint-scan/16.svg"
+      },
+      {
+        "name": "outline/fingerprint-scan/20",
+        "path": "outline/fingerprint-scan/20.svg"
+      },
+      {
+        "name": "outline/fingerprint-scan/24",
+        "path": "outline/fingerprint-scan/24.svg"
+      },
+      {
+        "name": "outline/fingerprint-scan/32",
+        "path": "outline/fingerprint-scan/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "file-network",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/file-network",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/file-network/16",
+        "path": "outline/file-network/16.svg"
+      },
+      {
+        "name": "outline/file-network/20",
+        "path": "outline/file-network/20.svg"
+      },
+      {
+        "name": "outline/file-network/24",
+        "path": "outline/file-network/24.svg"
+      },
+      {
+        "name": "outline/file-network/32",
+        "path": "outline/file-network/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "faq",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/faq",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/faq/16",
+        "path": "outline/faq/16.svg"
+      },
+      {
+        "name": "outline/faq/20",
+        "path": "outline/faq/20.svg"
+      },
+      {
+        "name": "outline/faq/24",
+        "path": "outline/faq/24.svg"
+      },
+      {
+        "name": "outline/faq/32",
+        "path": "outline/faq/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "face-recognition-scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/face-recognition-scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/face-recognition-scan/16",
+        "path": "outline/face-recognition-scan/16.svg"
+      },
+      {
+        "name": "outline/face-recognition-scan/20",
+        "path": "outline/face-recognition-scan/20.svg"
+      },
+      {
+        "name": "outline/face-recognition-scan/24",
+        "path": "outline/face-recognition-scan/24.svg"
+      },
+      {
+        "name": "outline/face-recognition-scan/32",
+        "path": "outline/face-recognition-scan/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "e-meterai",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/e-meterai",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/e-meterai/16",
+        "path": "outline/e-meterai/16.svg"
+      },
+      {
+        "name": "outline/e-meterai/20",
+        "path": "outline/e-meterai/20.svg"
+      },
+      {
+        "name": "outline/e-meterai/24",
+        "path": "outline/e-meterai/24.svg"
+      },
+      {
+        "name": "outline/e-meterai/32",
+        "path": "outline/e-meterai/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "dashboard",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/dashboard",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/dashboard/16",
+        "path": "outline/dashboard/16.svg"
+      },
+      {
+        "name": "outline/dashboard/20",
+        "path": "outline/dashboard/20.svg"
+      },
+      {
+        "name": "outline/dashboard/24",
+        "path": "outline/dashboard/24.svg"
+      },
+      {
+        "name": "outline/dashboard/32",
+        "path": "outline/dashboard/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "computer",
+    "aliases": [
+      "monitor"
+    ],
+    "category": "technology",
+    "folder": "outline/computer",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/computer/16",
+        "path": "outline/computer/16.svg"
+      },
+      {
+        "name": "outline/computer/20",
+        "path": "outline/computer/20.svg"
+      },
+      {
+        "name": "outline/computer/24",
+        "path": "outline/computer/24.svg"
+      },
+      {
+        "name": "outline/computer/32",
+        "path": "outline/computer/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "code",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/code",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/code/16",
+        "path": "outline/code/16.svg"
+      },
+      {
+        "name": "outline/code/20",
+        "path": "outline/code/20.svg"
+      },
+      {
+        "name": "outline/code/24",
+        "path": "outline/code/24.svg"
+      },
+      {
+        "name": "outline/code/32",
+        "path": "outline/code/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "cloud",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/cloud",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/cloud/16",
+        "path": "outline/cloud/16.svg"
+      },
+      {
+        "name": "outline/cloud/20",
+        "path": "outline/cloud/20.svg"
+      },
+      {
+        "name": "outline/cloud/24",
+        "path": "outline/cloud/24.svg"
+      },
+      {
+        "name": "outline/cloud/32",
+        "path": "outline/cloud/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "camera",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/camera",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/camera/16",
+        "path": "outline/camera/16.svg"
+      },
+      {
+        "name": "outline/camera/20",
+        "path": "outline/camera/20.svg"
+      },
+      {
+        "name": "outline/camera/24",
+        "path": "outline/camera/24.svg"
+      },
+      {
+        "name": "outline/camera/32",
+        "path": "outline/camera/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "blog",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/blog",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/blog/16",
+        "path": "outline/blog/16.svg"
+      },
+      {
+        "name": "outline/blog/20",
+        "path": "outline/blog/20.svg"
+      },
+      {
+        "name": "outline/blog/24",
+        "path": "outline/blog/24.svg"
+      },
+      {
+        "name": "outline/blog/32",
+        "path": "outline/blog/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "apps",
+    "aliases": [
+      "features"
+    ],
+    "category": "technology",
+    "folder": "outline/apps",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/apps/16",
+        "path": "outline/apps/16.svg"
+      },
+      {
+        "name": "outline/apps/20",
+        "path": "outline/apps/20.svg"
+      },
+      {
+        "name": "outline/apps/24",
+        "path": "outline/apps/24.svg"
+      },
+      {
+        "name": "outline/apps/32",
+        "path": "outline/apps/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "api",
+    "aliases": [],
+    "category": "technology",
+    "folder": "outline/api",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/api/16",
+        "path": "outline/api/16.svg"
+      },
+      {
+        "name": "outline/api/20",
+        "path": "outline/api/20.svg"
+      },
+      {
+        "name": "outline/api/24",
+        "path": "outline/api/24.svg"
+      },
+      {
+        "name": "outline/api/32",
+        "path": "outline/api/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "question-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "outline/question-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/question-circle/16",
+        "path": "outline/question-circle/16.svg"
+      },
+      {
+        "name": "outline/question-circle/20",
+        "path": "outline/question-circle/20.svg"
+      },
+      {
+        "name": "outline/question-circle/24",
+        "path": "outline/question-circle/24.svg"
+      },
+      {
+        "name": "outline/question-circle/32",
+        "path": "outline/question-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "information-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "outline/information-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/information-circle/16",
+        "path": "outline/information-circle/16.svg"
+      },
+      {
+        "name": "outline/information-circle/20",
+        "path": "outline/information-circle/20.svg"
+      },
+      {
+        "name": "outline/information-circle/24",
+        "path": "outline/information-circle/24.svg"
+      },
+      {
+        "name": "outline/information-circle/32",
+        "path": "outline/information-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "exclamation-triangle",
+    "aliases": [],
+    "category": "status",
+    "folder": "outline/exclamation-triangle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/exclamation-triangle/16",
+        "path": "outline/exclamation-triangle/16.svg"
+      },
+      {
+        "name": "outline/exclamation-triangle/20",
+        "path": "outline/exclamation-triangle/20.svg"
+      },
+      {
+        "name": "outline/exclamation-triangle/24",
+        "path": "outline/exclamation-triangle/24.svg"
+      },
+      {
+        "name": "outline/exclamation-triangle/32",
+        "path": "outline/exclamation-triangle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "exclamation-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "outline/exclamation-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/exclamation-circle/16",
+        "path": "outline/exclamation-circle/16.svg"
+      },
+      {
+        "name": "outline/exclamation-circle/20",
+        "path": "outline/exclamation-circle/20.svg"
+      },
+      {
+        "name": "outline/exclamation-circle/24",
+        "path": "outline/exclamation-circle/24.svg"
+      },
+      {
+        "name": "outline/exclamation-circle/32",
+        "path": "outline/exclamation-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "close-circle",
+    "aliases": [
+      "clear-circle",
+      "dismiss-circle"
+    ],
+    "category": "status",
+    "folder": "outline/close-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/close-circle/16",
+        "path": "outline/close-circle/16.svg"
+      },
+      {
+        "name": "outline/close-circle/20",
+        "path": "outline/close-circle/20.svg"
+      },
+      {
+        "name": "outline/close-circle/24",
+        "path": "outline/close-circle/24.svg"
+      },
+      {
+        "name": "outline/close-circle/32",
+        "path": "outline/close-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-verified",
+    "aliases": [],
+    "category": "status",
+    "folder": "outline/checkmark-verified",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/checkmark-verified/16",
+        "path": "outline/checkmark-verified/16.svg"
+      },
+      {
+        "name": "outline/checkmark-verified/20",
+        "path": "outline/checkmark-verified/20.svg"
+      },
+      {
+        "name": "outline/checkmark-verified/24",
+        "path": "outline/checkmark-verified/24.svg"
+      },
+      {
+        "name": "outline/checkmark-verified/32",
+        "path": "outline/checkmark-verified/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-double",
+    "aliases": [
+      "read"
+    ],
+    "category": "status",
+    "folder": "outline/checkmark-double",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/checkmark-double/16",
+        "path": "outline/checkmark-double/16.svg"
+      },
+      {
+        "name": "outline/checkmark-double/20",
+        "path": "outline/checkmark-double/20.svg"
+      },
+      {
+        "name": "outline/checkmark-double/24",
+        "path": "outline/checkmark-double/24.svg"
+      },
+      {
+        "name": "outline/checkmark-double/32",
+        "path": "outline/checkmark-double/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "outline/checkmark-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/checkmark-circle/16",
+        "path": "outline/checkmark-circle/16.svg"
+      },
+      {
+        "name": "outline/checkmark-circle/20",
+        "path": "outline/checkmark-circle/20.svg"
+      },
+      {
+        "name": "outline/checkmark-circle/24",
+        "path": "outline/checkmark-circle/24.svg"
+      },
+      {
+        "name": "outline/checkmark-circle/32",
+        "path": "outline/checkmark-circle/32.svg"
+      }
     ]
   },
   {
     "name": "checkmark",
-    "category": "status",
     "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "banned-filled",
     "category": "status",
-    "aliases": [
-      "reject-filled"
-    ],
+    "folder": "outline/checkmark",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/checkmark/16",
+        "path": "outline/checkmark/16.svg"
+      },
+      {
+        "name": "outline/checkmark/20",
+        "path": "outline/checkmark/20.svg"
+      },
+      {
+        "name": "outline/checkmark/24",
+        "path": "outline/checkmark/24.svg"
+      },
+      {
+        "name": "outline/checkmark/32",
+        "path": "outline/checkmark/32.svg"
+      }
     ]
   },
   {
     "name": "banned-circle",
-    "category": "status",
     "aliases": [
       "reject"
     ],
+    "category": "status",
+    "folder": "outline/banned-circle",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/banned-circle/16",
+        "path": "outline/banned-circle/16.svg"
+      },
+      {
+        "name": "outline/banned-circle/20",
+        "path": "outline/banned-circle/20.svg"
+      },
+      {
+        "name": "outline/banned-circle/24",
+        "path": "outline/banned-circle/24.svg"
+      },
+      {
+        "name": "outline/banned-circle/32",
+        "path": "outline/banned-circle/32.svg"
+      }
     ]
   },
   {
     "name": "time",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/time",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/time/16",
+        "path": "outline/time/16.svg"
+      },
+      {
+        "name": "outline/time/20",
+        "path": "outline/time/20.svg"
+      },
+      {
+        "name": "outline/time/24",
+        "path": "outline/time/24.svg"
+      },
+      {
+        "name": "outline/time/32",
+        "path": "outline/time/32.svg"
+      }
     ]
   },
   {
     "name": "template",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/template",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/template/16",
+        "path": "outline/template/16.svg"
+      },
+      {
+        "name": "outline/template/20",
+        "path": "outline/template/20.svg"
+      },
+      {
+        "name": "outline/template/24",
+        "path": "outline/template/24.svg"
+      },
+      {
+        "name": "outline/template/32",
+        "path": "outline/template/32.svg"
+      }
     ]
   },
   {
     "name": "stopwatch",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/stopwatch",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/stopwatch/16",
+        "path": "outline/stopwatch/16.svg"
+      },
+      {
+        "name": "outline/stopwatch/20",
+        "path": "outline/stopwatch/20.svg"
+      },
+      {
+        "name": "outline/stopwatch/24",
+        "path": "outline/stopwatch/24.svg"
+      },
+      {
+        "name": "outline/stopwatch/32",
+        "path": "outline/stopwatch/32.svg"
+      }
     ]
   },
   {
     "name": "shield",
-    "category": "other",
     "aliases": [
       "protection"
     ],
+    "category": "other",
+    "folder": "outline/shield",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/shield/16",
+        "path": "outline/shield/16.svg"
+      },
+      {
+        "name": "outline/shield/20",
+        "path": "outline/shield/20.svg"
+      },
+      {
+        "name": "outline/shield/24",
+        "path": "outline/shield/24.svg"
+      },
+      {
+        "name": "outline/shield/32",
+        "path": "outline/shield/32.svg"
+      }
     ]
   },
   {
     "name": "shield-on",
-    "category": "other",
     "aliases": [
       "protection-on"
     ],
+    "category": "other",
+    "folder": "outline/shield-on",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/shield-on/16",
+        "path": "outline/shield-on/16.svg"
+      },
+      {
+        "name": "outline/shield-on/20",
+        "path": "outline/shield-on/20.svg"
+      },
+      {
+        "name": "outline/shield-on/24",
+        "path": "outline/shield-on/24.svg"
+      },
+      {
+        "name": "outline/shield-on/32",
+        "path": "outline/shield-on/32.svg"
+      }
     ]
   },
   {
     "name": "shield-off",
-    "category": "other",
     "aliases": [
       "protection-off"
     ],
+    "category": "other",
+    "folder": "outline/shield-off",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/shield-off/16",
+        "path": "outline/shield-off/16.svg"
+      },
+      {
+        "name": "outline/shield-off/20",
+        "path": "outline/shield-off/20.svg"
+      },
+      {
+        "name": "outline/shield-off/24",
+        "path": "outline/shield-off/24.svg"
+      },
+      {
+        "name": "outline/shield-off/32",
+        "path": "outline/shield-off/32.svg"
+      }
     ]
   },
   {
     "name": "sad-face",
-    "category": "other",
     "aliases": [
       "dissapointed-face"
     ],
+    "category": "other",
+    "folder": "outline/sad-face",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/sad-face/16",
+        "path": "outline/sad-face/16.svg"
+      },
+      {
+        "name": "outline/sad-face/20",
+        "path": "outline/sad-face/20.svg"
+      },
+      {
+        "name": "outline/sad-face/24",
+        "path": "outline/sad-face/24.svg"
+      },
+      {
+        "name": "outline/sad-face/32",
+        "path": "outline/sad-face/32.svg"
+      }
     ]
   },
   {
     "name": "repair",
-    "category": "other",
     "aliases": [
       "settings",
       "wrench"
     ],
+    "category": "other",
+    "folder": "outline/repair",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/repair/16",
+        "path": "outline/repair/16.svg"
+      },
+      {
+        "name": "outline/repair/20",
+        "path": "outline/repair/20.svg"
+      },
+      {
+        "name": "outline/repair/24",
+        "path": "outline/repair/24.svg"
+      },
+      {
+        "name": "outline/repair/32",
+        "path": "outline/repair/32.svg"
+      }
     ]
   },
   {
     "name": "puzzle",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/puzzle",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/puzzle/16",
+        "path": "outline/puzzle/16.svg"
+      },
+      {
+        "name": "outline/puzzle/20",
+        "path": "outline/puzzle/20.svg"
+      },
+      {
+        "name": "outline/puzzle/24",
+        "path": "outline/puzzle/24.svg"
+      },
+      {
+        "name": "outline/puzzle/32",
+        "path": "outline/puzzle/32.svg"
+      }
     ]
   },
   {
     "name": "package-box",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/package-box",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/package-box/16",
+        "path": "outline/package-box/16.svg"
+      },
+      {
+        "name": "outline/package-box/20",
+        "path": "outline/package-box/20.svg"
+      },
+      {
+        "name": "outline/package-box/24",
+        "path": "outline/package-box/24.svg"
+      },
+      {
+        "name": "outline/package-box/32",
+        "path": "outline/package-box/32.svg"
+      }
     ]
   },
   {
     "name": "onsite",
-    "category": "other",
     "aliases": [
       "pin"
     ],
+    "category": "other",
+    "folder": "outline/onsite",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/onsite/16",
+        "path": "outline/onsite/16.svg"
+      },
+      {
+        "name": "outline/onsite/20",
+        "path": "outline/onsite/20.svg"
+      },
+      {
+        "name": "outline/onsite/24",
+        "path": "outline/onsite/24.svg"
+      },
+      {
+        "name": "outline/onsite/32",
+        "path": "outline/onsite/32.svg"
+      }
     ]
   },
   {
     "name": "megaphone",
-    "category": "other",
     "aliases": [
       "horn"
     ],
+    "category": "other",
+    "folder": "outline/megaphone",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/megaphone/16",
+        "path": "outline/megaphone/16.svg"
+      },
+      {
+        "name": "outline/megaphone/20",
+        "path": "outline/megaphone/20.svg"
+      },
+      {
+        "name": "outline/megaphone/24",
+        "path": "outline/megaphone/24.svg"
+      },
+      {
+        "name": "outline/megaphone/32",
+        "path": "outline/megaphone/32.svg"
+      }
     ]
   },
   {
     "name": "medal",
-    "category": "other",
     "aliases": [
       "certificate"
     ],
+    "category": "other",
+    "folder": "outline/medal",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/medal/16",
+        "path": "outline/medal/16.svg"
+      },
+      {
+        "name": "outline/medal/20",
+        "path": "outline/medal/20.svg"
+      },
+      {
+        "name": "outline/medal/24",
+        "path": "outline/medal/24.svg"
+      },
+      {
+        "name": "outline/medal/32",
+        "path": "outline/medal/32.svg"
+      }
     ]
   },
   {
     "name": "map",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/map",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/map/16",
+        "path": "outline/map/16.svg"
+      },
+      {
+        "name": "outline/map/20",
+        "path": "outline/map/20.svg"
+      },
+      {
+        "name": "outline/map/24",
+        "path": "outline/map/24.svg"
+      },
+      {
+        "name": "outline/map/32",
+        "path": "outline/map/32.svg"
+      }
     ]
   },
   {
     "name": "layer",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/layer",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/layer/16",
+        "path": "outline/layer/16.svg"
+      },
+      {
+        "name": "outline/layer/20",
+        "path": "outline/layer/20.svg"
+      },
+      {
+        "name": "outline/layer/24",
+        "path": "outline/layer/24.svg"
+      },
+      {
+        "name": "outline/layer/32",
+        "path": "outline/layer/32.svg"
+      }
     ]
   },
   {
     "name": "lamp",
-    "category": "other",
     "aliases": [
       "idea",
       "bulb"
     ],
+    "category": "other",
+    "folder": "outline/lamp",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/lamp/16",
+        "path": "outline/lamp/16.svg"
+      },
+      {
+        "name": "outline/lamp/20",
+        "path": "outline/lamp/20.svg"
+      },
+      {
+        "name": "outline/lamp/24",
+        "path": "outline/lamp/24.svg"
+      },
+      {
+        "name": "outline/lamp/32",
+        "path": "outline/lamp/32.svg"
+      }
     ]
   },
   {
     "name": "ktp",
-    "category": "other",
     "aliases": [
       "id-card"
     ],
+    "category": "other",
+    "folder": "outline/ktp",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/ktp/16",
+        "path": "outline/ktp/16.svg"
+      },
+      {
+        "name": "outline/ktp/20",
+        "path": "outline/ktp/20.svg"
+      },
+      {
+        "name": "outline/ktp/24",
+        "path": "outline/ktp/24.svg"
+      },
+      {
+        "name": "outline/ktp/32",
+        "path": "outline/ktp/32.svg"
+      }
     ]
   },
   {
     "name": "key",
-    "category": "other",
     "aliases": [
       "password"
     ],
+    "category": "other",
+    "folder": "outline/key",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/key/16",
+        "path": "outline/key/16.svg"
+      },
+      {
+        "name": "outline/key/20",
+        "path": "outline/key/20.svg"
+      },
+      {
+        "name": "outline/key/24",
+        "path": "outline/key/24.svg"
+      },
+      {
+        "name": "outline/key/32",
+        "path": "outline/key/32.svg"
+      }
     ]
   },
   {
     "name": "happy-face",
-    "category": "other",
     "aliases": [
       "smiley-face"
     ],
+    "category": "other",
+    "folder": "outline/happy-face",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/happy-face/16",
+        "path": "outline/happy-face/16.svg"
+      },
+      {
+        "name": "outline/happy-face/20",
+        "path": "outline/happy-face/20.svg"
+      },
+      {
+        "name": "outline/happy-face/24",
+        "path": "outline/happy-face/24.svg"
+      },
+      {
+        "name": "outline/happy-face/32",
+        "path": "outline/happy-face/32.svg"
+      }
     ]
   },
   {
     "name": "fingerprint",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/fingerprint",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/fingerprint/16",
+        "path": "outline/fingerprint/16.svg"
+      },
+      {
+        "name": "outline/fingerprint/20",
+        "path": "outline/fingerprint/20.svg"
+      },
+      {
+        "name": "outline/fingerprint/24",
+        "path": "outline/fingerprint/24.svg"
+      },
+      {
+        "name": "outline/fingerprint/32",
+        "path": "outline/fingerprint/32.svg"
+      }
     ]
   },
   {
     "name": "envelope",
-    "category": "other",
     "aliases": [
       "mail",
       "postcard"
     ],
+    "category": "other",
+    "folder": "outline/envelope",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/envelope/16",
+        "path": "outline/envelope/16.svg"
+      },
+      {
+        "name": "outline/envelope/20",
+        "path": "outline/envelope/20.svg"
+      },
+      {
+        "name": "outline/envelope/24",
+        "path": "outline/envelope/24.svg"
+      },
+      {
+        "name": "outline/envelope/32",
+        "path": "outline/envelope/32.svg"
+      }
     ]
   },
   {
     "name": "education",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/education",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/education/16",
+        "path": "outline/education/16.svg"
+      },
+      {
+        "name": "outline/education/20",
+        "path": "outline/education/20.svg"
+      },
+      {
+        "name": "outline/education/24",
+        "path": "outline/education/24.svg"
+      },
+      {
+        "name": "outline/education/32",
+        "path": "outline/education/32.svg"
+      }
     ]
   },
   {
     "name": "calculator-check",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/calculator-check",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/calculator-check/16",
+        "path": "outline/calculator-check/16.svg"
+      },
+      {
+        "name": "outline/calculator-check/20",
+        "path": "outline/calculator-check/20.svg"
+      },
+      {
+        "name": "outline/calculator-check/24",
+        "path": "outline/calculator-check/24.svg"
+      },
+      {
+        "name": "outline/calculator-check/32",
+        "path": "outline/calculator-check/32.svg"
+      }
     ]
   },
   {
     "name": "archive-box",
-    "category": "other",
     "aliases": [],
+    "category": "other",
+    "folder": "outline/archive-box",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/archive-box/16",
+        "path": "outline/archive-box/16.svg"
+      },
+      {
+        "name": "outline/archive-box/20",
+        "path": "outline/archive-box/20.svg"
+      },
+      {
+        "name": "outline/archive-box/24",
+        "path": "outline/archive-box/24.svg"
+      },
+      {
+        "name": "outline/archive-box/32",
+        "path": "outline/archive-box/32.svg"
+      }
     ]
   },
   {
     "name": "address",
-    "category": "other",
     "aliases": [
       "at"
     ],
+    "category": "other",
+    "folder": "outline/address",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/address/16",
+        "path": "outline/address/16.svg"
+      },
+      {
+        "name": "outline/address/20",
+        "path": "outline/address/20.svg"
+      },
+      {
+        "name": "outline/address/24",
+        "path": "outline/address/24.svg"
+      },
+      {
+        "name": "outline/address/32",
+        "path": "outline/address/32.svg"
+      }
     ]
   },
   {
     "name": "trash",
-    "category": "operation",
     "aliases": [
       "delete"
     ],
+    "category": "operation",
+    "folder": "outline/trash",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/trash/16",
+        "path": "outline/trash/16.svg"
+      },
+      {
+        "name": "outline/trash/20",
+        "path": "outline/trash/20.svg"
+      },
+      {
+        "name": "outline/trash/24",
+        "path": "outline/trash/24.svg"
+      },
+      {
+        "name": "outline/trash/32",
+        "path": "outline/trash/32.svg"
+      }
     ]
   },
   {
     "name": "tag",
-    "category": "operation",
     "aliases": [
       "label"
     ],
+    "category": "operation",
+    "folder": "outline/tag",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/tag/16",
+        "path": "outline/tag/16.svg"
+      },
+      {
+        "name": "outline/tag/20",
+        "path": "outline/tag/20.svg"
+      },
+      {
+        "name": "outline/tag/24",
+        "path": "outline/tag/24.svg"
+      },
+      {
+        "name": "outline/tag/32",
+        "path": "outline/tag/32.svg"
+      }
     ]
   },
   {
     "name": "tag-all",
-    "category": "operation",
     "aliases": [
       "label-all"
     ],
+    "category": "operation",
+    "folder": "outline/tag-all",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/tag-all/16",
+        "path": "outline/tag-all/16.svg"
+      },
+      {
+        "name": "outline/tag-all/20",
+        "path": "outline/tag-all/20.svg"
+      },
+      {
+        "name": "outline/tag-all/24",
+        "path": "outline/tag-all/24.svg"
+      },
+      {
+        "name": "outline/tag-all/32",
+        "path": "outline/tag-all/32.svg"
+      }
     ]
   },
   {
     "name": "sign-out",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/sign-out",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/sign-out/16",
+        "path": "outline/sign-out/16.svg"
+      },
+      {
+        "name": "outline/sign-out/20",
+        "path": "outline/sign-out/20.svg"
+      },
+      {
+        "name": "outline/sign-out/24",
+        "path": "outline/sign-out/24.svg"
+      },
+      {
+        "name": "outline/sign-out/32",
+        "path": "outline/sign-out/32.svg"
+      }
     ]
   },
   {
     "name": "sign-in",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/sign-in",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/sign-in/16",
+        "path": "outline/sign-in/16.svg"
+      },
+      {
+        "name": "outline/sign-in/20",
+        "path": "outline/sign-in/20.svg"
+      },
+      {
+        "name": "outline/sign-in/24",
+        "path": "outline/sign-in/24.svg"
+      },
+      {
+        "name": "outline/sign-in/32",
+        "path": "outline/sign-in/32.svg"
+      }
     ]
   },
   {
     "name": "settings",
-    "category": "operation",
     "aliases": [
       "cog"
     ],
+    "category": "operation",
+    "folder": "outline/settings",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/settings/16",
+        "path": "outline/settings/16.svg"
+      },
+      {
+        "name": "outline/settings/20",
+        "path": "outline/settings/20.svg"
+      },
+      {
+        "name": "outline/settings/24",
+        "path": "outline/settings/24.svg"
+      },
+      {
+        "name": "outline/settings/32",
+        "path": "outline/settings/32.svg"
+      }
     ]
   },
   {
     "name": "send",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/send",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/send/16",
+        "path": "outline/send/16.svg"
+      },
+      {
+        "name": "outline/send/20",
+        "path": "outline/send/20.svg"
+      },
+      {
+        "name": "outline/send/24",
+        "path": "outline/send/24.svg"
+      },
+      {
+        "name": "outline/send/32",
+        "path": "outline/send/32.svg"
+      }
     ]
   },
   {
     "name": "search",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/search",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/search/16",
+        "path": "outline/search/16.svg"
+      },
+      {
+        "name": "outline/search/20",
+        "path": "outline/search/20.svg"
+      },
+      {
+        "name": "outline/search/24",
+        "path": "outline/search/24.svg"
+      },
+      {
+        "name": "outline/search/32",
+        "path": "outline/search/32.svg"
+      }
     ]
   },
   {
     "name": "restart",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/restart",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/restart/16",
+        "path": "outline/restart/16.svg"
+      },
+      {
+        "name": "outline/restart/20",
+        "path": "outline/restart/20.svg"
+      },
+      {
+        "name": "outline/restart/24",
+        "path": "outline/restart/24.svg"
+      },
+      {
+        "name": "outline/restart/32",
+        "path": "outline/restart/32.svg"
+      }
     ]
   },
   {
     "name": "reset",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/reset",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/reset/16",
+        "path": "outline/reset/16.svg"
+      },
+      {
+        "name": "outline/reset/20",
+        "path": "outline/reset/20.svg"
+      },
+      {
+        "name": "outline/reset/24",
+        "path": "outline/reset/24.svg"
+      },
+      {
+        "name": "outline/reset/32",
+        "path": "outline/reset/32.svg"
+      }
     ]
   },
   {
     "name": "reply",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/reply",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/reply/16",
+        "path": "outline/reply/16.svg"
+      },
+      {
+        "name": "outline/reply/20",
+        "path": "outline/reply/20.svg"
+      },
+      {
+        "name": "outline/reply/24",
+        "path": "outline/reply/24.svg"
+      },
+      {
+        "name": "outline/reply/32",
+        "path": "outline/reply/32.svg"
+      }
     ]
   },
   {
     "name": "refresh",
-    "category": "operation",
     "aliases": [
       "reload"
     ],
+    "category": "operation",
+    "folder": "outline/refresh",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/refresh/16",
+        "path": "outline/refresh/16.svg"
+      },
+      {
+        "name": "outline/refresh/20",
+        "path": "outline/refresh/20.svg"
+      },
+      {
+        "name": "outline/refresh/24",
+        "path": "outline/refresh/24.svg"
+      },
+      {
+        "name": "outline/refresh/32",
+        "path": "outline/refresh/32.svg"
+      }
     ]
   },
   {
     "name": "privy-balance",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/privy-balance",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/privy-balance/16",
+        "path": "outline/privy-balance/16.svg"
+      },
+      {
+        "name": "outline/privy-balance/20",
+        "path": "outline/privy-balance/20.svg"
+      },
+      {
+        "name": "outline/privy-balance/24",
+        "path": "outline/privy-balance/24.svg"
+      },
+      {
+        "name": "outline/privy-balance/32",
+        "path": "outline/privy-balance/32.svg"
+      }
     ]
   },
   {
     "name": "minimize",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/minimize",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/minimize/16",
+        "path": "outline/minimize/16.svg"
+      },
+      {
+        "name": "outline/minimize/20",
+        "path": "outline/minimize/20.svg"
+      },
+      {
+        "name": "outline/minimize/24",
+        "path": "outline/minimize/24.svg"
+      },
+      {
+        "name": "outline/minimize/32",
+        "path": "outline/minimize/32.svg"
+      }
     ]
   },
   {
     "name": "maximize",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/maximize",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/maximize/16",
+        "path": "outline/maximize/16.svg"
+      },
+      {
+        "name": "outline/maximize/20",
+        "path": "outline/maximize/20.svg"
+      },
+      {
+        "name": "outline/maximize/24",
+        "path": "outline/maximize/24.svg"
+      },
+      {
+        "name": "outline/maximize/32",
+        "path": "outline/maximize/32.svg"
+      }
     ]
   },
   {
     "name": "inbox",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/inbox",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/inbox/16",
+        "path": "outline/inbox/16.svg"
+      },
+      {
+        "name": "outline/inbox/20",
+        "path": "outline/inbox/20.svg"
+      },
+      {
+        "name": "outline/inbox/24",
+        "path": "outline/inbox/24.svg"
+      },
+      {
+        "name": "outline/inbox/32",
+        "path": "outline/inbox/32.svg"
+      }
     ]
   },
   {
     "name": "home",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/home",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/home/16",
+        "path": "outline/home/16.svg"
+      },
+      {
+        "name": "outline/home/20",
+        "path": "outline/home/20.svg"
+      },
+      {
+        "name": "outline/home/24",
+        "path": "outline/home/24.svg"
+      },
+      {
+        "name": "outline/home/32",
+        "path": "outline/home/32.svg"
+      }
     ]
   },
   {
     "name": "history",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/history",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/history/16",
+        "path": "outline/history/16.svg"
+      },
+      {
+        "name": "outline/history/20",
+        "path": "outline/history/20.svg"
+      },
+      {
+        "name": "outline/history/24",
+        "path": "outline/history/24.svg"
+      },
+      {
+        "name": "outline/history/32",
+        "path": "outline/history/32.svg"
+      }
     ]
   },
   {
     "name": "forwards",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/forwards",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/forwards/16",
+        "path": "outline/forwards/16.svg"
+      },
+      {
+        "name": "outline/forwards/20",
+        "path": "outline/forwards/20.svg"
+      },
+      {
+        "name": "outline/forwards/24",
+        "path": "outline/forwards/24.svg"
+      },
+      {
+        "name": "outline/forwards/32",
+        "path": "outline/forwards/32.svg"
+      }
     ]
   },
   {
     "name": "expand",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/expand",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/expand/16",
+        "path": "outline/expand/16.svg"
+      },
+      {
+        "name": "outline/expand/20",
+        "path": "outline/expand/20.svg"
+      },
+      {
+        "name": "outline/expand/24",
+        "path": "outline/expand/24.svg"
+      },
+      {
+        "name": "outline/expand/32",
+        "path": "outline/expand/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-sort",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/chevron-sort",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-sort/16",
+        "path": "outline/chevron-sort/16.svg"
+      },
+      {
+        "name": "outline/chevron-sort/20",
+        "path": "outline/chevron-sort/20.svg"
+      },
+      {
+        "name": "outline/chevron-sort/24",
+        "path": "outline/chevron-sort/24.svg"
+      },
+      {
+        "name": "outline/chevron-sort/32",
+        "path": "outline/chevron-sort/32.svg"
+      }
     ]
   },
   {
     "name": "caret-sort",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/caret-sort",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/caret-sort/16",
+        "path": "outline/caret-sort/16.svg"
+      },
+      {
+        "name": "outline/caret-sort/20",
+        "path": "outline/caret-sort/20.svg"
+      },
+      {
+        "name": "outline/caret-sort/24",
+        "path": "outline/caret-sort/24.svg"
+      },
+      {
+        "name": "outline/caret-sort/32",
+        "path": "outline/caret-sort/32.svg"
+      }
     ]
   },
   {
     "name": "calendar-history",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/calendar-history",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/calendar-history/16",
+        "path": "outline/calendar-history/16.svg"
+      },
+      {
+        "name": "outline/calendar-history/20",
+        "path": "outline/calendar-history/20.svg"
+      },
+      {
+        "name": "outline/calendar-history/24",
+        "path": "outline/calendar-history/24.svg"
+      },
+      {
+        "name": "outline/calendar-history/32",
+        "path": "outline/calendar-history/32.svg"
+      }
     ]
   },
   {
     "name": "calendar",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/calendar",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/calendar/16",
+        "path": "outline/calendar/16.svg"
+      },
+      {
+        "name": "outline/calendar/20",
+        "path": "outline/calendar/20.svg"
+      },
+      {
+        "name": "outline/calendar/24",
+        "path": "outline/calendar/24.svg"
+      },
+      {
+        "name": "outline/calendar/32",
+        "path": "outline/calendar/32.svg"
+      }
     ]
   },
   {
     "name": "bookmark",
-    "category": "operation",
     "aliases": [],
+    "category": "operation",
+    "folder": "outline/bookmark",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/bookmark/16",
+        "path": "outline/bookmark/16.svg"
+      },
+      {
+        "name": "outline/bookmark/20",
+        "path": "outline/bookmark/20.svg"
+      },
+      {
+        "name": "outline/bookmark/24",
+        "path": "outline/bookmark/24.svg"
+      },
+      {
+        "name": "outline/bookmark/32",
+        "path": "outline/bookmark/32.svg"
+      }
     ]
   },
   {
     "name": "adjust",
-    "category": "operation",
     "aliases": [
       "settings"
     ],
+    "category": "operation",
+    "folder": "outline/adjust",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/adjust/16",
+        "path": "outline/adjust/16.svg"
+      },
+      {
+        "name": "outline/adjust/20",
+        "path": "outline/adjust/20.svg"
+      },
+      {
+        "name": "outline/adjust/24",
+        "path": "outline/adjust/24.svg"
+      },
+      {
+        "name": "outline/adjust/32",
+        "path": "outline/adjust/32.svg"
+      }
     ]
   },
   {
     "name": "zoom-out",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/zoom-out",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/zoom-out/16",
+        "path": "outline/zoom-out/16.svg"
+      },
+      {
+        "name": "outline/zoom-out/20",
+        "path": "outline/zoom-out/20.svg"
+      },
+      {
+        "name": "outline/zoom-out/24",
+        "path": "outline/zoom-out/24.svg"
+      },
+      {
+        "name": "outline/zoom-out/32",
+        "path": "outline/zoom-out/32.svg"
+      }
     ]
   },
   {
     "name": "zoom-in",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/zoom-in",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/zoom-in/16",
+        "path": "outline/zoom-in/16.svg"
+      },
+      {
+        "name": "outline/zoom-in/20",
+        "path": "outline/zoom-in/20.svg"
+      },
+      {
+        "name": "outline/zoom-in/24",
+        "path": "outline/zoom-in/24.svg"
+      },
+      {
+        "name": "outline/zoom-in/32",
+        "path": "outline/zoom-in/32.svg"
+      }
     ]
   },
   {
-    "name": "plus-circle",
+    "name": "remove",
+    "aliases": [
+      "minus"
+    ],
     "category": "navigation",
-    "aliases": [],
+    "folder": "outline/remove",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/remove/16",
+        "path": "outline/remove/16.svg"
+      },
+      {
+        "name": "outline/remove/20",
+        "path": "outline/remove/20.svg"
+      },
+      {
+        "name": "outline/remove/24",
+        "path": "outline/remove/24.svg"
+      },
+      {
+        "name": "outline/remove/32",
+        "path": "outline/remove/32.svg"
+      }
     ]
   },
   {
-    "name": "plus",
+    "name": "remove-circle",
+    "aliases": [
+      "minus-circle"
+    ],
     "category": "navigation",
-    "aliases": [],
+    "folder": "outline/remove-circle",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "minus-circle",
-    "category": "navigation",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
-    ]
-  },
-  {
-    "name": "minus",
-    "category": "navigation",
-    "aliases": [],
-    "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/remove-circle/16",
+        "path": "outline/remove-circle/16.svg"
+      },
+      {
+        "name": "outline/remove-circle/20",
+        "path": "outline/remove-circle/20.svg"
+      },
+      {
+        "name": "outline/remove-circle/24",
+        "path": "outline/remove-circle/24.svg"
+      },
+      {
+        "name": "outline/remove-circle/32",
+        "path": "outline/remove-circle/32.svg"
+      }
     ]
   },
   {
     "name": "menu-vertical",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/menu-vertical",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/menu-vertical/16",
+        "path": "outline/menu-vertical/16.svg"
+      },
+      {
+        "name": "outline/menu-vertical/20",
+        "path": "outline/menu-vertical/20.svg"
+      },
+      {
+        "name": "outline/menu-vertical/24",
+        "path": "outline/menu-vertical/24.svg"
+      },
+      {
+        "name": "outline/menu-vertical/32",
+        "path": "outline/menu-vertical/32.svg"
+      }
     ]
   },
   {
     "name": "menu-horizontal",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/menu-horizontal",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/menu-horizontal/16",
+        "path": "outline/menu-horizontal/16.svg"
+      },
+      {
+        "name": "outline/menu-horizontal/20",
+        "path": "outline/menu-horizontal/20.svg"
+      },
+      {
+        "name": "outline/menu-horizontal/24",
+        "path": "outline/menu-horizontal/24.svg"
+      },
+      {
+        "name": "outline/menu-horizontal/32",
+        "path": "outline/menu-horizontal/32.svg"
+      }
     ]
   },
   {
-    "name": "cross",
-    "category": "navigation",
+    "name": "close",
     "aliases": [
-      "close",
       "dismiss",
-      "clear",
-      "remove"
+      "clear"
     ],
+    "category": "navigation",
+    "folder": "outline/close",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/close/16",
+        "path": "outline/close/16.svg"
+      },
+      {
+        "name": "outline/close/20",
+        "path": "outline/close/20.svg"
+      },
+      {
+        "name": "outline/close/24",
+        "path": "outline/close/24.svg"
+      },
+      {
+        "name": "outline/close/32",
+        "path": "outline/close/32.svg"
+      }
     ]
   },
   {
     "name": "chevrons-up",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevrons-up",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevrons-up/16",
+        "path": "outline/chevrons-up/16.svg"
+      },
+      {
+        "name": "outline/chevrons-up/20",
+        "path": "outline/chevrons-up/20.svg"
+      },
+      {
+        "name": "outline/chevrons-up/24",
+        "path": "outline/chevrons-up/24.svg"
+      },
+      {
+        "name": "outline/chevrons-up/32",
+        "path": "outline/chevrons-up/32.svg"
+      }
     ]
   },
   {
     "name": "chevrons-right",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevrons-right",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevrons-right/16",
+        "path": "outline/chevrons-right/16.svg"
+      },
+      {
+        "name": "outline/chevrons-right/20",
+        "path": "outline/chevrons-right/20.svg"
+      },
+      {
+        "name": "outline/chevrons-right/24",
+        "path": "outline/chevrons-right/24.svg"
+      },
+      {
+        "name": "outline/chevrons-right/32",
+        "path": "outline/chevrons-right/32.svg"
+      }
     ]
   },
   {
     "name": "chevrons-left",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevrons-left",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevrons-left/16",
+        "path": "outline/chevrons-left/16.svg"
+      },
+      {
+        "name": "outline/chevrons-left/20",
+        "path": "outline/chevrons-left/20.svg"
+      },
+      {
+        "name": "outline/chevrons-left/24",
+        "path": "outline/chevrons-left/24.svg"
+      },
+      {
+        "name": "outline/chevrons-left/32",
+        "path": "outline/chevrons-left/32.svg"
+      }
     ]
   },
   {
     "name": "chevrons-down",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevrons-down",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevrons-down/16",
+        "path": "outline/chevrons-down/16.svg"
+      },
+      {
+        "name": "outline/chevrons-down/20",
+        "path": "outline/chevrons-down/20.svg"
+      },
+      {
+        "name": "outline/chevrons-down/24",
+        "path": "outline/chevrons-down/24.svg"
+      },
+      {
+        "name": "outline/chevrons-down/32",
+        "path": "outline/chevrons-down/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-up",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevron-up",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-up/16",
+        "path": "outline/chevron-up/16.svg"
+      },
+      {
+        "name": "outline/chevron-up/20",
+        "path": "outline/chevron-up/20.svg"
+      },
+      {
+        "name": "outline/chevron-up/24",
+        "path": "outline/chevron-up/24.svg"
+      },
+      {
+        "name": "outline/chevron-up/32",
+        "path": "outline/chevron-up/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-right",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevron-right",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-right/16",
+        "path": "outline/chevron-right/16.svg"
+      },
+      {
+        "name": "outline/chevron-right/20",
+        "path": "outline/chevron-right/20.svg"
+      },
+      {
+        "name": "outline/chevron-right/24",
+        "path": "outline/chevron-right/24.svg"
+      },
+      {
+        "name": "outline/chevron-right/32",
+        "path": "outline/chevron-right/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-left",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevron-left",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-left/16",
+        "path": "outline/chevron-left/16.svg"
+      },
+      {
+        "name": "outline/chevron-left/20",
+        "path": "outline/chevron-left/20.svg"
+      },
+      {
+        "name": "outline/chevron-left/24",
+        "path": "outline/chevron-left/24.svg"
+      },
+      {
+        "name": "outline/chevron-left/32",
+        "path": "outline/chevron-left/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-down",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevron-down",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-down/16",
+        "path": "outline/chevron-down/16.svg"
+      },
+      {
+        "name": "outline/chevron-down/20",
+        "path": "outline/chevron-down/20.svg"
+      },
+      {
+        "name": "outline/chevron-down/24",
+        "path": "outline/chevron-down/24.svg"
+      },
+      {
+        "name": "outline/chevron-down/32",
+        "path": "outline/chevron-down/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-circle-up",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevron-circle-up",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-circle-up/16",
+        "path": "outline/chevron-circle-up/16.svg"
+      },
+      {
+        "name": "outline/chevron-circle-up/20",
+        "path": "outline/chevron-circle-up/20.svg"
+      },
+      {
+        "name": "outline/chevron-circle-up/24",
+        "path": "outline/chevron-circle-up/24.svg"
+      },
+      {
+        "name": "outline/chevron-circle-up/32",
+        "path": "outline/chevron-circle-up/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-circle-right",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevron-circle-right",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-circle-right/16",
+        "path": "outline/chevron-circle-right/16.svg"
+      },
+      {
+        "name": "outline/chevron-circle-right/20",
+        "path": "outline/chevron-circle-right/20.svg"
+      },
+      {
+        "name": "outline/chevron-circle-right/24",
+        "path": "outline/chevron-circle-right/24.svg"
+      },
+      {
+        "name": "outline/chevron-circle-right/32",
+        "path": "outline/chevron-circle-right/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-circle-left",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevron-circle-left",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-circle-left/16",
+        "path": "outline/chevron-circle-left/16.svg"
+      },
+      {
+        "name": "outline/chevron-circle-left/20",
+        "path": "outline/chevron-circle-left/20.svg"
+      },
+      {
+        "name": "outline/chevron-circle-left/24",
+        "path": "outline/chevron-circle-left/24.svg"
+      },
+      {
+        "name": "outline/chevron-circle-left/32",
+        "path": "outline/chevron-circle-left/32.svg"
+      }
     ]
   },
   {
     "name": "chevron-circle-down",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/chevron-circle-down",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chevron-circle-down/16",
+        "path": "outline/chevron-circle-down/16.svg"
+      },
+      {
+        "name": "outline/chevron-circle-down/20",
+        "path": "outline/chevron-circle-down/20.svg"
+      },
+      {
+        "name": "outline/chevron-circle-down/24",
+        "path": "outline/chevron-circle-down/24.svg"
+      },
+      {
+        "name": "outline/chevron-circle-down/32",
+        "path": "outline/chevron-circle-down/32.svg"
+      }
     ]
   },
   {
     "name": "caret-up",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/caret-up",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/caret-up/16",
+        "path": "outline/caret-up/16.svg"
+      },
+      {
+        "name": "outline/caret-up/20",
+        "path": "outline/caret-up/20.svg"
+      },
+      {
+        "name": "outline/caret-up/24",
+        "path": "outline/caret-up/24.svg"
+      },
+      {
+        "name": "outline/caret-up/32",
+        "path": "outline/caret-up/32.svg"
+      }
     ]
   },
   {
     "name": "caret-right",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/caret-right",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/caret-right/16",
+        "path": "outline/caret-right/16.svg"
+      },
+      {
+        "name": "outline/caret-right/20",
+        "path": "outline/caret-right/20.svg"
+      },
+      {
+        "name": "outline/caret-right/24",
+        "path": "outline/caret-right/24.svg"
+      },
+      {
+        "name": "outline/caret-right/32",
+        "path": "outline/caret-right/32.svg"
+      }
     ]
   },
   {
     "name": "caret-left",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/caret-left",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/caret-left/16",
+        "path": "outline/caret-left/16.svg"
+      },
+      {
+        "name": "outline/caret-left/20",
+        "path": "outline/caret-left/20.svg"
+      },
+      {
+        "name": "outline/caret-left/24",
+        "path": "outline/caret-left/24.svg"
+      },
+      {
+        "name": "outline/caret-left/32",
+        "path": "outline/caret-left/32.svg"
+      }
     ]
   },
   {
     "name": "caret-down",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/caret-down",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/caret-down/16",
+        "path": "outline/caret-down/16.svg"
+      },
+      {
+        "name": "outline/caret-down/20",
+        "path": "outline/caret-down/20.svg"
+      },
+      {
+        "name": "outline/caret-down/24",
+        "path": "outline/caret-down/24.svg"
+      },
+      {
+        "name": "outline/caret-down/32",
+        "path": "outline/caret-down/32.svg"
+      }
     ]
   },
   {
     "name": "arrow-up",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/arrow-up",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/arrow-up/16",
+        "path": "outline/arrow-up/16.svg"
+      },
+      {
+        "name": "outline/arrow-up/20",
+        "path": "outline/arrow-up/20.svg"
+      },
+      {
+        "name": "outline/arrow-up/24",
+        "path": "outline/arrow-up/24.svg"
+      },
+      {
+        "name": "outline/arrow-up/32",
+        "path": "outline/arrow-up/32.svg"
+      }
     ]
   },
   {
     "name": "arrow-right",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/arrow-right",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/arrow-right/16",
+        "path": "outline/arrow-right/16.svg"
+      },
+      {
+        "name": "outline/arrow-right/20",
+        "path": "outline/arrow-right/20.svg"
+      },
+      {
+        "name": "outline/arrow-right/24",
+        "path": "outline/arrow-right/24.svg"
+      },
+      {
+        "name": "outline/arrow-right/32",
+        "path": "outline/arrow-right/32.svg"
+      }
     ]
   },
   {
     "name": "arrow-left",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/arrow-left",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/arrow-left/16",
+        "path": "outline/arrow-left/16.svg"
+      },
+      {
+        "name": "outline/arrow-left/20",
+        "path": "outline/arrow-left/20.svg"
+      },
+      {
+        "name": "outline/arrow-left/24",
+        "path": "outline/arrow-left/24.svg"
+      },
+      {
+        "name": "outline/arrow-left/32",
+        "path": "outline/arrow-left/32.svg"
+      }
     ]
   },
   {
     "name": "arrow-down",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/arrow-down",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/arrow-down/16",
+        "path": "outline/arrow-down/16.svg"
+      },
+      {
+        "name": "outline/arrow-down/20",
+        "path": "outline/arrow-down/20.svg"
+      },
+      {
+        "name": "outline/arrow-down/24",
+        "path": "outline/arrow-down/24.svg"
+      },
+      {
+        "name": "outline/arrow-down/32",
+        "path": "outline/arrow-down/32.svg"
+      }
     ]
   },
   {
     "name": "arrow-circle-up",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/arrow-circle-up",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/arrow-circle-up/16",
+        "path": "outline/arrow-circle-up/16.svg"
+      },
+      {
+        "name": "outline/arrow-circle-up/20",
+        "path": "outline/arrow-circle-up/20.svg"
+      },
+      {
+        "name": "outline/arrow-circle-up/24",
+        "path": "outline/arrow-circle-up/24.svg"
+      },
+      {
+        "name": "outline/arrow-circle-up/32",
+        "path": "outline/arrow-circle-up/32.svg"
+      }
     ]
   },
   {
     "name": "arrow-circle-right",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/arrow-circle-right",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/arrow-circle-right/16",
+        "path": "outline/arrow-circle-right/16.svg"
+      },
+      {
+        "name": "outline/arrow-circle-right/20",
+        "path": "outline/arrow-circle-right/20.svg"
+      },
+      {
+        "name": "outline/arrow-circle-right/24",
+        "path": "outline/arrow-circle-right/24.svg"
+      },
+      {
+        "name": "outline/arrow-circle-right/32",
+        "path": "outline/arrow-circle-right/32.svg"
+      }
     ]
   },
   {
     "name": "arrow-circle-left",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/arrow-circle-left",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/arrow-circle-left/16",
+        "path": "outline/arrow-circle-left/16.svg"
+      },
+      {
+        "name": "outline/arrow-circle-left/20",
+        "path": "outline/arrow-circle-left/20.svg"
+      },
+      {
+        "name": "outline/arrow-circle-left/24",
+        "path": "outline/arrow-circle-left/24.svg"
+      },
+      {
+        "name": "outline/arrow-circle-left/32",
+        "path": "outline/arrow-circle-left/32.svg"
+      }
     ]
   },
   {
     "name": "arrow-circle-down",
-    "category": "navigation",
     "aliases": [],
+    "category": "navigation",
+    "folder": "outline/arrow-circle-down",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/arrow-circle-down/16",
+        "path": "outline/arrow-circle-down/16.svg"
+      },
+      {
+        "name": "outline/arrow-circle-down/20",
+        "path": "outline/arrow-circle-down/20.svg"
+      },
+      {
+        "name": "outline/arrow-circle-down/24",
+        "path": "outline/arrow-circle-down/24.svg"
+      },
+      {
+        "name": "outline/arrow-circle-down/32",
+        "path": "outline/arrow-circle-down/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "add-plus",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "outline/add-plus",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/add-plus/16",
+        "path": "outline/add-plus/16.svg"
+      },
+      {
+        "name": "outline/add-plus/20",
+        "path": "outline/add-plus/20.svg"
+      },
+      {
+        "name": "outline/add-plus/24",
+        "path": "outline/add-plus/24.svg"
+      },
+      {
+        "name": "outline/add-plus/32",
+        "path": "outline/add-plus/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "add-circle",
+    "aliases": [
+      "plus-circle"
+    ],
+    "category": "navigation",
+    "folder": "outline/add-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "outline/add-circle/16",
+        "path": "outline/add-circle/16.svg"
+      },
+      {
+        "name": "outline/add-circle/20",
+        "path": "outline/add-circle/20.svg"
+      },
+      {
+        "name": "outline/add-circle/24",
+        "path": "outline/add-circle/24.svg"
+      },
+      {
+        "name": "outline/add-circle/32",
+        "path": "outline/add-circle/32.svg"
+      }
     ]
   },
   {
     "name": "wallet",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/wallet",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/wallet/16",
+        "path": "outline/wallet/16.svg"
+      },
+      {
+        "name": "outline/wallet/20",
+        "path": "outline/wallet/20.svg"
+      },
+      {
+        "name": "outline/wallet/24",
+        "path": "outline/wallet/24.svg"
+      },
+      {
+        "name": "outline/wallet/32",
+        "path": "outline/wallet/32.svg"
+      }
     ]
   },
   {
     "name": "ticket",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/ticket",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/ticket/16",
+        "path": "outline/ticket/16.svg"
+      },
+      {
+        "name": "outline/ticket/20",
+        "path": "outline/ticket/20.svg"
+      },
+      {
+        "name": "outline/ticket/24",
+        "path": "outline/ticket/24.svg"
+      },
+      {
+        "name": "outline/ticket/32",
+        "path": "outline/ticket/32.svg"
+      }
     ]
   },
   {
     "name": "spoon-and-fork",
-    "category": "life-style",
     "aliases": [
       "dinner",
       "lunch",
       "breakfast"
     ],
+    "category": "life-style",
+    "folder": "outline/spoon-and-fork",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/spoon-and-fork/16",
+        "path": "outline/spoon-and-fork/16.svg"
+      },
+      {
+        "name": "outline/spoon-and-fork/20",
+        "path": "outline/spoon-and-fork/20.svg"
+      },
+      {
+        "name": "outline/spoon-and-fork/24",
+        "path": "outline/spoon-and-fork/24.svg"
+      },
+      {
+        "name": "outline/spoon-and-fork/32",
+        "path": "outline/spoon-and-fork/32.svg"
+      }
     ]
   },
   {
     "name": "shopping-bag",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/shopping-bag",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/shopping-bag/16",
+        "path": "outline/shopping-bag/16.svg"
+      },
+      {
+        "name": "outline/shopping-bag/20",
+        "path": "outline/shopping-bag/20.svg"
+      },
+      {
+        "name": "outline/shopping-bag/24",
+        "path": "outline/shopping-bag/24.svg"
+      },
+      {
+        "name": "outline/shopping-bag/32",
+        "path": "outline/shopping-bag/32.svg"
+      }
     ]
   },
   {
     "name": "shop",
-    "category": "life-style",
     "aliases": [
       "store",
       "merchant"
     ],
+    "category": "life-style",
+    "folder": "outline/shop",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/shop/16",
+        "path": "outline/shop/16.svg"
+      },
+      {
+        "name": "outline/shop/20",
+        "path": "outline/shop/20.svg"
+      },
+      {
+        "name": "outline/shop/24",
+        "path": "outline/shop/24.svg"
+      },
+      {
+        "name": "outline/shop/32",
+        "path": "outline/shop/32.svg"
+      }
     ]
   },
   {
     "name": "receipt-history",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/receipt-history",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/receipt-history/16",
+        "path": "outline/receipt-history/16.svg"
+      },
+      {
+        "name": "outline/receipt-history/20",
+        "path": "outline/receipt-history/20.svg"
+      },
+      {
+        "name": "outline/receipt-history/24",
+        "path": "outline/receipt-history/24.svg"
+      },
+      {
+        "name": "outline/receipt-history/32",
+        "path": "outline/receipt-history/32.svg"
+      }
     ]
   },
   {
     "name": "receipt",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/receipt",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/receipt/16",
+        "path": "outline/receipt/16.svg"
+      },
+      {
+        "name": "outline/receipt/20",
+        "path": "outline/receipt/20.svg"
+      },
+      {
+        "name": "outline/receipt/24",
+        "path": "outline/receipt/24.svg"
+      },
+      {
+        "name": "outline/receipt/32",
+        "path": "outline/receipt/32.svg"
+      }
     ]
   },
   {
     "name": "gift",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/gift",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/gift/16",
+        "path": "outline/gift/16.svg"
+      },
+      {
+        "name": "outline/gift/20",
+        "path": "outline/gift/20.svg"
+      },
+      {
+        "name": "outline/gift/24",
+        "path": "outline/gift/24.svg"
+      },
+      {
+        "name": "outline/gift/32",
+        "path": "outline/gift/32.svg"
+      }
     ]
   },
   {
     "name": "gala-dinner",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/gala-dinner",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/gala-dinner/16",
+        "path": "outline/gala-dinner/16.svg"
+      },
+      {
+        "name": "outline/gala-dinner/20",
+        "path": "outline/gala-dinner/20.svg"
+      },
+      {
+        "name": "outline/gala-dinner/24",
+        "path": "outline/gala-dinner/24.svg"
+      },
+      {
+        "name": "outline/gala-dinner/32",
+        "path": "outline/gala-dinner/32.svg"
+      }
     ]
   },
   {
     "name": "flight-departure",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/flight-departure",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/flight-departure/16",
+        "path": "outline/flight-departure/16.svg"
+      },
+      {
+        "name": "outline/flight-departure/20",
+        "path": "outline/flight-departure/20.svg"
+      },
+      {
+        "name": "outline/flight-departure/24",
+        "path": "outline/flight-departure/24.svg"
+      },
+      {
+        "name": "outline/flight-departure/32",
+        "path": "outline/flight-departure/32.svg"
+      }
     ]
   },
   {
     "name": "flight-arrival",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/flight-arrival",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/flight-arrival/16",
+        "path": "outline/flight-arrival/16.svg"
+      },
+      {
+        "name": "outline/flight-arrival/20",
+        "path": "outline/flight-arrival/20.svg"
+      },
+      {
+        "name": "outline/flight-arrival/24",
+        "path": "outline/flight-arrival/24.svg"
+      },
+      {
+        "name": "outline/flight-arrival/32",
+        "path": "outline/flight-arrival/32.svg"
+      }
     ]
   },
   {
     "name": "diamond",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/diamond",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/diamond/16",
+        "path": "outline/diamond/16.svg"
+      },
+      {
+        "name": "outline/diamond/20",
+        "path": "outline/diamond/20.svg"
+      },
+      {
+        "name": "outline/diamond/24",
+        "path": "outline/diamond/24.svg"
+      },
+      {
+        "name": "outline/diamond/32",
+        "path": "outline/diamond/32.svg"
+      }
     ]
   },
   {
     "name": "credit-card",
-    "category": "life-style",
     "aliases": [
       "debit-card"
     ],
+    "category": "life-style",
+    "folder": "outline/credit-card",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/credit-card/16",
+        "path": "outline/credit-card/16.svg"
+      },
+      {
+        "name": "outline/credit-card/20",
+        "path": "outline/credit-card/20.svg"
+      },
+      {
+        "name": "outline/credit-card/24",
+        "path": "outline/credit-card/24.svg"
+      },
+      {
+        "name": "outline/credit-card/32",
+        "path": "outline/credit-card/32.svg"
+      }
     ]
   },
   {
     "name": "cart",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/cart",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/cart/16",
+        "path": "outline/cart/16.svg"
+      },
+      {
+        "name": "outline/cart/20",
+        "path": "outline/cart/20.svg"
+      },
+      {
+        "name": "outline/cart/24",
+        "path": "outline/cart/24.svg"
+      },
+      {
+        "name": "outline/cart/32",
+        "path": "outline/cart/32.svg"
+      }
     ]
   },
   {
     "name": "bus",
-    "category": "life-style",
     "aliases": [],
+    "category": "life-style",
+    "folder": "outline/bus",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/bus/16",
+        "path": "outline/bus/16.svg"
+      },
+      {
+        "name": "outline/bus/20",
+        "path": "outline/bus/20.svg"
+      },
+      {
+        "name": "outline/bus/24",
+        "path": "outline/bus/24.svg"
+      },
+      {
+        "name": "outline/bus/32",
+        "path": "outline/bus/32.svg"
+      }
     ]
   },
   {
     "name": "building",
-    "category": "life-style",
     "aliases": [
       "office"
     ],
+    "category": "life-style",
+    "folder": "outline/building",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/building/16",
+        "path": "outline/building/16.svg"
+      },
+      {
+        "name": "outline/building/20",
+        "path": "outline/building/20.svg"
+      },
+      {
+        "name": "outline/building/24",
+        "path": "outline/building/24.svg"
+      },
+      {
+        "name": "outline/building/32",
+        "path": "outline/building/32.svg"
+      }
     ]
   },
   {
     "name": "stetoscop",
-    "category": "health",
     "aliases": [],
+    "category": "health",
+    "folder": "outline/stetoscop",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/stetoscop/16",
+        "path": "outline/stetoscop/16.svg"
+      },
+      {
+        "name": "outline/stetoscop/20",
+        "path": "outline/stetoscop/20.svg"
+      },
+      {
+        "name": "outline/stetoscop/24",
+        "path": "outline/stetoscop/24.svg"
+      },
+      {
+        "name": "outline/stetoscop/32",
+        "path": "outline/stetoscop/32.svg"
+      }
     ]
   },
   {
     "name": "people-insurance",
-    "category": "health",
     "aliases": [],
+    "category": "health",
+    "folder": "outline/people-insurance",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/people-insurance/16",
+        "path": "outline/people-insurance/16.svg"
+      },
+      {
+        "name": "outline/people-insurance/20",
+        "path": "outline/people-insurance/20.svg"
+      },
+      {
+        "name": "outline/people-insurance/24",
+        "path": "outline/people-insurance/24.svg"
+      },
+      {
+        "name": "outline/people-insurance/32",
+        "path": "outline/people-insurance/32.svg"
+      }
     ]
   },
   {
     "name": "medicines",
-    "category": "health",
     "aliases": [],
+    "category": "health",
+    "folder": "outline/medicines",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/medicines/16",
+        "path": "outline/medicines/16.svg"
+      },
+      {
+        "name": "outline/medicines/20",
+        "path": "outline/medicines/20.svg"
+      },
+      {
+        "name": "outline/medicines/24",
+        "path": "outline/medicines/24.svg"
+      },
+      {
+        "name": "outline/medicines/32",
+        "path": "outline/medicines/32.svg"
+      }
     ]
   },
   {
     "name": "hospital",
-    "category": "health",
     "aliases": [],
+    "category": "health",
+    "folder": "outline/hospital",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/hospital/16",
+        "path": "outline/hospital/16.svg"
+      },
+      {
+        "name": "outline/hospital/20",
+        "path": "outline/hospital/20.svg"
+      },
+      {
+        "name": "outline/hospital/24",
+        "path": "outline/hospital/24.svg"
+      },
+      {
+        "name": "outline/hospital/32",
+        "path": "outline/hospital/32.svg"
+      }
     ]
   },
   {
     "name": "health-facility",
-    "category": "health",
     "aliases": [],
+    "category": "health",
+    "folder": "outline/health-facility",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/health-facility/16",
+        "path": "outline/health-facility/16.svg"
+      },
+      {
+        "name": "outline/health-facility/20",
+        "path": "outline/health-facility/20.svg"
+      },
+      {
+        "name": "outline/health-facility/24",
+        "path": "outline/health-facility/24.svg"
+      },
+      {
+        "name": "outline/health-facility/32",
+        "path": "outline/health-facility/32.svg"
+      }
     ]
   },
   {
     "name": "cross",
-    "category": "health",
     "aliases": [],
+    "category": "health",
+    "folder": "outline/cross",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/cross/16",
+        "path": "outline/cross/16.svg"
+      },
+      {
+        "name": "outline/cross/20",
+        "path": "outline/cross/20.svg"
+      },
+      {
+        "name": "outline/cross/24",
+        "path": "outline/cross/24.svg"
+      },
+      {
+        "name": "outline/cross/32",
+        "path": "outline/cross/32.svg"
+      }
     ]
   },
   {
     "name": "blood-drop",
-    "category": "health",
     "aliases": [],
+    "category": "health",
+    "folder": "outline/blood-drop",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/blood-drop/16",
+        "path": "outline/blood-drop/16.svg"
+      },
+      {
+        "name": "outline/blood-drop/20",
+        "path": "outline/blood-drop/20.svg"
+      },
+      {
+        "name": "outline/blood-drop/24",
+        "path": "outline/blood-drop/24.svg"
+      },
+      {
+        "name": "outline/blood-drop/32",
+        "path": "outline/blood-drop/32.svg"
+      }
     ]
   },
   {
     "name": "unlink",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/unlink",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/unlink/16",
+        "path": "outline/unlink/16.svg"
+      },
+      {
+        "name": "outline/unlink/20",
+        "path": "outline/unlink/20.svg"
+      },
+      {
+        "name": "outline/unlink/24",
+        "path": "outline/unlink/24.svg"
+      },
+      {
+        "name": "outline/unlink/32",
+        "path": "outline/unlink/32.svg"
+      }
     ]
   },
   {
     "name": "signature-text",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/signature-text",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/signature-text/16",
+        "path": "outline/signature-text/16.svg"
+      },
+      {
+        "name": "outline/signature-text/20",
+        "path": "outline/signature-text/20.svg"
+      },
+      {
+        "name": "outline/signature-text/24",
+        "path": "outline/signature-text/24.svg"
+      },
+      {
+        "name": "outline/signature-text/32",
+        "path": "outline/signature-text/32.svg"
+      }
     ]
   },
   {
     "name": "signature-manage",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/signature-manage",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/signature-manage/16",
+        "path": "outline/signature-manage/16.svg"
+      },
+      {
+        "name": "outline/signature-manage/20",
+        "path": "outline/signature-manage/20.svg"
+      },
+      {
+        "name": "outline/signature-manage/24",
+        "path": "outline/signature-manage/24.svg"
+      },
+      {
+        "name": "outline/signature-manage/32",
+        "path": "outline/signature-manage/32.svg"
+      }
     ]
   },
   {
     "name": "signature-draw",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/signature-draw",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/signature-draw/16",
+        "path": "outline/signature-draw/16.svg"
+      },
+      {
+        "name": "outline/signature-draw/20",
+        "path": "outline/signature-draw/20.svg"
+      },
+      {
+        "name": "outline/signature-draw/24",
+        "path": "outline/signature-draw/24.svg"
+      },
+      {
+        "name": "outline/signature-draw/32",
+        "path": "outline/signature-draw/32.svg"
+      }
     ]
   },
   {
     "name": "signature",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/signature",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/signature/16",
+        "path": "outline/signature/16.svg"
+      },
+      {
+        "name": "outline/signature/20",
+        "path": "outline/signature/20.svg"
+      },
+      {
+        "name": "outline/signature/24",
+        "path": "outline/signature/24.svg"
+      },
+      {
+        "name": "outline/signature/32",
+        "path": "outline/signature/32.svg"
+      }
     ]
   },
   {
     "name": "rotate-right",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/rotate-right",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/rotate-right/16",
+        "path": "outline/rotate-right/16.svg"
+      },
+      {
+        "name": "outline/rotate-right/20",
+        "path": "outline/rotate-right/20.svg"
+      },
+      {
+        "name": "outline/rotate-right/24",
+        "path": "outline/rotate-right/24.svg"
+      },
+      {
+        "name": "outline/rotate-right/32",
+        "path": "outline/rotate-right/32.svg"
+      }
     ]
   },
   {
     "name": "rotate-left",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/rotate-left",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/rotate-left/16",
+        "path": "outline/rotate-left/16.svg"
+      },
+      {
+        "name": "outline/rotate-left/20",
+        "path": "outline/rotate-left/20.svg"
+      },
+      {
+        "name": "outline/rotate-left/24",
+        "path": "outline/rotate-left/24.svg"
+      },
+      {
+        "name": "outline/rotate-left/32",
+        "path": "outline/rotate-left/32.svg"
+      }
     ]
   },
   {
     "name": "print",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/print",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/print/16",
+        "path": "outline/print/16.svg"
+      },
+      {
+        "name": "outline/print/20",
+        "path": "outline/print/20.svg"
+      },
+      {
+        "name": "outline/print/24",
+        "path": "outline/print/24.svg"
+      },
+      {
+        "name": "outline/print/32",
+        "path": "outline/print/32.svg"
+      }
     ]
   },
   {
     "name": "pallete",
-    "category": "formatting",
     "aliases": [
       "theme",
       "style"
     ],
+    "category": "formatting",
+    "folder": "outline/pallete",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/pallete/16",
+        "path": "outline/pallete/16.svg"
+      },
+      {
+        "name": "outline/pallete/20",
+        "path": "outline/pallete/20.svg"
+      },
+      {
+        "name": "outline/pallete/24",
+        "path": "outline/pallete/24.svg"
+      },
+      {
+        "name": "outline/pallete/32",
+        "path": "outline/pallete/32.svg"
+      }
     ]
   },
   {
     "name": "no-image",
-    "category": "formatting",
     "aliases": [
       "broken-image"
     ],
+    "category": "formatting",
+    "folder": "outline/no-image",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/no-image/16",
+        "path": "outline/no-image/16.svg"
+      },
+      {
+        "name": "outline/no-image/20",
+        "path": "outline/no-image/20.svg"
+      },
+      {
+        "name": "outline/no-image/24",
+        "path": "outline/no-image/24.svg"
+      },
+      {
+        "name": "outline/no-image/32",
+        "path": "outline/no-image/32.svg"
+      }
     ]
   },
   {
     "name": "link",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/link",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/link/16",
+        "path": "outline/link/16.svg"
+      },
+      {
+        "name": "outline/link/20",
+        "path": "outline/link/20.svg"
+      },
+      {
+        "name": "outline/link/24",
+        "path": "outline/link/24.svg"
+      },
+      {
+        "name": "outline/link/32",
+        "path": "outline/link/32.svg"
+      }
     ]
   },
   {
     "name": "image",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/image",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/image/16",
+        "path": "outline/image/16.svg"
+      },
+      {
+        "name": "outline/image/20",
+        "path": "outline/image/20.svg"
+      },
+      {
+        "name": "outline/image/24",
+        "path": "outline/image/24.svg"
+      },
+      {
+        "name": "outline/image/32",
+        "path": "outline/image/32.svg"
+      }
     ]
   },
   {
     "name": "edit-square",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/edit-square",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/edit-square/16",
+        "path": "outline/edit-square/16.svg"
+      },
+      {
+        "name": "outline/edit-square/20",
+        "path": "outline/edit-square/20.svg"
+      },
+      {
+        "name": "outline/edit-square/24",
+        "path": "outline/edit-square/24.svg"
+      },
+      {
+        "name": "outline/edit-square/32",
+        "path": "outline/edit-square/32.svg"
+      }
     ]
   },
   {
     "name": "edit",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/edit",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/edit/16",
+        "path": "outline/edit/16.svg"
+      },
+      {
+        "name": "outline/edit/20",
+        "path": "outline/edit/20.svg"
+      },
+      {
+        "name": "outline/edit/24",
+        "path": "outline/edit/24.svg"
+      },
+      {
+        "name": "outline/edit/32",
+        "path": "outline/edit/32.svg"
+      }
     ]
   },
   {
     "name": "crop",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/crop",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/crop/16",
+        "path": "outline/crop/16.svg"
+      },
+      {
+        "name": "outline/crop/20",
+        "path": "outline/crop/20.svg"
+      },
+      {
+        "name": "outline/crop/24",
+        "path": "outline/crop/24.svg"
+      },
+      {
+        "name": "outline/crop/32",
+        "path": "outline/crop/32.svg"
+      }
     ]
   },
   {
     "name": "clipboard-check",
-    "category": "formatting",
     "aliases": [
       "to-do-list"
     ],
+    "category": "formatting",
+    "folder": "outline/clipboard-check",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/clipboard-check/16",
+        "path": "outline/clipboard-check/16.svg"
+      },
+      {
+        "name": "outline/clipboard-check/20",
+        "path": "outline/clipboard-check/20.svg"
+      },
+      {
+        "name": "outline/clipboard-check/24",
+        "path": "outline/clipboard-check/24.svg"
+      },
+      {
+        "name": "outline/clipboard-check/32",
+        "path": "outline/clipboard-check/32.svg"
+      }
     ]
   },
   {
     "name": "clipboard",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/clipboard",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/clipboard/16",
+        "path": "outline/clipboard/16.svg"
+      },
+      {
+        "name": "outline/clipboard/20",
+        "path": "outline/clipboard/20.svg"
+      },
+      {
+        "name": "outline/clipboard/24",
+        "path": "outline/clipboard/24.svg"
+      },
+      {
+        "name": "outline/clipboard/32",
+        "path": "outline/clipboard/32.svg"
+      }
     ]
   },
   {
     "name": "clip",
-    "category": "formatting",
     "aliases": [
       "attachment"
     ],
+    "category": "formatting",
+    "folder": "outline/clip",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/clip/16",
+        "path": "outline/clip/16.svg"
+      },
+      {
+        "name": "outline/clip/20",
+        "path": "outline/clip/20.svg"
+      },
+      {
+        "name": "outline/clip/24",
+        "path": "outline/clip/24.svg"
+      },
+      {
+        "name": "outline/clip/32",
+        "path": "outline/clip/32.svg"
+      }
     ]
   },
   {
     "name": "brush",
-    "category": "formatting",
     "aliases": [],
+    "category": "formatting",
+    "folder": "outline/brush",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/brush/16",
+        "path": "outline/brush/16.svg"
+      },
+      {
+        "name": "outline/brush/20",
+        "path": "outline/brush/20.svg"
+      },
+      {
+        "name": "outline/brush/24",
+        "path": "outline/brush/24.svg"
+      },
+      {
+        "name": "outline/brush/32",
+        "path": "outline/brush/32.svg"
+      }
     ]
   },
   {
     "name": "note",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/note",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/note/16",
+        "path": "outline/note/16.svg"
+      },
+      {
+        "name": "outline/note/20",
+        "path": "outline/note/20.svg"
+      },
+      {
+        "name": "outline/note/24",
+        "path": "outline/note/24.svg"
+      },
+      {
+        "name": "outline/note/32",
+        "path": "outline/note/32.svg"
+      }
     ]
   },
   {
     "name": "folder",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/folder",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/folder/16",
+        "path": "outline/folder/16.svg"
+      },
+      {
+        "name": "outline/folder/20",
+        "path": "outline/folder/20.svg"
+      },
+      {
+        "name": "outline/folder/24",
+        "path": "outline/folder/24.svg"
+      },
+      {
+        "name": "outline/folder/32",
+        "path": "outline/folder/32.svg"
+      }
     ]
   },
   {
     "name": "document-verified",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-verified",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-verified/16",
+        "path": "outline/document-verified/16.svg"
+      },
+      {
+        "name": "outline/document-verified/20",
+        "path": "outline/document-verified/20.svg"
+      },
+      {
+        "name": "outline/document-verified/24",
+        "path": "outline/document-verified/24.svg"
+      },
+      {
+        "name": "outline/document-verified/32",
+        "path": "outline/document-verified/32.svg"
+      }
     ]
   },
   {
     "name": "document-signed",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-signed",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-signed/16",
+        "path": "outline/document-signed/16.svg"
+      },
+      {
+        "name": "outline/document-signed/20",
+        "path": "outline/document-signed/20.svg"
+      },
+      {
+        "name": "outline/document-signed/24",
+        "path": "outline/document-signed/24.svg"
+      },
+      {
+        "name": "outline/document-signed/32",
+        "path": "outline/document-signed/32.svg"
+      }
     ]
   },
   {
     "name": "document-search",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-search",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-search/16",
+        "path": "outline/document-search/16.svg"
+      },
+      {
+        "name": "outline/document-search/20",
+        "path": "outline/document-search/20.svg"
+      },
+      {
+        "name": "outline/document-search/24",
+        "path": "outline/document-search/24.svg"
+      },
+      {
+        "name": "outline/document-search/32",
+        "path": "outline/document-search/32.svg"
+      }
     ]
   },
   {
     "name": "document-seal",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-seal",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-seal/16",
+        "path": "outline/document-seal/16.svg"
+      },
+      {
+        "name": "outline/document-seal/20",
+        "path": "outline/document-seal/20.svg"
+      },
+      {
+        "name": "outline/document-seal/24",
+        "path": "outline/document-seal/24.svg"
+      },
+      {
+        "name": "outline/document-seal/32",
+        "path": "outline/document-seal/32.svg"
+      }
     ]
   },
   {
     "name": "document-review",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-review",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-review/16",
+        "path": "outline/document-review/16.svg"
+      },
+      {
+        "name": "outline/document-review/20",
+        "path": "outline/document-review/20.svg"
+      },
+      {
+        "name": "outline/document-review/24",
+        "path": "outline/document-review/24.svg"
+      },
+      {
+        "name": "outline/document-review/32",
+        "path": "outline/document-review/32.svg"
+      }
     ]
   },
   {
     "name": "document-question",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-question",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-question/16",
+        "path": "outline/document-question/16.svg"
+      },
+      {
+        "name": "outline/document-question/20",
+        "path": "outline/document-question/20.svg"
+      },
+      {
+        "name": "outline/document-question/24",
+        "path": "outline/document-question/24.svg"
+      },
+      {
+        "name": "outline/document-question/32",
+        "path": "outline/document-question/32.svg"
+      }
     ]
   },
   {
     "name": "document-protected",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-protected",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-protected/16",
+        "path": "outline/document-protected/16.svg"
+      },
+      {
+        "name": "outline/document-protected/20",
+        "path": "outline/document-protected/20.svg"
+      },
+      {
+        "name": "outline/document-protected/24",
+        "path": "outline/document-protected/24.svg"
+      },
+      {
+        "name": "outline/document-protected/32",
+        "path": "outline/document-protected/32.svg"
+      }
     ]
   },
   {
     "name": "document-information",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-information",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-information/16",
+        "path": "outline/document-information/16.svg"
+      },
+      {
+        "name": "outline/document-information/20",
+        "path": "outline/document-information/20.svg"
+      },
+      {
+        "name": "outline/document-information/24",
+        "path": "outline/document-information/24.svg"
+      },
+      {
+        "name": "outline/document-information/32",
+        "path": "outline/document-information/32.svg"
+      }
     ]
   },
   {
     "name": "document-import",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-import",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-import/16",
+        "path": "outline/document-import/16.svg"
+      },
+      {
+        "name": "outline/document-import/20",
+        "path": "outline/document-import/20.svg"
+      },
+      {
+        "name": "outline/document-import/24",
+        "path": "outline/document-import/24.svg"
+      },
+      {
+        "name": "outline/document-import/32",
+        "path": "outline/document-import/32.svg"
+      }
     ]
   },
   {
     "name": "document-history",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-history",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-history/16",
+        "path": "outline/document-history/16.svg"
+      },
+      {
+        "name": "outline/document-history/20",
+        "path": "outline/document-history/20.svg"
+      },
+      {
+        "name": "outline/document-history/24",
+        "path": "outline/document-history/24.svg"
+      },
+      {
+        "name": "outline/document-history/32",
+        "path": "outline/document-history/32.svg"
+      }
     ]
   },
   {
     "name": "document-filled",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-filled",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-filled/16",
+        "path": "outline/document-filled/16.svg"
+      },
+      {
+        "name": "outline/document-filled/20",
+        "path": "outline/document-filled/20.svg"
+      },
+      {
+        "name": "outline/document-filled/24",
+        "path": "outline/document-filled/24.svg"
+      },
+      {
+        "name": "outline/document-filled/32",
+        "path": "outline/document-filled/32.svg"
+      }
     ]
   },
   {
     "name": "document-export",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-export",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-export/16",
+        "path": "outline/document-export/16.svg"
+      },
+      {
+        "name": "outline/document-export/20",
+        "path": "outline/document-export/20.svg"
+      },
+      {
+        "name": "outline/document-export/24",
+        "path": "outline/document-export/24.svg"
+      },
+      {
+        "name": "outline/document-export/32",
+        "path": "outline/document-export/32.svg"
+      }
     ]
   },
   {
     "name": "document-exclamation",
-    "category": "files",
     "aliases": [
       "document-warning"
     ],
+    "category": "files",
+    "folder": "outline/document-exclamation",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-exclamation/16",
+        "path": "outline/document-exclamation/16.svg"
+      },
+      {
+        "name": "outline/document-exclamation/20",
+        "path": "outline/document-exclamation/20.svg"
+      },
+      {
+        "name": "outline/document-exclamation/24",
+        "path": "outline/document-exclamation/24.svg"
+      },
+      {
+        "name": "outline/document-exclamation/32",
+        "path": "outline/document-exclamation/32.svg"
+      }
     ]
   },
   {
     "name": "document-empty",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-empty",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-empty/16",
+        "path": "outline/document-empty/16.svg"
+      },
+      {
+        "name": "outline/document-empty/20",
+        "path": "outline/document-empty/20.svg"
+      },
+      {
+        "name": "outline/document-empty/24",
+        "path": "outline/document-empty/24.svg"
+      },
+      {
+        "name": "outline/document-empty/32",
+        "path": "outline/document-empty/32.svg"
+      }
     ]
   },
   {
     "name": "document-draft",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-draft",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-draft/16",
+        "path": "outline/document-draft/16.svg"
+      },
+      {
+        "name": "outline/document-draft/20",
+        "path": "outline/document-draft/20.svg"
+      },
+      {
+        "name": "outline/document-draft/24",
+        "path": "outline/document-draft/24.svg"
+      },
+      {
+        "name": "outline/document-draft/32",
+        "path": "outline/document-draft/32.svg"
+      }
     ]
   },
   {
     "name": "document-copy",
-    "category": "files",
     "aliases": [
       "duplicate"
     ],
+    "category": "files",
+    "folder": "outline/document-copy",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-copy/16",
+        "path": "outline/document-copy/16.svg"
+      },
+      {
+        "name": "outline/document-copy/20",
+        "path": "outline/document-copy/20.svg"
+      },
+      {
+        "name": "outline/document-copy/24",
+        "path": "outline/document-copy/24.svg"
+      },
+      {
+        "name": "outline/document-copy/32",
+        "path": "outline/document-copy/32.svg"
+      }
     ]
   },
   {
     "name": "document-check",
-    "category": "files",
     "aliases": [],
+    "category": "files",
+    "folder": "outline/document-check",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/document-check/16",
+        "path": "outline/document-check/16.svg"
+      },
+      {
+        "name": "outline/document-check/20",
+        "path": "outline/document-check/20.svg"
+      },
+      {
+        "name": "outline/document-check/24",
+        "path": "outline/document-check/24.svg"
+      },
+      {
+        "name": "outline/document-check/32",
+        "path": "outline/document-check/32.svg"
+      }
     ]
   },
   {
     "name": "report-statistics",
-    "category": "data",
     "aliases": [],
+    "category": "data",
+    "folder": "outline/report-statistics",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/report-statistics/16",
+        "path": "outline/report-statistics/16.svg"
+      },
+      {
+        "name": "outline/report-statistics/20",
+        "path": "outline/report-statistics/20.svg"
+      },
+      {
+        "name": "outline/report-statistics/24",
+        "path": "outline/report-statistics/24.svg"
+      },
+      {
+        "name": "outline/report-statistics/32",
+        "path": "outline/report-statistics/32.svg"
+      }
     ]
   },
   {
     "name": "pie-graph",
-    "category": "data",
     "aliases": [],
+    "category": "data",
+    "folder": "outline/pie-graph",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/pie-graph/16",
+        "path": "outline/pie-graph/16.svg"
+      },
+      {
+        "name": "outline/pie-graph/20",
+        "path": "outline/pie-graph/20.svg"
+      },
+      {
+        "name": "outline/pie-graph/24",
+        "path": "outline/pie-graph/24.svg"
+      },
+      {
+        "name": "outline/pie-graph/32",
+        "path": "outline/pie-graph/32.svg"
+      }
     ]
   },
   {
     "name": "line-graph",
-    "category": "data",
     "aliases": [],
+    "category": "data",
+    "folder": "outline/line-graph",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/line-graph/16",
+        "path": "outline/line-graph/16.svg"
+      },
+      {
+        "name": "outline/line-graph/20",
+        "path": "outline/line-graph/20.svg"
+      },
+      {
+        "name": "outline/line-graph/24",
+        "path": "outline/line-graph/24.svg"
+      },
+      {
+        "name": "outline/line-graph/32",
+        "path": "outline/line-graph/32.svg"
+      }
     ]
   },
   {
     "name": "database",
-    "category": "data",
     "aliases": [],
+    "category": "data",
+    "folder": "outline/database",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/database/16",
+        "path": "outline/database/16.svg"
+      },
+      {
+        "name": "outline/database/20",
+        "path": "outline/database/20.svg"
+      },
+      {
+        "name": "outline/database/24",
+        "path": "outline/database/24.svg"
+      },
+      {
+        "name": "outline/database/32",
+        "path": "outline/database/32.svg"
+      }
     ]
   },
   {
     "name": "data-structure",
-    "category": "data",
     "aliases": [],
+    "category": "data",
+    "folder": "outline/data-structure",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/data-structure/16",
+        "path": "outline/data-structure/16.svg"
+      },
+      {
+        "name": "outline/data-structure/20",
+        "path": "outline/data-structure/20.svg"
+      },
+      {
+        "name": "outline/data-structure/24",
+        "path": "outline/data-structure/24.svg"
+      },
+      {
+        "name": "outline/data-structure/32",
+        "path": "outline/data-structure/32.svg"
+      }
     ]
   },
   {
     "name": "data-branch",
-    "category": "data",
     "aliases": [],
+    "category": "data",
+    "folder": "outline/data-branch",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/data-branch/16",
+        "path": "outline/data-branch/16.svg"
+      },
+      {
+        "name": "outline/data-branch/20",
+        "path": "outline/data-branch/20.svg"
+      },
+      {
+        "name": "outline/data-branch/24",
+        "path": "outline/data-branch/24.svg"
+      },
+      {
+        "name": "outline/data-branch/32",
+        "path": "outline/data-branch/32.svg"
+      }
     ]
   },
   {
     "name": "bar-graph",
-    "category": "data",
     "aliases": [],
+    "category": "data",
+    "folder": "outline/bar-graph",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/bar-graph/16",
+        "path": "outline/bar-graph/16.svg"
+      },
+      {
+        "name": "outline/bar-graph/20",
+        "path": "outline/bar-graph/20.svg"
+      },
+      {
+        "name": "outline/bar-graph/24",
+        "path": "outline/bar-graph/24.svg"
+      },
+      {
+        "name": "outline/bar-graph/32",
+        "path": "outline/bar-graph/32.svg"
+      }
     ]
   },
   {
     "name": "activity",
-    "category": "data",
     "aliases": [],
+    "category": "data",
+    "folder": "outline/activity",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/activity/16",
+        "path": "outline/activity/16.svg"
+      },
+      {
+        "name": "outline/activity/20",
+        "path": "outline/activity/20.svg"
+      },
+      {
+        "name": "outline/activity/24",
+        "path": "outline/activity/24.svg"
+      },
+      {
+        "name": "outline/activity/32",
+        "path": "outline/activity/32.svg"
+      }
     ]
   },
   {
     "name": "message",
-    "category": "communication",
     "aliases": [],
+    "category": "communication",
+    "folder": "outline/message",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/message/16",
+        "path": "outline/message/16.svg"
+      },
+      {
+        "name": "outline/message/20",
+        "path": "outline/message/20.svg"
+      },
+      {
+        "name": "outline/message/24",
+        "path": "outline/message/24.svg"
+      },
+      {
+        "name": "outline/message/32",
+        "path": "outline/message/32.svg"
+      }
     ]
   },
   {
     "name": "email-user",
-    "category": "communication",
     "aliases": [
       "request-only"
     ],
+    "category": "communication",
+    "folder": "outline/email-user",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/email-user/16",
+        "path": "outline/email-user/16.svg"
+      },
+      {
+        "name": "outline/email-user/20",
+        "path": "outline/email-user/20.svg"
+      },
+      {
+        "name": "outline/email-user/24",
+        "path": "outline/email-user/24.svg"
+      },
+      {
+        "name": "outline/email-user/32",
+        "path": "outline/email-user/32.svg"
+      }
     ]
   },
   {
     "name": "email-upload",
-    "category": "communication",
     "aliases": [],
+    "category": "communication",
+    "folder": "outline/email-upload",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/email-upload/16",
+        "path": "outline/email-upload/16.svg"
+      },
+      {
+        "name": "outline/email-upload/20",
+        "path": "outline/email-upload/20.svg"
+      },
+      {
+        "name": "outline/email-upload/24",
+        "path": "outline/email-upload/24.svg"
+      },
+      {
+        "name": "outline/email-upload/32",
+        "path": "outline/email-upload/32.svg"
+      }
     ]
   },
   {
     "name": "email-signature",
-    "category": "communication",
     "aliases": [
       "sign-and-request"
     ],
+    "category": "communication",
+    "folder": "outline/email-signature",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/email-signature/16",
+        "path": "outline/email-signature/16.svg"
+      },
+      {
+        "name": "outline/email-signature/20",
+        "path": "outline/email-signature/20.svg"
+      },
+      {
+        "name": "outline/email-signature/24",
+        "path": "outline/email-signature/24.svg"
+      },
+      {
+        "name": "outline/email-signature/32",
+        "path": "outline/email-signature/32.svg"
+      }
     ]
   },
   {
     "name": "email-invitation",
-    "category": "communication",
     "aliases": [],
+    "category": "communication",
+    "folder": "outline/email-invitation",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/email-invitation/16",
+        "path": "outline/email-invitation/16.svg"
+      },
+      {
+        "name": "outline/email-invitation/20",
+        "path": "outline/email-invitation/20.svg"
+      },
+      {
+        "name": "outline/email-invitation/24",
+        "path": "outline/email-invitation/24.svg"
+      },
+      {
+        "name": "outline/email-invitation/32",
+        "path": "outline/email-invitation/32.svg"
+      }
     ]
   },
   {
     "name": "email-download",
-    "category": "communication",
     "aliases": [],
+    "category": "communication",
+    "folder": "outline/email-download",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/email-download/16",
+        "path": "outline/email-download/16.svg"
+      },
+      {
+        "name": "outline/email-download/20",
+        "path": "outline/email-download/20.svg"
+      },
+      {
+        "name": "outline/email-download/24",
+        "path": "outline/email-download/24.svg"
+      },
+      {
+        "name": "outline/email-download/32",
+        "path": "outline/email-download/32.svg"
+      }
     ]
   },
   {
     "name": "email",
-    "category": "communication",
     "aliases": [],
+    "category": "communication",
+    "folder": "outline/email",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/email/16",
+        "path": "outline/email/16.svg"
+      },
+      {
+        "name": "outline/email/20",
+        "path": "outline/email/20.svg"
+      },
+      {
+        "name": "outline/email/24",
+        "path": "outline/email/24.svg"
+      },
+      {
+        "name": "outline/email/32",
+        "path": "outline/email/32.svg"
+      }
     ]
   },
   {
     "name": "customer-service",
-    "category": "communication",
     "aliases": [],
+    "category": "communication",
+    "folder": "outline/customer-service",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/customer-service/16",
+        "path": "outline/customer-service/16.svg"
+      },
+      {
+        "name": "outline/customer-service/20",
+        "path": "outline/customer-service/20.svg"
+      },
+      {
+        "name": "outline/customer-service/24",
+        "path": "outline/customer-service/24.svg"
+      },
+      {
+        "name": "outline/customer-service/32",
+        "path": "outline/customer-service/32.svg"
+      }
     ]
   },
   {
     "name": "chat",
-    "category": "communication",
     "aliases": [
       "discussions"
     ],
+    "category": "communication",
+    "folder": "outline/chat",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/chat/16",
+        "path": "outline/chat/16.svg"
+      },
+      {
+        "name": "outline/chat/20",
+        "path": "outline/chat/20.svg"
+      },
+      {
+        "name": "outline/chat/24",
+        "path": "outline/chat/24.svg"
+      },
+      {
+        "name": "outline/chat/32",
+        "path": "outline/chat/32.svg"
+      }
     ]
   },
   {
     "name": "upload",
-    "category": "actions",
     "aliases": [],
+    "category": "actions",
+    "folder": "outline/upload",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/upload/16",
+        "path": "outline/upload/16.svg"
+      },
+      {
+        "name": "outline/upload/20",
+        "path": "outline/upload/20.svg"
+      },
+      {
+        "name": "outline/upload/24",
+        "path": "outline/upload/24.svg"
+      },
+      {
+        "name": "outline/upload/32",
+        "path": "outline/upload/32.svg"
+      }
     ]
   },
   {
     "name": "share",
-    "category": "actions",
     "aliases": [],
+    "category": "actions",
+    "folder": "outline/share",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/share/16",
+        "path": "outline/share/16.svg"
+      },
+      {
+        "name": "outline/share/20",
+        "path": "outline/share/20.svg"
+      },
+      {
+        "name": "outline/share/24",
+        "path": "outline/share/24.svg"
+      },
+      {
+        "name": "outline/share/32",
+        "path": "outline/share/32.svg"
+      }
     ]
   },
   {
     "name": "download",
-    "category": "actions",
     "aliases": [],
+    "category": "actions",
+    "folder": "outline/download",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/download/16",
+        "path": "outline/download/16.svg"
+      },
+      {
+        "name": "outline/download/20",
+        "path": "outline/download/20.svg"
+      },
+      {
+        "name": "outline/download/24",
+        "path": "outline/download/24.svg"
+      },
+      {
+        "name": "outline/download/32",
+        "path": "outline/download/32.svg"
+      }
     ]
   },
   {
     "name": "cloud-upload",
-    "category": "actions",
     "aliases": [],
+    "category": "actions",
+    "folder": "outline/cloud-upload",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/cloud-upload/16",
+        "path": "outline/cloud-upload/16.svg"
+      },
+      {
+        "name": "outline/cloud-upload/20",
+        "path": "outline/cloud-upload/20.svg"
+      },
+      {
+        "name": "outline/cloud-upload/24",
+        "path": "outline/cloud-upload/24.svg"
+      },
+      {
+        "name": "outline/cloud-upload/32",
+        "path": "outline/cloud-upload/32.svg"
+      }
     ]
   },
   {
     "name": "cloud-download",
-    "category": "actions",
     "aliases": [],
+    "category": "actions",
+    "folder": "outline/cloud-download",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/cloud-download/16",
+        "path": "outline/cloud-download/16.svg"
+      },
+      {
+        "name": "outline/cloud-download/20",
+        "path": "outline/cloud-download/20.svg"
+      },
+      {
+        "name": "outline/cloud-download/24",
+        "path": "outline/cloud-download/24.svg"
+      },
+      {
+        "name": "outline/cloud-download/32",
+        "path": "outline/cloud-download/32.svg"
+      }
     ]
   },
   {
     "name": "broom",
-    "category": "actions",
     "aliases": [
       "clean"
     ],
+    "category": "actions",
+    "folder": "outline/broom",
+    "variant": "outline",
     "files": [
-      "16",
-      "20",
-      "24",
-      "32"
+      {
+        "name": "outline/broom/16",
+        "path": "outline/broom/16.svg"
+      },
+      {
+        "name": "outline/broom/20",
+        "path": "outline/broom/20.svg"
+      },
+      {
+        "name": "outline/broom/24",
+        "path": "outline/broom/24.svg"
+      },
+      {
+        "name": "outline/broom/32",
+        "path": "outline/broom/32.svg"
+      }
     ]
   }
 ]
