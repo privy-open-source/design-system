@@ -135,15 +135,11 @@
   }
 
   a {
-    @apply text-link dark:text-dark-link;
-
-    &:is(.freetext, .nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
-      @apply text-inherit;
-    }
+    @apply text-link dark:text-dark-link hover:no-underline;
 
     &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
       @apply underline decoration-solid hover:no-underline;
-    }
+    } 
 
     &:not(.freetext--medium) {
       @apply font-inherit;

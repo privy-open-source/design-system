@@ -180,6 +180,8 @@ Text have 7 style variant, there are `heading`, `subheading`, `body`, `button`, 
 |---------------------|:---------:|:-----------:|------------------------------------------------------------------------|
 | `variant`           | `String`  | `body`      | Text variant, valid value is `heading`, `subheading`, `body`, `button`, `caption`, `formlabel` and `overline`    |
 | `href`              | `String`  | `-`         | Provide hyperlink in the text                                          |
+| `weight`              | `String`  | `normal`         | Provide font-weight of text, valid value is `normal`, `medium` and `bold`                                          |
+| `transform`              | `String`  | `normalcase`         | Provide font-weight of text, valid value is `normalcase`, `lowercase`, `capitalize` and `uppercase`                                          |
 
 ### Slots
 
