@@ -13,7 +13,7 @@ description: Collections of colors library
 </script>
 
 # Colors
-Persona uses design tokens to collaborate between UI/UX designers and engineers. Design token is a way to manage user interface data such as color, spacing, shadow, etc. by storing it in a variable. The goal is to build a cross platform user interface.
+Persona use design tokens to collaborate between UI/UX designers and engineers. Design token is a way to manage user interface data such as color, spacing, shadow, etc. by storing it in a variable. The goal is to build a cross platform user interface.
 
 ## Colors Tokens
 
@@ -33,6 +33,7 @@ Persona uses design tokens to collaborate between UI/UX designers and engineers.
 </div>
 
 ## Colors Semantics
+In the development process, to maintain consistency, everything related to color must use color semantics. Because semantic colors are very easy to maintain. If at any time the parent-color-token of the semantic color changes, there is no need to change the code that has been written.
 
 <div class="pb-8 pt-20 space-y-1">
   <p-heading element="h5" class="mb-0">Semantics</p-heading>
@@ -67,7 +68,9 @@ Mostly used on logo and button cta
 </div>
 
 ### Foregrounds
-Mostly used on text and icons
+Mostly used on text and icons. 
+
+This semantic can be written to the tailwind class with the format: `text-{semantic-foreground-name}`. Example: `text-default`. And for the dark-mode version can be written as: `text-dark-{semantic-foreground-name}`. Example `text-dark-default`.
 
 <p-text variant="subheading" class="block ml-24 pt-8">
   Light
@@ -92,7 +95,9 @@ Mostly used on text and icons
 </div>
 
 ### Backgrounds
-Mostly used on cards or overlay
+Mostly used on cards or overlay.
+
+Semantic background can be written to the tailwind class with the format: `bg-{semantic-background-name}`. Example: `bg-default`. And for the dark-mode version can be written as: `bg-dark-{semantic-background-name}`. Example `bg-dark-default`.
 
 <p-text variant="subheading" class="block ml-24 pt-8">
   Light
@@ -117,7 +122,9 @@ Mostly used on cards or overlay
 </div>
 
 ### Borders
-Mostly used on cards and form OR as divider beetween section such as data table
+Mostly used on cards and form OR as divider beetween section such as data table.
+
+This semantic can be written to the tailwind class with the format: `border-{semantic-border-name}`. Example: `border-default`. And for the dark-mode version can be written as: `border-dark-{semantic-border-name}`. Example `border-dark-default`.
 
 <p-text variant="subheading" class="block ml-24 pt-8">
   Light
