@@ -128,7 +128,7 @@ export default defineComponent({
   --p-color-danger-focus: darken(theme(backgroundColor.danger.emphasis), 10%);
   --p-color-dark-danger-focus: darken(theme(backgroundColor.dark.danger.emphasis), 10%);
 
-  @apply inline-flex align-middle font-medium disabled:opacity-50 disabled:pointer-events-none transition-all ease-in-out duration-200;
+  @apply inline-flex align-middle justify-center font-medium no-underline hover:no-underline disabled:opacity-50 disabled:pointer-events-none transition-all ease-in-out duration-200;
 
   > svg {
     @apply self-center;
@@ -163,8 +163,8 @@ export default defineComponent({
   * default style variant
   */
   &&--variant-solid {
-    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-state-emphasis;
-    @apply dark:text-dark-state-emphasis;
+    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-state-emphasis hover:text-state-emphasis;
+    @apply dark:text-dark-state-emphasis dark:hover:text-dark-state-emphasis;
 
     &.btn {
       &--default {
