@@ -16,6 +16,7 @@ import {
   computed,
 } from 'vue-demi'
 import { StyleVariant } from '.'
+import { WeightVariant, TransformVariant } from '../heading'
 
 export default defineComponent({
   props: {
@@ -26,6 +27,14 @@ export default defineComponent({
     href: {
       type   : String,
       default: undefined,
+    },
+    weight: {
+      type   : String as PropType<WeightVariant>,
+      default: 'normal',
+    },
+    transform: {
+      type   : String as PropType<TransformVariant>,
+      default: 'normalcase',
     },
   },
 
@@ -41,6 +50,12 @@ export default defineComponent({
 
       if (props.variant)
         result.push(`freetext--${props.variant}`)
+
+      if (props.weight)
+        result.push(`freetext--${props.weight}`)
+
+      if (props.transform)
+        result.push(`freetext--${props.transform}`)
 
       if (props.href)
         result.push('freetext--hyperlink')
@@ -65,8 +80,40 @@ export default defineComponent({
     @apply underline decoration-solid;
   }
 
+  /**
+  * Weight variant
+  * of text
+  */
+  &--normal {
+    @apply font-normal;
+  }
+
   &--medium {
     @apply font-medium;
+  }
+
+  &--bold {
+    @apply font-bold;
+  }
+
+  /**
+  * Text transform
+  * of text
+  */
+  &--normalcase {
+    @apply normal-case;
+  }
+
+  &--lowercase {
+    @apply lowercase;
+  }
+
+  &--capitalize {
+    @apply capitalize;
+  }
+
+  &--uppercase {
+    @apply uppercase;
   }
 
   /**
