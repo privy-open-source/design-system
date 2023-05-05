@@ -16,6 +16,7 @@ import { kebabCase, chunk } from 'lodash-es'
 import { optimize } from 'svgo'
 import download from 'download'
 import ora from 'ora'
+import { ESLint } from 'eslint'
 import { ObjectData, MetaData } from './types'
 
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
@@ -27,6 +28,7 @@ const CHUNK_SIZE = 300
 
 const api     = new Api({ personalAccessToken: TOKEN })
 const spinner = ora()
+const eslint  = new ESLint({ fix: true })
 
 function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData> {
   const result: Map<string, ObjectData> = new Map()
@@ -96,6 +98,12 @@ function toVue (svg: string): string {
   return `<template>${EOL}${svg.replace('<svg', '<svg class="icon"')}${EOL}</template>${EOL}`
 }
 
+async function lintFile (file: string) {
+  const results = await eslint.lintFiles(file)
+
+  await ESLint.outputFixes(results)
+}
+
 async function main () {
   spinner.start('Opening figma files')
 
@@ -151,6 +159,8 @@ async function main () {
       }
     }),
   )
+
+  await lintFile(VUE_DIR)
 
   spinner.start('Create metadata')
 
