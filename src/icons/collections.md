@@ -27,7 +27,7 @@ const icons = computed(() => {
 })
 
 function getURL (icon) {
-  return new URL(`../../packages/persona-icon/src/svg/${icon.folder}/32.svg`, import.meta.url).href
+  return new URL(`../../packages/persona-icon/svg/${icon.folder}/32.svg`, import.meta.url).href
 }
 </script>
 
@@ -40,7 +40,7 @@ function getURL (icon) {
 <template v-if="Object.values(icons).length > 0">
   <template v-for="(items, category) in icons">
     <h3 class="capitalize">{{ category }}</h3>
-    <div class="grid grid-cols-4 gap-4 mt-8">
+    <div class="grid grid-cols-2 gap-4 mt-8 md:grid-cols-4">
       <template v-for="icon in items">
         <div class="flex flex-col items-center justify-center py-5 border rounded">
           <client-only>

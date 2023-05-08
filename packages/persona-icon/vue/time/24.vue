@@ -1,0 +1,16 @@
+<template>
+  <svg
+    class="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"><path
+      fill="#000"
+      fill-rule="evenodd"
+      d="M12 3.538a8.462 8.462 0 1 0 0 16.924 8.462 8.462 0 0 0 0-16.924ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Z"
+      clip-rule="evenodd" /><path
+        fill="#000"
+        fill-rule="evenodd"
+        d="M12 6.103a.77.77 0 0 1 .77.769v4.81l2.85 2.851a.77.77 0 0 1-1.087 1.088l-3.302-3.302V6.872a.77.77 0 0 1 .769-.77Z"
+        clip-rule="evenodd" /></svg>
+</template>

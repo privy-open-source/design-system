@@ -1,0 +1,12 @@
+<template>
+  <svg
+    class="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="none"><path
+      fill="#000"
+      fill-rule="evenodd"
+      d="M8 3a5 5 0 1 0 0 10A5 5 0 0 0 8 3ZM2 8a6 6 0 1 1 12 0A6 6 0 0 1 2 8Zm6.258-2.187a.5.5 0 0 1 .707 0l1.833 1.833a.5.5 0 0 1 0 .708l-1.833 1.833a.5.5 0 0 1-.707-.707l.98-.98H5.555a.5.5 0 1 1 0-1h3.681l-.98-.98a.5.5 0 0 1 0-.707Z"
+      clip-rule="evenodd" /></svg>
+</template>

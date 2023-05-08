@@ -1,6 +1,6 @@
 <script setup>
-import IconURL from '@privyid/persona-icon/svg/broom/32.svg'
-import IconBroom from '@privyid/persona-icon/vue/broom/32.vue'
+import IconURL from '@privyid/persona-icon/svg/persona/32.svg'
+import IconBroom from '@privyid/persona-icon/vue/persona/32.vue'
 </script>
 
 # Icons
@@ -27,7 +27,7 @@ yarn add @privyid/persona-icon
 </template>
 
 <script setup lang="ts">
-import IconURL from '@privyid/persona-icon/svg/broom/32.svg'
+import IconURL from '@privyid/persona-icon/svg/persona/32.svg'
 </script>
 ```
 
@@ -43,7 +43,7 @@ import IconURL from '@privyid/persona-icon/svg/broom/32.svg'
 </template>
 
 <script setup lang="ts">
-import IconBroom from '@privyid/persona-icon/vue/broom/32.vue'
+import IconBroom from '@privyid/persona-icon/vue/persona/32.vue'
 </script>
 ```
 

@@ -1,0 +1,12 @@
+<template>
+  <svg
+    class="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="none"><path
+      fill="#000"
+      fill-rule="evenodd"
+      d="M4.156 4.156a.533.533 0 0 1 .754 0L8 7.246l3.09-3.09a.533.533 0 0 1 .754.754L8.754 8l3.09 3.09a.533.533 0 1 1-.755.754L8 8.754l-3.09 3.09a.533.533 0 1 1-.754-.755L7.246 8l-3.09-3.09a.533.533 0 0 1 0-.754Z"
+      clip-rule="evenodd" /></svg>
+</template>

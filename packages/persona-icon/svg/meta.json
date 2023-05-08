@@ -50,5 +50,6672 @@
         "path": "cloud-download/20.svg"
       }
     ]
+  },
+  {
+    "name": "inbox",
+    "aliases": [],
+    "category": "operation",
+    "folder": "inbox",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "inbox/20",
+        "path": "inbox/20.svg"
+      },
+      {
+        "name": "inbox/16",
+        "path": "inbox/16.svg"
+      },
+      {
+        "name": "inbox/24",
+        "path": "inbox/24.svg"
+      },
+      {
+        "name": "inbox/32",
+        "path": "inbox/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "image",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "image",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "image/32",
+        "path": "image/32.svg"
+      },
+      {
+        "name": "image/20",
+        "path": "image/20.svg"
+      },
+      {
+        "name": "image/24",
+        "path": "image/24.svg"
+      },
+      {
+        "name": "image/16",
+        "path": "image/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "persona-alt",
+    "aliases": [],
+    "category": "brand",
+    "folder": "persona-alt",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "persona-alt/16",
+        "path": "persona-alt/16.svg"
+      },
+      {
+        "name": "persona-alt/24",
+        "path": "persona-alt/24.svg"
+      },
+      {
+        "name": "persona-alt/20",
+        "path": "persona-alt/20.svg"
+      },
+      {
+        "name": "persona-alt/32",
+        "path": "persona-alt/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "persona",
+    "aliases": [],
+    "category": "brand",
+    "folder": "persona",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "persona/24",
+        "path": "persona/24.svg"
+      },
+      {
+        "name": "persona/20",
+        "path": "persona/20.svg"
+      },
+      {
+        "name": "persona/32",
+        "path": "persona/32.svg"
+      },
+      {
+        "name": "persona/16",
+        "path": "persona/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "privy-alt",
+    "aliases": [],
+    "category": "brand",
+    "folder": "privy-alt",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "privy-alt/32",
+        "path": "privy-alt/32.svg"
+      },
+      {
+        "name": "privy-alt/20",
+        "path": "privy-alt/20.svg"
+      },
+      {
+        "name": "privy-alt/16",
+        "path": "privy-alt/16.svg"
+      },
+      {
+        "name": "privy-alt/24",
+        "path": "privy-alt/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "twitter",
+    "aliases": [],
+    "category": "brand",
+    "folder": "twitter",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "twitter/24",
+        "path": "twitter/24.svg"
+      },
+      {
+        "name": "twitter/16",
+        "path": "twitter/16.svg"
+      },
+      {
+        "name": "twitter/20",
+        "path": "twitter/20.svg"
+      },
+      {
+        "name": "twitter/32",
+        "path": "twitter/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "apple",
+    "aliases": [],
+    "category": "brand",
+    "folder": "apple",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "apple/32",
+        "path": "apple/32.svg"
+      },
+      {
+        "name": "apple/24",
+        "path": "apple/24.svg"
+      },
+      {
+        "name": "apple/16",
+        "path": "apple/16.svg"
+      },
+      {
+        "name": "apple/20",
+        "path": "apple/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "linkedin",
+    "aliases": [],
+    "category": "brand",
+    "folder": "linkedin",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "linkedin/32",
+        "path": "linkedin/32.svg"
+      },
+      {
+        "name": "linkedin/20",
+        "path": "linkedin/20.svg"
+      },
+      {
+        "name": "linkedin/16",
+        "path": "linkedin/16.svg"
+      },
+      {
+        "name": "linkedin/24",
+        "path": "linkedin/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "whatsapp",
+    "aliases": [],
+    "category": "brand",
+    "folder": "whatsapp",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "whatsapp/16",
+        "path": "whatsapp/16.svg"
+      },
+      {
+        "name": "whatsapp/20",
+        "path": "whatsapp/20.svg"
+      },
+      {
+        "name": "whatsapp/24",
+        "path": "whatsapp/24.svg"
+      },
+      {
+        "name": "whatsapp/32",
+        "path": "whatsapp/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "google",
+    "aliases": [],
+    "category": "brand",
+    "folder": "google",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "google/32",
+        "path": "google/32.svg"
+      },
+      {
+        "name": "google/20",
+        "path": "google/20.svg"
+      },
+      {
+        "name": "google/24",
+        "path": "google/24.svg"
+      },
+      {
+        "name": "google/16",
+        "path": "google/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "line-graph",
+    "aliases": [],
+    "category": "data",
+    "folder": "line-graph",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "line-graph/32",
+        "path": "line-graph/32.svg"
+      },
+      {
+        "name": "line-graph/20",
+        "path": "line-graph/20.svg"
+      },
+      {
+        "name": "line-graph/24",
+        "path": "line-graph/24.svg"
+      },
+      {
+        "name": "line-graph/16",
+        "path": "line-graph/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "ktp",
+    "aliases": [
+      "id-card"
+    ],
+    "category": "other",
+    "folder": "ktp",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "ktp/24",
+        "path": "ktp/24.svg"
+      },
+      {
+        "name": "ktp/16",
+        "path": "ktp/16.svg"
+      },
+      {
+        "name": "ktp/32",
+        "path": "ktp/32.svg"
+      },
+      {
+        "name": "ktp/20",
+        "path": "ktp/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "blog",
+    "aliases": [],
+    "category": "technology",
+    "folder": "blog",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "blog/20",
+        "path": "blog/20.svg"
+      },
+      {
+        "name": "blog/16",
+        "path": "blog/16.svg"
+      },
+      {
+        "name": "blog/32",
+        "path": "blog/32.svg"
+      },
+      {
+        "name": "blog/24",
+        "path": "blog/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "qr-code",
+    "aliases": [],
+    "category": "technology",
+    "folder": "qr-code",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-code/16",
+        "path": "qr-code/16.svg"
+      },
+      {
+        "name": "qr-code/20",
+        "path": "qr-code/20.svg"
+      },
+      {
+        "name": "qr-code/32",
+        "path": "qr-code/32.svg"
+      },
+      {
+        "name": "qr-code/24",
+        "path": "qr-code/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "sun",
+    "aliases": [
+      "day-mode",
+      "light-mode"
+    ],
+    "category": "toggle",
+    "folder": "sun",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "sun/32",
+        "path": "sun/32.svg"
+      },
+      {
+        "name": "sun/24",
+        "path": "sun/24.svg"
+      },
+      {
+        "name": "sun/20",
+        "path": "sun/20.svg"
+      },
+      {
+        "name": "sun/16",
+        "path": "sun/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-find",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-find",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-find/24",
+        "path": "user-find/24.svg"
+      },
+      {
+        "name": "user-find/20",
+        "path": "user-find/20.svg"
+      },
+      {
+        "name": "user-find/16",
+        "path": "user-find/16.svg"
+      },
+      {
+        "name": "user-find/32",
+        "path": "user-find/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "remove-circle",
+    "aliases": [
+      "minus-circle"
+    ],
+    "category": "navigation",
+    "folder": "remove-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "remove-circle/24",
+        "path": "remove-circle/24.svg"
+      },
+      {
+        "name": "remove-circle/16",
+        "path": "remove-circle/16.svg"
+      },
+      {
+        "name": "remove-circle/20",
+        "path": "remove-circle/20.svg"
+      },
+      {
+        "name": "remove-circle/32",
+        "path": "remove-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "view-off",
+    "aliases": [
+      "eye-off",
+      "hide"
+    ],
+    "category": "toggle",
+    "folder": "view-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "view-off/32",
+        "path": "view-off/32.svg"
+      },
+      {
+        "name": "view-off/20",
+        "path": "view-off/20.svg"
+      },
+      {
+        "name": "view-off/24",
+        "path": "view-off/24.svg"
+      },
+      {
+        "name": "view-off/16",
+        "path": "view-off/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "clipboard",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "clipboard",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "clipboard/24",
+        "path": "clipboard/24.svg"
+      },
+      {
+        "name": "clipboard/32",
+        "path": "clipboard/32.svg"
+      },
+      {
+        "name": "clipboard/16",
+        "path": "clipboard/16.svg"
+      },
+      {
+        "name": "clipboard/20",
+        "path": "clipboard/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "exclamation-triangle",
+    "aliases": [],
+    "category": "status",
+    "folder": "exclamation-triangle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "exclamation-triangle-solid/32",
+        "path": "exclamation-triangle-solid/32.svg"
+      },
+      {
+        "name": "exclamation-triangle-solid/24",
+        "path": "exclamation-triangle-solid/24.svg"
+      },
+      {
+        "name": "exclamation-triangle-solid/20",
+        "path": "exclamation-triangle-solid/20.svg"
+      },
+      {
+        "name": "exclamation-triangle-solid/16",
+        "path": "exclamation-triangle-solid/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "cloud-upload",
+    "aliases": [],
+    "category": "actions",
+    "folder": "cloud-upload",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "cloud-upload/20",
+        "path": "cloud-upload/20.svg"
+      },
+      {
+        "name": "cloud-upload/32",
+        "path": "cloud-upload/32.svg"
+      },
+      {
+        "name": "cloud-upload/24",
+        "path": "cloud-upload/24.svg"
+      },
+      {
+        "name": "cloud-upload/16",
+        "path": "cloud-upload/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "download",
+    "aliases": [],
+    "category": "actions",
+    "folder": "download",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "download/24",
+        "path": "download/24.svg"
+      },
+      {
+        "name": "download/16",
+        "path": "download/16.svg"
+      },
+      {
+        "name": "download/32",
+        "path": "download/32.svg"
+      },
+      {
+        "name": "download/20",
+        "path": "download/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "share",
+    "aliases": [],
+    "category": "actions",
+    "folder": "share",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "share/32",
+        "path": "share/32.svg"
+      },
+      {
+        "name": "share/16",
+        "path": "share/16.svg"
+      },
+      {
+        "name": "share/20",
+        "path": "share/20.svg"
+      },
+      {
+        "name": "share/24",
+        "path": "share/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "upload",
+    "aliases": [],
+    "category": "actions",
+    "folder": "upload",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "upload/24",
+        "path": "upload/24.svg"
+      },
+      {
+        "name": "upload/32",
+        "path": "upload/32.svg"
+      },
+      {
+        "name": "upload/20",
+        "path": "upload/20.svg"
+      },
+      {
+        "name": "upload/16",
+        "path": "upload/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "chat",
+    "aliases": [
+      "discussions"
+    ],
+    "category": "communication",
+    "folder": "chat",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chat/16",
+        "path": "chat/16.svg"
+      },
+      {
+        "name": "chat/24",
+        "path": "chat/24.svg"
+      },
+      {
+        "name": "chat/32",
+        "path": "chat/32.svg"
+      },
+      {
+        "name": "chat/20",
+        "path": "chat/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "email-download",
+    "aliases": [],
+    "category": "communication",
+    "folder": "email-download",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "email-download/24",
+        "path": "email-download/24.svg"
+      },
+      {
+        "name": "email-download/16",
+        "path": "email-download/16.svg"
+      },
+      {
+        "name": "email-download/20",
+        "path": "email-download/20.svg"
+      },
+      {
+        "name": "email-download/32",
+        "path": "email-download/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "email-user",
+    "aliases": [
+      "request-only"
+    ],
+    "category": "communication",
+    "folder": "email-user",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "email-user/32",
+        "path": "email-user/32.svg"
+      },
+      {
+        "name": "email-user/20",
+        "path": "email-user/20.svg"
+      },
+      {
+        "name": "email-user/16",
+        "path": "email-user/16.svg"
+      },
+      {
+        "name": "email-user/24",
+        "path": "email-user/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "activity",
+    "aliases": [],
+    "category": "data",
+    "folder": "activity",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "activity/20",
+        "path": "activity/20.svg"
+      },
+      {
+        "name": "activity/16",
+        "path": "activity/16.svg"
+      },
+      {
+        "name": "activity/24",
+        "path": "activity/24.svg"
+      },
+      {
+        "name": "activity/32",
+        "path": "activity/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "bar-graph",
+    "aliases": [],
+    "category": "data",
+    "folder": "bar-graph",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "bar-graph/32",
+        "path": "bar-graph/32.svg"
+      },
+      {
+        "name": "bar-graph/20",
+        "path": "bar-graph/20.svg"
+      },
+      {
+        "name": "bar-graph/24",
+        "path": "bar-graph/24.svg"
+      },
+      {
+        "name": "bar-graph/16",
+        "path": "bar-graph/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "data-branch",
+    "aliases": [],
+    "category": "data",
+    "folder": "data-branch",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "data-branch/32",
+        "path": "data-branch/32.svg"
+      },
+      {
+        "name": "data-branch/20",
+        "path": "data-branch/20.svg"
+      },
+      {
+        "name": "data-branch/16",
+        "path": "data-branch/16.svg"
+      },
+      {
+        "name": "data-branch/24",
+        "path": "data-branch/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "database",
+    "aliases": [],
+    "category": "data",
+    "folder": "database",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "database/32",
+        "path": "database/32.svg"
+      },
+      {
+        "name": "database/24",
+        "path": "database/24.svg"
+      },
+      {
+        "name": "database/16",
+        "path": "database/16.svg"
+      },
+      {
+        "name": "database/20",
+        "path": "database/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "pie-graph",
+    "aliases": [],
+    "category": "data",
+    "folder": "pie-graph",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "pie-graph/20",
+        "path": "pie-graph/20.svg"
+      },
+      {
+        "name": "pie-graph/16",
+        "path": "pie-graph/16.svg"
+      },
+      {
+        "name": "pie-graph/24",
+        "path": "pie-graph/24.svg"
+      },
+      {
+        "name": "pie-graph/32",
+        "path": "pie-graph/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "report-statistics",
+    "aliases": [],
+    "category": "data",
+    "folder": "report-statistics",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "report-statistics/24",
+        "path": "report-statistics/24.svg"
+      },
+      {
+        "name": "report-statistics/20",
+        "path": "report-statistics/20.svg"
+      },
+      {
+        "name": "report-statistics/32",
+        "path": "report-statistics/32.svg"
+      },
+      {
+        "name": "report-statistics/16",
+        "path": "report-statistics/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-draft",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-draft",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-draft/32",
+        "path": "document-draft/32.svg"
+      },
+      {
+        "name": "document-draft/20",
+        "path": "document-draft/20.svg"
+      },
+      {
+        "name": "document-draft/24",
+        "path": "document-draft/24.svg"
+      },
+      {
+        "name": "document-draft/16",
+        "path": "document-draft/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-history",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-history",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-history/24",
+        "path": "document-history/24.svg"
+      },
+      {
+        "name": "document-history/20",
+        "path": "document-history/20.svg"
+      },
+      {
+        "name": "document-history/16",
+        "path": "document-history/16.svg"
+      },
+      {
+        "name": "document-history/32",
+        "path": "document-history/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-information",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-information",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-information/32",
+        "path": "document-information/32.svg"
+      },
+      {
+        "name": "document-information/20",
+        "path": "document-information/20.svg"
+      },
+      {
+        "name": "document-information/24",
+        "path": "document-information/24.svg"
+      },
+      {
+        "name": "document-information/16",
+        "path": "document-information/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-search",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-search",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-search/24",
+        "path": "document-search/24.svg"
+      },
+      {
+        "name": "document-search/20",
+        "path": "document-search/20.svg"
+      },
+      {
+        "name": "document-search/16",
+        "path": "document-search/16.svg"
+      },
+      {
+        "name": "document-search/32",
+        "path": "document-search/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "folder",
+    "aliases": [],
+    "category": "files",
+    "folder": "folder",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "folder/20",
+        "path": "folder/20.svg"
+      },
+      {
+        "name": "folder/24",
+        "path": "folder/24.svg"
+      },
+      {
+        "name": "folder/16",
+        "path": "folder/16.svg"
+      },
+      {
+        "name": "folder/32",
+        "path": "folder/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "brush",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "brush",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "brush/24",
+        "path": "brush/24.svg"
+      },
+      {
+        "name": "brush/16",
+        "path": "brush/16.svg"
+      },
+      {
+        "name": "brush/20",
+        "path": "brush/20.svg"
+      },
+      {
+        "name": "brush/32",
+        "path": "brush/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "clip",
+    "aliases": [
+      "attachment"
+    ],
+    "category": "formatting",
+    "folder": "clip",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "clip/20",
+        "path": "clip/20.svg"
+      },
+      {
+        "name": "clip/16",
+        "path": "clip/16.svg"
+      },
+      {
+        "name": "clip/24",
+        "path": "clip/24.svg"
+      },
+      {
+        "name": "clip/32",
+        "path": "clip/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "clipboard-check",
+    "aliases": [
+      "to-do-list"
+    ],
+    "category": "formatting",
+    "folder": "clipboard-check",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "clipboard-check/24",
+        "path": "clipboard-check/24.svg"
+      },
+      {
+        "name": "clipboard-check/16",
+        "path": "clipboard-check/16.svg"
+      },
+      {
+        "name": "clipboard-check/20",
+        "path": "clipboard-check/20.svg"
+      },
+      {
+        "name": "clipboard-check/32",
+        "path": "clipboard-check/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "edit-square",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "edit-square",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "edit-square/32",
+        "path": "edit-square/32.svg"
+      },
+      {
+        "name": "edit-square/24",
+        "path": "edit-square/24.svg"
+      },
+      {
+        "name": "edit-square/16",
+        "path": "edit-square/16.svg"
+      },
+      {
+        "name": "edit-square/20",
+        "path": "edit-square/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "rotate-left",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "rotate-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "rotate-left/16",
+        "path": "rotate-left/16.svg"
+      },
+      {
+        "name": "rotate-left/24",
+        "path": "rotate-left/24.svg"
+      },
+      {
+        "name": "rotate-left/32",
+        "path": "rotate-left/32.svg"
+      },
+      {
+        "name": "rotate-left/20",
+        "path": "rotate-left/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "signature-manage",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "signature-manage",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "signature-manage/24",
+        "path": "signature-manage/24.svg"
+      },
+      {
+        "name": "signature-manage/32",
+        "path": "signature-manage/32.svg"
+      },
+      {
+        "name": "signature-manage/16",
+        "path": "signature-manage/16.svg"
+      },
+      {
+        "name": "signature-manage/20",
+        "path": "signature-manage/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "signature-text",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "signature-text",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "signature-text/32",
+        "path": "signature-text/32.svg"
+      },
+      {
+        "name": "signature-text/24",
+        "path": "signature-text/24.svg"
+      },
+      {
+        "name": "signature-text/20",
+        "path": "signature-text/20.svg"
+      },
+      {
+        "name": "signature-text/16",
+        "path": "signature-text/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "unlink",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "unlink",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "unlink/32",
+        "path": "unlink/32.svg"
+      },
+      {
+        "name": "unlink/20",
+        "path": "unlink/20.svg"
+      },
+      {
+        "name": "unlink/24",
+        "path": "unlink/24.svg"
+      },
+      {
+        "name": "unlink/16",
+        "path": "unlink/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "cross",
+    "aliases": [],
+    "category": "health",
+    "folder": "cross",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "cross/24",
+        "path": "cross/24.svg"
+      },
+      {
+        "name": "cross/20",
+        "path": "cross/20.svg"
+      },
+      {
+        "name": "cross/16",
+        "path": "cross/16.svg"
+      },
+      {
+        "name": "cross/32",
+        "path": "cross/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "people-insurance",
+    "aliases": [],
+    "category": "health",
+    "folder": "people-insurance",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "people-insurance/32",
+        "path": "people-insurance/32.svg"
+      },
+      {
+        "name": "people-insurance/20",
+        "path": "people-insurance/20.svg"
+      },
+      {
+        "name": "people-insurance/16",
+        "path": "people-insurance/16.svg"
+      },
+      {
+        "name": "people-insurance/24",
+        "path": "people-insurance/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "building",
+    "aliases": [
+      "office"
+    ],
+    "category": "life-style",
+    "folder": "building",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "building/24",
+        "path": "building/24.svg"
+      },
+      {
+        "name": "building/16",
+        "path": "building/16.svg"
+      },
+      {
+        "name": "building/20",
+        "path": "building/20.svg"
+      },
+      {
+        "name": "building/32",
+        "path": "building/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-circle-down",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevron-circle-down",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-circle-down/32",
+        "path": "chevron-circle-down/32.svg"
+      },
+      {
+        "name": "chevron-circle-down/20",
+        "path": "chevron-circle-down/20.svg"
+      },
+      {
+        "name": "chevron-circle-down/24",
+        "path": "chevron-circle-down/24.svg"
+      },
+      {
+        "name": "chevron-circle-down/16",
+        "path": "chevron-circle-down/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "bus",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "bus",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "bus/20",
+        "path": "bus/20.svg"
+      },
+      {
+        "name": "bus/32",
+        "path": "bus/32.svg"
+      },
+      {
+        "name": "bus/16",
+        "path": "bus/16.svg"
+      },
+      {
+        "name": "bus/24",
+        "path": "bus/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "cart",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "cart",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "cart/20",
+        "path": "cart/20.svg"
+      },
+      {
+        "name": "cart/32",
+        "path": "cart/32.svg"
+      },
+      {
+        "name": "cart/24",
+        "path": "cart/24.svg"
+      },
+      {
+        "name": "cart/16",
+        "path": "cart/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "diamond",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "diamond",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "diamond/20",
+        "path": "diamond/20.svg"
+      },
+      {
+        "name": "diamond/16",
+        "path": "diamond/16.svg"
+      },
+      {
+        "name": "diamond/32",
+        "path": "diamond/32.svg"
+      },
+      {
+        "name": "diamond/24",
+        "path": "diamond/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "gala-dinner",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "gala-dinner",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "gala-dinner/32",
+        "path": "gala-dinner/32.svg"
+      },
+      {
+        "name": "gala-dinner/24",
+        "path": "gala-dinner/24.svg"
+      },
+      {
+        "name": "gala-dinner/16",
+        "path": "gala-dinner/16.svg"
+      },
+      {
+        "name": "gala-dinner/20",
+        "path": "gala-dinner/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "receipt",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "receipt",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "receipt/20",
+        "path": "receipt/20.svg"
+      },
+      {
+        "name": "receipt/24",
+        "path": "receipt/24.svg"
+      },
+      {
+        "name": "receipt/16",
+        "path": "receipt/16.svg"
+      },
+      {
+        "name": "receipt/32",
+        "path": "receipt/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "receipt-history",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "receipt-history",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "receipt-history/32",
+        "path": "receipt-history/32.svg"
+      },
+      {
+        "name": "receipt-history/16",
+        "path": "receipt-history/16.svg"
+      },
+      {
+        "name": "receipt-history/20",
+        "path": "receipt-history/20.svg"
+      },
+      {
+        "name": "receipt-history/24",
+        "path": "receipt-history/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "shopping-bag",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "shopping-bag",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "shopping-bag/32",
+        "path": "shopping-bag/32.svg"
+      },
+      {
+        "name": "shopping-bag/20",
+        "path": "shopping-bag/20.svg"
+      },
+      {
+        "name": "shopping-bag/24",
+        "path": "shopping-bag/24.svg"
+      },
+      {
+        "name": "shopping-bag/16",
+        "path": "shopping-bag/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "spoon-and-fork",
+    "aliases": [
+      "dinner",
+      "lunch",
+      "breakfast"
+    ],
+    "category": "life-style",
+    "folder": "spoon-and-fork",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "spoon-and-fork/32",
+        "path": "spoon-and-fork/32.svg"
+      },
+      {
+        "name": "spoon-and-fork/24",
+        "path": "spoon-and-fork/24.svg"
+      },
+      {
+        "name": "spoon-and-fork/16",
+        "path": "spoon-and-fork/16.svg"
+      },
+      {
+        "name": "spoon-and-fork/20",
+        "path": "spoon-and-fork/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "wallet",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "wallet",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "wallet/20",
+        "path": "wallet/20.svg"
+      },
+      {
+        "name": "wallet/16",
+        "path": "wallet/16.svg"
+      },
+      {
+        "name": "wallet/24",
+        "path": "wallet/24.svg"
+      },
+      {
+        "name": "wallet/32",
+        "path": "wallet/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "add-circle",
+    "aliases": [
+      "plus-circle"
+    ],
+    "category": "navigation",
+    "folder": "add-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "add-circle/32",
+        "path": "add-circle/32.svg"
+      },
+      {
+        "name": "add-circle/24",
+        "path": "add-circle/24.svg"
+      },
+      {
+        "name": "add-circle/16",
+        "path": "add-circle/16.svg"
+      },
+      {
+        "name": "add-circle/20",
+        "path": "add-circle/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "add-plus",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "add-plus",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "add-plus/24",
+        "path": "add-plus/24.svg"
+      },
+      {
+        "name": "add-plus/16",
+        "path": "add-plus/16.svg"
+      },
+      {
+        "name": "add-plus/32",
+        "path": "add-plus/32.svg"
+      },
+      {
+        "name": "add-plus/20",
+        "path": "add-plus/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "microsoft",
+    "aliases": [],
+    "category": "brand",
+    "folder": "microsoft",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "microsoft/16",
+        "path": "microsoft/16.svg"
+      },
+      {
+        "name": "microsoft/32",
+        "path": "microsoft/32.svg"
+      },
+      {
+        "name": "microsoft/24",
+        "path": "microsoft/24.svg"
+      },
+      {
+        "name": "microsoft/20",
+        "path": "microsoft/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "arrow-circle-down",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "arrow-circle-down",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "arrow-circle-down/32",
+        "path": "arrow-circle-down/32.svg"
+      },
+      {
+        "name": "arrow-circle-down/20",
+        "path": "arrow-circle-down/20.svg"
+      },
+      {
+        "name": "arrow-circle-down/16",
+        "path": "arrow-circle-down/16.svg"
+      },
+      {
+        "name": "arrow-circle-down/24",
+        "path": "arrow-circle-down/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "arrow-circle-left",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "arrow-circle-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "arrow-circle-left/32",
+        "path": "arrow-circle-left/32.svg"
+      },
+      {
+        "name": "arrow-circle-left/16",
+        "path": "arrow-circle-left/16.svg"
+      },
+      {
+        "name": "arrow-circle-left/24",
+        "path": "arrow-circle-left/24.svg"
+      },
+      {
+        "name": "arrow-circle-left/20",
+        "path": "arrow-circle-left/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "arrow-circle-right",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "arrow-circle-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "arrow-circle-right/24",
+        "path": "arrow-circle-right/24.svg"
+      },
+      {
+        "name": "arrow-circle-right/16",
+        "path": "arrow-circle-right/16.svg"
+      },
+      {
+        "name": "arrow-circle-right/32",
+        "path": "arrow-circle-right/32.svg"
+      },
+      {
+        "name": "arrow-circle-right/20",
+        "path": "arrow-circle-right/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "pallete",
+    "aliases": [
+      "theme",
+      "style"
+    ],
+    "category": "formatting",
+    "folder": "pallete",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "pallete/20",
+        "path": "pallete/20.svg"
+      },
+      {
+        "name": "pallete/24",
+        "path": "pallete/24.svg"
+      },
+      {
+        "name": "pallete/16",
+        "path": "pallete/16.svg"
+      },
+      {
+        "name": "pallete/32",
+        "path": "pallete/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "arrow-circle-up",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "arrow-circle-up",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "arrow-circle-up/32",
+        "path": "arrow-circle-up/32.svg"
+      },
+      {
+        "name": "arrow-circle-up/20",
+        "path": "arrow-circle-up/20.svg"
+      },
+      {
+        "name": "arrow-circle-up/16",
+        "path": "arrow-circle-up/16.svg"
+      },
+      {
+        "name": "arrow-circle-up/24",
+        "path": "arrow-circle-up/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "arrow-down",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "arrow-down",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "arrow-down/20",
+        "path": "arrow-down/20.svg"
+      },
+      {
+        "name": "arrow-down/32",
+        "path": "arrow-down/32.svg"
+      },
+      {
+        "name": "arrow-down/16",
+        "path": "arrow-down/16.svg"
+      },
+      {
+        "name": "arrow-down/24",
+        "path": "arrow-down/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "arrow-right",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "arrow-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "arrow-right/32",
+        "path": "arrow-right/32.svg"
+      },
+      {
+        "name": "arrow-right/20",
+        "path": "arrow-right/20.svg"
+      },
+      {
+        "name": "arrow-right/24",
+        "path": "arrow-right/24.svg"
+      },
+      {
+        "name": "arrow-right/16",
+        "path": "arrow-right/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "arrow-up",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "arrow-up",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "arrow-up/24",
+        "path": "arrow-up/24.svg"
+      },
+      {
+        "name": "arrow-up/16",
+        "path": "arrow-up/16.svg"
+      },
+      {
+        "name": "arrow-up/20",
+        "path": "arrow-up/20.svg"
+      },
+      {
+        "name": "arrow-up/32",
+        "path": "arrow-up/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "caret-down",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "caret-down",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "caret-down/32",
+        "path": "caret-down/32.svg"
+      },
+      {
+        "name": "caret-down/24",
+        "path": "caret-down/24.svg"
+      },
+      {
+        "name": "caret-down/20",
+        "path": "caret-down/20.svg"
+      },
+      {
+        "name": "caret-down/16",
+        "path": "caret-down/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "caret-left",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "caret-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "caret-left/24",
+        "path": "caret-left/24.svg"
+      },
+      {
+        "name": "caret-left/16",
+        "path": "caret-left/16.svg"
+      },
+      {
+        "name": "caret-left/20",
+        "path": "caret-left/20.svg"
+      },
+      {
+        "name": "caret-left/32",
+        "path": "caret-left/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-circle-up",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevron-circle-up",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-circle-up/24",
+        "path": "chevron-circle-up/24.svg"
+      },
+      {
+        "name": "chevron-circle-up/16",
+        "path": "chevron-circle-up/16.svg"
+      },
+      {
+        "name": "chevron-circle-up/32",
+        "path": "chevron-circle-up/32.svg"
+      },
+      {
+        "name": "chevron-circle-up/20",
+        "path": "chevron-circle-up/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-down",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevron-down",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-down/24",
+        "path": "chevron-down/24.svg"
+      },
+      {
+        "name": "chevron-down/32",
+        "path": "chevron-down/32.svg"
+      },
+      {
+        "name": "chevron-down/16",
+        "path": "chevron-down/16.svg"
+      },
+      {
+        "name": "chevron-down/20",
+        "path": "chevron-down/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-right",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevron-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-right/24",
+        "path": "chevron-right/24.svg"
+      },
+      {
+        "name": "chevron-right/32",
+        "path": "chevron-right/32.svg"
+      },
+      {
+        "name": "chevron-right/20",
+        "path": "chevron-right/20.svg"
+      },
+      {
+        "name": "chevron-right/16",
+        "path": "chevron-right/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevrons-left",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevrons-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevrons-left/16",
+        "path": "chevrons-left/16.svg"
+      },
+      {
+        "name": "chevrons-left/32",
+        "path": "chevrons-left/32.svg"
+      },
+      {
+        "name": "chevrons-left/20",
+        "path": "chevrons-left/20.svg"
+      },
+      {
+        "name": "chevrons-left/24",
+        "path": "chevrons-left/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "menu-horizontal",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "menu-horizontal",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "menu-horizontal/32",
+        "path": "menu-horizontal/32.svg"
+      },
+      {
+        "name": "menu-horizontal/24",
+        "path": "menu-horizontal/24.svg"
+      },
+      {
+        "name": "menu-horizontal/20",
+        "path": "menu-horizontal/20.svg"
+      },
+      {
+        "name": "menu-horizontal/16",
+        "path": "menu-horizontal/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "zoom-out",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "zoom-out",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "zoom-out/20",
+        "path": "zoom-out/20.svg"
+      },
+      {
+        "name": "zoom-out/16",
+        "path": "zoom-out/16.svg"
+      },
+      {
+        "name": "zoom-out/24",
+        "path": "zoom-out/24.svg"
+      },
+      {
+        "name": "zoom-out/32",
+        "path": "zoom-out/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "calendar",
+    "aliases": [],
+    "category": "operation",
+    "folder": "calendar",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "calendar/24",
+        "path": "calendar/24.svg"
+      },
+      {
+        "name": "calendar/16",
+        "path": "calendar/16.svg"
+      },
+      {
+        "name": "calendar/20",
+        "path": "calendar/20.svg"
+      },
+      {
+        "name": "calendar/32",
+        "path": "calendar/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "calendar-history",
+    "aliases": [],
+    "category": "operation",
+    "folder": "calendar-history",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "calendar-history/20",
+        "path": "calendar-history/20.svg"
+      },
+      {
+        "name": "calendar-history/16",
+        "path": "calendar-history/16.svg"
+      },
+      {
+        "name": "calendar-history/32",
+        "path": "calendar-history/32.svg"
+      },
+      {
+        "name": "calendar-history/24",
+        "path": "calendar-history/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "caret-sort",
+    "aliases": [],
+    "category": "operation",
+    "folder": "caret-sort",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "caret-sort/16",
+        "path": "caret-sort/16.svg"
+      },
+      {
+        "name": "caret-sort/24",
+        "path": "caret-sort/24.svg"
+      },
+      {
+        "name": "caret-sort/32",
+        "path": "caret-sort/32.svg"
+      },
+      {
+        "name": "caret-sort/20",
+        "path": "caret-sort/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "checkmark-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "checkmark-circle-solid/32",
+        "path": "checkmark-circle-solid/32.svg"
+      },
+      {
+        "name": "checkmark-circle-solid/24",
+        "path": "checkmark-circle-solid/24.svg"
+      },
+      {
+        "name": "checkmark-circle-solid/20",
+        "path": "checkmark-circle-solid/20.svg"
+      },
+      {
+        "name": "checkmark-circle-solid/16",
+        "path": "checkmark-circle-solid/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "minimize",
+    "aliases": [],
+    "category": "operation",
+    "folder": "minimize",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "minimize/16",
+        "path": "minimize/16.svg"
+      },
+      {
+        "name": "minimize/20",
+        "path": "minimize/20.svg"
+      },
+      {
+        "name": "minimize/32",
+        "path": "minimize/32.svg"
+      },
+      {
+        "name": "minimize/24",
+        "path": "minimize/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "refresh",
+    "aliases": [
+      "reload"
+    ],
+    "category": "operation",
+    "folder": "refresh",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "refresh/32",
+        "path": "refresh/32.svg"
+      },
+      {
+        "name": "refresh/24",
+        "path": "refresh/24.svg"
+      },
+      {
+        "name": "refresh/20",
+        "path": "refresh/20.svg"
+      },
+      {
+        "name": "refresh/16",
+        "path": "refresh/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "reply",
+    "aliases": [],
+    "category": "operation",
+    "folder": "reply",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "reply/32",
+        "path": "reply/32.svg"
+      },
+      {
+        "name": "reply/24",
+        "path": "reply/24.svg"
+      },
+      {
+        "name": "reply/20",
+        "path": "reply/20.svg"
+      },
+      {
+        "name": "reply/16",
+        "path": "reply/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "search",
+    "aliases": [],
+    "category": "operation",
+    "folder": "search",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "search/32",
+        "path": "search/32.svg"
+      },
+      {
+        "name": "search/20",
+        "path": "search/20.svg"
+      },
+      {
+        "name": "search/24",
+        "path": "search/24.svg"
+      },
+      {
+        "name": "search/16",
+        "path": "search/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "settings",
+    "aliases": [
+      "cog"
+    ],
+    "category": "operation",
+    "folder": "settings",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "settings/20",
+        "path": "settings/20.svg"
+      },
+      {
+        "name": "settings/24",
+        "path": "settings/24.svg"
+      },
+      {
+        "name": "settings/32",
+        "path": "settings/32.svg"
+      },
+      {
+        "name": "settings/16",
+        "path": "settings/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "sign-in",
+    "aliases": [],
+    "category": "operation",
+    "folder": "sign-in",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "sign-in/32",
+        "path": "sign-in/32.svg"
+      },
+      {
+        "name": "sign-in/20",
+        "path": "sign-in/20.svg"
+      },
+      {
+        "name": "sign-in/16",
+        "path": "sign-in/16.svg"
+      },
+      {
+        "name": "sign-in/24",
+        "path": "sign-in/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "sign-out",
+    "aliases": [],
+    "category": "operation",
+    "folder": "sign-out",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "sign-out/32",
+        "path": "sign-out/32.svg"
+      },
+      {
+        "name": "sign-out/16",
+        "path": "sign-out/16.svg"
+      },
+      {
+        "name": "sign-out/24",
+        "path": "sign-out/24.svg"
+      },
+      {
+        "name": "sign-out/20",
+        "path": "sign-out/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "address",
+    "aliases": [
+      "at"
+    ],
+    "category": "other",
+    "folder": "address",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "address/32",
+        "path": "address/32.svg"
+      },
+      {
+        "name": "address/24",
+        "path": "address/24.svg"
+      },
+      {
+        "name": "address/20",
+        "path": "address/20.svg"
+      },
+      {
+        "name": "address/16",
+        "path": "address/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "happy-face",
+    "aliases": [
+      "smiley-face"
+    ],
+    "category": "other",
+    "folder": "happy-face",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "happy-face/32",
+        "path": "happy-face/32.svg"
+      },
+      {
+        "name": "happy-face/24",
+        "path": "happy-face/24.svg"
+      },
+      {
+        "name": "happy-face/16",
+        "path": "happy-face/16.svg"
+      },
+      {
+        "name": "happy-face/20",
+        "path": "happy-face/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "love-favorite",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "love-favorite",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "love-favorite/32",
+        "path": "love-favorite/32.svg"
+      },
+      {
+        "name": "love-favorite/16",
+        "path": "love-favorite/16.svg"
+      },
+      {
+        "name": "love-favorite/24",
+        "path": "love-favorite/24.svg"
+      },
+      {
+        "name": "love-favorite/20",
+        "path": "love-favorite/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevrons-right",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevrons-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevrons-right/24",
+        "path": "chevrons-right/24.svg"
+      },
+      {
+        "name": "chevrons-right/16",
+        "path": "chevrons-right/16.svg"
+      },
+      {
+        "name": "chevrons-right/32",
+        "path": "chevrons-right/32.svg"
+      },
+      {
+        "name": "chevrons-right/20",
+        "path": "chevrons-right/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "lamp",
+    "aliases": [
+      "idea",
+      "bulb"
+    ],
+    "category": "other",
+    "folder": "lamp",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "lamp/32",
+        "path": "lamp/32.svg"
+      },
+      {
+        "name": "lamp/16",
+        "path": "lamp/16.svg"
+      },
+      {
+        "name": "lamp/20",
+        "path": "lamp/20.svg"
+      },
+      {
+        "name": "lamp/24",
+        "path": "lamp/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "layer",
+    "aliases": [],
+    "category": "other",
+    "folder": "layer",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "layer/20",
+        "path": "layer/20.svg"
+      },
+      {
+        "name": "layer/16",
+        "path": "layer/16.svg"
+      },
+      {
+        "name": "layer/24",
+        "path": "layer/24.svg"
+      },
+      {
+        "name": "layer/32",
+        "path": "layer/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "map",
+    "aliases": [],
+    "category": "other",
+    "folder": "map",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "map/16",
+        "path": "map/16.svg"
+      },
+      {
+        "name": "map/20",
+        "path": "map/20.svg"
+      },
+      {
+        "name": "map/24",
+        "path": "map/24.svg"
+      },
+      {
+        "name": "map/32",
+        "path": "map/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "onsite",
+    "aliases": [
+      "pin"
+    ],
+    "category": "other",
+    "folder": "onsite",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "onsite/16",
+        "path": "onsite/16.svg"
+      },
+      {
+        "name": "onsite/24",
+        "path": "onsite/24.svg"
+      },
+      {
+        "name": "onsite/32",
+        "path": "onsite/32.svg"
+      },
+      {
+        "name": "onsite/20",
+        "path": "onsite/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "package-box",
+    "aliases": [],
+    "category": "other",
+    "folder": "package-box",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "package-box/32",
+        "path": "package-box/32.svg"
+      },
+      {
+        "name": "package-box/20",
+        "path": "package-box/20.svg"
+      },
+      {
+        "name": "package-box/24",
+        "path": "package-box/24.svg"
+      },
+      {
+        "name": "package-box/16",
+        "path": "package-box/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "puzzle",
+    "aliases": [],
+    "category": "other",
+    "folder": "puzzle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "puzzle/32",
+        "path": "puzzle/32.svg"
+      },
+      {
+        "name": "puzzle/20",
+        "path": "puzzle/20.svg"
+      },
+      {
+        "name": "puzzle/16",
+        "path": "puzzle/16.svg"
+      },
+      {
+        "name": "puzzle/24",
+        "path": "puzzle/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "repair",
+    "aliases": [
+      "settings",
+      "wrench"
+    ],
+    "category": "other",
+    "folder": "repair",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "repair/32",
+        "path": "repair/32.svg"
+      },
+      {
+        "name": "repair/24",
+        "path": "repair/24.svg"
+      },
+      {
+        "name": "repair/16",
+        "path": "repair/16.svg"
+      },
+      {
+        "name": "repair/20",
+        "path": "repair/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "sad-face",
+    "aliases": [
+      "dissapointed-face"
+    ],
+    "category": "other",
+    "folder": "sad-face",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "sad-face/20",
+        "path": "sad-face/20.svg"
+      },
+      {
+        "name": "sad-face/16",
+        "path": "sad-face/16.svg"
+      },
+      {
+        "name": "sad-face/24",
+        "path": "sad-face/24.svg"
+      },
+      {
+        "name": "sad-face/32",
+        "path": "sad-face/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "shield-off",
+    "aliases": [
+      "protection-off"
+    ],
+    "category": "other",
+    "folder": "shield-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "shield-off/24",
+        "path": "shield-off/24.svg"
+      },
+      {
+        "name": "shield-off/16",
+        "path": "shield-off/16.svg"
+      },
+      {
+        "name": "shield-off/20",
+        "path": "shield-off/20.svg"
+      },
+      {
+        "name": "shield-off/32",
+        "path": "shield-off/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "shield-on",
+    "aliases": [
+      "protection-on"
+    ],
+    "category": "other",
+    "folder": "shield-on",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "shield-on/20",
+        "path": "shield-on/20.svg"
+      },
+      {
+        "name": "shield-on/16",
+        "path": "shield-on/16.svg"
+      },
+      {
+        "name": "shield-on/24",
+        "path": "shield-on/24.svg"
+      },
+      {
+        "name": "shield-on/32",
+        "path": "shield-on/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "stopwatch",
+    "aliases": [],
+    "category": "other",
+    "folder": "stopwatch",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "stopwatch/24",
+        "path": "stopwatch/24.svg"
+      },
+      {
+        "name": "stopwatch/20",
+        "path": "stopwatch/20.svg"
+      },
+      {
+        "name": "stopwatch/32",
+        "path": "stopwatch/32.svg"
+      },
+      {
+        "name": "stopwatch/16",
+        "path": "stopwatch/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "template",
+    "aliases": [],
+    "category": "other",
+    "folder": "template",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "template/16",
+        "path": "template/16.svg"
+      },
+      {
+        "name": "template/32",
+        "path": "template/32.svg"
+      },
+      {
+        "name": "template/24",
+        "path": "template/24.svg"
+      },
+      {
+        "name": "template/20",
+        "path": "template/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "time",
+    "aliases": [],
+    "category": "other",
+    "folder": "time",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "time/32",
+        "path": "time/32.svg"
+      },
+      {
+        "name": "time/20",
+        "path": "time/20.svg"
+      },
+      {
+        "name": "time/24",
+        "path": "time/24.svg"
+      },
+      {
+        "name": "time/16",
+        "path": "time/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "banned-circle",
+    "aliases": [
+      "reject"
+    ],
+    "category": "status",
+    "folder": "banned-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "banned-circle/20",
+        "path": "banned-circle/20.svg"
+      },
+      {
+        "name": "banned-circle/16",
+        "path": "banned-circle/16.svg"
+      },
+      {
+        "name": "banned-circle/24",
+        "path": "banned-circle/24.svg"
+      },
+      {
+        "name": "banned-circle/32",
+        "path": "banned-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark",
+    "aliases": [],
+    "category": "status",
+    "folder": "checkmark",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "checkmark/20",
+        "path": "checkmark/20.svg"
+      },
+      {
+        "name": "checkmark/16",
+        "path": "checkmark/16.svg"
+      },
+      {
+        "name": "checkmark/24",
+        "path": "checkmark/24.svg"
+      },
+      {
+        "name": "checkmark/32",
+        "path": "checkmark/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "checkmark-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "checkmark-circle/24",
+        "path": "checkmark-circle/24.svg"
+      },
+      {
+        "name": "checkmark-circle/20",
+        "path": "checkmark-circle/20.svg"
+      },
+      {
+        "name": "checkmark-circle/16",
+        "path": "checkmark-circle/16.svg"
+      },
+      {
+        "name": "checkmark-circle/32",
+        "path": "checkmark-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-verified",
+    "aliases": [],
+    "category": "status",
+    "folder": "checkmark-verified",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "checkmark-verified/16",
+        "path": "checkmark-verified/16.svg"
+      },
+      {
+        "name": "checkmark-verified/24",
+        "path": "checkmark-verified/24.svg"
+      },
+      {
+        "name": "checkmark-verified/32",
+        "path": "checkmark-verified/32.svg"
+      },
+      {
+        "name": "checkmark-verified/20",
+        "path": "checkmark-verified/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "close-circle",
+    "aliases": [
+      "clear-circle",
+      "dismiss-circle"
+    ],
+    "category": "status",
+    "folder": "close-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "close-circle/24",
+        "path": "close-circle/24.svg"
+      },
+      {
+        "name": "close-circle/32",
+        "path": "close-circle/32.svg"
+      },
+      {
+        "name": "close-circle/20",
+        "path": "close-circle/20.svg"
+      },
+      {
+        "name": "close-circle/16",
+        "path": "close-circle/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "exclamation-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "exclamation-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "exclamation-circle/32",
+        "path": "exclamation-circle/32.svg"
+      },
+      {
+        "name": "exclamation-circle/24",
+        "path": "exclamation-circle/24.svg"
+      },
+      {
+        "name": "exclamation-circle/16",
+        "path": "exclamation-circle/16.svg"
+      },
+      {
+        "name": "exclamation-circle/20",
+        "path": "exclamation-circle/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "exclamation-triangle",
+    "aliases": [],
+    "category": "status",
+    "folder": "exclamation-triangle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "exclamation-triangle/20",
+        "path": "exclamation-triangle/20.svg"
+      },
+      {
+        "name": "exclamation-triangle/16",
+        "path": "exclamation-triangle/16.svg"
+      },
+      {
+        "name": "exclamation-triangle/32",
+        "path": "exclamation-triangle/32.svg"
+      },
+      {
+        "name": "exclamation-triangle/24",
+        "path": "exclamation-triangle/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "information-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "information-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "information-circle/24",
+        "path": "information-circle/24.svg"
+      },
+      {
+        "name": "information-circle/20",
+        "path": "information-circle/20.svg"
+      },
+      {
+        "name": "information-circle/32",
+        "path": "information-circle/32.svg"
+      },
+      {
+        "name": "information-circle/16",
+        "path": "information-circle/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "api",
+    "aliases": [],
+    "category": "technology",
+    "folder": "api",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "api/16",
+        "path": "api/16.svg"
+      },
+      {
+        "name": "api/20",
+        "path": "api/20.svg"
+      },
+      {
+        "name": "api/24",
+        "path": "api/24.svg"
+      },
+      {
+        "name": "api/32",
+        "path": "api/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "email-invitation",
+    "aliases": [],
+    "category": "communication",
+    "folder": "email-invitation",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "email-invitation/32",
+        "path": "email-invitation/32.svg"
+      },
+      {
+        "name": "email-invitation/24",
+        "path": "email-invitation/24.svg"
+      },
+      {
+        "name": "email-invitation/16",
+        "path": "email-invitation/16.svg"
+      },
+      {
+        "name": "email-invitation/20",
+        "path": "email-invitation/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "apps",
+    "aliases": [
+      "features"
+    ],
+    "category": "technology",
+    "folder": "apps",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "apps/32",
+        "path": "apps/32.svg"
+      },
+      {
+        "name": "apps/16",
+        "path": "apps/16.svg"
+      },
+      {
+        "name": "apps/20",
+        "path": "apps/20.svg"
+      },
+      {
+        "name": "apps/24",
+        "path": "apps/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "camera",
+    "aliases": [],
+    "category": "technology",
+    "folder": "camera",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "camera/16",
+        "path": "camera/16.svg"
+      },
+      {
+        "name": "camera/20",
+        "path": "camera/20.svg"
+      },
+      {
+        "name": "camera/24",
+        "path": "camera/24.svg"
+      },
+      {
+        "name": "camera/32",
+        "path": "camera/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "cloud",
+    "aliases": [],
+    "category": "technology",
+    "folder": "cloud",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "cloud/24",
+        "path": "cloud/24.svg"
+      },
+      {
+        "name": "cloud/20",
+        "path": "cloud/20.svg"
+      },
+      {
+        "name": "cloud/32",
+        "path": "cloud/32.svg"
+      },
+      {
+        "name": "cloud/16",
+        "path": "cloud/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-circle-left",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevron-circle-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-circle-left/16",
+        "path": "chevron-circle-left/16.svg"
+      },
+      {
+        "name": "chevron-circle-left/32",
+        "path": "chevron-circle-left/32.svg"
+      },
+      {
+        "name": "chevron-circle-left/20",
+        "path": "chevron-circle-left/20.svg"
+      },
+      {
+        "name": "chevron-circle-left/24",
+        "path": "chevron-circle-left/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "code",
+    "aliases": [],
+    "category": "technology",
+    "folder": "code",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "code/32",
+        "path": "code/32.svg"
+      },
+      {
+        "name": "code/20",
+        "path": "code/20.svg"
+      },
+      {
+        "name": "code/16",
+        "path": "code/16.svg"
+      },
+      {
+        "name": "code/24",
+        "path": "code/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "computer",
+    "aliases": [
+      "monitor"
+    ],
+    "category": "technology",
+    "folder": "computer",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "computer/24",
+        "path": "computer/24.svg"
+      },
+      {
+        "name": "computer/16",
+        "path": "computer/16.svg"
+      },
+      {
+        "name": "computer/32",
+        "path": "computer/32.svg"
+      },
+      {
+        "name": "computer/20",
+        "path": "computer/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "e-meterai",
+    "aliases": [],
+    "category": "technology",
+    "folder": "e-meterai",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "e-meterai/24",
+        "path": "e-meterai/24.svg"
+      },
+      {
+        "name": "e-meterai/20",
+        "path": "e-meterai/20.svg"
+      },
+      {
+        "name": "e-meterai/32",
+        "path": "e-meterai/32.svg"
+      },
+      {
+        "name": "e-meterai/16",
+        "path": "e-meterai/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "location",
+    "aliases": [
+      "map-mark"
+    ],
+    "category": "technology",
+    "folder": "location",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "location/32",
+        "path": "location/32.svg"
+      },
+      {
+        "name": "location/16",
+        "path": "location/16.svg"
+      },
+      {
+        "name": "location/20",
+        "path": "location/20.svg"
+      },
+      {
+        "name": "location/24",
+        "path": "location/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "qr-code-scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "qr-code-scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-code-scan/24",
+        "path": "qr-code-scan/24.svg"
+      },
+      {
+        "name": "qr-code-scan/20",
+        "path": "qr-code-scan/20.svg"
+      },
+      {
+        "name": "qr-code-scan/32",
+        "path": "qr-code-scan/32.svg"
+      },
+      {
+        "name": "qr-code-scan/16",
+        "path": "qr-code-scan/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "scan/32",
+        "path": "scan/32.svg"
+      },
+      {
+        "name": "scan/24",
+        "path": "scan/24.svg"
+      },
+      {
+        "name": "scan/16",
+        "path": "scan/16.svg"
+      },
+      {
+        "name": "scan/20",
+        "path": "scan/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "smartphone",
+    "aliases": [
+      "mobile"
+    ],
+    "category": "technology",
+    "folder": "smartphone",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "smartphone/24",
+        "path": "smartphone/24.svg"
+      },
+      {
+        "name": "smartphone/16",
+        "path": "smartphone/16.svg"
+      },
+      {
+        "name": "smartphone/20",
+        "path": "smartphone/20.svg"
+      },
+      {
+        "name": "smartphone/32",
+        "path": "smartphone/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "key",
+    "aliases": [
+      "password"
+    ],
+    "category": "other",
+    "folder": "key",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "key/32",
+        "path": "key/32.svg"
+      },
+      {
+        "name": "key/24",
+        "path": "key/24.svg"
+      },
+      {
+        "name": "key/20",
+        "path": "key/20.svg"
+      },
+      {
+        "name": "key/16",
+        "path": "key/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "call-off",
+    "aliases": [
+      "phone-off"
+    ],
+    "category": "toggle",
+    "folder": "call-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "call-off/32",
+        "path": "call-off/32.svg"
+      },
+      {
+        "name": "call-off/20",
+        "path": "call-off/20.svg"
+      },
+      {
+        "name": "call-off/16",
+        "path": "call-off/16.svg"
+      },
+      {
+        "name": "call-off/24",
+        "path": "call-off/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "call",
+    "aliases": [
+      "phone"
+    ],
+    "category": "toggle",
+    "folder": "call",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "call/24",
+        "path": "call/24.svg"
+      },
+      {
+        "name": "call/16",
+        "path": "call/16.svg"
+      },
+      {
+        "name": "call/32",
+        "path": "call/32.svg"
+      },
+      {
+        "name": "call/20",
+        "path": "call/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "grid-view",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "grid-view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "grid-view/32",
+        "path": "grid-view/32.svg"
+      },
+      {
+        "name": "grid-view/24",
+        "path": "grid-view/24.svg"
+      },
+      {
+        "name": "grid-view/16",
+        "path": "grid-view/16.svg"
+      },
+      {
+        "name": "grid-view/20",
+        "path": "grid-view/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "moon",
+    "aliases": [
+      "night-mode",
+      "dark-mode"
+    ],
+    "category": "toggle",
+    "folder": "moon",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "moon/32",
+        "path": "moon/32.svg"
+      },
+      {
+        "name": "moon/24",
+        "path": "moon/24.svg"
+      },
+      {
+        "name": "moon/16",
+        "path": "moon/16.svg"
+      },
+      {
+        "name": "moon/20",
+        "path": "moon/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "one-grid-view",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "one-grid-view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "one-grid-view/20",
+        "path": "one-grid-view/20.svg"
+      },
+      {
+        "name": "one-grid-view/16",
+        "path": "one-grid-view/16.svg"
+      },
+      {
+        "name": "one-grid-view/24",
+        "path": "one-grid-view/24.svg"
+      },
+      {
+        "name": "one-grid-view/32",
+        "path": "one-grid-view/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "star-favorite",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "star-favorite",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "star-favorite/24",
+        "path": "star-favorite/24.svg"
+      },
+      {
+        "name": "star-favorite/16",
+        "path": "star-favorite/16.svg"
+      },
+      {
+        "name": "star-favorite/32",
+        "path": "star-favorite/32.svg"
+      },
+      {
+        "name": "star-favorite/20",
+        "path": "star-favorite/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "two-grid-view",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "two-grid-view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "two-grid-view/20",
+        "path": "two-grid-view/20.svg"
+      },
+      {
+        "name": "two-grid-view/16",
+        "path": "two-grid-view/16.svg"
+      },
+      {
+        "name": "two-grid-view/24",
+        "path": "two-grid-view/24.svg"
+      },
+      {
+        "name": "two-grid-view/32",
+        "path": "two-grid-view/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "collaboration",
+    "aliases": [],
+    "category": "user",
+    "folder": "collaboration",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "collaboration/32",
+        "path": "collaboration/32.svg"
+      },
+      {
+        "name": "collaboration/24",
+        "path": "collaboration/24.svg"
+      },
+      {
+        "name": "collaboration/16",
+        "path": "collaboration/16.svg"
+      },
+      {
+        "name": "collaboration/20",
+        "path": "collaboration/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "email-signature",
+    "aliases": [
+      "sign-and-request"
+    ],
+    "category": "communication",
+    "folder": "email-signature",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "email-signature/20",
+        "path": "email-signature/20.svg"
+      },
+      {
+        "name": "email-signature/16",
+        "path": "email-signature/16.svg"
+      },
+      {
+        "name": "email-signature/24",
+        "path": "email-signature/24.svg"
+      },
+      {
+        "name": "email-signature/32",
+        "path": "email-signature/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "profile",
+    "aliases": [],
+    "category": "user",
+    "folder": "profile",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "profile/32",
+        "path": "profile/32.svg"
+      },
+      {
+        "name": "profile/20",
+        "path": "profile/20.svg"
+      },
+      {
+        "name": "profile/24",
+        "path": "profile/24.svg"
+      },
+      {
+        "name": "profile/16",
+        "path": "profile/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "bookmark",
+    "aliases": [],
+    "category": "operation",
+    "folder": "bookmark",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "bookmark/24",
+        "path": "bookmark/24.svg"
+      },
+      {
+        "name": "bookmark/16",
+        "path": "bookmark/16.svg"
+      },
+      {
+        "name": "bookmark/32",
+        "path": "bookmark/32.svg"
+      },
+      {
+        "name": "bookmark/20",
+        "path": "bookmark/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-circle",
+    "aliases": [
+      "avatar"
+    ],
+    "category": "user",
+    "folder": "user-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-circle/24",
+        "path": "user-circle/24.svg"
+      },
+      {
+        "name": "user-circle/16",
+        "path": "user-circle/16.svg"
+      },
+      {
+        "name": "user-circle/20",
+        "path": "user-circle/20.svg"
+      },
+      {
+        "name": "user-circle/32",
+        "path": "user-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "close-circle",
+    "aliases": [
+      "clear-circle",
+      "dismiss-circle"
+    ],
+    "category": "status",
+    "folder": "close-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "close-circle-solid/32",
+        "path": "close-circle-solid/32.svg"
+      },
+      {
+        "name": "close-circle-solid/24",
+        "path": "close-circle-solid/24.svg"
+      },
+      {
+        "name": "close-circle-solid/20",
+        "path": "close-circle-solid/20.svg"
+      },
+      {
+        "name": "close-circle-solid/16",
+        "path": "close-circle-solid/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "reset",
+    "aliases": [],
+    "category": "operation",
+    "folder": "reset",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "reset/32",
+        "path": "reset/32.svg"
+      },
+      {
+        "name": "reset/20",
+        "path": "reset/20.svg"
+      },
+      {
+        "name": "reset/24",
+        "path": "reset/24.svg"
+      },
+      {
+        "name": "reset/16",
+        "path": "reset/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-exclamation",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-exclamation",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-exclamation/24",
+        "path": "user-exclamation/24.svg"
+      },
+      {
+        "name": "user-exclamation/16",
+        "path": "user-exclamation/16.svg"
+      },
+      {
+        "name": "user-exclamation/20",
+        "path": "user-exclamation/20.svg"
+      },
+      {
+        "name": "user-exclamation/32",
+        "path": "user-exclamation/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-groups",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-groups",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-groups/32",
+        "path": "user-groups/32.svg"
+      },
+      {
+        "name": "user-groups/16",
+        "path": "user-groups/16.svg"
+      },
+      {
+        "name": "user-groups/20",
+        "path": "user-groups/20.svg"
+      },
+      {
+        "name": "user-groups/24",
+        "path": "user-groups/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "faq",
+    "aliases": [],
+    "category": "technology",
+    "folder": "faq",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "faq/32",
+        "path": "faq/32.svg"
+      },
+      {
+        "name": "faq/24",
+        "path": "faq/24.svg"
+      },
+      {
+        "name": "faq/16",
+        "path": "faq/16.svg"
+      },
+      {
+        "name": "faq/20",
+        "path": "faq/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-multiple-edit",
+    "aliases": [
+      "group-edit",
+      "member-edit"
+    ],
+    "category": "user",
+    "folder": "user-multiple-edit",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-multiple-edit/32",
+        "path": "user-multiple-edit/32.svg"
+      },
+      {
+        "name": "user-multiple-edit/20",
+        "path": "user-multiple-edit/20.svg"
+      },
+      {
+        "name": "user-multiple-edit/16",
+        "path": "user-multiple-edit/16.svg"
+      },
+      {
+        "name": "user-multiple-edit/24",
+        "path": "user-multiple-edit/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-plus",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-plus",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-plus/24",
+        "path": "user-plus/24.svg"
+      },
+      {
+        "name": "user-plus/16",
+        "path": "user-plus/16.svg"
+      },
+      {
+        "name": "user-plus/20",
+        "path": "user-plus/20.svg"
+      },
+      {
+        "name": "user-plus/32",
+        "path": "user-plus/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "restart",
+    "aliases": [],
+    "category": "operation",
+    "folder": "restart",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "restart/24",
+        "path": "restart/24.svg"
+      },
+      {
+        "name": "restart/16",
+        "path": "restart/16.svg"
+      },
+      {
+        "name": "restart/20",
+        "path": "restart/20.svg"
+      },
+      {
+        "name": "restart/32",
+        "path": "restart/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-square",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-square",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-square/32",
+        "path": "user-square/32.svg"
+      },
+      {
+        "name": "user-square/20",
+        "path": "user-square/20.svg"
+      },
+      {
+        "name": "user-square/24",
+        "path": "user-square/24.svg"
+      },
+      {
+        "name": "user-square/16",
+        "path": "user-square/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-transfer",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-transfer",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-transfer/32",
+        "path": "user-transfer/32.svg"
+      },
+      {
+        "name": "user-transfer/20",
+        "path": "user-transfer/20.svg"
+      },
+      {
+        "name": "user-transfer/16",
+        "path": "user-transfer/16.svg"
+      },
+      {
+        "name": "user-transfer/24",
+        "path": "user-transfer/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-verified",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-verified",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-verified/24",
+        "path": "user-verified/24.svg"
+      },
+      {
+        "name": "user-verified/16",
+        "path": "user-verified/16.svg"
+      },
+      {
+        "name": "user-verified/20",
+        "path": "user-verified/20.svg"
+      },
+      {
+        "name": "user-verified/32",
+        "path": "user-verified/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-signed",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-signed",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-signed/24",
+        "path": "document-signed/24.svg"
+      },
+      {
+        "name": "document-signed/20",
+        "path": "document-signed/20.svg"
+      },
+      {
+        "name": "document-signed/16",
+        "path": "document-signed/16.svg"
+      },
+      {
+        "name": "document-signed/32",
+        "path": "document-signed/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "trash",
+    "aliases": [
+      "delete"
+    ],
+    "category": "operation",
+    "folder": "trash",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "trash/32",
+        "path": "trash/32.svg"
+      },
+      {
+        "name": "trash/24",
+        "path": "trash/24.svg"
+      },
+      {
+        "name": "trash/16",
+        "path": "trash/16.svg"
+      },
+      {
+        "name": "trash/20",
+        "path": "trash/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-export",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-export",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-export/32",
+        "path": "document-export/32.svg"
+      },
+      {
+        "name": "document-export/20",
+        "path": "document-export/20.svg"
+      },
+      {
+        "name": "document-export/24",
+        "path": "document-export/24.svg"
+      },
+      {
+        "name": "document-export/16",
+        "path": "document-export/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "menu-vertical",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "menu-vertical",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "menu-vertical/24",
+        "path": "menu-vertical/24.svg"
+      },
+      {
+        "name": "menu-vertical/32",
+        "path": "menu-vertical/32.svg"
+      },
+      {
+        "name": "menu-vertical/16",
+        "path": "menu-vertical/16.svg"
+      },
+      {
+        "name": "menu-vertical/20",
+        "path": "menu-vertical/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-minus",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-minus",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-minus/32",
+        "path": "user-minus/32.svg"
+      },
+      {
+        "name": "user-minus/16",
+        "path": "user-minus/16.svg"
+      },
+      {
+        "name": "user-minus/20",
+        "path": "user-minus/20.svg"
+      },
+      {
+        "name": "user-minus/24",
+        "path": "user-minus/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-up",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevron-up",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-up/16",
+        "path": "chevron-up/16.svg"
+      },
+      {
+        "name": "chevron-up/24",
+        "path": "chevron-up/24.svg"
+      },
+      {
+        "name": "chevron-up/32",
+        "path": "chevron-up/32.svg"
+      },
+      {
+        "name": "chevron-up/20",
+        "path": "chevron-up/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "close",
+    "aliases": [
+      "dismiss",
+      "clear"
+    ],
+    "category": "navigation",
+    "folder": "close",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "close/32",
+        "path": "close/32.svg"
+      },
+      {
+        "name": "close/24",
+        "path": "close/24.svg"
+      },
+      {
+        "name": "close/16",
+        "path": "close/16.svg"
+      },
+      {
+        "name": "close/20",
+        "path": "close/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "view",
+    "aliases": [
+      "eye",
+      "show"
+    ],
+    "category": "toggle",
+    "folder": "view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "view/24",
+        "path": "view/24.svg"
+      },
+      {
+        "name": "view/16",
+        "path": "view/16.svg"
+      },
+      {
+        "name": "view/32",
+        "path": "view/32.svg"
+      },
+      {
+        "name": "view/20",
+        "path": "view/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "instagram",
+    "aliases": [],
+    "category": "brand",
+    "folder": "instagram",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "instagram/20",
+        "path": "instagram/20.svg"
+      },
+      {
+        "name": "instagram/24",
+        "path": "instagram/24.svg"
+      },
+      {
+        "name": "instagram/16",
+        "path": "instagram/16.svg"
+      },
+      {
+        "name": "instagram/32",
+        "path": "instagram/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "multiple-window",
+    "aliases": [],
+    "category": "technology",
+    "folder": "multiple-window",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "multiple-window/20",
+        "path": "multiple-window/20.svg"
+      },
+      {
+        "name": "multiple-window/16",
+        "path": "multiple-window/16.svg"
+      },
+      {
+        "name": "multiple-window/32",
+        "path": "multiple-window/32.svg"
+      },
+      {
+        "name": "multiple-window/24",
+        "path": "multiple-window/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "ocr-scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "ocr-scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "ocr-scan/24",
+        "path": "ocr-scan/24.svg"
+      },
+      {
+        "name": "ocr-scan/16",
+        "path": "ocr-scan/16.svg"
+      },
+      {
+        "name": "ocr-scan/20",
+        "path": "ocr-scan/20.svg"
+      },
+      {
+        "name": "ocr-scan/32",
+        "path": "ocr-scan/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "file-network",
+    "aliases": [],
+    "category": "technology",
+    "folder": "file-network",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "file-network/24",
+        "path": "file-network/24.svg"
+      },
+      {
+        "name": "file-network/16",
+        "path": "file-network/16.svg"
+      },
+      {
+        "name": "file-network/20",
+        "path": "file-network/20.svg"
+      },
+      {
+        "name": "file-network/32",
+        "path": "file-network/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "facebook",
+    "aliases": [],
+    "category": "brand",
+    "folder": "facebook",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "facebook/24",
+        "path": "facebook/24.svg"
+      },
+      {
+        "name": "facebook/20",
+        "path": "facebook/20.svg"
+      },
+      {
+        "name": "facebook/32",
+        "path": "facebook/32.svg"
+      },
+      {
+        "name": "facebook/16",
+        "path": "facebook/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "credit-card",
+    "aliases": [
+      "debit-card"
+    ],
+    "category": "life-style",
+    "folder": "credit-card",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "credit-card/32",
+        "path": "credit-card/32.svg"
+      },
+      {
+        "name": "credit-card/20",
+        "path": "credit-card/20.svg"
+      },
+      {
+        "name": "credit-card/24",
+        "path": "credit-card/24.svg"
+      },
+      {
+        "name": "credit-card/16",
+        "path": "credit-card/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevrons-down",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevrons-down",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevrons-down/24",
+        "path": "chevrons-down/24.svg"
+      },
+      {
+        "name": "chevrons-down/16",
+        "path": "chevrons-down/16.svg"
+      },
+      {
+        "name": "chevrons-down/20",
+        "path": "chevrons-down/20.svg"
+      },
+      {
+        "name": "chevrons-down/32",
+        "path": "chevrons-down/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "envelope",
+    "aliases": [
+      "mail",
+      "postcard"
+    ],
+    "category": "other",
+    "folder": "envelope",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "envelope/24",
+        "path": "envelope/24.svg"
+      },
+      {
+        "name": "envelope/16",
+        "path": "envelope/16.svg"
+      },
+      {
+        "name": "envelope/32",
+        "path": "envelope/32.svg"
+      },
+      {
+        "name": "envelope/20",
+        "path": "envelope/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "face-recognition-scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "face-recognition-scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "face-recognition-scan/32",
+        "path": "face-recognition-scan/32.svg"
+      },
+      {
+        "name": "face-recognition-scan/24",
+        "path": "face-recognition-scan/24.svg"
+      },
+      {
+        "name": "face-recognition-scan/16",
+        "path": "face-recognition-scan/16.svg"
+      },
+      {
+        "name": "face-recognition-scan/20",
+        "path": "face-recognition-scan/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-seal",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-seal",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-seal/32",
+        "path": "document-seal/32.svg"
+      },
+      {
+        "name": "document-seal/20",
+        "path": "document-seal/20.svg"
+      },
+      {
+        "name": "document-seal/24",
+        "path": "document-seal/24.svg"
+      },
+      {
+        "name": "document-seal/16",
+        "path": "document-seal/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevrons-up",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevrons-up",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevrons-up/32",
+        "path": "chevrons-up/32.svg"
+      },
+      {
+        "name": "chevrons-up/20",
+        "path": "chevrons-up/20.svg"
+      },
+      {
+        "name": "chevrons-up/16",
+        "path": "chevrons-up/16.svg"
+      },
+      {
+        "name": "chevrons-up/24",
+        "path": "chevrons-up/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "note",
+    "aliases": [],
+    "category": "files",
+    "folder": "note",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "note/24",
+        "path": "note/24.svg"
+      },
+      {
+        "name": "note/16",
+        "path": "note/16.svg"
+      },
+      {
+        "name": "note/20",
+        "path": "note/20.svg"
+      },
+      {
+        "name": "note/32",
+        "path": "note/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "notification",
+    "aliases": [
+      "bell"
+    ],
+    "category": "toggle",
+    "folder": "notification",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "notification/32",
+        "path": "notification/32.svg"
+      },
+      {
+        "name": "notification/16",
+        "path": "notification/16.svg"
+      },
+      {
+        "name": "notification/20",
+        "path": "notification/20.svg"
+      },
+      {
+        "name": "notification/24",
+        "path": "notification/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "medal",
+    "aliases": [
+      "certificate"
+    ],
+    "category": "other",
+    "folder": "medal",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "medal/32",
+        "path": "medal/32.svg"
+      },
+      {
+        "name": "medal/16",
+        "path": "medal/16.svg"
+      },
+      {
+        "name": "medal/20",
+        "path": "medal/20.svg"
+      },
+      {
+        "name": "medal/24",
+        "path": "medal/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "rocket",
+    "aliases": [],
+    "category": "technology",
+    "folder": "rocket",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "rocket/24",
+        "path": "rocket/24.svg"
+      },
+      {
+        "name": "rocket/20",
+        "path": "rocket/20.svg"
+      },
+      {
+        "name": "rocket/16",
+        "path": "rocket/16.svg"
+      },
+      {
+        "name": "rocket/32",
+        "path": "rocket/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "data-structure",
+    "aliases": [],
+    "category": "data",
+    "folder": "data-structure",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "data-structure/24",
+        "path": "data-structure/24.svg"
+      },
+      {
+        "name": "data-structure/16",
+        "path": "data-structure/16.svg"
+      },
+      {
+        "name": "data-structure/20",
+        "path": "data-structure/20.svg"
+      },
+      {
+        "name": "data-structure/32",
+        "path": "data-structure/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "otp-requested",
+    "aliases": [],
+    "category": "technology",
+    "folder": "otp-requested",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "otp-requested/32",
+        "path": "otp-requested/32.svg"
+      },
+      {
+        "name": "otp-requested/16",
+        "path": "otp-requested/16.svg"
+      },
+      {
+        "name": "otp-requested/24",
+        "path": "otp-requested/24.svg"
+      },
+      {
+        "name": "otp-requested/20",
+        "path": "otp-requested/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "caret-right",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "caret-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "caret-right/32",
+        "path": "caret-right/32.svg"
+      },
+      {
+        "name": "caret-right/20",
+        "path": "caret-right/20.svg"
+      },
+      {
+        "name": "caret-right/16",
+        "path": "caret-right/16.svg"
+      },
+      {
+        "name": "caret-right/24",
+        "path": "caret-right/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-event",
+    "aliases": [
+      "forum"
+    ],
+    "category": "user",
+    "folder": "user-event",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-event/24",
+        "path": "user-event/24.svg"
+      },
+      {
+        "name": "user-event/16",
+        "path": "user-event/16.svg"
+      },
+      {
+        "name": "user-event/32",
+        "path": "user-event/32.svg"
+      },
+      {
+        "name": "user-event/20",
+        "path": "user-event/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "question-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "question-circle",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "question-circle/16",
+        "path": "question-circle/16.svg"
+      },
+      {
+        "name": "question-circle/20",
+        "path": "question-circle/20.svg"
+      },
+      {
+        "name": "question-circle/24",
+        "path": "question-circle/24.svg"
+      },
+      {
+        "name": "question-circle/32",
+        "path": "question-circle/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "question-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "question-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "question-circle-solid/32",
+        "path": "question-circle-solid/32.svg"
+      },
+      {
+        "name": "question-circle-solid/24",
+        "path": "question-circle-solid/24.svg"
+      },
+      {
+        "name": "question-circle-solid/20",
+        "path": "question-circle-solid/20.svg"
+      },
+      {
+        "name": "question-circle-solid/16",
+        "path": "question-circle-solid/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "forwards",
+    "aliases": [],
+    "category": "operation",
+    "folder": "forwards",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "forwards/24",
+        "path": "forwards/24.svg"
+      },
+      {
+        "name": "forwards/20",
+        "path": "forwards/20.svg"
+      },
+      {
+        "name": "forwards/16",
+        "path": "forwards/16.svg"
+      },
+      {
+        "name": "forwards/32",
+        "path": "forwards/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "shop",
+    "aliases": [
+      "store",
+      "merchant"
+    ],
+    "category": "life-style",
+    "folder": "shop",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "shop/24",
+        "path": "shop/24.svg"
+      },
+      {
+        "name": "shop/20",
+        "path": "shop/20.svg"
+      },
+      {
+        "name": "shop/16",
+        "path": "shop/16.svg"
+      },
+      {
+        "name": "shop/32",
+        "path": "shop/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "crop",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "crop",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "crop/32",
+        "path": "crop/32.svg"
+      },
+      {
+        "name": "crop/20",
+        "path": "crop/20.svg"
+      },
+      {
+        "name": "crop/24",
+        "path": "crop/24.svg"
+      },
+      {
+        "name": "crop/16",
+        "path": "crop/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "remove",
+    "aliases": [
+      "minus"
+    ],
+    "category": "navigation",
+    "folder": "remove",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "remove/20",
+        "path": "remove/20.svg"
+      },
+      {
+        "name": "remove/32",
+        "path": "remove/32.svg"
+      },
+      {
+        "name": "remove/24",
+        "path": "remove/24.svg"
+      },
+      {
+        "name": "remove/16",
+        "path": "remove/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-checkmark",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-checkmark",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-checkmark/32",
+        "path": "user-checkmark/32.svg"
+      },
+      {
+        "name": "user-checkmark/20",
+        "path": "user-checkmark/20.svg"
+      },
+      {
+        "name": "user-checkmark/24",
+        "path": "user-checkmark/24.svg"
+      },
+      {
+        "name": "user-checkmark/16",
+        "path": "user-checkmark/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "shield",
+    "aliases": [
+      "protection"
+    ],
+    "category": "other",
+    "folder": "shield",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "shield/24",
+        "path": "shield/24.svg"
+      },
+      {
+        "name": "shield/16",
+        "path": "shield/16.svg"
+      },
+      {
+        "name": "shield/20",
+        "path": "shield/20.svg"
+      },
+      {
+        "name": "shield/32",
+        "path": "shield/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "information-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "information-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "information-circle-solid/32",
+        "path": "information-circle-solid/32.svg"
+      },
+      {
+        "name": "information-circle-solid/24",
+        "path": "information-circle-solid/24.svg"
+      },
+      {
+        "name": "information-circle-solid/20",
+        "path": "information-circle-solid/20.svg"
+      },
+      {
+        "name": "information-circle-solid/16",
+        "path": "information-circle-solid/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-double",
+    "aliases": [
+      "read"
+    ],
+    "category": "status",
+    "folder": "checkmark-double",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "checkmark-double/32",
+        "path": "checkmark-double/32.svg"
+      },
+      {
+        "name": "checkmark-double/20",
+        "path": "checkmark-double/20.svg"
+      },
+      {
+        "name": "checkmark-double/24",
+        "path": "checkmark-double/24.svg"
+      },
+      {
+        "name": "checkmark-double/16",
+        "path": "checkmark-double/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-biometric",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-biometric",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-biometric/32",
+        "path": "user-biometric/32.svg"
+      },
+      {
+        "name": "user-biometric/20",
+        "path": "user-biometric/20.svg"
+      },
+      {
+        "name": "user-biometric/16",
+        "path": "user-biometric/16.svg"
+      },
+      {
+        "name": "user-biometric/24",
+        "path": "user-biometric/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "flash-off",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "flash-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "flash-off/24",
+        "path": "flash-off/24.svg"
+      },
+      {
+        "name": "flash-off/32",
+        "path": "flash-off/32.svg"
+      },
+      {
+        "name": "flash-off/16",
+        "path": "flash-off/16.svg"
+      },
+      {
+        "name": "flash-off/20",
+        "path": "flash-off/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "stetoscop",
+    "aliases": [],
+    "category": "health",
+    "folder": "stetoscop",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "stetoscop/24",
+        "path": "stetoscop/24.svg"
+      },
+      {
+        "name": "stetoscop/16",
+        "path": "stetoscop/16.svg"
+      },
+      {
+        "name": "stetoscop/32",
+        "path": "stetoscop/32.svg"
+      },
+      {
+        "name": "stetoscop/20",
+        "path": "stetoscop/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "tag",
+    "aliases": [
+      "label"
+    ],
+    "category": "operation",
+    "folder": "tag",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "tag/24",
+        "path": "tag/24.svg"
+      },
+      {
+        "name": "tag/20",
+        "path": "tag/20.svg"
+      },
+      {
+        "name": "tag/32",
+        "path": "tag/32.svg"
+      },
+      {
+        "name": "tag/16",
+        "path": "tag/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "health-facility",
+    "aliases": [],
+    "category": "health",
+    "folder": "health-facility",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "health-facility/32",
+        "path": "health-facility/32.svg"
+      },
+      {
+        "name": "health-facility/20",
+        "path": "health-facility/20.svg"
+      },
+      {
+        "name": "health-facility/16",
+        "path": "health-facility/16.svg"
+      },
+      {
+        "name": "health-facility/24",
+        "path": "health-facility/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-multiple",
+    "aliases": [
+      "recipients"
+    ],
+    "category": "user",
+    "folder": "user-multiple",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-multiple/32",
+        "path": "user-multiple/32.svg"
+      },
+      {
+        "name": "user-multiple/20",
+        "path": "user-multiple/20.svg"
+      },
+      {
+        "name": "user-multiple/16",
+        "path": "user-multiple/16.svg"
+      },
+      {
+        "name": "user-multiple/24",
+        "path": "user-multiple/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "home",
+    "aliases": [],
+    "category": "operation",
+    "folder": "home",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "home/16",
+        "path": "home/16.svg"
+      },
+      {
+        "name": "home/24",
+        "path": "home/24.svg"
+      },
+      {
+        "name": "home/20",
+        "path": "home/20.svg"
+      },
+      {
+        "name": "home/32",
+        "path": "home/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-empty",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-empty",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-empty/32",
+        "path": "document-empty/32.svg"
+      },
+      {
+        "name": "document-empty/20",
+        "path": "document-empty/20.svg"
+      },
+      {
+        "name": "document-empty/16",
+        "path": "document-empty/16.svg"
+      },
+      {
+        "name": "document-empty/24",
+        "path": "document-empty/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-left",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevron-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-left/16",
+        "path": "chevron-left/16.svg"
+      },
+      {
+        "name": "chevron-left/20",
+        "path": "chevron-left/20.svg"
+      },
+      {
+        "name": "chevron-left/32",
+        "path": "chevron-left/32.svg"
+      },
+      {
+        "name": "chevron-left/24",
+        "path": "chevron-left/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "exclamation-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "exclamation-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "exclamation-circle-solid/32",
+        "path": "exclamation-circle-solid/32.svg"
+      },
+      {
+        "name": "exclamation-circle-solid/24",
+        "path": "exclamation-circle-solid/24.svg"
+      },
+      {
+        "name": "exclamation-circle-solid/20",
+        "path": "exclamation-circle-solid/20.svg"
+      },
+      {
+        "name": "exclamation-circle-solid/16",
+        "path": "exclamation-circle-solid/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-copy",
+    "aliases": [
+      "duplicate"
+    ],
+    "category": "files",
+    "folder": "document-copy",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-copy/24",
+        "path": "document-copy/24.svg"
+      },
+      {
+        "name": "document-copy/16",
+        "path": "document-copy/16.svg"
+      },
+      {
+        "name": "document-copy/20",
+        "path": "document-copy/20.svg"
+      },
+      {
+        "name": "document-copy/32",
+        "path": "document-copy/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "flight-departure",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "flight-departure",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "flight-departure/20",
+        "path": "flight-departure/20.svg"
+      },
+      {
+        "name": "flight-departure/16",
+        "path": "flight-departure/16.svg"
+      },
+      {
+        "name": "flight-departure/32",
+        "path": "flight-departure/32.svg"
+      },
+      {
+        "name": "flight-departure/24",
+        "path": "flight-departure/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "link",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "link",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "link/24",
+        "path": "link/24.svg"
+      },
+      {
+        "name": "link/16",
+        "path": "link/16.svg"
+      },
+      {
+        "name": "link/32",
+        "path": "link/32.svg"
+      },
+      {
+        "name": "link/20",
+        "path": "link/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "privy-balance",
+    "aliases": [],
+    "category": "operation",
+    "folder": "privy-balance",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "privy-balance/24",
+        "path": "privy-balance/24.svg"
+      },
+      {
+        "name": "privy-balance/16",
+        "path": "privy-balance/16.svg"
+      },
+      {
+        "name": "privy-balance/20",
+        "path": "privy-balance/20.svg"
+      },
+      {
+        "name": "privy-balance/32",
+        "path": "privy-balance/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "no-image",
+    "aliases": [
+      "broken-image"
+    ],
+    "category": "formatting",
+    "folder": "no-image",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "no-image/24",
+        "path": "no-image/24.svg"
+      },
+      {
+        "name": "no-image/16",
+        "path": "no-image/16.svg"
+      },
+      {
+        "name": "no-image/32",
+        "path": "no-image/32.svg"
+      },
+      {
+        "name": "no-image/20",
+        "path": "no-image/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "send",
+    "aliases": [],
+    "category": "operation",
+    "folder": "send",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "send/32",
+        "path": "send/32.svg"
+      },
+      {
+        "name": "send/20",
+        "path": "send/20.svg"
+      },
+      {
+        "name": "send/24",
+        "path": "send/24.svg"
+      },
+      {
+        "name": "send/16",
+        "path": "send/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "system-administrator",
+    "aliases": [],
+    "category": "user",
+    "folder": "system-administrator",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "system-administrator/32",
+        "path": "system-administrator/32.svg"
+      },
+      {
+        "name": "system-administrator/16",
+        "path": "system-administrator/16.svg"
+      },
+      {
+        "name": "system-administrator/20",
+        "path": "system-administrator/20.svg"
+      },
+      {
+        "name": "system-administrator/24",
+        "path": "system-administrator/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "ticket",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "ticket",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "ticket/32",
+        "path": "ticket/32.svg"
+      },
+      {
+        "name": "ticket/16",
+        "path": "ticket/16.svg"
+      },
+      {
+        "name": "ticket/24",
+        "path": "ticket/24.svg"
+      },
+      {
+        "name": "ticket/20",
+        "path": "ticket/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "signature-draw",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "signature-draw",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "signature-draw/32",
+        "path": "signature-draw/32.svg"
+      },
+      {
+        "name": "signature-draw/24",
+        "path": "signature-draw/24.svg"
+      },
+      {
+        "name": "signature-draw/20",
+        "path": "signature-draw/20.svg"
+      },
+      {
+        "name": "signature-draw/16",
+        "path": "signature-draw/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-check",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-check",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-check/24",
+        "path": "document-check/24.svg"
+      },
+      {
+        "name": "document-check/20",
+        "path": "document-check/20.svg"
+      },
+      {
+        "name": "document-check/16",
+        "path": "document-check/16.svg"
+      },
+      {
+        "name": "document-check/32",
+        "path": "document-check/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "email-upload",
+    "aliases": [],
+    "category": "communication",
+    "folder": "email-upload",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "email-upload/32",
+        "path": "email-upload/32.svg"
+      },
+      {
+        "name": "email-upload/24",
+        "path": "email-upload/24.svg"
+      },
+      {
+        "name": "email-upload/16",
+        "path": "email-upload/16.svg"
+      },
+      {
+        "name": "email-upload/20",
+        "path": "email-upload/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "zoom-in",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "zoom-in",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "zoom-in/32",
+        "path": "zoom-in/32.svg"
+      },
+      {
+        "name": "zoom-in/16",
+        "path": "zoom-in/16.svg"
+      },
+      {
+        "name": "zoom-in/24",
+        "path": "zoom-in/24.svg"
+      },
+      {
+        "name": "zoom-in/20",
+        "path": "zoom-in/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "privy",
+    "aliases": [],
+    "category": "brand",
+    "folder": "privy",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "privy/32",
+        "path": "privy/32.svg"
+      },
+      {
+        "name": "privy/16",
+        "path": "privy/16.svg"
+      },
+      {
+        "name": "privy/20",
+        "path": "privy/20.svg"
+      },
+      {
+        "name": "privy/24",
+        "path": "privy/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "dashboard",
+    "aliases": [],
+    "category": "technology",
+    "folder": "dashboard",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "dashboard/24",
+        "path": "dashboard/24.svg"
+      },
+      {
+        "name": "dashboard/20",
+        "path": "dashboard/20.svg"
+      },
+      {
+        "name": "dashboard/32",
+        "path": "dashboard/32.svg"
+      },
+      {
+        "name": "dashboard/16",
+        "path": "dashboard/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "banned",
+    "aliases": [
+      "reject"
+    ],
+    "category": "status",
+    "folder": "banned-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "banned-solid/32",
+        "path": "banned-solid/32.svg"
+      },
+      {
+        "name": "banned-solid/24",
+        "path": "banned-solid/24.svg"
+      },
+      {
+        "name": "banned-solid/20",
+        "path": "banned-solid/20.svg"
+      },
+      {
+        "name": "banned-solid/16",
+        "path": "banned-solid/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-wait",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-wait",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-wait/32",
+        "path": "user-wait/32.svg"
+      },
+      {
+        "name": "user-wait/16",
+        "path": "user-wait/16.svg"
+      },
+      {
+        "name": "user-wait/24",
+        "path": "user-wait/24.svg"
+      },
+      {
+        "name": "user-wait/20",
+        "path": "user-wait/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "print",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "print",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "print/24",
+        "path": "print/24.svg"
+      },
+      {
+        "name": "print/16",
+        "path": "print/16.svg"
+      },
+      {
+        "name": "print/20",
+        "path": "print/20.svg"
+      },
+      {
+        "name": "print/32",
+        "path": "print/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "internet",
+    "aliases": [
+      "worldwide",
+      "globe"
+    ],
+    "category": "technology",
+    "folder": "internet",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "internet/24",
+        "path": "internet/24.svg"
+      },
+      {
+        "name": "internet/16",
+        "path": "internet/16.svg"
+      },
+      {
+        "name": "internet/20",
+        "path": "internet/20.svg"
+      },
+      {
+        "name": "internet/32",
+        "path": "internet/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-question",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-question",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-question/24",
+        "path": "document-question/24.svg"
+      },
+      {
+        "name": "document-question/16",
+        "path": "document-question/16.svg"
+      },
+      {
+        "name": "document-question/32",
+        "path": "document-question/32.svg"
+      },
+      {
+        "name": "document-question/20",
+        "path": "document-question/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-verified",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-verified",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-verified/20",
+        "path": "document-verified/20.svg"
+      },
+      {
+        "name": "document-verified/24",
+        "path": "document-verified/24.svg"
+      },
+      {
+        "name": "document-verified/32",
+        "path": "document-verified/32.svg"
+      },
+      {
+        "name": "document-verified/16",
+        "path": "document-verified/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "notification-off",
+    "aliases": [
+      "bell-off"
+    ],
+    "category": "toggle",
+    "folder": "notification-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "notification-off/32",
+        "path": "notification-off/32.svg"
+      },
+      {
+        "name": "notification-off/24",
+        "path": "notification-off/24.svg"
+      },
+      {
+        "name": "notification-off/16",
+        "path": "notification-off/16.svg"
+      },
+      {
+        "name": "notification-off/20",
+        "path": "notification-off/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "education",
+    "aliases": [],
+    "category": "other",
+    "folder": "education",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "education/32",
+        "path": "education/32.svg"
+      },
+      {
+        "name": "education/24",
+        "path": "education/24.svg"
+      },
+      {
+        "name": "education/20",
+        "path": "education/20.svg"
+      },
+      {
+        "name": "education/16",
+        "path": "education/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-exclamation",
+    "aliases": [
+      "document-warning"
+    ],
+    "category": "files",
+    "folder": "document-exclamation",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-exclamation/32",
+        "path": "document-exclamation/32.svg"
+      },
+      {
+        "name": "document-exclamation/16",
+        "path": "document-exclamation/16.svg"
+      },
+      {
+        "name": "document-exclamation/24",
+        "path": "document-exclamation/24.svg"
+      },
+      {
+        "name": "document-exclamation/20",
+        "path": "document-exclamation/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "customer-service",
+    "aliases": [],
+    "category": "communication",
+    "folder": "customer-service",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "customer-service/32",
+        "path": "customer-service/32.svg"
+      },
+      {
+        "name": "customer-service/24",
+        "path": "customer-service/24.svg"
+      },
+      {
+        "name": "customer-service/20",
+        "path": "customer-service/20.svg"
+      },
+      {
+        "name": "customer-service/16",
+        "path": "customer-service/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "maximize",
+    "aliases": [],
+    "category": "operation",
+    "folder": "maximize",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "maximize/24",
+        "path": "maximize/24.svg"
+      },
+      {
+        "name": "maximize/32",
+        "path": "maximize/32.svg"
+      },
+      {
+        "name": "maximize/20",
+        "path": "maximize/20.svg"
+      },
+      {
+        "name": "maximize/16",
+        "path": "maximize/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "history",
+    "aliases": [],
+    "category": "operation",
+    "folder": "history",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "history/16",
+        "path": "history/16.svg"
+      },
+      {
+        "name": "history/32",
+        "path": "history/32.svg"
+      },
+      {
+        "name": "history/24",
+        "path": "history/24.svg"
+      },
+      {
+        "name": "history/20",
+        "path": "history/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-sort",
+    "aliases": [],
+    "category": "operation",
+    "folder": "chevron-sort",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-sort/24",
+        "path": "chevron-sort/24.svg"
+      },
+      {
+        "name": "chevron-sort/20",
+        "path": "chevron-sort/20.svg"
+      },
+      {
+        "name": "chevron-sort/32",
+        "path": "chevron-sort/32.svg"
+      },
+      {
+        "name": "chevron-sort/16",
+        "path": "chevron-sort/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-logs",
+    "aliases": [
+      "user-detail"
+    ],
+    "category": "user",
+    "folder": "user-logs",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-logs/32",
+        "path": "user-logs/32.svg"
+      },
+      {
+        "name": "user-logs/20",
+        "path": "user-logs/20.svg"
+      },
+      {
+        "name": "user-logs/16",
+        "path": "user-logs/16.svg"
+      },
+      {
+        "name": "user-logs/24",
+        "path": "user-logs/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "fingerprint",
+    "aliases": [],
+    "category": "other",
+    "folder": "fingerprint",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "fingerprint/32",
+        "path": "fingerprint/32.svg"
+      },
+      {
+        "name": "fingerprint/16",
+        "path": "fingerprint/16.svg"
+      },
+      {
+        "name": "fingerprint/20",
+        "path": "fingerprint/20.svg"
+      },
+      {
+        "name": "fingerprint/24",
+        "path": "fingerprint/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "expand",
+    "aliases": [],
+    "category": "operation",
+    "folder": "expand",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "expand/24",
+        "path": "expand/24.svg"
+      },
+      {
+        "name": "expand/16",
+        "path": "expand/16.svg"
+      },
+      {
+        "name": "expand/32",
+        "path": "expand/32.svg"
+      },
+      {
+        "name": "expand/20",
+        "path": "expand/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-import",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-import",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-import/24",
+        "path": "document-import/24.svg"
+      },
+      {
+        "name": "document-import/20",
+        "path": "document-import/20.svg"
+      },
+      {
+        "name": "document-import/16",
+        "path": "document-import/16.svg"
+      },
+      {
+        "name": "document-import/32",
+        "path": "document-import/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "flash-on",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "flash-on",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "flash-on/20",
+        "path": "flash-on/20.svg"
+      },
+      {
+        "name": "flash-on/24",
+        "path": "flash-on/24.svg"
+      },
+      {
+        "name": "flash-on/16",
+        "path": "flash-on/16.svg"
+      },
+      {
+        "name": "flash-on/32",
+        "path": "flash-on/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "message",
+    "aliases": [],
+    "category": "communication",
+    "folder": "message",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "message/32",
+        "path": "message/32.svg"
+      },
+      {
+        "name": "message/20",
+        "path": "message/20.svg"
+      },
+      {
+        "name": "message/16",
+        "path": "message/16.svg"
+      },
+      {
+        "name": "message/24",
+        "path": "message/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-settings",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-settings",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-settings/32",
+        "path": "user-settings/32.svg"
+      },
+      {
+        "name": "user-settings/16",
+        "path": "user-settings/16.svg"
+      },
+      {
+        "name": "user-settings/24",
+        "path": "user-settings/24.svg"
+      },
+      {
+        "name": "user-settings/20",
+        "path": "user-settings/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "email",
+    "aliases": [],
+    "category": "communication",
+    "folder": "email",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "email/32",
+        "path": "email/32.svg"
+      },
+      {
+        "name": "email/16",
+        "path": "email/16.svg"
+      },
+      {
+        "name": "email/24",
+        "path": "email/24.svg"
+      },
+      {
+        "name": "email/20",
+        "path": "email/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-protected",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-protected",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-protected/20",
+        "path": "document-protected/20.svg"
+      },
+      {
+        "name": "document-protected/24",
+        "path": "document-protected/24.svg"
+      },
+      {
+        "name": "document-protected/32",
+        "path": "document-protected/32.svg"
+      },
+      {
+        "name": "document-protected/16",
+        "path": "document-protected/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "user-cross",
+    "aliases": [
+      "user-disabled"
+    ],
+    "category": "user",
+    "folder": "user-cross",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-cross/32",
+        "path": "user-cross/32.svg"
+      },
+      {
+        "name": "user-cross/16",
+        "path": "user-cross/16.svg"
+      },
+      {
+        "name": "user-cross/20",
+        "path": "user-cross/20.svg"
+      },
+      {
+        "name": "user-cross/24",
+        "path": "user-cross/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "list-view",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "list-view",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "list-view/24",
+        "path": "list-view/24.svg"
+      },
+      {
+        "name": "list-view/32",
+        "path": "list-view/32.svg"
+      },
+      {
+        "name": "list-view/16",
+        "path": "list-view/16.svg"
+      },
+      {
+        "name": "list-view/20",
+        "path": "list-view/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "adjust",
+    "aliases": [
+      "settings"
+    ],
+    "category": "operation",
+    "folder": "adjust",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "adjust/32",
+        "path": "adjust/32.svg"
+      },
+      {
+        "name": "adjust/20",
+        "path": "adjust/20.svg"
+      },
+      {
+        "name": "adjust/24",
+        "path": "adjust/24.svg"
+      },
+      {
+        "name": "adjust/16",
+        "path": "adjust/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "calculator-check",
+    "aliases": [],
+    "category": "other",
+    "folder": "calculator-check",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "calculator-check/32",
+        "path": "calculator-check/32.svg"
+      },
+      {
+        "name": "calculator-check/16",
+        "path": "calculator-check/16.svg"
+      },
+      {
+        "name": "calculator-check/24",
+        "path": "calculator-check/24.svg"
+      },
+      {
+        "name": "calculator-check/20",
+        "path": "calculator-check/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "unlock",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "unlock",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "unlock/32",
+        "path": "unlock/32.svg"
+      },
+      {
+        "name": "unlock/24",
+        "path": "unlock/24.svg"
+      },
+      {
+        "name": "unlock/20",
+        "path": "unlock/20.svg"
+      },
+      {
+        "name": "unlock/16",
+        "path": "unlock/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "edit",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "edit",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "edit/32",
+        "path": "edit/32.svg"
+      },
+      {
+        "name": "edit/20",
+        "path": "edit/20.svg"
+      },
+      {
+        "name": "edit/16",
+        "path": "edit/16.svg"
+      },
+      {
+        "name": "edit/24",
+        "path": "edit/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "caret-up",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "caret-up",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "caret-up/20",
+        "path": "caret-up/20.svg"
+      },
+      {
+        "name": "caret-up/32",
+        "path": "caret-up/32.svg"
+      },
+      {
+        "name": "caret-up/16",
+        "path": "caret-up/16.svg"
+      },
+      {
+        "name": "caret-up/24",
+        "path": "caret-up/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "blood-drop",
+    "aliases": [],
+    "category": "health",
+    "folder": "blood-drop",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "blood-drop/32",
+        "path": "blood-drop/32.svg"
+      },
+      {
+        "name": "blood-drop/24",
+        "path": "blood-drop/24.svg"
+      },
+      {
+        "name": "blood-drop/20",
+        "path": "blood-drop/20.svg"
+      },
+      {
+        "name": "blood-drop/16",
+        "path": "blood-drop/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "hospital",
+    "aliases": [],
+    "category": "health",
+    "folder": "hospital",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "hospital/32",
+        "path": "hospital/32.svg"
+      },
+      {
+        "name": "hospital/16",
+        "path": "hospital/16.svg"
+      },
+      {
+        "name": "hospital/24",
+        "path": "hospital/24.svg"
+      },
+      {
+        "name": "hospital/20",
+        "path": "hospital/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "chevron-circle-right",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "chevron-circle-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "chevron-circle-right/24",
+        "path": "chevron-circle-right/24.svg"
+      },
+      {
+        "name": "chevron-circle-right/16",
+        "path": "chevron-circle-right/16.svg"
+      },
+      {
+        "name": "chevron-circle-right/32",
+        "path": "chevron-circle-right/32.svg"
+      },
+      {
+        "name": "chevron-circle-right/20",
+        "path": "chevron-circle-right/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "rotate-right",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "rotate-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "rotate-right/32",
+        "path": "rotate-right/32.svg"
+      },
+      {
+        "name": "rotate-right/24",
+        "path": "rotate-right/24.svg"
+      },
+      {
+        "name": "rotate-right/16",
+        "path": "rotate-right/16.svg"
+      },
+      {
+        "name": "rotate-right/20",
+        "path": "rotate-right/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "flight-arrival",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "flight-arrival",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "flight-arrival/24",
+        "path": "flight-arrival/24.svg"
+      },
+      {
+        "name": "flight-arrival/16",
+        "path": "flight-arrival/16.svg"
+      },
+      {
+        "name": "flight-arrival/20",
+        "path": "flight-arrival/20.svg"
+      },
+      {
+        "name": "flight-arrival/32",
+        "path": "flight-arrival/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "arrow-left",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "arrow-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "arrow-left/32",
+        "path": "arrow-left/32.svg"
+      },
+      {
+        "name": "arrow-left/24",
+        "path": "arrow-left/24.svg"
+      },
+      {
+        "name": "arrow-left/16",
+        "path": "arrow-left/16.svg"
+      },
+      {
+        "name": "arrow-left/20",
+        "path": "arrow-left/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "tag-all",
+    "aliases": [
+      "label-all"
+    ],
+    "category": "operation",
+    "folder": "tag-all",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "tag-all/32",
+        "path": "tag-all/32.svg"
+      },
+      {
+        "name": "tag-all/20",
+        "path": "tag-all/20.svg"
+      },
+      {
+        "name": "tag-all/16",
+        "path": "tag-all/16.svg"
+      },
+      {
+        "name": "tag-all/24",
+        "path": "tag-all/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "fingerprint-scan",
+    "aliases": [],
+    "category": "technology",
+    "folder": "fingerprint-scan",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "fingerprint-scan/32",
+        "path": "fingerprint-scan/32.svg"
+      },
+      {
+        "name": "fingerprint-scan/16",
+        "path": "fingerprint-scan/16.svg"
+      },
+      {
+        "name": "fingerprint-scan/20",
+        "path": "fingerprint-scan/20.svg"
+      },
+      {
+        "name": "fingerprint-scan/24",
+        "path": "fingerprint-scan/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "gift",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "gift",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "gift/32",
+        "path": "gift/32.svg"
+      },
+      {
+        "name": "gift/24",
+        "path": "gift/24.svg"
+      },
+      {
+        "name": "gift/16",
+        "path": "gift/16.svg"
+      },
+      {
+        "name": "gift/20",
+        "path": "gift/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "group-contact",
+    "aliases": [],
+    "category": "user",
+    "folder": "group-contact",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "group-contact/20",
+        "path": "group-contact/20.svg"
+      },
+      {
+        "name": "group-contact/16",
+        "path": "group-contact/16.svg"
+      },
+      {
+        "name": "group-contact/32",
+        "path": "group-contact/32.svg"
+      },
+      {
+        "name": "group-contact/24",
+        "path": "group-contact/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-verified",
+    "aliases": [],
+    "category": "status",
+    "folder": "checkmark-verified-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "checkmark-verified-solid/32",
+        "path": "checkmark-verified-solid/32.svg"
+      },
+      {
+        "name": "checkmark-verified-solid/24",
+        "path": "checkmark-verified-solid/24.svg"
+      },
+      {
+        "name": "checkmark-verified-solid/20",
+        "path": "checkmark-verified-solid/20.svg"
+      },
+      {
+        "name": "checkmark-verified-solid/16",
+        "path": "checkmark-verified-solid/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "signature",
+    "aliases": [
+      "self-sign"
+    ],
+    "category": "formatting",
+    "folder": "signature",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "signature/16",
+        "path": "signature/16.svg"
+      },
+      {
+        "name": "signature/20",
+        "path": "signature/20.svg"
+      },
+      {
+        "name": "signature/32",
+        "path": "signature/32.svg"
+      },
+      {
+        "name": "signature/24",
+        "path": "signature/24.svg"
+      }
+    ]
+  },
+  {
+    "name": "translates",
+    "aliases": [
+      "language"
+    ],
+    "category": "technology",
+    "folder": "translates",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "translates/24",
+        "path": "translates/24.svg"
+      },
+      {
+        "name": "translates/16",
+        "path": "translates/16.svg"
+      },
+      {
+        "name": "translates/20",
+        "path": "translates/20.svg"
+      },
+      {
+        "name": "translates/32",
+        "path": "translates/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-review",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-review",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-review/20",
+        "path": "document-review/20.svg"
+      },
+      {
+        "name": "document-review/16",
+        "path": "document-review/16.svg"
+      },
+      {
+        "name": "document-review/24",
+        "path": "document-review/24.svg"
+      },
+      {
+        "name": "document-review/32",
+        "path": "document-review/32.svg"
+      }
+    ]
+  },
+  {
+    "name": "lock",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "lock",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "lock/20",
+        "path": "lock/20.svg"
+      },
+      {
+        "name": "lock/32",
+        "path": "lock/32.svg"
+      },
+      {
+        "name": "lock/24",
+        "path": "lock/24.svg"
+      },
+      {
+        "name": "lock/16",
+        "path": "lock/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "archive-box",
+    "aliases": [],
+    "category": "other",
+    "folder": "archive-box",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "archive-box/24",
+        "path": "archive-box/24.svg"
+      },
+      {
+        "name": "archive-box/32",
+        "path": "archive-box/32.svg"
+      },
+      {
+        "name": "archive-box/16",
+        "path": "archive-box/16.svg"
+      },
+      {
+        "name": "archive-box/20",
+        "path": "archive-box/20.svg"
+      }
+    ]
+  },
+  {
+    "name": "megaphone",
+    "aliases": [
+      "horn"
+    ],
+    "category": "other",
+    "folder": "megaphone",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "megaphone/32",
+        "path": "megaphone/32.svg"
+      },
+      {
+        "name": "megaphone/20",
+        "path": "megaphone/20.svg"
+      },
+      {
+        "name": "megaphone/24",
+        "path": "megaphone/24.svg"
+      },
+      {
+        "name": "megaphone/16",
+        "path": "megaphone/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "medicines",
+    "aliases": [],
+    "category": "health",
+    "folder": "medicines",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "medicines/32",
+        "path": "medicines/32.svg"
+      },
+      {
+        "name": "medicines/20",
+        "path": "medicines/20.svg"
+      },
+      {
+        "name": "medicines/24",
+        "path": "medicines/24.svg"
+      },
+      {
+        "name": "medicines/16",
+        "path": "medicines/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "document-filled",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-filled",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-filled/24",
+        "path": "document-filled/24.svg"
+      },
+      {
+        "name": "document-filled/20",
+        "path": "document-filled/20.svg"
+      },
+      {
+        "name": "document-filled/32",
+        "path": "document-filled/32.svg"
+      },
+      {
+        "name": "document-filled/16",
+        "path": "document-filled/16.svg"
+      }
+    ]
+  },
+  {
+    "name": "employee-tree",
+    "aliases": [],
+    "category": "user",
+    "folder": "employee-tree",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "employee-tree/24",
+        "path": "employee-tree/24.svg"
+      },
+      {
+        "name": "employee-tree/16",
+        "path": "employee-tree/16.svg"
+      },
+      {
+        "name": "employee-tree/20",
+        "path": "employee-tree/20.svg"
+      },
+      {
+        "name": "employee-tree/32",
+        "path": "employee-tree/32.svg"
+      }
+    ]
   }
 ]
