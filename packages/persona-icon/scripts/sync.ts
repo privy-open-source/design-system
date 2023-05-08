@@ -3,6 +3,7 @@
 
 import 'dotenv/config'
 import { EOL } from 'node:os'
+import { createHash } from 'node:crypto'
 import { Api } from 'figma-api'
 import type { ComponentMetadata } from 'figma-api/lib/api-types'
 import {
@@ -79,6 +80,7 @@ function getMetadata (objects: Iterable<ObjectData>): MetaData[] {
       metadata.files.push({
         name: object.filename,
         path: object.filepath,
+        hash: object.filehash,
       })
     } else {
       metadata = {
@@ -91,6 +93,7 @@ function getMetadata (objects: Iterable<ObjectData>): MetaData[] {
           {
             name: object.filename,
             path: object.filepath,
+            hash: object.filehash,
           },
         ],
       }
@@ -163,10 +166,17 @@ async function main () {
         await ensureFile(resolve(VUE_DIR, `${object.filename}.vue`))
         await writeFile(resolve(VUE_DIR, `${object.filename}.vue`), toVue(svg))
 
-        spinner.start(`[${++count}/${total}] - Success ${object.filename}`)
+        object.filehash = createHash('SHA256')
+          .update(svg)
+          .digest()
+          .toString('hex')
+
+        spinner.start(`[${++count}/${total}] - Success download ${object.filename}`)
       }
     }),
   )
+
+  spinner.start('Lint result files')
 
   await lintFile(VUE_DIR)
 

@@ -7,6 +7,7 @@ export interface MetaData {
   files: Array<{
     name: string,
     path: string,
+    hash?: string,
   }>,
 }
 
@@ -19,4 +20,5 @@ export interface ObjectData {
   category: string,
   filename: string,
   filepath: string,
+  filehash?: string,
 }
