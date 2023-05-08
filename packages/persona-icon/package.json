@@ -1,6 +1,6 @@
 {
   "name": "@privyid/persona-icon",
-  "version": "0.13.0",
+  "version": "0.13.0-rc.1",
   "packageManager": "yarn@3.3.1",
   "type": "module",
   "main": "./dist/module.cjs",
@@ -12,8 +12,8 @@
       "require": "./dist/module.cjs",
       "types": "./dist/types.d.ts"
     },
-    "./vue/": "./dist/vue/",
-    "./svg/": "./dist/svg/"
+    "./vue/": "./vue/",
+    "./svg/": "./svg/"
   },
   "license": "MIT",
   "repository": {
@@ -27,11 +27,14 @@
   },
   "homepage": "https://privy-open-source.github.io/design-system/",
   "files": [
-    "dist/"
+    "dist/",
+    "svg/",
+    "vue/"
   ],
   "scripts": {
     "prepack": "yarn build",
     "build": "nuxt-module-build",
+    "lint": "jiti scripts/lint.ts",
     "sync": "jiti scripts/sync.ts"
   },
   "devDependencies": {
@@ -48,5 +51,8 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.4.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

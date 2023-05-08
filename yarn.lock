@@ -3300,10 +3300,8 @@ __metadata:
   dependencies:
     "@nuxt/kit": ^3.4.3
     "@nuxt/module-builder": ^0.3.1
-    "@types/cli-progress": ^3
     "@types/download": ^8
     "@types/fs-extra": ^11
-    "@types/signale": ^1.4.4
     dotenv: ^16.0.3
     download: ^8.0.0
     figma-api: ^1.11.0
@@ -3844,15 +3842,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cli-progress@npm:^3":
-  version: 3.11.0
-  resolution: "@types/cli-progress@npm:3.11.0"
-  dependencies:
-    "@types/node": "*"
-  checksum: d4401622333e888925b47c5d5bb0b89dddae17cc020f909a64ad7275b326bf3c6e9cd467f625a197fd958a1e49220d32f4a2b0bf2948fee330c719a9b985674e
-  languageName: node
-  linkType: hard
-
 "@types/decompress@npm:*":
   version: 4.2.4
   resolution: "@types/decompress@npm:4.2.4"
@@ -4054,15 +4043,6 @@ __metadata:
   version: 7.3.13
   resolution: "@types/semver@npm:7.3.13"
   checksum: 00c0724d54757c2f4bc60b5032fe91cda6410e48689633d5f35ece8a0a66445e3e57fa1d6e07eb780f792e82ac542948ec4d0b76eb3484297b79bd18b8cf1cb0
-  languageName: node
-  linkType: hard
-
-"@types/signale@npm:^1.4.4":
-  version: 1.4.4
-  resolution: "@types/signale@npm:1.4.4"
-  dependencies:
-    "@types/node": "*"
-  checksum: da244d14b069311afe0d800446e13ccc2f9e37492188cf632dffc5061fa662886a1eee8907f2c6e45643119dc574902fccf09a3d2b3385b858fdcda266ca4161
   languageName: node
   linkType: hard
 

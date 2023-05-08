@@ -21,8 +21,8 @@ import { ObjectData, MetaData } from './types'
 
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
 const FILE_ID    = process.env.FIGMA_FILE_ID ?? ''
-const SVG_DIR    = resolve(__dirname, '../src/svg')
-const VUE_DIR    = resolve(__dirname, '../src/vue')
+const SVG_DIR    = resolve(__dirname, '../svg')
+const VUE_DIR    = resolve(__dirname, '../vue')
 const META_FILE  = resolve(SVG_DIR, 'meta.json')
 const CHUNK_SIZE = 300
 
