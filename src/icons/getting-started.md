@@ -46,3 +46,23 @@ import IconURL from '@privyid/persona-icon/svg/broom/32.svg'
 import IconBroom from '@privyid/persona-icon/vue/broom/32.vue'
 </script>
 ```
+
+## Nuxt 3
+
+Add this to your `nuxt.config.ts`
+
+```ts
+export default defineNuxtConfig({
+  modules: [
+    '@privyid/persona-icon'
+  ]
+})
+```
+
+All icons will auto-imported with format `pi-[name]-[size]`
+
+```vue
+<template>
+  <pi-broom-32 />
+</template>
+```

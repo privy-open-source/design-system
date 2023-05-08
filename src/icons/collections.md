@@ -9,7 +9,7 @@ import { groupBy } from 'lodash-es'
 
 const keyword = ref('')
 const fuse    = new Fuse(meta, {
-  threshold: 0.4,
+  threshold: 0.5,
   keys     : [
     'name',
     'folder',
@@ -27,7 +27,7 @@ const icons = computed(() => {
 })
 
 function getURL (icon) {
-  return new URL(`../../packages/persona-icon/svg/${icon.folder}/32.svg`, import.meta.url).href
+  return new URL(`../../packages/persona-icon/src/svg/${icon.folder}/32.svg`, import.meta.url).href
 }
 </script>
 

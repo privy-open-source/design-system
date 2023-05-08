@@ -21,14 +21,22 @@ import { ObjectData, MetaData } from './types'
 
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
 const FILE_ID    = process.env.FIGMA_FILE_ID ?? ''
-const SVG_DIR    = resolve(__dirname, '../svg')
-const VUE_DIR    = resolve(__dirname, '../vue')
+const SVG_DIR    = resolve(__dirname, '../src/svg')
+const VUE_DIR    = resolve(__dirname, '../src/vue')
 const META_FILE  = resolve(SVG_DIR, 'meta.json')
 const CHUNK_SIZE = 300
 
 const api     = new Api({ personalAccessToken: TOKEN })
 const spinner = ora()
-const eslint  = new ESLint({ fix: true })
+const eslint  = new ESLint({
+  fix       : true,
+  extensions: ['.vue'],
+  fixTypes  : [
+    'layout',
+    'problem',
+    'suggestion',
+  ],
+})
 
 function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData> {
   const result: Map<string, ObjectData> = new Map()

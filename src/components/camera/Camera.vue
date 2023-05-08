@@ -360,6 +360,7 @@ export default defineComponent({
       onStart,
       toast,
       deviceId,
+      constraints,
     }
   },
 })
