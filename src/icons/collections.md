@@ -26,7 +26,7 @@ const fuse    = new Fuse(meta, {
 const icons = computed(() => {
   const filtered = keyword.value
     ? fuse.search(keyword.value).map((result) => result.item)
-    : sortBy(meta, ['category', 'name'])
+    : sortBy(meta, ['category', 'folder'])
 
   return groupBy(filtered, 'category')
 })
@@ -46,13 +46,13 @@ function getURL (icon) {
   <template v-for="(items, category) in icons" :key="category">
     <h3 class="capitalize">{{ category }}</h3>
     <div class="grid grid-cols-2 gap-4 mt-8 md:grid-cols-4">
-      <template v-for="icon in items" :key="icon.name">
+      <template v-for="icon in items" :key="icon.folder">
         <div class="flex flex-col items-center justify-center py-5 border rounded">
           <client-only>
             <template #placeholder>
-              <img :src="createSpinner(32)" />
+              <img width="32" height="32" :src="createSpinner(32)" />
             </template>
-            <img :src="getURL(icon)" />
+            <img width="32" height="32" :src="getURL(icon)" />
           </client-only>
           <p-caption class="mt-4 text-center">
             {{ icon.folder }}

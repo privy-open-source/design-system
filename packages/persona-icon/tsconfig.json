@@ -16,6 +16,7 @@
     "lib": ["esnext", "dom"]
   },
   "include": [
+    "types",
     "src/**/*",
     "scripts/**/*",
     "build.config.ts"
