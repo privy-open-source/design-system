@@ -629,7 +629,7 @@ When you need title for grouping navigation, you can add navigation title by usi
 | Props          |   Type     | Default      | Description                                  |
 |----------------|:----------:|:------------:|-------------------------------------------------------------------|
 | `text`         | `String`   | `undefined`  | Text to place in the toggle element (link) of dropdown            |
-| `menu-class`         | `String`   | `undefined`  | CSS class to add in the menu container            |
+| `menu-class`         | `String` or `Array` or `Object`   | `undefined`  | CSS class to add in the menu container            |
 
 ### Slots `<p-nav-item-dropdown>`
 

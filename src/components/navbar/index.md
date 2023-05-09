@@ -355,7 +355,7 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
         </template>
         Label
       </p-nav-item>
-      <p-nav-item-dropdown class="dropdownadsf" dropdown-class="test-class">
+      <p-nav-item-dropdown>
         <template #button-content>
           <IconBee /> Label
         </template>
