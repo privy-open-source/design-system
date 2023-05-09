@@ -207,7 +207,7 @@ export default defineComponent({
     }
 
     .toggle__pointer {
-      @apply w-1/2 h-full rounded-xs z-[1];
+      @apply w-1/2 h-full rounded-xs z-1;
     }
 
     &.toggle--checked {

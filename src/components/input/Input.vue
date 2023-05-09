@@ -142,7 +142,7 @@ export default defineComponent({
     }
 
     &:focus {
-      @apply border-subtle ring-4 ring-subtle/10 z-[1];
+      @apply border-subtle ring-4 ring-subtle/10 z-1;
       @apply dark:border-dark-subtle dark:ring-dark-subtle/10;
     }
   }
@@ -191,7 +191,7 @@ export default defineComponent({
 
   &__prepend,
   &__append {
-    @apply absolute top-0 h-full flex items-center;
+    @apply absolute top-0 h-full flex items-center z-1;
   }
 
   &__prepend {
