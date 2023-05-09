@@ -5,7 +5,7 @@
     width="32"
     height="32"
     fill="none"><path
-      fill="#000"
+      fill="currentColor"
       fill-rule="evenodd"
       d="M6 16a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Z"
       clip-rule="evenodd" /></svg>

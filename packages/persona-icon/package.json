@@ -13,6 +13,7 @@
       "types": "./dist/types.d.ts"
     },
     "./vue/": "./vue/",
+    "./fonts/": "./fonts/",
     "./svg/": {
       "types": "./types/svg.d.ts",
       "default": "./svg/"
@@ -32,7 +33,8 @@
   "files": [
     "dist/",
     "svg/",
-    "vue/"
+    "vue/",
+    "fonts"
   ],
   "scripts": {
     "prepack": "yarn build",
@@ -50,7 +52,8 @@
     "fs-extra": "^11.1.1",
     "jiti": "^1.18.2",
     "ora": "^6.3.0",
-    "svgo": "^3.0.2"
+    "svgo": "^3.0.2",
+    "webfont": "^11.2.26"
   },
   "dependencies": {
     "@nuxt/kit": "^3.4.3"

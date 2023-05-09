@@ -47,7 +47,7 @@ function getURL (icon) {
     <h3 class="capitalize">{{ category }}</h3>
     <div class="grid grid-cols-2 gap-4 mt-8 md:grid-cols-4">
       <template v-for="icon in items" :key="icon.folder">
-        <div class="flex flex-col items-center justify-center py-5 border rounded">
+        <div class="flex flex-col items-center justify-center py-5 border rounded bg-default">
           <client-only>
             <template #placeholder>
               <img width="32" height="32" :src="createSpinner(32)" />

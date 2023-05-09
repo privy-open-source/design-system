@@ -5,6 +5,6 @@
     width="20"
     height="20"
     fill="none"><path
-      fill="#000"
+      fill="currentColor"
       d="M13 10 7 5v10l6-5Z" /></svg>
 </template>

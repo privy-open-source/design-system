@@ -5,14 +5,14 @@
     width="20"
     height="20"
     fill="none"><path
-      fill="#000"
+      fill="currentColor"
       fill-rule="evenodd"
       d="M10 3.352a6.648 6.648 0 1 0 0 13.296 6.648 6.648 0 0 0 0-13.296ZM2 10a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z"
       clip-rule="evenodd" /><path
-        fill="#000"
+        fill="currentColor"
         fill-rule="evenodd"
         d="M13.255 13.931a.676.676 0 0 1-.676-.676 2.58 2.58 0 1 0-5.158 0 .676.676 0 1 1-1.352 0 3.931 3.931 0 1 1 7.862 0 .676.676 0 0 1-.676.676Z"
         clip-rule="evenodd" /><path
-          fill="#000"
+          fill="currentColor"
           d="M8.372 7.559a.814.814 0 1 1-1.627 0 .814.814 0 0 1 1.627 0ZM13.255 7.559a.814.814 0 1 1-1.628 0 .814.814 0 0 1 1.628 0Z" /></svg>
 </template>

@@ -5,6 +5,7 @@ import 'dotenv/config'
 import { EOL } from 'node:os'
 import { createHash } from 'node:crypto'
 import { Api } from 'figma-api'
+import webfont from 'webfont'
 import type { ComponentMetadata } from 'figma-api/lib/api-types'
 import {
   writeFile,
@@ -12,7 +13,11 @@ import {
   writeJSON,
   remove,
 } from 'fs-extra'
-import { resolve, join } from 'node:path'
+import {
+  resolve,
+  join,
+  dirname,
+} from 'node:path'
 import { kebabCase, chunk } from 'lodash-es'
 import { optimize } from 'svgo'
 import download from 'download'
@@ -24,6 +29,7 @@ const TOKEN      = process.env.FIGMA_TOKEN ?? ''
 const FILE_ID    = process.env.FIGMA_FILE_ID ?? ''
 const SVG_DIR    = resolve(__dirname, '../svg')
 const VUE_DIR    = resolve(__dirname, '../vue')
+const FONT_DIR   = resolve(__dirname, '../fonts')
 const META_FILE  = resolve(SVG_DIR, 'meta.json')
 const CHUNK_SIZE = 300
 
@@ -32,11 +38,6 @@ const spinner = ora()
 const eslint  = new ESLint({
   fix       : true,
   extensions: ['.vue'],
-  fixTypes  : [
-    'layout',
-    'problem',
-    'suggestion',
-  ],
 })
 
 function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData> {
@@ -106,13 +107,58 @@ function getMetadata (objects: Iterable<ObjectData>): MetaData[] {
 }
 
 function toVue (svg: string): string {
-  return `<template>${EOL}${svg.replace('<svg', '<svg class="icon"')}${EOL}</template>${EOL}`
+  const content = svg
+    .replace('<svg', '<svg class="persona-icon"')
+    .replaceAll('fill="#000"', 'fill="currentColor"')
+
+  return `<template>${EOL}${content}${EOL}</template>${EOL}`
 }
 
 async function lintFile (file: string) {
   const results = await eslint.lintFiles(file)
 
   await ESLint.outputFixes(results)
+}
+
+async function createWebfont () {
+  const result = await webfont({
+    files            : [join(SVG_DIR, '**/32.svg')],
+    fontName         : 'persona-icon',
+    templateClassName: 'pi',
+    fixedWidth       : true,
+    normalize        : true,
+    fontHeight       : 1000,
+    round            : 10e12,
+    sort             : true,
+    glyphTransformFn (obj) {
+      return Object.assign(obj, { name: dirname((obj as any).path) })
+    },
+  })
+
+  if (result.ttf) {
+    await ensureFile(resolve(FONT_DIR, 'persona-icon.ttf'))
+    await writeFile(resolve(FONT_DIR, 'persona-icon.ttf'), result.ttf)
+  }
+
+  if (result.woff) {
+    await ensureFile(resolve(FONT_DIR, 'persona-iconresult.woff'))
+    await writeFile(resolve(FONT_DIR, 'persona-iconresult.woff'), result.woff)
+  }
+
+  if (result.woff2) {
+    await ensureFile(resolve(FONT_DIR, 'persona-iconresult.woff2'))
+    await writeFile(resolve(FONT_DIR, 'persona-iconresult.woff2'), result.woff2)
+  }
+
+  if (result.eot) {
+    await ensureFile(resolve(FONT_DIR, 'persona-iconresult.eot'))
+    await writeFile(resolve(FONT_DIR, 'persona-iconresult.eot'), result.eot)
+  }
+
+  if (result.svg) {
+    await ensureFile(resolve(FONT_DIR, 'persona-iconresult.svg'))
+    await writeFile(resolve(FONT_DIR, 'persona-iconresult.svg'), result.svg)
+  }
 }
 
 async function main () {
@@ -175,6 +221,10 @@ async function main () {
       }
     }),
   )
+
+  spinner.start('Generate webfont')
+
+  await createWebfont()
 
   spinner.start('Lint result files')
 
