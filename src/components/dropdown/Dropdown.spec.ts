@@ -561,3 +561,17 @@ it('should have style "divider" if props `divider` has provided', () => {
   expect(dropdown).toBeInTheDocument()
   expect(dropdown).toHaveClass('dropdown--divider')
 })
+
+it('should be able to add menu class in the dropdown container via `menu-class` props', () => {
+  const screen = render({
+    components: { Dropdown },
+    template  : `
+      <Dropdown menu-class="custom-class" />
+    `,
+  })
+
+  const dropdownMenu = screen.queryByTestId('dropdown-menu')
+
+  expect(dropdownMenu).toBeInTheDocument()
+  expect(dropdownMenu).toHaveClass('custom-class')
+})

@@ -122,3 +122,16 @@ it('should be able to toggle dropdown via v-model', async () => {
   dropdown = screen.queryByTestId('dropdown-menu')
   expect(dropdown).toBeVisible()
 })
+
+it('should be able to add class in the dropdown container via `menu-class` props', () => {
+  const screen = render({
+    components: { NavItemDropdown },
+    template  : `
+      <NavItemDropdown menu-class="custom-dropdown" />
+    `,
+  })
+
+  const menu = screen.queryByTestId('dropdown-menu')
+  expect(menu).toBeInTheDocument()
+  expect(menu).toHaveClass('custom-dropdown')
+})

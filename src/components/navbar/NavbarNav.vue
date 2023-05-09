@@ -40,7 +40,7 @@ export default defineComponent({
 <style lang="postcss">
 .navbar {
   &__nav {
-    @apply flex flex-row;
+    @apply flex flex-row items-center;
 
     &:not(.nav--align-center):not(.nav--align-right) {
       @apply mr-auto;
