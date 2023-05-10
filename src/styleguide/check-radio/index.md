@@ -343,7 +343,7 @@ This component usually used for picking option like icon, color, or image.
       <Card
         element="div"
         class="flex items-center justify-center hover:shadow-md ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-01.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
-        :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : image === 'image 01' }"
+        :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-1' : image === 'image 01' }"
         sectioned>
         <IconCheck
           class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
@@ -391,7 +391,7 @@ This component usually used for picking option like icon, color, or image.
       <Card
         element="div"
         class="flex items-center justify-center ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-01.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
-        :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : image === 'image 01' }"
+        :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-1' : image === 'image 01' }"
         sectioned>
         <IconCheck
           class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
@@ -423,7 +423,7 @@ This component usually used for picking option like icon, color, or image.
       <Card
         element="div"
         class="flex items-center justify-center shadow-md ease-in-out duration-200 bg-[url('/assets/images/img-radio-picker-01.svg')] bg-cover bg-no-repeat !border-0 relative overflow-hidden w-14 h-14"
-        :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-[1]' : image === 'image 01' }"
+        :class="{ 'after:absolute after:left-0 after:top-0 after:content-[\'\'] after:w-full after:h-full after:bg-emphasis/50 after:z-1' : image === 'image 01' }"
         sectioned>
         <IconCheck
           class="ease-in-out duration-200 text-on-emphasis relative z-[2]"
