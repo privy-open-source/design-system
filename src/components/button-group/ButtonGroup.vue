@@ -83,7 +83,7 @@ export default defineComponent({
     * to the front to overlay borders
     */
     &:is(:hover, :focus, :active, .active) {
-      @apply z-[1];
+      @apply z-1;
     }
 
     /**
