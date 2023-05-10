@@ -43,6 +43,7 @@
     "sync": "jiti scripts/sync.ts"
   },
   "devDependencies": {
+    "@happy-dom/global-registrator": "^9.10.9",
     "@nuxt/module-builder": "^0.3.1",
     "@types/download": "^8",
     "@types/fs-extra": "^11",
@@ -50,8 +51,10 @@
     "download": "^8.0.0",
     "figma-api": "^1.11.0",
     "fs-extra": "^11.1.1",
+    "happy-dom": "^9.10.9",
     "jiti": "^1.18.2",
     "ora": "^6.3.0",
+    "svg-path-commander": "^2.0.5",
     "svgo": "^3.0.2",
     "webfont": "^11.2.26"
   },

@@ -24,6 +24,7 @@ import download from 'download'
 import ora from 'ora'
 import { ESLint } from 'eslint'
 import { ObjectData, MetaData } from './types'
+import { fixSvg } from './fix-svg'
 
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
 const FILE_ID    = process.env.FIGMA_FILE_ID ?? ''
@@ -107,11 +108,7 @@ function getMetadata (objects: Iterable<ObjectData>): MetaData[] {
 }
 
 function toVue (svg: string): string {
-  const content = svg
-    .replace('<svg', '<svg class="persona-icon"')
-    .replaceAll('fill="#000"', 'fill="currentColor"')
-
-  return `<template>${EOL}${content}${EOL}</template>${EOL}`
+  return `<template>${EOL}${svg}${EOL}</template>${EOL}`
 }
 
 async function lintFile (file: string) {
@@ -204,7 +201,7 @@ async function main () {
         spinner.start(`[${count}/${total}] - Downloading ${object.filename}`)
 
         const buffer = await download(url)
-        const svg    = optimize(buffer.toString()).data
+        const svg    = optimize(fixSvg(buffer.toString())).data
 
         await ensureFile(resolve(SVG_DIR, object.filepath))
         await writeFile(resolve(SVG_DIR, object.filepath), svg)

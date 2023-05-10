@@ -1,16 +1,12 @@
 <template>
   <svg
-    class="icon"
+    class="persona-icon"
     xmlns="http://www.w3.org/2000/svg"
     width="20"
     height="20"
     fill="none"><path
       fill="currentColor"
-      fill-rule="evenodd"
-      d="M10 3.143a6.857 6.857 0 1 0 0 13.714 6.857 6.857 0 0 0 0-13.714ZM2 10a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z"
-      clip-rule="evenodd" /><path
+      d="M2 10a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm8-6.857a6.857 6.857 0 1 0 0 13.714 6.857 6.857 0 0 0 0-13.714Z" /><path
         fill="currentColor"
-        fill-rule="evenodd"
-        d="M13.706 7.945a.571.571 0 0 1 0 .808L9.579 12.88a.572.572 0 0 1-.809 0l-2.476-2.476a.571.571 0 0 1 .808-.808l2.073 2.072 3.723-3.723a.571.571 0 0 1 .808 0Z"
-        clip-rule="evenodd" /></svg>
+        d="M13.706 7.945a.571.571 0 0 1 0 .808L9.579 12.88a.571.571 0 0 1-.809 0l-2.476-2.476a.572.572 0 0 1 .808-.808l2.073 2.072 3.723-3.723a.571.571 0 0 1 .808 0Z" /></svg>
 </template>
