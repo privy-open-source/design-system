@@ -290,3 +290,20 @@ Tooltip use shadow `sm`
 
 ### Tour
 Tour is using shadow `sm`
+
+## Z-Index
+Some components that have fixed and absolute positions are given z-index values to sort their layer hierarchies.
+
+<div class="table-list w-full">
+
+| Name              |   Value     | Component            |
+|-------------------|-------------|----------------------|
+| z-fixed           | 1040        | Navbar & Sidebar     |
+| z-modal           | 1050        | Modal                |
+| z-overlay         | 1060        | Overlay              |
+| z-tooltip         | 1070        | Tooltip              |
+| z-tour-backdrop   | 1080        | Tour backdrop        |
+| z-tour            | 1085        | Tour                 |
+| z-toast           | 1090        | Toast                |
+
+</div>

@@ -95,7 +95,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .navbar {
-  --p-navbar-z-index: 1030;
+  --p-navbar-z-index: theme(zIndex.fixed);
 
   @apply bg-default relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
   @apply dark:bg-dark-default;
