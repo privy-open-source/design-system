@@ -6,7 +6,7 @@ description: List of all icons
 <script setup>
 import Fuse from 'fuse.js'
 import meta from '@privyid/persona-icon/svg/meta.json'
-import pCaption from '../components/caption/Caption.vue'
+import pText from '../components/text/Text.vue'
 import pInput from '../components/input/Input.vue'
 import { createSpinner } from '../components/avatar/utils/create-image'
 import { computed, ref } from 'vue-demi'
@@ -38,7 +38,8 @@ function getURL (icon) {
 
 # Collections
 
-> List of all icons
+> List of **{{ meta.length }}** icons
+
 
 <p-input placeholder="Search..." v-model="keyword" clearable />
 
@@ -47,16 +48,16 @@ function getURL (icon) {
     <h3 class="capitalize">{{ category }}</h3>
     <div class="grid grid-cols-2 gap-4 mt-8 md:grid-cols-4">
       <template v-for="icon in items" :key="icon.folder">
-        <div class="flex flex-col items-center justify-center py-5 border rounded bg-default">
+        <div class="flex flex-col items-center justify-center py-5 border rounded border-default dark:border-dark bg-default-alpha dark:bg-dark-default-alpha">
           <client-only>
             <template #placeholder>
               <img width="32" height="32" :src="createSpinner(32)" />
             </template>
-            <img width="32" height="32" :src="getURL(icon)" />
+            <img class="dark:invert" width="32" height="32" :src="getURL(icon)" />
           </client-only>
-          <p-caption class="mt-4 text-center">
+          <p-text variant="caption" class="mt-4 text-center">
             {{ icon.folder }}
-          </p-caption>
+          </p-text>
         </div>
       </template>
     </div>

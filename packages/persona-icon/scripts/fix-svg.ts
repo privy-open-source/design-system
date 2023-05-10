@@ -43,7 +43,7 @@ export function fixSvg (svgString: string) {
   svg.classList.add('persona-icon')
   svg.setAttribute('focusable', 'false')
 
-  return svg.innerHTML
+  return document.body.innerHTML
 }
 
 function isEnclosed (inner: PathArray, outer: PathArray) {

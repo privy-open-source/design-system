@@ -13,7 +13,7 @@
       "types": "./dist/types.d.ts"
     },
     "./vue/": "./vue/",
-    "./fonts/": "./fonts/",
+    "./font/": "./font/",
     "./svg/": {
       "types": "./types/svg.d.ts",
       "default": "./svg/"

@@ -1,10 +1,10 @@
 <template>
   <svg
-    class="persona-icon"
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
-    fill="none"><path
+    fill="none"
+    class="persona-icon"><path
       fill="currentColor"
       d="M2 8.41a6.41 6.41 0 1 1 12.52 1.945l7.255 7.255a.77.77 0 0 1 .225.544v3.077a.77.77 0 0 1-.77.769h-3.076a.77.77 0 0 1-.544-.225l-7.255-7.255A6.41 6.41 0 0 1 2 8.41Zm6.41-4.872a4.872 4.872 0 1 0 1.85 9.38.77.77 0 0 1 .837.168l7.376 7.376h1.989v-1.99l-7.376-7.375a.77.77 0 0 1-.168-.836A4.872 4.872 0 0 0 8.41 3.539Z" /><path
         fill="currentColor"
