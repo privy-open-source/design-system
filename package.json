@@ -19,7 +19,8 @@
     "postinstall": "husky install",
     "packages:prepare": "yarn workspaces foreach -v --topological-dev run prepare",
     "packages:build": "yarn workspaces foreach -v --topological-dev run build",
-    "release:prepare": "yarn workspaces foreach -v --topological-dev version minor --deferred"
+    "release:prepare": "yarn workspaces foreach -v --topological-dev version minor --deferred",
+    "icon:sync": "yarn workspace @privyid/persona-icon sync"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",

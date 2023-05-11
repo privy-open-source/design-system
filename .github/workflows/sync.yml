@@ -1,0 +1,62 @@
+name: Sync
+
+on:
+  schedule:
+    cron: 0 0 * * *
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+        node-version:
+          - 18
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+
+      - name: Get Cache Dir
+        id: yarn-cache-dir
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - name: Use Cache
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+
+      - name: Install Deps
+        run: yarn install --immutable
+
+      - name: Run Sync
+        run: yarn icon:sync
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE_ID: ${{ secrets.FIGMA_FILE_ID }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: feat/sync-icon
+          commit-message: "chore(persona-icon): sync with figma"
+          title: "chore(persona-icon): sync with figma"
