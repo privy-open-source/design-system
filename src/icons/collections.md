@@ -126,17 +126,17 @@ function download (icon) {
   <template v-if="selected">
     <div class="grid grid-cols-2 gap-4 mb-4">
       <div
-        class="p-4 border border-default-alpha dark:border-dark-default-alpha">
+        class="flex items-center justify-center p-4 border border-default-alpha dark:border-dark-default-alpha">
         <img
-          class="w-full h-full dark:invert"
-          width="100"
-          height="100"
+          class="scale-[5] dark:invert"
+          :width="size"
+          :height="size"
           :src="getURL(selected, size)" />
       </div>
       <div class="flex flex-col">
         <p-form-group
           class="col-span-2"
-          label="Name(s)">
+          label="Name">
           <div class="space-gap-1">
             <p-label>
               {{ selected.folder }}
@@ -154,13 +154,15 @@ function download (icon) {
         <p-form-group label="Size">
           <div class="flex space-x-4">
             <p-select
-              class="w-24"
+              class="w-36"
               v-model="size"
               :options="['16', '20', '24', '32']" />
           </div>
         </p-form-group>
         <div>
-          <p-button @click="download(selected)">
+          <p-button
+            class="w-36"
+            @click="download(selected)">
             <PiDownload16 />
             Get SVG
           </p-button>
