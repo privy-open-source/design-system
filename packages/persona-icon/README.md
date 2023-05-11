@@ -1,6 +1,6 @@
 # @privyid/persona-icon
 
-> Persona icon pack
+> Persona icon package
 
 ## Installation
 

@@ -4,8 +4,8 @@
 
 ## Official Packages
 
-- **[@privyid/persona][persona]** - Tailwind config presets which following our foundations
-- **[@privyid/persona-icon][persona-icon]** - Tailwind config presets which following our foundations
+- **[@privyid/persona][persona]** - Persona core package
+- **[@privyid/persona-icon][persona-icon]** - Persona icon package
 - **[@privyid/tailwind-preset][tailwind-preset]** - Tailwind config presets which following our foundations
 - **[@privyid/tailwind-extended][tailwind-extended]** - Add missing tailwind utilities
 - **[@privyid/tailwind-animation][tailwind-animation]** - Collection animation class for vue `<transition>`
