@@ -60,6 +60,7 @@ description: ase component for modal dialog.
 > Base component for modal dialog.
 
 ## Usage
+Modal are using `z-modal` for z-index value. It posible to change z-index value using CSS variable `--p-modal-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
 
 ### Simple Usage
 

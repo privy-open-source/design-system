@@ -96,6 +96,7 @@ export default defineComponent({
 .sidebar {
   --p-sidebar-size-narrow: 60px;
   --p-sidebar-size-wide: 230px;
+  --p-sidebar-z-index: theme(zIndex.fixed);
 
   @apply bg-default px-2 py-4;
   @apply dark:bg-dark-default;
@@ -121,7 +122,7 @@ export default defineComponent({
   * Fixed sidebar
   */
   &&--fixed {
-    @apply fixed top-0 h-full shadow-lg overflow-y-auto;
+    @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg overflow-y-auto;
 
     &:not(.sidebar--right) {
       @apply left-0;
