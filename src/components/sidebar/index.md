@@ -73,6 +73,7 @@ description: Base dashboard sidebar menu.
 ```
 
 ### Fixed Sidebar
+Fixed sidebar are using z-fixed for z-index value. It posible to change z-index value using CSS variable `--p-sidebar-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
 <preview>
   <p-sidebar fixed>
     <p-sidebar-brand>
