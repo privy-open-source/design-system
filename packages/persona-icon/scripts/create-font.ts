@@ -78,7 +78,7 @@ async function createCss (result: Result) {
        url('../font/persona-icon.woff2?${hash(result.woff2 ?? '')}') format('woff2'),
        url('../font/persona-icon.woff?${hash(result.woff ?? '')}') format('woff'),
        url('../font/persona-icon.ttf?${hash(result.ttf ?? '')}') format('truetype'),
-       url('../font/persona-icon.svg?${hash(result.svg ?? '')}#fontello') format('svg');
+       url('../font/persona-icon.svg?${hash(result.svg ?? '')}#${encodeURIComponent('Persona Icon')}') format('svg');
   font-weight: normal;
   font-style: normal;
 }

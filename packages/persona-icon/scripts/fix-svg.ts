@@ -1,49 +1,24 @@
 import SVGPath, { PathArray } from 'svg-path-commander'
-import { Window } from 'happy-dom'
 import { sortBy } from 'lodash-es'
 
-export function fixSvg (svgString: string) {
-  const window   = new Window()
-  const document = window.document
+export function fixPath (d: string): string {
+  const path  = SVGPath.normalizePath(d)
+  const paths = sortPaths(SVGPath.splitPath(path))
 
-  document.body.innerHTML = svgString
+  for (const [i, cur] of paths.entries()) {
+    if (i > 0) {
+      const outer = paths[0]
+      const prev  = paths[i - 1]
 
-  const svg   = document.querySelector('svg')
-  const paths = document.querySelectorAll('path')
+      const needRotate = (isEnclosed(cur, prev) && isClockwise(cur) === isClockwise(prev))
+        || (isEnclosed(cur, outer) && isClockwise(cur) === isClockwise(outer))
 
-  for (const el of paths) {
-    const d = el.getAttribute('d')
-
-    if (d) {
-      const path  = SVGPath.normalizePath(d)
-      const paths = sortPaths(SVGPath.splitPath(path))
-
-      for (const [i, cur] of paths.entries()) {
-        if (i > 0) {
-          const outer = paths[0]
-          const prev  = paths[i - 1]
-
-          const needRotate = (isEnclosed(cur, prev) && isClockwise(cur) === isClockwise(prev))
-            || (isEnclosed(cur, outer) && isClockwise(cur) === isClockwise(outer))
-
-          if (needRotate)
-            paths[i] = SVGPath.reversePath(cur)
-        }
-      }
-
-      el.setAttribute('d', SVGPath.pathToString(paths.flat() as PathArray))
+      if (needRotate)
+        paths[i] = SVGPath.reversePath(cur)
     }
-
-    el.removeAttribute('fill-rule')
-    el.removeAttribute('clip-rule')
-
-    el.setAttribute('fill', 'currentColor')
   }
 
-  svg.classList.add('persona-icon')
-  svg.setAttribute('focusable', 'false')
-
-  return document.body.innerHTML
+  return SVGPath.pathToString(paths.flat() as PathArray)
 }
 
 function isEnclosed (inner: PathArray, outer: PathArray) {

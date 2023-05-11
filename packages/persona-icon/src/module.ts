@@ -11,10 +11,10 @@ export interface ModuleOptions {
    */
   component: boolean,
   /**
-   * Enable webfont
+   * Enable fonticon
    * @default false
    */
-  font: boolean,
+  fonticon: boolean,
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -25,7 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {
     component: true,
-    font     : false,
+    fonticon : false,
   },
   async setup (options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
@@ -38,7 +38,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     }
 
-    if (options.font)
+    if (options.fonticon)
       nuxt.options.css.push(resolve('../font/persona-icon.css'))
   },
 })

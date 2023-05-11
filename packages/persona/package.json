@@ -1,5 +1,6 @@
 {
   "name": "@privyid/persona",
+  "description": "Persona core package",
   "version": "0.12.0",
   "license": "MIT",
   "repository": {

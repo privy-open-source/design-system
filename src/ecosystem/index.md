@@ -1,15 +1,11 @@
-<script setup>
-  import pCard from '../components/card/Card.vue'
-  import pButton from '../components/button/Button.vue'
-  import IconGithub from "@carbon/icons-vue/lib/logo--github/20"
-</script>
-
 # Ecosystem
 
 > An awesome list of Persona ecosystem.
 
 ## Official Packages
 
+- **[@privyid/persona][persona]** - Tailwind config presets which following our foundations
+- **[@privyid/persona-icon][persona-icon]** - Tailwind config presets which following our foundations
 - **[@privyid/tailwind-preset][tailwind-preset]** - Tailwind config presets which following our foundations
 - **[@privyid/tailwind-extended][tailwind-extended]** - Add missing tailwind utilities
 - **[@privyid/tailwind-animation][tailwind-animation]** - Collection animation class for vue `<transition>`
@@ -19,6 +15,8 @@
 - **[@privyid/nuauth][nuauth]** - Oauth2 Client for Nuxt
 - **[@privyid/nuapi][nuapi]** - Nuxt HTTP Client module
 
+[persona]: https://www.npmjs.com/package/@privyid/persona
+[persona-icon]: https://www.npmjs.com/package/@privyid/persona-icon
 [tailwind-preset]: https://www.npmjs.com/package/@privyid/tailwind-preset
 [tailwind-extended]: https://www.npmjs.com/package/@privyid/tailwind-extended
 [tailwind-animation]: https://www.npmjs.com/package/@privyid/tailwind-animation

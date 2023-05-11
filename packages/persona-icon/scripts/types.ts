@@ -12,6 +12,7 @@ export interface MetaData {
 }
 
 export interface ObjectData {
+  hash: string,
   id: string,
   name: string,
   folder: string,

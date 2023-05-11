@@ -3312,13 +3312,16 @@ __metadata:
     "@nuxt/module-builder": ^0.3.1
     "@types/download": ^8
     "@types/fs-extra": ^11
+    "@types/minimist": ^1
     dotenv: ^16.0.3
     download: ^8.0.0
     figma-api: ^1.11.0
     fs-extra: ^11.1.1
-    happy-dom: ^9.10.9
     jiti: ^1.18.2
+    minimist: ^1.2.8
+    ohash: ^1.1.2
     ora: ^6.3.0
+    p-all: ^5.0.0
     svg-path-commander: ^2.0.5
     svgo: ^3.0.2
     webfont: ^11.2.26
@@ -3999,7 +4002,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimist@npm:^1.2.0":
+"@types/minimist@npm:^1, @types/minimist@npm:^1.2.0":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
   checksum: b8da83c66eb4aac0440e64674b19564d9d86c80ae273144db9681e5eeff66f238ade9515f5006ffbfa955ceff8b89ad2bd8ec577d7caee74ba101431fb07045d
@@ -12144,6 +12147,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimist@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "minimist@npm:1.2.8"
+  checksum: 75a6d645fb122dad29c06a7597bddea977258957ed88d7a6df59b5cd3fe4a527e253e9bbf2e783e4b73657f9098b96a5fe96ab8a113655d4109108577ecf85b0
+  languageName: node
+  linkType: hard
+
 "minipass-collect@npm:^1.0.2":
   version: 1.0.2
   resolution: "minipass-collect@npm:1.0.2"
@@ -12961,7 +12971,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ohash@npm:^1.1.1":
+"ohash@npm:^1.1.1, ohash@npm:^1.1.2":
   version: 1.1.2
   resolution: "ohash@npm:1.1.2"
   checksum: f9f325096658aa793ca91bb6787014c02ed7f9f77a9b5269fc8e2e1f4eea40283f53c0cbf5c1ec2d4004fafbacaa2dae0504caa1c701d4b098c237ed6fb83f95
@@ -13103,6 +13113,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p-all@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "p-all@npm:5.0.0"
+  dependencies:
+    p-map: ^6.0.0
+  checksum: c9e1391871a106fdd7984cb0be6c2434793baf6e02599dbd50585738cff0388ee4204e7e09b8066126fa8bfb3f69636a5abd344c35ab2b4634c3815e06b68bab
+  languageName: node
+  linkType: hard
+
 "p-cancelable@npm:^0.4.0":
   version: 0.4.1
   resolution: "p-cancelable@npm:0.4.1"
@@ -13175,6 +13194,13 @@ __metadata:
   dependencies:
     aggregate-error: ^3.0.0
   checksum: cb0ab21ec0f32ddffd31dfc250e3afa61e103ef43d957cc45497afe37513634589316de4eb88abdfd969fe6410c22c0b93ab24328833b8eb1ccc087fc0442a1c
+  languageName: node
+  linkType: hard
+
+"p-map@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "p-map@npm:6.0.0"
+  checksum: 41e20c30a08da664610ff1ed198519d8cb93567491392c819ce502f523dde1187afab23e75e4c0fe74310d424a6f74ceaebe73ad5496c9e27d91183184fedd37
   languageName: node
   linkType: hard
 

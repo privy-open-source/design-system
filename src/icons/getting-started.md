@@ -140,15 +140,15 @@ All icons will auto-imported with format `pi-[icon-name]-[size]`
 
 ### Enable Fonticon
 
-We not recommended to use fonticon because cannot be tree-shaking. But if you want to enable, set `font: true` in your `nuxt.config.ts`.
+We not recommended to use fonticon because cannot be tree-shaking. But if you want to enable, set `fonticon: true` in your `nuxt.config.ts`.
 
 ```ts
 export default defineNuxtConfig({
   modules: [
     '@privyid/persona-icon'
   ],
-  personaIcon: {  // [!code ++]
-    font: true    // [!code ++]
-  },              // [!code ++]
+  personaIcon: {        // [!code ++]
+    fonticon: true      // [!code ++]
+  },                    // [!code ++]
 })
 ```

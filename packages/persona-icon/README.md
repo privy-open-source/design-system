@@ -1,12 +1,16 @@
-# persona-icon
+# @privyid/persona-icon
 
-> Tailwind preset for Persona project
+> Persona icon pack
 
 ## Installation
 
 ```sh
 yarn add -D @privyid/persona-icon
 ```
+
+## Usage
+
+See: https://privy-open-source.github.io/design-system/icons/getting-started
 
 ## License
 
