@@ -37,7 +37,7 @@ description: Base dashboard navbar.
     @apply block relative;
 
     &--fixed {
-      @apply h-36 overflow-hidden;
+      @apply h-40 overflow-hidden;
 
       .navbar--fixed {
         @apply absolute z-10;
@@ -124,6 +124,7 @@ Navbar brand is used for company, product, or project name. You can add permalin
 ```
 
 ## Fixed Navbar
+Fixed navbar are using `z-fixed` for z-index value. It posible to change z-index value using CSS variable `--p-navbar-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
 <preview class="flex-grow preview--fixed">
   <p-navbar fixed>
     <p-navbar-brand>
