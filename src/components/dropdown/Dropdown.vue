@@ -35,7 +35,8 @@
         v-show="isOpen"
         ref="menu"
         data-testid="dropdown-menu"
-        class="dropdown__menu">
+        class="dropdown__menu"
+        :class="menuClass">
         <DropdownGroup
           ref="wizard"
           class="dropdown__menu__container">
@@ -133,6 +134,14 @@ export default defineComponent({
     divider: {
       type   : Boolean,
       default: false,
+    },
+    menuClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
     },
   },
   models: {
