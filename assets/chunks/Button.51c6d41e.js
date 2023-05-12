@@ -1,1 +1,0 @@
-import{_ as a}from"./Button.vue_vue_type_style_index_0_lang.9316ee59.js";import{_ as e,o,A as r,B as t,r as n,n as l,L as p}from"./framework.e03f6a99.js";function c(s,f,m,i,d,_){return o(),r(p(s.tagName),{href:s.href,"data-testid":"btn",class:l(s.classNames)},{default:t(()=>[n(s.$slots,"default")]),_:3},8,["href","class"])}const $=e(a,[["render",c]]);export{$ as p};
