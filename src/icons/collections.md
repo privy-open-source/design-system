@@ -65,7 +65,7 @@ function download (icon) {
   const a = document.createElement('a')
 
   a.href     = getURL(icon, size.value)
-  a.download = kebabCase(`pi-${icon.folder}-${size.value}.svg`)
+  a.download = kebabCase(`pi-${icon.folder}-${size.value}`)
 
   a.click()
 }
