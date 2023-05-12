@@ -2903,32 +2903,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:^3.4.2":
-  version: 3.4.2
-  resolution: "@nuxt/kit@npm:3.4.2"
-  dependencies:
-    "@nuxt/schema": 3.4.2
-    c12: ^1.4.1
-    consola: ^3.1.0
-    defu: ^6.1.2
-    globby: ^13.1.4
-    hash-sum: ^2.0.0
-    ignore: ^5.2.4
-    jiti: ^1.18.2
-    knitwork: ^1.0.0
-    lodash.template: ^4.5.0
-    mlly: ^1.2.0
-    pathe: ^1.1.0
-    pkg-types: ^1.0.2
-    scule: ^1.0.0
-    semver: ^7.5.0
-    unctx: ^2.3.0
-    unimport: ^3.0.6
-    untyped: ^1.3.2
-  checksum: 7b3923fe122f30f134b9de57647077d444718a1b60690127eccb279ff6145e5daf5474c084b3244c917e849cca1cf99ddcc521b9a76a3dab59df8ac242530e75
-  languageName: node
-  linkType: hard
-
 "@nuxt/kit@npm:^3.4.3":
   version: 3.4.3
   resolution: "@nuxt/kit@npm:3.4.3"
@@ -3005,23 +2979,6 @@ __metadata:
     unimport: ^3.0.4
     untyped: ^1.3.2
   checksum: 78b432fdb5a6c874aff8a46f8aa1c0b7880af47786c5339c1c37f8c1723e773b50548bc543d5718ec0e132803a1fc8d94eecd881fd3a4f2e5469243001ee2ba1
-  languageName: node
-  linkType: hard
-
-"@nuxt/schema@npm:3.4.2":
-  version: 3.4.2
-  resolution: "@nuxt/schema@npm:3.4.2"
-  dependencies:
-    defu: ^6.1.2
-    hookable: ^5.5.3
-    pathe: ^1.1.0
-    pkg-types: ^1.0.2
-    postcss-import-resolver: ^2.0.0
-    std-env: ^3.3.2
-    ufo: ^1.1.1
-    unimport: ^3.0.6
-    untyped: ^1.3.2
-  checksum: bd9bd9168304e8d17ee7012abe65b8028c2dd9ba5ff8b8811c551e8d61a98f21cae0a6b339ea448bc1914efa9a04d9d4d2e7ad5f5d4532fd7e3c02c8c91a6c40
   languageName: node
   linkType: hard
 
@@ -3125,20 +3082,21 @@ __metadata:
   linkType: hard
 
 "@nuxtjs/tailwindcss@npm:^6.2.0":
-  version: 6.6.7
-  resolution: "@nuxtjs/tailwindcss@npm:6.6.7"
+  version: 6.6.8
+  resolution: "@nuxtjs/tailwindcss@npm:6.6.8"
   dependencies:
-    "@nuxt/kit": ^3.4.2
+    "@nuxt/kit": ^3.4.3
     "@nuxt/postcss8": ^1.1.3
     autoprefixer: ^10.4.14
     chokidar: ^3.5.3
     clear-module: ^4.1.2
     colorette: ^2.0.20
-    cookie-es: ^0.5.0
+    cookie-es: ^1.0.0
     defu: ^6.1.2
     destr: ^1.2.2
-    h3: ^1.6.4
+    h3: ^1.6.5
     iron-webcrypto: ^0.7.0
+    minimatch: ^9.0.0
     pathe: ^1.1.0
     postcss: ^8.4.23
     postcss-custom-properties: ^13.1.5
@@ -3146,9 +3104,9 @@ __metadata:
     radix3: ^1.0.1
     tailwind-config-viewer: ^1.7.2
     tailwindcss: ~3.3.2
-    ufo: ^1.1.1
+    ufo: ^1.1.2
     uncrypto: ^0.1.2
-  checksum: f4e5b5b0c24d1b0574886b858d2324b3ae3e5c84373ac5f27cc7a1221503e7a1ea126940ac7c7eb3be6704f1398136c149ea1c06664f3d1e9342909d847c9b69
+  checksum: 7179896988da1bd8a21eb57b76920a024ba933365cc62ceb474a445b818aa73b3f3df6ce97ac8c80d774f4709e473676b07943a750b8949690c258ef51cc17a9
   languageName: node
   linkType: hard
 
@@ -6686,6 +6644,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie-es@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "cookie-es@npm:1.0.0"
+  checksum: e8721cf4d38f3e44049c9118874b323f4f674b1c5cef84a2b888f5bf86ad720ad17b51b43150cad7535a375c24e2921da603801ad28aa6125c3d36c031b41468
+  languageName: node
+  linkType: hard
+
 "cookie-signature@npm:1.0.6":
   version: 1.0.6
   resolution: "cookie-signature@npm:1.0.6"
@@ -9898,6 +9863,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"h3@npm:^1.6.5":
+  version: 1.6.5
+  resolution: "h3@npm:1.6.5"
+  dependencies:
+    cookie-es: ^1.0.0
+    defu: ^6.1.2
+    destr: ^1.2.2
+    iron-webcrypto: ^0.7.0
+    radix3: ^1.0.1
+    ufo: ^1.1.2
+    uncrypto: ^0.1.2
+  checksum: 23b34f7cc62a46bcf5ac2e51b39af4a4ff425483b90cde8ca8310e8dcd6d1f7c2377dd72f26c1fcaff88497bd14957f2fd14422e2306990b4541d23077f1e131
+  languageName: node
+  linkType: hard
+
 "happy-dom@npm:8.9.0":
   version: 8.9.0
   resolution: "happy-dom@npm:8.9.0"
@@ -12070,6 +12050,15 @@ __metadata:
   dependencies:
     brace-expansion: ^2.0.1
   checksum: 15ce53d31a06361e8b7a629501b5c75491bc2b59712d53e802b1987121d91b433d73fcc5be92974fde66b2b51d8fb28d75a9ae900d249feb792bb1ba2a4f0a90
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "minimatch@npm:9.0.0"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: 7bd57899edd1d1b0560f50b5b2d1ea4ad2a366c5a2c8e0a943372cf2f200b64c256bae45a87a80915adbce27fa36526264296ace0da57b600481fe5ea3e372e5
   languageName: node
   linkType: hard
 
@@ -16506,6 +16495,13 @@ __metadata:
   version: 1.1.1
   resolution: "ufo@npm:1.1.1"
   checksum: 6bd210ed93d8c0dedd76c456b1d1dfb0e3b08c2216ee6080e61f0f545de0bac24b3d3a5530cd6a403810855f8d8fc3922583965296142e04cfc287442635e6c7
+  languageName: node
+  linkType: hard
+
+"ufo@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "ufo@npm:1.1.2"
+  checksum: 83c940a6a23b6d4fc0cd116265bb5dcf88ab34a408ad9196e413270ca607a4781c09b547dc518f43caee128a096f20fe80b5a0e62b4bcc0a868619896106d048
   languageName: node
   linkType: hard
 
