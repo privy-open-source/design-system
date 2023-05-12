@@ -374,6 +374,7 @@ You can programmatically toggle dropdown using `v-model`
 | `href`   | `String` |    `-`     | Place url permalink in the `dropdown-item` |
 | `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
 | `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |
+| `menu-class`       | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the menu container  |
 
 ### Slots
 
