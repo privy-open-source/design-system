@@ -86,18 +86,15 @@ const svgoConfig: Config = {
 }
 
 async function getLockData (): Promise<Map<string, ObjectData>> {
+  let data: Record<string, ObjectData> = {}
+
   if (!FORCE_SYNC && await exists(LOCK_FILE)) {
     try {
-      const data = await readJson(LOCK_FILE)
-
-      if (data)
-        return new Map(Object.entries(data))
-    } catch {
-      return new Map()
-    }
+      data = await readJson(LOCK_FILE)
+    } catch {}
   }
 
-  return new Map()
+  return new Map(Object.entries(data))
 }
 
 function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData> {

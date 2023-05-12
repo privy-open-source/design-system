@@ -2591,15 +2591,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@happy-dom/global-registrator@npm:^9.10.9":
-  version: 9.10.9
-  resolution: "@happy-dom/global-registrator@npm:9.10.9"
-  dependencies:
-    happy-dom: ^9.10.9
-  checksum: 934c3f6db7281b3baa32998235700210dd9e85463b7678486612f430cd6efe873af31e636ce86250f8c4bdf7f1659f91db51e22590b1634c36aa6051e1c8f1c4
-  languageName: node
-  linkType: hard
-
 "@humanwhocodes/config-array@npm:^0.11.8":
   version: 0.11.8
   resolution: "@humanwhocodes/config-array@npm:0.11.8"
@@ -3307,7 +3298,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/persona-icon@workspace:packages/persona-icon"
   dependencies:
-    "@happy-dom/global-registrator": ^9.10.9
     "@nuxt/kit": ^3.4.3
     "@nuxt/module-builder": ^0.3.1
     "@types/download": ^8
@@ -9943,20 +9933,6 @@ __metadata:
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
   checksum: 2a9d853199e924e4445c11844a3d0fdd75b9831edab4c5dda52c4725c4f7889cd919814333162b70b3ae43884ec70ed50fbc22564eb94ba09408218922870a34
-  languageName: node
-  linkType: hard
-
-"happy-dom@npm:^9.10.9":
-  version: 9.10.9
-  resolution: "happy-dom@npm:9.10.9"
-  dependencies:
-    css.escape: ^1.5.1
-    he: ^1.2.0
-    iconv-lite: ^0.6.3
-    webidl-conversions: ^7.0.0
-    whatwg-encoding: ^2.0.0
-    whatwg-mimetype: ^3.0.0
-  checksum: 03c8a8bc0351711f54956403d282e2cca693b7141dcc4dc1d4da0819fe024703f556b9fc8fc61ac454ffc62d30c68ed3144846d04ed0a884df87e929a9f104c9
   languageName: node
   linkType: hard
 

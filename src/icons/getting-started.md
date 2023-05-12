@@ -69,12 +69,12 @@ import IconPersona from '@privyid/persona-icon/vue/persona/32.vue'
 To use as font icon, you need include the css `@privyid/persona-icon/font/persona-icon.css`.
 
 <preview>
-  <p><i class="pi-persona" />Hello World</p>
+  <p><i class="pi-persona" /> Hello World</p>
 </preview>
 
 ```vue
 <template>
-  <p><i class="pi-persona" />Hello World</p>
+  <p><i class="pi-persona" /> Hello World</p>
 </template>
 
 <script setup lang="ts">

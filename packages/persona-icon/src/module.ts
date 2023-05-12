@@ -19,7 +19,7 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name         : '@privyid/icon',
+    name         : '@privyid/persona-icon',
     configKey    : 'personaIcon',
     compatibility: { nuxt: '>=3.0.0' },
   },

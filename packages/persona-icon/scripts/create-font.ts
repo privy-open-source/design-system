@@ -93,13 +93,8 @@ async function createCss (result: Result) {
   text-align: center;
   font-variant: normal;
   text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
-  /* you can be more comfortable with increased icons size */
-  font-size: 120%;
   vertical-align: middle;
-  margin-right: .2em;
-  /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }${EOL}${EOL}`
