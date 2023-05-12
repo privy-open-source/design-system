@@ -221,7 +221,7 @@ export default defineComponent({
   * in white
   */
   &__content {
-    @apply my-8 bg-default rounded relative shadow-2xl;
+    @apply my-8 bg-default rounded relative shadow-2xl max-w-[calc(100vw_-_theme('spacing.4'))];
     @apply dark:bg-dark-default;
 
     .modal__dismiss {
