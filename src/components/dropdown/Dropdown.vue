@@ -210,23 +210,25 @@ export default defineComponent({
     })
 
     onKeyStroke(['ArrowUp'], (event) => {
-      event.preventDefault()
+      if (isOpen.value) {
+        event.preventDefault()
 
-      if (isOpen.value)
         prevFocus()
+      }
     })
 
     onKeyStroke(['ArrowDown'], (event) => {
-      event.preventDefault()
+      if (isOpen.value) {
+        event.preventDefault()
 
-      if (isOpen.value)
         nextFocus()
+      }
     })
 
     onKeyStroke(['Tab'], (event) => {
-      event.preventDefault()
-
       if (isOpen.value) {
+        event.preventDefault()
+
         if (event.shiftKey)
           prevFocus()
         else
