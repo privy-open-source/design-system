@@ -1,0 +1,70 @@
+{
+  "name": "@privyid/persona-icon",
+  "description": "Persona icon package",
+  "version": "0.13.0-rc.3",
+  "packageManager": "yarn@3.3.1",
+  "type": "module",
+  "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs",
+      "types": "./dist/types.d.ts"
+    },
+    "./vue/": "./vue/",
+    "./font/": "./font/",
+    "./svg/": {
+      "types": "./types/svg.d.ts",
+      "default": "./svg/"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/privy-open-source/design-system.git",
+    "type": "git",
+    "directory": "packages/persona-icon"
+  },
+  "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",
+  "bugs": {
+    "url": "https://github.com/privy-open-source/design-system/issues"
+  },
+  "homepage": "https://privy-open-source.github.io/design-system/",
+  "files": [
+    "dist/",
+    "svg/",
+    "vue/",
+    "font/"
+  ],
+  "scripts": {
+    "prepack": "yarn build",
+    "build": "nuxt-module-build",
+    "lint": "jiti scripts/lint.ts",
+    "sync": "jiti scripts/sync.ts"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "^0.3.1",
+    "@types/download": "^8",
+    "@types/fs-extra": "^11",
+    "@types/minimist": "^1",
+    "dotenv": "^16.0.3",
+    "download": "^8.0.0",
+    "figma-api": "^1.11.0",
+    "fs-extra": "^11.1.1",
+    "jiti": "^1.18.2",
+    "minimist": "^1.2.8",
+    "ohash": "^1.1.2",
+    "ora": "^6.3.0",
+    "p-all": "^5.0.0",
+    "svg-path-commander": "^2.0.5",
+    "svgo": "^3.0.2",
+    "webfont": "^11.2.26"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.4.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -232,10 +232,14 @@ export default defineComponent({
       return cameras.value?.at(camera.value)?.deviceId
     })
 
-    const { stream, start, stop, enabled: isActive } = useUserMedia({
-      videoDeviceId: deviceId,
-      audioDeviceId: false,
+    const constraints = computed<MediaStreamConstraints>(() => {
+      return {
+        video: { deviceId: deviceId.value },
+        audio: false,
+      }
     })
+
+    const { stream, start, stop, enabled: isActive } = useUserMedia({ constraints })
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -356,6 +360,7 @@ export default defineComponent({
       onStart,
       toast,
       deviceId,
+      constraints,
     }
   },
 })

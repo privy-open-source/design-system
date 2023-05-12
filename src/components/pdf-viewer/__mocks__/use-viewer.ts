@@ -32,18 +32,18 @@ export const openDoc = vi.fn((src: string, password?: string) => {
       if (src.includes('error')) {
         context.error = new Error('Doc not loaded')
 
-        errorEvent.trigger(context.error)
+        void errorEvent.trigger(context.error)
       } else if (src.includes('protected') && !password) {
         context.error      = new Error('Doc not loaded')
         context.error.name = 'PasswordException'
 
-        errorEvent.trigger(context.error)
+        void errorEvent.trigger(context.error)
       } else {
         context.ready     = true
         context.totalPage = 5
 
-        loadEvent.trigger({} as unknown as PDFJS.PDFDocumentProxy)
-        readyEvent.trigger({})
+        void loadEvent.trigger({} as unknown as PDFJS.PDFDocumentProxy)
+        void readyEvent.trigger({})
       }
 
       context.loading = false

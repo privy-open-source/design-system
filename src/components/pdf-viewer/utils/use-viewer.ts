@@ -63,13 +63,13 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
         pdfViewer.value.setDocument(pdfDoc.value)
         pdfLinkService.value.setDocument(pdfDoc.value)
 
-        loadEvent.trigger(pdfDoc.value)
+        void loadEvent.trigger(pdfDoc.value)
       }
     } catch (error_) {
       if (error_ instanceof Error) {
         error.value = error_
 
-        errorEvent.trigger(error_)
+        void errorEvent.trigger(error_)
       }
     } finally {
       loading.value = false
@@ -108,7 +108,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
         pdfViewer.value.currentPageNumber = page.value
         ready.value                       = true
 
-        readyEvent.trigger(pdfViewer.value)
+        void readyEvent.trigger(pdfViewer.value)
       })
 
       bus.on('pagechanging', (event: { pageNumber: number }) => {
