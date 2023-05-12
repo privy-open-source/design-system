@@ -3196,7 +3196,7 @@ __metadata:
     postcss: 8.4.23
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
-    postcss-nested: 6.0.0
+    postcss-nested: 6.0.1
     sanitize-html: ^2.8.1
     scroll-into-view: ^1.16.2
     tabbable: 6.0.1
@@ -13842,7 +13842,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nested@npm:^6.0.1":
+"postcss-nested@npm:6.0.1, postcss-nested@npm:^6.0.1":
   version: 6.0.1
   resolution: "postcss-nested@npm:6.0.1"
   dependencies:
