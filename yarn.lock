@@ -16531,24 +16531,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ufo@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "ufo@npm:1.0.0"
-  checksum: 0ef41654d5b04028cc4778884e324f7fe1309c6dd7b3cbebc77e7eebd8df0776824c404ae958706667a7dce882510a3af31ec8dcef0ea1ec9f98cca84303407c
-  languageName: node
-  linkType: hard
-
-"ufo@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "ufo@npm:1.0.1"
-  checksum: 63024876f21b7cc44267255a8043062046d3215e09212bd682787a13ccf1e0c5d23f7686a7f1bc7ac9f34c7e8a88100af234f42b509db50f17ce638af6ac87cc
-  languageName: node
-  linkType: hard
-
-"ufo@npm:^1.1.0, ufo@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "ufo@npm:1.1.1"
-  checksum: 6bd210ed93d8c0dedd76c456b1d1dfb0e3b08c2216ee6080e61f0f545de0bac24b3d3a5530cd6a403810855f8d8fc3922583965296142e04cfc287442635e6c7
+"ufo@npm:^1.0.0, ufo@npm:^1.0.1, ufo@npm:^1.1.0, ufo@npm:^1.1.1":
+  version: 1.1.2
+  resolution: "ufo@npm:1.1.2"
+  checksum: 83c940a6a23b6d4fc0cd116265bb5dcf88ab34a408ad9196e413270ca607a4781c09b547dc518f43caee128a096f20fe80b5a0e62b4bcc0a868619896106d048
   languageName: node
   linkType: hard
 
