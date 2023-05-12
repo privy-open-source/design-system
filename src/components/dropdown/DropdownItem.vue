@@ -14,7 +14,9 @@
 
 <script lang="ts">
 import {
-  defineComponent, inject, computed,
+  defineComponent,
+  inject,
+  computed,
 } from 'vue-demi'
 import { DROPDOWN_CONTEXT } from '.'
 import { TagVariant } from '../button'
@@ -64,7 +66,9 @@ export default defineComponent({
     })
 
     return {
-      handleOnClick, classNames, tagName,
+      handleOnClick,
+      classNames,
+      tagName,
     }
   },
 })
