@@ -1,3 +1,5 @@
+import type { ComponentMetadata } from 'figma-api/lib/api-types'
+
 export interface MetaData {
   name: string,
   folder: string,
@@ -22,4 +24,5 @@ export interface ObjectData {
   filename: string,
   filepath: string,
   filehash?: string,
+  component: ComponentMetadata,
 }

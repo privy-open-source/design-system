@@ -124,6 +124,7 @@ function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData
       filename,
       filepath,
       aliases,
+      component,
     })
   }
 
