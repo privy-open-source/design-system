@@ -2,7 +2,7 @@
   "name": "@privyid/browserslist-config",
   "description": "Browserslist shareable config for Persona project",
   "version": "0.13.0",
-  "packageManager": "yarn@3.3.1",
+  "packageManager": "yarn@3.5.1",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
