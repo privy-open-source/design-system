@@ -10,23 +10,6 @@ layout: home
   import FILE2 from '../../public/assets/pdf/sample.pdf?url'
   import { reactive, ref } from 'vue-demi'
   
-  import pSidebar from '../sidebar/Sidebar.vue'
-  import pSidebarNav from '../sidebar/SidebarNav.vue'
-  import pSidebarBrand from '../sidebar/SidebarBrand.vue'
-  import pNavItem from '../nav/NavItem.vue'
-  import pNavSubItem from '../nav/NavSubItem.vue'
-  import pCheckbox from '../checkbox/Checkbox.vue'
-  import pBanner from '../banner/Banner.vue'
-  import pCard from '../card/Card.vue'
-  import pCaption from '../caption/Caption.vue'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconGroup from '@carbon/icons-vue/lib/group/20'
-  import IconDataStructured from '@carbon/icons-vue/lib/data--structured/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconCheck from '@carbon/icons-vue/lib/checkmark/20'
-  import IconClose from '@carbon/icons-vue/lib/close/20'
-
   const scale = ref(1)
 
   const src   = ref(FILE)
@@ -180,108 +163,6 @@ layout: home
   Zoom Out
 </p-button>
 <preview>
-  <p-sidebar fixed type="narrow">
-    <p-sidebar-brand>
-      <img src="/assets/images/logo-privy-icon.svg" alt="" />
-    </p-sidebar-brand>
-    <p-sidebar-nav>
-      <p-nav-item active>
-        <template #icon>
-          <IconDocument />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDocument />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-    </p-sidebar-nav>
-    <p-sidebar-nav bottom>
-      <p-nav-item>
-        <template #icon>
-          <IconSettings />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <img src="/assets/images/icon-flag.svg"/>
-        </template>
-        ENG
-      </p-nav-item>
-    </p-sidebar-nav>
-  </p-sidebar>
-</preview>
-<!-- <preview>
   <p-pdf-viewer layout="fit" :offset-top="72" :src="FILE" v-model:scale="scale">
     <template #navbar>
       <button @click="toggle">NGanu</button>
@@ -304,4 +185,4 @@ layout: home
         :src="`https://via.placeholder.com/${Math.round(item.width)}x${Math.round(item.height)}/77AB59/fff`" />
     </p-pdf-object>
   </p-pdf-viewer>
-</preview> -->
+</preview>

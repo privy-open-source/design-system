@@ -112,6 +112,7 @@ export default defineComponent({
   --p-sidebar-size-wide: 230px;
   --p-sidebar-bg: theme(backgroundColor.DEFAULT);
   --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT)
+  --p-sidebar-z-index: theme(zIndex.fixed);
 
   @apply bg-[color:var(--p-sidebar-bg)] px-2 py-4;
   @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
@@ -137,7 +138,7 @@ export default defineComponent({
   * Fixed sidebar
   */
   &&--fixed {
-    @apply fixed top-0 h-full shadow-lg overflow-y-auto;
+    @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg overflow-y-auto;
 
     .sidebar__container {
       @apply relative min-h-full;
@@ -148,7 +149,8 @@ export default defineComponent({
     }
 
     .sidebar__bottom {
-      @apply absolute bottom-0 w-[calc(100%+1rem)] -left-2;
+      @apply absolute -bottom-4 pb-4 w-[calc(100%+1rem)] -left-2 bg-[color:var(--p-sidebar-bg)];
+      @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
     }
 
     /**

@@ -35,7 +35,8 @@
         v-show="isOpen"
         ref="menu"
         data-testid="dropdown-menu"
-        class="dropdown__menu">
+        class="dropdown__menu"
+        :class="menuClass">
         <DropdownGroup
           ref="wizard"
           class="dropdown__menu__container">
@@ -134,6 +135,14 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    menuClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -210,23 +219,25 @@ export default defineComponent({
     })
 
     onKeyStroke(['ArrowUp'], (event) => {
-      event.preventDefault()
+      if (isOpen.value) {
+        event.preventDefault()
 
-      if (isOpen.value)
         prevFocus()
+      }
     })
 
     onKeyStroke(['ArrowDown'], (event) => {
-      event.preventDefault()
+      if (isOpen.value) {
+        event.preventDefault()
 
-      if (isOpen.value)
         nextFocus()
+      }
     })
 
     onKeyStroke(['Tab'], (event) => {
-      event.preventDefault()
-
       if (isOpen.value) {
+        event.preventDefault()
+
         if (event.shiftKey)
           prevFocus()
         else

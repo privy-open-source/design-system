@@ -75,7 +75,8 @@ description: Base dashboard sidebar menu.
 ```
 
 ### Fixed Sidebar
-<preview>
+Fixed sidebar are using z-fixed for z-index value. It posible to change z-index value using CSS variable `--p-sidebar-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
+<preview class="preview--fixed">
   <p-sidebar fixed>
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy.svg" alt="" />
@@ -135,7 +136,7 @@ To align Sidebar, use align prop. Available value are `left` and `right`
 ## Condensed
 When you need less space/padding of sidebar navigation, you can set by using `condensed` prop.
 
-<preview>
+<preview class="preview--fixed">
 <p-sidebar fixed>
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
@@ -286,98 +287,6 @@ If you need to place menus in the bottom, you just add `bottom` prop in your `<p
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
-    <p-sidebar-nav bottom>
-      <p-nav-item>
-        <template #icon>
-          <IconSettings />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <img src="/assets/images/icon-flag.svg"/>
-        </template>
-        ENG
-      </p-nav-item>
-    </p-sidebar-nav>
-  </p-sidebar>
-</preview>
-<preview>
-  <p-sidebar fixed type="narrow">
-    <p-sidebar-brand>
-      <img src="/assets/images/logo-privy-icon.svg" alt="" />
-    </p-sidebar-brand>
-    <p-sidebar-nav>
-      <p-nav-item active>
-        <template #icon>
-          <IconDocument />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDocument />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <!-- <p-nav-item>
-        <template #icon>
-          <IconDocument />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconDocument />
-        </template>
-      </p-nav-item>
-      <p-nav-item>
-        <template #icon>
-          <IconGroup />
-        </template>
-      </p-nav-item> -->
-      <p-nav-item>
-        <template #icon>
-          <IconDataStructured />
-        </template>
-      </p-nav-item>
-    </p-sidebar-nav>
     <p-sidebar-nav bottom>
       <p-nav-item>
         <template #icon>
@@ -573,7 +482,6 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
           class="p-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
             <div>
               Toggle Sidebar <IconCheck class="inline text-info" v-if="model" /> <IconClose class="inline text-danger" v-else />
               <p-caption>just works in under lg screen</p-caption>
@@ -624,7 +532,6 @@ It's possible to make sidebar toggle-hide by default to make fullwidth page with
           class="p-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
             <div>
               Toggle Sidebar <IconCheck class="inline text-info" v-if="modelA" /> <IconClose class="inline text-danger" v-else />
               <p-caption>works in all screen</p-caption>

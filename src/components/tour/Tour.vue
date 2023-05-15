@@ -106,6 +106,9 @@ export default defineComponent({
 
 <style lang="postcss">
 .tour {
+  --p-tour-z-index: theme(zIndex.tour.DEFAULT);
+  --p-tour-backdrop-z-index: theme(zIndex.tour.backdrop);
+
   & > &__dialog {
     @apply absolute top-0 left-0;
   }

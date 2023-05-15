@@ -9,7 +9,8 @@
       :variant="variant"
       :size="size"
       :placement="placement"
-      :no-caret="noCaret">
+      :no-caret="noCaret"
+      :menu-class="menuClass">
       <template #button-content>
         <slot name="button-content">
           {{ text }}
@@ -60,6 +61,14 @@ export default defineComponent({
     placement: {
       type   : String as PropType<Placement>,
       default: 'bottom-end',
+    },
+    menuClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
     },
   },
   models: {

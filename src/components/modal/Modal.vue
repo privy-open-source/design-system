@@ -191,7 +191,7 @@ export default defineComponent({
   --p-modal-size-lg: 800px;
   --p-modal-size-md: 600px;
   --p-modal-size-sm: 400px;
-  --p-modal-z-index: 1060;
+  --p-modal-z-index: theme(zIndex.modal);
   --p-modal-dismiss-z-index: calc(var(--p-modal-z-index) + 1);
 
   /**
@@ -221,7 +221,7 @@ export default defineComponent({
   * in white
   */
   &__content {
-    @apply my-8 bg-default rounded relative shadow-2xl;
+    @apply my-8 bg-default rounded relative shadow-2xl max-w-[calc(100vw_-_theme('spacing.4'))];
     @apply dark:bg-dark-default;
 
     .modal__dismiss {
