@@ -3,11 +3,17 @@
     data-testid="sidebar"
     class="sidebar"
     :class="classNames">
-    <slot />
+    <div
+      ref="sidebarContainer"
+      class="sidebar__container"
+      :style="`padding-bottom: ${height+40}px`">
+      <slot />
+    </div>
   </aside>
 </template>
 
 <script lang="ts">
+import { templateRef, useElementSize } from '@vueuse/core'
 import {
   defineComponent,
   PropType,
@@ -15,6 +21,7 @@ import {
   provide,
 } from 'vue-demi'
 import { SIDEBAR_SETTINGS, TypeVariant } from '.'
+import { useSelector } from '../../../packages/persona/dist/components/pdf-object/utils/use-selector'
 import { useVModel } from '../input'
 import { StyleVariant, AlignVariant } from '../nav'
 import { ToggleableVariant } from '../navbar'
@@ -61,6 +68,13 @@ export default defineComponent({
       type   : props.type,
     })
 
+    const sidebarContainer = templateRef<HTMLDivElement>('sidebarContainer')
+    const sidebarBottom    = useSelector('.sidebar__bottom', sidebarContainer)
+
+    const {
+      height,
+    } = useElementSize(sidebarBottom)
+
     const model = useVModel(props)
 
     const classNames = computed(() => {
@@ -87,7 +101,7 @@ export default defineComponent({
       return result
     })
 
-    return { classNames }
+    return { classNames, height }
   },
 })
 </script>
@@ -96,9 +110,11 @@ export default defineComponent({
 .sidebar {
   --p-sidebar-size-narrow: 60px;
   --p-sidebar-size-wide: 230px;
+  --p-sidebar-bg: theme(backgroundColor.DEFAULT);
+  --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT)
 
-  @apply bg-default px-2 py-4;
-  @apply dark:bg-dark-default;
+  @apply bg-[color:var(--p-sidebar-bg)] px-2 py-4;
+  @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
 
   /**
   * Default sidebar has
@@ -123,8 +139,16 @@ export default defineComponent({
   &&--fixed {
     @apply fixed top-0 h-full shadow-lg overflow-y-auto;
 
+    .sidebar__container {
+      @apply relative min-h-full;
+    }
+
     &:not(.sidebar--right) {
       @apply left-0;
+    }
+
+    .sidebar__bottom {
+      @apply absolute bottom-0 w-[calc(100%+1rem)] -left-2;
     }
 
     /**

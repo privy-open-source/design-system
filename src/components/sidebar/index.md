@@ -30,8 +30,10 @@ description: Base dashboard sidebar menu.
   .preview {
     @apply block h-96 overflow-hidden;
 
-    .sidebar--fixed {
-      @apply absolute;
+    &--fixed {
+      .sidebar--fixed {
+        @apply absolute;
+      }
     }
   }
 </style>
@@ -103,7 +105,7 @@ description: Base dashboard sidebar menu.
 
 ## Alignment
 To align Sidebar, use align prop. Available value are `left` and `right`
-<preview>
+<preview class="preview--fixed">
 <p-sidebar fixed align="right">
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
@@ -165,7 +167,7 @@ When you need less space/padding of sidebar navigation, you can set by using `co
 Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`, you can place your navigation with icon-only or icon-label.
 
 ### Icon Only
-<preview>
+<preview class="preview--fixed">
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy-icon.svg" alt="" />
@@ -218,7 +220,7 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 ```
 ### Icon with Label
 
-<preview>
+<preview class="preview--fixed">
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy-icon.svg" alt="" />
@@ -279,11 +281,103 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 ### Bottom Menus
 If you need to place menus in the bottom, you just add `bottom` prop in your `<p-sidebar-nav>`
 
+<preview class="preview--fixed">
+  <p-sidebar fixed type="narrow">
+    <p-sidebar-brand>
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
+    </p-sidebar-brand>
+    <p-sidebar-nav bottom>
+      <p-nav-item>
+        <template #icon>
+          <IconSettings />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <img src="/assets/images/icon-flag.svg"/>
+        </template>
+        ENG
+      </p-nav-item>
+    </p-sidebar-nav>
+  </p-sidebar>
+</preview>
 <preview>
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
+    <p-sidebar-nav>
+      <p-nav-item active>
+        <template #icon>
+          <IconDocument />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconGroup />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconDataStructured />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconDocument />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconGroup />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconGroup />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconDataStructured />
+        </template>
+      </p-nav-item>
+      <!-- <p-nav-item>
+        <template #icon>
+          <IconDocument />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconGroup />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconGroup />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconDataStructured />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconDocument />
+        </template>
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconGroup />
+        </template>
+      </p-nav-item> -->
+      <p-nav-item>
+        <template #icon>
+          <IconDataStructured />
+        </template>
+      </p-nav-item>
+    </p-sidebar-nav>
     <p-sidebar-nav bottom>
       <p-nav-item>
         <template #icon>
@@ -328,7 +422,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 
 ### Default Submenu
 
-<preview>
+<preview class="preview--fixed">
 <p-sidebar fixed>
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
@@ -396,7 +490,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 
 ### Collapsible Menus
 
-<preview>
+<preview class="preview--fixed">
 <p-sidebar fixed>
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
@@ -470,7 +564,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
   the demo works.
 </p-banner>
 
-<preview>
+<preview class="preview--fixed">
   <div class="flex justify-end">
     <p-checkbox appearance="none" v-model="model">
       <template #default>
@@ -521,7 +615,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
 </p-banner>
 
 It's possible to make sidebar toggle-hide by default to make fullwidth page with no-sidebar. Just give `all` value in `toggleable` props.
-<preview>
+<preview class="preview--fixed">
   <div class="flex justify-end">
     <p-checkbox appearance="none" v-model="modelA">
       <template #default>
