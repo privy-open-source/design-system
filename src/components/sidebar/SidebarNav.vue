@@ -1,15 +1,30 @@
 <template>
   <Nav
+    v-if="!bottom"
     class="sidebar__nav"
     data-testid="sidebar-nav"
     :title="title"
     vertical
     :variant="variant"
     :condensed="condensed"
-    :align="align"
-    :class="classNames">
+    :align="align">
     <slot />
   </Nav>
+  <template v-else>
+    <div class="sidebar__bottom">
+      <Nav
+        class="sidebar__nav"
+        data-testid="sidebar-nav"
+        :title="title"
+        vertical
+        :variant="variant"
+        :condensed="condensed"
+        :align="align"
+        :class="classNames">
+        <slot />
+      </Nav>
+    </div>
+  </template>
 </template>
 
 <script lang="ts">
@@ -73,9 +88,9 @@ export default defineComponent({
       }
     }
 
-    &&--bottom {
+    /* &&--bottom {
       @apply absolute bottom-0;
-    }
+    } */
   }
 
   &&--narrow {
