@@ -30,8 +30,10 @@ description: Base dashboard sidebar menu.
   .preview {
     @apply block h-96 overflow-hidden;
 
-    .sidebar--fixed {
-      @apply absolute;
+    &--fixed {
+      .sidebar--fixed {
+        @apply absolute;
+      }
     }
   }
 </style>
@@ -74,7 +76,7 @@ description: Base dashboard sidebar menu.
 
 ### Fixed Sidebar
 Fixed sidebar are using z-fixed for z-index value. It posible to change z-index value using CSS variable `--p-sidebar-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
-<preview>
+<preview class="preview--fixed">
   <p-sidebar fixed>
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy.svg" alt="" />
@@ -104,7 +106,7 @@ Fixed sidebar are using z-fixed for z-index value. It posible to change z-index 
 
 ## Alignment
 To align Sidebar, use align prop. Available value are `left` and `right`
-<preview>
+<preview class="preview--fixed">
 <p-sidebar fixed align="right">
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
@@ -134,7 +136,7 @@ To align Sidebar, use align prop. Available value are `left` and `right`
 ## Condensed
 When you need less space/padding of sidebar navigation, you can set by using `condensed` prop.
 
-<preview>
+<preview class="preview--fixed">
 <p-sidebar fixed>
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
@@ -166,7 +168,7 @@ When you need less space/padding of sidebar navigation, you can set by using `co
 Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`, you can place your navigation with icon-only or icon-label.
 
 ### Icon Only
-<preview>
+<preview class="preview--fixed">
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy-icon.svg" alt="" />
@@ -219,7 +221,7 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 ```
 ### Icon with Label
 
-<preview>
+<preview class="preview--fixed">
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy-icon.svg" alt="" />
@@ -280,7 +282,7 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 ### Bottom Menus
 If you need to place menus in the bottom, you just add `bottom` prop in your `<p-sidebar-nav>`
 
-<preview>
+<preview class="preview--fixed">
   <p-sidebar fixed type="narrow">
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy-icon.svg" alt="" />
@@ -329,7 +331,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 
 ### Default Submenu
 
-<preview>
+<preview class="preview--fixed">
 <p-sidebar fixed>
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
@@ -397,7 +399,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 
 ### Collapsible Menus
 
-<preview>
+<preview class="preview--fixed">
 <p-sidebar fixed>
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
@@ -471,7 +473,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
   the demo works.
 </p-banner>
 
-<preview>
+<preview class="preview--fixed">
   <div class="flex justify-end">
     <p-checkbox appearance="none" v-model="model">
       <template #default>
@@ -480,7 +482,6 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
           class="p-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
             <div>
               Toggle Sidebar <IconCheck class="inline text-info" v-if="model" /> <IconClose class="inline text-danger" v-else />
               <p-caption>just works in under lg screen</p-caption>
@@ -522,7 +523,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
 </p-banner>
 
 It's possible to make sidebar toggle-hide by default to make fullwidth page with no-sidebar. Just give `all` value in `toggleable` props.
-<preview>
+<preview class="preview--fixed">
   <div class="flex justify-end">
     <p-checkbox appearance="none" v-model="modelA">
       <template #default>
@@ -531,7 +532,6 @@ It's possible to make sidebar toggle-hide by default to make fullwidth page with
           class="p-2 hover:shadow-md hover:border-subtle ease-in-out duration-200 min-w-[223px]"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted" />
             <div>
               Toggle Sidebar <IconCheck class="inline text-info" v-if="modelA" /> <IconClose class="inline text-danger" v-else />
               <p-caption>works in all screen</p-caption>
