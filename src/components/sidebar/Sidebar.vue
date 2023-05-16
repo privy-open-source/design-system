@@ -21,7 +21,7 @@ import {
   provide,
 } from 'vue-demi'
 import { SIDEBAR_SETTINGS, TypeVariant } from '.'
-import { useSelector } from '../../../packages/persona/dist/components/pdf-object/utils/use-selector'
+import { useSelector } from '../pdf-object/utils/use-selector'
 import { useVModel } from '../input'
 import { StyleVariant, AlignVariant } from '../nav'
 import { ToggleableVariant } from '../navbar'
