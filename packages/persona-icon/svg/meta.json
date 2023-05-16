@@ -223,7 +223,7 @@
       {
         "name": "signature-manage/32",
         "path": "signature-manage/32.svg",
-        "hash": "de25d3282d7fa3ce33d87aece8bc810c095293817314da20230eac6acf12cd9e"
+        "hash": "717f738aa6cd6ef158dfd9446117df2f5242dc64c2fc38b4be2a56b50dc9e395"
       },
       {
         "name": "signature-manage/20",
@@ -7777,6 +7777,37 @@
         "name": "expand/32",
         "path": "expand/32.svg",
         "hash": "7d463a6dc0a9d02fdd7b1124a30219c10c8357280950f86b234797d15769ade9"
+      }
+    ]
+  },
+  {
+    "name": "set-default",
+    "aliases": [
+      "checkmark-square"
+    ],
+    "category": "formatting",
+    "folder": "set-default",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "set-default/16",
+        "path": "set-default/16.svg",
+        "hash": "44a17f6fcde3f7f63600bffaa0a2e8b60c86b64478c14b779b3b535661fc9bd7"
+      },
+      {
+        "name": "set-default/32",
+        "path": "set-default/32.svg",
+        "hash": "9bb400a53e6a5804e5e4c7ac888a50ccd712b511bffcc61a86b01ad4b30c74b8"
+      },
+      {
+        "name": "set-default/20",
+        "path": "set-default/20.svg",
+        "hash": "6415b60d324630dd7995267a68838557d0273146d6829047826e900fce45e032"
+      },
+      {
+        "name": "set-default/24",
+        "path": "set-default/24.svg",
+        "hash": "31a0d6cef7a5bae7ad9fdcdf6021994fbb96ff4c25409d512213a326ad651170"
       }
     ]
   }
