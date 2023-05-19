@@ -2667,19 +2667,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/core@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@floating-ui/core@npm:1.0.1"
-  checksum: c8a5f1a491788e5bebfe747e9372df2c7cbee0d8790ddf95e25149ac91ccf1a2cca8f768029826cfd3d687617c1d0f3241b97f1648bdf2a28d421f39e79c2eee
+"@floating-ui/core@npm:^1.2.6":
+  version: 1.2.6
+  resolution: "@floating-ui/core@npm:1.2.6"
+  checksum: e4aa96c435277f1720d4bc939e17a79b1e1eebd589c20b622d3c646a5273590ff889b8c6e126f7be61873cf8c4d7db7d418895986ea19b8b0d0530de32504c3a
   languageName: node
   linkType: hard
 
 "@floating-ui/dom@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@floating-ui/dom@npm:1.0.4"
+  version: 1.2.8
+  resolution: "@floating-ui/dom@npm:1.2.8"
   dependencies:
-    "@floating-ui/core": ^1.0.1
-  checksum: f038ad74c8c0d4e3668705396c9955018ec4fce5de4a3ebc0d2317fa10a0dbae3ff6c9d331423014ab7558864977a83a1664be2800cb1a1d57cd35647a3d4907
+    "@floating-ui/core": ^1.2.6
+  checksum: 02894774475a17baa498c86cd25d2825598e7de0734b8c08f7b8797b19c0bec13c4c726e529feb8bf26c6dee219c153ac1f90d8530a93534f765b3c04cfa3b4a
   languageName: node
   linkType: hard
 
