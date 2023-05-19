@@ -131,8 +131,8 @@ export default defineComponent({
       @apply dark:text-dark-default;
 
       > .btn {
-        @apply text-subtlest hover:text-muted;
-        @apply dark:text-dark-subtle hover:dark:text-dark-default;
+        @apply text-subtlest hover:text-muted focus:text-muted;
+        @apply dark:text-dark-subtle hover:dark:text-dark-default focus:dark:text-dark-default;
       }
 
       > .select {
