@@ -335,11 +335,9 @@ const menus = defineMenu([
 
 <preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="narrow" type="narrow">
-    <template #brand>
-      <p-sidebar-brand>
-        <img src="/assets/images/logo-privy-icon.svg" alt="" />
-      </p-sidebar-brand>
-    </template>
+    <p-sidebar-brand>
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
+    </p-sidebar-brand>
   </p-sidebar-menu>
 </preview>
 
