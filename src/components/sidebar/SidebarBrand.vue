@@ -1,14 +1,23 @@
 <template>
-  <a
-    :href="href"
+  <div
+    ref="sidebarBrand"
+    :class="classNames"
     data-testid="sidebar-brand"
     class="sidebar__brand">
-    <slot />
-  </a>
+    <a
+      v-if="href"
+      :href="href"
+      data-testid="sidebar-brand-link">
+      <slot />
+    </a>
+    <template v-else>
+      <slot />
+    </template>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue-demi'
+import { defineComponent, computed } from 'vue-demi'
 
 export default defineComponent({
   props: {
@@ -16,6 +25,30 @@ export default defineComponent({
       type   : String,
       default: undefined,
     },
+    sticky: {
+      type   : Boolean,
+      default: false,
+    },
+    fixed: {
+      type   : Boolean,
+      default: false,
+    },
+  },
+
+  setup (props) {
+    const classNames = computed(() => {
+      const result: string[] = ['']
+
+      if (props.sticky)
+        result.push('sidebar__brand--sticky')
+
+      if (props.fixed)
+        result.push('sidebar__brand--fixed')
+
+      return result
+    })
+
+    return { classNames }
   },
 })
 </script>
@@ -23,31 +56,45 @@ export default defineComponent({
 <style lang="postcss">
 .sidebar {
   &__brand {
-    @apply block text-center mx-auto font-semibold no-underline pb-4 text-default;
+    --p-sidebar-brand-sticky-top: 0;
+
+    @apply block text-center mx-auto pb-4 font-semibold text-default;
     @apply dark:text-dark-default;
+
+    a {
+      @apply no-underline;
+    }
 
     img {
       @apply max-w-full h-auto;
     }
-  }
 
-  &&--wide {
-    .sidebar__brand {
+    &--fixed {
+      @apply fixed top-0 left-0;
+
+      .sidebar--right & {
+        @apply right-0 left-auto;
+      }
+    }
+
+    &--sticky {
+      @apply sticky top-[var(--p-sidebar-brand-sticky-top)];
+    }
+
+    .sidebar--wide & {
+      @apply px-3;
+
       img {
         @apply h-7 w-auto;
       }
     }
-  }
 
-  &&--tabs,
-  &&--lines {
-    .sidebar__brand {
+    .sidebar--tabs &,
+    .sidebar--lines & {
       @apply pr-2;
     }
-  }
 
-  &&--lines {
-    .sidebar__brand {
+    .sidebar--lines & {
       @apply pl-2;
     }
   }
