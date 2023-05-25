@@ -1,5 +1,6 @@
 import { render } from '@testing-library/vue'
 import Sidebar from './Sidebar.vue'
+import SidebarBrand from './SidebarBrand.vue'
 import { ref, nextTick } from 'vue-demi'
 
 it('should rendered properly without any props', () => {
@@ -120,4 +121,25 @@ it('sidebar able to toggle via v-model', async () => {
 
   sidebar = screen.queryByTestId('sidebar')
   expect(sidebar).not.toHaveClass('sidebar--show')
+})
+
+it('able to add sidebar brand via `brand` slots', () => {
+  const screen = render({
+    components: { Sidebar, SidebarBrand },
+    template  : `
+      <Sidebar>
+        <template #brand>
+          <SidebarBrand>
+            brand
+          </SidebarBrand>
+        </template>
+      </Sidebar>
+    `,
+  })
+
+  const sidebarMenu  = screen.queryByTestId('sidebar-menus')
+  const sidebarBrand = screen.queryByTestId('sidebar-brand')
+
+  expect(sidebarMenu).not.toContainElement(sidebarBrand)
+  expect(sidebarBrand).toHaveTextContent('brand')
 })

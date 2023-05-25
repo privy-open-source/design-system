@@ -3,11 +3,19 @@
     data-testid="sidebar"
     class="sidebar"
     :class="classNames">
+    <slot name="brand" />
     <div
-      ref="sidebarContainer"
-      class="sidebar__container"
+      ref="sidebarMenus"
+      data-testid="sidebar-menus"
+      class="sidebar__menus"
       :style="`padding-bottom: ${height+40}px`">
       <slot />
+
+      <div
+        v-if="$slots.bottom"
+        class="sidebar__bottom">
+        <slot name="bottom" />
+      </div>
     </div>
   </aside>
 </template>
@@ -68,8 +76,8 @@ export default defineComponent({
       type   : props.type,
     })
 
-    const sidebarContainer = templateRef<HTMLDivElement>('sidebarContainer')
-    const sidebarBottom    = useSelector('.sidebar__bottom', sidebarContainer)
+    const sidebarMenus  = templateRef<HTMLDivElement>('sidebarMenus')
+    const sidebarBottom = useSelector('.sidebar__bottom', sidebarMenus)
 
     const {
       height,
@@ -111,7 +119,7 @@ export default defineComponent({
   --p-sidebar-size-narrow: 60px;
   --p-sidebar-size-wide: 230px;
   --p-sidebar-bg: theme(backgroundColor.DEFAULT);
-  --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT)
+  --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT);
   --p-sidebar-z-index: theme(zIndex.fixed);
 
   @apply bg-[color:var(--p-sidebar-bg)] px-2 py-4;
@@ -140,7 +148,7 @@ export default defineComponent({
   &&--fixed {
     @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg overflow-y-auto;
 
-    .sidebar__container {
+    .sidebar__menus {
       @apply relative min-h-full;
     }
 

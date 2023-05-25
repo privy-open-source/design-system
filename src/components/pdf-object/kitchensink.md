@@ -9,7 +9,7 @@ layout: home
   import FILE from '../../public/assets/pdf/Calibrator-v3.pdf?url'
   import FILE2 from '../../public/assets/pdf/sample.pdf?url'
   import { reactive, ref } from 'vue-demi'
-  
+
   const scale = ref(1)
 
   const src   = ref(FILE)

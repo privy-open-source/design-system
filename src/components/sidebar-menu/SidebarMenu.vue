@@ -5,7 +5,9 @@
     :fixed="fixed"
     :toggleable="toggleable"
     :align="align">
-    <slot />
+    <template #brand>
+      <slot />
+    </template>
     <SidebarNav
       v-for="(menu, id) in menus"
       :key="id"
@@ -57,6 +59,9 @@
         </NavItem>
       </template>
     </SidebarNav>
+    <template #bottom>
+      <slot name="bottom" />
+    </template>
   </Sidebar>
 </template>
 
