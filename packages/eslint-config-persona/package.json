@@ -1,7 +1,7 @@
 {
   "name": "@privyid/eslint-config-persona",
   "description": "Eslint shareable config for Persona project",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "packageManager": "yarn@3.5.1",
   "license": "MIT",
   "repository": {
