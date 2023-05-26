@@ -19,6 +19,7 @@
     "postinstall": "husky install",
     "packages:prepare": "yarn workspaces foreach -v --topological-dev run prepare",
     "packages:build": "yarn workspaces foreach -v --topological-dev run build",
+    "release": "yarn workspaces foreach -v --topological-dev --no-private npm public --tolerate-republish",
     "release:prepare": "yarn workspaces foreach -v --topological-dev version minor --deferred",
     "icon:sync": "yarn workspace @privyid/persona-icon sync"
   },
