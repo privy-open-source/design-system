@@ -1,6 +1,6 @@
 {
   "name": "@privyid/tailwind-animation",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "packageManager": "yarn@3.5.1",
   "license": "MIT",
   "repository": {

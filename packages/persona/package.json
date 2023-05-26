@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona",
   "description": "Persona core package",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
@@ -64,7 +64,7 @@
     "@vueuse/core": "10.1.2",
     "@vueuse/math": "10.1.2",
     "@zxing/browser": "0.1.3",
-    "@zxing/library": "0.19.2",
+    "@zxing/library": "0.20.0",
     "chart.js": "4.3.0",
     "core-js": "3",
     "date-fns": "2.29.3",
