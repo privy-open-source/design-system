@@ -392,7 +392,7 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
 ```
 
 ## Responsive
-Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with available value `lg`, `md` and `sm`. Then `<p-navbar-toggle>` used with `<p-collapse is-nav>` component.
+Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with available value `lg`, `md` and `sm`. Then `<p-navbar-toggle>` used with `<p-collapse is-nav>` component. Max height of navbar collapse is `20rem` by default, but it's very possible to custom it via `--p-navbar-collapse-max-height` variable.
 
 <preview>
   <p-navbar toggleable="lg">
