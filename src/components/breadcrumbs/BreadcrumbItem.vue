@@ -69,7 +69,7 @@ export default defineComponent({
 <style lang="postcss">
 .breadcrumbs {
   &__item {
-    @apply inline-flex text-sm items-center;
+    @apply inline-flex text-sm items-center capitalize;
 
     &:last-child {
       & > .breadcrumbs__item__icon {
