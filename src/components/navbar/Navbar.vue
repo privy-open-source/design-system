@@ -96,6 +96,7 @@ export default defineComponent({
 <style lang="postcss">
 .navbar {
   --p-navbar-z-index: theme(zIndex.fixed);
+  --p-navbar-collapse-max-height: 20rem; /** 320px */
 
   @apply bg-default relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
   @apply dark:bg-dark-default;
@@ -162,6 +163,104 @@ export default defineComponent({
 
       .navbar--collapse {
         @apply sm:flex sm:basis-auto;
+      }
+    }
+  }
+
+  &--collapse {
+    @apply basis-full flex-grow items-center max-h-[var(--p-navbar-collapse-max-height)] overflow-y-auto;
+
+    &.collapse--show {
+      @apply mt-3;
+
+      .nav__item--dropdown {
+        @apply ml-0;
+
+        .dropdown,
+        .btn {
+          @apply flex w-full;
+        }
+
+        .dropdown {
+          @apply flex-col;
+
+          &__menu {
+            @apply static shadow-none border-0 bg-base rounded-t-none;
+            @apply dark:bg-dark-base;
+
+            &__container {
+              .dropdown__item {
+                @apply first:rounded-t-none;
+              }
+            }
+          }
+
+          &.dropdown--open {
+            .dropdown__activator.btn.btn--md {
+              @apply rounded-b-none bg-base;
+              @apply dark:bg-dark-base;
+            }
+          }
+        }
+
+        &-icon {
+          .dropdown__menu__container {
+            .dropdown__item {
+              @apply px-11;
+            }
+          }
+        }
+
+        .btn {
+          @apply justify-start;
+
+          .dropdown__caret {
+            @apply ml-auto;
+          }
+        }
+      }
+
+      .nav__item,
+      .nav__text,
+      .nav__form {
+        @apply w-full;
+      }
+    }
+  }
+
+  &&--lines {
+    .navbar--collapse {
+
+      &.collapse--show {
+
+        .nav__item--dropdown {
+
+          .dropdown {
+            &__menu {
+              @apply rounded mt-2;
+
+              &__container {
+                .dropdown__item {
+                  @apply first:rounded-t;
+                }
+              }
+            }
+
+            &.dropdown--open {
+              .dropdown__activator.btn.btn--md {
+                @apply rounded-b-none bg-transparent;
+              }
+            }
+          }
+
+          &-icon {
+            .dropdown__menu__container {
+              .dropdown__item {
+                @apply px-3;
+              }
+            }
+          }
+        }
       }
     }
   }
