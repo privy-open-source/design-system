@@ -87,10 +87,6 @@ export default defineComponent({
         @apply pr-3;
       }
     }
-
-    /* &&--bottom {
-      @apply absolute bottom-0;
-    } */
   }
 
   &&--narrow {

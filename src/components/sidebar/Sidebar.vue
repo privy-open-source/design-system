@@ -1,5 +1,6 @@
 <template>
   <aside
+    ref="sidebar"
     data-testid="sidebar"
     class="sidebar"
     :class="classNames">
@@ -8,7 +9,7 @@
       ref="sidebarMenus"
       data-testid="sidebar-menus"
       class="sidebar__menus"
-      :style="`padding-bottom: ${height+40}px`">
+      :style="{ 'padding-bottom': bottomHeight }">
       <slot />
 
       <div
@@ -69,19 +70,29 @@ export default defineComponent({
 
   emits: ['update:modelValue'],
 
-  setup (props) {
+  setup (props, { slots }) {
     provide(SIDEBAR_SETTINGS, {
       variant: props.variant,
       align  : props.align,
       type   : props.type,
     })
 
+    const sidebar      = templateRef<HTMLDivElement>('sidebar')
+    const sidebarBrand = useSelector('.sidebar__brand', sidebar)
+
     const sidebarMenus  = templateRef<HTMLDivElement>('sidebarMenus')
     const sidebarBottom = useSelector('.sidebar__bottom', sidebarMenus)
 
-    const {
-      height,
-    } = useElementSize(sidebarBottom)
+    const { height } = useElementSize(sidebarBottom)
+    const brand      = useElementSize(sidebarBrand)
+
+    const brandHeight = computed(() => {
+      return `${brand.height.value + 16}px`
+    })
+
+    const bottomHeight = computed(() => {
+      return slots.bottom && !slots.default() ? 0 : `${height.value + 24}px`
+    })
 
     const model = useVModel(props)
 
@@ -109,7 +120,9 @@ export default defineComponent({
       return result
     })
 
-    return { classNames, height }
+    return {
+      classNames, bottomHeight, brandHeight,
+    }
   },
 })
 </script>
@@ -149,7 +162,7 @@ export default defineComponent({
     @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg overflow-y-auto;
 
     .sidebar__menus {
-      @apply relative min-h-full;
+      @apply relative min-h-[calc(100%-v-bind(brandHeight))];
     }
 
     &:not(.sidebar--right) {
@@ -157,7 +170,7 @@ export default defineComponent({
     }
 
     .sidebar__bottom {
-      @apply absolute -bottom-4 pb-4 w-[calc(100%+1rem)] -left-2 bg-[color:var(--p-sidebar-bg)];
+      @apply absolute -bottom-4 w-[calc(100%+1rem)] -left-2 bg-[color:var(--p-sidebar-bg)];
       @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
     }
 

@@ -58,9 +58,6 @@ description: Base dashboard sidebar menu.
       <p-nav-item>Contacts</p-nav-item>
       <p-nav-item>Structure</p-nav-item>
     </p-sidebar-nav>
-    <template #bottom>
-      template buttom menus
-    </template>
   </p-sidebar>
 </preview>
 
@@ -82,7 +79,7 @@ description: Base dashboard sidebar menu.
 ```
 
 ### Fixed Sidebar
-Fixed sidebar are using z-fixed for z-index value. It posible to change z-index value using CSS variable `--p-sidebar-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
+Fixed sidebar are using z-fixed for z-index value. It posible to change z-index value using `--p-sidebar-z-index` CSS variable. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
 <preview class="preview--fixed">
   <p-sidebar fixed>
     <template #brand>
@@ -316,9 +313,6 @@ If you need to place menus in the bottom, you just add `bottom` prop in your `<p
         <img src="/assets/images/logo-privy-icon.svg" alt="" />
       </p-sidebar-brand>
     </template>
-    <p-sidebar-brand>
-      <img src="/assets/images/logo-privy-icon.svg" alt="" />
-    </p-sidebar-brand>
     <p-sidebar-nav bottom>
       <p-nav-item>
         <template #icon>
@@ -642,6 +636,24 @@ It's possible to make sidebar toggle-hide by default to make fullwidth page with
 </template>
 ```
 
+## Variables
+Sidebar use local CSS variables for enhanced real-time customization.
+
+### `.sidebar`
+```sass
+--p-sidebar-size-narrow: 60px;
+--p-sidebar-size-wide: 230px;
+--p-sidebar-bg: theme(backgroundColor.DEFAULT);
+--p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT);
+--p-sidebar-z-index: theme(zIndex.fixed);
+```
+
+### `.sidebar__brand`
+
+```sass
+--p-sidebar-brand-sticky-top: 0;
+```
+
 ## API
 
 ### Props `<p-sidebar>`
@@ -660,12 +672,15 @@ It's possible to make sidebar toggle-hide by default to make fullwidth page with
 |------------------|---------------------------------------------------------|
 | `default`        | Content to place in the Sidebar                         |
 | `brand`          | Content to place in the Sidebar Brand                   |
+| `bottom`         | Content to place in the Sidebar bottom                   |
 
 ### Props `<p-sidebar-brand>`
 
 | Props          |   Type    | Default     | Description                                                       |
 |----------------|:---------:|:-----------:|-------------------------------------------------------------------|
 | `href`         | `String`  | `undefined` | Target URL of the Sidebar Brand link                              |
+| `fixed`        | `Boolean` | `false`     | Make position of sidebar brand fixed on top                       |
+| `sticky`       | `Boolean` | `false`     | Make position of sidebar brand sticky on top                      |
 
 ### Slots `<p-sidebar-brand>`
 
