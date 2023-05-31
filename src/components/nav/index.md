@@ -17,12 +17,6 @@ import pDropdownItem from '../dropdown/DropdownItem.vue'
 import pRadio from '../radio/Radio.vue'
 import { ref } from 'vue-demi'
 
-const options = ref(['english', 'indonesian'])
-const lang = ref('english')
-const isOpen = ref(false)
-function close () {
-  isOpen.value = false
-}
 </script>
 
 <style lang="postcss" scoped>
@@ -40,22 +34,6 @@ function close () {
 ### Simple Navigation
 
 <preview>
-  <p-nav>
-    <p-nav-item-dropdown icon no-caret v-model="isOpen">
-      <template #button-content>
-        <IconMenu />
-      </template>
-      <template v-for="(item, idx) in options" :key="idx">
-        <p-radio
-          appearance="option"
-          v-model="lang"
-          @click="close"
-          :value="item">
-          {{ item }}
-        </p-radio>
-      </template>
-    </p-nav-item-dropdown>
-  </p-nav>
   <p-nav>
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>

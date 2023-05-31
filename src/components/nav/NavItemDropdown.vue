@@ -90,6 +90,14 @@ export default defineComponent({
   &__item {
     &--dropdown {
       @apply ml-auto;
+
+      .dropdown {
+        &__menu {
+          .dropdown__item {
+            @apply px-3;
+          }
+        }
+      }
     }
   }
 
