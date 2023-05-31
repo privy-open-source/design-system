@@ -1,6 +1,7 @@
 import { render } from '@testing-library/vue'
 import Sidebar from './Sidebar.vue'
 import SidebarBrand from './SidebarBrand.vue'
+import SidebarNav from './SidebarNav.vue'
 import { ref, nextTick } from 'vue-demi'
 
 it('should rendered properly without any props', () => {
@@ -142,4 +143,56 @@ it('able to add sidebar brand via `brand` slots', () => {
 
   expect(sidebarMenu).not.toContainElement(sidebarBrand)
   expect(sidebarBrand).toHaveTextContent('brand')
+})
+
+it('should have style that contain variables to calculate sidebar__menus', () => {
+  const screen = render({
+    components: { Sidebar, SidebarNav },
+    template  : `
+      <Sidebar fixed>
+        <SidebarNav bottom />
+      </Sidebar>
+    `,
+  })
+
+  const sidebarMenu = screen.queryByTestId('sidebar-menus')
+  expect(sidebarMenu).toHaveAttribute('data-sidebar-menu', '0')
+})
+
+it('should have style to set padding bottom of sidebar__menus when bottom menu available', () => {
+  const screen = render({
+    components: { Sidebar, SidebarNav },
+    template  : `
+      <Sidebar>
+        <SidebarNav />
+        <SidebarNav bottom />
+      </Sidebar>
+    `,
+  })
+
+  const sidebarMenu = screen.queryByTestId('sidebar-menus')
+
+  expect(sidebarMenu).toHaveStyle('padding-bottom: 24px')
+})
+
+it('able to add sidebar bottom via `bottom` slots', () => {
+  const screen = render({
+    components: { Sidebar, SidebarNav },
+    template  : `
+      <Sidebar>
+        <template #bottom>
+          <SidebarNav>
+            Text
+          </SidebarNav>
+        </template>
+      </Sidebar>
+    `,
+  })
+
+  const sidebarNav    = screen.queryByTestId('sidebar-nav')
+  const sidebarBottom = screen.queryByTestId('sidebar-bottom')
+
+  expect(sidebarNav).toBeInTheDocument()
+  expect(sidebarBottom).toBeInTheDocument()
+  expect(sidebarNav).toHaveTextContent('Text')
 })

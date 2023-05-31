@@ -4,16 +4,20 @@
     data-testid="sidebar"
     class="sidebar"
     :class="classNames">
-    <slot name="brand" />
+    <slot
+      v-if="$slots.brand"
+      name="brand" />
     <div
       ref="sidebarMenus"
       data-testid="sidebar-menus"
+      :data-sidebar-menu="brandHeight"
       class="sidebar__menus"
       :style="{ 'padding-bottom': bottomHeight }">
       <slot />
 
       <div
         v-if="$slots.bottom"
+        data-testid="sidebar-bottom"
         class="sidebar__bottom">
         <slot name="bottom" />
       </div>
@@ -87,11 +91,11 @@ export default defineComponent({
     const brand      = useElementSize(sidebarBrand)
 
     const brandHeight = computed(() => {
-      return `${brand.height.value + 16}px`
+      return slots.brand ? `${brand.height.value + 16}px` : 0
     })
 
     const bottomHeight = computed(() => {
-      return slots.bottom && !slots.default() ? 0 : `${height.value + 24}px`
+      return slots.bottom && !slots.default ? 0 : `${height.value + 24}px`
     })
 
     const model = useVModel(props)

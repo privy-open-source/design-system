@@ -308,13 +308,13 @@ If you need to place menus in the bottom, you just add `bottom` prop in your `<p
 
 <preview class="preview--fixed">
   <p-sidebar fixed type="narrow">
-    <template #brand>
+    <!-- <template #brand>
       <p-sidebar-brand>
         <img src="/assets/images/logo-privy-icon.svg" alt="" />
       </p-sidebar-brand>
-    </template>
-    <p-sidebar-nav bottom>
-      <p-nav-item>
+    </template> -->
+    <p-sidebar-nav bottom />
+      <!-- <p-nav-item>
         <template #icon>
           <IconSettings />
         </template>
@@ -324,8 +324,8 @@ If you need to place menus in the bottom, you just add `bottom` prop in your `<p
           <img src="/assets/images/icon-flag.svg"/>
         </template>
         ENG
-      </p-nav-item>
-    </p-sidebar-nav>
+      </p-nav-item> -->
+    <!-- </p-sidebar-nav> -->
   </p-sidebar>
 </preview>
 
