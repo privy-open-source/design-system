@@ -36,7 +36,7 @@
         ref="menu"
         data-testid="dropdown-menu"
         class="dropdown__menu"
-        :class="menuClass">
+        :class="[menuClass, containerSize]">
         <DropdownGroup
           ref="wizard"
           class="dropdown__menu__container">
@@ -80,6 +80,9 @@ import type {
   ColorVariant,
   SizeVariant,
 } from '../button'
+import type {
+  MenuSizeVariant,
+} from '.'
 import { DROPDOWN_CONTEXT } from '.'
 
 type DropdownSubitemElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
@@ -143,6 +146,10 @@ export default defineComponent({
       ],
       default: undefined,
     },
+    menuSize: {
+      type   : String as PropType<MenuSizeVariant>,
+      default: 'sm',
+    },
   },
   models: {
     prop : 'modelValue',
@@ -167,6 +174,15 @@ export default defineComponent({
 
       if (props.divider)
         result.push('dropdown--divider')
+
+      return result
+    })
+
+    const containerSize = computed(() => {
+      const result: string[] = ['']
+
+      if (props.menuSize)
+        result.push(`dropdown__menu--${props.menuSize}`)
 
       return result
     })
@@ -285,6 +301,7 @@ export default defineComponent({
     return {
       isOpen,
       classNames,
+      containerSize,
       toggle,
       open,
       close,
@@ -295,10 +312,14 @@ export default defineComponent({
 
 <style lang="postcss">
 .dropdown {
+  --p-dropdown-size-lg: 30rem; /* 480px */
+  --p-dropdown-size-md: 20rem; /* 320px */
+  --p-dropdown-size-sm: 15rem; /* 240px */
+
   @apply relative inline-flex;
 
   &__menu {
-    @apply max-h-64 border rounded w-full min-w-[15rem] bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
+    @apply max-h-64 border rounded bg-default z-10 border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
     @apply dark:bg-dark-default dark:border-dark-default;
 
     &__container {
@@ -313,6 +334,18 @@ export default defineComponent({
           @apply rounded-b-sm;
         }
       }
+    }
+
+    &--lg {
+      @apply w-[var(--p-dropdown-size-lg)];
+    }
+
+    &--md {
+      @apply w-[var(--p-dropdown-size-md)];
+    }
+
+    &--sm {
+      @apply w-[var(--p-dropdown-size-sm)];
     }
   }
 

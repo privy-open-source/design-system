@@ -575,3 +575,17 @@ it('should be able to add menu class in the dropdown container via `menu-class` 
   expect(dropdownMenu).toBeInTheDocument()
   expect(dropdownMenu).toHaveClass('custom-class')
 })
+
+it('should be able to add dropdown-menu-container size via `menu-size` props', () => {
+  const screen = render({
+    components: { Dropdown },
+    template  : `
+      <Dropdown menu-size="md" />
+    `,
+  })
+
+  const dropdownMenu = screen.queryByTestId('dropdown-menu')
+  expect(dropdownMenu).toBeInTheDocument()
+  expect(dropdownMenu).toHaveClass('dropdown__menu--md')
+  expect(dropdownMenu).not.toHaveClass('dropdown__menu--sm')
+})
