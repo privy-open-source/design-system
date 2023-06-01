@@ -59,7 +59,9 @@
         </NavItem>
       </template>
     </SidebarNav>
-    <template #bottom>
+    <template
+      v-if="$slots.bottom"
+      #bottom>
       <slot name="bottom" />
     </template>
   </Sidebar>

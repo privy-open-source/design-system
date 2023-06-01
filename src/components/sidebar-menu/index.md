@@ -413,6 +413,7 @@ const menus = defineMenu([
 | Name             | Description                                             |
 |------------------|---------------------------------------------------------|
 | `default`        | Content to place Sidebar Brand                          |
+| `bottom`         | Content to place in the Sidebar bottom                  |
 
 ### Events
 
