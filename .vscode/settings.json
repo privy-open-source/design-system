@@ -19,5 +19,8 @@
         "@typescript-eslint/no-floating-promises": "off",
       }
     }
-  }
+  },
+  "editor.rulers": [
+    80
+  ]
 }
