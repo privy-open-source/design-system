@@ -1,1 +1,0 @@
-import{g as o}from"./commonjsHelpers.042e6b4d.js";import{u as r}from"./utils-6ba05f5b.5b33f0d1.js";var e=r,t=e.createSVGComponent(t,{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 16 16",fill:"currentColor",width:16,height:16},[{elem:"path",attrs:{d:"M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"}}]),a=t;const l=o(a);export{l as I};
