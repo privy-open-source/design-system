@@ -375,6 +375,7 @@ You can programmatically toggle dropdown using `v-model`
 | `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
 | `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |
 | `menu-class`       | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the menu container  |
+| `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md` and `lg`  |
 
 ### Slots
 

@@ -412,8 +412,7 @@ export default defineComponent({
   }
 
   &__preview {
-    background-image: url("./assets/ps-neutral.png");
-
+    @apply bg-[url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAGklEQVR4AWNYJYoK92ihwpGiAF0AXcMIUQAAbIfSgRmCFqkAAAAASUVORK5CYII=)];
     @apply flex w-full overflow-hidden h-auto relative aspect-compat-square select-none;
   }
 
