@@ -3197,8 +3197,8 @@ __metadata:
   linkType: hard
 
 "@nuxtjs/tailwindcss@npm:^6.2.0":
-  version: 6.6.8
-  resolution: "@nuxtjs/tailwindcss@npm:6.6.8"
+  version: 6.7.0
+  resolution: "@nuxtjs/tailwindcss@npm:6.7.0"
   dependencies:
     "@nuxt/kit": ^3.4.3
     "@nuxt/postcss8": ^1.1.3
@@ -3209,9 +3209,9 @@ __metadata:
     cookie-es: ^1.0.0
     defu: ^6.1.2
     destr: ^1.2.2
-    h3: ^1.6.5
+    h3: ^1.6.6
     iron-webcrypto: ^0.7.0
-    minimatch: ^9.0.0
+    micromatch: ^4.0.5
     pathe: ^1.1.0
     postcss: ^8.4.23
     postcss-custom-properties: ^13.1.5
@@ -3221,7 +3221,7 @@ __metadata:
     tailwindcss: ~3.3.2
     ufo: ^1.1.2
     uncrypto: ^0.1.2
-  checksum: 7179896988da1bd8a21eb57b76920a024ba933365cc62ceb474a445b818aa73b3f3df6ce97ac8c80d774f4709e473676b07943a750b8949690c258ef51cc17a9
+  checksum: 405143b5000c4058bf2d58a1301584ed9a6339042352ed8e746e99d09df29e2401bae748d8f40c425639a3bea4996f83c34c4ac0340a640246cb05b128111b45
   languageName: node
   linkType: hard
 
@@ -10104,9 +10104,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"h3@npm:^1.6.5":
-  version: 1.6.5
-  resolution: "h3@npm:1.6.5"
+"h3@npm:^1.6.6":
+  version: 1.6.6
+  resolution: "h3@npm:1.6.6"
   dependencies:
     cookie-es: ^1.0.0
     defu: ^6.1.2
@@ -10115,7 +10115,7 @@ __metadata:
     radix3: ^1.0.1
     ufo: ^1.1.2
     uncrypto: ^0.1.2
-  checksum: 23b34f7cc62a46bcf5ac2e51b39af4a4ff425483b90cde8ca8310e8dcd6d1f7c2377dd72f26c1fcaff88497bd14957f2fd14422e2306990b4541d23077f1e131
+  checksum: 58a24d0f5eeff0e36caf7299d0237c43e0e10b9fcc8f8858aec51bcac0a0ab6ed28ebff199119a62e5571c0c35e6788acb69fe63468ff04c3134598c7ee46f1a
   languageName: node
   linkType: hard
 
@@ -12282,15 +12282,6 @@ __metadata:
   dependencies:
     brace-expansion: ^2.0.1
   checksum: 15ce53d31a06361e8b7a629501b5c75491bc2b59712d53e802b1987121d91b433d73fcc5be92974fde66b2b51d8fb28d75a9ae900d249feb792bb1ba2a4f0a90
-  languageName: node
-  linkType: hard
-
-"minimatch@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "minimatch@npm:9.0.0"
-  dependencies:
-    brace-expansion: ^2.0.1
-  checksum: 7bd57899edd1d1b0560f50b5b2d1ea4ad2a366c5a2c8e0a943372cf2f200b64c256bae45a87a80915adbce27fa36526264296ace0da57b600481fe5ea3e372e5
   languageName: node
   linkType: hard
 
