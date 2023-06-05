@@ -1,7 +1,0 @@
-undecided:
-  - "@privyid/design-system"
-  - "@privyid/browserslist-config"
-  - "@privyid/eslint-config-persona"
-  - "@privyid/tailwind-animation"
-  - "@privyid/tailwind-extended"
-  - "@privyid/tailwind-preset"
