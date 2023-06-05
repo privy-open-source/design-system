@@ -445,6 +445,14 @@ Page component has 2 type variant, `wide` and `narrow`. Default type is `narrow`
 </template>
 ```
 
+## Variables
+Page use local CSS variables on `.page` for enhanced real-time customization.
+The values of variables below are based/depends on sidebar size variant.
+
+```sass
+--p-page-type-wide: 60px; /** for sidebar type narrow */
+--p-page-type-narrow: 230px; /** for sidebar type wide */
+```
 
 ## API
 

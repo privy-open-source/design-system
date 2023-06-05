@@ -646,6 +646,16 @@ Modal can be vertically center in the viewport by setting `centered` prop.
   </template>
 </p-modal>
 
+## Variables
+Modal use local CSS variables on `.modal` for enhanced real-time customization.
+
+```sass
+--p-modal-size-xl: 960px;
+--p-modal-size-lg: 800px;
+--p-modal-size-md: 600px;
+--p-modal-size-sm: 400px;
+--p-modal-z-index: theme(zIndex.modal);
+```
 
 ## API
 

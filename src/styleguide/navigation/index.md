@@ -77,9 +77,11 @@ The navigation component is used to display the primary navigation in the sideba
 
 <div class="relative h-[50rem] flex my-6">
   <p-sidebar fixed>
-    <p-sidebar-brand>
-      <img src="/assets/images/logo-privy.svg" alt="" />
-    </p-sidebar-brand>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
     <p-sidebar-nav>
       <p-nav-item active>
         <template #icon>
@@ -236,9 +238,11 @@ The navigation component is used to display the primary navigation in the sideba
 
 <div class="relative h-[50rem] flex my-6">
   <p-sidebar fixed>
-    <p-sidebar-brand>
-      <img src="/assets/images/logo-privy.svg" alt="" />
-    </p-sidebar-brand>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
     <p-sidebar-nav>
       <p-nav-item active>
         <template #icon>
@@ -305,9 +309,11 @@ Usage : Use this variant sidebar for more clear context of the menu, if the icon
 
 <div class="relative h-[35rem] flex my-6">
   <p-sidebar type="narrow" fixed>
-    <p-sidebar-brand>
-      <img src="/assets/images/logo-privy-icon.svg" alt="" />
-    </p-sidebar-brand>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy-icon.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
     <p-sidebar-nav>
       <p-nav-item active>
         <template #icon>
@@ -351,7 +357,7 @@ Usage : Use this variant sidebar for more clear context of the menu, if the icon
 #### Navtab - Default
 <div class="flex flex-row">
   <div class="w-1/2">
-    <div class="relative h-64 flex my-6">
+    <div class="relative flex h-64 my-6">
       <p-sidebar variant="tabs" type="narrow" fixed>
         <p-sidebar-nav>
           <p-nav-item active>
@@ -374,7 +380,7 @@ Usage : Use this variant sidebar for more clear context of the menu, if the icon
     </div>
   </div>
   <div class="w-1/2">
-    <div class="relative h-64 flex my-6">
+    <div class="relative flex h-64 my-6">
       <p-sidebar variant="tabs" fixed>
         <p-sidebar-nav>
           <p-nav-item active>
@@ -407,7 +413,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
 #### Navtab - Skeleton
 <div class="flex flex-row">
   <div class="w-1/2">
-    <div class="relative h-64 flex my-6">
+    <div class="relative flex h-64 my-6">
       <p-sidebar variant="lines" type="narrow" fixed>
         <p-sidebar-nav>
           <p-nav-item active>
@@ -430,7 +436,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
     </div>
   </div>
   <div class="w-1/2">
-    <div class="relative h-64 flex my-6">
+    <div class="relative flex h-64 my-6">
       <p-sidebar variant="lines" fixed>
         <p-sidebar-nav>
           <p-nav-item active>
@@ -463,7 +469,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
 #### Navtab - Floating
 <div class="flex flex-row">
   <div class="w-1/2">
-    <div class="relative h-64 flex my-6">
+    <div class="relative flex h-64 my-6">
       <p-sidebar variant="pills" type="narrow" class="border-r border-r-default dark:border-r-dark-default" fixed>
         <p-sidebar-nav>
           <p-nav-item active>
@@ -486,7 +492,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
     </div>
   </div>
   <div class="w-1/2">
-    <div class="relative h-64 flex my-6">
+    <div class="relative flex h-64 my-6">
       <p-sidebar variant="pills" class="border-r border-r-default dark:border-r-dark-default" fixed>
         <p-sidebar-nav>
           <p-nav-item active>

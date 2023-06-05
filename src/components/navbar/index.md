@@ -575,6 +575,13 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 </template>
 ```
 
+## Variables
+Navbar use local CSS variables on `.navbar` for enhanced real-time customization.
+
+```sass
+--p-navbar-z-index: theme(zIndex.fixed);
+--p-navbar-collapse-max-height: 20rem; /* 320px */
+```
 ## API
 
 ### Props `<p-navbar>`
