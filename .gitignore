@@ -124,6 +124,7 @@ src/.vitepress/cache/
 .vscode-test
 
 # yarn v2
+.yarn/versions
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml
