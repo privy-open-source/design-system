@@ -3256,7 +3256,7 @@ __metadata:
     "@rollup/plugin-babel": ^6.0.2
     "@rollup/plugin-inject": ^5.0.3
     "@rollup/plugin-replace": ^5.0.1
-    "@rushstack/eslint-patch": 1.2.0
+    "@rushstack/eslint-patch": 1.3.0
     "@testing-library/jest-dom": 5.16.5
     "@testing-library/user-event": ^14.4.3
     "@testing-library/vue": 6.6.0
@@ -3720,10 +3720,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@rushstack/eslint-patch@npm:1.2.0"
-  checksum: faa749faae0e83c26ae9eb00ad36a897ac78f3cf27da8e8ff21c00bcf7973b598d823d8f2b3957ef66079288bcf577f94df831eae2d65f3f68d8ca32f18b6aff
+"@rushstack/eslint-patch@npm:1.3.0":
+  version: 1.3.0
+  resolution: "@rushstack/eslint-patch@npm:1.3.0"
+  checksum: 2860b4adeebbab9a13bff68a2737ecf660fe199a3d2eca45b0359132ff92052467622ac4b22837958bc3ad611714d5f2b662db98ffdc5db34df604b4d502d347
   languageName: node
   linkType: hard
 
