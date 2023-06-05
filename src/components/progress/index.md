@@ -193,6 +193,16 @@ import IconDocument from '@carbon/icons-vue/lib/document/16'
 </template>
 ```
 
+## Variables
+Progress use local CSS variables on `.progress` for enhanced real-time customization.
+
+```sass
+--p-bg-bar-active-state: theme(backgroundColor.info.emphasis);
+--p-bg-bar-normal-state: theme(backgroundColor.subtle.DEFAULT);
+--p-bg-dark-bar-active-state: theme(backgroundColor.dark.info.emphasis);
+--p-bg-dark-bar-normal-state: theme(backgroundColor.dark.subtle.DEFAULT);
+```
+
 ## API
 
 ### Props `<p-progress>`

@@ -109,6 +109,28 @@ Badge has 3 variants namely `default`, `light` and `inverse`. When variant is no
 </template>
 ```
 
+## Variables
+Badge use local CSS variables for enhanced real-time customization.
+Use this variable for [level color](/styleguide/badge/#level-color-customizable-and-optional) customization.
+
+### `.badge.badge--default`
+```sass
+--p-bg-variant-default: theme(backgroundColor.inverse);
+--p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
+```
+
+### `.badge.badge--variant-{light | inverse}.badge--default`
+```sass
+--p-color-variant-inverse: theme(textColor.subtle);
+--p-color-dark-variant-inverse: theme(textColor.dark.subtle);
+```
+
+### `.badge.badge--variant-light.badge--default`
+```sass
+--p-bg-variant-light: theme(backgroundColor.subtle.alpha);
+--p-bg-dark-variant-light: theme(backgroundColor.dark.subtle.alpha);
+```
+
 ## API
 
 ### Props
