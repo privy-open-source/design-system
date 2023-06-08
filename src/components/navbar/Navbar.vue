@@ -42,6 +42,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    sticky: {
+      type   : Boolean,
+      default: false,
+    },
     condensed: {
       type   : Boolean,
       default: false,
@@ -64,6 +68,9 @@ export default defineComponent({
 
       if (props.fixed)
         result.push('navbar--fixed')
+
+      if (props.sticky)
+        result.push('navbar--sticky')
 
       if (props.variant)
         result.push(`navbar--${props.variant}`)
@@ -103,6 +110,11 @@ export default defineComponent({
 
   &&--fixed {
     @apply fixed left-0 top-0 w-full z-[var(--p-navbar-z-index)];
+  }
+
+  &&--sticky {
+    --p-navbar-sticky-top: theme(spacing.0);
+    @apply sticky top-[var(--p-navbar-sticky-top)] z-sticky;
   }
 
   &&--shadow {

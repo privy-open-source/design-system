@@ -57,6 +57,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    sticky: {
+      type   : Boolean,
+      default: false,
+    },
     toggleable: {
       type   : String as PropType<ToggleableVariant>,
       default: undefined,
@@ -114,6 +118,9 @@ export default defineComponent({
 
       if (props.fixed)
         result.push('sidebar--fixed')
+
+      if (props.sticky)
+        result.push('sidebar--sticky')
 
       if (props.toggleable)
         result.push(`sidebar--toggleable sidebar--toggleable-${props.toggleable}`)
@@ -211,6 +218,14 @@ export default defineComponent({
         @apply sm:left-0;
       }
     }
+  }
+
+  /**
+  * Sticky sidebar
+  */
+  &&--sticky {
+    --p-sidebar-sticky-top: theme(spacing.0);
+    @apply sticky top-[var(--p-sidebar-sticky-top)] z-sticky;
   }
 
   /**

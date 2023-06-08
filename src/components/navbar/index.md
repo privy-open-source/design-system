@@ -580,6 +580,7 @@ Navbar use local CSS variables on `.navbar` for enhanced real-time customization
 
 ```sass
 --p-navbar-z-index: theme(zIndex.fixed);
+--p-navbar-sticky-top: theme(spacing.0);
 --p-navbar-collapse-max-height: 20rem; /* 320px */
 ```
 ## API

@@ -158,6 +158,20 @@ it('should be able to make sidebar fixed via prop `fixed`', () => {
   expect(sidebar).toHaveClass('sidebar--fixed')
 })
 
+it('should be able to make sidebar sticky via prop `sticky`', () => {
+  const screen = render({
+    components: { SidebarMenu },
+    template  : `
+      <SidebarMenu sticky />
+    `,
+  })
+
+  const sidebar = screen.queryByTestId('sidebar-menu')
+
+  expect(sidebar).toBeInTheDocument()
+  expect(sidebar).toHaveClass('sidebar', 'sidebar--sticky')
+})
+
 it('should be able to make sidebar expand automatically via prop `toggleable`', () => {
   const screen = render({
     components: { SidebarMenu },
