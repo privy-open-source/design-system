@@ -145,6 +145,7 @@ export default defineComponent({
   --p-sidebar-bg: theme(backgroundColor.DEFAULT);
   --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT);
   --p-sidebar-z-index: theme(zIndex.fixed);
+  --p-sidebar-sticky-top: theme(spacing.0);
 
   @apply bg-[color:var(--p-sidebar-bg)] px-2 py-4;
   @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
@@ -224,7 +225,6 @@ export default defineComponent({
   * Sticky sidebar
   */
   &&--sticky {
-    --p-sidebar-sticky-top: theme(spacing.0);
     @apply sticky top-[var(--p-sidebar-sticky-top)] z-sticky;
   }
 

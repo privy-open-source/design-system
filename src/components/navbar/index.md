@@ -591,6 +591,7 @@ Navbar use local CSS variables on `.navbar` for enhanced real-time customization
 | `variant`      | `String`  | `pills`     | Navbar variant, valid value is `pills` and `lines`                |
 | `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
 | `fixed`        | `Boolean` | `false`     | Activate fixed Navbar                                             |
+| `sticky`       | `Boolean` | `false`     | Activate sticky Navbar                                             |
 | `toggleable`   | `String`  | -           | automatically expand navigation with desired breakpoint           |
 ### Slots `<p-navbar>`
 

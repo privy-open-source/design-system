@@ -665,6 +665,7 @@ Sidebar use local CSS variables for enhanced real-time customization.
 | `align`        | `String`  | `left`      | Sidebar alignment, valid value is `left` and `right`              |
 | `type`         | `String`  | `wide`      | Sidebar type, valid value is `wide` and `narrow`                  |
 | `fixed`        | `Boolean` | `false`     | Activate fixed Sidebar                                            |
+| `sticky`       | `Boolean` | `false`     | Activate sticky Sidebar                                            |
 | `toggleable`   | `String`  | `-`         | Toggle with desired breakpoint `lg`, `md`, `sm` and `all`         |
 
 ### Slots `<p-sidebar>`

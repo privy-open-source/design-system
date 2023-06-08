@@ -103,6 +103,7 @@ export default defineComponent({
 <style lang="postcss">
 .navbar {
   --p-navbar-z-index: theme(zIndex.fixed);
+  --p-navbar-sticky-top: theme(spacing.0);
   --p-navbar-collapse-max-height: 20rem; /** 320px */
 
   @apply bg-default relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
@@ -113,7 +114,6 @@ export default defineComponent({
   }
 
   &&--sticky {
-    --p-navbar-sticky-top: theme(spacing.0);
     @apply sticky top-[var(--p-navbar-sticky-top)] z-sticky;
   }
 
