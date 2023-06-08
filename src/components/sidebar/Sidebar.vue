@@ -57,6 +57,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    sticky: {
+      type   : Boolean,
+      default: false,
+    },
     toggleable: {
       type   : String as PropType<ToggleableVariant>,
       default: undefined,
@@ -115,6 +119,9 @@ export default defineComponent({
       if (props.fixed)
         result.push('sidebar--fixed')
 
+      if (props.sticky)
+        result.push('sidebar--sticky')
+
       if (props.toggleable)
         result.push(`sidebar--toggleable sidebar--toggleable-${props.toggleable}`)
 
@@ -138,6 +145,7 @@ export default defineComponent({
   --p-sidebar-bg: theme(backgroundColor.DEFAULT);
   --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT);
   --p-sidebar-z-index: theme(zIndex.fixed);
+  --p-sidebar-sticky-top: theme(spacing.0);
 
   @apply bg-[color:var(--p-sidebar-bg)] px-2 py-4;
   @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
@@ -211,6 +219,13 @@ export default defineComponent({
         @apply sm:left-0;
       }
     }
+  }
+
+  /**
+  * Sticky sidebar
+  */
+  &&--sticky {
+    @apply sticky top-[var(--p-sidebar-sticky-top)] z-sticky;
   }
 
   /**

@@ -60,7 +60,7 @@ Button has 3 radius variant. `default` radius is used for button size `lg` and `
   <p-button color="info" size="xs">xs</p-button>
 </preview>
 
-<div class="table-list w-2/4">
+<div class="w-2/4 table-list">
 
 | Size          | Default     | Pills                          |
 |---------------|-------------|--------------------------------|
@@ -82,7 +82,7 @@ Label has 4 radius variant. `default` radius is used form label size `lg`, `sm` 
   <p-label variant="dot" color="info" size="xs">tn</p-label>
 </preview>
 
-<div class="table-list w-2/3">
+<div class="w-2/3 table-list">
 
 | Size          |   None    | Default     | Pills                          |
 |---------------|-----------|-------------|--------------------------------|
@@ -100,7 +100,7 @@ Badge use `full` radius.
   <p-badge color="info">full</p-badge>
 </preview>
 
-<div class="table-list w-1/3">
+<div class="w-1/3 table-list">
 
 | Size          | Pills      |
 |---------------|------------|
@@ -115,7 +115,7 @@ Card use `md` radius.
   <p-card>md</p-card>
 </preview>
 
-<div class="table-list w-1/3">
+<div class="w-1/3 table-list">
 
 | Size          | Default     |
 |---------------|-------------|
@@ -126,7 +126,7 @@ Card use `md` radius.
 ### Other Radius Rules
 Normal size of some component are use `none` (no-radius) or `default` radius.
 
-<div class="table-list w-2/4">
+<div class="w-2/4 table-list">
 
 | Size          |   None    | Default     |
 |---------------|-----------|-------------|
@@ -148,7 +148,7 @@ Avatar has 5 size variant, there are `xl`, `lg`, `md`, `sm` and `xs`. Default si
   <p-avatar size="xs" name="xenia senia"></p-avatar>
 </preview>
 
-<div class="table-list w-1/3">
+<div class="w-1/3 table-list">
 
 | Size          | Default State     |
 |---------------|-------------------|
@@ -170,7 +170,7 @@ Button has 4 size variant, there are `lg`, `md`, `sm` and `xs`. Default button s
   <p-button color="info" size="xs">xs</p-button>
 </preview>
 
-<div class="table-list w-1/3">
+<div class="w-1/3 table-list">
 
 | Size          | Default State     |
 |---------------|-------------------|
@@ -191,7 +191,7 @@ Label has 4 size variant, there are `lg`, `md`, `sm` and `xs`. The default size 
   <p-label variant="dot" color="info" size="xs">xs</p-label>
 </preview>
 
-<div class="table-list w-1/3">
+<div class="w-1/3 table-list">
 
 | Size          | Default State     |
 |---------------|-------------------|
@@ -220,7 +220,7 @@ Modal has 4 different size, namely `lg`, `md`, `sm` and `xs`. Default modal size
   no-close-on-esc>
 </p-modal>
 
-<div class="table-list w-1/3">
+<div class="w-1/3 table-list">
 
 | Size          | Default State     |
 |---------------|-------------------|
@@ -241,7 +241,7 @@ Input has 4 size variant, there are `lg`, `md`, `sm` and `xs`. The default size 
   <p-input size="xs" placeholder="Input xs" />
 </preview>
 
-<div class="table-list w-1/3">
+<div class="w-1/3 table-list">
 
 | Size          | Default State     |
 |---------------|-------------------|
@@ -255,7 +255,7 @@ Input has 4 size variant, there are `lg`, `md`, `sm` and `xs`. The default size 
 
 ## Box Shadow
 
-<div class="table-list w-full">
+<div class="w-full table-list">
 
 | Type          | sm     | md     | lg     | xl     | 2xl    |
 |---------------|:------:|:------:|:------:|:------:|:------:|
@@ -294,10 +294,12 @@ Tour is using shadow `sm`
 ## Z-Index
 Some components that have fixed and absolute positions are given z-index values to sort their layer hierarchies.
 
-<div class="table-list w-full">
+<div class="w-full table-list">
 
 | Name              |   Value     | Component            |
 |-------------------|-------------|----------------------|
+| z-dropdown        | 1020        | Dropdown             |
+| z-sticky          | 1030        | Navbar & Sidebar     |
 | z-fixed           | 1040        | Navbar & Sidebar     |
 | z-modal           | 1050        | Modal                |
 | z-overlay         | 1060        | Overlay              |

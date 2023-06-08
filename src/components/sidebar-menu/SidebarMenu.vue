@@ -3,6 +3,7 @@
     data-testid="sidebar-menu"
     :type="type"
     :fixed="fixed"
+    :sticky="sticky"
     :toggleable="toggleable"
     :align="align">
     <template #brand>
@@ -88,6 +89,10 @@ export default defineComponent({
       default: () => ([]),
     },
     fixed: {
+      type   : Boolean,
+      default: false,
+    },
+    sticky: {
       type   : Boolean,
       default: false,
     },

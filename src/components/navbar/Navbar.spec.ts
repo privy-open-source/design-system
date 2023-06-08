@@ -57,6 +57,18 @@ it('should be able to make navbar fixed via prop `fixed`', () => {
   expect(navbar).toHaveClass('navbar', 'navbar--fixed')
 })
 
+it('should be able to make navbar sticky via prop `sticky`', () => {
+  const screen = render({
+    components: { Navbar },
+    template  : '<Navbar sticky />',
+  })
+
+  const navbar = screen.queryByTestId('navbar')
+
+  expect(navbar).toBeInTheDocument()
+  expect(navbar).toHaveClass('navbar', 'navbar--sticky')
+})
+
 it('should be able to make content automatically expand via prop `toggleable`', () => {
   const screen = render({
     components: { Navbar },
