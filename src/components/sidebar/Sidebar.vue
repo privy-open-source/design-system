@@ -11,6 +11,7 @@
       ref="sidebarMenus"
       data-testid="sidebar-menus"
       :data-sidebar-menu="brandHeight"
+      :data-bottom-menu="isBottomMenu"
       class="sidebar__menus"
       :style="{ 'padding-bottom': bottomHeight }">
       <slot />
@@ -31,7 +32,9 @@ import {
   defineComponent,
   PropType,
   computed,
+  ref,
   provide,
+  onMounted,
 } from 'vue-demi'
 import { SIDEBAR_SETTINGS, TypeVariant } from '.'
 import { useSelector } from '../pdf-object/utils/use-selector'
@@ -83,19 +86,18 @@ export default defineComponent({
 
     const sidebar      = templateRef<HTMLDivElement>('sidebar')
     const sidebarBrand = useSelector('.sidebar__brand', sidebar)
+    const brand        = useElementSize(sidebarBrand)
 
     const sidebarMenus  = templateRef<HTMLDivElement>('sidebarMenus')
     const sidebarBottom = useSelector('.sidebar__bottom', sidebarMenus)
-
-    const { height } = useElementSize(sidebarBottom)
-    const brand      = useElementSize(sidebarBrand)
+    const { height }    = useElementSize(sidebarBottom)
 
     const brandHeight = computed(() => {
-      return slots.brand ? `${brand.height.value + 16}px` : 0
+      return slots.brand ? `${brand.height.value + titleHeight.value + 16}px` : 0
     })
 
     const bottomHeight = computed(() => {
-      return slots.bottom && !slots.default ? 0 : `${height.value + 24}px`
+      return (isBottomMenu.value && !isDefault.value) || (!isBottomMenu.value && isDefault.value) ? 0 : `${height.value + 16}px`
     })
 
     const model = useVModel(props)
@@ -124,8 +126,20 @@ export default defineComponent({
       return result
     })
 
+    const titleHeight  = ref(0)
+    const isBottomMenu = ref(false)
+    const isDefault    = ref(false)
+
+    onMounted(() => {
+      titleHeight.value = (document.querySelectorAll('.sidebar .nav--has-title').length * 0.25) * 20
+
+      isBottomMenu.value = document.querySelectorAll('.sidebar .sidebar__nav--bottom').length > 0
+
+      isDefault.value = document.querySelectorAll('.sidebar .sidebar__nav:not(.sidebar__nav--bottom)').length > 0
+    })
+
     return {
-      classNames, bottomHeight, brandHeight,
+      classNames, bottomHeight, brandHeight, isBottomMenu, isDefault,
     }
   },
 })
@@ -174,8 +188,12 @@ export default defineComponent({
     }
 
     .sidebar__bottom {
-      @apply absolute -bottom-4 w-[calc(100%+1rem)] -left-2 bg-[color:var(--p-sidebar-bg)];
+      @apply absolute -bottom-2 w-[calc(100%+1rem)] -left-2 bg-[color:var(--p-sidebar-bg)];
       @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
+
+      .sidebar__nav {
+        @apply px-2;
+      }
     }
 
     /**

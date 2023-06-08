@@ -63,9 +63,19 @@ export default defineComponent({
 
     a {
       @apply no-underline;
+
+      & > img {
+        @apply max-w-full h-auto;
+      }
+
+      .sidebar--wide & {
+        & > img {
+          @apply h-7 w-auto;
+        }
+      }
     }
 
-    img {
+    & > img {
       @apply max-w-full h-auto;
     }
 
@@ -84,7 +94,7 @@ export default defineComponent({
     .sidebar--wide & {
       @apply px-3;
 
-      img {
+      & > img {
         @apply h-7 w-auto;
       }
     }

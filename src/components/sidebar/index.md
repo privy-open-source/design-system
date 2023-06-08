@@ -46,8 +46,8 @@ description: Base dashboard sidebar menu.
 
 ### Basic Sidebar
 
-<preview>
-  <p-sidebar>
+<preview class="preview--fixed">
+  <p-sidebar fixed>
     <template #brand>
       <p-sidebar-brand>
         <img src="/assets/images/logo-privy.svg" alt="" />
@@ -57,6 +57,9 @@ description: Base dashboard sidebar menu.
       <p-nav-item active>Documents</p-nav-item>
       <p-nav-item>Contacts</p-nav-item>
       <p-nav-item>Structure</p-nav-item>
+    </p-sidebar-nav>
+    <p-sidebar-nav bottom>
+      <p-nav-item>Contacts</p-nav-item>
     </p-sidebar-nav>
   </p-sidebar>
 </preview>
