@@ -305,12 +305,14 @@ module.exports = {
       },
       ringColor: ({ theme }) => ({ ...theme('borderColor') }),
       zIndex   : {
-        1      : 1,
-        fixed  : 1040,
-        modal  : 1050,
-        overlay: 1060,
-        tooltip: 1070,
-        tour   : {
+        1       : 1,
+        dropdown: 1020,
+        sticky  : 1030,
+        fixed   : 1040,
+        modal   : 1050,
+        overlay : 1060,
+        tooltip : 1070,
+        tour    : {
           DEFAULT : 1085,
           backdrop: 1080,
         },

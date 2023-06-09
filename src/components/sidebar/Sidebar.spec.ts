@@ -88,6 +88,20 @@ it('should be able to make sidebar fixed via prop `fixed`', async () => {
   expect(sidebarMenu).toHaveAttribute('data-bottom-menu', 'false')
 })
 
+it('should be able to make sidebar sticky via prop `sticky`', () => {
+  const screen = render({
+    components: { Sidebar },
+    template  : `
+      <Sidebar sticky />
+    `,
+  })
+
+  const sidebar = screen.queryByTestId('sidebar')
+
+  expect(sidebar).toBeInTheDocument()
+  expect(sidebar).toHaveClass('sidebar--sticky')
+})
+
 it('should be able to make sidebar automatically expand via prop `toggleable`', () => {
   const screen = render({
     components: { Sidebar },

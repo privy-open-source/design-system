@@ -361,6 +361,7 @@ You can programmatically toggle dropdown using `v-model`
 Dropdown use local CSS variables for enhanced real-time customization.
 
 ```sass
+--p-dropdown-z-index: theme(zIndex.sticky)
 --p-dropdown-size-lg: 30rem; /* 480px */
 --p-dropdown-size-md: 20rem; /* 320px */
 --p-dropdown-size-sm: 15rem; /* 240px */
