@@ -3201,19 +3201,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/module-builder@npm:^0.3.0, @nuxt/module-builder@npm:^0.3.1":
-  version: 0.3.1
-  resolution: "@nuxt/module-builder@npm:0.3.1"
+"@nuxt/module-builder@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@nuxt/module-builder@npm:0.4.0"
   dependencies:
     consola: ^3.1.0
-    mlly: ^1.2.0
+    mlly: ^1.3.0
     mri: ^1.2.0
     pathe: ^1.1.0
     unbuild: ^1.2.1
+  peerDependencies:
+    "@nuxt/kit": ^3.5.0
+    nuxi: ^3.5.0
   bin:
     nuxt-build-module: dist/cli.mjs
     nuxt-module-build: dist/cli.mjs
-  checksum: f37e114deba1d4de8298ab011cc31bc6daa5ac3d6482c4a25aeace53c044ff18c7bd905f6b702a2e71c3c79f88123bc29a58a60dda0168e349d51f4fa033a164
+  checksum: 6af03be20ce692ab75042bdc1ce99dbb96e4ef2f333b5c721ad536cb54a3b2581c1478036d77849a38d4fdd28768401b79b22efd3ce6b4ac802f72ad11f2d106
   languageName: node
   linkType: hard
 
@@ -3513,7 +3516,7 @@ __metadata:
   resolution: "@privyid/persona-icon@workspace:packages/persona-icon"
   dependencies:
     "@nuxt/kit": ^3.4.3
-    "@nuxt/module-builder": ^0.3.1
+    "@nuxt/module-builder": ^0.4.0
     "@types/download": ^8
     "@types/fs-extra": ^11
     "@types/minimist": ^1
@@ -3540,7 +3543,7 @@ __metadata:
     "@floating-ui/dom": ^1.0.4
     "@juggle/resize-observer": ^3.4.0
     "@nuxt/kit": ^3.3.2
-    "@nuxt/module-builder": ^0.3.0
+    "@nuxt/module-builder": ^0.4.0
     "@nuxt/schema": 3.3.3
     "@nuxtjs/tailwindcss": ^6.2.0
     "@privyid/browserslist-config": "workspace:^"
@@ -12582,6 +12585,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mlly@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "mlly@npm:1.3.0"
+  dependencies:
+    acorn: ^8.8.2
+    pathe: ^1.1.0
+    pkg-types: ^1.0.3
+    ufo: ^1.1.2
+  checksum: aea2a99131b1a1f02a733219317b6466156e150473e0a2f490802eaf2dc66940a21bb68e0ddd5c003360263e674e7dd0bd02da6520c740e6d16fa0edf5efa46e
+  languageName: node
+  linkType: hard
+
 "modern-node-polyfills@npm:0.0.9":
   version: 0.0.9
   resolution: "modern-node-polyfills@npm:0.0.9"
@@ -13776,6 +13791,17 @@ __metadata:
     mlly: ^1.1.1
     pathe: ^1.1.0
   checksum: 2d0a70c1721c2ebbe075b912531a4f43136e6658fdcc59dc76c39966201ab5ddf265868d1211943183406d4b70d373c17e3b176487bc2020ea737d030b0fd080
+  languageName: node
+  linkType: hard
+
+"pkg-types@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "pkg-types@npm:1.0.3"
+  dependencies:
+    jsonc-parser: ^3.2.0
+    mlly: ^1.2.0
+    pathe: ^1.1.0
+  checksum: 4b305c834b912ddcc8a0fe77530c0b0321fe340396f84cbb87aecdbc126606f47f2178f23b8639e71a4870f9631c7217aef52ffed0ae17ea2dbbe7e43d116a6e
   languageName: node
   linkType: hard
 
