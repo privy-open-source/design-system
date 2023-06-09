@@ -2,7 +2,6 @@ import { render } from '@testing-library/vue'
 import { delay } from 'nanodelay'
 import { ref, nextTick } from 'vue-demi'
 import Nav from './Nav.vue'
-// import NavItem from './NavItem.vue'
 import NavItemDropdown from './NavItemDropdown.vue'
 
 it('should rendered properly without any props', () => {
@@ -134,4 +133,18 @@ it('should be able to add class in the dropdown container via `menu-class` props
   const menu = screen.queryByTestId('dropdown-menu')
   expect(menu).toBeInTheDocument()
   expect(menu).toHaveClass('custom-dropdown')
+})
+
+it('should be able to add size in the dropdown container via `menu-size` props', () => {
+  const screen = render({
+    components: { NavItemDropdown },
+    template  : `
+      <NavItemDropdown menu-size="lg" />
+    `,
+  })
+
+  const menu = screen.queryByTestId('dropdown-menu')
+  expect(menu).toBeInTheDocument()
+  expect(menu).toHaveClass('dropdown__menu--lg')
+  expect(menu).not.toHaveClass('dropdown__menu--sm')
 })

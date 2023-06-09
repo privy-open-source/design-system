@@ -200,6 +200,10 @@ export default defineComponent({
             @apply static shadow-none border-0 bg-base rounded-t-none;
             @apply dark:bg-dark-base;
 
+            &:where(.dropdown__menu--sm, .dropdown__menu--md, .dropdown__menu--lg) {
+              @apply w-full;
+            }
+
             &__container {
               .dropdown__item {
                 @apply first:rounded-t-none;
@@ -232,9 +236,7 @@ export default defineComponent({
         }
       }
 
-      .nav__item,
-      .nav__text,
-      .nav__form {
+      :where(.nav__item, .nav__text, .nav__form) {
         @apply w-full;
       }
     }

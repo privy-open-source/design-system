@@ -9,6 +9,17 @@
   import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
   import IconEN from '../../public/assets/images/img-flag.svg'
 
+  import pNavbar from '../navbar/Navbar.vue'
+  import pNavbarBrand from '../navbar/NavbarBrand.vue'
+  import pNavbarNav from '../navbar/NavbarNav.vue'
+  import pNavbarToggle from '../navbar/NavbarToggle.vue'
+  import pNavItemDropdown from '../nav/NavItemDropdown.vue'
+  import pDropdownItem from '../dropdown/DropdownItem.vue'
+  import pNavForm from '../nav/NavForm.vue'
+  import pNavText from '../nav/NavText.vue'
+  import pAvatar from '../avatar/Avatar.vue'
+  import IconUser from '@carbon/icons-vue/lib/events/16'
+  import pCollapse from '../collapse/Collapse.vue'
   import pSidebar from '../sidebar/Sidebar.vue'
   import pSidebarNav from '../sidebar/SidebarNav.vue'
   import pNavItem from '../nav/NavItem.vue'
@@ -17,7 +28,6 @@
   import pBanner from '../banner/Banner.vue'
   import pCard from '../card/Card.vue'
   import pCaption from '../caption/Caption.vue'
-  import pAvatar from '../avatar/Avatar.vue'
   import pButton from '../button/Button.vue'
   import IconGroup from '@carbon/icons-vue/lib/group/20'
   import IconDataStructured from '@carbon/icons-vue/lib/data--structured/20'
@@ -103,20 +113,18 @@
       ]
     },
   ])
+
+  const menu = ref(false)
 </script>
 
 
-<!-- <p-sidebar-menu fixed :menus="fixed" type="wide" align="right">
+<p-sidebar-menu fixed :menus="fixed" type="wide" align="right">
   <p-sidebar-brand>
     <img src="/assets/images/logo-privy.svg" alt="" />
   </p-sidebar-brand>
-</p-sidebar-menu> -->
+</p-sidebar-menu>
 
 <p-sidebar fixed>
-  <p-sidebar-nav />
-</p-sidebar>
-
-<!-- <p-sidebar fixed>
   <template #brand>
     <p-sidebar-brand>
       <img src="/assets/images/logo-privy.svg" alt="" />
@@ -153,4 +161,26 @@
   <p-sidebar-nav bottom>
     <p-nav-item active>Contacts</p-nav-item>
   </p-sidebar-nav>
-</p-sidebar> -->
+</p-sidebar>
+
+<p-navbar fixed toggleable="all">
+  <p-navbar-brand>
+    <img src="../../public/assets/images/logo.svg" />
+  </p-navbar-brand>
+  <p-navbar-toggle @click="menu =! menu" />
+  <p-collapse v-model="menu" is-nav>
+    <p-navbar-nav>
+      <p-nav-item active>
+        Label
+      </p-nav-item>
+      <p-nav-item-dropdown menu-size="md">
+        <template #button-content>
+          label
+        </template>
+        <p-dropdown-item href="#adf">Edit Profile</p-dropdown-item>
+        <p-dropdown-item>Preference</p-dropdown-item>
+        <p-dropdown-item>Sign out</p-dropdown-item>
+      </p-nav-item-dropdown>
+    </p-navbar-nav>
+  </p-collapse>
+</p-navbar>

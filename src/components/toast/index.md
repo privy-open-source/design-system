@@ -9,14 +9,6 @@ description: Simple notification pop-up.
   import toast from '.'
 </script>
 
-<style lang="postcss">
-  .toast {
-    &-container {
-      --p-toast-z-index: 1090;
-    }
-  }
-</style>
-
 # Toast
 
 > Simple notification pop-up.
