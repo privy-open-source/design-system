@@ -10,7 +10,8 @@
       :size="size"
       :placement="placement"
       :no-caret="noCaret"
-      :menu-class="menuClass">
+      :menu-class="menuClass"
+      :menu-size="menuSize">
       <template #button-content>
         <slot name="button-content">
           {{ text }}
@@ -30,6 +31,7 @@ import type {
   StyleVariant,
 } from '../button'
 import { useVModel } from '../input'
+import { MenuSizeVariant } from '../dropdown'
 
 export default defineComponent({
   components: { Dropdown },
@@ -69,6 +71,10 @@ export default defineComponent({
         Object,
       ],
       default: undefined,
+    },
+    menuSize: {
+      type   : String as PropType<MenuSizeVariant>,
+      default: 'sm',
     },
   },
   models: {
