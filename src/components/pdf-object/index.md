@@ -12,6 +12,8 @@ description: Add object to PDF Viewer
   import IconClose from '@carbon/icons-vue/lib/close/16'
   import { reactive, ref, nextTick } from 'vue-demi'
   import { random } from 'lodash-es'
+  import pDropdown from '../dropdown/Dropdown.vue'
+  import pDropdownItem from '../dropdown/DropdownItem.vue'
 
   const object1 = reactive({
     page  : undefined,
