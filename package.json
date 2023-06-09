@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "packageManager": "yarn@3.6.0",
   "private": true,
   "scripts": {
@@ -20,7 +20,7 @@
     "packages:prepare": "yarn workspaces foreach -v --topological-dev run prepare",
     "packages:build": "yarn workspaces foreach -v --topological-dev run build",
     "release": "yarn workspaces foreach -v --topological-dev --no-private npm publish --tolerate-republish",
-    "release:prepare": "yarn workspaces foreach -v --topological-dev version minor --deferred",
+    "release:prepare": "yarn workspaces foreach -v --topological-dev version",
     "icon:sync": "yarn workspace @privyid/persona-icon sync"
   },
   "devDependencies": {
