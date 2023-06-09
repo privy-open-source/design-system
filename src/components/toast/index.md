@@ -9,6 +9,14 @@ description: Simple notification pop-up.
   import toast from '.'
 </script>
 
+<style lang="postcss">
+  .toast {
+    &-container {
+      --p-toast-z-index: 1090;
+    }
+  }
+</style>
+
 # Toast
 
 > Simple notification pop-up.
@@ -245,6 +253,12 @@ toast({
   text      : 'Lorem ipsum dolor sit amet.',
   toastClass: 'mt-28 mr-10',
 })
+```
+## Variables
+Toast use local CSS variables on `.toast-container` for enhanced real-time customization.
+
+```sass
+--p-toast-z-index: theme(zIndex.toast); //1090
 ```
 
 ## API

@@ -122,8 +122,6 @@ export default defineComponent({
   * global style
   * of toast
   */
-  --p-toast-z-index: theme(zIndex.toast);
-
   @apply flex shadow-xl rounded w-72 md:w-96 overflow-hidden;
 
   .toast__icon,
