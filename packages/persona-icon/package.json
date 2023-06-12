@@ -44,7 +44,7 @@
     "sync": "jiti scripts/sync.ts"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.3.1",
+    "@nuxt/module-builder": "^0.4.0",
     "@types/download": "^8",
     "@types/fs-extra": "^11",
     "@types/minimist": "^1",
