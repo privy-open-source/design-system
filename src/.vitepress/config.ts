@@ -447,7 +447,11 @@ export default defineConfig({
         {
           text     : 'Icons',
           collapsed: true,
-          items    : [{ text: 'Instalation', link: '/icons/getting-started' }, { text: 'Collections', link: '/icons/collections' }],
+          items    : [
+            { text: 'Instalation', link: '/icons/getting-started' },
+            { text: 'Collections', link: '/icons/collections' },
+            { text: 'Changelog', link: '/icons/changelog' },
+          ],
         },
       ],
     },

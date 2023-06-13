@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona",
   "description": "Persona core package",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
@@ -67,7 +67,7 @@
     "@zxing/library": "0.20.0",
     "chart.js": "4.3.0",
     "core-js": "3",
-    "date-fns": "2.29.3",
+    "date-fns": "2.30.0",
     "defu": "6.1.2",
     "fast-equals": "^4.0.3",
     "fuse.js": "6.6.2",
@@ -96,7 +96,7 @@
     "vue-router": ">=4.0.0"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.3.0",
+    "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "3.3.3",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@privyid/browserslist-config": "workspace:^",

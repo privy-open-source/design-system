@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona-icon",
   "description": "Persona icon package",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "packageManager": "yarn@3.6.0",
   "type": "module",
   "main": "./dist/module.cjs",
@@ -41,10 +41,11 @@
     "prepack": "yarn build",
     "build": "nuxt-module-build",
     "lint": "jiti scripts/lint.ts",
-    "sync": "jiti scripts/sync.ts"
+    "sync": "jiti scripts/sync.ts",
+    "changelog": "jiti scripts/changelog.ts"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.3.1",
+    "@nuxt/module-builder": "^0.4.0",
     "@types/download": "^8",
     "@types/fs-extra": "^11",
     "@types/minimist": "^1",
