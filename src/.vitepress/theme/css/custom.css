@@ -91,7 +91,7 @@
   }
 
   .table-list {
-    @apply mt-4 p-3 rounded border shadow-sm dark:border-dark-subtle;
+    @apply p-3 mt-4 border rounded shadow-sm dark:border-dark-subtle;
 
     table {
       @apply table w-full my-0;
@@ -103,11 +103,11 @@
       }
 
       tr {
-        @apply border-t-0 bg-transparent dark:bg-transparent;
+        @apply bg-transparent border-t-0 dark:bg-transparent;
       }
 
       th {
-        @apply border-0 bg-transparent dark:bg-transparent font-bold text-default dark:text-dark-default ;
+        @apply font-bold bg-transparent border-0 dark:bg-transparent text-default dark:text-dark-default ;
       }
 
       td {
@@ -122,11 +122,15 @@
     @apply text-default dark:text-dark-default;
 
     h1, h2, h3, h4, h5, h6 {
-      @apply mt-0 pt-0;
+      &:not(.subheading, .heading) {
+        @apply pt-0 mt-0;
+      }
     }
 
     h5 {
-      @apply mb-2;
+      &:not(.subheading, .heading) {
+        @apply mb-2;
+      }
     }
   }
   
@@ -158,7 +162,7 @@
 
   h2 {
     &:is(.h2) {
-      @apply m-0 border-t-0 pt-0 text-6xl;
+      @apply pt-0 m-0 text-6xl border-t-0;
     }
   }
 
