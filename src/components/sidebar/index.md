@@ -536,7 +536,7 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
         <img src="/assets/images/logo-privy.svg" alt="" />
       </p-sidebar-brand>
     </template>
-    <p-sidebar-nav title="Main">
+    <p-sidebar-nav title="Main" title-action-label="label" title-action-url="/url">
       <p-nav-item active>Documents</p-nav-item>
       <p-nav-item>Contacts</p-nav-item>
       <p-nav-item>Structure</p-nav-item>

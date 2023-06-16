@@ -123,3 +123,20 @@ it('should be able to make condensed navigation via props `condensed`', () => {
   expect(nav).toBeInTheDocument()
   expect(nav).toHaveClass('nav', 'nav--condensed')
 })
+
+it('should be able to add navigation title-action via props `title-action-label` and `title-action-url`', () => {
+  const screen = render({
+    components: { Nav },
+    template  : `
+      <Nav title="Title" title-action-url="/home" title-action-label="Action" />
+    `,
+  })
+
+  const nav      = screen.queryByTestId('nav')
+  const navTitle = screen.queryByTestId('nav-action')
+
+  expect(nav).toBeInTheDocument()
+  expect(navTitle).toBeInTheDocument()
+  expect(navTitle).toHaveTextContent('Action')
+  expect(navTitle).toHaveAttribute('href', '/home')
+})

@@ -5,11 +5,20 @@
     <li
       v-if="title"
       class="nav__title">
-      <Caption
-        weight="bold"
-        transform="capitalize">
-        {{ title }}
-      </Caption>
+      <span class="nav__title__item">
+        <Caption
+          weight="bold"
+          transform="capitalize">
+          {{ title }}
+        </Caption>
+        <Text
+          v-if="titleActionLabel && titleActionUrl"
+          data-testid="nav-action"
+          variant="caption"
+          :href="titleActionUrl">
+          {{ titleActionLabel }}
+        </Text>
+      </span>
     </li>
     <slot />
   </ul>
@@ -23,9 +32,10 @@ import {
 } from 'vue-demi'
 import { AlignVariant, StyleVariant } from '.'
 import Caption from '../caption/Caption.vue'
+import Text from '../text/Text.vue'
 
 export default defineComponent({
-  components: { Caption },
+  components: { Caption, Text },
   props     : {
     fill: {
       type   : Boolean,
@@ -48,6 +58,14 @@ export default defineComponent({
       default: false,
     },
     title: {
+      type   : String,
+      default: undefined,
+    },
+    titleActionLabel: {
+      type   : String,
+      default: undefined,
+    },
+    titleActionUrl: {
       type   : String,
       default: undefined,
     },
@@ -359,7 +377,11 @@ export default defineComponent({
   }
 
   &__title {
-    @apply absolute left-5 top-0 text-base inline-block;
+    @apply absolute left-5 top-0 text-base w-[calc(100%-1.75rem)]; /* 1.25rem + 0.75rem (padding) */
+
+    &__item {
+      @apply flex items-center w-full justify-between space-x-2;
+    }
 
     .caption {
       @apply text-subtle;

@@ -483,7 +483,7 @@ When you need title for grouping navigation, you can add navigation title by usi
     <p-nav-item>In Progress</p-nav-item>
     <p-nav-item>Others</p-nav-item>
   </p-nav>
-  <p-nav vertical title="Quick Jump" class="w-80">
+  <p-nav vertical title="Quick Jump" class="w-80" title-action-label="Permalink" title-action-url="/home">
     <p-nav-item>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
     <p-nav-item>Auditrail</p-nav-item>

@@ -138,9 +138,12 @@
     @apply pr-0 -ml-6;
   }
 
-  a {
+  a,
+  .preview a {
     @apply text-link dark:text-dark-link hover:no-underline;
+  }
 
+  a {
     &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
       @apply underline decoration-solid hover:no-underline;
     } 

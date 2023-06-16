@@ -4,6 +4,8 @@
     class="sidebar__nav"
     data-testid="sidebar-nav"
     :title="title"
+    :title-action-label="titleActionLabel"
+    :title-action-url="titleActionUrl"
     vertical
     :variant="variant"
     :condensed="condensed"
@@ -16,6 +18,8 @@
         class="sidebar__nav"
         data-testid="sidebar-nav"
         :title="title"
+        :title-action-label="titleActionLabel"
+        :title-action-url="titleActionUrl"
         vertical
         :variant="variant"
         :condensed="condensed"
@@ -40,6 +44,14 @@ export default defineComponent({
   components: { Nav },
   props     : {
     title: {
+      type   : String,
+      default: undefined,
+    },
+    titleActionLabel: {
+      type   : String,
+      default: undefined,
+    },
+    titleActionUrl: {
       type   : String,
       default: undefined,
     },
