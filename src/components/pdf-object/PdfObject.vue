@@ -9,10 +9,10 @@
     :data-page="page"
     :data-width="width"
     :data-height="height"
-    @keydown.up.stop.prevent="move(0, -1)"
-    @keydown.down.stop.prevent="move(0, 1)"
-    @keydown.left.stop.prevent="move(-1, 0)"
-    @keydown.right.stop.prevent="move(1, 0)">
+    @keydown.up.stop.prevent="move($event, 0, -1)"
+    @keydown.down.stop.prevent="move($event, 0, 1)"
+    @keydown.left.stop.prevent="move($event, -1, 0)"
+    @keydown.right.stop.prevent="move($event, 1, 0)">
     <div class="pdf-object__container">
       <slot />
       <PdfObjectDebugger v-if="debug" />
@@ -52,6 +52,7 @@ import {
 import { computePosition, getPosition } from './utils/position'
 import { getEmptyPosition, ObjectPosition } from './utils/overlap'
 import PdfObjectDebugger from './PdfObjectDebugger.vue'
+import { clamp } from 'lodash-es'
 
 export default defineComponent({
   components: { PdfObjectDebugger },
@@ -163,7 +164,8 @@ export default defineComponent({
         y.value = top
       },
       onmove (event) {
-        move(event.dx, event.dy)
+        x.value += event.dx
+        y.value += event.dy
       },
       onend (event) {
         if (event.relatedTarget) {
@@ -237,10 +239,22 @@ export default defineComponent({
       }
     })
 
-    function move (dx: number, dy: number) {
+    function move (event: KeyboardEvent, dx: number, dy: number) {
       if (props.moveable) {
-        x.value += dx
-        y.value += dy
+        const pageWidth  = pageEl.value.clientWidth
+        const pageHeight = pageEl.value.clientHeight
+
+        const maxX = Math.floor((pageWidth / scale.value) - width.value)
+        const maxY = Math.floor((pageHeight / scale.value) - height.value)
+
+        const ax = (event.metaKey || event.ctrlKey) ? maxX : (event.shiftKey ? 10 : 1)
+        const ay = (event.metaKey || event.ctrlKey) ? maxY : (event.shiftKey ? 10 : 1)
+
+        const x1 = x.value + dx * ax
+        const y1 = y.value + dy * ay
+
+        x.value = clamp(x1, 0, maxX)
+        y.value = clamp(y1, 0, maxY)
       }
     }
 
