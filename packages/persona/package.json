@@ -37,6 +37,9 @@
       ],
       "directive": [
         "./dist/directive/index.d.ts"
+      ],
+      "components": [
+        "./dist/components/"
       ]
     }
   },
