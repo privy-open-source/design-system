@@ -1,12 +1,34 @@
 <template>
+  <div
+    v-if="title"
+    class="sidebar__title"
+    data-testid="sidebar-title"
+    :class="{ 'sidebar__title__collapsible' : (collapsible && type !== 'narrow') }"
+    @click.prevent="collapse">
+    <Caption
+      weight="bold"
+      transform="capitalize">
+      {{ title }}
+    </Caption>
+    <Text
+      v-if="titleActionLabel && titleActionUrl"
+      data-testid="sidebar-nav-action"
+      variant="caption"
+      :href="titleActionUrl">
+      {{ titleActionLabel }}
+    </Text>
+
+    <IconArrow
+      v-if="collapsible"
+      data-testid="sidebar-title-caret"
+      class="sidebar__title__caret" />
+  </div>
   <Nav
     v-if="!bottom"
     class="sidebar__nav"
     data-testid="sidebar-nav"
-    :title="title"
-    :title-action-label="titleActionLabel"
-    :title-action-url="titleActionUrl"
     vertical
+    :title="title"
     :variant="variant"
     :condensed="condensed"
     :align="align">
@@ -17,10 +39,8 @@
       <Nav
         class="sidebar__nav"
         data-testid="sidebar-nav"
-        :title="title"
-        :title-action-label="titleActionLabel"
-        :title-action-url="titleActionUrl"
         vertical
+        :title="title"
         :variant="variant"
         :condensed="condensed"
         :align="align"
@@ -38,11 +58,16 @@ import {
   inject,
 } from 'vue-demi'
 import Nav from '../nav/Nav.vue'
+import Caption from '../caption/Caption.vue'
+import Text from '../text/Text.vue'
 import { SIDEBAR_SETTINGS } from '.'
+import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
 
 export default defineComponent({
-  components: { Nav },
-  props     : {
+  components: {
+    Nav, Caption, Text, IconArrow,
+  },
+  props: {
     title: {
       type   : String,
       default: undefined,
@@ -63,12 +88,17 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    collapsible: {
+      type   : Boolean,
+      default: false,
+    },
   },
 
   setup (props) {
     const settings = inject(SIDEBAR_SETTINGS, undefined, true)
     const variant  = settings?.variant
     const align    = settings?.align
+    const type     = settings?.type
 
     const classNames = computed(() => {
       const result: string[] = ['']
@@ -79,10 +109,21 @@ export default defineComponent({
       return result
     })
 
+    function collapse (event: Event): void {
+      if (props.collapsible && props.title && type !== 'narrow') {
+        const title = (event.target as HTMLDivElement).closest('.sidebar__title')
+
+        title?.classList.toggle('sidebar__title--collapsed')
+        title?.nextElementSibling?.classList.toggle('sidebar__nav--collapsed')
+      }
+    }
+
     return {
       variant,
       align,
+      type,
       classNames,
+      collapse,
     }
   },
 
@@ -98,6 +139,14 @@ export default defineComponent({
       .nav__link {
         @apply pr-3;
       }
+    }
+
+    .nav__title {
+      @apply hidden;
+    }
+
+    &&--collapsed {
+      @apply hidden;
     }
   }
 
@@ -163,6 +212,35 @@ export default defineComponent({
 
     .nav__title {
       @apply hidden;
+    }
+  }
+
+  &__title {
+    @apply relative z-1 flex items-center justify-between -mb-9 px-3 mt-5;
+
+    &__collapsible {
+      @apply cursor-pointer;
+    }
+
+    &__caret {
+      @apply absolute right-2 rotate-180 origin-center ease-in-out duration-150;
+    }
+
+    &&--collapsed {
+      .sidebar__title__caret {
+        @apply rotate-0 ease-in-out duration-150;
+      }
+    }
+
+    &:is(&__collapsible) {
+      a {
+        @apply mr-5;
+      }
+    }
+
+    .caption {
+      @apply text-subtle;
+      @apply dark:text-dark-subtle;
     }
   }
 }

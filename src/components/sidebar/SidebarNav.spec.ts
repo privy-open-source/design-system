@@ -1,4 +1,5 @@
-import { render } from '@testing-library/vue'
+import { render, fireEvent } from '@testing-library/vue'
+import { delay } from 'nanodelay'
 import Sidebar from './Sidebar.vue'
 import SidebarNav from './SidebarNav.vue'
 
@@ -77,10 +78,38 @@ it('should be able to set sidebar section-title via props `title-action-label` a
   })
 
   const sidebarNav   = screen.queryByTestId('sidebar-nav')
-  const sidebarTitle = screen.queryByTestId('nav-action')
+  const sidebarTitle = screen.queryByTestId('sidebar-nav-action')
 
   expect(sidebarNav).toBeInTheDocument()
   expect(sidebarTitle).toBeInTheDocument()
   expect(sidebarTitle).toHaveTextContent('Show more')
   expect(sidebarTitle).toHaveAttribute('href', '/document/category')
+})
+
+it('should be able to set collapsible grouped menu via props `collapsible`', async () => {
+  const screen = render({
+    components: { Sidebar, SidebarNav },
+    template  : `
+      <Sidebar>
+        <SidebarNav title="Title" collapsible />
+      </Sidebar>
+    `,
+  })
+
+  const sidebarNav   = screen.queryByTestId('sidebar-nav')
+  const sidebarTitle = screen.queryByTestId('sidebar-title')
+  const caret        = screen.queryByTestId('sidebar-title-caret')
+
+  expect(sidebarTitle).toBeInTheDocument()
+  expect(sidebarTitle).toHaveClass('sidebar__title__collapsible')
+  expect(sidebarTitle).not.toHaveClass('sidebar__title--collapsed')
+  expect(caret).toBeInTheDocument()
+  expect(sidebarNav).toBeInTheDocument()
+  expect(sidebarNav).not.toHaveClass('sidebar__nav--collapsed')
+
+  await fireEvent.click(sidebarTitle)
+  await delay(0)
+
+  expect(sidebarTitle).toHaveClass('sidebar__title--collapsed')
+  expect(sidebarNav).toHaveClass('sidebar__nav--collapsed')
 })

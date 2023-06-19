@@ -13,13 +13,13 @@ description: Base dashboard sidebar menu.
   import pBanner from '../banner/Banner.vue'
   import pCard from '../card/Card.vue'
   import pCaption from '../caption/Caption.vue'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconGroup from '@carbon/icons-vue/lib/group/20'
-  import IconDataStructured from '@carbon/icons-vue/lib/data--structured/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconCheck from '@carbon/icons-vue/lib/checkmark/20'
-  import IconClose from '@carbon/icons-vue/lib/close/20'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconGroup from '@privyid/persona-icon/vue/user-multiple/20.vue'
+  import IconDataStructured from '@privyid/persona-icon/vue/employee-tree/20.vue'
+  import IconSettings from '@privyid/persona-icon/vue/settings/20.vue'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconCheck from '@privyid/persona-icon/vue/checkmark/20.vue'
+  import IconClose from '@privyid/persona-icon/vue/close/20.vue'
   import { ref } from "vue-demi"
 
   const model   = ref(false)
@@ -53,13 +53,10 @@ description: Base dashboard sidebar menu.
         <img src="/assets/images/logo-privy.svg" alt="" />
       </p-sidebar-brand>
     </template>
-    <p-sidebar-nav title="Main">
+    <p-sidebar-nav>
       <p-nav-item active>Documents</p-nav-item>
       <p-nav-item>Contacts</p-nav-item>
       <p-nav-item>Structure</p-nav-item>
-    </p-sidebar-nav>
-    <p-sidebar-nav bottom>
-      <p-nav-item>Contacts</p-nav-item>
     </p-sidebar-nav>
   </p-sidebar>
 </preview>
@@ -380,7 +377,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
       <template #icon>
         <IconDocument />
       </template>
-      <p-sidebar-nav id="chld-1">
+      <p-sidebar-nav>
         <p-nav-item>
           Need Action
         </p-nav-item>
@@ -415,7 +412,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
         <template #icon>
           <IconDocument />
         </template>
-        <p-sidebar-nav id="chld-1">
+        <p-sidebar-nav>
           <p-nav-item>
             Need Action
           </p-nav-item>
@@ -452,7 +449,7 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
       <template #icon>
         <IconDocument />
       </template>
-      <p-sidebar-nav id="chld-1">
+      <p-sidebar-nav>
         <p-nav-item>
           Need Action
         </p-nav-item>
@@ -487,7 +484,145 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
         <template #icon>
           <IconDocument />
         </template>
-        <p-sidebar-nav id="chld-1">
+        <p-sidebar-nav>
+          <p-nav-item>
+            Need Action
+          </p-nav-item>
+          <p-nav-item>
+            In Progress
+          </p-nav-item>
+          <p-nav-item>
+            Others
+          </p-nav-item>
+        </p-sidebar-nav>
+      </p-nav-sub-item>
+    </p-sidebar-nav>
+  </p-sidebar>
+</template>
+```
+
+## Grouped Menu
+Grouped menu in the sidebar can be implemented by adding section-title via `title` props in your `<p-sidebar-nav>`.
+Action-permalink can also be added to the section-title via `title-action-label` & `title-action-url`.
+
+### Action
+<preview class="preview--fixed">
+  <p-sidebar fixed>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
+    <p-sidebar-nav 
+      title="main" 
+      title-action-label="See More" 
+      title-action-url="#/categories">
+      <p-nav-item active>
+        <template #icon>
+          <IconDashboard />
+        </template>
+        Dashboard
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconDocument />
+        </template>
+        Documents
+      </p-nav-item>
+    </p-sidebar-nav>
+  </p-sidebar>
+</preview>
+
+```vue
+<template>
+  <p-sidebar fixed>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
+    <p-sidebar-nav
+      title="main" 
+      title-action-label="See More" 
+      title-action-url="#/categories">
+      <p-nav-item active>
+        <template #icon>
+          <IconDashboard />
+        </template>
+        Dashboard
+      </p-nav-item>
+      <p-nav-item>
+        <template #icon>
+          <IconDocument />
+        </template>
+        Documents
+      </p-nav-item>
+    </p-sidebar-nav>
+  </p-sidebar>
+</template>
+```
+
+### Collapsible
+If you want collapsible grouped menus, you just need to add `collapsible` props in your `<p-sidebar-nav>`.
+
+<preview class="preview--fixed">
+  <p-sidebar fixed>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
+    <p-sidebar-nav 
+      title="main"
+      collapsible>
+      <p-nav-item active>
+        <template #icon>
+          <IconDashboard />
+        </template>
+        Dashboard
+      </p-nav-item>
+      <p-nav-sub-item text="Documents" collapsible>
+        <template #icon>
+          <IconDocument />
+        </template>
+        <p-sidebar-nav>
+          <p-nav-item>
+            Need Action
+          </p-nav-item>
+          <p-nav-item>
+            In Progress
+          </p-nav-item>
+          <p-nav-item>
+            Others
+          </p-nav-item>
+        </p-sidebar-nav>
+      </p-nav-sub-item>
+    </p-sidebar-nav>
+  </p-sidebar>
+</preview>
+
+```vue
+<template>
+  <p-sidebar fixed>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
+    <p-sidebar-nav 
+      title="main"
+      collapsible>
+      <p-nav-item active>
+        <template #icon>
+          <IconDashboard />
+        </template>
+        Dashboard
+      </p-nav-item>
+      <p-nav-sub-item text="Documents" collapsible>
+        <template #icon>
+          <IconDocument />
+        </template>
+        <p-sidebar-nav>
           <p-nav-item>
             Need Action
           </p-nav-item>
@@ -536,10 +671,26 @@ Toggleable-feature can be used for responsive purpose. It can be toggle the side
         <img src="/assets/images/logo-privy.svg" alt="" />
       </p-sidebar-brand>
     </template>
-    <p-sidebar-nav title="Main" title-action-label="label" title-action-url="/url">
+    <p-sidebar-nav title="Main" title-action-label="label" title-action-url="/url" collapsible>
       <p-nav-item active>Documents</p-nav-item>
       <p-nav-item>Contacts</p-nav-item>
       <p-nav-item>Structure</p-nav-item>
+      <p-nav-sub-item text="Documents" collapsible>
+        <template #icon>
+          <IconDocument />
+        </template>
+        <p-sidebar-nav id="chld-1">
+          <p-nav-item>
+            Need Action
+          </p-nav-item>
+          <p-nav-item>
+            In Progress
+          </p-nav-item>
+          <p-nav-item>
+            Others
+          </p-nav-item>
+        </p-sidebar-nav>
+      </p-nav-sub-item>
     </p-sidebar-nav>
   </p-sidebar>
 </preview>
@@ -668,7 +819,7 @@ Sidebar use local CSS variables for enhanced real-time customization.
 | `align`        | `String`  | `left`      | Sidebar alignment, valid value is `left` and `right`              |
 | `type`         | `String`  | `wide`      | Sidebar type, valid value is `wide` and `narrow`                  |
 | `fixed`        | `Boolean` | `false`     | Activate fixed Sidebar                                            |
-| `sticky`       | `Boolean` | `false`     | Activate sticky Sidebar                                            |
+| `sticky`       | `Boolean` | `false`     | Activate sticky Sidebar                                           |
 | `toggleable`   | `String`  | `-`         | Toggle with desired breakpoint `lg`, `md`, `sm` and `all`         |
 
 ### Slots `<p-sidebar>`
@@ -696,10 +847,13 @@ Sidebar use local CSS variables for enhanced real-time customization.
 ### Props `<p-sidebar-nav>`
 
 | Props          |   Type    | Default     | Description                                                       |
-|----------------|:---------:|:-----------:|-------------------------------------------------------------------|
-| `title`        | `String`  | `undefined` | Title to place in the top of sidebar navigation block             |
-| `bottom`       | `Boolean` | `false`     | Place group of sidebar navigation in the bottom of Sidebar        |
-| `condensed`    | `Boolean` | `false`     | Activate condensed of group navigation with less space            |
+|----------------------|:---------:|:-----------:|-------------------------------------------------------------------|
+| `title`              | `String`  | `undefined` | Title to place in the top of sidebar navigation block             |
+| `title-action-label` | `String`  | `undefined` | Title action label to place in the section title                  |
+| `title-action-url`   | `String`  | `undefined` | Title action url to place in the section title                    |
+| `bottom`             | `Boolean` | `false`     | Place group of sidebar navigation in the bottom of Sidebar        |
+| `condensed`          | `Boolean` | `false`     | Activate condensed of group navigation with less space            |
+| `collapsible`        | `Boolean` | `false`     | Activate collapsible navigation from section title                |
 
 ### Slots `<p-sidebar-nav>`
 

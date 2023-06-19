@@ -30,7 +30,7 @@ import {
   inject,
 } from 'vue-demi'
 import { SIDEBAR_SETTINGS } from '../sidebar'
-import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
+import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
 
 export default defineComponent({
   components: { IconArrow },
