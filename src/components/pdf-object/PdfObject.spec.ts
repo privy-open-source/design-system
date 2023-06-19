@@ -73,7 +73,11 @@ it('should able to micro-adjust using arrow-keyboard', async () => {
     },
   })
 
+  const page   = screen.queryByTestId('page-1')
   const object = screen.queryByTestId('pdf-object')
+
+  vi.spyOn(page, 'clientWidth', 'get').mockReturnValue(793)
+  vi.spyOn(page, 'clientHeight', 'get').mockReturnValue(1122)
 
   await fireEvent.keyDown(object, { key: 'ArrowUp' })
 
@@ -213,8 +217,8 @@ it('should moving position when dragged', async () => {
     y     : 100,
     x     : 100,
     left  : 100,
-    width : 300,
-    height: 400,
+    width : 791,
+    height: 1122,
     bottom: 0,
     right : 0,
     toJSON: vi.fn(),
