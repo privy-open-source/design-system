@@ -57,7 +57,7 @@ it('should have `center` alignment if align set to `center`', () => {
   expect(bar).toHaveClass('contextual-bar', 'contextual-bar--align-center')
 })
 
-it('should be abble to add title content via prop `title`', () => {
+it('should be able to add title content via prop `title`', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
@@ -73,7 +73,7 @@ it('should be abble to add title content via prop `title`', () => {
   expect(text).toBeInTheDocument()
 })
 
-it('should be abble to add title content via slot `title`', () => {
+it('should be able to add title content via slot `title`', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
@@ -93,7 +93,7 @@ it('should be abble to add title content via slot `title`', () => {
   expect(text).toBeInTheDocument()
 })
 
-it('should be abble to add additional message via prop `message`', () => {
+it('should be able to add additional message via prop `message`', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
@@ -111,7 +111,7 @@ it('should be abble to add additional message via prop `message`', () => {
   expect(text).toBeInTheDocument()
 })
 
-it('should be abble to add additional message via slot `message`', () => {
+it('should be able to add additional message via slot `message`', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
@@ -133,7 +133,7 @@ it('should be abble to add additional message via slot `message`', () => {
   expect(text).toBeInTheDocument()
 })
 
-it('should be abble to add custom background via prop `background-url`', () => {
+it('should be able to add custom background via prop `background-url`', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
@@ -148,7 +148,7 @@ it('should be abble to add custom background via prop `background-url`', () => {
   expect(bar).toHaveStyle({ 'background-image': 'url("assets/images/img-background-contextualbar.svg")' })
 })
 
-it('should be abble to add icon via slot `icon`', () => {
+it('should be able to add icon via slot `icon`', () => {
   const screen = render({
     components: { pContextualBar, IconInfo },
     template  : `
@@ -166,7 +166,7 @@ it('should be abble to add icon via slot `icon`', () => {
   expect(icon).toHaveClass('contextual-bar__icon')
 })
 
-it('should be abble to add button action via slot `action`', () => {
+it('should be able to add button action via slot `action`', () => {
   const screen = render({
     components: { pContextualBar, pButton },
     template  : `

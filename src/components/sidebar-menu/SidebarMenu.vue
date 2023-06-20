@@ -13,8 +13,11 @@
       v-for="(menu, id) in menus"
       :key="id"
       :title="menu.title"
+      :title-action-label="menu.titleActionLabel"
+      :title-action-url="menu.titleActionUrl"
       :bottom="menu.bottom"
-      :condensed="menu.condensed">
+      :condensed="menu.condensed"
+      :collapsible="menu.collapsible">
       <template
         v-for="(item, i) in menu.items"
         :key="i">

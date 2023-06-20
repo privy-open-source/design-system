@@ -19,7 +19,7 @@ it('should rendered properly without any props', () => {
   expect(navbar).toHaveClass('navbar')
 })
 
-it('should be abble to change variant via prop `variant`', () => {
+it('should be able to change variant via prop `variant`', () => {
   const screen = render({
     components: { Navbar },
     template  : `

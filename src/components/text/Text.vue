@@ -77,7 +77,8 @@ export default defineComponent({
 <style lang="postcss">
 .freetext {
   &--hyperlink {
-    @apply underline decoration-solid;
+    @apply underline decoration-solid text-info;
+    @apply dark:text-dark-info;
   }
 
   /**

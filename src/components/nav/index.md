@@ -505,19 +505,42 @@ When you need title for grouping navigation, you can add navigation title by usi
 </template>
 ```
 
+### Title with action
+If we need some action in section title, you can add this by using `title-action-label` and `title-action-url`
+
+<preview>
+  <p-nav vertical title="Quick Jump" class="w-80" title-action-label="See More" title-action-url="#/categories">
+    <p-nav-item>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+</preview>
+
+```vue
+<template>
+  <p-nav vertical title="Quick Jump" class="w-80" title-action-label="See More" title-action-url="#/categories">
+    <p-nav-item>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+</template>
+```
+
 ## API
 
 ### Props `<p-nav>`
 
-| Props          |   Type    | Default     | Description                                                       |
-|----------------|:---------:|:-----------:|-------------------------------------------------------------------|
-| `variant`      | `String`  | `pills`     | Navigation variant, valid value is `pills`, `lines` and `tabs`    |
-| `fill`         | `Boolean` | `false`     | Activate fullwidth navigation with `fill` type                    |
-| `justified`    | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
-| `align`        | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
-| `vertical`     | `Boolean` | `false`     | Activate vertical navigation                                      |
-| `title`        | `String`  | `undefined` | Title to place in the top of navigation block                     |
-| `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
+| Props                |   Type    | Default     | Description                                                       |
+|----------------------|:---------:|:-----------:|-------------------------------------------------------------------|
+| `variant`            | `String`  | `pills`     | Navigation variant, valid value is `pills`, `lines` and `tabs`    |
+| `fill`               | `Boolean` | `false`     | Activate fullwidth navigation with `fill` type                    |
+| `justified`          | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
+| `align`              | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
+| `vertical`           | `Boolean` | `false`     | Activate vertical navigation                                      |
+| `title`              | `String`  | `undefined` | Title to place in the top of navigation block                     |
+| `title-action-label` | `String`  | `undefined` | Title action label to place in the section title                  |
+| `title-action-url`   | `String`  | `undefined` | Title action url to place in the section title                    |
+| `condensed`          | `Boolean` | `false`     | Activate condensed navigation with less space                     |
 
 ### Slots `<p-nav>`
 
