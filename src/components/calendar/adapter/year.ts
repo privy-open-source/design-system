@@ -24,7 +24,7 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, model, min, max }) {
+  getItems ({ cursor, start: vStart, end: vEnd, min, max }) {
     return eachYearOfInterval(getInterval(cursor.value)).map((date) => {
       const start      = min.value ?? minTime
       const end        = max.value ?? maxTime
@@ -32,12 +32,17 @@ export default defineAdapter({
         && !isSameYear(end, date)
         && !isWithinInterval(date, { start, end })
 
+      const isHead = isSameYear(vStart.value, date)
+      const isTail = isSameYear(vEnd.value, date)
+
       return {
         value   : date,
         text    : date.getFullYear().toString(),
         disabled: isDisabled,
         readonly: false,
-        active  : isSameYear(model.value, date),
+        head    : isHead,
+        tail    : isTail,
+        active  : isHead || isTail,
       }
     })
   },

@@ -31,18 +31,23 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, model, min, max }) {
+  getItems ({ cursor, end: vEnd, start: vStart, min, max }) {
     const dates: CalendarItem[] = eachDayOfInterval(getInterval(cursor.value)).map((date) => {
       const start      = min.value ?? minTime
       const end        = max.value ?? maxTime
       const isDisabled = !isSameMonth(cursor.value, date)
         || !isWithinInterval(date, { start, end })
 
+      const isHead = isSameDay(vStart.value, date)
+      const isTail = isSameDay(vEnd.value, date)
+
       return {
         value   : date,
         text    : date.getDate().toString(),
         disabled: isDisabled,
-        active  : isSameDay(model.value, date),
+        head    : isHead,
+        tail    : isTail,
+        active  : isHead || isTail,
         readonly: false,
       }
     })
@@ -53,6 +58,8 @@ export default defineAdapter({
         text    : formatDate(item.value, 'EEEEEE'),
         disabled: false,
         readonly: true,
+        head    : false,
+        tail    : false,
         active  : false,
       }
     })

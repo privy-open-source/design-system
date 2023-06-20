@@ -8,13 +8,15 @@ export function createMockContext (
   maxDate?: Date,
 ): CalendarContext {
   const cursor = ref(new Date(2022, 4, 13))
-  const model  = ref(new Date(2022, 4, 13))
+  const start  = ref(new Date(2022, 4, 13))
+  const end    = ref(new Date(2022, 4, 13))
   const min    = ref(minDate)
   const max    = ref(maxDate)
 
   return {
     cursor,
-    model,
+    start,
+    end,
     min,
     max,
   }

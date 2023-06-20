@@ -24,7 +24,7 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, model, min, max }) {
+  getItems ({ cursor, start: vStart, end: vEnd, min, max }) {
     return eachMonthOfInterval(getInterval(cursor.value))
       .map((date) => {
         const start      = min.value ?? minTime
@@ -33,12 +33,17 @@ export default defineAdapter({
           && !isSameMonth(end, date)
           && !isWithinInterval(date, { start, end })
 
+        const isHead = isSameMonth(vStart.value, date)
+        const isTail = isSameMonth(vEnd.value, date)
+
         return {
           value   : date,
           text    : formatDate(date, 'MMM'),
           disabled: isDisabled,
           readonly: false,
-          active  : isSameMonth(model.value, date),
+          head    : isHead,
+          tail    : isTail,
+          active  : isHead || isTail,
         }
       })
   },

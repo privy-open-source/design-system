@@ -12,11 +12,14 @@ export interface CalendarItem {
   disabled: boolean,
   readonly: boolean,
   active: boolean,
+  head: boolean,
+  tail: boolean,
 }
 
 export interface CalendarContext {
   cursor: Ref<Date>,
-  model: Ref<Date>,
+  start: Ref<Date>,
+  end: Ref<Date>,
   max: Ref<Date | undefined>,
   min: Ref<Date | undefined>,
 }

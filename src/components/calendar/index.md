@@ -7,11 +7,13 @@ description: Sub-component for Datepicker
   import pCalendar from "./Calendar.vue"
   import Banner from "../banner/Banner.vue"
   import { ref } from "vue-demi"
-  import { format } from 'date-fns'
+  import { format, startOfYear, endOfYear } from 'date-fns'
 
   const value = ref()
-</script>
 
+  const min = startOfYear(new Date())
+  const max = endOfYear(new Date())
+</script>
 
 # Calendar
 
@@ -22,7 +24,7 @@ description: Sub-component for Datepicker
 ### Simple Usage
 
 <preview>
-  <p-calendar />
+  <p-calendar range />
 </preview>
 
 ```vue
@@ -37,16 +39,16 @@ You can limit the date via `min` or `max` props
 
 <preview>
   <p-calendar
-    :min="new Date(2022, 0, 1)"
-    :max="new Date(2022, 11, 31)" />
+    :min="min"
+    :max="max" />
 </preview>
 
 ```vue
 <template>
   <!-- Limit 1 Jan - 31 Dec 2022 -->
   <p-calendar
-    :min="new Date(2022, 0, 1)"
-    :max="new Date(2022, 11, 31)" />
+    :min="min"
+    :max="max" />
 </template>
 ```
 
