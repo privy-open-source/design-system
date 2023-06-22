@@ -109,3 +109,18 @@ it('should be able to add icon via slot `icon`', () => {
   expect(navLink).toBeInTheDocument()
   expect(navLink).toHaveClass('nav__link--icon')
 })
+
+it('should be able to add link class via props `link-class`', () => {
+  const screen = render({
+    components: { Nav, NavItem },
+    template  : `
+      <Nav>
+        <NavItem link-class="link-class">link</NavItem>
+      </Nav>
+    `,
+  })
+
+  const navLink = screen.queryByTestId('nav-link')
+
+  expect(navLink).toHaveClass('link-class')
+})
