@@ -30,6 +30,11 @@
       :max="max"
       :min="min"
       :mode="mode"
+      :range="range"
+      :start="start"
+      :end="end"
+      :min-gap="minGap"
+      :max-gap="maxGap"
       class="datepicker__calendar"
       @change="onSelected" />
   </Dropdown>
@@ -59,7 +64,7 @@ export default defineComponent({
   },
   props: {
     modelValue: {
-      type   : Date,
+      type   : [Date, Array] as PropType<Date | [Date, Date]>,
       default: undefined,
     },
     placeholder: {
@@ -94,19 +99,47 @@ export default defineComponent({
       type   : String as PropType<CalendarMode>,
       default: 'date',
     },
+    range: {
+      type   : Boolean,
+      default: false,
+    },
+    start: {
+      type   : Date,
+      default: undefined,
+    },
+    end: {
+      type   : Date,
+      default: undefined,
+    },
+    minGap: {
+      type   : String,
+      default: undefined,
+    },
+    maxGap: {
+      type   : String,
+      default: undefined,
+    },
   },
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['change', 'update:modelValue'],
+  emits: [
+    'change',
+    'update:modelValue',
+    'update:start',
+    'update:end',
+  ],
   setup (props, { emit }) {
     const model  = useVModel(props)
     const isOpen = ref(false)
 
     const value = computed(() => {
+      if (props.range && Array.isArray(model.value))
+        return `${formatDate(model.value[0], props.format)} - ${formatDate(model.value[1], props.format)}`
+
       return isDate(model.value)
-        ? formatDate(model.value, props.format)
+        ? formatDate(model.value as Date, props.format)
         : ''
     })
 

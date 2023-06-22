@@ -11,13 +11,12 @@ import {
   isAfter,
   isBefore,
   isWithinInterval,
-  minTime,
-  maxTime,
 } from 'date-fns'
 import {
   CalendarItem,
   defineAdapter,
   formatDate,
+  getLimit,
 } from './adapter'
 
 function getInterval (date: Date) {
@@ -31,15 +30,13 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, end: vEnd, start: vStart, min, max }) {
-    const dates: CalendarItem[] = eachDayOfInterval(getInterval(cursor.value)).map((date) => {
-      const start      = min.value ?? minTime
-      const end        = max.value ?? maxTime
-      const isDisabled = !isSameMonth(cursor.value, date)
-        || !isWithinInterval(date, { start, end })
+  getItems (context) {
+    const dates: CalendarItem[] = eachDayOfInterval(getInterval(context.cursor.value)).map((date) => {
+      const isDisabled = !isSameMonth(context.cursor.value, date)
+        || !isWithinInterval(date, getLimit(context))
 
-      const isHead = isSameDay(vStart.value, date)
-      const isTail = isSameDay(vEnd.value, date)
+      const isHead = isSameDay(context.start.value, date)
+      const isTail = isSameDay(context.end.value, date)
 
       return {
         value   : date,
@@ -80,7 +77,7 @@ export default defineAdapter({
   },
 
   canNext (context) {
-    const max   = context.max.value
+    const max   = getLimit(context).end
     const date  = this.getNextCursor(context)
     const start = startOfMonth(date)
     const end   = endOfMonth(date)
@@ -89,7 +86,7 @@ export default defineAdapter({
   },
 
   canPrev (context) {
-    const min   = context.min.value
+    const min   = getLimit(context).start
     const date  = this.getPrevCursor(context)
     const start = startOfMonth(date)
     const end   = endOfMonth(date)

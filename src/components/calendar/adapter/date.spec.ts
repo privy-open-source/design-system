@@ -12,13 +12,19 @@ export function createMockContext (
   const end    = ref(new Date(2022, 4, 13))
   const min    = ref(minDate)
   const max    = ref(maxDate)
+  const minGap = ref()
+  const maxGap = ref()
+  const range  = ref(false)
 
   return {
+    range,
     cursor,
     start,
     end,
     min,
     max,
+    minGap,
+    maxGap,
   }
 }
 

@@ -1,4 +1,4 @@
-import { defineAdapter } from './adapter'
+import { defineAdapter, getLimit } from './adapter'
 import {
   addYears,
   eachYearOfInterval,
@@ -7,8 +7,6 @@ import {
   isBefore,
   isSameYear,
   isWithinInterval,
-  maxTime,
-  minTime,
   startOfDecade,
   subYears,
 } from 'date-fns'
@@ -24,16 +22,15 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, start: vStart, end: vEnd, min, max }) {
-    return eachYearOfInterval(getInterval(cursor.value)).map((date) => {
-      const start      = min.value ?? minTime
-      const end        = max.value ?? maxTime
-      const isDisabled = !isSameYear(start, date)
+  getItems (context) {
+    return eachYearOfInterval(getInterval(context.cursor.value)).map((date) => {
+      const { start, end } = getLimit(context)
+      const isDisabled     = !isSameYear(start, date)
         && !isSameYear(end, date)
         && !isWithinInterval(date, { start, end })
 
-      const isHead = isSameYear(vStart.value, date)
-      const isTail = isSameYear(vEnd.value, date)
+      const isHead = isSameYear(context.start.value, date)
+      const isTail = isSameYear(context.end.value, date)
 
       return {
         value   : date,

@@ -83,9 +83,12 @@ import {
 } from 'vue-demi'
 import {
   CalendarAdapter,
+  CalendarContext,
   CalendarFormat,
   CalendarItem,
   CalendarMode,
+  validateDuration,
+  parseDuration,
 } from './adapter/adapter'
 import DateAdapter from './adapter/date'
 import MonthAdapter from './adapter/month'
@@ -150,6 +153,20 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    minGap: {
+      type   : String,
+      default: undefined,
+      validator (value: string) {
+        return validateDuration(value)
+      },
+    },
+    maxGap: {
+      type   : String,
+      default: undefined,
+      validator (value: string) {
+        return validateDuration(value)
+      },
+    },
   },
   emits: [
     'update:modelValue',
@@ -166,13 +183,19 @@ export default defineComponent({
 
     const cursor = ref(startOfMonth(localStart.value ?? new Date()))
     const hover  = ref<Date>()
+    const range  = toRef(props, 'range')
+    const minGap = computed(() => parseDuration(props.minGap))
+    const maxGap = computed(() => parseDuration(props.maxGap))
 
-    const context = {
+    const context: CalendarContext = {
+      range : range,
       cursor: cursor,
       start : localStart,
       end   : localEnd,
       min   : toRef(props, 'min'),
       max   : toRef(props, 'max'),
+      minGap: minGap,
+      maxGap: maxGap,
     }
 
     const adapter = computed(() => {
@@ -204,7 +227,7 @@ export default defineComponent({
       if (props.readonly)
         result.push('calendar--readonly')
 
-      if (props.range)
+      if (range.value)
         result.push('calendar--range')
 
       return result
@@ -231,7 +254,7 @@ export default defineComponent({
       get () {
         return Array.isArray(props.modelValue)
           ? props.modelValue[1]
-          : (props.start ?? props.modelValue)
+          : (props.end ?? props.modelValue)
       },
       set (value: Date) {
         emit('update:end', value)
@@ -260,7 +283,7 @@ export default defineComponent({
 
     function selectItem (item: CalendarItem) {
       if (viewmode.value === props.mode) {
-        if (props.range && (localStart.value && !localEnd.value)) {
+        if (range.value && (localStart.value && !localEnd.value)) {
           localEnd.value   = maxDate([localStart.value, item.value])
           localStart.value = minDate([localStart.value, item.value])
         } else {
@@ -275,12 +298,12 @@ export default defineComponent({
     }
 
     function setHover (item: CalendarItem) {
-      if (props.range && !item.readonly && !item.disabled)
+      if (range.value && !item.readonly && !item.disabled)
         hover.value = item.value
     }
 
     function isInRange (item: CalendarItem) {
-      if (props.range && localStart.value && (localEnd.value || hover.value) && !item.readonly && !item.active) {
+      if (range.value && localStart.value && (localEnd.value || hover.value) && !item.readonly && !item.active) {
         return isWithinInterval(item.value, {
           start: minDate([localStart.value, localEnd.value ?? hover.value]),
           end  : maxDate([localStart.value, localEnd.value ?? hover.value]),
@@ -294,9 +317,11 @@ export default defineComponent({
     syncRef(localEnd, vEnd)
 
     watch([localStart, localEnd], ([startVal, endVal]) => {
-      if (props.range && startVal && endVal) {
-        emit('update:modelValue', [startVal, endVal])
-        emit('change', [startVal, endVal])
+      if (props.range) {
+        if (startVal && endVal) {
+          emit('update:modelValue', [startVal, endVal])
+          emit('change', [startVal, endVal])
+        }
       } else {
         emit('update:modelValue', startVal)
         emit('change', startVal)

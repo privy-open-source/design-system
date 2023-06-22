@@ -6,12 +6,14 @@ import {
   isBefore,
   isSameMonth,
   isWithinInterval,
-  maxTime,
-  minTime,
   startOfYear,
   subYears,
 } from 'date-fns'
-import { defineAdapter, formatDate } from './adapter'
+import {
+  defineAdapter,
+  formatDate,
+  getLimit,
+} from './adapter'
 
 function getInterval (date: Date) {
   const start = startOfYear(date)
@@ -24,17 +26,16 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, start: vStart, end: vEnd, min, max }) {
-    return eachMonthOfInterval(getInterval(cursor.value))
+  getItems (context) {
+    return eachMonthOfInterval(getInterval(context.cursor.value))
       .map((date) => {
-        const start      = min.value ?? minTime
-        const end        = max.value ?? maxTime
-        const isDisabled = !isSameMonth(start, date)
+        const { start, end } = getLimit(context)
+        const isDisabled     = !isSameMonth(start, date)
           && !isSameMonth(end, date)
           && !isWithinInterval(date, { start, end })
 
-        const isHead = isSameMonth(vStart.value, date)
-        const isTail = isSameMonth(vEnd.value, date)
+        const isHead = isSameMonth(context.start.value, date)
+        const isTail = isSameMonth(context.end.value, date)
 
         return {
           value   : date,
@@ -61,14 +62,14 @@ export default defineAdapter({
   },
 
   canNext (context) {
-    const max  = context.max.value
+    const max  = getLimit(context).end
     const date = this.getNextCursor(context)
 
     return !max || isBefore(date, max) || isWithinInterval(max, getInterval(date))
   },
 
   canPrev (context) {
-    const min  = context.min.value
+    const min  = getLimit(context).start
     const date = this.getPrevCursor(context)
 
     return !min || isAfter(date, min) || isWithinInterval(min, getInterval(date))
