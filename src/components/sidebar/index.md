@@ -47,7 +47,7 @@ description: Base dashboard sidebar menu.
 ### Basic Sidebar
 
 <preview class="preview--fixed">
-  <p-sidebar fixed>
+  <p-sidebar fixed class="[--p-sidebar-bg: #999]">
     <template #brand>
       <p-sidebar-brand>
         <img src="/assets/images/logo-privy.svg" alt="" />
