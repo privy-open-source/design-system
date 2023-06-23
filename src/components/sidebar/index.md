@@ -801,6 +801,8 @@ Sidebar use local CSS variables for enhanced real-time customization.
 --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT);
 --p-sidebar-z-index: theme(zIndex.fixed);
 --p-sidebar-sticky-top: theme(spacing.0);
+--p-sidebar-padding-x: theme(spacing.2);
+--p-sidebar-padding-y: theme(spacing.4);
 ```
 
 ### `.sidebar__brand`

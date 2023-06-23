@@ -160,8 +160,10 @@ export default defineComponent({
   --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT);
   --p-sidebar-z-index: theme(zIndex.fixed);
   --p-sidebar-sticky-top: theme(spacing.0);
+  --p-sidebar-padding-x: theme(spacing.2);
+  --p-sidebar-padding-y: theme(spacing.4);
 
-  @apply bg-[color:var(--p-sidebar-bg)] px-2 py-4;
+  @apply bg-[color:var(--p-sidebar-bg)] px-[var(--p-sidebar-padding-x)] py-[var(--p-sidebar-padding-y)];
   @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
 
   /**
