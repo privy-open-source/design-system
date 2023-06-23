@@ -2,12 +2,6 @@ import { Ref } from 'vue-demi'
 import {
   format,
   Duration,
-  minTime as MIN_TIME,
-  maxTime as MAX_TIME,
-  min as minDate,
-  max as maxDate,
-  add,
-  sub,
 } from 'date-fns'
 import id from 'date-fns/locale/id/index'
 import en from 'date-fns/locale/en-US/index'
@@ -27,14 +21,11 @@ export interface CalendarItem {
 }
 
 export interface CalendarContext {
-  range: Ref<boolean>,
   cursor: Ref<Date>,
   start: Ref<Date>,
   end: Ref<Date>,
   min: Ref<Date | undefined>,
   max: Ref<Date | undefined>,
-  minGap: Ref<Duration | undefined>,
-  maxGap: Ref<Duration | undefined>,
 }
 
 export interface CalendarAdapter {
@@ -85,7 +76,7 @@ const DURATION_SUFFIX = {
 
 type DURATION_TOKEN = keyof typeof DURATION_SUFFIX
 
-export const DURATION_REGEX = /((\d+)([DHMWYdhmswy]))/
+const DURATION_REGEX = /((-?\d+)([DHMWYdhmswy]))/
 
 export function validateDuration (duration?: string) {
   if (!duration)
@@ -114,30 +105,4 @@ export function parseDuration (duration?: string): Duration | undefined {
   }
 
   return result
-}
-
-export function getLimit (context: CalendarContext) {
-  const {
-    range,
-    min,
-    max,
-    maxGap,
-    minGap,
-    start: vStart,
-    end: vEnd,
-  } = context
-
-  const isTempLock = range.value && vStart.value && !vEnd.value
-  const limitStart = (min.value ?? MIN_TIME)
-  const limitEnd   = (max.value ?? MAX_TIME)
-
-  const start = isTempLock
-    ? maxDate([add(vStart.value, minGap.value ?? {}), limitStart])
-    : limitStart
-
-  const end = isTempLock && maxGap.value
-    ? minDate([add(vStart.value, maxGap.value), limitEnd])
-    : sub(limitEnd, minGap.value ?? {})
-
-  return { start, end }
 }

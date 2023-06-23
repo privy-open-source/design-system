@@ -16,7 +16,6 @@ import {
   CalendarItem,
   defineAdapter,
   formatDate,
-  getLimit,
 } from './adapter'
 
 function getInterval (date: Date) {
@@ -30,13 +29,13 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems (context) {
-    const dates: CalendarItem[] = eachDayOfInterval(getInterval(context.cursor.value)).map((date) => {
-      const isDisabled = !isSameMonth(context.cursor.value, date)
-        || !isWithinInterval(date, getLimit(context))
+  getItems ({ cursor, start, end, min, max }) {
+    const dates: CalendarItem[] = eachDayOfInterval(getInterval(cursor.value)).map((date) => {
+      const isDisabled = !isSameMonth(cursor.value, date)
+        || !isWithinInterval(date, { start: min.value, end: max.value })
 
-      const isHead = isSameDay(context.start.value, date)
-      const isTail = isSameDay(context.end.value, date)
+      const isHead = isSameDay(start.value, date)
+      const isTail = isSameDay(end.value, date)
 
       return {
         value   : date,
@@ -77,7 +76,7 @@ export default defineAdapter({
   },
 
   canNext (context) {
-    const max   = getLimit(context).end
+    const max   = context.max.value
     const date  = this.getNextCursor(context)
     const start = startOfMonth(date)
     const end   = endOfMonth(date)
@@ -86,7 +85,7 @@ export default defineAdapter({
   },
 
   canPrev (context) {
-    const min   = getLimit(context).start
+    const min   = context.min.value
     const date  = this.getPrevCursor(context)
     const start = startOfMonth(date)
     const end   = endOfMonth(date)

@@ -25,18 +25,20 @@
 
     <Calendar
       v-model="model"
+      :start="start"
+      :end="end"
       :disabled="disabled"
       :readonly="readonly"
       :max="max"
       :min="min"
       :mode="mode"
       :range="range"
-      :start="start"
-      :end="end"
-      :min-gap="minGap"
-      :max-gap="maxGap"
+      :min-range="minRange"
+      :max-range="maxRange"
       class="datepicker__calendar"
-      @change="onSelected" />
+      @change="onSelected"
+      @update:start="$emit('update:start', $event)"
+      @update:end="$emit('update:end', $event)" />
   </Dropdown>
 </template>
 
@@ -53,7 +55,7 @@ import {
 } from 'vue-demi'
 import { CalendarMode } from '../calendar/adapter/adapter'
 import { useVModel } from '../input'
-import IconCalendar from '@carbon/icons-vue/lib/calendar/16'
+import IconCalendar from '@privyid/persona-icon/vue/calendar/16.vue'
 
 export default defineComponent({
   components: {
@@ -65,6 +67,14 @@ export default defineComponent({
   props: {
     modelValue: {
       type   : [Date, Array] as PropType<Date | [Date, Date]>,
+      default: undefined,
+    },
+    start: {
+      type   : Date,
+      default: undefined,
+    },
+    end: {
+      type   : Date,
       default: undefined,
     },
     placeholder: {
@@ -103,19 +113,11 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
-    start: {
-      type   : Date,
-      default: undefined,
-    },
-    end: {
-      type   : Date,
-      default: undefined,
-    },
-    minGap: {
+    minRange: {
       type   : String,
       default: undefined,
     },
-    maxGap: {
+    maxRange: {
       type   : String,
       default: undefined,
     },

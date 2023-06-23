@@ -104,6 +104,7 @@ for example, mode `month` make user can only select the month, but can't select 
 ```
 
 ## Readonly state
+
 <preview>
   <p-calendar readonly />
 </preview>
@@ -128,24 +129,24 @@ Set prop `range` to `true` to enable date range picker mode.
 </template>
 ```
 
-## Min and Max Gap
+### Min and Max Range
 
-You can limit minimal and maximal date range to pick using prop `min-gap` and `max-gap`.
+You can limit minimal and maximal date range to pick using prop `min-range` and `max-range`.
 
 <preview>
-  <p-calendar range min-gap="3D" max-gap="7D" />
+  <p-calendar range min-range="3D" max-range="7D" />
 </preview>
 
 ```vue
 <template>
   <!-- Limit min 3 days and max 7 days -->
-  <p-calendar range min-gap="3D" max-gap="7D" />
+  <p-calendar range min-range="3D" max-range="7D" />
 </template>
 ```
 
-### Gap Format
+### Min and Max Range Format
 
-Value of min-gap and max-gap was following this format token:
+Value of min-range and max-range was following this format token:
 
 |   Tokens   | Description |
 |:----------:|-------------|
@@ -156,6 +157,14 @@ Value of min-gap and max-gap was following this format token:
 | `H` or `h` | `hours`     |
 |    `m`     | `minutes`   |
 | `S` or `s` | `seconds`   |
+
+You can combine multiple format in single value:
+
+- `1W3D`: 👉 1 week + 3 days
+- `1M-1D30m`: 👉 1 month - 1 day + 30 minutes
+- `3D3D`: 👉 3 days + 3 days 👉 6 days
+- *etc*
+
 
 ## Binding v-model
 
@@ -262,19 +271,19 @@ You can specific binding the value using `v-model:start` or `v-model:end`
 
 ### Props
 
-| Props        |   Type    | Default | Description                                                          |
-|--------------|:---------:|:-------:|----------------------------------------------------------------------|
-| `modelValue` |  `Date`   |   `-`   | `v-model` value                                                      |
-| `start`      |  `Date`   |   `-`   | `v-model:start` value                                                |
-| `end`        |  `Date`   |   `-`   | `v-model:end` value                                                  |
-| `disabled`   | `Boolean` | `false` | Disabled state                                                       |
-| `readonly`   | `Boolean` | `false` | Readonly state                                                       |
-| `mode`       | `String`  |   `-`   | Calendar mode valid value: `date`, `month`, `year`                   |
-| `min`        |  `Date`   |   `-`   | Minimum date can be selected                                         |
-| `max`        |  `Date`   |   `-`   | Maximum date can be selected                                         |
-| `range`      | `Boolean` | `false` | Enable range picker mode                                             |
-| `minGap`     | `String`  |   `-`   | Minimum range date should be selected, see [gap format](#gap-format) |
-| `maxGap`     | `String`  |   `-`   | Maximum range date should be selected, see [gap format](#gap-format) |
+| Props        |   Type    | Default | Description                                                                          |
+|--------------|:---------:|:-------:|--------------------------------------------------------------------------------------|
+| `modelValue` |  `Date`   |   `-`   | `v-model` value                                                                      |
+| `start`      |  `Date`   |   `-`   | `v-model:start` value                                                                |
+| `end`        |  `Date`   |   `-`   | `v-model:end` value                                                                  |
+| `disabled`   | `Boolean` | `false` | Disabled state                                                                       |
+| `readonly`   | `Boolean` | `false` | Readonly state                                                                       |
+| `mode`       | `String`  |   `-`   | Calendar mode valid value: `date`, `month`, `year`                                   |
+| `min`        |  `Date`   |   `-`   | Minimum date can be selected                                                         |
+| `max`        |  `Date`   |   `-`   | Maximum date can be selected                                                         |
+| `range`      | `Boolean` | `false` | Enable range picker mode                                                             |
+| `minRange`   | `String`  |   `-`   | Minimum range date should be selected, see [range format](#min-and-max-range-format) |
+| `maxRange`   | `String`  |   `-`   | Maximum range date should be selected, see [range format](#min-and-max-range-format) |
 
 ### Slots
 

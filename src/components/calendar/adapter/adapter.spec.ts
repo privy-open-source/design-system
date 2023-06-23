@@ -10,7 +10,8 @@ describe('validateDuration', () => {
     ['88', false],
     ['8D77', false],
     ['8DHH77', false],
-    ['-4H', false],
+    ['-4H', true],
+    ['1W-1D', true],
   ]
 
   it.each(cases)('"%s" should return "%s"', (input, expected) => {
@@ -29,5 +30,9 @@ describe('parseDuration', () => {
 
   it('should sum value of multiple value with same token (suffix)', () => {
     expect(parseDuration('3D4D')).toStrictEqual({ days: 7 })
+  })
+
+  it('should able to use negative value', () => {
+    expect(parseDuration('1W-1D')).toStrictEqual({ weeks: 1, days: -1 })
   })
 })

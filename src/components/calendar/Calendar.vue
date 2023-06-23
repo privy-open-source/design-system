@@ -71,14 +71,13 @@
 <script lang="ts">
 import pButton from '../button/Button.vue'
 import pCard from '../card/Card.vue'
-import IconNext from '@carbon/icons-vue/lib/chevron--right/20'
-import IconBack from '@carbon/icons-vue/lib/chevron--left/20'
+import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
+import IconBack from '@privyid/persona-icon/vue/chevron-left/20.vue'
 import {
   defineComponent,
   ref,
   computed,
   watch,
-  toRef,
   PropType,
 } from 'vue-demi'
 import {
@@ -98,6 +97,10 @@ import {
   startOfMonth,
   min as minDate,
   max as maxDate,
+  minTime as MIN_TIME,
+  maxTime as MAX_TIME,
+  add,
+  sub,
 } from 'date-fns'
 import { syncRef } from '@vueuse/core'
 
@@ -121,26 +124,6 @@ export default defineComponent({
       type   : [Date, Array] as PropType<Date | [Date, Date]>,
       default: undefined,
     },
-    disabled: {
-      type   : Boolean,
-      default: undefined,
-    },
-    readonly: {
-      type   : Boolean,
-      default: undefined,
-    },
-    max: {
-      type   : Date,
-      default: undefined,
-    },
-    min: {
-      type   : Date,
-      default: undefined,
-    },
-    mode: {
-      type   : String as PropType<CalendarMode>,
-      default: 'date',
-    },
     start: {
       type   : Date,
       default: undefined,
@@ -149,18 +132,38 @@ export default defineComponent({
       type   : Date,
       default: undefined,
     },
+    disabled: {
+      type   : Boolean,
+      default: undefined,
+    },
+    readonly: {
+      type   : Boolean,
+      default: undefined,
+    },
+    min: {
+      type   : Date,
+      default: () => new Date(MIN_TIME),
+    },
+    max: {
+      type   : Date,
+      default: () => new Date(MAX_TIME),
+    },
+    mode: {
+      type   : String as PropType<CalendarMode>,
+      default: 'date',
+    },
     range: {
       type   : Boolean,
       default: false,
     },
-    minGap: {
+    minRange: {
       type   : String,
       default: undefined,
       validator (value: string) {
         return validateDuration(value)
       },
     },
-    maxGap: {
+    maxRange: {
       type   : String,
       default: undefined,
       validator (value: string) {
@@ -181,21 +184,59 @@ export default defineComponent({
     const localStart = ref(Array.isArray(props.modelValue) ? props.modelValue[0] : (props.start ?? props.modelValue))
     const localEnd   = ref(Array.isArray(props.modelValue) ? props.modelValue[1] : (props.end ?? props.modelValue))
 
+    /**
+     * v-model:start
+     */
+    const vStart = computed({
+      get () {
+        return Array.isArray(props.modelValue)
+          ? props.modelValue[0]
+          : (props.start ?? props.modelValue)
+      },
+      set (value: Date) {
+        emit('update:start', value)
+      },
+    })
+
+    /**
+     * v-model:end
+     */
+    const vEnd = computed({
+      get () {
+        return Array.isArray(props.modelValue)
+          ? props.modelValue[1]
+          : (props.end ?? props.modelValue)
+      },
+      set (value: Date) {
+        emit('update:end', value)
+      },
+    })
+
     const cursor = ref(startOfMonth(localStart.value ?? new Date()))
     const hover  = ref<Date>()
-    const range  = toRef(props, 'range')
-    const minGap = computed(() => parseDuration(props.minGap))
-    const maxGap = computed(() => parseDuration(props.maxGap))
+
+    const minRange   = computed(() => parseDuration(props.minRange))
+    const maxRange   = computed(() => parseDuration(props.maxRange))
+    const isTempLock = computed(() => props.range && localStart.value && !localEnd.value)
+
+    const min = computed(() => {
+      return isTempLock.value
+        ? maxDate([add(localStart.value, minRange.value ?? {}), props.min])
+        : props.min
+    })
+
+    const max = computed(() => {
+      return isTempLock.value && maxRange.value
+        ? minDate([add(localStart.value, maxRange.value), props.max])
+        : sub(props.max, minRange.value ?? {})
+    })
 
     const context: CalendarContext = {
-      range : range,
       cursor: cursor,
       start : localStart,
       end   : localEnd,
-      min   : toRef(props, 'min'),
-      max   : toRef(props, 'max'),
-      minGap: minGap,
-      maxGap: maxGap,
+      min   : min,
+      max   : max,
     }
 
     const adapter = computed(() => {
@@ -227,38 +268,10 @@ export default defineComponent({
       if (props.readonly)
         result.push('calendar--readonly')
 
-      if (range.value)
+      if (props.range)
         result.push('calendar--range')
 
       return result
-    })
-
-    /**
-     * v-model:start
-     */
-    const vStart = computed({
-      get () {
-        return Array.isArray(props.modelValue)
-          ? props.modelValue[0]
-          : (props.start ?? props.modelValue)
-      },
-      set (value: Date) {
-        emit('update:start', value)
-      },
-    })
-
-    /**
-     * v-model:end
-     */
-    const vEnd = computed({
-      get () {
-        return Array.isArray(props.modelValue)
-          ? props.modelValue[1]
-          : (props.end ?? props.modelValue)
-      },
-      set (value: Date) {
-        emit('update:end', value)
-      },
     })
 
     function next () {
@@ -283,7 +296,7 @@ export default defineComponent({
 
     function selectItem (item: CalendarItem) {
       if (viewmode.value === props.mode) {
-        if (range.value && (localStart.value && !localEnd.value)) {
+        if (props.range && (localStart.value && !localEnd.value)) {
           localEnd.value   = maxDate([localStart.value, item.value])
           localStart.value = minDate([localStart.value, item.value])
         } else {
@@ -298,12 +311,12 @@ export default defineComponent({
     }
 
     function setHover (item: CalendarItem) {
-      if (range.value && !item.readonly && !item.disabled)
+      if (props.range && !item.readonly && !item.disabled)
         hover.value = item.value
     }
 
     function isInRange (item: CalendarItem) {
-      if (range.value && localStart.value && (localEnd.value || hover.value) && !item.readonly && !item.active) {
+      if (props.range && localStart.value && (localEnd.value || hover.value) && !item.readonly && !item.active) {
         return isWithinInterval(item.value, {
           start: minDate([localStart.value, localEnd.value ?? hover.value]),
           end  : maxDate([localStart.value, localEnd.value ?? hover.value]),

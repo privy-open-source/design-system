@@ -144,22 +144,22 @@ Set prop `range` to `true` to enable date range picker mode.
 </template>
 ```
 
-## Min and Max Gap
+### Min and Max Range
 
-You can limit minimal and maximal date range to pick using prop `min-gap` and `max-gap`.
+You can limit minimal and maximal date range to pick using prop `min-range` and `max-range`.
 
 <preview>
-  <p-datepicker range min-gap="3D" max-gap="7D" />
+  <p-calendar range min-range="3D" max-range="7D" />
 </preview>
 
 ```vue
 <template>
-  <!-- Limit min 3 days and max 7 days from date-start -->
-  <p-datepicker range min-gap="3D" max-gap="7D" />
+  <!-- Limit min 3 days and max 7 days -->
+  <p-calendar range min-range="3D" max-range="7D" />
 </template>
 ```
 
-👉 See [gap format](/components/calendar/#gap-format) to more information about gap format value.
+👉 See [here](/components/calendar/#min-and-max-range-format) to more information about range format value.
 
 ## Disabled State
 
@@ -211,6 +211,56 @@ You can limit minimal and maximal date range to pick using prop `min-gap` and `m
 
 <pre class="max-w-full truncate"><code>{{ value ?? '-' }}</code></pre>
 
+### v-model in range mode
+
+There are 2 ways to use v-model in `range` mode.
+
+#### 1. Using basic v-model
+
+You can use basic `v-model` to handle date range input, The value will be tuple of Date, `[start, end]`
+
+<preview class="flex-col">
+  <p-datepicker v-model="result" range />
+</preview>
+
+**result:**
+
+<pre class="truncate"><code>{{ result ?? '-' }}</code></pre>
+
+```vue
+<template>
+  <p-datepicker v-model="result" range />
+</template>
+```
+
+#### 2. using v-model:start and v-model:end
+
+You can specific binding the value using `v-model:start` or `v-model:end`
+
+<preview class="flex-col">
+  <p-datepicker
+    v-model:start="start"
+    v-model:end="end"
+    range />
+</preview>
+
+**start:**
+
+<pre class="truncate"><code>{{ start ?? '-' }}</code></pre>
+
+**end:**
+
+<pre class="truncate"><code>{{ end ?? '-' }}</code></pre>
+
+```vue
+<template>
+  <p-datepicker
+    v-model:start="start"
+    v-model:end="end"
+    range />
+</template>
+```
+
 ## API
 
 ### Props
@@ -229,8 +279,8 @@ You can limit minimal and maximal date range to pick using prop `min-gap` and `m
 | `min`         |  `Date`   |     `-`      | Minimum date can be selected                       |
 | `max`         |  `Date`   |     `-`      | Maximum date can be selected                       |
 | `range`       | `Boolean` |   `false`    | Enable range picker mode                           |
-| `minGap`      | `String`  |     `-`      | Minimum range date should be selected              |
-| `maxGap`      | `String`  |     `-`      | Maximum range date should be selected              |
+| `minRange`    | `String`  |     `-`      | Minimum range date should be selected              |
+| `maxRange`    | `String`  |     `-`      | Maximum range date should be selected              |
 
 ### Slots
 
