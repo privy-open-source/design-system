@@ -179,7 +179,7 @@ function download (icon) {
 </template>
 
 <script lang="ts" setup>
-  import {{ pascalCase(`pi-${selected.folder}-${size}`) }} from '@privyid/persona/vue/{{ selected.folder }}/{{ size }}.vue'
+  import {{ pascalCase(`pi-${selected.folder}-${size}`) }} from '@privyid/persona-icon/vue/{{ selected.folder }}/{{ size }}.vue'
 </script>
 ```
 
@@ -200,7 +200,7 @@ function download (icon) {
 </template>
 
 <script lang="ts" setup>
-  import {{ pascalCase(`icon-${selected.folder}-32`) }} from '@privyid/persona/svg/{{ selected.folder }}/{{ size }}.svg'
+  import {{ pascalCase(`icon-${selected.folder}-32`) }} from '@privyid/persona-icon/svg/{{ selected.folder }}/{{ size }}.svg'
 </script>
 ```
 
