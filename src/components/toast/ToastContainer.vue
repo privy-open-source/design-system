@@ -55,6 +55,10 @@ export default defineComponent({
 .toast-container {
   --p-toast-z-index: theme(zIndex.toast);
   @apply z-[var(--p-toast-z-index)] fixed top-0 right-0 flex flex-col space-y-2 max-h-screen overflow-visible;
+
+  &&--top-left {
+    @apply left-0 top-0;
+  }
 }
 
 .toast {

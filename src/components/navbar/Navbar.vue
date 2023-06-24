@@ -105,9 +105,13 @@ export default defineComponent({
   --p-navbar-z-index: theme(zIndex.fixed);
   --p-navbar-sticky-top: theme(spacing.0);
   --p-navbar-collapse-max-height: 20rem; /** 320px */
+  --p-navbar-padding-x: theme(spacing.3);
+  --p-navbar-padding-y: theme(spacing.3);
+  --p-navbar-bg: theme(backgroundColor.default.DEFAULT);
+  --p-navbar-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
 
-  @apply bg-default relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
-  @apply dark:bg-dark-default;
+  @apply bg-[color:var(--p-navbar-bg)] relative px-[var(--p-navbar-padding-x)] py-[var(--p-navbar-padding-y)] flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  @apply dark:bg-[color:var(--p-navbar-bg-dark)];
 
   &&--fixed {
     @apply fixed left-0 top-0 w-full z-[var(--p-navbar-z-index)];

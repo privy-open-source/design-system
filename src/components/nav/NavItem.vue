@@ -7,7 +7,7 @@
       data-testid="nav-link"
       :href="link"
       :target="target"
-      :class="classNames">
+      :class="[classNames, linkClass]">
       <span
         v-if="$slots.icon"
         data-testid="nav-icon"
@@ -49,6 +49,14 @@ export default defineComponent({
     target: {
       type   : String as PropType<AnchorHTMLAttributes['target']>,
       default: '_self',
+    },
+    linkClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
     },
   },
 
