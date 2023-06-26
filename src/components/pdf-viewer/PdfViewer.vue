@@ -49,7 +49,7 @@
 
       <transition name="slide-up">
         <PdfNavigation
-          v-show="!idle && !loading" />
+          v-show="!idle && !loading && !error" />
       </transition>
 
       <slot
