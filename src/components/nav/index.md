@@ -17,6 +17,7 @@ import pDropdownItem from '../dropdown/DropdownItem.vue'
 import pRadio from '../radio/Radio.vue'
 import { ref } from 'vue-demi'
 
+const numb = ref(0)
 </script>
 
 <style lang="postcss" scoped>
