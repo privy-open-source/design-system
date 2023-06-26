@@ -110,8 +110,8 @@ export function getPosition (context: GetPosition) {
   const page = Number.parseInt(reference.dataset.pageNumber)
 
   return {
-    x   : clamp(x, 0, maxX),
-    y   : clamp(y, 0, maxY),
+    x   : clamp(x, 1, maxX - 1),
+    y   : clamp(y, 1, maxY - 1),
     page: page,
   }
 }

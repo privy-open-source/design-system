@@ -332,7 +332,7 @@ it('should moving position when dragged', async () => {
   await triggerDragEnd(page2 as HTMLDivElement)
 
   expect(object).toHaveStyle({ position: 'absolute' })
-  expect(model.x).toBe(0)
+  expect(model.x).toBe(1)
   expect(model.y).toBe(300)
   expect(model.page).toBe(2)
 })
