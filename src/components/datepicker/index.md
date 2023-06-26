@@ -149,13 +149,13 @@ Set prop `range` to `true` to enable date range picker mode.
 You can limit minimal and maximal date range to pick using prop `min-range` and `max-range`.
 
 <preview>
-  <p-calendar range min-range="3D" max-range="7D" />
+  <p-datepicker range min-range="3D" max-range="7D" />
 </preview>
 
 ```vue
 <template>
   <!-- Limit min 3 days and max 7 days -->
-  <p-calendar range min-range="3D" max-range="7D" />
+  <p-datepicker range min-range="3D" max-range="7D" />
 </template>
 ```
 
