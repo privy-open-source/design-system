@@ -1,1 +1,0 @@
-import{e}from"./memoize.8367968b.js";import{i as t,a as f}from"./isArrayLike.1bec32f4.js";import{i as m}from"./toNumber.09abc7f0.js";function o(s,i,r){if(!m(r))return!1;var a=typeof i;return(a=="number"?t(r)&&f(i,r.length):a=="string"&&i in r)?e(r[i],s):!1}export{o as i};
