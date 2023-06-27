@@ -12,31 +12,46 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-core@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@algolia/autocomplete-core@npm:1.8.2"
+"@algolia/autocomplete-core@npm:1.9.3":
+  version: 1.9.3
+  resolution: "@algolia/autocomplete-core@npm:1.9.3"
   dependencies:
-    "@algolia/autocomplete-shared": 1.8.2
-  checksum: 03c164d8ce685e8b690734364a2e8653a7ebaf9b49ccbea5f94236b1231d66ed6771010406a0b00a2ce884b767712d71903a7d124ec11f35a87006d1456da762
+    "@algolia/autocomplete-plugin-algolia-insights": 1.9.3
+    "@algolia/autocomplete-shared": 1.9.3
+  checksum: ce78048568660184a4fa3c6548f344a7f5ce0ba45d4cfc233f9756b6d4f360afd5ae3a18efefcd27a626d3a0d6cf22d9cba3e21b217afae62b8e9d11bc4960da
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-preset-algolia@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@algolia/autocomplete-preset-algolia@npm:1.8.2"
+"@algolia/autocomplete-plugin-algolia-insights@npm:1.9.3":
+  version: 1.9.3
+  resolution: "@algolia/autocomplete-plugin-algolia-insights@npm:1.9.3"
   dependencies:
-    "@algolia/autocomplete-shared": 1.8.2
+    "@algolia/autocomplete-shared": 1.9.3
+  peerDependencies:
+    search-insights: ">= 1 < 3"
+  checksum: 030695bf692021c27f52a3d4931efed23032796e326d4ae7957ae91b51c36a10dc2d885fb043909e853f961c994b8e9ff087f50bb918cfa075370562251a199f
+  languageName: node
+  linkType: hard
+
+"@algolia/autocomplete-preset-algolia@npm:1.9.3":
+  version: 1.9.3
+  resolution: "@algolia/autocomplete-preset-algolia@npm:1.9.3"
+  dependencies:
+    "@algolia/autocomplete-shared": 1.9.3
   peerDependencies:
     "@algolia/client-search": ">= 4.9.1 < 6"
     algoliasearch: ">= 4.9.1 < 6"
-  checksum: f968b0f9d0ad9e75d3e1cfe35a02816ed01d83eb3d702bb8d4297bb9abf542991659c4a16c6ea323eea9268f189e85f58fcb109de76e6c4a9f58a0d63812c92e
+  checksum: 1ab3273d3054b348eed286ad1a54b21807846326485507b872477b827dc688006d4f14233cebd0bf49b2932ec8e29eca6d76e48a3c9e9e963b25153b987549c0
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-shared@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@algolia/autocomplete-shared@npm:1.8.2"
-  checksum: 1ec17deb594c41e983643cfd888e3590963aa7207ef6a67859c49a8f4835340493ba3b025b8b617b488365730ba9817ad58ee44a610c172332446e560fb68780
+"@algolia/autocomplete-shared@npm:1.9.3":
+  version: 1.9.3
+  resolution: "@algolia/autocomplete-shared@npm:1.9.3"
+  peerDependencies:
+    "@algolia/client-search": ">= 4.9.1 < 6"
+    algoliasearch: ">= 4.9.1 < 6"
+  checksum: 06014c8b08d30c452de079f48c0235d8fa09904bf511da8dc1b7e491819940fd4ff36b9bf65340242b2e157a26799a3b9aea01feee9c5bf67be3c48d7dff43d7
   languageName: node
   linkType: hard
 
@@ -2096,30 +2111,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docsearch/css@npm:3.4.0, @docsearch/css@npm:^3.3.5":
-  version: 3.4.0
-  resolution: "@docsearch/css@npm:3.4.0"
-  checksum: 25984a01ef9d68ab04ce9639e96d3bb3065f360334290be60986fa92414bfa4ac5474503bd6d4c543d5c46b67a4cba1cb9a0a950c13689a773c865160c91ba3f
+"@docsearch/css@npm:3.5.1, @docsearch/css@npm:^3.5.0":
+  version: 3.5.1
+  resolution: "@docsearch/css@npm:3.5.1"
+  checksum: ce84aaf2b7ab653a0512869e7398ea92cd20976d63499c5200afdfe8dec2205371c77ee6d529bbad25767594f5cf89854907372560d506154947ff21ef901434
   languageName: node
   linkType: hard
 
-"@docsearch/js@npm:^3.3.5":
-  version: 3.4.0
-  resolution: "@docsearch/js@npm:3.4.0"
+"@docsearch/js@npm:^3.5.0":
+  version: 3.5.1
+  resolution: "@docsearch/js@npm:3.5.1"
   dependencies:
-    "@docsearch/react": 3.4.0
+    "@docsearch/react": 3.5.1
     preact: ^10.0.0
-  checksum: 14b9d5d03d6be406cbf1353c79b881e8c1c706c3338c7e2896ceaf4d74bb5ecd7f8c31dc58fd66b92c4c65a639f368ef359b865187206147f9d3838e574ea5fa
+  checksum: 0d6cf753bdb6cd434a1840c3690da10445a4c7b58a4259a31b344fa5a85c66992212e7a7a1fa75e38edfadab670b21545c4281f61a9e74326d35fc14f48b5fe8
   languageName: node
   linkType: hard
 
-"@docsearch/react@npm:3.4.0":
-  version: 3.4.0
-  resolution: "@docsearch/react@npm:3.4.0"
+"@docsearch/react@npm:3.5.1":
+  version: 3.5.1
+  resolution: "@docsearch/react@npm:3.5.1"
   dependencies:
-    "@algolia/autocomplete-core": 1.8.2
-    "@algolia/autocomplete-preset-algolia": 1.8.2
-    "@docsearch/css": 3.4.0
+    "@algolia/autocomplete-core": 1.9.3
+    "@algolia/autocomplete-preset-algolia": 1.9.3
+    "@docsearch/css": 3.5.1
     algoliasearch: ^4.0.0
   peerDependencies:
     "@types/react": ">= 16.8.0 < 19.0.0"
@@ -2132,7 +2147,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: a64d42298d74946b5c9c7dab39a6bee40879bca35f46906a062171f414041d9a14c31afbdda26c454fc152170356021b7fc07a13e3434ef559fdbd024070fd43
+  checksum: 560ff968861820586c84f28df76c3caf5c137b60cb1434c54af87b7fda04b32c38bcc0211f88f0c153e650c8857d5a9d8373556be0bbb3accaf4e3f3b51a22a1
   languageName: node
   linkType: hard
 
@@ -3306,7 +3321,7 @@ __metadata:
     tailwindcss: 3.3.2
     typescript: 5.1.3
     ufo: ^1.0.1
-    vitepress: 1.0.0-beta.1
+    vitepress: 1.0.0-beta.3
     vitest: 0.24.5
     vue-content-loader: ^2.0.1
     vue-demi: 0.13.11
@@ -9371,7 +9386,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"focus-trap@npm:^7.4.2":
+"focus-trap@npm:^7.4.3":
   version: 7.4.3
   resolution: "focus-trap@npm:7.4.3"
   dependencies:
@@ -17194,9 +17209,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.3.8":
-  version: 4.3.8
-  resolution: "vite@npm:4.3.8"
+"vite@npm:^4.3.9":
+  version: 4.3.9
+  resolution: "vite@npm:4.3.9"
   dependencies:
     esbuild: ^0.17.5
     fsevents: ~2.3.2
@@ -17227,30 +17242,30 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 454a7c0c1bd1fd5611c9df28c62e3adbe75f48e87fc787179c5af60c4ab9a87aa0eda44be446d898851a135766d36f65f8e7d56317556aa807d30e561de369c4
+  checksum: 8c45a516278d1e0425fac00c0877336790f71484a851a318346a70e0d2aef9f3b9651deb2f9f002c791ceb920eda7d6a3cda753bdefd657321c99f448b02dd25
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-beta.1":
-  version: 1.0.0-beta.1
-  resolution: "vitepress@npm:1.0.0-beta.1"
+"vitepress@npm:1.0.0-beta.3":
+  version: 1.0.0-beta.3
+  resolution: "vitepress@npm:1.0.0-beta.3"
   dependencies:
-    "@docsearch/css": ^3.3.5
-    "@docsearch/js": ^3.3.5
+    "@docsearch/css": ^3.5.0
+    "@docsearch/js": ^3.5.0
     "@vitejs/plugin-vue": ^4.2.3
     "@vue/devtools-api": ^6.5.0
     "@vueuse/core": ^10.1.2
     "@vueuse/integrations": ^10.1.2
     body-scroll-lock: 4.0.0-beta.0
-    focus-trap: ^7.4.2
+    focus-trap: ^7.4.3
     mark.js: 8.11.1
     minisearch: ^6.1.0
     shiki: ^0.14.2
-    vite: ^4.3.8
+    vite: ^4.3.9
     vue: ^3.3.4
   bin:
     vitepress: bin/vitepress.js
-  checksum: bbb2c666cf7640662e6d565d51175140a87681015c7cf49954f2f9fead5e56c16490c39baac0e46211253ea175c1b6f5bd6be092bf254a3d06a643b37b9b533e
+  checksum: 996f22c5bc5ee0e7ca0335a61f300c84ab44af8120a107563305ce75b60db0e7da7c34006eb9c3ee0aaf5665fb6a43077c7325f79d73a449c32b850afca0a8c8
   languageName: node
   linkType: hard
 
