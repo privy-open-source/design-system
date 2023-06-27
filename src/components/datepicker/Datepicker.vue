@@ -25,13 +25,20 @@
 
     <Calendar
       v-model="model"
+      :start="start"
+      :end="end"
       :disabled="disabled"
       :readonly="readonly"
       :max="max"
       :min="min"
       :mode="mode"
+      :range="range"
+      :min-range="minRange"
+      :max-range="maxRange"
       class="datepicker__calendar"
-      @change="onSelected" />
+      @change="onSelected"
+      @update:start="$emit('update:start', $event)"
+      @update:end="$emit('update:end', $event)" />
   </Dropdown>
 </template>
 
@@ -48,7 +55,7 @@ import {
 } from 'vue-demi'
 import { CalendarMode } from '../calendar/adapter/adapter'
 import { useVModel } from '../input'
-import IconCalendar from '@carbon/icons-vue/lib/calendar/16'
+import IconCalendar from '@privyid/persona-icon/vue/calendar/16.vue'
 
 export default defineComponent({
   components: {
@@ -59,6 +66,14 @@ export default defineComponent({
   },
   props: {
     modelValue: {
+      type   : [Date, Array] as PropType<Date | [Date, Date]>,
+      default: undefined,
+    },
+    start: {
+      type   : Date,
+      default: undefined,
+    },
+    end: {
       type   : Date,
       default: undefined,
     },
@@ -94,19 +109,39 @@ export default defineComponent({
       type   : String as PropType<CalendarMode>,
       default: 'date',
     },
+    range: {
+      type   : Boolean,
+      default: false,
+    },
+    minRange: {
+      type   : String,
+      default: undefined,
+    },
+    maxRange: {
+      type   : String,
+      default: undefined,
+    },
   },
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['change', 'update:modelValue'],
+  emits: [
+    'change',
+    'update:modelValue',
+    'update:start',
+    'update:end',
+  ],
   setup (props, { emit }) {
     const model  = useVModel(props)
     const isOpen = ref(false)
 
     const value = computed(() => {
+      if (props.range && Array.isArray(model.value))
+        return `${formatDate(model.value[0], props.format)} - ${formatDate(model.value[1], props.format)}`
+
       return isDate(model.value)
-        ? formatDate(model.value, props.format)
+        ? formatDate(model.value as Date, props.format)
         : ''
     })
 

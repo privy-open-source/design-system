@@ -132,7 +132,7 @@ export default defineComponent({
 
     const { width, left } = useElementBounding(track)
 
-    const startValue = computed({
+    const vStart = computed({
       get () {
         if (Array.isArray(props.modelValue))
           return props.modelValue[0]
@@ -144,7 +144,7 @@ export default defineComponent({
       },
     })
 
-    const endValue = computed({
+    const vEnd = computed({
       get () {
         if (Array.isArray(props.modelValue))
           return props.modelValue[1]
@@ -242,8 +242,8 @@ export default defineComponent({
         end.value = getValue(event)
     })
 
-    syncRef(start, startValue)
-    syncRef(end, endValue)
+    syncRef(start, vStart)
+    syncRef(end, vEnd)
 
     watch([start, end], ([startVal, endVal]) => {
       localStart.value = startVal

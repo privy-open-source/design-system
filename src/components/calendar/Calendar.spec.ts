@@ -292,3 +292,138 @@ it('should modify value in v-model', async () => {
   expect(model.value).toBeDate()
   expect(model.value.toISOString()).toBe(expected.toISOString())
 })
+
+it('should able to select range of date using prop `range`', async () => {
+  const model  = ref([new Date(2022, 0, 15), new Date(2022, 0, 31)])
+  const screen = render({
+    components: { Calendar },
+    template  : `
+      <Calendar v-model="model" range />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const items    = screen.queryAllByTestId('calendar-item')
+  const expected = [new Date(2022, 0, 1), new Date(2022, 0, 8)]
+
+  await fireEvent.click(items.at(12))
+  await fireEvent.click(items.at(19))
+
+  expect(model.value).toBeArray()
+  expect(model.value[0]).toBeDate()
+  expect(model.value[1]).toBeDate()
+  expect(model.value[0].toISOString()).toBe(expected[0].toISOString())
+  expect(model.value[1].toISOString()).toBe(expected[1].toISOString())
+})
+
+it('should modify v-model:start and v-model:end when using props `range`', async () => {
+  const start  = ref(new Date(2022, 0, 15))
+  const end    = ref(new Date(2022, 0, 31))
+  const screen = render({
+    components: { Calendar },
+    template  : `
+      <Calendar
+        v-model:start="start"
+        v-model:end="end"
+        range
+      />
+    `,
+    setup () {
+      return { start, end }
+    },
+  })
+
+  const items    = screen.queryAllByTestId('calendar-item')
+  const expected = [new Date(2022, 0, 1), new Date(2022, 0, 8)]
+
+  await fireEvent.click(items.at(12))
+
+  expect(start.value).toBeDate()
+  expect(end.value).toBeUndefined()
+
+  await fireEvent.click(items.at(19))
+
+  expect(start.value).toBeDate()
+  expect(end.value).toBeDate()
+
+  expect(start.value.toISOString()).toBe(expected[0].toISOString())
+  expect(end.value.toISOString()).toBe(expected[1].toISOString())
+})
+
+it('should highlight the date range when hover date after selecting start\'s date', async () => {
+  const start  = ref(new Date(2022, 0, 15))
+  const end    = ref(new Date(2022, 0, 31))
+  const screen = render({
+    components: { Calendar },
+    template  : `
+      <Calendar
+        v-model:start="start"
+        v-model:end="end"
+        range
+      />
+    `,
+    setup () {
+      return { start, end }
+    },
+  })
+
+  let items = screen.queryAllByTestId('calendar-item')
+
+  await fireEvent.click(items.at(12)) // Jan 1st
+
+  expect(start.value).toBeDate()
+  expect(end.value).toBeUndefined()
+
+  await fireEvent.mouseOver(items.at(19))
+
+  items = screen.queryAllByTestId('calendar-item')
+
+  expect(items.at(15)).toHaveClass('calendar__item--in-range')
+  expect(items.at(16)).toHaveClass('calendar__item--in-range')
+  expect(items.at(17)).toHaveClass('calendar__item--in-range')
+  expect(items.at(19)).toHaveClass('calendar__item--in-range')
+
+  await fireEvent.click(items.at(19))
+
+  items = screen.queryAllByTestId('calendar-item')
+
+  expect(items.at(19)).not.toHaveClass('calendar__item--in-range')
+  expect(items.at(12)).toHaveClass('calendar__item--head')
+  expect(items.at(19)).toHaveClass('calendar__item--tail')
+})
+
+it('should able to limit date range using prop `min-range` and `max-range`', async () => {
+  const start  = ref(new Date(2022, 0, 15))
+  const end    = ref(new Date(2022, 0, 30))
+  const screen = render({
+    components: { Calendar },
+    template  : `
+      <Calendar
+        v-model:start="start"
+        v-model:end="end"
+        min-range="3D"
+        max-range="1W-1D"
+        range
+      />
+    `,
+    setup () {
+      return { start, end }
+    },
+  })
+
+  let items = screen.queryAllByTestId('calendar-item')
+
+  await fireEvent.click(items.at(12)) // Jan 1st
+
+  items = screen.queryAllByTestId('calendar-item')
+
+  expect(items.at(12)).toBeDisabled()
+  expect(items.at(13)).toBeDisabled()
+  expect(items.at(14)).toBeDisabled()
+  expect(items.at(15)).not.toBeDisabled()
+
+  expect(items.at(18)).not.toBeDisabled()
+  expect(items.at(19)).toBeDisabled()
+})

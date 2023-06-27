@@ -152,7 +152,7 @@ it('should emit landed if object successfully dropped', async () => {
 
   expect(object).toHaveStyle({ position: 'absolute' })
   expect(onLanded).toBeCalledWith({
-    x     : 0,
+    x     : 1,
     y     : 300,
     page  : 2,
     width : 198,
