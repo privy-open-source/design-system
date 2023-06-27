@@ -1,12 +1,12 @@
 <template>
-  <Card
+  <p-card
     data-testid="calendar"
     class="calendar"
     element="div"
     :viewmode="viewmode"
     :class="classNames">
     <div class="calendar__nav">
-      <Button
+      <p-button
         data-testid="calendar-prev"
         variant="solid"
         icon
@@ -14,18 +14,18 @@
         :readonly="disabled || readonly"
         @click="prev">
         <IconBack />
-      </Button>
+      </p-button>
 
-      <Button
+      <p-button
         data-testid="calendar-title"
         class="calendar__nav-title"
         variant="solid"
         :readonly="disabled || readonly"
         @click="changeMode(1)">
         {{ title }}
-      </Button>
+      </p-button>
 
-      <Button
+      <p-button
         data-testid="calendar-next"
         variant="solid"
         icon
@@ -33,7 +33,7 @@
         :disabled="!canNext"
         @click="next">
         <IconNext />
-      </Button>
+      </p-button>
     </div>
 
     <Transition
@@ -47,45 +47,62 @@
         <template
           v-for="(item, i) in items"
           :key="i">
-          <Button
+          <p-button
             variant="solid"
             data-testid="calendar-item"
             :readonly="item.readonly || disabled || readonly"
             :active="item.active"
             :disabled="item.disabled"
-            @click="selectItem(item)">
+            :class="{
+              'calendar__item--in-range': isInRange(item),
+              'calendar__item--head': item.head,
+              'calendar__item--tail': item.tail,
+            }"
+            @click="selectItem(item)"
+            @mouseover="setHover(item)">
             {{ item.text }}
-          </Button>
+          </p-button>
         </template>
       </div>
     </Transition>
-  </Card>
+  </p-card>
 </template>
 
 <script lang="ts">
-import Button from '../button/Button.vue'
-import Card from '../card/Card.vue'
-import IconNext from '@carbon/icons-vue/lib/chevron--right/20'
-import IconBack from '@carbon/icons-vue/lib/chevron--left/20'
+import pButton from '../button/Button.vue'
+import pCard from '../card/Card.vue'
+import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
+import IconBack from '@privyid/persona-icon/vue/chevron-left/20.vue'
 import {
   defineComponent,
   ref,
   computed,
   watch,
-  toRef,
   PropType,
 } from 'vue-demi'
 import {
   CalendarAdapter,
+  CalendarContext,
   CalendarFormat,
   CalendarItem,
   CalendarMode,
+  validateDuration,
+  parseDuration,
 } from './adapter/adapter'
 import DateAdapter from './adapter/date'
 import MonthAdapter from './adapter/month'
 import YearAdapter from './adapter/year'
-import { startOfMonth } from 'date-fns'
-import { useVModel } from '../input'
+import {
+  isWithinInterval,
+  startOfMonth,
+  min as minDate,
+  max as maxDate,
+  minTime as MIN_TIME,
+  maxTime as MAX_TIME,
+  add,
+  sub,
+} from 'date-fns'
+import { syncRef } from '@vueuse/core'
 
 const Adapters: Record<CalendarMode, CalendarAdapter> = {
   date : DateAdapter,
@@ -97,14 +114,21 @@ type TransitionMode = 'slide-left' | 'slide-right' | 'zoom-in' | 'zoom-out'
 
 export default defineComponent({
   components: {
-    // eslint-disable-next-line vue/no-reserved-component-names
-    Button,
-    Card,
+    pButton,
+    pCard,
     IconNext,
     IconBack,
   },
   props: {
     modelValue: {
+      type   : [Date, Array] as PropType<Date | [Date, Date]>,
+      default: undefined,
+    },
+    start: {
+      type   : Date,
+      default: undefined,
+    },
+    end: {
       type   : Date,
       default: undefined,
     },
@@ -116,31 +140,103 @@ export default defineComponent({
       type   : Boolean,
       default: undefined,
     },
-    max: {
-      type   : Date,
-      default: undefined,
-    },
     min: {
       type   : Date,
-      default: undefined,
+      default: () => new Date(MIN_TIME),
+    },
+    max: {
+      type   : Date,
+      default: () => new Date(MAX_TIME),
     },
     mode: {
       type   : String as PropType<CalendarMode>,
       default: 'date',
     },
+    range: {
+      type   : Boolean,
+      default: false,
+    },
+    minRange: {
+      type   : String,
+      default: undefined,
+      validator (value: string) {
+        return validateDuration(value)
+      },
+    },
+    maxRange: {
+      type   : String,
+      default: undefined,
+      validator (value: string) {
+        return validateDuration(value)
+      },
+    },
   },
-  emits: ['update:modelValue', 'change'],
+  emits: [
+    'update:modelValue',
+    'update:start',
+    'update:end',
+    'change',
+  ],
   setup (props, { emit }) {
     const viewmode   = ref<CalendarMode>(props.mode)
     const transition = ref<TransitionMode>('slide-left')
-    const cursor     = ref(startOfMonth(props.modelValue ?? new Date()))
-    const model      = useVModel(props)
 
-    const context = {
+    const localStart = ref(Array.isArray(props.modelValue) ? props.modelValue[0] : (props.start ?? props.modelValue))
+    const localEnd   = ref(Array.isArray(props.modelValue) ? props.modelValue[1] : (props.end ?? props.modelValue))
+
+    /**
+     * v-model:start
+     */
+    const vStart = computed({
+      get () {
+        return Array.isArray(props.modelValue)
+          ? props.modelValue[0]
+          : (props.start ?? props.modelValue)
+      },
+      set (value: Date) {
+        emit('update:start', value)
+      },
+    })
+
+    /**
+     * v-model:end
+     */
+    const vEnd = computed({
+      get () {
+        return Array.isArray(props.modelValue)
+          ? props.modelValue[1]
+          : (props.end ?? props.modelValue)
+      },
+      set (value: Date) {
+        emit('update:end', value)
+      },
+    })
+
+    const cursor = ref(startOfMonth(localStart.value ?? new Date()))
+    const hover  = ref<Date>()
+
+    const minRange   = computed(() => parseDuration(props.minRange))
+    const maxRange   = computed(() => parseDuration(props.maxRange))
+    const isTempLock = computed(() => props.range && localStart.value && !localEnd.value)
+
+    const min = computed(() => {
+      return isTempLock.value
+        ? maxDate([add(localStart.value, minRange.value ?? {}), props.min])
+        : props.min
+    })
+
+    const max = computed(() => {
+      return isTempLock.value && maxRange.value
+        ? minDate([add(localStart.value, maxRange.value), props.max])
+        : sub(props.max, minRange.value ?? {})
+    })
+
+    const context: CalendarContext = {
       cursor: cursor,
-      model : model,
-      min   : toRef(props, 'min'),
-      max   : toRef(props, 'max'),
+      start : localStart,
+      end   : localEnd,
+      min   : min,
+      max   : max,
     }
 
     const adapter = computed(() => {
@@ -172,6 +268,9 @@ export default defineComponent({
       if (props.readonly)
         result.push('calendar--readonly')
 
+      if (props.range)
+        result.push('calendar--range')
+
       return result
     })
 
@@ -197,15 +296,50 @@ export default defineComponent({
 
     function selectItem (item: CalendarItem) {
       if (viewmode.value === props.mode) {
-        model.value = item.value
-
-        emit('change', item.value)
+        if (props.range && (localStart.value && !localEnd.value)) {
+          localEnd.value   = maxDate([localStart.value, item.value])
+          localStart.value = minDate([localStart.value, item.value])
+        } else {
+          localStart.value = item.value
+          localEnd.value   = undefined
+        }
       } else {
         cursor.value = item.value
 
         changeMode(-1)
       }
     }
+
+    function setHover (item: CalendarItem) {
+      if (props.range && !item.readonly && !item.disabled)
+        hover.value = item.value
+    }
+
+    function isInRange (item: CalendarItem) {
+      if (props.range && localStart.value && (localEnd.value || hover.value) && !item.readonly && !item.active) {
+        return isWithinInterval(item.value, {
+          start: minDate([localStart.value, localEnd.value ?? hover.value]),
+          end  : maxDate([localStart.value, localEnd.value ?? hover.value]),
+        })
+      }
+
+      return false
+    }
+
+    syncRef(localStart, vStart)
+    syncRef(localEnd, vEnd)
+
+    watch([localStart, localEnd], ([startVal, endVal]) => {
+      if (props.range) {
+        if (startVal && endVal) {
+          emit('update:modelValue', [startVal, endVal])
+          emit('change', [startVal, endVal])
+        }
+      } else {
+        emit('update:modelValue', startVal)
+        emit('change', startVal)
+      }
+    })
 
     watch(() => props.mode, (value) => {
       const newIndex     = CalendarFormat.indexOf(value)
@@ -237,6 +371,8 @@ export default defineComponent({
       prev,
       changeMode,
       selectItem,
+      isInRange,
+      setHover,
     }
   },
 })
@@ -275,6 +411,11 @@ export default defineComponent({
         @apply text-muted;
         @apply dark:text-dark-muted;
       }
+
+      &.calendar__item--in-range {
+        @apply bg-info rounded-none;
+        @apply dark:bg-dark-info;
+      }
     }
 
     &[readonly] {
@@ -284,7 +425,7 @@ export default defineComponent({
 
   .calendar__items {
     &[viewmode="date"] {
-      @apply grid grid-cols-7 gap-1;
+      @apply grid grid-cols-7 gap-y-1;
 
       .btn--md {
         @apply p-1 md:p-2;
@@ -297,10 +438,20 @@ export default defineComponent({
 
     &[viewmode="month"],
     &[viewmode="year"] {
-      @apply grid grid-cols-4 gap-1;
+      @apply grid grid-cols-4 gap-y-1;
       .btn--md {
         @apply px-3;
       }
+    }
+  }
+
+  &--range {
+    .calendar__item--head:not(.calendar__item--tail) {
+      @apply rounded-r-none;
+    }
+
+    .calendar__item--tail:not(.calendar__item--head) {
+      @apply rounded-l-none;
     }
   }
 

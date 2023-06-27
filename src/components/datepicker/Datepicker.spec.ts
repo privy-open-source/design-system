@@ -204,3 +204,24 @@ it('should have error style if prop error was provided', () => {
 
   expect(datepicker).toHaveClass('datepicker--error', 'state--error')
 })
+
+it('should display date range format on range mode', () => {
+  const model  = ref([new Date(2022, 0, 1), new Date(2022, 0, 31)])
+  const screen = render({
+    components: { Datepicker },
+    template  : `
+      <Datepicker
+        v-model="model"
+        format="yyyy-MM-dd"
+        placeholder="Pick A Date"
+        range />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('datepicker-input')
+
+  expect(input).toHaveValue('2022-01-01 - 2022-01-31')
+})

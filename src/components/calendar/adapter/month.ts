@@ -6,12 +6,13 @@ import {
   isBefore,
   isSameMonth,
   isWithinInterval,
-  maxTime,
-  minTime,
   startOfYear,
   subYears,
 } from 'date-fns'
-import { defineAdapter, formatDate } from './adapter'
+import {
+  defineAdapter,
+  formatDate,
+} from './adapter'
 
 function getInterval (date: Date) {
   const start = startOfYear(date)
@@ -24,21 +25,24 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, model, min, max }) {
+  getItems ({ cursor, start, end, min, max }) {
     return eachMonthOfInterval(getInterval(cursor.value))
       .map((date) => {
-        const start      = min.value ?? minTime
-        const end        = max.value ?? maxTime
-        const isDisabled = !isSameMonth(start, date)
-          && !isSameMonth(end, date)
-          && !isWithinInterval(date, { start, end })
+        const isDisabled = !isSameMonth(min.value, date)
+          && !isSameMonth(max.value, date)
+          && !isWithinInterval(date, { start: min.value, end: max.value })
+
+        const isHead = isSameMonth(start.value, date)
+        const isTail = isSameMonth(end.value, date)
 
         return {
           value   : date,
           text    : formatDate(date, 'MMM'),
           disabled: isDisabled,
           readonly: false,
-          active  : isSameMonth(model.value, date),
+          head    : isHead,
+          tail    : isTail,
+          active  : isHead || isTail,
         }
       })
   },
