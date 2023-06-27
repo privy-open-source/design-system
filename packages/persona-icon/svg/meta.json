@@ -3110,7 +3110,7 @@
       {
         "name": "document-search/32",
         "path": "document-search/32.svg",
-        "hash": "cf5fa80a3eafbd6ae9aba800b12b05f8f278be52b6bc1f6496adbff22cbb72e5"
+        "hash": "c945748d0818b96534558a1cba3d45a6cfd790e708769dd1cc4e389f0247ce21"
       },
       {
         "name": "document-search/16",
@@ -8011,6 +8011,93 @@
         "name": "employee-tree/24",
         "path": "employee-tree/24.svg",
         "hash": "462508a83fc9f5f4aa8643324fc3fdcacb5f46ca6aa219a740776a5919246755"
+      }
+    ]
+  },
+  {
+    "name": "signature-draw-alt",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "signature-draw-alt",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "signature-draw-alt/32",
+        "path": "signature-draw-alt/32.svg",
+        "hash": "6c6a31679a6893425ccc8c468529f3a17b5feb8192602534663c974fd4dfca42"
+      },
+      {
+        "name": "signature-draw-alt/24",
+        "path": "signature-draw-alt/24.svg",
+        "hash": "7df32a0e1e660b18cbdce8429a5d997e1c6f1c2a0afcbb74bccc9d1c4c89a85d"
+      },
+      {
+        "name": "signature-draw-alt/20",
+        "path": "signature-draw-alt/20.svg",
+        "hash": "28cacf6fcb6b06aeb53b1e265e2b617c96653804e7107b8170253e310249c059"
+      },
+      {
+        "name": "signature-draw-alt/16",
+        "path": "signature-draw-alt/16.svg",
+        "hash": "d4c2bd55e83c0331350064f90ba50399a6e8aa3b72013843058d2dcbee4f4476"
+      }
+    ]
+  },
+  {
+    "name": "draggable",
+    "aliases": [],
+    "category": "operation",
+    "folder": "draggable",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "draggable/16",
+        "path": "draggable/16.svg",
+        "hash": "b6e3fd629594afd52214382fce3f1794096427fa1eda150b658dc00d4b85c712"
+      },
+      {
+        "name": "draggable/20",
+        "path": "draggable/20.svg",
+        "hash": "19809cd2a9f83927ecd183741eca86a2403e44f1c44679af9309e519728239dd"
+      },
+      {
+        "name": "draggable/32",
+        "path": "draggable/32.svg",
+        "hash": "89b9ea98d0e2e1578a48188d7aa1429ce17f4f56174e6a7c4c450d326eec463a"
+      },
+      {
+        "name": "draggable/24",
+        "path": "draggable/24.svg",
+        "hash": "4d9a87fe9448c189b1eef43294077fb608c35d04d8e41c1b419d15ff097a7323"
+      }
+    ]
+  },
+  {
+    "name": "document-retract",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-retract",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-retract/32",
+        "path": "document-retract/32.svg",
+        "hash": "3c22db51ee5ed53ddb42670100a083048a8b760a7509f131320e9a41ac3dd8af"
+      },
+      {
+        "name": "document-retract/24",
+        "path": "document-retract/24.svg",
+        "hash": "8a0358e7062d5e1357b1ed628cbf5d571ba09d6643721ba7c812ad8ba4e58a83"
+      },
+      {
+        "name": "document-retract/20",
+        "path": "document-retract/20.svg",
+        "hash": "161d11f5613fd3374f7ee18a59d308793a5128c3488fa51ee600000d8ebf5405"
+      },
+      {
+        "name": "document-retract/16",
+        "path": "document-retract/16.svg",
+        "hash": "7bb262fd63397988a259bfbd2d07ca3391068d1bdbc0a18bd1649e11c8fb1ef4"
       }
     ]
   }
