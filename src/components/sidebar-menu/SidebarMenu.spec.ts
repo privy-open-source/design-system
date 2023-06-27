@@ -1,4 +1,5 @@
-import { render } from '@testing-library/vue'
+import { render, fireEvent } from '@testing-library/vue'
+import { delay } from 'nanodelay'
 import SidebarMenu from './SidebarMenu.vue'
 import { defineMenu } from '.'
 import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
@@ -77,6 +78,59 @@ const menus = defineMenu([
         label: 'English',
         url  : '/',
         icon : './assets/images/img-flag.svg',
+      },
+    ],
+  },
+])
+
+const toggleMenu = defineMenu([
+  {
+    maxLength: 2,
+    items    : [
+      {
+        name : 'home',
+        label: 'Home',
+        url  : '/',
+        icon : IconDashboard,
+      },
+      {
+        name       : 'document',
+        label      : 'Document',
+        url        : '/',
+        icon       : IconDocument,
+        collapsible: true,
+        submenu    : [
+          {
+            name : 'need-action',
+            label: 'Need Action',
+            url  : '/',
+          },
+          {
+            name : 'in-progress',
+            label: 'In Progress',
+            url  : '/',
+          },
+        ],
+      },
+      {
+        name : 'setting',
+        label: 'Setting',
+        url  : '/',
+        icon : IconSettings,
+      },
+      {
+        name       : 'user',
+        label      : 'User',
+        icon       : IconUsers,
+        url        : '/',
+        collapsible: true,
+        submenu    : [
+          {
+            name : 'need-action',
+            label: 'Need Action',
+            url  : '/',
+          },
+        ],
       },
     ],
   },
@@ -185,4 +239,30 @@ it('should be able to make sidebar expand automatically via prop `toggleable`', 
 
   expect(sidebar).toBeInTheDocument()
   expect(sidebar).toHaveClass('sidebar--toggleable', 'sidebar--toggleable-md')
+})
+
+it('should be able limit the displayed menu in the sidebar with `maxLength`', async () => {
+  const screen = render({
+    components: { SidebarMenu },
+    template  : `
+      <SidebarMenu :menus="toggleMenu" />
+    `,
+    setup () {
+      return { toggleMenu }
+    },
+  })
+
+  let toggle = screen.queryByTestId('sidebar-toggle')
+  const menu = screen.getAllByText('Home')
+
+  await delay(0)
+
+  expect(toggle).toBeInTheDocument()
+  expect(toggle).toHaveTextContent('More')
+  expect(menu).toHaveLength(1)
+
+  await fireEvent.click(toggle)
+
+  toggle = screen.queryByTestId('sidebar-toggle')
+  expect(toggle).toHaveTextContent('Less')
 })

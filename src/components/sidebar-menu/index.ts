@@ -25,6 +25,7 @@ export interface Menu {
   condensed?: boolean,
   items?: MenuItem[],
   align?: AlignVariant,
+  maxLength?: number,
 }
 
 export function defineMenu (menus: Menu[]): Menu[] {
