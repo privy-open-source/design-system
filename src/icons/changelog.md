@@ -2,6 +2,18 @@
 
 > Icons changelog
 
+## 0.16.0
+
+### Added
+
+- document-retract
+- draggable
+- signature-draw-alt
+
+### Changed
+
+- document-search/32
+
 ## 0.15.0
 
 ### Added

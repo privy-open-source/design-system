@@ -61,7 +61,7 @@ npx degit privy-open-source/persona-starter#docs my_docs
 Install persona and all dependencies.
 
 ```sh
-yarn add --dev @privyid/persona @privyid/tailwind-preset tailwindcss autoprefixer postcss  postcss-hexrgba postcss-lighten-darken
+yarn add --dev @privyid/persona @privyid/browserslist-config @privyid/tailwind-preset tailwindcss autoprefixer postcss  postcss-hexrgba postcss-lighten-darken
 ```
 
 #### 2. Configure Tailwind
