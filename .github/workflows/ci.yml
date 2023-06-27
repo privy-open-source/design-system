@@ -103,10 +103,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Run Linter
-        run: yarn fix
-
-      - name: Push Changes
-        uses: autofix-ci/action@8bc06253bec489732e5f9c52884c7cace15c0160
+        run: yarn lint:ci
 
   typecheck:
     runs-on: ${{ matrix.os }}
