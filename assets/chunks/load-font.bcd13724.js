@@ -1,0 +1,1 @@
+import{Q as i}from"./framework.d1aba3cb.js";async function r(t){const e=await i(()=>import("./webfontloader.bdfd9de5.js").then(o=>o.w),["assets/chunks/webfontloader.bdfd9de5.js","assets/chunks/commonjsHelpers.042e6b4d.js"]);return await new Promise((o,a)=>{e.load({google:{families:[t]},fontactive(){o()},fontinactive(){a(new Error("FONTLOADER_TIMEOUT"))}})})}export{r as l};
