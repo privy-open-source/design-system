@@ -140,7 +140,11 @@
 
   a,
   .preview a {
-    @apply text-link dark:text-dark-link hover:no-underline;
+    @apply hover:no-underline;
+    
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
+      @apply text-link dark:text-dark-link;
+    }
   }
 
   a {

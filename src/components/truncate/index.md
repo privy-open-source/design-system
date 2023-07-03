@@ -99,7 +99,7 @@ You can change "show more" and "show less" text via prop `show-more-text` and `s
 | `length`       | `Number`  |    `100`    | Max length before text truncated |
 | `expandable`   | `Boolean` |   `false`   | Show expand button               |
 | `showMoreText` | `String`  | `Show More` | Text for show more's button      |
-| `showLessText` | `String`  | `Show Less` | Text for show lest's button      |
+| `showLessText` | `String`  | `Show Less` | Text for show less's button      |
 
 ### Slots
 

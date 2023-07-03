@@ -109,6 +109,7 @@ export default defineComponent({
   --p-navbar-padding-y: theme(spacing.3);
   --p-navbar-bg: theme(backgroundColor.default.DEFAULT);
   --p-navbar-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
+  --p-navbar-shadow: theme(boxShadow.lg);
 
   @apply bg-[color:var(--p-navbar-bg)] relative px-[var(--p-navbar-padding-x)] py-[var(--p-navbar-padding-y)] flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
   @apply dark:bg-[color:var(--p-navbar-bg-dark)];
@@ -122,7 +123,7 @@ export default defineComponent({
   }
 
   &&--shadow {
-    @apply shadow-lg transition-shadow duration-150 ease-in-out;
+    @apply shadow-[var(--p-navbar-shadow)] transition-shadow duration-150 ease-in-out;
   }
 
   &&--expand {

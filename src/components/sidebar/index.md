@@ -31,6 +31,10 @@ description: Base dashboard sidebar menu.
     @apply block h-96 overflow-hidden;
 
     &--fixed {
+      .sidebar {
+        --p-sidebar-z-index: 15;
+      }
+
       .sidebar--fixed {
         @apply absolute;
       }
@@ -47,7 +51,7 @@ description: Base dashboard sidebar menu.
 ### Basic Sidebar
 
 <preview class="preview--fixed">
-  <p-sidebar fixed class="[--p-sidebar-bg: #999]">
+  <p-sidebar fixed>
     <template #brand>
       <p-sidebar-brand>
         <img src="/assets/images/logo-privy.svg" alt="" />

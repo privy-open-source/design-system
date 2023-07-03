@@ -36,7 +36,7 @@ description: Define sidebar using JSON
           label: 'Contacts',
           url  : '/',
           icon : IconUsers
-        }
+        },
       ]
     },
   ])
@@ -154,6 +154,42 @@ description: Define sidebar using JSON
       ]
     }
   ])
+
+  const limit = defineMenu([
+    {
+      maxLength: 2,
+      items: [
+        {
+          name : 'dashboard',
+          label: 'Dashboard',
+          url  : '/',
+          icon : IconDashboard,
+        },
+        {
+          name       : 'document',
+          label      : 'Documents',
+          url        : '/',
+          icon       : IconDocument,
+        },
+        {
+          name : 'contact',
+          label: 'Contacts',
+          url  : '/',
+          icon : IconUsers
+        },
+        {
+          name : 'rejects',
+          label: 'Rejects',
+          url  : '/',
+        },
+        {
+          name: 'archives',
+          label: 'Archives',
+          url: '/',
+        },
+      ]
+    },
+  ])
 </script>
 <style scoped lang="postcss">
   .preview {
@@ -176,6 +212,15 @@ description: Define sidebar using JSON
 ## Usage
 
 ### Basic Sidebar
+
+
+<preview class="flex-col space-y-2">
+  <p-sidebar-menu :menus="basic">
+    <p-sidebar-brand>
+      <img src="/assets/images/logo-privy.svg" alt="" />
+    </p-sidebar-brand>
+  </p-sidebar-menu>
+</preview>
 
 <preview class="flex-col space-y-2">
   <p-sidebar-menu :menus="basic">
@@ -397,6 +442,70 @@ const menus = defineMenu([
 </script>
 ```
 
+## Limiting Menus
+Limiting how much menu-item would be displayed is possible by setup it from `maxLength`.
+
+<preview class="flex-col space-y-2 higher">
+  <p-sidebar-menu fixed :menus="limit">
+    <p-sidebar-brand>
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
+    </p-sidebar-brand>
+  </p-sidebar-menu>
+</preview>
+
+```vue
+<template>
+  <p-sidebar-menu fixed :menus="menus">
+    <p-sidebar-brand>
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
+    </p-sidebar-brand>
+  </p-sidebar-menu>
+</template>
+
+<script setup>
+import { defineMenu } from '@privyid/persona/core'
+import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
+import IconDocument from '@carbon/icons-vue/lib/document/20'
+import IconUsers from '@carbon/icons-vue/lib/group/20'
+
+const limit = defineMenu([
+  {
+    maxLength: 2,
+    items: [
+      {
+        name : 'dashboard',
+        label: 'Dashboard',
+        url  : '/',
+        icon : IconDashboard,
+      },
+      {
+        name: 'document',
+        label: 'Documents',
+        url: '/',
+        icon: IconDocument,
+      },
+      {
+        name : 'contact',
+        label: 'Contacts',
+        url  : '/',
+        icon : IconUsers
+      },
+      {
+        name : 'rejects',
+        label: 'Rejects',
+        url  : '/',
+      },
+      {
+        name: 'archives',
+        label: 'Archives',
+        url: '/',
+      },
+    ]
+  },
+])
+</script>
+```
+
 ## API
 
 ### Props
@@ -407,6 +516,8 @@ const menus = defineMenu([
 | `type`         | `String`  | `wide`      | Sidebar type, valid value is `wide` and `narrow`                  |
 | `fixed`        | `Boolean` | `false`     | Activate fixed Sidebar                                            |
 | `menus`        | `Array`   | `-`         | Menu items                                                        |
+| `showMoreText` | `String`  | `More`      | Text for show more's button                                       |
+| `showLessText` | `String`  | `Less`      | Text for show less's button                                       |
 
 ### Slots
 
