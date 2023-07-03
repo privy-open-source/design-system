@@ -86,21 +86,12 @@ export default defineComponent({
 <style lang="postcss">
 .collapse {
   &&--show {
-    @apply block visible;
+    @apply block visible text-default;
+    @apply dark:text-dark-default;
   }
 
   &:not(&--show) {
     @apply hidden;
-  }
-}
-
-.navbar {
-  &--collapse {
-    @apply basis-full flex-grow items-center;
-
-    &.collapse--show {
-      @apply pt-3;
-    }
   }
 }
 </style>

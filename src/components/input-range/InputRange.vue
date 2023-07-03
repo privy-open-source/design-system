@@ -132,7 +132,7 @@ export default defineComponent({
 
     const { width, left } = useElementBounding(track)
 
-    const startValue = computed({
+    const vStart = computed({
       get () {
         if (Array.isArray(props.modelValue))
           return props.modelValue[0]
@@ -144,7 +144,7 @@ export default defineComponent({
       },
     })
 
-    const endValue = computed({
+    const vEnd = computed({
       get () {
         if (Array.isArray(props.modelValue))
           return props.modelValue[1]
@@ -242,8 +242,8 @@ export default defineComponent({
         end.value = getValue(event)
     })
 
-    syncRef(start, startValue)
-    syncRef(end, endValue)
+    syncRef(start, vStart)
+    syncRef(end, vEnd)
 
     watch([start, end], ([startVal, endVal]) => {
       localStart.value = startVal
@@ -275,14 +275,16 @@ export default defineComponent({
   @apply py-2 w-full;
 
   &__tracks {
-    @apply relative flex w-full bg-subtle cursor-pointer overflow-visible rounded;
+    @apply relative flex w-full bg-base cursor-pointer overflow-visible rounded;
+    @apply dark:bg-dark-base;
   }
 
   &__track {
     @apply h-2 rounded;
 
     &-active {
-      @apply bg-accent-emphasis relative text-center;
+      @apply bg-info-emphasis relative text-center;
+      @apply dark:bg-dark-info-emphasis;
     }
 
     &-upper {
@@ -291,12 +293,13 @@ export default defineComponent({
   }
 
   &__thumb {
-    @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-gray-25;
-    @apply touch-none select-none;
+    @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-muted touch-none select-none;
+    @apply dark:bg-dark-layer-2 dark:border-dark-subtle;
 
     &:hover,
     &:active {
-      @apply ring ring-accent border-accent-emphasis;
+      @apply ring ring-info border-info-emphasis;
+      @apply dark:ring-dark-info dark:border-dark-info-emphasis;
     }
 
     &-start {

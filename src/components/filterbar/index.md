@@ -118,7 +118,7 @@ const schema = defineFilter([
 
 ## Types
 
-### `toggle`
+### Toggle
 
 <preview>
   <p-filterbar :schema="toggleOnly" v-model="query" />
@@ -141,7 +141,7 @@ const schema = defineFilter([
 </script>
 ```
 
-### `select`
+### Select
 
 <preview>
   <p-filterbar :schema="selectOnly" v-model="query" />
@@ -169,7 +169,7 @@ const schema = defineFilter([
 </script>
 ```
 
-### `multiselect`
+### Multiselect
 
 <preview>
   <p-filterbar :schema="multiselectOnly" v-model="query" />

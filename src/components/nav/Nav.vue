@@ -5,11 +5,20 @@
     <li
       v-if="title"
       class="nav__title">
-      <Caption
-        weight="bold"
-        transform="capitalize">
-        {{ title }}
-      </Caption>
+      <span class="nav__title__item">
+        <Caption
+          weight="bold"
+          transform="capitalize">
+          {{ title }}
+        </Caption>
+        <Text
+          v-if="titleActionLabel && titleActionUrl"
+          data-testid="nav-action"
+          variant="caption"
+          :href="titleActionUrl">
+          {{ titleActionLabel }}
+        </Text>
+      </span>
     </li>
     <slot />
   </ul>
@@ -23,9 +32,10 @@ import {
 } from 'vue-demi'
 import { AlignVariant, StyleVariant } from '.'
 import Caption from '../caption/Caption.vue'
+import Text from '../text/Text.vue'
 
 export default defineComponent({
-  components: { Caption },
+  components: { Caption, Text },
   props     : {
     fill: {
       type   : Boolean,
@@ -48,6 +58,14 @@ export default defineComponent({
       default: false,
     },
     title: {
+      type   : String,
+      default: undefined,
+    },
+    titleActionLabel: {
+      type   : String,
+      default: undefined,
+    },
+    titleActionUrl: {
       type   : String,
       default: undefined,
     },
@@ -110,15 +128,18 @@ export default defineComponent({
 
   & > &__item {
     .nav__link {
-      @apply text-subtle dark:text-muted;
+      @apply text-subtle;
+      @apply dark:text-dark-subtle;
 
       &:hover,
       &--active {
-        @apply text-default dark:text-on-emphasis;
+        @apply text-default;
+        @apply dark:text-dark-default;
       }
 
       &--disabled {
         @apply text-muted hover:text-muted focus:text-muted active:text-muted;
+        @apply dark:text-dark-muted hover:dark:text-dark-muted focus:dark:text-dark-muted active:dark:text-dark-muted;
       }
     }
   }
@@ -142,7 +163,8 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-b-on-emphasis dark:border-b-default;
+          @apply border-b-inverse;
+          @apply dark:border-b-dark-inverse;
         }
       }
     }
@@ -157,7 +179,8 @@ export default defineComponent({
 
         &--active {
           &:not(.nav__link--disabled) {
-            @apply border-r border-r-on-emphasis rounded-tr-none;
+            @apply border-r border-r-inverse rounded-tr-none;
+            @apply dark:border-r-dark-inverse;
           }
         }
       }
@@ -168,7 +191,8 @@ export default defineComponent({
 
           &--active {
             &:not(.nav__link--disabled) {
-              @apply border-l border-l-on-emphasis rounded-tl-none;
+              @apply border-l border-l-inverse rounded-tl-none;
+              @apply dark:border-l-dark-inverse;
             }
           }
         }
@@ -189,7 +213,8 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply border-t-default border-x-default bg-subtle;
+          @apply border-t-default border-x-default bg-base;
+          @apply dark:border-t-dark-default dark:border-x-dark-default dark:bg-dark-base;
         }
       }
     }
@@ -202,7 +227,8 @@ export default defineComponent({
       .nav__link {
         &--active {
           &:not(.nav__link--disabled) {
-            @apply border-l-default border-y-default border-r-transparent bg-subtle rounded-l rounded-r-none;
+            @apply border-l-default border-y-default border-r-transparent bg-base rounded-l rounded-r-none;
+            @apply dark:border-l-dark-default dark:border-y-dark-default dark:border-r-transparent dark:bg-dark-base;
           }
         }
       }
@@ -212,6 +238,7 @@ export default defineComponent({
           &--active {
             &:not(.nav__link--disabled) {
               @apply border-r-default border-y-default border-l-transparent rounded-r rounded-l-none;
+              @apply dark:border-r-dark-default dark:border-y-dark-default dark:border-l-transparent;
             }
           }
         }
@@ -233,7 +260,8 @@ export default defineComponent({
     .nav__link {
       &--active {
         &:not(.nav__link--disabled) {
-          @apply bg-subtle dark:bg-emphasis-alpha rounded-b;
+          @apply bg-base rounded-b;
+          @apply dark:bg-dark-base;
         }
       }
     }
@@ -247,6 +275,7 @@ export default defineComponent({
       .nav__link {
         &--active {
           @apply bg-transparent;
+          @apply dark:bg-transparent;
         }
       }
     }
@@ -316,6 +345,10 @@ export default defineComponent({
     .nav {
       @apply flex-col;
 
+      .nav__item {
+        @apply first:mx-0;
+      }
+
       &__link {
         @apply mb-0 -mr-[1px];
       }
@@ -344,10 +377,15 @@ export default defineComponent({
   }
 
   &__title {
-    @apply absolute left-5 top-0 text-base inline-block;
+    @apply absolute left-5 top-0 text-base w-[calc(100%-1.75rem)]; /* 1.25rem + 0.75rem (padding) */
+
+    &__item {
+      @apply flex items-center w-full justify-between space-x-2;
+    }
 
     .caption {
       @apply text-subtle;
+      @apply dark:text-dark-subtle;
     }
   }
 }

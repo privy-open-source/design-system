@@ -1,4 +1,5 @@
-import { render } from '@testing-library/vue'
+import { render, fireEvent } from '@testing-library/vue'
+import { delay } from 'nanodelay'
 import SidebarMenu from './SidebarMenu.vue'
 import { defineMenu } from '.'
 import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
@@ -82,6 +83,59 @@ const menus = defineMenu([
   },
 ])
 
+const toggleMenu = defineMenu([
+  {
+    maxLength: 2,
+    items    : [
+      {
+        name : 'home',
+        label: 'Home',
+        url  : '/',
+        icon : IconDashboard,
+      },
+      {
+        name       : 'document',
+        label      : 'Document',
+        url        : '/',
+        icon       : IconDocument,
+        collapsible: true,
+        submenu    : [
+          {
+            name : 'need-action',
+            label: 'Need Action',
+            url  : '/',
+          },
+          {
+            name : 'in-progress',
+            label: 'In Progress',
+            url  : '/',
+          },
+        ],
+      },
+      {
+        name : 'setting',
+        label: 'Setting',
+        url  : '/',
+        icon : IconSettings,
+      },
+      {
+        name       : 'user',
+        label      : 'User',
+        icon       : IconUsers,
+        url        : '/',
+        collapsible: true,
+        submenu    : [
+          {
+            name : 'need-action',
+            label: 'Need Action',
+            url  : '/',
+          },
+        ],
+      },
+    ],
+  },
+])
+
 it('should rendered properly without any props', () => {
   const screen = render({
     components: { SidebarMenu },
@@ -156,4 +210,59 @@ it('should be able to make sidebar fixed via prop `fixed`', () => {
 
   expect(sidebar).toBeInTheDocument()
   expect(sidebar).toHaveClass('sidebar--fixed')
+})
+
+it('should be able to make sidebar sticky via prop `sticky`', () => {
+  const screen = render({
+    components: { SidebarMenu },
+    template  : `
+      <SidebarMenu sticky />
+    `,
+  })
+
+  const sidebar = screen.queryByTestId('sidebar-menu')
+
+  expect(sidebar).toBeInTheDocument()
+  expect(sidebar).toHaveClass('sidebar', 'sidebar--sticky')
+})
+
+it('should be able to make sidebar expand automatically via prop `toggleable`', () => {
+  const screen = render({
+    components: { SidebarMenu },
+    template  : `
+      <SidebarMenu toggleable="md">
+      </SidebarMenu>
+    `,
+  })
+
+  const sidebar = screen.queryByTestId('sidebar-menu')
+
+  expect(sidebar).toBeInTheDocument()
+  expect(sidebar).toHaveClass('sidebar--toggleable', 'sidebar--toggleable-md')
+})
+
+it('should be able limit the displayed menu in the sidebar with `maxLength`', async () => {
+  const screen = render({
+    components: { SidebarMenu },
+    template  : `
+      <SidebarMenu :menus="toggleMenu" />
+    `,
+    setup () {
+      return { toggleMenu }
+    },
+  })
+
+  let toggle = screen.queryByTestId('sidebar-toggle')
+  const menu = screen.getAllByText('Home')
+
+  await delay(0)
+
+  expect(toggle).toBeInTheDocument()
+  expect(toggle).toHaveTextContent('More')
+  expect(menu).toHaveLength(1)
+
+  await fireEvent.click(toggle)
+
+  toggle = screen.queryByTestId('sidebar-toggle')
+  expect(toggle).toHaveTextContent('Less')
 })

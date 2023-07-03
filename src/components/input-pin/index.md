@@ -86,7 +86,7 @@ Like other input, input value can be binding with `v-model`.
 
 **result:**
 
-<pre class="truncate"><code>{{ result || '-' }}</code></pre>
+<code class="truncate whitespace-pre">{{ result || '-' }}</code>
 
 ```vue
 <template>

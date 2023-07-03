@@ -3,10 +3,15 @@
     v-if="show"
     data-testid="banner"
     :class="classNames">
-    <div class="banner__icon">
-      <component
-        :is="icon"
-        v-if="icon" />
+    <div
+      class="banner__icon"
+      data-testid="banner-icon"
+      :class="{ 'banner__icon--custom' : $slots.icon }">
+      <slot name="icon">
+        <component
+          :is="icon"
+          v-if="icon" />
+      </slot>
     </div>
     <div class="banner__body">
       <slot :close="close" />
@@ -89,10 +94,12 @@ export default defineComponent({
 <style lang="postcss">
 .banner {
   @apply p-4 flex space-x-2 rounded text-subtle;
+  @apply dark:text-dark-subtle;
 
   a {
     &:not(.btn) {
-      @apply underline decoration-solid text-accent;
+      @apply underline decoration-solid text-info;
+      @apply dark:text-dark-info;
     }
   }
 
@@ -105,18 +112,22 @@ export default defineComponent({
   }
 
   &&--info {
-    @apply bg-subtle;
+    @apply bg-base;
+    @apply dark:bg-dark-base;
 
     .banner__icon {
-      @apply text-accent;
+      @apply text-info;
+      @apply dark:text-dark-info;
     }
   }
 
   &&--danger {
     @apply bg-danger;
+    @apply dark:bg-dark-danger;
 
     .banner__icon {
       @apply text-danger;
+      @apply dark:text-dark-danger;
     }
   }
 
@@ -131,6 +142,7 @@ export default defineComponent({
 
   &__close {
     @apply cursor-pointer text-default/30 hover:text-default/50;
+    @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
   }
 }
 </style>

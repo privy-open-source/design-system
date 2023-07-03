@@ -1,6 +1,8 @@
 import { vi } from 'vitest'
 import { fireEvent, render } from '@testing-library/vue'
 import Button from './Button.vue'
+import ButtonGroup from '../button-group/ButtonGroup.vue'
+import InputGroup from '../input-group/InputGroup.vue'
 
 it('should render properly without any props', () => {
   const screen = render({
@@ -120,4 +122,54 @@ it('should emit "click" when button is clicked', async () => {
   await fireEvent.click(button)
 
   expect(spy).toBeCalled()
+})
+
+it('should be an anchor when button have `href` props', async () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button href="#">
+        Hello
+      </Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toHaveAttribute('href')
+  expect(button).toContainHTML('a')
+})
+
+it('should automatically set size of each button via `size` props of button-group', () => {
+  const screen = render({
+    components: { ButtonGroup, Button },
+    template  : `
+      <ButtonGroup size="lg">
+        <Button>Text</Button>
+      </ButtonGroup>
+    `,
+  })
+
+  const buttonGroup = screen.queryByTestId('btn-group')
+  const button      = screen.queryByTestId('btn')
+
+  expect(buttonGroup).toBeInTheDocument()
+  expect(button).toHaveClass('btn--lg')
+})
+
+it('should automatically set size of button via `size` props of input-group', () => {
+  const screen = render({
+    components: { InputGroup, Button },
+    template  : `
+      <InputGroup size="sm">
+        <Button variant="input">Text</Button>
+      </InputGroup>
+    `,
+  })
+
+  const inputGroup = screen.queryByTestId('input-group')
+  const button     = screen.queryByTestId('btn')
+
+  expect(inputGroup).toBeInTheDocument()
+  expect(button).toHaveClass('btn--sm')
 })

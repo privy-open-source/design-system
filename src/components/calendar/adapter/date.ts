@@ -11,8 +11,6 @@ import {
   isAfter,
   isBefore,
   isWithinInterval,
-  minTime,
-  maxTime,
 } from 'date-fns'
 import {
   CalendarItem,
@@ -31,18 +29,21 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, model, min, max }) {
+  getItems ({ cursor, start, end, min, max }) {
     const dates: CalendarItem[] = eachDayOfInterval(getInterval(cursor.value)).map((date) => {
-      const start      = min.value ?? minTime
-      const end        = max.value ?? maxTime
       const isDisabled = !isSameMonth(cursor.value, date)
-        || !isWithinInterval(date, { start, end })
+        || !isWithinInterval(date, { start: min.value, end: max.value })
+
+      const isHead = isSameDay(start.value, date)
+      const isTail = isSameDay(end.value, date)
 
       return {
         value   : date,
         text    : date.getDate().toString(),
         disabled: isDisabled,
-        active  : isSameDay(model.value, date),
+        head    : isHead,
+        tail    : isTail,
+        active  : isHead || isTail,
         readonly: false,
       }
     })
@@ -53,6 +54,8 @@ export default defineAdapter({
         text    : formatDate(item.value, 'EEEEEE'),
         disabled: false,
         readonly: true,
+        head    : false,
+        tail    : false,
         active  : false,
       }
     })

@@ -279,10 +279,17 @@ export default defineComponent({
 .select {
   &__search {
     @apply pr-8 truncate hover:cursor-default focus:cursor-text;
+
+    .state--error &,
+    .select--error & {
+        @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
+        @apply dark:border-dark-danger-emphasis hover:dark:border-dark-danger-emphasis focus:dark:ring-dark-danger focus:dark:border-dark-danger-emphasis;
+    }
   }
 
   &__caret {
     @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-subtle pointer-events-none;
+    @apply dark:text-dark-subtle;
   }
 
   &__option {
@@ -293,7 +300,8 @@ export default defineComponent({
     }
 
     &-checked {
-      @apply flex-shrink-0 text-accent invisible;
+      @apply flex-shrink-0 text-info invisible;
+      @apply dark:text-dark-info;
 
       .selected & {
         @apply visible;
@@ -304,6 +312,7 @@ export default defineComponent({
   &__empty,
   &__loading {
     @apply px-3 py-2 text-default text-center;
+    @apply dark:text-dark-default;
   }
 
   &__loading {

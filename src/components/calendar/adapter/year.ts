@@ -7,8 +7,6 @@ import {
   isBefore,
   isSameYear,
   isWithinInterval,
-  maxTime,
-  minTime,
   startOfDecade,
   subYears,
 } from 'date-fns'
@@ -24,20 +22,23 @@ function getInterval (date: Date) {
 }
 
 export default defineAdapter({
-  getItems ({ cursor, model, min, max }) {
+  getItems ({ cursor, start, end, min, max }) {
     return eachYearOfInterval(getInterval(cursor.value)).map((date) => {
-      const start      = min.value ?? minTime
-      const end        = max.value ?? maxTime
-      const isDisabled = !isSameYear(start, date)
-        && !isSameYear(end, date)
-        && !isWithinInterval(date, { start, end })
+      const isDisabled = !isSameYear(min.value, date)
+        && !isSameYear(max.value, date)
+        && !isWithinInterval(date, { start: min.value, end: max.value })
+
+      const isHead = isSameYear(start.value, date)
+      const isTail = isSameYear(end.value, date)
 
       return {
         value   : date,
         text    : date.getFullYear().toString(),
         disabled: isDisabled,
         readonly: false,
-        active  : isSameYear(model.value, date),
+        head    : isHead,
+        tail    : isTail,
+        active  : isHead || isTail,
       }
     })
   },

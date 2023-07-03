@@ -13,6 +13,8 @@ export interface ToastOption {
   toastClass?: string | string[],
 }
 
+export type ToastPositionVariant = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
+
 export default async function showToast (option: ToastOption) {
   const { default: ToastContainer } = await import('./ToastContainer.vue')
   const toast                       = await useSingleton(ToastContainer)

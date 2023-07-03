@@ -22,7 +22,7 @@ description: Show and hide content.
 ### Simple Usage
 
 <preview class="flex-col">
-  <p-button class="mb-5" @click="sample = !sample" color="primary">Collapse</p-button>
+  <p-button class="mb-5" @click="sample = !sample" color="info">Collapse</p-button>
   <p-collapse v-model="sample">
     But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
   </p-collapse>
@@ -30,7 +30,7 @@ description: Show and hide content.
 
 ```vue
 <template>
-  <p-button class="mb-5" @click="sample = !sample"color="primary">Collapse</p-button>
+  <p-button class="mb-5" @click="sample = !sample"color="info">Collapse</p-button>
   <p-collapse v-model="sample">
     But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
   </p-collapse>
@@ -40,7 +40,7 @@ description: Show and hide content.
 ### With Card
 
 <preview class="flex-col">
-  <p-button class="mb-5" @click="sample2 = !sample2" color="primary">Collapse</p-button>
+  <p-button class="mb-5" @click="sample2 = !sample2" color="info">Collapse</p-button>
   <p-collapse v-model="sample2">
     <p-card>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born</p-card>
   </p-collapse>
@@ -48,7 +48,7 @@ description: Show and hide content.
 
 ```vue
 <template>
-  <p-button class="mb-5" @click="sample = !sample" color="primary">Collapse</p-button>
+  <p-button class="mb-5" @click="sample = !sample" color="info">Collapse</p-button>
   <p-collapse v-model="sample">
     <p-card>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born</p-card>
   </p-collapse>

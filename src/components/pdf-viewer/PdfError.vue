@@ -1,10 +1,11 @@
 <template>
   <div
+    v-p-aspect-ratio="1122/793"
     data-testid="pdf-error"
     class="pdf__error">
-    <h3 class="text-danger">
+    <Heading element="h3">
       Failed to load PDF
-    </h3>
+    </Heading>
     <dl class="mt-7">
       <dt>URL:</dt>
       <dd class="truncate">
@@ -28,10 +29,14 @@
 
 <script lang="ts">
 import type * as PDFJS from 'pdfjs-dist'
+import { pAspectRatio } from '../aspect-ratio'
 import { defineComponent, PropType } from 'vue-demi'
+import Heading from '../heading/Heading.vue'
 
 export default defineComponent({
-  props: {
+  directives: { pAspectRatio },
+  components: { Heading },
+  props     : {
     url: {
       type   : String,
       default: '',
@@ -53,6 +58,21 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf__error {
-  @apply shadow-lg mb-4 p-6 bg-danger w-full h-full;
+  @apply shadow-lg mb-4 p-6 bg-danger w-full h-full max-w-[var(--p-pdf-container-width)] mx-auto text-default;
+  @apply dark:bg-dark-danger-emphasis dark:text-dark-default;
+
+  a {
+    &,
+    &:hover {
+      > code {
+        @apply text-danger;
+      }
+    }
+  }
+
+  :not(pre) code {
+    @apply bg-subtle-alpha text-danger;
+    @apply dark:bg-dark-danger dark:text-dark-danger;
+  }
 }
 </style>

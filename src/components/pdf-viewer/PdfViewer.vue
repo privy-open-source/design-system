@@ -1,16 +1,18 @@
 <template>
   <div
     ref="root"
-    v-p-aspect-ratio="layout === 'fixed' ? ratio : 16/9"
+    v-p-aspect-ratio="layout === 'fixed' ? ratio : false"
     data-testid="pdf-viewer"
     class="pdf"
+    :data-page="pdfPage"
+    :data-scale="pdfScale"
     :class="classNames">
     <div
       class="pdf__header">
       <slot
         name="header"
-        :page="page"
-        :scale="scale"
+        :page="pdfPage"
+        :scale="pdfScale"
         :total-page="totalPage"
         :doc="pdfDoc" />
     </div>
@@ -31,8 +33,8 @@
           ref="viewer"
           class="pdf__viewer pdfViewer" />
         <slot
-          :page="page"
-          :scale="scale"
+          :page="pdfPage"
+          :scale="pdfScale"
           :total-page="totalPage"
           :doc="pdfDoc" />
       </div>
@@ -40,28 +42,28 @@
 
       <slot
         name="container"
-        :page="page"
-        :scale="scale"
+        :page="pdfPage"
+        :scale="pdfScale"
         :total-page="totalPage"
         :doc="pdfDoc" />
 
       <transition name="slide-up">
         <PdfNavigation
-          v-show="!idle" />
+          v-show="!idle && !loading && !error" />
       </transition>
 
       <slot
         name="body"
-        :page="page"
-        :scale="scale"
+        :page="pdfPage"
+        :scale="pdfScale"
         :total-page="totalPage"
         :doc="pdfDoc" />
     </PdfObjects>
     <div class="pdf__footer">
       <slot
         name="footer"
-        :page="page"
-        :scale="scale"
+        :page="pdfPage"
+        :scale="pdfScale"
         :total-page="totalPage"
         :doc="pdfDoc" />
     </div>
@@ -82,7 +84,9 @@ import { pAspectRatio } from '../aspect-ratio'
 import {
   templateRef,
   useToNumber,
+  useVModel,
   watchDebounced,
+  syncRef,
 } from '@vueuse/core'
 import { LayoutVariant, PDF_VIEWER_CONTEXT } from '.'
 import { useSticky } from './utils/use-sticky'
@@ -106,6 +110,14 @@ export default defineComponent({
       type   : String,
       default: '',
     },
+    page: {
+      type   : Number,
+      default: 1,
+    },
+    scale: {
+      type   : Number,
+      default: 1,
+    },
     password: {
       type   : String,
       default: undefined,
@@ -124,15 +136,21 @@ export default defineComponent({
     },
   },
   emits: [
+    'ready',
     'loaded',
     'error',
     'error-password',
+    'update:page',
+    'update:scale',
   ],
   setup (props, { emit }) {
     const root      = templateRef<HTMLDivElement>('root')
     const container = templateRef<HTMLDivElement>('container')
     const viewer    = templateRef<HTMLDivElement>('viewer')
     const idle      = useIdle(container)
+
+    const vPage  = useVModel(props, 'page')
+    const vScale = useVModel(props, 'scale')
 
     const offsetTop    = useToNumber(toRef(props, 'offsetTop'), { nanToZero: true })
     const enableSticky = useSticky(root, { offsetTop: offsetTop })
@@ -147,8 +165,8 @@ export default defineComponent({
     })
 
     const {
-      page,
-      scale,
+      page: pdfPage,
+      scale: pdfScale,
       totalPage,
       openDoc,
       closeDoc,
@@ -158,6 +176,7 @@ export default defineComponent({
       error,
       onLoaded,
       onError,
+      onReady,
     } = useViewer(container, viewer)
 
     watchDebounced(() => [props.src, props.password], ([src, password]) => {
@@ -184,16 +203,23 @@ export default defineComponent({
         emit('error', error_)
     })
 
+    onReady((pdfViewer) => {
+      emit('ready', pdfViewer)
+    })
+
     provide(PDF_VIEWER_CONTEXT, {
-      page,
-      scale,
+      page : pdfPage,
+      scale: pdfScale,
       totalPage,
     })
 
+    syncRef(pdfPage, vPage)
+    syncRef(pdfScale, vScale)
+
     return {
+      pdfPage,
+      pdfScale,
       classNames,
-      page,
-      scale,
       totalPage,
       openDoc,
       closeDoc,
@@ -209,7 +235,10 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf {
+  --p-pdf-container-width: 793px;
+
   @apply relative overflow-hidden w-full flex flex-col bg-subtle z-1;
+  @apply dark:bg-dark-subtle;
 
   &__wrapper {
     @apply relative h-full w-full flex-grow;
@@ -228,17 +257,20 @@ export default defineComponent({
       @apply shadow-lg mb-4 mt-0 border;
 
       &.hover {
-        @apply ring-accent ring;
+        @apply ring-info ring;
+        @apply dark:ring-dark-info;
       }
     }
   }
 
   &__header {
     @apply z-1 bg-default shadow-lg;
+    @apply dark:bg-dark-default;
   }
 
   &__footer {
     @apply z-1 bg-default shadow-lg-top;
+    @apply dark:bg-dark-default;
   }
 }
 </style>

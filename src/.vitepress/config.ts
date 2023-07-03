@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { Plugin } from 'vite'
 import { babel } from '@rollup/plugin-babel'
+import getTarget from 'browserslist-to-esbuild'
 import head from './head'
 
 export default defineConfig({
@@ -10,7 +11,7 @@ export default defineConfig({
   description: 'Persona - PrivyID\'s Design System, built on top Nuxt3, Typescript and Tailwind',
   head       : head,
   themeConfig: {
-    logo    : './assets/images/logo.svg',
+    logo    : '/assets/images/logo.svg',
     editLink: { pattern: 'https://github.com/privy-open-source/design-system/edit/main/src/:path' },
     footer  : {
       message  : 'Released under the MIT License.',
@@ -21,6 +22,7 @@ export default defineConfig({
       { text: 'Components', link: '/components/avatar/' },
       { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
+      { text: 'Icons', link: '/icons/getting-started' },
       { text: 'Ecosystem', link: '/ecosystem/' },
     ],
     outline    : [2, 3],
@@ -33,9 +35,9 @@ export default defineConfig({
     sidebar: {
       '/docs/': [
         {
-          text       : 'Documentation',
-          collapsible: true,
-          items      : [
+          text     : 'Documentation',
+          collapsed: true,
+          items    : [
             { text: 'Instalation', link: '/docs/getting-started' },
             { text: 'Editor Setup', link: '/docs/editor-setup' },
             { text: 'Browser Support', link: '/docs/browser-support' },
@@ -44,21 +46,37 @@ export default defineConfig({
       ],
       '/foundation/': [
         {
-          text       : 'Foundation',
-          collapsible: true,
-          items      : [
+          text     : 'Foundation',
+          collapsed: true,
+          items    : [
+            {
+              text: 'Borders',
+              link: '/foundation/borders/',
+            },
             {
               text: 'Colors',
               link: '/foundation/colors/',
+            },
+            {
+              text: 'Shadows',
+              link: '/foundation/shadows/',
+            },
+            {
+              text: 'Typography',
+              link: '/foundation/typography/',
+            },
+            {
+              text: 'Variables',
+              link: '/foundation/variables/',
             },
           ],
         },
       ],
       '/components/': [
         {
-          text       : 'Base',
-          collapsible: true,
-          items      : [
+          text     : 'Base',
+          collapsed: true,
+          items    : [
             {
               text: 'Avatar',
               link: '/components/avatar/',
@@ -162,9 +180,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Typography',
-          collapsible: true,
-          items      : [
+          text     : 'Typography',
+          collapsed: true,
+          items    : [
             {
               text: 'Caption',
               link: '/components/caption/',
@@ -178,15 +196,19 @@ export default defineConfig({
               link: '/components/subheading/',
             },
             {
+              text: 'Text',
+              link: '/components/text/',
+            },
+            {
               text: 'Truncate',
               link: '/components/truncate/',
             },
           ],
         },
         {
-          text       : 'Form',
-          collapsible: true,
-          items      : [
+          text     : 'Form',
+          collapsed: true,
+          items    : [
             {
               text: 'Calendar',
               link: '/components/calendar/',
@@ -246,9 +268,13 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Dashboard',
-          collapsible: true,
-          items      : [
+          text     : 'Dashboard',
+          collapsed: true,
+          items    : [
+            {
+              text: 'Breadcrumbs',
+              link: '/components/breadcrumbs/',
+            },
             {
               text: 'Filterbar',
               link: '/components/filterbar/',
@@ -256,6 +282,10 @@ export default defineConfig({
             {
               text: 'Navbar',
               link: '/components/navbar/',
+            },
+            {
+              text: 'Page',
+              link: '/components/page/',
             },
             {
               text: 'Sidebar',
@@ -268,9 +298,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Signature',
-          collapsible: true,
-          items      : [
+          text     : 'Signature',
+          collapsed: true,
+          items    : [
             {
               text: 'Signature Draw',
               link: '/components/signature-draw/',
@@ -282,9 +312,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'PDF',
-          collapsible: true,
-          items      : [
+          text     : 'PDF',
+          collapsed: true,
+          items    : [
             {
               text: 'PDF Viewer',
               link: '/components/pdf-viewer/',
@@ -293,12 +323,20 @@ export default defineConfig({
               text: 'PDF Object',
               link: '/components/pdf-object/',
             },
+            {
+              text: 'PDF Helipad',
+              link: '/components/pdf-helipad/',
+            },
+            {
+              text: 'PDF Text',
+              link: '/components/pdf-text/',
+            },
           ],
         },
         {
-          text       : 'Non-Component',
-          collapsible: true,
-          items      : [
+          text     : 'Non-Component',
+          collapsed: true,
+          items    : [
             {
               text: 'Dialog',
               link: '/components/dialog/',
@@ -318,9 +356,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Headless',
-          collapsible: true,
-          items      : [
+          text     : 'Headless',
+          collapsed: true,
+          items    : [
             {
               text: 'Dropzone',
               link: '/components/dropzone/',
@@ -336,9 +374,9 @@ export default defineConfig({
           ],
         },
         {
-          text       : 'Directive',
-          collapsible: true,
-          items      : [
+          text     : 'Directive',
+          collapsed: true,
+          items    : [
             {
               text: 'Aspect Ratio',
               link: '/components/aspect-ratio/',
@@ -356,9 +394,13 @@ export default defineConfig({
       ],
       '/styleguide/': [
         {
-          text       : 'Guide',
-          collapsible: true,
-          items      : [
+          text     : 'Guide',
+          collapsed: true,
+          items    : [
+            {
+              text: 'Avatar',
+              link: '/styleguide/avatar/',
+            },
             {
               text: 'Badge',
               link: '/styleguide/badge/',
@@ -377,18 +419,50 @@ export default defineConfig({
             },
             {
               text: 'Checkbox & Radio',
-              link: '/styleguide/checkbox-radio/',
+              link: '/styleguide/check-radio/',
             },
             {
-              text: 'Navbar',
-              link: '/styleguide/navbar/',
+              text: 'Dropdown',
+              link: '/styleguide/dropdown/',
             },
+            {
+              text: 'Navigation',
+              link: '/styleguide/navigation/',
+            },
+            {
+              text: 'Pagination',
+              link: '/styleguide/pagination/',
+            },
+            {
+              text: 'Progress',
+              link: '/styleguide/progress/',
+            },
+            {
+              text: 'Table',
+              link: '/styleguide/table/',
+            },
+            {
+              text: 'Toggle',
+              link: '/styleguide/toggle/',
+            },
+          ],
+        },
+      ],
+      '/icons/': [
+        {
+          text     : 'Icons',
+          collapsed: true,
+          items    : [
+            { text: 'Instalation', link: '/icons/getting-started' },
+            { text: 'Collections', link: '/icons/collections' },
+            { text: 'Changelog', link: '/icons/changelog' },
           ],
         },
       ],
     },
   },
   vite: {
+    build  : { target: getTarget('extends @privyid/browserslist-config') },
     plugins: [
       babel({
         babelHelpers: 'bundled',

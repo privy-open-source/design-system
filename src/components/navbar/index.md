@@ -37,7 +37,7 @@ description: Base dashboard navbar.
     @apply block relative;
 
     &--fixed {
-      @apply h-36 overflow-hidden;
+      @apply h-40 overflow-hidden;
 
       .navbar--fixed {
         @apply absolute z-10;
@@ -124,6 +124,7 @@ Navbar brand is used for company, product, or project name. You can add permalin
 ```
 
 ## Fixed Navbar
+Fixed navbar are using `z-fixed` for z-index value. It posible to change z-index value using CSS variable `--p-navbar-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
 <preview class="flex-grow preview--fixed">
   <p-navbar fixed>
     <p-navbar-brand>
@@ -288,6 +289,8 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
       <img src="../../public/assets/images/logo.svg" />
     </p-navbar-brand>
     <p-navbar-nav>
+      <p-nav-item active>Label</p-nav-item>
+      <p-nav-item>Label</p-nav-item>
       <p-nav-form>
         <p-input-group>
           <p-input placeholder="Search" />
@@ -389,7 +392,7 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
 ```
 
 ## Responsive
-Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with available value `lg`, `md` and `sm`. Then `<p-navbar-toggle>` used with `<p-collapse is-nav>` component.
+Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with available value `lg`, `md` and `sm`. Then `<p-navbar-toggle>` used with `<p-collapse is-nav>` component. Max height of navbar collapse is `20rem` by default, but it's very possible to custom it via `--p-navbar-collapse-max-height` variable.
 
 <preview>
   <p-navbar toggleable="lg">
@@ -546,7 +549,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
     <p-navbar-nav align="right">
       <p-nav-form>
         <p-button href="#" variant="link">Login</p-button>
-        <p-button href="#" color="primary">Create Free Account</p-button>
+        <p-button href="#" color="info">Create Free Account</p-button>
       </p-nav-form>
     </p-navbar-nav>
   </p-navbar>
@@ -555,49 +558,35 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 ```vue
 <template>
   <p-navbar>
-    <div class="flex flex-row">
-      <div class="transition-all duration-200 ease-in-out basis-2/4 focus-within:basis-full">
-        <p-navbar-nav>
-          <p-input-group>
-            <p-input-group-addon>
-              <IconSearch />
-            </p-input-group-addon>
-            <p-input placeholder="Search" />
-          </p-input-group>
-        </p-navbar-nav>
-      </div>
-    </div>
-     <p-navbar-nav align="right">
-      <p-nav-item>
-        <template #icon>
-          <IconNotif />
-        </template>
-      </p-nav-item>
-      <p-nav-item-dropdown no-caret size="xs" variant="outline">
-        <template #button-content>
-          <span class="flex items-center space-x-2">
-            <p-avatar size="xs">
-              <IconUser />
-            </p-avatar>
-            <span class="block text-left">
-              <span class="text-sm">Tarjono Sujono</span>
-              <p-caption size="xs">Personal Account</p-caption>
-            </span>
-            <IconChevron />
-          </span>
-        </template>
-        <p-dropdown-item>Edit Profile</p-dropdown-item>
-        <p-dropdown-item>Preference</p-dropdown-item>
-        <p-dropdown-item>Sign out</p-dropdown-item>
-      </p-nav-item-dropdown>
-      <p-nav-text>
-        <p-avatar src="https://picsum.photos/50" />
-      </p-nav-text>
+    <p-navbar-brand>
+      <img src="../../public/assets/images/logo-privy.svg" />
+    </p-navbar-brand>
+    <p-navbar-nav>
+      <p-nav-item active>Home</p-nav-item>
+      <p-nav-item>Products</p-nav-item>
+    </p-navbar-nav>
+    <p-navbar-nav align="right">
+      <p-nav-form>
+        <p-button href="#" variant="link">Login</p-button>
+        <p-button href="#" color="info">Create Free Account</p-button>
+      </p-nav-form>
     </p-navbar-nav>
   </p-navbar>
 </template>
 ```
 
+## Variables
+Navbar use local CSS variables on `.navbar` for enhanced real-time customization.
+
+```sass
+--p-navbar-z-index: theme(zIndex.fixed);
+--p-navbar-sticky-top: theme(spacing.0);
+--p-navbar-collapse-max-height: 20rem; /* 320px */
+--p-navbar-padding-x: theme(spacing.3);
+--p-navbar-padding-y: theme(spacing.3);
+--p-navbar-bg: theme(backgroundColor.default.DEFAULT);
+--p-navbar-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
+```
 ## API
 
 ### Props `<p-navbar>`
@@ -606,6 +595,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 | `variant`      | `String`  | `pills`     | Navbar variant, valid value is `pills` and `lines`                |
 | `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
 | `fixed`        | `Boolean` | `false`     | Activate fixed Navbar                                             |
+| `sticky`       | `Boolean` | `false`     | Activate sticky Navbar                                             |
 | `toggleable`   | `String`  | -           | automatically expand navigation with desired breakpoint           |
 ### Slots `<p-navbar>`
 

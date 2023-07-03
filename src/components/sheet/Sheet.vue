@@ -31,7 +31,7 @@ import {
   PropType,
 } from 'vue-demi'
 import { useVModel } from '../input'
-import { PositionVariant } from '../pdf-object'
+import { AddonPositionVariant } from '../pdf-object'
 
 export default defineComponent({
   props: {
@@ -40,7 +40,7 @@ export default defineComponent({
       default: false,
     },
     position: {
-      type   : String as PropType<PositionVariant>,
+      type   : String as PropType<AddonPositionVariant>,
       default: 'left',
     },
     zIndex: {

@@ -24,7 +24,8 @@ export default defineComponent({
 <style lang="postcss">
   .navbar {
     &__brand {
-      @apply inline-block mr-4 text-xl py-1 font-medium;
+      @apply inline-block mr-4 text-xl py-1 font-medium text-default;
+      @apply dark:text-dark-default;
 
       img {
         @apply h-7 w-auto inline-block;

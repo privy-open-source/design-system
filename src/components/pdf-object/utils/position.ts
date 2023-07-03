@@ -1,3 +1,5 @@
+import { clamp } from 'lodash-es'
+
 interface ComputePosition {
   /**
    * Root container element
@@ -25,7 +27,7 @@ interface GetPosition {
   /**
    * Root container element
    */
-  container: HTMLElement,
+  container?: HTMLElement,
   /**
    * Reference element where the object should be placed
    */
@@ -100,9 +102,16 @@ export function getPosition (context: GetPosition) {
   const objectBounding = object.getBoundingClientRect()
   const refBounding    = reference.getBoundingClientRect()
 
+  const maxX = Math.floor((refBounding.width - objectBounding.width) / scale)
+  const maxY = Math.floor((refBounding.height - objectBounding.height) / scale)
+
+  const x    = (objectBounding.left - refBounding.left) / scale
+  const y    = (objectBounding.top - refBounding.top) / scale
+  const page = Number.parseInt(reference.dataset.pageNumber)
+
   return {
-    x   : (objectBounding.left - refBounding.left) / scale,
-    y   : (objectBounding.top - refBounding.top) / scale,
-    page: Number.parseInt(reference.dataset.pageNumber),
+    x   : clamp(x, 1, maxX - 1),
+    y   : clamp(y, 1, maxY - 1),
+    page: page,
   }
 }

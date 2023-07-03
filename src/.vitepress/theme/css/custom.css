@@ -72,26 +72,140 @@
   }
 
   th, td {
-    @apply border-accent dark:border-on-emphasis-subtle;
+    @apply border-info dark:border-dark-default dark:bg-dark-default;
   }
 
   thead > tr:first-child,
   tr:nth-child(2n) {
-    @apply bg-accent dark:bg-emphasis-subtle;
+    @apply bg-info;
+  }
+
+  thead > tr:first-child {
+    th, td {
+      @apply dark:bg-dark-base;
+    }
   }
 
   .token.attr-name {
     @apply text-[#cc99cd];
   }
+
+  .table-list {
+    @apply p-3 mt-4 border rounded shadow-sm dark:border-dark-subtle;
+
+    table {
+      @apply table w-full my-0;
+
+      thead > tr:first-child {
+        th, td {
+          @apply dark:bg-transparent;
+        }
+      }
+
+      tr {
+        @apply bg-transparent border-t-0 dark:bg-transparent;
+      }
+
+      th {
+        @apply font-bold bg-transparent border-0 dark:bg-transparent text-default dark:text-dark-default ;
+      }
+
+      td {
+        @apply border-0 border-t border-[color:var(--vp-c-divider)] dark:bg-transparent;
+      }
+    }
+  }
 }
 
 .vp-doc {
+  .preview {
+    @apply text-default dark:text-dark-default;
+
+    h1, h2, h3, h4, h5, h6 {
+      &:not(.subheading, .heading) {
+        @apply pt-0 mt-0;
+      }
+    }
+
+    h5 {
+      &:not(.subheading, .heading) {
+        @apply mb-2;
+      }
+    }
+  }
+  
   .header-anchor {
     @apply pr-0 -ml-6;
   }
 
+  a,
+  .preview a {
+    @apply hover:no-underline;
+    
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
+      @apply text-link dark:text-dark-link;
+    }
+  }
+
   a {
-    @apply font-inherit text-inherit;
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item) {
+      @apply underline decoration-solid hover:no-underline;
+    } 
+
+    &:not(.freetext--medium) {
+      @apply font-inherit;
+    }
+
+    &:where(.freetext--hyperlink) {
+      @apply decoration-solid;
+    }
+  }
+
+  h1 {
+    &:is(.h1) {
+      @apply mt-0 text-7xl;
+    }
+  }
+
+  h2 {
+    &:is(.h2) {
+      @apply pt-0 m-0 text-6xl border-t-0;
+    }
+  }
+
+  h3 {
+    &:is(.h3) {
+      @apply mt-0 text-5xl;
+    }
+  }
+
+  p {
+    
+    &.lh {
+      &-none {
+        @apply leading-none;
+      }
+
+      &-tightest {
+        @apply leading-tightest;
+      }
+
+      &-tighter {
+        @apply leading-tighter;
+      }
+
+      &-tight {
+        @apply leading-tight;
+      }
+
+      &-normal {
+        @apply leading-normal;
+      }
+
+      &-wide {
+        @apply leading-wide;
+      }
+    }
   }
 
   .nav__link__icon {

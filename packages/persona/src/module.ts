@@ -48,6 +48,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Add Components
     await addComponentsDir({
       path      : resolve('./components'),
+      pathPrefix: false,
       prefix    : options.prefix,
       extensions: ['vue'],
     })
@@ -67,6 +68,7 @@ export default defineNuxtModule<ModuleOptions>({
         'zxcvbn',
         'pdfjs-dist',
         'pdfjs-dist/web/pdf_viewer',
+        'vuedraggable',
       )
     })
   },

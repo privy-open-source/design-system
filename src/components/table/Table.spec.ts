@@ -84,16 +84,20 @@ it('should have style static if variant set to `static`', () => {
 
 it('should able to set cell width if width provided in fields scheme', () => {
   const fields = defineTable([{ key: 'id', width: 1 }])
+  const itemsA = ref([])
   const screen = render({
     components: { Table },
     template  : `
       <div>
         <Table variant="flexible" :fields="fields" :items="items" />
         <Table variant="static" :fields="fields" :items="items" />
+        <Table :fields="fields" :items="itemsA" />
       </div>
     `,
     setup () {
-      return { fields, items }
+      return {
+        fields, items, itemsA,
+      }
     },
   })
 
@@ -106,6 +110,11 @@ it('should able to set cell width if width provided in fields scheme', () => {
 
   expect(headers.at(0)).toHaveStyle({ width: '1%' })
   expect(headers.at(0)).not.toHaveStyle({ flex: '1 1 0%' })
+
+  const cellsEmpty = screen.getAllByTestId('datatable-cell-empty')
+
+  expect(cellsEmpty.at(0)).toHaveStyle({ width: '1%' })
+  expect(cellsEmpty.at(0)).not.toHaveStyle({ flex: '1 1 0%' })
 })
 
 it('should enable checkbox if prop `selectable` is provided', () => {
@@ -209,29 +218,6 @@ it('should show drag handle if `draggable` prop is provided', () => {
   expect(handle).toHaveLength(4)
 })
 
-it('should show drag handle if `draggable` prop is provided', () => {
-  const screen = render({
-    components: { Table },
-    template  : `
-      <Table
-        variant="static"
-        :fields="fields"
-        :items="items"
-        draggable
-      />`,
-    setup () {
-      return {
-        fields,
-        items,
-      }
-    },
-  })
-
-  const handle = screen.getAllByTestId('datatable-drag-handle')
-
-  expect(handle).toHaveLength(4)
-})
-
 it('should binding v-model:item when drag the item', async () => {
   const items = ref([
     {
@@ -270,4 +256,28 @@ it('should binding v-model:item when drag the item', async () => {
 
   // eslint-disable-next-line array-bracket-newline, array-element-newline
   expect(items.value.map((i) => i.id)).toEqual([3, 2, 1])
+})
+
+it('should able to change empty state label via `empty-label` prop', () => {
+  const itemsA = ref([])
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="fields"
+        :items="itemsA"
+        empty-label="nothing to show here"
+      />`,
+    setup () {
+      return {
+        fields,
+        itemsA,
+      }
+    },
+  })
+
+  const empty = screen.getByTestId('datatable-empty')
+
+  expect(empty).toBeInTheDocument()
+  expect(empty).toHaveTextContent('nothing to show here')
 })

@@ -127,26 +127,30 @@ export default defineComponent({
     @apply absolute bottom-4 inset-x-0 justify-center items-center flex w-80 mx-auto z-10;
 
     &-container {
-      @apply flex bg-gray-70 text-gray-30 rounded p-2 space-x-1 items-center;
+      @apply flex bg-inverse text-subtlest rounded p-2 space-x-1 items-center;
+      @apply dark:text-dark-default;
 
       > .btn {
-        @apply text-gray-30;
+        @apply text-subtlest hover:text-muted focus:text-muted;
+        @apply dark:text-dark-subtle hover:dark:text-dark-default focus:dark:text-dark-default;
       }
 
       > .select {
         @apply w-16;
 
         > .input {
-          @apply bg-emphasis-subtle;
+          @apply bg-default-alpha;
+          @apply dark:bg-dark-default-alpha;
 
           > .input__form {
-            @apply border-on-emphasis-subtle bg-emphasis-subtle;
+            @apply border-subtle-alpha bg-default-alpha text-state-emphasis;
+            @apply dark:border-dark-subtle-alpha dark:bg-dark-default-alpha dark:text-dark-state-emphasis;
           }
         }
       }
 
       > .divider {
-        @apply border-none bg-gray-50;
+        @apply border-none bg-dark-subtle-alpha;
       }
     }
 

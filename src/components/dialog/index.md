@@ -38,11 +38,11 @@ description: Instant Modal, alternative of window.alert or window.confirm
 ### Alert
 
 <div class="flex mt-5">
-  <Button @click="example1" color="primary">Show Alert</Button>
+  <Button @click="example1" color="info">Show Alert</Button>
 </div>
 
 ```ts
-import dialog from '@privyid/persona/core'
+import { dialog } from '@privyid/persona/core'
 
 dialog.alert({
   title: 'Dialog',
@@ -53,11 +53,11 @@ dialog.alert({
 ### Confirm
 
 <div class="flex mt-5">
-  <Button @click="example2" color="primary">Show Confirm</Button>
+  <Button @click="example2" color="info">Show Confirm</Button>
 </div>
 
 ```ts
-import dialog from '@privyid/persona/core'
+import { dialog } from '@privyid/persona/core'
 
 dialog.confirm({
   title: 'Delete Confirmation',
@@ -72,3 +72,44 @@ dialog.confirm({
   }
 })
 ```
+
+
+## API
+
+### Confirm
+
+`confirm(options: DialogOptions): Promise<boolean>`
+
+| Options       |   Type   | Default  | Description                                                               |
+|---------------|:--------:|:--------:|---------------------------------------------------------------------------|
+| `title`       | `String` |    -     | Dialog title, **required**                                                |
+| `text`        | `String` |    -     | Dialog text content                                                       |
+| `size`        | `String` |    -     | Dialog size, valid value is `sm`, `md`, `lg`, `xl`                        |
+| `centered`    | `Boolean`|  `false`   | Dialog vertically center in the viewport                                  |
+| `footerAlign` | `Number` |  `start` | The alignment of dialog footer, valid value is `start` and `end`          |
+| `cancel`      | `DialogButton` |    -     | Cancel button's options for dialog footer                           |
+| `confirm`     | `DialogButton` |    -     | Confirm button's options for dialog footer                          |
+
+`DialogButton`
+
+| Options       |   Type    | Default  | Description                                                               |
+|---------------|:---------:|:--------:|---------------------------------------------------------------------------|
+| `text`        | `String`  |    -     | Dialog button text                                                        |
+| `visible`     | `Boolean` |  `true`  | Show or hide dialog button                                                |
+| `className`   | `String`  | `-`      | Add class to dialog button                                                |
+| `closeModal`  | `Boolean` |  `true`  | Close dialog modal when dialog button was clicked                         |
+| `color`       | `String`  |    -     | Dialog button color variant, valid value is `default`, `primary`, `info`, `success`, `danger`, `warning`                                           |
+| `variant`     | `String`  |    -     | Dialog button style variant, valid value is `solid`, `outline`, `ghost`, and `link`                                              |
+
+### Alert
+
+`alert(options: Omit<DialogOptions, 'cancel'>): Promise<void>`
+
+| Options       |   Type   | Default  | Description                                                               |
+|---------------|:--------:|:--------:|---------------------------------------------------------------------------|
+| `title`       | `String` |    -     | Dialog title, **required**                                                |
+| `text`        | `String` |    -     | Dialog text content                                                       |
+| `size`        | `String` |    -     | Dialog size, valid value is `sm`, `md`, `lg`, `xl`                        |
+| `centered`    | `Boolean`|  `false` | Dialog vertically center in the viewport                                  |
+| `footerAlign` | `Number` |  `start` | The alignment of dialog footer, valid value is `start` and `end`          |
+| `confirm`     | `DialogButton` |    -     | Confirm button's options for dialog footer                          |

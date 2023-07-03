@@ -2,19 +2,25 @@ import Adapter from './date'
 import { ref } from 'vue-demi'
 import { CalendarContext, CalendarItem } from './adapter'
 import { initAppContext, setLang } from '../../global/context'
+import {
+  minTime as MIN_TIME,
+  maxTime as MAX_TIME,
+} from 'date-fns'
 
 export function createMockContext (
   minDate?: Date,
   maxDate?: Date,
 ): CalendarContext {
   const cursor = ref(new Date(2022, 4, 13))
-  const model  = ref(new Date(2022, 4, 13))
-  const min    = ref(minDate)
-  const max    = ref(maxDate)
+  const start  = ref(new Date(2022, 4, 13))
+  const end    = ref(new Date(2022, 4, 13))
+  const min    = ref(minDate ?? new Date(MIN_TIME))
+  const max    = ref(maxDate ?? new Date(MAX_TIME))
 
   return {
     cursor,
-    model,
+    start,
+    end,
     min,
     max,
   }

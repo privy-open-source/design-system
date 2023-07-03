@@ -13,12 +13,12 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { PositionVariant } from '.'
+import { AddonPositionVariant } from '.'
 
 export default defineComponent({
   props: {
     position: {
-      type   : String as PropType<PositionVariant>,
+      type   : String as PropType<AddonPositionVariant>,
       default: 'right',
     },
   },
@@ -41,6 +41,7 @@ export default defineComponent({
 .pdf-object {
   &__addon {
     @apply absolute;
+    @apply dark:text-default;
 
     &--right {
       @apply top-0 left-full pl-2;

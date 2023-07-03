@@ -69,8 +69,11 @@ export default defineComponent({
 
 <style lang="postcss">
 .pdf-object {
+  --p-pdf-debugger-size: 198px;
+
   &__debugger {
-    @apply grid grid-cols-1 p-4 bg-emphasis text-on-emphasis absolute rounded w-[198px];
+    @apply grid grid-cols-1 p-4 bg-inverse text-on-emphasis absolute rounded w-[var(--p-pdf-debugger-size)];
+    /* @apply dark:bg-dark-inverse dark:text-dark-on-emphasis; */
 
     > pre {
       @apply truncate;

@@ -8,10 +8,12 @@ description: Add object to PDF Viewer
   import pPdfObject from './PdfObject.vue'
   import pPdfObjectAddon from './PdfObjectAddon.vue'
   import pButton from '../button/Button.vue'
-  import FILE from '../pdf-viewer/assets/Calibrator-v3.pdf?url'
+  import FILE from '../../public/assets/pdf/Calibrator-v3.pdf?url'
   import IconClose from '@carbon/icons-vue/lib/close/16'
   import { reactive, ref, nextTick } from 'vue-demi'
   import { random } from 'lodash-es'
+  import pDropdown from '../dropdown/Dropdown.vue'
+  import pDropdownItem from '../dropdown/DropdownItem.vue'
 
   const object1 = reactive({
     page  : undefined,
@@ -112,7 +114,7 @@ description: Add object to PDF Viewer
 <script setup lang="ts">
   import FILE from '~/assets/Calibrator-v3.pdf?url'
 
-  interface PDFObject {
+  interface PdfObject {
     page?: number,
     x?: number,
     y?: number,
@@ -120,7 +122,7 @@ description: Add object to PDF Viewer
     height?: number,
   }
 
-  const object = reactive<PDFObject>({
+  const object = reactive<PdfObject>({
     page  : undefined,
     x     : undefined,
     y     : undefined,
@@ -188,7 +190,7 @@ You can add additional element like action button using `<p-object-addon>` compo
 <script setup lang="ts">
   import FILE from '~/assets/Calibrator-v3.pdf?url'
 
-  interface PDFObject {
+  interface PdfObject {
     _id: symbol,
     page?: number,
     x?: number,
@@ -197,7 +199,7 @@ You can add additional element like action button using `<p-object-addon>` compo
     height?: number,
   }
 
-  const objects = reactive<PDFObject[]>([])
+  const objects = reactive<PdfObject[]>([])
 
   function add () {
     objects.push({

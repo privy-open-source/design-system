@@ -3,18 +3,20 @@
     data-testid="nav-item-dropdown"
     class="nav__item nav__item--dropdown">
     <Dropdown
+      v-model="model"
       :text="text"
       :icon="icon"
       :variant="variant"
       :size="size"
-      placement="bottom-end"
-      :no-caret="noCaret">
+      :placement="placement"
+      :no-caret="noCaret"
+      :menu-class="menuClass"
+      :menu-size="menuSize">
       <template #button-content>
         <slot name="button-content">
           {{ text }}
         </slot>
       </template>
-
       <slot />
     </Dropdown>
   </li>
@@ -23,14 +25,21 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue-demi'
 import Dropdown from '../dropdown/Dropdown.vue'
+import { Placement } from '@floating-ui/core'
 import type {
   SizeVariant,
   StyleVariant,
 } from '../button'
+import { useVModel } from '../input'
+import { MenuSizeVariant } from '../dropdown'
 
 export default defineComponent({
   components: { Dropdown },
   props     : {
+    modelValue: {
+      type   : Boolean,
+      default: false,
+    },
     text: {
       type   : String,
       default: '',
@@ -51,6 +60,33 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    placement: {
+      type   : String as PropType<Placement>,
+      default: 'bottom-end',
+    },
+    menuClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
+    menuSize: {
+      type   : String as PropType<MenuSizeVariant>,
+      default: 'sm',
+    },
+  },
+  models: {
+    prop : 'modelValue',
+    event: 'update:modelValue',
+  },
+  emits: ['update:modelValue'],
+
+  setup (props) {
+    const model = useVModel(props)
+
+    return { model }
   },
 })
 </script>
@@ -60,6 +96,14 @@ export default defineComponent({
   &__item {
     &--dropdown {
       @apply ml-auto;
+
+      .dropdown {
+        &__menu {
+          .dropdown__item {
+            @apply px-3;
+          }
+        }
+      }
     }
   }
 

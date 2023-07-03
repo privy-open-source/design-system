@@ -1,65 +1,27 @@
-<script setup>
-  import pCard from '../components/card/Card.vue'
-  import pButton from '../components/button/Button.vue'
-  import IconGithub from "@carbon/icons-vue/lib/logo--github/20"
-</script>
-
 # Ecosystem
+
+> An awesome list of Persona ecosystem.
 
 ## Official Packages
 
-<div class="space-y-4">
-  <p-card
-    title="@privyid/tailwind-preset"
-    element="div"
-    :dismissable="false"
-    callout>
-    <div class="flex items-start space-x-8">
-      <div class="w-3/4">
-        Tailwind config presets which following our <a href="../foundation/">foundations</a>
-        <div class="pt-8">
-          <p-button variant="outline" color="secondary">
-            View on Github
-            <IconGithub></IconGithub>
-          </p-button>
-        </div>
-      </div>
-    </div>
-  </p-card>
+- **[@privyid/persona][persona]** - Persona core package
+- **[@privyid/persona-icon][persona-icon]** - Persona icon package
+- **[@privyid/tailwind-preset][tailwind-preset]** - Tailwind config presets which following our foundations
+- **[@privyid/tailwind-extended][tailwind-extended]** - Add missing tailwind utilities
+- **[@privyid/tailwind-animation][tailwind-animation]** - Collection animation class for vue `<transition>`
+- **[@privyid/eslint-config-persona][eslint-config-persona]** - Eslint shareable config for Persona project
+- **[@privyid/browserslist-config][browserslist-config]** - Browserslist shareable config for Persona project
+- **[@privyid/nhp][nhp]** - Nuxt HTTP Proxy Module
+- **[@privyid/nuauth][nuauth]** - Oauth2 Client for Nuxt
+- **[@privyid/nuapi][nuapi]** - Nuxt HTTP Client module
 
-  <p-card
-    title="@privyid/tailwind-extended"
-    element="div"
-    :dismissable="false"
-    callout>
-    <div class="flex items-start space-x-8">
-      <div class="w-3/4">
-        Add missing tailwind utilities
-        <div class="pt-8">
-          <p-button variant="outline" color="secondary">
-            View on Github
-            <IconGithub></IconGithub>
-          </p-button>
-        </div>
-      </div>
-    </div>
-  </p-card>
-
-  <p-card
-    title="@privyid/tailwind-animation"
-    element="div"
-    :dismissable="false"
-    callout>
-    <div class="flex items-start space-x-8">
-      <div class="w-3/4">
-        Collection animation class for vue <code>&lt;transitions&gt;</code>
-        <div class="pt-8">
-          <p-button variant="outline" color="secondary">
-            View on Github
-            <IconGithub></IconGithub>
-          </p-button>
-        </div>
-      </div>
-    </div>
-  </p-card>
-</div>
+[persona]: https://www.npmjs.com/package/@privyid/persona
+[persona-icon]: https://www.npmjs.com/package/@privyid/persona-icon
+[tailwind-preset]: https://www.npmjs.com/package/@privyid/tailwind-preset
+[tailwind-extended]: https://www.npmjs.com/package/@privyid/tailwind-extended
+[tailwind-animation]: https://www.npmjs.com/package/@privyid/tailwind-animation
+[eslint-config-persona]: https://www.npmjs.com/package/@privyid/eslint-config-persona
+[browserslist-config]: https://www.npmjs.com/package/@privyid/browserslist-config
+[nhp]: https://www.npmjs.com/package/@privyid/nhp
+[nuauth]: https://www.npmjs.com/package/@privyid/nuauth
+[nuapi]: https://www.npmjs.com/package/@privyid/nuapi

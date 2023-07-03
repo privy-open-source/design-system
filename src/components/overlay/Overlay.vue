@@ -57,7 +57,10 @@ export default defineComponent({
 }
 
 .overlay {
-  @apply fixed top-0 left-0 right-0 bottom-0 w-screen h-screen z-50 bg-emphasis/20 flex items-center justify-center select-none will-change-[transform,opacity];
+  --p-overlay-z-index: theme(zIndex.overlay);
+
+  @apply z-[var(--p-overlay-z-index)] fixed top-0 left-0 right-0 bottom-0 w-screen h-screen bg-inverse/30 flex items-center justify-center select-none will-change-[transform,opacity];
+  @apply dark:bg-dark-inverse/30;
 
   &__icon {
     @apply w-10 md:w-16 animate-[overlayLoading_1s_ease-in-out_infinite];

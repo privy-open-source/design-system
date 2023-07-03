@@ -167,11 +167,14 @@ export default defineComponent({
     }
 
     &__placeholder {
-      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center;
+      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none text-center text-muted;
     }
 
     &__reset {
       @apply absolute right-1 top-1 bg-default;
+      &.btn--variant-link.btn--default {
+        @apply dark:text-dark-subtlest hover:dark:text-dark-on-emphasis;
+      }
     }
   }
   </style>

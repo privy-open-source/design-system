@@ -109,7 +109,7 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: ['update:modelValue', 'change'],
-  setup (props) {
+  setup (props, { slots }) {
     const model = useVModel(props)
 
     const classNames = computed(() => {
@@ -126,6 +126,9 @@ export default defineComponent({
 
       if (props.readonly)
         result.push('toggle--readonly')
+
+      if (slots.default)
+        result.push('toggle--labeled')
 
       return result
     })
@@ -146,14 +149,17 @@ export default defineComponent({
 
 <style lang="postcss">
 .toggle {
-  @apply inline-flex cursor-pointer relative items-center select-none;
+  @apply inline-flex cursor-pointer relative items-center select-none text-default;
+  @apply dark:text-dark-default;
 
   &__switch {
-    @apply flex items-center justify-center relative bg-inactive border-subtle mr-4;
+    @apply flex items-center justify-center relative bg-subtle border-default;
+    @apply dark:bg-dark-subtle dark:border-dark-default;
   }
 
   &__pointer {
     @apply block absolute appearance-none cursor-pointer will-change-transform transition-transform -translate-x-1/2 bg-default;
+    @apply dark:bg-dark-layer-2;
   }
 
   &--disabled {
@@ -162,7 +168,8 @@ export default defineComponent({
 
   &&--pill {
     .toggle__switch {
-      @apply w-9 h-5 rounded-full text-[0.5rem] text-on-emphasis border;
+      @apply w-9 h-5 rounded-full text-[0.5rem] text-state-emphasis border;
+      @apply dark:text-dark-state-emphasis;
     }
 
     .toggle__label {
@@ -175,7 +182,8 @@ export default defineComponent({
 
     &.toggle--checked {
       .toggle__switch {
-        @apply bg-accent-emphasis border-accent-emphasis;
+        @apply bg-info-emphasis border-info-emphasis;
+        @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis;
       }
 
       .toggle__pointer {
@@ -186,7 +194,7 @@ export default defineComponent({
 
   &&--flat {
     .toggle__switch {
-      @apply flex-row-reverse border-2 rounded-[6px] min-h-[1.5rem] min-w-[2.5rem];
+      @apply flex-row-reverse border-2 rounded-sm min-h-[1.5rem] min-w-[2.5rem];
     }
 
     .toggle__label {
@@ -195,19 +203,22 @@ export default defineComponent({
 
     .toggle__checked-label {
       @apply text-muted;
+      @apply dark:text-dark-muted;
     }
 
     .toggle__pointer {
-      @apply w-1/2 h-full rounded-sm z-[1];
+      @apply w-1/2 h-full rounded-xs z-1;
     }
 
     &.toggle--checked {
       .toggle__checked-label {
         @apply text-default;
+        @apply dark:text-dark-default;
       }
 
       .toggle__unchecked-label {
         @apply text-muted;
+        @apply dark:text-dark-muted;
       }
 
       .toggle__pointer {
@@ -218,10 +229,18 @@ export default defineComponent({
 
   .dropdown__menu & {
     @apply px-3 py-2 cursor-pointer text-default w-full select-none text-left flex justify-between items-center flex-row-reverse;
+    @apply dark:text-dark-default;
 
     &:hover,
     &:focus-visible {
-      @apply bg-inactive;
+      @apply bg-subtle;
+      @apply dark:bg-dark-subtle;
+    }
+  }
+
+  &&--labeled {
+    .toggle__switch {
+      @apply mr-4;
     }
   }
 }

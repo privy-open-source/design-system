@@ -405,20 +405,20 @@ export default defineComponent({
 <style lang="postcss">
 .cropper {
   @apply bg-default w-full aspect-compat-square;
+  @apply dark:bg-dark-default;
 
   &__canvas {
     @apply hidden;
   }
 
   &__preview {
-    background-image: url("./assets/ps-neutral.png");
-
+    @apply bg-[url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAGklEQVR4AWNYJYoK92ihwpGiAF0AXcMIUQAAbIfSgRmCFqkAAAAASUVORK5CYII=)];
     @apply flex w-full overflow-hidden h-auto relative aspect-compat-square select-none;
   }
 
   &__mask {
-    @apply pointer-events-none touch-none select-none;
-    @apply border border-default border-dashed box-border shadow-mask absolute inset-0 m-auto max-w-[66.666667%];
+    @apply pointer-events-none touch-none select-none border border-default border-dashed box-border shadow-mask absolute inset-0 m-auto max-w-[66.666667%];
+    @apply dark:border-dark-default;
   }
 
   &__image {

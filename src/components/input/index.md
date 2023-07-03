@@ -6,6 +6,10 @@ description: Base text-input form.
 <script setup>
   import pInput from "./Input.vue"
   import { ref } from "vue-demi"
+  import IconAt from '@carbon/icons-vue/lib/at/20'
+  import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/20'
+  import IconEmail from '@carbon/icons-vue/lib/email/20'
+  import PSpinner from '../spinner/Spinner.vue'
 
   const value  = ref('')
   const result = ref('')
@@ -98,6 +102,67 @@ Add clear button to input with prop `clearable`.
 </template>
 ```
 
+## Prepend & Append
+Input has append & prepend feature to place content inside input field. But the content that can be inserted is limited, which is only an icon.
+
+### Prepend
+<preview class="flex-col space-y-3">
+  <p-input>
+    <template #prepend>
+      <IconAt />
+    </template>
+  </p-input>
+  <p-input>
+    <template #prepend>
+      <IconEmail class="text-muted" />
+    </template>
+  </p-input>
+</preview>
+
+```vue
+<template>
+  <p-input>
+    <template #prepend>
+      <IconAt />
+    </template>
+  </p-input>
+  <p-input>
+    <template #prepend>
+      <IconEmail class="text-muted" />
+    </template>
+  </p-input>
+</template>
+```
+
+### Append
+<preview class="flex-col space-y-3">
+  <p-input>
+    <template #append>
+      <IconCheck class="text-success" />
+    </template>
+  </p-input>
+  <p-input>
+    <template #append>
+      <p-spinner />
+    </template>
+  </p-input>
+</preview>
+
+```vue
+<template>
+  <p-input>
+    <template #append>
+      <IconCheck class="text-success" />
+    </template>
+  </p-input>
+  <p-input>
+    <template #append>
+      <p-spinner />
+    </template>
+  </p-input>
+</template>
+```
+
 ## Binding v-model
 
 Input value can be binding with `v-model`.
@@ -133,19 +198,10 @@ Input value can be binding with `v-model`.
 
 ### Slots
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2" class="text-center">There no slots here</td>
-    </tr>
-  </tbody>
-</table>
+| Name      | Description                                         |
+|-----------|-----------------------------------------------------|
+| `prepend` | Content to place icon inside of prepend input field |
+| `append`  | Content to place icon inside of append input field   |
 
 ### Events
 

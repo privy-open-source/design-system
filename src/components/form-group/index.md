@@ -6,7 +6,6 @@ description: Form label, caption, and other stuff.
 <script setup>
   import pFormGroup from './FormGroup.vue'
   import pInput from '../input/Input.vue'
-  import pCheckbox from '../checkbox/Checkbox.vue'
 </script>
 
 # Form Group

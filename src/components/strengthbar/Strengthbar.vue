@@ -80,23 +80,27 @@ export default defineComponent({
 
   &__bar {
     @apply rounded-full h-1 bg-subtle-alpha flex-grow transition-colors duration-150;
+    @apply dark:bg-dark-subtle-alpha;
   }
 
   &&[data-status="low"] {
     .strengthbar--active {
       @apply bg-danger-emphasis;
+      @apply dark:bg-dark-danger-emphasis;
     }
   }
 
   &&[data-status="mid"] {
     .strengthbar--active {
       @apply bg-warning-emphasis;
+      @apply dark:bg-dark-warning-emphasis;
     }
   }
 
   &&[data-status="high"] {
     .strengthbar--active {
       @apply bg-success-emphasis;
+      @apply dark:bg-dark-success-emphasis;
     }
   }
 }

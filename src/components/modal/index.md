@@ -60,11 +60,12 @@ description: ase component for modal dialog.
 > Base component for modal dialog.
 
 ## Usage
+Modal are using `z-modal` for z-index value. It posible to change z-index value using CSS variable `--p-modal-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
 
 ### Simple Usage
 
 <div class="flex mt-5">
-  <p-button @click="click" color="primary">Show Modal</p-button>
+  <p-button @click="click" color="info">Show Modal</p-button>
 </div>
 
 <preview>
@@ -77,7 +78,7 @@ description: ase component for modal dialog.
       should contain only valuable and relevant information.">
     <template #footer="{ close }">
       <div class="flex items-center justify-end">
-        <p-button @click="close" color="primary">
+        <p-button @click="close" color="info">
           Submit
         </p-button>
       </div>
@@ -93,7 +94,7 @@ description: ase component for modal dialog.
       should contain only valuable and relevant information.">
     <template #footer="{ close }">
       <div class="flex items-center justify-end">
-        <p-button @click="close" color="primary">
+        <p-button @click="close" color="info">
           Submit
         </p-button>
       </div>
@@ -111,7 +112,7 @@ description: ase component for modal dialog.
   </p>
   <template #footer="{ close }">
     <div class="flex items-center justify-end">
-      <p-button @click="close" color="primary">
+      <p-button @click="close" color="info">
         Submit
       </p-button>
     </div>
@@ -121,7 +122,7 @@ description: ase component for modal dialog.
 ### Combine with additional component
 
 <div class="flex mt-5">
-  <p-button @click="previewAdvance = true" color="primary">Show Modal</p-button>
+  <p-button @click="previewAdvance = true" color="info">Show Modal</p-button>
 </div>
 
 <preview>
@@ -145,7 +146,7 @@ description: ase component for modal dialog.
           </p-checkbox>
         </div>
         <div>
-          <p-button @click="close" color="primary">
+          <p-button @click="close" color="info">
             Button text
           </p-button>
         </div>
@@ -174,7 +175,7 @@ description: ase component for modal dialog.
           </p-checkbox>
         </div>
         <div>
-          <p-button @click="close" color="primary">
+          <p-button @click="close" color="info">
             Button text
           </p-button>
         </div>
@@ -202,7 +203,7 @@ description: ase component for modal dialog.
         </p-checkbox>
       </div>
       <div>
-        <p-button @click="close" color="primary">
+        <p-button @click="close" color="info">
           Button text
         </p-button>
       </div>
@@ -215,7 +216,7 @@ description: ase component for modal dialog.
 You can hide close button with `dismissable` set to `false`
 
 <div class="flex mt-5">
-  <p-button @click="bottomSheet = true" color="primary">Show Modal</p-button>
+  <p-button @click="bottomSheet = true" color="info">Show Modal</p-button>
 </div>
 
 <preview>
@@ -230,7 +231,7 @@ You can hide close button with `dismissable` set to `false`
     </p>
     <template #footer>
       <div class="flex justify-end">
-        <p-button color="primary" @click="banner2 = false">
+        <p-button color="info" @click="banner2 = false">
           Button Text
         </p-button>
       </div>
@@ -250,7 +251,7 @@ You can hide close button with `dismissable` set to `false`
     </p>
     <template #footer>
       <div class="flex justify-end">
-        <p-button color="primary" @click="bottomSheet = false">
+        <p-button color="info" @click="bottomSheet = false">
           Button Text
         </p-button>
       </div>
@@ -268,7 +269,7 @@ You can hide close button with `dismissable` set to `false`
   </p>
   <template #footer>
     <div class="flex justify-end">
-      <p-button color="primary" @click="bottomSheet = false">
+      <p-button color="info" @click="bottomSheet = false">
         Button Text
       </p-button>
     </div>
@@ -279,7 +280,7 @@ You can hide close button with `dismissable` set to `false`
 Modal will not close while Escape button was pressed by props `no-close-on-esc`. Also you can make modal can't close while backdrop was clicked by props `no-close-on-backdrop`.
 
 <div class="flex mt-5">
-  <p-button @click="bannerSheet = true" color="primary">Show Modal</p-button>
+  <p-button @click="bannerSheet = true" color="info">Show Modal</p-button>
 </div>
 
 <preview>
@@ -295,7 +296,7 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
     </p>
     <template #footer>
       <div class="flex justify-end">
-        <p-button color="primary" @click="bottomSheet = false">
+        <p-button color="info" @click="bottomSheet = false">
           Button Text
         </p-button>
       </div>
@@ -317,7 +318,7 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
     </p>
     <template #footer="{ close }">
       <div class="flex justify-end">
-        <p-button color="primary" @click="close">
+        <p-button color="info" @click="close">
           Button Text
         </p-button>
       </div>
@@ -338,7 +339,7 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
   </p>
   <template #footer="{ close }">
     <div class="flex justify-end">
-      <p-button color="primary" @click="close">
+      <p-button color="info" @click="close">
         Button Text
       </p-button>
     </div>
@@ -349,7 +350,7 @@ Modal will not close while Escape button was pressed by props `no-close-on-esc`.
 When modals content become too long, modal body can scroll itself by adding props `modal-body-scrollable`.
 
 <div class="flex mt-5">
-  <p-button @click="bodyScroll = true" color="primary">Show Modal</p-button>
+  <p-button @click="bodyScroll = true" color="info">Show Modal</p-button>
 </div>
 
 <preview class="scroll">
@@ -371,7 +372,7 @@ When modals content become too long, modal body can scroll itself by adding prop
       </p>
     </div>
     <template #footer="{ close }">
-      <p-button @click="close" color="primary">
+      <p-button @click="close" color="info">
         Button Text
       </p-button>
     </template>
@@ -398,7 +399,7 @@ When modals content become too long, modal body can scroll itself by adding prop
       </p>
     </div>
     <template #footer="{ close }">
-      <p-button @click="close" color="primary">
+      <p-button @click="close" color="info">
         Button Text
       </p-button>
     </template>
@@ -424,7 +425,7 @@ When modals content become too long, modal body can scroll itself by adding prop
     </p>
   </div>
   <template #footer="{ close }">
-    <p-button @click="close" color="primary">
+    <p-button @click="close" color="info">
       Button Text
     </p-button>
   </template>
@@ -434,7 +435,7 @@ When modals content become too long, modal body can scroll itself by adding prop
 Modal can be set look like banner with prop `banner`. For example, it can be used for promotional purposes, events and others.
 
 <div class="flex mt-5">
-  <p-button @click="previewBanner = true" color="primary">Show Modal</p-button>
+  <p-button @click="previewBanner = true" color="info">Show Modal</p-button>
 </div>
 
 <preview class="banner">
@@ -444,7 +445,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
     no-close-on-esc
     no-close-on-backdrop
     banner>
-    <img src="./assets/images/img-modal-banner-sheet.jpg">
+    <img src="/assets/images/img-modal-banner-sheet.jpg">
     <div class="p-6">
       <p-heading element="h6">Give Me Title Here</p-heading>
       <p>
@@ -457,7 +458,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
         <p-button variant="link" @click="close">
           Button Text
         </p-button>
-        <p-button color="primary" @click="close">
+        <p-button color="info" @click="close">
           Button Text
         </p-button>
       </div>
@@ -471,7 +472,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
     v-model="modalBanner"
     :dismissable="false"
     banner>
-    <img src="./assets/images/img-modal-banner-sheet.jpg">
+    <img src="/assets/images/img-modal-banner-sheet.jpg">
     <div class="p-6 text-center">
       <p-heading element="h6">Give Me Title Here</p-heading>
       <p>
@@ -484,7 +485,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
         <p-button variant="link" @click="close">
           Button Text
         </p-button>
-        <p-button color="primary" @click="close">
+        <p-button color="info" @click="close">
           Button Text
         </p-button>
       </div>
@@ -497,7 +498,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
   v-model="previewBanner"
   size="sm"
   banner>
-  <img src="./assets/images/img-modal-banner-sheet.jpg">
+  <img src="/assets/images/img-modal-banner-sheet.jpg">
     <div class="p-6">
       <p-heading element="h6">Modal Title</p-heading>
       <p>
@@ -510,7 +511,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
       <p-button variant="link" @click="close">
         Button Text
       </p-button>
-      <p-button color="primary" @click="close">
+      <p-button color="info" @click="close">
         Button Text
       </p-button>
     </div>
@@ -521,7 +522,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
 Modal has 4 different sizing, there are `sm`, `md`, `lg` and `xl`. You can change the size via prop `size`. Default size are `md`.
 
 <div class="flex mt-5">
-  <p-button @click="size = true" color="primary">Show Modal XL</p-button>
+  <p-button @click="size = true" color="info">Show Modal XL</p-button>
 </div>
 
 <preview>
@@ -537,7 +538,7 @@ Modal has 4 different sizing, there are `sm`, `md`, `lg` and `xl`. You can chang
       </blockquote>
     </div>
     <template #footer="{ close }">
-      <p-button @click="close" color="primary">
+      <p-button @click="close" color="info">
         Button Text
       </p-button>
     </template>
@@ -557,7 +558,7 @@ Modal has 4 different sizing, there are `sm`, `md`, `lg` and `xl`. You can chang
       </blockquote>
     </div>
     <template #footer="{ close }">
-      <p-button @click="close" color="primary">
+      <p-button @click="close" color="info">
         Button Text
       </p-button>
     </template>
@@ -575,7 +576,7 @@ Modal has 4 different sizing, there are `sm`, `md`, `lg` and `xl`. You can chang
     </blockquote>
   </div>
   <template #footer="{ close }">
-    <p-button @click="close" color="primary">
+    <p-button @click="close" color="info">
       Button Text
     </p-button>
   </template>
@@ -586,7 +587,7 @@ Modal can be vertically center in the viewport by setting `centered` prop.
 
 
 <div class="flex mt-5">
-  <p-button @click="centered = true" color="primary">Show Modal</p-button>
+  <p-button @click="centered = true" color="info">Show Modal</p-button>
 </div>
 
 <preview>
@@ -602,7 +603,7 @@ Modal can be vertically center in the viewport by setting `centered` prop.
       should contain only valuable and relevant information.
     </div>
     <template #footer="{ close }">
-      <p-button @click="close" color="primary">
+      <p-button @click="close" color="info">
         Button Text
       </p-button>
     </template>
@@ -621,7 +622,7 @@ Modal can be vertically center in the viewport by setting `centered` prop.
       should contain only valuable and relevant information.
     </div>
     <template #footer="{ close }">
-      <p-button @click="close" color="primary">
+      <p-button @click="close" color="info">
         Button Text
       </p-button>
     </template>
@@ -639,12 +640,22 @@ Modal can be vertically center in the viewport by setting `centered` prop.
       should contain only valuable and relevant information.
     </div>
   <template #footer="{ close }">
-    <p-button @click="close" color="primary">
+    <p-button @click="close" color="info">
       Button Text
     </p-button>
   </template>
 </p-modal>
 
+## Variables
+Modal use local CSS variables on `.modal` for enhanced real-time customization.
+
+```sass
+--p-modal-size-xl: 960px;
+--p-modal-size-lg: 800px;
+--p-modal-size-md: 600px;
+--p-modal-size-sm: 400px;
+--p-modal-z-index: theme(zIndex.modal);
+```
 
 ## API
 

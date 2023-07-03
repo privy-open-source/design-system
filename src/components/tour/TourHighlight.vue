@@ -53,11 +53,11 @@ export default defineComponent({
 <style lang="postcss">
 .tour {
   &__backdrop {
-    @apply fixed inset-0 overflow-hidden w-full h-full z-[100];
+    @apply fixed inset-0 overflow-hidden w-full h-full z-[var(--p-tour-backdrop-z-index)];
   }
 
   &__highlight {
-    @apply absolute shadow-mask cursor-pointer rounded-sm;
+    @apply z-[var(--p-tour-z-index)] absolute shadow-mask cursor-pointer rounded-tn;
   }
 }
 </style>

@@ -87,6 +87,12 @@ export default defineComponent({
     * Weight variant
     * of heading
     */
+
+    :where(&--normal, &--medium, &--bold) {
+      @apply text-default;
+      @apply dark:text-dark-default;
+    }
+
     &--normal {
       @apply font-normal;
     }

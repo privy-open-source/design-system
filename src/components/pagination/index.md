@@ -6,7 +6,6 @@ import IconNextOutline from '@carbon/icons-vue/lib/next--outline/20'
 import IconPrevOutline from '@carbon/icons-vue/lib/previous--outline/20'
 import IconSkipForward from '@carbon/icons-vue/lib/skip--forward/20'
 import IconSkipBack from '@carbon/icons-vue/lib/skip--back/20'
-import {template} from 'lodash'
 
 const simpleModel = ref(1)
 const simpleTotal = ref(100)
@@ -106,9 +105,9 @@ Add prop `show-detail` to show row calculation and per page options.
 ```vue
 <template>
   <p-pagination
-    v-model="model" 
-    v-model:per-page="perPage" 
-    :total="total" 
+    v-model="model"
+    v-model:per-page="perPage"
+    :total="total"
     :per-page-options="perPageOptions"
     show-detail />
 </template>
@@ -133,11 +132,11 @@ You can change the text label via `prev-nav-label` and `next-nav-label` prop.
 ```vue
 <template>
   <p-pagination v-model="model" :total="total" navigation-text />
-  <p-pagination 
-    v-model="model" 
-    :total="total" 
-    navigation-text 
-    prev-nav-label="Kembali" 
+  <p-pagination
+    v-model="model"
+    :total="total"
+    navigation-text
+    prev-nav-label="Kembali"
     next-nav-label="Lanjut" />
 </template>
 
@@ -208,8 +207,8 @@ Add prop `quick-jump` to change mode to quick jump.
     v-model="model"
     v-model:per-page="perPage"
     :per-page-options="perPageOptions"
-    :total="total" 
-    quick-jump 
+    :total="total"
+    quick-jump
     show-detail />
 </template>
 

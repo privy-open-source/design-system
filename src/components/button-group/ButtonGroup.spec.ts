@@ -25,16 +25,17 @@ it('should have style "lg" if size props set to "lg"', () => {
     template  : `
       <Button-Group size="lg">
         <Button>Button Text</Button>
-        <Button>Button Text</Button>
       </Button-Group>
     `,
   })
 
-  const button = screen.queryByTestId('btn-group')
+  const buttonGroup = screen.queryByTestId('btn-group')
+  const button      = screen.queryByTestId('btn')
 
-  expect(button).toBeInTheDocument()
-  expect(button).toHaveClass('btn-group', 'btn-group--lg')
-  expect(button).not.toHaveClass('btn-group--md')
+  expect(buttonGroup).toBeInTheDocument()
+  expect(buttonGroup).toHaveClass('btn-group', 'btn-group--lg')
+  expect(buttonGroup).not.toHaveClass('btn-group--md')
+  expect(button).toHaveClass('btn--lg')
 })
 
 it('should have style "pill" if pill is provided', () => {

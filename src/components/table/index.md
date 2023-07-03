@@ -5,9 +5,12 @@ description: Delightful datatables.
 
 <script setup>
   import pTable from './Table.vue'
-  import pBadge from '../badge/Badge.vue'
+  import pAvatar from '../avatar/Avatar.vue'
+  import pLabel from '../label/Label.vue'
+  import pHeading from '../heading/Heading.vue'
+  import pText from '../text/Text.vue'
   import { defineTable } from '.'
-  import { ref }from 'vue-demi'
+  import { ref } from 'vue-demi'
 
   const fields = defineTable([
     'id',
@@ -39,17 +42,17 @@ description: Delightful datatables.
     },
     {
       id    : 2,
-      name  : 'Tarjono',
+      name  : 'Renatta',
       status: false,
     },
     {
       id    : 3,
-      name  : 'Tarjono',
+      name  : 'Jonathan Smith',
       status: true,
     },
     {
       id    : 4,
-      name  : 'Tarjono',
+      name  : 'Arch Brown',
       status: true,
     },
   ])
@@ -77,6 +80,8 @@ description: Delightful datatables.
       _selectable: false,
     },
   ])
+
+  const itemsC = ref([])
 
   const selected = ref([])
   const selectedA = ref([])
@@ -188,6 +193,32 @@ const items = ref([
 </script>
 ```
 
+### Custom Empty Label
+Empty state label customization can be done through the `empty-label` prop.
+#### Default
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="itemsC" />
+</preview>
+
+```vue
+<template>
+  <p-table :fields="fields" :items="items" />
+</template>
+```
+
+#### Custom
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="itemsC" empty-label="There’s nothing to show here" />
+</preview>
+
+```vue
+<template>
+  <p-table 
+    :fields="fields" :items="items" 
+    empty-label="There’s nothing to show here" />
+</template>
+```
+
 ## Variants
 
 There are 2 variants: `flexible` and `static`, default is `flexible`
@@ -295,8 +326,16 @@ add prop `draggable` to enable drag-to-sort.
 
 <preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items">
+    <template #cell(name)="{ item }">
+      <div class="flex items-center space-x-2">
+        <p-avatar size="sm" :name="item.name" />
+        <span>{{ item.name }}</span>
+      </div>
+    </template>
     <template #cell(status)="{ item }">
-      <p-badge>{{ item.status ? 'active' : 'inactive' }}</p-badge>
+      <p-label variant="light" :color="item.status ? 'success' : 'default'" size="sm">
+        {{ item.status ? 'active' : 'inactive' }}
+      </p-label>
     </template>
   </p-table>
 </preview>
@@ -304,8 +343,18 @@ add prop `draggable` to enable drag-to-sort.
 ```vue
 <template>
   <p-table :fields="fields" :items="items">
+    <template #cell(name)="{ item }">
+      <div class="flex items-center space-x-2">
+        <p-avatar size="sm" :name="item.name" />
+        <span>{{ item.name }}</span>
+      </div>
+    </template>
     <template #cell(status)="{ item }">
-      <p-badge>{{ item.status ? 'active' : 'inactive' }}</p-badge>
+      <p-label 
+        variant="light" :color="item.status ? 'success' : 'default'" 
+        size="sm">
+        {{ item.status ? 'active' : 'inactive' }}
+      </p-label>
     </template>
   </p-table>
 </template>
@@ -316,7 +365,7 @@ add prop `draggable` to enable drag-to-sort.
 <preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items">
     <template #head(status)="{ label }">
-      {{ label }}<p-badge class="ml-1">new</p-badge>
+      {{ label }}<p-label size="xs" class="ml-1">new</p-label>
     </template>
   </p-table>
 </preview>
@@ -325,7 +374,38 @@ add prop `draggable` to enable drag-to-sort.
 <template>
   <p-table :fields="fields" :items="items">
     <template #head(status)="{ label }">
-      {{ label }}<p-badge class="ml-1">new</p-badge>
+      {{ label }}<p-label size="xs" class="ml-1">new</p-label>
+    </template>
+  </p-table>
+</template>
+```
+
+### Custom Empty
+Table has default empty state, but it's be able to customize by own via slot `empty`.
+
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="itemsC">
+    <template #empty>
+      <div class="flex flex-col justify-center items-center">
+        <img src="../../public/assets/images/img-table-empty-records.svg">
+        <p-heading element="h6" class="mt-12">Uh oh, no data</p-heading>
+        <p-text variant="body2" class="py-4 text-subtle dark:text-dark-subtle">We’re empty-handed!</p-text>
+      </div>
+    </template>
+  </p-table>
+</preview>
+
+```vue
+<template>
+  <p-table :fields="fields" :items="items">
+    <template #empty>
+      <div class="flex flex-col justify-center items-center">
+        <img src="/assets/images/img-table-empty-records.svg">
+        <p-heading element="h6" class="mt-12">Uh oh, no data</p-heading>
+        <p-text variant="body2" class="py-4 text-subtle dark:text-dark-subtle">
+          We’re empty-handed!
+        </p-text>
+      </div>
     </template>
   </p-table>
 </template>
@@ -343,6 +423,7 @@ add prop `draggable` to enable drag-to-sort.
 | `selectable` | `Boolean` |  `false`   | Enable checkbox                                          |
 | `draggable`  | `Boolean` |  `false`   | Enable draggable                                         |
 | `modelValue` |  `Array`  |    `-`     | `v-model` for selected value                             |
+| `empty-label` | `String` |  `There are no records to show`   | Table empty state label            |
 
 ### Slots
 
@@ -350,6 +431,7 @@ add prop `draggable` to enable drag-to-sort.
 |--------------|-----------------------------|
 | `cell(:key)` | Content for checked label   |
 | `head(:key)` | Content for unchecked label |
+| `empty`      | Content for empty state     |
 
 ### Events
 

@@ -32,7 +32,7 @@ onMounted (() => {
 })
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .preview {
     &--bar {
       .contextual-bar {
@@ -45,7 +45,11 @@ onMounted (() => {
     }
 
     &--hide {
-      @apply border-transparent bg-transparent bg-none;
+      @apply border-transparent dark:border-transparent bg-transparent dark:bg-transparent bg-none p-0;
+
+      :deep(.preview__label) {
+        @apply hidden;
+      }
     }
   }
 </style>
@@ -59,7 +63,7 @@ onMounted (() => {
 ### Simple Usage
 
 <div class="pt-5">
-  <p-button @click="example1">Live Preview</p-button>
+  <p-button @click="example1" color="info">Live Preview</p-button>
 </div>
 
 <preview class="preview--bar">
@@ -98,7 +102,7 @@ onMounted (() => {
   </p-contextual-bar>
   <p-contextual-bar v-model="sample" title="Hey! This is Title Text and telling less">
     <template #icon>
-      <img src="assets/images/img-background-contextualbar.svg" />
+      <img src="../avatar/assets/avatar.png" />
     </template>
   </p-contextual-bar>
 </template>
@@ -116,7 +120,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
       <IconInfo />
     </template>
     <template #action>
-      <p-button size="sm" color="primary">Button text</p-button>
+      <p-button size="sm" color="info">Button text</p-button>
     </template>
   </p-contextual-bar>
 </preview>
@@ -125,7 +129,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 <template>
   <p-contextual-bar v-model="sample" title="Hey! This is Title Text">
     <template #action>
-      <p-button size="sm" color="primary">Button text</p-button>
+      <p-button size="sm" color="info">Button text</p-button>
     </template>
   </p-contextual-bar>
 </template>
@@ -135,8 +139,8 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 <preview class="preview--bar">
   <p-contextual-bar title="This is Title Text" v-model="sample03">
     <template #action>
-      <p-button size="sm" color="primary">Button</p-button>
-      <p-button size="sm" color="primary" variant="outline">Button</p-button>
+      <p-button size="sm" color="info">Button</p-button>
+      <p-button size="sm" color="info" variant="outline">Button</p-button>
     </template>
   </p-contextual-bar>
 </preview>
@@ -145,8 +149,8 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
 <template>
   <p-contextual-bar v-model="sample" message="This is Title Text">
     <template #action>
-      <p-button size="sm" color="primary">Button</p-button>
-      <p-button size="sm" color="primary" variant="outline">Button</p-button>
+      <p-button size="sm" color="info">Button</p-button>
+      <p-button size="sm" color="info" variant="outline">Button</p-button>
     </template>
   </p-contextual-bar>
 </template>
@@ -176,7 +180,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document">
     <template #action>
-      <p-button color="primary" size="sm">Button</p-button>
+      <p-button color="info" size="sm">Button</p-button>
     </template>
   </p-contextual-bar>
 </preview>
@@ -188,7 +192,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document">
     <template #action>
-      <p-button color="primary" size="sm">Button</p-button>
+      <p-button color="info" size="sm">Button</p-button>
     </template>
   </p-contextual-bar>
 </template>
@@ -200,7 +204,7 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
   <p-contextual-bar
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
-    background-url="assets/images/img-background-contextualbar.svg">
+    background-url="/assets/images/img-contextualbar-bg.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
@@ -213,9 +217,9 @@ import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
     v-model="sample"
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
-    background-url="assets/images/img-background-contextualbar.svg">
+    background-url="/assets/images/img-contextualbar-bg.svg">
     <template #icon>
-      <img src="assets/images/avatar.png" />
+      <img src="../avatar/assets/avatar.png" />
     </template>
   </p-contextual-bar>
 </template>
@@ -264,13 +268,17 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 ```
 
 <preview class="preview--hide">
-  <p-contextual-bar color="light" v-model="sample1" title="Hey! This is Title Text and telling less as possible" background-url="assets/images/img-background-contextualbar.svg">
+  <p-contextual-bar
+    v-model="sample1"
+    color="light"
+    title="Hey! This is Title Text and telling less as possible"
+    background-url="/assets/images/img-contextualbar-bg.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
     <template #action>
       <p-button size="sm" color="secondary" variant="link">Cancel</p-button>
-      <p-button size="sm" color="primary">Button Text</p-button>
+      <p-button size="sm" color="info">Button Text</p-button>
     </template>
     <template #message>
       You will be unable to sign or seal a document while your privy balance runs out.

@@ -34,7 +34,7 @@ it('should be able to change alignment via props `align`', () => {
   expect(navbarNav).toHaveClass('nav--align-left')
 })
 
-it('should be abble to change variant via prop `variant`', () => {
+it('should be able to change variant via prop `variant`', () => {
   const screen = render({
     components: { Navbar, NavbarNav },
     template  : `
@@ -50,7 +50,7 @@ it('should be abble to change variant via prop `variant`', () => {
   expect(navbarNav).toHaveClass('nav--lines')
 })
 
-it('should be abble to make condensed navigation via prop `condensed`', () => {
+it('should be able to make condensed navigation via prop `condensed`', () => {
   const screen = render({
     components: { Navbar, NavbarNav },
     template  : `

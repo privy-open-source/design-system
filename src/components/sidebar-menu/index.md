@@ -12,7 +12,9 @@ description: Define sidebar using JSON
   import IconDocument from '@carbon/icons-vue/lib/document/20'
   import IconUsers from '@carbon/icons-vue/lib/group/20'
   import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconEN from './assets/images/img-flag.svg'
+  import IconEN from '../../public/assets/images/img-flag.svg'
+
+  const modelA   = ref(false)
 
   const basic = defineMenu([
     {
@@ -34,7 +36,7 @@ description: Define sidebar using JSON
           label: 'Contacts',
           url  : '/',
           icon : IconUsers
-        }
+        },
       ]
     },
   ])
@@ -152,6 +154,42 @@ description: Define sidebar using JSON
       ]
     }
   ])
+
+  const limit = defineMenu([
+    {
+      maxLength: 2,
+      items: [
+        {
+          name : 'dashboard',
+          label: 'Dashboard',
+          url  : '/',
+          icon : IconDashboard,
+        },
+        {
+          name       : 'document',
+          label      : 'Documents',
+          url        : '/',
+          icon       : IconDocument,
+        },
+        {
+          name : 'contact',
+          label: 'Contacts',
+          url  : '/',
+          icon : IconUsers
+        },
+        {
+          name : 'rejects',
+          label: 'Rejects',
+          url  : '/',
+        },
+        {
+          name: 'archives',
+          label: 'Archives',
+          url: '/',
+        },
+      ]
+    },
+  ])
 </script>
 <style scoped lang="postcss">
   .preview {
@@ -175,10 +213,19 @@ description: Define sidebar using JSON
 
 ### Basic Sidebar
 
+
 <preview class="flex-col space-y-2">
   <p-sidebar-menu :menus="basic">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
+    </p-sidebar-brand>
+  </p-sidebar-menu>
+</preview>
+
+<preview class="flex-col space-y-2">
+  <p-sidebar-menu :menus="basic">
+    <p-sidebar-brand>
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </preview>
@@ -187,7 +234,7 @@ description: Define sidebar using JSON
 <template>
   <p-sidebar-menu :menus="menus">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </template>
@@ -230,7 +277,7 @@ const menus = defineMenu([
 <preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="fixed">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </preview>
@@ -239,7 +286,7 @@ const menus = defineMenu([
 <template>
   <p-sidebar-menu fixed :menus="menus">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy.svg" alt="" />
+      <img src="/assets/images/logo-privy.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </template>
@@ -334,7 +381,7 @@ const menus = defineMenu([
 <preview class="flex-col space-y-2 higher">
   <p-sidebar-menu fixed :menus="narrow" type="narrow">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </preview>
@@ -343,7 +390,7 @@ const menus = defineMenu([
 <template>
   <p-sidebar-menu fixed :menus="menus" type="narrow">
     <p-sidebar-brand>
-      <img src="../sidebar/assets/images/logo-privy-icon.svg" alt="" />
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
     </p-sidebar-brand>
   </p-sidebar-menu>
 </template>
@@ -387,10 +434,74 @@ const menus = defineMenu([
         name : 'language',
         label: 'ENG',
         url  : '/',
-        icon : './assets/images/img-flag.svg'
+        icon : '/assets/images/img-flag.svg'
       }
     ]
   }
+])
+</script>
+```
+
+## Limiting Menus
+Limiting how much menu-item would be displayed is possible by setup it from `maxLength`.
+
+<preview class="flex-col space-y-2 higher">
+  <p-sidebar-menu fixed :menus="limit">
+    <p-sidebar-brand>
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
+    </p-sidebar-brand>
+  </p-sidebar-menu>
+</preview>
+
+```vue
+<template>
+  <p-sidebar-menu fixed :menus="menus">
+    <p-sidebar-brand>
+      <img src="/assets/images/logo-privy-icon.svg" alt="" />
+    </p-sidebar-brand>
+  </p-sidebar-menu>
+</template>
+
+<script setup>
+import { defineMenu } from '@privyid/persona/core'
+import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
+import IconDocument from '@carbon/icons-vue/lib/document/20'
+import IconUsers from '@carbon/icons-vue/lib/group/20'
+
+const limit = defineMenu([
+  {
+    maxLength: 2,
+    items: [
+      {
+        name : 'dashboard',
+        label: 'Dashboard',
+        url  : '/',
+        icon : IconDashboard,
+      },
+      {
+        name: 'document',
+        label: 'Documents',
+        url: '/',
+        icon: IconDocument,
+      },
+      {
+        name : 'contact',
+        label: 'Contacts',
+        url  : '/',
+        icon : IconUsers
+      },
+      {
+        name : 'rejects',
+        label: 'Rejects',
+        url  : '/',
+      },
+      {
+        name: 'archives',
+        label: 'Archives',
+        url: '/',
+      },
+    ]
+  },
 ])
 </script>
 ```
@@ -405,12 +516,15 @@ const menus = defineMenu([
 | `type`         | `String`  | `wide`      | Sidebar type, valid value is `wide` and `narrow`                  |
 | `fixed`        | `Boolean` | `false`     | Activate fixed Sidebar                                            |
 | `menus`        | `Array`   | `-`         | Menu items                                                        |
+| `showMoreText` | `String`  | `More`      | Text for show more's button                                       |
+| `showLessText` | `String`  | `Less`      | Text for show less's button                                       |
 
 ### Slots
 
 | Name             | Description                                             |
 |------------------|---------------------------------------------------------|
 | `default`        | Content to place Sidebar Brand                          |
+| `bottom`         | Content to place in the Sidebar bottom                  |
 
 ### Events
 

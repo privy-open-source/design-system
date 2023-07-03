@@ -127,7 +127,9 @@ export default defineComponent({
 
 <style lang="postcss">
 .tooltip {
-  @apply px-4 py-3 rounded text-xs inline-block z-30 absolute drop-shadow-sm;
+  --p-tooltip-z-index: theme(zIndex.tooltip);
+
+  @apply z-[var(--p-tooltip-z-index)] px-4 py-3 rounded text-xs inline-block absolute drop-shadow-sm;
 
   &__arrow {
     @apply absolute after:w-4 after:h-4 after:block after:rounded-[3px] after:rotate-45 after:left-0 after:content-[''] after:z-0;
@@ -150,18 +152,22 @@ export default defineComponent({
   }
 
   &--black {
-    @apply bg-base-black text-on-emphasis;
+    @apply bg-inverse text-on-emphasis;
+    @apply dark:bg-dark-inverse dark:text-dark-on-emphasis;
 
     .tooltip__arrow {
-      @apply after:bg-base-black;
+      @apply after:bg-inverse;
+      @apply dark:after:bg-dark-inverse;
     }
   }
 
   &--white {
     @apply bg-default text-subtle;
+    @apply dark:bg-dark-default dark:text-dark-subtle;
 
     .tooltip__arrow {
       @apply after:bg-default;
+      @apply dark:after:bg-dark-default;
     }
   }
 }

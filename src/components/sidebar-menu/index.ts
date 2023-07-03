@@ -18,10 +18,14 @@ export interface MenuItem {
 
 export interface Menu {
   title?: string,
+  titleActionLabel?: string,
+  titleActionUrl?: string,
+  collapsible?: boolean,
   bottom?: boolean,
   condensed?: boolean,
   items?: MenuItem[],
   align?: AlignVariant,
+  maxLength?: number,
 }
 
 export function defineMenu (menus: Menu[]): Menu[] {

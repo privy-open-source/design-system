@@ -13,9 +13,9 @@ description: Open and View PDF Document
   import pInputPassword from '../input-password/InputPassword.vue'
   import pBanner from '../banner/Banner.vue'
   import pToggle from '../toggle/Toggle.vue'
-  import FILE from './assets/Calibrator-v3.pdf?url'
-  import FILE_PROTECT from './assets/Calibrator-v3_protected.pdf?url'
-  import IMG_FIXED_FIT from './assets/fixed-vs-fit.svg'
+  import FILE from '../../public/assets/pdf/Calibrator-v3.pdf?url'
+  import FILE_PROTECT from '../../public/assets/pdf/Calibrator-v3_protected.pdf?url'
+  import IMG_FIXED_FIT from '../../public/assets/images/fixed-vs-fit.svg'
   import { ref } from 'vue-demi'
 
   const password = ref('')
@@ -45,7 +45,7 @@ description: Open and View PDF Document
 </template>
 
 <script setup>
-  import FILE from '~/assets/Calibrator-v3.pdf?url'
+  import FILE from '~/assets/Calibrator-v3.pdf'
 </script>
 ```
 
@@ -183,6 +183,8 @@ Set `layout` prop to `fit` to enable layout fit mode. It will adapt the viewer h
 | `password`  | `String` |   `-`   | Document password                                 |
 | `layout`    | `String` | `fixed` | Viewer layout sizing, valid value: `fixed`, `fit` |
 | `offsetTop` | `Number` |   `0`   | Margin top when using layout `fit`                |
+| `page`      | `Number` |   `1`   | `v-model:page` value                              |
+| `scale`     | `Number` |   `1`   | `v-model:scale` value                             |
 
 ### Slots
 

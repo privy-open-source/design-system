@@ -141,7 +141,8 @@ export default defineComponent({
 * Last Update   : May 23, 2022
 */
 .card {
-  @apply border bg-default border-default rounded;
+  @apply border bg-default border-default text-default rounded;
+  @apply dark:bg-dark-default dark:border-dark-default dark:text-dark-default;
 
   /*
   * Card Body & Card Header
@@ -161,6 +162,7 @@ export default defineComponent({
 
     .card__section {
       @apply border-b border-subtle-alpha;
+      @apply dark:border-dark-subtle-alpha;
 
       /**
       * Adding border-top in the first element
@@ -206,7 +208,8 @@ export default defineComponent({
   * If Card disabled
   */
   &&--disabled {
-    @apply bg-muted;
+    @apply bg-subtle;
+    @apply dark:bg-dark-subtle;
   }
 
   /**
@@ -214,7 +217,7 @@ export default defineComponent({
   * Card Callout is enable
   */
   &&--callout {
-    @apply shadow;
+    @apply shadow-sm;
   }
 
   &__header {
@@ -237,11 +240,13 @@ export default defineComponent({
 
     &__dismiss {
       @apply text-default/30 hover:text-default/50 hover:cursor-pointer;
+      @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
     }
   }
 
   &__section {
     @apply border-b border-subtle-alpha;
+    @apply dark:border-dark-subtle-alpha;
 
     &:last-child {
       @apply border-b-0;
@@ -249,7 +254,8 @@ export default defineComponent({
 
     &&--disabled,
     &.card--disabled {
-      @apply bg-muted;
+      @apply bg-subtle;
+      @apply dark:bg-dark-subtle;
     }
 
     &.card--disabled {

@@ -6,8 +6,8 @@ description: Preview and crop image
 <script setup>
 import pButton from '../button/Button.vue'
 import pCropper from './Cropper.vue'
-import img from './assets/sample-1.jpg'
-import EMPTY_IMG from '../signature-draw/assets/empty-img.png'
+import img from '../../public/assets/images/img-sample-crop.jpg'
+import EMPTY_IMG from '../../public/assets/images/empty-img.png'
 import { ref } from 'vue-demi'
 import { templateRef } from '@vueuse/core'
 
@@ -142,7 +142,9 @@ You can disabled it using prop `no-autocrop`. And to trigger the cropping, you c
 
 <preview class="flex-col">
   <p-cropper ref="cropper" :src="img" v-model.base64="result2" no-autocrop />
-  <p-button @click="doCrop">Do Crop</p-button>
+  <div class="mt-4">
+    <p-button @click="doCrop">Do Crop</p-button>
+  </div>
 </preview>
 
 **result:**

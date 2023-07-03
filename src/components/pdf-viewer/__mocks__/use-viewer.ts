@@ -7,6 +7,8 @@ export const loadEvent = createEventHook<PDFJS.PDFDocumentProxy>()
 
 export const errorEvent = createEventHook<Error>()
 
+export const readyEvent = createEventHook()
+
 export const context = reactive({
   page          : 1,
   scale         : 1,
@@ -30,17 +32,18 @@ export const openDoc = vi.fn((src: string, password?: string) => {
       if (src.includes('error')) {
         context.error = new Error('Doc not loaded')
 
-        errorEvent.trigger(context.error)
+        void errorEvent.trigger(context.error)
       } else if (src.includes('protected') && !password) {
         context.error      = new Error('Doc not loaded')
         context.error.name = 'PasswordException'
 
-        errorEvent.trigger(context.error)
+        void errorEvent.trigger(context.error)
       } else {
         context.ready     = true
         context.totalPage = 5
 
-        loadEvent.trigger({} as unknown as PDFJS.PDFDocumentProxy)
+        void loadEvent.trigger({} as unknown as PDFJS.PDFDocumentProxy)
+        void readyEvent.trigger({})
       }
 
       context.loading = false
@@ -57,5 +60,6 @@ export function useViewer () {
     closeDoc,
     onLoaded: loadEvent.on,
     onError : errorEvent.on,
+    onReady : readyEvent.on,
   }
 }

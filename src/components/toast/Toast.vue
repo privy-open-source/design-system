@@ -135,6 +135,7 @@ export default defineComponent({
 
   .toast__close {
     @apply cursor-pointer text-default/30 hover:text-default/50;
+    @apply dark:text-dark-default/30 dark:text-dark-default/50;
   }
 
   .toast__body {
@@ -166,10 +167,12 @@ export default defineComponent({
   &:is(.toast--info) {
     .toast__title {
       @apply text-default;
+      @apply dark:text-dark-default;
     }
 
     .toast__text {
       @apply text-subtle;
+      @apply dark:text-dark-subtle;
     }
   }
 
@@ -181,7 +184,8 @@ export default defineComponent({
   &&--info {
     .toast__icon,
     &.toast--filled {
-      @apply bg-subtle text-accent;
+      @apply bg-base text-info;
+      @apply dark:bg-dark-base dark:text-dark-info;
     }
   }
 
@@ -196,12 +200,14 @@ export default defineComponent({
     &.toast--simple {
       .toast__title {
         @apply text-danger;
+        @apply dark:text-dark-danger;
       }
     }
 
     .toast__icon,
     &.toast--filled {
       @apply bg-danger-emphasis;
+      @apply dark:bg-dark-danger-emphasis;
     }
   }
 
@@ -209,12 +215,14 @@ export default defineComponent({
     &.toast--simple {
       .toast__title {
         @apply text-success;
+        @apply dark:text-dark-success;
       }
     }
 
     .toast__icon,
     &.toast--filled {
       @apply bg-success-emphasis;
+      @apply dark:bg-dark-success-emphasis;
     }
   }
 
@@ -222,12 +230,14 @@ export default defineComponent({
     &.toast--simple {
       .toast__title {
         @apply text-warning;
+        @apply dark:text-dark-warning;
       }
     }
 
     .toast__icon,
     &.toast--filled {
       @apply bg-warning-emphasis;
+      @apply dark:bg-dark-warning-emphasis;
     }
   }
 
@@ -238,14 +248,17 @@ export default defineComponent({
   */
   &&--simple {
     @apply bg-default;
+    @apply dark:bg-dark-default;
 
     .toast__text {
       @apply text-subtle;
+      @apply dark:text-dark-subtle;
     }
 
     &:not(.toast--info) {
       .toast__icon {
-        @apply text-on-emphasis;
+        @apply text-state-emphasis;
+        @apply dark:text-dark-state-emphasis;
       }
     }
   }
@@ -262,7 +275,8 @@ export default defineComponent({
     }
 
     &:not(.toast--info) {
-      @apply text-on-emphasis;
+      @apply text-state-emphasis;
+      @apply dark:text-dark-state-emphasis;
     }
   }
 }

@@ -26,6 +26,7 @@
         variant="solid"
         size="sm"
         :disabled="!canPrev"
+        class="pagination__items__nav-first"
         icon
         @click="selectPage(1)">
         <slot name="first-navigation">
@@ -38,6 +39,7 @@
         variant="solid"
         size="sm"
         :disabled="!canPrev"
+        class="pagination__items__nav-prev"
         icon
         @click="prev">
         <slot name="prev-navigation">
@@ -67,6 +69,7 @@
         variant="solid"
         size="sm"
         :disabled="!canNext"
+        class="pagination__items__nav-next"
         icon
         @click="next">
         <slot name="next-navigation">
@@ -82,6 +85,7 @@
         variant="solid"
         size="sm"
         :disabled="!canNext"
+        class="pagination__items__nav-last"
         icon
         @click="selectPage(totalPageCount)">
         <slot name="last-navigation">
@@ -339,7 +343,8 @@ export default defineComponent({
   &__quickjump,
   &__items,
   &__options {
-    @apply flex flex-wrap items-center;
+    @apply flex flex-wrap items-center text-default;
+    @apply dark:text-dark-default;
   }
 
   &__quickjump {
@@ -352,12 +357,16 @@ export default defineComponent({
     @apply space-x-2;
 
     .btn--icon.btn--sm {
-      @apply p-2 min-w-[34px];
+      @apply px-2 py-1 min-w-[34px];
+      &:is(.pagination__items__nav-first, .pagination__items__nav-prev, .pagination__items__nav-next, .pagination__items__nav-last) > svg {
+        @apply my-[0.15rem];
+      }
     }
   }
 
   &__count {
-    @apply ml-5;
+    @apply ml-5 text-default;
+    @apply dark:text-dark-default;
   }
 
   &__options {
@@ -374,10 +383,6 @@ export default defineComponent({
     &__menu {
       @apply min-w-fit;
     }
-
-    .input {
-      @apply py-1.5 leading-[1.4];
-    }
   }
 
   .btn {
@@ -388,10 +393,12 @@ export default defineComponent({
     @apply justify-center items-center hover:shadow-none;
 
     &.btn--default {
-      @apply bg-transparent hover:bg-subtle focus:bg-subtle border-transparent focus:border-default hover:border-default text-default font-normal focus:outline-none;
+      @apply bg-transparent hover:bg-base focus:bg-base border-transparent focus:border-default hover:border-default text-default font-normal focus:outline-none;
+      @apply dark:bg-transparent hover:dark:bg-dark-base focus:dark:bg-dark-base dark:border-transparent focus:dark:border-dark-default hover:dark:border-dark-default dark:text-dark-default;
 
       &[active="true"] {
-        @apply bg-accent-emphasis border-accent-emphasis text-on-emphasis cursor-default;
+        @apply bg-info-emphasis border-info-emphasis text-state-emphasis cursor-default;
+        @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis dark:text-dark-state-emphasis;
       }
 
       &[readonly] {

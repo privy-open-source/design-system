@@ -14,6 +14,10 @@ import IconMenu from '@carbon/icons-vue/lib/overflow-menu--vertical/16'
 import pBadge from '../badge/Badge.vue'
 import pNavItemDropdown from './NavItemDropdown.vue'
 import pDropdownItem from '../dropdown/DropdownItem.vue'
+import pRadio from '../radio/Radio.vue'
+import { ref } from 'vue-demi'
+
+const numb = ref(0)
 </script>
 
 <style lang="postcss" scoped>
@@ -253,21 +257,21 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
 ### Badge
 <preview>
   <p-nav fill>
-    <p-nav-item active>To Sign <p-badge color="secondary" variant="light">25</p-badge></p-nav-item>
-    <p-nav-item>To Review <p-badge color="secondary" variant="light">25</p-badge></p-nav-item>
+    <p-nav-item active>To Sign <p-badge variant="light">25</p-badge></p-nav-item>
+    <p-nav-item>To Review <p-badge variant="light">25</p-badge></p-nav-item>
   </p-nav>
   <p-nav fill>
     <p-nav-item active>
       <template #icon>
         <IconView />
       </template>
-      To Sign <p-badge color="secondary" variant="light">25</p-badge>
+      To Sign <p-badge variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       <template #icon>
         <IconView />
       </template>
-      To Review <p-badge color="secondary" variant="light">25</p-badge>
+      To Review <p-badge variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
 </preview>
@@ -277,11 +281,11 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
   <p-nav fill>
     <p-nav-item active>
       To Sign
-      <p-badge color="secondary" variant="light">25</p-badge>
+      <p-badge variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       To Review
-      <p-badge color="secondary" variant="light">25</p-badge>
+      <p-badge variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
   <p-nav fill>
@@ -289,13 +293,13 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
       <template #icon>
         <IconView />
       </template>
-      To Sign <p-badge color="secondary" variant="light">25</p-badge>
+      To Sign <p-badge variant="light">25</p-badge>
     </p-nav-item>
     <p-nav-item>
       <template #icon>
         <IconView />
       </template>
-      To Review <p-badge color="secondary" variant="light">25</p-badge>
+      To Review <p-badge variant="light">25</p-badge>
     </p-nav-item>
   </p-nav>
 </template>
@@ -502,19 +506,42 @@ When you need title for grouping navigation, you can add navigation title by usi
 </template>
 ```
 
+### Title with action
+If we need some action in section title, you can add this by using `title-action-label` and `title-action-url`
+
+<preview>
+  <p-nav vertical title="Quick Jump" class="w-80" title-action-label="See More" title-action-url="#/categories">
+    <p-nav-item>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+</preview>
+
+```vue
+<template>
+  <p-nav vertical title="Quick Jump" class="w-80" title-action-label="See More" title-action-url="#/categories">
+    <p-nav-item>To Sign</p-nav-item>
+    <p-nav-item>To Review</p-nav-item>
+    <p-nav-item>Auditrail</p-nav-item>
+  </p-nav>
+</template>
+```
+
 ## API
 
 ### Props `<p-nav>`
 
-| Props          |   Type    | Default     | Description                                                       |
-|----------------|:---------:|:-----------:|-------------------------------------------------------------------|
-| `variant`      | `String`  | `pills`     | Navigation variant, valid value is `pills`, `lines` and `tabs`    |
-| `fill`         | `Boolean` | `false`     | Activate fullwidth navigation with `fill` type                    |
-| `justified`    | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
-| `align`        | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
-| `vertical`     | `Boolean` | `false`     | Activate vertical navigation                                      |
-| `title`        | `String`  | `undefined` | Title to place in the top of navigation block                     |
-| `condensed`    | `Boolean` | `false`     | Activate condensed navigation with less space                     |
+| Props                |   Type    | Default     | Description                                                       |
+|----------------------|:---------:|:-----------:|-------------------------------------------------------------------|
+| `variant`            | `String`  | `pills`     | Navigation variant, valid value is `pills`, `lines` and `tabs`    |
+| `fill`               | `Boolean` | `false`     | Activate fullwidth navigation with `fill` type                    |
+| `justified`          | `Boolean` | `false`     | Activate fullwidth navigation with `justified` type               |
+| `align`              | `String`  | `left`      | Navigation alignment, valid value is `left`, `center`, and `right`|
+| `vertical`           | `Boolean` | `false`     | Activate vertical navigation                                      |
+| `title`              | `String`  | `undefined` | Title to place in the top of navigation block                     |
+| `title-action-label` | `String`  | `undefined` | Title action label to place in the section title                  |
+| `title-action-url`   | `String`  | `undefined` | Title action url to place in the section title                    |
+| `condensed`          | `Boolean` | `false`     | Activate condensed navigation with less space                     |
 
 ### Slots `<p-nav>`
 
@@ -604,6 +631,8 @@ When you need title for grouping navigation, you can add navigation title by usi
 | Props          |   Type     | Default      | Description                                  |
 |----------------|:----------:|:------------:|-------------------------------------------------------------------|
 | `text`         | `String`   | `undefined`  | Text to place in the toggle element (link) of dropdown            |
+| `menu-class`   | `String` or `Array` or `Object`   | `undefined`  | CSS class to add in the menu container            |
+| `menu-size`    | `String`   | `sm`         | Dropdown menu-container size, valid value is `sm`, `md` and `lg`  |
 
 ### Slots `<p-nav-item-dropdown>`
 

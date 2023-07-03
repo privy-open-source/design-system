@@ -42,6 +42,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    sticky: {
+      type   : Boolean,
+      default: false,
+    },
     condensed: {
       type   : Boolean,
       default: false,
@@ -64,6 +68,9 @@ export default defineComponent({
 
       if (props.fixed)
         result.push('navbar--fixed')
+
+      if (props.sticky)
+        result.push('navbar--sticky')
 
       if (props.variant)
         result.push(`navbar--${props.variant}`)
@@ -95,14 +102,28 @@ export default defineComponent({
 
 <style lang="postcss">
 .navbar {
-  @apply bg-default dark:bg-emphasis-subtle relative p-3 flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  --p-navbar-z-index: theme(zIndex.fixed);
+  --p-navbar-sticky-top: theme(spacing.0);
+  --p-navbar-collapse-max-height: 20rem; /** 320px */
+  --p-navbar-padding-x: theme(spacing.3);
+  --p-navbar-padding-y: theme(spacing.3);
+  --p-navbar-bg: theme(backgroundColor.default.DEFAULT);
+  --p-navbar-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
+  --p-navbar-shadow: theme(boxShadow.lg);
+
+  @apply bg-[color:var(--p-navbar-bg)] relative px-[var(--p-navbar-padding-x)] py-[var(--p-navbar-padding-y)] flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  @apply dark:bg-[color:var(--p-navbar-bg-dark)];
 
   &&--fixed {
-    @apply fixed left-0 top-0 w-full z-[1030];
+    @apply fixed left-0 top-0 w-full z-[var(--p-navbar-z-index)];
+  }
+
+  &&--sticky {
+    @apply sticky top-[var(--p-navbar-sticky-top)] z-sticky;
   }
 
   &&--shadow {
-    @apply shadow-sm transition-shadow duration-150 ease-in-out;
+    @apply shadow-[var(--p-navbar-shadow)] transition-shadow duration-150 ease-in-out;
   }
 
   &&--expand {
@@ -159,6 +180,106 @@ export default defineComponent({
 
       .navbar--collapse {
         @apply sm:flex sm:basis-auto;
+      }
+    }
+  }
+
+  &--collapse {
+    @apply basis-full flex-grow items-center max-h-[var(--p-navbar-collapse-max-height)] overflow-y-auto;
+
+    &.collapse--show {
+      @apply mt-3;
+
+      .nav__item--dropdown {
+        @apply ml-0;
+
+        .dropdown,
+        .btn {
+          @apply flex w-full;
+        }
+
+        .dropdown {
+          @apply flex-col;
+
+          &__menu {
+            @apply static shadow-none border-0 bg-base rounded-t-none;
+            @apply dark:bg-dark-base;
+
+            &:where(.dropdown__menu--sm, .dropdown__menu--md, .dropdown__menu--lg) {
+              @apply w-full;
+            }
+
+            &__container {
+              .dropdown__item {
+                @apply first:rounded-t-none;
+              }
+            }
+          }
+
+          &.dropdown--open {
+            .dropdown__activator.btn.btn--md {
+              @apply rounded-b-none bg-base;
+              @apply dark:bg-dark-base;
+            }
+          }
+        }
+
+        &-icon {
+          .dropdown__menu__container {
+            .dropdown__item {
+              @apply px-11;
+            }
+          }
+        }
+
+        .btn {
+          @apply justify-start;
+
+          .dropdown__caret {
+            @apply ml-auto;
+          }
+        }
+      }
+
+      :where(.nav__item, .nav__text, .nav__form) {
+        @apply w-full;
+      }
+    }
+  }
+
+  &&--lines {
+    .navbar--collapse {
+
+      &.collapse--show {
+
+        .nav__item--dropdown {
+
+          .dropdown {
+            &__menu {
+              @apply rounded mt-2;
+
+              &__container {
+                .dropdown__item {
+                  @apply first:rounded-t;
+                }
+              }
+            }
+
+            &.dropdown--open {
+              .dropdown__activator.btn.btn--md {
+                @apply rounded-b-none bg-transparent;
+              }
+            }
+          }
+
+          &-icon {
+            .dropdown__menu__container {
+              .dropdown__item {
+                @apply px-3;
+              }
+            }
+          }
+        }
       }
     }
   }

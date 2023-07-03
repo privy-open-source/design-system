@@ -1,5 +1,7 @@
 # tailwind-animation
 
+> Collection animation class for vue `<transition>`
+
 ## Installation
 
 ```sh
@@ -16,6 +18,27 @@ module.exports = {
   // ...
 }
 ```
+
+## Usage
+
+```vue
+<template>
+<!-- ... -->
+  <transition name="fade" >
+    <!-- ... -->
+  </transition>
+<!-- ... -->
+</template>
+```
+
+## Available list
+
+- `fade`
+- `slide-up`
+- `slide-left`
+- `slide-right`
+- `zoom-in`
+- `zoom-out`
 
 ## License
 

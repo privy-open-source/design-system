@@ -21,7 +21,7 @@
     <Button
       size="sm"
       variant="link"
-      color="primary"
+      color="info"
       @click="reset">
       Reset
     </Button>
@@ -38,17 +38,15 @@ import {
 import { FilterItem } from '.'
 import Dropdown from '../dropdown/Dropdown.vue'
 import Button from '../button/Button.vue'
-import Select from './pinned/Select.vue'
-import Toggle from './pinned/Toggle.vue'
-import Multiselect from './pinned/Multiselect.vue'
-import Date from './pinned/Date.vue'
-import Divider from '../divider/Divider.vue'
+import Select from './pinned/PinnedSelect.vue'
+import Toggle from './pinned/PinnedToggle.vue'
+import Multiselect from './pinned/PinnedMultiselect.vue'
+import Date from './pinned/PinnedDate.vue'
 import { useVModel } from '../input'
 import { isFilled } from './utils/sorter'
 
 export default defineComponent({
   components: {
-    Divider,
     Button,
     Dropdown,
     Date,
@@ -119,7 +117,8 @@ export default defineComponent({
     &.filterbar--active {
       &.btn--default,
       & .dropdown__activator.btn--default {
-        @apply bg-emphasis-subtle text-on-emphasis border-on-emphasis;
+        @apply bg-inverse text-on-emphasis border-inverse;
+        @apply dark:bg-dark-inverse dark:text-dark-on-emphasis dark:border-dark-inverse;
       }
     }
   }

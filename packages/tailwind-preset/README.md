@@ -1,5 +1,7 @@
 # tailwind-preset
 
+> Tailwind preset for Persona project
+
 ## Installation
 
 ```sh

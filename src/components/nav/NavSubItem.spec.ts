@@ -24,7 +24,7 @@ it('should rendered properly without any props', () => {
   expect(navSubItem).toHaveClass('nav__subitem')
 })
 
-it('should be abble to change parent-submenu text via props `text`', () => {
+it('should be able to change parent-submenu text via props `text`', () => {
   const screen = render({
     components: {
       Nav, NavItem, NavSubItem,

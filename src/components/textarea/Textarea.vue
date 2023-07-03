@@ -152,14 +152,17 @@ export default defineComponent({
   @apply flex flex-auto relative;
 
   &__input {
-    @apply p-3 rounded border border-solid border-muted hover:border-subtle focus:border-subtle placeholder:text-muted w-full outline-none text-default bg-default resize-none min-h-[46px] focus:ring-4 focus:ring-subtle/10 focus:z-[1];
+    @apply p-3 rounded border border-solid border-muted hover:border-subtle focus:border-subtle placeholder:text-muted w-full outline-none text-default bg-default resize-none min-h-[46px] focus:ring-4 focus:ring-subtle/10 focus:z-1;
+    @apply dark:border-dark-muted hover:dark:border-dark-subtle focus:dark:border-dark-subtle placeholder:dark:text-dark-muted dark:text-dark-default dark:bg-dark-default focus:dark:ring-dark-subtle/10;
 
     .textarea--readonly & {
       @apply hover:border-muted focus:border-muted focus:ring-0 focus:z-0;
+      @apply hover:dark:border-dark-muted focus:dark:border-dark-muted;
     }
 
     .textarea--disabled & {
-      @apply bg-muted border-muted pointer-events-none text-muted;
+      @apply bg-subtle border-subtle pointer-events-none text-muted;
+      @apply dark:bg-dark-subtle dark:border-dark-subtle dark:text-dark-muted;
     }
 
     .textarea--resize & {
@@ -172,16 +175,14 @@ export default defineComponent({
 
     .state--error &,
     .textarea--error & {
-      @apply border-danger-emphasis hover:border-danger-emphasis;
-
-      &:focus {
-        @apply ring-danger border-danger-emphasis;
-      }
+      @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
+      @apply dark:border-dark-danger-emphasis hover:dark:border-dark-danger-emphasis focus:dark:ring-dark-danger focus:dark:border-dark-danger-emphasis;
     }
   }
 
   &__counter {
     @apply text-right text-muted text-xs absolute bottom-1 right-1 pointer-events-none z-1;
+    @apply dark:text-dark-muted;
   }
 }
 

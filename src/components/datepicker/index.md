@@ -7,8 +7,17 @@ description: Base button component
   import pDatepicker from './Datepicker.vue'
   import Banner from '../banner/Banner.vue'
   import { ref } from 'vue-demi'
+  import { startOfYear, endOfYear, endOfMonth } from 'date-fns'
 
-  const value = ref()
+  const value  = ref()
+  const result = ref()
+  const start  = ref()
+  const end    = ref()
+
+  const min = startOfYear(new Date())
+  const max = endOfYear(new Date())
+
+  const thisMonth = endOfMonth(new Date())
 </script>
 
 # Datepicker
@@ -20,12 +29,12 @@ description: Base button component
 ### Simple Usage
 
 <preview>
-  <p-datepicker v-model="value" />
+  <p-datepicker />
 </preview>
 
 ```vue
 <template>
-  <p-datepicker v-model="value" />
+  <p-datepicker />
 </template>
 ```
 
@@ -69,17 +78,24 @@ You can limit the date via `min` or `max` props
 
 <preview>
   <p-datepicker
-    :min="new Date(2022, 0, 1)"
-    :max="new Date(2022, 11, 31)" />
+    :min="min"
+    :max="max" />
 </preview>
 
 ```vue
 <template>
-  <!-- Limit 1 Jan - 31 Dec 2022 -->
+  <!-- Limit this year only -->
   <p-datepicker
-    :min="new Date(2022, 0, 1)"
-    :max="new Date(2022, 11, 31)" />
+    :min="min"
+    :max="max" />
 </template>
+
+<script lang="ts" setup>
+  import { startOfYear, endOfYear } from 'date-fns'
+
+  const min = startOfYear(new Date())
+  const max = endOfYear(new Date())
+</script>
 ```
 
 ## Mode Variant
@@ -113,6 +129,37 @@ for example, mode `month` make user can only select the month, but can't select 
     mode="year" />
 </template>
 ```
+
+## Range Picker
+
+Set prop `range` to `true` to enable date range picker mode.
+
+<preview>
+  <p-datepicker range />
+</preview>
+
+```vue
+<template>
+  <p-datepicker range />
+</template>
+```
+
+### Min and Max Range
+
+You can limit minimal and maximal date range to pick using prop `min-range` and `max-range`.
+
+<preview>
+  <p-datepicker range min-range="3D" max-range="7D" />
+</preview>
+
+```vue
+<template>
+  <!-- Limit min 3 days and max 7 days -->
+  <p-datepicker range min-range="3D" max-range="7D" />
+</template>
+```
+
+👉 See [here](/components/calendar/#min-and-max-range-format) to more information about range format value.
 
 ## Disabled State
 
@@ -164,6 +211,56 @@ for example, mode `month` make user can only select the month, but can't select 
 
 <pre class="max-w-full truncate"><code>{{ value ?? '-' }}</code></pre>
 
+### v-model in range mode
+
+There are 2 ways to use v-model in `range` mode.
+
+#### 1. Using basic v-model
+
+You can use basic `v-model` to handle date range input, The value will be tuple of Date, `[start, end]`
+
+<preview class="flex-col">
+  <p-datepicker v-model="result" range />
+</preview>
+
+**result:**
+
+<pre class="truncate"><code>{{ result ?? '-' }}</code></pre>
+
+```vue
+<template>
+  <p-datepicker v-model="result" range />
+</template>
+```
+
+#### 2. using v-model:start and v-model:end
+
+You can specific binding the value using `v-model:start` or `v-model:end`
+
+<preview class="flex-col">
+  <p-datepicker
+    v-model:start="start"
+    v-model:end="end"
+    range />
+</preview>
+
+**start:**
+
+<pre class="truncate"><code>{{ start ?? '-' }}</code></pre>
+
+**end:**
+
+<pre class="truncate"><code>{{ end ?? '-' }}</code></pre>
+
+```vue
+<template>
+  <p-datepicker
+    v-model:start="start"
+    v-model:end="end"
+    range />
+</template>
+```
+
 ## API
 
 ### Props
@@ -171,14 +268,19 @@ for example, mode `month` make user can only select the month, but can't select 
 | Props         |   Type    |   Default    | Description                                        |
 |---------------|:---------:|:------------:|----------------------------------------------------|
 | `modelValue`  |  `Date`   |     `-`      | `v-model` value                                    |
+| `start`       |  `Date`   |     `-`      | `v-model:start` value                              |
+| `end`         |  `Date`   |     `-`      | `v-model:end` value                                |
 | `placeholder` | `String`  |     `-`      | Input placeholder                                  |
 | `format`      | `String`  | `dd/MM/yyyy` | Date format                                        |
 | `disabled`    | `Boolean` |   `false`    | Disabled state                                     |
 | `readonly`    | `Boolean` |   `false`    | Readonly state                                     |
 | `error`       | `Boolean` |   `false`    | Error state                                        |
 | `mode`        | `String`  |     `-`      | Calendar mode valid value: `date`, `month`, `year` |
-| `max`         |  `Date`   |     `-`      | Maximum date can be selected                       |
 | `min`         |  `Date`   |     `-`      | Minimum date can be selected                       |
+| `max`         |  `Date`   |     `-`      | Maximum date can be selected                       |
+| `range`       | `Boolean` |   `false`    | Enable range picker mode                           |
+| `minRange`    | `String`  |     `-`      | Minimum range date should be selected              |
+| `maxRange`    | `String`  |     `-`      | Maximum range date should be selected              |
 
 ### Slots
 
@@ -204,4 +306,4 @@ for example, mode `month` make user can only select the month, but can't select 
 
 ## See Also
 
-- [Datepicker](/components/datepicker/)
+- [Calendar](/components/calendar/)

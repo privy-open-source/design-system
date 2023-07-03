@@ -2,7 +2,11 @@
   <div
     class="input"
     data-testid="input-container">
-    <slot name="prepend" />
+    <span
+      v-if="$slots.prepend"
+      class="input__prepend">
+      <slot name="prepend" />
+    </span>
     <input
       v-model="model"
       class="input__form"
@@ -16,7 +20,11 @@
       class="input__clear"
       data-testid="input-clear"
       @click="clear" />
-    <slot name="append" />
+    <span
+      v-if="$slots.append"
+      class="input__append">
+      <slot name="append" />
+    </span>
   </div>
 </template>
 
@@ -24,11 +32,13 @@
 import {
   computed,
   defineComponent,
+  inject,
   PropType,
 } from 'vue-demi'
 import { useVModel } from '.'
 import { SizeVariant } from '../button'
 import IconClear from '@carbon/icons-vue/lib/close--filled/16'
+import { INPUTGROUP_SETTING } from '../input-group'
 
 export default defineComponent({
   components  : { IconClear },
@@ -64,14 +74,18 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: ['update:modelValue', 'clear'],
-  setup (props, { emit }) {
-    const model = useVModel(props)
+  setup (props, { emit, slots }) {
+    const model   = useVModel(props)
+    const setting = inject(INPUTGROUP_SETTING, undefined, false)
 
     const classNames = computed(() => {
       const result: string[] = []
 
       // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
+      if (setting?.size.value)
+        result.push(`input--${setting?.size.value}`)
+      // eslint-disable-next-line unicorn/explicit-length-check
+      else if (props.size)
         result.push(`input--${props.size}`)
 
       if (props.disabled)
@@ -86,14 +100,20 @@ export default defineComponent({
       if (props.clearable)
         result.push('input--clearable')
 
+      if (slots.prepend)
+        result.push('input--has-prepend')
+
+      if (slots.append)
+        result.push('input--has-append')
+
       return result
     })
 
-    function clear () {
-      if (!props.disabled && !props.readonly)
-        model.value = ''
+    function clear (event: MouseEvent) {
+      emit('clear', event)
 
-      emit('clear')
+      if (!props.disabled && !props.readonly && !event.defaultPrevented)
+        model.value = ''
     }
 
     return {
@@ -108,48 +128,51 @@ export default defineComponent({
 <style lang="postcss">
 .input {
   @apply w-full relative bg-default rounded;
+  @apply dark:bg-dark-default;
 
   &__form {
-    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle placeholder:text-muted w-full outline-none;
+    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle text-default placeholder:text-muted w-full outline-none;
+    @apply dark:border-dark-muted hover:dark:border-dark-subtle dark:text-dark-default placeholder:dark:text-dark-muted;
 
     &:disabled,
     &--disabled,
     .state--disabled & {
-      @apply bg-muted border-muted pointer-events-none text-muted;
+      @apply bg-subtle border-subtle pointer-events-none text-muted;
+      @apply dark:bg-dark-subtle dark:border-dark-subtle  dark:text-dark-muted;
     }
 
     &:focus {
-      @apply border-subtle ring-4 ring-subtle/10 z-[1];
+      @apply border-subtle ring-4 ring-subtle/10 z-1;
+      @apply dark:border-dark-subtle dark:ring-dark-subtle/10;
     }
   }
 
   &--xs {
-    @apply text-xs px-3 py-2;
+    @apply text-sm py-[2px] rounded-xs;
   }
 
   &--sm {
-    @apply px-3 py-2;
+    @apply py-[4px] rounded-sm;
   }
 
   &--md {
-    @apply px-3 py-3;
+    @apply py-[10px];
   }
 
   &--lg {
-    @apply px-3 py-4;
+    @apply py-4;
   }
 
-  .state--error &__form,
-  &--error {
-    @apply border-danger-emphasis hover:border-danger-emphasis;
-
-    &:focus {
-      @apply ring-danger border-danger-emphasis;
-    }
+  .state--error,
+  &--error,
+  &-group--error.input-group .input > .input__form {
+    @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
+    @apply dark:border-dark-danger-emphasis hover:dark:border-dark-danger-emphasis focus:dark:ring-dark-danger focus:dark:border-dark-danger-emphasis;
   }
 
   .input__clear {
-    @apply cursor-pointer hover:text-danger z-1;
+    @apply text-default/30 cursor-pointer hover:text-danger z-1;
+    @apply dark:text-dark-default/30 hover:dark:text-dark-danger;
   }
 
   &--clearable {
@@ -157,6 +180,35 @@ export default defineComponent({
 
     + .input__clear {
       @apply absolute right-3 top-1/2 -translate-y-1/2;
+    }
+
+    &:where(.input--has-append) {
+      + .input__clear {
+        @apply right-10;
+      }
+    }
+  }
+
+  &__prepend,
+  &__append {
+    @apply absolute top-0 h-full flex items-center z-1;
+  }
+
+  &__prepend {
+    @apply left-3;
+  }
+
+  &__append {
+    @apply right-3;
+  }
+
+  &--has {
+    &-prepend {
+      @apply pl-9;
+    }
+
+    &-append {
+      @apply pr-9;
     }
   }
 }
