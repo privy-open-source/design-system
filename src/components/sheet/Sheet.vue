@@ -101,12 +101,12 @@ export default defineComponent({
   }
 
   &__backdrop {
-    @apply fixed inset-0 bg-emphasis/20;
+    @apply fixed inset-0 bg-inverse/30;
   }
 
   &--left {
     .sheet__content {
-      @apply left-0 top-0 h-full w-2/3 md:w-1/3 lg:w-1/4 xl:w-1/6 min-w-[250px] shadow-lg-right;
+      @apply left-0 top-0 h-full w-2/3 md:w-1/3 lg:w-1/4 xl:w-1/6 min-w-[250px] shadow-lg;
     }
 
     &-enter-active,
@@ -122,7 +122,7 @@ export default defineComponent({
 
   &--right {
     .sheet__content {
-      @apply right-0 top-0 h-full w-2/3 md:w-1/3 lg:w-1/4 xl:w-1/6 min-w-[250px] shadow-lg-left;
+      @apply right-0 top-0 h-full w-2/3 md:w-1/3 lg:w-1/4 xl:w-1/6 min-w-[250px] shadow-lg;
     }
 
     &-enter-active,

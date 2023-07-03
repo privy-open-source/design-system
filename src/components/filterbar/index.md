@@ -75,10 +75,6 @@ description: Add filter to your datatable easy-way.
 
 ## Usage
 
-<pre>{{ query }}</pre>
-
-<pre>{{ status }}</pre>
-
 ### Simple Usage
 
 <preview>

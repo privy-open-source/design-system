@@ -24,7 +24,7 @@ description: Off-Canvas container.
 
 ### Simple Usage
 
-<p-button class="mt-4" color="primary" @click="model = true">
+<p-button class="mt-4" @click="model = true">
   Live Demo
 </p-button>
 
@@ -53,16 +53,16 @@ description: Off-Canvas container.
 There are 4 positions you can use, `left`, `right`, `top` and `bottom`. Default is `left`.
 
 <div class="flex space-gap-3">
-  <p-button color="primary" @click="left = true">
+  <p-button @click="left = true">
     Left
   </p-button>
-  <p-button color="primary" @click="top = true">
+  <p-button @click="top = true">
     Top
   </p-button>
-  <p-button color="primary" @click="right = true">
+  <p-button @click="right = true">
     Right
   </p-button>
-  <p-button color="primary" @click="bottom = true">
+  <p-button @click="bottom = true">
     Bottom
   </p-button>
 </div>
