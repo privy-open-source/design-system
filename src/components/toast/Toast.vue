@@ -135,7 +135,7 @@ export default defineComponent({
 
   .toast__close {
     @apply cursor-pointer text-default/30 hover:text-default/50;
-    @apply dark:text-dark-default/30 dark:text-dark-default/50;
+    @apply dark:text-dark-default/50;
   }
 
   .toast__body {

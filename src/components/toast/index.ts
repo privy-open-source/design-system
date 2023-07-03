@@ -11,13 +11,14 @@ export interface ToastOption {
   text: string,
   duration?: number,
   toastClass?: string | string[],
+  position?: ToastPositionVariant,
 }
 
 export type ToastPositionVariant = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 
 export default async function showToast (option: ToastOption) {
-  const { default: ToastContainer } = await import('./ToastContainer.vue')
-  const toast                       = await useSingleton(ToastContainer)
+  const { default: ToastRoot } = await import('./ToastRoot.vue')
+  const toast                  = await useSingleton(ToastRoot)
 
-  toast.add(option)
+  await toast.add(option)
 }

@@ -3,6 +3,7 @@
     tag="div"
     name="toast"
     class="toast-container"
+    :class="classNames"
     data-testid="toast-container">
     <Toast
       v-for="(item, i) in items"
@@ -18,8 +19,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue-demi'
-import { ToastOption } from '.'
+import {
+  PropType,
+  computed,
+  defineComponent,
+  ref,
+} from 'vue-demi'
+import { ToastOption, ToastPositionVariant } from '.'
 import Toast from './Toast.vue'
 
 interface ToastItem extends ToastOption {
@@ -28,8 +34,23 @@ interface ToastItem extends ToastOption {
 
 export default defineComponent({
   components: { Toast },
-  setup () {
+  props     : {
+    position: {
+      type   : String as PropType<ToastPositionVariant>,
+      default: 'top-left',
+    },
+  },
+  setup (props) {
     const items = ref<ToastItem[]>([])
+
+    const classNames = computed(() => {
+      const result: string[] = []
+
+      if (props.position)
+        result.push(`toast-container--${props.position}`)
+
+      return result
+    })
 
     function add (option: ToastOption) {
       items.value.unshift({
@@ -46,6 +67,7 @@ export default defineComponent({
       add,
       remove,
       items,
+      classNames,
     }
   },
 })
@@ -56,7 +78,7 @@ export default defineComponent({
   --p-toast-z-index: theme(zIndex.toast);
   @apply z-[var(--p-toast-z-index)] fixed top-0 right-0 flex flex-col space-y-2 max-h-screen overflow-visible;
 
-  &&--top-left {
+  &--top-left {
     @apply left-0 top-0;
   }
 }
