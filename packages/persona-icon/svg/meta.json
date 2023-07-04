@@ -1,5 +1,36 @@
 [
   {
+    "name": "building",
+    "aliases": [
+      "office"
+    ],
+    "category": "life-style",
+    "folder": "building",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "building/24",
+        "path": "building/24.svg",
+        "hash": "9ccde7ad09b56764088cb4dc0b5b68afc4055011a58dffba096feb1199d651fa"
+      },
+      {
+        "name": "building/32",
+        "path": "building/32.svg",
+        "hash": "8dbe20cbfe761d2b31972f4563613f6f73cec4d491c3cc65cbbb1b36219d09f8"
+      },
+      {
+        "name": "building/16",
+        "path": "building/16.svg",
+        "hash": "3c16f28919161f36fc6d5ef98bf5f83afd0441c3111718ff9a77e234acfa0ab3"
+      },
+      {
+        "name": "building/20",
+        "path": "building/20.svg",
+        "hash": "cb9c0fa8913fdf5bf5c85833f87395ef3441d21fd2ea5c31dfacd4ea61c6c93e"
+      }
+    ]
+  },
+  {
     "name": "broom",
     "aliases": [
       "clean"
@@ -3863,37 +3894,6 @@
         "name": "microsoft/32",
         "path": "microsoft/32.svg",
         "hash": "00149829ad43284da5c97f6ef74e87ffd01b7f36b1529976cb308f516f1f205e"
-      }
-    ]
-  },
-  {
-    "name": "building",
-    "aliases": [
-      "office"
-    ],
-    "category": "life-style",
-    "folder": "building",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "building/24",
-        "path": "building/24.svg",
-        "hash": "9ccde7ad09b56764088cb4dc0b5b68afc4055011a58dffba096feb1199d651fa"
-      },
-      {
-        "name": "building/32",
-        "path": "building/32.svg",
-        "hash": "8dbe20cbfe761d2b31972f4563613f6f73cec4d491c3cc65cbbb1b36219d09f8"
-      },
-      {
-        "name": "building/16",
-        "path": "building/16.svg",
-        "hash": "3c16f28919161f36fc6d5ef98bf5f83afd0441c3111718ff9a77e234acfa0ab3"
-      },
-      {
-        "name": "building/20",
-        "path": "building/20.svg",
-        "hash": "cb9c0fa8913fdf5bf5c85833f87395ef3441d21fd2ea5c31dfacd4ea61c6c93e"
       }
     ]
   },
