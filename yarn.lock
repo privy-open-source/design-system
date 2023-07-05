@@ -5916,8 +5916,8 @@ __metadata:
   linkType: hard
 
 "browserslist-useragent-regexp@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "browserslist-useragent-regexp@npm:4.0.0"
+  version: 4.1.0
+  resolution: "browserslist-useragent-regexp@npm:4.1.0"
   dependencies:
     argue-cli: ^2.1.0
     easy-table: ^1.1.1
@@ -5929,7 +5929,7 @@ __metadata:
   bin:
     bluare: dist/cli.js
     browserslist-useragent-regexp: dist/cli.js
-  checksum: f61d1fbb31eefb19473f8bdc3ba312136f1f0d21a5e8921256d95da0fdb089ea8f27b1d587046fb68df8034ffeb443cae33085584f3d29d5769c2f6c5fcbfd8d
+  checksum: 10577e27ef60641578cacd87b99bcf214e094ac3c42be4ca2615f0920a0d99d336fd5617efa05e0b1af8234279d6aa69e3c8c8b18579975af82ef317333c011b
   languageName: node
   linkType: hard
 
