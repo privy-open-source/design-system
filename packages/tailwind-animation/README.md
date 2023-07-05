@@ -37,6 +37,8 @@ module.exports = {
 - `slide-up`
 - `slide-left`
 - `slide-right`
+- `slide-top`
+- `slide-bottom`
 - `zoom-in`
 - `zoom-out`
 
