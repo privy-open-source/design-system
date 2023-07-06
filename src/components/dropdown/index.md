@@ -28,7 +28,7 @@ description: Base dropdown button, suit for action menus
 
 ### Simple Usage
 <preview>
-  <p-dropdown text="Click Here">
+  <p-dropdown text="Click Here" button-class="w-full">
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -409,6 +409,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
 | `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |
 | `menu-class`       | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the menu container  |
+| `button-class`     | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the button dropdown  |
 | `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md` and `lg`  |
 
 ### Slots
