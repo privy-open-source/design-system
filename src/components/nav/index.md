@@ -311,7 +311,7 @@ To align Navigation, use `align` prop. Available value are `left`, `right` and `
   <p-nav>
     <p-nav-item active>To Sign</p-nav-item>
     <p-nav-item>To Review</p-nav-item>
-    <p-nav-item-dropdown icon no-caret>
+    <p-nav-item-dropdown icon no-caret divider>
       <template #button-content>
         <IconMenu />
       </template>
@@ -631,7 +631,8 @@ If we need some action in section title, you can add this by using `title-action
 | Props          |   Type     | Default      | Description                                  |
 |----------------|:----------:|:------------:|-------------------------------------------------------------------|
 | `text`         | `String`   | `undefined`  | Text to place in the toggle element (link) of dropdown            |
-| `menu-class`   | `String` or `Array` or `Object`   | `undefined`  | CSS class to add in the menu container            |
+| `divider`      | `Boolean`  | `false`      | Enable divider in dropdown-item                                   |
+| `menu-class`   | `String` or `Array` or `Object`   | `undefined`  | CSS class to add in the menu container     |
 | `menu-size`    | `String`   | `sm`         | Dropdown menu-container size, valid value is `sm`, `md` and `lg`  |
 
 ### Slots `<p-nav-item-dropdown>`
