@@ -8,6 +8,7 @@ description: Base dropdown button, suit for action menus
   import pInput from "../input/Input.vue"
   import pDropdown from "./Dropdown.vue"
   import pDropdownItem from "./DropdownItem.vue"
+  import pDropdownHeader from './DropdownHeader.vue'
   import Banner from '../banner/Banner.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
   import pRadio from '../radio/Radio.vue'
@@ -306,6 +307,29 @@ You can also completely change dropdown's activator button to something else via
   </p-dropdown>
 </template>
 ```
+
+## Dropdown Header
+<preview>
+  <p-dropdown
+    text="Button">
+    <p-dropdown-header>Title</p-dropdown-header>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+</preview>
+
+```vue
+<template>
+  <p-dropdown
+    text="Button"
+    no-caret>
+    <p-dropdown-header>Title</p-dropdown-header>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+</template>
+```
+
 
 ## Hide Caret
 
