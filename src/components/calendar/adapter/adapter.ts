@@ -3,8 +3,8 @@ import {
   format,
   Duration,
 } from 'date-fns'
-import id from 'date-fns/locale/id/index'
-import en from 'date-fns/locale/en-US/index'
+import id from 'date-fns/locale/id'
+import en from 'date-fns/locale/en-US'
 import { getLang } from '../../global/context'
 import { chunk } from 'lodash-es'
 
