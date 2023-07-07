@@ -34,7 +34,10 @@ export default defineComponent({
     const groups = shallowRef<ToastGroupMap>(new Map())
 
     async function add (options: ToastOption) {
-      const position = options.position ?? 'top-right'
+      if (!options.position)
+        options.position = 'bottom-left'
+
+      const position = options.position
 
       let group = groups.value.get(position)
 

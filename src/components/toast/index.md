@@ -223,6 +223,108 @@ toast({
 })
 ```
 
+## Position
+
+There available 6 position for toast: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right` default is `bottom-left`
+
+**Try it:**
+
+<div class="mt-3 space-gap-3">
+  <Button color="info" @click="toast({
+    title: 'Lorem ipsum',
+    text : 'Lorem ipsum dolor sit amet.',
+    position : 'top-left'
+  })">
+    Top Left
+  </Button>
+
+  <Button color="info" @click="toast({
+    title: 'Lorem ipsum',
+    text : 'Lorem ipsum dolor sit amet.',
+    position : 'top-center'
+  })">
+    Top Center
+  </Button>
+
+  <Button color="info" @click="toast({
+    title: 'Lorem ipsum',
+    text : 'Lorem ipsum dolor sit amet.',
+    position : 'top-right'
+  })">
+    Top Right
+  </Button>
+
+  <Button color="info" @click="toast({
+    title: 'Lorem ipsum',
+    text : 'Lorem ipsum dolor sit amet.',
+    position : 'bottom-left'
+  })">
+    Bottom Left
+  </Button>
+
+  <Button color="info" @click="toast({
+    title: 'Lorem ipsum',
+    text : 'Lorem ipsum dolor sit amet.',
+    position : 'bottom-center'
+  })">
+    Bottom Center
+  </Button>
+
+  <Button color="info" @click="toast({
+    title: 'Lorem ipsum',
+    text : 'Lorem ipsum dolor sit amet.',
+    position : 'bottom-right'
+  })">
+    Bottom Right
+  </Button>
+</div>
+
+```ts
+import { toast } from '@privyid/persona/core'
+
+// top-left
+toast({
+  title: 'Lorem ipsum',
+  text : 'Lorem ipsum dolor sit amet.',
+  position : 'top-left'
+})
+
+// top-center
+toast({
+  title: 'Lorem ipsum',
+  text : 'Lorem ipsum dolor sit amet.',
+  position : 'top-center'
+})
+
+// top-right
+toast({
+  title: 'Lorem ipsum',
+  text : 'Lorem ipsum dolor sit amet.',
+  position : 'top-right'
+})
+
+// bottom-left
+toast({
+  title: 'Lorem ipsum',
+  text : 'Lorem ipsum dolor sit amet.',
+  position : 'bottom-left'
+})
+
+// bottom-center
+toast({
+  title: 'Lorem ipsum',
+  text : 'Lorem ipsum dolor sit amet.',
+  position : 'bottom-center'
+})
+
+// bottom-right
+toast({
+  title: 'Lorem ipsum',
+  text : 'Lorem ipsum dolor sit amet.',
+  position : 'bottom-right'
+})
+```
+
 ## Customization
 
 You can add some custom class to Toast element via `toastClass`.
@@ -266,4 +368,6 @@ Toast use local CSS variables on `.toast-container` for enhanced real-time custo
 | `text`       | `String` |    -     | Toast text message, **required**                                          |
 | `variant`    | `String` | `simple` | Toast style variant, valid value is `simple`, `filled`                    |
 | `duration`   | `Number` |  `3000`  | Duration for which the toast should be displayed. `-1` to permanent toast |
+| `position`   | `String` |  `top-left`  | Position for toast, valid value is `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right`|
 | `toastClass` | `String` |    -     | Add class to toast component                                              |
+ 

@@ -106,3 +106,43 @@ it('should removed when close clockid', async () => {
 
   expect(toast).not.toBeInTheDocument()
 })
+
+it('should be able to have class', async () => {
+  const screen = render({
+    components: { ToastContainer },
+    template  : `
+          <div>
+            <ToastContainer ref="toast" />
+            <button @click="addToast">Show</button>
+            <button @click="addToast2">Show-2</button>
+          </div>
+      `,
+    methods: {
+      addToast () {
+        this.$refs.toast.add({
+          title   : 'This is title',
+          text    : 'This is text message',
+          position: 'bottom-left',
+        })
+      },
+      addToast2 () {
+        this.$refs.toast.add({
+          title   : 'This is title 2',
+          text    : 'This is text message 2',
+          position: 'bottom-left',
+        })
+      },
+    },
+  })
+
+  const button  = screen.queryByText('Show')
+  const button2 = screen.queryByText('Show-2')
+
+  await fireEvent.click(button)
+  await fireEvent.click(button2)
+  await nextTick()
+
+  const toast = screen.queryAllByTestId('toast')
+
+  expect(toast.at(1)).toHaveTextContent('This is text message')
+})

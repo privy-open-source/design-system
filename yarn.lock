@@ -2768,6 +2768,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jest/schemas@npm:^29.6.0":
+  version: 29.6.0
+  resolution: "@jest/schemas@npm:29.6.0"
+  dependencies:
+    "@sinclair/typebox": ^0.27.8
+  checksum: c00511c69cf89138a7d974404d3a5060af375b5a52b9c87215d91873129b382ca11c1ff25bd6d605951404bb381ddce5f8091004a61e76457da35db1f5c51365
+  languageName: node
+  linkType: hard
+
 "@jridgewell/gen-mapping@npm:^0.1.0":
   version: 0.1.1
   resolution: "@jridgewell/gen-mapping@npm:0.1.1"
@@ -3326,6 +3335,7 @@ __metadata:
     "@vitejs/plugin-vue": 4.2.3
     "@vitest/browser": ^0.25.3
     "@vitest/coverage-c8": 0.24.5
+    "@vitest/ui": ^0.32.4
     "@vue/eslint-config-typescript": 11.0.3
     "@vueuse/core": 10.1.2
     "@vueuse/math": 10.1.2
@@ -3783,6 +3793,13 @@ __metadata:
   version: 0.24.44
   resolution: "@sinclair/typebox@npm:0.24.44"
   checksum: 773d9efc85cea69129659239ebda902c1b09e3e82f19358e5cd0f60ba21203ea694afce71bca1062376550b2bd99de6eeea98e6c273eb233d25daca95357f0cf
+  languageName: node
+  linkType: hard
+
+"@sinclair/typebox@npm:^0.27.8":
+  version: 0.27.8
+  resolution: "@sinclair/typebox@npm:0.27.8"
+  checksum: 00bd7362a3439021aa1ea51b0e0d0a0e8ca1351a3d54c606b115fdcc49b51b16db6e5f43b4fe7a28c38688523e22a94d49dd31168868b655f0d4d50f032d07a1
   languageName: node
   linkType: hard
 
@@ -4637,6 +4654,34 @@ __metadata:
     c8: ^7.12.0
     vitest: 0.24.5
   checksum: 54ca01a281df13f6c312a9fd14cff31a214b5886549ebe8179b94423aad831e6c3d5438a45464596703f02c7a4117f1b1a7c31fb84c3779d20c47cbb0dc9a3fb
+  languageName: node
+  linkType: hard
+
+"@vitest/ui@npm:^0.32.4":
+  version: 0.32.4
+  resolution: "@vitest/ui@npm:0.32.4"
+  dependencies:
+    "@vitest/utils": 0.32.4
+    fast-glob: ^3.2.12
+    fflate: ^0.8.0
+    flatted: ^3.2.7
+    pathe: ^1.1.1
+    picocolors: ^1.0.0
+    sirv: ^2.0.3
+  peerDependencies:
+    vitest: ">=0.30.1 <1"
+  checksum: e228a9573c81f341aa044832914a3332f477b0d6ff81416135d07d54581967956f8901a4099dd33e7c7dbaef813f53a89eb8d2f597c0c98b97ed87f496e9e554
+  languageName: node
+  linkType: hard
+
+"@vitest/utils@npm:0.32.4":
+  version: 0.32.4
+  resolution: "@vitest/utils@npm:0.32.4"
+  dependencies:
+    diff-sequences: ^29.4.3
+    loupe: ^2.3.6
+    pretty-format: ^29.5.0
+  checksum: 7d81162c3afaa638d30c47a28b7eced62abb8d7a8c891b10fa2f9756b2b6609d767142162044fe976c2cb8c17911d135fb3950f83e6d2bbd90150a042237bd25
   languageName: node
   linkType: hard
 
@@ -7502,6 +7547,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"diff-sequences@npm:^29.4.3":
+  version: 29.4.3
+  resolution: "diff-sequences@npm:29.4.3"
+  checksum: 28b265e04fdddcf7f9f814effe102cc95a9dec0564a579b5aed140edb24fc345c611ca52d76d725a3cab55d3888b915b5e8a4702e0f6058968a90fa5f41fcde7
+  languageName: node
+  linkType: hard
+
 "dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
@@ -9279,6 +9331,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fflate@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "fflate@npm:0.8.0"
+  checksum: 6215f95ee01d620a41e459247a7de7e7117dd23e78ef017c26b64c26f2a880a90eedc77675918bbf816d18cc990f6505cd71be933c67cc48cc1e7ebbff1589ea
+  languageName: node
+  linkType: hard
+
 "figma-api@npm:^1.11.0":
   version: 1.11.0
   resolution: "figma-api@npm:1.11.0"
@@ -9467,6 +9526,13 @@ __metadata:
   version: 3.2.5
   resolution: "flatted@npm:3.2.5"
   checksum: 3c436e9695ccca29620b4be5671dd72e5dd0a7500e0856611b7ca9bd8169f177f408c3b9abfa78dfe1493ee2d873e2c119080a8a9bee4e1a186a9e60ca6c89f1
+  languageName: node
+  linkType: hard
+
+"flatted@npm:^3.2.7":
+  version: 3.2.7
+  resolution: "flatted@npm:3.2.7"
+  checksum: 427633049d55bdb80201c68f7eb1cbd533e03eac541f97d3aecab8c5526f12a20ccecaeede08b57503e772c769e7f8680b37e8d482d1e5f8d7e2194687f9ea35
   languageName: node
   linkType: hard
 
@@ -11896,6 +11962,15 @@ __metadata:
   dependencies:
     get-func-name: ^2.0.0
   checksum: 5af91db61aa18530f1749a64735ee194ac263e65e9f4d1562bf3036c591f1baa948289c193e0e34c7b5e2c1b75d3c1dc4fce87f5edb3cee10b0c0df46bc9ffb3
+  languageName: node
+  linkType: hard
+
+"loupe@npm:^2.3.6":
+  version: 2.3.6
+  resolution: "loupe@npm:2.3.6"
+  dependencies:
+    get-func-name: ^2.0.0
+  checksum: cc83f1b124a1df7384601d72d8d1f5fe95fd7a8185469fec48bb2e4027e45243949e7a013e8d91051a138451ff0552310c32aa9786e60b6a30d1e801bdc2163f
   languageName: node
   linkType: hard
 
@@ -14398,6 +14473,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pretty-format@npm:^29.5.0":
+  version: 29.6.0
+  resolution: "pretty-format@npm:29.6.0"
+  dependencies:
+    "@jest/schemas": ^29.6.0
+    ansi-styles: ^5.0.0
+    react-is: ^18.0.0
+  checksum: 0add3fdc295d75bd493212b3e35dfdfc995a554e846895ca3e5fd379041d60591e85363df78213deaa6a40bb280174d5d465711cdad5a819d2e82ab7933f1f36
+  languageName: node
+  linkType: hard
+
 "process-nextick-args@npm:~2.0.0":
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
@@ -15573,6 +15659,17 @@ __metadata:
     mrmime: ^1.0.0
     totalist: ^3.0.0
   checksum: 6982f8ecee9392d246d7eeea8144e50334fe1b46a4fa942995a844ea88c2d518b17cce781bb09926c9a5692a7002a207d18dfd67af2aa538a15e733dc2042298
+  languageName: node
+  linkType: hard
+
+"sirv@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "sirv@npm:2.0.3"
+  dependencies:
+    "@polka/url": ^1.0.0-next.20
+    mrmime: ^1.0.0
+    totalist: ^3.0.0
+  checksum: e2dfd4c97735a6ad6d842d0eec2cd9e3919ff0e46f0d228248c5753ad4b70b832711e77e1259c031c439cdb08303cc54d923685c92b0e890145cc733af7c5568
   languageName: node
   linkType: hard
 
