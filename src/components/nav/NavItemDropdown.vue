@@ -10,6 +10,7 @@
       :size="size"
       :placement="placement"
       :no-caret="noCaret"
+      :divider="divider"
       :menu-class="menuClass"
       :menu-size="menuSize">
       <template #button-content>
@@ -75,6 +76,10 @@ export default defineComponent({
     menuSize: {
       type   : String as PropType<MenuSizeVariant>,
       default: 'sm',
+    },
+    divider: {
+      type   : Boolean,
+      default: false,
     },
   },
   models: {

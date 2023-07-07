@@ -408,6 +408,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | `href`   | `String` |    `-`     | Place url permalink in the `dropdown-item` |
 | `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
 | `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |
+| `divider`       | `Boolean`  |      `-`       | Enable divider in dropdown-item  |
 | `menu-class`       | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the menu container  |
 | `button-class`     | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the button dropdown  |
 | `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md` and `lg`  |
