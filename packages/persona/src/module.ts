@@ -31,6 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Add alias to unsupported ESM package
     nuxt.options.alias['@carbon/icons-vue/lib'] = '@carbon/icons-vue/es'
+    nuxt.options.alias['date-fns']              = 'date-fns/esm'
 
     // Add font CDN
     if (options.font) {
