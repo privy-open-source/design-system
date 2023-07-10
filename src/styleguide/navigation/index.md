@@ -29,7 +29,6 @@ description: Navbar style guide
   import pNavSubItem from '../../components/nav/NavSubItem.vue'
   import IconDocument from '@carbon/icons-vue/lib/document/20'
   import IconGroup from '@carbon/icons-vue/lib/group/20'
-  import IconDataStructured from '@carbon/icons-vue/lib/data--structured/20'
   import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
   import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
   import IconMenu from '@carbon/icons-vue/lib/overflow-menu--horizontal/20'
@@ -407,7 +406,7 @@ Usage : Use this variant sidebar for more clear context of the menu, if the icon
   </div>
 </div>
 <p-caption class="!text-subtle">
-Usage : Nav tab is a secondary navigation menu after side bar. It has 2 varian (Compact & Wide). 
+Usage : Nav tab is a secondary navigation menu after side bar. It has 2 varian (Compact & Wide).
 The position of this nav tab can be place on right left, or top. It can be only icon, only text, icon with text.</p-caption>
 
 #### Navtab - Skeleton
@@ -627,8 +626,8 @@ The position of this nav tab can be place on right left, or top. It can be only 
   <div class="w-2/3">
     <ul>
       <li>
-      Contain primary navigation items that perform an action when clicked. 
-      Each action should navigate to a URL or trigger another action 
+      Contain primary navigation items that perform an action when clicked.
+      Each action should navigate to a URL or trigger another action
       like a modal overlay.
       </li>
       <li>Only use secondary actions for supplementary actions to the primary actions.</li>
@@ -638,7 +637,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
       <li>Use a major icon for item actions.</li>
       <li>Use a minor icon for secondary actions.</li>
       <li>Use the provided navigation section component to group navigation items.</li>
-    </ul> 
+    </ul>
   </div>
 </div>
 
