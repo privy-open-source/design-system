@@ -13,13 +13,13 @@
       <Button
         data-testid="dropdown-activator"
         class="dropdown__activator"
+        :class="buttonClass"
         :variant="variant"
         :color="color"
         :size="size"
         :icon="icon"
         :pill="pill"
         :disabled="disabled"
-        :class="buttonClass"
         @click.prevent="toggle">
         <slot name="button-content">
           {{ text }}
