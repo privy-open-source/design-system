@@ -8,6 +8,7 @@ description: Base dropdown button, suit for action menus
   import pInput from "../input/Input.vue"
   import pDropdown from "./Dropdown.vue"
   import pDropdownItem from "./DropdownItem.vue"
+  import pDropdownHeader from './DropdownHeader.vue'
   import Banner from '../banner/Banner.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
   import pRadio from '../radio/Radio.vue'
@@ -27,7 +28,7 @@ description: Base dropdown button, suit for action menus
 
 ### Simple Usage
 <preview>
-  <p-dropdown text="Click Here">
+  <p-dropdown text="Click Here" button-class="w-full">
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -307,6 +308,29 @@ You can also completely change dropdown's activator button to something else via
 </template>
 ```
 
+## Dropdown Header
+<preview>
+  <p-dropdown
+    text="Button">
+    <p-dropdown-header>Title</p-dropdown-header>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+</preview>
+
+```vue
+<template>
+  <p-dropdown
+    text="Button"
+    no-caret>
+    <p-dropdown-header>Title</p-dropdown-header>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+</template>
+```
+
+
 ## Hide Caret
 
 Add props `no-caret` to hide caret icon
@@ -386,6 +410,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                                                                                                |
 | `divider`       | `Boolean`  |      `-`       | Enable divider in dropdown-item  |
 | `menu-class`       | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the menu container  |
+| `button-class`     | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the button dropdown  |
 | `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md` and `lg`  |
 
 ### Slots

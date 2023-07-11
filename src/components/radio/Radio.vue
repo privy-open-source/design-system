@@ -305,8 +305,8 @@ export default defineComponent({
 
     &:hover,
     &:focus-visible {
-      @apply bg-subtle;
-      @apply dark:bg-dark-subtle;
+      @apply bg-default-alpha;
+      @apply dark:bg-dark-default-alpha;
     }
   }
 }

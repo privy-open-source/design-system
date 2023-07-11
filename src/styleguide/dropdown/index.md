@@ -7,6 +7,7 @@ description: Dropdown style guide
   import pDropdownGroup from '../../components/dropdown-subitem/DropdownSubitem.vue'
   import pDropdown from '../../components/dropdown/Dropdown.vue'
   import pDropdownItem from '../../components/dropdown/DropdownItem.vue'
+  import pDropdownHeader from '../../components/dropdown/DropdownHeader.vue'
   import pSubheading from '../../components/subheading/Subheading.vue'
   import pCaption from '../../components/caption/Caption.vue'
   import pCheckbox from '../../components/checkbox/Checkbox.vue'
@@ -26,6 +27,7 @@ description: Dropdown style guide
     @apply py-4;
 
     .dropdown {
+      --p-dropdown-z-index: 9;
       &__menu {
         @apply static;
       }
@@ -44,23 +46,20 @@ A list of actions or selectable options for a user. Each list resemble specific 
 
 #### List Item Default
 <div class="dropdown-preview">
-  <div class="dropdown">
+  <div class="dropdown dropdown--md">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <div class="dropdown__subitem">
-        <p-subheading
-          class="px-4 pt-4 pb-1"
-          weight="medium"
-          overline>
+        <p-dropdown-header>
           Title Section
-        </p-subheading>
-        <p-dropdown-item href="#">
+        </p-dropdown-header>
+        <p-dropdown-item>
           Item Text
         </p-dropdown-item>
-        <p-dropdown-item href="#">
+        <p-dropdown-item>
           Item Text
         </p-dropdown-item>
-        <p-dropdown-item href="#">
+        <p-dropdown-item>
           Item Text
         </p-dropdown-item>
       </div>
@@ -75,27 +74,24 @@ A list of actions or selectable options for a user. Each list resemble specific 
 <div class="dropdown-preview">
   <div class="dropdown">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <div class="dropdown__subitem">
-        <p-subheading
-          class="px-4 pt-4 pb-1"
-          weight="medium"
-          overline>
+        <p-dropdown-header>
           Title Section
-        </p-subheading>
-        <p-dropdown-item href="#">
+        </p-dropdown-header>
+        <p-dropdown-item>
           <span class="flex items-center justify-between">
             <span>Item Text</span>
             <p-caption>value</p-caption>
           </span>
         </p-dropdown-item>
-        <p-dropdown-item href="#">
+        <p-dropdown-item>
           <span class="flex items-center justify-between">
             <span>Item Text</span>
             <p-caption>value</p-caption>
           </span>
         </p-dropdown-item>
-        <p-dropdown-item href="#">
+        <p-dropdown-item>
           <span class="flex items-center justify-between">
             <span>Item Text</span>
             <p-caption>value</p-caption>
@@ -113,27 +109,24 @@ A list of actions or selectable options for a user. Each list resemble specific 
 <div class="dropdown-preview">
   <div class="dropdown">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <div class="dropdown__subitem">
-        <p-subheading
-          class="px-4 pt-4 pb-1"
-          weight="medium"
-          overline>
+        <p-dropdown-header>
           Title Section
-        </p-subheading>
-        <p-dropdown-item href="#">
+        </p-dropdown-header>
+        <p-dropdown-item>
           <span class="flex items-center justify-between">
             <span>Item Text</span>
             <IconNext />
           </span>
         </p-dropdown-item>
-        <p-dropdown-item href="#">
+        <p-dropdown-item>
           <span class="flex items-center justify-between">
             <span>Item Text</span>
             <IconNext />
           </span>
         </p-dropdown-item>
-        <p-dropdown-item href="#">
+        <p-dropdown-item>
           <span class="flex items-center justify-between">
             <span>Item Text</span>
             <IconNext />
@@ -149,16 +142,13 @@ A list of actions or selectable options for a user. Each list resemble specific 
 
 #### List item Checkbox
 <div class="dropdown-preview">
-  <div class="dropdown w-2/6">
+  <div class="w-2/6 dropdown">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <div class="dropdown__subitem">
-        <p-subheading
-          class="px-4 pt-4 pb-1"
-          weight="medium"
-          overline>
+        <p-dropdown-header>
           Title Section
-        </p-subheading>
+        </p-dropdown-header>
         <p-checkbox>Checklist Label</p-checkbox>
         <p-checkbox>Checklist Label</p-checkbox>
         <p-checkbox>Checklist Label</p-checkbox>
@@ -172,16 +162,13 @@ A list of actions or selectable options for a user. Each list resemble specific 
 
 #### List item Select
 <div class="dropdown-preview">
-  <div class="dropdown w-2/6">
+  <div class="w-2/6 dropdown">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <div class="dropdown__subitem">
-        <p-subheading
-          class="px-4 pt-4 pb-1"
-          weight="medium"
-          overline>
+        <p-dropdown-header>
           Title Section
-        </p-subheading>
+        </p-dropdown-header>
         <p-radio appearance="option" v-model="selected" value="orange">Checklist Label</p-radio>
         <p-radio appearance="option" v-model="selected" value="grape">Checklist Label</p-radio>
         <p-radio appearance="option" v-model="selected" value="pineaple">Checklist Label</p-radio>
@@ -195,29 +182,26 @@ A list of actions or selectable options for a user. Each list resemble specific 
 
 #### List item with avatar
 <div class="dropdown-preview">
-  <div class="dropdown w-2/6">
+  <div class="w-2/6 dropdown">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <div class="dropdown__subitem">
-        <p-subheading
-          class="px-4 pt-4 pb-1"
-          weight="medium"
-          overline>
+        <p-dropdown-header>
           Title Section
-        </p-subheading>
-        <p-dropdown-item href="#">
+        </p-dropdown-header>
+        <p-dropdown-item>
           <span class="flex items-center space-x-2">
             <p-avatar src="https://picsum.photos/50" size="xs" />
             <span>Item Text</span>
           </span>
         </p-dropdown-item>
-        <p-dropdown-item href="#">
+        <p-dropdown-item>
           <span class="flex items-center space-x-2">
             <p-avatar name="Sam Alpha" size="xs" />
             <span>Item Text</span>
           </span>
         </p-dropdown-item>
-        <p-dropdown-item href="#">
+        <p-dropdown-item>
           <span class="flex items-center space-x-2">
             <p-avatar size="xs" />
             <span>Item Text</span>
@@ -233,24 +217,21 @@ A list of actions or selectable options for a user. Each list resemble specific 
 
 #### List item with subtext
 <div class="dropdown-preview">
-  <div class="dropdown w-2/6">
+  <div class="w-2/6 dropdown">
     <div
-      class="dropdown__menu">
-      <p-subheading
-        class="px-4 pt-4 pb-1"
-        weight="medium"
-        overline>
+      class="dropdown__menu dropdown__menu--sm">
+      <p-dropdown-header>
         Title Section
-      </p-subheading>
-      <p-dropdown-item href="#">
+      </p-dropdown-header>
+      <p-dropdown-item>
         Item Text
         <p-caption>Item Subtext</p-caption>
       </p-dropdown-item>
-      <p-dropdown-item href="#">
+      <p-dropdown-item>
         Item Text
         <p-caption>Item Subtext</p-caption>
       </p-dropdown-item>
-      <p-dropdown-item href="#">
+      <p-dropdown-item>
         Item Text
         <p-caption>Item Subtext</p-caption>
       </p-dropdown-item>
@@ -269,18 +250,18 @@ Note: All types can be combined as needed, except the checkbox and icon used to 
 
 #### List item With Divider
 <div class="dropdown-preview">
-  <div class="dropdown dropdown--divider w-2/6">
+  <div class="w-2/6 dropdown dropdown--divider">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <p-subheading
         class="px-4 pt-4 pb-1"
         weight="medium"
         overline>
         Title Section
       </p-subheading>
-      <p-dropdown-item href="#">Item Text</p-dropdown-item>
-      <p-dropdown-item href="#">Item Text</p-dropdown-item>
-      <p-dropdown-item href="#">Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
+      <p-dropdown-item>Item Text</p-dropdown-item>
     </div>
   </div>
 </div>
@@ -290,17 +271,17 @@ Note: All types can be combined as needed, except the checkbox and icon used to 
 
 #### List item With Divider and Gap
 <div class="dropdown-preview">
-  <div class="dropdown dropdown--divider w-2/6">
+  <div class="w-2/6 dropdown dropdown--divider">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <p-subheading
         class="px-4 pt-4 pb-1"
         weight="medium"
         overline>
         Title Section
       </p-subheading>
-      <p-dropdown-item href="#" class="!py-6">Item Text</p-dropdown-item>
-      <p-dropdown-item href="#" class="!py-6">Item Text</p-dropdown-item>
+      <p-dropdown-item class="!py-6">Item Text</p-dropdown-item>
+      <p-dropdown-item class="!py-6">Item Text</p-dropdown-item>
     </div>
   </div>
 </div>
@@ -312,20 +293,20 @@ Note: All types can be combined as needed, except the checkbox and icon used to 
 
 #### Grouping List
 <div class="dropdown-preview">
-  <div class="dropdown w-2/6">
+  <div class="w-2/6 dropdown">
     <div
-      class="dropdown__menu">
+      class="dropdown__menu dropdown__menu--sm">
       <p-subheading
         class="px-4 pt-4 pb-1"
         weight="medium"
         overline>
         Title Section
       </p-subheading>
-      <p-dropdown-item href="#">Profile</p-dropdown-item>
-      <p-dropdown-item href="#">Settings</p-dropdown-item>
-      <p-dropdown-item href="#">Help</p-dropdown-item>
+      <p-dropdown-item>Profile</p-dropdown-item>
+      <p-dropdown-item>Settings</p-dropdown-item>
+      <p-dropdown-item>Help</p-dropdown-item>
       <p-divider />
-      <p-dropdown-item href="#">Log Out</p-dropdown-item>
+      <p-dropdown-item>Log Out</p-dropdown-item>
     </div>
   </div>
 </div>
