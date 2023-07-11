@@ -19,6 +19,7 @@
         :icon="icon"
         :pill="pill"
         :disabled="disabled"
+        :class="buttonClass"
         @click.prevent="toggle">
         <slot name="button-content">
           {{ text }}
@@ -139,6 +140,14 @@ export default defineComponent({
       default: false,
     },
     menuClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
+    buttonClass: {
       type: [
         String,
         Array,
@@ -316,11 +325,12 @@ export default defineComponent({
   --p-dropdown-size-lg: 30rem; /* 480px */
   --p-dropdown-size-md: 20rem; /* 320px */
   --p-dropdown-size-sm: 15rem; /* 240px */
+  --p-dropdown-max-height: theme(spacing.64);
 
   @apply relative inline-flex;
 
   &__menu {
-    @apply max-h-64 border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
+    @apply max-h-[var(--p-dropdown-max-height)] border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
     @apply dark:bg-dark-default dark:border-dark-default;
 
     &__container {
