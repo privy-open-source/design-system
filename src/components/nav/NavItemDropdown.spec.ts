@@ -148,3 +148,16 @@ it('should be able to add size in the dropdown container via `menu-size` props',
   expect(menu).toHaveClass('dropdown__menu--lg')
   expect(menu).not.toHaveClass('dropdown__menu--sm')
 })
+
+it('should be able to add divider in the dropdown-item via `divider` props', () => {
+  const screen = render({
+    components: { NavItemDropdown },
+    template  : `
+      <NavItemDropdown divider />
+    `,
+  })
+
+  const dropdown = screen.queryByTestId('dropdown')
+  expect(dropdown).toBeInTheDocument()
+  expect(dropdown).toHaveClass('dropdown--divider')
+})
