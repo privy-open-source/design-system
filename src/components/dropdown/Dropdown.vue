@@ -13,6 +13,7 @@
       <Button
         data-testid="dropdown-activator"
         class="dropdown__activator"
+        :class="buttonClass"
         :variant="variant"
         :color="color"
         :size="size"
@@ -149,6 +150,14 @@ export default defineComponent({
     menuSize: {
       type   : String as PropType<MenuSizeVariant>,
       default: 'sm',
+    },
+    buttonClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
     },
   },
   models: {
