@@ -39,7 +39,7 @@ export default defineComponent({
   props       : {
     modelValue: {
       type   : String,
-      default: '',
+      default: undefined,
     },
     placeholder: {
       type   : String,
