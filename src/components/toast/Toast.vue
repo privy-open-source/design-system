@@ -134,8 +134,8 @@ export default defineComponent({
   }
 
   .toast__close {
-    @apply cursor-pointer text-default/30 hover:text-default/50;
-    @apply dark:text-dark-default/30 dark:text-dark-default/50;
+    @apply cursor-pointer text-dark-default/50 hover:text-default/50;
+    @apply dark:text-default/30;
   }
 
   .toast__body {
@@ -166,13 +166,13 @@ export default defineComponent({
   */
   &:is(.toast--info) {
     .toast__title {
-      @apply text-default;
-      @apply dark:text-dark-default;
+      @apply text-on-emphasis;
+      @apply dark:text-dark-on-emphasis;
     }
 
     .toast__text {
-      @apply text-subtle;
-      @apply dark:text-dark-subtle;
+      @apply text-on-emphasis;
+      @apply dark:text-dark-on-emphasis;
     }
   }
 
@@ -182,10 +182,19 @@ export default defineComponent({
   * variant is filled
   */
   &&--info {
-    .toast__icon,
+    &:is(.toast--simple) {
+      .toast__icon {
+        @apply bg-base text-info;
+        @apply dark:bg-dark-base dark:text-dark-info;
+      }
+      .toast__title {
+        @apply text-default;
+        @apply dark:text-dark-default;
+      }
+    }
     &.toast--filled {
-      @apply bg-base text-info;
-      @apply dark:bg-dark-base dark:text-dark-info;
+      @apply bg-inverse text-info;
+      @apply dark:bg-dark-inverse dark:text-dark-info;
     }
   }
 
