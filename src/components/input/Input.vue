@@ -46,7 +46,7 @@ export default defineComponent({
   props       : {
     modelValue: {
       type   : [String, Number],
-      default: '',
+      default: undefined,
     },
     size: {
       type   : String as PropType<SizeVariant>,
