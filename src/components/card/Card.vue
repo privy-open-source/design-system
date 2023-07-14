@@ -141,6 +141,9 @@ export default defineComponent({
 * Last Update   : May 23, 2022
 */
 .card {
+  --p-card-padding-x: theme(spacing.6);
+  --p-card-padding-y: theme(spacing.6);
+
   @apply border bg-default border-default text-default rounded;
   @apply dark:bg-dark-default dark:border-dark-default dark:text-dark-default;
 
@@ -150,11 +153,11 @@ export default defineComponent({
   */
   &__header,
   &__body {
-    @apply pt-6 px-6;
+    @apply pt-[var(--p-card-padding-y)] px-[var(--p-card-padding-x)];
   }
 
   &__body {
-    @apply pb-6;
+    @apply pb-[var(--p-card-padding-y)];
 
     > .card__section {
       @apply pt-0;
@@ -170,7 +173,7 @@ export default defineComponent({
       * of margin-top
       */
       &:first-child {
-        @apply border-t mt-6;
+        @apply border-t mt-[var(--p-card-padding-y)];
       }
 
       &:last-child {
@@ -259,12 +262,12 @@ export default defineComponent({
     }
 
     &.card--disabled {
-      @apply px-6 pb-6;
+      @apply px-[var(--p-card-padding-x)] pb-[var(--p-card-padding-y)];
     }
   }
 
   &__footer {
-    @apply pb-6 px-6 pt-3;
+    @apply pb-[var(--p-card-padding-y)] px-[var(--p-card-padding-x)] pt-3;
   }
 }
 </style>
