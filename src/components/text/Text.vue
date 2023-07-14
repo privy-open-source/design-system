@@ -183,10 +183,12 @@ export default defineComponent({
   * Form Label Style
   */
   &--formlabel {
-    @apply font-medium text-sm tracking-wide;
+    @apply font-medium text-sm tracking-wide text-subtle;
+    @apply dark:text-dark-subtle;
   }
   &--formlabel2 {
-    @apply font-medium text-xs leading-tightest;
+    @apply font-medium text-xs leading-tightest text-subtle;
+    @apply dark:text-dark-subtle;
   }
 
   /**
