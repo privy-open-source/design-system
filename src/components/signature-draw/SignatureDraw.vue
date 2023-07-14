@@ -1,7 +1,7 @@
 <template>
   <component
     :is="view"
-    v-model="model"
+    :model-value="modelValue"
     :model-modifiers="modelModifiers"
     :width="width"
     :height="height"
@@ -9,7 +9,8 @@
     :placeholder="placeholder"
     :reset-label="resetLabel"
     :open-draw-label="openDrawLabel"
-    :close-draw-label="closeDrawLabel" />
+    :close-draw-label="closeDrawLabel"
+    @update:model-value="$emit('update:modelValue', $event)" />
 </template>
 
 <script lang="ts">
@@ -19,7 +20,6 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
-import { useVModel } from '../input'
 import SignatureDrawMobile from './SignatureDrawMobile.vue'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 import { ModelModifier } from '../dropzone'
@@ -68,8 +68,7 @@ export default defineComponent({
     event: 'update:modelValue',
   },
   emits: ['update:modelValue'],
-  setup (props) {
-    const model     = useVModel(props)
+  setup () {
     const isDesktop = useMediaQuery('(min-width: 768px)')
     const view      = computed(() => {
       return isDesktop.value
@@ -77,7 +76,7 @@ export default defineComponent({
         : SignatureDrawMobile
     })
 
-    return { view, model }
+    return { view }
   },
 })
 </script>
