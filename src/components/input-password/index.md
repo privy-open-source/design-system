@@ -18,10 +18,6 @@ description: Base password-input form.
 
 ### Simple Usage
 
-<preview>
-  <p-input-password />
-</preview>
-
 ```vue
 <template>
   <p-input-password />
