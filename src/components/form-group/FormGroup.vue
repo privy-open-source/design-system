@@ -85,8 +85,8 @@ export default defineComponent({
   @apply flex flex-col mb-4;
 
   &__label {
-    @apply font-bold text-xs mb-2 relative text-default;
-    @apply dark:text-dark-default;
+    @apply font-bold text-xs mb-2 relative text-subtle;
+    @apply dark:text-dark-subtle;
 
     > sup {
       @apply text-danger;
