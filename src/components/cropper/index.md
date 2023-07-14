@@ -6,10 +6,11 @@ description: Preview and crop image
 <script setup>
 import pButton from '../button/Button.vue'
 import pCropper from './Cropper.vue'
-import img from '../../public/assets/images/img-sample-crop.jpg'
-import EMPTY_IMG from '../../public/assets/images/empty-img.png'
 import { ref } from 'vue-demi'
 import { templateRef } from '@vueuse/core'
+
+const SAMPLE_IMG = '/assets/images/img-sample-crop.jpg'
+const EMPTY_IMG  = '/assets/images/empty-img.png'
 
 const result    = ref()
 const resultB64 = ref()
@@ -32,7 +33,7 @@ function doCrop () {
 ### Simple Usage
 
 <preview class="flex-col">
-  <p-cropper :src="img" />
+  <p-cropper :src="SAMPLE_IMG" />
 </preview>
 
 ```vue
@@ -48,7 +49,7 @@ You can adjust crop size using `width`, `height` or `ratio`.
 ### Using `width` and `height`
 
 <preview>
-  <p-cropper :src="img" width="500" height="200" />
+  <p-cropper :src="SAMPLE_IMG" width="500" height="200" />
 </preview>
 
 ```vue
@@ -60,7 +61,7 @@ You can adjust crop size using `width`, `height` or `ratio`.
 ### Using Ratio
 
 <preview>
-  <p-cropper :src="img" :ratio="16/9" />
+  <p-cropper :src="SAMPLE_IMG" :ratio="16/9" />
 </preview>
 
 ```vue
@@ -73,7 +74,7 @@ You can adjust crop size using `width`, `height` or `ratio`.
 Add prop `rounded` to enable circular cropping.
 
 <preview>
-  <p-cropper :src="img" rounded />
+  <p-cropper :src="SAMPLE_IMG" rounded />
 </preview>
 
 ```vue
@@ -87,7 +88,7 @@ Add prop `rounded` to enable circular cropping.
 If you want to use this component for previewing image only, you can add prop `no-crop` to disabled cropping.
 
 <preview>
-  <p-cropper :src="img" no-crop />
+  <p-cropper :src="SAMPLE_IMG" no-crop />
 </preview>
 
 ```vue
@@ -102,7 +103,7 @@ If you want to use this component for previewing image only, you can add prop `n
 You can bind the result of cropped image using `v-model`.
 
 <preview>
-  <p-cropper :src="img" v-model="result" />
+  <p-cropper :src="SAMPLE_IMG" v-model="result" />
 </preview>
 
 ```vue
@@ -120,7 +121,7 @@ You can bind the result of cropped image using `v-model`.
 You can add modifier `base64` to your `v-model`, it's enforce result to [base64-dataURI](https://en.wikipedia.org/wiki/Data_URI_scheme).
 
 <preview class="flex-col">
-  <p-cropper :src="img" v-model.base64="resultB64" />
+  <p-cropper :src="SAMPLE_IMG" v-model.base64="resultB64" />
 </preview>
 
 ```vue
@@ -141,7 +142,7 @@ By default, cropping process was ran every movement (drag, zoom, & rotate). It c
 You can disabled it using prop `no-autocrop`. And to trigger the cropping, you can use `templateRef` on `<p-cropper>` component, and call `.crop()` function.
 
 <preview class="flex-col">
-  <p-cropper ref="cropper" :src="img" v-model.base64="result2" no-autocrop />
+  <p-cropper ref="cropper" :src="SAMPLE_IMG" v-model.base64="result2" no-autocrop />
   <div class="mt-4">
     <p-button @click="doCrop">Do Crop</p-button>
   </div>
