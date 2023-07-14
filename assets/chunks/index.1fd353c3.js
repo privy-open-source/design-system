@@ -1,0 +1,1 @@
+import{g as s,h as t}from"./theme.e6ed61fa.js";import{af as n,c as u,r as p}from"./framework.d1aba3cb.js";function i(e,r,o){if(typeof e=="function"||n(e))return u(()=>s(t(e),t(r),t(o)));const a=p(e);return u({get(){return a.value=s(a.value,t(r),t(o))},set(f){a.value=s(f,t(r),t(o))}})}export{i as u};
