@@ -164,6 +164,7 @@ export default defineComponent({
   }
 
   .state--error,
+  .state--error & > &__form,
   &--error,
   &-group--error.input-group .input > .input__form {
     @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;

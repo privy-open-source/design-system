@@ -13,6 +13,10 @@ export type TravelHook = (to: number, from: number) => boolean | Promise<boolean
 
 export type FinishedHook = () => void | Promise<void>
 
+export type DirectionVariant = 'horizontal' | 'vertical'
+
+export type AnimationVariant = 'slide' | 'slide-full'
+
 export interface StepContext {
   next: () => void,
   prev: () => void,

@@ -86,6 +86,7 @@
     "@fontsource/dm-sans": "4.5.9",
     "@juggle/resize-observer": "^3.4.0",
     "@privyid/persona-icon": "workspace:^",
+    "@splidejs/splide": "^4.1.4",
     "@testing-library/user-event": "^14.4.3",
     "@vueuse/core": "10.1.2",
     "@vueuse/math": "10.1.2",

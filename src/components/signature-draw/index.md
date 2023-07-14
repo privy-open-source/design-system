@@ -6,7 +6,8 @@ description: Draw signature like using real pen
   import pSignatureDraw from './SignatureDraw.vue'
   import pButton from '../button/Button.vue'
   import { ref } from 'vue-demi'
-  import EMPTY_IMG from '../../public/assets/images/empty-img.png'
+
+  const EMPTY_IMG = '/assets/images/empty-img.png'
 
   const result    = ref()
   const resultB64 = ref()

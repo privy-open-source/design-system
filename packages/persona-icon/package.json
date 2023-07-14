@@ -13,7 +13,10 @@
       "require": "./dist/module.cjs",
       "types": "./dist/types.d.ts"
     },
-    "./vue/": "./vue/",
+    "./vue/": {
+      "types": "./types/vue.d.ts",
+      "default": "./vue/"
+    },
     "./font/": "./font/",
     "./svg/": {
       "types": "./types/svg.d.ts",
