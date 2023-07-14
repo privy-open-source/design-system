@@ -5,7 +5,7 @@ description: Show user's avatar, using name or image
 
 <script setup>
   import pAvatar from './Avatar.vue'
-  import IconUser from '@carbon/icons-vue/lib/events/20'
+  import IconUser from '@privyid/persona-icon/vue/profile/20.vue'
 </script>
 
 # Avatar
@@ -54,7 +54,7 @@ description: Show user's avatar, using name or image
 </template>
 
 <script setup>
-  import IconUser from '@carbon/icons-vue/lib/events/20'
+  import IconUser from '@privyid/persona-icon/vue/profile/20.vue'
 </script>
 ```
 

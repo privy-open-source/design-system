@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import IconInfo from '@carbon/icons-vue/lib/information--filled/16'
+import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import pCaption from '../caption/Caption.vue'
 import { pTooltip } from '../tooltip'
 import { computed, defineComponent } from 'vue-demi'

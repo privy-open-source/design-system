@@ -4,7 +4,7 @@ description: Base dropdown button, suit for action menus
 ---
 
 <script setup>
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import Persona from '@privyid/persona-icon/vue/persona/20.vue'
   import pInput from "../input/Input.vue"
   import pDropdown from "./Dropdown.vue"
   import pDropdownItem from "./DropdownItem.vue"
@@ -229,7 +229,7 @@ You also can customize button content via slot `button-content`
     text="Button"
     icon>
     <template #button-content>
-      <IconBee />
+      <Persona />
     </template>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -242,7 +242,7 @@ You also can customize button content via slot `button-content`
   <p-dropdown
     icon>
     <template #button-content>
-      <IconBee />
+      <Persona />
     </template>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -251,7 +251,7 @@ You also can customize button content via slot `button-content`
 </template>
 
 <script setup>
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import Persona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 ```
 

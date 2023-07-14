@@ -5,7 +5,7 @@ description: Base button component
 
 <script setup>
   import pButton from './Button.vue'
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 
 # Button
@@ -29,16 +29,16 @@ description: Base button component
 ### Button with icon
 
 <preview>
-  <p-button color="info" icon><IconBee /></p-button>
+  <p-button color="info" icon><IconPersona /></p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button color="info" icon><IconBee /></p-button>
+  <p-button color="info" icon><IconPersona /></p-button>
 </template>
 
 <script setup>
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 ```
 
@@ -46,19 +46,19 @@ description: Base button component
 
 <preview>
   <div class="flex flex-col items-center space-gap-3 md:flex-row">
-    <p-button color="info"><IconBee /> Click Me</p-button>
-    <p-button color="info">Click Me <IconBee /></p-button>
+    <p-button color="info"><IconPersona /> Click Me</p-button>
+    <p-button color="info">Click Me <IconPersona /></p-button>
   </div>
 </preview>
 
 ```vue
 <template>
-  <p-button color="info"><IconBee /> Click Me</p-button>
-  <p-button color="info">Click Me <IconBee /></p-button>
+  <p-button color="info"><IconPersona /> Click Me</p-button>
+  <p-button color="info">Click Me <IconPersona /></p-button>
 </template>
 
 <script setup>
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 ```
 
@@ -212,36 +212,36 @@ You can add prop `pill` to make button more rounded
 You can add prop `icon` to make button more square, it's suitable for button with icon only
 
 <preview class="items-center gap-3">
-  <p-button color="info" size="xs" icon><IconBee /></p-button>
-  <p-button color="info" size="sm" icon><IconBee /></p-button>
-  <p-button color="info" size="md" icon><IconBee /></p-button>
-  <p-button color="info" size="lg" icon><IconBee /></p-button>
+  <p-button color="info" size="xs" icon><IconPersona /></p-button>
+  <p-button color="info" size="sm" icon><IconPersona /></p-button>
+  <p-button color="info" size="md" icon><IconPersona /></p-button>
+  <p-button color="info" size="lg" icon><IconPersona /></p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button color="info" size="xs" icon><IconBee /></p-button>
-  <p-button color="info" size="sm" icon><IconBee /></p-button>
-  <p-button color="info" size="md" icon><IconBee /></p-button>
-  <p-button color="info" size="lg" icon><IconBee /></p-button>
+  <p-button color="info" size="xs" icon><IconPersona /></p-button>
+  <p-button color="info" size="sm" icon><IconPersona /></p-button>
+  <p-button color="info" size="md" icon><IconPersona /></p-button>
+  <p-button color="info" size="lg" icon><IconPersona /></p-button>
 </template>
 ```
 
 You can also combine with `pill` mode to make round button
 
 <preview class="items-center gap-3">
-  <p-button color="info" size="xs" icon pill><IconBee /></p-button>
-  <p-button color="info" size="sm" icon pill><IconBee /></p-button>
-  <p-button color="info" size="md" icon pill><IconBee /></p-button>
-  <p-button color="info" size="lg" icon pill><IconBee /></p-button>
+  <p-button color="info" size="xs" icon pill><IconPersona /></p-button>
+  <p-button color="info" size="sm" icon pill><IconPersona /></p-button>
+  <p-button color="info" size="md" icon pill><IconPersona /></p-button>
+  <p-button color="info" size="lg" icon pill><IconPersona /></p-button>
 </preview>
 
 ```vue
 <template>
-  <p-button color="info" size="xs" icon pill><IconBee /></p-button>
-  <p-button color="info" size="sm" icon pill><IconBee /></p-button>
-  <p-button color="info" size="md" icon pill><IconBee /></p-button>
-  <p-button color="info" size="lg" icon pill><IconBee /></p-button>
+  <p-button color="info" size="xs" icon pill><IconPersona /></p-button>
+  <p-button color="info" size="sm" icon pill><IconPersona /></p-button>
+  <p-button color="info" size="md" icon pill><IconPersona /></p-button>
+  <p-button color="info" size="lg" icon pill><IconPersona /></p-button>
 </template>
 ```
 

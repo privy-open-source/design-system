@@ -11,9 +11,9 @@
 
 <script lang="ts" setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
 
 const menus = defineMenu([
   {
