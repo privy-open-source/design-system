@@ -13,7 +13,6 @@ description: Slideshow for cycling through a series of content.
   import { ref } from 'vue-demi'
 
   const active = ref(1)
-  const check  = ref(false)
 </script>
 
 # Carousel
@@ -24,14 +23,12 @@ description: Slideshow for cycling through a series of content.
 
 ### Simple Usage
 
-<button @click="check = !check">Check ({{ check }})</button>
-
 <preview>
   <p-carousel>
     <p-carousel-item>
       <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/34/600/400" />
     </p-carousel-item>
-    <p-carousel-item v-if="check">
+    <p-carousel-item>
       <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/57/600/400" />
     </p-carousel-item>
     <p-carousel-item>
