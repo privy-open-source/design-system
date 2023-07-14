@@ -30,8 +30,6 @@
   import pCaption from '../caption/Caption.vue'
   import pButton from '../button/Button.vue'
   import IconGroup from '@carbon/icons-vue/lib/group/20'
-  import IconDataStructured from '@carbon/icons-vue/lib/data--structured/20'
-  import IconCheck from '@carbon/icons-vue/lib/checkmark/20'
   import IconClose from '@carbon/icons-vue/lib/close/20'
   import IconSignOut from '@carbon/icons-vue/lib/logout/20'
 

@@ -46,7 +46,7 @@ export default defineComponent({
   props       : {
     modelValue: {
       type   : [String, Number],
-      default: '',
+      default: undefined,
     },
     size: {
       type   : String as PropType<SizeVariant>,
@@ -131,8 +131,8 @@ export default defineComponent({
   @apply dark:bg-dark-default;
 
   &__form {
-    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle text-default placeholder:text-muted w-full outline-none;
-    @apply dark:border-dark-muted hover:dark:border-dark-subtle dark:text-dark-default placeholder:dark:text-dark-muted;
+    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle text-default placeholder:text-muted w-full outline-none bg-transparent;
+    @apply dark:border-dark-muted hover:dark:border-dark-subtle dark:text-dark-default placeholder:dark:text-dark-muted dark:bg-transparent;
 
     &:disabled,
     &--disabled,
