@@ -44,7 +44,7 @@ export default defineComponent({
   props       : {
     modelValue: {
       type   : String,
-      default: '',
+      default: undefined,
     },
     length: {
       type   : [Number, String],
@@ -71,7 +71,7 @@ export default defineComponent({
   setup (props, { emit }) {
     const root       = templateRef<HTMLDivElement>('root')
     const num        = useToNumber(toRef(props, 'length'))
-    const localModel = ref<string[]>([...props.modelValue.padEnd(num.value)].slice(0, num.value))
+    const localModel = ref<string[]>([...(props.modelValue?.padEnd(num.value) ?? '')].slice(0, num.value))
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -92,7 +92,7 @@ export default defineComponent({
 
     const model = computed<string[]>({
       get () {
-        return [...props.modelValue.padEnd(num.value)].slice(0, num.value)
+        return [...(props.modelValue?.padEnd(num.value) ?? '')].slice(0, num.value)
       },
       set (value: string[]) {
         const text = value.map((val) => val || ' ').join('').trimEnd()
