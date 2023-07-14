@@ -2,10 +2,10 @@ const plugin  = require('tailwindcss/plugin')
 const useBase = require('./base')
 
 module.exports = plugin(
-  function ({ addComponents }) {
+  function ({ addComponents, theme }) {
     addComponents({
-      '.fade'   : useBase({ opacity: 0 }),
-      '.zoom-in': useBase(
+      '.fade'   : useBase(theme, { opacity: 0 }),
+      '.zoom-in': useBase(theme,
         {
           opacity  : 0,
           transform: 'scale(0.95)',
@@ -15,7 +15,7 @@ module.exports = plugin(
           transform: 'scale(1.05)',
         },
       ),
-      '.zoom-out': useBase(
+      '.zoom-out': useBase(theme,
         {
           opacity  : 0,
           transform: 'scale(1.05)',
@@ -25,7 +25,7 @@ module.exports = plugin(
           transform: 'scale(0.95)',
         },
       ),
-      '.slide-right': useBase(
+      '.slide-right': useBase(theme,
         {
           opacity  : 0,
           transform: 'translateX(-1.5rem)',
@@ -35,7 +35,7 @@ module.exports = plugin(
           transform: 'translateX(1.5rem)',
         },
       ),
-      '.slide-left': useBase(
+      '.slide-left': useBase(theme,
         {
           opacity  : 0,
           transform: 'translateX(1.5rem)',
@@ -45,7 +45,7 @@ module.exports = plugin(
           transform: 'translateX(-1.5rem)',
         },
       ),
-      '.slide-top': useBase(
+      '.slide-top': useBase(theme,
         {
           opacity  : 0,
           transform: 'translateY(1.5rem)',
@@ -55,7 +55,7 @@ module.exports = plugin(
           transform: 'translateY(-1.5rem)',
         },
       ),
-      '.slide-bottom': useBase(
+      '.slide-bottom': useBase(theme,
         {
           opacity  : 0,
           transform: 'translateY(-1.5rem)',
@@ -65,10 +65,50 @@ module.exports = plugin(
           transform: 'translateY(1.5rem)',
         },
       ),
-      '.slide-up': useBase({
+      '.slide-up': useBase(theme, {
         opacity  : 0,
         transform: 'translateY(1.5rem)',
       }),
+      '.slide-full-right': useBase(theme,
+        {
+          opacity  : 0,
+          transform: 'translateX(-100%)',
+        },
+        {
+          opacity  : 0,
+          transform: 'translateX(100%)',
+        },
+      ),
+      '.slide-full-left': useBase(theme,
+        {
+          opacity  : 0,
+          transform: 'translateX(100%)',
+        },
+        {
+          opacity  : 0,
+          transform: 'translateX(-100%)',
+        },
+      ),
+      '.slide-full-top': useBase(theme,
+        {
+          opacity  : 0,
+          transform: 'translateY(100%)',
+        },
+        {
+          opacity  : 0,
+          transform: 'translateY(-100%)',
+        },
+      ),
+      '.slide-full-bottom': useBase(theme,
+        {
+          opacity  : 0,
+          transform: 'translateY(-100%)',
+        },
+        {
+          opacity  : 0,
+          transform: 'translateY(100%)',
+        },
+      ),
     })
   },
   { safelist: [{ pattern: /^(slide|zoom|fade)/ }] },

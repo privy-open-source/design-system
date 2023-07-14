@@ -1,9 +1,9 @@
-module.exports = function useBase (onEnter, onLeave = onEnter) {
+module.exports = function useBase (theme, onEnter, onLeave = onEnter) {
   return {
     '&-enter-active, &-leave-active': {
-      transitionDuration      : '150ms',
+      transitionDuration      : theme('transitionDuration.150'),
+      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
       transitionProperty      : 'opacity, transform',
-      transitionTimingFunction: 'cubic-bezier(0.2, 0, 0.38, 0.9)',
       willChange              : 'opacity, transform',
     },
     '&-enter, &-enter-from': onEnter,
