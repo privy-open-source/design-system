@@ -141,6 +141,10 @@ export default defineConfig({
               link: '/components/label/',
             },
             {
+              text: 'List Group',
+              link: '/components/list-group/',
+            },
+            {
               text: 'Modal',
               link: '/components/modal/',
             },
