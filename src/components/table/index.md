@@ -386,7 +386,7 @@ Table has default empty state, but it's be able to customize by own via slot `em
 <preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="itemsC">
     <template #empty>
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-col items-center justify-center">
         <img src="../../public/assets/images/img-table-empty-records.svg">
         <p-heading element="h6" class="mt-12">Uh oh, no data</p-heading>
         <p-text variant="body2" class="py-4 text-subtle dark:text-dark-subtle">We’re empty-handed!</p-text>
@@ -399,7 +399,7 @@ Table has default empty state, but it's be able to customize by own via slot `em
 <template>
   <p-table :fields="fields" :items="items">
     <template #empty>
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-col items-center justify-center">
         <img src="/assets/images/img-table-empty-records.svg">
         <p-heading element="h6" class="mt-12">Uh oh, no data</p-heading>
         <p-text variant="body2" class="py-4 text-subtle dark:text-dark-subtle">

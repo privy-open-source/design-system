@@ -100,7 +100,7 @@ export default defineComponent({
 .nav {
   &__item {
     &--dropdown {
-      @apply ml-auto;
+      @apply ml-auto relative;
 
       .dropdown {
         &__menu {
