@@ -39,7 +39,7 @@ import { DirectionVariant } from '../steps'
 import '@splidejs/splide/css/core'
 import { defu } from 'defu'
 import { AlignmentVariant, CAROUSEL_INSTANCE } from '.'
-import { Splide, Options } from '@splidejs/splide'
+import type { Options, Splide } from '@splidejs/splide'
 import { useVModel } from '../input'
 
 export default defineComponent({
@@ -150,12 +150,13 @@ export default defineComponent({
       }
     }
 
-    onMounted(() => {
+    onMounted(async () => {
       if (container.value) {
+        const { Splide } = await import('@splidejs/splide')
+
         slider.value = new Splide(container.value, options.value)
 
-        slider.value.on('mounted', onLoaded)
-        slider.value.on('refresh', onLoaded)
+        slider.value.on('mounted refresh', onLoaded)
         slider.value.on('move', onMove)
         slider.value.mount()
       }
