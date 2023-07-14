@@ -23,7 +23,7 @@ export function useVModel<V> (props: InputProps<V>): Ref<V> {
     },
   })
 
-  syncRef(localValue, model)
+  syncRef(localValue, model, { immediate: false })
 
   return localValue
 }
