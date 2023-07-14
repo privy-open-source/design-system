@@ -10,6 +10,7 @@
       :size="size"
       :placement="placement"
       :no-caret="noCaret"
+      :divider="divider"
       :menu-class="menuClass"
       :menu-size="menuSize">
       <template #button-content>
@@ -76,6 +77,10 @@ export default defineComponent({
       type   : String as PropType<MenuSizeVariant>,
       default: 'sm',
     },
+    divider: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -95,7 +100,7 @@ export default defineComponent({
 .nav {
   &__item {
     &--dropdown {
-      @apply ml-auto;
+      @apply ml-auto relative;
 
       .dropdown {
         &__menu {
