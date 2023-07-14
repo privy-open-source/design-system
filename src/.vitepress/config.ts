@@ -105,6 +105,10 @@ export default defineConfig({
               link: '/components/card/',
             },
             {
+              text: 'Carousel',
+              link: '/components/carousel/',
+            },
+            {
               text: 'Chart',
               link: '/components/chart/',
             },
@@ -151,6 +155,10 @@ export default defineConfig({
             {
               text: 'Progress',
               link: '/components/progress/',
+            },
+            {
+              text: 'Progress Indicator',
+              link: '/components/progress-indicator/',
             },
             {
               text: 'Spinner',
