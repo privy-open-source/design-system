@@ -5,6 +5,7 @@ description: Base form input.
 
 <script setup>
   import pSelect from "./Select.vue"
+  import pAvatar from "../avatar/Avatar.vue"
   import FuzzyAdapter from "../select/adapter/fuzzy-adapter"
   import defineAsyncAdapter from "./adapter/async-adapter"
   import { ref } from "vue-demi"
@@ -15,6 +16,15 @@ description: Base form input.
     { text: '🍎 Apfel', value: 'Apple' },
     { text: '🍇 Traube', value: 'Grape' },
     { text: '🍌 Bananen', value: 'Banana'},
+  ])
+  const users = ref([
+    {
+      text: 'John Doe',
+      value: {
+        img: "https://picsum.photos/id/50/50",
+        id: 1
+      }
+    }
   ])
 
   const value    = ref('')
@@ -328,6 +338,58 @@ To do this, you need add the province value as **watch dependencies**. It will a
       }
     })
   }, [province]) // 👈 need to add `province` as watch deps
+</script>
+```
+
+## Custom Option with Slot
+
+If you want to make custom option with slot, you can use `option` with scoped slot. The scoped slot from `option` has two slot props `text` and `value`.
+
+<preview>
+  <p-select :options="users">
+    <template #option="slot">
+      <div class="flex flex-row">
+        <div class="pr-3 py-2">
+          <p-avatar :src="slot.item.value.img" />
+        </div>
+        <div class="py-2 ">
+          <div class="text-base font-normal font-sans">{{ slot.item.text }}
+          </div>
+            <div class="text-xs font-light option-text">ID: {{ slot.item.value.id }}
+          </div>
+        </div>
+      </div>
+    </template>
+  </p-select>
+</preview>
+
+```vue
+<template>
+  <p-select :options="users">
+    <template #option="slot">
+      <div class="flex flex-row">
+        <div class="pr-3 py-2">
+          <p-avatar :src="slot.item.value.img" />
+          <div class="text-base font-normal font-sans">{{ slot.item.value.img }}
+          </div>
+            <div class="text-xs font-light option-text">{{ slot.item.text }}
+          </div>
+        </div>
+      </div>
+    </template>
+  </p-select>
+</template>
+
+<script setup>
+  const users = ref([
+    {
+      text: 'John Doe',
+      value: {
+        img: "https://picsum.photos/id/50/50",
+        id: 1
+      }
+    }
+  ])
 </script>
 ```
 ## API
