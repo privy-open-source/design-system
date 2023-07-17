@@ -10,6 +10,8 @@ description: ase component for modal dialog.
   import pHeading from '../heading/Heading.vue'
   import pBanner from '../banner/Banner.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
+  import pFormGroup from '../form-group/FormGroup.vue'
+  import pDatepicker from '../datepicker/Datepicker.vue'
 
   const basicModal  = ref(true)
   const showModal   = ref(false)
@@ -370,6 +372,9 @@ When modals content become too long, modal body can scroll itself by adding prop
       <p>
         I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
       </p>
+      <p-form-group label="Select Date">
+        <p-datepicker />
+      </p-form-group>
     </div>
     <template #footer="{ close }">
       <p-button @click="close" color="info">
