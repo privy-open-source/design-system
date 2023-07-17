@@ -507,6 +507,14 @@ You can binding current active with v-model
 
 <pre><code>{{ active }}</code></pre>
 
+## Variables
+Tabs use local CSS variables for enhanced real-time customization.
+
+```sass
+--p-tabs-content-padding-x: theme(spacing.6);
+--p-tabs-content-padding-y: theme(spacing.6); // for vertical variant
+```
+
 ## API
 
 ### Props `<p-tabs>`
