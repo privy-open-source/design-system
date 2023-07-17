@@ -467,6 +467,7 @@ The available alignment in vertical Tabs is just `left` and `right`
 | `align`             | `String`  | `left`      | Tabs navigation alignment, valid value is `left`, `center`, and `right`|
 | `vertical`          | `Boolean` | `false`     | Activate vertical Tabs                                                 |
 | `nav-wrapper-class` | `String`  | `undefined` | Class to place in the navigation wrapper                               |
+| `modelValue`        | `Number`  | `0`         | Set default active tab according to tab index                          |
 
 ### Slots `<p-tabs>`
 
