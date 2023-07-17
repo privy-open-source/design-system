@@ -14,9 +14,7 @@
       :readonly="readonly"
       :disabled="disabled"
       :error="error"
-      @input="setValue(i - 1, $event)"
-      @focus.passive="onFocus"
-      @keyup.delete.stop.prevent="onDelete"
+      @beforeinput.prevent="setValue(i - 1, $event)"
       @keyup.left.stop.prevent="prevFocus"
       @keyup.right.stop.prevent="nextFocus"
       @paste.passive="onPaste" />
@@ -67,7 +65,7 @@ export default defineComponent({
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: ['update:modelValue', 'clear'],
+  emits: ['update:modelValue', 'change'],
   setup (props, { emit }) {
     const root       = templateRef<HTMLDivElement>('root')
     const num        = useToNumber(toRef(props, 'length'))
@@ -92,24 +90,26 @@ export default defineComponent({
 
     const model = computed<string[]>({
       get () {
-        return [...(props.modelValue?.padEnd(num.value) ?? '')].slice(0, num.value)
+        return props.modelValue
+          ? [...(props.modelValue.padEnd(num.value))].slice(0, num.value)
+          : []
       },
       set (value: string[]) {
         const text = value.map((val) => val || ' ').join('').trimEnd()
 
+        emit('change', text)
         emit('update:modelValue', text)
       },
     })
 
-    syncRef(localModel, model, { deep: true })
+    syncRef(localModel, model, { deep: true, immediate: false })
 
     function getValue (index: number): string {
       return localModel.value.at(index)
     }
 
     function setValue (index: number, event: InputEvent) {
-      const target = event.target as HTMLInputElement
-      const value  = target.value
+      const value = event.data ?? ''
 
       localModel.value[index] = value
 
@@ -119,15 +119,6 @@ export default defineComponent({
         else
           prevFocus()
       }
-    }
-
-    function onFocus (event: InputEvent) {
-      (event.target as HTMLInputElement).select()
-    }
-
-    function onDelete (event: InputEvent) {
-      if (root.value && !(event.target as HTMLInputElement).value.trim())
-        prevFocus()
     }
 
     function onPaste (event: ClipboardEvent) {
@@ -141,8 +132,6 @@ export default defineComponent({
       localModel,
       getValue,
       setValue,
-      onFocus,
-      onDelete,
       onPaste,
       nextFocus,
       prevFocus,
