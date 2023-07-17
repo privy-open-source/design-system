@@ -1,1 +1,0 @@
-import{s as m}from"./index.c4b65e70.js";import{j as s,m as u,l as n}from"./framework.1cabf72c.js";function d(e){const t=s(e.modelValue),{emit:o}=u(),a=n({get(){return e.modelValue},set(l){o("update:modelValue",l)}});return m(t,a,{immediate:!1}),t}export{d as u};
