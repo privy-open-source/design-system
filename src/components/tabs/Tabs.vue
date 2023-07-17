@@ -153,12 +153,14 @@ export default defineComponent({
 * Last Update   : Aug 12, 2022
 */
 .tabs {
+  --p-tabs-content-padding-x: theme(spacing.6);
+  --p-tabs-content-padding-y: theme(spacing.6);
 
   /**
   * tab content
   */
   &__content {
-    @apply py-6 w-full;
+    @apply py-[var(--p-tabs-content-padding-y)] w-full;
   }
 
   /**
@@ -195,7 +197,7 @@ export default defineComponent({
       }
 
       &__content {
-        @apply grow p-6;
+        @apply grow px-[var(--p-tabs-content-padding-x)] py-[var(--p-tabs-content-padding-y)];
       }
     }
   }
