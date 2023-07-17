@@ -127,6 +127,10 @@ export default defineComponent({
   --p-color-dark-danger-hover: darken(theme(backgroundColor.dark.danger.emphasis), 5%);
   --p-color-danger-focus: darken(theme(backgroundColor.danger.emphasis), 10%);
   --p-color-dark-danger-focus: darken(theme(backgroundColor.dark.danger.emphasis), 10%);
+  --p-button-xs-padding-x: theme(spacing.2);
+  --p-button-sm-padding-x: theme(spacing.4);
+  --p-button-md-padding-x: theme(spacing.5);
+  --p-button-lg-padding-x: theme(spacing.8);
 
   @apply inline-flex align-middle justify-center font-medium no-underline hover:no-underline disabled:opacity-50 disabled:pointer-events-none transition-all ease-in-out duration-200;
 
@@ -143,19 +147,19 @@ export default defineComponent({
   * eg: xs, sm, md, and lg
   */
   &&--xs {
-    @apply px-2 py-[2px] gap-1 text-sm rounded-xs;
+    @apply px-[var(--p-button-xs-padding-x)] py-[2px] gap-1 text-sm rounded-xs;
   }
 
   &&--sm {
-    @apply px-4 py-1 gap-2 text-base tracking-wider rounded-sm;
+    @apply px-[var(--p-button-sm-padding-x)] py-1 gap-2 text-base tracking-wider rounded-sm;
   }
 
   &&--md {
-    @apply px-5 py-[10px] gap-3 text-base tracking-wider rounded;
+    @apply px-[var(--p-button-md-padding-x)] py-[10px] gap-3 text-base tracking-wider rounded;
   }
 
   &&--lg {
-    @apply px-8 py-4 gap-4 text-base tracking-wider rounded;
+    @apply px-[var(--p-button-lg-padding-x)] py-4 gap-4 text-base tracking-wider rounded;
   }
 
   /*

@@ -265,6 +265,16 @@ You can also combine with `pill` mode to make round button
 </template>
 ```
 
+## Variables
+Button use local CSS variables on `.btn` for enhanced real-time customization.
+
+```sass
+--p-button-xs-padding-x: theme(spacing.2);
+--p-button-sm-padding-x: theme(spacing.4);
+--p-button-md-padding-x: theme(spacing.5);
+--p-button-lg-padding-x: theme(spacing.8);
+```
+
 ## API
 
 ### Props

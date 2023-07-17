@@ -660,6 +660,9 @@ Modal use local CSS variables on `.modal` for enhanced real-time customization.
 --p-modal-size-md: 600px;
 --p-modal-size-sm: 400px;
 --p-modal-z-index: theme(zIndex.modal);
+--p-modal-body-scrollable-max-height: theme(spacing.64);
+--p-modal-body-scrollable-min-height: 0;
+--p-modal-content-margin-y: theme(spacing.8);
 ```
 
 ## API
