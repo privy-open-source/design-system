@@ -16506,11 +16506,11 @@ __metadata:
   linkType: hard
 
 "svg-path-commander@npm:^2.0.5":
-  version: 2.0.7
-  resolution: "svg-path-commander@npm:2.0.7"
+  version: 2.0.8
+  resolution: "svg-path-commander@npm:2.0.8"
   dependencies:
     "@thednp/dommatrix": ^2.0.5
-  checksum: 88297a1c6a9ec6d5b840866311835a500cbe475905026ede1de75699949c4ec3ae0e827243749ca2bb52f5b3fa55a4cf2bd259e6dfa66f5eb2c48480889ae71f
+  checksum: 7a8d6393698235470de771a3baf9e8766c82ee44d9531595158bbed673c2788e31aa2a1671f2ca1cbfae8cbf0ad905acf3733a412ca527fc078234b86fc13742
   languageName: node
   linkType: hard
 
