@@ -29,7 +29,7 @@
 <script lang="ts">
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import IconDanger from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
-import IconClose from '@privyid/persona-icon/vue/close/20.vue'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import {
   defineComponent,
   PropType,

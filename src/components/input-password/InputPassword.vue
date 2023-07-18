@@ -17,8 +17,8 @@
 
 <script lang="ts">
 import pInput from '../input/Input.vue'
-import IconShow from '@carbon/icons-vue/lib/view/16'
-import IconHide from '@carbon/icons-vue/lib/view--off/16'
+import IconShow from '@privyid/persona-icon/vue/view/20.vue'
+import IconHide from '@privyid/persona-icon/vue/view-off/20.vue'
 import { defineComponent, ref } from 'vue-demi'
 
 export default defineComponent({

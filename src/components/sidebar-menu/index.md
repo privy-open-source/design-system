@@ -8,10 +8,10 @@ description: Define sidebar using JSON
   import { ref } from 'vue-demi'
   import pSidebarBrand from '../sidebar/SidebarBrand.vue'
   import { defineMenu } from '.'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconUsers from '@carbon/icons-vue/lib/group/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+  import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
   import IconEN from '../../public/assets/images/img-flag.svg'
 
   const modelA   = ref(false)
@@ -241,9 +241,9 @@ description: Define sidebar using JSON
 
 <script setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
 
 const menus = defineMenu([
   {
@@ -293,10 +293,10 @@ const menus = defineMenu([
 
 <script setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
-import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
 
 const menus = defineMenu([
   {
@@ -397,10 +397,10 @@ const menus = defineMenu([
 
 <script setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
-import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
 
 const menus = defineMenu([
   {
@@ -464,9 +464,9 @@ Limiting how much menu-item would be displayed is possible by setup it from `max
 
 <script setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
 
 const limit = defineMenu([
   {

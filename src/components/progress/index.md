@@ -6,7 +6,7 @@ description: Sub-component for Wizard and Timeline.
 <script setup>
   import pProgress from './Progress.vue'
   import pProgressItem from './ProgressItem.vue'
-  import IconDocument from '@carbon/icons-vue/lib/document/16'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
 </script>
 
 # Progress
@@ -165,7 +165,7 @@ You can customize progress point with icon with slot `icon`.
 </template>
 
 <script setup>
-import IconDocument from '@carbon/icons-vue/lib/document/16'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
 </script>
 ```
 

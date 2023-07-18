@@ -9,10 +9,10 @@ description: Base radio form input.
   import pCard from "../card/Card.vue"
   import pLabel from "../label/Label.vue"
   import pButton from "../button/Button.vue"
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
-  import IconBug from '@carbon/icons-vue/lib/debug/20'
-  import IconBeeBat from '@carbon/icons-vue/lib/bee-bat/20'
-  import IconCheck from '@carbon/icons-vue/lib/checkmark--outline/20'
+  import IconHome from '@privyid/persona-icon/vue/home/20.vue'
+  import IconBuilding from '@privyid/persona-icon/vue/building/20.vue'
+  import IconShop from '@privyid/persona-icon/vue/shop/20.vue'
+  import IconCheck from '@privyid/persona-icon/vue/checkmark-circle/20.vue'
   import { ref } from "vue-demi"
 
   const value    = ref('')
@@ -150,7 +150,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis' : isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted dark:text-dark-muted" />
+            <IconHome class="text-muted dark:text-dark-muted" />
             <div>
               Olivia Withness
               <p-caption>olivia@eth.com</p-caption>
@@ -167,7 +167,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis' : isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted dark:text-dark-muted" />
+            <IconHome class="text-muted dark:text-dark-muted" />
             <div>
               Hyuga Kojiro
               <p-caption>hyuga@gmail.com</p-caption>
@@ -184,7 +184,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis' : isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted dark:text-dark-muted" />
+            <IconHome class="text-muted dark:text-dark-muted" />
             <div>
               Marsha Timoty
               <p-caption>timoty@marsha.com</p-caption>
@@ -211,7 +211,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted dark:text-dark-muted" />
+            <IconHome class="text-muted dark:text-dark-muted" />
             <div>
               Olivia Withness
               <p-caption>olivia@eth.com</p-caption>
@@ -228,7 +228,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted dark:text-dark-muted" />
+            <IconHome class="text-muted dark:text-dark-muted" />
             <div>
               Hyuga Kojiro
               <p-caption>hyuga@gmail.com</p-caption>
@@ -245,7 +245,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
           <div class="flex items-center space-x-3">
-            <IconBee class="text-muted dark:text-dark-muted" />
+            <IconHome class="text-muted dark:text-dark-muted" />
             <div>
               Marsha Timoty
               <p-caption>timoty@marsha.com</p-caption>
@@ -269,7 +269,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
-          <IconBee />
+          <IconHome />
         </p-card>
       </template>
     </p-radio>
@@ -280,7 +280,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
-          <IconBug />
+          <IconBuilding />
         </p-card>
       </template>
     </p-radio>
@@ -291,7 +291,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
-            <IconBeeBat />
+            <IconShop />
         </p-card>
       </template>
     </p-radio>
@@ -312,7 +312,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
-          <IconBee />
+          <IconHome />
         </p-card>
       </template>
     </p-radio>
@@ -323,7 +323,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
-          <IconBug />
+          <IconBuilding />
         </p-card>
       </template>
     </p-radio>
@@ -334,7 +334,7 @@ Just set `appearance` to `none`, can create your own radio's appearance.
           class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
           :class="{ '!border-info-emphasis dark:!border-dark-info-emphasis': isChecked }"
           sectioned>
-            <IconBeeBat />
+            <IconShop />
         </p-card>
       </template>
     </p-radio>

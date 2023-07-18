@@ -6,7 +6,7 @@ description: Button style guide
 <script setup>
   import Button from '../../components/button/Button.vue'
   import Caption from '../../components/caption/Caption.vue'
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 
 <style scoped lang="postcss">
@@ -34,7 +34,7 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 
 ##### Default button icon
 <div>
-  <Button icon><IconBee /></Button>
+  <Button icon><IconPersona /></Button>
 </div>
 <div class="flex pt-5 pb-6">
   <div class="w-3/4">
@@ -46,8 +46,8 @@ Buttons are used primarily for actions, such as “Add”, “Continue”, “Ca
 
 ##### Default button icon text
 <div class="flex space-x-3">
-  <Button icon><IconBee /> Button Text</Button>
-  <Button icon>Button Text <IconBee /></Button>
+  <Button icon><IconPersona /> Button Text</Button>
+  <Button icon>Button Text <IconPersona /></Button>
 </div>
 <div class="flex pt-5 pb-8">
   <div class="w-3/4">

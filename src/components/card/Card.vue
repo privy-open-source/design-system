@@ -59,7 +59,7 @@ import {
   PropType,
   ref,
 } from 'vue-demi'
-import IconClose from '@privyid/persona-icon/vue/close/20.vue'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import Heading from '../heading/Heading.vue'
 import { ElementVariant } from '.'
 

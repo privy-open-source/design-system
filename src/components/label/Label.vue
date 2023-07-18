@@ -28,7 +28,7 @@ import {
 import Dot from '../dot/Dot.vue'
 import { StyleVariant } from '.'
 import { ColorVariant, SizeVariant } from '../button'
-import IconClose from '@privyid/persona-icon/vue/close/20.vue'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 
 export default defineComponent({
   components: { Dot, IconClose },

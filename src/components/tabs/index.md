@@ -7,9 +7,9 @@ description: Base tab menus.
   import pTabs from './Tabs.vue'
   import pTab from './Tab.vue'
   import pBadge from '../badge/Badge.vue'
-  import IconEdit from '@carbon/icons-vue/lib/edit/20'
-  import IconView from '@carbon/icons-vue/lib/view/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
+  import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
+  import IconView from '@privyid/persona-icon/vue/view/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
 </script>
 
 <style lang="postcss" scoped>

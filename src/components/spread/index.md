@@ -6,7 +6,7 @@ description: Sub-component for creating spread animation.
 <script setup>
   import pSpread from './Spread.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
-  import IconFile from '@carbon/icons-vue/lib/document/32'
+  import IconFile from '@privyid/persona-icon/vue/document-filled/32.vue'
   import { ref } from 'vue-demi'
 
   const active = ref(false)
@@ -35,7 +35,7 @@ description: Sub-component for creating spread animation.
 </template>
 
 <script setup>
-  import IconFile from '@carbon/icons-vue/lib/document/32'
+  import IconFile from '@privyid/persona-icon/vue/document-filled/32.vue'
 </script>
 ```
 
