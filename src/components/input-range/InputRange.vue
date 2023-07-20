@@ -12,14 +12,14 @@
         data-testid="track-lower"
         class="input-range__track input-range__track-lower"
         :style="lowerStyle"
-        @click="onClickLowerTrack" />
+        @click.capture="onClickLowerTrack" />
       <!-- Active Track -->
       <div
         ref="track-active"
         data-testid="track-active"
         class="input-range__track input-range__track-active"
         :style="upperStyle"
-        @click="onClickActiveTrack">
+        @click.capture="onClickActiveTrack">
         <div
           v-show="multiple"
           ref="thumb-start"
@@ -34,7 +34,7 @@
       <div
         data-testid="track-upper"
         class="input-range__track input-range__track-upper"
-        @click="onClickUpperTrack" />
+        @click.capture="onClickUpperTrack" />
     </div>
   </div>
 </template>
@@ -242,8 +242,8 @@ export default defineComponent({
         end.value = getValue(event)
     })
 
-    syncRef(start, vStart)
-    syncRef(end, vEnd)
+    syncRef(start, vStart, { immediate: false })
+    syncRef(end, vEnd, { immediate: false })
 
     watch([start, end], ([startVal, endVal]) => {
       localStart.value = startVal

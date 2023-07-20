@@ -116,6 +116,24 @@ Show character counter with prop `show-counter`
 </template>
 ```
 
+## Accept Character
+
+You can filter what characters are allowed to be input using the prop `accept`. The value can be RegExp, or using available preset.
+
+<preview class="flex-col space-y-4">
+  <p-textarea accept="0-9" placeholder="Numeric Only (Manual)" />
+  <p-textarea accept="numeric" placeholder="Numeric Only (using Preset)" />
+</preview>
+
+```vue
+<template>
+  <p-textarea accept="0-9" placeholder="Numeric Only (Manual)" />
+  <p-textarea accept="numeric" placeholder="Numeric Only (using Preset)" />
+</template>
+```
+
+👉 See [Available Preset](../input/#available-preset) for more information
+
 ## Binding v-model
 
 Textarea value can be binding with `v-model`.
@@ -138,16 +156,17 @@ Textarea value can be binding with `v-model`.
 
 ### Props
 
-| Props          |   Type    | Default | Description            |
-|----------------|:---------:|:-------:|------------------------|
-| `placeholder`  | `String`  |   `-`   | Input's placeholder    |
-| `disabled`     | `Boolean` | `false` | Disable state          |
-| `readonly`     | `Boolean` | `false` | Readonly state         |
-| `error`        | `Boolean` | `false` | Error state            |
-| `autogrow`     | `Boolean` | `false` | Enable auto-resize     |
-| `resize`       | `Boolean` | `false` | Enable resize          |
-| `show-counter` | `Boolean` | `false` | Show character counter |
-| `modelValue`   | `String`  |   `-`   | `v-model` value        |
+| Props          |   Type    | Default | Description                         |
+|----------------|:---------:|:-------:|-------------------------------------|
+| `placeholder`  | `String`  |   `-`   | Input's placeholder                 |
+| `disabled`     | `Boolean` | `false` | Disable state                       |
+| `readonly`     | `Boolean` | `false` | Readonly state                      |
+| `error`        | `Boolean` | `false` | Error state                         |
+| `autogrow`     | `Boolean` | `false` | Enable auto-resize                  |
+| `resize`       | `Boolean` | `false` | Enable resize                       |
+| `show-counter` | `Boolean` | `false` | Show character counter              |
+| `accept`       | `String`  |   `-`   | Whitelist character can be inputted |
+| `modelValue`   | `String`  |   `-`   | `v-model` value                     |
 
 ### Slots
 

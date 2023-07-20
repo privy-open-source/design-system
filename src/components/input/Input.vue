@@ -38,7 +38,7 @@ import {
 } from 'vue-demi'
 import { useVModel } from '.'
 import { SizeVariant } from '../button'
-import IconClear from '@privyid/persona-icon/vue/close-circle-solid/16.vue'
+import IconClear from '@privyid/persona-icon/vue/close-circle-solid/20.vue'
 import { INPUTGROUP_SETTING } from '../input-group'
 import {
   AcceptVariant,
@@ -182,7 +182,7 @@ export default defineComponent({
   }
 
   .input__clear {
-    @apply text-default/30 cursor-pointer hover:text-danger z-1;
+    @apply text-default/30 cursor-pointer hover:text-danger z-[2];
     @apply dark:text-dark-default/30 hover:dark:text-dark-danger;
   }
 

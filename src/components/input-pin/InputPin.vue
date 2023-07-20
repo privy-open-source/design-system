@@ -10,6 +10,7 @@
       maxlength="1"
       v-bind="$attrs"
       :model-value="getValue(i - 1)"
+      :size="size"
       :clearable="false"
       :readonly="readonly"
       :disabled="disabled"
@@ -41,6 +42,7 @@ import {
   removeUnaccepted,
 } from '../input'
 import { toArray } from '.'
+import { SizeVariant } from '../button'
 
 export default defineComponent({
   components  : { pInput },
@@ -49,6 +51,10 @@ export default defineComponent({
     modelValue: {
       type   : String,
       default: undefined,
+    },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
     },
     length: {
       type   : [Number, String],
