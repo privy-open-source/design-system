@@ -16,8 +16,7 @@
       :error="error"
       @beforeinput.prevent="setValue(i - 1, $event)"
       @keyup.left.stop.prevent="prevFocus"
-      @keyup.right.stop.prevent="nextFocus"
-      @paste.passive="onPaste" />
+      @keyup.right.stop.prevent="nextFocus" />
   </div>
 </template>
 
@@ -28,6 +27,7 @@ import {
   defineComponent,
   toRef,
   ref,
+  PropType,
 } from 'vue-demi'
 import {
   syncRef,
@@ -35,6 +35,12 @@ import {
   useToNumber,
 } from '@vueuse/core'
 import { useFocus } from '../dropdown/utils/use-focus'
+import {
+  AcceptVariant,
+  isAccepted,
+  removeUnaccepted,
+} from '../input'
+import { toArray } from '.'
 
 export default defineComponent({
   components  : { pInput },
@@ -60,6 +66,10 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    accept: {
+      type   : String as PropType<AcceptVariant>,
+      default: undefined,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -69,7 +79,7 @@ export default defineComponent({
   setup (props, { emit }) {
     const root       = templateRef<HTMLDivElement>('root')
     const num        = useToNumber(toRef(props, 'length'))
-    const localModel = ref<string[]>([...(props.modelValue?.padEnd(num.value) ?? '')].slice(0, num.value))
+    const localModel = ref<string[]>(toArray(props.modelValue, num.value))
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -90,9 +100,7 @@ export default defineComponent({
 
     const model = computed<string[]>({
       get () {
-        return props.modelValue
-          ? [...(props.modelValue.padEnd(num.value))].slice(0, num.value)
-          : []
+        return toArray(props.modelValue, num.value)
       },
       set (value: string[]) {
         const text = value.map((val) => val || ' ').join('').trimEnd()
@@ -109,21 +117,19 @@ export default defineComponent({
     }
 
     function setValue (index: number, event: InputEvent) {
-      const value = event.data ?? ''
+      if (event.inputType === 'insertFromPaste')
+        localModel.value = toArray(removeUnaccepted(props.accept, event.data), num.value)
 
-      localModel.value[index] = value
+      else if (!event.data || isAccepted(props.accept, event.data)) {
+        localModel.value[index] = event.data
 
-      if (root.value) {
-        if (value)
-          nextFocus()
-        else
-          prevFocus()
+        if (root.value) {
+          if (event.inputType === 'deleteContentBackward')
+            prevFocus()
+          else
+            nextFocus()
+        }
       }
-    }
-
-    function onPaste (event: ClipboardEvent) {
-      localModel.value = [...event.clipboardData.getData('Text')]
-        .slice(0, num.value)
     }
 
     return {
@@ -132,7 +138,6 @@ export default defineComponent({
       localModel,
       getValue,
       setValue,
-      onPaste,
       nextFocus,
       prevFocus,
     }

@@ -1,5 +1,5 @@
 ---
-title: Input Password · Components
+title: Input Pin · Components
 description: One at time input form.
 ---
 

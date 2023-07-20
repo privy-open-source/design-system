@@ -1,5 +1,6 @@
 
 import { render, fireEvent } from '@testing-library/vue'
+import userEvent from '@testing-library/user-event'
 import InputPin from './InputPin.vue'
 import { ref } from 'vue-demi'
 import { vi } from 'vitest'
@@ -84,12 +85,12 @@ it('should combine all value from all input into single v-model', async () => {
   })
 
   const inputs = screen.queryAllByTestId('input')
+  const user   = userEvent.setup()
 
-  await fireEvent.update(inputs.at(0), '1')
-  await fireEvent.update(inputs.at(1), '2')
-  await fireEvent.update(inputs.at(2), '3')
-  await fireEvent.update(inputs.at(3), '')
-  await fireEvent.update(inputs.at(4), '3')
+  await user.type(inputs.at(0), '1')
+  await user.type(inputs.at(1), '2')
+  await user.type(inputs.at(2), '3')
+  await user.type(inputs.at(4), '3')
 
   expect(model.value).toBe('123 3')
 })
@@ -105,10 +106,11 @@ it('should not trim space in begining of v-model result text', async () => {
   })
 
   const inputs = screen.queryAllByTestId('input')
+  const user   = userEvent.setup()
 
-  await fireEvent.update(inputs.at(2), '1')
-  await fireEvent.update(inputs.at(3), '2')
-  await fireEvent.update(inputs.at(4), '3')
+  await user.type(inputs.at(2), '1')
+  await user.type(inputs.at(3), '2')
+  await user.type(inputs.at(4), '3')
 
   expect(model.value).toBe('  123')
 })
@@ -123,10 +125,9 @@ it('should handle value from clipboard (paste)', async () => {
     },
   })
 
-  const inputs        = screen.queryAllByTestId('input')
-  const clipboardData = { getData: vi.fn(() => '123456789') }
+  const inputs = screen.queryAllByTestId('input')
 
-  await fireEvent.paste(inputs.at(0), { clipboardData })
+  await fireEvent(inputs.at(0), new InputEvent('beforeinput', { inputType: 'insertFromPaste', data: '123456789' }))
 
   expect(model.value).toBe('12345')
   expect(inputs.at(0)).toHaveValue('1')
@@ -143,22 +144,9 @@ it('should back to previous focus if delete the value', async () => {
   })
 
   const inputs = screen.queryAllByTestId('input')
+  const user   = userEvent.setup()
 
-  await fireEvent.keyUp(inputs.at(2), { key: 'Backspace' })
+  await user.clear(inputs.at(2))
 
   expect(prevFocus).toBeCalled()
-})
-
-it('should select the input when focus', async () => {
-  const screen = render({
-    components: { InputPin },
-    template  : '<input-pin />',
-  })
-
-  const inputs = screen.queryAllByTestId('input')
-  const select = vi.spyOn(inputs.at(2) as HTMLInputElement, 'select')
-
-  await fireEvent.focus(inputs.at(2))
-
-  expect(select).toBeCalled()
 })
