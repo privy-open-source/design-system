@@ -18,6 +18,10 @@ description: Base password-input form.
 
 ### Simple Usage
 
+<preview class="flex-col space-y-3">
+  <p-input-password class="test" />
+</preview>
+
 ```vue
 <template>
   <p-input-password />
@@ -121,6 +125,7 @@ Like other input, input value can be binding with `v-model`.
 | `error`       | `Boolean` | `false` | Error state                                             |
 | `clearable`   | `Boolean` | `false` | Enable clear button                                     |
 | `modelValue`  | `String`  |   `-`   | v-model value                                           |
+| `container-class` | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the input password container  |
 
 ### Slots
 

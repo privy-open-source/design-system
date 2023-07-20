@@ -195,6 +195,7 @@ Input value can be binding with `v-model`.
 | `error`       | `Boolean` | `false` | Error state                                             |
 | `clearable`   | `Boolean` | `false` | Enable clear button                                     |
 | `modelValue`  | `String`  |   `-`   | v-model value                                           |
+| `container-class`  | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the input container  |
 
 ### Slots
 
