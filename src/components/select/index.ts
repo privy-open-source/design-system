@@ -1,3 +1,5 @@
+import { isEqual } from '../utils/value'
+
 export interface SelectItem {
   text: string,
   value: unknown,
@@ -11,4 +13,9 @@ export interface SelectProps {
 
 export function defineOptions (options: SelectItem[]): SelectItem[] {
   return options
+}
+
+export function findSelected (items: SelectItem[], value: unknown): SelectItem {
+  return items.find((item) => isEqual(item.value, value))
+    ?? { text: '', value: undefined }
 }
