@@ -2,7 +2,7 @@
 import pContextualBar from './ContextualBar.vue'
 import pButton from '../button/Button.vue'
 import { ref, onMounted } from "vue-demi"
-import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
+import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 
 const sample1 = ref(false)
 
@@ -108,7 +108,7 @@ onMounted (() => {
 </template>
 
 <script setup>
-import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
+import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 </script>
 ```
 

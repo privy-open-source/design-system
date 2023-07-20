@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/vue'
 import Avatar from './Avatar.vue'
-import IconUser from '@carbon/icons-vue/lib/events/20'
+import IconUser from '@privyid/persona-icon/vue/profile/20.vue'
 import MockImage from './__mocks__/image'
 import { vi, expect } from 'vitest'
 import { delay } from 'nanodelay'

@@ -76,7 +76,7 @@ import { AlignVariant } from '../nav'
 import { useVModel } from '../input'
 import pCaption from '../caption/Caption.vue'
 import pSubheading from '../subheading/Subheading.vue'
-import IconClose from '@carbon/icons-vue/lib/close/20'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import { StyleVariant } from '.'
 
 export default defineComponent({

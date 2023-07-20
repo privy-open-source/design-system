@@ -2,7 +2,7 @@ import { render } from '@testing-library/vue'
 import pTabs from './Tabs.vue'
 import pTab from './Tab.vue'
 import { delay } from 'nanodelay'
-import IconEdit from '@carbon/icons-vue/lib/edit/16'
+import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
 
 it('should rendered properly without any props', () => {
   const screen = render({

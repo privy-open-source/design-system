@@ -6,9 +6,9 @@ description: Base text-input form.
 <script setup>
   import pInput from "./Input.vue"
   import { ref } from "vue-demi"
-  import IconAt from '@carbon/icons-vue/lib/at/20'
-  import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/20'
-  import IconEmail from '@carbon/icons-vue/lib/email/20'
+  import IconAt from '@privyid/persona-icon/vue/address/20.vue'
+  import IconCheck from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
+  import IconEmail from '@privyid/persona-icon/vue/email/20.vue'
   import PSpinner from '../spinner/Spinner.vue'
 
   const value  = ref('')

@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue-demi'
-import IconChevron from '@carbon/icons-vue/lib/chevron--right/16'
+import IconChevron from '@privyid/persona-icon/vue/chevron-right/20.vue'
 import { TagVariant } from '.'
 
 export default defineComponent({

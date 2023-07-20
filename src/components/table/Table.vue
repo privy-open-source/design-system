@@ -129,7 +129,7 @@
           data-testid="datatable-empty"
           class="datatable__cell datatable__cell--empty datatable__state-empty">
           <slot name="empty">
-            <span class="flex justify-center items-center text-subtle dark:text-dark-subtle">
+            <span class="flex items-center justify-center text-subtle dark:text-dark-subtle">
               {{ emptyLabel }}
             </span>
           </slot>
@@ -148,7 +148,7 @@ import {
 import { TableField } from '.'
 import Checkbox from '../checkbox/Checkbox.vue'
 import { useVModel } from '../input'
-import IconDrag from '@carbon/icons-vue/lib/draggable/24'
+import IconDrag from '@privyid/persona-icon/vue/draggable/20.vue'
 import Draggable from 'vuedraggable'
 import defu from 'defu'
 

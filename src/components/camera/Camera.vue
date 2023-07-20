@@ -128,9 +128,9 @@ import {
   toRef,
 } from 'vue-demi'
 import pButton from '../button/Button.vue'
-import IconRotate from '@carbon/icons-vue/lib/renew/16'
-import IconCamera from '@carbon/icons-vue/lib/camera/24'
-import IconRetake from '@carbon/icons-vue/lib/reset/24'
+import IconRotate from '@privyid/persona-icon/vue/refresh/16.vue'
+import IconCamera from '@privyid/persona-icon/vue/camera/24.vue'
+import IconRetake from '@privyid/persona-icon/vue/reset/24.vue'
 import ShutterWav from './assets/shutter.wav'
 import { useVModel } from '../input'
 import CaptureAdapter from './adapter/capture'
