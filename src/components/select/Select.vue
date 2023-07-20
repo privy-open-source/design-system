@@ -73,8 +73,8 @@
 import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
 import pInput from '../input/Input.vue'
-import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
-import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/16'
+import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'
+import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
 import IconLoading from '../spinner/SpinnerRing.vue'
 import {
   computed,

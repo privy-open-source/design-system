@@ -27,9 +27,9 @@
 </template>
 
 <script lang="ts">
-import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
-import IconDanger from '@carbon/icons-vue/lib/warning--filled/20'
-import IconClose from '@carbon/icons-vue/lib/close/16'
+import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
+import IconDanger from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import {
   defineComponent,
   PropType,

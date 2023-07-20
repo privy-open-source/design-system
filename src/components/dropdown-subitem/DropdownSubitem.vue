@@ -50,8 +50,8 @@
 
 <script lang="ts">
 import DropdownItem from '../dropdown/DropdownItem.vue'
-import IconNext from '@carbon/icons-vue/lib/chevron--right/16'
-import IconBack from '@carbon/icons-vue/lib/arrow--left/16'
+import IconNext from '@privyid/persona-icon/vue/chevron-right/16.vue'
+import IconBack from '@privyid/persona-icon/vue/arrow-left/16.vue'
 import {
   defineComponent,
   inject,

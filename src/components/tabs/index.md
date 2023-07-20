@@ -7,9 +7,12 @@ description: Base tab menus.
   import pTabs from './Tabs.vue'
   import pTab from './Tab.vue'
   import pBadge from '../badge/Badge.vue'
-  import IconEdit from '@carbon/icons-vue/lib/edit/20'
-  import IconView from '@carbon/icons-vue/lib/view/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
+  import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
+  import IconView from '@privyid/persona-icon/vue/view/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import { ref } from 'vue-demi'
+
+  const active = ref(1)
 </script>
 
 <style lang="postcss" scoped>
@@ -454,6 +457,55 @@ The available alignment in vertical Tabs is just `left` and `right`
   </p-tabs>
 </template>
 ```
+### Binding v-model
+
+You can binding current active with v-model
+
+<preview>
+  <p-tabs v-model="active">
+    <p-tab title="Home">
+      One morning, when Gregor Samsa woke from troubled dreams,
+      he found himself transformed in his bed into a horrible vermin.
+      He lay on his armour-like back, and if he lifted his head
+    </p-tab>
+    <p-tab title="Profile">
+      But I must explain to you how all this mistaken idea of
+      denouncing pleasure and praising pain was born and I will
+      give you a complete account of the system,
+    </p-tab>
+    <p-tab title="Setting" disabled>
+      Far far away, behind the word mountains, far from
+      the countries Vokalia and Consonantia, there live the
+      blind texts. Separated they live in Bookmarksgrove right
+    </p-tab>
+  </p-tabs>
+</preview>
+
+```vue
+<template>
+  <p-tabs v-model="active">
+    <p-tab title="Home">
+      One morning, when Gregor Samsa woke from troubled dreams,
+      he found himself transformed in his bed into a horrible vermin.
+      He lay on his armour-like back, and if he lifted his head
+    </p-tab>
+    <p-tab title="Profile">
+      But I must explain to you how all this mistaken idea of
+      denouncing pleasure and praising pain was born and I will
+      give you a complete account of the system,
+    </p-tab>
+    <p-tab title="Setting" disabled>
+      Far far away, behind the word mountains, far from
+      the countries Vokalia and Consonantia, there live the
+      blind texts. Separated they live in Bookmarksgrove right
+    </p-tab>
+  </p-tabs>
+</template>
+```
+
+**Active :**
+
+<pre><code>{{ active }}</code></pre>
 
 ## Variables
 Tabs use local CSS variables for enhanced real-time customization.
@@ -475,6 +527,7 @@ Tabs use local CSS variables for enhanced real-time customization.
 | `align`             | `String`  | `left`      | Tabs navigation alignment, valid value is `left`, `center`, and `right`|
 | `vertical`          | `Boolean` | `false`     | Activate vertical Tabs                                                 |
 | `nav-wrapper-class` | `String`  | `undefined` | Class to place in the navigation wrapper                               |
+| `v-model`        | `Number`  | `0`         | Set default active tab according to tab index                          |
 
 ### Slots `<p-tabs>`
 

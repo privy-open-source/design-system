@@ -6,10 +6,8 @@ description: Toggle style guide
 <script setup>
   import pToggle from '../../components/toggle/Toggle.vue'
   import pCaption from '../../components/caption/Caption.vue'
-  import IconOne from '@carbon/icons-vue/lib/number--1/16'
-  import IconZero from '@carbon/icons-vue/lib/number--0/16'
-  import IconLight from "@carbon/icons-vue/lib/light/16"
-  import IconDark from "@carbon/icons-vue/lib/asleep/16"
+  import IconLight from '@privyid/persona-icon/vue/sun/16.vue'
+  import IconDark from '@privyid/persona-icon/vue/moon/16.vue'
   import { ref } from "vue-demi"
   import { useDark } from '@vueuse/core'
 
@@ -80,10 +78,10 @@ A toggle is used to view or switch between enabled or disabled states. Toggle sw
 <div class="flex my-6">
   <p-toggle variant="pill" readonly checked>
     <template #checked>
-      <IconOne />
+      1
     </template>
     <template #unchecked>
-      <IconZero />
+      0
     </template>
   </p-toggle>
 </div>

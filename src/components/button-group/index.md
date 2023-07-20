@@ -9,9 +9,9 @@ description: Collection of buttons consisting of at least 2 buttons in single li
   import pButton from '../button/Button.vue'
   import pDropdown from '../dropdown/Dropdown.vue'
   import pDropdownItem from '../dropdown/DropdownItem.vue'
-  import IconChevronLeft from '@carbon/icons-vue/lib/chevron--left/20'
-  import IconChevronRight from '@carbon/icons-vue/lib/chevron--right/20'
-  import IconChevronDown from '@carbon/icons-vue/lib/chevron--down/20'
+  import IconChevronLeft from '@privyid/persona-icon/vue/chevron-left/20.vue'
+  import IconChevronRight from '@privyid/persona-icon/vue/chevron-right/20.vue'
+  import IconChevronDown from '@privyid/persona-icon/vue/chevron-down/20.vue'
 
 </script>
 
@@ -63,7 +63,7 @@ Place one add-on on either side of a Button. You may also make Button all addon.
 </template>
 
 <script setup>
-  import IconChevronLeft from '@carbon/icons-vue/lib/chevron--left/20'
+  import IconChevronLeft from '@privyid/persona-icon/vue/chevron-left/20.vue'
 </script>
 ```
 
@@ -106,7 +106,7 @@ In the button group, to simplify several actions in one button, it can be combin
 </template>
 
 <script setup>
-  import IconChevronDown from '@carbon/icons-vue/lib/chevron--down/20'
+  import IconChevronDown from '@privyid/persona-icon/vue/chevron-down/20.vue'
 </script>
 ```
 
@@ -129,8 +129,8 @@ Button Group all addon is group a series of buttons with only icon
 </template>
 
 <script setup>
-  import IconChevronLeft from '@carbon/icons-vue/lib/chevron--left/20'
-  import IconChevronRight from '@carbon/icons-vue/lib/chevron--right/20'
+  import IconChevronLeft from '@privyid/persona-icon/vue/chevron-left/20.vue'
+  import IconChevronRight from '@privyid/persona-icon/vue/chevron-right/20.vue'
 </script>
 ```
 

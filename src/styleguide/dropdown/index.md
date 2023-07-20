@@ -15,7 +15,7 @@ description: Dropdown style guide
   import pBanner from '../../components/banner/Banner.vue'
   import pDivider from '../../components/divider/Divider.vue'
   import pRadio from '../../components/radio/Radio.vue'
-  import IconNext from '@carbon/icons-vue/lib/chevron--right/16'
+  import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
   import { ref } from 'vue-demi'
   
   const model = ref(true)

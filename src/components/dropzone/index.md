@@ -8,8 +8,8 @@ description: Headless component for Drag'n'Drop Files Upload.
   import pHeading from '../heading/Heading.vue'
   import pCaption from '../caption/Caption.vue'
   import pSpread from '../spread/Spread.vue'
-  import IconFile from '@carbon/icons-vue/lib/document/32'
-  import IconImage from '@carbon/icons-vue/lib/image/32'
+  import IconFile from '@privyid/persona-icon/vue/document-filled/32.vue'
+  import IconImage from '@privyid/persona-icon/vue/image/32.vue'
   import { ref } from 'vue-demi'
 
   const result  = ref()

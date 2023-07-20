@@ -8,7 +8,7 @@ description: Fancy form wizard.
   import pWizardStep from './WizardStep.vue'
   import pButton from '../button/Button.vue'
   import pInput from '../input/Input.vue'
-  import IconDocument from '@carbon/icons-vue/lib/document/16'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
   import { reactive } from 'vue-demi'
   import { dialog } from '../../core/'
 
