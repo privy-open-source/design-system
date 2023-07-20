@@ -7,7 +7,7 @@ import {
 } from 'vue-demi'
 import pContextualBar from './ContextualBar.vue'
 import pButton from '../button/Button.vue'
-import IconInfo from '@carbon/icons-vue/lib/information--filled/20'
+import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import { until } from '@vueuse/core'
 
 afterEach(() => {

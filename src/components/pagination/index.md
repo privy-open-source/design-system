@@ -2,10 +2,10 @@
 import { ref } from 'vue-demi'
 import pPagination from './Pagination.vue'
 
-import IconNextOutline from '@carbon/icons-vue/lib/next--outline/20'
-import IconPrevOutline from '@carbon/icons-vue/lib/previous--outline/20'
-import IconSkipForward from '@carbon/icons-vue/lib/skip--forward/20'
-import IconSkipBack from '@carbon/icons-vue/lib/skip--back/20'
+import IconNextOutline from '@privyid/persona-icon/vue/arrow-circle-right/20.vue'
+import IconPrevOutline from '@privyid/persona-icon/vue/arrow-circle-left/20.vue'
+import IconSkipForward from '@privyid/persona-icon/vue/caret-right/20.vue'
+import IconSkipBack from '@privyid/persona-icon/vue/caret-left/20.vue'
 
 const simpleModel = ref(1)
 const simpleTotal = ref(100)

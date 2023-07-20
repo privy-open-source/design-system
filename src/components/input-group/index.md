@@ -10,7 +10,7 @@ description: Combine multiple input in singleline.
   import pButton from '../button/Button.vue'
   import pDivider from '../divider/Divider.vue'
   import pSelect from '../select/Select.vue'
-  import IconEmail from '@carbon/icons-vue/lib/at/16'
+  import IconEmail from '@privyid/persona-icon/vue/address/20.vue'
   import { ref } from 'vue-demi'
 
   const select = ref()

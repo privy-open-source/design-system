@@ -5,8 +5,8 @@ description: Base input toggle.
 
 <script setup>
   import pToggle from "./Toggle.vue"
-  import IconLight from "@carbon/icons-vue/lib/light/16"
-  import IconDark from "@carbon/icons-vue/lib/asleep/16"
+  import IconLight from '@privyid/persona-icon/vue/sun/16.vue'
+  import IconDark from '@privyid/persona-icon/vue/moon/16.vue'
   import { ref } from "vue-demi"
   import { useDark } from '@vueuse/core'
 
@@ -129,8 +129,8 @@ You can also use `checked` and `unchecked` slot to customize the label, it allow
 </template>
 
 <script setup>
-  import IconLight from "@carbon/icons-vue/lib/light/16"
-  import IconDark from "@carbon/icons-vue/lib/asleep/16"
+  import IconLight from '@privyid/persona-icon/vue/sun/16.vue'
+  import IconDark from '@privyid/persona-icon/vue/moon/16.vue'
 </script>
 ```
 

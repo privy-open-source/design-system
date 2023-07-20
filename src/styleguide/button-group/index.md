@@ -9,9 +9,9 @@ description: Button group style guide
   import Dropdown from '../../components/dropdown/Dropdown.vue'
   import DropdownItem from '../../components/dropdown/DropdownItem.vue'
   import Caption from '../../components/caption/Caption.vue'
-  import IconChevronDown from '@carbon/icons-vue/lib/chevron--down/20'
-  import IconChevronLeft from '@carbon/icons-vue/lib/chevron--left/20'
-  import IconChevronRight from '@carbon/icons-vue/lib/chevron--right/20'
+  import IconChevronDown from '@privyid/persona-icon/vue/chevron-down/20.vue'
+  import IconChevronLeft from '@privyid/persona-icon/vue/chevron-left/20.vue'
+  import IconChevronRight from '@privyid/persona-icon/vue/chevron-right/20.vue'
 </script>
 
 # ![button](/assets/images/img-guide-button.svg) Buttons Group

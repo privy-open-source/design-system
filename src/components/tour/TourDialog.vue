@@ -89,7 +89,7 @@ import pSubheading from '../subheading/Subheading.vue'
 import pCaption from '../caption/Caption.vue'
 import pButton from '../button/Button.vue'
 import { pMd } from '../markdown'
-import IconClose from '@carbon/icons-vue/lib/close/16'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 
 export default defineComponent({
   components: {

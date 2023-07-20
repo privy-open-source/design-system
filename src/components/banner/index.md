@@ -8,7 +8,7 @@ description: Alert to convey information or actions
   import pButton from '../button/Button.vue'
   import pCaption from '../caption/Caption.vue'
   import pSubheading from '../subheading/Subheading.vue'
-  import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/20'
+  import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
 </script>
 
 # Banner
@@ -126,7 +126,7 @@ description: Alert to convey information or actions
   </p-banner>
 
   <script setup>
-  import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/20'
+  import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
   </script>
 </template>
 ```

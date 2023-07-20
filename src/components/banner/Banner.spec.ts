@@ -1,7 +1,7 @@
 import { vi } from 'vitest'
 import { fireEvent, render } from '@testing-library/vue'
 import Banner from './Banner.vue'
-import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/20'
+import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
 
 it('should rendered properly without any props', () => {
   const screen = render({

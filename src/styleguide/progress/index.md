@@ -7,7 +7,7 @@ description: Progress style guide
   import pProgress from '../../components/progress/Progress.vue'
   import pProgressItem from '../../components/progress/ProgressItem.vue'
   import pCaption from '../../components/caption/Caption.vue'
-  import IconBee from '@carbon/icons-vue/lib/bee/16'
+  import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 
 # ![progress](/assets/images/img-guide-progress.svg) Progress
@@ -90,22 +90,22 @@ A progress tracker is progress indicator component communicates or displays the 
     <p-progress>
       <p-progress-item active >
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
       </p-progress-item>
       <p-progress-item>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
       </p-progress-item>
       <p-progress-item>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
       </p-progress-item>
       <p-progress-item>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
       </p-progress-item>
     </p-progress>  

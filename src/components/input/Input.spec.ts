@@ -1,6 +1,6 @@
 import pInput from './Input.vue'
 import pInputGroup from '../input-group/InputGroup.vue'
-import IconEmail from '@carbon/icons-vue/lib/email/16'
+import IconEmail from '@privyid/persona-icon/vue/email/20.vue'
 import { fireEvent, render } from '@testing-library/vue'
 import { ref } from 'vue-demi'
 

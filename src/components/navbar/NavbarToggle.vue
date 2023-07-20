@@ -21,8 +21,8 @@ import {
   computed,
 } from 'vue-demi'
 import Button from '../button/Button.vue'
-import IconMenu from '@carbon/icons-vue/lib/menu/20'
-import IconClose from '@carbon/icons-vue/lib/close/20'
+import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
+import IconClose from '@privyid/persona-icon/vue/close/20.vue'
 import { NAVBAR_SETTINGS } from '.'
 
 export default defineComponent({

@@ -11,11 +11,11 @@ description: Page with toggle expand for responsive purpose
   import pCard from '../card/Card.vue'
   import pHeading from '../heading/Heading.vue'
   import pBanner from '../banner/Banner.vue'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconUsers from '@carbon/icons-vue/lib/group/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconMenu from '@carbon/icons-vue/lib/menu/20'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconUsers from '@privyid/persona-icon/vue/user-multiple/20.vue'
+  import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
+  import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
   import IconEN from '../../public/assets/images/img-flag.svg'
   import { defineMenu } from '../sidebar-menu'
   import { ref } from 'vue-demi'
@@ -227,10 +227,10 @@ The page component is used in combination with the sidebar component. It can be 
 ```vue
 <script setup>
   import { defineMenu } from '@privyid/persona/core'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconUsers from '@carbon/icons-vue/lib/group/20'
-  import IconMenu from '@carbon/icons-vue/lib/menu/20'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+  import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
 
   const model = ref(false)
 
@@ -383,11 +383,11 @@ Page component has 2 type variant, `wide` and `narrow`. Default type is `narrow`
 ```vue
 <script setup>
   import { defineMenu } from '@privyid/persona/core'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconUsers from '@carbon/icons-vue/lib/group/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconMenu from '@carbon/icons-vue/lib/menu/20'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+  import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
+  import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
   import IconEN from '../assets/images/img-flag.svg'
 
   const model = ref(false)

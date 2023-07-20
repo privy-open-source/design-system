@@ -69,7 +69,7 @@ import {
 } from 'vue-demi'
 import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
-import IconClose from '@carbon/icons-vue/lib/close/16'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import { useVModel } from '../input'
 
 export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl'

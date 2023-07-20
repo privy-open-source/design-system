@@ -34,11 +34,11 @@ import {
   onUnmounted,
 } from 'vue-demi'
 import { ToastStyleVariant, ToastTypeVariant } from '.'
-import IconInfo from '@carbon/icons-vue/lib/information--filled/24'
-import IconSuccess from '@carbon/icons-vue/lib/checkmark/24'
-import IconWarning from '@carbon/icons-vue/lib/warning--filled/24'
-import IconError from '@carbon/icons-vue/lib/warning--alt--filled/24'
-import IconClose from '@carbon/icons-vue/lib/close/16'
+import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/24.vue'
+import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
+import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/24.vue'
+import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/24.vue'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 
 const ToastIcons = {
   info   : IconInfo,
