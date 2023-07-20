@@ -134,6 +134,7 @@ export default defineComponent({
       step,
       next,
       prev,
+      total,
       canNext,
       canPrev,
       toStep,
