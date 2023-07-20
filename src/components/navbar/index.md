@@ -22,12 +22,12 @@ description: Base dashboard navbar.
   import pAvatar from '../avatar/Avatar.vue'
   import pCollapse from '../collapse/Collapse.vue'
   import pCaption from '../caption/Caption.vue'
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
-  import IconView from '@carbon/icons-vue/lib/view/20'
-  import IconUser from '@carbon/icons-vue/lib/events/16'
-  import IconChevron from '@carbon/icons-vue/lib/chevron--sort/20'
-  import IconNotif from '@carbon/icons-vue/lib/notification/20'
-  import IconSearch from '@carbon/icons-vue/lib/search/20'
+  import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
+  import IconView from '@privyid/persona-icon/vue/view/20.vue'
+  import IconUser from '@privyid/persona-icon/vue/user-groups/16.vue'
+  import IconChevron from '@privyid/persona-icon/vue/chevron-sort/20.vue'
+  import IconNotif from '@privyid/persona-icon/vue/notification/20.vue'
+  import IconSearch from '@privyid/persona-icon/vue/search/20.vue'
 
   const menu = ref(false)
 </script>
@@ -247,13 +247,13 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
     <p-navbar-nav>
       <p-nav-item active>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
         Label
       </p-nav-item>
       <p-nav-item>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
         Label
       </p-nav-item>
@@ -267,13 +267,13 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
     <p-navbar-nav>
       <p-nav-item active>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
         Label
       </p-nav-item>
       <p-nav-item>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
         Label
       </p-nav-item>
@@ -352,13 +352,13 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
     <p-navbar-nav>
       <p-nav-item active>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
         Label
       </p-nav-item>
       <p-nav-item-dropdown>
         <template #button-content>
-          <IconBee /> Label
+          <IconPersona /> Label
         </template>
         <p-dropdown-item>Children 1</p-dropdown-item>
         <p-dropdown-item>Children 2</p-dropdown-item>
@@ -374,13 +374,13 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
     <p-navbar-nav>
       <p-nav-item active>
         <template #icon>
-          <IconBee />
+          <IconPersona />
         </template>
         Label
       </p-nav-item>
       <p-nav-item-dropdown>
         <template #button-content>
-          <IconBee /> Label
+          <IconPersona /> Label
         </template>
         <p-dropdown-item>Children 1</p-dropdown-item>
         <p-dropdown-item>Children 2</p-dropdown-item>
@@ -401,7 +401,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
     </p-navbar-brand>
     <p-navbar-toggle @click="menu =! menu">
       <template #default="{ expanded }">
-        <IconBee v-if="expanded" />
+        <IconPersona v-if="expanded" />
         <IconView v-else />
       </template>
     </p-navbar-toggle>
@@ -423,7 +423,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
     </p-navbar-brand>
     <p-navbar-toggle @click="menu =! menu">
       <template #default="{ expanded }">
-        <IconBee v-if="expanded" />
+        <IconPersona v-if="expanded" />
         <IconView v-else />
       </template>
     </p-navbar-toggle>
@@ -438,8 +438,8 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 </template>
 
 <script setup>
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
-  import IconView from '@carbon/icons-vue/lib/view/20'
+  import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
+  import IconView from '@privyid/persona-icon/vue/view/20.vue'
 
   const menu = ref(false)
 </script>

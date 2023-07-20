@@ -38,7 +38,7 @@ import {
 } from 'vue-demi'
 import { useVModel } from '.'
 import { SizeVariant } from '../button'
-import IconClear from '@carbon/icons-vue/lib/close--filled/16'
+import IconClear from '@privyid/persona-icon/vue/close-circle-solid/16.vue'
 import { INPUTGROUP_SETTING } from '../input-group'
 import {
   AcceptVariant,

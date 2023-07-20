@@ -2,8 +2,8 @@ import { render, fireEvent } from '@testing-library/vue'
 import { delay } from 'nanodelay'
 import Navbar from './Navbar.vue'
 import NavbarToggle from './NavbarToggle.vue'
-import IconBee from '@carbon/icons-vue/lib/bee/20'
-import IconView from '@carbon/icons-vue/lib/view/16'
+import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
+import IconView from '@privyid/persona-icon/vue/view/20.vue'
 
 it('should rendered properly without any props', () => {
   const screen = render({
@@ -22,12 +22,12 @@ it('should rendered properly without any props', () => {
 it('Toggle menu collapse and expand when button was pressed', async () => {
   const screen = render({
     components: {
-      NavbarToggle, IconBee, IconView,
+      NavbarToggle, IconPersona, IconView,
     },
     template: `
       <NavbarToggle>
         <template #default="{ expanded }">
-          <IconBee data-testid="toggle-close" v-if="expanded" />
+          <IconPersona data-testid="toggle-close" v-if="expanded" />
           <IconView data-testid="toggle-open" v-else />
         </template>
       </NavbarToggle>

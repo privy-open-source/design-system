@@ -13,7 +13,7 @@ description: Table style guide
   import pRadio from '../../components/radio/Radio.vue'
   import pInput from '../../components/input/Input.vue'
   import pToggle from '../../components/toggle/Toggle.vue'
-  import IconMenu from '@carbon/icons-vue/lib/overflow-menu--horizontal/20'
+  import IconMenu from '@privyid/persona-icon/vue/menu-horizontal/20.vue'
   import { defineTable } from '../../components/table'
   import { ref } from 'vue-demi'
 
@@ -263,13 +263,13 @@ Table is used to organize and display information from a data set.
   <p-table :fields="fields2" :items="items1">
     <template #cell(label)="{ item }">
       <div class="flex flex-row space-x-10">
-        <span class="flex space-x-2 items-center">
+        <span class="flex items-center space-x-2">
           <p-avatar src="https://picsum.photos/50" />
           <span>
             Text Content
           </span>
         </span>
-        <span class="flex space-x-2 items-center">
+        <span class="flex items-center space-x-2">
           <p-avatar src="https://picsum.photos/50" />
           <span>
             Text Content

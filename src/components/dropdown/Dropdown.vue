@@ -77,7 +77,7 @@ import {
   hide,
 } from '@floating-ui/dom'
 import { useVModel } from '../input'
-import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
+import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
 import type {
   StyleVariant,
   ColorVariant,

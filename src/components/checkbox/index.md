@@ -8,7 +8,7 @@ description: Base checkbox form
   import pCheckbox from "./Checkbox.vue"
   import pCaption from "../caption/Caption.vue"
   import pCard from "../card/Card.vue"
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import IconBee from '@privyid/persona-icon/vue/persona/20.vue'
   import { ref, computed } from "vue-demi"
 
   const value    = ref(false)

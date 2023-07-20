@@ -9,7 +9,7 @@ description: Add object to PDF Viewer with Drag'n'Drop
   import pPdfObjectAddon from '../pdf-object/PdfObjectAddon.vue'
   import pPdfViewer from '../pdf-viewer/PdfViewer.vue'
   import pButton from '../button/Button.vue'
-  import IconClose from '@carbon/icons-vue/lib/close/16'
+  import IconClose from '@privyid/persona-icon/vue/close/16.vue'
   import FILE from '../../public/assets/pdf/Calibrator-v3.pdf?url'
   import IMG_HELICOPTER from '../../public/assets/images/img-helicopter.svg'
   import { reactive, ref } from 'vue-demi'

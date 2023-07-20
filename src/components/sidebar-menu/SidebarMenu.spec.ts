@@ -2,10 +2,10 @@ import { render, fireEvent } from '@testing-library/vue'
 import { delay } from 'nanodelay'
 import SidebarMenu from './SidebarMenu.vue'
 import { defineMenu } from '.'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
-import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
 
 const menus = defineMenu([
   {
