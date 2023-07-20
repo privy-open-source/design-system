@@ -5,6 +5,9 @@ description: Base textarea form input.
 
 <script setup>
   import pTextarea from './Textarea.vue'
+  import { ref } from 'vue-demi'
+
+  const result = ref()
 </script>
 
 # Textarea
@@ -110,6 +113,24 @@ Show character counter with prop `show-counter`
 <template>
   <p-textarea show-counter />
   <p-textarea show-counter maxlength="50" />
+</template>
+```
+
+## Binding v-model
+
+Textarea value can be binding with `v-model`.
+
+<preview>
+  <p-textarea v-model="result" />
+</preview>
+
+**result:**
+
+<pre class="truncate"><code>{{ result || '-' }}</code></pre>
+
+```vue
+<template>
+  <p-textarea v-model="result" />
 </template>
 ```
 
