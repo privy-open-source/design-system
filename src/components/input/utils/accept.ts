@@ -88,8 +88,8 @@ export function checkOnInput (accept: AcceptVariant | undefined, event: Event) {
       try {
         target.value = nextValue
 
-        target.dispatchEvent(new InputEvent('input', event))
-        target.setSelectionRange(ss + value.length, ss + value.length)
+        target.dispatchEvent(new InputEvent('input'))
+        target.setSelectionRange(value.length + ss, value.length + ss)
       } catch (error) {
         if (import.meta.env.DEV)
           console.error(error)
