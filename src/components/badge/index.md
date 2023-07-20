@@ -119,7 +119,7 @@ Use this variable for [level color](/styleguide/badge/#level-color-customizable-
 --p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
 ```
 
-### `.badge.badge--variant-{light | inverse}.badge--default`
+### `.badge.badge--variant-inverse.badge--default`
 ```sass
 --p-color-variant-inverse: theme(textColor.subtle);
 --p-color-dark-variant-inverse: theme(textColor.dark.subtle);

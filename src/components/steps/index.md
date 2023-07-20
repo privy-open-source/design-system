@@ -144,6 +144,197 @@ description: Headless Wizard.
 </template>
 ```
 
+## Vertical Mode
+
+Set `direction` to `vertical` to enable Vertical mode.
+
+<preview>
+  <p-steps direction="vertical">
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 1</div>
+            <div class="space-gap-2">
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 2</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev, toStep }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 3</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Finish</p-button>
+              <p-button @click="toStep(1)" color="info">To Step 1</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+  </p-steps>
+</preview>
+
+```vue
+<template>
+  <p-steps direction="vertical">
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 1</div>
+            <div class="space-gap-2">
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 2</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev, toStep }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 3</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Finish</p-button>
+              <p-button @click="toStep(1)" color="info">To Step 1</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+  </p-steps>
+</template>
+```
+
+## Loop Over
+
+Add prop `loop` to enable Loop mode, it will loop over the steps and never finished.
+
+<preview>
+  <p-steps loop>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 1</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 2</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 3</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+  </p-steps>
+</preview>
+
+```vue
+<template>
+  <p-steps loop>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 1</div>
+            <div class="space-gap-2">
+              <p-button disabled color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 2</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Next</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+    <p-step>
+      <template #default="{ next, prev, toStep }">
+        <p-card>
+          <div class="flex flex-col h-52">
+            <div class="flex-grow">Step 3</div>
+            <div class="space-gap-2">
+              <p-button @click="prev" color="info">Prev</p-button>
+              <p-button @click="next" color="info">Finish</p-button>
+              <p-button @click="toStep(1)" color="info">To Step 1</p-button>
+            </div>
+          </div>
+        </p-card>
+      </template>
+    </p-step>
+  </p-steps>
+</template>
+```
+
 ## Hooks
 
 ### `on-before-next` hook
@@ -263,6 +454,10 @@ Similar to [`on-before-next`](#on-before-next-hook), but run when `prev` functio
 ### `on-finished` hook
 
 This hook run when `next` function called in **last step**, and after `on-before-next` resolved. It's suit for handle save form, or sending POST to API.
+
+<p-banner>
+  This hook never be called in <strong>Loop Mode</strong>
+</p-banner>
 
 <preview>
   <p-steps
@@ -420,13 +615,15 @@ You can binding current step with v-model
 
 ### Props `<p-steps>`
 
-| Props            |    Type    | Default | Description                                                       |
-|------------------|:----------:|:-------:|-------------------------------------------------------------------|
-| `on-before-next` | `Function` |   `-`   | Hook which run before navigate to next page                       |
-| `on-before-prev` | `Function` |   `-`   | Hook which run before navigate to previous page                   |
-| `on-finished`    | `Function` |   `-`   | Hook which run on last step, after `on-before-next` hook resolved |
-| `keep-alive`     | `Boolean`  | `false` | Enable [KeepAlive][KeepAlive]                                     |
-| `modelValue`     |  `Number`  |   `1`   | Binding v-model                                                   |
+| Props            |    Type    |   Default    | Description                                                       |
+|------------------|:----------:|:------------:|-------------------------------------------------------------------|
+| `direction`      |  `String`  | `horizontal` | Slide direction, valid values is `horizontal`, `vertical`         |
+| `loop`           | `Boolean`  |   `false`    | Enable loop mode                                                  |
+| `on-before-next` | `Function` |     `-`      | Hook which run before navigate to next page                       |
+| `on-before-prev` | `Function` |     `-`      | Hook which run before navigate to previous page                   |
+| `on-finished`    | `Function` |     `-`      | Hook which run on last step, after `on-before-next` hook resolved |
+| `keep-alive`     | `Boolean`  |   `false`    | Enable [KeepAlive][KeepAlive]                                     |
+| `modelValue`     |  `Number`  |     `1`      | Binding v-model                                                   |
 
 ### Slot `<p-steps>`
 

@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona-icon",
   "description": "Persona icon package",
-  "version": "0.16.0",
+  "version": "0.17.1",
   "packageManager": "yarn@3.6.0",
   "type": "module",
   "main": "./dist/module.cjs",
@@ -13,7 +13,10 @@
       "require": "./dist/module.cjs",
       "types": "./dist/types.d.ts"
     },
-    "./vue/": "./vue/",
+    "./vue/": {
+      "types": "./types/vue.d.ts",
+      "default": "./vue/"
+    },
     "./font/": "./font/",
     "./svg/": {
       "types": "./types/svg.d.ts",

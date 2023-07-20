@@ -244,7 +244,8 @@ Contextual Bar have 2 variants: `light` and `dark`. Default is `light`
 </template>
 ```
 
-## Alignments
+## Alignment
+
 To align Contextual Bar content, use align prop. Available value are `left`, `right` and `center`
 
 <preview class="flex-col space-y-4 preview--bar">

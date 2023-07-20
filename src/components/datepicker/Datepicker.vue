@@ -14,6 +14,7 @@
         class="datepicker__input"
         :placeholder="placeholder"
         :disabled="disabled"
+        :error="error"
         readonly
         @focus="onFocus">
         <template #append>

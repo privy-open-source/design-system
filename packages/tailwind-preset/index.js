@@ -318,6 +318,10 @@ module.exports = {
         },
         toast: 1090,
       },
+      minWidth : ({ theme }) => ({ ...theme('spacing') }),
+      maxWidth : ({ theme }) => ({ ...theme('spacing') }),
+      minHeight: ({ theme }) => ({ ...theme('spacing') }),
+      maxHeight: ({ theme }) => ({ ...theme('spacing') }),
     },
   },
 }

@@ -213,7 +213,6 @@ description: Define sidebar using JSON
 
 ### Basic Sidebar
 
-
 <preview class="flex-col space-y-2">
   <p-sidebar-menu :menus="basic">
     <p-sidebar-brand>

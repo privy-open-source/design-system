@@ -7,7 +7,7 @@
     :disabled="disabled"
     :class="classNames">
     <template #activator>
-      <Input
+      <p-input
         v-model="search"
         data-testid="select-search"
         class="select__search"
@@ -15,8 +15,11 @@
         :placeholder="placeholder"
         :disabled="disabled"
         :readonly="readonly"
-        @focus="onFocus" />
-      <IconArrow class="select__caret" />
+        @focus="onFocus">
+        <template #append>
+          <IconArrow class="select__caret" />
+        </template>
+      </p-input>
     </template>
 
     <template v-if="!isLoading && items.length === 0">
@@ -69,7 +72,7 @@
 <script lang="ts">
 import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
-import Input from '../input/Input.vue'
+import pInput from '../input/Input.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'
 import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
 import IconLoading from '../spinner/SpinnerRing.vue'
@@ -94,7 +97,7 @@ export default defineComponent({
   components: {
     Dropdown,
     DropdownItem,
-    Input,
+    pInput,
     IconArrow,
     IconCheck,
     IconLoading,
@@ -288,7 +291,7 @@ export default defineComponent({
   }
 
   &__caret {
-    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-subtle pointer-events-none;
+    @apply transition-transform duration-150 text-subtle pointer-events-none;
     @apply dark:text-dark-subtle;
   }
 

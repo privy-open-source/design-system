@@ -17,12 +17,12 @@ description: Show user's avatar, using name or image
 ### Using image
 
 <preview>
-  <p-avatar src="https://picsum.photos/50" />
+  <p-avatar src="https://picsum.photos/id/50/50" />
 </preview>
 
 ```vue
 <template>
-  <p-avatar src="https://picsum.photos/50" />
+  <p-avatar src="https://picsum.photos/id/50/50" />
 </template>
 ```
 
@@ -64,21 +64,21 @@ There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is
 
 <preview>
   <div class="flex flex-col items-center space-gap-3 lg:flex-row">
-    <p-avatar src="https://picsum.photos/24" size="xs" />
-    <p-avatar src="https://picsum.photos/32" size="sm" />
-    <p-avatar src="https://picsum.photos/40" size="md" />
-    <p-avatar src="https://picsum.photos/56" size="lg" />
-    <p-avatar src="https://picsum.photos/96" size="xl" />
+    <p-avatar src="https://picsum.photos/id/24/24" size="xs" />
+    <p-avatar src="https://picsum.photos/id/32/32" size="sm" />
+    <p-avatar src="https://picsum.photos/id/40/40" size="md" />
+    <p-avatar src="https://picsum.photos/id/56/56" size="lg" />
+    <p-avatar src="https://picsum.photos/id/96/96" size="xl" />
   </div>
 </preview>
 
 ```vue
 <template>
-  <p-avatar src="https://picsum.photos/24" size="xs" />
-  <p-avatar src="https://picsum.photos/32" size="sm" />
-  <p-avatar src="https://picsum.photos/40" size="md" />
-  <p-avatar src="https://picsum.photos/56" size="lg" />
-  <p-avatar src="https://picsum.photos/96" size="xl" />
+  <p-avatar src="https://picsum.photos/id/24/24" size="xs" />
+  <p-avatar src="https://picsum.photos/id/32/32" size="sm" />
+  <p-avatar src="https://picsum.photos/id/40/40" size="md" />
+  <p-avatar src="https://picsum.photos/id/56/56" size="lg" />
+  <p-avatar src="https://picsum.photos/id/96/96" size="xl" />
 </template>
 ```
 
@@ -87,13 +87,13 @@ There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is
 Avatar has 2 style variant: `image` and `alias`
 
 <preview class="space-x-3">
-  <p-avatar variant="image" src="https://picsum.photos/40" />
+  <p-avatar variant="image" src="https://picsum.photos/id/40/40" />
   <p-avatar variant="alias" name="Tarjono Smith" />
 </preview>
 
 ```vue
 <template>
-  <p-avatar variant="image" src="https://picsum.photos/40" />
+  <p-avatar variant="image" src="https://picsum.photos/id/40/40" />
   <p-avatar variant="alias" name="Tarjono Smith" />
 </template>
 ```
@@ -108,7 +108,7 @@ If prop `variant` not set, it will detect the variant with some caveats:
 ```vue
 <template>
   <!-- This will use `image` -->
-  <p-avatar src="https://picsum.photos/40" />
+  <p-avatar src="https://picsum.photos/id/40/40" />
   <!-- This will use `alias` -->
   <p-avatar name="Tarjono Smith" />
   <!-- This will use `image` -->
@@ -119,7 +119,7 @@ If prop `variant` not set, it will detect the variant with some caveats:
 **Result**:
 
 <preview class="space-x-3">
-  <p-avatar variant="image" src="https://picsum.photos/40" />
+  <p-avatar variant="image" src="https://picsum.photos/id/40/40" />
   <p-avatar variant="alias" name="Tarjono Smith" />
   <p-avatar />
 </preview>

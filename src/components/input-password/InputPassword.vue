@@ -47,7 +47,7 @@ export default defineComponent({
   @apply pr-9;
 
   &__toggle {
-    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer z-1 text-default/30 hover:text-subtle;
+    @apply absolute right-[0.15rem] top-1/2 -translate-y-1/2 cursor-pointer z-1 text-default/30 hover:text-subtle;
     @apply dark:text-dark-default/30 hover:dark:text-dark-subtle;
 
     .input--disabled ~ & {
@@ -57,10 +57,10 @@ export default defineComponent({
   }
 
   &.input--clearable {
-    @apply pr-14;
+    @apply pr-16;
 
     + .input__clear {
-      @apply right-9;
+      @apply right-10;
     }
   }
 }
