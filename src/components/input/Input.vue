@@ -14,7 +14,8 @@
       :disabled="disabled"
       :readonly="readonly"
       :class="classNames"
-      v-bind="$attrs">
+      v-bind="$attrs"
+      @beforeinput="checkOnInput(accept, $event)">
     <IconClear
       v-show="(clearable && model)"
       class="input__clear"
@@ -39,6 +40,10 @@ import { useVModel } from '.'
 import { SizeVariant } from '../button'
 import IconClear from '@carbon/icons-vue/lib/close--filled/16'
 import { INPUTGROUP_SETTING } from '../input-group'
+import {
+  AcceptVariant,
+  checkOnInput,
+} from './utils/accept'
 
 export default defineComponent({
   components  : { IconClear },
@@ -67,6 +72,10 @@ export default defineComponent({
     clearable: {
       type   : Boolean,
       default: false,
+    },
+    accept: {
+      type   : String as PropType<AcceptVariant>,
+      default: undefined,
     },
   },
   models: {
@@ -120,6 +129,7 @@ export default defineComponent({
       classNames,
       model,
       clear,
+      checkOnInput,
     }
   },
 })
