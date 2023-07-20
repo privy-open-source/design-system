@@ -326,8 +326,8 @@ export default defineComponent({
       return false
     }
 
-    syncRef(localStart, vStart)
-    syncRef(localEnd, vEnd)
+    syncRef(localStart, vStart, { immediate: false })
+    syncRef(localEnd, vEnd, { immediate: false })
 
     watch([localStart, localEnd], ([startVal, endVal]) => {
       if (props.range) {
