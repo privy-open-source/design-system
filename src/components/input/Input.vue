@@ -80,6 +80,7 @@ export default defineComponent({
         Array,
         Object,
       ],
+      default: undefined,
     },
     accept: {
       type   : String as PropType<AcceptVariant>,

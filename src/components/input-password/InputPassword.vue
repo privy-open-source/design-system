@@ -1,8 +1,7 @@
 <template>
   <p-input
     class="input-password"
-    :type="isShow ? 'text' : 'password'"
-    :container-class="containerClass">
+    :type="isShow ? 'text' : 'password'">
     <template #append>
       <IconHide
         v-if="isShow"
@@ -38,16 +37,6 @@ export default defineComponent<Props, Bindings>({
     pInput,
     IconShow,
     IconHide,
-  },
-  props: {
-    containerClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
   },
   setup () {
     const isShow = ref(false)
