@@ -22,6 +22,7 @@ export interface StepContext {
   prev: () => void,
   toStep: (step: number) => void,
 
+  total: Ref<number>,
   step: Ref<number>,
   canPrev: ComputedRef<boolean>,
   canNext: ComputedRef<boolean>,
@@ -40,6 +41,7 @@ export function useStep () {
       next       : noop,
       prev       : noop,
       toStep     : noop,
+      total      : ref(1),
       step       : ref(1),
       canPrev    : ref(false),
       canNext    : ref(false),

@@ -2,18 +2,18 @@
   <svg
     v-once
     data-testid="spinner"
-    class="spinner"
-    width="19"
-    height="19"
+    class="spinner spinner-basic"
+    width="1em"
+    height="1em"
     viewBox="0 0 19 19"
-    fill="none"
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg">
     <rect
       x="8.125"
       width="2.5"
       height="6.25"
       rx="1.25"
-      fill="#80858E">
+      fill="currentColor">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -29,7 +29,7 @@
       height="6.25"
       rx="1.25"
       transform="rotate(45 15.1202 1.86199)"
-      fill="#80858E">
+      fill="currentColor">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -45,7 +45,7 @@
       height="6.25"
       rx="1.25"
       transform="rotate(90 18.75 8.125)"
-      fill="#80858E">
+      fill="currentColor">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -61,7 +61,7 @@
       height="6.25"
       rx="1.25"
       transform="rotate(135 16.888 15.1202)"
-      fill="#80858E">
+      fill="currentColor">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -76,7 +76,7 @@
       width="2.5"
       height="6.25"
       rx="1.25"
-      fill="#80858E">
+      fill="currentColor">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -92,7 +92,7 @@
       height="6.25"
       rx="1.25"
       transform="rotate(45 6.2814 10.7008)"
-      fill="#80858E">
+      fill="currentColor">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -108,7 +108,7 @@
       height="6.25"
       rx="1.25"
       transform="rotate(90 6.25 8.125)"
-      fill="#80858E">
+      fill="currentColor">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -124,7 +124,7 @@
       height="6.25"
       rx="1.25"
       transform="rotate(135 8.04917 6.2814)"
-      fill="#80858E">
+      fill="currentColor">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -141,3 +141,10 @@ import { defineComponent } from 'vue-demi'
 
 export default defineComponent({})
 </script>
+
+<style lang="postcss">
+.spinner-basic {
+  @apply text-subtle;
+  @apply dark:text-subtle;
+}
+</style>

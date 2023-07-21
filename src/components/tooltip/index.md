@@ -6,6 +6,11 @@ description: Directive for add tooltip to element.
 <script setup lang="ts">
   import { vPTooltip } from '.'
   import pButton from '../button/Button.vue'
+  import pCheckbox from '../checkbox/Checkbox.vue'
+  import { ref } from 'vue-demi'
+  import { showTooltip, hideTooltip, toggleTooltip } from '.'
+
+  const show = ref(false)
 </script>
 
 # Tooltip
@@ -125,6 +130,62 @@ Tooltips can be triggered (opened/closed) using modifiers `.click`, `.hover` and
 </template>
 ```
 
+### Manual Trigger
+
+If you prefer to trigger manually, add modifiers `.manual` and combine it with some ref.
+
+<preview class="flex flex-col space-gap-2 md:flex-row">
+  <p-button v-p-tooltip.manual="show" title="Hello I'm Tooltip">
+    Lorem Ipsum
+  </p-button>
+  <p-checkbox v-model="show">Show Tooltip</p-checkbox>
+</preview>
+
+```vue
+<template>
+  <p-button v-p-tooltip.manual="show" title="Hello I'm Tooltip">
+    Lorem Ipsum
+  </p-button>
+  <p-checkbox v-model="show">Show Tooltip</p-checkbox>
+</template>
+
+<script lang="ts" setup>
+  const show = ref(false)
+</script>
+```
+
+### Programmatic Trigger
+
+Alternatively, you can manual trigger tooltip using `showTooltip`, `hideToolip`, or `toggleTooltip` function.
+
+<preview class="flex flex-col space-gap-2 md:flex-row">
+  <span v-p-tooltip.manual title="Hello I'm Tooltip" id="tooltip-manual">
+    Lorem Ipsum
+  </span>
+  <p-button @click="showTooltip('#tooltip-manual')">Show</p-button>
+  <p-button @click="hideTooltip('#tooltip-manual')">Hide</p-button>
+  <p-button @click="toggleTooltip('#tooltip-manual')">Toggle</p-button>
+</preview>
+
+```vue
+<template>
+  <span v-p-tooltip.manual title="Hello I'm Tooltip" id="tooltip-manual">
+    Lorem Ipsum
+  </span>
+  <p-button @click="showTooltip('#tooltip-manual')">Show</p-button>
+  <p-button @click="hideTooltip('#tooltip-manual')">Hide</p-button>
+  <p-button @click="toggleTooltip('#tooltip-manual')">Toggle</p-button>
+</template>
+
+<script lang="ts" setup>
+  import {
+    showTooltip,
+    hideTooltip,
+    toggleTooltip,
+  } from '@privyid/persona/core'
+</script>
+```
+
 ## API
 
 ### Modifiers
@@ -142,3 +203,10 @@ Tooltips can be triggered (opened/closed) using modifiers `.click`, `.hover` and
 | `hover`   | Enable hover trigger         |
 | `click`   | Enable click trigger         |
 | `focus`   | Enable focus trigger         |
+
+### Events
+
+| Name           | Arguments               | Description                     |
+|----------------|-------------------------|---------------------------------|
+| `tooltip:show` | Native DOM Event object | Event when tooltip will be show |
+| `tooltip:hide` | Native DOM Event object | Event when tooltip will be hide |

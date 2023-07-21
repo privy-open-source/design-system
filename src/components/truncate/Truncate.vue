@@ -4,8 +4,10 @@
     mode="out-in">
     <span
       :key="`${expand}`"
+      v-p-tooltip="tooltip && !expandable && text.length > maxLength"
       class="truncate"
-      data-testid="truncate">
+      data-testid="truncate"
+      :title="text">
       {{ viewText }}
       <template v-if="expandable && text.length > maxLength">
         <a
@@ -25,9 +27,11 @@ import {
   ref,
   computed,
 } from 'vue-demi'
+import { pTooltip } from '../tooltip'
 
 export default defineComponent({
-  props: {
+  directives: { pTooltip },
+  props     : {
     text: {
       type   : String,
       default: '',
@@ -51,6 +55,10 @@ export default defineComponent({
     showLessText: {
       type   : String,
       default: 'Show Less',
+    },
+    tooltip: {
+      type   : Boolean,
+      default: true,
     },
   },
   setup (props) {

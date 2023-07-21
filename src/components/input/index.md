@@ -163,6 +163,36 @@ Input has append & prepend feature to place content inside input field. But the 
 </template>
 ```
 
+## Accept Character
+
+You can filter what characters are allowed to be input using the prop `accept`. The value can be RegExp, or using available preset.
+
+<preview class="flex-col space-y-4">
+  <p-input accept="0-9" placeholder="Numeric Only (Manual)" />
+  <p-input accept="numeric" placeholder="Numeric Only (using Preset)" />
+</preview>
+
+```vue
+<template>
+  <p-input accept="0-9" placeholder="Numeric Only (Manual)" />
+  <p-input accept="numeric" placeholder="Numeric Only (using Preset)" />
+</template>
+```
+
+### Available Preset
+
+| Preset                       | RegExp                                                              | Alias                            |
+|------------------------------|---------------------------------------------------------------------|----------------------------------|
+| `numeric`                    | `0-9`                                                               | `num`, `digit`                   |
+| `alpha`                      | `A-Za-z`                                                            |                                  |
+| `alpha-space`                | `A-Za-z\s`                                                          |                                  |
+| `alpha-space-symbol`         | <code>A-Za-z\s!"#$%&\'()*+,./:;<=>?@[\\\\\\]^_&#96;{\|}~-</code>    | `non-numeric`                    |
+| `alpha-numeric`              | `A-Za-z0-9`                                                         | `alpha-num`                      |
+| `alpha-numeric-space`        | `A-Za-z0-9\s`                                                       | `alpha-num-space`                |
+| `alpha-numeric-space-symbol` | <code>A-Za-z0-9\s!"#$%&\'()*+,./:;<=>?@[\\\\\\]^_&#96;{\|}~-</code> | `text`, `alpha-num-space-symbol` |
+| `numeric-space`              | `0-9\s`                                                             | `num-space`                      |
+| `numeric-space-symbol`       | <code>0-9\s!"#$%&\'()*+,./:;<=>?@[\\\\\\]^_&#96;{\|}~-</code>       | `non-alpha`, `num-space-symbol`  |
+
 ## Binding v-model
 
 Input value can be binding with `v-model`.
@@ -194,6 +224,7 @@ Input value can be binding with `v-model`.
 | `readonly`    | `Boolean` | `false` | Readonly state                                          |
 | `error`       | `Boolean` | `false` | Error state                                             |
 | `clearable`   | `Boolean` | `false` | Enable clear button                                     |
+| `accept`      | `String`  |   `-`   | Whitelist character can be inputted                     |
 | `modelValue`  | `String`  |   `-`   | v-model value                                           |
 
 ### Slots
@@ -201,7 +232,7 @@ Input value can be binding with `v-model`.
 | Name      | Description                                         |
 |-----------|-----------------------------------------------------|
 | `prepend` | Content to place icon inside of prepend input field |
-| `append`  | Content to place icon inside of append input field   |
+| `append`  | Content to place icon inside of append input field  |
 
 ### Events
 

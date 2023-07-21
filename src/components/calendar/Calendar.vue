@@ -190,7 +190,7 @@ export default defineComponent({
     const vStart = computed({
       get () {
         return Array.isArray(props.modelValue)
-          ? props.modelValue[0]
+          ? props.modelValue?.[0]
           : (props.start ?? props.modelValue)
       },
       set (value: Date) {
@@ -204,7 +204,7 @@ export default defineComponent({
     const vEnd = computed({
       get () {
         return Array.isArray(props.modelValue)
-          ? props.modelValue[1]
+          ? props.modelValue?.[1]
           : (props.end ?? props.modelValue)
       },
       set (value: Date) {
@@ -326,8 +326,8 @@ export default defineComponent({
       return false
     }
 
-    syncRef(localStart, vStart)
-    syncRef(localEnd, vEnd)
+    syncRef(localStart, vStart, { immediate: false })
+    syncRef(localEnd, vEnd, { immediate: false })
 
     watch([localStart, localEnd], ([startVal, endVal]) => {
       if (props.range) {

@@ -658,8 +658,20 @@ You can binding current step with v-model
 ### Slots `<p-step>`
 
 | Name      | Description  |
-|-----------|--------------|
+|-----------|:-------------|
 | `default` | Step content |
+
+`default` slot contains scoped slots
+
+| Scoped           |    Type   | Default | Description                                                                       |
+|------------------|:---------:|:-------:|-----------------------------------------------------------------------------------|
+| `canNext`        | `Boolean` | `false` | Hook which indicate whether there is next step                                    |
+| `canPrev`        | `Boolean` | `false` | Hook which indicate whether there is previous step                                |
+| `toStep`         | `Function`| `-`     | Hook to jump to another step `toStep(stepIndex)`, the argument use `number` type  |
+| `next`           | `Function`| `-`     | Hook to jump to the next step                                                     |
+| `prev`           | `Function`| `-`     | Hook to jump to the previous step                                                 |
+| `total`          | `Number`  | `1`     | Show total steps                                                                  |
+| `step`           | `Number`  | `1`     | Show current step                                                                 |
 
 ### Events `<p-step>`
 

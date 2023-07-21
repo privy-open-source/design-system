@@ -457,7 +457,7 @@ The available alignment in vertical Tabs is just `left` and `right`
   </p-tabs>
 </template>
 ```
-### Binding v-model
+## Binding v-model
 
 You can binding current active with v-model
 
@@ -481,6 +481,10 @@ You can binding current active with v-model
   </p-tabs>
 </preview>
 
+**Active :**
+
+<pre><code>{{ active }}</code></pre>
+
 ```vue
 <template>
   <p-tabs v-model="active">
@@ -503,11 +507,8 @@ You can binding current active with v-model
 </template>
 ```
 
-**Active :**
-
-<pre><code>{{ active }}</code></pre>
-
 ## Variables
+
 Tabs use local CSS variables for enhanced real-time customization.
 
 ```sass

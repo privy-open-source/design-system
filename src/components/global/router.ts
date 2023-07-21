@@ -1,3 +1,4 @@
+import type { RouteLocationRaw } from 'vue-router'
 /**
  * Universal router which compatible in many enviroment
  */
@@ -5,7 +6,7 @@ interface RouterCompat {
   /**
    * redirect to URL
    */
-  toURL: (url: string) => unknown | Promise<unknown>,
+  toURL: (url: RouteLocationRaw) => unknown | Promise<unknown>,
   /**
     * Get current URL
     */

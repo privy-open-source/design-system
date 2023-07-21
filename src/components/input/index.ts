@@ -27,3 +27,10 @@ export function useVModel<V> (props: InputProps<V>): Ref<V> {
 
   return localValue
 }
+
+export {
+  type AcceptVariant,
+  isAccepted,
+  removeUnaccepted,
+  checkOnInput,
+} from './utils/accept'
