@@ -199,8 +199,8 @@ export default defineComponent({
     onError((error_) => {
       if (error_.name === 'PasswordException')
         emit('error-password', error_)
-      else
-        emit('error', error_)
+
+      emit('error', error_)
     })
 
     onReady((pdfViewer) => {

@@ -65,13 +65,12 @@ description: Base form input.
 ### Simple Usage
 
 <preview>
-  <p-select :options="optionsA" v-model="value" />
+  <p-select :options="optionsA" />
 </preview>
 
 ```vue
 <template>
   <p-select
-    v-model="value"
     :options="options" />
 </template>
 

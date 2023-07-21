@@ -14,6 +14,7 @@
       :rows="rows"
       :maxlength="maxlength"
       :aria-valuemax="maxlength"
+      @beforeinput="checkOnInput(accept, $event)"
       @input="handleInput" />
     <div
       v-if="showCounter"
@@ -25,12 +26,17 @@
 </template>
 
 <script lang="ts">
-import { useVModel } from '../input'
+import {
+  AcceptVariant,
+  checkOnInput,
+  useVModel,
+} from '../input'
 import {
   defineComponent,
   computed,
   onMounted,
   watch,
+  PropType,
 } from 'vue-demi'
 import { templateRef } from '@vueuse/core'
 
@@ -75,6 +81,10 @@ export default defineComponent({
     },
     maxlength: {
       type   : [Number, String],
+      default: undefined,
+    },
+    accept: {
+      type   : String as PropType<AcceptVariant>,
       default: undefined,
     },
   },
@@ -140,6 +150,7 @@ export default defineComponent({
       model,
       classNames,
       handleInput,
+      checkOnInput,
       charactersLength,
       calculateRowHeight,
     }
