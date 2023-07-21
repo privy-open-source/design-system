@@ -13,7 +13,11 @@
     "esModuleInterop": true,
     "downlevelIteration": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["esnext", "dom"]
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ]
   },
   "include": [
     "src/**/*.ts",

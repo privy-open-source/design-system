@@ -66,6 +66,9 @@ export function parsePlacement (_el: HTMLElement, { modifiers }: DirectiveBindin
 export function parseAction (_el: HTMLElement, { modifiers }: DirectiveBinding): string {
   const result: string[] = []
 
+  if (modifiers.manual)
+    result.push('manual')
+
   if (modifiers.focus)
     result.push('focus')
 
@@ -95,7 +98,8 @@ export function parseText (el: HTMLElement, bindings: DirectiveBinding<string | 
 
 /**
  * Parse color from modifiers
- * @param _el (unsuded)
+ * @param _el (unused)
+ * @param bindings directive bindings options
  */
 export function parseColor (_el: HTMLElement, { modifiers }: DirectiveBinding): ColorVariant {
   return modifiers.white ? 'white' : 'black'
