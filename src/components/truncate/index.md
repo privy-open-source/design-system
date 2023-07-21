@@ -97,6 +97,7 @@ You can change "show more" and "show less" text via prop `show-more-text` and `s
 |----------------|:---------:|:-----------:|----------------------------------|
 | `text`         | `String`  |     `-`     | Text to truncate                 |
 | `length`       | `Number`  |    `100`    | Max length before text truncated |
+| `tooltip`      | `Boolean` |   `true`    | Show tooltip of fulltext         |
 | `expandable`   | `Boolean` |   `false`   | Show expand button               |
 | `showMoreText` | `String`  | `Show More` | Text for show more's button      |
 | `showLessText` | `String`  | `Show Less` | Text for show less's button      |

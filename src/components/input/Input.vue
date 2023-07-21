@@ -15,7 +15,8 @@
       :disabled="disabled"
       :readonly="readonly"
       :class="classNames"
-      v-bind="$attrs">
+      v-bind="$attrs"
+      @beforeinput="checkOnInput(accept, $event)">
     <IconClear
       v-show="(clearable && model)"
       class="input__clear"
@@ -38,8 +39,12 @@ import {
 } from 'vue-demi'
 import { useVModel } from '.'
 import { SizeVariant } from '../button'
-import IconClear from '@privyid/persona-icon/vue/close-circle-solid/16.vue'
+import IconClear from '@privyid/persona-icon/vue/close-circle-solid/20.vue'
 import { INPUTGROUP_SETTING } from '../input-group'
+import {
+  AcceptVariant,
+  checkOnInput,
+} from './utils/accept'
 
 export default defineComponent({
   components  : { IconClear },
@@ -75,6 +80,9 @@ export default defineComponent({
         Array,
         Object,
       ],
+    },
+    accept: {
+      type   : String as PropType<AcceptVariant>,
       default: undefined,
     },
   },
@@ -129,6 +137,7 @@ export default defineComponent({
       classNames,
       model,
       clear,
+      checkOnInput,
     }
   },
 })
@@ -181,7 +190,7 @@ export default defineComponent({
   }
 
   .input__clear {
-    @apply text-default/30 cursor-pointer hover:text-danger z-1;
+    @apply text-default/30 cursor-pointer hover:text-danger z-[2];
     @apply dark:text-dark-default/30 hover:dark:text-dark-danger;
   }
 
