@@ -44,7 +44,7 @@ it('should be able travel focus on elements', () => {
   expect(itemB).not.toHaveFocus()
 })
 
-it('should stop focus on last item if repeat set to false', () => {
+it('should stop focus on last item if loop set to false', () => {
   const div = document.createElement('div')
 
   div.innerHTML = `

@@ -29,15 +29,21 @@ const handleMouseLeave = createHandler('hover', 'hide')
 const handleFocus      = createHandler('focus', 'show')
 const handleBlur       = createHandler('focus', 'hide')
 
+async function useTooltip () {
+  const { default: TooltipContainer } = await import('./TooltipContainer.vue')
+  const tooltip                       = await useSingleton(TooltipContainer)
+
+  return tooltip
+}
+
 export const pTooltip: Directive<HTMLElement, string | boolean> = {
   async mounted (el, bindings) {
-    const { default: TooltipContainer } = await import('./TooltipContainer.vue')
-    const tooltip                       = await useSingleton(TooltipContainer)
-    const action                        = parseAction(el, bindings)
-    const color                         = parseColor(el, bindings)
-    const text                          = parseText(el, bindings)
-    const placement                     = parsePlacement(el, bindings)
-    const enable                        = bindings.value !== false && !!text
+    const tooltip   = await useTooltip()
+    const action    = parseAction(el, bindings)
+    const color     = parseColor(el, bindings)
+    const text      = parseText(el, bindings)
+    const placement = parsePlacement(el, bindings)
+    const enable    = bindings.value !== false && !!text
 
     const id = tooltip.add({
       target   : el,
@@ -60,14 +66,13 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
   },
 
   async updated (el, bindings) {
-    const { default: TooltipContainer } = await import('./TooltipContainer.vue')
-    const tooltip                       = await useSingleton(TooltipContainer)
-    const id                            = el.dataset.tooltipId
-    const action                        = parseAction(el, bindings)
-    const color                         = parseColor(el, bindings)
-    const text                          = parseText(el, bindings)
-    const placement                     = parsePlacement(el, bindings)
-    const enable                        = bindings.value !== false && !!text
+    const tooltip   = await useTooltip()
+    const id        = el.dataset.tooltipId
+    const action    = parseAction(el, bindings)
+    const color     = parseColor(el, bindings)
+    const text      = parseText(el, bindings)
+    const placement = parsePlacement(el, bindings)
+    const enable    = bindings.value !== false && !!text
 
     el.dataset.tooltipAction = action
     el.dataset.tooltipText   = text
@@ -112,3 +117,37 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
 }
 
 export const vPTooltip = pTooltip
+
+function getTooltipId (selector: HTMLElement | string) {
+  const targets = selector instanceof HTMLElement
+    ? [selector]
+    : [...document.querySelectorAll(selector)]
+
+  return targets
+    .map((target) => (target as HTMLElement)?.dataset.tooltipId)
+    .filter(Boolean)
+}
+
+export async function showTooltip (selector: string | HTMLElement) {
+  const ids     = getTooltipId(selector)
+  const tooltip = await useTooltip()
+
+  for (const id of ids)
+    tooltip.show(id)
+}
+
+export async function hideTooltip (selector: string | HTMLElement) {
+  const ids     = getTooltipId(selector)
+  const tooltip = await useTooltip()
+
+  for (const id of ids)
+    tooltip.hide(id)
+}
+
+export async function toggleTooltip (selector: string | HTMLElement) {
+  const ids     = getTooltipId(selector)
+  const tooltip = await useTooltip()
+
+  for (const id of ids)
+    tooltip.toggle(id)
+}

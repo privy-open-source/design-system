@@ -1,6 +1,6 @@
 <template>
   <transition
-    name="fade"
+    name="collapse"
     mode="out-in">
     <div
       v-show="model || isToggleable"
@@ -92,6 +92,17 @@ export default defineComponent({
 
   &:not(&--show) {
     @apply hidden;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    @apply transition-[transform,opacity] origin-top duration-150 ease-in-out;
+  }
+
+  &-enter,
+  &-enter-from,
+  &-leave-to {
+    @apply scale-y-0 opacity-0;
   }
 }
 </style>

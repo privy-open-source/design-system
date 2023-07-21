@@ -62,7 +62,7 @@
           width="14"
           height="14" />
         <slot name="loading">
-          {{ loadingText }}
+          <span>{{ loadingText }}</span>
         </slot>
       </div>
     </template>
@@ -84,13 +84,15 @@ import {
   ref,
   watch,
 } from 'vue-demi'
-import { SelectItem } from '.'
+import { findSelected, SelectItem } from '.'
 import { Adapter } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
 import { tryOnMounted } from '@vueuse/shared'
-import { onStartTyping } from '@vueuse/core'
+import {
+  onStartTyping,
+} from '@vueuse/core'
 import { SizeVariant } from '../button'
 
 export default defineComponent({
@@ -112,7 +114,7 @@ export default defineComponent({
         Object,
         Date,
       ],
-      default: '',
+      default: undefined,
     },
     selected: {
       type   : Object as PropType<SelectItem>,
@@ -183,25 +185,8 @@ export default defineComponent({
       isLoading,
     }
 
-    const items = props.adapter.setup(context)
-
-    const model = computed({
-      get (): SelectItem {
-        return items.value.find((item) => isEqual(item.value, props.modelValue))
-          ?? {
-            text : '',
-            value: undefined,
-          }
-      },
-      set (selected: SelectItem) {
-        emit('change', selected)
-        emit('update:modelValue', selected.value)
-        emit('update:selected', selected)
-
-        if (isOpen.value)
-          emit('userInput', selected)
-      },
-    })
+    const items      = props.adapter.setup(context)
+    const localModel = ref<SelectItem>(findSelected(items.value, props.modelValue))
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -225,7 +210,7 @@ export default defineComponent({
       get () {
         return isOpen.value
           ? keyword.value
-          : model.value?.text
+          : localModel.value?.text
       },
       set (value: string) {
         if (value !== search.value)
@@ -233,8 +218,19 @@ export default defineComponent({
       },
     })
 
+    watch(() => props.modelValue, (value) => {
+      localModel.value = findSelected(items.value, value)
+    })
+
     function select (item: SelectItem) {
-      model.value = item
+      localModel.value = item
+
+      emit('change', item)
+      emit('update:selected', item)
+      emit('update:modelValue', item.value)
+
+      if (isOpen.value)
+        emit('userInput', item)
     }
 
     function onFocus () {
@@ -243,7 +239,7 @@ export default defineComponent({
     }
 
     function isSelected (item: SelectItem) {
-      return isEqual(item.value, model.value.value)
+      return isEqual(item.value, localModel.value.value)
     }
 
     watch(isOpen, (value) => {
@@ -265,7 +261,6 @@ export default defineComponent({
 
     return {
       classNames,
-      model,
       isOpen,
       isLoading,
       search,
