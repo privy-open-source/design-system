@@ -138,12 +138,13 @@ description: Flexible displaying a series of content
 </template>
 ```
 
-## Flush
+## Variant
+### Flush
 
 <preview>
   <p-list-group flush>
-    <p-list-group-item>First item disabled</p-list-group-item>
-    <p-list-group-item>Second item</p-list-group-item>
+    <p-list-group-item disabled>First item disabled</p-list-group-item>
+    <p-list-group-item active>Second item active</p-list-group-item>
     <p-list-group-item>The third item</p-list-group-item>
     <p-list-group-item>And the last item</p-list-group-item>
   </p-list-group>
@@ -152,7 +153,51 @@ description: Flexible displaying a series of content
 ```vue
 <template>
   <p-list-group flush>
-    <p-list-group-item>First item disabled</p-list-group-item>
+    <p-list-group-item disabled>First item disabled</p-list-group-item>
+    <p-list-group-item active>Second item active</p-list-group-item>
+    <p-list-group-item>The third item</p-list-group-item>
+    <p-list-group-item>And the last item</p-list-group-item>
+  </p-list-group>
+</template>
+```
+
+### Horizontal
+
+<preview>
+  <p-list-group horizontal>
+    <p-list-group-item disabled>First item disabled</p-list-group-item>
+    <p-list-group-item active>Second item active</p-list-group-item>
+    <p-list-group-item>The third item</p-list-group-item>
+    <p-list-group-item>And the last item</p-list-group-item>
+  </p-list-group>
+</preview>
+
+```vue
+<template>
+  <p-list-group horizontal>
+    <p-list-group-item disabled>First item disabled</p-list-group-item>
+    <p-list-group-item active>Second item active</p-list-group-item>
+    <p-list-group-item>The third item</p-list-group-item>
+    <p-list-group-item>And the last item</p-list-group-item>
+  </p-list-group>
+</template>
+```
+
+### Borderless
+
+<preview>
+  <p-list-group borderless>
+    <p-list-group-item disabled>First item disabled</p-list-group-item>
+    <p-list-group-item active>Second item active</p-list-group-item>
+    <p-list-group-item>The third item</p-list-group-item>
+    <p-list-group-item>And the last item</p-list-group-item>
+  </p-list-group>
+</preview>
+
+```vue
+<template>
+  <p-list-group borderless>
+    <p-list-group-item disabled>First item disabled</p-list-group-item>
     <p-list-group-item>Second item</p-list-group-item>
     <p-list-group-item>The third item</p-list-group-item>
     <p-list-group-item>And the last item</p-list-group-item>
@@ -160,24 +205,41 @@ description: Flexible displaying a series of content
 </template>
 ```
 
-## Horizontal
+### Combination
 
-<preview>
-  <p-list-group horizontal>
-    <p-list-group-item>First item disabled</p-list-group-item>
-    <p-list-group-item>Second item</p-list-group-item>
-    <p-list-group-item>The third item</p-list-group-item>
-    <p-list-group-item>And the last item</p-list-group-item>
+<preview class="space-x-6 flex-cols">
+  <p-list-group rounded borderless class="space-y-2" style="--p-list-group-bg: transparent;">
+    <p-list-group-item class="shadow-sm">
+      <span class="flex items-center space-x-3">
+        <p-avatar size="sm" />
+        <span>Danish Brown</span>
+      </span>
+    </p-list-group-item>
+    <p-list-group-item class="shadow-sm">Second item</p-list-group-item>
+    <p-list-group-item class="shadow-sm">The third item</p-list-group-item>
+    <p-list-group-item class="shadow-sm">And the last item</p-list-group-item>
   </p-list-group>
 </preview>
 
 ```vue
 <template>
-  <p-list-group horizontal>
-    <p-list-group-item>First item disabled</p-list-group-item>
-    <p-list-group-item>Second item</p-list-group-item>
-    <p-list-group-item>The third item</p-list-group-item>
-    <p-list-group-item>And the last item</p-list-group-item>
+  <p-list-group rounded borderless class="space-y-2" 
+    style="--p-list-group-bg: transparent; --p-list-group-bg-dark: transparent;">
+    <p-list-group-item class="shadow-sm">
+      <span class="flex items-center space-x-3">
+        <p-avatar size="sm" />
+        <span>Danish Brown</span>
+      </span>
+    </p-list-group-item>
+    <p-list-group-item class="shadow-sm">
+      Second item
+    </p-list-group-item>
+    <p-list-group-item class="shadow-sm">
+      The third item
+    </p-list-group-item>
+    <p-list-group-item class="shadow-sm">
+      And the last item
+    </p-list-group-item>
   </p-list-group>
 </template>
 ```
@@ -455,6 +517,8 @@ List group use local CSS variables for enhanced real-time customization.
 |---------------|:---------:|:---------:|--------------------------------------------------------------|
 | `flush`       | `Boolean` |  `false`  | Enable flush, list group without container-border            |
 | `horizontal`  | `Boolean` |  `false`  | Enable horizontal list group                                 |
+| `borderless`  | `Boolean` |  `false`  | Remove all border in list group                              |
+| `rounded`     | `Boolean` |  `false`  | Enable rounded in each list group item                       |
 
 ### Slots `<p-list-group>`
 
@@ -485,7 +549,7 @@ List group use local CSS variables for enhanced real-time customization.
 |---------------|:---------:|:---------:|--------------------------------------------------------------|
 | `active`      | `Boolean` |  `false`  | Active state of list group item                              |
 | `disabled`    | `Boolean` |  `false`  | Disable state of list group item                             |
-| `element`     | `Boolean` |  `false`  | Change tag element of list group item                        |
+| `element`     | `Boolean` |  `false`  | Change tag element of list group item, valid value is `div`, `span` and `link` |
 
 ### Slots `<p-list-group-item>`
 
