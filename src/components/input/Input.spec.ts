@@ -164,6 +164,18 @@ it('should able to add input append via `append` slots', () => {
   expect(input).toHaveClass('input--has-append')
 })
 
+it('should able to add input-container class via `container-class` props', () => {
+  const screen = render({
+    components: { pInput },
+    template  : `
+      <p-input container-class="custom-class" />
+    `,
+  })
+
+  const container = screen.queryByTestId('input-container')
+  expect(container).toHaveClass('custom-class')
+})
+
 it('should able to filter inputted character if prop `accept` was provided', async () => {
   const model  = ref('')
   const screen = render({
