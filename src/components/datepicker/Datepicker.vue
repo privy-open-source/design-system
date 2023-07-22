@@ -15,6 +15,7 @@
         :placeholder="placeholder"
         :disabled="disabled"
         :error="error"
+        :size="size"
         readonly
         @focus="onFocus">
         <template #append>
@@ -57,6 +58,7 @@ import {
 import { CalendarMode } from '../calendar/adapter/adapter'
 import { useVModel } from '../input'
 import IconCalendar from '@privyid/persona-icon/vue/calendar/16.vue'
+import { SizeVariant } from '../button'
 
 export default defineComponent({
   components: {
@@ -69,6 +71,10 @@ export default defineComponent({
     modelValue: {
       type   : [Date, Array] as PropType<Date | [Date, Date]>,
       default: undefined,
+    },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
     },
     start: {
       type   : Date,
