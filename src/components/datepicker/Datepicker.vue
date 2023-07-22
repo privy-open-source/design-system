@@ -54,6 +54,7 @@ import {
   defineComponent,
   PropType,
   ref,
+  watch,
 } from 'vue-demi'
 import { CalendarMode } from '../calendar/adapter/adapter'
 import { useVModel } from '../input'
@@ -144,12 +145,25 @@ export default defineComponent({
     const isOpen = ref(false)
 
     const value = computed(() => {
-      if (props.range && Array.isArray(model.value))
-        return `${formatDate(model.value[0], props.format)} - ${formatDate(model.value[1], props.format)}`
+      const dates = Array.isArray(model.value)
+        ? model.value
+        : [model.value]
 
-      return isDate(model.value)
-        ? formatDate(model.value as Date, props.format)
-        : ''
+      return dates.map((date) => {
+        return isDate(date)
+          ? formatDate(date as Date, props.format)
+          : ''
+      }).filter(Boolean).join(' - ')
+    })
+
+    watch(() => props.start, (start) => {
+      if (Array.isArray(model.value))
+        model.value[0] = start
+    })
+
+    watch(() => props.end, (end) => {
+      if (Array.isArray(model.value))
+        model.value[1] = end
     })
 
     const classNames = computed(() => {
