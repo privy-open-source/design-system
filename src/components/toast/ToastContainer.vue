@@ -89,7 +89,7 @@ export default defineComponent({
   @apply z-[var(--p-toast-z-index)] fixed flex flex-col space-y-2 max-h-screen overflow-visible;
 
   &--top-right {
-    @apply top-0 right-0;
+    @apply top-2 right-4;
 
     .toast {
       &-enter-from,
@@ -100,7 +100,7 @@ export default defineComponent({
   }
 
   &--top-center {
-    @apply top-0 left-1/2 -translate-x-1/2;
+    @apply top-2 left-1/2 -translate-x-1/2;
 
     .toast {
       &-enter-from,
@@ -111,7 +111,7 @@ export default defineComponent({
   }
 
   &--top-left {
-    @apply top-0 left-0;
+    @apply top-2 left-4;
 
     .toast {
       &-enter-from,
@@ -122,7 +122,7 @@ export default defineComponent({
   }
 
   &--bottom-right {
-    @apply bottom-0 right-0;
+    @apply bottom-2 right-4;
 
     .toast {
       &-enter-from,
@@ -133,7 +133,7 @@ export default defineComponent({
   }
 
   &--bottom-center {
-    @apply  bottom-0 left-1/2 -translate-x-1/2;
+    @apply  bottom-2 left-1/2 -translate-x-1/2;
 
     .toast {
       &-enter-from,
@@ -144,7 +144,7 @@ export default defineComponent({
   }
 
   &--bottom-left {
-    @apply bottom-0 left-0;
+    @apply bottom-2 left-4;
 
     .toast {
       &-enter-from,
