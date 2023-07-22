@@ -141,11 +141,16 @@ export default defineComponent({
     }
 
     function onKeyDown (event: KeyboardEvent) {
-      if (event.key === 'Backspace') {
-        event.preventDefault()
-        event.stopPropagation()
+      const target = event.target as HTMLInputElement
 
-        ;(event.target as HTMLInputElement).dispatchEvent(new InputEvent('beforeinput', { inputType: 'deleteContentBackward' }))
+      if (target.value && [...event.key].length === 1 && !event.ctrlKey && !event.metaKey) {
+        event.preventDefault()
+
+        target.dispatchEvent(new InputEvent('beforeinput', { inputType: 'insertText', data: event.key }))
+      } else if (event.key === 'Backspace') {
+        event.preventDefault()
+
+        target.dispatchEvent(new InputEvent('beforeinput', { inputType: 'deleteContentBackward' }))
       }
     }
 
