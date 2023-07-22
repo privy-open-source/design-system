@@ -30,7 +30,7 @@ description: Show and hide content.
 
 ```vue
 <template>
-  <p-button class="mb-5" @click="sample = !sample"color="info">Collapse</p-button>
+  <p-button class="mb-5" @click="sample = !sample" color="info">Collapse</p-button>
   <p-collapse v-model="sample">
     But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born
   </p-collapse>

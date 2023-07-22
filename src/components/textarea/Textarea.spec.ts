@@ -1,6 +1,7 @@
 import { fireEvent, render } from '@testing-library/vue'
 import { nextTick, ref } from 'vue-demi'
-import Textarea from './Textarea.vue'
+import pTextarea from './Textarea.vue'
+import userEvent from '@testing-library/user-event'
 
 Object.defineProperty(HTMLTextAreaElement.prototype, 'scrollHeight', {
   configurable: true,
@@ -22,9 +23,9 @@ Object.defineProperty(HTMLTextAreaElement.prototype, 'scrollHeight', {
 
 it('should render properly without prop', () => {
   const screen = render({
-    components: { Textarea },
+    components: { pTextarea },
     template  : `
-      <Textarea />
+      <p-textarea />
     `,
   })
 
@@ -35,9 +36,9 @@ it('should render properly without prop', () => {
 
 it('should have style disabled if props `disabled` is provided', () => {
   const screen = render({
-    components: { Textarea },
+    components: { pTextarea },
     template  : `
-      <Textarea disabled />
+      <p-textarea disabled />
     `,
   })
 
@@ -50,9 +51,9 @@ it('should have style disabled if props `disabled` is provided', () => {
 
 it('should have style readonly if props `readonly` is provided', () => {
   const screen = render({
-    components: { Textarea },
+    components: { pTextarea },
     template  : `
-      <Textarea readonly />
+      <p-textarea readonly />
     `,
   })
 
@@ -65,9 +66,9 @@ it('should have style readonly if props `readonly` is provided', () => {
 
 it('should have style error if props `error` is provided', () => {
   const screen = render({
-    components: { Textarea },
+    components: { pTextarea },
     template  : `
-      <Textarea error />
+      <p-textarea error />
     `,
   })
 
@@ -78,9 +79,9 @@ it('should have style error if props `error` is provided', () => {
 
 it('should enable resize if props `resize` is provided', () => {
   const screen = render({
-    components: { Textarea },
+    components: { pTextarea },
     template  : `
-      <Textarea resize />
+      <p-textarea resize />
     `,
   })
 
@@ -91,9 +92,9 @@ it('should enable resize if props `resize` is provided', () => {
 
 it('should be able height by content if prop `auto-grow` is provided', async () => {
   const screen = render({
-    components: { Textarea },
+    components: { pTextarea },
     template  : `
-      <Textarea auto-grow rows="1" />
+      <p-textarea auto-grow rows="1" />
     `,
   })
 
@@ -110,9 +111,9 @@ it('should be able height by content if prop `auto-grow` is provided', async () 
 it('should remove height if prop `auto-grow` set to false', async () => {
   const autoGrow = ref(true)
   const screen   = render({
-    components: { Textarea },
+    components: { pTextarea },
     template  : `
-      <Textarea :auto-grow="autoGrow" rows="1" />
+      <p-textarea :auto-grow="autoGrow" rows="1" />
     `,
     setup () {
       return { autoGrow }
@@ -140,9 +141,9 @@ it('should remove height if prop `auto-grow` set to false', async () => {
 it('should modify value in v-model', async () => {
   const model  = ref('')
   const screen = render({
-    components: { Textarea },
+    components: { pTextarea },
     template  : `
-      <Textarea v-model="model" />
+      <p-textarea v-model="model" />
     `,
     setup () {
       return { model }
@@ -154,4 +155,24 @@ it('should modify value in v-model', async () => {
   await fireEvent.update(input, 'Hello\nWorld')
 
   expect(model.value).toBe('Hello\nWorld')
+})
+
+it('should able to filter inputted character if prop `accept` was provided', async () => {
+  const model  = ref('')
+  const screen = render({
+    components: { pTextarea },
+    template  : `
+      <p-textarea v-model="model" accept="num" />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('textarea-input')
+  const user  = userEvent.setup()
+
+  await user.type(input, '123456')
+
+  expect(model.value.toString()).toBe('123456')
 })

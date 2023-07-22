@@ -1,5 +1,5 @@
 ---
-title: Input Password · Components
+title: Input Pin · Components
 description: One at time input form.
 ---
 
@@ -42,6 +42,26 @@ You can set how many input digit do you want with prop `length`, default is `5`.
 </template>
 ```
 
+## Sizing
+
+Input has 4 variants size: `xs`, `sm`, `md`, `lg`, default is `md`.
+
+<preview class="flex-col space-y-3">
+  <p-input-pin size="xs" />
+  <p-input-pin size="sm" />
+  <p-input-pin size="md" />
+  <p-input-pin size="lg" />
+</preview>
+
+```vue
+<template>
+  <p-input-pin size="xs" />
+  <p-input-pin size="sm" />
+  <p-input-pin size="md" />
+  <p-input-pin size="lg" />
+</template>
+```
+
 ## Disabled State
 
 <preview>
@@ -76,6 +96,22 @@ You can set how many input digit do you want with prop `length`, default is `5`.
 </template>
 ```
 
+## Accept Character
+
+You can filter what characters are allowed to be input using the prop `accept`. The value can be RegExp, or using available preset.
+
+<preview class="flex-col space-y-4">
+  <p-input-pin accept="numeric" />
+</preview>
+
+```vue
+<template>
+  <p-input-pin accept="numeric" />
+</template>
+```
+
+👉 See [Available Preset](../input/#available-preset) for more information
+
 ## Binding v-model
 
 Like other input, input value can be binding with `v-model`.
@@ -98,13 +134,15 @@ Like other input, input value can be binding with `v-model`.
 
 ### Props
 
-| Props         |   Type    | Default | Description       |
-|---------------|:---------:|:-------:|-------------------|
-| `length`      | `Number`  |   `5`   | Number of input   |
-| `disabled`    | `Boolean` | `false` | Disabled state    |
-| `readonly`    | `Boolean` | `false` | Readonly state    |
-| `error`       | `Boolean` | `false` | Error state       |
-| `modelValue`  | `String`  |   `-`   | v-model value     |
+| Props        |   Type    | Default | Description                                             |
+|--------------|:---------:|:-------:|---------------------------------------------------------|
+| `length`     | `Number`  |   `5`   | Number of input                                         |
+| `size`       | `String`  |  `md`   | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
+| `disabled`   | `Boolean` | `false` | Disabled state                                          |
+| `readonly`   | `Boolean` | `false` | Readonly state                                          |
+| `error`      | `Boolean` | `false` | Error state                                             |
+| `accept`     | `String`  |   `-`   | Whitelist character can be inputted                     |
+| `modelValue` | `String`  |   `-`   | v-model value                                           |
 
 ### Slots
 
@@ -124,9 +162,9 @@ Like other input, input value can be binding with `v-model`.
 
 ### Events
 
-| Name     | Arguments | Description                     |
-|----------|-----------|---------------------------------|
-| `change` | `String`  | Event when value changed        |
+| Name     | Arguments | Description              |
+|----------|-----------|--------------------------|
+| `change` | `String`  | Event when value changed |
 
 ## See Also
 

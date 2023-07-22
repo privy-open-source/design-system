@@ -1,7 +1,13 @@
 import { render, fireEvent } from '@testing-library/vue'
 import { delay } from 'nanodelay'
 import { ref } from 'vue-demi'
-import { pTooltip, vPTooltip } from '.'
+import {
+  pTooltip,
+  vPTooltip,
+  hideTooltip,
+  toggleTooltip,
+  showTooltip,
+} from '.'
 
 beforeAll(async () => {
   /* pre-load module TooltipContainer */
@@ -238,6 +244,56 @@ it('should hide the tooltip if v-p-tooltip set to `false` when it\'s shown befor
 
   active.value = false
   await delay(0)
+
+  expect(tooltip).not.toBeVisible()
+})
+
+it('should able to manual show/hide tooltip using `showTooltip` and `hideTooltip`', async () => {
+  const screen = render({
+    directives: { PTooltip: pTooltip },
+    template  : `
+      <div
+        id="sample"
+        data-testid="sample"
+        v-p-tooltip.manual
+        title="Hello" />
+    `,
+  })
+
+  await delay(0)
+
+  const tooltip = screen.queryByTestId('tooltip')
+
+  await showTooltip('#sample')
+
+  expect(tooltip).toBeVisible()
+
+  await hideTooltip('#sample')
+
+  expect(tooltip).not.toBeVisible()
+})
+
+it('should able to manual show/hide tooltip using `toggleTooltip`', async () => {
+  const screen = render({
+    directives: { PTooltip: pTooltip },
+    template  : `
+      <div
+        data-testid="sample"
+        v-p-tooltip.manual
+        title="Hello" />
+    `,
+  })
+
+  await delay(0)
+
+  const sample  = screen.queryByTestId('sample')
+  const tooltip = screen.queryByTestId('tooltip')
+
+  await toggleTooltip(sample)
+
+  expect(tooltip).toBeVisible()
+
+  await toggleTooltip(sample)
 
   expect(tooltip).not.toBeVisible()
 })

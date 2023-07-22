@@ -48,17 +48,34 @@ export default defineComponent({
     }
 
     function show (id: string) {
-      items.value.get(id).isShow = true
+      const item   = items.value.get(id)
+      const result = item.target.dispatchEvent(new CustomEvent('tooltip:show', {
+        detail    : item,
+        cancelable: true,
+      }))
+
+      if (result)
+        item.isShow = true
     }
 
     function hide (id: string) {
-      items.value.get(id).isShow = false
+      const item   = items.value.get(id)
+      const result = item.target.dispatchEvent(new CustomEvent('tooltip:hide', {
+        detail    : item,
+        cancelable: true,
+      }))
+
+      if (result)
+        item.isShow = false
     }
 
     function toggle (id: string) {
       const item = items.value.get(id)
 
-      item.isShow = !item.isShow
+      if (item.isShow)
+        hide(id)
+      else
+        show(id)
     }
 
     function remove (id: string) {

@@ -10,6 +10,12 @@ export {
 } from '../components/overlay'
 
 export {
+  hideTooltip,
+  showTooltip,
+  toggleTooltip,
+} from '../components/tooltip'
+
+export {
   default as toast,
 } from '../components/toast'
 

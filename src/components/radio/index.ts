@@ -15,7 +15,8 @@ export function useVModel (props: RadioProps) {
     set (value: boolean) {
       emit('change', value)
 
-      if (value) emit('update:modelValue', checked)
+      if (value)
+        emit('update:modelValue', checked)
     },
   })
 
