@@ -15,6 +15,7 @@
       :readonly="readonly"
       :disabled="disabled"
       :error="error"
+      @keydown="onKeyDown($event)"
       @beforeinput.prevent="setValue(i - 1, $event)"
       @keyup.left.stop.prevent="prevFocus"
       @keyup.right.stop.prevent="nextFocus" />
@@ -132,9 +133,19 @@ export default defineComponent({
         if (root.value) {
           if (event.inputType === 'deleteContentBackward')
             prevFocus()
-          else
+
+          if (event.inputType === 'insertText')
             nextFocus()
         }
+      }
+    }
+
+    function onKeyDown (event: KeyboardEvent) {
+      if (event.key === 'Backspace') {
+        event.preventDefault()
+        event.stopPropagation()
+
+        ;(event.target as HTMLInputElement).dispatchEvent(new InputEvent('beforeinput', { inputType: 'deleteContentBackward' }))
       }
     }
 
@@ -146,6 +157,7 @@ export default defineComponent({
       setValue,
       nextFocus,
       prevFocus,
+      onKeyDown,
     }
   },
 })
