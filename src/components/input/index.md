@@ -226,6 +226,7 @@ Input value can be binding with `v-model`.
 | `clearable`   | `Boolean` | `false` | Enable clear button                                     |
 | `accept`      | `String`  |   `-`   | Whitelist character can be inputted                     |
 | `modelValue`  | `String`  |   `-`   | v-model value                                           |
+| `container-class`  | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the input container  |
 
 ### Slots
 

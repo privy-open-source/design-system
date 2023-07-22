@@ -1,6 +1,7 @@
 <template>
   <div
     class="input"
+    :class="containerClass"
     data-testid="input-container">
     <span
       v-if="$slots.prepend"
@@ -72,6 +73,14 @@ export default defineComponent({
     clearable: {
       type   : Boolean,
       default: false,
+    },
+    containerClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
     },
     accept: {
       type   : String as PropType<AcceptVariant>,
