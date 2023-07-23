@@ -144,9 +144,8 @@ it('should back to previous focus if delete the value', async () => {
   })
 
   const inputs = screen.queryAllByTestId('input')
-  const user   = userEvent.setup()
 
-  await user.clear(inputs.at(2))
+  await fireEvent.keyDown(inputs.at(2), { key: 'Backspace' })
 
   expect(prevFocus).toBeCalled()
 })

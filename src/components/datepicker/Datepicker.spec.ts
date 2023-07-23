@@ -264,4 +264,18 @@ it('should modify v-model:start and v-model:end when using props `range`', async
   expect(end.value.toISOString()).toBe(expected[1].toISOString())
 
   expect(input).toHaveValue('01/01/2022 - 08/01/2022')
+
+  start.value = undefined
+  end.value   = undefined
+
+  await nextTick()
+
+  expect(input).toHaveValue('')
+
+  start.value = new Date(2023, 0, 1)
+  end.value   = new Date(2023, 1, 1)
+
+  await nextTick()
+
+  expect(input).toHaveValue('01/01/2023 - 01/02/2023')
 })
