@@ -36,3 +36,27 @@ it('should be able to make list group without borderdered-container via `flush` 
   expect(listGroup).toBeInTheDocument()
   expect(listGroup).toHaveClass('list-group', 'list-group--flush')
 })
+
+it('should be able to make list group without border via `borderless` props', () => {
+  const screen = render({
+    components: { pListGroup },
+    template  : '<p-list-group borderless />',
+  })
+
+  const listGroup = screen.getByTestId('list-group')
+
+  expect(listGroup).toBeInTheDocument()
+  expect(listGroup).toHaveClass('list-group', 'list-group--borderless')
+})
+
+it('should be able to make list group item rounded via `rounded` props', () => {
+  const screen = render({
+    components: { pListGroup },
+    template  : '<p-list-group rounded />',
+  })
+
+  const listGroup = screen.getByTestId('list-group')
+
+  expect(listGroup).toBeInTheDocument()
+  expect(listGroup).toHaveClass('list-group', 'list-group--rounded')
+})
