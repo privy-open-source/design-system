@@ -213,8 +213,8 @@ Empty state label customization can be done through the `empty-label` prop.
 
 ```vue
 <template>
-  <p-table 
-    :fields="fields" :items="items" 
+  <p-table
+    :fields="fields" :items="items"
     empty-label="There’s nothing to show here" />
 </template>
 ```
@@ -350,8 +350,8 @@ add prop `draggable` to enable drag-to-sort.
       </div>
     </template>
     <template #cell(status)="{ item }">
-      <p-label 
-        variant="light" :color="item.status ? 'success' : 'default'" 
+      <p-label
+        variant="light" :color="item.status ? 'success' : 'default'"
         size="sm">
         {{ item.status ? 'active' : 'inactive' }}
       </p-label>
@@ -415,15 +415,27 @@ Table has default empty state, but it's be able to customize by own via slot `em
 
 ### Props
 
-| Props        |   Type    |  Default   | Description                                              |
-|--------------|:---------:|:----------:|----------------------------------------------------------|
-| `variant`    | `String`  | `flexible` | Table style variant, valid value is `flexible`, `static` |
-| `items`      |  `Array`  |    `-`     | Table items                                              |
-| `fields`     |  `Array`  |    `-`     | Table fields                                             |
-| `selectable` | `Boolean` |  `false`   | Enable checkbox                                          |
-| `draggable`  | `Boolean` |  `false`   | Enable draggable                                         |
-| `modelValue` |  `Array`  |    `-`     | `v-model` for selected value                             |
-| `empty-label` | `String` |  `There are no records to show`   | Table empty state label            |
+| Props         |   Type    |  Default   | Description                                              |
+|---------------|:---------:|:----------:|----------------------------------------------------------|
+| `variant`     | `String`  | `flexible` | Table style variant, valid value is `flexible`, `static` |
+| `items`       |  `Array`  |    `-`     | Table items                                              |
+| `fields`      |  `Array`  |    `-`     | Table fields                                             |
+| `selectable`  | `Boolean` |  `false`   | Enable checkbox                                          |
+| `draggable`   | `Boolean` |  `false`   | Enable draggable                                         |
+| `v-model`     |  `Array`  |    `-`     | `v-model` for selected value                             |
+| `empty-label` | `String`  |  `There are no records to show`   | Table empty state label           |
+
+In props `fields` contain
+
+| Props       | Type             | Description                                                                  |
+|-------------|:----------------:|------------------------------------------------------------------------------|
+| `key`       | `String`         | Field's key                                                                  |
+| `label?`     | `String`         | Field's Label                                                               |
+| `width?`     | `Number`         | Field's width in percent                                                    |
+| `formatter?` | `Function`       | Field's formatter, it receives `value` and `item` params and returning string value  |
+| `thClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table column cell                     |
+| `tdClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table head cell                       |
+
 
 ### Slots
 
