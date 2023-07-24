@@ -6,6 +6,7 @@ export interface SubMenu {
   label: string,
   url: string,
   access?: string | string[],
+  attribute?: object,
 }
 
 export interface MenuItem {
@@ -16,6 +17,7 @@ export interface MenuItem {
   access?: string | string[],
   collapsible?: boolean,
   submenu?: SubMenu[],
+  attribute?: object,
 }
 
 export interface Menu {
