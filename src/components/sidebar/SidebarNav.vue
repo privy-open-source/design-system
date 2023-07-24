@@ -4,6 +4,7 @@
     class="sidebar__title"
     data-testid="sidebar-title"
     :class="{ 'sidebar__title__collapsible' : (collapsible && type !== 'narrow') }"
+    v-bind="$attrs"
     @click.prevent="collapse">
     <Caption
       weight="bold"
@@ -65,9 +66,13 @@ import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
 
 export default defineComponent({
   components: {
-    Nav, Caption, Text, IconArrow,
+    Nav,
+    Caption,
+    Text,
+    IconArrow,
   },
-  props: {
+  inheritAttrs: false,
+  props       : {
     title: {
       type   : String,
       default: undefined,

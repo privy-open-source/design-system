@@ -14,6 +14,10 @@ function hasAccess (access: Access | Access[] | undefined, role: string) {
     : access === role
 }
 
+interface AdditionalAttr extends HTMLAttributes {
+  [key: string]: unknown,
+}
+
 export interface SubMenu {
   /**
    * Menu name
@@ -34,7 +38,7 @@ export interface SubMenu {
   /**
    * Additional Attribute
    */
-  attrs?: HTMLAttributes,
+  attrs?: AdditionalAttr,
 }
 
 export interface MenuItem {
@@ -69,7 +73,7 @@ export interface MenuItem {
   /**
    * Additional attribute
    */
-  attrs?: HTMLAttributes,
+  attrs?: AdditionalAttr,
 }
 
 export interface Menu {
@@ -116,7 +120,7 @@ export interface Menu {
   /**
    * Additional Attribute
    */
-  attrs?: HTMLAttributes,
+  attrs?: AdditionalAttr,
 }
 
 /**
