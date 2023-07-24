@@ -275,3 +275,72 @@ it('should have style error if `error` prop was provided', () => {
 
   expect(select).toHaveClass('select--error', 'state--error')
 })
+
+it('should be toggle dropdown if caret icon is clicked', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select />
+    `,
+  })
+
+  const select = screen.getByTestId('select')
+
+  expect(select).toBeInTheDocument()
+  expect(select).not.toHaveClass('select--open')
+
+  const caretIcon = screen.queryByTestId('select-caret-icon')
+
+  await fireEvent.click(caretIcon)
+  await nextTick()
+
+  expect(select).toHaveClass('select--open')
+
+  await fireEvent.click(caretIcon)
+  await nextTick()
+
+  expect(select).not.toHaveClass('select--open')
+})
+
+it('should be toggle dropdown via `caret` slot-scope function', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select>
+        <template #caret="{ toggle }">
+          <div @click="toggle">Toggle</div>
+        </template>
+      </Select>
+    `,
+  })
+
+  const select = screen.getByTestId('select')
+
+  expect(select).toBeInTheDocument()
+  expect(select).not.toHaveClass('select--open')
+
+  const toggle = screen.queryByText('Toggle')
+
+  await fireEvent.click(toggle)
+  await nextTick()
+
+  expect(select).toHaveClass('select--open')
+
+  await fireEvent.click(toggle)
+  await nextTick()
+
+  expect(select).not.toHaveClass('select--open')
+})
+
+it('should hide caret icon if props `no-caret` is provided', () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select no-caret />
+    `,
+  })
+
+  const caret = screen.queryByTestId('select-caret-icon')
+
+  expect(caret).not.toBeInTheDocument()
+})
