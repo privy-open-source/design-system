@@ -669,16 +669,18 @@ Modal use local CSS variables on `.modal` for enhanced real-time customization.
 
 ### Props
 
-| Props                      |   Type    | Default | Description                                     |
-|----------------------------|:---------:|:-------:|-------------------------------------------------|
-| `title`                    | `String`  | -       | Modal Title                                     |
-| `text`                     | `String`  | -       | Text inside of Modal Body                       |
-| `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                      |
-| `size`                     | `String`  | `md`    | Size of modal, valid value is `sm`, `md`, `lg` and `xl`  |
-| `banner`                   | `Boolean` | `false` | Give modal no-padding to place image for specific purpose |
-| `no-close-on-esc`          | `Boolean` | `false` | No close modal while Escape was pressed         |
-| `no-close-on-backdrop`     | `Boolean` | `false` | No close modal while Modal Backdrop was clicked |
-| `modal-body-scrollable`    | `Boolean` | `false` | Scrollable modal body when content is to long   |
+| Props                      |   Type    | Default | Description                                                |
+|----------------------------|:---------:|:-------:|------------------------------------------------------------|
+| `v-model`                  | `Boolean` | `false` | Show / Hide modal                                          |
+| `title`                    | `String`  | -       | Modal Title                                                |
+| `text`                     | `String`  | -       | Text inside of Modal Body                                  |
+| `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                                 |
+| `size`                     | `String`  | `md`    | Size of modal, valid value is `sm`, `md`, `lg` and `xl`    |
+| `banner`                   | `Boolean` | `false` | Give modal no-padding to place image for specific purpose  |
+| `no-close-on-esc`          | `Boolean` | `false` | No close modal while Escape was pressed                    |
+| `no-close-on-backdrop`     | `Boolean` | `false` | No close modal while Modal Backdrop was clicked            |
+| `modal-body-scrollable`    | `Boolean` | `false` | Scrollable modal body when content is to long              |
+| `centered`                 | `Boolean` | `false` | Handle center vertically of the viewport                   |
 
 ### Slots
 | Name      | Description                                                                                      |
