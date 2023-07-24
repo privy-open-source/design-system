@@ -81,7 +81,7 @@
     "vue-tsc": "1.4.4"
   },
   "dependencies": {
-    "@carbon/icons-vue": "10.49.1",
+    "@carbon/icons-vue": "10.71.1",
     "@floating-ui/dom": "^1.0.4",
     "@fontsource/dm-sans": "4.5.9",
     "@juggle/resize-observer": "^3.4.0",
