@@ -17,6 +17,11 @@ description: Base form input.
     { text: '🍇 Traube', value: 'Grape' },
     { text: '🍌 Bananen', value: 'Banana'},
   ])
+  const optionsC = ref([
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape', disabled: true },
+    { text: '🍌 Bananen', value: 'Banana', disabled: false},
+  ])
   const users = ref([
     {
       text: 'John Doe',
@@ -97,6 +102,28 @@ description: Base form input.
     { text: '🍎 Apfel', value: 'Apple' },
     { text: '🍇 Traube', value: 'Grape' },
     { text: '🍌 Bananen', value: 'Banana'},
+  ])
+</script>
+```
+
+### with Disabled option
+
+<preview>
+  <p-select :options="optionsC" v-model="value" />
+</preview>
+
+```vue
+<template>
+  <p-select
+    v-model="value"
+    :options="options" />
+</template>
+
+<script setup>
+  const options = ref([
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape', disabled: true },
+    { text: '🍌 Bananen', value: 'Banana', disabled: false},
   ])
 </script>
 ```
