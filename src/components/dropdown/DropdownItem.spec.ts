@@ -60,3 +60,16 @@ it('should be an anchor when dropdown item has `href` props', async () => {
 
   expect(dropdownItem).toHaveClass('dropdown__item--active')
 })
+
+it('should be disable when dropdown item has `disabled` props', async () => {
+  const screen = render({
+    components: { DropdownItem },
+    template  : `
+      <DropdownItem disabled />
+    `,
+  })
+
+  const dropdownItem = screen.queryByTestId('dropdown-item')
+
+  expect(dropdownItem).toHaveProperty('disabled')
+})

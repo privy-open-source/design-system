@@ -3,6 +3,7 @@ import { isEqual } from '../utils/value'
 export interface SelectItem {
   text: string,
   value: unknown,
+  disabled?: unknown,
 }
 
 export interface SelectProps {

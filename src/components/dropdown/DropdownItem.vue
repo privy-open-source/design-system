@@ -94,5 +94,10 @@ export default defineComponent({
     @apply bg-default-alpha;
     @apply dark:bg-dark-default-alpha cursor-default;
   }
+
+  &:disabled {
+    @apply bg-subtle border-subtle pointer-events-none text-muted;
+    @apply dark:bg-dark-subtle dark:border-dark-subtle  dark:text-dark-muted;
+  }
 }
 </style>
