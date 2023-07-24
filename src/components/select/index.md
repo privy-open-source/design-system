@@ -410,11 +410,12 @@ If you want to make custom option with slot, you can use `option` with scoped sl
 
 ### Slots
 
-| Name      | Description                               |
-|-----------|-------------------------------------------|
-| `empty`   | Content when option is empty or not found |
-| `loading` | Content when loading                      |
-| `option`  | Content to place in Option Items          |
+| Name      | Description                                    |
+|-----------|------------------------------------------------|
+| `empty`   | Content when option is empty or not found      |
+| `loading` | Content when loading                           |
+| `option`  | Content to place in Option Items               |
+| `caret`   | Element for opening and closing the dropdown   |
 
 ### Events
 
