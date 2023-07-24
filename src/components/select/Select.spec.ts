@@ -331,3 +331,16 @@ it('should be toggle dropdown via `caret` slot-scope function', async () => {
 
   expect(select).not.toHaveClass('select--open')
 })
+
+it('should hide caret icon if props `no-caret` is provided', () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select no-caret />
+    `,
+  })
+
+  const caret = screen.queryByTestId('select-caret-icon')
+
+  expect(caret).not.toBeInTheDocument()
+})

@@ -6,6 +6,7 @@ description: Base form input.
 <script setup>
   import pSelect from "./Select.vue"
   import pAvatar from "../avatar/Avatar.vue"
+  import PiCaretDown16 from '@privyid/persona-icon/vue/caret-down/16.vue'
   import FuzzyAdapter from "../select/adapter/fuzzy-adapter"
   import defineAsyncAdapter from "./adapter/async-adapter"
   import { ref } from "vue-demi"
@@ -391,6 +392,56 @@ If you want to make custom option with slot, you can use `option` with scoped sl
   ])
 </script>
 ```
+
+## Caret
+
+### Custom Caret Icon
+
+By using the `caret` slot-scope, you can define your own custom icon for the caret, giving you the flexibility to choose a different icon or style that suits your design or preference.
+
+<preview>
+  <p-select :options="optionsA">
+    <template #caret="{ isOpen, toggle }">
+      <pi-caret-down-16 @click="toggle" />
+    </template>
+  </p-select>
+</preview>
+
+```vue
+<template>
+  <p-select :options="optionsA">
+    <template #caret="{ isOpen, toggle }">
+      <pi-caret-down-16 @click="toggle" />
+    </template>
+  </p-select>
+</template>
+
+<script setup>
+  import PiCaretDown16 from '@privyid/persona-icon/vue/caret-down/16.vue'
+
+  const options = ref(['Apple', 'Banana', 'Grape'])
+</script>
+```
+
+### Hide Caret
+
+When you set the `no-caret` prop to true, it will hide the caret icon, and users won't see it in the component.
+
+<preview>
+  <p-select :options="optionsA" no-caret />
+</preview>
+
+```vue
+<template>
+  <p-select :options="optionsA" />
+</template>
+
+<script setup>
+  const options = ref(['Apple', 'Banana', 'Grape'])
+</script>
+```
+
+
 ## API
 
 ### Props
@@ -407,6 +458,7 @@ If you want to make custom option with slot, you can use `option` with scoped sl
 | `adapter`     | `Adapter` | `BaseAdapter` | Adapter for loading option's items |
 | `modelValue`  |   `Any`   |      `-`      | `v-model` value                    |
 | `selected`    | `Object`  |      `-`      | `v-model:selected` value           |
+| `no-caret`    | `Boolean` |    `false`    | Hide caret icon                    |
 
 ### Slots
 

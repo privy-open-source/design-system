@@ -16,7 +16,9 @@
         :disabled="disabled"
         :readonly="readonly"
         @focus="onFocus">
-        <template #append>
+        <template
+          v-if="!noCaret"
+          #append>
           <slot
             name="caret"
             :is-open="isOpen"
@@ -168,6 +170,10 @@ export default defineComponent({
     size: {
       type   : String as PropType<SizeVariant>,
       default: 'md',
+    },
+    noCaret: {
+      type   : Boolean,
+      default: false,
     },
   },
   models: {
