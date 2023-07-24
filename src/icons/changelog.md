@@ -1,6 +1,63 @@
+<style lang="postcss">
+  ._design-system_icons_changelog ul {
+    @apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3;
+
+    > li {
+      @apply mt-0 ml-4;
+    }
+  }
+</style>
+
 # Changelog
 
 > Icons changelog
+
+## 0.18.0
+
+### Added
+
+- align-center
+- align-justify
+- align-left
+- align-right
+- bold
+- font-family
+- font-size
+- highlight
+- italic
+- list-bullets
+- list-numbers
+- new-page
+- redo
+- save
+- strikethrough
+- table
+- underlined
+- undo
+
+### Changed
+
+- brush/32
+- clip/16
+- clip/32
+- edit-square/16
+- edit-square/32
+- no-image/32
+- pallete/20
+- pallete/32
+- print/32
+- rotate-left/32
+- rotate-right/32
+- signature-draw/32
+- unlink/32
+
+## 0.17.1
+
+Nothing Changed
+
+## 0.17.0
+
+Nothing Changed
 
 ## 0.16.0
 
