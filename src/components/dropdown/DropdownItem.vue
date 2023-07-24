@@ -5,6 +5,7 @@
     class="dropdown__item"
     :class="classNames"
     :href="href"
+    :disabled="disabled"
     @click="handleOnClick">
     <slot>
       {{ text }}
@@ -32,6 +33,10 @@ export default defineComponent({
       default: undefined,
     },
     active: {
+      type   : Boolean,
+      default: false,
+    },
+    disabled: {
       type   : Boolean,
       default: false,
     },
