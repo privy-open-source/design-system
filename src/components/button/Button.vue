@@ -1,7 +1,8 @@
 <template>
   <component
     :is="tagName"
-    :href="href"
+    :href="tagName === 'a' ? href : undefined"
+    :to="tagName === 'a' ? undefined : href"
     data-testid="btn"
     :class="classNames">
     <slot />
@@ -14,7 +15,10 @@ import {
   defineComponent,
   PropType,
   inject,
+  resolveComponent,
+  type DefineComponent,
 } from 'vue-demi'
+import type { RouteLocationRaw } from 'vue-router'
 
 import {
   ColorVariant,
@@ -49,7 +53,7 @@ export default defineComponent({
       default: false,
     },
     href: {
-      type   : String,
+      type   : [String, Object] as PropType<string | RouteLocationRaw>,
       default: undefined,
     },
   },
@@ -85,13 +89,18 @@ export default defineComponent({
       return result
     })
 
-    const tagName = computed(() => {
-      let tag: TagVariant = 'button'
+    const tagName = computed<TagVariant | DefineComponent>(() => {
+      if (props.href) {
+        if (
+          typeof props.href === 'string'
+          && (props.href.startsWith('http') || props.href.startsWith('#'))
+        )
+          return 'a'
 
-      if (props.href)
-        tag = 'a'
+        return resolveComponent('router-link') as DefineComponent
+      }
 
-      return tag
+      return 'button'
     })
 
     return { classNames, tagName }
