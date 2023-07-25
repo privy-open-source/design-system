@@ -48,6 +48,7 @@
         :key="i"
         data-testid="select-item"
         :class="{ selected: isSelected(item) }"
+        :disabled="Boolean(item.disabled)"
         @click="select(item)">
         <div class="select__option">
           <div class="select__option-text">
