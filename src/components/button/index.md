@@ -5,7 +5,7 @@ description: Base button component
 
 <script setup>
   import pButton from './Button.vue'
-  import pSpinner from '../spinner/spinner.vue'
+  import pSpinner from '../spinner/Spinner.vue'
   import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
 
   import { ref } from "vue-demi"
