@@ -63,6 +63,9 @@ description: Base form input.
 ## Usage
 
 ### Simple Usage
+<div class="my-64">
+  <p-select :options="optionsA" section-label="title" />
+</div>
 
 <preview>
   <p-select :options="optionsA" />
@@ -348,11 +351,11 @@ If you want to make custom option with slot, you can use `option` with scoped sl
   <p-select :options="users">
     <template #option="slot">
       <div class="flex flex-row">
-        <div class="pr-3 py-2">
+        <div class="py-2 pr-3">
           <p-avatar :src="slot.item.value.img" />
         </div>
         <div class="py-2 ">
-          <div class="text-base font-normal font-sans">{{ slot.item.text }}
+          <div class="font-sans text-base font-normal">{{ slot.item.text }}
           </div>
             <div class="text-xs font-light option-text">ID: {{ slot.item.value.id }}
           </div>
@@ -367,9 +370,9 @@ If you want to make custom option with slot, you can use `option` with scoped sl
   <p-select :options="users">
     <template #option="slot">
       <div class="flex flex-row">
-        <div class="pr-3 py-2">
+        <div class="py-2 pr-3">
           <p-avatar :src="slot.item.value.img" />
-          <div class="text-base font-normal font-sans">{{ slot.item.value.img }}
+          <div class="font-sans text-base font-normal">{{ slot.item.value.img }}
           </div>
             <div class="text-xs font-light option-text">{{ slot.item.text }}
           </div>

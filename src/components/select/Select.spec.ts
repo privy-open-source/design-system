@@ -275,3 +275,17 @@ it('should have style error if `error` prop was provided', () => {
 
   expect(select).toHaveClass('select--error', 'state--error')
 })
+
+it('should able to add section label via `section-label` prop', () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select :options="['apple', 'grape', 'orange']" section-label="title" />
+    `,
+  })
+
+  const label = screen.queryByTestId('select-label')
+
+  expect(label).toBeInTheDocument()
+  expect(label).toHaveTextContent('title')
+})
