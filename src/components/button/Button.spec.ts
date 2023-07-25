@@ -173,3 +173,17 @@ it('should automatically set size of button via `size` props of input-group', ()
   expect(inputGroup).toBeInTheDocument()
   expect(button).toHaveClass('btn--sm')
 })
+
+it('should showing spinner component if component has loading state', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+        <Button loading>Text</Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toContainHTML('svg')
+})

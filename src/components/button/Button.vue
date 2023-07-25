@@ -4,7 +4,12 @@
     :href="href"
     data-testid="btn"
     :class="classNames">
-    <slot />
+    <slot
+      v-if="loading"
+      name="loader">
+      <SpinnerRing />
+    </slot>
+    <slot v-else />
   </component>
 </template>
 
@@ -25,9 +30,11 @@ import {
 import { BUTTONGROUP_SETTING } from '../button-group'
 
 import { INPUTGROUP_SETTING } from '../input-group'
+import SpinnerRing from '../spinner/SpinnerRing.vue'
 
 export default defineComponent({
-  props: {
+  components: { SpinnerRing },
+  props     : {
     variant: {
       type   : String as PropType<StyleVariant>,
       default: 'solid',
@@ -51,6 +58,10 @@ export default defineComponent({
     href: {
       type   : String,
       default: undefined,
+    },
+    loading: {
+      type   : Boolean,
+      default: false,
     },
   },
   setup (props) {

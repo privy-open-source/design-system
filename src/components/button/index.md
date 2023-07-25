@@ -5,7 +5,19 @@ description: Base button component
 
 <script setup>
   import pButton from './Button.vue'
+  import pSpinner from '../spinner/spinner.vue'
   import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
+
+  import { ref } from "vue-demi"
+
+  const loading = ref(false)
+  const interactLoading = () => {
+    loading.value = true
+
+    setTimeout(() => {
+      loading.value = false
+    }, 2000)
+  }
 </script>
 
 # Button
@@ -265,6 +277,41 @@ You can also combine with `pill` mode to make round button
 </template>
 ```
 
+## Loading state
+
+<preview label="link variant">
+  <div class="grid grid-cols-2 gap-3 lg:grid-cols-2">
+    <p-button color="info" variant="solid" loading>Click me</p-button>
+    <p-button color="info" variant="outline" :loading="loading" @click="interactLoading" >
+      <template #loader>
+        <p-spinner />
+      </template>
+      Click me
+    </p-button>
+  </div>
+</preview>
+
+```vue
+<script setup>
+const loading = ref(false)
+const interactLoading = () => {
+  loading.value = true
+  setTimeout(() => {
+    loading.value = false
+  }, 2000)
+}
+</script>
+
+<template>
+  <p-button color="info" variant="solid" loading>Click me</p-button>
+  <p-button color="info" variant="outline" :loading="loading" @click="interactLoading" >
+    <template #loader>
+      <p-spinner />
+    </template>
+    Click me
+  </p-button>
+</template>
+```
 ## Variables
 Button use local CSS variables on `.btn` for enhanced real-time customization.
 
