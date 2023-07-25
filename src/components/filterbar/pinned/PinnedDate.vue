@@ -9,12 +9,9 @@
     <template #button-content>
       {{ value ? value : schema.label }}
     </template>
-    <Subheading
-      class="px-4 pt-4 pb-1"
-      weight="medium"
-      overline>
+    <DropdownHeader>
       {{ schema.label }}
-    </Subheading>
+    </DropdownHeader>
 
     <Calendar
       v-model="model"
@@ -32,9 +29,9 @@ import {
   PropType,
   ref,
 } from 'vue-demi'
-import Subheading from '../../subheading/Subheading.vue'
 import Calendar from '../../calendar/Calendar.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
+import DropdownHeader from '../../dropdown/DropdownHeader.vue'
 import { useVModel } from '../../input'
 import { FilterDate } from '..'
 import { CalendarMode } from '../../calendar/adapter/adapter'
@@ -42,8 +39,8 @@ import { isDate, format as formatDate } from 'date-fns'
 
 export default defineComponent({
   components: {
-    Subheading,
     Dropdown,
+    DropdownHeader,
     Calendar,
   },
   props: {

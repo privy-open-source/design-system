@@ -22,12 +22,9 @@
       </template>
     </template>
 
-    <Subheading
-      class="px-4 pt-4 pb-1"
-      weight="medium"
-      overline>
+    <DropdownHeader>
       {{ schema.label }}
-    </Subheading>
+    </DropdownHeader>
     <template
       v-for="(item, i) in items"
       :key="i">
@@ -49,8 +46,8 @@ import {
   ref,
 } from 'vue-demi'
 import Badge from '../../badge/Badge.vue'
-import Subheading from '../../subheading/Subheading.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
+import DropdownHeader from '../../dropdown/DropdownHeader.vue'
 import Checkbox from '../../checkbox/Checkbox.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
 import { useVModel } from '../../input'
@@ -61,8 +58,8 @@ import { SelectItem } from '../../select'
 export default defineComponent({
   components: {
     Badge,
-    Subheading,
     Dropdown,
+    DropdownHeader,
     Checkbox,
   },
   props: {
