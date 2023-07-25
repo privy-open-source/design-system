@@ -63,9 +63,6 @@ description: Base form input.
 ## Usage
 
 ### Simple Usage
-<div class="my-64">
-  <p-select :options="optionsA" section-label="title" />
-</div>
 
 <preview>
   <p-select :options="optionsA" />
@@ -114,6 +111,22 @@ You can set input placeholder via `placeholder` props
 ```vue
 <template>
   <p-select placeholder="Pick A Value" />
+</template>
+```
+
+## Section Label
+
+You can set sectiom label via `section-label` props
+
+<preview>
+  <p-select placeholder="Pick A Value" :options="optionsA" section-label="Fruits" />
+</preview>
+
+```vue
+<template>
+  <p-select placeholder="Pick A Value" 
+    :options="optionsA" 
+    section-label="Fruits" />
 </template>
 ```
 
@@ -410,6 +423,7 @@ If you want to make custom option with slot, you can use `option` with scoped sl
 | `adapter`     | `Adapter` | `BaseAdapter` | Adapter for loading option's items |
 | `modelValue`  |   `Any`   |      `-`      | `v-model` value                    |
 | `selected`    | `Object`  |      `-`      | `v-model:selected` value           |
+| `section-label`    | `String`  |      `-`      | Section label in select container           |
 
 ### Slots
 
