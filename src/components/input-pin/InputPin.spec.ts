@@ -149,3 +149,59 @@ it('should back to previous focus if delete the value', async () => {
 
   expect(prevFocus).toBeCalled()
 })
+
+it('should have readonly attribute if prop readonly was provided', async () => {
+  const screen = render({
+    components: { InputPin },
+    template  : '<input-pin readonly />',
+  })
+
+  const inputs = screen.queryAllByTestId('input')
+  expect(inputs[0]).toHaveAttribute('readonly')
+})
+
+it('should have readonly attribute if prop readonly was provided', () => {
+  const screen = render({
+    components: { InputPin },
+    template  : '<input-pin readonly />',
+  })
+
+  const inputs = screen.queryAllByTestId('input')
+  expect(inputs[0]).toHaveAttribute('readonly')
+})
+
+it('should failed to typing if input have readonly properties', async () => {
+  const model  = ref('')
+  const screen = render({
+    components: { InputPin },
+    template  : '<input-pin readonly v-model="model"/>',
+  })
+
+  const inputs = screen.queryAllByTestId('input')
+  const user   = userEvent.setup()
+
+  await user.type(inputs.at(1), '1')
+  await user.type(inputs.at(2), '1')
+  await user.type(inputs.at(3), '2')
+  await user.type(inputs.at(4), '3')
+
+  expect(model.value).toBe('')
+})
+
+it('should failed to typing if input have disabled properties', async () => {
+  const model  = ref('')
+  const screen = render({
+    components: { InputPin },
+    template  : '<input-pin disabled v-model="model"/>',
+  })
+
+  const inputs = screen.queryAllByTestId('input')
+  const user   = userEvent.setup()
+
+  await user.type(inputs.at(1), '1')
+  await user.type(inputs.at(2), '1')
+  await user.type(inputs.at(3), '2')
+  await user.type(inputs.at(4), '3')
+
+  expect(model.value).toBe('')
+})
