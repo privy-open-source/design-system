@@ -83,6 +83,25 @@ description: Base dropdown button, suit for action menus
 </template>
 ```
 
+### With Disabled Item
+<preview>
+  <p-dropdown text="Click Here">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item :disabled="true">Item Text</p-dropdown-item>
+    <p-dropdown-item :disabled="false">Item Text</p-dropdown-item>
+  </p-dropdown>
+</preview>
+
+```vue
+<template>
+  <p-dropdown text="Click Here">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item :disabled="true">Item Text</p-dropdown-item>
+    <p-dropdown-item :disabled="false">Item Text</p-dropdown-item>
+  </p-dropdown>
+</template>
+```
+
 ## Placement
 
 You can change popup placement via `placement` prop. Valid options is:
@@ -466,6 +485,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | Props        |   Type    |    Default     |       Description                          |
 |--------------|:---------:|:--------------:|--------------------------------------------|
 | `href`       | `String`  |    `-`         | Place url permalink in the `dropdown-item` |
+| `disabled`   | `Boolean` |    false       | Set disabled state in the `dropdown-item`  |
 ### Slots `<p-dropdown-header>`
 
 | Name             | Description                                             |

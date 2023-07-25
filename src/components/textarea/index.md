@@ -139,7 +139,7 @@ You can filter what characters are allowed to be input using the prop `accept`. 
 Textarea value can be binding with `v-model`.
 
 <preview>
-  <p-textarea v-model="result" accept="num" />
+  <p-textarea v-model="result" />
 </preview>
 
 **result:**

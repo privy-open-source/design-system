@@ -551,12 +551,12 @@ If we need some action in section title, you can add this by using `title-action
 
 ### Props `<p-nav-item>`
 
-| Props          |   Type     | Default      | Description                                  |
-|----------------|:----------:|:------------:|-------------------------------------------------------------------|
-| `active`       | `Boolean`  | `false`      | Place component in the active state with active styling           |
-| `disabled`     | `Boolean`  | `false`      | Disables component functionality and place it in disabled state   |
-| `href`         | `String`   | `undefined`  | Target URL of the link                                            |
-| `target`       | `String`   | `_self`      | Sets the `target` attribute on the rendered link, valid value is `_blank`, `_self`, `_parent`, dan `_top` |
+| Props          |   Type                         | Default      | Description                                                                                               |
+|----------------|:------------------------------:|:------------:|-----------------------------------------------------------------------------------------------------------|
+| `active`       | `Boolean`                      | `false`      | Place component in the active state with active styling                                                   |
+| `disabled`     | `Boolean`                      | `false`      | Disables component functionality and place it in disabled state                                           |
+| `href`         | `String` or `RouteLocationRaw` | `undefined`  | Target URL of the link                                                                                    |
+| `target`       | `String`                       | `_self`      | Sets the `target` attribute on the rendered link, valid value is `_blank`, `_self`, `_parent`, dan `_top` |
 
 ### Slots `<p-nav-item>`
 
