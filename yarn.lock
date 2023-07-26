@@ -4377,11 +4377,11 @@ __metadata:
   linkType: hard
 
 "@types/sanitize-html@npm:^2":
-  version: 2.8.0
-  resolution: "@types/sanitize-html@npm:2.8.0"
+  version: 2.9.0
+  resolution: "@types/sanitize-html@npm:2.9.0"
   dependencies:
     htmlparser2: ^8.0.0
-  checksum: 6e583cac673832536fac8da53890073f753baf2c49826fd0c2831e615cb5527692d03b2b5ba9eb8caf8694de4bfb1c31fd12398d2b68331725590a6ceb8f82fe
+  checksum: b60f42b740bbfb1b1434ce8b43925a38ecc608b60aa654fd009d2e22e33f324b61d370768c55bd2fd98e03de08518ffa8911d61606c483526fb931bb8b59d1b0
   languageName: node
   linkType: hard
 
@@ -15831,8 +15831,8 @@ __metadata:
   linkType: hard
 
 "sanitize-html@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "sanitize-html@npm:2.8.1"
+  version: 2.11.0
+  resolution: "sanitize-html@npm:2.11.0"
   dependencies:
     deepmerge: ^4.2.2
     escape-string-regexp: ^4.0.0
@@ -15840,7 +15840,7 @@ __metadata:
     is-plain-object: ^5.0.0
     parse-srcset: ^1.0.2
     postcss: ^8.3.11
-  checksum: 0d35503b261800b736a02648e8b9b2a5206cbc621248cf8dd86d5b9bdd470d0146d74704222d287bd7359a599e8a186cc5b015401237b0244352f18f37465daa
+  checksum: 44807f22b0feb5a6a883b4bc04bcd8690ec3bbd6dacb24d6e52226ffe0c0e4fad43d6a882ce60e3884a327fae2de01e67e566e3a211491add50ff0160be2e98a
   languageName: node
   linkType: hard
 
