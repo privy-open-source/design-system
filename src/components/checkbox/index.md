@@ -16,6 +16,7 @@ description: Base checkbox form
   const modelA   = ref(false)
   const modelB   = ref('disagree')
   const selected = ref([])
+  const selected2= ref([])
 
   const items  = ref(['apple', 'grape', 'orange'])
   const result = ref(['apple'])
@@ -244,7 +245,7 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
 
 <preview class="justify-center">
   <div class="flex flex-col space-y-3">
-    <p-checkbox appearance="none" v-model="selected" value="Olivia Withness">
+    <p-checkbox appearance="none" v-model="selected2" value="Olivia Withness">
       <template #default>
         <p-card
           element="div"
@@ -260,7 +261,7 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
         </p-card>
       </template>
     </p-checkbox>
-    <p-checkbox appearance="none" v-model="selected" value="Hyuga Kojiro">
+    <p-checkbox appearance="none" v-model="selected2" value="Hyuga Kojiro">
       <template #default>
         <p-card
           element="div"
@@ -276,7 +277,7 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
         </p-card>
       </template>
     </p-checkbox>
-    <p-checkbox appearance="none" v-model="selected" value="Marsha Timoty" disabled>
+    <p-checkbox appearance="none" v-model="selected2" value="Marsha Timoty" disabled>
       <template #default>
         <p-card
           element="div"
@@ -297,7 +298,7 @@ It's possible to create checkbox with custom appearance. If don't wanna see "che
 
 **Selected :**
 
-<pre><code>{{ selected }}</code></pre>
+<pre><code>{{ selected2 }}</code></pre>
 
 ```vue
 <template>
