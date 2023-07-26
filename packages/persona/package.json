@@ -58,7 +58,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@carbon/icons-vue": "10.49.1",
+    "@carbon/icons-vue": "10.71.1",
     "@floating-ui/dom": "^1.0.4",
     "@juggle/resize-observer": "^3.4.0",
     "@nuxt/kit": "^3.3.2",
