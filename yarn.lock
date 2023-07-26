@@ -2126,19 +2126,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/icon-helpers@npm:^10.29.0":
-  version: 10.29.0
-  resolution: "@carbon/icon-helpers@npm:10.29.0"
-  checksum: 2fe3c8c9a35822565a35a6e0d906b195bc205898dc022bc92432a6c921388f4d2a1873b71b5b2353699c8b5dacb28e226578a02d47ca4b8926c3b23729bc2f40
+"@carbon/icon-helpers@npm:^10.42.1":
+  version: 10.43.0
+  resolution: "@carbon/icon-helpers@npm:10.43.0"
+  checksum: ca1e607cfe5c50dc2e0ddc7632ad4a81e8e1304d2dc91508223e51b6e1b17f42f2bf8bf97c87eb636ae1c537bde12fd46483cc173db77bf268c03d590e8797b7
   languageName: node
   linkType: hard
 
-"@carbon/icons-vue@npm:10.49.1":
-  version: 10.49.1
-  resolution: "@carbon/icons-vue@npm:10.49.1"
+"@carbon/icons-vue@npm:10.71.1":
+  version: 10.71.1
+  resolution: "@carbon/icons-vue@npm:10.71.1"
   dependencies:
-    "@carbon/icon-helpers": ^10.29.0
-  checksum: 063dd316bbcaca1a1b6ffa400744643be1467810398672a19682a8aa0a2958ea30e504a6d91cfbe7340044f705fa6c43e599472ac174548a94113b8098afe2a0
+    "@carbon/icon-helpers": ^10.42.1
+  checksum: a686ff2cf1fc16dd70e5e2742fa4814519fd24b4cf7411c8ee6615262ac0413c59f25a9ebceebd057426b143a7d28231881cceac45ef5349b26b78a681174617
   languageName: node
   linkType: hard
 
@@ -3528,7 +3528,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.19.6
     "@babel/preset-env": ^7.19.4
-    "@carbon/icons-vue": 10.49.1
+    "@carbon/icons-vue": 10.71.1
     "@floating-ui/dom": ^1.0.4
     "@fontsource/dm-sans": 4.5.9
     "@interactjs/types": 1.10.17
@@ -3664,7 +3664,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
-    "@carbon/icons-vue": 10.49.1
+    "@carbon/icons-vue": 10.71.1
     "@floating-ui/dom": ^1.0.4
     "@juggle/resize-observer": ^3.4.0
     "@nuxt/kit": ^3.3.2
