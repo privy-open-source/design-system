@@ -557,6 +557,67 @@
     ]
   },
   {
+    "name": "github",
+    "aliases": [],
+    "category": "brand",
+    "folder": "github",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "github/32",
+        "path": "github/32.svg",
+        "hash": "b14428966db57631f5c2097365d7af4563b49bee93ab977d71fb131e6469a54a"
+      },
+      {
+        "name": "github/16",
+        "path": "github/16.svg",
+        "hash": "2b160c8cd750a9534c10d70537fdd9b568bb094c929ee10749a0621ee3cf5238"
+      },
+      {
+        "name": "github/24",
+        "path": "github/24.svg",
+        "hash": "3e4f221ad5943ca4623dace43e404bf7db27c24bfd86f8571a3d54a746df87c3"
+      },
+      {
+        "name": "github/20",
+        "path": "github/20.svg",
+        "hash": "2ec0a8467e995805ba2411e8117d32c83bccb3f02ea8b869958a16badb6d263e"
+      }
+    ]
+  },
+  {
+    "name": "adjust",
+    "aliases": [
+      "settings",
+      "filter"
+    ],
+    "category": "operation",
+    "folder": "adjust",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "adjust/16",
+        "path": "adjust/16.svg",
+        "hash": "c5ce48af8ff3d613293d46f9c5263c5ce5db9165eebc7569968daf3455a8a25e"
+      },
+      {
+        "name": "adjust/20",
+        "path": "adjust/20.svg",
+        "hash": "00e2ad8f595713619b93dfd701ef860c3ed8c0956213c07b0c78b37b9df46624"
+      },
+      {
+        "name": "adjust/32",
+        "path": "adjust/32.svg",
+        "hash": "85b21e168a957d971659fc0c6d73dbded6e92f6b7250a25d7c87c4a25d8b2ad4"
+      },
+      {
+        "name": "adjust/24",
+        "path": "adjust/24.svg",
+        "hash": "9ca16bb738364fed7fc390301c7870145189aba8d4ccafb8ad0b196fd6da3ac0"
+      }
+    ]
+  },
+  {
     "name": "broom",
     "aliases": [
       "clean"
@@ -8061,37 +8122,6 @@
         "name": "message/16",
         "path": "message/16.svg",
         "hash": "ffba7260f99968158f0a84c8088641ad48e4551234c0cca96930632a6c6f098f"
-      }
-    ]
-  },
-  {
-    "name": "adjust",
-    "aliases": [
-      "settings"
-    ],
-    "category": "operation",
-    "folder": "adjust",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "adjust/16",
-        "path": "adjust/16.svg",
-        "hash": "c5ce48af8ff3d613293d46f9c5263c5ce5db9165eebc7569968daf3455a8a25e"
-      },
-      {
-        "name": "adjust/20",
-        "path": "adjust/20.svg",
-        "hash": "00e2ad8f595713619b93dfd701ef860c3ed8c0956213c07b0c78b37b9df46624"
-      },
-      {
-        "name": "adjust/32",
-        "path": "adjust/32.svg",
-        "hash": "85b21e168a957d971659fc0c6d73dbded6e92f6b7250a25d7c87c4a25d8b2ad4"
-      },
-      {
-        "name": "adjust/24",
-        "path": "adjust/24.svg",
-        "hash": "9ca16bb738364fed7fc390301c7870145189aba8d4ccafb8ad0b196fd6da3ac0"
       }
     ]
   },
