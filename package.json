@@ -43,7 +43,7 @@
     "@types/marked": "^4",
     "@types/sanitize-html": "^2",
     "@types/scroll-into-view": "^1",
-    "@types/testing-library__jest-dom": "5.14.8",
+    "@types/testing-library__jest-dom": "5.14.9",
     "@types/webfontloader": "1.6.35",
     "@types/zxcvbn": "^4",
     "@typescript-eslint/eslint-plugin": "5.62.0",
