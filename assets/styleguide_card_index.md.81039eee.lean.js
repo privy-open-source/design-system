@@ -1,1 +1,0 @@
-import{_ as e,p as t,x as a}from"./chunks/framework.fc7d399c.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"styleguide/card/index.md","filePath":"styleguide/card/index.md"}'),r={name:"styleguide/card/index.md"};function d(n,s,c,i,o,p){return a(),t("div")}const m=e(r,[["render",d]]);export{l as __pageData,m as default};
