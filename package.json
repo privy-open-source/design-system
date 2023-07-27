@@ -83,7 +83,7 @@
   "dependencies": {
     "@carbon/icons-vue": "10.71.1",
     "@floating-ui/dom": "^1.0.4",
-    "@fontsource/dm-sans": "4.5.9",
+    "@fontsource/dm-sans": "5.0.5",
     "@juggle/resize-observer": "^3.4.0",
     "@privyid/persona-icon": "workspace:^",
     "@splidejs/splide": "^4.1.4",
