@@ -3767,7 +3767,7 @@ __metadata:
     zxcvbn: ^4.4.2
   peerDependencies:
     "@privyid/tailwind-preset": "workspace:^"
-    postcss-custom-properties: ^12.1.11
+    postcss-custom-properties: ^12.1.11 || ^13.0.0
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
     tailwind: ">=3.0.0"
