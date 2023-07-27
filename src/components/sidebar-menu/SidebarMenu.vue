@@ -17,7 +17,8 @@
       :title-action-url="menu.titleActionUrl"
       :bottom="menu.bottom"
       :condensed="menu.condensed"
-      :collapsible="menu.collapsible">
+      :collapsible="menu.collapsible"
+      v-bind="menu.attrs">
       <!-- IF: Menu has maxlength -->
       <template
         v-if="menu.maxLength">
@@ -28,7 +29,8 @@
             v-if="item.submenu"
             data-testid="sidebar-submenu"
             :text="item.label"
-            :collapsible="item.collapsible">
+            :collapsible="item.collapsible"
+            v-bind="item.attrs">
             <template #icon>
               <template v-if="item.icon && typeof item.icon === 'string'">
                 <img
@@ -43,15 +45,20 @@
               <NavItem
                 v-for="(submenu, x) in item.submenu"
                 :key="x"
-                :href="submenu.url">
+                :href="submenu.url"
+                v-bind="submenu.attrs">
                 {{ submenu.label }}
               </NavItem>
             </SidebarNav>
           </NavSubItem>
           <NavItem
             v-else
+            v-bind="item.attrs"
             :href="item.url"
-            :class="{ 'nav__item--no-label' : !item.label, 'nav__item--no-icon' : !item.icon }">
+            :class="{
+              'nav__item--no-label': !item.label,
+              'nav__item--no-icon': !item.icon
+            }">
             <template
               #icon>
               <template v-if="item.icon && typeof item.icon === 'string'">
@@ -82,6 +89,7 @@
             :key="i">
             <NavSubItem
               v-if="item.submenu"
+              v-bind="item.attrs"
               :text="item.label"
               :collapsible="item.collapsible">
               <template #icon>
@@ -98,15 +106,20 @@
                 <NavItem
                   v-for="(submenu, x) in item.submenu"
                   :key="x"
-                  :href="submenu.url">
+                  :href="submenu.url"
+                  v-bind="submenu.attrs">
                   {{ submenu.label }}
                 </NavItem>
               </SidebarNav>
             </NavSubItem>
             <NavItem
               v-else
+              v-bind="item.attrs"
               :href="item.url"
-              :class="{ 'nav__item--no-label' : !item.label, 'nav__item--no-icon' : !item.icon }">
+              :class="{
+                'nav__item--no-label': !item.label,
+                'nav__item--no-icon' : !item.icon,
+              }">
               <template
                 #icon>
                 <template v-if="item.icon && typeof item.icon === 'string'">
@@ -125,50 +138,57 @@
       </template>
       <!-- ENDIF -->
 
-      <template
-        v-for="(item, i) in menu.items"
-        v-else
-        :key="i">
-        <NavSubItem
-          v-if="item.submenu"
-          :text="item.label"
-          :collapsible="item.collapsible">
-          <template #icon>
-            <template v-if="item.icon && typeof item.icon === 'string'">
-              <img
-                :src="item.icon"
-                alt="icon-menu">
+      <template v-else>
+        <template
+          v-for="(item, i) in menu.items"
+          :key="i">
+          <NavSubItem
+            v-if="item.submenu"
+            :text="item.label"
+            :collapsible="item.collapsible"
+            v-bind="item.attrs">
+            <template #icon>
+              <template v-if="item.icon && typeof item.icon === 'string'">
+                <img
+                  :src="item.icon"
+                  alt="icon-menu">
+              </template>
+              <template v-else-if="item.icon">
+                <component :is="item.icon" />
+              </template>
             </template>
-            <template v-else-if="item.icon">
-              <component :is="item.icon" />
+            <SidebarNav :condensed="menu.condensed">
+              <NavItem
+                v-for="(submenu, x) in item.submenu"
+                :key="x"
+                :href="submenu.url"
+                v-bind="submenu.attrs">
+                {{ submenu.label }}
+              </NavItem>
+            </SidebarNav>
+          </NavSubItem>
+          <NavItem
+            v-else
+            v-bind="item.attrs"
+            :href="item.url"
+            :class="{
+              'nav__item--no-label': !item.label,
+              'nav__item--no-icon': !item.icon,
+            }">
+            <template
+              #icon>
+              <template v-if="item.icon && typeof item.icon === 'string'">
+                <img
+                  :src="item.icon"
+                  alt="icon-menu">
+              </template>
+              <template v-else-if="item.icon">
+                <component :is="item.icon" />
+              </template>
             </template>
-          </template>
-          <SidebarNav :condensed="menu.condensed">
-            <NavItem
-              v-for="(submenu, x) in item.submenu"
-              :key="x"
-              :href="submenu.url">
-              {{ submenu.label }}
-            </NavItem>
-          </SidebarNav>
-        </NavSubItem>
-        <NavItem
-          v-else
-          :href="item.url"
-          :class="{ 'nav__item--no-label' : !item.label, 'nav__item--no-icon' : !item.icon }">
-          <template
-            #icon>
-            <template v-if="item.icon && typeof item.icon === 'string'">
-              <img
-                :src="item.icon"
-                alt="icon-menu">
-            </template>
-            <template v-else-if="item.icon">
-              <component :is="item.icon" />
-            </template>
-          </template>
-          {{ item.label }}
-        </NavItem>
+            {{ item.label }}
+          </NavItem>
+        </template>
       </template>
     </SidebarNav>
     <template
@@ -181,7 +201,9 @@
 
 <script lang="ts">
 import {
-  defineComponent, PropType, ref,
+  defineComponent,
+  PropType,
+  ref,
 } from 'vue-demi'
 import Sidebar from '../sidebar/Sidebar.vue'
 import { TypeVariant } from '../sidebar'
@@ -196,7 +218,12 @@ import IconLess from '@privyid/persona-icon/vue/chevron-up/16.vue'
 
 export default defineComponent({
   components: {
-    Sidebar, SidebarNav, NavItem, NavSubItem, IconMore, IconLess,
+    Sidebar,
+    SidebarNav,
+    NavItem,
+    NavSubItem,
+    IconMore,
+    IconLess,
   },
   props: {
     menus: {

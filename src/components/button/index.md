@@ -326,15 +326,15 @@ Button use local CSS variables on `.btn` for enhanced real-time customization.
 
 ### Props
 
-| Props      |   Type    |  Default  | Description                                                                                                 |
-|------------|:---------:|:---------:|-------------------------------------------------------------------------------------------------------------|
-| `variant`  | `String`  |  `solid`  | Button style variant, valid value is `solid`, `outline`, `ghost` and `link`                                    |
-| `color`    | `String`  | `-`       | Button color variant, valid value is `primary`, `info`, `success`, `warning` and `danger` |
-| `size`     | `String`  |   `md`    | Size of button, valid value is `xs`, `sm`, `md`, `lg`                                                             |
-| `pill`     | `Boolean` |  `false`  | Enable pill mode                                                                                            |
-| `icon`     | `Boolean` |  `false`  | Enable icon mode                                                                                            |
-| `disabled` | `Boolean` |  `false`  | Disable state                                                                                               |
-| `href` | `String` |  `-`  | Place url in the button to make button-like permalink |
+| Props      |   Type                         |  Default  | Description                                                                                                 |
+|------------|:------------------------------:|:---------:|-------------------------------------------------------------------------------------------------------------|
+| `variant`  | `String`                       |  `solid`  | Button style variant, valid value is `solid`, `outline`, `ghost` and `link`                                 |
+| `color`    | `String`                       | `-`       | Button color variant, valid value is `primary`, `info`, `success`, `warning` and `danger`                   |
+| `size`     | `String`                       |   `md`    | Size of button, valid value is `xs`, `sm`, `md`, `lg`                                                       |
+| `pill`     | `Boolean`                      |  `false`  | Enable pill mode                                                                                            |
+| `icon`     | `Boolean`                      |  `false`  | Enable icon mode                                                                                            |
+| `disabled` | `Boolean`                      |  `false`  | Disable state                                                                                               |
+| `href`     | `String` or `RouteLocationRaw` |  `-`      | Place url in the button to make button-like permalink                                                       |
 
 ### Slots
 

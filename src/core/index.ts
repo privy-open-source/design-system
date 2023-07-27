@@ -39,6 +39,7 @@ export {
 
 export {
   defineMenu,
+  filterMenu,
 } from '../components/sidebar-menu'
 
 export {
