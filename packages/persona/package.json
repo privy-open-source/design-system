@@ -76,7 +76,7 @@
     "fuse.js": "6.6.2",
     "interactjs": "1.10.17",
     "lodash-es": "4.17.21",
-    "marked": "^4.1.1",
+    "marked": "^5.0.0",
     "nanodelay": "2.0.2",
     "pdfjs-dist": "^3.2.146",
     "sanitize-html": "^2.8.1",
