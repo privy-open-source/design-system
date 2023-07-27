@@ -110,7 +110,7 @@
     "tabbable": "6.2.0",
     "vue-content-loader": "^2.0.1",
     "vue-demi": "0.14.5",
-    "vue-router": "4.1.6",
+    "vue-router": "4.2.4",
     "vuedraggable": "next",
     "webfontloader": "1.6.28",
     "zxcvbn": "^4.4.2"
