@@ -3,6 +3,7 @@
     :is="tagName"
     :href="tagName === 'a' ? href : undefined"
     :to="tagName === 'a' ? undefined : href"
+    :type="tagName === 'a' ? undefined : type"
     data-testid="btn"
     :class="classNames">
     <slot />
@@ -25,6 +26,7 @@ import {
   SizeVariant,
   StyleVariant,
   TagVariant,
+  TypeVariant,
 } from '.'
 import { BUTTONGROUP_SETTING } from '../button-group'
 
@@ -55,6 +57,10 @@ export default defineComponent({
     href: {
       type   : [String, Object] as PropType<string | RouteLocationRaw>,
       default: undefined,
+    },
+    type: {
+      type   : String as PropType<TypeVariant>,
+      default: 'button',
     },
   },
   setup (props) {

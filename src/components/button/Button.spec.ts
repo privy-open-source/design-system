@@ -205,3 +205,17 @@ it('should automatically set size of button via `size` props of input-group', ()
   expect(inputGroup).toBeInTheDocument()
   expect(button).toHaveClass('btn--sm')
 })
+
+it('should have type properties with value button if the element is button', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+        <Button >Text</Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveProperty('type', 'button')
+})
