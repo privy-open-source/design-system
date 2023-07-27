@@ -10,6 +10,7 @@
         data-testid="calendar-prev"
         variant="solid"
         icon
+        type="button"
         :disabled="!canPrev"
         :readonly="disabled || readonly"
         @click="prev">
@@ -20,6 +21,7 @@
         data-testid="calendar-title"
         class="calendar__nav-title"
         variant="solid"
+        type="button"
         :readonly="disabled || readonly"
         @click="changeMode(1)">
         {{ title }}
@@ -29,6 +31,7 @@
         data-testid="calendar-next"
         variant="solid"
         icon
+        type="button"
         :readonly="disabled || readonly"
         :disabled="!canNext"
         @click="next">
@@ -49,6 +52,7 @@
           :key="i">
           <p-button
             variant="solid"
+            type="button"
             data-testid="calendar-item"
             :readonly="item.readonly || disabled || readonly"
             :active="item.active"
