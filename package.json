@@ -96,7 +96,7 @@
     "core-js": "3",
     "date-fns": "2.30.0",
     "defu": "6.1.2",
-    "fast-equals": "^4.0.3",
+    "fast-equals": "^5.0.0",
     "fuse.js": "6.6.2",
     "interactjs": "1.10.17",
     "lodash-es": "4.17.21",
