@@ -3628,7 +3628,7 @@ __metadata:
     autoprefixer: 10.4.14
     browserslist-to-esbuild: ^1.2.0
     browserslist-useragent-regexp: ^4.0.0
-    chart.js: 4.3.0
+    chart.js: 4.3.2
     core-js: 3
     date-fns: 2.30.0
     defu: 6.1.2
@@ -3742,7 +3742,7 @@ __metadata:
     "@zxing/browser": 0.1.4
     "@zxing/library": 0.20.0
     browserslist-to-esbuild: ^1.2.0
-    chart.js: 4.3.0
+    chart.js: 4.3.2
     core-js: 3
     date-fns: 2.30.0
     defu: 6.1.2
@@ -6629,12 +6629,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chart.js@npm:4.3.0":
-  version: 4.3.0
-  resolution: "chart.js@npm:4.3.0"
+"chart.js@npm:4.3.2":
+  version: 4.3.2
+  resolution: "chart.js@npm:4.3.2"
   dependencies:
     "@kurkle/color": ^0.3.0
-  checksum: 157ceaa3815665163cb30ccc221a5af40834dca940faa6ec02cb95406bf3e83c15c5f36ad950a1716c9d199e87f7b9be953227c4d9d445d593536175b47bbab8
+  checksum: 1d4b839b2bd3183dd10a380107df166a57a58d5dcbab92b61dcdd14518ceaaf5b98e0b30af34e77b638cca18c5cc1de649fec6be4742ac4bad0fd17ed8d210d5
   languageName: node
   linkType: hard
 
