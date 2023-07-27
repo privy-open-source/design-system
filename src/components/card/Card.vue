@@ -146,7 +146,7 @@ export default defineComponent({
   --p-card-bg: theme(backgroundColor.default.DEFAULT);
   --p-card-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
   --p-card-border: theme(borderColor.default.DEFAULT);
-  --p-card-border-dark: theme(borderColor.default.DEFAULT);
+  --p-card-border-dark: theme(borderColor.dark.default.DEFAULT);
   --p-card-color: theme(textColor.default);
   --p-card-color-dark: theme(textColor.dark.default);
 
