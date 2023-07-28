@@ -43,6 +43,11 @@
     </template>
 
     <template v-else>
+      <DropdownHeader
+        v-if="sectionLabel"
+        data-testid="select-label">
+        {{ sectionLabel }}
+      </DropdownHeader>
       <DropdownItem
         v-for="(item, i) in items"
         :key="i"
@@ -83,6 +88,7 @@
 <script lang="ts">
 import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
+import DropdownHeader from '../dropdown/DropdownHeader.vue'
 import pInput from '../input/Input.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'
 import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
@@ -110,6 +116,7 @@ export default defineComponent({
   components: {
     Dropdown,
     DropdownItem,
+    DropdownHeader,
     pInput,
     IconArrow,
     IconCheck,
@@ -171,6 +178,10 @@ export default defineComponent({
     size: {
       type   : String as PropType<SizeVariant>,
       default: 'md',
+    },
+    sectionLabel: {
+      type   : String,
+      default: undefined,
     },
     noCaret: {
       type   : Boolean,
