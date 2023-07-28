@@ -1,7 +1,9 @@
 <template>
   <component
     :is="tagName"
-    :href="href"
+    :href="tagName === 'a' ? href : undefined"
+    :to="tagName === 'a' ? undefined : href"
+    :type="tagName === 'a' ? undefined : type"
     data-testid="btn"
     :class="classNames">
     <slot />
@@ -14,13 +16,17 @@ import {
   defineComponent,
   PropType,
   inject,
+  resolveComponent,
+  type DefineComponent,
 } from 'vue-demi'
+import type { RouteLocationRaw } from 'vue-router'
 
 import {
   ColorVariant,
   SizeVariant,
   StyleVariant,
   TagVariant,
+  TypeVariant,
 } from '.'
 import { BUTTONGROUP_SETTING } from '../button-group'
 
@@ -49,8 +55,12 @@ export default defineComponent({
       default: false,
     },
     href: {
-      type   : String,
+      type   : [String, Object] as PropType<string | RouteLocationRaw>,
       default: undefined,
+    },
+    type: {
+      type   : String as PropType<TypeVariant>,
+      default: 'button',
     },
   },
   setup (props) {
@@ -85,13 +95,18 @@ export default defineComponent({
       return result
     })
 
-    const tagName = computed(() => {
-      let tag: TagVariant = 'button'
+    const tagName = computed<TagVariant | DefineComponent>(() => {
+      if (props.href) {
+        if (
+          typeof props.href === 'string'
+          && (props.href.startsWith('http') || props.href.startsWith('#'))
+        )
+          return 'a'
 
-      if (props.href)
-        tag = 'a'
+        return resolveComponent('router-link') as DefineComponent
+      }
 
-      return tag
+      return 'button'
     })
 
     return { classNames, tagName }

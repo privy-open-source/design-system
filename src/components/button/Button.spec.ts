@@ -136,7 +136,39 @@ it('should be an anchor when button have `href` props', async () => {
 
   const button = screen.queryByTestId('btn')
 
-  expect(button).toHaveAttribute('href')
+  expect(button).toHaveAttribute('href', '#')
+  expect(button).toContainHTML('a')
+})
+
+it('should be an router-link when button have `href` props without http', async () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button href="/">
+        Hello
+      </Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toHaveAttribute('to', '/')
+  expect(button).toContainHTML('router-link')
+})
+
+it('should be an anchor when button have `href` props and with http', async () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button href="https://privy.id">
+        Hello
+      </Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toHaveAttribute('href', 'https://privy.id')
   expect(button).toContainHTML('a')
 })
 
@@ -172,4 +204,18 @@ it('should automatically set size of button via `size` props of input-group', ()
 
   expect(inputGroup).toBeInTheDocument()
   expect(button).toHaveClass('btn--sm')
+})
+
+it('should have type properties with value button if the element is button', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+        <Button >Text</Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveProperty('type', 'button')
 })

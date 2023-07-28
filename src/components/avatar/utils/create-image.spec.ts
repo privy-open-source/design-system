@@ -25,7 +25,7 @@ describe('createSpinner', () => {
     const image = createSpinner(50, 100)
 
     expect(image).toContain('data:image/svg+xml')
-    expect(image).toContain('class="lds-spinner"')
+    expect(image).toContain('class="spinner')
     expect(image).toContain('width="50"')
     expect(image).toContain('height="100"')
   })

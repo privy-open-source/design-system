@@ -143,9 +143,15 @@ export default defineComponent({
 .card {
   --p-card-padding-x: theme(spacing.6);
   --p-card-padding-y: theme(spacing.6);
+  --p-card-bg: theme(backgroundColor.default.DEFAULT);
+  --p-card-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
+  --p-card-border: theme(borderColor.default.DEFAULT);
+  --p-card-border-dark: theme(borderColor.dark.default.DEFAULT);
+  --p-card-color: theme(textColor.default);
+  --p-card-color-dark: theme(textColor.dark.default);
 
-  @apply border bg-default border-default text-default rounded;
-  @apply dark:bg-dark-default dark:border-dark-default dark:text-dark-default;
+  @apply border bg-[color:var(--p-card-bg)] border-[color:var(--p-card-border)] text-[color:var(--p-card-color)] rounded;
+  @apply dark:bg-[color:var(--p-card-bg-dark)] dark:border-[color:var(--p-card-border-dark)] dark:text-[color:var(--p-card-color-dark)];
 
   /*
   * Card Body & Card Header

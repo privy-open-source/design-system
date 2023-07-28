@@ -266,3 +266,52 @@ it('should be able limit the displayed menu in the sidebar with `maxLength`', as
   toggle = screen.queryByTestId('sidebar-toggle')
   expect(toggle).toHaveTextContent('Less')
 })
+
+it('should able to add custom attribute using `attrs`', async () => {
+  const screen = render({
+    components: { SidebarMenu },
+    template  : `
+      <SidebarMenu :menus="menus" />
+    `,
+    setup () {
+      return {
+        menus: defineMenu([
+          {
+            title      : 'Menu',
+            collapsible: true,
+            attrs      : {
+              'data-testid': 'level-1',
+              'class'      : 'custom__class',
+            },
+            items: [
+              {
+                name   : 'menu-item',
+                label  : 'Menu Item',
+                url    : '/',
+                attrs  : { 'data-testid': 'level-2' },
+                submenu: [
+                  {
+                    name : 'submenu',
+                    label: 'Sub Menu',
+                    url  : '/',
+                    attrs: { 'data-testid': 'level-3' },
+                  },
+                ],
+              },
+            ],
+          },
+        ]),
+      }
+    },
+  })
+
+  const menu     = screen.queryByTestId('level-1')
+  const menuItem = screen.queryByTestId('level-2')
+  const subMenu  = screen.queryByTestId('level-3')
+
+  expect(menu).toBeInTheDocument()
+  expect(menuItem).toBeInTheDocument()
+  expect(subMenu).toBeInTheDocument()
+
+  expect(menu).toHaveClass('custom__class', 'sidebar__title__collapsible')
+})

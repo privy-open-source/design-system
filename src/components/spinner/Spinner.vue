@@ -9,11 +9,13 @@
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg">
     <rect
+      class="spinner-basic__bar"
       x="8.125"
       width="2.5"
       height="6.25"
       rx="1.25"
-      fill="currentColor">
+      fill="currentColor"
+      fill-opacity="60%">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -23,13 +25,15 @@
         repeatCount="indefinite" />
     </rect>
     <rect
+      class="spinner-basic__bar"
       x="15.1202"
       y="1.86199"
       width="2.5"
       height="6.25"
       rx="1.25"
       transform="rotate(45 15.1202 1.86199)"
-      fill="currentColor">
+      fill="currentColor"
+      fill-opacity="60%">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -39,13 +43,15 @@
         repeatCount="indefinite" />
     </rect>
     <rect
+      class="spinner-basic__bar"
       x="18.75"
       y="8.125"
       width="2.5"
       height="6.25"
       rx="1.25"
       transform="rotate(90 18.75 8.125)"
-      fill="currentColor">
+      fill="currentColor"
+      fill-opacity="60%">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -55,13 +61,15 @@
         repeatCount="indefinite" />
     </rect>
     <rect
+      class="spinner-basic__bar"
       x="16.888"
       y="15.1202"
       width="2.5"
       height="6.25"
       rx="1.25"
       transform="rotate(135 16.888 15.1202)"
-      fill="currentColor">
+      fill="currentColor"
+      fill-opacity="60%">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -71,12 +79,14 @@
         repeatCount="indefinite" />
     </rect>
     <rect
+      class="spinner-basic__bar"
       x="8.125"
       y="12.5"
       width="2.5"
       height="6.25"
       rx="1.25"
-      fill="currentColor">
+      fill="currentColor"
+      fill-opacity="60%">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -86,13 +96,15 @@
         repeatCount="indefinite" />
     </rect>
     <rect
+      class="spinner-basic__bar"
       x="6.2814"
       y="10.7008"
       width="2.5"
       height="6.25"
       rx="1.25"
       transform="rotate(45 6.2814 10.7008)"
-      fill="currentColor">
+      fill="currentColor"
+      fill-opacity="60%">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -102,13 +114,15 @@
         repeatCount="indefinite" />
     </rect>
     <rect
+      class="spinner-basic__bar"
       x="6.25"
       y="8.125"
       width="2.5"
       height="6.25"
       rx="1.25"
       transform="rotate(90 6.25 8.125)"
-      fill="currentColor">
+      fill="currentColor"
+      fill-opacity="60%">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -118,13 +132,15 @@
         repeatCount="indefinite" />
     </rect>
     <rect
+      class="spinner-basic__bar"
       x="8.04917"
       y="6.2814"
       width="2.5"
       height="6.25"
       rx="1.25"
       transform="rotate(135 8.04917 6.2814)"
-      fill="currentColor">
+      fill="currentColor"
+      fill-opacity="60%">
       <animate
         attributeName="opacity"
         values="1;0"
@@ -141,10 +157,3 @@ import { defineComponent } from 'vue-demi'
 
 export default defineComponent({})
 </script>
-
-<style lang="postcss">
-.spinner-basic {
-  @apply text-subtle;
-  @apply dark:text-subtle;
-}
-</style>
