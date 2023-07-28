@@ -174,7 +174,7 @@ You can combine multiple format in single value:
 
 ```vue
 <template>
-  <p-calendar v-vmodel="value" />
+  <p-calendar v-model="value" />
 </template>
 ```
 

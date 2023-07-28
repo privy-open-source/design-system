@@ -16,8 +16,18 @@
         :disabled="disabled"
         :readonly="readonly"
         @focus="onFocus">
-        <template #append>
-          <IconArrow class="select__caret" />
+        <template
+          v-if="!noCaret"
+          #append>
+          <slot
+            name="caret"
+            :is-open="isOpen"
+            :toggle="toggleOpen">
+            <IconArrow
+              class="select__caret"
+              data-testid="select-caret-icon"
+              @click="toggleOpen" />
+          </slot>
         </template>
       </p-input>
     </template>
@@ -43,6 +53,7 @@
         :key="i"
         data-testid="select-item"
         :class="{ selected: isSelected(item) }"
+        :disabled="Boolean(item.disabled)"
         @click="select(item)">
         <div class="select__option">
           <div class="select__option-text">
@@ -172,6 +183,10 @@ export default defineComponent({
       type   : String,
       default: undefined,
     },
+    noCaret: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -198,6 +213,10 @@ export default defineComponent({
 
     const items      = props.adapter.setup(context)
     const localModel = ref<SelectItem>(findSelected(items.value, props.modelValue))
+
+    const toggleOpen = () => {
+      isOpen.value = !isOpen.value
+    }
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -276,6 +295,7 @@ export default defineComponent({
       isLoading,
       search,
       items,
+      toggleOpen,
       select,
       onFocus,
       isSelected,
@@ -297,8 +317,9 @@ export default defineComponent({
   }
 
   &__caret {
-    @apply transition-transform duration-150 text-subtle pointer-events-none;
+    @apply transition-transform duration-150 text-subtle;
     @apply dark:text-dark-subtle;
+    @apply cursor-pointer;
   }
 
   &__option {

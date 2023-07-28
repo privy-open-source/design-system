@@ -10,5 +10,5 @@ it('should render properly without any props', () => {
   const spinner = screen.getByTestId('spinner')
 
   expect(spinner).toBeInTheDocument()
-  expect(spinner).toHaveClass('spinner')
+  expect(spinner).toHaveClass('spinner', 'spinner-ring')
 })

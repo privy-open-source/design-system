@@ -214,16 +214,12 @@ export default defineComponent({
     }
 
     &--rotate {
-      & * {
-        @apply vertical-lr;
-      }
-
       .signature-draw__close {
         @apply mr-4 mt-0;
       }
 
       .signature-draw__modal {
-        @apply flex-col-reverse;
+        @apply flex-col-reverse vertical-lr;
 
         .signature-draw__reset {
           @apply bottom-1 top-auto;
@@ -247,7 +243,7 @@ export default defineComponent({
       }
 
       & > img {
-        @apply max-w-full h-auto;
+        @apply w-full h-full;
       }
     }
   }

@@ -3,9 +3,11 @@
     data-testid="nav-item"
     class="nav__item"
     :class="navItemClass">
-    <a
+    <component
+      :is="tagName"
       data-testid="nav-link"
-      :href="link"
+      :href="isExternalLink ? link : undefined"
+      :to="isExternalLink ? undefined : href"
       :target="target"
       :class="[classNames, linkClass]">
       <span
@@ -20,7 +22,7 @@
         class="nav__link__label">
         <slot />
       </span>
-    </a>
+    </component>
   </li>
 </template>
 
@@ -30,7 +32,9 @@ import {
   computed,
   defineComponent,
   PropType,
+  resolveComponent,
 } from 'vue-demi'
+import { type RouteLocationRaw } from 'vue-router'
 
 export default defineComponent({
   props: {
@@ -43,7 +47,7 @@ export default defineComponent({
       default: false,
     },
     href: {
-      type   : String,
+      type   : [String, Object] as PropType<string | RouteLocationRaw>,
       default: undefined,
     },
     target: {
@@ -97,10 +101,26 @@ export default defineComponent({
       return permalink
     })
 
+    const isExternalLink = computed(() => {
+      return (
+        !props.href
+        || (typeof props.href === 'string'
+          && (props.href.startsWith('http') || props.href.startsWith('#')))
+      )
+    })
+
+    const tagName = computed(() => {
+      if (isExternalLink.value) return 'a'
+
+      return resolveComponent('router-link')
+    })
+
     return {
       classNames,
       navItemClass,
       link,
+      isExternalLink,
+      tagName,
     }
   },
 })
