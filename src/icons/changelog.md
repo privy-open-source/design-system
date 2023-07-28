@@ -23,6 +23,7 @@
 - bold
 - font-family
 - font-size
+- github
 - highlight
 - italic
 - list-bullets
