@@ -9,6 +9,7 @@ description: The current page's location within a navigational hierarchy
   import pBreadcrumbItemDropdown from './BreadcrumbItemDropdown.vue'
   import { defineNavigation } from '.'
   import pDropdownItem from '../dropdown/DropdownItem.vue'
+  import PiArrowRight16 from '@privyid/persona-icon/vue/arrow-right/16.vue'
 
   const items = defineNavigation([
     {
@@ -205,6 +206,27 @@ Individual `<p-breadcrumb-item>` can be placed manually in the default slot of `
 </template>
 ```
 
+## Breadcrumb Divider
+
+<preview>
+  <p-breadcrumb :items="items">
+    <template #divider>
+      <pi-arrow-right-16 />
+    </template>
+  </p-breadcrumb>
+</preview>
+
+```vue
+<template>
+  <p-breadcrumb :items="items">
+    <template #divider>
+      <pi-arrow-right-16 />
+    </template>
+  </p-breadcrumb>
+</template>
+```
+
+
 ## API
 
 ### Props `<p-breadcrumb>`
@@ -215,9 +237,10 @@ Individual `<p-breadcrumb-item>` can be placed manually in the default slot of `
 
 ### Slots `<p-breadcrumb>`
 
-| Name      | Description                      |
-|-----------|----------------------------------|
-| `default` | Content to place breadcrumb item |
+| Name      | Description                                         |
+|-----------|-----------------------------------------------------|
+| `default` | Content to place breadcrumb item                    |
+| `divider` | Specifies the dividing character/icon between items |
 
 ### Props `<p-breadcrumb-item>`
 | Props       |   Type     | Default      | Description                                               |
