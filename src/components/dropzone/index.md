@@ -473,7 +473,7 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
 | `maxlength`    |      `Number`       |   `-`   | Maxlength selected files, only work on multiple mode                           |
 | `accept`       |      `String`       |   `-`   | Limitting file type can be selected, see [HTML attribute: accept][attr-accept] |
 | `clearOnCanel` |      `Boolean`      | `false` | Clear v-model when user cancel the browse file                                 |
-| `modelValue`   |       `File`        |   `-`   | v-model value                                                                  |
+| `v-model`   |       `File`        |   `-`   | v-model value                                                                  |
 
 ### Slots
 
@@ -481,6 +481,19 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
 |-----------|-------------------------------|
 | `default` | Content to place for dropzone |
 
+`default` slot contains scoped slots
+
+| Scoped           |    Type                               | Default      | Description                                                                       |
+|------------------|:-------------------------------------:|:------------:|-----------------------------------------------------------------------------------|
+| `browse`         | `Function`                            | `false`      | Function to trigger browse file                                                   |
+| `clear`          | `Function`                            | `false`      | Function to clear model value                                                     |
+| `onDrop`         | `Function`                            | `-`          | Function to handle event when file dropped into dropzone                          |
+| `onChange`       | `Function`                            | `-`          | Function to handle event when file change                                         |
+| `isDragover`     | `Boolean`                             | `false`      | Indicates file(s) are dragover on the dropzone                                    |
+| `isHovered`      | `Boolean`                             | `false`      | Dropzone hover indicator                                                          |
+| `classNames`     | `String[]`                            | `[]`         | Styles to dropzone component                                                      |
+| `v-model`        | `File | File[] | String | String[]`   | `undefined`  | File formatted Base64                                                             |
+| `rawModel`       | `File | File[]`                       | `undefined`  | Original value of file                                                            |
 ### Events
 | Name     | Arguments | Description                           |
 |----------|-----------|---------------------------------------|
