@@ -3733,6 +3733,7 @@ __metadata:
     "@nuxtjs/tailwindcss": ^6.2.0
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
+    "@splidejs/splide": ^4.1.4
     "@testing-library/dom": ^9.0.0
     "@testing-library/user-event": ^14.4.3
     "@types/sanitize-html": ^2

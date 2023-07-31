@@ -10,7 +10,6 @@
     "types": [
       "vitest",
       "vite/client",
-      "jest-extended",
       "interactjs"
     ]
   }
