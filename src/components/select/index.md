@@ -128,6 +128,29 @@ description: Base form input.
   ])
 </script>
 ```
+
+### with Clearable
+
+<preview>
+  <p-select :options="optionsB" v-model="value" clearable/>
+</preview>
+
+```vue
+<template>
+  <p-select
+    v-model="value"
+    :options="options"
+    clearable />
+</template>
+
+<script setup>
+  const options = ref([
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape' },
+    { text: '🍌 Bananen', value: 'Banana'},
+  ])
+</script>
+```
 ## Placeholder
 
 You can set input placeholder via `placeholder` props
@@ -152,8 +175,8 @@ You can set sectiom label via `section-label` props
 
 ```vue
 <template>
-  <p-select placeholder="Pick A Value" 
-    :options="optionsA" 
+  <p-select placeholder="Pick A Value"
+    :options="optionsA"
     section-label="Fruits" />
 </template>
 ```
