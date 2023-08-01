@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "0.17.1",
+  "version": "0.18.0",
   "packageManager": "yarn@3.6.1",
   "private": true,
   "scripts": {
@@ -59,7 +59,7 @@
     "eslint-config-standard-with-typescript": "latest",
     "eslint-formatter-pretty": "4.1.0",
     "eslint-plugin-align-assignments": "1.1.2",
-    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-import": "2.28.0",
     "eslint-plugin-n": "15.7.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.1.1",

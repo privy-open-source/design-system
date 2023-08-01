@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona",
   "description": "Persona core package",
-  "version": "0.17.1",
+  "version": "0.18.0",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
@@ -58,7 +58,6 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@carbon/icons-vue": "10.71.1",
     "@floating-ui/dom": "^1.0.4",
     "@juggle/resize-observer": "^3.4.0",
     "@nuxt/kit": "^3.3.2",
@@ -91,6 +90,7 @@
     "extends @privyid/browserslist-config"
   ],
   "peerDependencies": {
+    "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "postcss-custom-properties": "^12.1.11 || ^13.0.0",
     "postcss-hexrgba": "^2.1.0",
