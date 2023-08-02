@@ -46,6 +46,7 @@
                 v-for="(submenu, x) in item.submenu"
                 :key="x"
                 :href="submenu.url"
+                :exact="submenu.exact"
                 v-bind="submenu.attrs">
                 {{ submenu.label }}
               </NavItem>
@@ -55,6 +56,7 @@
             v-else
             v-bind="item.attrs"
             :href="item.url"
+            :exact="item.exact"
             :class="{
               'nav__item--no-label': !item.label,
               'nav__item--no-icon': !item.icon
@@ -73,17 +75,11 @@
             {{ item.label }}
           </NavItem>
         </template>
-        <NavItem
+        <NavCollapse
           v-if="menu.maxLength"
-          data-testid="sidebar-toggle"
-          @click.prevent="toggle">
-          <template #icon>
-            <IconLess v-if="expand" />
-            <IconMore v-else />
-          </template>
-          {{ expand ? showLessText : showMoreText }}
-        </NavItem>
-        <div v-show="expand">
+          :show-less-text="showLessText"
+          :show-more-text="showMoreText"
+          data-testid="sidebar-toggle">
           <template
             v-for="(item, i) in menu.items?.slice(menu.maxLength, menu.items.length)"
             :key="i">
@@ -107,6 +103,7 @@
                   v-for="(submenu, x) in item.submenu"
                   :key="x"
                   :href="submenu.url"
+                  :exact="submenu.exact"
                   v-bind="submenu.attrs">
                   {{ submenu.label }}
                 </NavItem>
@@ -116,6 +113,7 @@
               v-else
               v-bind="item.attrs"
               :href="item.url"
+              :exact="item.exact"
               :class="{
                 'nav__item--no-label': !item.label,
                 'nav__item--no-icon' : !item.icon,
@@ -134,7 +132,7 @@
               {{ item.label }}
             </NavItem>
           </template>
-        </div>
+        </NavCollapse>
       </template>
       <!-- ENDIF -->
 
@@ -162,6 +160,7 @@
                 v-for="(submenu, x) in item.submenu"
                 :key="x"
                 :href="submenu.url"
+                :exact="submenu.exact"
                 v-bind="submenu.attrs">
                 {{ submenu.label }}
               </NavItem>
@@ -171,6 +170,7 @@
             v-else
             v-bind="item.attrs"
             :href="item.url"
+            :exact="item.exact"
             :class="{
               'nav__item--no-label': !item.label,
               'nav__item--no-icon': !item.icon,
@@ -203,7 +203,6 @@
 import {
   defineComponent,
   PropType,
-  ref,
 } from 'vue-demi'
 import Sidebar from '../sidebar/Sidebar.vue'
 import { TypeVariant } from '../sidebar'
@@ -213,6 +212,7 @@ import NavSubItem from '../nav/NavSubItem.vue'
 import { Menu } from '.'
 import { AlignVariant } from '../nav'
 import { ToggleableVariant } from '../navbar'
+import NavCollapse from '../nav/NavCollapse.vue'
 import IconMore from '@privyid/persona-icon/vue/chevron-down/16.vue'
 import IconLess from '@privyid/persona-icon/vue/chevron-up/16.vue'
 
@@ -222,6 +222,7 @@ export default defineComponent({
     SidebarNav,
     NavItem,
     NavSubItem,
+    NavCollapse,
     IconMore,
     IconLess,
   },
@@ -262,19 +263,6 @@ export default defineComponent({
       type   : String,
       default: 'Less',
     },
-  },
-
-  setup () {
-    const expand = ref(false)
-
-    function toggle () {
-      expand.value = !expand.value
-    }
-
-    return {
-      expand,
-      toggle,
-    }
   },
 })
 </script>

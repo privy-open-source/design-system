@@ -8,9 +8,10 @@ import pButton from '../button/Button.vue'
 import pCropper from './Cropper.vue'
 import { ref } from 'vue-demi'
 import { templateRef } from '@vueuse/core'
+import { withBase } from 'vitepress'
 
-const SAMPLE_IMG = '/assets/images/img-sample-crop.jpg'
-const EMPTY_IMG  = '/assets/images/empty-img.png'
+const SAMPLE_IMG = withBase('/assets/images/img-sample-crop.jpg')
+const EMPTY_IMG  = withBase('/assets/images/empty-img.png')
 
 const result    = ref()
 const resultB64 = ref()

@@ -3666,6 +3666,7 @@ __metadata:
     ufo: ^1.0.1
     vitepress: 1.0.0-beta.6
     vitest: 0.24.5
+    vue-collapsed: ^1.2.5
     vue-content-loader: ^2.0.1
     vue-demi: 0.14.5
     vue-router: 4.2.4
@@ -3712,6 +3713,7 @@ __metadata:
     fs-extra: ^11.1.1
     jiti: ^1.18.2
     minimist: ^1.2.8
+    nanoid: ^4.0.2
     ohash: ^1.1.2
     ora: ^6.3.0
     p-all: ^5.0.0
@@ -3733,6 +3735,7 @@ __metadata:
     "@nuxtjs/tailwindcss": ^6.2.0
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
+    "@splidejs/splide": ^4.1.4
     "@testing-library/dom": ^9.0.0
     "@testing-library/user-event": ^14.4.3
     "@types/sanitize-html": ^2
@@ -3760,6 +3763,7 @@ __metadata:
     scroll-into-view: ^1.16.2
     tabbable: 6.2.0
     tailwind: ^4.0.0
+    vue-collapsed: ^1.2.5
     vue-demi: 0.14.5
     vuedraggable: next
     webfontloader: 1.6.28
@@ -18414,6 +18418,13 @@ __metadata:
   dependencies:
     ufo: ^1.1.1
   checksum: 4f9e141aa6a9686b2e6e10da157a4ff87f4ca5295cf8b964e51fc8fad5c400600fbca43a71242c60f6da0070311095135cd6939bda0a33c8695320eec180e40d
+  languageName: node
+  linkType: hard
+
+"vue-collapsed@npm:^1.2.5":
+  version: 1.2.5
+  resolution: "vue-collapsed@npm:1.2.5"
+  checksum: a567fcadf851bdc009fa63c4406aa9ed5749044f713eb3a0f5524ad47867895738703dc5e4ef761d5f0d343f518dceaf1a632db70603c8c784580408a1c7f61d
   languageName: node
   linkType: hard
 

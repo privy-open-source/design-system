@@ -4,9 +4,8 @@
     width="16"
     height="16"
     fill="none"
-    class="persona-icon"><g clip-path="url(#a)"><path
+    class="persona-icon"
+    viewBox="0 0 16 16"><path
       fill="currentColor"
-      d="M6.667 3.5a.5.5 0 0 1 .5-.5H10.5a.5.5 0 1 1 0 1H9.374L7.66 12h1.173a.5.5 0 1 1 0 1H5.5a.5.5 0 0 1 0-1h1.137l1.715-8H7.166a.5.5 0 0 1-.5-.5Z" /></g><defs><clipPath id="a"><path
-        fill="#fff"
-        d="M0 0h16v16H0z" /></clipPath></defs></svg>
+      d="M6.667 3.5a.5.5 0 0 1 .5-.5H10.5a.5.5 0 1 1 0 1H9.374L7.66 12h1.173a.5.5 0 1 1 0 1H5.5a.5.5 0 0 1 0-1h1.137l1.715-8H7.166a.5.5 0 0 1-.5-.5Z" /></svg>
 </template>

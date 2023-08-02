@@ -4,7 +4,8 @@
     width="16"
     height="16"
     fill="none"
-    class="persona-icon"><path
+    class="persona-icon"
+    viewBox="0 0 16 16"><path
       fill="currentColor"
       d="M2 9.5a.5.5 0 0 1 .5.5v2A1.5 1.5 0 0 0 4 13.5h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 1 1 0v2a2.5 2.5 0 0 1-2.5 2.5H4A2.5 2.5 0 0 1 1.5 12v-2a.5.5 0 0 1 .5-.5Z" /><path
         fill="currentColor"

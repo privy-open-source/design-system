@@ -3,9 +3,12 @@
     v-if="title"
     class="sidebar__title"
     data-testid="sidebar-title"
-    :class="{ 'sidebar__title__collapsible' : (collapsible && type !== 'narrow') }"
+    :class="{
+      'sidebar__title__collapsible': (collapsible && type !== 'narrow'),
+      'sidebar__title--collapsed': !isExpand,
+    }"
     v-bind="$attrs"
-    @click.prevent="collapse">
+    @click.prevent="toggleExpand">
     <Caption
       weight="bold"
       transform="capitalize">
@@ -24,17 +27,22 @@
       data-testid="sidebar-title-caret"
       class="sidebar__title__caret" />
   </div>
-  <Nav
+  <Collapse
     v-if="!bottom"
-    class="sidebar__nav"
-    data-testid="sidebar-nav"
-    vertical
-    :title="title"
-    :variant="variant"
-    :condensed="condensed"
-    :align="align">
-    <slot />
-  </Nav>
+    :model-value="isExpand">
+    <Nav
+      ref="root"
+      class="sidebar__nav"
+      :class="{ 'sidebar__nav--collapsed' : !isExpand }"
+      data-testid="sidebar-nav"
+      vertical
+      :title="title"
+      :variant="variant"
+      :condensed="condensed"
+      :align="align">
+      <slot />
+    </Nav>
+  </Collapse>
   <template v-else>
     <div class="sidebar__bottom">
       <Nav
@@ -57,11 +65,13 @@ import {
   computed,
   defineComponent,
   inject,
+  ref,
 } from 'vue-demi'
 import Nav from '../nav/Nav.vue'
 import Caption from '../caption/Caption.vue'
 import Text from '../text/Text.vue'
 import { SIDEBAR_SETTINGS } from '.'
+import Collapse from '../collapse/Collapse.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
 
 export default defineComponent({
@@ -70,6 +80,7 @@ export default defineComponent({
     Caption,
     Text,
     IconArrow,
+    Collapse,
   },
   inheritAttrs: false,
   props       : {
@@ -104,6 +115,7 @@ export default defineComponent({
     const variant  = settings?.variant
     const align    = settings?.align
     const type     = settings?.type
+    const isExpand = ref(true)
 
     const classNames = computed(() => {
       const result: string[] = ['']
@@ -114,21 +126,18 @@ export default defineComponent({
       return result
     })
 
-    function collapse (event: Event): void {
-      if (props.collapsible && props.title && type !== 'narrow') {
-        const title = (event.target as HTMLDivElement).closest('.sidebar__title')
-
-        title?.classList.toggle('sidebar__title--collapsed')
-        title?.nextElementSibling?.classList.toggle('sidebar__nav--collapsed')
-      }
+    function toggleExpand (): void {
+      if (props.collapsible)
+        isExpand.value = !isExpand.value
     }
 
     return {
+      isExpand,
       variant,
       align,
       type,
       classNames,
-      collapse,
+      toggleExpand,
     }
   },
 
@@ -147,10 +156,6 @@ export default defineComponent({
     }
 
     .nav__title {
-      @apply hidden;
-    }
-
-    &&--collapsed {
       @apply hidden;
     }
   }
@@ -224,7 +229,7 @@ export default defineComponent({
     @apply relative z-1 flex items-center justify-between -mb-9 px-3 mt-5;
 
     &__collapsible {
-      @apply cursor-pointer;
+      @apply cursor-pointer select-none;
     }
 
     &__caret {
@@ -233,7 +238,7 @@ export default defineComponent({
 
     &&--collapsed {
       .sidebar__title__caret {
-        @apply rotate-0 ease-in-out duration-150;
+        @apply rotate-0;
       }
     }
 

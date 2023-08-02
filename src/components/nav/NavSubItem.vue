@@ -1,12 +1,13 @@
 <template>
   <li
+    ref="root"
     data-testid="nav-subitem"
     class="nav__subitem"
     :class="classNames">
     <div
       class="nav__subitem__parent"
       data-testid="nav-subitem-parent"
-      @click.prevent="collapse">
+      @click.prevent="toggleExpand">
       <span
         v-if="$slots.icon"
         class="nav__link__icon">
@@ -19,7 +20,9 @@
         v-if="collapsible"
         class="nav__link__caret" />
     </div>
-    <slot />
+    <Collapse :model-value="isExpand">
+      <slot />
+    </Collapse>
   </li>
 </template>
 
@@ -28,12 +31,16 @@ import {
   defineComponent,
   computed,
   inject,
+  ref,
+  onMounted,
 } from 'vue-demi'
 import { SIDEBAR_SETTINGS } from '../sidebar'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
+import { templateRef } from '@vueuse/core'
+import Collapse from '../collapse/Collapse.vue'
 
 export default defineComponent({
-  components: { IconArrow },
+  components: { IconArrow, Collapse },
   props     : {
     text: {
       type   : String,
@@ -46,8 +53,10 @@ export default defineComponent({
   },
 
   setup (props, { slots }) {
-    const settings = inject(SIDEBAR_SETTINGS, undefined, true)
-    const type     = settings?.type
+    const settings    = inject(SIDEBAR_SETTINGS, undefined, true)
+    const root        = templateRef<HTMLLIElement>('root')
+    const collapsible = computed(() => props.collapsible && settings?.type !== 'narrow')
+    const isExpand    = ref(!props.collapsible)
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -55,21 +64,36 @@ export default defineComponent({
       if (slots.icon)
         result.push('nav__subitem--icon')
 
-      if (props.collapsible && type !== 'narrow')
-        result.push('nav__subitem--collapsible nav__subitem--collapsed')
+      if (collapsible.value) {
+        result.push('nav__subitem--collapsible')
+
+        if (isExpand.value)
+          result.push('nav__subitem--expanded')
+        else
+          result.push('nav__subitem--collapsed')
+      }
 
       return result
     })
 
-    function collapse (event: Event): void {
-      if (props.collapsible && type !== 'narrow') {
-        const container = (event.target as HTMLElement).closest('li')
-
-        container?.classList.toggle('nav__subitem--collapsed')
-      }
+    function toggleExpand () {
+      if (collapsible.value)
+        isExpand.value = !isExpand.value
     }
 
-    return { classNames, collapse }
+    onMounted(() => {
+      if (collapsible.value && root.value) {
+        isExpand.value = root.value
+          .querySelectorAll('.router-link-active:not(.nav__link--exact),.router-link-exact-active.nav__link--exact')
+          .length > 0
+      }
+    })
+
+    return {
+      classNames,
+      toggleExpand,
+      isExpand,
+    }
   },
 })
 </script>
@@ -104,13 +128,8 @@ export default defineComponent({
       }
 
       &.nav__subitem--collapsed {
-        > .sidebar__nav,
-        > .nav {
-          @apply hidden;
-        }
-
         .nav__link__caret {
-          @apply rotate-0 ease-in-out duration-150;
+          @apply rotate-0;
         }
       }
     }

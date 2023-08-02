@@ -138,6 +138,40 @@ it('should be using router-link if url without http', () => {
   const navLink = screen.queryByTestId('nav-link')
 
   expect(navLink).toBeInTheDocument()
-  expect(navLink).toContainHTML('router-link')
-  expect(navLink).toHaveAttribute('to', '/')
+  expect(navLink).toContainHTML('nuxt-link')
+  expect(navLink).toHaveAttribute('href', '/')
+})
+
+it('should be remove href url if disabled', () => {
+  const screen = render({
+    components: { Nav, NavItem },
+    template  : `
+      <Nav>
+        <NavItem href="/link" disabled>link</NavItem>
+      </Nav>
+    `,
+  })
+
+  const navLink = screen.queryByTestId('nav-link')
+
+  expect(navLink).toBeInTheDocument()
+  expect(navLink).toContainHTML('nuxt-link')
+  expect(navLink).not.toHaveAttribute('href', '/link')
+})
+
+it('should be exact matching if prop exact set to true', () => {
+  const screen = render({
+    components: { Nav, NavItem },
+    template  : `
+      <Nav>
+        <NavItem href="/link" exact>link</NavItem>
+      </Nav>
+    `,
+  })
+
+  const navLink = screen.queryByTestId('nav-link')
+
+  expect(navLink).toBeInTheDocument()
+  expect(navLink).toContainHTML('nuxt-link')
+  expect(navLink).toHaveClass('nav__link--exact')
 })

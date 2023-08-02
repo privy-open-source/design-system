@@ -1,9 +1,8 @@
 <template>
   <component
     :is="tagName"
-    :href="tagName === 'a' ? href : undefined"
-    :to="tagName === 'a' ? undefined : href"
-    :type="tagName === 'a' ? undefined : type"
+    :href="href"
+    :type="type"
     data-testid="btn"
     :class="classNames">
     <slot />
@@ -16,20 +15,15 @@ import {
   defineComponent,
   PropType,
   inject,
-  resolveComponent,
-  type DefineComponent,
 } from 'vue-demi'
 import type { RouteLocationRaw } from 'vue-router'
-
 import {
   ColorVariant,
   SizeVariant,
   StyleVariant,
-  TagVariant,
   TypeVariant,
 } from '.'
 import { BUTTONGROUP_SETTING } from '../button-group'
-
 import { INPUTGROUP_SETTING } from '../input-group'
 
 export default defineComponent({
@@ -95,18 +89,10 @@ export default defineComponent({
       return result
     })
 
-    const tagName = computed<TagVariant | DefineComponent>(() => {
-      if (props.href) {
-        if (
-          typeof props.href === 'string'
-          && (props.href.startsWith('http') || props.href.startsWith('#'))
-        )
-          return 'a'
-
-        return resolveComponent('router-link') as DefineComponent
-      }
-
-      return 'button'
+    const tagName = computed(() => {
+      return props.href
+        ? 'nuxt-link'
+        : 'button'
     })
 
     return { classNames, tagName }
