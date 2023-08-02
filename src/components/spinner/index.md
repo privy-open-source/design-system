@@ -56,7 +56,7 @@ description: Loading spinner.
 All spinners are color neutral, it will follow the current text's color. Changing spinner's color is easy as changing text color
 
 <preview>
-  <div class="flex items-center justify-center p-4 space-x-4 bg-info-emphasis text-on-emphasis dark:bg-dark-info-emphasis">
+  <div class="flex items-center justify-center p-4 space-x-4 bg-info-emphasis text-state-emphasis dark:bg-dark-info-emphasis dark:text-dark-state-emphasis">
     <p-spinner />
     <p-spinner-ring />
     <p-spinner-ringgo />
@@ -65,7 +65,7 @@ All spinners are color neutral, it will follow the current text's color. Changin
 
 ```vue
 <template>
-  <div class="flex items-center justify-center p-4 space-x-4 bg-info-emphasis text-on-emphasis dark:bg-dark-info-emphasis">
+  <div class="flex items-center justify-center p-4 space-x-4 bg-info-emphasis text-state-emphasis dark:bg-dark-info-emphasis dark:text-dark-state-emphasis">
     <p-spinner />
     <p-spinner-ring />
     <p-spinner-ringgo />

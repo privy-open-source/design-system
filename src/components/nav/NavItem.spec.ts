@@ -138,6 +138,6 @@ it('should be using router-link if url without http', () => {
   const navLink = screen.queryByTestId('nav-link')
 
   expect(navLink).toBeInTheDocument()
-  expect(navLink).toContainHTML('router-link')
-  expect(navLink).toHaveAttribute('to', '/')
+  expect(navLink).toContainHTML('nuxt-link')
+  expect(navLink).toHaveAttribute('href', '/')
 })

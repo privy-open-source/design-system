@@ -517,9 +517,9 @@ Action-permalink can also be added to the section-title via `title-action-label`
         <img src="/assets/images/logo-privy.svg" alt="" />
       </p-sidebar-brand>
     </template>
-    <p-sidebar-nav 
-      title="main" 
-      title-action-label="See More" 
+    <p-sidebar-nav
+      title="main"
+      title-action-label="See More"
       title-action-url="#/categories">
       <p-nav-item active>
         <template #icon>
@@ -546,8 +546,8 @@ Action-permalink can also be added to the section-title via `title-action-label`
       </p-sidebar-brand>
     </template>
     <p-sidebar-nav
-      title="main" 
-      title-action-label="See More" 
+      title="main"
+      title-action-label="See More"
       title-action-url="#/categories">
       <p-nav-item active>
         <template #icon>
@@ -576,7 +576,7 @@ If you want collapsible grouped menus, you just need to add `collapsible` props 
         <img src="/assets/images/logo-privy.svg" alt="" />
       </p-sidebar-brand>
     </template>
-    <p-sidebar-nav 
+    <p-sidebar-nav
       title="main"
       collapsible>
       <p-nav-item active>
@@ -613,7 +613,7 @@ If you want collapsible grouped menus, you just need to add `collapsible` props 
         <img src="/assets/images/logo-privy.svg" alt="" />
       </p-sidebar-brand>
     </template>
-    <p-sidebar-nav 
+    <p-sidebar-nav
       title="main"
       collapsible>
       <p-nav-item active>

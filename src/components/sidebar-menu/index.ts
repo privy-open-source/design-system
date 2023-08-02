@@ -30,7 +30,7 @@ export interface SubMenu {
   /**
    * Menu URL
    */
-  url: string,
+  url?: string,
   /**
    * Access Role
    */
@@ -39,6 +39,11 @@ export interface SubMenu {
    * Additional Attribute
    */
   attrs?: AdditionalAttr,
+  /**
+   * Active on exact match
+   * @default false
+   */
+  exact?: boolean,
 }
 
 export interface MenuItem {
@@ -53,7 +58,7 @@ export interface MenuItem {
   /**
    * Menu URL
    */
-  url: string,
+  url?: string,
   /**
    * Menu Icon
    */
@@ -74,6 +79,11 @@ export interface MenuItem {
    * Additional attribute
    */
   attrs?: AdditionalAttr,
+  /**
+   * Active on exact match
+   * @default false
+   */
+  exact?: boolean,
 }
 
 export interface Menu {
@@ -91,14 +101,17 @@ export interface Menu {
   titleActionUrl?: string,
   /**
    * Enable collapse
+   * @default false
    */
   collapsible?: boolean,
   /**
    * Set to bottom
+   * @default false
    */
   bottom?: boolean,
   /**
    * Enable condensed mode
+   * @default false
    */
   condensed?: boolean,
   /**
@@ -121,6 +134,11 @@ export interface Menu {
    * Additional Attribute
    */
   attrs?: AdditionalAttr,
+  /**
+   * Active on exact match
+   * @default false
+   */
+  exact?: boolean,
 }
 
 /**
