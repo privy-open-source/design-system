@@ -203,7 +203,6 @@
 import {
   defineComponent,
   PropType,
-  ref,
 } from 'vue-demi'
 import Sidebar from '../sidebar/Sidebar.vue'
 import { TypeVariant } from '../sidebar'
@@ -264,19 +263,6 @@ export default defineComponent({
       type   : String,
       default: 'Less',
     },
-  },
-
-  setup () {
-    const expand = ref(false)
-
-    function toggle () {
-      expand.value = !expand.value
-    }
-
-    return {
-      expand,
-      toggle,
-    }
   },
 })
 </script>

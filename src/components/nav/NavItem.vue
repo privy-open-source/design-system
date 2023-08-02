@@ -5,7 +5,7 @@
     :class="navItemClass">
     <nuxt-link
       data-testid="nav-link"
-      :href="href"
+      :href="link"
       :target="target"
       :class="[classNames, linkClass]">
       <span
