@@ -100,7 +100,10 @@ const svgoConfig: Config = {
       name  : 'addAttributesToSVGElement',
       params: { attributes: [{ focusable: 'false' }] },
     },
-    'preset-default',
+    {
+      name  : 'preset-default',
+      params: { overrides: { removeViewBox: false } },
+    },
   ],
 }
 
