@@ -3713,6 +3713,7 @@ __metadata:
     fs-extra: ^11.1.1
     jiti: ^1.18.2
     minimist: ^1.2.8
+    nanoid: ^4.0.2
     ohash: ^1.1.2
     ora: ^6.3.0
     p-all: ^5.0.0
