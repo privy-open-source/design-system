@@ -1,0 +1,1 @@
+import{a0 as i}from"./framework.408943e8.js";async function r(t){const a=await i(()=>import("./webfontloader.a4b65fe8.js").then(o=>o.w),["assets/chunks/webfontloader.a4b65fe8.js","assets/chunks/commonjsHelpers.de833af9.js"]);return await new Promise((o,e)=>{a.load({google:{families:[t]},fontactive(){o()},fontinactive(){e(new Error("FONTLOADER_TIMEOUT"))}})})}export{r as l};

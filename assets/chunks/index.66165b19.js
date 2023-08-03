@@ -1,0 +1,1 @@
+import{s}from"./theme.af157f64.js";import{P as m,r,H as u}from"./framework.408943e8.js";function c(e){const t=m(e.modelValue),{emit:o}=u(),a=r({get(){return e.modelValue},set(l){o("update:modelValue",l)}});return s(t,a,{immediate:!1}),t}export{c as u};
