@@ -3123,6 +3123,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@interactjs/types@npm:1.10.18":
+  version: 1.10.18
+  resolution: "@interactjs/types@npm:1.10.18"
+  checksum: 5479ba9ef0055ad03a78b9194388d11c7d8b3d17dcdf3b98dc47faed9dc1ef980dedb4f1a63287f4201fefca5a4eb62672fd8e420ff9586c43a905d909d6d166
+  languageName: node
+  linkType: hard
+
 "@ioredis/commands@npm:^1.1.1":
   version: 1.2.0
   resolution: "@ioredis/commands@npm:1.2.0"
@@ -3602,7 +3609,7 @@ __metadata:
     "@carbon/icons-vue": 10.71.1
     "@floating-ui/dom": ^1.0.4
     "@fontsource/dm-sans": 5.0.5
-    "@interactjs/types": 1.10.17
+    "@interactjs/types": 1.10.18
     "@juggle/resize-observer": ^3.4.0
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/eslint-config-persona": "workspace:^"
