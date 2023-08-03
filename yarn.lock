@@ -3681,7 +3681,7 @@ __metadata:
     tailwindcss: 3.3.3
     typescript: 5.1.6
     ufo: ^1.0.1
-    vitepress: 1.0.0-beta.6
+    vitepress: 1.0.0-beta.7
     vitest: 0.24.5
     vue-collapsed: ^1.2.5
     vue-content-loader: ^2.0.1
@@ -18217,9 +18217,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.4.6":
-  version: 4.4.6
-  resolution: "vite@npm:4.4.6"
+"vite@npm:^4.4.7":
+  version: 4.4.8
+  resolution: "vite@npm:4.4.8"
   dependencies:
     esbuild: ^0.18.10
     fsevents: ~2.3.2
@@ -18253,7 +18253,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 5a821897f1e03f9786f827acb89e3117a79b8901d184bbc3a2e48d6404b37975a5cdeb6b6969ec24ed1e81d96f1959ed6f9426cbb64501d1e4770bdb20f9c02f
+  checksum: e8ffe688f8a7396b1357778f00cb06d1f3dadad200823c47a1955cf52774a0cbff5ac4d6a8f8d09e26c1d4e588e5815956f9eba02ae301e77a36c3d181a1bc86
   languageName: node
   linkType: hard
 
@@ -18294,9 +18294,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-beta.6":
-  version: 1.0.0-beta.6
-  resolution: "vitepress@npm:1.0.0-beta.6"
+"vitepress@npm:1.0.0-beta.7":
+  version: 1.0.0-beta.7
+  resolution: "vitepress@npm:1.0.0-beta.7"
   dependencies:
     "@docsearch/css": ^3.5.1
     "@docsearch/js": ^3.5.1
@@ -18309,11 +18309,11 @@ __metadata:
     mark.js: 8.11.1
     minisearch: ^6.1.0
     shiki: ^0.14.3
-    vite: ^4.4.6
+    vite: ^4.4.7
     vue: ^3.3.4
   bin:
     vitepress: bin/vitepress.js
-  checksum: c734582f0be45023809ad5b6b6c1ac84bd8d93fac84ab37cb21f92744fd77ec4ac0f2165e92b770021c212e39eae93439b3aa1b095c7d51094c53f21cf0f76a2
+  checksum: 1687ff15b631a4b24b8fb3e3f2ca791ce13802c4d17098055261347cbb01635f09833051795ef96cb40f790bef0449661fdb08172f8194a9ba294a733c186f92
   languageName: node
   linkType: hard
 
