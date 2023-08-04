@@ -8656,5 +8656,63 @@
         "hash": "74f218b7ccbe45e1fae7d01750da182f6cc9ab453a79589cfffe73bcd8a4530d"
       }
     ]
+  },
+  {
+    "name": "message",
+    "aliases": [],
+    "category": "apps",
+    "folder": "message-apps",
+    "variant": "apps",
+    "files": [
+      {
+        "name": "message-apps/32",
+        "path": "message-apps/32.svg",
+        "hash": "8315f5d6f5b524c88c317dc26a9e6df469247f8f48bba5d9543416bb7eceedef"
+      },
+      {
+        "name": "message-apps/24",
+        "path": "message-apps/24.svg",
+        "hash": "1d63a67433aeb010214223e2e3292ad2b90d4ca77e11f24d0aea0b788617da64"
+      },
+      {
+        "name": "message-apps/16",
+        "path": "message-apps/16.svg",
+        "hash": "0c3417d8c6ece770a44cf874e3d2e81dd05a59d6ec7c562d9af8fe6422cecd45"
+      },
+      {
+        "name": "message-apps/20",
+        "path": "message-apps/20.svg",
+        "hash": "beb0e24dcc4f61c1db20f4fc43409651db0606100e3070dc443ed4694d1807f0"
+      }
+    ]
+  },
+  {
+    "name": "admin-center",
+    "aliases": [],
+    "category": "apps",
+    "folder": "admin-center-apps",
+    "variant": "apps",
+    "files": [
+      {
+        "name": "admin-center-apps/32",
+        "path": "admin-center-apps/32.svg",
+        "hash": "bc8720b95707812d1d2fca1dbb9c94dadfb1a8040cb1ef9b1ed024aa43fb3879"
+      },
+      {
+        "name": "admin-center-apps/24",
+        "path": "admin-center-apps/24.svg",
+        "hash": "d0e043c0fd630bb500cbee63f720bc044ca032036b0f3b4697c532134715fd6b"
+      },
+      {
+        "name": "admin-center-apps/20",
+        "path": "admin-center-apps/20.svg",
+        "hash": "86c6a4ad8ef8651599d28be78afc5ce15c86fe46c6e514fe4e23cf9d3bc5a41f"
+      },
+      {
+        "name": "admin-center-apps/16",
+        "path": "admin-center-apps/16.svg",
+        "hash": "e7fc68a5ecd23e21e90d724bbfc336bcd7e5875170f481f48c2e73b027c44dc1"
+      }
+    ]
   }
 ]
