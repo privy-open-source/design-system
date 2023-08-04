@@ -18432,9 +18432,9 @@ __metadata:
   linkType: hard
 
 "vue-collapsed@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "vue-collapsed@npm:1.2.5"
-  checksum: a567fcadf851bdc009fa63c4406aa9ed5749044f713eb3a0f5524ad47867895738703dc5e4ef761d5f0d343f518dceaf1a632db70603c8c784580408a1c7f61d
+  version: 1.2.6
+  resolution: "vue-collapsed@npm:1.2.6"
+  checksum: 934895db51da4763afefc1e459d1f61897eb608641a89923a43219b239c8760e2323550fa1c7b7724a406d2a8a7124fe01b72e680bf27525f39e6f516bdcec07
   languageName: node
   linkType: hard
 
