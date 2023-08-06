@@ -1,1 +1,0 @@
-import{u as e,r}from"./framework.408943e8.js";const u=e({props:{color:{type:String,default:"default"},variant:{type:String,default:"default"}},setup(a){return{classNames:r(()=>{const t=["badge"];return a.color&&t.push(`badge--${a.color}`),a.variant&&t.push(`badge--variant-${a.variant}`),t})}}});export{u as _};

@@ -1,0 +1,1 @@
+import{_ as a}from"./Heading.vue_vue_type_style_index_0_lang.6b8dafa1.js";import{_ as e,v as t,C as o,O as r,d as n,e as d,E as c}from"./framework.0290506e.js";function f(s,i,m,p,_,l){return t(),o(c(s.elementNames),{"data-testid":"heading",class:d(s.classNames)},{default:r(()=>[n(s.$slots,"default")]),_:3},8,["class"])}const g=e(a,[["render",f]]);export{g as H};
