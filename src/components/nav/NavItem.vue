@@ -3,11 +3,9 @@
     data-testid="nav-item"
     class="nav__item"
     :class="navItemClass">
-    <component
-      :is="tagName"
+    <nuxt-link
       data-testid="nav-link"
-      :href="isExternalLink ? link : undefined"
-      :to="isExternalLink ? undefined : href"
+      :href="link"
       :target="target"
       :class="[classNames, linkClass]">
       <span
@@ -22,7 +20,7 @@
         class="nav__link__label">
         <slot />
       </span>
-    </component>
+    </nuxt-link>
   </li>
 </template>
 
@@ -32,7 +30,6 @@ import {
   computed,
   defineComponent,
   PropType,
-  resolveComponent,
 } from 'vue-demi'
 import { type RouteLocationRaw } from 'vue-router'
 
@@ -62,8 +59,11 @@ export default defineComponent({
       ],
       default: undefined,
     },
+    exact: {
+      type   : Boolean,
+      default: false,
+    },
   },
-
   setup (props, { slots }) {
     const classNames = computed(() => {
       const result: string[] = ['nav__link']
@@ -76,6 +76,9 @@ export default defineComponent({
 
       if (slots.icon)
         result.push('nav__link--icon')
+
+      if (props.exact)
+        result.push('nav__link--exact')
 
       return result
     })
@@ -101,26 +104,10 @@ export default defineComponent({
       return permalink
     })
 
-    const isExternalLink = computed(() => {
-      return (
-        !props.href
-        || (typeof props.href === 'string'
-          && (props.href.startsWith('http') || props.href.startsWith('#')))
-      )
-    })
-
-    const tagName = computed(() => {
-      if (isExternalLink.value) return 'a'
-
-      return resolveComponent('router-link')
-    })
-
     return {
       classNames,
       navItemClass,
       link,
-      isExternalLink,
-      tagName,
     }
   },
 })

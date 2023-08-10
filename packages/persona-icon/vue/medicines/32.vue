@@ -4,7 +4,8 @@
     width="32"
     height="32"
     fill="none"
-    class="persona-icon"><path
+    class="persona-icon"
+    viewBox="0 0 32 32"><path
       fill="currentColor"
       d="M10.998 6.998h10v2.82a3 3 0 0 0 1.373 2.521l.337.217a5 5 0 0 1 2.29 4.202v7.24a5 5 0 0 1-5 5h-8a5 5 0 0 1-5-5v-7.24a5 5 0 0 1 2.29-4.202l.336-.217a3 3 0 0 0 1.374-2.52V6.997Zm2 2v.82a5 5 0 0 1-2.29 4.202l-.337.217a3 3 0 0 0-1.373 2.52v7.24a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-7.24a3 3 0 0 0-1.374-2.52l-.337-.217a5 5 0 0 1-2.29-4.202v-.82h-6Z" /><path
         fill="currentColor"

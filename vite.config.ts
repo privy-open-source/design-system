@@ -1,4 +1,4 @@
-import { UserConfig } from 'vite'
+import type { UserConfig } from 'vite'
 import type { UserConfig as VitestConfig } from 'vitest/config'
 import Vue from '@vitejs/plugin-vue'
 

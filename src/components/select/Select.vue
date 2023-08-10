@@ -15,6 +15,7 @@
         :placeholder="placeholder"
         :disabled="disabled"
         :readonly="readonly"
+        :clearable="clearable"
         @focus="onFocus">
         <template
           v-if="!noCaret"
@@ -172,6 +173,10 @@ export default defineComponent({
       default: false,
     },
     error: {
+      type   : Boolean,
+      default: false,
+    },
+    clearable: {
       type   : Boolean,
       default: false,
     },

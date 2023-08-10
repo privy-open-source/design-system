@@ -4,7 +4,8 @@
     width="20"
     height="20"
     fill="none"
-    class="persona-icon"><path
+    class="persona-icon"
+    viewBox="0 0 20 20"><path
       fill="currentColor"
       d="M5.873 6.698a.825.825 0 1 0 0-1.65.825.825 0 0 0 0 1.65Z" /><path
         fill="currentColor"
