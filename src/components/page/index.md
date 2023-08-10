@@ -36,13 +36,13 @@ description: Page with toggle expand for responsive purpose
         {
           name : 'documents',
           label: 'Documents',
-          url  : '/',
+          url  : '/documents',
           icon : IconDocument
         },
         {
           name : 'contacts',
           label: 'Contacts',
-          url  : '/',
+          url  : '/contacts',
           icon : IconUsers
         }
       ]
@@ -61,31 +61,31 @@ description: Page with toggle expand for responsive purpose
         {
           name       : 'document',
           label      : 'Documents',
-          url        : '/',
+          url        : '/document',
           icon       : IconDocument,
           collapsible: true,
           submenu    : [
             {
               name : 'need-action',
               label: 'Need Action',
-              url  : '/'
+              url  : '/need-action'
             },
             {
               name : 'in-progress',
               label: 'In Progress',
-              url  : '/'
+              url  : '/in-progress'
             },
             {
               name : 'others',
               label: 'Others',
-              url  : '/'
+              url  : '/others'
             }
           ]
         },
         {
           name : 'contact',
           label: 'Contacts',
-          url  : '/',
+          url  : '/contact',
           icon : IconUsers
         }
       ]
@@ -97,12 +97,12 @@ description: Page with toggle expand for responsive purpose
         {
           name : 'rejects',
           label: 'Rejects',
-          url  : '/',
+          url  : '/rejects',
         },
         {
-          name: 'archives',
+          name : 'rejects',
           label: 'Archives',
-          url: '/',
+          url  : '/rejects',
         },
       ]
     },
@@ -113,12 +113,11 @@ description: Page with toggle expand for responsive purpose
           name : 'settings',
           label: 'Settings',
           icon : IconSettings,
-          url  : '/',
+          url  : '/settings',
         },
         {
           name : 'english',
           label: 'English',
-          url  : '/',
           icon : IconEN
         },
       ]
@@ -135,12 +134,12 @@ description: Page with toggle expand for responsive purpose
         },
         {
           name: 'document',
-          url : '/',
+          url : '/document',
           icon: IconDocument
         },
         {
           name: 'users',
-          url : '/',
+          url : '/users',
           icon: IconUsers
         }
       ]
@@ -150,13 +149,12 @@ description: Page with toggle expand for responsive purpose
       items : [
         {
           name: 'settings',
-          url : '/',
+          url : '/settings',
           icon: IconSettings
         },
         {
           name : 'language',
           label: 'ENG',
-          url  : '/',
           icon : IconEN,
         }
       ]

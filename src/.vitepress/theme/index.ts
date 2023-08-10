@@ -7,6 +7,7 @@ import './css/tailwind.css'
 import DefaultTheme from 'vitepress/theme'
 import './css/custom.css'
 import Preview from './components/Preview.vue'
+import NuxtLink from './components/NuxtLink.vue'
 import vueRouter from './router'
 import { initAppContext } from '../../components/global/context'
 import { installRouter } from '../../components/global/router'
@@ -16,6 +17,7 @@ export default {
   enhanceApp ({ app, router }) {
     app.use(vueRouter)
     app.component('Preview', Preview)
+    app.component('NuxtLink', NuxtLink)
 
     initAppContext()
     installRouter({

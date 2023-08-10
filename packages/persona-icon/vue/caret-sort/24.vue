@@ -4,7 +4,8 @@
     width="24"
     height="24"
     fill="none"
-    class="persona-icon"><path
+    class="persona-icon"
+    viewBox="0 0 24 24"><path
       fill="currentColor"
       d="M12 2 6.5 9h11L12 2ZM12 22l5.5-7h-11l5.5 7Z" /></svg>
 </template>

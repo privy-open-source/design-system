@@ -152,8 +152,8 @@ it('should be an router-link when button have `href` props without http', async 
 
   const button = screen.queryByTestId('btn')
 
-  expect(button).toHaveAttribute('to', '/')
-  expect(button).toContainHTML('router-link')
+  expect(button).toHaveAttribute('href', '/')
+  expect(button).toContainHTML('nuxt-link')
 })
 
 it('should be an anchor when button have `href` props and with http', async () => {

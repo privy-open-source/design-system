@@ -358,3 +358,19 @@ it('should hide caret icon if props `no-caret` is provided', () => {
 
   expect(caret).not.toBeInTheDocument()
 })
+
+it('should have a clear button when `clearable` props is provided', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select clearable />
+    `,
+  })
+  const select = screen.getByTestId('select')
+  expect(select).toBeInTheDocument()
+
+  await fireEvent.click(select)
+
+  const clearButton = screen.queryByTestId('input-clear')
+  expect(clearButton).toBeInTheDocument()
+})
