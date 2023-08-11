@@ -8,21 +8,27 @@
       :href="permalink">
       <slot />
     </component>
-    <IconChevron
+    <div
       v-if="!active"
-      data-testid="breadcrumbs-icon"
-      class="breadcrumbs__item__icon" />
+      data-testid="breadcrumbs-divider"
+      class="breadcrumbs__item__divider">
+      <component :is="divider" />
+    </div>
   </li>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue-demi'
+import {
+  defineComponent,
+  computed,
+  inject,
+  h,
+} from 'vue-demi'
 import IconChevron from '@privyid/persona-icon/vue/chevron-right/20.vue'
 import { TagVariant } from '.'
 
 export default defineComponent({
-  components: { IconChevron },
-  props     : {
+  props: {
     href: {
       type   : String,
       default: '#',
@@ -59,8 +65,13 @@ export default defineComponent({
       return props.href
     })
 
+    const divider = inject('divider', () => h(IconChevron))
+
     return {
-      classNames, tagName, permalink,
+      classNames,
+      tagName,
+      permalink,
+      divider,
     }
   },
 })
@@ -72,13 +83,13 @@ export default defineComponent({
     @apply inline-flex text-sm items-center capitalize;
 
     &:last-child {
-      & > .breadcrumbs__item__icon {
+      & > .breadcrumbs__item__divider {
         @apply hidden;
       }
     }
 
     &:not(:last-child) {
-      & > .breadcrumbs__item__icon {
+      & > .breadcrumbs__item__divider {
         @apply inline-flex ml-3;
       }
     }
