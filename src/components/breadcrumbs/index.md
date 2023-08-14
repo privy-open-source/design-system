@@ -28,12 +28,12 @@ description: The current page's location within a navigational hierarchy
       href: '#',
     },
     {
-      text: 'Document',
-      active: true,
+      text   : 'Document',
+      active : true,
       subitem: [
         {
-          text: 'Waiting',
-          href: '#',
+          text  : 'Waiting',
+          href  : '#',
           active: true,
         },
         {
@@ -73,7 +73,7 @@ Items of breadcrumbs are rendered using `items` prop. It can be an array of obje
       href: '/'
     },
     {
-      text: 'All Documents',
+      text  : 'All Documents',
       active: true
     }
   ])
