@@ -56,6 +56,7 @@ description: The current page's location within a navigational hierarchy
 ## Usage
 
 ### Simple Usage
+
 Items of breadcrumbs are rendered using `items` prop. It can be an array of object to provide text, link and active state.
 
 <preview>
@@ -80,6 +81,26 @@ Items of breadcrumbs are rendered using `items` prop. It can be an array of obje
 
 <template>
   <p-breadcrumb :items="items" />
+</template>
+```
+
+### Breadcrumb with / Divider
+
+<preview>
+  <p-breadcrumb :items="items">
+    <template #divider>
+      /
+    </template>
+  </p-breadcrumb>
+</preview>
+
+```vue
+<template>
+  <p-breadcrumb :items="items">
+    <template #divider>
+      /
+    </template>
+  </p-breadcrumb>
 </template>
 ```
 
@@ -206,34 +227,14 @@ Individual `<p-breadcrumb-item>` can be placed manually in the default slot of `
 </template>
 ```
 
-## Breadcrumb Divider
-
-<preview>
-  <p-breadcrumb :items="items">
-    <template #divider>
-      <pi-arrow-right-16 />
-    </template>
-  </p-breadcrumb>
-</preview>
-
-```vue
-<template>
-  <p-breadcrumb :items="items">
-    <template #divider>
-      <pi-arrow-right-16 />
-    </template>
-  </p-breadcrumb>
-</template>
-```
-
 
 ## API
 
 ### Props `<p-breadcrumb>`
 
-| Props       |   Type     | Default      | Description                                               |
-|-------------|:----------:|:------------:|-----------------------------------------------------------|
-| `items`     | `Array`    |  `-`         | Breadcrumb items (array of object)                        |
+| Props   |  Type   | Default | Description                        |
+|---------|:-------:|:-------:|------------------------------------|
+| `items` | `Array` |   `-`   | Breadcrumb items (array of object) |
 
 ### Slots `<p-breadcrumb>`
 
@@ -243,11 +244,12 @@ Individual `<p-breadcrumb-item>` can be placed manually in the default slot of `
 | `divider` | Specifies the dividing character/icon between items |
 
 ### Props `<p-breadcrumb-item>`
-| Props       |   Type     | Default      | Description                                               |
-|-------------|:----------:|:------------:|-----------------------------------------------------------|
-| `text`      | `String`   |  `-`         | Breadcrumb item label                                     |
-| `active`    | `Boolean`  |  `false`     | Breadcrumb item active state                             |
-| `href`      | `String`   |  `-`         | Target URL of the breadcrumb item link                    |
+
+| Props    |   Type    | Default | Description                            |
+|----------|:---------:|:-------:|----------------------------------------|
+| `text`   | `String`  |   `-`   | Breadcrumb item label                  |
+| `active` | `Boolean` | `false` | Breadcrumb item active state           |
+| `href`   | `String`  |   `-`   | Target URL of the breadcrumb item link |
 
 ### Slots `<p-breadcrumb-item>`
 
@@ -256,17 +258,18 @@ Individual `<p-breadcrumb-item>` can be placed manually in the default slot of `
 | `default` | Content to place breadcrumb item label |
 
 ### Props `<p-breadcrumb-item-dropdown>`
-| Props       |   Type     | Default      | Description                                                  |
-|-------------|:----------:|:------------:|--------------------------------------------------------------|
-| `text`      | `String`   |  `-`         | Breadcrumb item dropdown activator label                     |
-| `active`    | `Boolean`  |  `false`     | Breadcrumb item dropdown activator active state              |
-| `href`      | `String`   |  `-`         | Target URL of the breadcrumb item dropdown activator link    |
+
+| Props    |   Type    | Default | Description                                               |
+|----------|:---------:|:-------:|-----------------------------------------------------------|
+| `text`   | `String`  |   `-`   | Breadcrumb item dropdown activator label                  |
+| `active` | `Boolean` | `false` | Breadcrumb item dropdown activator active state           |
+| `href`   | `String`  |   `-`   | Target URL of the breadcrumb item dropdown activator link |
 
 ### Slots `<p-breadcrumb-item-dropdown>`
 
-| Name      | Description                            |
-|-----------|----------------------------------------|
-| `default` | Content to place dropdown item         |
+| Name      | Description                    |
+|-----------|--------------------------------|
+| `default` | Content to place dropdown item |
 
 ### Events
 
