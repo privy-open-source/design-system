@@ -374,3 +374,25 @@ it('should have a clear button when `clearable` props is provided', async () => 
   const clearButton = screen.queryByTestId('input-clear')
   expect(clearButton).toBeInTheDocument()
 })
+
+it('should have not able to open if `caret` icon is clicked and select is disabled', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select disabled />
+    `,
+  })
+
+  const select = screen.queryByTestId('select')
+
+  expect(select).toBeInTheDocument()
+  expect(select).not.toHaveClass('select--open')
+
+  const caretIcon = screen.queryByTestId('select-caret-icon')
+
+  await fireEvent.click(caretIcon)
+  await nextTick()
+
+  expect(select).toHaveClass('select--disabled')
+  expect(select).not.toHaveClass('select--open')
+})
