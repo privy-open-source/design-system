@@ -221,7 +221,8 @@ export default defineComponent({
     const localModel = ref<SelectItem>(findSelected(items.value, props.modelValue))
 
     const toggleOpen = () => {
-      isOpen.value = !isOpen.value
+      if (!props.disabled && !props.readonly)
+        isOpen.value = !isOpen.value
     }
 
     const classNames = computed(() => {

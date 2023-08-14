@@ -9236,5 +9236,36 @@
         "hash": "e7fc68a5ecd23e21e90d724bbfc336bcd7e5875170f481f48c2e73b027c44dc1"
       }
     ]
+  },
+  {
+    "name": "path",
+    "aliases": [
+      "slash"
+    ],
+    "category": "operation",
+    "folder": "path",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "path/16",
+        "path": "path/16.svg",
+        "hash": "cfaec591cbbff22ebde1a99880b82fd50393bb600b7e4430b9f76197daa0fca1"
+      },
+      {
+        "name": "path/20",
+        "path": "path/20.svg",
+        "hash": "7d1ea6c125f7c949ac8569c31163b60ee01d0cca62e5394104739487ef4d903d"
+      },
+      {
+        "name": "path/24",
+        "path": "path/24.svg",
+        "hash": "791b42a8b5282623ca878d3ec559e1355d0977fe01172e94e5b1c33e78b6583d"
+      },
+      {
+        "name": "path/32",
+        "path": "path/32.svg",
+        "hash": "4a8d4d7ca73ea93ecd32af8bed75ec3bc4f021cba81e70b46380a32ea612e145"
+      }
+    ]
   }
 ]
