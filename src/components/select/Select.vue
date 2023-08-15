@@ -283,7 +283,7 @@ export default defineComponent({
     }
 
     function isSelected (item: SelectItem) {
-      return isEqual(item.value, localModel.value.value)
+      return isEqual(item.value, localModel.value?.value)
     }
 
     watch(isOpen, (value) => {
