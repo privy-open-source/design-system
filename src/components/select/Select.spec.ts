@@ -396,3 +396,69 @@ it('should have not able to open if `caret` icon is clicked and select is disabl
   expect(select).toHaveClass('select--disabled')
   expect(select).not.toHaveClass('select--open')
 })
+
+it('should have clear button if prop `clearable` was provided', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model:selected="model"
+        :options="['apple', 'grape', 'orange']"
+        clearable
+      />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('select-search')
+
+  input.focus()
+  await nextTick()
+
+  const items = screen.queryAllByTestId('select-item')
+
+  await fireEvent.click(items.at(1))
+
+  expect(model.value).toStrictEqual({ text: 'grape', value: 'grape' })
+
+  const clear = screen.queryByTestId('input-clear')
+
+  await fireEvent.click(clear)
+
+  expect(model.value).toBeUndefined()
+})
+
+it('should clear search keyword if click clear button when select was opened', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model:selected="model"
+        :options="['apple', 'grape', 'orange']"
+        clearable
+      />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('select-search')
+
+  input.focus()
+  await nextTick()
+
+  await fireEvent.update(input, 'Hello World')
+
+  expect(input).toHaveValue('Hello World')
+
+  const clear = screen.queryByTestId('input-clear')
+
+  await fireEvent.click(clear)
+
+  expect(input).toHaveValue('')
+})

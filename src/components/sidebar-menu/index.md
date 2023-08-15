@@ -55,7 +55,7 @@ description: Define sidebar using JSON
           label      : 'Documents',
           url        : '/document',
           icon       : IconDocument,
-          collapsible: false,
+          collapsible: true,
           submenu    : [
             {
               name : 'need-action',

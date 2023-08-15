@@ -16,6 +16,7 @@
         :disabled="disabled"
         :readonly="readonly"
         :clearable="clearable"
+        @clear.prevent="onClear"
         @focus="onFocus">
         <template
           v-if="!noCaret"
@@ -258,12 +259,12 @@ export default defineComponent({
       localModel.value = findSelected(items.value, value)
     })
 
-    function select (item: SelectItem) {
+    function select (item?: SelectItem) {
       localModel.value = item
 
       emit('change', item)
       emit('update:selected', item)
-      emit('update:modelValue', item.value)
+      emit('update:modelValue', item?.value)
 
       if (isOpen.value)
         emit('userInput', item)
@@ -274,8 +275,15 @@ export default defineComponent({
         isOpen.value = true
     }
 
+    function onClear () {
+      if (isOpen.value)
+        keyword.value = ''
+      else
+        select()
+    }
+
     function isSelected (item: SelectItem) {
-      return isEqual(item.value, localModel.value.value)
+      return isEqual(item.value, localModel.value?.value)
     }
 
     watch(isOpen, (value) => {
@@ -304,6 +312,7 @@ export default defineComponent({
       toggleOpen,
       select,
       onFocus,
+      onClear,
       isSelected,
     }
   },

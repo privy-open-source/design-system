@@ -18,11 +18,13 @@ description: Base form input.
     { text: '🍇 Traube', value: 'Grape' },
     { text: '🍌 Bananen', value: 'Banana'},
   ])
+
   const optionsC = ref([
     { text: '🍎 Apfel', value: 'Apple' },
     { text: '🍇 Traube', value: 'Grape', disabled: true },
     { text: '🍌 Bananen', value: 'Banana', disabled: false},
   ])
+
   const users = ref([
     {
       text: 'John Doe',
@@ -129,28 +131,6 @@ description: Base form input.
 </script>
 ```
 
-### with Clearable
-
-<preview>
-  <p-select :options="optionsB" v-model="value" clearable/>
-</preview>
-
-```vue
-<template>
-  <p-select
-    v-model="value"
-    :options="options"
-    clearable />
-</template>
-
-<script setup>
-  const options = ref([
-    { text: '🍎 Apfel', value: 'Apple' },
-    { text: '🍇 Traube', value: 'Grape' },
-    { text: '🍌 Bananen', value: 'Banana'},
-  ])
-</script>
-```
 ## Placeholder
 
 You can set input placeholder via `placeholder` props
@@ -179,6 +159,29 @@ You can set sectiom label via `section-label` props
     :options="optionsA"
     section-label="Fruits" />
 </template>
+```
+
+## Clearable
+
+<preview>
+  <p-select :options="optionsB" v-model="value" clearable/>
+</preview>
+
+```vue
+<template>
+  <p-select
+    v-model="value"
+    :options="options"
+    clearable />
+</template>
+
+<script setup>
+  const options = ref([
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape' },
+    { text: '🍌 Bananen', value: 'Banana'},
+  ])
+</script>
 ```
 
 ## Sizing
