@@ -329,6 +329,7 @@ export default defineComponent({
 <style lang="postcss">
 .dropdown {
   --p-dropdown-z-index: theme(zIndex.dropdown);
+  --p-dropdown-size-xl: 36rem; /* 576px */
   --p-dropdown-size-lg: 30rem; /* 480px */
   --p-dropdown-size-md: 20rem; /* 320px */
   --p-dropdown-size-sm: 15rem; /* 240px */
@@ -352,6 +353,10 @@ export default defineComponent({
           @apply rounded-b-sm;
         }
       }
+    }
+
+    &--xl {
+      @apply w-[var(--p-dropdown-size-xl)];
     }
 
     &--lg {
