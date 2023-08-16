@@ -150,8 +150,16 @@ export default defineComponent({
   --p-card-color: theme(textColor.default);
   --p-card-color-dark: theme(textColor.dark.default);
 
-  @apply border bg-[color:var(--p-card-bg)] border-[color:var(--p-card-border)] text-[color:var(--p-card-color)] rounded;
+  @apply border bg-[color:var(--p-card-bg)] border-[color:var(--p-card-border)] text-[color:var(--p-card-color)] rounded-md;
   @apply dark:bg-[color:var(--p-card-bg-dark)] dark:border-[color:var(--p-card-border-dark)] dark:text-[color:var(--p-card-color-dark)];
+
+  /**
+  * Card inside card
+  * has 8px rounded
+  */
+  .card {
+    @apply rounded;
+  }
 
   /*
   * Card Body & Card Header
