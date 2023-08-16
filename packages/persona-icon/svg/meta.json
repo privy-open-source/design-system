@@ -760,11 +760,6 @@
         "hash": "c48de11f008e707cdd9da86b722a8172bbf98fc5fae14d91b0616ad8c20d1cc1"
       },
       {
-        "name": "folder/32",
-        "path": "folder/32.svg",
-        "hash": "75c22ac0fcc2d9c0e4e763820e0f1e375099c5311298027926a925f8faa00ff8"
-      },
-      {
         "name": "folder/20",
         "path": "folder/20.svg",
         "hash": "a7758ad976aa586a50ed7ea284feae0d5e788da88d38b8e93f3b5a730efe854e"
@@ -772,7 +767,12 @@
       {
         "name": "folder/24",
         "path": "folder/24.svg",
-        "hash": "ea622c4ca09b8a7dd6480074ab6434a134f27f64342a66e33292ee3221039d0a"
+        "hash": "b4657068729a57afc0b7a1a80a226c83d12017c427f0ead9192a85ffc1723164"
+      },
+      {
+        "name": "folder/32",
+        "path": "folder/32.svg",
+        "hash": "75c22ac0fcc2d9c0e4e763820e0f1e375099c5311298027926a925f8faa00ff8"
       }
     ]
   },
