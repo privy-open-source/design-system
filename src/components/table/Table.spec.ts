@@ -281,3 +281,49 @@ it('should able to change empty state label via `empty-label` prop', () => {
   expect(empty).toBeInTheDocument()
   expect(empty).toHaveTextContent('nothing to show here')
 })
+
+it('should able to hide label in flexible variant via `no-label` prop', () => {
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="fields"
+        :items="items"
+        no-label
+      />`,
+    setup () {
+      return {
+        fields,
+        items,
+      }
+    },
+  })
+
+  const table = screen.getByTestId('datatable')
+
+  expect(table).toBeInTheDocument()
+  expect(table).toHaveClass('datatable--no-label')
+})
+
+it('should able to show table header in flexible variant via `show-table-header` prop', () => {
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="fields"
+        :items="items"
+        show-table-header
+      />`,
+    setup () {
+      return {
+        fields,
+        items,
+      }
+    },
+  })
+
+  const table = screen.getByTestId('datatable')
+
+  expect(table).toBeInTheDocument()
+  expect(table).toHaveClass('datatable--show-table-header')
+})
