@@ -3136,10 +3136,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:5.0.8":
-  version: 5.0.8
-  resolution: "@fontsource/dm-sans@npm:5.0.8"
-  checksum: ae055ea36e1827ff080d43a96d74675dfeb6960e8adcb7e0ba4b59fb5f5b63a7d64c3221090357545e8279f9a4883d9cda061a0f9a1fb46d845e353d41889f95
+"@fontsource/dm-sans@npm:5.0.9":
+  version: 5.0.9
+  resolution: "@fontsource/dm-sans@npm:5.0.9"
+  checksum: 07b05870c77ff39d86c3847ba05523933c7446b3c73799dac8cd7b3b7274513aa07ad3f67995fdb872648ad157ccfef4cf31188287b5cab6441497f907053bad
   languageName: node
   linkType: hard
 
@@ -3651,7 +3651,7 @@ __metadata:
     "@babel/preset-env": ^7.19.4
     "@carbon/icons-vue": 10.72.1
     "@floating-ui/dom": ^1.0.4
-    "@fontsource/dm-sans": 5.0.8
+    "@fontsource/dm-sans": 5.0.9
     "@interactjs/types": 1.10.18
     "@juggle/resize-observer": ^3.4.0
     "@privyid/browserslist-config": "workspace:^"
