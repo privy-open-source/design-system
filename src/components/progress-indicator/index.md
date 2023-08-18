@@ -11,7 +11,7 @@ description: Sub-component for Carousel.
 </script>
 
 # Progress Indicator
-> Sub-component for Carousel
+> Sub-component for [Carousel](../carousel/)
 
 ## Usage
 
@@ -46,7 +46,7 @@ description: Sub-component for Carousel.
 ## Vertical Mode
 
 Set prop `direction` to `vertical` to enable Vertical Mode.
-
+![Alt text](image.png)
 <preview>
   <div class="h-36">
     <p-progress-indicator direction="vertical" />
@@ -105,7 +105,11 @@ You can binding current active with v-model
 
 ### Events
 
-| Name     | Arguments | Description                     |
-|----------|-----------|---------------------------------|
-| `change` | `String`  | Event when value changed        |
+| Name     | Arguments | Description              |
+|----------|-----------|--------------------------|
+| `change` | `String`  | Event when value changed |
 
+
+## See Also
+
+- [Carousel](../carousel/)
