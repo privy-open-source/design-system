@@ -48,7 +48,7 @@
     "@types/zxcvbn": "^4",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
-    "@vitejs/plugin-vue": "4.2.3",
+    "@vitejs/plugin-vue": "4.3.1",
     "@vitest/browser": "^0.25.3",
     "@vitest/coverage-c8": "0.24.5",
     "@vue/eslint-config-typescript": "11.0.3",
