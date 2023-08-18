@@ -96,6 +96,14 @@ description: Delightful datatables.
 ### Simple Usage
 
 <preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="items" variant="static" />
+</preview>
+
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="items" />
+</preview>
+
+<preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items" />
 </preview>
 
@@ -236,7 +244,7 @@ There are 2 variants: `flexible` and `static`, default is `flexible`
 </template>
 ```
 
-#### Hide Label
+#### No Label
 <preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items" no-label />
 </preview>
@@ -459,6 +467,24 @@ Table use local CSS variables on `.datatable` for enhanced real-time customizati
 --p-table-border: theme(borderColor.default.DEFAULT);
 --p-table-border-dark: theme(borderColor.dark.default.DEFAULT);
 ```
+### Example
+It's possible to custom table flexible background, but the border must be transparent or same as the background color.
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="items" style="--p-table-bg: #F3F3F3;--p-table-bg-dark: #0D1117;--p-table-border: #F3F3F3; --p-table-border-dark: #0D1117;" />
+</preview>
+
+```vue
+<template>
+  <p-table 
+    :fields="fields" 
+    :items="items" 
+    style="--p-table-bg: #F3F3F3;
+    --p-table-bg-dark: #0D1117;
+    --p-table-border: #F3F3F3; 
+    --p-table-border-dark: #0D1117;" />
+</template>
+```
+
 
 ## API
 
