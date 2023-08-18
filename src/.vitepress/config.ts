@@ -165,6 +165,10 @@ export default defineConfig({
               link: '/components/progress-indicator/',
             },
             {
+              text: 'Progressbar',
+              link: '/components/progressbar/',
+            },
+            {
               text: 'Spinner',
               link: '/components/spinner/',
             },
