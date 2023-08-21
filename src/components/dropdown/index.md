@@ -464,7 +464,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | `divider`       | `Boolean`  |      `-`       | Enable divider in dropdown-item  |
 | `menu-class`       | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the menu container  |
 | `button-class`     | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the button dropdown  |
-| `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md` and `lg`  |
+| `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md`, `lg` and `xl`  |
 
 ### Slots `<p-dropdown>`
 
