@@ -11,7 +11,7 @@ description: Sub-component for Carousel.
 </script>
 
 # Progress Indicator
-> Sub-component for Carousel
+> Sub-component for [Carousel](../carousel/)
 
 ## Usage
 
@@ -105,7 +105,11 @@ You can binding current active with v-model
 
 ### Events
 
-| Name     | Arguments | Description                     |
-|----------|-----------|---------------------------------|
-| `change` | `String`  | Event when value changed        |
+| Name     | Arguments | Description              |
+|----------|-----------|--------------------------|
+| `change` | `String`  | Event when value changed |
 
+
+## See Also
+
+- [Carousel](../carousel/)

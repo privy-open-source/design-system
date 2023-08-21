@@ -64,6 +64,10 @@ export {
 } from '../components/camera/adapter/qr-code'
 
 export {
+  defineAdapter,
+} from '../components/camera/adapter/adapter'
+
+export {
   defineFilter,
 } from '../components/filterbar'
 
@@ -104,3 +108,7 @@ export {
 export type {
   PdfHelipadResult,
 } from '../components/pdf-helipad'
+
+export {
+  useStep,
+} from '../components/steps'
