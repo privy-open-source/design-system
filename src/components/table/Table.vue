@@ -4,7 +4,7 @@
     class="datatable"
     :class="classNames">
     <div
-      v-if="variant === 'static'"
+      v-if="variant === 'static' || (variant === 'flexible' && showTableHeader)"
       class="datatable__headers">
       <div
         v-if="draggable"
@@ -189,6 +189,14 @@ export default defineComponent({
       type   : String,
       default: 'There are no records to show',
     },
+    noLabel: {
+      type   : Boolean,
+      default: false,
+    },
+    showTableHeader: {
+      type   : Boolean,
+      default: false,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -220,6 +228,12 @@ export default defineComponent({
 
       if (props.draggable)
         results.push('datatable--draggable')
+
+      if (props.noLabel && props.variant === 'flexible')
+        results.push('datatable--no-label')
+
+      if (props.showTableHeader && props.variant === 'flexible')
+        results.push('datatable--show-table-header')
 
       return results
     })
@@ -256,11 +270,16 @@ export default defineComponent({
 
 <style lang="postcss">
 .datatable {
+  --p-table-bg: theme(backgroundColor.default.DEFAULT);
+  --p-table-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
+  --p-table-border: theme(borderColor.default.DEFAULT);
+  --p-table-border-dark: theme(borderColor.dark.default.DEFAULT);
+
   @apply flex flex-col w-full;
 
   &__headers {
-    @apply flex pt-4 space-x-2 bg-default;
-    @apply dark:bg-dark-default;
+    @apply flex pt-4 space-x-2 bg-[color:var(--p-table-bg)];
+    @apply dark:bg-[color:var(--p-table-bg-dark)];
 
     > .datatable__header {
       @apply px-3;
@@ -278,6 +297,10 @@ export default defineComponent({
     &.datatable__checkbox,
     &.datatable__drag {
       @apply flex-shrink-0 flex-grow-0;
+    }
+
+    &.datatable__checkbox {
+      @apply px-6;
     }
 
     &.datatable__drag {
@@ -320,6 +343,7 @@ export default defineComponent({
 
     &--empty {
       @apply pt-4 pb-0 px-3 text-sm text-default;
+      @apply dark:text-dark-default;
 
       &.basis-full {
         @apply pb-4;
@@ -341,20 +365,40 @@ export default defineComponent({
     }
 
     .datatable__row {
-      @apply rounded border border-default bg-default;
-      @apply dark:border-dark-default dark:bg-dark-default;
+      @apply rounded border border-[color:var(--p-table-border)] bg-[color:var(--p-table-bg)];
+      @apply dark:border-[color:var(--p-table-border-dark)] dark:bg-[color:var(--p-table-bg-dark)];
     }
+
+    &.datatable--no-label {
+      .datatable__body {
+        .datatable__header {
+          @apply hidden;
+        }
+      }
+    }
+
+    &.datatable--show-table-header {
+      .datatable__headers {
+        @apply border py-2 rounded border-[color:var(--p-table-border)];
+        @apply dark:border-[color:var(--p-table-border-dark)];
+
+        .datatable__header {
+          @apply pb-0;
+        }
+      }
+    }
+
   }
 
   &--static {
     .datatable__headers {
-      @apply border-b border-b-default;
-      @apply dark:border-b-dark-default;
+      @apply border-b border-b-[color:var(--p-table-border)];
+      @apply dark:border-b-[color:var(--p-table-border-dark)];
     }
 
     .datatable__body {
-      @apply border-b border-b-default divide-y divide-default bg-default;
-      @apply dark:border-b-dark-default dark:divide-dark-default dark:bg-dark-default;
+      @apply border-b border-b-[color:var(--p-table-border)] divide-y divide-[color:var(--p-table-border)] bg-[color:var(--p-table-bg)];
+      @apply dark:border-b-[color:var(--p-table-border-dark)] dark:divide-[color:var(--p-table-border-dark)] dark:bg-[color:var(--p-table-bg-dark)];
     }
   }
 }
