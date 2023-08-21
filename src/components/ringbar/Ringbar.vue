@@ -14,6 +14,7 @@
       stroke-width="2px" />
     <g class="ringbar__wrapper">
       <circle
+        data-testid="ringbar-ring"
         class="ringbar__ring"
         cx="9"
         cy="9"
@@ -36,6 +37,17 @@ import {
 } from 'vue-demi'
 import { type SizeVariant } from '../button'
 
+/**
+ * How to count dashoffset
+ *
+ *  offset = 2 * r * π
+ *
+ * ex:
+ *  r = 8
+ *
+ *  offset = 2 * 8 * 3.14
+ *         = 50.2654825
+ */
 export default defineComponent({
   props: {
     value: {
@@ -91,6 +103,7 @@ export default defineComponent({
   }
 
   &__ring {
+    @apply transition-[stroke-dashoffset] will-change-[stroke-dashoffset] duration-75 ease-out;
     @apply stroke-[color:theme(borderColor.info.emphasis)] origin-center;
     @apply dark:stroke-[color:theme(borderColor.dark.info.emphasis)];
   }

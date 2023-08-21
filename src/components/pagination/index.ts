@@ -21,7 +21,10 @@ export function usePagination (props: PaginationProps) {
   })
 
   const rowRange = computed(() => {
-    return [total.value === 0 ? 0 : (page.value - 1) * perPage.value + 1, page.value * perPage.value > total.value ? total.value : page.value * perPage.value]
+    const start = Math.max((page.value - 1) * perPage.value + 1, 0)
+    const end   = Math.min(page.value * perPage.value, total.value)
+
+    return [start, end]
   })
 
   const pageItems = computed(() => {

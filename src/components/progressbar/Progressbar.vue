@@ -6,6 +6,7 @@
     :class="classNames"
     :data-value="percentage">
     <div
+      data-testid="progressbar-bar"
       class="progressbar__bar"
       :style="{ width }" />
   </div>
@@ -81,7 +82,8 @@ export default defineComponent({
   @apply dark:bg-dark-base;
 
   &__bar {
-    @apply bg-info-emphasis rounded-full h-full origin-center will-change-[width];
+    @apply transition-[width] will-change-[width] duration-75 ease-out;
+    @apply bg-info-emphasis rounded-full h-full origin-center;
     @apply dark:bg-dark-info-emphasis;
   }
 

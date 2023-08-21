@@ -40,13 +40,11 @@ export default defineComponent({
 
   setup (props) {
     const hyperlink = computed(() => {
-      const tag : String = props.href ? 'a' : 'span'
-
-      return tag
+      return props.href ? 'a' : 'span'
     })
 
     const classNames = computed(() => {
-      const result : String[] = ['']
+      const result : string[] = ['']
 
       if (props.variant)
         result.push(`freetext--${props.variant}`)
