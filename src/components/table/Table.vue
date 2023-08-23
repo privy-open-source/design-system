@@ -257,6 +257,9 @@ export default defineComponent({
         && model.value.length < selectableRows.value.length
     })
 
+    if (import.meta.env.DEV)
+      console.warn('<p-table> was deprecated, please use <p-table-flex> or <p-table-static> instead')
+
     return {
       model,
       rows,

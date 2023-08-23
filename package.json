@@ -112,6 +112,7 @@
     "vue-content-loader": "^2.0.1",
     "vue-demi": "0.14.5",
     "vue-router": "4.2.4",
+    "vue3-iframe": "^0.0.7",
     "vuedraggable": "next",
     "webfontloader": "1.6.28",
     "zxcvbn": "^4.4.2"

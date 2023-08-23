@@ -71,21 +71,6 @@
     }
   }
 
-  th, td {
-    @apply border-info dark:border-dark-default dark:bg-dark-default;
-  }
-
-  thead > tr:first-child,
-  tr:nth-child(2n) {
-    @apply bg-info;
-  }
-
-  thead > tr:first-child {
-    th, td {
-      @apply dark:bg-dark-base;
-    }
-  }
-
   .token.attr-name {
     @apply text-[#cc99cd];
   }
@@ -133,7 +118,7 @@
       }
     }
   }
-  
+
   .header-anchor {
     @apply pr-0 -ml-6;
   }
@@ -141,7 +126,7 @@
   a,
   .preview a {
     @apply hover:no-underline;
-    
+
     &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item) {
       @apply text-link dark:text-dark-link;
     }
@@ -150,7 +135,7 @@
   a {
     &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item) {
       @apply underline decoration-solid hover:no-underline;
-    } 
+    }
 
     &:not(.freetext--medium) {
       @apply font-inherit;
@@ -180,7 +165,7 @@
   }
 
   p {
-    
+
     &.lh {
       &-none {
         @apply leading-none;

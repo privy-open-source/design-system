@@ -3731,6 +3731,7 @@ __metadata:
     vue-demi: 0.14.5
     vue-router: 4.2.4
     vue-tsc: 1.8.8
+    vue3-iframe: ^0.0.7
     vuedraggable: next
     webfontloader: 1.6.28
     zxcvbn: ^4.4.2
@@ -5279,7 +5280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:10.3.0":
+"@vueuse/core@npm:10.3.0, @vueuse/core@npm:^10.1.2":
   version: 10.3.0
   resolution: "@vueuse/core@npm:10.3.0"
   dependencies:
@@ -18740,7 +18741,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.3.4":
+"vue3-iframe@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "vue3-iframe@npm:0.0.7"
+  dependencies:
+    "@vueuse/core": ^10.1.2
+    vue: ^3.2.47
+  checksum: 256d60893e0505494bc6819926d2af0026be314f07e8e93db0465a6b9f96736f7a89e7282f2940c4d2b1da1dd158f8b1103bdfe88945ccd1d98e07547231334d
+  languageName: node
+  linkType: hard
+
+"vue@npm:^3.2.47, vue@npm:^3.3.4":
   version: 3.3.4
   resolution: "vue@npm:3.3.4"
   dependencies:
