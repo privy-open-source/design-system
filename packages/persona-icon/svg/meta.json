@@ -6766,7 +6766,7 @@
       {
         "name": "table/16",
         "path": "table/16.svg",
-        "hash": "8067f3462c1ce503f59fdb636243834e136170513ffaf3987daac8e74cc6baa9"
+        "hash": "b92f191a352f87c1cc3abc3923d68d48c1cf4ffae8962e5f6b002abfa06523ad"
       },
       {
         "name": "table/20",
@@ -8079,11 +8079,6 @@
     "variant": "outline",
     "files": [
       {
-        "name": "tax/20",
-        "path": "tax/20.svg",
-        "hash": "bb1054433f6b87b9666a4a9eb78a977927dd8d2ca33dc5a7a7977a56eb31efde"
-      },
-      {
         "name": "tax/24",
         "path": "tax/24.svg",
         "hash": "7aefd8e975257f309732b5395f004f7c5ae494b367c3abf6f043efcba40d62ca"
@@ -8097,35 +8092,11 @@
         "name": "tax/16",
         "path": "tax/16.svg",
         "hash": "ee990056985351069c852bd0d52d7f4b3a2ddffde4ea67ac381b41a3180fb9da"
-      }
-    ]
-  },
-  {
-    "name": "section",
-    "aliases": [],
-    "category": "other",
-    "folder": "section",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "section/16",
-        "path": "section/16.svg",
-        "hash": "1213c02887f53ea1f181a4c8b0adfd55e59cf07558e2a57a731ecde56409bc4e"
       },
       {
-        "name": "section/20",
-        "path": "section/20.svg",
-        "hash": "7365c59361dc2d0178316462733aea3c0307fdef44ab0032e36c29d6bc88c3ed"
-      },
-      {
-        "name": "section/24",
-        "path": "section/24.svg",
-        "hash": "5918c4c6310850cf6b84e7f29a7c366f40fcaf37b90dad45e266e616e5b5ba45"
-      },
-      {
-        "name": "section/32",
-        "path": "section/32.svg",
-        "hash": "bb6666070ddee8e90cd6c51b6fa7fabf4a66cb23f13e98ff01dba8390b715de3"
+        "name": "tax/20",
+        "path": "tax/20.svg",
+        "hash": "bb1054433f6b87b9666a4a9eb78a977927dd8d2ca33dc5a7a7977a56eb31efde"
       }
     ]
   },
@@ -8137,16 +8108,6 @@
     "variant": "outline",
     "files": [
       {
-        "name": "pause/20",
-        "path": "pause/20.svg",
-        "hash": "f430385107865979196517d5708ede5a8ecec062e1fe21e4e0d6b9670a7628b3"
-      },
-      {
-        "name": "pause/32",
-        "path": "pause/32.svg",
-        "hash": "41b419f2a4335237c34c0d2bd2b209aae0cf4f91a8bc7010bf2bfef9d8c33945"
-      },
-      {
         "name": "pause/24",
         "path": "pause/24.svg",
         "hash": "12a7f72e7cdfd676fd310180e9d150209d73f11cd7068928c3bb03147e36cd7d"
@@ -8155,151 +8116,16 @@
         "name": "pause/16",
         "path": "pause/16.svg",
         "hash": "a8a10392903c65828b76385d7186a2c74dcdc0f431b78897998f717decd89b9c"
-      }
-    ]
-  },
-  {
-    "name": "record",
-    "aliases": [],
-    "category": "control",
-    "folder": "record",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "record/16",
-        "path": "record/16.svg",
-        "hash": "c33514659f85c28b768f2dc0d31ee7e398934eea45741f962822837aef8fa49e"
       },
       {
-        "name": "record/24",
-        "path": "record/24.svg",
-        "hash": "2156e198731c23341edf4d62175230ac85af6227117a3774cb179104195b7f7e"
+        "name": "pause/20",
+        "path": "pause/20.svg",
+        "hash": "f430385107865979196517d5708ede5a8ecec062e1fe21e4e0d6b9670a7628b3"
       },
       {
-        "name": "record/32",
-        "path": "record/32.svg",
-        "hash": "263fc465407c6995ec6c76da0f0786215cc7a73026318c459393beabbb79cf45"
-      },
-      {
-        "name": "record/20",
-        "path": "record/20.svg",
-        "hash": "9dd06757632578e55e8bcfc690f18571cb2534bf5d12835579db82005d456502"
-      }
-    ]
-  },
-  {
-    "name": "play",
-    "aliases": [],
-    "category": "control",
-    "folder": "play",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "play/20",
-        "path": "play/20.svg",
-        "hash": "6723ed9e126672b94dbee2cd99edce42a80950b8551856ff32270c7fae829383"
-      },
-      {
-        "name": "play/32",
-        "path": "play/32.svg",
-        "hash": "1ac597da65ef119f82d9754d26c0f16538c478a38868c982fe4935560dd554bf"
-      },
-      {
-        "name": "play/24",
-        "path": "play/24.svg",
-        "hash": "9e3da2549120ad09631779925b26e0ccf77f9c79136096eb1e2a7690dd9201f1"
-      },
-      {
-        "name": "play/16",
-        "path": "play/16.svg",
-        "hash": "57944f413e8134853edebb54b0739ba8ef36806ce9f0a83ba57baaf3a1eb1267"
-      }
-    ]
-  },
-  {
-    "name": "stop",
-    "aliases": [],
-    "category": "control",
-    "folder": "stop",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "stop/32",
-        "path": "stop/32.svg",
-        "hash": "5ae1fa77f8e7ce96e44cf8beae57ae1348afd00d0fe6170a83d5c07920db33a9"
-      },
-      {
-        "name": "stop/20",
-        "path": "stop/20.svg",
-        "hash": "510c5754c7a98e506ead4384bc3a800ee019878f78e07da36ddf14dcef93a225"
-      },
-      {
-        "name": "stop/16",
-        "path": "stop/16.svg",
-        "hash": "40eb9668d7c4507bed745db7ad321ceeda490770041b3291ee1cd7b7d75ce341"
-      },
-      {
-        "name": "stop/24",
-        "path": "stop/24.svg",
-        "hash": "412814a7c9ce486d25413a405f9a09d54aa836c028612898eaf798e5f87cbd67"
-      }
-    ]
-  },
-  {
-    "name": "short-text",
-    "aliases": [],
-    "category": "technology",
-    "folder": "short-text",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "short-text/16",
-        "path": "short-text/16.svg",
-        "hash": "489494129a0aee860ca45fe81986c8ad78a181352853c27a3508c1e555ac3ed1"
-      },
-      {
-        "name": "short-text/32",
-        "path": "short-text/32.svg",
-        "hash": "797bd19e6ff97b5cb3e9a91c28fba5ca15fa98cf80167a40b55a16e84f40161a"
-      },
-      {
-        "name": "short-text/20",
-        "path": "short-text/20.svg",
-        "hash": "e642b8c563c70770ebf35c7288e6c2db7c3cfe639cdc2b3a4656a5260cc61d00"
-      },
-      {
-        "name": "short-text/24",
-        "path": "short-text/24.svg",
-        "hash": "92473d0f71d6132fe081ed54f2bb9d9cb2168b998992c633421889a1985722d4"
-      }
-    ]
-  },
-  {
-    "name": "voucher",
-    "aliases": [],
-    "category": "life-style",
-    "folder": "voucher",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "voucher/20",
-        "path": "voucher/20.svg",
-        "hash": "bb0c8ad7dc57e552d954afb7970c9bcc800214d6855742c0603739cfbb68bd6b"
-      },
-      {
-        "name": "voucher/24",
-        "path": "voucher/24.svg",
-        "hash": "0820a06e59548035167ffada686527b683b7dfde90fc4cdc422b35b16f2ed1ee"
-      },
-      {
-        "name": "voucher/16",
-        "path": "voucher/16.svg",
-        "hash": "09c98961004f54162ac19136b7f459529768500c8440ec6b219a01c0423905f4"
-      },
-      {
-        "name": "voucher/32",
-        "path": "voucher/32.svg",
-        "hash": "1e4736a230802a0e8739f8f821abbece104a6bdb3463eaddcac47bba44d52cc8"
+        "name": "pause/32",
+        "path": "pause/32.svg",
+        "hash": "41b419f2a4335237c34c0d2bd2b209aae0cf4f91a8bc7010bf2bfef9d8c33945"
       }
     ]
   },
@@ -8316,6 +8142,11 @@
         "hash": "f0efa913475df5644b0c9d1de6ce3c8719391755d1a861c5a9e7779c603104dc"
       },
       {
+        "name": "text-editor/32",
+        "path": "text-editor/32.svg",
+        "hash": "22ab00277e100f621a19c3b3ade591f57b03ffa46f02824fdc079fc56b75c34c"
+      },
+      {
         "name": "text-editor/20",
         "path": "text-editor/20.svg",
         "hash": "0762d7b3f958f73c7161f5e5402d9287958bacabf9193ec1892bc20d0f9f41f9"
@@ -8324,40 +8155,6 @@
         "name": "text-editor/24",
         "path": "text-editor/24.svg",
         "hash": "096846fc7d233cedcc8cc85bbf9c29ff8ea4bb3305e25cc9332887377e7147ea"
-      },
-      {
-        "name": "text-editor/32",
-        "path": "text-editor/32.svg",
-        "hash": "22ab00277e100f621a19c3b3ade591f57b03ffa46f02824fdc079fc56b75c34c"
-      }
-    ]
-  },
-  {
-    "name": "backward",
-    "aliases": [],
-    "category": "control",
-    "folder": "backward",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "backward/16",
-        "path": "backward/16.svg",
-        "hash": "84132e5e13db020cb9906d5d5b83bf808093ede2df6f75966d92b78c045c092c"
-      },
-      {
-        "name": "backward/20",
-        "path": "backward/20.svg",
-        "hash": "50c8534e4661769ac1432ff80a108f8fc40e0d06d8e666fe4058a498c2f5a7f0"
-      },
-      {
-        "name": "backward/24",
-        "path": "backward/24.svg",
-        "hash": "f2d3529cc6bbd0ce83290307fa80fde7f7d84002e5c3928609ee403f28d7aa64"
-      },
-      {
-        "name": "backward/32",
-        "path": "backward/32.svg",
-        "hash": "d693361b1e3b6b64376d6d63a1586fd570e61ed33ae07adc1ddc24d8cb8af539"
       }
     ]
   },
@@ -8374,77 +8171,19 @@
         "hash": "c21a70936fa8e3c2db79a6f294db732af7c978fce7f9ed57c1e4acddb66e7558"
       },
       {
-        "name": "forward/24",
-        "path": "forward/24.svg",
-        "hash": "0fcfd9bb7da22bab46dbe5b121de3fe1b406b68922b68214a8d24b4129d43a42"
-      },
-      {
         "name": "forward/32",
         "path": "forward/32.svg",
         "hash": "ec8f27706fe059e3a536b8a338fafa181b1967f4de98dd88f251e2e259fae261"
       },
       {
+        "name": "forward/24",
+        "path": "forward/24.svg",
+        "hash": "0fcfd9bb7da22bab46dbe5b121de3fe1b406b68922b68214a8d24b4129d43a42"
+      },
+      {
         "name": "forward/20",
         "path": "forward/20.svg",
         "hash": "b1cfdb4d44f2b49bd241d74dd6bcea7501f5e5fafafcb8ac2a12c908f8e966c8"
-      }
-    ]
-  },
-  {
-    "name": "online-event",
-    "aliases": [],
-    "category": "technology",
-    "folder": "online-event",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "online-event/16",
-        "path": "online-event/16.svg",
-        "hash": "93e8e3f50dcc9fc8fa5ecc7d751257059fe456f907f0b463fe5ad5995ad36647"
-      },
-      {
-        "name": "online-event/24",
-        "path": "online-event/24.svg",
-        "hash": "cb499a786956319c18410477c34f9cfd06ab76f3c9041b622e62886df9f48f3a"
-      },
-      {
-        "name": "online-event/32",
-        "path": "online-event/32.svg",
-        "hash": "16ba1114837cec86129addf82a99be3a83fa45cc7f2791bd1bd0bcc652519958"
-      },
-      {
-        "name": "online-event/20",
-        "path": "online-event/20.svg",
-        "hash": "1b8ce934c8113b81129427d11e7a65969b702081df953cf2452c53396b1abf58"
-      }
-    ]
-  },
-  {
-    "name": "video-camera",
-    "aliases": [],
-    "category": "technology",
-    "folder": "video-camera",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "video-camera/20",
-        "path": "video-camera/20.svg",
-        "hash": "6265930be8894ae77c8d054802bf696c266c841f9e0622996acee24833c103fb"
-      },
-      {
-        "name": "video-camera/32",
-        "path": "video-camera/32.svg",
-        "hash": "0c3a5f39a8a3d982ec8eca35f370e6e71ec8ce7d5df64a224dee0c26f2f5ca7b"
-      },
-      {
-        "name": "video-camera/24",
-        "path": "video-camera/24.svg",
-        "hash": "865384ed8be55fe6bb2807d54bf129b233820ec21ac814f42cfc2ec6f8d69726"
-      },
-      {
-        "name": "video-camera/16",
-        "path": "video-camera/16.svg",
-        "hash": "dae7add7165b89421ac01dc5f61f8f18131ba7d8617ef16dede9c1ff5c0e422b"
       }
     ]
   },
@@ -8456,9 +8195,9 @@
     "variant": "outline",
     "files": [
       {
-        "name": "money/16",
-        "path": "money/16.svg",
-        "hash": "e6d1e2258fb3dc95a4d7c3c64a2c73812aaa03ea52d1ba4937f7fe9f1b895d64"
+        "name": "money/24",
+        "path": "money/24.svg",
+        "hash": "fddcdb06d3ed0a05aab77ca87a9803db0105fd0c5536cf6400deb20ab630d7a1"
       },
       {
         "name": "money/20",
@@ -8466,101 +8205,14 @@
         "hash": "292c9b42671c72511286387ec4a7eebd2932d0f5ea7e8e73f66138579494c371"
       },
       {
-        "name": "money/24",
-        "path": "money/24.svg",
-        "hash": "fddcdb06d3ed0a05aab77ca87a9803db0105fd0c5536cf6400deb20ab630d7a1"
+        "name": "money/16",
+        "path": "money/16.svg",
+        "hash": "e6d1e2258fb3dc95a4d7c3c64a2c73812aaa03ea52d1ba4937f7fe9f1b895d64"
       },
       {
         "name": "money/32",
         "path": "money/32.svg",
         "hash": "ff7796ffc1694e7f8d26bf80c1b32462c80c1bb736fb5675b1c440a776341808"
-      }
-    ]
-  },
-  {
-    "name": "hybrid-event",
-    "aliases": [],
-    "category": "technology",
-    "folder": "hybrid-event",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "hybrid-event/24",
-        "path": "hybrid-event/24.svg",
-        "hash": "b0d222948111fe839d819d14d92dedc18da3619e64125aa5784d375fb7405af5"
-      },
-      {
-        "name": "hybrid-event/32",
-        "path": "hybrid-event/32.svg",
-        "hash": "372bbda9edcde452ac0f3e2a48a758dceace8a0c35ee3e3f02e4516a1a89eb0a"
-      },
-      {
-        "name": "hybrid-event/20",
-        "path": "hybrid-event/20.svg",
-        "hash": "7ba9b69cc8f8b4fa17205adc8e7eb674241913fec5aa05bd77762e91138e51cd"
-      },
-      {
-        "name": "hybrid-event/16",
-        "path": "hybrid-event/16.svg",
-        "hash": "58f3c171f7ea2028aa7c9021ebdadcf68e4548359e1d8c7bb0f043016e80c526"
-      }
-    ]
-  },
-  {
-    "name": "direction",
-    "aliases": [],
-    "category": "navigation",
-    "folder": "direction",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "direction/32",
-        "path": "direction/32.svg",
-        "hash": "ebdc3d67bc4bef138a0d4b822c58db1dab58c51f4afbb7624c6e4d4cfb8f4025"
-      },
-      {
-        "name": "direction/24",
-        "path": "direction/24.svg",
-        "hash": "5cd5488cb2e8f9c62825703cf1e64030ce7b945749db99b66c3d4d14e8fc6fa1"
-      },
-      {
-        "name": "direction/20",
-        "path": "direction/20.svg",
-        "hash": "422613f9e95dfc122431f7abc79c40facb1b969807a97d4270782a90c091f876"
-      },
-      {
-        "name": "direction/16",
-        "path": "direction/16.svg",
-        "hash": "b624e9b396c14652b06a15f330ec02f0406c043dfd46e71215e9a01995794075"
-      }
-    ]
-  },
-  {
-    "name": "dollars",
-    "aliases": [],
-    "category": "life-style",
-    "folder": "dollars",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "dollars/24",
-        "path": "dollars/24.svg",
-        "hash": "646bd97a020901e1115fa2398c45aab37611414d0d54b312332ec70bc84668e3"
-      },
-      {
-        "name": "dollars/20",
-        "path": "dollars/20.svg",
-        "hash": "731a8a786598c4c4ac37b0b912e180418c5ba380eba5b1d937f9d817ba5aedfe"
-      },
-      {
-        "name": "dollars/16",
-        "path": "dollars/16.svg",
-        "hash": "7b46474b8c460be647a554823ea594c82040010d1f87c27ff386e0b78161c069"
-      },
-      {
-        "name": "dollars/32",
-        "path": "dollars/32.svg",
-        "hash": "6167c37c19f62832edd045bb68b53f0d8c35faefe18cffd2022b4bd737714a2a"
       }
     ]
   },
@@ -8574,7 +8226,7 @@
       {
         "name": "signature-text/20",
         "path": "signature-text/20.svg",
-        "hash": "edc7c310054c0acbdac77ce043c2ddd945ef44e698bc62a88d48158c9bbd2150"
+        "hash": "6a7b34bb61591ab2f808fa2ad92fa3842a80943d9dc00a2b4f236deb06856db1"
       },
       {
         "name": "signature-text/24",
@@ -8584,7 +8236,7 @@
       {
         "name": "signature-text/32",
         "path": "signature-text/32.svg",
-        "hash": "368a8227ce52408f5e33ad69d7594739e5e0278d934af1d4cdaae048136180d1"
+        "hash": "69c2c63cd5302800dccb5a4230dcc94ae21dc17a9a021727ee78882ff097bc54"
       },
       {
         "name": "signature-text/16",
@@ -9180,6 +8832,588 @@
     ]
   },
   {
+    "name": "qr-position-top-left",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-top-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-top-left/16",
+        "path": "qr-position-top-left/16.svg",
+        "hash": "f72de4080bc1610ffa2f7fdc235584114d288005114651a37d073a628b2c6e93"
+      },
+      {
+        "name": "qr-position-top-left/32",
+        "path": "qr-position-top-left/32.svg",
+        "hash": "676c4b55c85f02c2708b6ade82e8e8e8c55fd7788551ec129a01f0fb8cc19ff3"
+      },
+      {
+        "name": "qr-position-top-left/24",
+        "path": "qr-position-top-left/24.svg",
+        "hash": "bfdaa4f19b259bd0b5d43d83d19123ed2d727ad16051fbc9157b7c7787380673"
+      },
+      {
+        "name": "qr-position-top-left/20",
+        "path": "qr-position-top-left/20.svg",
+        "hash": "91f0e76caa7c48c9d14031572ad1c0ab6a8665f63a030503c9f3880d1a5e39f0"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-bottom-left",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-bottom-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-bottom-left/32",
+        "path": "qr-position-bottom-left/32.svg",
+        "hash": "d5c15a572066be16322b1270d164d041892a026a7609d1736225772dd2afea31"
+      },
+      {
+        "name": "qr-position-bottom-left/24",
+        "path": "qr-position-bottom-left/24.svg",
+        "hash": "4e13db6bd974f992009ea522f3e9bb6988d8a7f76333f4460473d707c97b2d2f"
+      },
+      {
+        "name": "qr-position-bottom-left/16",
+        "path": "qr-position-bottom-left/16.svg",
+        "hash": "e731141944e515cba455e74eb7bb78857431c1acb9fa6d229714a89b48c098d6"
+      },
+      {
+        "name": "qr-position-bottom-left/20",
+        "path": "qr-position-bottom-left/20.svg",
+        "hash": "44036ac60e1f0df53e4b860f8228f153c695e4df73c2c09191ce10e2b5967771"
+      }
+    ]
+  },
+  {
+    "name": "tablet-landscape",
+    "aliases": [],
+    "category": "technology",
+    "folder": "tablet-landscape",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "tablet-landscape/20",
+        "path": "tablet-landscape/20.svg",
+        "hash": "d74be5312d0fab493e38db49b204c7f67f760b9270e6cd66480cccaacfed7b22"
+      },
+      {
+        "name": "tablet-landscape/24",
+        "path": "tablet-landscape/24.svg",
+        "hash": "1ca4d32f472d12084dec6d238b3240b8477a557e959cd13a516c4783e1bb469f"
+      },
+      {
+        "name": "tablet-landscape/32",
+        "path": "tablet-landscape/32.svg",
+        "hash": "13dcec9c3ed41387823e3785a6d50a7a2471156dd64e1b490482ec732d85b650"
+      },
+      {
+        "name": "tablet-landscape/16",
+        "path": "tablet-landscape/16.svg",
+        "hash": "a74eec5c88d507327154e6d4a1d37375fee62c71b301485ea7df8a378464047d"
+      }
+    ]
+  },
+  {
+    "name": "tablet",
+    "aliases": [],
+    "category": "technology",
+    "folder": "tablet",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "tablet/16",
+        "path": "tablet/16.svg",
+        "hash": "129c3e350fe099df723bb1d0f9122d3f15b9bf2b8d01654a8f29e54210e9ca5e"
+      },
+      {
+        "name": "tablet/20",
+        "path": "tablet/20.svg",
+        "hash": "df13ed2e7fcccdd88969bc62d0b9846bd724e47049bfc051103ccd894350b688"
+      },
+      {
+        "name": "tablet/32",
+        "path": "tablet/32.svg",
+        "hash": "f2002e786d8222125dead76263b5e5a83414974178a1b9ecf6575f947c9fba87"
+      },
+      {
+        "name": "tablet/24",
+        "path": "tablet/24.svg",
+        "hash": "898c04bdbc5d9b8153cd84732da3994b32b3addc4d6d452ddd1cee22b38fb81d"
+      }
+    ]
+  },
+  {
+    "name": "smartphone-landscape",
+    "aliases": [],
+    "category": "technology",
+    "folder": "smartphone-landscape",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "smartphone-landscape/16",
+        "path": "smartphone-landscape/16.svg",
+        "hash": "13853ccc5f0279ac11a435f47489cb1fd318ecb7d362971bf73e4dc06b85a58c"
+      },
+      {
+        "name": "smartphone-landscape/20",
+        "path": "smartphone-landscape/20.svg",
+        "hash": "2933014dcc9eb53d78aa6d161c496fa9b8b56e1a2905b6ad786fcafa26c39fff"
+      },
+      {
+        "name": "smartphone-landscape/24",
+        "path": "smartphone-landscape/24.svg",
+        "hash": "6233b84ab08fe06960ce38c44378fa66d721bf12bced4c3d718fc6d3828a7564"
+      },
+      {
+        "name": "smartphone-landscape/32",
+        "path": "smartphone-landscape/32.svg",
+        "hash": "8b5ffe2471d9df3cdcf4d2b471e153ef0815a6ef34f6d1e625dc251400161d84"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-top-right",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-top-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-top-right/20",
+        "path": "qr-position-top-right/20.svg",
+        "hash": "4c65f3c728ddb6eec991f4f050d0a92ade5eed4a4003fb1394e340cd358839c2"
+      },
+      {
+        "name": "qr-position-top-right/24",
+        "path": "qr-position-top-right/24.svg",
+        "hash": "8b39060699a79063c1c3de6c745fd631acd3ff81640b02d7957cbb3ce4213485"
+      },
+      {
+        "name": "qr-position-top-right/32",
+        "path": "qr-position-top-right/32.svg",
+        "hash": "35625f34b585ba8ec72ef854008434fe917789a6d50bf2eef027ed0fc3b2eddc"
+      },
+      {
+        "name": "qr-position-top-right/16",
+        "path": "qr-position-top-right/16.svg",
+        "hash": "653fc9763cbe39ac62e883fdfe5dfc52348d535d149cb5bda440dc3366678521"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-bottom-right",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-bottom-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-bottom-right/24",
+        "path": "qr-position-bottom-right/24.svg",
+        "hash": "ac2652600126b3bdfee8fbbbed7e4f39f03fcbe8374fd672c02b84c3e25bf2b2"
+      },
+      {
+        "name": "qr-position-bottom-right/20",
+        "path": "qr-position-bottom-right/20.svg",
+        "hash": "51af0090d934d8c0d6807aa437380f528f126f257b4d2361e1b3ab4d25b8fc99"
+      },
+      {
+        "name": "qr-position-bottom-right/16",
+        "path": "qr-position-bottom-right/16.svg",
+        "hash": "fea88218a1ed87eae912f144ab9b80c7ff0f03fd2d120a7ccbcdab0223a16409"
+      },
+      {
+        "name": "qr-position-bottom-right/32",
+        "path": "qr-position-bottom-right/32.svg",
+        "hash": "fa486d89ab67b301a911a55bffc10830aaa34e7214d3b88ebec61783a5ef431f"
+      }
+    ]
+  },
+  {
+    "name": "stop",
+    "aliases": [],
+    "category": "control",
+    "folder": "stop",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "stop/32",
+        "path": "stop/32.svg",
+        "hash": "5ae1fa77f8e7ce96e44cf8beae57ae1348afd00d0fe6170a83d5c07920db33a9"
+      },
+      {
+        "name": "stop/20",
+        "path": "stop/20.svg",
+        "hash": "510c5754c7a98e506ead4384bc3a800ee019878f78e07da36ddf14dcef93a225"
+      },
+      {
+        "name": "stop/16",
+        "path": "stop/16.svg",
+        "hash": "40eb9668d7c4507bed745db7ad321ceeda490770041b3291ee1cd7b7d75ce341"
+      },
+      {
+        "name": "stop/24",
+        "path": "stop/24.svg",
+        "hash": "412814a7c9ce486d25413a405f9a09d54aa836c028612898eaf798e5f87cbd67"
+      }
+    ]
+  },
+  {
+    "name": "direction",
+    "aliases": [],
+    "category": "navigation",
+    "folder": "direction",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "direction/32",
+        "path": "direction/32.svg",
+        "hash": "ebdc3d67bc4bef138a0d4b822c58db1dab58c51f4afbb7624c6e4d4cfb8f4025"
+      },
+      {
+        "name": "direction/24",
+        "path": "direction/24.svg",
+        "hash": "5cd5488cb2e8f9c62825703cf1e64030ce7b945749db99b66c3d4d14e8fc6fa1"
+      },
+      {
+        "name": "direction/20",
+        "path": "direction/20.svg",
+        "hash": "422613f9e95dfc122431f7abc79c40facb1b969807a97d4270782a90c091f876"
+      },
+      {
+        "name": "direction/16",
+        "path": "direction/16.svg",
+        "hash": "b624e9b396c14652b06a15f330ec02f0406c043dfd46e71215e9a01995794075"
+      }
+    ]
+  },
+  {
+    "name": "online-event",
+    "aliases": [],
+    "category": "technology",
+    "folder": "online-event",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "online-event/24",
+        "path": "online-event/24.svg",
+        "hash": "cb499a786956319c18410477c34f9cfd06ab76f3c9041b622e62886df9f48f3a"
+      },
+      {
+        "name": "online-event/16",
+        "path": "online-event/16.svg",
+        "hash": "93e8e3f50dcc9fc8fa5ecc7d751257059fe456f907f0b463fe5ad5995ad36647"
+      },
+      {
+        "name": "online-event/32",
+        "path": "online-event/32.svg",
+        "hash": "16ba1114837cec86129addf82a99be3a83fa45cc7f2791bd1bd0bcc652519958"
+      },
+      {
+        "name": "online-event/20",
+        "path": "online-event/20.svg",
+        "hash": "1b8ce934c8113b81129427d11e7a65969b702081df953cf2452c53396b1abf58"
+      }
+    ]
+  },
+  {
+    "name": "dollars",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "dollars",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "dollars/24",
+        "path": "dollars/24.svg",
+        "hash": "646bd97a020901e1115fa2398c45aab37611414d0d54b312332ec70bc84668e3"
+      },
+      {
+        "name": "dollars/20",
+        "path": "dollars/20.svg",
+        "hash": "731a8a786598c4c4ac37b0b912e180418c5ba380eba5b1d937f9d817ba5aedfe"
+      },
+      {
+        "name": "dollars/16",
+        "path": "dollars/16.svg",
+        "hash": "7b46474b8c460be647a554823ea594c82040010d1f87c27ff386e0b78161c069"
+      },
+      {
+        "name": "dollars/32",
+        "path": "dollars/32.svg",
+        "hash": "6167c37c19f62832edd045bb68b53f0d8c35faefe18cffd2022b4bd737714a2a"
+      }
+    ]
+  },
+  {
+    "name": "play",
+    "aliases": [],
+    "category": "control",
+    "folder": "play",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "play/32",
+        "path": "play/32.svg",
+        "hash": "1ac597da65ef119f82d9754d26c0f16538c478a38868c982fe4935560dd554bf"
+      },
+      {
+        "name": "play/24",
+        "path": "play/24.svg",
+        "hash": "9e3da2549120ad09631779925b26e0ccf77f9c79136096eb1e2a7690dd9201f1"
+      },
+      {
+        "name": "play/20",
+        "path": "play/20.svg",
+        "hash": "6723ed9e126672b94dbee2cd99edce42a80950b8551856ff32270c7fae829383"
+      },
+      {
+        "name": "play/16",
+        "path": "play/16.svg",
+        "hash": "57944f413e8134853edebb54b0739ba8ef36806ce9f0a83ba57baaf3a1eb1267"
+      }
+    ]
+  },
+  {
+    "name": "hybrid-event",
+    "aliases": [],
+    "category": "technology",
+    "folder": "hybrid-event",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "hybrid-event/24",
+        "path": "hybrid-event/24.svg",
+        "hash": "b0d222948111fe839d819d14d92dedc18da3619e64125aa5784d375fb7405af5"
+      },
+      {
+        "name": "hybrid-event/16",
+        "path": "hybrid-event/16.svg",
+        "hash": "58f3c171f7ea2028aa7c9021ebdadcf68e4548359e1d8c7bb0f043016e80c526"
+      },
+      {
+        "name": "hybrid-event/32",
+        "path": "hybrid-event/32.svg",
+        "hash": "372bbda9edcde452ac0f3e2a48a758dceace8a0c35ee3e3f02e4516a1a89eb0a"
+      },
+      {
+        "name": "hybrid-event/20",
+        "path": "hybrid-event/20.svg",
+        "hash": "7ba9b69cc8f8b4fa17205adc8e7eb674241913fec5aa05bd77762e91138e51cd"
+      }
+    ]
+  },
+  {
+    "name": "path",
+    "aliases": [
+      "slash"
+    ],
+    "category": "operation",
+    "folder": "path",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "path/24",
+        "path": "path/24.svg",
+        "hash": "791b42a8b5282623ca878d3ec559e1355d0977fe01172e94e5b1c33e78b6583d"
+      },
+      {
+        "name": "path/20",
+        "path": "path/20.svg",
+        "hash": "7d1ea6c125f7c949ac8569c31163b60ee01d0cca62e5394104739487ef4d903d"
+      },
+      {
+        "name": "path/32",
+        "path": "path/32.svg",
+        "hash": "4a8d4d7ca73ea93ecd32af8bed75ec3bc4f021cba81e70b46380a32ea612e145"
+      },
+      {
+        "name": "path/16",
+        "path": "path/16.svg",
+        "hash": "cfaec591cbbff22ebde1a99880b82fd50393bb600b7e4430b9f76197daa0fca1"
+      }
+    ]
+  },
+  {
+    "name": "voucher",
+    "aliases": [],
+    "category": "life-style",
+    "folder": "voucher",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "voucher/20",
+        "path": "voucher/20.svg",
+        "hash": "bb0c8ad7dc57e552d954afb7970c9bcc800214d6855742c0603739cfbb68bd6b"
+      },
+      {
+        "name": "voucher/24",
+        "path": "voucher/24.svg",
+        "hash": "0820a06e59548035167ffada686527b683b7dfde90fc4cdc422b35b16f2ed1ee"
+      },
+      {
+        "name": "voucher/16",
+        "path": "voucher/16.svg",
+        "hash": "09c98961004f54162ac19136b7f459529768500c8440ec6b219a01c0423905f4"
+      },
+      {
+        "name": "voucher/32",
+        "path": "voucher/32.svg",
+        "hash": "1e4736a230802a0e8739f8f821abbece104a6bdb3463eaddcac47bba44d52cc8"
+      }
+    ]
+  },
+  {
+    "name": "short-text",
+    "aliases": [],
+    "category": "technology",
+    "folder": "short-text",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "short-text/16",
+        "path": "short-text/16.svg",
+        "hash": "489494129a0aee860ca45fe81986c8ad78a181352853c27a3508c1e555ac3ed1"
+      },
+      {
+        "name": "short-text/24",
+        "path": "short-text/24.svg",
+        "hash": "92473d0f71d6132fe081ed54f2bb9d9cb2168b998992c633421889a1985722d4"
+      },
+      {
+        "name": "short-text/20",
+        "path": "short-text/20.svg",
+        "hash": "e642b8c563c70770ebf35c7288e6c2db7c3cfe639cdc2b3a4656a5260cc61d00"
+      },
+      {
+        "name": "short-text/32",
+        "path": "short-text/32.svg",
+        "hash": "797bd19e6ff97b5cb3e9a91c28fba5ca15fa98cf80167a40b55a16e84f40161a"
+      }
+    ]
+  },
+  {
+    "name": "record",
+    "aliases": [],
+    "category": "control",
+    "folder": "record",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "record/32",
+        "path": "record/32.svg",
+        "hash": "263fc465407c6995ec6c76da0f0786215cc7a73026318c459393beabbb79cf45"
+      },
+      {
+        "name": "record/20",
+        "path": "record/20.svg",
+        "hash": "9dd06757632578e55e8bcfc690f18571cb2534bf5d12835579db82005d456502"
+      },
+      {
+        "name": "record/16",
+        "path": "record/16.svg",
+        "hash": "c33514659f85c28b768f2dc0d31ee7e398934eea45741f962822837aef8fa49e"
+      },
+      {
+        "name": "record/24",
+        "path": "record/24.svg",
+        "hash": "2156e198731c23341edf4d62175230ac85af6227117a3774cb179104195b7f7e"
+      }
+    ]
+  },
+  {
+    "name": "backward",
+    "aliases": [],
+    "category": "control",
+    "folder": "backward",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "backward/32",
+        "path": "backward/32.svg",
+        "hash": "d693361b1e3b6b64376d6d63a1586fd570e61ed33ae07adc1ddc24d8cb8af539"
+      },
+      {
+        "name": "backward/16",
+        "path": "backward/16.svg",
+        "hash": "84132e5e13db020cb9906d5d5b83bf808093ede2df6f75966d92b78c045c092c"
+      },
+      {
+        "name": "backward/24",
+        "path": "backward/24.svg",
+        "hash": "f2d3529cc6bbd0ce83290307fa80fde7f7d84002e5c3928609ee403f28d7aa64"
+      },
+      {
+        "name": "backward/20",
+        "path": "backward/20.svg",
+        "hash": "50c8534e4661769ac1432ff80a108f8fc40e0d06d8e666fe4058a498c2f5a7f0"
+      }
+    ]
+  },
+  {
+    "name": "video-camera",
+    "aliases": [],
+    "category": "technology",
+    "folder": "video-camera",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "video-camera/24",
+        "path": "video-camera/24.svg",
+        "hash": "865384ed8be55fe6bb2807d54bf129b233820ec21ac814f42cfc2ec6f8d69726"
+      },
+      {
+        "name": "video-camera/20",
+        "path": "video-camera/20.svg",
+        "hash": "6265930be8894ae77c8d054802bf696c266c841f9e0622996acee24833c103fb"
+      },
+      {
+        "name": "video-camera/16",
+        "path": "video-camera/16.svg",
+        "hash": "dae7add7165b89421ac01dc5f61f8f18131ba7d8617ef16dede9c1ff5c0e422b"
+      },
+      {
+        "name": "video-camera/32",
+        "path": "video-camera/32.svg",
+        "hash": "0c3a5f39a8a3d982ec8eca35f370e6e71ec8ce7d5df64a224dee0c26f2f5ca7b"
+      }
+    ]
+  },
+  {
+    "name": "section",
+    "aliases": [],
+    "category": "other",
+    "folder": "section",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "section/24",
+        "path": "section/24.svg",
+        "hash": "5918c4c6310850cf6b84e7f29a7c366f40fcaf37b90dad45e266e616e5b5ba45"
+      },
+      {
+        "name": "section/20",
+        "path": "section/20.svg",
+        "hash": "7365c59361dc2d0178316462733aea3c0307fdef44ab0032e36c29d6bc88c3ed"
+      },
+      {
+        "name": "section/32",
+        "path": "section/32.svg",
+        "hash": "bb6666070ddee8e90cd6c51b6fa7fabf4a66cb23f13e98ff01dba8390b715de3"
+      },
+      {
+        "name": "section/16",
+        "path": "section/16.svg",
+        "hash": "1213c02887f53ea1f181a4c8b0adfd55e59cf07558e2a57a731ecde56409bc4e"
+      }
+    ]
+  },
+  {
     "name": "message",
     "aliases": [],
     "category": "apps",
@@ -9234,37 +9468,6 @@
         "name": "admin-center-apps/16",
         "path": "admin-center-apps/16.svg",
         "hash": "e7fc68a5ecd23e21e90d724bbfc336bcd7e5875170f481f48c2e73b027c44dc1"
-      }
-    ]
-  },
-  {
-    "name": "path",
-    "aliases": [
-      "slash"
-    ],
-    "category": "operation",
-    "folder": "path",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "path/16",
-        "path": "path/16.svg",
-        "hash": "cfaec591cbbff22ebde1a99880b82fd50393bb600b7e4430b9f76197daa0fca1"
-      },
-      {
-        "name": "path/20",
-        "path": "path/20.svg",
-        "hash": "7d1ea6c125f7c949ac8569c31163b60ee01d0cca62e5394104739487ef4d903d"
-      },
-      {
-        "name": "path/24",
-        "path": "path/24.svg",
-        "hash": "791b42a8b5282623ca878d3ec559e1355d0977fe01172e94e5b1c33e78b6583d"
-      },
-      {
-        "name": "path/32",
-        "path": "path/32.svg",
-        "hash": "4a8d4d7ca73ea93ecd32af8bed75ec3bc4f021cba81e70b46380a32ea612e145"
       }
     ]
   }
