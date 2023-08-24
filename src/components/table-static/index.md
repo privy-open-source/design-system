@@ -1,6 +1,6 @@
 ---
 title: Table Static · Components
-description: Delightful Table.
+description: Classic style Table.
 ---
 
 <script setup>
@@ -94,16 +94,12 @@ description: Delightful Table.
     table {
       @apply table my-0;
     }
-
-    thead tr {
-      @apply border-t-0;
-    }
   }
 </style>
 
 # Table Static
 
-> Delightful Table.
+> Classic style Table.
 
 ## Usage
 

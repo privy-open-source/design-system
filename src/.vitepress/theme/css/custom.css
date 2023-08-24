@@ -216,4 +216,36 @@
       @apply mt-0;
     }
   }
+
+  table {
+    thead tr {
+      @apply border-t-0;
+    }
+
+    tr {
+      @apply border-default;
+      @apply dark:border-dark-default;
+    }
+
+    th {
+      @apply text-xs bg-base;
+      @apply dark:bg-dark-base;
+    }
+
+    td {
+      @apply bg-default first:whitespace-nowrap;
+      @apply dark:bg-dark-default;
+    }
+
+    th,
+    td {
+      &:not(:first-child) {
+        @apply border-l-0;
+      }
+
+      &:not(:last-child) {
+        @apply border-r-0;
+      }
+    }
+  }
 }
