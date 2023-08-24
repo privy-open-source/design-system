@@ -221,19 +221,6 @@ const classNames = computed(() => {
   .table-flex__header {
     @apply text-subtle text-xs font-bold pb-3;
     @apply dark:text-dark-subtle;
-
-    &.table-flex__checkbox,
-    &.table-flex__drag {
-      @apply flex-shrink-0 flex-grow-0;
-    }
-
-    &.table-flex__checkbox {
-      @apply px-6;
-    }
-
-    &.table-flex__drag {
-      @apply invisible mx-3;
-    }
   }
 
   &__row {
@@ -253,7 +240,7 @@ const classNames = computed(() => {
 
   &__cell {
     @apply max-sm:w-full md:w-[var(--p-table-flex-cell-width)];
-    @apply py-4 pl-5 pr-3 text-sm text-default break-all;
+    @apply py-4 px-3 text-sm text-default break-all;
     @apply dark:text-dark-default;
 
     & > .table-flex__header {
@@ -263,7 +250,7 @@ const classNames = computed(() => {
     &.table-flex__checkbox,
     &.table-flex__drag {
       @apply max-sm:absolute max-sm:left-0 max-sm:top-1/2 max-sm:-translate-y-1/2;
-      @apply flex-shrink-0 flex-grow-0 self-center;
+      @apply flex-shrink-0 flex-grow-0 self-center w-auto;
     }
 
     &.table-flex__checkbox {

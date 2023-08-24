@@ -277,8 +277,8 @@ const indeterminate = computed(() => {
   }
 
   & &__body > &__row {
-    @apply border-t border-t-[color:var(--p-table-border)] bg-[color:var(--p-table-bg)];
-    @apply dark:border-b-[color:var(--p-table-border-dark)] dark:bg-[color:var(--p-table-bg-dark)];
+    @apply border-t border-[color:var(--p-table-border)] bg-[color:var(--p-table-bg)];
+    @apply dark:border-[color:var(--p-table-border-dark)] dark:bg-[color:var(--p-table-bg-dark)];
   }
 
   &--no-label {
@@ -301,7 +301,7 @@ const indeterminate = computed(() => {
 
     .table-static__row .table-static__cell,
     .table-static__headers .table-static__header {
-      @apply border-x-0 border-y border-[color:var(--p-table-border)];
+      @apply border-x-0 border-y;
 
       &:first-child {
         @apply rounded-l border-l;
