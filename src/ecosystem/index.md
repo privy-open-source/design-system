@@ -14,6 +14,7 @@
 - **[@privyid/nhp][nhp]** - Nuxt HTTP Proxy Module
 - **[@privyid/nuauth][nuauth]** - Oauth2 Client for Nuxt
 - **[@privyid/nuapi][nuapi]** - Nuxt HTTP Client module
+- **[@privyid/pong][pong]** - Service discovery, Log & Trace module
 
 [persona]: https://www.npmjs.com/package/@privyid/persona
 [persona-icon]: https://www.npmjs.com/package/@privyid/persona-icon
@@ -25,3 +26,4 @@
 [nhp]: https://www.npmjs.com/package/@privyid/nhp
 [nuauth]: https://www.npmjs.com/package/@privyid/nuauth
 [nuapi]: https://www.npmjs.com/package/@privyid/nuapi
+[pong]: https://www.npmjs.com/package/@privyid/pong
