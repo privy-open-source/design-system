@@ -53,7 +53,7 @@ import Subheading from '../../../components/subheading/Subheading.vue'
 import Badge from '../../../components/badge/Badge.vue'
 import Button from '../../../components/button/Button.vue'
 import { useRouter, withBase } from 'vitepress'
-import IconGithub from '@carbon/icons-vue/lib/logo--github/20'
+import IconGithub from '@privyid/persona-icon/vue/github/24.vue'
 
 export default defineComponent({
   components: {

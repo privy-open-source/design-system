@@ -2176,22 +2176,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/icon-helpers@npm:^10.43.1":
-  version: 10.43.1
-  resolution: "@carbon/icon-helpers@npm:10.43.1"
-  checksum: b77039f58dfb28ee42c832387a59f787fd14c2ebac98a36c6fb5cdcff84fb19c35a5854f0066e1ddead55440cad783e1e52923d2706a482ec1a7067dcf23330b
-  languageName: node
-  linkType: hard
-
-"@carbon/icons-vue@npm:10.72.1":
-  version: 10.72.1
-  resolution: "@carbon/icons-vue@npm:10.72.1"
-  dependencies:
-    "@carbon/icon-helpers": ^10.43.1
-  checksum: 016041efdc94f6d556aea3446909d7e60fa93700c10b6905ef23e8bb22ca240ae235ef778681f0e31b86b0c81ccb76ddb1f8211400c60a7c25a235d761737a28
-  languageName: node
-  linkType: hard
-
 "@cloudflare/kv-asset-handler@npm:^0.3.0":
   version: 0.3.0
   resolution: "@cloudflare/kv-asset-handler@npm:0.3.0"
@@ -3712,7 +3696,6 @@ __metadata:
   dependencies:
     "@babel/core": ^7.19.6
     "@babel/preset-env": ^7.19.4
-    "@carbon/icons-vue": 10.72.1
     "@floating-ui/dom": ^1.0.4
     "@fontsource/dm-sans": 5.0.9
     "@interactjs/types": 1.10.18
