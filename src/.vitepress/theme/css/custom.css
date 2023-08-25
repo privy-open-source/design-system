@@ -137,7 +137,7 @@
       @apply underline decoration-solid hover:no-underline;
     }
 
-    &:not(.freetext--medium) {
+    &:not([class^='freetext-'], [class*='freetext-']) {
       @apply font-inherit;
     }
 
