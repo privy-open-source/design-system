@@ -29,7 +29,7 @@ it('should be able to set active via prop `active`', () => {
   const dropdownDivider = screen.queryByTestId('dropdown-divider')
 
   expect(breadcrumbItem).toHaveClass('breadcrumbs__item--active')
-  expect(breadcrumbItem).toContainHTML('<span />')
+  expect(breadcrumbItem).toContainHTML('<span class="" />')
   expect(breadcrumbItem).not.toContainHTML('<a />')
   expect(dropdownDivider).not.toBeInTheDocument()
 })

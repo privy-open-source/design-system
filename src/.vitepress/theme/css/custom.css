@@ -126,14 +126,14 @@
   a,
   .preview a {
     @apply hover:no-underline;
-
-    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item) {
+    
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item, .breadcrumbs__item__link) {
       @apply text-link dark:text-dark-link;
     }
   }
 
   a {
-    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item) {
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item, .breadcrumbs__item__link) {
       @apply underline decoration-solid hover:no-underline;
     }
 

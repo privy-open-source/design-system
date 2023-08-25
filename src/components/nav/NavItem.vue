@@ -135,7 +135,7 @@ export default defineComponent({
   }
 
   &__link {
-    @apply block relative py-[10px] px-3 -mb-[1px] border border-transparent rounded-t text-base font-normal cursor-pointer hover:no-underline text-subtle hover:text-default;
+    @apply block relative py-[10px] px-3 -mb-[1px] border border-transparent rounded-t text-base font-normal cursor-pointer no-underline hover:no-underline text-subtle hover:text-default;
     @apply dark:text-dark-subtle hover:dark:text-dark-default;
 
     &&--active {
