@@ -2700,35 +2700,6 @@
     ]
   },
   {
-    "name": "signature-draw-alt",
-    "aliases": [],
-    "category": "formatting",
-    "folder": "signature-draw-alt",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "signature-draw-alt/32",
-        "path": "signature-draw-alt/32.svg",
-        "hash": "b18943586b3b470dde87571b9caad4d9880c772f169784517fa3488099b46db7"
-      },
-      {
-        "name": "signature-draw-alt/20",
-        "path": "signature-draw-alt/20.svg",
-        "hash": "366adf384af8cdc13a98d4cb647dccffeb3f14dc8c64bba68ac9af28ecfad3c8"
-      },
-      {
-        "name": "signature-draw-alt/16",
-        "path": "signature-draw-alt/16.svg",
-        "hash": "036369f53f9cca0fa54c8c53851c9cac9284444e301b2edc7d0684bb1cf12f7e"
-      },
-      {
-        "name": "signature-draw-alt/24",
-        "path": "signature-draw-alt/24.svg",
-        "hash": "560e87aa2b09e63dc402fcb6f5c1f88006237380719ac5876dea38c8ac703acf"
-      }
-    ]
-  },
-  {
     "name": "happy-face",
     "aliases": [
       "smiley-face"
@@ -8832,64 +8803,6 @@
     ]
   },
   {
-    "name": "qr-position-top-left",
-    "aliases": [],
-    "category": "formatting",
-    "folder": "qr-position-top-left",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "qr-position-top-left/16",
-        "path": "qr-position-top-left/16.svg",
-        "hash": "f72de4080bc1610ffa2f7fdc235584114d288005114651a37d073a628b2c6e93"
-      },
-      {
-        "name": "qr-position-top-left/32",
-        "path": "qr-position-top-left/32.svg",
-        "hash": "676c4b55c85f02c2708b6ade82e8e8e8c55fd7788551ec129a01f0fb8cc19ff3"
-      },
-      {
-        "name": "qr-position-top-left/24",
-        "path": "qr-position-top-left/24.svg",
-        "hash": "bfdaa4f19b259bd0b5d43d83d19123ed2d727ad16051fbc9157b7c7787380673"
-      },
-      {
-        "name": "qr-position-top-left/20",
-        "path": "qr-position-top-left/20.svg",
-        "hash": "91f0e76caa7c48c9d14031572ad1c0ab6a8665f63a030503c9f3880d1a5e39f0"
-      }
-    ]
-  },
-  {
-    "name": "qr-position-bottom-left",
-    "aliases": [],
-    "category": "formatting",
-    "folder": "qr-position-bottom-left",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "qr-position-bottom-left/32",
-        "path": "qr-position-bottom-left/32.svg",
-        "hash": "d5c15a572066be16322b1270d164d041892a026a7609d1736225772dd2afea31"
-      },
-      {
-        "name": "qr-position-bottom-left/24",
-        "path": "qr-position-bottom-left/24.svg",
-        "hash": "4e13db6bd974f992009ea522f3e9bb6988d8a7f76333f4460473d707c97b2d2f"
-      },
-      {
-        "name": "qr-position-bottom-left/16",
-        "path": "qr-position-bottom-left/16.svg",
-        "hash": "e731141944e515cba455e74eb7bb78857431c1acb9fa6d229714a89b48c098d6"
-      },
-      {
-        "name": "qr-position-bottom-left/20",
-        "path": "qr-position-bottom-left/20.svg",
-        "hash": "44036ac60e1f0df53e4b860f8228f153c695e4df73c2c09191ce10e2b5967771"
-      }
-    ]
-  },
-  {
     "name": "tablet-landscape",
     "aliases": [],
     "category": "technology",
@@ -8973,64 +8886,6 @@
         "name": "smartphone-landscape/32",
         "path": "smartphone-landscape/32.svg",
         "hash": "8b5ffe2471d9df3cdcf4d2b471e153ef0815a6ef34f6d1e625dc251400161d84"
-      }
-    ]
-  },
-  {
-    "name": "qr-position-top-right",
-    "aliases": [],
-    "category": "formatting",
-    "folder": "qr-position-top-right",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "qr-position-top-right/20",
-        "path": "qr-position-top-right/20.svg",
-        "hash": "4c65f3c728ddb6eec991f4f050d0a92ade5eed4a4003fb1394e340cd358839c2"
-      },
-      {
-        "name": "qr-position-top-right/24",
-        "path": "qr-position-top-right/24.svg",
-        "hash": "8b39060699a79063c1c3de6c745fd631acd3ff81640b02d7957cbb3ce4213485"
-      },
-      {
-        "name": "qr-position-top-right/32",
-        "path": "qr-position-top-right/32.svg",
-        "hash": "35625f34b585ba8ec72ef854008434fe917789a6d50bf2eef027ed0fc3b2eddc"
-      },
-      {
-        "name": "qr-position-top-right/16",
-        "path": "qr-position-top-right/16.svg",
-        "hash": "653fc9763cbe39ac62e883fdfe5dfc52348d535d149cb5bda440dc3366678521"
-      }
-    ]
-  },
-  {
-    "name": "qr-position-bottom-right",
-    "aliases": [],
-    "category": "formatting",
-    "folder": "qr-position-bottom-right",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "qr-position-bottom-right/24",
-        "path": "qr-position-bottom-right/24.svg",
-        "hash": "ac2652600126b3bdfee8fbbbed7e4f39f03fcbe8374fd672c02b84c3e25bf2b2"
-      },
-      {
-        "name": "qr-position-bottom-right/20",
-        "path": "qr-position-bottom-right/20.svg",
-        "hash": "51af0090d934d8c0d6807aa437380f528f126f257b4d2361e1b3ab4d25b8fc99"
-      },
-      {
-        "name": "qr-position-bottom-right/16",
-        "path": "qr-position-bottom-right/16.svg",
-        "hash": "fea88218a1ed87eae912f144ab9b80c7ff0f03fd2d120a7ccbcdab0223a16409"
-      },
-      {
-        "name": "qr-position-bottom-right/32",
-        "path": "qr-position-bottom-right/32.svg",
-        "hash": "fa486d89ab67b301a911a55bffc10830aaa34e7214d3b88ebec61783a5ef431f"
       }
     ]
   },
@@ -9468,6 +9323,151 @@
         "name": "admin-center-apps/16",
         "path": "admin-center-apps/16.svg",
         "hash": "e7fc68a5ecd23e21e90d724bbfc336bcd7e5875170f481f48c2e73b027c44dc1"
+      }
+    ]
+  },
+  {
+    "name": "signature-draw-alt",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "signature-draw-alt",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "signature-draw-alt/24",
+        "path": "signature-draw-alt/24.svg",
+        "hash": "560e87aa2b09e63dc402fcb6f5c1f88006237380719ac5876dea38c8ac703acf"
+      },
+      {
+        "name": "signature-draw-alt/20",
+        "path": "signature-draw-alt/20.svg",
+        "hash": "48346312197eed16023fb6c04b47f7d8ad5fdff2a3714116a398713e3aa7a057"
+      },
+      {
+        "name": "signature-draw-alt/16",
+        "path": "signature-draw-alt/16.svg",
+        "hash": "036369f53f9cca0fa54c8c53851c9cac9284444e301b2edc7d0684bb1cf12f7e"
+      },
+      {
+        "name": "signature-draw-alt/32",
+        "path": "signature-draw-alt/32.svg",
+        "hash": "b18943586b3b470dde87571b9caad4d9880c772f169784517fa3488099b46db7"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-top-right",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-top-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-top-right/32",
+        "path": "qr-position-top-right/32.svg",
+        "hash": "35625f34b585ba8ec72ef854008434fe917789a6d50bf2eef027ed0fc3b2eddc"
+      },
+      {
+        "name": "qr-position-top-right/20",
+        "path": "qr-position-top-right/20.svg",
+        "hash": "4c65f3c728ddb6eec991f4f050d0a92ade5eed4a4003fb1394e340cd358839c2"
+      },
+      {
+        "name": "qr-position-top-right/16",
+        "path": "qr-position-top-right/16.svg",
+        "hash": "653fc9763cbe39ac62e883fdfe5dfc52348d535d149cb5bda440dc3366678521"
+      },
+      {
+        "name": "qr-position-top-right/24",
+        "path": "qr-position-top-right/24.svg",
+        "hash": "8b39060699a79063c1c3de6c745fd631acd3ff81640b02d7957cbb3ce4213485"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-bottom-left",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-bottom-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-bottom-left/20",
+        "path": "qr-position-bottom-left/20.svg",
+        "hash": "44036ac60e1f0df53e4b860f8228f153c695e4df73c2c09191ce10e2b5967771"
+      },
+      {
+        "name": "qr-position-bottom-left/24",
+        "path": "qr-position-bottom-left/24.svg",
+        "hash": "4e13db6bd974f992009ea522f3e9bb6988d8a7f76333f4460473d707c97b2d2f"
+      },
+      {
+        "name": "qr-position-bottom-left/32",
+        "path": "qr-position-bottom-left/32.svg",
+        "hash": "d5c15a572066be16322b1270d164d041892a026a7609d1736225772dd2afea31"
+      },
+      {
+        "name": "qr-position-bottom-left/16",
+        "path": "qr-position-bottom-left/16.svg",
+        "hash": "e731141944e515cba455e74eb7bb78857431c1acb9fa6d229714a89b48c098d6"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-top-left",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-top-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-top-left/32",
+        "path": "qr-position-top-left/32.svg",
+        "hash": "676c4b55c85f02c2708b6ade82e8e8e8c55fd7788551ec129a01f0fb8cc19ff3"
+      },
+      {
+        "name": "qr-position-top-left/16",
+        "path": "qr-position-top-left/16.svg",
+        "hash": "f72de4080bc1610ffa2f7fdc235584114d288005114651a37d073a628b2c6e93"
+      },
+      {
+        "name": "qr-position-top-left/24",
+        "path": "qr-position-top-left/24.svg",
+        "hash": "bfdaa4f19b259bd0b5d43d83d19123ed2d727ad16051fbc9157b7c7787380673"
+      },
+      {
+        "name": "qr-position-top-left/20",
+        "path": "qr-position-top-left/20.svg",
+        "hash": "91f0e76caa7c48c9d14031572ad1c0ab6a8665f63a030503c9f3880d1a5e39f0"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-bottom-right",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-bottom-right",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-bottom-right/24",
+        "path": "qr-position-bottom-right/24.svg",
+        "hash": "ac2652600126b3bdfee8fbbbed7e4f39f03fcbe8374fd672c02b84c3e25bf2b2"
+      },
+      {
+        "name": "qr-position-bottom-right/32",
+        "path": "qr-position-bottom-right/32.svg",
+        "hash": "fa486d89ab67b301a911a55bffc10830aaa34e7214d3b88ebec61783a5ef431f"
+      },
+      {
+        "name": "qr-position-bottom-right/20",
+        "path": "qr-position-bottom-right/20.svg",
+        "hash": "51af0090d934d8c0d6807aa437380f528f126f257b4d2361e1b3ab4d25b8fc99"
+      },
+      {
+        "name": "qr-position-bottom-right/16",
+        "path": "qr-position-bottom-right/16.svg",
+        "hash": "fea88218a1ed87eae912f144ab9b80c7ff0f03fd2d120a7ccbcdab0223a16409"
       }
     ]
   }
