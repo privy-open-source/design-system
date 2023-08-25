@@ -24,6 +24,9 @@
   import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
   import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
 
+  import Main from '../main/Main.vue'
+
+
   /**
    * sidebar
    */
@@ -64,12 +67,20 @@
   </p-navbar-nav>
 </p-navbar>
 
-<div class="flex flex-row h-screen">
-  <div class="flex-shrink-0 bg-base">
-    <p-sidebar-menu :menus="basic" style="--p-sidebar-bg: rgb(243,243,243)">
-    </p-sidebar-menu>
+<Main>
+  <div class="flex flex-row h-screen">
+    <div class="flex-shrink-0 bg-base">
+      <p-sidebar-menu :menus="basic" style="--p-sidebar-bg: rgb(243,243,243)">
+      </p-sidebar-menu>
+    </div>
+    <div class="p-4">
+      <p>Lorem ipsum dolor sit amet</p>
+      <div class="flex-cols gap-x-3">
+        <p-button variant="outline" color="info">Button</p-button>
+        <p-button color="info">Button</p-button>
+        <p-button variant="ghost" color="info">Button</p-button>
+        <p-button variant="link" color="info">Button</p-button>
+      </div>
+    </div>
   </div>
-  <div class="p-4">
-    <p>Lorem ipsum dolor sit amet</p>
-  </div>
-</div>
+</Main>

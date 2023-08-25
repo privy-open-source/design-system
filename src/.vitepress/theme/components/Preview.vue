@@ -24,8 +24,8 @@ export default defineComponent({
   @apply flex justify-center items-center w-full p-5 mt-3 border-2 rounded border-info-emphasis/30 relative bg-transparent dark:border-dark-info-emphasis/30 text-default;
 
   a {
-    &:not(.freetext-btn, .freetext-btn2, .freetext-caption2, .freetext-formlabel, .freetext-formlabel2, .freetext-overline, .freetext-subheading, .freetext-subheading2) {
-      @apply font-inherit text-inherit hover:text-inherit;;
+    &:not(.freetext-btn, .freetext-btn2, .freetext-caption2, .freetext-formlabel, .freetext-formlabel2, .freetext-overline, .freetext-subheading, .freetext-subheading2, .breadcrumbs__item__link) {
+      @apply font-inherit text-inherit hover:text-inherit;
     }
   }
 

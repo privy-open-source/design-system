@@ -1,15 +1,15 @@
 <template>
   <div
-    v-if="title"
     class="sidebar__title"
     data-testid="sidebar-title"
-    :class="{
+    :class="[(!title && titleActionLabel) ? 'justify-end' : 'justify-between', {
       'sidebar__title__collapsible': (collapsible && type !== 'narrow'),
       'sidebar__title--collapsed': !isExpand,
-    }"
+    }]"
     v-bind="$attrs"
     @click.prevent="toggleExpand">
     <Caption
+      v-if="title"
       weight="bold"
       transform="capitalize">
       {{ title }}
@@ -37,6 +37,8 @@
       data-testid="sidebar-nav"
       vertical
       :title="title"
+      :title-action-label="titleActionLabel"
+      :title-action-url="titleActionUrl"
       :variant="variant"
       :condensed="condensed"
       :align="align">
@@ -226,7 +228,7 @@ export default defineComponent({
   }
 
   &__title {
-    @apply relative z-1 flex items-center justify-between -mb-9 px-3 mt-5;
+    @apply relative z-1 flex items-center -mb-9 px-3 mt-5;
 
     &__collapsible {
       @apply cursor-pointer select-none;

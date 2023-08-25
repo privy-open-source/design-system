@@ -5,7 +5,8 @@
     :class="classNames">
     <component
       :is="tagName"
-      :href="permalink">
+      :href="permalink"
+      :class="{ 'breadcrumbs__item__link' : permalink }">
       <slot />
     </component>
     <div
@@ -94,7 +95,7 @@ export default defineComponent({
       }
     }
 
-    & > a {
+    & > .breadcrumbs__item__link {
       @apply text-subtle cursor-pointer underline decoration-solid hover:no-underline;
       @apply dark:text-dark-subtle;
     }

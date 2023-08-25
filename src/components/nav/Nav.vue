@@ -3,10 +3,12 @@
     data-testid="nav"
     :class="classNames">
     <li
-      v-if="title"
       class="nav__title">
-      <span class="nav__title__item">
+      <span
+        class="nav__title__item"
+        :class="[ (!title && titleActionLabel) ? 'justify-end' : 'justify-between' ]">
         <Caption
+          v-if="title"
           weight="bold"
           transform="capitalize">
           {{ title }}
@@ -94,7 +96,7 @@ export default defineComponent({
       if (props.vertical)
         result.push('nav--vertical')
 
-      if (props.title)
+      if (props.title || props.titleActionLabel)
         result.push('nav--has-title')
 
       if (props.condensed)
@@ -398,7 +400,7 @@ export default defineComponent({
     @apply absolute left-5 top-0 text-base w-[calc(100%-1.75rem)]; /* 1.25rem + 0.75rem (padding) */
 
     &__item {
-      @apply flex items-center w-full justify-between space-x-2;
+      @apply flex items-center w-full space-x-2;
     }
 
     .caption {
