@@ -9,5 +9,7 @@
       fill="currentColor"
       d="M13.2 6.8H6.8v6.4h6.4V6.8Z" /><path
         fill="currentColor"
-        d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm-6.8 8a6.8 6.8 0 1 1 13.6 0 6.8 6.8 0 0 1-13.6 0Z" /></svg>
+        fill-rule="evenodd"
+        d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm-6.8 8a6.8 6.8 0 1 1 13.6 0 6.8 6.8 0 0 1-13.6 0Z"
+        clip-rule="evenodd" /></svg>
 </template>

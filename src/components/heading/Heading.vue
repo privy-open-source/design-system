@@ -2,6 +2,7 @@
   <component
     :is="elementNames"
     data-testid="heading"
+    class="heading"
     :class="classNames">
     <slot />
   </component>
@@ -87,14 +88,29 @@ export default defineComponent({
     * Weight variant
     * of heading
     */
-
-    :where(&--normal, &--medium, &--bold) {
+    &:not([class^='text-'], [class*='text-']) {
       @apply text-default;
       @apply dark:text-dark-default;
     }
 
+    &--thin {
+      @apply font-thin;
+    }
+
+    &--extralight {
+      @apply font-extralight;
+    }
+
+    &--light {
+      @apply font-light;
+    }
+
     &--normal {
       @apply font-normal;
+    }
+
+    &--semibold {
+      @apply font-semibold;
     }
 
     &--medium {
@@ -103,6 +119,14 @@ export default defineComponent({
 
     &--bold {
       @apply font-bold;
+    }
+
+    &--extrabold {
+      @apply font-extrabold;
+    }
+
+    &--black {
+      @apply font-black;
     }
 
     /**

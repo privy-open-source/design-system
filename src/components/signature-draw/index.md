@@ -102,8 +102,8 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 
 **result**
 
-<pre class="truncate"><code>{{ resultB64 }}</code></pre>
-<img class="mt-2 border" :src="resultB64 || EMPTY_IMG" width="430" height="230" alt="Result Image" />
+<pre class="truncate"><code>{{ resultB64 || '-' }}</code></pre>
+<img class="mt-2 border border-default dark:border-dark-default bg-base-white" :src="resultB64 || EMPTY_IMG" width="430" height="230" alt="Result Image" />
 
 ```vue
 <template>

@@ -77,12 +77,8 @@ const svgoConfig: Config = {
           element: {
             enter (node) {
               if (node.name === 'path') {
-                if (node.attributes.d) {
+                if (node.attributes.d)
                   node.attributes.d = fixPath(node.attributes.d)
-
-                  delete node.attributes['fill-rule']
-                  delete node.attributes['clip-rule']
-                }
 
                 if (node.attributes.fill !== 'none')
                   node.attributes.fill = 'currentColor'

@@ -5,6 +5,11 @@
     "cpylua.language-postcss",
     "bradlc.vscode-tailwindcss",
     "editorconfig.editorconfig",
-    "lokalise.i18n-ally"
+    "lokalise.i18n-ally",
+    "chouzz.vscode-better-align",
+    "wmaurer.change-case",
+    "mikestead.dotenv",
+    "heybourn.headwind",
+    "midnightsyntax.vscode-wrap-console-log"
   ]
 }

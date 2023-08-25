@@ -185,10 +185,6 @@ export default defineConfig({
               link: '/components/tabs/',
             },
             {
-              text: 'Table',
-              link: '/components/table/',
-            },
-            {
               text: 'Wizard',
               link: '/components/wizard/',
             },
@@ -217,6 +213,20 @@ export default defineConfig({
             {
               text: 'Truncate',
               link: '/components/truncate/',
+            },
+          ],
+        },
+        {
+          text     : 'Table',
+          collapsed: true,
+          items    : [
+            {
+              text: 'Table Flex',
+              link: '/components/table-flex/',
+            },
+            {
+              text: 'Table Static',
+              link: '/components/table-static/',
             },
           ],
         },

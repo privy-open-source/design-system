@@ -62,14 +62,35 @@ export default defineComponent({
 
 <style lang="postcss">
 .subheading {
-  @apply m-0 capitalize tracking-normal text-default dark:text-dark-default;
+  @apply m-0 capitalize tracking-normal;
+
+  &:not([class^='text-'], [class*='text-']) {
+    @apply text-default;
+    @apply dark:text-dark-default
+  }
 
   /**
   * Weight variant
   * of subheading
   */
+  &&--thin {
+    @apply font-thin;
+  }
+
+  &&--extralight {
+    @apply font-extralight;
+  }
+
+  &&--light {
+    @apply font-light;
+  }
+
   &&--normal {
     @apply font-normal;
+  }
+
+  &&--semibold {
+    @apply font-semibold;
   }
 
   &&--medium {
@@ -78,6 +99,14 @@ export default defineComponent({
 
   &&--bold {
     @apply font-bold;
+  }
+
+  &&--extrabold {
+    @apply font-extrabold;
+  }
+
+  &&--black {
+    @apply font-black;
   }
 
   /**
@@ -117,7 +146,12 @@ export default defineComponent({
   * of subheading
   */
   &&--overline {
-    @apply uppercase text-tn tracking-widest text-subtle;
+    @apply uppercase text-tn tracking-widest;
+
+    &:not([class^='text-'], [class*='text-']) {
+      @apply text-subtle;
+      @apply dark:text-dark-subtle;
+    }
   }
 }
 </style>

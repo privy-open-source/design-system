@@ -9,6 +9,7 @@ description: Delightful datatables.
   import pLabel from '../label/Label.vue'
   import pHeading from '../heading/Heading.vue'
   import pText from '../text/Text.vue'
+  import pBanner from '../banner/Banner.vue'
   import { defineTable } from '.'
   import { ref } from 'vue-demi'
 
@@ -90,6 +91,11 @@ description: Delightful datatables.
 # Table
 
 > Delightful datatables.
+
+<p-banner variant="danger">
+  This component mark as <strong>deprecated</strong>.
+  Please use <a href="../table-flex/">Table Flex</a> or <a href="../table-static/">Table Static</a> instead
+</p-banner>
 
 ## Usage
 
@@ -262,10 +268,10 @@ There are 2 variants: `flexible` and `static`, default is `flexible`
 
 ```vue
 <template>
-  <p-table 
-    :fields="fields" 
-    :items="items" 
-    no-label 
+  <p-table
+    :fields="fields"
+    :items="items"
+    no-label
     show-table-header />
 </template>
 ```
@@ -434,7 +440,7 @@ Table has default empty state, but it's be able to customize by own via slot `em
   <p-table :fields="fields" :items="itemsC">
     <template #empty>
       <div class="flex flex-col items-center justify-center">
-        <img src="../../public/assets/images/img-table-empty-records.svg">
+        <img src="/assets/images/img-table-empty-records.svg">
         <p-heading element="h6" class="mt-12">Uh oh, no data</p-heading>
         <p-text variant="body2" class="py-4 text-subtle dark:text-dark-subtle">We’re empty-handed!</p-text>
       </div>
@@ -475,12 +481,12 @@ It's possible to custom table flexible background, but the border must be transp
 
 ```vue
 <template>
-  <p-table 
-    :fields="fields" 
-    :items="items" 
+  <p-table
+    :fields="fields"
+    :items="items"
     style="--p-table-bg: #F3F3F3;
     --p-table-bg-dark: #0D1117;
-    --p-table-border: #F3F3F3; 
+    --p-table-border: #F3F3F3;
     --p-table-border-dark: #0D1117;" />
 </template>
 ```
