@@ -219,7 +219,12 @@ export default defineComponent({
       }
 
       .signature-draw__modal {
-        @apply flex-col-reverse vertical-lr;
+        @apply flex-col-reverse;
+
+        &,
+        & * {
+          @apply vertical-lr;
+        }
 
         .signature-draw__reset {
           @apply bottom-1 top-auto;

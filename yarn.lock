@@ -3841,6 +3841,7 @@ __metadata:
     ohash: ^1.1.2
     ora: ^7.0.0
     p-all: ^5.0.0
+    path-intersection: ^2.2.1
     svg-path-commander: ^2.0.5
     svgo: ^3.0.2
     webfont: ^11.2.26
@@ -14513,6 +14514,13 @@ __metadata:
   version: 4.0.0
   resolution: "path-exists@npm:4.0.0"
   checksum: 505807199dfb7c50737b057dd8d351b82c033029ab94cb10a657609e00c1bc53b951cfdbccab8de04c5584d5eff31128ce6afd3db79281874a5ef2adbba55ed1
+  languageName: node
+  linkType: hard
+
+"path-intersection@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "path-intersection@npm:2.2.1"
+  checksum: 50fb531e4c49e0d2025c463e9b79ecd5dae7b1ef49a300a40f774d40fb69eb8d42c86949e9b45997ade8f7ffb348a39aabd46410e8ebce6e0e843f4146712fc6
   languageName: node
   linkType: hard
 

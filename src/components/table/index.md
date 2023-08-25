@@ -440,7 +440,7 @@ Table has default empty state, but it's be able to customize by own via slot `em
   <p-table :fields="fields" :items="itemsC">
     <template #empty>
       <div class="flex flex-col items-center justify-center">
-        <img src="../../public/assets/images/img-table-empty-records.svg">
+        <img src="/assets/images/img-table-empty-records.svg">
         <p-heading element="h6" class="mt-12">Uh oh, no data</p-heading>
         <p-text variant="body2" class="py-4 text-subtle dark:text-dark-subtle">We’re empty-handed!</p-text>
       </div>

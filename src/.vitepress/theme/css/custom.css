@@ -218,6 +218,8 @@
   }
 
   table {
+    @apply min-w-full md:table;
+
     thead tr {
       @apply border-t-0;
     }
@@ -233,8 +235,12 @@
     }
 
     td {
-      @apply bg-default first:whitespace-nowrap;
+      @apply bg-default;
       @apply dark:bg-dark-default;
+
+      > code {
+        @apply whitespace-pre;
+      }
     }
 
     th,
