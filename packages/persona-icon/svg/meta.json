@@ -227,7 +227,7 @@
       {
         "name": "blog/20",
         "path": "blog/20.svg",
-        "hash": "563f358736d342eea15ad04f85afcd58f8d987748095b63691a48aa182baf927"
+        "hash": "505e9078756a35bc5a13f10b140f429fd190761401c7fa681d0a0d7f71f492c7"
       },
       {
         "name": "blog/32",
@@ -341,22 +341,22 @@
       {
         "name": "pallete/32",
         "path": "pallete/32.svg",
-        "hash": "7124ad12dad98c5ae0b0ecf5f45c26d1a6b4d83b64f4e91279e9247072bf0488"
+        "hash": "47a4d971666c783cd536943766ff409dfc4dbd4442cb37dcaf9f46adefe52383"
       },
       {
         "name": "pallete/24",
         "path": "pallete/24.svg",
-        "hash": "07098f3c1faf7d0c0b451bdcc7a6b2591ec643fd5c0f7094c3eaae9c860e66e9"
+        "hash": "3ae1ced26fcbcbbe72f2871717d9a95b72bdcb560043cf86848993d1d33c1075"
       },
       {
         "name": "pallete/20",
         "path": "pallete/20.svg",
-        "hash": "b08dd9cf491d348d437d634eabef4304fd2dd1265b5a1a12c307d2f746e7118f"
+        "hash": "ba27128e54c8fa0f02efb828c244ca0f1190daea4afa81f40067d3b983a976fa"
       },
       {
         "name": "pallete/16",
         "path": "pallete/16.svg",
-        "hash": "55b9c03a2623d05e8b12f13472e3004c965d953a4335f672b524655aaceb697b"
+        "hash": "a427356acfcfce72eea7ae9e0fefa7dbb365b931939c8f060ffa2fc2e54ecb31"
       }
     ]
   },
@@ -475,7 +475,7 @@
       {
         "name": "close-circle/32",
         "path": "close-circle/32.svg",
-        "hash": "1d0c1a2ab60f32bc3c73feaa192a869ba063153476732ac34781e5bae9a94c1b"
+        "hash": "2292a6a21a085eb2f211988c1dc79fe5f0d4cb61175acc2609e24679f421d2fa"
       }
     ]
   },
@@ -489,7 +489,7 @@
       {
         "name": "file-network/20",
         "path": "file-network/20.svg",
-        "hash": "6d9b1288489eec17e4261f3fa679393b725b8656c7bbb5edba31c7118ce288f9"
+        "hash": "bbca2bdbe46aea716b1af388f730e701628be4095ec97e622ad7a0a797321c46"
       },
       {
         "name": "file-network/32",
@@ -646,7 +646,7 @@
       {
         "name": "database/20",
         "path": "database/20.svg",
-        "hash": "82b1f3c39fec3ee11a50e42c539f8d00fa0522edff47cd67fd408c091b5f29e7"
+        "hash": "e1fd37c24c859d849de39a8adb3711b51fcbda6545cd89a2085914ff3e7be6b4"
       },
       {
         "name": "database/24",
@@ -819,22 +819,22 @@
       {
         "name": "broom/16",
         "path": "broom/16.svg",
-        "hash": "dec1769120e1a063a37b96dbd8ccbb1eb42e7bbef247c72c4cfadcb989763df1"
+        "hash": "5ef57a191f06d407fa6c902d0fa2a365a95c39ac41c84d5882d04472fe15fbdd"
       },
       {
         "name": "broom/24",
         "path": "broom/24.svg",
-        "hash": "88538e9d8b1a58068eed6a547e6bc4b423145c59a729fe6567eaf17bf2d7a566"
+        "hash": "a0da2d6c5cd87ae4f64fce3e9eccd00e0132ce1267b0696c790efd30c97bb88f"
       },
       {
         "name": "broom/32",
         "path": "broom/32.svg",
-        "hash": "0d0074e08336b816c58caa8aa92c55c3044df3c25d6c1742b12ded9c8912e5ab"
+        "hash": "6ad941d2bd388169c6fcc098cdf37901adb844bc2eee0a38a7300d41e29efaeb"
       },
       {
         "name": "broom/20",
         "path": "broom/20.svg",
-        "hash": "4dde326b778127b07d61cf22036469c661d193e95c16f1662c30a09a976b0017"
+        "hash": "44b9132b50230ef62af3de8326099aba2e9b12ef7d3773f56b6e8b798fea0dd2"
       }
     ]
   },
@@ -1053,7 +1053,7 @@
       {
         "name": "brush/32",
         "path": "brush/32.svg",
-        "hash": "89f59720a5487f37dd9a3d19db3889e3ea5e3071c9584efb49b99dc95d28548f"
+        "hash": "ed799f0912fc043a4657f0acdd8cbfa7b478769466eb201448d177ce414163e7"
       },
       {
         "name": "brush/20",
@@ -1068,7 +1068,7 @@
       {
         "name": "brush/24",
         "path": "brush/24.svg",
-        "hash": "8bfc54eb1607c38306e7a4ea847bc2abde84f293a94cf6876cfa54cbff22ef0c"
+        "hash": "bd025bb31ca67ecaf01352def764e9197847397692419b0aa783dfce76cf4e75"
       }
     ]
   },
@@ -1140,7 +1140,7 @@
       {
         "name": "document-filled/24",
         "path": "document-filled/24.svg",
-        "hash": "89db5bfbac8b3027b50ee502f7fcd04d4ce9941d8c1cafb877bfe1de872f6586"
+        "hash": "36b4c22c1b7cd51fa5c8d7e1a416e536fbd64fce05c2590d111ac69b94f28ff3"
       },
       {
         "name": "document-filled/16",
@@ -1169,12 +1169,12 @@
       {
         "name": "document-history/24",
         "path": "document-history/24.svg",
-        "hash": "e64ec331bcc7260f85d0733590ea716373bbf25414b8ce300593f4edf0469558"
+        "hash": "703ef59a36568c427870ce167d2a1d10289f6046c38f41def061216aceee45ab"
       },
       {
         "name": "document-history/16",
         "path": "document-history/16.svg",
-        "hash": "855bc083544fd7136d87c8cb70baa0b7eebe5aa31aa24a1a294cc42a0fc33226"
+        "hash": "868d02c8cc4a6f0c76c32c9e393dd7d7b2b656000fb193e483203d9ef22b5558"
       },
       {
         "name": "document-history/20",
@@ -1229,22 +1229,22 @@
       {
         "name": "report-statistics/20",
         "path": "report-statistics/20.svg",
-        "hash": "14dcd77c83d3bb4bcc7a208ee97ad28bca5c8d3b4bc718d053b74f9773254e28"
+        "hash": "1cf5f8f92e2b09ae0ac6743b29460444ebc32141009a6d190648718e1b7cfa49"
       },
       {
         "name": "report-statistics/32",
         "path": "report-statistics/32.svg",
-        "hash": "a4b8f144af47dd480ee348ef105c61bb38c5cf09fe80d4e2bc6f74c7e7877e8a"
+        "hash": "8e3114c4ac75bc825b3275f135b714746d1f08386c3a1f6d466bb1e5271aa82b"
       },
       {
         "name": "report-statistics/24",
         "path": "report-statistics/24.svg",
-        "hash": "ea1c68ac7c409841d1b2f1eb21984138f2b251c36499c4cfceacc9268fe7909e"
+        "hash": "904df08a13d41983cd3bf32952f7e9747d12d99b44b6378d75444a4bc2f5a55d"
       },
       {
         "name": "report-statistics/16",
         "path": "report-statistics/16.svg",
-        "hash": "c4c99c2baf1ba945e62f8b9968633e32aecb70a97797dd523a62539c570ca245"
+        "hash": "de2a974d1a0318428c28038432a2f2a8f241b9fa14b81458ca352aaafde9b775"
       }
     ]
   },
@@ -1318,22 +1318,22 @@
       {
         "name": "save/24",
         "path": "save/24.svg",
-        "hash": "9944ec906ee7f3d15fd88b808eb8b4c52d4fade9a03329fe8306f58883b75c5b"
+        "hash": "18806415d5386bc6661eed2726c299fd813fafa8308fd2010aec5d8cf1753674"
       },
       {
         "name": "save/20",
         "path": "save/20.svg",
-        "hash": "295bb74b5e021bcf1de8ac54791b8c71cd7e43534cae8029d8dd3233905795b2"
+        "hash": "d79a9b465aecadc6d933f497e38508b7ef402b446cafeedbb4bd8442ea855b42"
       },
       {
         "name": "save/32",
         "path": "save/32.svg",
-        "hash": "59beb64841c7d7e884d0bcb0bfd6907401862f1373258c8780379e4d7e096428"
+        "hash": "11dce8b349c592955d12ec6c2cb4c9bfb3e47ffd2e5d556f2ce5d456f5d4da24"
       },
       {
         "name": "save/16",
         "path": "save/16.svg",
-        "hash": "1cf73184ec7e9ed49b819752cdebf61384d5877ab3a4be39cddce0dd6a5b5cf9"
+        "hash": "cb66dceecb7aaa96890d3df09d2f03a65524c7d181004cddd541e0ba9a14724a"
       }
     ]
   },
@@ -1381,17 +1381,17 @@
       {
         "name": "image/20",
         "path": "image/20.svg",
-        "hash": "43f7c8a9b5a15ab44198fd852ca2dadf37629010d6a341e18ad6e54537976ee2"
+        "hash": "cfad03d595b745388d7bb955053fffd084fb3d7027fb31e64f3dec874b5f85db"
       },
       {
         "name": "image/32",
         "path": "image/32.svg",
-        "hash": "a3e42566ac9e049eae140ede8f62953fd8857c1efe338de506efab2453e1e37c"
+        "hash": "909171a81cb9da686fcf6ddcb0b1b74bec77a0c88b99840a132015ac11996c6d"
       },
       {
         "name": "image/16",
         "path": "image/16.svg",
-        "hash": "93a194114d68d0ff174b8f3ccc8f7b29aef16b700c13abd4d736114832d758e4"
+        "hash": "dd25c1b4e2873400ef817ee1934d7514a6c8652382f3ef1212e59746e232d674"
       }
     ]
   },
@@ -1550,22 +1550,22 @@
       {
         "name": "whatsapp/16",
         "path": "whatsapp/16.svg",
-        "hash": "09d0bc28171e77124dcd91ea6e9755cdb983e14137a16265f92cd4353c66cd66"
+        "hash": "5e91f6de22978dbba1a20af55c1b26d8e7e5d172e949778531611ece21460f20"
       },
       {
         "name": "whatsapp/32",
         "path": "whatsapp/32.svg",
-        "hash": "5b58abd676c2186f1240071e652e8a026f9da70fce539abe9a768f96770726ea"
+        "hash": "553ba44050ae8f7305ebbebd718e99b0a45b1f497151663ec4f8573204422b03"
       },
       {
         "name": "whatsapp/24",
         "path": "whatsapp/24.svg",
-        "hash": "88cdae758884f5ac46761c0bb9f7ad1ed6884739c25dd6f2d40ae8d6b9de9123"
+        "hash": "34b8a968d10564f6c631763cfa7f63d4aa867a60873799cadf3765c4597b1161"
       },
       {
         "name": "whatsapp/20",
         "path": "whatsapp/20.svg",
-        "hash": "799aedf5aa26e78750a26ce6f471c04e7a7459fdc0b22e950a4bf3a6a43ba13b"
+        "hash": "f04c325e00b5bea10620e4ac6a09d2363b4cd03a15caf5469eec9c4324274b89"
       }
     ]
   },
@@ -1757,7 +1757,7 @@
       {
         "name": "bar-graph/20",
         "path": "bar-graph/20.svg",
-        "hash": "c69ee786605402cdc80ddde50f2b454dce8e9ee80473b21aefdada6798f469b3"
+        "hash": "3f86834c9bb09df587f72553372b75ef9ce9dc0c4d302b2e9d9107f07eaeb6b9"
       },
       {
         "name": "bar-graph/24",
@@ -1859,7 +1859,7 @@
       {
         "name": "checkmark-verified/20",
         "path": "checkmark-verified/20.svg",
-        "hash": "d43df60ec5ca5c997e72022764c1aabc2a8f9ff2e525c021079fd4b8d6778f58"
+        "hash": "ab191cd253c80f5abbe797a7d8e7f8eb134b0f3cc56a8a055a5a31274fc95396"
       },
       {
         "name": "checkmark-verified/32",
@@ -1998,7 +1998,7 @@
       {
         "name": "banned-circle/16",
         "path": "banned-circle/16.svg",
-        "hash": "109d5bbcabb1c530ed8a2be8121de31390c569c96d1429a9f4d7ce4b6f3545fc"
+        "hash": "72e29c68065e61a44aae529b60f6b63179ce0e8e71737df1e071e935750ba360"
       },
       {
         "name": "banned-circle/20",
@@ -2008,12 +2008,12 @@
       {
         "name": "banned-circle/32",
         "path": "banned-circle/32.svg",
-        "hash": "f441bb68e7b7bccb5eb735c2d9ac59073e077520535110f4941ff90e08c4a173"
+        "hash": "865de8b1c32bcaaef0be66d36abbc2546f2816027f6145449092a686187a822a"
       },
       {
         "name": "banned-circle/24",
         "path": "banned-circle/24.svg",
-        "hash": "787610b647ca6ebdd7be2883a80f9447ec35e345dfc66966d28d4f90cd03ef9b"
+        "hash": "8b23f17ecef318698dc5de88de097dc7e06fbeea9dad8cd3562fd204ab5603c8"
       }
     ]
   },
@@ -2104,7 +2104,7 @@
       {
         "name": "map/20",
         "path": "map/20.svg",
-        "hash": "e98ff8dd2bc4b515d60792fa1e07b5096ba79cb05c550253d549c95e1400470e"
+        "hash": "547fb8800b044c09d42b734c9536823306524708e60a46eaecc8d6c85ba4410b"
       }
     ]
   },
@@ -2207,22 +2207,22 @@
       {
         "name": "package-box/20",
         "path": "package-box/20.svg",
-        "hash": "3441fcd1f34f91106cf8b062b92dd5e7a8de858387142a5772daa8d7e01eca2e"
+        "hash": "86acf8f4311e608f6e1945611e143493b78b0a4662298358bef9b5f129000ec3"
       },
       {
         "name": "package-box/32",
         "path": "package-box/32.svg",
-        "hash": "22085e377ee468115857e3bac1137a1686f15f8aa39657f4aef62cada5129bbe"
+        "hash": "50a5ff131492df2cac652e3100538f8178ec2f0adb81b34efa35b59bc4f40b1e"
       },
       {
         "name": "package-box/16",
         "path": "package-box/16.svg",
-        "hash": "a231dcb931f4e45cd57ab80a5a0ae2a83f075fe7a82b39ff9f8050871b4e5df2"
+        "hash": "a813bd464d2fc3332fe1cde66ec9f5754c3ee936d1452afb6f684948d4ec204a"
       },
       {
         "name": "package-box/24",
         "path": "package-box/24.svg",
-        "hash": "f283685b9877a9d92edac5011e3608d3492a1fdca99b6500611dc93782f66c7e"
+        "hash": "90bffef59185120e9c786d04b10227452e80c656052c8fa2fd4c150932b45a83"
       }
     ]
   },
@@ -2296,7 +2296,7 @@
       {
         "name": "onsite/24",
         "path": "onsite/24.svg",
-        "hash": "e745a727f5eb2a3954258e23d0a52f23d3edfa4bee29f86f19e14d80c765ae08"
+        "hash": "676fe8b18c7683dc98795fed81365aebd0d7dcecc31eafca88fde1d76250519d"
       },
       {
         "name": "onsite/20",
@@ -2306,12 +2306,12 @@
       {
         "name": "onsite/32",
         "path": "onsite/32.svg",
-        "hash": "5fd7ae8dcf39ada9b75517ece321fb9e7bd0de209de2578f12b2f4445d18024b"
+        "hash": "92b06adbd315de2b049af3473aa34e4349f272f7ee04965263bf9055b197ba66"
       },
       {
         "name": "onsite/16",
         "path": "onsite/16.svg",
-        "hash": "790d98ac77172f43413c71611c6546c6752d548ec88a2f2b65fb460b794c8a36"
+        "hash": "a0d093e7200c20a730bf977e2b1a8fd76f270e42737c482ee7e0b6edefcf9bec"
       }
     ]
   },
@@ -2503,22 +2503,22 @@
       {
         "name": "settings/20",
         "path": "settings/20.svg",
-        "hash": "c964a493d3f72624e3baf53e283f196fb89d0a0a3609e30141335176254a2d55"
+        "hash": "a1f9791959ccf6758365abf033cac15382e8b21e8af73a139d64ff9aceaade6f"
       },
       {
         "name": "settings/16",
         "path": "settings/16.svg",
-        "hash": "06cbdba8d54726066a50a7a4f0bbfb0779b046b3767c48fe6ac8ad88ce056e6b"
+        "hash": "911a3840c01eab300ad80d2462ed0b80ec34575b2bfa3cfef68ac4a1674ab696"
       },
       {
         "name": "settings/24",
         "path": "settings/24.svg",
-        "hash": "13dee2a8e6aa520bd36017d4c59018499cd1874e3649ee416903cdbff3934339"
+        "hash": "bebcc9100fa4b344d33683ee37bdc6028fdb3250fadcbbbde27f2b415409f2c3"
       },
       {
         "name": "settings/32",
         "path": "settings/32.svg",
-        "hash": "78437f6fb9a85cae19bbf9036f19023bcf903bd4f155b8008daa3a4b34f58ea4"
+        "hash": "04f4b8540201ec2d24a11e963aeaa7c9902ab513dbfc165197ab2435b52d86de"
       }
     ]
   },
@@ -2532,22 +2532,22 @@
       {
         "name": "api/24",
         "path": "api/24.svg",
-        "hash": "02e24f6f0fa3f8f6ea49977dc5f7d2cdae99d465915ef2260b3264e2e1d99136"
+        "hash": "003ad36bfe0fe9d911ba56313055c325d708a7e8564d4bc194c515b260fbf436"
       },
       {
         "name": "api/16",
         "path": "api/16.svg",
-        "hash": "072295857e3823d89ae83b4e9d244b9374c763386b47cb9b864185dfb248e5a2"
+        "hash": "9cdcf88126196e688b7846bf567de3ffb1bd5203ecabe5d89407ced7f0e64c51"
       },
       {
         "name": "api/32",
         "path": "api/32.svg",
-        "hash": "2d40ff95b8f65aa2239d29eb06d2a79da855ae044ad0200733c93d20578ca813"
+        "hash": "bac279aa82ad952522d2c9be447cc4943a760b6f00d07074ad78ddee3f118629"
       },
       {
         "name": "api/20",
         "path": "api/20.svg",
-        "hash": "56bc82309e959426bfdf219fe8981a3f4a8dadc5184e9d45ab22247b4dad9c00"
+        "hash": "4f8cd3aceb75c099d0898848578d33680e8c3a28966898ecc63c2253ce1424db"
       }
     ]
   },
@@ -2579,7 +2579,7 @@
       {
         "name": "lamp/24",
         "path": "lamp/24.svg",
-        "hash": "79d27fd9372d78d2f255040e341d24c747e9432c3d2a254a5fae06f1b475aa2f"
+        "hash": "73b0e4ca69578ce6a5a1f19d883f62359fb7e4e1f7883e233b14754f6dafcd3f"
       }
     ]
   },
@@ -2803,22 +2803,22 @@
       {
         "name": "user-multiple-edit/16",
         "path": "user-multiple-edit/16.svg",
-        "hash": "1d592b628184ca5fb0947b7fa044f7926ebb1aaeadb434a2cc9ccaf130267e5b"
+        "hash": "25c07a149c719cd8058a6582c2600b30a0a31f557d9cead97677ee72fbfb924b"
       },
       {
         "name": "user-multiple-edit/32",
         "path": "user-multiple-edit/32.svg",
-        "hash": "9677f0fdbfe976a240cf168d58ad14ef16aa88e302893d439f386850b68c32da"
+        "hash": "c991516602d5e8ae33ef41599de305165ca081d18499b4605b13f31292a06157"
       },
       {
         "name": "user-multiple-edit/24",
         "path": "user-multiple-edit/24.svg",
-        "hash": "63baf4642bdc902aa5cc6b0e92f07c597991329f213034084869e0489ad6932c"
+        "hash": "bc573cf7c9b04804245cc93b802f9f0e7ec97cf733a1c4ca0e32a0ac89082923"
       },
       {
         "name": "user-multiple-edit/20",
         "path": "user-multiple-edit/20.svg",
-        "hash": "23c8326b29fe13dd3c9899cb5804f7c571ba86b39765ad6e172ca8a797ffc249"
+        "hash": "1b648078a056c192e572d00b876a8dd0cb67991173a8a6516a5296521a4c013b"
       }
     ]
   },
@@ -3273,22 +3273,22 @@
       {
         "name": "user-circle/24",
         "path": "user-circle/24.svg",
-        "hash": "3510517c782b519e8ac0f66600e35924fc1ad8fd8a14bc2bf04a4a9fb9772ded"
+        "hash": "68bba3e822d8af6fba5a15c305b1a1afa22863c77ac6019bc74bfbd30af2891e"
       },
       {
         "name": "user-circle/32",
         "path": "user-circle/32.svg",
-        "hash": "cd1814dca2aced579c83c37140157aca7b17d6d9f84af12e8a587cb52c636508"
+        "hash": "1372ac37bad7ce04864c23af9a320a5764355e91076149a0521371071af2cd1f"
       },
       {
         "name": "user-circle/20",
         "path": "user-circle/20.svg",
-        "hash": "8f7004dc239532df9b73d84c621545a8f4644a0657bba00a03257ec56efab032"
+        "hash": "263a6a9576061dd391d7fa3fceeced5c24fa1eb8337f129d27346edc85a16150"
       },
       {
         "name": "user-circle/16",
         "path": "user-circle/16.svg",
-        "hash": "1d2658c3abe53b7d70f7732050b2598a4ececb045783c02c2c3d166022aba9c7"
+        "hash": "5711754be56b5275803152d2d8c37afad1df692400521231a1f2c47877a74718"
       }
     ]
   },
@@ -3304,22 +3304,22 @@
       {
         "name": "location/16",
         "path": "location/16.svg",
-        "hash": "0c08ede840c7e293bd42c25b02c8cf8bd3df63a93a345ed90e2f9be8d71997cf"
+        "hash": "75c09882f0543a5c60a60026f2dfb791a76d305250adb8752e1014a45bb01ce3"
       },
       {
         "name": "location/20",
         "path": "location/20.svg",
-        "hash": "f4b86f776b66e1408a45b86a0285374d0766eb41c7d249c75fec4c2149b10834"
+        "hash": "ce9daab4872fc3a9808bfa911f2a69ebf53ba5963f1152d40e616d46d2879d85"
       },
       {
         "name": "location/32",
         "path": "location/32.svg",
-        "hash": "75d31f5e09c84a4639c4deedc0819140a8f3ad1f4a8f42c933f35542059880f1"
+        "hash": "8de546609d29538662295fa4808ab183674317fbb476988946a358014695927a"
       },
       {
         "name": "location/24",
         "path": "location/24.svg",
-        "hash": "1f828ec2e598e7abe7956faf67f701b8ff018472b16e3e22a5736f078fefc119"
+        "hash": "7ccc90681bcd30840647dd7356aaec631e612c5846daa06f485842f0826a6e7b"
       }
     ]
   },
@@ -3364,7 +3364,7 @@
       {
         "name": "computer/20",
         "path": "computer/20.svg",
-        "hash": "e1c7339d7f38f95c2e15f525fa20d47a47f6e760b255a64038401748f73f101b"
+        "hash": "f14289144142dd2e3548d5665467aed9efbd4ba45d202e33b5d80459d397eb37"
       },
       {
         "name": "computer/32",
@@ -3398,17 +3398,17 @@
       {
         "name": "user-square/20",
         "path": "user-square/20.svg",
-        "hash": "ac691a7617508806bc3cf81dbe8b9c8a1dd79320a1dee84ef7f49db6f5476807"
+        "hash": "73fb3f015b7bbb9170ac26514ca8b57dc161a782aee3af990ea46a416a41c532"
       },
       {
         "name": "user-square/16",
         "path": "user-square/16.svg",
-        "hash": "8534132cc225532ee3f3c701e224dcd4dd0e56aa2e2bdf561d7fe7d4595d6003"
+        "hash": "120bda796481370c6a34a0c37f66d1643719ad44560203631298c59c7c382f66"
       },
       {
         "name": "user-square/32",
         "path": "user-square/32.svg",
-        "hash": "e9241fa8977f7c6cfae12c9705897b033790cb4a1a438c2c9c2744db864b8490"
+        "hash": "97e7e37cd052d8db92a4d02368ae9898e72f3b71d4b56ee5be50d6a676bb386d"
       }
     ]
   },
@@ -3719,22 +3719,22 @@
       {
         "name": "bus/24",
         "path": "bus/24.svg",
-        "hash": "4832b912c47976473c3f3dcec9a818b7656b50c912ed1f4803b081af822aa2a7"
+        "hash": "1a75fa251ef49a4983dbb1992ae7c52eb72a0864f009c521096fb55bf74ad0c4"
       },
       {
         "name": "bus/16",
         "path": "bus/16.svg",
-        "hash": "58efdb4fffe2e2cfd5096c597d33b0c208e2f08cdd5c3c2d3f7be3c24256bf32"
+        "hash": "2298ed17db29026877a1809243b76f1966cbcdbd3ceae6bf3a11675a67ed45eb"
       },
       {
         "name": "bus/32",
         "path": "bus/32.svg",
-        "hash": "ad2a9683087bec0f94a88c429ecc5602bf9db848b5e31798cdf050737e2d6ed3"
+        "hash": "7dafd42ce7f9cf9bc2e058022a9c5f1304e48a68bda6d90c57aae9dd104704e7"
       },
       {
         "name": "bus/20",
         "path": "bus/20.svg",
-        "hash": "233dd062ba6940babeae769b2d5793dd32385d185af89d10f075852498f57bb1"
+        "hash": "8f936d0a7eac25a79d383d60030f6ab215f8e3ce38f95ad58bc81e3b1c355808"
       }
     ]
   },
@@ -3806,7 +3806,7 @@
       {
         "name": "receipt/24",
         "path": "receipt/24.svg",
-        "hash": "0a991c74bd9b21f6894e52f6590c4045afc4e49a6843f57e97ba00b04e76211c"
+        "hash": "7c78931e6b2d496e62dceae38b1a547cbd80e1370e721c9ea790e687bee94896"
       },
       {
         "name": "receipt/16",
@@ -4042,7 +4042,7 @@
       {
         "name": "cart/20",
         "path": "cart/20.svg",
-        "hash": "85ae4e30fd0cf0805de66a5424f42f3dc9a23112da5d72d00b99cde20e2bd6bc"
+        "hash": "997447e5bb5ab7fbcdf65c1228a0f1d4c6320e5754275eac19536a7feec83772"
       },
       {
         "name": "cart/32",
@@ -4076,7 +4076,7 @@
       {
         "name": "wallet/32",
         "path": "wallet/32.svg",
-        "hash": "b5af1c49c925aeb5349b4c723d466c5a945e4c19ed8ae171d4aae5f98b87dce0"
+        "hash": "7d35d3c23a22459f4a036453f9fea759709ad16e8836b7a083ada751f8118017"
       },
       {
         "name": "wallet/24",
@@ -4086,7 +4086,7 @@
       {
         "name": "wallet/16",
         "path": "wallet/16.svg",
-        "hash": "278e6ee08065187103a050243c15ca603a331ffdfb5ffef47f0dc9b45c379d50"
+        "hash": "b0554ece46aab082627e59e4c5b685667df9de295ac815c28f626ab96beb30db"
       }
     ]
   },
@@ -4309,7 +4309,7 @@
       {
         "name": "building/24",
         "path": "building/24.svg",
-        "hash": "e232c9d22a168c6ef7ee5f9cb37bb8af786ed5ec9b9f9f0eb9cdf07edbc496bf"
+        "hash": "cf77483d98015abaf0ab1073b9b0323176111a56695d0fe39fb3b08ad74018dc"
       },
       {
         "name": "building/32",
@@ -4324,7 +4324,7 @@
       {
         "name": "building/20",
         "path": "building/20.svg",
-        "hash": "f11c4914d587dd6d16a3a0c8dd895f668647ddefeafa73d620c6f83e9b7c8284"
+        "hash": "07a530e48fbd4b4ab89a8e954c89ab1a0bf852a359c6c211967a9482d6ada417"
       }
     ]
   },
@@ -4454,7 +4454,7 @@
       {
         "name": "arrow-circle-right/16",
         "path": "arrow-circle-right/16.svg",
-        "hash": "aa195f3b829149d77da22c56573e3271df94efa2af699bbff00ac77de6b5f8d1"
+        "hash": "d89145cdbc5bc6d8883189d723fb0abe174dc429ec6bbc1d5ad7719ad29b5807"
       },
       {
         "name": "arrow-circle-right/24",
@@ -4469,7 +4469,7 @@
       {
         "name": "arrow-circle-right/20",
         "path": "arrow-circle-right/20.svg",
-        "hash": "9a695a761aea764b741caa184292dc072658e47b35a9a6615ab7acab8f91bd66"
+        "hash": "ad0501bb0af8983e092b1846efa388ac5885eabb8f59bc7c3ea1ec2708441c52"
       }
     ]
   },
@@ -4541,22 +4541,22 @@
       {
         "name": "diamond/32",
         "path": "diamond/32.svg",
-        "hash": "8425b1635e8379c3472d7f9f9f81000cb64b35c05663e2f60771e877de514fe4"
+        "hash": "15e6124b9af6b9ea88011e16d2519b84b3d0d145bffa084a3fcc1ae35dcc2747"
       },
       {
         "name": "diamond/24",
         "path": "diamond/24.svg",
-        "hash": "d89bd28bb6d3159011a37b73ff17a2fd303752f91a38fece22007610f0103423"
+        "hash": "ce3129226a71035d4eee488ece068c570e042a019094ab74500f0c3b99cdf65c"
       },
       {
         "name": "diamond/20",
         "path": "diamond/20.svg",
-        "hash": "a4585d3510fdbc8d0344110268d22df8d064429cc679d3bbafabfa70eb0847ce"
+        "hash": "fd7de210ebc277e8dcd9dc20caea5f92d3991f27dc63567e46b08ff20a5ab8da"
       },
       {
         "name": "diamond/16",
         "path": "diamond/16.svg",
-        "hash": "7a248d7711b341b0d8c275480cb1c0e79b2bf1c2abc0d7787b19168a9d7c9095"
+        "hash": "c7e2a7832fea807c68ec7a7bf3710a68b025a49c2a0898aadc18a49bb41e710f"
       }
     ]
   },
@@ -4657,7 +4657,7 @@
       {
         "name": "shopping-bag/20",
         "path": "shopping-bag/20.svg",
-        "hash": "f142d9b0f76ca04acb5e448025b78688b2911c66d908075a71c5894cfa84a2ac"
+        "hash": "4faddca5c44f7c811f0cfe45d6966dd09e8c1e1152e78e4eb2d18120558dc697"
       },
       {
         "name": "shopping-bag/16",
@@ -4744,7 +4744,7 @@
       {
         "name": "inbox/16",
         "path": "inbox/16.svg",
-        "hash": "375e7741ed6d06e56514974d4cb671353e69c640bcc69e30059e966bf68b55db"
+        "hash": "c881403be19918344abb0bf4d9cc6279eb949edb5fe7bda1129f6555f5ea1b65"
       },
       {
         "name": "inbox/20",
@@ -4863,22 +4863,22 @@
       {
         "name": "shop/32",
         "path": "shop/32.svg",
-        "hash": "182ca9fc63085b07fd3a5dd73efeb412aec18ce4c6f659c62c9444165eff6d9d"
+        "hash": "326ee140009c4f0ff3afc91abde4e83c81124b365407b94cd27bb0bbad59f443"
       },
       {
         "name": "shop/16",
         "path": "shop/16.svg",
-        "hash": "c2382f669660749fc63256e03b0b4f50de3e07d29c7e3eb2901a15e07fcfcb4a"
+        "hash": "034f03900e9393402dac28d6e91d7365fcbc39434883dfadbd4bd0be6bd435f8"
       },
       {
         "name": "shop/24",
         "path": "shop/24.svg",
-        "hash": "7c2b6f515372f7b5929df5695d2c8d39f18b05b08ded1b9b6e58f694aba8f890"
+        "hash": "09fd8e3956df3132cf316fb59e60ee00a5c8f8d258531533bda0b46837b839d9"
       },
       {
         "name": "shop/20",
         "path": "shop/20.svg",
-        "hash": "96a41bab131e07fd571db44bfffa6ea9f227ab03282a698baf6b235cb12e1703"
+        "hash": "21f7a4007dc935c5be07999b02a8030729fa23b3543439042e3909540b39619e"
       }
     ]
   },
@@ -4950,22 +4950,22 @@
       {
         "name": "bold/20",
         "path": "bold/20.svg",
-        "hash": "5837a360a3ccf0a38a14d8281c1c42854fea4ec4ace642d1ff9308413f2b52f1"
+        "hash": "4bbb133ecb0e4634f2212930d61948b557933863986761c0145dd711af2f45fa"
       },
       {
         "name": "bold/24",
         "path": "bold/24.svg",
-        "hash": "a34ece0ad334749c8c08e61239ce91d3a62c169b0295a00cab719e74fa9c08a2"
+        "hash": "d42fba9000e229ab9abc1f7ca901135584ac68189857dbe3d67a0a7f0c748895"
       },
       {
         "name": "bold/16",
         "path": "bold/16.svg",
-        "hash": "1f377d7deb15bfc37101e96a23774590d9914685c3ae1ebb00389e6d1e67d756"
+        "hash": "e3c626850b2234041aa99157829fe15e482de37b9b273dbad6efc993c405611d"
       },
       {
         "name": "bold/32",
         "path": "bold/32.svg",
-        "hash": "348863561ac42ba349899edbff9121b1c6689f7e1e58714c35e1ce5759d2275b"
+        "hash": "87546af7b44d604184f6a5e7815c286db1b48c395aa72d07bfd62a34a0d8daae"
       }
     ]
   },
@@ -5171,7 +5171,7 @@
       {
         "name": "notification/20",
         "path": "notification/20.svg",
-        "hash": "e80e73fc5d300f306d950b5d9ac98532ab2b10048fa9bdec8bb04596ce9e36e1"
+        "hash": "f8f86314f4abf35f9f8e603b9091534794fa59510477cd0609a9feefce5a6edf"
       },
       {
         "name": "notification/24",
@@ -5280,22 +5280,22 @@
       {
         "name": "view-off/20",
         "path": "view-off/20.svg",
-        "hash": "3b45bbf0267e34c9e778f1683c5c44658e569c9056428c4ce4c33c8baa424bab"
+        "hash": "64bf598c1ae1d2f4243ccfc57752a4602810e3b6dff8f5dd69fb738af8b9a1d1"
       },
       {
         "name": "view-off/16",
         "path": "view-off/16.svg",
-        "hash": "b814c30b135b4fbedfb1ce3998dd7d2fac3163bda7e0a1fe0eea7bbabbdfccf2"
+        "hash": "b827fe869bda4639ac9614b23c75a08604258f845673fa0a4a1da641ec04d0ab"
       },
       {
         "name": "view-off/32",
         "path": "view-off/32.svg",
-        "hash": "7f3b2447505110ef4b2f1484f72e5b20c4e021f89fc5469ab74edafe1ca8ba2f"
+        "hash": "ecbd578fb58ee4328c4c7c6ee8dfa7eb893c250a9e14b735d58eec622ac35cd9"
       },
       {
         "name": "view-off/24",
         "path": "view-off/24.svg",
-        "hash": "3adeed7a114b03813b5c8a95c32acc499ec42351b22711a5e7297e31f81e94c3"
+        "hash": "dfc3997f34ee39a08ce67a3923d1c3d1286e72ac034bf6a07ab443b81ad405b4"
       }
     ]
   },
@@ -5309,22 +5309,22 @@
       {
         "name": "multiple-window/32",
         "path": "multiple-window/32.svg",
-        "hash": "dfb7861c15efb525c675fd4c96c689f8e24b46e691d1ea8049b91688592d654a"
+        "hash": "b7bcf70d89658cca7d883b1ad6f7b9ca5eff342abbe9550603122fe6a135756d"
       },
       {
         "name": "multiple-window/24",
         "path": "multiple-window/24.svg",
-        "hash": "18badd95a747c6f369686d02fcaeae067244c6efeaebecaa2261c3c016854394"
+        "hash": "cbaf9f842eb92e159b6fbc2f36ca7bcc39924d8f22fb8b43a9742f799388be40"
       },
       {
         "name": "multiple-window/16",
         "path": "multiple-window/16.svg",
-        "hash": "6ed9c03d6f4f6e81ea0b539fd202048e16663c3f803dac095bf4c4e4fac17148"
+        "hash": "c36f5e27cfe5357d4e2f4344315847131caeb93f53ce0134ad654ea9b6961323"
       },
       {
         "name": "multiple-window/20",
         "path": "multiple-window/20.svg",
-        "hash": "9b672a4f81e8cc22c9948e1c15eff7c2c331926124594c85813268e40a329f77"
+        "hash": "d7ab2625953b5c2f0b2cb38b710adde3979cac818e900b8594e6a9507e278d6a"
       }
     ]
   },
@@ -5398,22 +5398,22 @@
       {
         "name": "instagram/24",
         "path": "instagram/24.svg",
-        "hash": "27592c1547c8138cc2b24ce145c06e06f0eff0adf8209a6cf078662a5f79b420"
+        "hash": "b7ec7bddcee02ced0089bb7b74fb284d01fab07d20b7da7d1d1a053132fc38a7"
       },
       {
         "name": "instagram/20",
         "path": "instagram/20.svg",
-        "hash": "0659d961d6211e75b6f4f41030abe3a52c24ed63254c373c05ad709e4f623dc6"
+        "hash": "f36e80fce31392d7bb728137145713dc238a459c64e8fa1371303966a79634db"
       },
       {
         "name": "instagram/16",
         "path": "instagram/16.svg",
-        "hash": "e3e0bfad9b9fcb50bf5d7baa4995f91ce744e1bcf4c46800377fd1db21cf24e1"
+        "hash": "e73c5d7e2f37ea8fd41877eb7fb7be3885d906bc086fde27a09c3fd792b5154e"
       },
       {
         "name": "instagram/32",
         "path": "instagram/32.svg",
-        "hash": "a85c436751286be6a77d2c5495b9659074b8636ae3a2783c08a382c33a5d0d46"
+        "hash": "7f76588604ba64c0349c2cb09684bee54f0d81ff9fd92b17bde6d8ced8322118"
       }
     ]
   },
@@ -5548,7 +5548,7 @@
       {
         "name": "data-structure/20",
         "path": "data-structure/20.svg",
-        "hash": "2cb00dca78ebec9e58781f8d776a4836f2bc953e069ff7009ae3dc3a96f90897"
+        "hash": "ffb476e97da19b1e1b51af20a065cb1daa448227e100f829d224b4182275d454"
       },
       {
         "name": "data-structure/16",
@@ -5653,7 +5653,7 @@
       {
         "name": "face-recognition-scan/32",
         "path": "face-recognition-scan/32.svg",
-        "hash": "fe04a095615e936bd4e51408abaa168f1a738e6bad59a9dc43419e99a1600922"
+        "hash": "9670e71ccda1a131440a5d7dd7aa0e425e0959817fb7612ef2501047f4a7bb18"
       }
     ]
   },
@@ -5783,17 +5783,17 @@
       {
         "name": "customer-service/24",
         "path": "customer-service/24.svg",
-        "hash": "2374a7a026e441073d8dddbcc648eb72fba55b9212f9de7f0a6e211b69c3a882"
+        "hash": "24d09383cd61f3a029171a07f61df73f3751b62299cf0f152fc03dfebfd38a35"
       },
       {
         "name": "customer-service/16",
         "path": "customer-service/16.svg",
-        "hash": "2b307cb567729eabe703087d3bbcada05e2d964ebdb59e8aaa84aaf9c0b9ce17"
+        "hash": "5a6762f191a0b257acc1bdb85bf37dcaa9fc932f6386ac1a82fc232e32a1b8b2"
       },
       {
         "name": "customer-service/20",
         "path": "customer-service/20.svg",
-        "hash": "be09363e21116f40a13773e44ca283708b3ba1532cff8d985c8bd4a84e310312"
+        "hash": "f6e424f8881db8bb721c367e4c2cc54d7ec500bc5d42fe97b40b6e29993cb9eb"
       },
       {
         "name": "customer-service/32",
@@ -5906,7 +5906,7 @@
       {
         "name": "dashboard/20",
         "path": "dashboard/20.svg",
-        "hash": "47c113c768d2d848fea1765e174183b6b5387664a27e2a6dc649753a91a88a03"
+        "hash": "f49474e88738c26d7cf379a6a2bc81f17b469cc6f1c0a1bccf716d4ee44d6c20"
       },
       {
         "name": "dashboard/16",
@@ -5937,12 +5937,12 @@
       {
         "name": "no-image/20",
         "path": "no-image/20.svg",
-        "hash": "f80365303d8e7cdde2a0d0abebf40590a33fc7adc386f952d2a825ba7b120bc1"
+        "hash": "fa40230ce013a5485080033f3fbebbe2cb3e0b68c8640e94e86132f6d9c72d34"
       },
       {
         "name": "no-image/24",
         "path": "no-image/24.svg",
-        "hash": "31ef60b033d59fabab3a25f1db5802f72a100d1e96e72b06b2653ae90b849948"
+        "hash": "18181c81f13a6a37a2b8c6f6cca10946dccd4b6c67b68e96f939129dcc565a63"
       },
       {
         "name": "no-image/16",
@@ -6058,7 +6058,7 @@
       {
         "name": "print/16",
         "path": "print/16.svg",
-        "hash": "21052f27d74b081e6e6f3f23cd47ab13dbfc1164e071958fb5271acf3e85656c"
+        "hash": "424dc97ba9e25ce51020666ccbf80803709aede4c9b264ff62d3916cdfe871a7"
       },
       {
         "name": "print/24",
@@ -6113,7 +6113,7 @@
       {
         "name": "notification-off/32",
         "path": "notification-off/32.svg",
-        "hash": "33af59de568fc8a884790084a2188190185246c89f3bff4fe8ddbab43e07f471"
+        "hash": "69a6fe8950adee3239f73c09dcb81190d7a8ec27a246acddc29208e4d70a7ea0"
       },
       {
         "name": "notification-off/20",
@@ -6128,7 +6128,7 @@
       {
         "name": "notification-off/16",
         "path": "notification-off/16.svg",
-        "hash": "d38327e0fa2f20c1e9d64e2b1720a45836bc9c51da93712f6a747ea75bfbac2b"
+        "hash": "6bea27c71b628f746c68858f39028a73672eddd3aa589971ebdee750374ff835"
       }
     ]
   },
@@ -6142,17 +6142,17 @@
       {
         "name": "document-verified/32",
         "path": "document-verified/32.svg",
-        "hash": "1776d7e64f74923209c3f117b43c40d8e843832f73fe3a35fae08e9f97523130"
+        "hash": "b7161ea37c6e4d6dab30ccd2b6c89a9939315f5c9c83340d3014005195d22cfb"
       },
       {
         "name": "document-verified/24",
         "path": "document-verified/24.svg",
-        "hash": "aa1149d2f5de0c0427671884036ef58da1b410c9fd6c13fb301814ffe30e4e08"
+        "hash": "6dafa74c3f788e465f22b413963a878f9ca9d8a984ba411e6a19f03133bb012e"
       },
       {
         "name": "document-verified/16",
         "path": "document-verified/16.svg",
-        "hash": "ae1c381093a5d8e73749f7e145aa28244c199e90be6ff57b36f00f0ad77daa92"
+        "hash": "fffc118fb23772db5f3ac7917a0e88cd6745bd2b9f91a7bfaf0cd3aa4e95f2e6"
       },
       {
         "name": "document-verified/20",
@@ -6173,22 +6173,22 @@
       {
         "name": "document-exclamation/24",
         "path": "document-exclamation/24.svg",
-        "hash": "f326f9050d64ee9c1a4b22ac179dd29e8ec1b64ecd20520140131463f1744412"
+        "hash": "3f9fca406bdfc0275bb73e75af14dc2ad88a308a8ae3ce44bfe5f0201dad0698"
       },
       {
         "name": "document-exclamation/16",
         "path": "document-exclamation/16.svg",
-        "hash": "16eb7a168aece5c23a5b763da3f99c9e3ac2325192be37a7f1121af44bf617a9"
+        "hash": "01729aa5d6a763cd5bec71e8dbcddc4d8ea9133a19968dca6d0cf78b15035fd6"
       },
       {
         "name": "document-exclamation/32",
         "path": "document-exclamation/32.svg",
-        "hash": "74585e81b98760dadad1f1c4d5c849de5289dcf9bb41b6a9b0efebbd5746fa24"
+        "hash": "cc6da217f4f7c77c8c5c541e9330e8eb5f3180bdce1976ac3bcb3ed0eab52249"
       },
       {
         "name": "document-exclamation/20",
         "path": "document-exclamation/20.svg",
-        "hash": "65a0a6a8cc6c83c62f965a945ed87d767cf00c04be0032b457b1a38adc8d8c95"
+        "hash": "0a5e9a20f3f14d0f6cc0ae4c6f8471979d6484b41bf2821e8c2533f4483b4b59"
       }
     ]
   },
@@ -6325,7 +6325,7 @@
       {
         "name": "document-template/24",
         "path": "document-template/24.svg",
-        "hash": "62ccaee7002d478223509fb2d1d43a1db31582be7a32471cfc28ca6d11611653"
+        "hash": "f0a1a975af37057d30c29c1d7fae26b75fc559947046890c7707a0b0cea09c72"
       },
       {
         "name": "document-template/20",
@@ -6351,22 +6351,22 @@
       {
         "name": "document-copy/20",
         "path": "document-copy/20.svg",
-        "hash": "771e1bc9e1ba025da3d56f79588c63eb95f1a4916b5c46d021c70cb24ff31926"
+        "hash": "6c0b3af34829ebf4c8c7dd9dc076313dc398960b4a8a26d2e0ce87b9385b6622"
       },
       {
         "name": "document-copy/32",
         "path": "document-copy/32.svg",
-        "hash": "1841c9806768bd932941266c58871da6c7cd749f3e3b3ff57bb5bb1dad3201e9"
+        "hash": "9cace9bd46169ed7306190f00eb0ed0d60fc87310d7a5325dbbe4b881a504dd9"
       },
       {
         "name": "document-copy/16",
         "path": "document-copy/16.svg",
-        "hash": "a374be8c5fc8c0c70a26c3151383e5aab85bbb561c7c869baab6d4f46dc8118b"
+        "hash": "493d604972ec2fc188348cf98dc123d232524dc52bacad601fbec9abf41c84c2"
       },
       {
         "name": "document-copy/24",
         "path": "document-copy/24.svg",
-        "hash": "d1f6fd11df660ee3500f8cb83257a0d85a1e09bb4bdf6b4ba31bfad0f98fee82"
+        "hash": "690b906849a65237a3d10732a258e7e04998c32b52946b01c6a463a121454197"
       }
     ]
   },
@@ -6556,22 +6556,22 @@
       {
         "name": "maximize/24",
         "path": "maximize/24.svg",
-        "hash": "a2476753499aa987aa64426ffd5a44002b4ebd1f8b842c2fd59bb6b45ab16635"
+        "hash": "3e9d0739138f611c3db65182d04c54263205f7f0af304bc6e5d9005da424143a"
       },
       {
         "name": "maximize/32",
         "path": "maximize/32.svg",
-        "hash": "5cdf5943ac0cbb0b301be87d62ae426382e222491d8727415f2b58e6ff7b40b8"
+        "hash": "69e4f4673a5a030a3a8b09d6369a3a8b969169e4c839830546999c7d670af277"
       },
       {
         "name": "maximize/20",
         "path": "maximize/20.svg",
-        "hash": "20018b990558d22e7feefa53139cb89ab86840d774705be68e4510516ce89bb4"
+        "hash": "7995d01abf5ce686890b9214c5083e467fa977aad28bca03fb2afeba1e38c45b"
       },
       {
         "name": "maximize/16",
         "path": "maximize/16.svg",
-        "hash": "2c2583ea68b32aa3c484b55e7417824b98de385f1ca1f0dd09742de6d402584b"
+        "hash": "3c281c54279f899d144f430ac5df832fd9090b02f049d5ca76f0b5a6ed3714e4"
       }
     ]
   },
@@ -6732,22 +6732,22 @@
       {
         "name": "table/32",
         "path": "table/32.svg",
-        "hash": "580f2d7a2bd2c90f3353cac91a8db9ef13de34c54adfe4c43beea56a6ac58e42"
+        "hash": "3615a8f7327199aaa9300daf646c2d58d3593f5fab0914425ac428d45f08ab0e"
       },
       {
         "name": "table/16",
         "path": "table/16.svg",
-        "hash": "6a589fb9fbc36e70715645d6234301cbb8ff62810a4eda3c1f1b485eb0871357"
+        "hash": "cef2cd2cb13763bbb993903732f5fd3cba615c323ef139e1062bbadc8f0a3092"
       },
       {
         "name": "table/20",
         "path": "table/20.svg",
-        "hash": "8d37befaef06bc5f10a6452745b018b5f5377a3b357614fec19b022baf008601"
+        "hash": "1a2c505b6922a661785b4ec8c0a3c3ed012ca68f919ff85ff71544b226ac6e54"
       },
       {
         "name": "table/24",
         "path": "table/24.svg",
-        "hash": "f60d3e896cbc710af005186be729c32a1c4a71112ff3a6a562183a91c83fa179"
+        "hash": "decc272e816f0521e86b4803a6cc0033828a1f03b302595d45238a4db01345e2"
       }
     ]
   },
@@ -6858,7 +6858,7 @@
       {
         "name": "edit/32",
         "path": "edit/32.svg",
-        "hash": "782f6f9f5000274d15cb2ab961de887bf3d2a5b553e2d01ba81e0a0a886da494"
+        "hash": "076347d7576d07ac3902d6f0d0cdf6c21a58c33f4432d1de2967979489b7608d"
       },
       {
         "name": "edit/16",
@@ -6908,22 +6908,22 @@
       {
         "name": "gift/20",
         "path": "gift/20.svg",
-        "hash": "593dadcbf95e02619fe6b7228aed97f9224c535c78e6d4243bed68a96f5bdb28"
+        "hash": "efc9bd7b4b5efc73afb1f86b33d6dfa50d506718c0bbfa141c925f7f82d425a0"
       },
       {
         "name": "gift/24",
         "path": "gift/24.svg",
-        "hash": "09cafd611bf3fde09dfd94caf77b26957484bcba5fccb7eec3413aaf153fdf24"
+        "hash": "5210dbe9f1bb2397734a6cf6396c5120363ccb3907cd6aec23858ef15dbc4656"
       },
       {
         "name": "gift/32",
         "path": "gift/32.svg",
-        "hash": "2d51cf77484982816ec690b22c7d4e1b36fb9707c48b42a0d56c75f66913e5e3"
+        "hash": "3cc90aeaa5c8184ec2a0abd1e1245d11637dd0be4020ce6cd138e953af2e9c1f"
       },
       {
         "name": "gift/16",
         "path": "gift/16.svg",
-        "hash": "d07e3df5ad83eb741a14cb37c532cb42fce14e642c15709a3ac8eb8ff41a382b"
+        "hash": "0b9d649e64b3012a26bf416f593e69b4c8e5204ba25268adcfbf6efd3e4890fd"
       }
     ]
   },
@@ -6937,22 +6937,22 @@
       {
         "name": "document-question/20",
         "path": "document-question/20.svg",
-        "hash": "b25b6ead924e6ad76f1c4cfa46681879e02b7eb977ac67874bb19b372fb6bad8"
+        "hash": "c98ebef7fdac53120030118d71b7751b1f1dd6de9ab537f0c1ce085d1bd5daaf"
       },
       {
         "name": "document-question/32",
         "path": "document-question/32.svg",
-        "hash": "ba356f279ba6852126a8609be81a0baae88f8c6c664bf44b91573bf15757fabc"
+        "hash": "672ecb2275f3cd684420f960dc13ea350f7ea15a8fc1930227efafba68c35dca"
       },
       {
         "name": "document-question/16",
         "path": "document-question/16.svg",
-        "hash": "0dc9cdb6b2964ab1ff5895f034dd83cc08fb5ce461fbcd1d8a0aa070607e704d"
+        "hash": "51b389cf9652aec43f98b326e7faa64b26a0fc33d5e458e36f5e0a271a7013be"
       },
       {
         "name": "document-question/24",
         "path": "document-question/24.svg",
-        "hash": "9f3da47c696e350b61c938066a24d04342a0b5a08b79f27613b95bd842bca567"
+        "hash": "b46c4e98143e7ee9aaff644a720fb38763cb4e3ad1787f0b8e4e425982cf02c8"
       }
     ]
   },
@@ -7615,22 +7615,22 @@
       {
         "name": "hospital/20",
         "path": "hospital/20.svg",
-        "hash": "30d5c13caa4bbddd0ce9f397540726c46c57882b6dc0798ccba04e85b5a89c3c"
+        "hash": "90882423fde509e9caff6f3b7bf9e68fa300d39e18547a6b5a163b48b59a7e5d"
       },
       {
         "name": "hospital/32",
         "path": "hospital/32.svg",
-        "hash": "935736fb76c0b9bd0c0b29afa424ff0939ce8899baf4f761a749abb50f372164"
+        "hash": "b1fa1a8057e8140c567b12dddbc9876c766c45715cdf2f5613b7a5df32f725fc"
       },
       {
         "name": "hospital/24",
         "path": "hospital/24.svg",
-        "hash": "6a65651c0146fd1ce7db9c83513f1e7332238e26432cd356bd7134d505f392ee"
+        "hash": "286a406d3a5b7c85810a9a202c962af476f2d2bbc8d0137749e5002ca9c55a96"
       },
       {
         "name": "hospital/16",
         "path": "hospital/16.svg",
-        "hash": "bf955443a2e717f1f083c2c609da01ba738b83a40480dfb22a9296e2fc708afa"
+        "hash": "bd4349b05854ac2bd790b9ad908beb2e673ccd4c3bad48ad6b561210d64a082e"
       }
     ]
   },
@@ -7762,22 +7762,22 @@
       {
         "name": "megaphone/20",
         "path": "megaphone/20.svg",
-        "hash": "5fc0227aeb3e9ca076a6d03976dc5739e46a0e96b728408b40a99353a861bb28"
+        "hash": "000967a04ce736c16410f68f37349fba8be37753e8aff8dbc17d1c4246433486"
       },
       {
         "name": "megaphone/32",
         "path": "megaphone/32.svg",
-        "hash": "60ab82a78c15524a3b3cc06639401b73e1e03c2700bb4bc7e73fb448b8e1a0ee"
+        "hash": "5d6dc83c7db8c0d625c623e40d551886b89a77754b207ee387e5fcd8604b885d"
       },
       {
         "name": "megaphone/24",
         "path": "megaphone/24.svg",
-        "hash": "7436b55a6fadac03707bfab04f56028d4c6ccd44656b6d36011afc4cebf4c58d"
+        "hash": "c9c3964e71fb1b87abdb38a1d56cf52cab955238d2996befffce251681a026ff"
       },
       {
         "name": "megaphone/16",
         "path": "megaphone/16.svg",
-        "hash": "71744c73d4cc4680c9e99f2123730ee5ffcddf84b4f0ea302031923f3a3560bb"
+        "hash": "b2e640b8771de420e94062a7249437d0070ad6e5fae9b0df5ca5ecea38a5797a"
       }
     ]
   },
@@ -7849,22 +7849,22 @@
       {
         "name": "lock/16",
         "path": "lock/16.svg",
-        "hash": "7efee2169eb1b9787947c318d226a5d6cdb9d2fbedf6e6f33fc21a8e67639a6c"
+        "hash": "0f067563a68cc7cace31023136c06b68ab5e39e70b4056352b48dce7e74916b5"
       },
       {
         "name": "lock/32",
         "path": "lock/32.svg",
-        "hash": "43f301eb45aa07ccf392a0233b7b4d412e216d794ede3dc08a3e1de08d7a946f"
+        "hash": "a3ac6f2ee46a1dab0d8bc4e13482bc1224b104437a05eee72cd70ca35d20c0b1"
       },
       {
         "name": "lock/24",
         "path": "lock/24.svg",
-        "hash": "cb83ff12d5566e05edb17b273e69eedef8242d0eaff49bdfe5f106fdec5fce6d"
+        "hash": "311ad2d62eb88cf80d3751f5ee4b8cd2434594579ac3cde0012df20d712ba77a"
       },
       {
         "name": "lock/20",
         "path": "lock/20.svg",
-        "hash": "e9cdb880fc6ba6af799f23884255467d0942c10f740fb150a51322982f679985"
+        "hash": "1c70e23b81d5a22e940fa27cd7f180fd94b3b4b4030dcc377c46d4bcd879bdcb"
       }
     ]
   },
@@ -7888,7 +7888,7 @@
       {
         "name": "faq/24",
         "path": "faq/24.svg",
-        "hash": "211e2022bc61f0f6d3294a252aa0d5de8bc0e4909a6210d5535b69f1a47e92b9"
+        "hash": "edf8e7171008b2a5c975278a5f0d98d0263ab0f657d23376396037ebfe730759"
       },
       {
         "name": "faq/32",
@@ -7965,22 +7965,22 @@
       {
         "name": "employee-tree/32",
         "path": "employee-tree/32.svg",
-        "hash": "63772309fc74428ac43bc9aeb6d65f1f8c5c2ba888e1174b35265f2ecea8e554"
+        "hash": "e74ac4935c54586d1460e5c0dcfedd86f5d2f8fc4b7b44a94a5d5b1d1522c697"
       },
       {
         "name": "employee-tree/24",
         "path": "employee-tree/24.svg",
-        "hash": "3010e0a5397627609152ca7dd8923698ccb4a743b8d58596d8941a6b2ceef5f2"
+        "hash": "03a9337fe3b1b95f913c95bdf4078ac43c5b89aa550d5348994e9c0fae0b9118"
       },
       {
         "name": "employee-tree/20",
         "path": "employee-tree/20.svg",
-        "hash": "f31fb710ad9597a505ea00f10ed0e73dba5d15c839f9f7068a7da31706e8d534"
+        "hash": "32725cfe55fd17b916efe9c675cd437d5b9a8e7d735439c949b116de7be48c97"
       },
       {
         "name": "employee-tree/16",
         "path": "employee-tree/16.svg",
-        "hash": "01aea6d510caec27bac21865d40938c975b7d3d174d6e2eb0801372c40d91fde"
+        "hash": "f65c9193fd89bdca15e1bc47b49838bac2633e40dc10386618724ca1faf31d61"
       }
     ]
   },
@@ -8052,7 +8052,7 @@
       {
         "name": "tax/24",
         "path": "tax/24.svg",
-        "hash": "e6f4756ace5588e06b8ab4d427c1d77a8237192f0099eb990bf55a1c93dc9c2c"
+        "hash": "7c08689363384c7dcffbaf58898a4f39ee936d1d35c8ce4eb072b75e1189ef13"
       },
       {
         "name": "tax/32",
@@ -8062,12 +8062,12 @@
       {
         "name": "tax/16",
         "path": "tax/16.svg",
-        "hash": "e3044cfed38fc4d123b63eebbd2c02cfa586d3bc772960d9067e005ba9631458"
+        "hash": "f46004c4412f8c414b0ae44261f1f38f05208a62737f6bd3386ccb14e7cf1d14"
       },
       {
         "name": "tax/20",
         "path": "tax/20.svg",
-        "hash": "2ea27275cca252e6967eccf017994df4c3a7ac88fbcfc547e9ee6ae9fac0a575"
+        "hash": "22930a1e7e683262731c560713f6517980487b5ca3ed05d6cf7ebf53c121619a"
       }
     ]
   },
@@ -8139,7 +8139,7 @@
       {
         "name": "forward/16",
         "path": "forward/16.svg",
-        "hash": "5f27c12391f674cc4bdda3673ef197f276f6906708bbe25ff7315dd7d21577d8"
+        "hash": "caaa3c191c02d5625c998267b1a970519c2041d28a43509aac836e9e5dd3e602"
       },
       {
         "name": "forward/32",
@@ -8197,22 +8197,22 @@
       {
         "name": "signature-text/20",
         "path": "signature-text/20.svg",
-        "hash": "6b57c9f3dc36abf0de41fca8b9a50f31fbea80c0aefc49f8e25789c34da24eae"
+        "hash": "b8ec70df4aec3b31587224e8dd8bbe02f8e338e71017bed729bd3055afd05445"
       },
       {
         "name": "signature-text/24",
         "path": "signature-text/24.svg",
-        "hash": "9ff23277fd4294a95ed80826a226565ed1da309c6de9ad222a854e2c7620a1de"
+        "hash": "0a8c1f643d025924532136b812d7632d752b9eb29942f8b2f89e710f620d412a"
       },
       {
         "name": "signature-text/32",
         "path": "signature-text/32.svg",
-        "hash": "4411a4631baf5ee2873c87d9f176915ad9ed6d6acb882295ecc8409e2fc580ec"
+        "hash": "1fe94ee0bda38565bf6ca79c292550a041de84aee8dbec78dff63098254bcf38"
       },
       {
         "name": "signature-text/16",
         "path": "signature-text/16.svg",
-        "hash": "2beabd4a9b9ad979ae9a2343153a4ee97b88d9070d4339bdacf4871796d00e3a"
+        "hash": "42fd1797d00c8ec5736b00d5f2d29a5c63fb90d563205ba8446fa7f08c57e967"
       }
     ]
   },
@@ -8402,22 +8402,22 @@
       {
         "name": "minimize/32",
         "path": "minimize/32.svg",
-        "hash": "441ed3d5853d3c2bcf9da1674557694c70667270004a221355b4e557051358fe"
+        "hash": "477dbb24872de644eee98a435d05ffa818790ed84e05fbab5a2e939701ab829c"
       },
       {
         "name": "minimize/24",
         "path": "minimize/24.svg",
-        "hash": "accb712757c4c9aaaaa3a89b4ed3f3d2b01c796f0af9c2b2c9065e3406eb46ae"
+        "hash": "ce6d229ab06d6360ca07ab8bbb1615ea07f09107b96ab039e855f8d69d17f04e"
       },
       {
         "name": "minimize/16",
         "path": "minimize/16.svg",
-        "hash": "e890959053d3164d5d04ea2ebe0370095d59e4d803b36162766a8d26b71b4a40"
+        "hash": "b97bc51a9d975561f63a4010cddd0fe98929f4ab38f7a232c989af8598f7cde6"
       },
       {
         "name": "minimize/20",
         "path": "minimize/20.svg",
-        "hash": "95f1b7fdef5093556ebd9be73aecbcacfc1dba4a2da0c7340d1fd9601e0d0850"
+        "hash": "741374d8506b15ee4baaa28bf16054fc5f1ec32295d5570488d893570f339de0"
       }
     ]
   },
@@ -8493,7 +8493,7 @@
       {
         "name": "rocket/20",
         "path": "rocket/20.svg",
-        "hash": "06168974ea96e17512978aad24a045fc892486db99947c1e64c9609bb539a3b9"
+        "hash": "02deaeecc386015fd615e7922ec2b74500f0c016b1c113bb7b29165e53614c8d"
       },
       {
         "name": "rocket/32",
@@ -8638,22 +8638,22 @@
       {
         "name": "signature-draw/24",
         "path": "signature-draw/24.svg",
-        "hash": "ad5c3dcb5fe3652294b18fc2a5fd2038ef635fb15adcb67274c23a20ea03a8c8"
+        "hash": "e61f11de55d3fa13b78f98ab6bca9424c30c51604f7a6c46d5519dae7d7ba49d"
       },
       {
         "name": "signature-draw/32",
         "path": "signature-draw/32.svg",
-        "hash": "45622a67b3abfbc5fd83ca10eea01d05f84dfa649748beb520095899e970f6b5"
+        "hash": "5dc4a6ecbb1362dadab0b4de86af2ed89fdee1a9564fb963be8462895f4ef5e6"
       },
       {
         "name": "signature-draw/20",
         "path": "signature-draw/20.svg",
-        "hash": "db858520d89a4a25af8b0c0ed3e1c03423e88a316048d8de58029068f012739b"
+        "hash": "46c430d5de2f04ed2fc6332ece0411d03661c45d380c2d96fdd39dadb604ab60"
       },
       {
         "name": "signature-draw/16",
         "path": "signature-draw/16.svg",
-        "hash": "1cc3d6cf016ff52feef81ccc8a2794a49d2e530a2a65bb52e16100214c0dae64"
+        "hash": "912d084e462ddaa569aaeb2415ffca152e1c58c0bab8fd43672feda46b662c71"
       }
     ]
   },
@@ -8696,22 +8696,22 @@
       {
         "name": "user-settings/32",
         "path": "user-settings/32.svg",
-        "hash": "b8e8184e8daadf5aabc781a71ff81a5e156515de8d7fc388afa1598fa1989bd0"
+        "hash": "87713dbfbc63b34bb3d7f397c1b2d7d09b3426525311d2fbeca3e61fed45f623"
       },
       {
         "name": "user-settings/16",
         "path": "user-settings/16.svg",
-        "hash": "947d6be2ca9bd0e378c3b35f5c036480bb8fc57c12777c66e4444f054a3ce4e3"
+        "hash": "2d688c06d37f0e062cd0365ba6418e4d1300f869bc1951ccb5e8aed13f9c5e42"
       },
       {
         "name": "user-settings/24",
         "path": "user-settings/24.svg",
-        "hash": "6423c4111f5e105818183111ba2cdb0e6cc5bb2a458ced9d6cc207fef6024ca1"
+        "hash": "2ec8dba5cb2d876e92bf7edaffa2cea75b44e20406276c44f8eb65473b180de9"
       },
       {
         "name": "user-settings/20",
         "path": "user-settings/20.svg",
-        "hash": "9c08a7e1539c0b3d6075248fe41098bf54a99037866956fb6d11999a51753006"
+        "hash": "472b3b71d8b796382898a27ae915604cf794b32e8a979b9c0e02e6f0546d049b"
       }
     ]
   },
@@ -8812,22 +8812,22 @@
       {
         "name": "tablet-landscape/24",
         "path": "tablet-landscape/24.svg",
-        "hash": "47d58e268da1fb9544d0eb5c3469bdae1209214028ebf984fa829f4986f5754d"
+        "hash": "90ac5e87db987b046d35459a792fb9de7d134ba0a8e178493eceb3972a79d754"
       },
       {
         "name": "tablet-landscape/20",
         "path": "tablet-landscape/20.svg",
-        "hash": "3e10fd2c2a3923289006aee1f3c0986aa34aea0db33349ab6b640bf091e17d0f"
+        "hash": "99b199766b196e14eb3fe00b7d74c8695d7d1f9d5218bfd023741401e78a0107"
       },
       {
         "name": "tablet-landscape/16",
         "path": "tablet-landscape/16.svg",
-        "hash": "d66b83f41f91f9ee0fcf2ed81b4062fb26b3696d2328ca3b012ccdec30efe862"
+        "hash": "25eb78ed3c6c182c91cbd6e92c7c7ff41ad767a63df2c09dbb119b0b0de7ec2a"
       },
       {
         "name": "tablet-landscape/32",
         "path": "tablet-landscape/32.svg",
-        "hash": "952ccacca42f194c4129712b6c5fcf10c0c6e1f36e7f7127f5d933fd25b8b2d4"
+        "hash": "2b335ce8c39946d5894db80e904224479d240435c7b74c9816b532814045f726"
       }
     ]
   },
@@ -8841,22 +8841,22 @@
       {
         "name": "smartphone-landscape/16",
         "path": "smartphone-landscape/16.svg",
-        "hash": "dac79199395351b374d242ae90ebbb8f9599a58602f4a4b4d93efca43bf4ae03"
+        "hash": "5652c3eb69e282a2ecffa6a3e0ce91115a83f17a51dbc78738ec527314b34f4b"
       },
       {
         "name": "smartphone-landscape/20",
         "path": "smartphone-landscape/20.svg",
-        "hash": "1e06c5166389094d5121d175a9b641a7a99c0fc3df31be48a3fa3115f7516c2a"
+        "hash": "f8cd45c63436e362bafbf415ddcca5932f1becdd6c99a17e9169f92efe5b1e25"
       },
       {
         "name": "smartphone-landscape/24",
         "path": "smartphone-landscape/24.svg",
-        "hash": "20d2db48f26fae7da688852f79a2edbf4b119e7e736ed8ca5cab9292f40c1d92"
+        "hash": "84a5039a7814553a2c5e3f453b2d9c983c2dd2302f7d4e2bfa8f58b16094d01d"
       },
       {
         "name": "smartphone-landscape/32",
         "path": "smartphone-landscape/32.svg",
-        "hash": "139576c9f3107158411f4c22d9463c5b7e89b837be2fc1f8f3f1028e51de60da"
+        "hash": "fe13b128ea2f2150820b94e0b38db2a469a79462a6f2896a0b40dd78649d9c8c"
       }
     ]
   },
@@ -8880,7 +8880,7 @@
       {
         "name": "stop/16",
         "path": "stop/16.svg",
-        "hash": "a98eb4411d196043a85dbe1c1247d66645258052ddd553a4659386ea8b2baecd"
+        "hash": "0fbba3d38259106f339fa516fd524c0cfe7ec8c1fc03a9bc8d6be2aae1565961"
       },
       {
         "name": "stop/24",
@@ -8909,7 +8909,7 @@
       {
         "name": "direction/20",
         "path": "direction/20.svg",
-        "hash": "39a26c9675bd8d8b6b51044eca433734d6918c8364d68cb177dfa0e3a0504107"
+        "hash": "7b789a5afe3c8121148162867cac2b176154d317593db3c27472f248692500db"
       },
       {
         "name": "direction/16",
@@ -8928,22 +8928,22 @@
       {
         "name": "online-event/24",
         "path": "online-event/24.svg",
-        "hash": "6416601503bfecdf47c0d710008dfdca63345855754e60b3b4853edc4764a1d0"
+        "hash": "311b03d7f4be0622708a39ea21feb07eba7c8909231ca8abfc31ece822d9d61c"
       },
       {
         "name": "online-event/16",
         "path": "online-event/16.svg",
-        "hash": "0f951d0c6c3b173f8d51b72fa58ca2681015460d9ca4decdc9cc6ccd054a44ff"
+        "hash": "dd1d25c7c9ba5d23ccba0c91b3f03bc26c393a69f3c4524b25309c7dae2c851d"
       },
       {
         "name": "online-event/32",
         "path": "online-event/32.svg",
-        "hash": "94e3cbc2e4b52952a4a0ff0ec2e8497b5633cb6ce0338e0458686f0061039053"
+        "hash": "e4a686427af73cfcf25c744d0f48c3e3e6c8a213a61dbdfca8673cf9ebf28c34"
       },
       {
         "name": "online-event/20",
         "path": "online-event/20.svg",
-        "hash": "8e24489f6179f9da6e042b4b7cf3910b14bbdf53b3060020be6032661923506d"
+        "hash": "c16ea47e4d5b44e0f7fa4082f1d314186f63cfd6a06d8a2af433560e32d9a33f"
       }
     ]
   },
@@ -9015,22 +9015,22 @@
       {
         "name": "hybrid-event/24",
         "path": "hybrid-event/24.svg",
-        "hash": "75a84affa17ec140989f8bcb02a4e30af36b9ad2511311d6fd5746b551e5bb77"
+        "hash": "50cb09234b3136075f1ecc3ca3e3c6208a9baaaebb5cfcb03b6da5d493b4d26b"
       },
       {
         "name": "hybrid-event/16",
         "path": "hybrid-event/16.svg",
-        "hash": "b445b5397ca09022268bb268db2519925e9df180616bacbf50b06f3a9560c101"
+        "hash": "fd594ed2661a100a6a72833aff9926e3b84fd85f5e06250dfd0ff72042928b65"
       },
       {
         "name": "hybrid-event/32",
         "path": "hybrid-event/32.svg",
-        "hash": "d5d402926c5d3aac4e089147e52c1562d6dfd454b093e2eb9110de0d268466d6"
+        "hash": "c397e9099b904bf166f27ff47680d12114dbe0fec246fdb753ba65b887da75d5"
       },
       {
         "name": "hybrid-event/20",
         "path": "hybrid-event/20.svg",
-        "hash": "a153ae925484968670f8ca035e2c97f0cfb652c69909d4d677eb871a54b42d8e"
+        "hash": "0bbf1ab2adb817a8e3830e9f81b0276188e4d318b94f6ab8916131daad71f6ca"
       }
     ]
   },
@@ -9172,7 +9172,7 @@
       {
         "name": "backward/24",
         "path": "backward/24.svg",
-        "hash": "1394f3228406a54a6930c4c4f15544b9c3baf993c61010f21b48054c8618fdd0"
+        "hash": "0e374195b5172e56f946cad40cc26ce4ebfba8bfcba782f6be771a44afbffa12"
       },
       {
         "name": "backward/20",
@@ -9191,7 +9191,7 @@
       {
         "name": "video-camera/24",
         "path": "video-camera/24.svg",
-        "hash": "629fffb3b31e115101aa04a169f775fd0512df54220b5f49d0e905a3992893e2"
+        "hash": "0ff2ce0aed11f6267edb44bcae1fb8acb8a0c88db609386caf852c93c0469044"
       },
       {
         "name": "video-camera/20",
@@ -9307,22 +9307,22 @@
       {
         "name": "signature-draw-alt/24",
         "path": "signature-draw-alt/24.svg",
-        "hash": "560e87aa2b09e63dc402fcb6f5c1f88006237380719ac5876dea38c8ac703acf"
+        "hash": "678da2845267ebb8c577ee03c969e1ae819dbb5499a5dee786550c74a625152e"
       },
       {
         "name": "signature-draw-alt/20",
         "path": "signature-draw-alt/20.svg",
-        "hash": "48346312197eed16023fb6c04b47f7d8ad5fdff2a3714116a398713e3aa7a057"
+        "hash": "da10cb5e2aaaf9ee5a592fd96072e54c23703af401922b4d6ad834b53f58f04b"
       },
       {
         "name": "signature-draw-alt/16",
         "path": "signature-draw-alt/16.svg",
-        "hash": "036369f53f9cca0fa54c8c53851c9cac9284444e301b2edc7d0684bb1cf12f7e"
+        "hash": "3512c4cbfc49c71ecc40aa6f566c8ce124d605df58c9f32c93c421c6890f674a"
       },
       {
         "name": "signature-draw-alt/32",
         "path": "signature-draw-alt/32.svg",
-        "hash": "b18943586b3b470dde87571b9caad4d9880c772f169784517fa3488099b46db7"
+        "hash": "4401f2a3a7cb1a2a673ba5ddcfd37dd86b9a8a76ea02b8f5b783f08270f3472a"
       }
     ]
   },
@@ -9336,51 +9336,22 @@
       {
         "name": "qr-position-top-right/32",
         "path": "qr-position-top-right/32.svg",
-        "hash": "35625f34b585ba8ec72ef854008434fe917789a6d50bf2eef027ed0fc3b2eddc"
+        "hash": "fb3030c10bc150c684d0e330631eb568eccef62103918131201052d3e31855e9"
       },
       {
         "name": "qr-position-top-right/20",
         "path": "qr-position-top-right/20.svg",
-        "hash": "4c65f3c728ddb6eec991f4f050d0a92ade5eed4a4003fb1394e340cd358839c2"
+        "hash": "f23a562f5a227e138faf68498a2b210fee716546f1ad8bde00485df65da1dfa1"
       },
       {
         "name": "qr-position-top-right/16",
         "path": "qr-position-top-right/16.svg",
-        "hash": "653fc9763cbe39ac62e883fdfe5dfc52348d535d149cb5bda440dc3366678521"
+        "hash": "fcd6e72d36ccc541ca785369b53afeab534f5f36f8108b5af43adaf34060a3b5"
       },
       {
         "name": "qr-position-top-right/24",
         "path": "qr-position-top-right/24.svg",
-        "hash": "8b39060699a79063c1c3de6c745fd631acd3ff81640b02d7957cbb3ce4213485"
-      }
-    ]
-  },
-  {
-    "name": "qr-position-bottom-left",
-    "aliases": [],
-    "category": "formatting",
-    "folder": "qr-position-bottom-left",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "qr-position-bottom-left/20",
-        "path": "qr-position-bottom-left/20.svg",
-        "hash": "44036ac60e1f0df53e4b860f8228f153c695e4df73c2c09191ce10e2b5967771"
-      },
-      {
-        "name": "qr-position-bottom-left/24",
-        "path": "qr-position-bottom-left/24.svg",
-        "hash": "4e13db6bd974f992009ea522f3e9bb6988d8a7f76333f4460473d707c97b2d2f"
-      },
-      {
-        "name": "qr-position-bottom-left/32",
-        "path": "qr-position-bottom-left/32.svg",
-        "hash": "d5c15a572066be16322b1270d164d041892a026a7609d1736225772dd2afea31"
-      },
-      {
-        "name": "qr-position-bottom-left/16",
-        "path": "qr-position-bottom-left/16.svg",
-        "hash": "e731141944e515cba455e74eb7bb78857431c1acb9fa6d229714a89b48c098d6"
+        "hash": "c43503fafc9dc1703f9e5e5ab971fd68737b8575cf1439aa2c4c556cd5e7a3c5"
       }
     ]
   },
@@ -9394,22 +9365,51 @@
       {
         "name": "qr-position-top-left/32",
         "path": "qr-position-top-left/32.svg",
-        "hash": "676c4b55c85f02c2708b6ade82e8e8e8c55fd7788551ec129a01f0fb8cc19ff3"
+        "hash": "5cb805b47b37e737ce2a061821b9baee7b4815e70d9fc8034bfb3b6ad07f2595"
       },
       {
         "name": "qr-position-top-left/16",
         "path": "qr-position-top-left/16.svg",
-        "hash": "f72de4080bc1610ffa2f7fdc235584114d288005114651a37d073a628b2c6e93"
+        "hash": "320c1ee5cf08af84fabbce514e51324d41d07688c7ff36f95ee7ffb149ab8194"
       },
       {
         "name": "qr-position-top-left/24",
         "path": "qr-position-top-left/24.svg",
-        "hash": "bfdaa4f19b259bd0b5d43d83d19123ed2d727ad16051fbc9157b7c7787380673"
+        "hash": "fad2b453053ded2944e4347ac751be8b5dc51810c3d5504d7143ca8eaa6a0c8d"
       },
       {
         "name": "qr-position-top-left/20",
         "path": "qr-position-top-left/20.svg",
-        "hash": "91f0e76caa7c48c9d14031572ad1c0ab6a8665f63a030503c9f3880d1a5e39f0"
+        "hash": "332289ce118f4645ec2d0016c58fde2533b235b1985b2148dece212c4322ac86"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-bottom-left",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-bottom-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-bottom-left/20",
+        "path": "qr-position-bottom-left/20.svg",
+        "hash": "6bbd12410fb4581fd81679c8e23b5675f7ae5122992bac4da59ba163987b76e1"
+      },
+      {
+        "name": "qr-position-bottom-left/24",
+        "path": "qr-position-bottom-left/24.svg",
+        "hash": "c1a25ea45c210b6e8e4b629b87eab627357710a7d513e93f5fd7f20f14abcea8"
+      },
+      {
+        "name": "qr-position-bottom-left/32",
+        "path": "qr-position-bottom-left/32.svg",
+        "hash": "b9fe0256398e912e061833b317551e6e4c9a32810287d4cd8b6702e3971275d8"
+      },
+      {
+        "name": "qr-position-bottom-left/16",
+        "path": "qr-position-bottom-left/16.svg",
+        "hash": "0f0d19b888d6796dc90a8d90667775f9a9a289e66a6cbbc616f9a14820bf27a4"
       }
     ]
   },
@@ -9423,22 +9423,51 @@
       {
         "name": "qr-position-bottom-right/24",
         "path": "qr-position-bottom-right/24.svg",
-        "hash": "ac2652600126b3bdfee8fbbbed7e4f39f03fcbe8374fd672c02b84c3e25bf2b2"
+        "hash": "ada77b9f1048bd94f9036b4ad93c75a3535de7aebc5bfad58c5b933e63750eb0"
       },
       {
         "name": "qr-position-bottom-right/32",
         "path": "qr-position-bottom-right/32.svg",
-        "hash": "fa486d89ab67b301a911a55bffc10830aaa34e7214d3b88ebec61783a5ef431f"
+        "hash": "27c07fb8e5e5e3b0cdb55a645b49dfdd16384d2c002928aa1a4fa7adc155ecfa"
       },
       {
         "name": "qr-position-bottom-right/20",
         "path": "qr-position-bottom-right/20.svg",
-        "hash": "51af0090d934d8c0d6807aa437380f528f126f257b4d2361e1b3ab4d25b8fc99"
+        "hash": "b8d3f44db10bddcd396fe32f3f3fc022037c1ae1b44ec021623fb5e6ce93bd19"
       },
       {
         "name": "qr-position-bottom-right/16",
         "path": "qr-position-bottom-right/16.svg",
-        "hash": "fea88218a1ed87eae912f144ab9b80c7ff0f03fd2d120a7ccbcdab0223a16409"
+        "hash": "a5ea760035fccb2e7316ad07bad638092e5390c0f535c56a522fc1c464bca20c"
+      }
+    ]
+  },
+  {
+    "name": "tablet",
+    "aliases": [],
+    "category": "technology",
+    "folder": "tablet",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "tablet/20",
+        "path": "tablet/20.svg",
+        "hash": "36638b834dc325e06b1d73cd8fe7564a4d48c5ff02eb783d352d134025b3df22"
+      },
+      {
+        "name": "tablet/24",
+        "path": "tablet/24.svg",
+        "hash": "acb09676c2d125358bcff7acb94cdbffec430e96d80a74e24e10b8fd1d5c2bcc"
+      },
+      {
+        "name": "tablet/32",
+        "path": "tablet/32.svg",
+        "hash": "62081cbd5b021fa33eb6b65658bb1f9c55716b8a8d513e2e3347be2c4df5a5d8"
+      },
+      {
+        "name": "tablet/16",
+        "path": "tablet/16.svg",
+        "hash": "0d8b249e783fce3ea6d7a71ce69e1dd7fb69eeb3657e1ccd740c4e0b0265be9c"
       }
     ]
   }
