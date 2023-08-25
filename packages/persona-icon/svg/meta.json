@@ -9307,22 +9307,22 @@
       {
         "name": "signature-draw-alt/24",
         "path": "signature-draw-alt/24.svg",
-        "hash": "5434c8b8d74fe0f182a9d9de80a1f0256739774c81c81f2d80db080e8dd84c95"
+        "hash": "560e87aa2b09e63dc402fcb6f5c1f88006237380719ac5876dea38c8ac703acf"
       },
       {
         "name": "signature-draw-alt/20",
         "path": "signature-draw-alt/20.svg",
-        "hash": "bfc082480b2db1a70fda4308d457a086abd1ff16db19372565790b07818cc56f"
+        "hash": "48346312197eed16023fb6c04b47f7d8ad5fdff2a3714116a398713e3aa7a057"
       },
       {
         "name": "signature-draw-alt/16",
         "path": "signature-draw-alt/16.svg",
-        "hash": "3512c4cbfc49c71ecc40aa6f566c8ce124d605df58c9f32c93c421c6890f674a"
+        "hash": "036369f53f9cca0fa54c8c53851c9cac9284444e301b2edc7d0684bb1cf12f7e"
       },
       {
         "name": "signature-draw-alt/32",
         "path": "signature-draw-alt/32.svg",
-        "hash": "4401f2a3a7cb1a2a673ba5ddcfd37dd86b9a8a76ea02b8f5b783f08270f3472a"
+        "hash": "b18943586b3b470dde87571b9caad4d9880c772f169784517fa3488099b46db7"
       }
     ]
   },
@@ -9336,51 +9336,22 @@
       {
         "name": "qr-position-top-right/32",
         "path": "qr-position-top-right/32.svg",
-        "hash": "fb3030c10bc150c684d0e330631eb568eccef62103918131201052d3e31855e9"
+        "hash": "35625f34b585ba8ec72ef854008434fe917789a6d50bf2eef027ed0fc3b2eddc"
       },
       {
         "name": "qr-position-top-right/20",
         "path": "qr-position-top-right/20.svg",
-        "hash": "f23a562f5a227e138faf68498a2b210fee716546f1ad8bde00485df65da1dfa1"
+        "hash": "4c65f3c728ddb6eec991f4f050d0a92ade5eed4a4003fb1394e340cd358839c2"
       },
       {
         "name": "qr-position-top-right/16",
         "path": "qr-position-top-right/16.svg",
-        "hash": "fcd6e72d36ccc541ca785369b53afeab534f5f36f8108b5af43adaf34060a3b5"
+        "hash": "653fc9763cbe39ac62e883fdfe5dfc52348d535d149cb5bda440dc3366678521"
       },
       {
         "name": "qr-position-top-right/24",
         "path": "qr-position-top-right/24.svg",
-        "hash": "c43503fafc9dc1703f9e5e5ab971fd68737b8575cf1439aa2c4c556cd5e7a3c5"
-      }
-    ]
-  },
-  {
-    "name": "qr-position-top-left",
-    "aliases": [],
-    "category": "formatting",
-    "folder": "qr-position-top-left",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "qr-position-top-left/32",
-        "path": "qr-position-top-left/32.svg",
-        "hash": "5cb805b47b37e737ce2a061821b9baee7b4815e70d9fc8034bfb3b6ad07f2595"
-      },
-      {
-        "name": "qr-position-top-left/16",
-        "path": "qr-position-top-left/16.svg",
-        "hash": "320c1ee5cf08af84fabbce514e51324d41d07688c7ff36f95ee7ffb149ab8194"
-      },
-      {
-        "name": "qr-position-top-left/24",
-        "path": "qr-position-top-left/24.svg",
-        "hash": "fad2b453053ded2944e4347ac751be8b5dc51810c3d5504d7143ca8eaa6a0c8d"
-      },
-      {
-        "name": "qr-position-top-left/20",
-        "path": "qr-position-top-left/20.svg",
-        "hash": "332289ce118f4645ec2d0016c58fde2533b235b1985b2148dece212c4322ac86"
+        "hash": "8b39060699a79063c1c3de6c745fd631acd3ff81640b02d7957cbb3ce4213485"
       }
     ]
   },
@@ -9394,22 +9365,51 @@
       {
         "name": "qr-position-bottom-left/20",
         "path": "qr-position-bottom-left/20.svg",
-        "hash": "6bbd12410fb4581fd81679c8e23b5675f7ae5122992bac4da59ba163987b76e1"
+        "hash": "44036ac60e1f0df53e4b860f8228f153c695e4df73c2c09191ce10e2b5967771"
       },
       {
         "name": "qr-position-bottom-left/24",
         "path": "qr-position-bottom-left/24.svg",
-        "hash": "c1a25ea45c210b6e8e4b629b87eab627357710a7d513e93f5fd7f20f14abcea8"
+        "hash": "4e13db6bd974f992009ea522f3e9bb6988d8a7f76333f4460473d707c97b2d2f"
       },
       {
         "name": "qr-position-bottom-left/32",
         "path": "qr-position-bottom-left/32.svg",
-        "hash": "b9fe0256398e912e061833b317551e6e4c9a32810287d4cd8b6702e3971275d8"
+        "hash": "d5c15a572066be16322b1270d164d041892a026a7609d1736225772dd2afea31"
       },
       {
         "name": "qr-position-bottom-left/16",
         "path": "qr-position-bottom-left/16.svg",
-        "hash": "0f0d19b888d6796dc90a8d90667775f9a9a289e66a6cbbc616f9a14820bf27a4"
+        "hash": "e731141944e515cba455e74eb7bb78857431c1acb9fa6d229714a89b48c098d6"
+      }
+    ]
+  },
+  {
+    "name": "qr-position-top-left",
+    "aliases": [],
+    "category": "formatting",
+    "folder": "qr-position-top-left",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "qr-position-top-left/32",
+        "path": "qr-position-top-left/32.svg",
+        "hash": "676c4b55c85f02c2708b6ade82e8e8e8c55fd7788551ec129a01f0fb8cc19ff3"
+      },
+      {
+        "name": "qr-position-top-left/16",
+        "path": "qr-position-top-left/16.svg",
+        "hash": "f72de4080bc1610ffa2f7fdc235584114d288005114651a37d073a628b2c6e93"
+      },
+      {
+        "name": "qr-position-top-left/24",
+        "path": "qr-position-top-left/24.svg",
+        "hash": "bfdaa4f19b259bd0b5d43d83d19123ed2d727ad16051fbc9157b7c7787380673"
+      },
+      {
+        "name": "qr-position-top-left/20",
+        "path": "qr-position-top-left/20.svg",
+        "hash": "91f0e76caa7c48c9d14031572ad1c0ab6a8665f63a030503c9f3880d1a5e39f0"
       }
     ]
   },
@@ -9423,51 +9423,22 @@
       {
         "name": "qr-position-bottom-right/24",
         "path": "qr-position-bottom-right/24.svg",
-        "hash": "ada77b9f1048bd94f9036b4ad93c75a3535de7aebc5bfad58c5b933e63750eb0"
+        "hash": "ac2652600126b3bdfee8fbbbed7e4f39f03fcbe8374fd672c02b84c3e25bf2b2"
       },
       {
         "name": "qr-position-bottom-right/32",
         "path": "qr-position-bottom-right/32.svg",
-        "hash": "27c07fb8e5e5e3b0cdb55a645b49dfdd16384d2c002928aa1a4fa7adc155ecfa"
+        "hash": "fa486d89ab67b301a911a55bffc10830aaa34e7214d3b88ebec61783a5ef431f"
       },
       {
         "name": "qr-position-bottom-right/20",
         "path": "qr-position-bottom-right/20.svg",
-        "hash": "b8d3f44db10bddcd396fe32f3f3fc022037c1ae1b44ec021623fb5e6ce93bd19"
+        "hash": "51af0090d934d8c0d6807aa437380f528f126f257b4d2361e1b3ab4d25b8fc99"
       },
       {
         "name": "qr-position-bottom-right/16",
         "path": "qr-position-bottom-right/16.svg",
-        "hash": "a5ea760035fccb2e7316ad07bad638092e5390c0f535c56a522fc1c464bca20c"
-      }
-    ]
-  },
-  {
-    "name": "tablet",
-    "aliases": [],
-    "category": "technology",
-    "folder": "tablet",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "tablet/20",
-        "path": "tablet/20.svg",
-        "hash": "1e315f622adc94ee7e291cafe7c48feecb8cce48861fe3af9ae74706d1672ede"
-      },
-      {
-        "name": "tablet/24",
-        "path": "tablet/24.svg",
-        "hash": "5f4439659cb37d62ef0bc8cd3185fd88202f1031899680b2f286c390a1eac4ea"
-      },
-      {
-        "name": "tablet/32",
-        "path": "tablet/32.svg",
-        "hash": "d9b86c6e657cd46ede8463b4ab8be10467db26929074eababc6be413d7ab1364"
-      },
-      {
-        "name": "tablet/16",
-        "path": "tablet/16.svg",
-        "hash": "7d521c2e6671db4a0a2875e4634ac51e2a43054775e6c42e3d9124a78da562a2"
+        "hash": "fea88218a1ed87eae912f144ab9b80c7ff0f03fd2d120a7ccbcdab0223a16409"
       }
     ]
   }
