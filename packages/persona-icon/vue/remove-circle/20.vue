@@ -7,7 +7,11 @@
     class="persona-icon"
     viewBox="0 0 20 20"><path
       fill="currentColor"
-      d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm6.815 8a6.815 6.815 0 1 0-13.63 0 6.815 6.815 0 0 0 13.63 0Z" /><path
+      fill-rule="evenodd"
+      d="M10 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm6.815 8a6.815 6.815 0 1 0-13.63 0 6.815 6.815 0 0 0 13.63 0Z"
+      clip-rule="evenodd" /><path
         fill="currentColor"
-        d="M6.444 10c0-.327.266-.593.593-.593h5.926a.593.593 0 0 1 0 1.186H7.037A.593.593 0 0 1 6.444 10Z" /></svg>
+        fill-rule="evenodd"
+        d="M6.444 10c0-.327.266-.593.593-.593h5.926a.593.593 0 0 1 0 1.186H7.037A.593.593 0 0 1 6.444 10Z"
+        clip-rule="evenodd" /></svg>
 </template>

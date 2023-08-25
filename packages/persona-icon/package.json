@@ -67,7 +67,8 @@
     "webfont": "^11.2.26"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.4.3"
+    "@nuxt/kit": "^3.4.3",
+    "path-intersection": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"
