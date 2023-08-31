@@ -265,6 +265,26 @@ You can also combine with `pill` mode to make round button
 </template>
 ```
 
+## Loading state
+
+<preview label="link variant">
+  <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+    <p-button color="info" variant="solid" loading>Click me</p-button>
+    <p-button color="info" variant="outline" loading>Click me</p-button>
+    <p-button variant="ghost" loading>Click me</p-button>
+    <p-button color="info" variant="link" loading>Click me</p-button>
+  </div>
+</preview>
+
+```vue
+<template>
+  <p-button color="info" variant="solid" loading>Click me</p-button>
+  <p-button color="info" variant="outline" loading>Click me</p-button>
+  <p-button variant="ghost" loading>Click me</p-button>
+  <p-button color="info" variant="link" loading>Click me</p-button>
+</template>
+```
+
 ## Variables
 Button use local CSS variables on `.btn` for enhanced real-time customization.
 
@@ -279,15 +299,16 @@ Button use local CSS variables on `.btn` for enhanced real-time customization.
 
 ### Props
 
-| Props      |   Type                         |  Default  | Description                                                                                                 |
-|------------|:------------------------------:|:---------:|-------------------------------------------------------------------------------------------------------------|
-| `variant`  | `String`                       |  `solid`  | Button style variant, valid value is `solid`, `outline`, `ghost` and `link`                                 |
-| `color`    | `String`                       | `-`       | Button color variant, valid value is `primary`, `info`, `success`, `warning` and `danger`                   |
-| `size`     | `String`                       |   `md`    | Size of button, valid value is `xs`, `sm`, `md`, `lg`                                                       |
-| `pill`     | `Boolean`                      |  `false`  | Enable pill mode                                                                                            |
-| `icon`     | `Boolean`                      |  `false`  | Enable icon mode                                                                                            |
-| `disabled` | `Boolean`                      |  `false`  | Disable state                                                                                               |
-| `href`     | `String` or `RouteLocationRaw` |  `-`      | Place url in the button to make button-like permalink                                                       |
+| Props      |              Type              | Default | Description                                                                               |
+|------------|:------------------------------:|:-------:|-------------------------------------------------------------------------------------------|
+| `variant`  |            `String`            | `solid` | Button style variant, valid value is `solid`, `outline`, `ghost` and `link`               |
+| `color`    |            `String`            |   `-`   | Button color variant, valid value is `primary`, `info`, `success`, `warning` and `danger` |
+| `size`     |            `String`            |  `md`   | Size of button, valid value is `xs`, `sm`, `md`, `lg`                                     |
+| `pill`     |           `Boolean`            | `false` | Enable pill mode                                                                          |
+| `icon`     |           `Boolean`            | `false` | Enable icon mode                                                                          |
+| `disabled` |           `Boolean`            | `false` | Disable state                                                                             |
+| `loading`  |           `Boolean`            | `false` | Enable loading state                                                                      |
+| `href`     | `String` or `RouteLocationRaw` |   `-`   | Place url in the button to make button-like permalink                                     |
 
 ### Slots
 

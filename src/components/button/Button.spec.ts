@@ -105,6 +105,26 @@ it('should have style "pill" if pill is provided', () => {
   expect(button).toHaveClass('btn--pill')
 })
 
+it('should have loading if prop loading was provided', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button loading>
+        Hello
+      </Button>
+    `,
+  })
+
+  const button  = screen.queryByTestId('btn')
+  const spinner = screen.queryByTestId('spinner')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveClass('btn--loading')
+  expect(button).toBeDisabled()
+
+  expect(spinner).toBeInTheDocument()
+})
+
 it('should emit "click" when button is clicked', async () => {
   const spy    = vi.fn()
   const screen = render({

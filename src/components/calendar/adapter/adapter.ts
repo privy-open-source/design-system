@@ -5,7 +5,7 @@ import {
 } from 'date-fns'
 import id from 'date-fns/locale/id/index'
 import en from 'date-fns/locale/en-US/index'
-import { getLang } from '../../global/context'
+import { getLang } from '../../global/store'
 import { chunk } from 'lodash-es'
 
 const localePacks = { en, id }

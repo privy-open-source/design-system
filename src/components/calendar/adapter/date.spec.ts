@@ -1,7 +1,7 @@
 import Adapter from './date'
 import { ref } from 'vue-demi'
 import { CalendarContext, CalendarItem } from './adapter'
-import { initAppContext, setLang } from '../../global/context'
+import { initStore, setLang } from '../../global/store'
 import {
   minTime as MIN_TIME,
   maxTime as MAX_TIME,
@@ -27,7 +27,7 @@ export function createMockContext (
 }
 
 beforeEach(() => {
-  initAppContext()
+  initStore()
 })
 
 describe('getItems', () => {
