@@ -39,7 +39,7 @@
     "@testing-library/vue": "6.6.0",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
-    "@types/lodash-es": "4.17.8",
+    "@types/lodash-es": "4.17.9",
     "@types/marked": "^5.0.0",
     "@types/sanitize-html": "^2",
     "@types/scroll-into-view": "^1",
