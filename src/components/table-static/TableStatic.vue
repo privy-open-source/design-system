@@ -47,40 +47,45 @@
         tag="tbody"
         :disabled="!draggable">
         <template #item="{ element, index }">
-          <tr
-            class="table-static__row"
-            :class="trClass"
-            data-role="row">
-            <td
-              v-if="draggable"
-              class="table-static__cell table-static__drag"
-              data-testid="table-static-drag-handle">
-              <IconDrag />
-            </td>
-            <td
-              v-if="selectable"
-              class="table-static__cell table-static__checkbox">
-              <Checkbox
-                v-model="model"
-                data-testid="table-static-select"
-                :value="withoutKey(element)"
-                :disabled="element._selectable === false" />
-            </td>
-            <td
-              v-for="field in fields"
-              :key="field.key"
-              class="table-static__cell"
-              data-testid="table-static-cell"
-              :class="field.tdClass"
-              :data-cell="field.key">
-              <slot
-                :name="`cell(${field.key})`"
-                :index="index"
-                :item="element">
-                {{ field.formatter(element[field.key], element) }}
-              </slot>
-            </td>
-          </tr>
+          <slot
+            name="row"
+            :item="element"
+            :index="index">
+            <tr
+              class="table-static__row"
+              :class="trClass"
+              data-role="row">
+              <td
+                v-if="draggable"
+                class="table-static__cell table-static__drag"
+                data-testid="table-static-drag-handle">
+                <IconDrag />
+              </td>
+              <td
+                v-if="selectable"
+                class="table-static__cell table-static__checkbox">
+                <Checkbox
+                  v-model="model"
+                  data-testid="table-static-select"
+                  :value="withoutKey(element)"
+                  :disabled="element._selectable === false" />
+              </td>
+              <td
+                v-for="field in fields"
+                :key="field.key"
+                class="table-static__cell"
+                data-testid="table-static-cell"
+                :class="field.tdClass"
+                :data-cell="field.key">
+                <slot
+                  :name="`cell(${field.key})`"
+                  :index="index"
+                  :item="element">
+                  {{ field.formatter(element[field.key], element) }}
+                </slot>
+              </td>
+            </tr>
+          </slot>
         </template>
       </Draggable>
       <tbody
@@ -104,11 +109,12 @@
   </div>
 </template>
 
-<script lang="ts" setup generic="T extends { _selectable?: boolean }">
+<script lang="ts" setup generic="T extends Record<string, unknown>">
 import {
   computed,
   HTMLAttributes,
   PropType,
+  VNode,
 } from 'vue-demi'
 import {
   ApperanceVariant,
@@ -231,6 +237,13 @@ const indeterminate = computed(() => {
   return model.value.length > 0
     && model.value.length < selectableRows.value.length
 })
+
+defineSlots<{
+  empty:() => VNode,
+  row:(props: { index: number, item: T, [key: string]: any }) => VNode,
+  [colKey: `head(${string})`]:(props: { label: string, field: TableField<T>, [key: string]: any }) => VNode,
+  [colKey: `cell(${string})`]:(props: { index: number, item: T, [key: string]: any }) => VNode,
+}>()
 </script>
 
 <style lang="postcss">

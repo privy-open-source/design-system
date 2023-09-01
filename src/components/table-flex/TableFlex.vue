@@ -32,32 +32,37 @@
               :disabled="element._selectable === false" />
           </div>
 
-          <div
-            v-for="field in fields"
-            :key="field.key"
-            class="table-flex__cell"
-            data-testid="table-flex-cell"
-            :class="field.tdClass"
-            :style="field.width ? { '--p-table-flex-cell-width': withUnit(field.width) } : { flex: '1 1 0%' }"
-            :data-cell="field.key">
+          <slot
+            name="row"
+            :index="index"
+            :item="element">
             <div
-              class="table-flex__header"
-              :class="field.thClass">
+              v-for="field in fields"
+              :key="field.key"
+              class="table-flex__cell"
+              data-testid="table-flex-cell"
+              :class="field.tdClass"
+              :style="field.width ? { '--p-table-flex-cell-width': withUnit(field.width) } : { flex: '1 1 0%' }"
+              :data-cell="field.key">
+              <div
+                class="table-flex__header"
+                :class="field.thClass">
+                <slot
+                  :name="`head(${field.key})`"
+                  :label="field.label"
+                  :field="field"
+                  :data-header="field.key">
+                  {{ field.label }}
+                </slot>
+              </div>
               <slot
-                :name="`head(${field.key})`"
-                :label="field.label"
-                :field="field"
-                :data-header="field.key">
-                {{ field.label }}
+                :name="`cell(${field.key})`"
+                :index="index"
+                :item="element">
+                {{ field.formatter(element[field.key], element) }}
               </slot>
             </div>
-            <slot
-              :name="`cell(${field.key})`"
-              :index="index"
-              :item="element">
-              {{ field.formatter(element[field.key], element) }}
-            </slot>
-          </div>
+          </slot>
         </div>
       </template>
     </Draggable>
@@ -102,11 +107,12 @@
   </div>
 </template>
 
-<script lang="ts" setup generic="T extends { _selectable?: boolean }">
+<script lang="ts" setup generic="T extends Record<string, unknown>">
 import {
   computed,
   HTMLAttributes,
   PropType,
+  VNode,
 } from 'vue-demi'
 import {
   ApperanceVariant,
@@ -207,6 +213,13 @@ const classNames = computed(() => {
 
   return results
 })
+
+defineSlots<{
+  empty:() => VNode,
+  row:(props: { index: number, item: T, [key: string]: any }) => VNode,
+  [colKey: `head(${string})`]:(props: { label: string, field: TableField<T>, [key: string]: any }) => VNode,
+  [colKey: `cell(${string})`]:(props: { index: number, item: T, [key: string]: any }) => VNode,
+}>()
 </script>
 
 <style lang="postcss">

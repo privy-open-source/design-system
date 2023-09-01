@@ -482,6 +482,7 @@ In props `fields` contain
 | `cell(:key)` | Content for checked label   |
 | `head(:key)` | Content for unchecked label |
 | `empty`      | Content for empty state     |
+| `row`        | Custom render for row       |
 
 ### Events
 
