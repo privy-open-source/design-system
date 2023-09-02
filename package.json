@@ -99,7 +99,7 @@
     "fuse.js": "6.6.2",
     "interactjs": "1.10.18",
     "lodash-es": "4.17.21",
-    "marked": "^5.0.0",
+    "marked": "^7.0.0",
     "nanodelay": "2.0.2",
     "pdfjs-dist": "^3.1.81",
     "postcss-hexrgba": "^2.1.0",
