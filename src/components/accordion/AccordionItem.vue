@@ -41,7 +41,7 @@
 
 <script lang="ts" setup>
 import { useVModel } from '@vueuse/core'
-import { accordionInjectionKey, generateId } from '.'
+import { ACCORDION_CONTEXT, generateId } from '.'
 import {
   computed, inject, watch,
 } from 'vue-demi'
@@ -53,7 +53,7 @@ import ChevronDown from '@privyid/persona-icon/vue/chevron-down/16.vue'
 
 const uid = generateId(undefined, 'accordion-item')
 
-const parentData = inject(accordionInjectionKey)
+const parentData = inject(ACCORDION_CONTEXT)
 
 const props = defineProps({
   modelValue: {

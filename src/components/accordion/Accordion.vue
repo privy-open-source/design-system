@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 import { useVModel } from '@vueuse/core'
-import { type AccordionItem, accordionInjectionKey } from '.'
+import { type AccordionItem, ACCORDION_CONTEXT } from '.'
 import {
   PropType, computed, provide, readonly,
 } from 'vue-demi'
@@ -75,7 +75,7 @@ function setOpenItem (id: string): void {
   modelValue.value = id
 }
 
-provide(accordionInjectionKey, {
+provide(ACCORDION_CONTEXT, {
   openItem: readonly(modelValue),
   multiple: props.multiple,
   noCaret : props.noCaret,

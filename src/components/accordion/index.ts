@@ -8,7 +8,7 @@ export interface AccordionItem {
   disabled?: boolean,
 }
 
-export const accordionInjectionKey: InjectionKey<{
+export const ACCORDION_CONTEXT: InjectionKey<{
   openItem: Readonly<Ref<string | undefined>>,
   multiple: boolean,
   noCaret: boolean,
