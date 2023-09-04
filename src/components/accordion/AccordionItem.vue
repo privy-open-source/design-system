@@ -33,6 +33,7 @@
 
     <Collapse
       :when="model"
+      class="accordion__item__content"
       data-testid="accordion-item-content">
       <slot :expanded="model" />
     </Collapse>
@@ -171,6 +172,10 @@ watch(
     > .accordion__item__activator {
       @apply opacity-50;
     }
+  }
+
+  &__content {
+    @apply transition-[height] duration-300 ease-out;
   }
 }
 </style>
