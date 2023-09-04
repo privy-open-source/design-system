@@ -1,4 +1,8 @@
-import { MaybeRef, useElementBounding } from '@vueuse/core'
+import {
+  MaybeRef,
+  useElementBounding,
+  useWindowSize,
+} from '@vueuse/core'
 import {
   computed,
   Ref,
@@ -28,10 +32,12 @@ export function useSticky (target: Ref<HTMLElement>, options: Partial<StickyOpti
     left,
   } = useElementBounding(target)
 
+  const { height: windowHeight } = useWindowSize()
+
   watchEffect((onCleanup) => {
     if (enable.value && target.value) {
       if (top.value - offsetTop.value >= 0) {
-        target.value.style.setProperty('height', `${window.innerHeight - targetTop.value}px`)
+        target.value.style.setProperty('height', `${windowHeight.value - targetTop.value}px`)
         target.value.style.setProperty('width', '100%')
       } else {
         parent.value.style.setProperty('min-height', `${height.value}px`)
@@ -40,7 +46,7 @@ export function useSticky (target: Ref<HTMLElement>, options: Partial<StickyOpti
         target.value.style.setProperty('top', `${offsetTop.value}px`)
         target.value.style.setProperty('left', `${left.value}px`)
         target.value.style.setProperty('width', `${width.value}px`)
-        target.value.style.setProperty('height', `${window.innerHeight - offsetTop.value}px`)
+        target.value.style.setProperty('height', `${windowHeight.value - offsetTop.value}px`)
       }
 
       onCleanup(() => {

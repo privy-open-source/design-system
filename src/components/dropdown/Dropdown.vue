@@ -33,7 +33,7 @@
 
     <Transition name="fade">
       <div
-        v-show="isOpen"
+        v-show="isOpen && !isHidden"
         ref="menu"
         data-testid="dropdown-menu"
         class="dropdown__menu"
@@ -57,6 +57,7 @@ import {
   toRef,
   watchEffect,
   computed,
+  ref,
 } from 'vue-demi'
 import {
   templateRef,
@@ -73,9 +74,10 @@ import {
   offset,
   flip,
   shift,
+  hide,
 } from '@floating-ui/dom'
 import { useVModel } from '../input'
-import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
+import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
 import type {
   StyleVariant,
   ColorVariant,
@@ -175,6 +177,7 @@ export default defineComponent({
     const wizard    = templateRef<DropdownSubitemElement>('wizard')
     const placement = toRef(props, 'placement')
     const isOpen    = useVModel(props)
+    const isHidden  = ref(false)
 
     const { next: nextFocus, prev: prevFocus } = useFocus(menu)
 
@@ -280,13 +283,16 @@ export default defineComponent({
               flip(),
               shift(),
               offset(8),
+              hide(),
             ],
-          }).then(({ x, y, placement }) => {
+          }).then(({ x, y, placement, middlewareData }) => {
             if (menu.value) {
               menu.value.dataset.popperPlacement = placement
 
               menu.value.style.left = `${x || 0}px`
               menu.value.style.top  = `${y || 0}px`
+
+              isHidden.value = middlewareData.hide.referenceHidden
             }
           })
         })
@@ -309,6 +315,7 @@ export default defineComponent({
 
     return {
       isOpen,
+      isHidden,
       classNames,
       containerSize,
       toggle,
@@ -322,12 +329,13 @@ export default defineComponent({
 <style lang="postcss">
 .dropdown {
   --p-dropdown-z-index: theme(zIndex.dropdown);
+  --p-dropdown-size-xl: 36rem; /* 576px */
   --p-dropdown-size-lg: 30rem; /* 480px */
   --p-dropdown-size-md: 20rem; /* 320px */
   --p-dropdown-size-sm: 15rem; /* 240px */
   --p-dropdown-max-height: theme(spacing.64);
 
-  @apply relative inline-flex;
+  @apply inline-flex;
 
   &__menu {
     @apply max-h-[var(--p-dropdown-max-height)] border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
@@ -345,6 +353,10 @@ export default defineComponent({
           @apply rounded-b-sm;
         }
       }
+    }
+
+    &--xl {
+      @apply w-[var(--p-dropdown-size-xl)];
     }
 
     &--lg {

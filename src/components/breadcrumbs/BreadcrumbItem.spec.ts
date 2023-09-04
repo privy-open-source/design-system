@@ -9,12 +9,12 @@ it('should rendered properly without any props', () => {
     `,
   })
 
-  const breadcrumbItem = screen.getByTestId('breadcrumbs-item')
-  const breadcrumbIcon = screen.queryByTestId('breadcrumbs-icon')
+  const breadcrumbItem    = screen.getByTestId('breadcrumbs-item')
+  const breadcrumbDivider = screen.queryByTestId('breadcrumbs-divider')
 
   expect(breadcrumbItem).toBeInTheDocument()
   expect(breadcrumbItem).toHaveClass('breadcrumbs__item')
-  expect(breadcrumbIcon).toBeInTheDocument()
+  expect(breadcrumbDivider).toBeInTheDocument()
 })
 
 it('should be able to set active via prop `active`', () => {
@@ -25,13 +25,13 @@ it('should be able to set active via prop `active`', () => {
     `,
   })
 
-  const breadcrumbItem = screen.getByTestId('breadcrumbs-item')
-  const dropdownIcon   = screen.queryByTestId('dropdown-icon')
+  const breadcrumbItem  = screen.getByTestId('breadcrumbs-item')
+  const dropdownDivider = screen.queryByTestId('dropdown-divider')
 
   expect(breadcrumbItem).toHaveClass('breadcrumbs__item--active')
-  expect(breadcrumbItem).toContainHTML('<span />')
+  expect(breadcrumbItem).toContainHTML('<span class="" />')
   expect(breadcrumbItem).not.toContainHTML('<a />')
-  expect(dropdownIcon).not.toBeInTheDocument()
+  expect(dropdownDivider).not.toBeInTheDocument()
 })
 
 it('should be able to set url permalink via prop `href`', () => {

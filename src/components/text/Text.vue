@@ -40,13 +40,11 @@ export default defineComponent({
 
   setup (props) {
     const hyperlink = computed(() => {
-      const tag : String = props.href ? 'a' : 'span'
-
-      return tag
+      return props.href ? 'a' : 'span'
     })
 
     const classNames = computed(() => {
-      const result : String[] = ['']
+      const result : string[] = ['']
 
       if (props.variant)
         result.push(`freetext--${props.variant}`)
@@ -76,17 +74,28 @@ export default defineComponent({
 
 <style lang="postcss">
 .freetext {
-  &--hyperlink {
-    @apply underline decoration-solid text-info;
-    @apply dark:text-dark-info;
-  }
-
   /**
   * Weight variant
   * of text
   */
+  &--thin {
+    @apply font-thin;
+  }
+
+  &--extralight {
+    @apply font-extralight;
+  }
+
+  &--light {
+    @apply font-light;
+  }
+
   &--normal {
     @apply font-normal;
+  }
+
+  &--semibold {
+    @apply font-semibold;
   }
 
   &--medium {
@@ -95,6 +104,14 @@ export default defineComponent({
 
   &--bold {
     @apply font-bold;
+  }
+
+  &--extrabold {
+    @apply font-extrabold;
+  }
+
+  &--black {
+    @apply font-black;
   }
 
   /**
@@ -115,6 +132,14 @@ export default defineComponent({
 
   &--uppercase {
     @apply uppercase;
+  }
+
+  /**
+  * Hyperlink style
+   */
+  &--hyperlink {
+    @apply underline decoration-solid text-info;
+    @apply dark:text-dark-info;
   }
 
   /**
@@ -144,6 +169,7 @@ export default defineComponent({
   */
   &--subheading {
     @apply text-base font-medium;
+
   }
   &--subheading2 {
     @apply text-sm tracking-wide font-medium;
@@ -176,7 +202,7 @@ export default defineComponent({
     @apply text-xs;
   }
   &--caption2 {
-    @apply text-tn;
+    @apply text-tn font-medium;
   }
 
   /**
@@ -186,14 +212,22 @@ export default defineComponent({
     @apply font-medium text-sm tracking-wide;
   }
   &--formlabel2 {
-    @apply font-medium text-xs leading-tightest;
+    @apply font-bold text-xs leading-tightest;
+  }
+
+  &--formlabel,
+  &--formlabel2 {
+    &:not([class^='text-'], [class*='text-']) {
+      @apply text-subtle;
+      @apply dark:text-dark-subtle;
+    }
   }
 
   /**
   * Overline Style
   */
   &--overline {
-    @apply text-tn tracking-widest uppercase;
+    @apply text-tn font-medium tracking-widest uppercase;
   }
 }
 </style>

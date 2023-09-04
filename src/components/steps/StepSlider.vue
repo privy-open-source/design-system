@@ -3,9 +3,7 @@ import {
   defineComponent,
   h,
   KeepAlive,
-  ref,
   Transition,
-  watch,
 } from 'vue-demi'
 import { findAllChildren } from '../utils/vnode'
 
@@ -19,16 +17,12 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    transition: {
+      type   : String,
+      default: 'slide-left',
+    },
   },
   setup (props, { slots }) {
-    const transition = ref('slide-left')
-
-    watch(() => props.active, (value, old) => {
-      transition.value = value > old
-        ? 'slide-left'
-        : 'slide-right'
-    })
-
     return () => {
       const step = findAllChildren(slots.default(), 'Step').at(props.active)
       const body = () => {
@@ -38,7 +32,7 @@ export default defineComponent({
       }
 
       return h(Transition, {
-        name: transition.value,
+        name: props.transition,
         mode: 'out-in',
       }, body)
     }

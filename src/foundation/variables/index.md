@@ -6,7 +6,7 @@ description: Collections of foundation rules
 <script lang="ts" setup>
   import { ref, reactive } from 'vue-demi'
   import pCaption from '../../components/caption/Caption.vue'
-  import IconSun from '@carbon/icons-vue/lib/sun/16'
+  import IconSun from '@privyid/persona-icon/vue/sun/16.vue'
   import pButton from '../../components/button/Button.vue'
   import pLabel from '../../components/label/Label.vue'
   import pBadge from '../../components/badge/Badge.vue'

@@ -4,7 +4,7 @@ description: Base dropdown button, suit for action menus
 ---
 
 <script setup>
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import Persona from '@privyid/persona-icon/vue/persona/20.vue'
   import pInput from "../input/Input.vue"
   import pDropdown from "./Dropdown.vue"
   import pDropdownItem from "./DropdownItem.vue"
@@ -79,6 +79,25 @@ description: Base dropdown button, suit for action menus
       Item Text
       <p-caption>Item Subtext</p-caption>
     </p-dropdown-item>
+  </p-dropdown>
+</template>
+```
+
+### With Disabled Item
+<preview>
+  <p-dropdown text="Click Here">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item :disabled="true">Item Text</p-dropdown-item>
+    <p-dropdown-item :disabled="false">Item Text</p-dropdown-item>
+  </p-dropdown>
+</preview>
+
+```vue
+<template>
+  <p-dropdown text="Click Here">
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item :disabled="true">Item Text</p-dropdown-item>
+    <p-dropdown-item :disabled="false">Item Text</p-dropdown-item>
   </p-dropdown>
 </template>
 ```
@@ -229,7 +248,7 @@ You also can customize button content via slot `button-content`
     text="Button"
     icon>
     <template #button-content>
-      <IconBee />
+      <Persona />
     </template>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -242,7 +261,7 @@ You also can customize button content via slot `button-content`
   <p-dropdown
     icon>
     <template #button-content>
-      <IconBee />
+      <Persona />
     </template>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -251,7 +270,7 @@ You also can customize button content via slot `button-content`
 </template>
 
 <script setup>
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import Persona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 ```
 
@@ -445,7 +464,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | `divider`       | `Boolean`  |      `-`       | Enable divider in dropdown-item  |
 | `menu-class`       | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the menu container  |
 | `button-class`     | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the button dropdown  |
-| `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md` and `lg`  |
+| `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md`, `lg` and `xl`  |
 
 ### Slots `<p-dropdown>`
 
@@ -466,6 +485,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | Props        |   Type    |    Default     |       Description                          |
 |--------------|:---------:|:--------------:|--------------------------------------------|
 | `href`       | `String`  |    `-`         | Place url permalink in the `dropdown-item` |
+| `disabled`   | `Boolean` |    false       | Set disabled state in the `dropdown-item`  |
 ### Slots `<p-dropdown-header>`
 
 | Name             | Description                                             |

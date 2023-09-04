@@ -13,11 +13,16 @@ export type TravelHook = (to: number, from: number) => boolean | Promise<boolean
 
 export type FinishedHook = () => void | Promise<void>
 
+export type DirectionVariant = 'horizontal' | 'vertical'
+
+export type AnimationVariant = 'slide' | 'slide-full'
+
 export interface StepContext {
   next: () => void,
   prev: () => void,
   toStep: (step: number) => void,
 
+  total: Ref<number>,
   step: Ref<number>,
   canPrev: ComputedRef<boolean>,
   canNext: ComputedRef<boolean>,
@@ -36,6 +41,7 @@ export function useStep () {
       next       : noop,
       prev       : noop,
       toStep     : noop,
+      total      : ref(1),
       step       : ref(1),
       canPrev    : ref(false),
       canNext    : ref(false),

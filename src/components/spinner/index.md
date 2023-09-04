@@ -6,6 +6,7 @@ description: Loading spinner.
 <script setup>
   import pSpinner from "./Spinner.vue"
   import pSpinnerRing from "./SpinnerRing.vue"
+  import pSpinnerRinggo from "./SpinnerRinggo.vue"
 </script>
 
 # Spinner
@@ -35,6 +36,40 @@ description: Loading spinner.
 ```vue
 <template>
   <p-spinner-ring />
+</template>
+```
+
+### Spinner Ring-O
+
+<preview>
+  <p-spinner-ringgo />
+</preview>
+
+```vue
+<template>
+  <p-spinner-ringgo />
+</template>
+```
+
+## Customize Color
+
+All spinners are color neutral, it will follow the current text's color. Changing spinner's color is easy as changing text color
+
+<preview>
+  <div class="flex items-center justify-center p-4 space-x-4 bg-info-emphasis text-state-emphasis dark:bg-dark-info-emphasis dark:text-dark-state-emphasis">
+    <p-spinner />
+    <p-spinner-ring />
+    <p-spinner-ringgo />
+  </div>
+</preview>
+
+```vue
+<template>
+  <div class="flex items-center justify-center p-4 space-x-4 bg-info-emphasis text-state-emphasis dark:bg-dark-info-emphasis dark:text-dark-state-emphasis">
+    <p-spinner />
+    <p-spinner-ring />
+    <p-spinner-ringgo />
+  </div>
 </template>
 ```
 

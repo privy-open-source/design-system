@@ -1,6 +1,7 @@
 <template>
   <div
     class="input"
+    :class="containerClass"
     data-testid="input-container">
     <span
       v-if="$slots.prepend"
@@ -14,7 +15,8 @@
       :disabled="disabled"
       :readonly="readonly"
       :class="classNames"
-      v-bind="$attrs">
+      v-bind="$attrs"
+      @beforeinput="checkOnInput(accept, $event)">
     <IconClear
       v-show="(clearable && model)"
       class="input__clear"
@@ -37,8 +39,12 @@ import {
 } from 'vue-demi'
 import { useVModel } from '.'
 import { SizeVariant } from '../button'
-import IconClear from '@carbon/icons-vue/lib/close--filled/16'
+import IconClear from '@privyid/persona-icon/vue/close-circle-solid/20.vue'
 import { INPUTGROUP_SETTING } from '../input-group'
+import {
+  AcceptVariant,
+  checkOnInput,
+} from './utils/accept'
 
 export default defineComponent({
   components  : { IconClear },
@@ -67,6 +73,18 @@ export default defineComponent({
     clearable: {
       type   : Boolean,
       default: false,
+    },
+    containerClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
+    accept: {
+      type   : String as PropType<AcceptVariant>,
+      default: undefined,
     },
   },
   models: {
@@ -120,6 +138,7 @@ export default defineComponent({
       classNames,
       model,
       clear,
+      checkOnInput,
     }
   },
 })
@@ -164,6 +183,7 @@ export default defineComponent({
   }
 
   .state--error,
+  .state--error & > &__form,
   &--error,
   &-group--error.input-group .input > .input__form {
     @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
@@ -171,7 +191,7 @@ export default defineComponent({
   }
 
   .input__clear {
-    @apply text-default/30 cursor-pointer hover:text-danger z-1;
+    @apply text-default/30 cursor-pointer hover:text-danger z-[2];
     @apply dark:text-dark-default/30 hover:dark:text-dark-danger;
   }
 

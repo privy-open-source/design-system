@@ -14,6 +14,8 @@
         class="datepicker__input"
         :placeholder="placeholder"
         :disabled="disabled"
+        :error="error"
+        :size="size"
         readonly
         @focus="onFocus">
         <template #append>
@@ -52,10 +54,12 @@ import {
   defineComponent,
   PropType,
   ref,
+  watch,
 } from 'vue-demi'
 import { CalendarMode } from '../calendar/adapter/adapter'
 import { useVModel } from '../input'
 import IconCalendar from '@privyid/persona-icon/vue/calendar/16.vue'
+import { SizeVariant } from '../button'
 
 export default defineComponent({
   components: {
@@ -68,6 +72,10 @@ export default defineComponent({
     modelValue: {
       type   : [Date, Array] as PropType<Date | [Date, Date]>,
       default: undefined,
+    },
+    size: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
     },
     start: {
       type   : Date,
@@ -137,12 +145,25 @@ export default defineComponent({
     const isOpen = ref(false)
 
     const value = computed(() => {
-      if (props.range && Array.isArray(model.value))
-        return `${formatDate(model.value[0], props.format)} - ${formatDate(model.value[1], props.format)}`
+      const dates = Array.isArray(model.value)
+        ? model.value
+        : [model.value]
 
-      return isDate(model.value)
-        ? formatDate(model.value as Date, props.format)
-        : ''
+      return dates.map((date) => {
+        return isDate(date)
+          ? formatDate(date as Date, props.format)
+          : ''
+      }).filter(Boolean).join(' - ')
+    })
+
+    watch(() => props.start, (start) => {
+      if (Array.isArray(model.value))
+        model.value[0] = start
+    })
+
+    watch(() => props.end, (end) => {
+      if (Array.isArray(model.value))
+        model.value[1] = end
     })
 
     const classNames = computed(() => {

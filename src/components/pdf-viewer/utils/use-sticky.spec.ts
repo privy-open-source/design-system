@@ -1,9 +1,18 @@
 import { fireEvent, render } from '@testing-library/vue'
 import { vi } from 'vitest'
+import { useWindowSize, setWindowSize } from '../__mocks__/use-window-size'
 import { templateRef } from '@vueuse/core'
+import type * as VueUse from '@vueuse/core'
 import { useSticky } from './use-sticky'
 
-const innerHeight = vi.spyOn(window, 'innerHeight', 'get')
+vi.mock('@vueuse/core', async () => {
+  const vueuse = await vi.importActual('@vueuse/core')
+
+  return {
+    ...vueuse as typeof VueUse,
+    useWindowSize,
+  }
+})
 
 afterEach(() => {
   vi.resetAllMocks()
@@ -32,7 +41,7 @@ it('should set element height to fit window height', async () => {
 
   const target = screen.queryByTestId('target') as HTMLDivElement
 
-  innerHeight.mockReturnValue(1000)
+  setWindowSize(1000)
 
   vi.spyOn(target.parentElement, 'getBoundingClientRect')
     .mockReturnValue({
@@ -89,7 +98,7 @@ it('should ', async () => {
 
   const target = screen.queryByTestId('target') as HTMLDivElement
 
-  innerHeight.mockReturnValue(1000)
+  setWindowSize(1000)
 
   vi.spyOn(target.parentElement, 'getBoundingClientRect')
     .mockReturnValue({

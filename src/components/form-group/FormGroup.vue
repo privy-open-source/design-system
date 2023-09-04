@@ -1,14 +1,23 @@
 <template>
   <div
     class="form-group"
+    data-testid="form-group"
     :class="classNames">
-    <label class="form-group__label">
+    <label
+      data-testid="form-group-label"
+      class="form-group__label">
       <IconInfo
         v-if="hint"
         v-p-tooltip="hint"
+        data-testid="form-group-hint"
         class="form-group__hint" />
-      {{ label }}<sup v-if="required">*</sup>
-      <p-caption v-if="caption">{{ caption }}</p-caption>
+      {{ label }}<sup
+        v-if="required"
+        data-testid="form-group-required">*</sup>
+      <p-caption
+        v-if="caption"
+        data-testid="form-group-caption">
+        {{ caption }}</p-caption>
     </label>
 
     <slot />
@@ -18,11 +27,13 @@
       mode="out-in">
       <p
         v-if="error"
+        data-testid="form-group-error"
         class="form-group__error">
         {{ error }}
       </p>
       <p
         v-else-if="description"
+        data-testid="form-group-description"
         class="form-group__description">
         {{ description }}
       </p>
@@ -31,7 +42,7 @@
 </template>
 
 <script lang="ts">
-import IconInfo from '@carbon/icons-vue/lib/information--filled/16'
+import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import pCaption from '../caption/Caption.vue'
 import { pTooltip } from '../tooltip'
 import { computed, defineComponent } from 'vue-demi'
@@ -85,8 +96,8 @@ export default defineComponent({
   @apply flex flex-col mb-4;
 
   &__label {
-    @apply font-bold text-xs mb-2 relative text-default;
-    @apply dark:text-dark-default;
+    @apply font-bold text-xs mb-2 relative text-subtle;
+    @apply dark:text-dark-subtle;
 
     > sup {
       @apply text-danger;

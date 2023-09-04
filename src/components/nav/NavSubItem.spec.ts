@@ -2,8 +2,8 @@ import { render, fireEvent } from '@testing-library/vue'
 import Nav from './Nav.vue'
 import NavItem from './NavItem.vue'
 import NavSubItem from './NavSubItem.vue'
-import IconEdit from '@carbon/icons-vue/lib/edit/16'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
+import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
 
 it('should rendered properly without any props', () => {
   const screen = render({

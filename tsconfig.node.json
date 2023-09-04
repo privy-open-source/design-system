@@ -9,8 +9,8 @@
     "allowSyntheticDefaultImports": true,
     "types": [
       "vitest",
-      "vite/client",
       "jest-extended",
+      "vite/client",
       "interactjs"
     ]
   }

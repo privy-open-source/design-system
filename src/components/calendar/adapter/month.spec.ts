@@ -1,10 +1,10 @@
-import { initAppContext, setLang } from '../../global/context'
+import { initStore, setLang } from '../../global/store'
 import { CalendarItem } from './adapter'
 import { createMockContext } from './date.spec'
 import Adapter from './month'
 
 beforeEach(() => {
-  initAppContext()
+  initStore()
 })
 
 describe('getItems', () => {

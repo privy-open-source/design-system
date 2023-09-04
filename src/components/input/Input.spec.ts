@@ -1,8 +1,9 @@
 import pInput from './Input.vue'
 import pInputGroup from '../input-group/InputGroup.vue'
-import IconEmail from '@carbon/icons-vue/lib/email/16'
+import IconEmail from '@privyid/persona-icon/vue/email/20.vue'
 import { fireEvent, render } from '@testing-library/vue'
 import { ref } from 'vue-demi'
+import userEvent from '@testing-library/user-event'
 
 it('should render properly without any prop', () => {
   const screen = render({
@@ -161,4 +162,34 @@ it('should able to add input append via `append` slots', () => {
 
   const input = screen.queryByTestId('input')
   expect(input).toHaveClass('input--has-append')
+})
+
+it('should able to add input-container class via `container-class` props', () => {
+  const screen = render({
+    components: { pInput },
+    template  : `
+      <p-input container-class="custom-class" />
+    `,
+  })
+
+  const container = screen.queryByTestId('input-container')
+  expect(container).toHaveClass('custom-class')
+})
+
+it('should able to filter inputted character if prop `accept` was provided', async () => {
+  const model  = ref('')
+  const screen = render({
+    components: { pInput },
+    template  : '<p-input v-model="model" accept="num" />',
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('input')
+  const user  = userEvent.setup()
+
+  await user.type(input, 'Hello World 123456')
+
+  expect(model.value).toBe('123456')
 })

@@ -4,7 +4,7 @@ description: Sub-component of Dropdown for nesting dropdown item.
 ---
 
 <script setup>
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
+  import Persona from '@privyid/persona-icon/vue/persona/20.vue'
   import Badge from '../badge/Badge.vue'
   import Input from "../input/Input.vue"
   import pDropdown from "../dropdown/Dropdown.vue"
@@ -91,7 +91,7 @@ Similar to [Dropdown][dropdown], You can change button content via slot `button-
   <p-dropdown text="Custom Content">
     <p-dropdown-subitem>
       <template #button-content>
-        <IconBee class="inline-block" /> Fruit A
+        <Persona class="inline-block" /> Fruit A
       </template>
       <p-dropdown-item>Apple</p-dropdown-item>
       <p-dropdown-item>Avocado</p-dropdown-item>
@@ -108,7 +108,7 @@ Similar to [Dropdown][dropdown], You can change button content via slot `button-
   <p-dropdown text="Custom Content">
     <p-dropdown-subitem>
       <template #button-content>
-        <IconBee class="inline-block" /> Fruit A
+        <Persona class="inline-block" /> Fruit A
       </template>
       <p-dropdown-item>Apple</p-dropdown-item>
       <p-dropdown-item>Avocado</p-dropdown-item>

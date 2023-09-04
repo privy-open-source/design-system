@@ -5,6 +5,8 @@ description: Base form input.
 
 <script setup>
   import pSelect from "./Select.vue"
+  import pAvatar from "../avatar/Avatar.vue"
+  import PiCaretDown16 from '@privyid/persona-icon/vue/caret-down/16.vue'
   import FuzzyAdapter from "../select/adapter/fuzzy-adapter"
   import defineAsyncAdapter from "./adapter/async-adapter"
   import { ref } from "vue-demi"
@@ -15,6 +17,22 @@ description: Base form input.
     { text: '🍎 Apfel', value: 'Apple' },
     { text: '🍇 Traube', value: 'Grape' },
     { text: '🍌 Bananen', value: 'Banana'},
+  ])
+
+  const optionsC = ref([
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape', disabled: true },
+    { text: '🍌 Bananen', value: 'Banana', disabled: false},
+  ])
+
+  const users = ref([
+    {
+      text: 'John Doe',
+      value: {
+        img: "https://picsum.photos/id/50/50",
+        id: 1
+      }
+    }
   ])
 
   const value    = ref('')
@@ -55,13 +73,12 @@ description: Base form input.
 ### Simple Usage
 
 <preview>
-  <p-select :options="optionsA" v-model="value" />
+  <p-select :options="optionsA" />
 </preview>
 
 ```vue
 <template>
   <p-select
-    v-model="value"
     :options="options" />
 </template>
 
@@ -91,6 +108,29 @@ description: Base form input.
   ])
 </script>
 ```
+
+### with Disabled option
+
+<preview>
+  <p-select :options="optionsC" v-model="value" />
+</preview>
+
+```vue
+<template>
+  <p-select
+    v-model="value"
+    :options="options" />
+</template>
+
+<script setup>
+  const options = ref([
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape', disabled: true },
+    { text: '🍌 Bananen', value: 'Banana', disabled: false},
+  ])
+</script>
+```
+
 ## Placeholder
 
 You can set input placeholder via `placeholder` props
@@ -103,6 +143,45 @@ You can set input placeholder via `placeholder` props
 <template>
   <p-select placeholder="Pick A Value" />
 </template>
+```
+
+## Section Label
+
+You can set sectiom label via `section-label` props
+
+<preview>
+  <p-select placeholder="Pick A Value" :options="optionsA" section-label="Fruits" />
+</preview>
+
+```vue
+<template>
+  <p-select placeholder="Pick A Value"
+    :options="optionsA"
+    section-label="Fruits" />
+</template>
+```
+
+## Clearable
+
+<preview>
+  <p-select :options="optionsB" v-model="value" clearable/>
+</preview>
+
+```vue
+<template>
+  <p-select
+    v-model="value"
+    :options="options"
+    clearable />
+</template>
+
+<script setup>
+  const options = ref([
+    { text: '🍎 Apfel', value: 'Apple' },
+    { text: '🍇 Traube', value: 'Grape' },
+    { text: '🍌 Bananen', value: 'Banana'},
+  ])
+</script>
 ```
 
 ## Sizing
@@ -330,6 +409,108 @@ To do this, you need add the province value as **watch dependencies**. It will a
   }, [province]) // 👈 need to add `province` as watch deps
 </script>
 ```
+
+## Custom Option with Slot
+
+If you want to make custom option with slot, you can use `option` with scoped slot. The scoped slot from `option` has two slot props `text` and `value`.
+
+<preview>
+  <p-select :options="users">
+    <template #option="slot">
+      <div class="flex flex-row">
+        <div class="py-2 pr-3">
+          <p-avatar :src="slot.item.value.img" />
+        </div>
+        <div class="py-2 ">
+          <div class="font-sans text-base font-normal">{{ slot.item.text }}
+          </div>
+            <div class="text-xs font-light option-text">ID: {{ slot.item.value.id }}
+          </div>
+        </div>
+      </div>
+    </template>
+  </p-select>
+</preview>
+
+```vue
+<template>
+  <p-select :options="users">
+    <template #option="slot">
+      <div class="flex flex-row">
+        <div class="py-2 pr-3">
+          <p-avatar :src="slot.item.value.img" />
+          <div class="font-sans text-base font-normal">{{ slot.item.value.img }}
+          </div>
+            <div class="text-xs font-light option-text">{{ slot.item.text }}
+          </div>
+        </div>
+      </div>
+    </template>
+  </p-select>
+</template>
+
+<script setup>
+  const users = ref([
+    {
+      text: 'John Doe',
+      value: {
+        img: "https://picsum.photos/id/50/50",
+        id: 1
+      }
+    }
+  ])
+</script>
+```
+
+## Caret
+
+### Custom Caret Icon
+
+By using the `caret` slot-scope, you can define your own custom icon for the caret, giving you the flexibility to choose a different icon or style that suits your design or preference.
+
+<preview>
+  <p-select :options="optionsA">
+    <template #caret="{ isOpen, toggle }">
+      <pi-caret-down-16 @click="toggle" />
+    </template>
+  </p-select>
+</preview>
+
+```vue
+<template>
+  <p-select :options="optionsA">
+    <template #caret="{ isOpen, toggle }">
+      <pi-caret-down-16 @click="toggle" />
+    </template>
+  </p-select>
+</template>
+
+<script setup>
+  import PiCaretDown16 from '@privyid/persona-icon/vue/caret-down/16.vue'
+
+  const options = ref(['Apple', 'Banana', 'Grape'])
+</script>
+```
+
+### Hide Caret
+
+When you set the `no-caret` prop to true, it will hide the caret icon, and users won't see it in the component.
+
+<preview>
+  <p-select :options="optionsA" no-caret />
+</preview>
+
+```vue
+<template>
+  <p-select :options="optionsA" />
+</template>
+
+<script setup>
+  const options = ref(['Apple', 'Banana', 'Grape'])
+</script>
+```
+
+
 ## API
 
 ### Props
@@ -346,14 +527,16 @@ To do this, you need add the province value as **watch dependencies**. It will a
 | `adapter`     | `Adapter` | `BaseAdapter` | Adapter for loading option's items |
 | `modelValue`  |   `Any`   |      `-`      | `v-model` value                    |
 | `selected`    | `Object`  |      `-`      | `v-model:selected` value           |
+| `no-caret`    | `Boolean` |    `false`    | Hide caret icon                    |
 
 ### Slots
 
-| Name      | Description                               |
-|-----------|-------------------------------------------|
-| `empty`   | Content when option is empty or not found |
-| `loading` | Content when loading                      |
-| `option`  | Content to place in Option Items          |
+| Name      | Description                                    |
+|-----------|------------------------------------------------|
+| `empty`   | Content when option is empty or not found      |
+| `loading` | Content when loading                           |
+| `option`  | Content to place in Option Items               |
+| `caret`   | Element for opening and closing the dropdown   |
 
 ### Events
 

@@ -6,8 +6,8 @@ description: Pagination style guide
 <script setup>
   import pPagination from '../../components/pagination/Pagination.vue'
   import { ref } from 'vue-demi'
-  import IconPrev from '@carbon/icons-vue/lib/chevron--left/20'
-  import IconNext from '@carbon/icons-vue/lib/chevron--right/20'
+  import IconPrev from '@privyid/persona-icon/vue/chevron-left/20.vue'
+  import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
 
   const page = ref(1)
   const total = ref(100)

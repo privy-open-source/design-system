@@ -1,7 +1,7 @@
 <script setup>
   import pAvatar from '../../components/avatar/Avatar.vue'
   import pCaption from '../../components/caption/Caption.vue'
-  import IconUser from '@carbon/icons-vue/lib/events/16'
+  import IconUser from '@privyid/persona-icon/vue/profile/20.vue'
 </script>
 
 # ![avatar](/assets/images/img-guide-avatar.svg) Avatars
@@ -28,17 +28,17 @@
   <div class="w-1/2">
     <div class="flex justify-center space-x-12">
       <div class="text-center">
-        <div class="flex justify-center items-end h-12 pb-6">
+        <div class="flex items-end justify-center h-12 pb-6">
           <p-avatar size="sm" />
         </div>
         <span class="block text-sm">small</span>
       </div>
       <div class="text-center">
-        <div class="flex justify-center items-end h-12 pb-6">
+        <div class="flex items-end justify-center h-12 pb-6">
           <p-avatar size="md" />
         </div>
         <span class="block text-sm">medium</span>
-        <span class="font-bold text-sm">(Default)</span>
+        <span class="text-sm font-bold">(Default)</span>
       </div>
     </div>
   </div>
@@ -62,19 +62,19 @@
   <div class="w-1/2">
     <div class="flex justify-end space-x-12">
       <div class="text-center">
-        <div class="flex justify-center items-end h-16 pb-6">
+        <div class="flex items-end justify-center h-16 pb-6">
           <p-avatar size="xs" />
         </div>
         <span class="block text-sm">extra small</span>
       </div>
       <div class="text-center">
-        <div class="flex justify-center items-end h-16 pb-6">
+        <div class="flex items-end justify-center h-16 pb-6">
           <p-avatar size="lg" />
         </div>
         <span class="block text-sm">large</span>
       </div>
       <div class="text-center">
-        <div class="flex justify-center items-end h-16 pb-6">
+        <div class="flex items-end justify-center h-16 pb-6">
           <p-avatar size="xl" />
         </div>
         <span class="block text-sm">extra large</span>
@@ -122,21 +122,21 @@
   <div class="w-1/2">
     <div class="flex justify-end space-x-12">
       <div class="text-center">
-        <div class="flex justify-center items-end h-12 pb-6">
+        <div class="flex items-end justify-center h-12 pb-6">
           <p-avatar />
         </div>
         <span class="block text-sm">default</span>
-        <span class="font-bold text-sm">(image)</span>
+        <span class="text-sm font-bold">(image)</span>
       </div>
       <div class="text-center">
-        <div class="flex justify-center items-end h-12 pb-6">
+        <div class="flex items-end justify-center h-12 pb-6">
           <p-avatar name="Fififi Huhuhu" />
         </div>
         <span class="block text-sm">default</span>
-        <span class="font-bold text-sm">(initial)</span>
+        <span class="text-sm font-bold">(initial)</span>
       </div>
       <div class="text-center">
-        <div class="flex justify-center items-end h-12 pb-6">
+        <div class="flex items-end justify-center h-12 pb-6">
           <p-avatar>
             <IconUser />
           </p-avatar>
@@ -170,21 +170,21 @@
   <div class="w-1/2">
     <div class="flex justify-end space-x-12">
       <div class="text-center">
-        <div class="flex justify-center items-end h-12 pb-6">
+        <div class="flex items-end justify-center h-12 pb-6">
           <p-avatar />
         </div>
         <span class="block text-sm">default</span>
-        <span class="font-bold text-sm">(image)</span>
+        <span class="text-sm font-bold">(image)</span>
       </div>
       <div class="text-center">
-        <div class="flex justify-center items-end h-12 pb-6">
+        <div class="flex items-end justify-center h-12 pb-6">
           <p-avatar name="Fififi Huhuhu" />
         </div>
         <span class="block text-sm">default</span>
-        <span class="font-bold text-sm">(initial)</span>
+        <span class="text-sm font-bold">(initial)</span>
       </div>
       <div class="text-center">
-        <div class="flex justify-center items-end h-12 pb-6">
+        <div class="flex items-end justify-center h-12 pb-6">
           <p-avatar>
             <IconUser />
           </p-avatar>

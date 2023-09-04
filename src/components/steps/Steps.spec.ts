@@ -248,3 +248,56 @@ it('should modify value inside v-model', async () => {
 
   expect(model.value).toBe(2)
 })
+
+it('should loop over to start if prop loop set to true', async () => {
+  const model  = ref(3)
+  const screen = render({
+    components: { Steps, Step },
+    template  : `
+      <Steps v-model="model" loop direction="vertical">
+        <Step>
+          <template #default="{ prev, next }">
+            Step 1
+            <button @click="prev">
+              Prev
+            </button>
+            <button @click="next">
+              Next
+            </button>
+          </template>
+        </Step>
+        <Step>
+          <span>Step 2</span>
+        </Step>
+        <Step>
+          <template #default="{ prev, next }">
+            Step 3
+            <button @click="prev">
+              Prev
+            </button>
+            <button @click="next">
+              Next
+            </button>
+          </template>
+        </Step>
+      </Steps>
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const nextBtn = screen.queryByText('Next')
+
+  await fireEvent.click(nextBtn)
+  await delay(0)
+
+  expect(model.value).toBe(1)
+
+  const prevBtn = screen.queryByText('Prev')
+
+  await fireEvent.click(prevBtn)
+  await delay(0)
+
+  expect(model.value).toBe(3)
+})

@@ -2,100 +2,109 @@
   <component
     :is="tagName"
     :href="href"
+    :type="type"
     data-testid="btn"
-    :class="classNames">
-    <slot />
+    :class="classNames"
+    :disabled="loading || disabled">
+    <spinner v-if="loading" />
+    <slot v-else />
   </component>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
   computed,
-  defineComponent,
   PropType,
   inject,
 } from 'vue-demi'
-
+import type { RouteLocationRaw } from 'vue-router'
 import {
   ColorVariant,
   SizeVariant,
   StyleVariant,
-  TagVariant,
+  TypeVariant,
 } from '.'
 import { BUTTONGROUP_SETTING } from '../button-group'
-
 import { INPUTGROUP_SETTING } from '../input-group'
+import Spinner from '../spinner/SpinnerRinggo.vue'
 
-export default defineComponent({
-  props: {
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'solid',
-    },
-    color: {
-      type   : String as PropType<ColorVariant>,
-      default: 'default',
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    icon: {
-      type   : Boolean,
-      default: false,
-    },
-    pill: {
-      type   : Boolean,
-      default: false,
-    },
-    href: {
-      type   : String,
-      default: undefined,
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'solid',
   },
-  setup (props) {
-    const inputSetting  = inject(INPUTGROUP_SETTING, undefined, false)
-    const buttonSetting = inject(BUTTONGROUP_SETTING, undefined, false)
-
-    const classNames = computed(() => {
-      const result: string[] = ['btn']
-
-      if (props.color)
-        result.push(`btn--${props.color}`)
-
-      if (props.variant)
-        result.push(`btn--variant-${props.variant}`)
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (inputSetting?.size.value)
-        result.push(`btn--${inputSetting?.size.value}`)
-      // eslint-disable-next-line unicorn/explicit-length-check
-      else if (buttonSetting?.size.value)
-        result.push(`btn--${buttonSetting?.size.value}`)
-      // eslint-disable-next-line unicorn/explicit-length-check
-      else if (props.size)
-        result.push(`btn--${props.size}`)
-
-      if (props.icon)
-        result.push('btn--icon')
-
-      if (props.pill)
-        result.push('btn--pill')
-
-      return result
-    })
-
-    const tagName = computed(() => {
-      let tag: TagVariant = 'button'
-
-      if (props.href)
-        tag = 'a'
-
-      return tag
-    })
-
-    return { classNames, tagName }
+  color: {
+    type   : String as PropType<ColorVariant>,
+    default: 'default',
   },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  icon: {
+    type   : Boolean,
+    default: false,
+  },
+  pill: {
+    type   : Boolean,
+    default: false,
+  },
+  href: {
+    type   : [String, Object] as PropType<string | RouteLocationRaw>,
+    default: undefined,
+  },
+  type: {
+    type   : String as PropType<TypeVariant>,
+    default: 'button',
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  loading: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const inputSetting  = inject(INPUTGROUP_SETTING, undefined, false)
+const buttonSetting = inject(BUTTONGROUP_SETTING, undefined, false)
+
+const classNames = computed(() => {
+  const result: string[] = ['btn']
+
+  if (props.color)
+    result.push(`btn--${props.color}`)
+
+  if (props.variant)
+    result.push(`btn--variant-${props.variant}`)
+
+  if (props.loading)
+    result.push('btn--loading')
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (inputSetting?.size.value)
+    result.push(`btn--${inputSetting?.size.value}`)
+  // eslint-disable-next-line unicorn/explicit-length-check
+  else if (buttonSetting?.size.value)
+    result.push(`btn--${buttonSetting?.size.value}`)
+  // eslint-disable-next-line unicorn/explicit-length-check
+  else if (props.size)
+    result.push(`btn--${props.size}`)
+
+  if (props.icon)
+    result.push('btn--icon')
+
+  if (props.pill)
+    result.push('btn--pill')
+
+  return result
+})
+
+const tagName = computed(() => {
+  return props.href
+    ? 'nuxt-link'
+    : 'button'
 })
 </script>
 
@@ -127,6 +136,10 @@ export default defineComponent({
   --p-color-dark-danger-hover: darken(theme(backgroundColor.dark.danger.emphasis), 5%);
   --p-color-danger-focus: darken(theme(backgroundColor.danger.emphasis), 10%);
   --p-color-dark-danger-focus: darken(theme(backgroundColor.dark.danger.emphasis), 10%);
+  --p-button-xs-padding-x: theme(spacing.2);
+  --p-button-sm-padding-x: theme(spacing.4);
+  --p-button-md-padding-x: theme(spacing.5);
+  --p-button-lg-padding-x: theme(spacing.8);
 
   @apply inline-flex align-middle justify-center font-medium no-underline hover:no-underline disabled:opacity-50 disabled:pointer-events-none transition-all ease-in-out duration-200;
 
@@ -143,19 +156,19 @@ export default defineComponent({
   * eg: xs, sm, md, and lg
   */
   &&--xs {
-    @apply px-2 py-[2px] gap-1 text-sm rounded-xs;
+    @apply px-[var(--p-button-xs-padding-x)] py-[2px] gap-1 text-sm rounded-xs;
   }
 
   &&--sm {
-    @apply px-4 py-1 gap-2 text-base tracking-wider rounded-sm;
+    @apply px-[var(--p-button-sm-padding-x)] py-1 gap-2 text-base tracking-wider rounded-sm;
   }
 
   &&--md {
-    @apply px-5 py-[10px] gap-3 text-base tracking-wider rounded;
+    @apply px-[var(--p-button-md-padding-x)] py-[10px] gap-3 text-base tracking-wider rounded;
   }
 
   &&--lg {
-    @apply px-8 py-4 gap-4 text-base tracking-wider rounded;
+    @apply px-[var(--p-button-lg-padding-x)] py-4 gap-4 text-base tracking-wider rounded;
   }
 
   /*
@@ -337,6 +350,12 @@ export default defineComponent({
 
   &&--pill {
     @apply rounded-full;
+  }
+
+  &--loading {
+    .spinner {
+      @apply h-6;
+    }
   }
 }
 </style>

@@ -106,6 +106,10 @@ export default defineConfig({
               link: '/components/card/',
             },
             {
+              text: 'Carousel',
+              link: '/components/carousel/',
+            },
+            {
               text: 'Chart',
               link: '/components/chart/',
             },
@@ -162,6 +166,18 @@ export default defineConfig({
               link: '/components/sheet/',
             },
             {
+              text: 'Progress Indicator',
+              link: '/components/progress-indicator/',
+            },
+            {
+              text: 'Progressbar',
+              link: '/components/progressbar/',
+            },
+            {
+              text: 'Ringbar',
+              link: '/components/ringbar/',
+            },
+            {
               text: 'Spinner',
               link: '/components/spinner/',
             },
@@ -172,10 +188,6 @@ export default defineConfig({
             {
               text: 'Tabs',
               link: '/components/tabs/',
-            },
-            {
-              text: 'Table',
-              link: '/components/table/',
             },
             {
               text: 'Wizard',
@@ -206,6 +218,20 @@ export default defineConfig({
             {
               text: 'Truncate',
               link: '/components/truncate/',
+            },
+          ],
+        },
+        {
+          text     : 'Table',
+          collapsed: true,
+          items    : [
+            {
+              text: 'Table Flex',
+              link: '/components/table-flex/',
+            },
+            {
+              text: 'Table Static',
+              link: '/components/table-static/',
             },
           ],
         },

@@ -10,6 +10,7 @@
         data-testid="calendar-prev"
         variant="solid"
         icon
+        type="button"
         :disabled="!canPrev"
         :readonly="disabled || readonly"
         @click="prev">
@@ -20,6 +21,7 @@
         data-testid="calendar-title"
         class="calendar__nav-title"
         variant="solid"
+        type="button"
         :readonly="disabled || readonly"
         @click="changeMode(1)">
         {{ title }}
@@ -29,6 +31,7 @@
         data-testid="calendar-next"
         variant="solid"
         icon
+        type="button"
         :readonly="disabled || readonly"
         :disabled="!canNext"
         @click="next">
@@ -49,6 +52,7 @@
           :key="i">
           <p-button
             variant="solid"
+            type="button"
             data-testid="calendar-item"
             :readonly="item.readonly || disabled || readonly"
             :active="item.active"
@@ -190,7 +194,7 @@ export default defineComponent({
     const vStart = computed({
       get () {
         return Array.isArray(props.modelValue)
-          ? props.modelValue[0]
+          ? props.modelValue?.[0]
           : (props.start ?? props.modelValue)
       },
       set (value: Date) {
@@ -204,7 +208,7 @@ export default defineComponent({
     const vEnd = computed({
       get () {
         return Array.isArray(props.modelValue)
-          ? props.modelValue[1]
+          ? props.modelValue?.[1]
           : (props.end ?? props.modelValue)
       },
       set (value: Date) {
@@ -326,8 +330,8 @@ export default defineComponent({
       return false
     }
 
-    syncRef(localStart, vStart)
-    syncRef(localEnd, vEnd)
+    syncRef(localStart, vStart, { immediate: false })
+    syncRef(localEnd, vEnd, { immediate: false })
 
     watch([localStart, localEnd], ([startVal, endVal]) => {
       if (props.range) {

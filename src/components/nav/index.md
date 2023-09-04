@@ -7,10 +7,10 @@ description: Sub-components for Navbar, Sidebar, and Tabs.
 import pNav from './Nav.vue'
 import pNavItem from './NavItem.vue'
 import pNavSubItem from './NavSubItem.vue'
-import IconEdit from '@carbon/icons-vue/lib/edit/16'
-import IconView from '@carbon/icons-vue/lib/view/16'
-import IconDocument from '@carbon/icons-vue/lib/document/16'
-import IconMenu from '@carbon/icons-vue/lib/overflow-menu--vertical/16'
+import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
+import IconView from '@privyid/persona-icon/vue/view/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconMenu from '@privyid/persona-icon/vue/menu-vertical/20.vue'
 import pBadge from '../badge/Badge.vue'
 import pNavItemDropdown from './NavItemDropdown.vue'
 import pDropdownItem from '../dropdown/DropdownItem.vue'
@@ -551,12 +551,12 @@ If we need some action in section title, you can add this by using `title-action
 
 ### Props `<p-nav-item>`
 
-| Props          |   Type     | Default      | Description                                  |
-|----------------|:----------:|:------------:|-------------------------------------------------------------------|
-| `active`       | `Boolean`  | `false`      | Place component in the active state with active styling           |
-| `disabled`     | `Boolean`  | `false`      | Disables component functionality and place it in disabled state   |
-| `href`         | `String`   | `undefined`  | Target URL of the link                                            |
-| `target`       | `String`   | `_self`      | Sets the `target` attribute on the rendered link, valid value is `_blank`, `_self`, `_parent`, dan `_top` |
+| Props          |   Type                         | Default      | Description                                                                                               |
+|----------------|:------------------------------:|:------------:|-----------------------------------------------------------------------------------------------------------|
+| `active`       | `Boolean`                      | `false`      | Place component in the active state with active styling                                                   |
+| `disabled`     | `Boolean`                      | `false`      | Disables component functionality and place it in disabled state                                           |
+| `href`         | `String` or `RouteLocationRaw` | `undefined`  | Target URL of the link                                                                                    |
+| `target`       | `String`                       | `_self`      | Sets the `target` attribute on the rendered link, valid value is `_blank`, `_self`, `_parent`, dan `_top` |
 
 ### Slots `<p-nav-item>`
 

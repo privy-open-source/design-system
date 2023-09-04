@@ -8,15 +8,15 @@ description: Define sidebar using JSON
   import { ref } from 'vue-demi'
   import pSidebarBrand from '../sidebar/SidebarBrand.vue'
   import { defineMenu } from '.'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconUsers from '@carbon/icons-vue/lib/group/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconEN from '../../public/assets/images/img-flag.svg'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+  import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
+  import { withBase } from 'vitepress'
 
-  const modelA   = ref(false)
-
-  const basic = defineMenu([
+  const IconEN = withBase('/assets/images/img-flag.svg')
+  const modelA = ref(false)
+  const basic  = defineMenu([
     {
       items: [
         {
@@ -28,13 +28,13 @@ description: Define sidebar using JSON
         {
           name : 'documents',
           label: 'Documents',
-          url  : '/',
+          url  : '/documents',
           icon : IconDocument
         },
         {
           name : 'contacts',
           label: 'Contacts',
-          url  : '/',
+          url  : '/contacts',
           icon : IconUsers
         },
       ]
@@ -53,31 +53,31 @@ description: Define sidebar using JSON
         {
           name       : 'document',
           label      : 'Documents',
-          url        : '/',
+          url        : '/document',
           icon       : IconDocument,
           collapsible: true,
           submenu    : [
             {
               name : 'need-action',
               label: 'Need Action',
-              url  : '/'
+              url  : '/document/need-action'
             },
             {
               name : 'in-progress',
               label: 'In Progress',
-              url  : '/'
+              url  : '/document/in-progress'
             },
             {
               name : 'others',
               label: 'Others',
-              url  : '/'
+              url  : '/document/others'
             }
           ]
         },
         {
           name : 'contact',
           label: 'Contacts',
-          url  : '/',
+          url  : '/contact',
           icon : IconUsers
         }
       ]
@@ -89,28 +89,28 @@ description: Define sidebar using JSON
         {
           name : 'rejects',
           label: 'Rejects',
-          url  : '/',
+          url  : '/document/rejects',
         },
         {
           name: 'archives',
           label: 'Archives',
-          url: '/',
+          url: '/document/archives',
         },
       ]
     },
     {
       bottom: true,
-      items: [
+      items : [
         {
           name : 'settings',
           label: 'Settings',
           icon : IconSettings,
-          url  : '/',
+          url  : '/settings',
         },
         {
           name : 'english',
           label: 'English',
-          url  : '/',
+          url  : '#',
           icon : IconEN
         },
       ]
@@ -127,12 +127,12 @@ description: Define sidebar using JSON
         },
         {
           name: 'document',
-          url : '/',
+          url : '/document',
           icon: IconDocument
         },
         {
           name: 'users',
-          url : '/',
+          url : '/users',
           icon: IconUsers
         }
       ]
@@ -142,13 +142,13 @@ description: Define sidebar using JSON
       items : [
         {
           name: 'settings',
-          url : '/',
+          url : '/settings',
           icon: IconSettings
         },
         {
           name : 'language',
           label: 'ENG',
-          url  : '/',
+          url  : '#',
           icon : IconEN,
         }
       ]
@@ -158,7 +158,7 @@ description: Define sidebar using JSON
   const limit = defineMenu([
     {
       maxLength: 2,
-      items: [
+      items    : [
         {
           name : 'dashboard',
           label: 'Dashboard',
@@ -166,26 +166,26 @@ description: Define sidebar using JSON
           icon : IconDashboard,
         },
         {
-          name       : 'document',
-          label      : 'Documents',
-          url        : '/',
-          icon       : IconDocument,
+          name : 'document',
+          label: 'Documents',
+          url  : '/document',
+          icon : IconDocument,
         },
         {
           name : 'contact',
           label: 'Contacts',
-          url  : '/',
+          url  : '/contact',
           icon : IconUsers
         },
         {
           name : 'rejects',
           label: 'Rejects',
-          url  : '/',
+          url  : '/reject',
         },
         {
-          name: 'archives',
+          name : 'archives',
           label: 'Archives',
-          url: '/',
+          url  : '/archive',
         },
       ]
     },
@@ -240,9 +240,9 @@ description: Define sidebar using JSON
 
 <script setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
 
 const menus = defineMenu([
   {
@@ -292,10 +292,10 @@ const menus = defineMenu([
 
 <script setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
-import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
 
 const menus = defineMenu([
   {
@@ -396,10 +396,10 @@ const menus = defineMenu([
 
 <script setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
-import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
 
 const menus = defineMenu([
   {
@@ -463,9 +463,9 @@ Limiting how much menu-item would be displayed is possible by setup it from `max
 
 <script setup>
 import { defineMenu } from '@privyid/persona/core'
-import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-import IconDocument from '@carbon/icons-vue/lib/document/20'
-import IconUsers from '@carbon/icons-vue/lib/group/20'
+import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
 
 const limit = defineMenu([
   {

@@ -7,7 +7,7 @@
     :disabled="disabled"
     :class="classNames">
     <template #activator>
-      <Input
+      <p-input
         v-model="search"
         data-testid="select-search"
         class="select__search"
@@ -15,8 +15,23 @@
         :placeholder="placeholder"
         :disabled="disabled"
         :readonly="readonly"
-        @focus="onFocus" />
-      <IconArrow class="select__caret" />
+        :clearable="clearable"
+        @clear.prevent="onClear"
+        @focus="onFocus">
+        <template
+          v-if="!noCaret"
+          #append>
+          <slot
+            name="caret"
+            :is-open="isOpen"
+            :toggle="toggleOpen">
+            <IconArrow
+              class="select__caret"
+              data-testid="select-caret-icon"
+              @click="toggleOpen" />
+          </slot>
+        </template>
+      </p-input>
     </template>
 
     <template v-if="!isLoading && items.length === 0">
@@ -30,11 +45,17 @@
     </template>
 
     <template v-else>
+      <DropdownHeader
+        v-if="sectionLabel"
+        data-testid="select-label">
+        {{ sectionLabel }}
+      </DropdownHeader>
       <DropdownItem
         v-for="(item, i) in items"
         :key="i"
         data-testid="select-item"
         :class="{ selected: isSelected(item) }"
+        :disabled="Boolean(item.disabled)"
         @click="select(item)">
         <div class="select__option">
           <div class="select__option-text">
@@ -59,7 +80,7 @@
           width="14"
           height="14" />
         <slot name="loading">
-          {{ loadingText }}
+          <span>{{ loadingText }}</span>
         </slot>
       </div>
     </template>
@@ -69,9 +90,10 @@
 <script lang="ts">
 import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
-import Input from '../input/Input.vue'
-import IconArrow from '@carbon/icons-vue/lib/chevron--down/16'
-import IconCheck from '@carbon/icons-vue/lib/checkmark--filled/16'
+import DropdownHeader from '../dropdown/DropdownHeader.vue'
+import pInput from '../input/Input.vue'
+import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'
+import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
 import IconLoading from '../spinner/SpinnerRing.vue'
 import {
   computed,
@@ -81,20 +103,23 @@ import {
   ref,
   watch,
 } from 'vue-demi'
-import { SelectItem } from '.'
+import { findSelected, SelectItem } from '.'
 import { Adapter } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
 import { tryOnMounted } from '@vueuse/shared'
-import { onStartTyping } from '@vueuse/core'
+import {
+  onStartTyping,
+} from '@vueuse/core'
 import { SizeVariant } from '../button'
 
 export default defineComponent({
   components: {
     Dropdown,
     DropdownItem,
-    Input,
+    DropdownHeader,
+    pInput,
     IconArrow,
     IconCheck,
     IconLoading,
@@ -109,7 +134,7 @@ export default defineComponent({
         Object,
         Date,
       ],
-      default: '',
+      default: undefined,
     },
     selected: {
       type   : Object as PropType<SelectItem>,
@@ -152,9 +177,21 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    clearable: {
+      type   : Boolean,
+      default: false,
+    },
     size: {
       type   : String as PropType<SizeVariant>,
       default: 'md',
+    },
+    sectionLabel: {
+      type   : String,
+      default: undefined,
+    },
+    noCaret: {
+      type   : Boolean,
+      default: false,
     },
   },
   models: {
@@ -180,25 +217,13 @@ export default defineComponent({
       isLoading,
     }
 
-    const items = props.adapter.setup(context)
+    const items      = props.adapter.setup(context)
+    const localModel = ref<SelectItem>(findSelected(items.value, props.modelValue))
 
-    const model = computed({
-      get (): SelectItem {
-        return items.value.find((item) => isEqual(item.value, props.modelValue))
-          ?? {
-            text : '',
-            value: undefined,
-          }
-      },
-      set (selected: SelectItem) {
-        emit('change', selected)
-        emit('update:modelValue', selected.value)
-        emit('update:selected', selected)
-
-        if (isOpen.value)
-          emit('userInput', selected)
-      },
-    })
+    const toggleOpen = () => {
+      if (!props.disabled && !props.readonly)
+        isOpen.value = !isOpen.value
+    }
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -222,7 +247,7 @@ export default defineComponent({
       get () {
         return isOpen.value
           ? keyword.value
-          : model.value?.text
+          : localModel.value?.text
       },
       set (value: string) {
         if (value !== search.value)
@@ -230,8 +255,19 @@ export default defineComponent({
       },
     })
 
-    function select (item: SelectItem) {
-      model.value = item
+    watch(() => props.modelValue, (value) => {
+      localModel.value = findSelected(items.value, value)
+    })
+
+    function select (item?: SelectItem) {
+      localModel.value = item
+
+      emit('change', item)
+      emit('update:selected', item)
+      emit('update:modelValue', item?.value)
+
+      if (isOpen.value)
+        emit('userInput', item)
     }
 
     function onFocus () {
@@ -239,8 +275,15 @@ export default defineComponent({
         isOpen.value = true
     }
 
+    function onClear () {
+      if (isOpen.value)
+        keyword.value = ''
+      else
+        select()
+    }
+
     function isSelected (item: SelectItem) {
-      return isEqual(item.value, model.value.value)
+      return isEqual(item.value, localModel.value?.value)
     }
 
     watch(isOpen, (value) => {
@@ -262,13 +305,14 @@ export default defineComponent({
 
     return {
       classNames,
-      model,
       isOpen,
       isLoading,
       search,
       items,
+      toggleOpen,
       select,
       onFocus,
+      onClear,
       isSelected,
     }
   },
@@ -288,8 +332,9 @@ export default defineComponent({
   }
 
   &__caret {
-    @apply absolute right-3 top-0 bottom-0 my-auto transition-transform duration-150 text-subtle pointer-events-none;
+    @apply transition-transform duration-150 text-subtle;
     @apply dark:text-dark-subtle;
+    @apply cursor-pointer;
   }
 
   &__option {

@@ -6,6 +6,7 @@
       :step="step"
       :next="next"
       :prev="prev"
+      :total="total"
       :can-prev="canPrev"
       :can-next="canNext"
       :to-step="toStep" />
@@ -37,6 +38,7 @@ export default defineComponent({
       canPrev,
       toStep,
       step,
+      total,
       next,
       prev,
       onBeforeNext,
@@ -53,6 +55,7 @@ export default defineComponent({
       toStep,
       prev,
       next,
+      total,
       step,
     }
   },

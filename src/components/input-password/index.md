@@ -18,8 +18,8 @@ description: Base password-input form.
 
 ### Simple Usage
 
-<preview>
-  <p-input-password />
+<preview class="flex-col space-y-3">
+  <p-input-password class="test" />
 </preview>
 
 ```vue
@@ -94,6 +94,24 @@ description: Base password-input form.
 </template>
 ```
 
+## Accept Character
+
+You can filter what characters are allowed to be input using the prop `accept`. The value can be RegExp, or using available preset.
+
+<preview class="flex-col space-y-4">
+  <p-input-password accept="0-9" placeholder="Numeric Only (Manual)" />
+  <p-input-password accept="numeric" placeholder="Numeric Only (using Preset)" />
+</preview>
+
+```vue
+<template>
+  <p-input-password accept="0-9" placeholder="Numeric Only (Manual)" />
+  <p-input-password accept="numeric" placeholder="Numeric Only (using Preset)" />
+</template>
+```
+
+👉 See [Available Preset](../input/#available-preset) for more information
+
 ## Binding v-model
 
 Like other input, input value can be binding with `v-model`.
@@ -124,7 +142,9 @@ Like other input, input value can be binding with `v-model`.
 | `readonly`    | `Boolean` | `false` | Readonly state                                          |
 | `error`       | `Boolean` | `false` | Error state                                             |
 | `clearable`   | `Boolean` | `false` | Enable clear button                                     |
+| `accept`      | `String`  |   `-`   | Whitelist character can be inputted                     |
 | `modelValue`  | `String`  |   `-`   | v-model value                                           |
+| `container-class` | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the input password container  |
 
 ### Slots
 

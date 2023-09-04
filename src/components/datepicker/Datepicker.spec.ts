@@ -225,3 +225,57 @@ it('should display date range format on range mode', () => {
 
   expect(input).toHaveValue('2022-01-01 - 2022-01-31')
 })
+
+it('should modify v-model:start and v-model:end when using props `range`', async () => {
+  const start  = ref(new Date(2022, 0, 15))
+  const end    = ref(new Date(2022, 0, 31))
+  const screen = render({
+    components: { Datepicker },
+    template  : `
+      <Datepicker
+        v-model:start="start"
+        v-model:end="end"
+        range />
+    `,
+    setup () {
+      return { start, end }
+    },
+  })
+
+  const input = screen.queryByTestId('datepicker-input')
+
+  input.focus()
+  await nextTick()
+
+  const items    = screen.queryAllByTestId('calendar-item')
+  const expected = [new Date(2022, 0, 1), new Date(2022, 0, 8)]
+
+  await fireEvent.click(items.at(12))
+
+  expect(start.value).toBeDate()
+  expect(end.value).toBeUndefined()
+
+  await fireEvent.click(items.at(19))
+
+  expect(start.value).toBeDate()
+  expect(end.value).toBeDate()
+
+  expect(start.value.toISOString()).toBe(expected[0].toISOString())
+  expect(end.value.toISOString()).toBe(expected[1].toISOString())
+
+  expect(input).toHaveValue('01/01/2022 - 08/01/2022')
+
+  start.value = undefined
+  end.value   = undefined
+
+  await nextTick()
+
+  expect(input).toHaveValue('')
+
+  start.value = new Date(2023, 0, 1)
+  end.value   = new Date(2023, 1, 1)
+
+  await nextTick()
+
+  expect(input).toHaveValue('01/01/2023 - 01/02/2023')
+})

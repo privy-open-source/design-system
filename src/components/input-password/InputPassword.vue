@@ -17,11 +17,22 @@
 
 <script lang="ts">
 import pInput from '../input/Input.vue'
-import IconShow from '@carbon/icons-vue/lib/view/16'
-import IconHide from '@carbon/icons-vue/lib/view--off/16'
-import { defineComponent, ref } from 'vue-demi'
+import IconShow from '@privyid/persona-icon/vue/view/20.vue'
+import IconHide from '@privyid/persona-icon/vue/view-off/20.vue'
+import {
+  Ref,
+  ref,
+  defineComponent,
+} from 'vue-demi'
 
-export default defineComponent({
+type Props = InstanceType<typeof pInput>['$props']
+
+type Bindings = {
+  isShow: Ref<boolean>,
+  toggle: () => void,
+}
+
+export default defineComponent<Props, Bindings>({
   components: {
     pInput,
     IconShow,
@@ -47,7 +58,7 @@ export default defineComponent({
   @apply pr-9;
 
   &__toggle {
-    @apply absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer z-1 text-default/30 hover:text-subtle;
+    @apply absolute right-[0.15rem] top-1/2 -translate-y-1/2 cursor-pointer z-1 text-default/30 hover:text-subtle;
     @apply dark:text-dark-default/30 hover:dark:text-dark-subtle;
 
     .input--disabled ~ & {
@@ -57,10 +68,10 @@ export default defineComponent({
   }
 
   &.input--clearable {
-    @apply pr-14;
+    @apply pr-16;
 
     + .input__clear {
-      @apply right-9;
+      @apply right-10;
     }
   }
 }

@@ -1,15 +1,11 @@
 <template>
-  <transition
-    name="fade"
-    mode="out-in">
-    <div
-      v-show="model || isToggleable"
-      data-testid="collapse"
-      class="collapse"
-      :class="classNames">
-      <slot />
-    </div>
-  </transition>
+  <v-collapse
+    data-testid="collapse"
+    class="collapses"
+    :class="classNames"
+    :when="model || isToggleable">
+    <slot />
+  </v-collapse>
 </template>
 
 <script lang="ts">
@@ -21,9 +17,11 @@ import {
 import { useVModel } from '../input'
 import { NAVBAR_SETTINGS } from '../navbar'
 import { useMediaQuery } from '@vueuse/core'
+import { Collapse } from 'vue-collapsed'
 
 export default defineComponent({
-  props: {
+  components: { vCollapse: Collapse },
+  props     : {
     modelValue: {
       type   : Boolean,
       default: false,
@@ -33,14 +31,11 @@ export default defineComponent({
       default: false,
     },
   },
-
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-
   emits: ['update:modelValue'],
-
   setup (props) {
     const model   = useVModel(props)
     const context = inject(NAVBAR_SETTINGS, undefined, true)
@@ -66,6 +61,8 @@ export default defineComponent({
 
       if (model.value)
         result.push('collapse--show')
+      else
+        result.push('collapse--hide')
 
       if (props.isNav)
         result.push('navbar--collapse')
@@ -84,14 +81,7 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-.collapse {
-  &&--show {
-    @apply block visible text-default;
-    @apply dark:text-dark-default;
-  }
-
-  &:not(&--show) {
-    @apply hidden;
-  }
+.collapses {
+  @apply transition-[height] duration-300 ease-out block;
 }
 </style>

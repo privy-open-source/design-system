@@ -6,12 +6,12 @@ export interface RatioProp {
   ratio?: number,
 }
 
-export function useRatio (props: RatioProp): ComputedRef<number> {
+export function useRatio (props: RatioProp, defaultValue = 1): ComputedRef<number> {
   return computed(() => {
     if (props.width && props.height)
       return Number.parseFloat(`${props.width}`) / Number.parseFloat(`${props.height}`)
 
-    return props.ratio ?? 1
+    return props.ratio ?? defaultValue
   })
 }
 

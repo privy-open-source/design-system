@@ -266,6 +266,20 @@ description: Take picture from user's camera
 </template>
 ```
 
+## Variables
+Card use local CSS variables on `.card` for enhanced real-time customization.
+
+```sass
+--p-card-padding-x: theme(spacing.6);
+--p-card-padding-y: theme(spacing.6);
+--p-card-bg: theme(backgroundColor.default.DEFAULT);
+--p-card-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
+--p-card-border: theme(borderColor.default.DEFAULT);
+--p-card-border-dark: theme(borderColor.default.DEFAULT);
+--p-card-color: theme(textColor.default);
+--p-card-color-dark: theme(textColor.dark.default);
+```
+
 ## API
 
 ### Props

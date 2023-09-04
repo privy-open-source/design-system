@@ -1,7 +1,7 @@
 ##############################
 ## Building
 ##############################
-FROM node:19-alpine as builder
+FROM node:20-alpine as builder
 
 # RUN apk update && apk upgrade
 
@@ -36,7 +36,7 @@ RUN yarn docs:build
 ##############################
 ## Running
 ##############################
-FROM halverneus/static-file-server:v1.8.9
+FROM halverneus/static-file-server:v1.8.10
 
 # Set working directory
 WORKDIR /usr/src/app

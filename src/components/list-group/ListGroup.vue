@@ -19,6 +19,14 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    borderless: {
+      type   : Boolean,
+      default: false,
+    },
+    rounded: {
+      type   : Boolean,
+      default: false,
+    },
   },
   setup (props) {
     const classNames = computed(() => {
@@ -28,6 +36,10 @@ export default defineComponent({
         result.push('list-group--flush')
       if (props.horizontal)
         result.push('list-group--horizontal')
+      if (props.borderless)
+        result.push('list-group--borderless')
+      if (props.rounded)
+        result.push('list-group--rounded')
 
       return result
     })
@@ -50,6 +62,19 @@ export default defineComponent({
 
   &--horizontal {
     @apply flex-row divide-x divide-y-0;
+  }
+
+  &--borderless {
+    @apply border-0 divide-y-0;
+  }
+
+  &--rounded {
+    @apply divide-y-0;
+
+    > :not([hidden]) ~ :not([hidden]),
+    > :first-child {
+      @apply rounded-md;
+    }
   }
 }
 </style>

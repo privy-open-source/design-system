@@ -1,8 +1,8 @@
 {
   "name": "@privyid/tailwind-preset",
   "description": "Tailwind preset for Persona project",
-  "version": "0.16.0",
-  "packageManager": "yarn@3.6.0",
+  "version": "0.20.0",
+  "packageManager": "yarn@3.6.3",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",

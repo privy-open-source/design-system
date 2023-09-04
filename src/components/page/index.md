@@ -11,11 +11,11 @@ description: Page with toggle expand for responsive purpose
   import pCard from '../card/Card.vue'
   import pHeading from '../heading/Heading.vue'
   import pBanner from '../banner/Banner.vue'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconUsers from '@carbon/icons-vue/lib/group/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconMenu from '@carbon/icons-vue/lib/menu/20'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconUsers from '@privyid/persona-icon/vue/user-multiple/20.vue'
+  import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
+  import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
   import IconEN from '../../public/assets/images/img-flag.svg'
   import { defineMenu } from '../sidebar-menu'
   import { ref } from 'vue-demi'
@@ -36,13 +36,13 @@ description: Page with toggle expand for responsive purpose
         {
           name : 'documents',
           label: 'Documents',
-          url  : '/',
+          url  : '/documents',
           icon : IconDocument
         },
         {
           name : 'contacts',
           label: 'Contacts',
-          url  : '/',
+          url  : '/contacts',
           icon : IconUsers
         }
       ]
@@ -61,31 +61,31 @@ description: Page with toggle expand for responsive purpose
         {
           name       : 'document',
           label      : 'Documents',
-          url        : '/',
+          url        : '/document',
           icon       : IconDocument,
           collapsible: true,
           submenu    : [
             {
               name : 'need-action',
               label: 'Need Action',
-              url  : '/'
+              url  : '/need-action'
             },
             {
               name : 'in-progress',
               label: 'In Progress',
-              url  : '/'
+              url  : '/in-progress'
             },
             {
               name : 'others',
               label: 'Others',
-              url  : '/'
+              url  : '/others'
             }
           ]
         },
         {
           name : 'contact',
           label: 'Contacts',
-          url  : '/',
+          url  : '/contact',
           icon : IconUsers
         }
       ]
@@ -97,12 +97,12 @@ description: Page with toggle expand for responsive purpose
         {
           name : 'rejects',
           label: 'Rejects',
-          url  : '/',
+          url  : '/rejects',
         },
         {
-          name: 'archives',
+          name : 'rejects',
           label: 'Archives',
-          url: '/',
+          url  : '/rejects',
         },
       ]
     },
@@ -113,12 +113,11 @@ description: Page with toggle expand for responsive purpose
           name : 'settings',
           label: 'Settings',
           icon : IconSettings,
-          url  : '/',
+          url  : '/settings',
         },
         {
           name : 'english',
           label: 'English',
-          url  : '/',
           icon : IconEN
         },
       ]
@@ -135,12 +134,12 @@ description: Page with toggle expand for responsive purpose
         },
         {
           name: 'document',
-          url : '/',
+          url : '/document',
           icon: IconDocument
         },
         {
           name: 'users',
-          url : '/',
+          url : '/users',
           icon: IconUsers
         }
       ]
@@ -150,13 +149,12 @@ description: Page with toggle expand for responsive purpose
       items : [
         {
           name: 'settings',
-          url : '/',
+          url : '/settings',
           icon: IconSettings
         },
         {
           name : 'language',
           label: 'ENG',
-          url  : '/',
           icon : IconEN,
         }
       ]
@@ -227,10 +225,10 @@ The page component is used in combination with the sidebar component. It can be 
 ```vue
 <script setup>
   import { defineMenu } from '@privyid/persona/core'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconUsers from '@carbon/icons-vue/lib/group/20'
-  import IconMenu from '@carbon/icons-vue/lib/menu/20'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+  import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
 
   const model = ref(false)
 
@@ -383,11 +381,11 @@ Page component has 2 type variant, `wide` and `narrow`. Default type is `narrow`
 ```vue
 <script setup>
   import { defineMenu } from '@privyid/persona/core'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconUsers from '@carbon/icons-vue/lib/group/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconMenu from '@carbon/icons-vue/lib/menu/20'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
+  import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
+  import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
   import IconEN from '../assets/images/img-flag.svg'
 
   const model = ref(false)

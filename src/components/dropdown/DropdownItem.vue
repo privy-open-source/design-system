@@ -5,6 +5,7 @@
     class="dropdown__item"
     :class="classNames"
     :href="href"
+    :disabled="disabled"
     @click="handleOnClick">
     <slot>
       {{ text }}
@@ -32,6 +33,10 @@ export default defineComponent({
       default: undefined,
     },
     active: {
+      type   : Boolean,
+      default: false,
+    },
+    disabled: {
       type   : Boolean,
       default: false,
     },
@@ -80,7 +85,7 @@ export default defineComponent({
   @apply dark:text-dark-default;
 
   &:is(a) {
-    @apply hover:text-default;
+    @apply no-underline hover:no-underline hover:text-default;
     @apply hover:dark:text-dark-default;
   }
 
@@ -93,6 +98,11 @@ export default defineComponent({
   &&--active {
     @apply bg-default-alpha;
     @apply dark:bg-dark-default-alpha cursor-default;
+  }
+
+  &:disabled {
+    @apply bg-subtle border-subtle pointer-events-none text-muted;
+    @apply dark:bg-dark-subtle dark:border-dark-subtle  dark:text-dark-muted;
   }
 }
 </style>

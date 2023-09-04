@@ -1,10 +1,12 @@
-import { render } from '@testing-library/vue'
-import type * as VueUse from '@vueuse/core'
 import { vi } from 'vitest'
+import { nextTick, ref } from 'vue-demi'
+import { fireEvent, render } from '@testing-library/vue'
+import type * as VueUse from '@vueuse/core'
 import { useMediaQuery, setMediaQuery } from './__mocks__/use-window-size'
-import { useDraw } from './__mocks__/use-draw'
+import { triggerDraw, useDraw } from './__mocks__/use-draw'
 import * as canvas from './__mocks__/canvas'
 import SignatureDraw from './SignatureDraw.vue'
+import { delay } from 'nanodelay'
 
 vi.mock('./utils/use-draw.ts', () => ({ default: useDraw }))
 
@@ -25,7 +27,7 @@ vi.spyOn(window.URL, 'createObjectURL')
   })
 
 afterEach(() => {
-  vi.resetAllMocks()
+  vi.restoreAllMocks()
 })
 
 it('should use signature based on media-query', async () => {
@@ -35,6 +37,8 @@ it('should use signature based on media-query', async () => {
     components: { SignatureDraw },
     template  : '<SignatureDraw />',
   })
+
+  await delay(0)
 
   let mobile  = screen.queryByTestId('signature-draw-mobile')
   let desktop = screen.queryByTestId('signature-draw-desktop')
@@ -49,4 +53,32 @@ it('should use signature based on media-query', async () => {
 
   expect(mobile).not.toBeInTheDocument()
   expect(desktop).toBeInTheDocument()
+})
+
+it('should passthrought v-model', async () => {
+  await setMediaQuery('desktop')
+
+  const model  = ref('')
+  const screen = render({
+    components: { SignatureDraw },
+    template  : '<SignatureDraw v-model.base64="model" />',
+    setup () {
+      return { model }
+    },
+  })
+
+  await delay(0)
+
+  triggerDraw()
+  await nextTick()
+
+  expect(model.value).toStartWith('data:image/png')
+
+  const reset = screen.queryByTestId('signature-draw-reset')
+
+  expect(reset).toBeInTheDocument()
+
+  await fireEvent.click(reset)
+
+  expect(model.value).toBe('')
 })

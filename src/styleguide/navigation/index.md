@@ -27,17 +27,15 @@ description: Navbar style guide
   import pSidebarNav from '../../components/sidebar/SidebarNav.vue'
   import pSidebarBrand from '../../components/sidebar/SidebarBrand.vue'
   import pNavSubItem from '../../components/nav/NavSubItem.vue'
-  import IconDocument from '@carbon/icons-vue/lib/document/20'
-  import IconGroup from '@carbon/icons-vue/lib/group/20'
-  import IconSettings from '@carbon/icons-vue/lib/settings--adjust/20'
-  import IconDashboard from '@carbon/icons-vue/lib/dashboard/20'
-  import IconMenu from '@carbon/icons-vue/lib/overflow-menu--horizontal/20'
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
-  import IconView from '@carbon/icons-vue/lib/view/20'
-  import IconUser from '@carbon/icons-vue/lib/events/16'
-  import IconChevron from '@carbon/icons-vue/lib/chevron--sort/20'
-  import IconNotif from '@carbon/icons-vue/lib/notification/20'
-  import IconSearch from '@carbon/icons-vue/lib/search/20'
+  import IconDocument from '@privyid/persona-icon/vue/document-filled/20.vue'
+  import IconGroup from '@privyid/persona-icon/vue/user-multiple/20.vue'
+  import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
+  import IconDashboard from '@privyid/persona-icon/vue/dashboard/20.vue'
+  import IconMenu from '@privyid/persona-icon/vue/menu-horizontal/20.vue'
+  import IconUser from '@privyid/persona-icon/vue/profile/20.vue'
+  import IconChevron from '@privyid/persona-icon/vue/chevron-sort/16.vue'
+  import IconNotif from '@privyid/persona-icon/vue/notification/20.vue'
+  import IconSearch from '@privyid/persona-icon/vue/search/20.vue'
 
   const menu = ref(false)
 </script>
@@ -48,18 +46,6 @@ description: Navbar style guide
       @apply absolute;
     }
   }
-  /* h1, h2, h3, h4, h5, h6 {
-    &[class^='h'] {
-      @apply mt-0;
-      font-weight: inherit;
-    }
-  }
-
-  h2 {
-    &[class^='h'] {
-      @apply m-0 p-0 border-b-0;
-    }
-  } */
 </style>
 
 # ![navigation](/assets/images/img-guide-navbar.svg) Navigation

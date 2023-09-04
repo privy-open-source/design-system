@@ -69,7 +69,7 @@ import Button from '../button/Button.vue'
 import { useVModel } from '../input'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 import rotateImage from './utils/rotate-image'
-import IconEdit from '@carbon/icons-vue/lib/edit/20'
+import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
 import { pAspectRatio } from '../aspect-ratio'
 import { ModelModifier } from '../dropzone'
 import { usePreview } from '../cropper'
@@ -214,16 +214,17 @@ export default defineComponent({
     }
 
     &--rotate {
-      & * {
-        @apply vertical-lr;
-      }
-
       .signature-draw__close {
         @apply mr-4 mt-0;
       }
 
       .signature-draw__modal {
         @apply flex-col-reverse;
+
+        &,
+        & * {
+          @apply vertical-lr;
+        }
 
         .signature-draw__reset {
           @apply bottom-1 top-auto;
@@ -247,7 +248,7 @@ export default defineComponent({
       }
 
       & > img {
-        @apply max-w-full h-auto;
+        @apply w-full h-full;
       }
     }
   }

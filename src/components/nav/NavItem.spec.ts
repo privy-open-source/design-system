@@ -1,7 +1,7 @@
 import { render } from '@testing-library/vue'
 import Nav from './Nav.vue'
 import NavItem from './NavItem.vue'
-import IconEdit from '@carbon/icons-vue/lib/edit/16'
+import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
 
 it('should rendered properly without any props', () => {
   const screen = render({
@@ -123,4 +123,55 @@ it('should be able to add link class via props `link-class`', () => {
   const navLink = screen.queryByTestId('nav-link')
 
   expect(navLink).toHaveClass('link-class')
+})
+
+it('should be using router-link if url without http', () => {
+  const screen = render({
+    components: { Nav, NavItem },
+    template  : `
+      <Nav>
+        <NavItem href="/">link</NavItem>
+      </Nav>
+    `,
+  })
+
+  const navLink = screen.queryByTestId('nav-link')
+
+  expect(navLink).toBeInTheDocument()
+  expect(navLink).toContainHTML('nuxt-link')
+  expect(navLink).toHaveAttribute('href', '/')
+})
+
+it('should be remove href url if disabled', () => {
+  const screen = render({
+    components: { Nav, NavItem },
+    template  : `
+      <Nav>
+        <NavItem href="/link" disabled>link</NavItem>
+      </Nav>
+    `,
+  })
+
+  const navLink = screen.queryByTestId('nav-link')
+
+  expect(navLink).toBeInTheDocument()
+  expect(navLink).toContainHTML('nuxt-link')
+  expect(navLink).not.toHaveAttribute('href', '/link')
+})
+
+it('should be exact matching if prop exact set to true', () => {
+  const screen = render({
+    components: { Nav, NavItem },
+    template  : `
+      <Nav>
+        <NavItem href="/link" exact>link</NavItem>
+      </Nav>
+    `,
+  })
+
+  const navLink = screen.queryByTestId('nav-link')
+
+  expect(navLink).toBeInTheDocument()
+  expect(navLink).toContainHTML('nuxt-link')
+  expect(navLink).toHaveClass('nav__link--exact')
 })

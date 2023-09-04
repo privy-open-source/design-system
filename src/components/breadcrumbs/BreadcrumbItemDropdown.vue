@@ -9,20 +9,27 @@
       size="xs">
       <slot />
     </Dropdown>
-    <IconChevron
+    <div
       v-if="!active"
-      data-testid="breadcrumbs-icon"
-      class="breadcrumbs__item__icon" />
+      data-testid="breadcrumbs-divider"
+      class="breadcrumbs__item__divider">
+      <component :is="divider" />
+    </div>
   </li>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue-demi'
+import {
+  defineComponent,
+  computed,
+  inject,
+  h,
+} from 'vue-demi'
 import Dropdown from '../dropdown/Dropdown.vue'
-import IconChevron from '@carbon/icons-vue/lib/chevron--right/16'
+import IconChevron from '@privyid/persona-icon/vue/chevron-right/20.vue'
 
 export default defineComponent({
-  components: { Dropdown, IconChevron },
+  components: { Dropdown },
   props     : {
     text: {
       type   : String,
@@ -44,7 +51,9 @@ export default defineComponent({
       return result
     })
 
-    return { classNames }
+    const divider = inject('divider', () => h(IconChevron))
+
+    return { classNames, divider }
   },
 })
 </script>

@@ -46,7 +46,7 @@ export function useVModel (props: CheckboxProps) {
     },
   })
 
-  syncRef(localValue, model)
+  syncRef(localValue, model, { immediate: false })
 
   return localValue
 }

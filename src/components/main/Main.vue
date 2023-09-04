@@ -20,10 +20,12 @@
   * Permalink
   */
   a {
-    --p-color-link-hover: darken(theme(textColor.link), 5%);
-    --p-color-dark-link-hover: darken(theme(textColor.link), 5%);
-    @apply underline text-link hover:text-[color:var(--p-color-link-hover)];
-    @apply dark:text-dark-link hover:dark:text-[color:var(--p-color-dark-link-hover)];
+    &:not(.navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item, .btn, .nav__link, .breadcrumbs__item__link) {
+      --p-color-link-hover: darken(theme(textColor.link), 5%);
+      --p-color-dark-link-hover: darken(theme(textColor.link), 5%);
+      @apply underline text-link hover:text-[color:var(--p-color-link-hover)];
+      @apply dark:text-dark-link hover:dark:text-[color:var(--p-color-dark-link-hover)];
+    }
   }
 
   /**
@@ -57,4 +59,5 @@
     @apply dark:text-dark-muted;
   }
 }
+
 </style>

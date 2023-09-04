@@ -10,6 +10,8 @@ description: ase component for modal dialog.
   import pHeading from '../heading/Heading.vue'
   import pBanner from '../banner/Banner.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
+  import pFormGroup from '../form-group/FormGroup.vue'
+  import pDatepicker from '../datepicker/Datepicker.vue'
 
   const basicModal  = ref(true)
   const showModal   = ref(false)
@@ -370,6 +372,9 @@ When modals content become too long, modal body can scroll itself by adding prop
       <p>
         I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
       </p>
+      <p-form-group label="Select Date">
+        <p-datepicker />
+      </p-form-group>
     </div>
     <template #footer="{ close }">
       <p-button @click="close" color="info">
@@ -655,22 +660,27 @@ Modal use local CSS variables on `.modal` for enhanced real-time customization.
 --p-modal-size-md: 600px;
 --p-modal-size-sm: 400px;
 --p-modal-z-index: theme(zIndex.modal);
+--p-modal-body-scrollable-max-height: theme(spacing.64);
+--p-modal-body-scrollable-min-height: 0;
+--p-modal-content-margin-y: theme(spacing.8);
 ```
 
 ## API
 
 ### Props
 
-| Props                      |   Type    | Default | Description                                     |
-|----------------------------|:---------:|:-------:|-------------------------------------------------|
-| `title`                    | `String`  | -       | Modal Title                                     |
-| `text`                     | `String`  | -       | Text inside of Modal Body                       |
-| `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                      |
-| `size`                     | `String`  | `md`    | Size of modal, valid value is `sm`, `md`, `lg` and `xl`  |
-| `banner`                   | `Boolean` | `false` | Give modal no-padding to place image for specific purpose |
-| `no-close-on-esc`          | `Boolean` | `false` | No close modal while Escape was pressed         |
-| `no-close-on-backdrop`     | `Boolean` | `false` | No close modal while Modal Backdrop was clicked |
-| `modal-body-scrollable`    | `Boolean` | `false` | Scrollable modal body when content is to long   |
+| Props                      |   Type    | Default | Description                                                |
+|----------------------------|:---------:|:-------:|------------------------------------------------------------|
+| `v-model`                  | `Boolean` | `false` | Show / Hide modal                                          |
+| `title`                    | `String`  | -       | Modal Title                                                |
+| `text`                     | `String`  | -       | Text inside of Modal Body                                  |
+| `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                                 |
+| `size`                     | `String`  | `md`    | Size of modal, valid value is `sm`, `md`, `lg` and `xl`    |
+| `banner`                   | `Boolean` | `false` | Give modal no-padding to place image for specific purpose  |
+| `no-close-on-esc`          | `Boolean` | `false` | No close modal while Escape was pressed                    |
+| `no-close-on-backdrop`     | `Boolean` | `false` | No close modal while Modal Backdrop was clicked            |
+| `modal-body-scrollable`    | `Boolean` | `false` | Scrollable modal body when content is to long              |
+| `centered`                 | `Boolean` | `false` | Handle center vertically of the viewport                   |
 
 ### Slots
 | Name      | Description                                                                                      |

@@ -69,7 +69,7 @@ import {
 } from 'vue-demi'
 import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
-import IconClose from '@carbon/icons-vue/lib/close/16'
+import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import { useVModel } from '../input'
 
 export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl'
@@ -193,6 +193,9 @@ export default defineComponent({
   --p-modal-size-sm: 400px;
   --p-modal-z-index: theme(zIndex.modal);
   --p-modal-dismiss-z-index: calc(var(--p-modal-z-index) + 1);
+  --p-modal-body-scrollable-max-height: theme(spacing.64);
+  --p-modal-body-scrollable-min-height: 0;
+  --p-modal-content-margin-y: theme(spacing.8);
 
   /**
   * Set modal backdrop
@@ -253,7 +256,7 @@ export default defineComponent({
 
   &__body {
     &&--scroll {
-      @apply max-h-64 overflow-y-auto overscroll-contain;
+      @apply max-h-[var(--p-modal-body-scrollable-max-height)] min-h-[var(--p-modal-body-scrollable-min-height)] overflow-y-auto overscroll-contain;
     }
 
     + .modal__footer {

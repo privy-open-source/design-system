@@ -81,7 +81,7 @@ export default defineComponent({
     }
 
     a& {
-      @apply cursor-pointer text-default hover:bg-default-alpha;
+      @apply no-underline hover:no-underline cursor-pointer text-default hover:bg-default-alpha;
       @apply dark:text-dark-default dark:hover:bg-dark-default-alpha;
     }
 

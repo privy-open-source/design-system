@@ -3,7 +3,7 @@
     data-testid="nav-item"
     class="nav__item"
     :class="navItemClass">
-    <a
+    <nuxt-link
       data-testid="nav-link"
       :href="link"
       :target="target"
@@ -20,7 +20,7 @@
         class="nav__link__label">
         <slot />
       </span>
-    </a>
+    </nuxt-link>
   </li>
 </template>
 
@@ -31,6 +31,7 @@ import {
   defineComponent,
   PropType,
 } from 'vue-demi'
+import { type RouteLocationRaw } from 'vue-router'
 
 export default defineComponent({
   props: {
@@ -43,7 +44,7 @@ export default defineComponent({
       default: false,
     },
     href: {
-      type   : String,
+      type   : [String, Object] as PropType<string | RouteLocationRaw>,
       default: undefined,
     },
     target: {
@@ -58,8 +59,11 @@ export default defineComponent({
       ],
       default: undefined,
     },
+    exact: {
+      type   : Boolean,
+      default: false,
+    },
   },
-
   setup (props, { slots }) {
     const classNames = computed(() => {
       const result: string[] = ['nav__link']
@@ -72,6 +76,9 @@ export default defineComponent({
 
       if (slots.icon)
         result.push('nav__link--icon')
+
+      if (props.exact)
+        result.push('nav__link--exact')
 
       return result
     })
@@ -128,7 +135,7 @@ export default defineComponent({
   }
 
   &__link {
-    @apply block relative py-[10px] px-3 -mb-[1px] border border-transparent rounded-t text-base font-normal cursor-pointer hover:no-underline text-subtle hover:text-default;
+    @apply block relative py-[10px] px-3 -mb-[1px] border border-transparent rounded-t text-base font-normal cursor-pointer no-underline hover:no-underline text-subtle hover:text-default;
     @apply dark:text-dark-subtle hover:dark:text-dark-default;
 
     &&--active {

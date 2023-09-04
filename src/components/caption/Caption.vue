@@ -55,8 +55,12 @@ export default defineComponent({
 
 <style lang="postcss">
 .caption {
-  @apply block text-muted text-xs tracking-wide;
-  @apply dark:text-dark-muted;
+  @apply block text-xs tracking-wide;
+
+  &:not([class^='text-'], [class*='text-']) {
+    @apply text-muted;
+    @apply dark:text-dark-muted;
+  }
 
   /**
   * Caption in tiny size
@@ -68,8 +72,24 @@ export default defineComponent({
   /**
   * Weight of caption
   */
+  &--thin {
+    @apply font-thin;
+  }
+
+  &--extralight {
+    @apply font-extralight;
+  }
+
+  &--light {
+    @apply font-light;
+  }
+
   &--normal {
     @apply font-normal;
+  }
+
+  &--semibold {
+    @apply font-semibold;
   }
 
   &--medium {
@@ -78,6 +98,14 @@ export default defineComponent({
 
   &--bold {
     @apply font-bold;
+  }
+
+  &--extrabold {
+    @apply font-extrabold;
+  }
+
+  &--black {
+    @apply font-black;
   }
 
   /**

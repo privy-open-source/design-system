@@ -4,7 +4,8 @@
     width="20"
     height="20"
     fill="none"
-    class="persona-icon"><path
+    class="persona-icon"
+    viewBox="0 0 20 20"><path
       fill="currentColor"
       d="M11.81 4.472a5.817 5.817 0 1 0 4.007 5.464A.591.591 0 1 1 17 9.923a7 7 0 1 1-2.174-4.993V3.587a.587.587 0 1 1 1.174 0v2.826a.587.587 0 0 1-.587.587h-2.826a.587.587 0 1 1 0-1.174h1.465a5.816 5.816 0 0 0-2.243-1.354Z" /></svg>
 </template>

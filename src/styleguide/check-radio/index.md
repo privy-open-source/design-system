@@ -8,8 +8,8 @@ description: Checkbox & radio style guide
   import Checkbox from '../../components/checkbox/Checkbox.vue'
   import Caption from '../../components/caption/Caption.vue'
   import Card from '../../components/card/Card.vue'
-  import IconBee from '@carbon/icons-vue/lib/bee/20'
-  import IconCheck from '@carbon/icons-vue/lib/checkmark--outline/20'
+  import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
+  import IconCheck from '@privyid/persona-icon/vue/checkmark-circle/20.vue'
   import { ref, computed } from "vue-demi"
 
   const value  = ref(false)
@@ -147,7 +147,7 @@ Custom check box is a component that usually used when required more clearer con
         class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
         sectioned>
         <div class="flex items-center space-x-3">
-          <IconBee class="text-muted dark:text-dark-muted" />
+          <IconPersona class="text-muted dark:text-dark-muted" />
           <div>
             Title Text
             <Caption>Subtitle</Caption>
@@ -168,7 +168,7 @@ Custom check box is a component that usually used when required more clearer con
         class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
         sectioned>
         <div class="flex items-center space-x-3">
-          <IconBee class="text-muted dark:text-dark-muted" />
+          <IconPersona class="text-muted dark:text-dark-muted" />
           <div>
             Title Text
             <Caption>Subtitle</Caption>
@@ -189,7 +189,7 @@ Custom check box is a component that usually used when required more clearer con
         class="px-4 py-2 hover:cursor-default ease-in-out duration-200 min-w-[223px]"
         sectioned>
         <div class="flex items-center space-x-3">
-          <IconBee class="text-muted dark:text-dark-muted" />
+          <IconPersona class="text-muted dark:text-dark-muted" />
           <div>
             Title Text
             <Caption>Subtitle</Caption>
@@ -210,7 +210,7 @@ Custom check box is a component that usually used when required more clearer con
         class="px-4 py-2 shadow-md border-subtle ease-in-out duration-200 min-w-[223px]"
         sectioned>
         <div class="flex items-center space-x-3">
-          <IconBee class="text-muted dark:text-dark-muted" />
+          <IconPersona class="text-muted dark:text-dark-muted" />
           <div>
             Title Text
             <Caption>Subtitle</Caption>
@@ -231,7 +231,7 @@ Custom check box is a component that usually used when required more clearer con
         class="px-4 py-2 shadow-md border-subtle ease-in-out duration-200 min-w-[223px]"
         sectioned>
         <div class="flex items-center space-x-3">
-          <IconBee class="text-muted dark:text-dark-muted" />
+          <IconPersona class="text-muted dark:text-dark-muted" />
           <div>
             Title Text
             <Caption>Subtitle</Caption>
@@ -254,7 +254,7 @@ Custom check box is a component that usually used when required more clearer con
         class="px-4 py-2 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200 min-w-[223px]"
         sectioned>
         <div class="flex items-center space-x-3">
-          <IconBee class="text-muted dark:text-dark-muted" />
+          <IconPersona class="text-muted dark:text-dark-muted" />
           <div>
             Title Text
             <Caption>Subtitle</Caption>
@@ -310,9 +310,9 @@ This component usually used for picking option like icon, color, or image.
     <template #default>
       <Card
         element="div"
-        class="p-4 hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle ease-in-out duration-200"
+        class="p-4 duration-200 ease-in-out hover:shadow-md hover:border-subtle hover:dark:border-dark-subtle"
         sectioned>
-        <IconBee />
+        <IconPersona />
       </Card>
     </template>
   </Checkbox>
@@ -328,7 +328,7 @@ This component usually used for picking option like icon, color, or image.
         class="p-4 hover:shadow-md ease-in-out duration-200 !bg-[#0065D1] !border-[#0065D1]"
         sectioned>
         <IconCheck
-          class="ease-in-out duration-200 text-on-emphasis"
+          class="duration-200 ease-in-out text-on-emphasis"
           :class="[color === '#0065D1' ? 'opacity-100' : 'opacity-0']" />
       </Card>
     </template>

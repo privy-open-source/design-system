@@ -45,7 +45,7 @@
 
 <script lang="ts">
 import { useVModel } from '.'
-import IconCheck from '@carbon/icons-vue/lib/checkmark/16'
+import IconCheck from '@privyid/persona-icon/vue/checkmark/20.vue'
 import {
   computed,
   defineComponent,
