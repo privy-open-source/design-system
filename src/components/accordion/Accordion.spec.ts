@@ -174,3 +174,37 @@ it('should be render accordion items with same length if props `items` is provid
   expect(accordion).toBeInTheDocument()
   expect(accItems.length).toBe(items.length)
 })
+
+it('should be unset v-model value if no expanded accordion items', async () => {
+  const model = ref('')
+
+  const screen = render({
+    components: { pAccordion, pAccordionItem },
+    template  : `
+      <p-accordion v-model="model">
+        <p-accordion-item title="Item 1">
+          Content Item 1
+        </p-accordion-item>
+      </p-accordion>
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const accordion  = screen.getByTestId('accordion')
+  const items      = screen.queryAllByTestId('accordion-item')
+  const activators = screen.queryAllByTestId('accordion-item-activator')
+
+  const id0 = items.at(0).dataset.accordionItemId
+
+  expect(accordion).toBeInTheDocument()
+
+  await fireEvent.click(activators.at(0))
+
+  expect(model.value).toBe(id0)
+
+  await fireEvent.click(activators.at(0))
+
+  expect(model.value).not.toBe(id0)
+})

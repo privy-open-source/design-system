@@ -105,6 +105,9 @@ function toggle () {
     return
 
   model.value = !model.value
+
+  if (!model.value && !parentData?.multiple)
+    parentData?.setOpenItem('')
 }
 
 watch(
