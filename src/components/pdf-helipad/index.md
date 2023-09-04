@@ -44,7 +44,7 @@ description: Add object to PDF Viewer with Drag'n'Drop
 (Drag this to PDF Viewer)
 
 <p-pdf-helipad :scale="scale" @landed="onLanded">
-  <img class="w-full h-full" :src="IMG_HELICOPTER" />
+  <img class="w-full h-full bg-base-white" :src="IMG_HELICOPTER" />
 </p-pdf-helipad>
 
 <preview>
@@ -70,7 +70,7 @@ description: Add object to PDF Viewer with Drag'n'Drop
 ```vue
 <template>
   <p-pdf-helipad :scale="scale" @landed="onLanded">
-    <img class="w-full h-full" :src="IMG_HELICOPTER" />
+    <img class="w-full h-full bg-base-white" :src="IMG_HELICOPTER" />
   </p-pdf-helipad>
 
   <p-pdf-viewer :src="FILE" v-model:scale="scale">
@@ -128,7 +128,7 @@ description: Add object to PDF Viewer with Drag'n'Drop
 
 ## Disabled State
 
-<preview>
+<preview class="!bg-base-white">
   <p-pdf-helipad disabled>
     <img class="w-full h-full" :src="IMG_HELICOPTER" />
   </p-pdf-helipad>

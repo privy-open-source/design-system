@@ -42,7 +42,7 @@ export class SmoothLine {
   }
 
   /**
-   * Update coordinate when
+   * Update coordinate when drawing
    * @param x mouse X coordinate
    * @param y mouse Y coordinate
    * @return [x0, x0, x1, y1]
