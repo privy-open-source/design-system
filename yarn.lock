@@ -2978,10 +2978,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:5.0.9":
-  version: 5.0.9
-  resolution: "@fontsource/dm-sans@npm:5.0.9"
-  checksum: 07b05870c77ff39d86c3847ba05523933c7446b3c73799dac8cd7b3b7274513aa07ad3f67995fdb872648ad157ccfef4cf31188287b5cab6441497f907053bad
+"@fontsource/dm-sans@npm:5.0.11":
+  version: 5.0.11
+  resolution: "@fontsource/dm-sans@npm:5.0.11"
+  checksum: 619d60dc7eaaf7cdf8409ef42739476e712e979253919a637e604b70437b62f21ddf1fecfd4863d0b83a40d3ab23ce665e428032cb9ee8f4637a55fbfb7a4237
   languageName: node
   linkType: hard
 
@@ -3700,7 +3700,7 @@ __metadata:
     "@babel/core": ^7.19.6
     "@babel/preset-env": ^7.19.4
     "@floating-ui/dom": ^1.0.4
-    "@fontsource/dm-sans": 5.0.9
+    "@fontsource/dm-sans": 5.0.11
     "@interactjs/types": 1.10.18
     "@juggle/resize-observer": ^3.4.0
     "@privyid/browserslist-config": "workspace:^"
