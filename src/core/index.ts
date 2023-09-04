@@ -118,3 +118,7 @@ export type {
 export {
   useStep,
 } from '../components/steps'
+
+export {
+  defineAccordion,
+} from '../components/accordion'
