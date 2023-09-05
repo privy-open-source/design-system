@@ -2978,10 +2978,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:5.0.9":
-  version: 5.0.9
-  resolution: "@fontsource/dm-sans@npm:5.0.9"
-  checksum: 07b05870c77ff39d86c3847ba05523933c7446b3c73799dac8cd7b3b7274513aa07ad3f67995fdb872648ad157ccfef4cf31188287b5cab6441497f907053bad
+"@fontsource/dm-sans@npm:5.0.11":
+  version: 5.0.11
+  resolution: "@fontsource/dm-sans@npm:5.0.11"
+  checksum: 619d60dc7eaaf7cdf8409ef42739476e712e979253919a637e604b70437b62f21ddf1fecfd4863d0b83a40d3ab23ce665e428032cb9ee8f4637a55fbfb7a4237
   languageName: node
   linkType: hard
 
@@ -3700,7 +3700,7 @@ __metadata:
     "@babel/core": ^7.19.6
     "@babel/preset-env": ^7.19.4
     "@floating-ui/dom": ^1.0.4
-    "@fontsource/dm-sans": 5.0.9
+    "@fontsource/dm-sans": 5.0.11
     "@interactjs/types": 1.10.18
     "@juggle/resize-observer": ^3.4.0
     "@privyid/browserslist-config": "workspace:^"
@@ -3763,7 +3763,7 @@ __metadata:
     marked: ^5.0.0
     nanodelay: 2.0.2
     pdfjs-dist: ^3.1.81
-    postcss: 8.4.28
+    postcss: 8.4.29
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
     postcss-nested: 6.0.1
@@ -15398,14 +15398,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.28":
-  version: 8.4.28
-  resolution: "postcss@npm:8.4.28"
+"postcss@npm:8.4.29, postcss@npm:^8.4.27, postcss@npm:^8.4.28":
+  version: 8.4.29
+  resolution: "postcss@npm:8.4.29"
   dependencies:
     nanoid: ^3.3.6
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: f605c24a36f7e400bad379735fbfc893ccb8d293ad6d419bb824db77cdcb69f43d614ef35f9f7091f32ca588d130ec60dbcf53b366e6bf88a8a64bbeb3c05f6d
+  checksum: dd6daa25e781db9ae5b651d9b7bfde0ec6e60e86a37da69a18eb4773d5ddd51e28fc4ff054fbdc04636a31462e6bf09a1e50986f69ac52b10d46b7457cd36d12
   languageName: node
   linkType: hard
 
@@ -15483,17 +15483,6 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: 1cdd0c298849df6cd65f7e646a3ba36870a37b65f55fd59d1a165539c263e9b4872a402bf4ed1ca1bc31f58b68b2835545e33ea1a23b161a1f8aa6d5ded81e78
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.27, postcss@npm:^8.4.28":
-  version: 8.4.29
-  resolution: "postcss@npm:8.4.29"
-  dependencies:
-    nanoid: ^3.3.6
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: dd6daa25e781db9ae5b651d9b7bfde0ec6e60e86a37da69a18eb4773d5ddd51e28fc4ff054fbdc04636a31462e6bf09a1e50986f69ac52b10d46b7457cd36d12
   languageName: node
   linkType: hard
 
