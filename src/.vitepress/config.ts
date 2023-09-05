@@ -173,6 +173,10 @@ export default defineConfig({
               link: '/components/ringbar/',
             },
             {
+              text: 'Sheet',
+              link: '/components/sheet/',
+            },
+            {
               text: 'Spinner',
               link: '/components/spinner/',
             },

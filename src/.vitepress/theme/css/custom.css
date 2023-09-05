@@ -96,7 +96,7 @@
       }
 
       td {
-        @apply border-0 border-t border-[color:var(--vp-c-divider)] dark:bg-transparent;
+        @apply border-0 border-t border-[color:var(--vp-c-divider)] bg-transparent dark:bg-transparent;
       }
     }
   }
@@ -126,7 +126,7 @@
   a,
   .preview a {
     @apply hover:no-underline;
-    
+
     &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item, .breadcrumbs__item__link) {
       @apply text-link dark:text-dark-link;
     }

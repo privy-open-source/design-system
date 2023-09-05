@@ -92,7 +92,6 @@ const value = ref(50)
 
 | Props           |   Type    | Default | Description                                    |
 |-----------------|:---------:|:-------:|------------------------------------------------|
-| `size`          | `String`  |  `md`   | Ring size, valid value: `xs`, `sm`, `md`, `lg` |
 | `min`           | `Number`  |   `0`   | Lowest progress value                          |
 | `max`           | `Number`  |  `100`  | Highest progress value                         |
 | `value`         | `Number`  |   `-`   | Progress value                                 |
