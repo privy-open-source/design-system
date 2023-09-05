@@ -3647,7 +3647,7 @@ __metadata:
     lodash-es: 4.17.21
     marked: ^5.0.0
     nanodelay: 2.0.2
-    pdfjs-dist: ^3.1.81
+    pdfjs-dist: ^3.10.111
     postcss: 8.4.29
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
@@ -14417,7 +14417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:^3.1.81":
+"pdfjs-dist@npm:^3.10.111":
   version: 3.10.111
   resolution: "pdfjs-dist@npm:3.10.111"
   dependencies:
