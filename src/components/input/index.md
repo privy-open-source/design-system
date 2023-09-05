@@ -181,17 +181,21 @@ You can filter what characters are allowed to be input using the prop `accept`. 
 
 ### Available Preset
 
-| Preset                       | RegExp                                                              | Alias                            |
-|------------------------------|---------------------------------------------------------------------|----------------------------------|
-| `numeric`                    | `0-9`                                                               | `num`, `digit`                   |
-| `alpha`                      | `A-Za-z`                                                            |                                  |
-| `alpha-space`                | `A-Za-z\s`                                                          |                                  |
-| `alpha-space-symbol`         | <code>A-Za-z\s!"#$%&\'()*+,./:;<=>?@[\\\\\\]^_&#96;{\|}~-</code>    | `non-numeric`                    |
-| `alpha-numeric`              | `A-Za-z0-9`                                                         | `alpha-num`                      |
-| `alpha-numeric-space`        | `A-Za-z0-9\s`                                                       | `alpha-num-space`                |
-| `alpha-numeric-space-symbol` | <code>A-Za-z0-9\s!"#$%&\'()*+,./:;<=>?@[\\\\\\]^_&#96;{\|}~-</code> | `text`, `alpha-num-space-symbol` |
-| `numeric-space`              | `0-9\s`                                                             | `num-space`                      |
-| `numeric-space-symbol`       | <code>0-9\s!"#$%&\'()*+,./:;<=>?@[\\\\\\]^_&#96;{\|}~-</code>       | `non-alpha`, `num-space-symbol`  |
+<div class="overflow-x-auto">
+
+| Preset                       | RegExp                                                           | Alias                            |
+|------------------------------|------------------------------------------------------------------|----------------------------------|
+| `numeric`                    | `0-9`                                                            | `num`, `digit`                   |
+| `alpha`                      | `A-Za-z`                                                         |                                  |
+| `alpha-space`                | `A-Za-z\s`                                                       |                                  |
+| `alpha-space-symbol`         | <code>A-Za-z\s!"#$%&\'()*+,./:;<=>?@[\\\]^_&#96;{\|}~-</code>    | `non-numeric`                    |
+| `alpha-numeric`              | `A-Za-z0-9`                                                      | `alpha-num`                      |
+| `alpha-numeric-space`        | `A-Za-z0-9\s`                                                    | `alpha-num-space`                |
+| `alpha-numeric-space-symbol` | <code>A-Za-z0-9\s!"#$%&\'()*+,./:;<=>?@[\\\]^_&#96;{\|}~-</code> | `text`, `alpha-num-space-symbol` |
+| `numeric-space`              | `0-9\s`                                                          | `num-space`                      |
+| `numeric-space-symbol`       | <code>0-9\s!"#$%&\'()*+,./:;<=>?@[\\\]^_&#96;{\|}~-</code>       | `non-alpha`, `num-space-symbol`  |
+
+</div>
 
 ## Binding v-model
 
@@ -215,18 +219,18 @@ Input value can be binding with `v-model`.
 
 ### Props
 
-| Props         |   Type    | Default | Description                                             |
-|---------------|:---------:|:-------:|---------------------------------------------------------|
-| `type`        | `String`  | `text`  | Input type                                              |
-| `size`        | `String`  |  `md`   | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
-| `placeholder` | `String`  |   `-`   | Input placeholder                                       |
-| `disabled`    | `Boolean` | `false` | Disabled state                                          |
-| `readonly`    | `Boolean` | `false` | Readonly state                                          |
-| `error`       | `Boolean` | `false` | Error state                                             |
-| `clearable`   | `Boolean` | `false` | Enable clear button                                     |
-| `accept`      | `String`  |   `-`   | Whitelist character can be inputted                     |
-| `modelValue`  | `String`  |   `-`   | v-model value                                           |
-| `container-class`  | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the input container  |
+| Props             |              Type               | Default | Description                                             |
+|-------------------|:-------------------------------:|:-------:|---------------------------------------------------------|
+| `type`            |            `String`             | `text`  | Input type                                              |
+| `size`            |            `String`             |  `md`   | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
+| `placeholder`     |            `String`             |   `-`   | Input placeholder                                       |
+| `disabled`        |            `Boolean`            | `false` | Disabled state                                          |
+| `readonly`        |            `Boolean`            | `false` | Readonly state                                          |
+| `error`           |            `Boolean`            | `false` | Error state                                             |
+| `clearable`       |            `Boolean`            | `false` | Enable clear button                                     |
+| `accept`          |            `String`             |   `-`   | Whitelist character can be inputted                     |
+| `modelValue`      |            `String`             |   `-`   | v-model value                                           |
+| `container-class` | `String` or `Array` or `Object` |   `-`   | CSS class to add in the input container                 |
 
 ### Slots
 

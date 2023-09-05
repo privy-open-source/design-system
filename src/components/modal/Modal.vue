@@ -71,8 +71,7 @@ import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import { useVModel } from '../input'
-
-export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl'
+import { SizeVariant } from '.'
 
 export default defineComponent({
   components: { Heading, IconClose },
@@ -161,7 +160,7 @@ export default defineComponent({
     watch(model, (value) => {
       if (value === false) {
         nextTick(() => {
-          emit('close')
+          emit('close', new CustomEvent('close'))
         })
       }
     })
