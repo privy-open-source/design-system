@@ -1,1 +1,0 @@
-import{_ as a}from"./Divider.vue_vue_type_style_index_0_lang.d300481a.js";import{_ as r,v as e,b as i,a as t}from"./framework.8f224ebd.js";function d(s,o,p,c,n,_){return e(),i("div",{"data-testid":"divider",class:t(["divider",s.classNames])},null,2)}const v=r(a,[["render",d]]);export{v as p};
