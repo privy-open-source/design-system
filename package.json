@@ -3,6 +3,7 @@
   "version": "0.20.0",
   "packageManager": "yarn@3.6.3",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "yarn docs:dev",
     "prod": "yarn docs:build && yarn docs:serve",
