@@ -4,7 +4,8 @@
     class="signature--text"
     :width="width"
     :height="height"
-    :src="src">
+    :src="src"
+    :srcset="srcset">
 </template>
 
 <script lang="ts">
@@ -65,6 +66,7 @@ export default defineComponent({
   },
   setup (props) {
     const ready   = ref(false)
+    const srcset  = ref('')
     const model   = useVModel(props)
     const preview = usePreview(model)
 
@@ -105,7 +107,7 @@ export default defineComponent({
       load()
     })
 
-    function load () {
+    async function load () {
       ready.value = false
 
       const options = {
@@ -116,20 +118,19 @@ export default defineComponent({
         color : props.color,
       }
 
-      generate(options)
-        .then((result) => {
-          const value = props.modelModifiers.base64
-            ? result
-            : fromBase64(result)
+      const result = await generate(options)
+      const value  = props.modelModifiers.base64
+        ? result
+        : fromBase64(result)
 
-          model.value = value
-          ready.value = true
-        })
-        .catch(console.error)
+      model.value  = value
+      srcset.value = `${await generate(options, 2)} 2x`
+      ready.value  = true
     }
 
     return {
       src,
+      srcset,
       preview,
     }
   },

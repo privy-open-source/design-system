@@ -31,7 +31,7 @@ description: Generate text for Pdf Object
 
 ### Simple Usage
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-pdf-text
     text="Lorem ipsum dolor sit amet consectetur adipisicing" />
 </preview>
@@ -107,7 +107,7 @@ description: Generate text for Pdf Object
 
 You can the font using prop `font`, it importing font from [Google Font][google-font], default is `DM Sans`
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-pdf-text font="Indie Flower" text="Lorem ipsum dolor sit amet consectetur adipisicing"/>
   <p-pdf-text font="Satisfy" text="Lorem ipsum dolor sit amet consectetur adipisicing"/>
 </preview>
@@ -121,7 +121,7 @@ You can the font using prop `font`, it importing font from [Google Font][google-
 
 ## Change Color
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-pdf-text color="#004C9D" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
   <p-pdf-text color="#23B242" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
   <p-pdf-text color="#E42E2C" text="Lorem ipsum dolor sit amet consectetur adipisicing" />
@@ -139,7 +139,10 @@ You can the font using prop `font`, it importing font from [Google Font][google-
 
 You can add label text using prop `label`.
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
+  <p-pdf-text
+    label="Noted from Tarjono (TR001)"
+    text="Lorem ipsum dolor sit amet consectetur adipisicing" />
   <p-pdf-text
     label="Noted from Tarjono (TR001)"
     text="Lorem ipsum dolor sit amet consectetur adipisicing" />
@@ -158,7 +161,7 @@ You can add label text using prop `label`.
 By default, font-size will automatically adjusted to fit the image size and text length.
 If you want keep font-size fixed all time, add prop `fixed-size`.
 
-<preview>
+<preview class="!bg-base-white">
   <div class="grid grid-cols-2 grid-rows-2 gap-4">
     <p-pdf-text
       label="Fixed Size"
@@ -206,7 +209,7 @@ If you want keep font-size fixed all time, add prop `fixed-size`.
 
 You can bind the generated result with `v-model`.
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-pdf-text text="Lorem ipsum dolor sit amet consectetur adipisicing" v-model="result" />
 </preview>
 
@@ -228,7 +231,7 @@ const result = ref<File>()
 
 If you prefer [base64-dataURI][data-uri] format, add modifier `.base64` to your `v-model`.
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-pdf-text text="Lorem ipsum dolor sit amet consectetur adipisicing" v-model.base64="resultB64" />
 </preview>
 
