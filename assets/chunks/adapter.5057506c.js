@@ -1,1 +1,0 @@
-import{r as t}from"./framework.f49100b7.js";function o(r){return t(()=>Array.isArray(r.options)?r.options.map(n=>typeof n=="string"?{text:n,value:n}:n):[])}function u(r){return r}export{u as d,o as u};

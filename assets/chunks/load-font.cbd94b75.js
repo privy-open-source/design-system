@@ -1,1 +1,0 @@
-import{W as i}from"./framework.f49100b7.js";async function r(t){const e=await i(()=>import("./webfontloader.a4b65fe8.js").then(o=>o.w),["assets/chunks/webfontloader.a4b65fe8.js","assets/chunks/commonjsHelpers.de833af9.js"]);return await new Promise((o,a)=>{e.load({google:{families:[t]},fontactive(){o()},fontinactive(){a(new Error("FONTLOADER_TIMEOUT"))}})})}export{r as l};
