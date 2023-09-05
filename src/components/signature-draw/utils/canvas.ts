@@ -7,11 +7,14 @@ import { toRGB } from '../../utils/color'
  * @param width width
  * @param height height
  */
-export function createCanvas (width: number, height: number): HTMLCanvasElement {
-  const canvas = document.createElement('canvas')
+export function createCanvas (width: number, height: number, dpi = 1): HTMLCanvasElement {
+  const canvas  = document.createElement('canvas')
+  const context = canvas.getContext('2d')
 
-  canvas.width  = width
-  canvas.height = height
+  canvas.width  = width * dpi
+  canvas.height = height * dpi
+
+  context.scale(dpi, dpi)
 
   return canvas
 }

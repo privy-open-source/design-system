@@ -18,7 +18,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Docs', link: '/docs/getting-started' },
-      { text: 'Components', link: '/components/avatar/' },
+      { text: 'Components', link: '/components/accordion/' },
       { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
       { text: 'Icons', link: '/icons/getting-started' },
@@ -76,6 +76,10 @@ export default defineConfig({
           text     : 'Base',
           collapsed: true,
           items    : [
+            {
+              text: 'Accordion',
+              link: '/components/accordion/',
+            },
             {
               text: 'Avatar',
               link: '/components/avatar/',
@@ -171,6 +175,10 @@ export default defineConfig({
             {
               text: 'Ringbar',
               link: '/components/ringbar/',
+            },
+            {
+              text: 'Sheet',
+              link: '/components/sheet/',
             },
             {
               text: 'Spinner',
