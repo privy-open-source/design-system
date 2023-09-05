@@ -4,6 +4,7 @@
     :width="width"
     :height="height"
     :src="preview"
+    :srcset="srcset"
     :alt="text">
 </template>
 
@@ -12,6 +13,7 @@ import {
   defineComponent,
   onMounted,
   PropType,
+  ref,
 } from 'vue-demi'
 import { createSpinner } from '../avatar/utils/create-image'
 import { usePreview } from '../cropper'
@@ -95,6 +97,7 @@ export default defineComponent({
   setup (props) {
     const model   = useVModel(props)
     const preview = usePreview(model, createSpinner(props.width, props.height))
+    const srcset  = ref('')
 
     watchDebounced(() => [
       props.text,
@@ -124,10 +127,11 @@ export default defineComponent({
         ? result
         : fromBase64(result)
 
-      model.value = value
+      model.value  = value
+      srcset.value = `${await generate(props, 2)} 2x`
     }
 
-    return { preview }
+    return { preview, srcset }
   },
 })
 </script>

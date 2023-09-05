@@ -47,14 +47,14 @@
         tag="tbody"
         :disabled="!draggable">
         <template #item="{ element, index }">
-          <slot
-            name="row"
-            :item="element"
-            :index="index">
-            <tr
-              class="table-static__row"
-              :class="trClass"
-              data-role="row">
+          <tr
+            class="table-static__row"
+            :class="trClass"
+            data-role="row">
+            <slot
+              name="row"
+              :item="element"
+              :index="index">
               <td
                 v-if="draggable"
                 class="table-static__cell table-static__drag"
@@ -84,8 +84,8 @@
                   {{ field.formatter(element[field.key], element) }}
                 </slot>
               </td>
-            </tr>
-          </slot>
+            </slot>
+          </tr>
         </template>
       </Draggable>
       <tbody
@@ -282,6 +282,10 @@ defineSlots<{
   & &__row > &__cell {
     @apply ml-2 py-4 px-3 text-sm text-default whitespace-pre;
     @apply dark:text-dark-default;
+
+    &.table-static__drag {
+      @apply cursor-grabbing md:mx-3;
+    }
   }
 
   & &__headers &__header {

@@ -38,12 +38,12 @@ export function fromBase64 (dataurl: string, filename?: string, mimeType?: strin
     const [meta, body] = dataurl.split(',')
     const mime         = mimeType ?? meta.match(/:(.*?);/)[1]
     const buffer       = window.atob(body)
-    const u8int        = new Uint8Array(buffer.length)
+    const uint8        = new Uint8Array(buffer.length)
 
     for (let i = 0; i < buffer.length; i++)
-      u8int[i] = buffer.codePointAt(i)
+      uint8[i] = buffer.codePointAt(i)
 
-    return new globalThis.File([u8int], name, { type: mime })
+    return new globalThis.File([uint8], name, { type: mime })
   } catch (error) {
     if (import.meta.env.DEV)
       console.warn(error)
