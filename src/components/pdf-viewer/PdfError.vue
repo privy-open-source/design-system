@@ -22,16 +22,21 @@
       <dt>
         PDFJS Version:
       </dt>
-      <dd><code>{{ pdfJs.version }}</code></dd>
+      <dd><code>{{ version }}</code></dd>
     </dl>
   </div>
 </template>
 
 <script lang="ts">
-import type * as PDFJS from 'pdfjs-dist'
 import { pAspectRatio } from '../aspect-ratio'
-import { defineComponent, PropType } from 'vue-demi'
+import {
+  defineComponent,
+  onMounted,
+  PropType,
+  ref,
+} from 'vue-demi'
 import Heading from '../heading/Heading.vue'
+import { getVersion } from './utils/pdfjs'
 
 export default defineComponent({
   directives: { pAspectRatio },
@@ -41,17 +46,19 @@ export default defineComponent({
       type   : String,
       default: '',
     },
-    pdfJs: {
-      type   : Object as PropType<typeof PDFJS>,
-      default: () => ({}),
-    },
     error: {
       type   : Object as PropType<Error>,
       default: () => ({} as Error),
     },
   },
   setup () {
-    return {}
+    const version = ref('')
+
+    onMounted(async () => {
+      version.value = await getVersion()
+    })
+
+    return { version }
   },
 })
 </script>

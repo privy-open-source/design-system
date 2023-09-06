@@ -27,7 +27,6 @@
         <PdfError
           v-show="!loading && error"
           :url="src"
-          :pdf-js="pdfJS"
           :error="error" />
         <div
           ref="viewer"
@@ -171,7 +170,6 @@ export default defineComponent({
       openDoc,
       closeDoc,
       pdfDoc,
-      pdfJS,
       loading,
       error,
       onLoaded,
@@ -224,7 +222,6 @@ export default defineComponent({
       openDoc,
       closeDoc,
       pdfDoc,
-      pdfJS,
       idle,
       loading,
       error,

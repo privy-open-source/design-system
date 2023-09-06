@@ -9,6 +9,8 @@ vi.mock('../pdf-object/utils/use-drop.ts', () => ({ default: vi.fn(() => ref(tru
 
 vi.mock('./utils/use-viewer.ts', () => useViewer)
 
+vi.mock('./utils/pdfjs.ts', () => ({ getVersion: vi.fn(() => '3.10.x') }))
+
 it('should rendery properly', () => {
   const screen = render({
     components: { PdfViewer },
