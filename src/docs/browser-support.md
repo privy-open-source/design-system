@@ -1,6 +1,6 @@
 <script setup>
   import { ref, onMounted } from 'vue-demi'
-  import pTable from '../components/table/Table.vue'
+  import pTable from '../components/table-static/TableStatic.vue'
   import pLabel from '../components/label/Label.vue'
   import { defineTable } from '../components/table'
   import { withBase } from 'vitepress'
@@ -10,9 +10,9 @@
     {
       key    : 'version',
       label  : 'Min Version',
-      width  : 25,
+      width  : 1,
       tdClass: 'text-end',
-      thClass: 'text-end',
+      thClass: 'text-end whitespace-nowrap',
     },
   ])
 
@@ -20,7 +20,7 @@
     {
       browser: 'Chrome',
       icon   : 'chrome',
-      version: '62',
+      version: '70',
     },
     {
       browser: 'Firefox',
@@ -81,8 +81,6 @@
 We try our best to support many browsers as possible but technologies always grow with very fast speed.
 _We need to keep moving forward, and savoring the journey_ 😎
 
-{{ isSupport }}
-
 ## Support List
 
 <p-table variant="static" :fields="fields" :items="items">
@@ -91,7 +89,7 @@ _We need to keep moving forward, and savoring the journey_ 😎
       class="inline mr-2"
       width="24"
       height="24"
-      :src="withBase(`assets/images/browsers-logos/${item.icon}.svg`)"
+      :src="withBase(`/assets/images/browsers-logos/${item.icon}.svg`)"
       :alt="item.browser">
     {{ item.browser }}
   </template>

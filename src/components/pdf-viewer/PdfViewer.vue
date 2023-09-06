@@ -14,6 +14,10 @@
         :page="pdfPage"
         :scale="pdfScale"
         :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :next="next"
+        :prev="prev"
         :doc="pdfDoc" />
     </div>
 
@@ -35,6 +39,10 @@
           :page="pdfPage"
           :scale="pdfScale"
           :total-page="totalPage"
+          :zoom-in="zoomIn"
+          :zoom-out="zoomOut"
+          :next="next"
+          :prev="prev"
           :doc="pdfDoc" />
       </div>
       <!-- Minimum PDFJS Viewer end -->
@@ -44,6 +52,10 @@
         :page="pdfPage"
         :scale="pdfScale"
         :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :next="next"
+        :prev="prev"
         :doc="pdfDoc" />
 
       <transition name="slide-up">
@@ -56,6 +68,10 @@
         :page="pdfPage"
         :scale="pdfScale"
         :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :next="next"
+        :prev="prev"
         :doc="pdfDoc" />
     </PdfObjects>
     <div class="pdf__footer">
@@ -64,6 +80,10 @@
         :page="pdfPage"
         :scale="pdfScale"
         :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :next="next"
+        :prev="prev"
         :doc="pdfDoc" />
     </div>
   </div>
@@ -205,10 +225,30 @@ export default defineComponent({
       emit('ready', pdfViewer)
     })
 
+    function zoomIn () {
+      pdfScale.value = (Math.round(pdfScale.value / 0.1) * 0.1) + 0.1
+    }
+
+    function zoomOut () {
+      pdfScale.value = (Math.round(pdfScale.value / 0.1) * 0.1) - 0.1
+    }
+
+    function next () {
+      pdfPage.value++
+    }
+
+    function prev () {
+      pdfPage.value--
+    }
+
     provide(PDF_VIEWER_CONTEXT, {
       page : pdfPage,
       scale: pdfScale,
       totalPage,
+      zoomIn,
+      zoomOut,
+      next,
+      prev,
     })
 
     syncRef(pdfPage, vPage)
@@ -225,6 +265,10 @@ export default defineComponent({
       idle,
       loading,
       error,
+      zoomIn,
+      zoomOut,
+      next,
+      prev,
     }
   },
 })

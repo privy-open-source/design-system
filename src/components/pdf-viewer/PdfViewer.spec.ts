@@ -1,4 +1,4 @@
-import { render } from '@testing-library/vue'
+import { fireEvent, render } from '@testing-library/vue'
 import * as useViewer from './__mocks__/use-viewer'
 import PdfViewer from './PdfViewer.vue'
 import { vi } from 'vitest'
@@ -144,4 +144,70 @@ it('should emit error-password when document is protected but no password provid
   expect(errorPage).toBeInTheDocument()
   expect(errorPage).toBeVisible()
   expect(onErrorPassword).toBeCalled()
+})
+
+it('should expose navigation in slot', async () => {
+  const page   = ref(1)
+  const scale  = ref(1)
+  const screen = render({
+    components: { PdfViewer },
+    template  : `
+      <pdf-viewer
+        v-model:page="page"
+        v-model:scale="scale"
+        src="http://sample.pdf"
+        password="123456"
+      >
+        <template #header="{ zoomIn, zoomOut, next, prev }">
+          <button data-testid="zoom-in" @click="zoomIn">
+            zoom in
+          </button>
+          <button data-testid="zoom-out" @click="zoomOut">
+            zoom out
+          </button>
+          <button data-testid="next" @click="next">
+            next
+          </button>
+          <button data-testid="prev" @click="prev">
+            prev
+          </button>
+        </template>
+      </pdf-viewer>
+    `,
+    setup () {
+      return {
+        page,
+        scale,
+      }
+    },
+  })
+
+  const viewer = screen.queryByTestId('pdf-viewer')
+
+  await delay(2)
+
+  expect(viewer).toBeInTheDocument()
+
+  const zoomIn  = screen.queryByTestId('zoom-in')
+  const zoomOut = screen.queryByTestId('zoom-out')
+  const next    = screen.queryByTestId('next')
+  const prev    = screen.queryByTestId('prev')
+
+  await fireEvent.click(zoomIn)
+
+  expect(scale.value).toBe(1.1)
+
+  await fireEvent.click(zoomOut)
+  await fireEvent.click(zoomOut)
+
+  expect(scale.value).toBe(0.9)
+
+  await fireEvent.click(next)
+  await fireEvent.click(next)
+
+  expect(page.value).toBe(3)
+
+  await fireEvent.click(prev)
+
+  expect(page.value).toBe(2)
 })

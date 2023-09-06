@@ -4,6 +4,7 @@ import {
   ref,
   Ref,
 } from 'vue-demi'
+import { noop } from 'lodash-es'
 
 export type LayoutVariant = 'fixed' | 'fit'
 
@@ -11,6 +12,11 @@ export interface PdfViewerContext {
   page: Ref<number>,
   scale: Ref<number>,
   totalPage: Readonly<Ref<number>>,
+
+  zoomIn: () => void,
+  zoomOut: () => void,
+  next: () => void,
+  prev: () => void,
 }
 
 export const PDF_VIEWER_CONTEXT: InjectionKey<PdfViewerContext> = Symbol('PdfViewer')
@@ -25,6 +31,10 @@ export function usePdfContext () {
       page,
       scale,
       totalPage,
+      zoomIn : noop,
+      zoomOut: noop,
+      next   : noop,
+      prev   : noop,
     }
   }, true)
 }
