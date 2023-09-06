@@ -80,6 +80,10 @@ export default defineComponent({
       page,
       scale,
       totalPage,
+      zoomIn,
+      zoomOut,
+      next,
+      prev,
     } = usePdfContext()
 
     const pages = computed<SelectItem[]>(() => {
@@ -90,22 +94,6 @@ export default defineComponent({
         }
       })
     })
-
-    function zoomIn () {
-      scale.value = (Math.round(scale.value / 0.1) * 0.1) + 0.1
-    }
-
-    function zoomOut () {
-      scale.value = (Math.round(scale.value / 0.1) * 0.1) - 0.1
-    }
-
-    function next () {
-      page.value++
-    }
-
-    function prev () {
-      page.value--
-    }
 
     return {
       page,
