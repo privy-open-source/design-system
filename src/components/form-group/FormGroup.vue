@@ -20,74 +20,85 @@
         {{ caption }}</p-caption>
     </label>
 
-    <slot />
+    <div class="form-group__inputs">
+      <slot />
 
-    <transition
-      name="slide-up"
-      mode="out-in">
-      <p
-        v-if="error"
-        data-testid="form-group-error"
-        class="form-group__error">
-        {{ error }}
-      </p>
-      <p
-        v-else-if="description"
-        data-testid="form-group-description"
-        class="form-group__description">
-        {{ description }}
-      </p>
-    </transition>
+      <transition
+        name="slide-up"
+        mode="out-in">
+        <p
+          v-if="error"
+          data-testid="form-group-error"
+          class="form-group__error">
+          <slot name="error-icon">
+            <IconInfo
+              v-if="errorIcon"
+              data-testid="form-group-error-icon" />
+          </slot>
+          {{ error }}
+        </p>
+        <p
+          v-else-if="description"
+          data-testid="form-group-description"
+          class="form-group__description">
+          {{ description }}
+        </p>
+      </transition>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import pCaption from '../caption/Caption.vue'
-import { pTooltip } from '../tooltip'
-import { computed, defineComponent } from 'vue-demi'
+import { pTooltip as vPTooltip } from '../tooltip'
+import { computed } from 'vue-demi'
 
-export default defineComponent({
-  components: { pCaption, IconInfo },
-  directives: { pTooltip },
-  props     : {
-    required: {
-      type   : Boolean,
-      default: false,
-    },
-    label: {
-      type   : String,
-      default: '',
-    },
-    caption: {
-      type   : String,
-      default: '',
-    },
-    description: {
-      type   : String,
-      default: '',
-    },
-    hint: {
-      type   : String,
-      default: '',
-    },
-    error: {
-      type   : String,
-      default: '',
-    },
+const props = defineProps({
+  required: {
+    type   : Boolean,
+    default: false,
   },
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.error)
-        result.push('form-group--error', 'state--error')
-
-      return result
-    })
-
-    return { classNames }
+  label: {
+    type   : String,
+    default: '',
   },
+  caption: {
+    type   : String,
+    default: '',
+  },
+  description: {
+    type   : String,
+    default: '',
+  },
+  hint: {
+    type   : String,
+    default: '',
+  },
+  error: {
+    type   : String,
+    default: '',
+  },
+  horizontal: {
+    type   : Boolean,
+    default: false,
+  },
+  errorIcon: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.error)
+    result.push('form-group--error', 'state--error')
+
+  if (props.horizontal)
+    result.push('form-group--horizontal')
+
+  return result
 })
 </script>
 
@@ -105,19 +116,31 @@ export default defineComponent({
     }
   }
 
-  & > &__description {
+  &__description {
     @apply text-xs my-2 text-subtle;
     @apply dark:text-dark-subtle;
   }
 
-  & > &__error {
-    @apply text-xs text-danger;
+  &__error {
+    @apply text-xs text-danger flex gap-1 items-center;
     @apply dark:text-dark-danger my-2;
   }
 
   &__hint {
     @apply absolute right-0 text-info cursor-pointer focus:outline-none;
     @apply dark:text-dark-info;
+  }
+
+  &&--horizontal {
+    @apply flex-row items-baseline;
+
+    & > .form-group__label {
+      @apply mb-0 mr-2 basis-1/3;
+    }
+
+    & > .form-group__inputs {
+      @apply flex-grow;
+    }
   }
 }
 </style>

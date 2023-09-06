@@ -146,6 +146,35 @@ Error message from validation can be add in here using prop `error`. Note, it'll
   </p-form-group>
 </template>
 ```
+
+### With icon
+
+Show error icon with prop `error-icon`. Note, it'll only show if prop `error` was provided too.
+
+<preview class="flex-col space-y-4">
+  <div>
+    <p-form-group
+      label="First Name"
+      description="Lorem Ipsum dolor sitar"
+      error="Please fill this field"
+      error-icon>
+      <p-input />
+    </p-form-group>
+  </div>
+</preview>
+
+```vue
+<template>
+  <p-form-group
+    label="First Name"
+    description="Lorem Ipsum dolor sitar"
+    error="Please fill this field"
+    error-icon>
+    <p-input />
+  </p-form-group>
+</template>
+```
+
 ## Hint tooltip
 
 Easy add hint tooltip using prop `hint`.
@@ -168,6 +197,30 @@ Easy add hint tooltip using prop `hint`.
 </template>
 ```
 
+## Horizontal Layout
+
+<preview>
+  <p-form-group
+    horizontal
+    required
+    label="First Name"
+    description="This is description">
+    <p-input />
+  </p-form-group>
+</preview>
+
+```vue
+<template>
+  <p-form-group
+    horizontal
+    required
+    label="First Name"
+    description="This is description">
+    <p-input />
+  </p-form-group>
+</template>
+```
+
 ## API
 
 ### Props
@@ -180,6 +233,8 @@ Easy add hint tooltip using prop `hint`.
 | `description` | `String`  |   `-`   | Description note         |
 | `hint`        | `String`  |   `-`   | Tooltip hint             |
 | `error`       | `String`  |   `-`   | Error validation message |
+| `error-icon`  | `Boolean` | `false` | Show error icon          |
+| `horizontal`  | `Boolean` | `false` | Horizontal layout        |
 
 ### Slots
 
