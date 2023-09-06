@@ -116,17 +116,17 @@ const classNames = computed(() => {
     }
   }
 
-  &__description {
+  & > &__inputs > &__description {
     @apply text-xs my-2 text-subtle;
     @apply dark:text-dark-subtle;
   }
 
-  &__error {
+  & > &__inputs > &__error {
     @apply text-xs text-danger flex gap-1 items-center;
     @apply dark:text-dark-danger my-2;
   }
 
-  &__hint {
+  & > &__label > &__hint {
     @apply absolute right-0 text-info cursor-pointer focus:outline-none;
     @apply dark:text-dark-info;
   }
