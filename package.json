@@ -36,7 +36,7 @@
     "@rollup/plugin-inject": "^5.0.3",
     "@rollup/plugin-replace": "^5.0.1",
     "@rushstack/eslint-patch": "1.3.3",
-    "@testing-library/jest-dom": "6.0.1",
+    "@testing-library/jest-dom": "6.1.3",
     "@testing-library/vue": "6.6.0",
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
@@ -56,7 +56,7 @@
     "autoprefixer": "10.4.15",
     "browserslist-to-esbuild": "^1.2.0",
     "browserslist-useragent-regexp": "^4.0.0",
-    "eslint": "8.47.0",
+    "eslint": "8.48.0",
     "eslint-config-standard-with-typescript": "latest",
     "eslint-formatter-pretty": "4.1.0",
     "eslint-plugin-align-assignments": "1.1.2",
@@ -75,11 +75,11 @@
     "postcss": "8.4.29",
     "postcss-nested": "6.0.1",
     "tailwindcss": "3.3.3",
-    "typescript": "5.1.6",
+    "typescript": "5.2.2",
     "ufo": "^1.0.1",
     "vitepress": "1.0.0-rc.10",
     "vitest": "0.24.5",
-    "vue-tsc": "1.8.8"
+    "vue-tsc": "1.8.10"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
