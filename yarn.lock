@@ -11800,11 +11800,11 @@ __metadata:
   linkType: hard
 
 "jiti@npm:^1.18.2, jiti@npm:^1.19.1, jiti@npm:^1.19.3":
-  version: 1.19.3
-  resolution: "jiti@npm:1.19.3"
+  version: 1.20.0
+  resolution: "jiti@npm:1.20.0"
   bin:
     jiti: bin/jiti.js
-  checksum: de3dacdfe30948d96b69712b04cc28127c17f43d5233a5aa069933e04ac4c9aaf265bef4cdf2b0c2a6f5af236a58aea9bfea83e8e289e2490802bdff7f99bff7
+  checksum: 7924062b5675142e3e272a27735be84b7bfc0a0eb73217fc2dcafa034f37c4f7b4b9ffc07dd98bcff0f739a8811ce1544db205ae7e97b1c86f0df92c65ce3c72
   languageName: node
   linkType: hard
 
