@@ -122,3 +122,7 @@ export {
 export {
   defineAccordion,
 } from '../components/accordion'
+
+export {
+  useVModel,
+} from '../components/input'
