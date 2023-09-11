@@ -320,6 +320,7 @@ add prop `draggable` to enable drag-to-sort.
   <p-table-flex :fields="fields" v-model:items="items" draggable />
 </template>
 ```
+
 ## Customization Slot
 
 ### Custom Cell

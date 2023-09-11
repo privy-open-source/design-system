@@ -97,7 +97,7 @@
           data-testid="table-flex-empty"
           class="table-flex__cell table-flex__cell--empty table-flex__state-empty">
           <slot name="empty">
-            <span class="flex items-center justify-center text-subtle dark:text-dark-subtle">
+            <span class="table-flex__empty-label">
               {{ emptyLabel }}
             </span>
           </slot>
@@ -329,6 +329,11 @@ defineSlots<{
     .table-flex__drag {
       @apply top-0 translate-y-0;
     }
+  }
+
+  &__empty-label {
+    @apply flex items-center justify-center text-subtle;
+    @apply dark:text-dark-subtle;
   }
 }
 </style>

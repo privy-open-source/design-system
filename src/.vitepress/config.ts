@@ -236,6 +236,10 @@ export default defineConfig({
               text: 'Table Static',
               link: '/components/table-static/',
             },
+            {
+              text: 'Table Tree',
+              link: '/components/table-tree/',
+            },
           ],
         },
         {
