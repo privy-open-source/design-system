@@ -190,6 +190,8 @@ There are 4 sizes you can use, `sm`, `md`, `lg` and `xl`. Default is `sm`.
 | Props               |   Type    | Default | Description                                                    |
 |---------------------|:---------:|:-------:|----------------------------------------------------------------|
 | `position`          | `String`  | `left`  | Sheet positions, valid value: `left`, `right`, `top`, `bottom` |
+| `size`              | `String`  |  `sm`   | Sheet size, valid value: `sm`, `md`, `lg`, `xl`                |
+| `noCloseOnEsc`      | `Boolean` | `false` | No close modal while Escape was pressed                        |
 | `noCloseOnBackdrop` | `Boolean` | `false` | Disabled close when click on backdrop                          |
 
 ### Slots
@@ -200,10 +202,9 @@ There are 4 sizes you can use, `sm`, `md`, `lg` and `xl`. Default is `sm`.
 
 ### Events
 
-| Name   | Arguments | Description             |
-|--------|-----------|-------------------------|
-| `show` | -         | Event when sheet shown  |
-| `hide` | -         | Event when sheet hidden |
+| Name    | Arguments | Description                   |
+|---------|-----------|-------------------------------|
+| `close` | -         | Event when sheet wµill closed |
 
 ## See Also
 
