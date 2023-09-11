@@ -12,6 +12,12 @@
 
 > Icons changelog
 
+## 0.21.0
+
+### Changed
+
+- admin-center-apps
+
 ## 0.20.0
 
 ### Added
