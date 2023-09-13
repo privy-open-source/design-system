@@ -13,6 +13,9 @@ description: ase component for modal dialog.
   import pFormGroup from '../form-group/FormGroup.vue'
   import pDatepicker from '../datepicker/Datepicker.vue'
 
+  import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
+  import IconPrev from '@privyid/persona-icon/vue/chevron-left/20.vue'
+
   const basicModal  = ref(true)
   const showModal   = ref(false)
   const advanceModal = ref(true)
@@ -29,6 +32,8 @@ description: ase component for modal dialog.
   const size        = ref(false)
   const modalCenter   = ref(true)
   const centered        = ref(false)
+
+  const flscrn = ref(false)
 
   function click () {
     showModal.value = true
@@ -67,8 +72,37 @@ Modal are using `z-modal` for z-index value. It posible to change z-index value 
 ### Simple Usage
 
 <div class="flex mt-5">
-  <p-button @click="click" color="info">Show Modal</p-button>
+  <p-button @click="flscrn = true" color="info">Show Modal</p-button>
 </div>
+
+  <p-modal
+    no-close-on-esc
+    no-close-on-backdrop
+    size="full"
+    v-model="flscrn"
+    title="text"
+    text="text body"
+    body-class="p-6">
+    <template #header>
+      <div class="overflow-y-auto modal--full__header__content bg-default-alpha">
+        sdflk
+      </div>
+      <div class="modal--full__header__navigation">
+        <p-button style="--p-button-md-padding-x:6px;" variant="ghost"><IconPrev /></p-button>
+        <p-button style="--p-button-md-padding-x:6px;" variant="ghost"><IconPrev /></p-button>
+      </div>
+    </template>
+    <template #body>
+      replace body content
+    </template>
+    <template #footer="{ close }">
+      <div class="flex items-center justify-end">
+        <p-button @click="close" color="info">
+          Submit
+        </p-button>
+      </div>
+    </template>
+  </p-modal>
 
 <preview>
   <p-modal

@@ -13,21 +13,26 @@
         mode="out-in">
         <div
           v-show="model"
-          class="modal__dialog">
+          class="modal__dialog"
+          :class="dialogClass"
+          data-testid="modal-dialog">
           <div
             class="modal__content"
+            :class="contentClass"
+            data-testid="modal-content"
             @click.stop>
             <span
-              v-if="dismissable"
+              v-if="dismissable && size !== 'full'"
               data-testid="modal-dismiss"
               class="modal__dismiss"
               @click="close">
               <IconClose />
             </span>
             <div
-              v-if="$slots.header || title"
+              v-if="($slots.header || title) && (size !== 'full' && !freeDistraction)"
               data-testid="modal-header"
-              class="modal__header">
+              class="modal__header"
+              :class="headerClass">
               <slot name="header">
                 <Heading
                   v-if="title"
@@ -39,20 +44,64 @@
             </div>
             <div
               data-testid="modal-body"
-              :class="[ { 'modal__body--scroll' : modalBodyScrollable }, 'modal__body' ]">
-              <slot>
+              :class="[ { 'modal__body--scroll' : modalBodyScrollable }, bodyClass, 'modal__body' ]">
+              <div
+                v-if="size === 'full' && !freeDistraction"
+                class="flex flex-col">
+                <div
+                  ref="modal-header"
+                  class="modal--full__header">
+                  <span
+                    v-if="dismissable"
+                    class="modal--full__header__dismiss">
+                    <Button
+                      variant="link"
+                      data-testid="modal-full-dismiss"
+                      @click="close">
+                      <IconCloseFull />
+                    </Button>
+                  </span>
+                  <div
+                    data-testid="modal-full-header"
+                    class="modal--full__header__title"
+                    :class="headerClass">
+                    <slot name="header">
+                      <Heading
+                        v-if="title"
+                        class="modal__title"
+                        element="h6">
+                        {{ title }}
+                      </Heading>
+                    </slot>
+                  </div>
+                </div><!-- /header -->
+                <div :class="bodyClass">
+                  <slot name="body">
+                    {{ text }}
+                  </slot>
+                </div><!-- /body -->
+              </div>
+              <slot v-else>
                 {{ text }}
               </slot>
             </div>
             <div
-              v-if="$slots.footer"
+              v-if="$slots.footer && size !== 'full' || (size !== 'full' && !freeDistraction)"
               data-testid="modal-footer"
-              class="modal__footer">
+              class="modal__footer"
+              :class="footerClass">
               <slot
                 name="footer"
                 :close="close" />
             </div>
           </div>
+          <span
+            v-if="dismissable && (size === 'full' && freeDistraction)"
+            data-testid="modal-free-distraction-dismiss"
+            class="modal__dismiss"
+            @click="close">
+            <IconCloseFull class="text-state-emphasis dark:text-dark-state-emphasis" />
+          </span>
         </div>
       </transition>
     </div>
@@ -69,14 +118,17 @@ import {
 } from 'vue-demi'
 import { onKeyStroke } from '@vueuse/core'
 import Heading from '../heading/Heading.vue'
+import Button from '../button/Button.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
+import IconCloseFull from '@privyid/persona-icon/vue/close/24.vue'
 import { useVModel } from '../input'
-
-export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl'
+import { SizeVariant } from '.'
 
 export default defineComponent({
-  components: { Heading, IconClose },
-  props     : {
+  components: {
+    Heading, Button, IconClose, IconCloseFull,
+  },
+  props: {
     title: {
       type   : String,
       default: undefined,
@@ -117,6 +169,50 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    freeDistraction: {
+      type   : Boolean,
+      default: false,
+    },
+    headerClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
+    dialogClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
+    contentClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
+    bodyClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
+    footerClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
+    },
   },
   models: {
     prop : 'modelValue',
@@ -137,6 +233,12 @@ export default defineComponent({
 
       if (props.banner)
         result.push('modal--banner')
+
+      // if (props.fullscreen)
+      //   result.push('modal--fullscreen')
+
+      if (props.freeDistraction && props.size === 'full')
+        result.push('modal--full modal--free-distraction')
 
       return result
     })
@@ -187,6 +289,7 @@ export default defineComponent({
   /**
   * modal sizing variables
   */
+  --p-modal-size-full: 1022px;
   --p-modal-size-xl: 960px;
   --p-modal-size-lg: 800px;
   --p-modal-size-md: 600px;
@@ -271,9 +374,9 @@ export default defineComponent({
   }
 
   /**
-  * Modal has 4 different size
-  * eg: small, medium, large
-  * and extra large. default
+  * Modal has 5 different size
+  * eg: small, medium, large,
+  * extra large and full. default
   * size are medium
   */
   &&--xl {
@@ -297,6 +400,82 @@ export default defineComponent({
   &&--sm {
     .modal__content {
       @apply w-[var(--p-modal-size-sm)];
+    }
+  }
+
+  /**
+  * Modal has 2 types of
+  * full size, eg: full and
+  * free-distraction
+  */
+  &&--full {
+    /**
+    * Style of Modal full
+    * except free distraction type
+    */
+    &:not(.modal--free-distraction) {
+      /**
+      * Make modal dialog and
+      * modal content full height
+      */
+      .modal__dialog {
+        @apply h-full min-h-full;
+      }
+      .modal__content {
+        @apply w-full max-w-full my-0 rounded-none;
+      }
+
+      /**
+      * Reset modal body
+      */
+      .modal__body {
+        @apply p-0;
+      }
+
+      /**
+      * Custom modal header
+      * in full size
+      */
+      .modal--full__header {
+        @apply flex h-[60px] border-b border-b-default;
+        @apply dark:border-b-dark-default;
+
+        &__dismiss {
+          @apply flex items-center border-r shrink-0 border-r-default bg-default;
+          @apply dark:border-r-dark-default dark:bg-dark-default;
+        }
+
+        &__title {
+          @apply flex grow items-stretch;
+        }
+
+        &__content {
+          @apply grow flex items-center;
+        }
+
+        &__navigation {
+          @apply shrink-0 flex items-center border-l border-l-default px-3 space-x-1 bg-default;
+          @apply dark:border-l-dark-default dark:bg-dark-default;
+        }
+      }
+    }
+
+    /**
+    * Styling modal full
+    * with free distraction type
+    */
+    &:is(.modal--free-distraction) {
+      @apply bg-inverse/80;
+      @apply dark:bg-dark-inverse/80;
+
+      .modal__content {
+        @apply w-[var(--p-modal-size-full)];
+      }
+
+      .modal__dismiss {
+        @apply absolute right-5 top-5 p-[10px] rounded bg-default-alpha cursor-pointer;
+        @apply dark:bg-dark-default-alpha;
+      }
     }
   }
 
