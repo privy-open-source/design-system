@@ -259,7 +259,7 @@ export default defineComponent({
     watch(model, (value) => {
       if (value === false) {
         nextTick(() => {
-          emit('close')
+          emit('close', new CustomEvent('close'))
         })
       }
     })

@@ -971,22 +971,22 @@ Modal use local CSS variables on `.modal` for enhanced real-time customization.
 
 | Props                      |   Type    | Default | Description                                                |
 |----------------------------|:---------:|:-------:|------------------------------------------------------------|
-| `v-model`                  | `Boolean` | `false` | Show / Hide modal                                          |
-| `title`                    | `String`  | -       | Modal Title                                                |
-| `text`                     | `String`  | -       | Text inside of Modal Body                                  |
-| `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                                 |
-| `size`                     | `String`  | `md`    | Size of modal, valid value is `sm`, `md`, `lg`, `xl` and `full`    |
-| `banner`                   | `Boolean` | `false` | Give modal no-padding to place image for specific purpose  |
-| `no-close-on-esc`          | `Boolean` | `false` | No close modal while Escape was pressed                    |
-| `no-close-on-backdrop`     | `Boolean` | `false` | No close modal while Modal Backdrop was clicked            |
-| `modal-body-scrollable`    | `Boolean` | `false` | Scrollable modal body when content is to long              |
-| `centered`                 | `Boolean` | `false` | Handle center vertically of the viewport                   |
-| `free-distraction`         | `Boolean` | `false` | Activate modal free distraction type when size are `full`    |
-| `header-class`             | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal header  |
-| `dialog-class`             | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal dialog  |
-| `content-class`            | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal content |
-| `body-class`               | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal body  |
-| `footer-class`             | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal footer  |
+| `modelValue`          | `Boolean` | `false` | `v-model` value for show / hide modal                     |
+| `title`               | `String`  |    -    | Modal Title                                               |
+| `text`                | `String`  |    -    | Text inside of Modal Body                                 |
+| `dismissable`         | `Boolean` | `true`  | Show / Hide dismiss button                                |
+| `size`                | `String`  |  `md`   | Size of modal, valid value is `sm`, `md`, `lg` and `xl`   |
+| `banner`              | `Boolean` | `false` | Give modal no-padding to place image for specific purpose |
+| `noCloseOnEsc`        | `Boolean` | `false` | No close modal while Escape was pressed                   |
+| `noCloseOnBackdrop`   | `Boolean` | `false` | No close modal while Modal Backdrop was clicked           |
+| `modalBodyScrollable` | `Boolean` | `false` | Scrollable modal body when content is to long             |
+| `centered`            | `Boolean` | `false` | Handle center vertically of the viewport                  |
+| `freeDistraction`     | `Boolean` | `false` | Activate modal free distraction type when size are `full`    |
+| `headerClass`         | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal header  |
+| `dialogClass`         | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal dialog  |
+| `contentClass`        | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal content |
+| `bodyClass`           | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal body  |
+| `footerClass`         | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal footer  |
 
 ### Slots
 | Name      | Description                                                                                      |
@@ -997,7 +997,7 @@ Modal use local CSS variables on `.modal` for enhanced real-time customization.
 
 ### Events
 
-| Name        | Arguments | Description                     |
-|-------------|-----------|---------------------------------|
-| `close`     | -         | Event when close button clicked |
+| Name    | Arguments | Description                     |
+|---------|-----------|---------------------------------|
+| `close` | -         | Event when close button clicked |
 

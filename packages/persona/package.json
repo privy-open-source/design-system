@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona",
   "description": "Persona core package",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
@@ -58,11 +58,11 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@floating-ui/dom": "1.0.4",
+    "@floating-ui/dom": "1.5.1",
     "@juggle/resize-observer": "3.4.0",
-    "@nuxt/kit": "3.3.2",
+    "@nuxt/kit": "3.7.1",
     "@splidejs/splide": "4.1.4",
-    "@testing-library/dom": "9.0.0",
+    "@testing-library/dom": "9.3.1",
     "@testing-library/user-event": "14.4.3",
     "@vueuse/core": "10.3.0",
     "@vueuse/math": "10.3.0",
@@ -82,8 +82,8 @@
     "sanitize-html": "2.8.1",
     "scroll-into-view": "1.16.2",
     "tabbable": "6.2.0",
-    "vue-collapsed": "1.2.5",
-    "vue-demi": "0.14.5",
+    "vue-collapsed": "1.2.7",
+    "vue-demi": "0.14.6",
     "vuedraggable": "next",
     "webfontloader": "1.6.28",
     "zxcvbn": "4.4.2"
@@ -101,14 +101,14 @@
     "vue-router": ">=4.0.0"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.4.0",
-    "@nuxt/schema": "3.6.5",
+    "@nuxt/module-builder": "^0.5.0",
+    "@nuxt/schema": "3.7.1",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@types/sanitize-html": "^2",
     "browserslist-to-esbuild": "^1.2.0",
-    "nuxt": "3.6.5",
+    "nuxt": "3.7.1",
     "postcss-custom-properties": "^13.0.0",
     "postcss-hexrgba": "^2.1.0",
     "postcss-lighten-darken": "^0.9.0",

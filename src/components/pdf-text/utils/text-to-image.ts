@@ -69,7 +69,7 @@ interface GenerateOptions {
   labelSize?: number,
 }
 
-function wrapText (context: CanvasRenderingContext2D, text: string, fontSize: number, lineHeight: number, fontFamily: string, maxWidth: number): string[] {
+function wrapText (context: CanvasRenderingContext2D, text: string, fontSize: number, fontFamily: string, maxWidth: number): string[] {
   const lines: string[] = []
 
   context.font         = `${fontSize}px ${JSON.stringify(fontFamily)}`
@@ -117,7 +117,7 @@ function wrapText (context: CanvasRenderingContext2D, text: string, fontSize: nu
   return lines
 }
 
-export default async function generate (options: GenerateOptions) {
+export default async function generate (options: GenerateOptions, dpi = 1) {
   const {
     text,
     color,
@@ -130,12 +130,14 @@ export default async function generate (options: GenerateOptions) {
     maxSize,
     fixedSize,
     label,
+    lineHeight,
   } = options
 
   await loadFont(font)
 
-  const canvas  = options.canvas ?? createCanvas(width, height)
-  const context = canvas.getContext('2d')
+  const canvas   = options.canvas ?? createCanvas(width, height, dpi)
+  const context  = canvas.getContext('2d')
+  const maxWidth = width - (padding * 2)
 
   let y = padding
 
@@ -144,28 +146,34 @@ export default async function generate (options: GenerateOptions) {
     const labelFont  = options.labelFont ?? font
     const labelColor = options.labelColor ?? color
 
+    const labelLines = wrapText(
+      context,
+      label,
+      labelSize,
+      labelFont,
+      maxWidth,
+    )
+
     context.font         = `${labelSize}px ${JSON.stringify(labelFont)}`
     context.textBaseline = 'top'
     context.textAlign    = 'start'
     context.fillStyle    = labelColor
 
-    context.fillText(label, padding, y)
+    for (const line of labelLines) {
+      context.fillText(line, padding, y)
 
-    // eslint-disable-next-line unicorn/consistent-destructuring
-    y += (labelSize * options.lineHeight)
+      y += (labelSize * lineHeight)
+    }
   }
 
   if (text) {
-    const maxWidth  = width - (padding * 2)
     const maxHeight = height - (y + padding)
 
-    let fontSize   = size
-    let lineHeight = fontSize * options.lineHeight
-    let lines      = wrapText(
+    let fontSize = size
+    let lines    = wrapText(
       context,
       text,
       fontSize,
-      lineHeight,
       font,
       maxWidth,
     )
@@ -184,25 +192,18 @@ export default async function generate (options: GenerateOptions) {
         if (newFontSize === fontSize)
           break
 
-        fontSize   = newFontSize
-        lineHeight = fontSize * options.lineHeight
-        lines      = wrapText(
+        fontSize = newFontSize
+        lines    = wrapText(
           context,
           text,
           fontSize,
-          lineHeight,
           font,
           maxWidth,
         )
 
-        textHeight = (lines.length * lineHeight)
+        textHeight = (lines.length * lineHeight * fontSize)
       } while (textHeight > maxHeight && ++count < 5 /* to avoid infinite loop */)
     }
-
-    context.font         = `${fontSize}px ${JSON.stringify(font)}`
-    context.textBaseline = 'top'
-    context.textAlign    = 'start'
-    context.fillStyle    = color
 
     context.font         = `${fontSize}px ${JSON.stringify(font)}`
     context.textBaseline = 'top'
@@ -212,7 +213,7 @@ export default async function generate (options: GenerateOptions) {
     for (const line of lines) {
       context.fillText(line, padding, y)
 
-      y += lineHeight
+      y += (fontSize * lineHeight)
     }
   }
 

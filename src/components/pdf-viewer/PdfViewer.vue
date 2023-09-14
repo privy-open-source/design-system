@@ -14,6 +14,10 @@
         :page="pdfPage"
         :scale="pdfScale"
         :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :next="next"
+        :prev="prev"
         :doc="pdfDoc" />
     </div>
 
@@ -27,7 +31,6 @@
         <PdfError
           v-show="!loading && error"
           :url="src"
-          :pdf-js="pdfJS"
           :error="error" />
         <div
           ref="viewer"
@@ -36,6 +39,10 @@
           :page="pdfPage"
           :scale="pdfScale"
           :total-page="totalPage"
+          :zoom-in="zoomIn"
+          :zoom-out="zoomOut"
+          :next="next"
+          :prev="prev"
           :doc="pdfDoc" />
       </div>
       <!-- Minimum PDFJS Viewer end -->
@@ -45,6 +52,10 @@
         :page="pdfPage"
         :scale="pdfScale"
         :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :next="next"
+        :prev="prev"
         :doc="pdfDoc" />
 
       <transition name="slide-up">
@@ -57,6 +68,10 @@
         :page="pdfPage"
         :scale="pdfScale"
         :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :next="next"
+        :prev="prev"
         :doc="pdfDoc" />
     </PdfObjects>
     <div class="pdf__footer">
@@ -65,6 +80,10 @@
         :page="pdfPage"
         :scale="pdfScale"
         :total-page="totalPage"
+        :zoom-in="zoomIn"
+        :zoom-out="zoomOut"
+        :next="next"
+        :prev="prev"
         :doc="pdfDoc" />
     </div>
   </div>
@@ -171,7 +190,6 @@ export default defineComponent({
       openDoc,
       closeDoc,
       pdfDoc,
-      pdfJS,
       loading,
       error,
       onLoaded,
@@ -207,10 +225,30 @@ export default defineComponent({
       emit('ready', pdfViewer)
     })
 
+    function zoomIn () {
+      pdfScale.value = (Math.round(pdfScale.value / 0.1) * 0.1) + 0.1
+    }
+
+    function zoomOut () {
+      pdfScale.value = (Math.round(pdfScale.value / 0.1) * 0.1) - 0.1
+    }
+
+    function next () {
+      pdfPage.value++
+    }
+
+    function prev () {
+      pdfPage.value--
+    }
+
     provide(PDF_VIEWER_CONTEXT, {
       page : pdfPage,
       scale: pdfScale,
       totalPage,
+      zoomIn,
+      zoomOut,
+      next,
+      prev,
     })
 
     syncRef(pdfPage, vPage)
@@ -224,10 +262,13 @@ export default defineComponent({
       openDoc,
       closeDoc,
       pdfDoc,
-      pdfJS,
       idle,
       loading,
       error,
+      zoomIn,
+      zoomOut,
+      next,
+      prev,
     }
   },
 })

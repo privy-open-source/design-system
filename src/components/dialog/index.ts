@@ -5,7 +5,7 @@ import type {
   FooterButtonColorVariant,
   FooterButtonStyleVariant,
 } from './DialogFooter.vue'
-import type { SizeVariant } from '../modal/'
+import type { SizeVariant } from '../modal'
 
 interface DialogButton {
   text?: string,

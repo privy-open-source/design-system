@@ -1,3 +1,4 @@
+import { createCanvas } from '../../signature-draw/utils/canvas'
 import loadFont from './load-font'
 
 export interface GenerateOptions {
@@ -8,16 +9,7 @@ export interface GenerateOptions {
   color: string,
 }
 
-function createCanvas (width: number, height: number): HTMLCanvasElement {
-  const canvas = document.createElement('canvas')
-
-  canvas.width  = width
-  canvas.height = height
-
-  return canvas
-}
-
-export default async function generate (options: GenerateOptions): Promise<string> {
+export default async function generate (options: GenerateOptions, dpi = 1): Promise<string> {
   await loadFont(options.font)
 
   const text    = options.text
@@ -25,7 +17,7 @@ export default async function generate (options: GenerateOptions): Promise<strin
   const height  = options.height
   const color   = options.color
   const font    = options.font
-  const canvas  = createCanvas(width, height)
+  const canvas  = createCanvas(width, height, dpi)
   const context = canvas.getContext('2d')
 
   context.fillStyle    = color

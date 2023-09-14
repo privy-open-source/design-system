@@ -15,6 +15,13 @@ import type {
 import useLoading from '../../overlay/utils/use-loading'
 import { useClamp } from '@vueuse/math'
 import { createEventHook } from '@vueuse/core'
+import {
+  createEventBus,
+  createLinkService,
+  createViewer,
+  getCMAPUri,
+  getDocument,
+} from './pdfjs'
 
 export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivElement>) {
   const pdfDoc         = shallowRef<PDFJS.PDFDocumentProxy>()
@@ -22,7 +29,6 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
   const pdfViewer      = shallowRef<PDFViewer>()
   const pdfLoadingTask = shallowRef<PDFJS.PDFDocumentLoadingTask>()
   const pdfLinkService = shallowRef<PDFLinkService>()
-  const pdfJS          = shallowRef<typeof PDFJS>()
 
   const totalPage = computed(() => pdfDoc.value?.numPages ?? 0)
   const scale     = useClamp(1, 0.1, 2)
@@ -40,20 +46,15 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
     error.value   = undefined
 
     try {
-      pdfJS.value = await import('pdfjs-dist')
-
-      if (typeof window !== 'undefined' && 'Worker' in window)
-        pdfJS.value.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfJS.value.version}/build/pdf.worker.min.js`
-
       // Close previous document
       await closeDoc()
 
       if (url) {
         // Open new document
-        pdfLoadingTask.value = pdfJS.value.getDocument({
+        pdfLoadingTask.value = await getDocument({
           url          : url,
           password     : password,
-          cMapUrl      : `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfJS.value.version}/cmaps/`,
+          cMapUrl      : await getCMAPUri(),
           cMapPacked   : true,
           disableStream: false,
         })
@@ -92,14 +93,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
 
   async function initPdfViewer () {
     if (typeof navigator !== 'undefined' && container.value && viewer.value) {
-      const {
-        NullL10n,
-        PDFLinkService,
-        PDFViewer,
-        EventBus,
-      } = await import('pdfjs-dist/web/pdf_viewer')
-
-      const bus = new EventBus()
+      const bus = await createEventBus()
 
       bus.on('pagesinit', () => {
         const isWide = viewer.value.clientWidth >= 793
@@ -120,14 +114,12 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
       })
 
       pdfEventBus.value    = bus
-      pdfLinkService.value = new PDFLinkService({ eventBus: pdfEventBus.value })
-      pdfViewer.value      = new PDFViewer({
+      pdfLinkService.value = await createLinkService({ eventBus: pdfEventBus.value })
+      pdfViewer.value      = await createViewer({
         container        : container.value,
         viewer           : viewer.value,
         eventBus         : pdfEventBus.value,
         linkService      : pdfLinkService.value,
-        l10n             : NullL10n,
-        useOnlyCssZoom   : false,
         removePageBorders: true,
       })
 
@@ -180,7 +172,6 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
     pdfViewer     : pdfViewer,
     pdfLoadingTask: pdfLoadingTask,
     pdfLinkService: pdfLinkService,
-    pdfJS         : pdfJS,
     onLoaded      : loadEvent.on,
     onError       : errorEvent.on,
     onReady       : readyEvent.on,

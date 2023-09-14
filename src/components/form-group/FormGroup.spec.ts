@@ -1,5 +1,6 @@
 import { render } from '@testing-library/vue'
 import pFormGroup from './FormGroup.vue'
+import { ref, nextTick } from 'vue-demi'
 
 it('should mounted properly', () => {
   const screen = render({
@@ -108,4 +109,48 @@ it('should able to show error if prop `error` was provided, and replacing the de
   expect(error).toBeInTheDocument()
   expect(error).toHaveTextContent('Error, fix this please')
   expect(description).not.toBeInTheDocument()
+})
+
+it('should render with horizontal layout if prop `horizontal` was provided', () => {
+  const screen = render({
+    components: { pFormGroup },
+    template  : `
+      <p-form-group
+        label="Lorem Ipsum"
+        horizontal
+      />
+    `,
+  })
+
+  const formGroup = screen.queryByTestId('form-group')
+
+  expect(formGroup).toBeInTheDocument()
+  expect(formGroup).toHaveClass('form-group--horizontal')
+})
+
+it('should able to show error icon if prop `error-icon` was provided and prop `error` provided too', async () => {
+  const errMsg = ref('Please fill this field')
+  const screen = render({
+    components: { pFormGroup },
+    template  : `
+      <p-form-group
+        label="Lorem Ipsum"
+        description="This is description"
+        :error="errMsg"
+        error-icon
+      />
+    `,
+    setup () {
+      return { errMsg }
+    },
+  })
+
+  const errorIcon = screen.queryByTestId('form-group-error-icon')
+
+  expect(errorIcon).toBeInTheDocument()
+
+  errMsg.value = ''
+  await nextTick()
+
+  expect(errorIcon).not.toBeInTheDocument()
 })

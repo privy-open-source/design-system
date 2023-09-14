@@ -9,6 +9,8 @@ description: Table but using flexbox.
   import pLabel from '../label/Label.vue'
   import pHeading from '../heading/Heading.vue'
   import pText from '../text/Text.vue'
+  import pButton from '../button/Button.vue'
+  import PiTrash16 from '@privyid/persona-icon/vue/trash/16.vue'
   import { defineTable } from '../table'
   import { ref } from 'vue-demi'
 
@@ -378,6 +380,44 @@ add prop `draggable` to enable drag-to-sort.
 </template>
 ```
 
+### Custom Row
+
+<preview class="flex-col space-y-2">
+  <p-table-flex :fields="fields" :items="items" draggable>
+    <template #row="{ item }">
+      <div class="flex items-center flex-grow p-4 space-x-4 max-sm:w-full">
+        <p-avatar size="sm" :name="item.name" />
+        <div class="flex flex-col items-start flex-grow">
+          <span>{{ item.name }}</span>
+          <p-label color="danger" variant="light" size="sm">Sign</p-label>
+        </div>
+        <p-button variant="ghost" icon>
+          <pi-trash-16 />
+        </p-button>
+      </div>
+    </template>
+  </p-table-flex>
+</preview>
+
+```vue
+<template>
+  <p-table-flex :fields="fields" :items="items" draggable>
+    <template #row="{ item }">
+      <div class="flex items-center flex-grow p-4 space-x-4 max-sm:w-full">
+        <p-avatar size="sm" :name="item.name" />
+        <div class="flex flex-col items-start flex-grow">
+          <span>{{ item.name }}</span>
+          <p-label color="danger" variant="light" size="sm">Sign</p-label>
+        </div>
+        <p-button variant="ghost" icon>
+          <pi-trash-16 />
+        </p-button>
+      </div>
+    </template>
+  </p-table-flex>
+</template>
+```
+
 ### Custom Empty
 
 Table has default empty state, but it's be able to customize by own via slot `empty`.
@@ -482,6 +522,7 @@ In props `fields` contain
 | `cell(:key)` | Content for checked label   |
 | `head(:key)` | Content for unchecked label |
 | `empty`      | Content for empty state     |
+| `row`        | Custom render for row       |
 
 ### Events
 

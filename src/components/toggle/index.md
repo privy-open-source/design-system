@@ -12,7 +12,7 @@ description: Base input toggle.
 
   const modelA   = ref(false)
   const modelB   = ref('off')
-  const isDark   = useDark()
+  const isDark   = useDark({ storageKey: 'vitepress-theme-appearance' })
   const selected = ref([])
 </script>
 

@@ -9269,35 +9269,6 @@
     ]
   },
   {
-    "name": "admin-center",
-    "aliases": [],
-    "category": "apps",
-    "folder": "admin-center-apps",
-    "variant": "apps",
-    "files": [
-      {
-        "name": "admin-center-apps/32",
-        "path": "admin-center-apps/32.svg",
-        "hash": "4f9f3c95157d1e021c134af19aea00366dd6263a25bbd6c2499e08dbd2c3fa7d"
-      },
-      {
-        "name": "admin-center-apps/24",
-        "path": "admin-center-apps/24.svg",
-        "hash": "1360cba806e4ec7c73ca5243306ac12af6ef7f9be2312d4fcfb94e1587f6d8b7"
-      },
-      {
-        "name": "admin-center-apps/20",
-        "path": "admin-center-apps/20.svg",
-        "hash": "7e281ae4957bd677a02b279ca5e6f4991052cd1a667c505deba99afb22373b56"
-      },
-      {
-        "name": "admin-center-apps/16",
-        "path": "admin-center-apps/16.svg",
-        "hash": "57e026739ced2c7ecf1cb8343174f21c5e398758241af7645c83d26f2eff79ff"
-      }
-    ]
-  },
-  {
     "name": "signature-draw-alt",
     "aliases": [],
     "category": "formatting",
@@ -9468,6 +9439,35 @@
         "name": "tablet/16",
         "path": "tablet/16.svg",
         "hash": "0d8b249e783fce3ea6d7a71ce69e1dd7fb69eeb3657e1ccd740c4e0b0265be9c"
+      }
+    ]
+  },
+  {
+    "name": "admin-center",
+    "aliases": [],
+    "category": "apps",
+    "folder": "admin-center-apps",
+    "variant": "apps",
+    "files": [
+      {
+        "name": "admin-center-apps/20",
+        "path": "admin-center-apps/20.svg",
+        "hash": "ea0b632c8d84dc7a35abbce3c99a4d57abf5bf3c061217864656d72a71bbcaea"
+      },
+      {
+        "name": "admin-center-apps/16",
+        "path": "admin-center-apps/16.svg",
+        "hash": "f048b618f5fd7a1a033367f585607be54c325d34a302fd1432a7b1089098ee57"
+      },
+      {
+        "name": "admin-center-apps/32",
+        "path": "admin-center-apps/32.svg",
+        "hash": "ef45372a4706c4bff5b54f23cab1386e1c25182c71636ed05a437909e012a0a6"
+      },
+      {
+        "name": "admin-center-apps/24",
+        "path": "admin-center-apps/24.svg",
+        "hash": "b8da73288c6d1f77f3b9a34dab22b0cba46265d89c6b4297380ec52ffb0239fb"
       }
     ]
   }

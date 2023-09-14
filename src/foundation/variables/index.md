@@ -62,12 +62,12 @@ Button has 3 radius variant. `default` radius is used for button size `lg` and `
 
 <div class="w-2/4 table-list">
 
-| Size          | Default     | Pills                          |
-|---------------|-------------|--------------------------------|
-| large         | default     | full                           |
-| normal        | default     | full                           |
-| small         | sm          | full                           |
-| xsmall        | xs          | full                           |
+| Size   | Default | Pills |
+|--------|---------|-------|
+| large  | default | full  |
+| normal | default | full  |
+| small  | sm      | full  |
+| xsmall | xs      | full  |
 
 </div>
 
@@ -84,12 +84,12 @@ Label has 4 radius variant. `default` radius is used form label size `lg`, `sm` 
 
 <div class="w-2/3 table-list">
 
-| Size          |   None    | Default     | Pills                          |
-|---------------|-----------|-------------|--------------------------------|
-| large         | none      | default     | full                           |
-| medium        | none      | sm          | full                           |
-| small         | none      | xs          | full                           |
-| tiny          | none      | tn          | full                           |
+| Size   | None | Default | Pills |
+|--------|------|---------|-------|
+| large  | none | default | full  |
+| medium | none | sm      | full  |
+| small  | none | xs      | full  |
+| tiny   | none | tn      | full  |
 
 </div>
 
@@ -102,9 +102,9 @@ Badge use `full` radius.
 
 <div class="w-1/3 table-list">
 
-| Size          | Pills      |
-|---------------|------------|
-| normal        | full       |
+| Size   | Pills |
+|--------|-------|
+| normal | full  |
 
 </div>
 
@@ -117,9 +117,9 @@ Card use `md` radius.
 
 <div class="w-1/3 table-list">
 
-| Size          | Default     |
-|---------------|-------------|
-| normal        | md          |
+| Size   | Default |
+|--------|---------|
+| normal | md      |
 
 </div>
 
@@ -128,9 +128,9 @@ Normal size of some component are use `none` (no-radius) or `default` radius.
 
 <div class="w-2/4 table-list">
 
-| Size          |   None    | Default     |
-|---------------|-----------|-------------|
-| normal        | none      | default     |
+| Size   | None | Default |
+|--------|------|---------|
+| normal | none | default |
 
 </div>
 
@@ -150,13 +150,13 @@ Avatar has 5 size variant, there are `xl`, `lg`, `md`, `sm` and `xs`. Default si
 
 <div class="w-1/3 table-list">
 
-| Size          | Default State     |
-|---------------|-------------------|
-| Xlarge        |                   |
-| Large         |                   |
-| Medium        |   `Default`       |
-| Small         |                   |
-| Xsmall        |                   |
+| Size   | Default State |
+|--------|---------------|
+| Xlarge |               |
+| Large  |               |
+| Medium | `Default`     |
+| Small  |               |
+| Xsmall |               |
 
 </div>
 
@@ -172,12 +172,12 @@ Button has 4 size variant, there are `lg`, `md`, `sm` and `xs`. Default button s
 
 <div class="w-1/3 table-list">
 
-| Size          | Default State     |
-|---------------|-------------------|
-| Large         |                   |
-| Medium        |   `Default`       |
-| Small         |                   |
-| Xsmall        |                   |
+| Size   | Default State |
+|--------|---------------|
+| Large  |               |
+| Medium | `Default`     |
+| Small  |               |
+| Xsmall |               |
 
 </div>
 
@@ -193,12 +193,12 @@ Label has 4 size variant, there are `lg`, `md`, `sm` and `xs`. The default size 
 
 <div class="w-1/3 table-list">
 
-| Size          | Default State     |
-|---------------|-------------------|
-| Large         |                   |
-| Medium        |   `Default`       |
-| Small         |                   |
-| Xsmall        |                   |
+| Size   | Default State |
+|--------|---------------|
+| Large  |               |
+| Medium | `Default`     |
+| Small  |               |
+| Xsmall |               |
 
 </div>
 
@@ -212,8 +212,8 @@ Modal has 4 different size, namely `lg`, `md`, `sm` and `xs`. Default modal size
   <p-button color="info" @click="showModal('xs')">Modal Xsmall</p-button>
 </preview>
 
-<p-modal 
-  :size="attr.size" 
+<p-modal
+  :size="attr.size"
   v-model="model"
   title="modal title"
   :text="attr.body"
@@ -222,12 +222,12 @@ Modal has 4 different size, namely `lg`, `md`, `sm` and `xs`. Default modal size
 
 <div class="w-1/3 table-list">
 
-| Size          | Default State     |
-|---------------|-------------------|
-| Large         |                   |
-| Medium        |   `Default`       |
-| Small         |                   |
-| Xsmall        |                   |
+| Size   | Default State |
+|--------|---------------|
+| Large  |               |
+| Medium | `Default`     |
+| Small  |               |
+| Xsmall |               |
 
 </div>
 
@@ -243,12 +243,12 @@ Input has 4 size variant, there are `lg`, `md`, `sm` and `xs`. The default size 
 
 <div class="w-1/3 table-list">
 
-| Size          | Default State     |
-|---------------|-------------------|
-| Large         |                   |
-| Medium        |   `Default`       |
-| Small         |                   |
-| Xsmall        |                   |
+| Size   | Default State |
+|--------|---------------|
+| Large  |               |
+| Medium | `Default`     |
+| Small  |               |
+| Xsmall |               |
 
 </div>
 
@@ -257,15 +257,15 @@ Input has 4 size variant, there are `lg`, `md`, `sm` and `xs`. The default size 
 
 <div class="w-full table-list">
 
-| Type          | sm     | md     | lg     | xl     | 2xl    |
-|---------------|:------:|:------:|:------:|:------:|:------:|
-| Button        |        |        |  v     |        |        |
-| Card          | v      |        |        | v      |        |
-| Dropdown      |        |        |        | v      |        |
-| Modal         |        |        |        |        |  v     |
-| Toast         |        |        |        | v      |        |
-| Tooltip       | v      |        |        |        |        |
-| Tour          | v      |        |        |        |        |
+| Type     | sm | md | lg | xl | 2xl |
+|----------|:--:|:--:|:--:|:--:|:---:|
+| Button   |    |    | v  |    |     |
+| Card     | v  |    |    | v  |     |
+| Dropdown |    |    |    | v  |     |
+| Modal    |    |    |    |    |  v  |
+| Toast    |    |    |    | v  |     |
+| Tooltip  | v  |    |    |    |     |
+| Tour     | v  |    |    |    |     |
 
 
 </div>
@@ -296,16 +296,16 @@ Some components that have fixed and absolute positions are given z-index values 
 
 <div class="w-full table-list">
 
-| Name              |   Value     | Component            |
-|-------------------|-------------|----------------------|
-| z-dropdown        | 1020        | Dropdown             |
-| z-sticky          | 1030        | Navbar & Sidebar     |
-| z-fixed           | 1040        | Navbar & Sidebar     |
-| z-modal           | 1050        | Modal                |
-| z-overlay         | 1060        | Overlay              |
-| z-tooltip         | 1070        | Tooltip              |
-| z-tour-backdrop   | 1080        | Tour backdrop        |
-| z-tour            | 1085        | Tour                 |
-| z-toast           | 1090        | Toast                |
+| Name            | Value | Component        |
+|-----------------|-------|------------------|
+| z-dropdown      | 1020  | Dropdown         |
+| z-sticky        | 1030  | Navbar & Sidebar |
+| z-fixed         | 1040  | Navbar & Sidebar |
+| z-modal         | 1050  | Modal & Sheet    |
+| z-overlay       | 1060  | Overlay          |
+| z-tooltip       | 1070  | Tooltip          |
+| z-tour-backdrop | 1080  | Tour backdrop    |
+| z-tour          | 1085  | Tour             |
+| z-toast         | 1090  | Toast            |
 
 </div>
