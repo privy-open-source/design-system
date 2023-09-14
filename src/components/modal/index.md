@@ -680,7 +680,6 @@ Modal fullscreen is configured by prop `size` with `full` value. There are two t
 ```vue
 <script setup>
   import IconDocument from '@privyid/persona-icon/vue/document-empty/20.vue'
-  import IconClose from '@privyid/persona-icon/vue/close/20.vue'
 </script>
 
 <template>
