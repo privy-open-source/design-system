@@ -16,6 +16,13 @@
           class="modal__dialog"
           :class="dialogClass"
           data-testid="modal-dialog">
+          <span
+            v-if="dismissable && (size === 'full' && freeDistraction)"
+            data-testid="modal-free-distraction-dismiss"
+            class="modal__dismiss"
+            @click="close">
+            <IconCloseFull class="text-state-emphasis dark:text-dark-state-emphasis" />
+          </span>
           <div
             class="modal__content"
             :class="contentClass"
@@ -29,7 +36,7 @@
               <IconClose />
             </span>
             <div
-              v-if="($slots.header || title) && (size !== 'full' && !freeDistraction)"
+              v-if="($slots.header || title) && (size !== 'full' || freeDistraction)"
               data-testid="modal-header"
               class="modal__header"
               :class="headerClass">
@@ -44,12 +51,11 @@
             </div>
             <div
               data-testid="modal-body"
-              :class="[ { 'modal__body--scroll' : modalBodyScrollable }, bodyClass, 'modal__body' ]">
+              :class="[ { 'modal__body--scroll' : modalBodyScrollable}, (size !== 'full' || freeDistraction) ? bodyClass : '', 'modal__body' ]">
               <div
                 v-if="size === 'full' && !freeDistraction"
-                class="flex flex-col">
+                class="modal--full__content">
                 <div
-                  ref="modal-header"
                   class="modal--full__header">
                   <span
                     v-if="dismissable"
@@ -80,13 +86,13 @@
                     {{ text }}
                   </slot>
                 </div><!-- /body -->
-              </div>
+              </div><!-- /content -->
               <slot v-else>
                 {{ text }}
               </slot>
             </div>
             <div
-              v-if="$slots.footer && size !== 'full' || (size !== 'full' && !freeDistraction)"
+              v-if="$slots.footer && (size !== 'full' || freeDistraction)"
               data-testid="modal-footer"
               class="modal__footer"
               :class="footerClass">
@@ -95,13 +101,6 @@
                 :close="close" />
             </div>
           </div>
-          <span
-            v-if="dismissable && (size === 'full' && freeDistraction)"
-            data-testid="modal-free-distraction-dismiss"
-            class="modal__dismiss"
-            @click="close">
-            <IconCloseFull class="text-state-emphasis dark:text-dark-state-emphasis" />
-          </span>
         </div>
       </transition>
     </div>
@@ -234,11 +233,8 @@ export default defineComponent({
       if (props.banner)
         result.push('modal--banner')
 
-      // if (props.fullscreen)
-      //   result.push('modal--fullscreen')
-
       if (props.freeDistraction && props.size === 'full')
-        result.push('modal--full modal--free-distraction')
+        result.push('modal--free-distraction')
 
       return result
     })
@@ -352,11 +348,20 @@ export default defineComponent({
     }
   }
 
+  /**
+  * Set padding
+  * in body and footer
+  * of modal
+  */
   &__body,
   &__footer {
     @apply p-6;
   }
 
+  /**
+  * Modal variant
+  * Scroll
+  */
   &__body {
     &&--scroll {
       @apply max-h-[var(--p-modal-body-scrollable-max-height)] min-h-[var(--p-modal-body-scrollable-min-height)] overflow-y-auto overscroll-contain;
@@ -429,7 +434,15 @@ export default defineComponent({
       * Reset modal body
       */
       .modal__body {
-        @apply p-0;
+        @apply p-0 h-full;
+      }
+
+      /**
+      * Custom modal content
+      * in full size
+      */
+      .modal--full__content {
+        @apply flex flex-col justify-items-stretch h-full;
       }
 
       /**
@@ -437,7 +450,7 @@ export default defineComponent({
       * in full size
       */
       .modal--full__header {
-        @apply flex h-[60px] border-b border-b-default;
+        @apply flex h-[60px] border-b border-b-default shrink-0;
         @apply dark:border-b-dark-default;
 
         &__dismiss {
@@ -447,10 +460,14 @@ export default defineComponent({
 
         &__title {
           @apply flex grow items-stretch;
+
+          .modal__title {
+            @apply items-center flex;
+          }
         }
 
         &__content {
-          @apply grow flex items-center;
+          @apply grow flex items-stretch;
         }
 
         &__navigation {
@@ -475,6 +492,10 @@ export default defineComponent({
       .modal__dismiss {
         @apply absolute right-5 top-5 p-[10px] rounded bg-default-alpha cursor-pointer;
         @apply dark:bg-dark-default-alpha;
+      }
+
+      .modal__title {
+        @apply pr-0;
       }
     }
   }

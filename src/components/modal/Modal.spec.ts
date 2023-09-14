@@ -512,7 +512,7 @@ it('should able to make full size modal with free-distraction type via `free-dis
   expect(modal).toHaveClass('modal--full', 'modal--free-distraction')
   expect(dismiss).toBeInTheDocument()
   expect(close).not.toBeInTheDocument()
-  expect(footer).not.toBeInTheDocument()
+  expect(footer).toBeInTheDocument()
 })
 
 it('should emit event "close" if close button in modal full size is clicked', async () => {

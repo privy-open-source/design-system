@@ -8,13 +8,17 @@ description: ase component for modal dialog.
   import pButton from '../button/Button.vue'
   import pModal from './Modal.vue'
   import pHeading from '../heading/Heading.vue'
+  import pLabel from '../label/Label.vue'
   import pBanner from '../banner/Banner.vue'
+  import pSubheading from '../subheading/Subheading.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
   import pFormGroup from '../form-group/FormGroup.vue'
   import pDatepicker from '../datepicker/Datepicker.vue'
 
   import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
   import IconPrev from '@privyid/persona-icon/vue/chevron-left/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-empty/20.vue'
+  import IconClose from '@privyid/persona-icon/vue/close/20.vue'
 
   const basicModal  = ref(true)
   const showModal   = ref(false)
@@ -32,6 +36,14 @@ description: ase component for modal dialog.
   const size        = ref(false)
   const modalCenter   = ref(true)
   const centered        = ref(false)
+  const modalFull = ref(true)
+  const fullscreen = ref(false)
+  const modalFullHead = ref(true)
+  const fullscreenHead = ref(false)
+  const modalFullBody = ref(true)
+  const fullscreenBody = ref(false)
+  const modalFree = ref(true)
+  const freedistraction = ref(false)
 
   const flscrn = ref(false)
 
@@ -72,37 +84,8 @@ Modal are using `z-modal` for z-index value. It posible to change z-index value 
 ### Simple Usage
 
 <div class="flex mt-5">
-  <p-button @click="flscrn = true" color="info">Show Modal</p-button>
+  <p-button @click="showModal = true" color="info">Show Modal</p-button>
 </div>
-
-  <p-modal
-    no-close-on-esc
-    no-close-on-backdrop
-    size="full"
-    v-model="flscrn"
-    title="text"
-    text="text body"
-    body-class="p-6">
-    <template #header>
-      <div class="overflow-y-auto modal--full__header__content bg-default-alpha">
-        sdflk
-      </div>
-      <div class="modal--full__header__navigation">
-        <p-button style="--p-button-md-padding-x:6px;" variant="ghost"><IconPrev /></p-button>
-        <p-button style="--p-button-md-padding-x:6px;" variant="ghost"><IconPrev /></p-button>
-      </div>
-    </template>
-    <template #body>
-      replace body content
-    </template>
-    <template #footer="{ close }">
-      <div class="flex items-center justify-end">
-        <p-button @click="close" color="info">
-          Submit
-        </p-button>
-      </div>
-    </template>
-  </p-modal>
 
 <preview>
   <p-modal
@@ -558,7 +541,7 @@ Modal can be set look like banner with prop `banner`. For example, it can be use
 </p-modal>
 
 ## Sizing
-Modal has 4 different sizing, there are `sm`, `md`, `lg` and `xl`. You can change the size via prop `size`. Default size are `md`.
+Modal has 5 different sizing, there are `sm`, `md`, `lg`, `xl` and `full`. You can change the size via prop `size`. Default size are `md`.
 
 <div class="flex mt-5">
   <p-button @click="size = true" color="info">Show Modal XL</p-button>
@@ -619,6 +602,290 @@ Modal has 4 different sizing, there are `sm`, `md`, `lg` and `xl`. You can chang
       Button Text
     </p-button>
   </template>
+</p-modal>
+
+## Modal Fullscreen
+Modal fullscreen is configured by prop `size` with `full` value. There are two type of modal fullscreen, `default` and `free-distraction`.
+
+### Default Fullscreen
+<div class="flex mt-5">
+  <p-button @click="fullscreen = true" color="info">Show Modal</p-button>
+</div>
+
+<preview>
+  <p-modal
+    v-model="modalFull"
+    title="Modal Title"
+    text="This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information."
+    size="full"
+    header-class="px-6"
+    body-class="p-6"
+    no-close-on-esc
+    no-close-on-backdrop>
+  </p-modal>
+</preview>
+
+```vue
+<template>
+  <p-modal
+    v-model="modal"
+    title="Modal Title"
+    text="This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information."
+    size="full"
+    header-class="px-6"
+    body-class="p-6">
+  </p-modal>
+</template>
+```
+
+<p-modal
+  v-model="fullscreen"
+  title="Modal Title"
+  text="This is place holder text. The basic dialog for modals
+    should contain only valuable and relevant information."
+  size="full"
+  header-class="px-6"
+  body-class="p-6"
+  no-close-on-esc
+  no-close-on-backdrop>
+</p-modal>
+
+#### Modal Fullscreen With Custom Slot `header`
+<div class="flex mt-5">
+  <p-button @click="fullscreenHead = true" color="info">Show Modal</p-button>
+</div>
+
+<preview>
+  <p-modal
+    v-model="modalFullHead"
+    text="This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information."
+    size="full"
+    header-class="px-6"
+    body-class="p-6"
+    no-close-on-esc
+    no-close-on-backdrop>
+    <template #header>
+      <div class="space-x-3 modal__title">
+        <IconDocument />
+        <p-text class="text-subtle dark:text-dark-subtle">Letter of agreement</p-text>
+        <p-label color="warning" variant="dot">Waiting</p-label>
+      </div>
+    </template>
+  </p-modal>
+</preview>
+
+```vue
+<script setup>
+  import IconDocument from '@privyid/persona-icon/vue/document-empty/20.vue'
+  import IconClose from '@privyid/persona-icon/vue/close/20.vue'
+</script>
+
+<template>
+  <p-modal
+    v-model="modal"
+    text="This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information."
+    size="full"
+    header-class="px-6"
+    body-class="p-6">
+    <template #header>
+      <div class="space-x-3 modal__title">
+        <IconDocument />
+        <p-text class="text-subtle">Letter of agreement</p-text>
+        <p-label color="warning" variant="dot">Waiting</p-label>
+      </div>
+    </template>
+  </p-modal>
+</template>
+```
+
+<p-modal
+  v-model="fullscreenHead"
+  text="This is place holder text. The basic dialog for modals
+    should contain only valuable and relevant information."
+  size="full"
+  header-class="px-6"
+  body-class="p-6"
+  no-close-on-esc
+  no-close-on-backdrop>
+  <template #header>
+    <div class="space-x-3 modal__title">
+      <IconDocument />
+      <p-text class="text-subtle dark:text-dark-subtle">Letter of agreement</p-text>
+      <p-label color="warning" variant="dot">Waiting</p-label>
+    </div>
+  </template>
+</p-modal>
+
+
+#### Modal Fullscreen With Custom Slot `header` and `body`
+<div class="flex mt-5">
+  <p-button @click="fullscreenBody = true" color="info">Show Modal</p-button>
+</div>
+
+<preview>
+  <p-modal
+    v-model="modalFullBody"
+    size="full"
+    body-class="grid h-full grid-cols-8"
+    no-close-on-esc
+    no-close-on-backdrop>
+    <template #header>
+      <div class="overflow-y-auto modal--full__header__content bg-default-alpha dark:bg-dark-default-alpha">
+        <div class="flex items-center p-3 space-x-3 bg-default dark:bg-dark-default">
+          <IconDocument />
+          <p-text>Letter of Agreement..</p-text>
+          <IconClose class="cursor-pointer text-muted dark:text-dark-muted hover:text-subtle dark:hover:text-dark-subtle" />
+        </div>
+      </div>
+      <div class="modal--full__header__navigation">
+        <p-button style="--p-button-md-padding-x:6px;" variant="ghost"><IconPrev /></p-button>
+        <p-button style="--p-button-md-padding-x:6px;" variant="ghost"><IconNext /></p-button>
+      </div>
+    </template>
+    <template #body>
+        <div class="col-span-2 bg-default dark:bg-dark-default p-7">
+          <p-subheading weight="bold">Document properties</p-subheading>
+        </div>
+        <div class="col-span-4 px-4 pt-4 bg-base dark:bg-dark-base">
+          <div class="h-full p-6 rounded-t-lg shadow-sm bg-default">
+            This is place holder text. The basic dialog for modals
+            should contain only valuable and relevant information.
+          </div>
+        </div>
+        <div class="col-span-2 bg-default dark:bg-dark-default p-7">
+          <p-subheading weight="bold">Set e-Meterai</p-subheading>
+        </div>
+    </template>
+  </p-modal>
+</preview>
+
+```vue
+<script setup>
+  import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
+  import IconPrev from '@privyid/persona-icon/vue/chevron-left/20.vue'
+  import IconDocument from '@privyid/persona-icon/vue/document-empty/20.vue'
+  import IconClose from '@privyid/persona-icon/vue/close/20.vue'
+</script>
+
+<template>
+  <p-modal
+    v-model="modal"
+    body-class="grid h-full grid-cols-8"
+    size="full">
+    <template #header>
+      <div class="overflow-y-auto modal--full__header__content bg-default-alpha">
+        <div class="flex items-center p-3 space-x-3 bg-default">
+          <IconDocument />
+          <p-text>Letter of Agreement..</p-text>
+          <IconClose class="cursor-pointer text-muted hover:text-subtle" />
+        </div>
+      </div>
+      <div class="modal--full__header__navigation">
+        <p-button icon variant="ghost"><IconPrev /></p-button>
+        <p-button icon variant="ghost"><IconNext /></p-button>
+      </div>
+    </template>
+    <template #body>
+        <div class="col-span-2 bg-default p-7">
+          <p-subheading weight="bold">Document properties</p-subheading>
+        </div>
+        <div class="col-span-4 px-4 pt-4 bg-base">
+          <div class="h-full p-6 rounded-t-lg shadow-sm bg-default">
+            This is place holder text. The basic dialog for modals
+            should contain only valuable and relevant information.
+          </div>
+        </div>
+        <div class="col-span-2 p-7 bg-default">
+          <p-subheading weight="bold">Set e-Meterai</p-subheading>
+        </div>
+    </template>
+  </p-modal>
+</template>
+```
+
+<p-modal
+  v-model="fullscreenBody"
+  size="full"
+  body-class="grid h-full grid-cols-8"
+  no-close-on-esc
+  no-close-on-backdrop>
+  <template #header>
+    <div class="overflow-y-auto modal--full__header__content bg-default-alpha dark:bg-dark-default-alpha">
+      <div class="flex items-center p-3 space-x-3 bg-default dark:bg-dark-default">
+        <IconDocument />
+        <p-text>Letter of Agreement..</p-text>
+        <IconClose class="cursor-pointer text-muted dark:text-dark-muted hover:text-subtle dark:hover:text-dark-subtle" />
+      </div>
+    </div>
+    <div class="modal--full__header__navigation">
+      <p-button style="--p-button-md-padding-x:6px;" variant="ghost"><IconPrev /></p-button>
+      <p-button style="--p-button-md-padding-x:6px;" variant="ghost"><IconNext /></p-button>
+    </div>
+  </template>
+  <template #body>
+      <div class="col-span-2 bg-default dark:bg-dark-default p-7">
+        <p-subheading weight="bold">Document properties</p-subheading>
+      </div>
+      <div class="col-span-4 px-4 pt-4 bg-base dark:bg-dark-base">
+        <div class="h-full p-6 rounded-t-lg shadow-sm bg-default dark:bg-dark-default">
+          This is place holder text. The basic dialog for modals
+          should contain only valuable and relevant information.
+        </div>
+      </div>
+      <div class="col-span-2 bg-default dark:bg-dark-default p-7">
+        <p-subheading weight="bold">Set e-Meterai</p-subheading>
+      </div>
+  </template>
+</p-modal>
+
+### Free Distraction
+Activate modal free distraction type is by adding `free-distraction` prop in the modal size `full`.
+Slot `body` cannot be used in this modal type.
+<div class="flex mt-5">
+  <p-button @click="freedistraction = true" color="info">Show Modal</p-button>
+</div>
+
+<preview>
+  <p-modal
+    v-model="modalFree"
+    title="Modal Title"
+    text="This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information."
+    size="full"
+    header-class="px-6"
+    body-class="p-6"
+    no-close-on-esc
+    no-close-on-backdrop
+    free-distraction>
+  </p-modal>
+</preview>
+
+```vue
+<template>
+  <p-modal
+    v-model="modal"
+    title="Modal Title"
+    text="This is place holder text. The basic dialog for modals
+      should contain only valuable and relevant information."
+    size="full"
+    free-distraction>
+  </p-modal>
+</template>
+```
+
+<p-modal
+  v-model="freedistraction"
+  title="Modal Title"
+  text="This is place holder text. The basic dialog for modals
+    should contain only valuable and relevant information."
+  size="full"
+  no-close-on-esc
+  no-close-on-backdrop
+  free-distraction>
 </p-modal>
 
 ## Centered Modal
@@ -709,18 +976,25 @@ Modal use local CSS variables on `.modal` for enhanced real-time customization.
 | `title`                    | `String`  | -       | Modal Title                                                |
 | `text`                     | `String`  | -       | Text inside of Modal Body                                  |
 | `dismissable`              | `Boolean` | `true`  | Show / Hide dismiss button                                 |
-| `size`                     | `String`  | `md`    | Size of modal, valid value is `sm`, `md`, `lg` and `xl`    |
+| `size`                     | `String`  | `md`    | Size of modal, valid value is `sm`, `md`, `lg`, `xl` and `full`    |
 | `banner`                   | `Boolean` | `false` | Give modal no-padding to place image for specific purpose  |
 | `no-close-on-esc`          | `Boolean` | `false` | No close modal while Escape was pressed                    |
 | `no-close-on-backdrop`     | `Boolean` | `false` | No close modal while Modal Backdrop was clicked            |
 | `modal-body-scrollable`    | `Boolean` | `false` | Scrollable modal body when content is to long              |
 | `centered`                 | `Boolean` | `false` | Handle center vertically of the viewport                   |
+| `free-distraction`         | `Boolean` | `false` | Activate modal free distraction type when size are `full`    |
+| `header-class`             | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal header  |
+| `dialog-class`             | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal dialog  |
+| `content-class`            | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal content |
+| `body-class`               | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal body  |
+| `footer-class`             | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the modal footer  |
 
 ### Slots
 | Name      | Description                                                                                      |
 |-----------|--------------------------------------------------------------------------------------------------|
 | `header ` | Content (in the form of— permalink or button) to place in Modal Header                           |
-| `footer ` | Content (in the form of— permalink or button) to place in Modal Footer                           |
+| `body `   | Content to place in Modal body of size full with default type only                               |
+| `footer ` | Content (in the form of— permalink or button) to place in Modal Footer. Modal size full with default type **not supported** this slot.                           |
 
 ### Events
 
