@@ -3641,7 +3641,7 @@ __metadata:
     eslint-plugin-vue: 9.17.0
     fast-equals: ^5.0.0
     fuse.js: 6.6.2
-    happy-dom: 8.9.0
+    happy-dom: 11.2.0
     husky: 8.0.3
     interactjs: 1.10.18
     jest-extended: 4.0.1
@@ -8157,6 +8157,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"entities@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "entities@npm:4.5.0"
+  checksum: 853f8ebd5b425d350bffa97dd6958143179a5938352ccae092c62d1267c4e392a039be1bae7d51b6e4ffad25f51f9617531fedf5237f15df302ccfb452cbf2d7
+  languageName: node
+  linkType: hard
+
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -10727,18 +10734,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:8.9.0":
-  version: 8.9.0
-  resolution: "happy-dom@npm:8.9.0"
+"happy-dom@npm:11.2.0":
+  version: 11.2.0
+  resolution: "happy-dom@npm:11.2.0"
   dependencies:
     css.escape: ^1.5.1
-    he: ^1.2.0
+    entities: ^4.5.0
     iconv-lite: ^0.6.3
-    node-fetch: ^2.x.x
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 2a9d853199e924e4445c11844a3d0fdd75b9831edab4c5dda52c4725c4f7889cd919814333162b70b3ae43884ec70ed50fbc22564eb94ba09408218922870a34
+  checksum: 05d9cfcce6eddd0814043b61eb9709a47b68079f526858b6611d03e5f47ea47be29f896a40c363f5888347d012692caf0ea724225b22228b8c01ca6e3f8d78e7
   languageName: node
   linkType: hard
 
@@ -13525,7 +13531,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.7, node-fetch@npm:^2.x.x":
+"node-fetch@npm:^2.6.7":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
   dependencies:
