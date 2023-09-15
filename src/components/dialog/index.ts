@@ -20,6 +20,8 @@ export interface DialogOptions {
   text?: string,
   size?: SizeVariant,
   centered?: boolean,
+  dismissable?: boolean,
+  noCloseOnBackdrop?: boolean,
   footerAlign?: FooterAlignVariant,
   cancel?: DialogButton,
   confirm?: DialogButton,

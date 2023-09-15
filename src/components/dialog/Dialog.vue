@@ -6,6 +6,8 @@
     :title="context.title"
     :size="context.size"
     :centered="context.centered"
+    :dismissable="context.dismissable"
+    :no-close-on-backdrop="context.noCloseOnBackdrop"
     :text="context.text"
     @close="onCancel">
     <template #footer>
