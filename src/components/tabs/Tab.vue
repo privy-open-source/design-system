@@ -10,20 +10,17 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
-
-export default defineComponent({
-  name : 'Tab',
-  props: {
-    title: {
-      type   : String,
-      default: '',
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
+<script lang="ts" setup>
+defineProps({
+  title: {
+    type   : String,
+    default: '',
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
   },
 })
+
+defineOptions({ name: 'Tab' })
 </script>

@@ -21,7 +21,10 @@
           data-testid="tab"
           :disabled="tab.disabled"
           :active="i === active"
-          :class="{ 'nav__item--no-icon' : (!tab.slots.icon), 'nav__item--no-label' : (!tab.title && !tab.slots.title) }"
+          :class="{
+            'nav__item--no-icon' : (!tab.slots.icon),
+            'nav__item--no-label': (!tab.title && !tab.slots.title)
+          }"
           @click="selectTab(i, tab)">
           <template #icon>
             <template v-if="tab.slots.icon">
@@ -39,16 +42,19 @@
     </nav>
 
     <div class="tabs__content">
-      <tab-content :active="active">
+      <tab-content
+        :active="active"
+        :vertical="vertical"
+        :keep-alive="keepAlive">
         <slot />
       </tab-content>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
-  defineComponent,
+  VNode,
   PropType,
   computed,
   Slots,
@@ -69,80 +75,72 @@ interface TabContext {
   slots: Slots,
 }
 
-export default defineComponent({
-  components: {
-    Nav,
-    NavItem,
-    TabContent,
+const props = defineProps({
+  variant: {
+    type   : String as PropType<TabsStyleVariant>,
+    default: 'tabs',
   },
-  props: {
-    variant: {
-      type   : String as PropType<TabsStyleVariant>,
-      default: 'tabs',
-    },
-    align: {
-      type   : String as PropType<TabsAlignVariant>,
-      default: 'left',
-    },
-    vertical: {
-      type   : Boolean,
-      default: false,
-    },
-    fill: {
-      type   : Boolean,
-      default: false,
-    },
-    justified: {
-      type   : Boolean,
-      default: false,
-    },
-    navWrapperClass: {
-      type   : String,
-      default: undefined,
-    },
-    modelValue: {
-      type   : Number,
-      default: 0,
-    },
+  align: {
+    type   : String as PropType<TabsAlignVariant>,
+    default: 'left',
   },
-  setup (props, { slots }) {
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.vertical && props.align)
-        result.push(`tabs--vertical-align-${props.align}`)
-
-      return result
-    })
-
-    const active = useVModel(props)
-    const tabs   = computed<TabContext[]>(() => {
-      const vnodes = slots.default ? slots.default() : []
-      const tabs   = findAllChildren(vnodes, 'Tab')
-
-      return tabs.map((vnode) => {
-        return {
-          title   : vnode.props?.title,
-          disabled: toBoolean(vnode.props?.disabled),
-          slots   : vnode.children as Slots,
-        }
-      })
-    })
-
-    function selectTab (index: number, tab: TabContext) {
-      if (!tab.disabled)
-        active.value = index
-    }
-
-    return {
-      classNames,
-      active,
-      tabs,
-      selectTab,
-    }
+  vertical: {
+    type   : Boolean,
+    default: false,
+  },
+  fill: {
+    type   : Boolean,
+    default: false,
+  },
+  justified: {
+    type   : Boolean,
+    default: false,
+  },
+  navWrapperClass: {
+    type   : String,
+    default: undefined,
+  },
+  modelValue: {
+    type   : Number,
+    default: 0,
+  },
+  keepAlive: {
+    type   : Boolean,
+    default: false,
   },
 })
 
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.vertical && props.align)
+    result.push(`tabs--vertical-align-${props.align}`)
+
+  return result
+})
+
+const slots = defineSlots<{
+  default:() => VNode[],
+}>()
+
+const active = useVModel(props)
+const tabs   = computed<TabContext[]>(() => {
+  const vnodes = slots.default ? slots.default() : []
+  const tabs   = findAllChildren(vnodes, 'Tab')
+
+  return tabs.map((vnode) => {
+    return {
+      title   : vnode.props?.title,
+      disabled: toBoolean(vnode.props?.disabled),
+      slots   : vnode.children as Slots,
+    }
+  })
+})
+
+function selectTab (index: number, tab: TabContext) {
+  if (!tab.disabled)
+    active.value = index
+}
 </script>
 
 <style lang="postcss">

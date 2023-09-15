@@ -1,8 +1,14 @@
 import { render } from '@testing-library/vue'
-
 import TabContent from './TabContent.vue'
 import Tab from './Tab.vue'
-import { nextTick, ref } from 'vue-demi'
+import {
+  FunctionalComponent,
+  nextTick,
+  ref,
+} from 'vue-demi'
+import { vi } from 'vitest'
+
+const KeepAlive: FunctionalComponent = vi.fn()
 
 it('should showing active content only', async () => {
   const active = ref(1)
@@ -19,41 +25,31 @@ it('should showing active content only', async () => {
     },
   })
 
-  const tabs = screen.queryAllByTestId('tab-panel')
+  let tab = screen.queryByTestId('tab-panel')
 
-  expect(tabs.at(0)).not.toBeVisible()
-  expect(tabs.at(1)).toBeVisible()
+  expect(tab).toHaveTextContent('2')
 
   active.value = 0
   await nextTick()
 
-  expect(tabs.at(0)).toBeVisible()
-  expect(tabs.at(1)).not.toBeVisible()
+  tab = screen.queryByTestId('tab-panel')
+
+  expect(tab).toHaveTextContent('1')
 })
 
-it('should not showing if content is disabled', async () => {
-  const active = ref(1)
-  const screen = render({
+it('should keeping alive component if prop keep-alive is provided', async () => {
+  render({
     components: { TabContent, Tab },
     template  : `
-      <TabContent :active="active">
+      <TabContent :active="0" keep-alive>
         <Tab>1</Tab>
-        <Tab disabled>2</Tab>
+        <Tab>2</Tab>
       </TabContent>
     `,
     setup () {
-      return { active }
+      return {}
     },
-  })
+  }, { global: { stubs: { 'keep-alive': KeepAlive } } })
 
-  const tabs = screen.queryAllByTestId('tab-panel')
-
-  expect(tabs.at(0)).not.toBeVisible()
-  expect(tabs.at(1)).not.toBeVisible()
-
-  active.value = 0
-  await nextTick()
-
-  expect(tabs.at(0)).toBeVisible()
-  expect(tabs.at(1)).not.toBeVisible()
+  expect(KeepAlive).toBeCalled()
 })
