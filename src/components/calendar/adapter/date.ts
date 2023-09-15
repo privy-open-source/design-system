@@ -15,8 +15,8 @@ import {
 import {
   CalendarItem,
   defineAdapter,
-  formatDate,
 } from './adapter'
+import { formatDate } from '../../utils/date'
 
 function getInterval (date: Date) {
   const start = startOfWeek(startOfMonth(date), { weekStartsOn: 1 })

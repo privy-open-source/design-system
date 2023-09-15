@@ -1,4 +1,5 @@
 import { defineBuildConfig } from 'unbuild'
+import { createResolver } from './script/create-resolver'
 
 export default defineBuildConfig({
   entries: [
@@ -26,4 +27,9 @@ export default defineBuildConfig({
     },
   ],
   externals: [],
+  hooks    : {
+    async 'build:done' (ctx) {
+      await createResolver(ctx)
+    },
+  },
 })
