@@ -5,6 +5,7 @@ description: Base button component
 
 <script setup>
   import pButton from './Button.vue'
+  import pBanner from '../banner/Banner.vue'
   import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 
@@ -15,8 +16,6 @@ description: Base button component
 ## Usage
 
 ### Simple Button
-
-  <p-button color="primary" class="text-yellow-20">Click me</p-button>
 
 <preview>
   <p-button>Click me</p-button>

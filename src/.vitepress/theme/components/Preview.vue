@@ -63,7 +63,7 @@ export default defineComponent({
   */
   .nav {
     &__link {
-      @apply text-subtle hover:text-default;
+      @apply text-subtle hover:text-default no-underline;
 
       &--active {
         @apply text-default;
