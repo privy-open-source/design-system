@@ -105,6 +105,26 @@ it('should have style "pill" if pill is provided', () => {
   expect(button).toHaveClass('btn--pill')
 })
 
+it('should have loading if prop loading was provided', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+      <Button loading>
+        Hello
+      </Button>
+    `,
+  })
+
+  const button  = screen.queryByTestId('btn')
+  const spinner = screen.queryByTestId('spinner')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveClass('btn--loading')
+  expect(button).toBeDisabled()
+
+  expect(spinner).toBeInTheDocument()
+})
+
 it('should emit "click" when button is clicked', async () => {
   const spy    = vi.fn()
   const screen = render({
@@ -152,8 +172,8 @@ it('should be an router-link when button have `href` props without http', async 
 
   const button = screen.queryByTestId('btn')
 
-  expect(button).toHaveAttribute('to', '/')
-  expect(button).toContainHTML('router-link')
+  expect(button).toHaveAttribute('href', '/')
+  expect(button).toContainHTML('nuxt-link')
 })
 
 it('should be an anchor when button have `href` props and with http', async () => {
@@ -204,4 +224,18 @@ it('should automatically set size of button via `size` props of input-group', ()
 
   expect(inputGroup).toBeInTheDocument()
   expect(button).toHaveClass('btn--sm')
+})
+
+it('should have type properties with value button if the element is button', () => {
+  const screen = render({
+    components: { Button },
+    template  : `
+        <Button >Text</Button>
+    `,
+  })
+
+  const button = screen.queryByTestId('btn')
+
+  expect(button).toBeInTheDocument()
+  expect(button).toHaveProperty('type', 'button')
 })

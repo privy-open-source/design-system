@@ -52,18 +52,33 @@ const eslint  = new ESLint({
 const svgoConfig: Config = {
   plugins: [
     {
+      name: 'remove-clip-path',
+      fn  : () => {
+        return {
+          element: {
+            exit (node, parentNode) {
+              if (node.name === 'g' && node.attributes['clip-path']) {
+                parentNode.children = node.children.map((child) => {
+                  if (child.type === 'element')
+                    node.attributes.fill = 'currentColor'
+
+                  return child
+                })
+              }
+            },
+          },
+        }
+      },
+    },
+    {
       name: 'fix-path',
       fn  : () => {
         return {
           element: {
             enter (node) {
               if (node.name === 'path') {
-                if (node.attributes.d) {
+                if (node.attributes.d)
                   node.attributes.d = fixPath(node.attributes.d)
-
-                  delete node.attributes['fill-rule']
-                  delete node.attributes['clip-rule']
-                }
 
                 if (node.attributes.fill !== 'none')
                   node.attributes.fill = 'currentColor'
@@ -81,7 +96,10 @@ const svgoConfig: Config = {
       name  : 'addAttributesToSVGElement',
       params: { attributes: [{ focusable: 'false' }] },
     },
-    'preset-default',
+    {
+      name  : 'preset-default',
+      params: { overrides: { removeViewBox: false } },
+    },
   ],
 }
 

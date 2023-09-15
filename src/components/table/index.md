@@ -9,6 +9,7 @@ description: Delightful datatables.
   import pLabel from '../label/Label.vue'
   import pHeading from '../heading/Heading.vue'
   import pText from '../text/Text.vue'
+  import pBanner from '../banner/Banner.vue'
   import { defineTable } from '.'
   import { ref } from 'vue-demi'
 
@@ -91,9 +92,22 @@ description: Delightful datatables.
 
 > Delightful datatables.
 
+<p-banner variant="danger">
+  This component mark as <strong>deprecated</strong>.
+  Please use <a href="../table-flex/">Table Flex</a> or <a href="../table-static/">Table Static</a> instead
+</p-banner>
+
 ## Usage
 
 ### Simple Usage
+
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="items" variant="static" />
+</preview>
+
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="items" />
+</preview>
 
 <preview class="flex-col space-y-2">
   <p-table :fields="fields" :items="items" />
@@ -223,14 +237,53 @@ Empty state label customization can be done through the `empty-label` prop.
 
 There are 2 variants: `flexible` and `static`, default is `flexible`
 
+### Flexible
+
+#### Default
 <preview class="flex-col space-y-2">
-  <p-table variant="flexible" :fields="fields" :items="items" />
+  <p-table :fields="fields" :items="items" />
+</preview>
+
+```vue
+<template>
+  <p-table :fields="fields" :items="items" />
+</template>
+```
+
+#### No Label
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="items" no-label />
+</preview>
+
+```vue
+<template>
+  <p-table :fields="fields" :items="items" no-label />
+</template>
+```
+
+#### Show Table Header
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="items" no-label show-table-header />
+</preview>
+
+```vue
+<template>
+  <p-table
+    :fields="fields"
+    :items="items"
+    no-label
+    show-table-header />
+</template>
+```
+
+### Static
+
+<preview class="flex-col space-y-2">
   <p-table variant="static" :fields="fields" :items="items" />
 </preview>
 
 ```vue
 <template>
-  <p-table variant="flexible" :fields="fields" :items="items" />
   <p-table variant="static" :fields="fields" :items="items" />
 </template>
 ```
@@ -387,7 +440,7 @@ Table has default empty state, but it's be able to customize by own via slot `em
   <p-table :fields="fields" :items="itemsC">
     <template #empty>
       <div class="flex flex-col items-center justify-center">
-        <img src="../../public/assets/images/img-table-empty-records.svg">
+        <img src="/assets/images/img-table-empty-records.svg">
         <p-heading element="h6" class="mt-12">Uh oh, no data</p-heading>
         <p-text variant="body2" class="py-4 text-subtle dark:text-dark-subtle">We’re empty-handed!</p-text>
       </div>
@@ -411,6 +464,34 @@ Table has default empty state, but it's be able to customize by own via slot `em
 </template>
 ```
 
+## Variables
+Table use local CSS variables on `.datatable` for enhanced real-time customization.
+
+```sass
+--p-table-bg: theme(backgroundColor.default.DEFAULT);
+--p-table-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
+--p-table-border: theme(borderColor.default.DEFAULT);
+--p-table-border-dark: theme(borderColor.dark.default.DEFAULT);
+```
+### Example
+It's possible to custom table flexible background, but the border must be transparent or same as the background color.
+<preview class="flex-col space-y-2">
+  <p-table :fields="fields" :items="items" style="--p-table-bg: #F3F3F3;--p-table-bg-dark: #0D1117;--p-table-border: #F3F3F3; --p-table-border-dark: #0D1117;" />
+</preview>
+
+```vue
+<template>
+  <p-table
+    :fields="fields"
+    :items="items"
+    style="--p-table-bg: #F3F3F3;
+    --p-table-bg-dark: #0D1117;
+    --p-table-border: #F3F3F3;
+    --p-table-border-dark: #0D1117;" />
+</template>
+```
+
+
 ## API
 
 ### Props
@@ -424,6 +505,8 @@ Table has default empty state, but it's be able to customize by own via slot `em
 | `draggable`   | `Boolean` |  `false`   | Enable draggable                                         |
 | `v-model`     |  `Array`  |    `-`     | `v-model` for selected value                             |
 | `empty-label` | `String`  |  `There are no records to show`   | Table empty state label           |
+| `no-label`    | `Boolean` |  `false`   | Hide label in `flexible` variant                         |
+| `show-table-header`    | `Boolean` |  `false`   | Show table header in `flexible` variant         |
 
 In props `fields` contain
 

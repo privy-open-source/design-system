@@ -20,7 +20,7 @@ description: Generate text to signature image
 
 ### Simple Usage
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-signature-text text="Lorem Ipsum" />
 </preview>
 
@@ -32,7 +32,7 @@ description: Generate text to signature image
 
 ### for Initial
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-signature-text text="Lorem Ipsum" :width="230" :limit="1" />
 </preview>
 
@@ -46,7 +46,7 @@ description: Generate text to signature image
 
 You can the font using prop `font`, it importing font from [Google Font][google-font], default is `Herr Von Muellerhoff`
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-signature-text text="Lorem Ipsum" font="Herr Von Muellerhoff"/>
   <p-signature-text text="Lorem Ipsum" font="Satisfy"/>
 </preview>
@@ -62,7 +62,7 @@ You can the font using prop `font`, it importing font from [Google Font][google-
 
 Limit the text word using `maxwords`, default is `2`
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="3" />
   <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="2" />
   <p-signature-text text="Lorem ipsum dolor sit amet" maxwords="1" />
@@ -80,7 +80,7 @@ Limit the text word using `maxwords`, default is `2`
 
 Limit the text length using `maxlength`, default is `50`
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-signature-text text="Lorem Aaaaaaaaaaaaaaaaaaaaaaaaaaaaa" maxlength="15" />
 </preview>
 
@@ -92,7 +92,7 @@ Limit the text length using `maxlength`, default is `50`
 
 ## Color
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-signature-text text="Lorem ipsum" color="#004C9D" />
   <p-signature-text text="Lorem ipsum" color="#23B242" />
   <p-signature-text text="Lorem ipsum" color="#E42E2C" />
@@ -110,7 +110,7 @@ Limit the text length using `maxlength`, default is `50`
 
 You can bind the generated result with `v-model`.
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-signature-text text="Lorem ipsum" v-model="result" />
 </preview>
 
@@ -132,7 +132,7 @@ const result = ref<File>()
 
 If you prefer [base64-dataURI][data-uri] format, add modifier `.base64` to your `v-model`.
 
-<preview class="flex-col">
+<preview class="flex-col !bg-base-white">
   <p-signature-text text="Lorem ipsum" v-model.base64="resultB64" />
 </preview>
 

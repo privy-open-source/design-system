@@ -1,6 +1,5 @@
 <template>
   <svg
-    v-once
     data-testid="spinner"
     class="spinner spinner-ring"
     width="1em"

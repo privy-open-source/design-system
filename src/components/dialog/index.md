@@ -80,15 +80,17 @@ dialog.confirm({
 
 `confirm(options: DialogOptions): Promise<boolean>`
 
-| Options       |   Type   | Default  | Description                                                               |
-|---------------|:--------:|:--------:|---------------------------------------------------------------------------|
-| `title`       | `String` |    -     | Dialog title, **required**                                                |
-| `text`        | `String` |    -     | Dialog text content                                                       |
-| `size`        | `String` |    -     | Dialog size, valid value is `sm`, `md`, `lg`, `xl`                        |
-| `centered`    | `Boolean`|  `false`   | Dialog vertically center in the viewport                                  |
-| `footerAlign` | `Number` |  `start` | The alignment of dialog footer, valid value is `start` and `end`          |
-| `cancel`      | `DialogButton` |    -     | Cancel button's options for dialog footer                           |
-| `confirm`     | `DialogButton` |    -     | Confirm button's options for dialog footer                          |
+| Options             |   Type   | Default  | Description                                                                     |
+|---------------------|:--------------:|:--------:|---------------------------------------------------------------------------|
+| `title`             | `String`       |    -     | Dialog title, **required**                                                |
+| `text`              | `String`       |    -     | Dialog text content                                                       |
+| `size`              | `String`       |    -     | Dialog size, valid value is `sm`, `md`, `lg`, `xl`                        |
+| `centered`          | `Boolean`      | `false`  | Dialog vertically center in the viewport                                  |
+| `dismissable`       | `Boolean`      | `true`   | Show / Hide dismiss button                                                |
+| `noCloseOnBackdrop` | `Boolean`      | `false`  | No close dialog while dialog Backdrop was clicked                         |
+| `footerAlign`       | `Number`       | `start`  | The alignment of dialog footer, valid value is `start` and `end`          |
+| `cancel`            | `DialogButton` |    -     | Cancel button's options for dialog footer                                 |
+| `confirm`           | `DialogButton` |    -     | Confirm button's options for dialog footer                                |
 
 `DialogButton`
 

@@ -276,6 +276,20 @@ it('should have style error if `error` prop was provided', () => {
   expect(select).toHaveClass('select--error', 'state--error')
 })
 
+it('should able to add section label via `section-label` prop', () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select :options="['apple', 'grape', 'orange']" section-label="title" />
+    `,
+  })
+
+  const label = screen.queryByTestId('select-label')
+
+  expect(label).toBeInTheDocument()
+  expect(label).toHaveTextContent('title')
+})
+
 it('should be toggle dropdown if caret icon is clicked', async () => {
   const screen = render({
     components: { Select },
@@ -343,4 +357,108 @@ it('should hide caret icon if props `no-caret` is provided', () => {
   const caret = screen.queryByTestId('select-caret-icon')
 
   expect(caret).not.toBeInTheDocument()
+})
+
+it('should have a clear button when `clearable` props is provided', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select clearable />
+    `,
+  })
+  const select = screen.getByTestId('select')
+  expect(select).toBeInTheDocument()
+
+  await fireEvent.click(select)
+
+  const clearButton = screen.queryByTestId('input-clear')
+  expect(clearButton).toBeInTheDocument()
+})
+
+it('should have not able to open if `caret` icon is clicked and select is disabled', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select disabled />
+    `,
+  })
+
+  const select = screen.queryByTestId('select')
+
+  expect(select).toBeInTheDocument()
+  expect(select).not.toHaveClass('select--open')
+
+  const caretIcon = screen.queryByTestId('select-caret-icon')
+
+  await fireEvent.click(caretIcon)
+  await nextTick()
+
+  expect(select).toHaveClass('select--disabled')
+  expect(select).not.toHaveClass('select--open')
+})
+
+it('should have clear button if prop `clearable` was provided', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model:selected="model"
+        :options="['apple', 'grape', 'orange']"
+        clearable
+      />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('select-search')
+
+  input.focus()
+  await nextTick()
+
+  const items = screen.queryAllByTestId('select-item')
+
+  await fireEvent.click(items.at(1))
+
+  expect(model.value).toStrictEqual({ text: 'grape', value: 'grape' })
+
+  const clear = screen.queryByTestId('input-clear')
+
+  await fireEvent.click(clear)
+
+  expect(model.value).toBeUndefined()
+})
+
+it('should clear search keyword if click clear button when select was opened', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model:selected="model"
+        :options="['apple', 'grape', 'orange']"
+        clearable
+      />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('select-search')
+
+  input.focus()
+  await nextTick()
+
+  await fireEvent.update(input, 'Hello World')
+
+  expect(input).toHaveValue('Hello World')
+
+  const clear = screen.queryByTestId('input-clear')
+
+  await fireEvent.click(clear)
+
+  expect(input).toHaveValue('')
 })

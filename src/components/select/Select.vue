@@ -15,6 +15,8 @@
         :placeholder="placeholder"
         :disabled="disabled"
         :readonly="readonly"
+        :clearable="clearable"
+        @clear.prevent="onClear"
         @focus="onFocus">
         <template
           v-if="!noCaret"
@@ -43,6 +45,11 @@
     </template>
 
     <template v-else>
+      <DropdownHeader
+        v-if="sectionLabel"
+        data-testid="select-label">
+        {{ sectionLabel }}
+      </DropdownHeader>
       <DropdownItem
         v-for="(item, i) in items"
         :key="i"
@@ -83,6 +90,7 @@
 <script lang="ts">
 import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
+import DropdownHeader from '../dropdown/DropdownHeader.vue'
 import pInput from '../input/Input.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'
 import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
@@ -110,6 +118,7 @@ export default defineComponent({
   components: {
     Dropdown,
     DropdownItem,
+    DropdownHeader,
     pInput,
     IconArrow,
     IconCheck,
@@ -168,9 +177,17 @@ export default defineComponent({
       type   : Boolean,
       default: false,
     },
+    clearable: {
+      type   : Boolean,
+      default: false,
+    },
     size: {
       type   : String as PropType<SizeVariant>,
       default: 'md',
+    },
+    sectionLabel: {
+      type   : String,
+      default: undefined,
     },
     noCaret: {
       type   : Boolean,
@@ -204,7 +221,8 @@ export default defineComponent({
     const localModel = ref<SelectItem>(findSelected(items.value, props.modelValue))
 
     const toggleOpen = () => {
-      isOpen.value = !isOpen.value
+      if (!props.disabled && !props.readonly)
+        isOpen.value = !isOpen.value
     }
 
     const classNames = computed(() => {
@@ -241,12 +259,12 @@ export default defineComponent({
       localModel.value = findSelected(items.value, value)
     })
 
-    function select (item: SelectItem) {
+    function select (item?: SelectItem) {
       localModel.value = item
 
       emit('change', item)
       emit('update:selected', item)
-      emit('update:modelValue', item.value)
+      emit('update:modelValue', item?.value)
 
       if (isOpen.value)
         emit('userInput', item)
@@ -257,8 +275,15 @@ export default defineComponent({
         isOpen.value = true
     }
 
+    function onClear () {
+      if (isOpen.value)
+        keyword.value = ''
+      else
+        select()
+    }
+
     function isSelected (item: SelectItem) {
-      return isEqual(item.value, localModel.value.value)
+      return isEqual(item.value, localModel.value?.value)
     }
 
     watch(isOpen, (value) => {
@@ -287,6 +312,7 @@ export default defineComponent({
       toggleOpen,
       select,
       onFocus,
+      onClear,
       isSelected,
     }
   },

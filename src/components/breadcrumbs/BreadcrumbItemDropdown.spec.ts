@@ -10,11 +10,11 @@ it('should rendered properly without any props', () => {
   })
 
   const breadcrumbDropdown = screen.queryByTestId('breadcrumbs-dropdown')
-  const breadcrumbIcon     = screen.queryByTestId('breadcrumbs-icon')
+  const breadcrumbDivider  = screen.queryByTestId('breadcrumbs-divider')
 
   expect(breadcrumbDropdown).toBeInTheDocument()
   expect(breadcrumbDropdown).toHaveClass('breadcrumbs__item--dropdown')
-  expect(breadcrumbIcon).toBeInTheDocument()
+  expect(breadcrumbDivider).toBeInTheDocument()
 })
 
 it('should be able to set active via prop `active`', () => {

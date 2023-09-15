@@ -4,9 +4,14 @@
     width="16"
     height="16"
     fill="none"
-    class="persona-icon"><path
+    class="persona-icon"
+    viewBox="0 0 16 16"><path
       fill="currentColor"
-      d="M8 14A6 6 0 1 1 8 2a6 6 0 0 1 0 12ZM3 8a5 5 0 1 0 10 0A5 5 0 0 0 3 8Z" /><path
+      fill-rule="evenodd"
+      d="M8 14A6 6 0 1 1 8 2a6 6 0 0 1 0 12ZM3 8a5 5 0 1 0 10 0A5 5 0 0 0 3 8Z"
+      clip-rule="evenodd" /><path
         fill="currentColor"
-        d="M8 5a.51.51 0 0 1 .51.51v1.98h1.98a.51.51 0 0 1 0 1.02H8.51v1.98a.51.51 0 1 1-1.02 0V8.51H5.51a.51.51 0 1 1 0-1.02h1.98V5.51A.51.51 0 0 1 8 5Z" /></svg>
+        fill-rule="evenodd"
+        d="M8 5a.51.51 0 0 1 .51.51v1.98h1.98a.51.51 0 0 1 0 1.02H8.51v1.98a.51.51 0 1 1-1.02 0V8.51H5.51a.51.51 0 1 1 0-1.02h1.98V5.51A.51.51 0 0 1 8 5Z"
+        clip-rule="evenodd" /></svg>
 </template>

@@ -1,0 +1,84 @@
+<template>
+  <NavItem
+    ref="root"
+    class="nav__collapse"
+    :class="{ 'nav__collapse--expand': isExpand }"
+    data-testid="nav-collapse"
+    v-bind="$attrs"
+    @click.prevent="toggleExpand">
+    <template #icon>
+      <IconMore class="nav__collapse__icon" />
+    </template>
+    {{ isExpand ? showLessText : showMoreText }}
+  </NavItem>
+  <Collapse :model-value="isExpand">
+    <slot />
+  </Collapse>
+</template>
+
+<script lang="ts">
+import Collapse from '../collapse/Collapse.vue'
+import NavItem from '../nav/NavItem.vue'
+import IconMore from '@privyid/persona-icon/vue/chevron-down/20.vue'
+import {
+  defineComponent,
+  onMounted,
+  ref,
+} from 'vue-demi'
+import { templateRef } from '@vueuse/core'
+
+export default defineComponent({
+  components: {
+    Collapse,
+    NavItem,
+    IconMore,
+  },
+  props: {
+    showMoreText: {
+      type   : String,
+      default: 'More',
+    },
+    showLessText: {
+      type   : String,
+      default: 'Less',
+    },
+  },
+  setup () {
+    const nav      = templateRef<InstanceType<typeof NavItem>>('root')
+    const isExpand = ref(false)
+
+    function toggleExpand () {
+      isExpand.value = !isExpand.value
+    }
+
+    onMounted(() => {
+      if (nav.value.$el) {
+        isExpand.value = nav.value.$el
+          .querySelectorAll('.router-link-active:not(.nav__link--exact),.router-link-exact-active.nav__link--exact')
+          .length > 0
+      }
+    })
+
+    return {
+      isExpand,
+      toggleExpand,
+    }
+  },
+})
+</script>
+
+<style lang="postcss">
+.nav__collapse {
+  @apply select-none;
+
+  &__icon {
+    @apply transition-transform duration-150 ease-in-out;
+  }
+
+  &--expand {
+    .nav__collapse__icon {
+      @apply rotate-180;
+    }
+  }
+}
+</style>

@@ -52,3 +52,25 @@ it('should be able to render navigation', () => {
   expect(breadcrumbs).toContainElement(dropdown)
   expect(text).toHaveLength(1)
 })
+
+it('should be able to custom divider via slot `divider`', () => {
+  const screen = render({
+    components: { Breadcrumb },
+    template  : `
+    <Breadcrumb :items="items">
+      <template #divider>Custom divider</template>
+    </Breadcrumb>
+    `,
+    setup () {
+      return { items }
+    },
+  })
+
+  const breadcrumbs = screen.queryByTestId('breadcrumbs')
+
+  const dividers = screen.queryAllByTestId('breadcrumbs-divider')
+
+  expect(breadcrumbs).toBeInTheDocument()
+  expect(dividers.length).toBe(2)
+  expect(dividers.at(0).textContent).toEqual('Custom divider')
+})

@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue-demi'
+import { defineComponent, provide } from 'vue-demi'
 import { BreadcrumbItems } from '.'
 import BreadcrumbItem from './BreadcrumbItem.vue'
 import BreadcrumbItemDropdown from './BreadcrumbItemDropdown.vue'
@@ -48,6 +48,10 @@ export default defineComponent({
       type   : Array<BreadcrumbItems>,
       default: () => {},
     },
+  },
+  setup (_, { slots }) {
+    if (slots.divider)
+      provide('divider', slots.divider)
   },
 })
 </script>

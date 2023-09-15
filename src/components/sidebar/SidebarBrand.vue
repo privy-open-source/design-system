@@ -62,7 +62,7 @@ export default defineComponent({
     @apply dark:text-dark-default;
 
     a {
-      @apply no-underline;
+      @apply no-underline cursor-pointer hover:no-underline;
 
       & > img {
         @apply max-w-full h-auto;

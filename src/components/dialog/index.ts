@@ -5,7 +5,7 @@ import type {
   FooterButtonColorVariant,
   FooterButtonStyleVariant,
 } from './DialogFooter.vue'
-import type { SizeVariant } from '../modal/Modal.vue'
+import type { SizeVariant } from '../modal'
 
 interface DialogButton {
   text?: string,
@@ -20,6 +20,8 @@ export interface DialogOptions {
   text?: string,
   size?: SizeVariant,
   centered?: boolean,
+  dismissable?: boolean,
+  noCloseOnBackdrop?: boolean,
   footerAlign?: FooterAlignVariant,
   cancel?: DialogButton,
   confirm?: DialogButton,

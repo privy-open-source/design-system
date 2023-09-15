@@ -85,7 +85,7 @@ export default defineComponent({
   @apply dark:text-dark-default;
 
   &:is(a) {
-    @apply hover:text-default;
+    @apply no-underline hover:no-underline hover:text-default;
     @apply hover:dark:text-dark-default;
   }
 

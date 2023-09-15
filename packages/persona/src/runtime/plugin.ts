@@ -1,10 +1,14 @@
 import { defineNuxtPlugin, useRouter } from '#imports'
-import { initAppContext, installRouter } from '@privyid/persona/core'
+import {
+  initStore,
+  installRouter,
+  State,
+} from '@privyid/persona/core'
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxtApp) => {
   const router = useRouter()
+  const store  = initStore()
 
-  initAppContext()
   installRouter({
     getURL () {
       return router.currentRoute.value.fullPath
@@ -13,4 +17,10 @@ export default defineNuxtPlugin(() => {
       return await router.push(url)
     },
   })
+
+  // SSR Store & Hydrate
+  if (process.server)
+    nuxtApp.payload.persona = store.value
+  else if (nuxtApp.payload?.persona)
+    store.value = nuxtApp.payload.persona as State
 })

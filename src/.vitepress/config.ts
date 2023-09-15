@@ -18,7 +18,7 @@ export default defineConfig({
     },
     nav: [
       { text: 'Docs', link: '/docs/getting-started' },
-      { text: 'Components', link: '/components/avatar/' },
+      { text: 'Components', link: '/components/accordion/' },
       { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
       { text: 'Icons', link: '/icons/getting-started' },
@@ -76,6 +76,10 @@ export default defineConfig({
           text     : 'Base',
           collapsed: true,
           items    : [
+            {
+              text: 'Accordion',
+              link: '/components/accordion/',
+            },
             {
               text: 'Avatar',
               link: '/components/avatar/',
@@ -165,6 +169,18 @@ export default defineConfig({
               link: '/components/progress-indicator/',
             },
             {
+              text: 'Progressbar',
+              link: '/components/progressbar/',
+            },
+            {
+              text: 'Ringbar',
+              link: '/components/ringbar/',
+            },
+            {
+              text: 'Sheet',
+              link: '/components/sheet/',
+            },
+            {
               text: 'Spinner',
               link: '/components/spinner/',
             },
@@ -175,10 +191,6 @@ export default defineConfig({
             {
               text: 'Tabs',
               link: '/components/tabs/',
-            },
-            {
-              text: 'Table',
-              link: '/components/table/',
             },
             {
               text: 'Wizard',
@@ -209,6 +221,20 @@ export default defineConfig({
             {
               text: 'Truncate',
               link: '/components/truncate/',
+            },
+          ],
+        },
+        {
+          text     : 'Table',
+          collapsed: true,
+          items    : [
+            {
+              text: 'Table Flex',
+              link: '/components/table-flex/',
+            },
+            {
+              text: 'Table Static',
+              link: '/components/table-static/',
             },
           ],
         },

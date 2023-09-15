@@ -71,21 +71,6 @@
     }
   }
 
-  th, td {
-    @apply border-info dark:border-dark-default dark:bg-dark-default;
-  }
-
-  thead > tr:first-child,
-  tr:nth-child(2n) {
-    @apply bg-info;
-  }
-
-  thead > tr:first-child {
-    th, td {
-      @apply dark:bg-dark-base;
-    }
-  }
-
   .token.attr-name {
     @apply text-[#cc99cd];
   }
@@ -111,7 +96,7 @@
       }
 
       td {
-        @apply border-0 border-t border-[color:var(--vp-c-divider)] dark:bg-transparent;
+        @apply border-0 border-t border-[color:var(--vp-c-divider)] bg-transparent dark:bg-transparent;
       }
     }
   }
@@ -133,7 +118,7 @@
       }
     }
   }
-  
+
   .header-anchor {
     @apply pr-0 -ml-6;
   }
@@ -141,18 +126,18 @@
   a,
   .preview a {
     @apply hover:no-underline;
-    
-    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item) {
+
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item, .breadcrumbs__item__link) {
       @apply text-link dark:text-dark-link;
     }
   }
 
   a {
-    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item) {
+    &:not(.nav__link, .btn, .navbar__brand, .sidebar__brand, .dropdown__item, .list-group__item, .breadcrumbs__item__link) {
       @apply underline decoration-solid hover:no-underline;
-    } 
+    }
 
-    &:not(.freetext--medium) {
+    &:not([class^='freetext-'], [class*='freetext-']) {
       @apply font-inherit;
     }
 
@@ -180,7 +165,7 @@
   }
 
   p {
-    
+
     &.lh {
       &-none {
         @apply leading-none;
@@ -229,6 +214,44 @@
   .navbar {
     li + li {
       @apply mt-0;
+    }
+  }
+
+  table {
+    @apply min-w-full md:table;
+
+    thead tr {
+      @apply border-t-0;
+    }
+
+    tr {
+      @apply border-default;
+      @apply dark:border-dark-default;
+    }
+
+    th {
+      @apply text-xs bg-base;
+      @apply dark:bg-dark-base;
+    }
+
+    td {
+      @apply bg-default;
+      @apply dark:bg-dark-default;
+
+      > code {
+        @apply whitespace-pre;
+      }
+    }
+
+    th,
+    td {
+      &:not(:first-child) {
+        @apply border-l-0;
+      }
+
+      &:not(:last-child) {
+        @apply border-r-0;
+      }
     }
   }
 }

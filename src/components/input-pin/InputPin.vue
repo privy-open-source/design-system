@@ -142,7 +142,9 @@ export default defineComponent({
 
     function onKeyDown (event: KeyboardEvent) {
       const target = event.target as HTMLInputElement
-      if (props.readonly || props.disabled) return
+
+      if (props.readonly || props.disabled)
+        return
 
       if (target.value && [...event.key].length === 1 && !event.ctrlKey && !event.metaKey) {
         event.preventDefault()

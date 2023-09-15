@@ -6,6 +6,7 @@ import { useMediaQuery, setMediaQuery } from './__mocks__/use-window-size'
 import { triggerDraw, useDraw } from './__mocks__/use-draw'
 import * as canvas from './__mocks__/canvas'
 import SignatureDraw from './SignatureDraw.vue'
+import { delay } from 'nanodelay'
 
 vi.mock('./utils/use-draw.ts', () => ({ default: useDraw }))
 
@@ -37,6 +38,8 @@ it('should use signature based on media-query', async () => {
     template  : '<SignatureDraw />',
   })
 
+  await delay(0)
+
   let mobile  = screen.queryByTestId('signature-draw-mobile')
   let desktop = screen.queryByTestId('signature-draw-desktop')
 
@@ -63,6 +66,8 @@ it('should passthrought v-model', async () => {
       return { model }
     },
   })
+
+  await delay(0)
 
   triggerDraw()
   await nextTick()

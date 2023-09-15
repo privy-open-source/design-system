@@ -1,7 +1,8 @@
 {
   "name": "@privyid/tailwind-animation",
-  "version": "0.17.1",
-  "packageManager": "yarn@3.6.1",
+  "description": "Collection animation class for vue `<transition>`",
+  "version": "0.21.0",
+  "packageManager": "yarn@3.6.3",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",

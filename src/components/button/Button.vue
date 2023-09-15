@@ -1,110 +1,110 @@
 <template>
   <component
     :is="tagName"
-    :href="tagName === 'a' ? href : undefined"
-    :to="tagName === 'a' ? undefined : href"
+    :href="href"
+    :type="type"
     data-testid="btn"
-    :class="classNames">
-    <slot />
+    :class="classNames"
+    :disabled="loading || disabled">
+    <spinner v-if="loading" />
+    <slot v-else />
   </component>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
   computed,
-  defineComponent,
   PropType,
   inject,
-  resolveComponent,
-  type DefineComponent,
 } from 'vue-demi'
 import type { RouteLocationRaw } from 'vue-router'
-
 import {
   ColorVariant,
   SizeVariant,
   StyleVariant,
-  TagVariant,
+  TypeVariant,
 } from '.'
 import { BUTTONGROUP_SETTING } from '../button-group'
-
 import { INPUTGROUP_SETTING } from '../input-group'
+import Spinner from '../spinner/SpinnerRinggo.vue'
 
-export default defineComponent({
-  props: {
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'solid',
-    },
-    color: {
-      type   : String as PropType<ColorVariant>,
-      default: 'default',
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    icon: {
-      type   : Boolean,
-      default: false,
-    },
-    pill: {
-      type   : Boolean,
-      default: false,
-    },
-    href: {
-      type   : [String, Object] as PropType<string | RouteLocationRaw>,
-      default: undefined,
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'solid',
   },
-  setup (props) {
-    const inputSetting  = inject(INPUTGROUP_SETTING, undefined, false)
-    const buttonSetting = inject(BUTTONGROUP_SETTING, undefined, false)
-
-    const classNames = computed(() => {
-      const result: string[] = ['btn']
-
-      if (props.color)
-        result.push(`btn--${props.color}`)
-
-      if (props.variant)
-        result.push(`btn--variant-${props.variant}`)
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (inputSetting?.size.value)
-        result.push(`btn--${inputSetting?.size.value}`)
-      // eslint-disable-next-line unicorn/explicit-length-check
-      else if (buttonSetting?.size.value)
-        result.push(`btn--${buttonSetting?.size.value}`)
-      // eslint-disable-next-line unicorn/explicit-length-check
-      else if (props.size)
-        result.push(`btn--${props.size}`)
-
-      if (props.icon)
-        result.push('btn--icon')
-
-      if (props.pill)
-        result.push('btn--pill')
-
-      return result
-    })
-
-    const tagName = computed<TagVariant | DefineComponent>(() => {
-      if (props.href) {
-        if (
-          typeof props.href === 'string'
-          && (props.href.startsWith('http') || props.href.startsWith('#'))
-        )
-          return 'a'
-
-        return resolveComponent('router-link') as DefineComponent
-      }
-
-      return 'button'
-    })
-
-    return { classNames, tagName }
+  color: {
+    type   : String as PropType<ColorVariant>,
+    default: 'default',
   },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  icon: {
+    type   : Boolean,
+    default: false,
+  },
+  pill: {
+    type   : Boolean,
+    default: false,
+  },
+  href: {
+    type   : [String, Object] as PropType<string | RouteLocationRaw>,
+    default: undefined,
+  },
+  type: {
+    type   : String as PropType<TypeVariant>,
+    default: 'button',
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  loading: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const inputSetting  = inject(INPUTGROUP_SETTING, undefined, false)
+const buttonSetting = inject(BUTTONGROUP_SETTING, undefined, false)
+
+const classNames = computed(() => {
+  const result: string[] = ['btn']
+
+  if (props.color)
+    result.push(`btn--${props.color}`)
+
+  if (props.variant)
+    result.push(`btn--variant-${props.variant}`)
+
+  if (props.loading)
+    result.push('btn--loading')
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (inputSetting?.size.value)
+    result.push(`btn--${inputSetting?.size.value}`)
+  // eslint-disable-next-line unicorn/explicit-length-check
+  else if (buttonSetting?.size.value)
+    result.push(`btn--${buttonSetting?.size.value}`)
+  // eslint-disable-next-line unicorn/explicit-length-check
+  else if (props.size)
+    result.push(`btn--${props.size}`)
+
+  if (props.icon)
+    result.push('btn--icon')
+
+  if (props.pill)
+    result.push('btn--pill')
+
+  return result
+})
+
+const tagName = computed(() => {
+  return props.href
+    ? 'nuxt-link'
+    : 'button'
 })
 </script>
 
@@ -350,6 +350,12 @@ export default defineComponent({
 
   &&--pill {
     @apply rounded-full;
+  }
+
+  &--loading {
+    .spinner {
+      @apply h-6;
+    }
   }
 }
 </style>

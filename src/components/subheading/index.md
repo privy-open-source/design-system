@@ -69,15 +69,15 @@ Subheading have 3 weights variant, there are `normal`, `medium` and `bold`. Defa
 
 ```vue
 <template>
-  <p-heading weight="normal">
+  <p-subheading weight="normal">
     Normal heading title
-  </p-heading>
-  <p-heading weight="medium">
+  </p-subheading>
+  <p-subheading weight="medium">
     Medium heading title
-  </p-heading>
-  <p-heading weight="bold">
+  </p-subheading>
+  <p-subheading weight="bold">
     Bold heading title
-  </p-heading>
+  </p-subheading>
 </template>
 ```
 

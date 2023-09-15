@@ -34,7 +34,7 @@ it('should rendered properly without any props', () => {
   const text     = screen.queryByText('Hey there!')
 
   expect(collapse).toBeInTheDocument()
-  expect(collapse).toHaveClass('collapse')
+  expect(collapse).toHaveClass('collapses')
   expect(text).toBeInTheDocument()
 })
 
@@ -54,14 +54,13 @@ it('should rendered properly without any props', async () => {
   let collapse = screen.queryByTestId('collapse')
 
   expect(collapse).toBeInTheDocument()
-  expect(collapse).not.toBeVisible()
+  expect(collapse).toHaveClass('collapse--hide')
 
   model.value = true
 
   await nextTick()
 
   collapse = screen.queryByTestId('collapse')
-  expect(collapse).toBeVisible()
   expect(collapse).toHaveClass('collapse--show')
 
   model.value = false
@@ -69,7 +68,8 @@ it('should rendered properly without any props', async () => {
   await nextTick()
 
   collapse = screen.queryByTestId('collapse')
-  expect(collapse).not.toBeVisible()
+
+  expect(collapse).toHaveClass('collapse--hide')
 })
 
 it('should have style navbar-collapse via prop `is-nav`', () => {

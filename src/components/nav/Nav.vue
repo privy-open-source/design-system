@@ -3,10 +3,12 @@
     data-testid="nav"
     :class="classNames">
     <li
-      v-if="title"
       class="nav__title">
-      <span class="nav__title__item">
+      <span
+        class="nav__title__item"
+        :class="[ (!title && titleActionLabel) ? 'justify-end' : 'justify-between' ]">
         <Caption
+          v-if="title"
           weight="bold"
           transform="capitalize">
           {{ title }}
@@ -94,7 +96,7 @@ export default defineComponent({
       if (props.vertical)
         result.push('nav--vertical')
 
-      if (props.title)
+      if (props.title || props.titleActionLabel)
         result.push('nav--has-title')
 
       if (props.condensed)
@@ -132,7 +134,9 @@ export default defineComponent({
       @apply dark:text-dark-subtle;
 
       &:hover,
-      &--active {
+      &--active,
+      &.router-link-active:not(.nav__link--exact),
+      &.router-link-exact-active.nav__link--exact {
         @apply text-default;
         @apply dark:text-dark-default;
       }
@@ -161,7 +165,9 @@ export default defineComponent({
     * with border-bottom
     */
     .nav__link {
-      &--active {
+      &--active,
+      &.router-link-active:not(.nav__link--exact),
+      &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
           @apply border-b-inverse;
           @apply dark:border-b-dark-inverse;
@@ -177,7 +183,9 @@ export default defineComponent({
       .nav__link {
         @apply border-y-0;
 
-        &--active {
+        &--active,
+        &.router-link-active:not(.nav__link--exact),
+        &.router-link-exact-active.nav__link--exact {
           &:not(.nav__link--disabled) {
             @apply border-r border-r-inverse rounded-tr-none;
             @apply dark:border-r-dark-inverse;
@@ -189,7 +197,9 @@ export default defineComponent({
         .nav__link {
           @apply border-r-0;
 
-          &--active {
+          &--active,
+          &.router-link-active:not(.nav__link--exact),
+          &.router-link-exact-active.nav__link--exact {
             &:not(.nav__link--disabled) {
               @apply border-l border-l-inverse rounded-tl-none;
               @apply dark:border-l-dark-inverse;
@@ -211,7 +221,9 @@ export default defineComponent({
     * except in bottom-side
     */
     .nav__link {
-      &--active {
+      &--active,
+      &.router-link-active:not(.nav__link--exact),
+      &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
           @apply border-t-default border-x-default bg-base;
           @apply dark:border-t-dark-default dark:border-x-dark-default dark:bg-dark-base;
@@ -225,7 +237,9 @@ export default defineComponent({
     */
     &.nav--vertical {
       .nav__link {
-        &--active {
+        &--active,
+        &.router-link-active:not(.nav__link--exact),
+        &.router-link-exact-active.nav__link--exact {
           &:not(.nav__link--disabled) {
             @apply border-l-default border-y-default border-r-transparent bg-base rounded-l rounded-r-none;
             @apply dark:border-l-dark-default dark:border-y-dark-default dark:border-r-transparent dark:bg-dark-base;
@@ -235,7 +249,9 @@ export default defineComponent({
 
       &.nav--align-right {
         .nav__link {
-          &--active {
+          &--active,
+          &.router-link-active:not(.nav__link--exact),
+          &.router-link-exact-active.nav__link--exact {
             &:not(.nav__link--disabled) {
               @apply border-r-default border-y-default border-l-transparent rounded-r rounded-l-none;
               @apply dark:border-r-dark-default dark:border-y-dark-default dark:border-l-transparent;
@@ -258,7 +274,9 @@ export default defineComponent({
     * with background
     */
     .nav__link {
-      &--active {
+      &--active,
+      &.router-link-active:not(.nav__link--exact),
+      &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
           @apply bg-base rounded-b;
           @apply dark:bg-dark-base;
@@ -273,7 +291,9 @@ export default defineComponent({
     */
     &.nav--condensed {
       .nav__link {
-        &--active {
+        &--active,
+        &.router-link-active:not(.nav__link--exact),
+        &.router-link-exact-active.nav__link--exact {
           @apply bg-transparent;
           @apply dark:bg-transparent;
         }
@@ -380,7 +400,7 @@ export default defineComponent({
     @apply absolute left-5 top-0 text-base w-[calc(100%-1.75rem)]; /* 1.25rem + 0.75rem (padding) */
 
     &__item {
-      @apply flex items-center w-full justify-between space-x-2;
+      @apply flex items-center w-full space-x-2;
     }
 
     .caption {
