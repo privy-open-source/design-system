@@ -3753,7 +3753,7 @@ __metadata:
     marked: 5.0.0
     nanodelay: 2.0.2
     nuxt: 3.7.3
-    pdfjs-dist: 3.2.146
+    pdfjs-dist: 3.10.111
     postcss-custom-properties: ^13.0.0
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
@@ -6647,7 +6647,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"canvas@npm:^2.11.0, canvas@npm:^2.11.2":
+"canvas@npm:^2.11.2":
   version: 2.11.2
   resolution: "canvas@npm:2.11.2"
   dependencies:
@@ -14446,20 +14446,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:3.2.146":
-  version: 3.2.146
-  resolution: "pdfjs-dist@npm:3.2.146"
-  dependencies:
-    canvas: ^2.11.0
-    web-streams-polyfill: ^3.2.1
-  dependenciesMeta:
-    canvas:
-      optional: true
-  checksum: 54d4c75140f7fc1eb2008a7bb55e664c59602be09def9883da6aff4c1a7ad58a09aaa927d07f2a695181da0f20b8a96b569365195c34a0aac6ecb0d378959f8a
-  languageName: node
-  linkType: hard
-
-"pdfjs-dist@npm:^3.10.111":
+"pdfjs-dist@npm:3.10.111, pdfjs-dist@npm:^3.10.111":
   version: 3.10.111
   resolution: "pdfjs-dist@npm:3.10.111"
   dependencies:
@@ -18799,7 +18786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"web-streams-polyfill@npm:^3.0.3, web-streams-polyfill@npm:^3.2.1":
+"web-streams-polyfill@npm:^3.0.3":
   version: 3.2.1
   resolution: "web-streams-polyfill@npm:3.2.1"
   checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02
