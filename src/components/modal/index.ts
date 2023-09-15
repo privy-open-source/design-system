@@ -1,1 +1,1 @@
-export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl'
+export type SizeVariant = 'sm' | 'md' | 'lg' | 'xl' | 'full'
