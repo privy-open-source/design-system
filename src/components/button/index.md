@@ -16,6 +16,8 @@ description: Base button component
 
 ### Simple Button
 
+  <p-button color="primary" class="text-yellow-20">Click me</p-button>
+
 <preview>
   <p-button>Click me</p-button>
 </preview>
