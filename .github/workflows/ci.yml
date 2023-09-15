@@ -23,7 +23,7 @@ jobs:
         node-version:
           - 16
           - 18
-          - 19
+          - 20
 
     steps:
       - name: Git Checkout
