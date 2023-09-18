@@ -5,6 +5,7 @@ description: Base button component
 
 <script setup>
   import pButton from './Button.vue'
+  import pBanner from '../banner/Banner.vue'
   import IconPersona from '@privyid/persona-icon/vue/persona/20.vue'
 </script>
 

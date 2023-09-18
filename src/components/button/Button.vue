@@ -116,10 +116,10 @@ const tagName = computed(() => {
 * Last Update   : Nov 21, 2022
 */
 .btn {
-  --p-color-primary-hover: darken(theme(colors.brand.accent), 5%);
-  --p-color-dark-primary-hover: darken(theme(colors.dark.brand.accent), 5%);
-  --p-color-primary-focus: darken(theme(colors.brand.accent), 10%);
-  --p-color-dark-primary-focus: darken(theme(colors.dark.brand.accent), 10%);
+  --p-color-primary-hover: darken(theme(colors.brand.action), 5%);
+  --p-color-dark-primary-hover: darken(theme(colors.dark.brand.action), 5%);
+  --p-color-primary-focus: darken(theme(colors.brand.action), 10%);
+  --p-color-dark-primary-focus: darken(theme(colors.dark.brand.action), 10%);
   --p-color-info-hover: darken(theme(backgroundColor.info.emphasis), 5%);
   --p-color-dark-info-hover: darken(theme(backgroundColor.dark.info.emphasis), 5%);
   --p-color-info-focus: darken(theme(backgroundColor.info.emphasis), 10%);
@@ -181,13 +181,13 @@ const tagName = computed(() => {
 
     &.btn {
       &--default {
-        @apply bg-default-alpha focus:bg-subtle-alpha active:bg-subtle-alpha text-subtle hover:text-default focus:text-default;
-        @apply dark:bg-dark-default-alpha focus:dark:bg-dark-subtle-alpha active:dark:bg-dark-subtle-alpha dark:text-dark-subtle hover:dark:text-dark-default focus:dark:text-dark-default;
+        @apply bg-default-alpha focus:bg-subtle-alpha active:bg-subtle-alpha hover:text-default focus:text-default;
+        @apply dark:bg-dark-default-alpha focus:dark:bg-dark-subtle-alpha active:dark:bg-dark-subtle-alpha hover:dark:text-dark-default focus:dark:text-dark-default;
       }
 
       &--primary {
-        @apply bg-brand-accent hover:bg-[color:var(--p-color-primary-hover)] focus:bg-[color:var(--p-color-primary-focus)] active:bg-[color:var(--p-color-primary-focus)];
-        @apply dark:bg-dark-brand-accent hover:dark:bg-[color:var(--p-color-dark-primary-hover)] focus:dark:bg-[color:var(--p-color-dark-primary-focus)] active:dark:bg-[color:var(--p-color-dark-primary-focus)];
+        @apply bg-brand-action hover:bg-[color:var(--p-color-primary-hover)] focus:bg-[color:var(--p-color-primary-focus)] active:bg-[color:var(--p-color-primary-focus)];
+        @apply dark:bg-dark-brand-action hover:dark:bg-[color:var(--p-color-dark-primary-hover)] focus:dark:bg-[color:var(--p-color-dark-primary-focus)] active:dark:bg-[color:var(--p-color-dark-primary-focus)];
       }
 
       &--info {
@@ -214,8 +214,8 @@ const tagName = computed(() => {
 
   &&--variant-outline,
   &&--variant-ghost {
-    @apply border border-solid text-subtle hover:text-default hover:shadow-lg focus:shadow-none active:shadow-none focus:text-default active:text-default;
-    @apply dark:text-dark-subtle hover:dark:text-dark-default focus:dark:text-dark-default active:dark:text-dark-default;
+    @apply border border-solid text-default hover:text-default hover:shadow-lg focus:shadow-none active:shadow-none focus:text-default active:text-default;
+    @apply dark:text-dark-default hover:dark:text-dark-default focus:dark:text-dark-default active:dark:text-dark-default;
   }
 
   /**
@@ -228,13 +228,13 @@ const tagName = computed(() => {
   &&--variant-outline {
     &.btn {
       &--default {
-        @apply border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
-        @apply dark:border-dark-default-alpha hover:dark:border-dark-subtle-alpha active:dark:border-dark-subtle-alpha focus:dark:border-dark-subtle-alpha;
+        @apply text-default border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
+        @apply dark:text-dark-default dark:border-dark-default-alpha hover:dark:border-dark-subtle-alpha active:dark:border-dark-subtle-alpha focus:dark:border-dark-subtle-alpha;
       }
 
       &--primary {
-        @apply border-brand-accent hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
-        @apply dark:border-dark-brand-accent hover:dark:border-[color:var(--p-color-dark-primary-hover)] focus:dark:border-[color:var(--p-color-dark-primary-focus)] active:dark:border-[color:var(--p-color-dark-primary-focus)];
+        @apply border-brand-action hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
+        @apply dark:border-dark-brand-action border-brand-action hover:dark:border-[color:var(--p-color-dark-primary-hover)] focus:dark:border-[color:var(--p-color-dark-primary-focus)] active:dark:border-[color:var(--p-color-dark-primary-focus)];
       }
 
       &--info {
@@ -276,13 +276,13 @@ const tagName = computed(() => {
 
     &.btn {
       &--default {
-        @apply text-subtle hover:text-default focus:text-default active:text-default ;
-        @apply dark:text-dark-subtle hover:dark:text-dark-default focus:dark:text-dark-default active:dark:text-dark-default;
+        @apply text-default hover:text-default focus:text-default active:text-default ;
+        @apply dark:text-dark-default hover:dark:text-dark-default focus:dark:text-dark-default active:dark:text-dark-default;
       }
 
       &--primary {
-        @apply text-brand-accent hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
-        @apply dark:text-dark-brand-accent hover:dark:text-[color:var(--p-color-dark-primary-hover)] focus:dark:text-[color:var(--p-color-dark-primary-focus)] active:dark:text-[color:var(--p-color-dark-primary-focus)];
+        @apply text-brand-action hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
+        @apply dark:text-dark-brand-action hover:dark:text-[color:var(--p-color-dark-primary-hover)] focus:dark:text-[color:var(--p-color-dark-primary-focus)] active:dark:text-[color:var(--p-color-dark-primary-focus)];
       }
 
       &--info {

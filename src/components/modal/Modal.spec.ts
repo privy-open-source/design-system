@@ -66,9 +66,13 @@ it('should have no close button if props "dismissable" set to false', () => {
     `,
   })
 
-  const dismiss = screen.queryByTestId('modal-dismiss')
+  const dismiss     = screen.queryByTestId('modal-dismiss')
+  const close       = screen.queryByTestId('modal-full-dismiss')
+  const dismissFree = screen.queryByTestId('modal-free-distraction-dismiss')
 
   expect(dismiss).not.toBeInTheDocument()
+  expect(close).not.toBeInTheDocument()
+  expect(dismissFree).not.toBeInTheDocument()
 })
 
 it('should emit event "close" if close button clicked', async () => {
@@ -365,4 +369,231 @@ it('should have style `banner` if setting the banner prop', () => {
 
   expect(modal).toBeInTheDocument()
   expect(modal).toHaveClass('modal--banner')
+})
+
+it('should be able to add custom class in header via `header-class` props', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+    <Modal header-class="custom-header" title="Modal Title" />
+    `,
+  })
+
+  const header = screen.queryByTestId('modal-header')
+
+  expect(header).toBeInTheDocument()
+  expect(header).toHaveClass('custom-header')
+})
+
+it('should be able to add custom header class in modal full size via `header-class` props', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+    <Modal header-class="custom-header" size="full" />
+    `,
+  })
+
+  const header = screen.queryByTestId('modal-full-header')
+
+  expect(header).toBeInTheDocument()
+  expect(header).toHaveClass('custom-header')
+})
+
+it('should be able to add custom class in dialog via `dialog-class` props', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+    <Modal dialog-class="custom-dialog" />
+    `,
+  })
+
+  const dialog = screen.queryByTestId('modal-dialog')
+
+  expect(dialog).toBeInTheDocument()
+  expect(dialog).toHaveClass('custom-dialog')
+})
+
+it('should be able to add custom class in content via `content-class` props', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+    <Modal content-class="custom-content" />
+    `,
+  })
+
+  const content = screen.queryByTestId('modal-content')
+
+  expect(content).toBeInTheDocument()
+  expect(content).toHaveClass('custom-content')
+})
+
+it('should be able to add custom class in body via `body-class` props', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+    <Modal body-class="custom-body" />
+    `,
+  })
+
+  const body = screen.queryByTestId('modal-body')
+
+  expect(body).toBeInTheDocument()
+  expect(body).toHaveClass('custom-body')
+})
+
+it('should be able to add custom class in footer via `footer-class` props', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+    <Modal footer-class="custom-footer" free-distraction>
+      <template #footer>
+        <Button>Button Text</Button>
+      </template>
+    </Modal>
+    `,
+  })
+
+  const modal  = screen.queryByTestId('modal')
+  const footer = screen.queryByTestId('modal-footer')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).toHaveClass('modal--md')
+  expect(modal).not.toHaveClass('modal--free-distraction')
+
+  expect(footer).toBeInTheDocument()
+  expect(footer).toHaveClass('custom-footer')
+})
+
+it('should have full size if size of props was set to `full`', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+    <Modal size="full">
+      Modal Text
+      <template #footer>
+        <Button>Button Text</Button>
+      </template>
+    </Modal>
+    `,
+  })
+
+  const modal   = screen.queryByTestId('modal')
+  const dismiss = screen.queryByTestId('modal-free-distraction-dismiss')
+  const close   = screen.queryByTestId('modal-full-dismiss')
+  const footer  = screen.queryByTestId('modal-footer')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).toHaveClass('modal--full')
+  expect(modal).not.toHaveClass('modal--free-distraction')
+  expect(dismiss).not.toBeInTheDocument()
+  expect(close).toBeInTheDocument()
+  expect(footer).not.toBeInTheDocument()
+})
+
+it('should able to make full size modal with free-distraction type via `free-distraction` props', () => {
+  const screen = render({
+    components: { Modal },
+    template  : `
+    <Modal size="full" free-distraction>
+      Modal Text
+      <template #footer>
+        <Button>Button Text</Button>
+      </template>
+    </Modal>
+    `,
+  })
+
+  const modal   = screen.queryByTestId('modal')
+  const dismiss = screen.queryByTestId('modal-free-distraction-dismiss')
+  const close   = screen.queryByTestId('modal-full-dismiss')
+  const footer  = screen.queryByTestId('modal-footer')
+
+  expect(modal).toBeInTheDocument()
+  expect(modal).toHaveClass('modal--full', 'modal--free-distraction')
+  expect(dismiss).toBeInTheDocument()
+  expect(close).not.toBeInTheDocument()
+  expect(footer).toBeInTheDocument()
+})
+
+it('should emit event "close" if close button in modal full size is clicked', async () => {
+  const model  = ref(false)
+  const spy    = vi.fn()
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        v-model="model"
+        title="Modal Title"
+        size="full"
+        @close="onDismissed">
+        Modal Text
+      </Modal>
+    `,
+    methods: { onDismissed: spy },
+    setup () {
+      return { model }
+    },
+  })
+
+  let modal   = screen.queryByTestId('modal')
+  const close = screen.queryByTestId('modal-full-dismiss')
+
+  expect(modal).toBeInTheDocument()
+  expect(close).toBeInTheDocument()
+  expect(spy).not.toBeCalled()
+
+  model.value = true
+  await nextTick()
+
+  modal = screen.queryByTestId('modal')
+  expect(modal).toBeVisible()
+
+  await fireEvent.click(close)
+  await delay(0)
+
+  modal = screen.queryByTestId('modal')
+  expect(spy).toBeCalled()
+  expect(modal).not.toBeVisible()
+})
+
+it('should emit event "close" if close button in modal free distraction type is clicked', async () => {
+  const model  = ref(false)
+  const spy    = vi.fn()
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        v-model="model"
+        title="Modal Title"
+        size="full"
+        @close="onDismissed"
+        free-distraction>
+        Modal Text
+      </Modal>
+    `,
+    methods: { onDismissed: spy },
+    setup () {
+      return { model }
+    },
+  })
+
+  let modal   = screen.queryByTestId('modal')
+  const close = screen.queryByTestId('modal-free-distraction-dismiss')
+
+  expect(modal).toBeInTheDocument()
+  expect(close).toBeInTheDocument()
+  expect(spy).not.toBeCalled()
+
+  model.value = true
+  await nextTick()
+
+  modal = screen.queryByTestId('modal')
+  expect(modal).toBeVisible()
+
+  await fireEvent.click(close)
+  await delay(0)
+
+  modal = screen.queryByTestId('modal')
+  expect(spy).toBeCalled()
+  expect(modal).not.toBeVisible()
 })
