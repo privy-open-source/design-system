@@ -94,7 +94,7 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
     el.removeAttribute('title')
   },
 
-  async beforeUnmount (el, bindings) {
+  async unmounted (el, bindings) {
     const { default: TooltipContainer } = await import('./TooltipContainer.vue')
     const tooltip                       = await useSingleton(TooltipContainer)
     const id                            = el.dataset.tooltipId

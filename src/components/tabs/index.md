@@ -520,36 +520,37 @@ Tabs use local CSS variables for enhanced real-time customization.
 
 ### Props `<p-tabs>`
 
-| Props               |   Type    | Default     | Description                                                            |
-|---------------------|:---------:|:-----------:|------------------------------------------------------------------------|
-| `variant`           | `String`  | `pills`     | Tabs navigation variant, valid value is `pills`, `lines` and `tabs`    |
-| `fill`              | `Boolean` | `false`     | Activate fullwidth Tabs navigation with `fill` type                    |
-| `justified`         | `Boolean` | `false`     | Activate fullwidth Tabs navigation with `justified` type               |
-| `align`             | `String`  | `left`      | Tabs navigation alignment, valid value is `left`, `center`, and `right`|
-| `vertical`          | `Boolean` | `false`     | Activate vertical Tabs                                                 |
-| `nav-wrapper-class` | `String`  | `undefined` | Class to place in the navigation wrapper                               |
-| `v-model`        | `Number`  | `0`         | Set default active tab according to tab index                          |
+| Props               |   Type    |   Default   | Description                                                             |
+|---------------------|:---------:|:-----------:|-------------------------------------------------------------------------|
+| `variant`           | `String`  |   `pills`   | Tabs navigation variant, valid value is `pills`, `lines` and `tabs`     |
+| `fill`              | `Boolean` |   `false`   | Activate fullwidth Tabs navigation with `fill` type                     |
+| `justified`         | `Boolean` |   `false`   | Activate fullwidth Tabs navigation with `justified` type                |
+| `align`             | `String`  |   `left`    | Tabs navigation alignment, valid value is `left`, `center`, and `right` |
+| `vertical`          | `Boolean` |   `false`   | Activate vertical Tabs                                                  |
+| `nav-wrapper-class` | `String`  | `undefined` | Class to place in the navigation wrapper                                |
+| `keep-alive`        | `Boolean` |   `false`   | Enable [KeepAlive][KeepAlive]                                           |
+| `modelValue`        | `Number`  |     `0`     | `v-model` for actived tab                                               |
 
 ### Slots `<p-tabs>`
 
-| Name             | Description                                             |
-|------------------|---------------------------------------------------------|
-| `default`        | Content to place in the Nav                             |
+| Name      | Description                 |
+|-----------|-----------------------------|
+| `default` | Content to place in the Nav |
 
 ### Props `<p-tab>`
 
-| Props          |   Type     | Default      | Description                                                 |
-|----------------|:----------:|:------------:|-------------------------------------------------------------|
-| `title`        | `String`   | `undefined`  | Place content in the Tab title                              |
-| `disabled`     | `Boolean`  | `false`      | Disable tab functionality and place it in disabled state    |
+| Props      |   Type    |   Default   | Description                                              |
+|------------|:---------:|:-----------:|----------------------------------------------------------|
+| `title`    | `String`  | `undefined` | Place content in the Tab title                           |
+| `disabled` | `Boolean` |   `false`   | Disable tab functionality and place it in disabled state |
 
 ### Slots `<p-tab>`
 
-| Name             | Description                                             |
-|------------------|---------------------------------------------------------|
-| `default`        | Content to place in the Tab                             |
-| `icon`           | Content to place icon in Tab navigation                 |
-| `title`          | Content to place icon in Tab title                      |
+| Name      | Description                             |
+|-----------|-----------------------------------------|
+| `default` | Content to place in the Tab             |
+| `icon`    | Content to place icon in Tab navigation |
+| `title`   | Content to place icon in Tab title      |
 
 ### Events
 

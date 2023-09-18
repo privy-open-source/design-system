@@ -153,18 +153,18 @@ To align Sidebar, use align prop. Available value are `left` and `right`
 When you need less space/padding of sidebar navigation, you can set by using `condensed` prop.
 
 <preview class="preview--fixed">
-<p-sidebar fixed>
-  <template #brand>
-    <p-sidebar-brand>
-      <img src="/assets/images/logo-privy.svg" alt="" />
-    </p-sidebar-brand>
-  </template>
-  <p-sidebar-nav condensed>
-    <p-nav-item active>Documents</p-nav-item>
-    <p-nav-item>Contacts</p-nav-item>
-    <p-nav-item>Structure</p-nav-item>
-  </p-sidebar-nav>
-</p-sidebar>
+  <p-sidebar fixed>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
+    <p-sidebar-nav condensed>
+      <p-nav-item active>Documents</p-nav-item>
+      <p-nav-item>Contacts</p-nav-item>
+      <p-nav-item>Structure</p-nav-item>
+    </p-sidebar-nav>
+  </p-sidebar>
 </preview>
 
 ```vue
@@ -308,6 +308,7 @@ Sidebar has 2 types, `wide` and `narrow`. Default is `wide`. In variant `narrow`
 ```
 
 ### Bottom Menus
+
 If you need to place menus in the bottom, you just add `bottom` prop in your `<p-sidebar-nav>`
 
 <preview class="preview--fixed">
@@ -436,37 +437,37 @@ Submenu just works in `wide` type. If you need collapsible menus, you just add `
 ### Collapsible Menus
 
 <preview class="preview--fixed">
-<p-sidebar fixed>
-  <template #brand>
-    <p-sidebar-brand>
-      <img src="/assets/images/logo-privy.svg" alt="" />
-    </p-sidebar-brand>
-  </template>
-  <p-sidebar-nav>
-    <p-nav-item active>
-      <template #icon>
-        <IconDashboard />
-      </template>
-      Dashboard
-    </p-nav-item>
-    <p-nav-sub-item text="Documents" collapsible>
-      <template #icon>
-        <IconDocument />
-      </template>
-      <p-sidebar-nav>
-        <p-nav-item>
-          Need Action
-        </p-nav-item>
-        <p-nav-item>
-          In Progress
-        </p-nav-item>
-        <p-nav-item>
-          Others
-        </p-nav-item>
-      </p-sidebar-nav>
-    </p-nav-sub-item>
-  </p-sidebar-nav>
-</p-sidebar>
+  <p-sidebar fixed>
+    <template #brand>
+      <p-sidebar-brand>
+        <img src="/assets/images/logo-privy.svg" alt="" />
+      </p-sidebar-brand>
+    </template>
+    <p-sidebar-nav>
+      <p-nav-item active>
+        <template #icon>
+          <IconDashboard />
+        </template>
+        Dashboard
+      </p-nav-item>
+      <p-nav-sub-item text="Documents" collapsible>
+        <template #icon>
+          <IconDocument />
+        </template>
+        <p-sidebar-nav>
+          <p-nav-item>
+            Need Action
+          </p-nav-item>
+          <p-nav-item>
+            In Progress
+          </p-nav-item>
+          <p-nav-item>
+            Others
+          </p-nav-item>
+        </p-sidebar-nav>
+      </p-nav-sub-item>
+    </p-sidebar-nav>
+  </p-sidebar>
 </preview>
 
 ```vue

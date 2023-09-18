@@ -126,3 +126,8 @@ export {
 export {
   useVModel,
 } from '../components/input'
+
+export {
+  installLocale,
+  formatDate,
+} from '../components/utils/date'

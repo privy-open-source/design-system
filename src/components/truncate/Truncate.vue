@@ -13,7 +13,7 @@
         <a
           data-testid="truncate-expand"
           href="#"
-          @click.prevent="toggle">
+          @click.stop.prevent="toggle">
           {{ expand ? showLessText : showMoreText }}
         </a>
       </template>

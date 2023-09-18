@@ -31,7 +31,6 @@
     v-if="!bottom"
     :model-value="isExpand">
     <Nav
-      ref="root"
       class="sidebar__nav"
       :class="{ 'sidebar__nav--collapsed' : !isExpand }"
       data-testid="sidebar-nav"
@@ -46,26 +45,21 @@
     </Nav>
   </Collapse>
   <template v-else>
-    <div class="sidebar__bottom">
-      <Nav
-        class="sidebar__nav"
-        data-testid="sidebar-nav"
-        vertical
-        :title="title"
-        :variant="variant"
-        :condensed="condensed"
-        :align="align"
-        :class="classNames">
-        <slot />
-      </Nav>
-    </div>
+    <Nav
+      class="sidebar__nav sidebar__nav--bottom"
+      data-testid="sidebar-nav"
+      vertical
+      :title="title"
+      :variant="variant"
+      :condensed="condensed"
+      :align="align">
+      <slot />
+    </Nav>
   </template>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
-  computed,
-  defineComponent,
   inject,
   ref,
 } from 'vue-demi'
@@ -76,74 +70,48 @@ import { SIDEBAR_SETTINGS } from '.'
 import Collapse from '../collapse/Collapse.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
 
-export default defineComponent({
-  components: {
-    Nav,
-    Caption,
-    Text,
-    IconArrow,
-    Collapse,
-  },
+defineOptions({
+  name        : 'SidebarNav',
   inheritAttrs: false,
-  props       : {
-    title: {
-      type   : String,
-      default: undefined,
-    },
-    titleActionLabel: {
-      type   : String,
-      default: undefined,
-    },
-    titleActionUrl: {
-      type   : String,
-      default: undefined,
-    },
-    bottom: {
-      type   : Boolean,
-      default: false,
-    },
-    condensed: {
-      type   : Boolean,
-      default: false,
-    },
-    collapsible: {
-      type   : Boolean,
-      default: false,
-    },
-  },
-
-  setup (props) {
-    const settings = inject(SIDEBAR_SETTINGS, undefined, true)
-    const variant  = settings?.variant
-    const align    = settings?.align
-    const type     = settings?.type
-    const isExpand = ref(true)
-
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.bottom)
-        result.push('sidebar__nav--bottom')
-
-      return result
-    })
-
-    function toggleExpand (): void {
-      if (props.collapsible)
-        isExpand.value = !isExpand.value
-    }
-
-    return {
-      isExpand,
-      variant,
-      align,
-      type,
-      classNames,
-      toggleExpand,
-    }
-  },
-
 })
+
+const props = defineProps({
+  title: {
+    type   : String,
+    default: undefined,
+  },
+  titleActionLabel: {
+    type   : String,
+    default: undefined,
+  },
+  titleActionUrl: {
+    type   : String,
+    default: undefined,
+  },
+  bottom: {
+    type   : Boolean,
+    default: false,
+  },
+  condensed: {
+    type   : Boolean,
+    default: false,
+  },
+  collapsible: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const settings = inject(SIDEBAR_SETTINGS, undefined, true)
+const variant  = settings?.variant
+const align    = settings?.align
+const type     = settings?.type
+const isExpand = ref(true)
+
+function toggleExpand (): void {
+  if (props.collapsible)
+    isExpand.value = !isExpand.value
+}
 </script>
 
 <style lang="postcss">

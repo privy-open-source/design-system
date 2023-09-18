@@ -157,7 +157,7 @@ it('should work properly with v-for', async () => {
   const screen = render({
     components: { pTabs, pTab },
     template  : `
-      <p-tabs>
+      <p-tabs vertical>
         <template v-for="i in 3">
           <p-tab :title="i.toString()">Home page content {{ i }}</p-tab>
         </template>
@@ -179,4 +179,11 @@ it('should work properly with v-for', async () => {
 
   expect(tab.at(1)).toHaveClass('nav__item--active')
   expect(tab.at(0)).not.toHaveClass('nav__item--active')
+
+  await fireEvent.click(tab.at(0))
+
+  tab = screen.queryAllByTestId('tab')
+
+  expect(tab.at(0)).toHaveClass('nav__item--active')
+  expect(tab.at(1)).not.toHaveClass('nav__item--active')
 })

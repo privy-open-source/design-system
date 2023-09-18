@@ -22,7 +22,7 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-  .navbar {
+  a.navbar {
     &__brand {
       @apply inline-block mr-4 text-xl py-1 font-medium text-default no-underline cursor-pointer hover:no-underline;
       @apply dark:text-dark-default;

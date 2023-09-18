@@ -17,7 +17,7 @@ export default function createHandler (eventName: string, tooltipAction: EventAc
     const enable                        = target.dataset.tooltipEnable !== 'false'
     const action                        = target.dataset.tooltipAction
 
-    if (enable && action.includes(eventName)) {
+    if (id && enable && action.includes(eventName)) {
       tooltip[tooltipAction](id)
 
       if (prevent)

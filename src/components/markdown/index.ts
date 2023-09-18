@@ -1,6 +1,7 @@
 import { Directive } from 'vue-demi'
 import { marked } from 'marked'
 import sanitizeHtml from 'sanitize-html'
+import defu from 'defu'
 
 export interface MarkdownOption {
   /**
@@ -12,6 +13,10 @@ export interface MarkdownOption {
    * Disabled sanitize HTML result
    */
   unsecure: boolean,
+  /**
+   * marked options
+   */
+  marked: marked.MarkedOptions,
 }
 
 /**
@@ -19,10 +24,16 @@ export interface MarkdownOption {
  * @param text markdown string
  * @param options parsing options
  */
-export function markdown (text = '', options: Partial<MarkdownOption> = {}) {
+export function markdown (text = '', _option: Partial<MarkdownOption>) {
+  const options = defu(_option, {
+    inline  : false,
+    unsecure: false,
+    marked  : { mangle: false, headerIds: false },
+  })
+
   const html = options.inline
-    ? marked.parseInline(text)
-    : marked.parse(text)
+    ? marked.parseInline(text, options.marked)
+    : marked.parse(text, options.marked)
 
   if (html && !options.unsecure)
     return sanitizeHtml(html)

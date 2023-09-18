@@ -5,6 +5,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "script/*.ts",
     "playground/**/*.ts",
     "playground/**/*.d.ts",
     "playground/**/*.tsx",

@@ -4,8 +4,9 @@ import {
   ref,
   toRef,
 } from 'vue-demi'
+import { LiteralUnion } from 'type-fest'
 
-type Lang = 'id' | 'en'
+type Lang = LiteralUnion<'id' | 'en', string>
 
 /**
  * Simple vuex-like-store for global configuration

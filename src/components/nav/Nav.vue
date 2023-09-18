@@ -128,6 +128,10 @@ export default defineComponent({
     @apply first:ml-2 mr-2 last:mr-0;
   }
 
+  &__item > &__link {
+    @apply no-underline;
+  }
+
   & > &__item {
     .nav__link {
       @apply text-subtle;
@@ -370,7 +374,7 @@ export default defineComponent({
       }
 
       &__link {
-        @apply mb-0 -mr-[1px];
+        @apply mb-0;
       }
 
       &__title {
