@@ -17,7 +17,7 @@ description: Label of the thing they're quantifying, such as the number of notif
 ### Basic Usage
 
 Default color of badge are black.
-<p-badge class="bg-gold-40">25</p-badge>
+
 <preview>
   <p-badge>25</p-badge>
 </preview>
