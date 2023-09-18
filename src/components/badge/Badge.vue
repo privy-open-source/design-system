@@ -61,7 +61,12 @@ export default defineComponent({
   --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
   --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent), 40%);
 
-  @apply inline-block font-bold text-xs px-2 py-0.5 text-state-emphasis dark:text-dark-state-emphasis rounded-full;
+  @apply inline-block font-bold text-xs px-2 py-0.5 rounded-full;
+
+  &:not(&--variant-default&--default) {
+    @apply text-state-emphasis;
+    @apply dark:text-dark-state-emphasis
+  }
 
   /**
   * Provide colors variant
@@ -74,8 +79,16 @@ export default defineComponent({
       &--default {
         --p-bg-variant-default: theme(backgroundColor.inverse);
         --p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
-        @apply bg-[color:var(--p-bg-variant-default)];
-        @apply dark:bg-[color:var(--p-bg-dark-variant-default)] dark:text-dark-on-emphasis;
+
+        &:not([class^='bg-'], [class*='bg-']) {
+          @apply bg-[color:var(--p-bg-variant-default)];
+          @apply dark:bg-[color:var(--p-bg-dark-variant-default)];
+        }
+
+        &:not([class^='text-'], [class*='text-']) {
+          @apply text-state-emphasis;
+          @apply dark:text-dark-state-emphasis dark:text-dark-on-emphasis;
+        }
       }
 
       &--primary {
