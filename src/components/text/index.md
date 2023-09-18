@@ -178,10 +178,11 @@ Text have 7 style variant, there are `heading`, `subheading`, `body`, `button`, 
 
 | Props               |   Type    | Default     | Description                                                            |
 |---------------------|:---------:|:-----------:|------------------------------------------------------------------------|
-| `variant`           | `String`  | `body`      | Text variant, valid value is `heading`, `subheading`, `body`, `button`, `caption`, `formlabel` and `overline`    |
+| `variant`           | `String`  | `body`      | Text variant, valid value is `heading`, `subheading`, `body`, `button`, `caption`, `formlabel` and `overline`|
 | `href`              | `String`  | `-`         | Provide hyperlink in the text                                          |
-| `weight`              | `String`  | `normal`         | Provide font-weight of text, valid value is `normal`, `medium` and `bold`                                          |
-| `transform`              | `String`  | `normalcase`         | Provide font-weight of text, valid value is `normalcase`, `lowercase`, `capitalize` and `uppercase`                                          |
+| `weight`            | `String`  | `normal`    | Provide font-weight of text, valid value is `thin`, `extralight`, `light`, `normal`, `semibold`, `medium`, `bold`, `extrabold` and `black` |
+| `transform`         | `String`  | `normalcase`   | Provide font-weight of text, valid value is `normalcase`, `lowercase`, `capitalize` and `uppercase` |
+| `element`           | `String`  | `span`   | Provide element tag of text, valid value is `h1-h6`, `span`, `a`, `p` and `label` |
 
 ### Slots
 

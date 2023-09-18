@@ -1,6 +1,6 @@
 <template>
   <component
-    :is="hyperlink"
+    :is="elementNames"
     data-testid="freetext"
     class="freetext"
     :class="classNames"
@@ -15,7 +15,7 @@ import {
   PropType,
   computed,
 } from 'vue-demi'
-import { StyleVariant } from '.'
+import { StyleVariant, ElementVariant } from '.'
 import { WeightVariant, TransformVariant } from '../heading'
 
 export default defineComponent({
@@ -36,11 +36,15 @@ export default defineComponent({
       type   : String as PropType<TransformVariant>,
       default: 'normalcase',
     },
+    element: {
+      type   : String as PropType<ElementVariant>,
+      default: 'span',
+    },
   },
 
   setup (props) {
-    const hyperlink = computed(() => {
-      return props.href ? 'a' : 'span'
+    const elementNames = computed(() => {
+      return props.href ? 'a' : props.element
     })
 
     const classNames = computed(() => {
@@ -65,8 +69,8 @@ export default defineComponent({
     })
 
     return {
-      hyperlink,
       classNames,
+      elementNames,
     }
   },
 })
@@ -138,8 +142,12 @@ export default defineComponent({
   * Hyperlink style
    */
   &--hyperlink {
-    @apply underline decoration-solid text-info;
-    @apply dark:text-dark-info;
+    @apply underline decoration-solid;
+
+    &:not([class^='text-'], [class*='text-']) {
+      @apply text-link;
+      @apply dark:text-dark-link;
+    }
   }
 
   /**
