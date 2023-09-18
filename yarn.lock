@@ -3750,7 +3750,7 @@ __metadata:
     fuse.js: 6.6.2
     interactjs: 1.10.18
     lodash-es: 4.17.21
-    marked: 5.0.0
+    marked: 5.1.2
     nanodelay: 2.0.2
     nuxt: 3.7.3
     pdfjs-dist: 3.10.111
@@ -12751,16 +12751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:5.0.0":
-  version: 5.0.0
-  resolution: "marked@npm:5.0.0"
-  bin:
-    marked: bin/marked.js
-  checksum: 992a79213e549f6d568d1f88d35d5f2cfebd6957d29131c4843ebbe7c26bf125fab3345c4b0d4d77d44a87c9751a14362c4f8b386dd59bb9d2c12787ffbfccd5
-  languageName: node
-  linkType: hard
-
-"marked@npm:^5.0.0":
+"marked@npm:5.1.2, marked@npm:^5.0.0":
   version: 5.1.2
   resolution: "marked@npm:5.1.2"
   bin:
