@@ -4,6 +4,7 @@
     data-testid="banner"
     :class="classNames">
     <div
+      v-if="!noIcon"
       class="banner__icon"
       data-testid="banner-icon"
       :class="{ 'banner__icon--custom' : $slots.icon }">
@@ -57,6 +58,10 @@ export default defineComponent({
     dismissable: {
       type   : Boolean,
       default: true,
+    },
+    noIcon: {
+      type   : Boolean,
+      default: false,
     },
   },
   emits: ['dismissed'],
