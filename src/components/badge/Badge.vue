@@ -61,7 +61,12 @@ export default defineComponent({
   --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
   --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent), 40%);
 
-  @apply inline-block font-bold text-xs px-2 py-0.5 rounded-full;
+  @apply inline-block font-bold text-xs px-2 py-0.5 rounded-full space-x-1 align-middle;
+
+  > .persona-icon,
+  > svg {
+    @apply inline-block;
+  }
 
   &:not(&--variant-default&--default) {
     @apply text-state-emphasis;

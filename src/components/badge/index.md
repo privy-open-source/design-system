@@ -6,6 +6,7 @@ description: Label of the thing they're quantifying, such as the number of notif
 <script setup>
   import pBadge from './Badge.vue'
   import pBanner from '../banner/Banner.vue'
+  import Icon from '@privyid/persona-icon/vue/persona/16.vue'
 </script>
 
 # Badge
