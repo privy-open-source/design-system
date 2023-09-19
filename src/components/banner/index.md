@@ -185,6 +185,31 @@ You can hide close button with `dismissable` set to `false`
 </template>
 ```
 
+## No Icon
+<preview class="flex-col">
+  <p-banner variant="danger" :dismissable="false" noIcon>
+    <p-subheading>
+      Your e-Meterai balance is sufficient only for 2 placements
+    </p-subheading>
+    <span>
+      You can continue with 2 e-Meterai or contact admin to top up then retry the process
+    </span>
+  </p-banner>
+</preview>
+
+```vue
+<template>
+  <p-banner variant="danger" :dismissable="false" noIcon>
+    <p-subheading>
+      Your e-Meterai balance is sufficient only for 2 placements
+    </p-subheading>
+    <span>
+      You can continue with 2 e-Meterai or contact admin to top up then retry the process
+    </span>
+  </p-banner>
+</template>
+```
+
 ## API
 
 ### Props
