@@ -5,6 +5,8 @@ description: Label of the thing they're quantifying, such as the number of notif
 
 <script setup>
   import pBadge from './Badge.vue'
+  import pBanner from '../banner/Banner.vue'
+  import Icon from '@privyid/persona-icon/vue/persona/16.vue'
 </script>
 
 # Badge
@@ -50,6 +52,33 @@ Badge available in 4 different colors. There are `primary`, `info`, `success`, `
   <p-badge color="danger">6</p-badge>
 </template>
 ```
+
+<p-banner :dismissable="false">
+It's <strong>possible</strong> to make <strong>customizable</strong> and or optional <strong>color</strong> refers to what state the user 
+is in or objects being tagged by using default color Badge with <code>variables</code> or <code>class</code>.
+</p-banner>
+
+### Custom Color
+
+<preview>
+  <div class="flex flex-wrap space-gap-3">
+    <p-badge class="bg-gold-40">25</p-badge>
+    <p-badge class="text-yellow-30">79</p-badge>
+    <p-badge class="bg-purple-0 text-purple-40 dark:bg-purple-50 dark:text-purple-20">999+</p-badge>
+  </div>
+</preview>
+
+```vue
+<template>
+  <p-badge class="bg-gold-40">25</p-badge>
+  <p-badge class="text-yellow-30">79</p-badge>
+  <p-badge 
+    class="bg-purple-0 text-purple-40 dark:bg-purple-50 dark:text-purple-20">
+    999+
+  </p-badge>
+</template>
+```
+
 
 ## Variants
 

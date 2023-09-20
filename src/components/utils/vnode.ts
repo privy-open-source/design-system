@@ -31,7 +31,7 @@ export function findAllChildren (vnodes: VNode[], ...names: string[]): VNode[] {
     if (vnode.type === Fragment && Array.isArray(vnode.children))
       scan.push(...vnode.children as VNode[])
 
-    else if (vnode.type && names.includes((vnode.type as Component).name))
+    else if ((names[0] === '*') || (vnode.type && names.includes((vnode.type as Component).name)))
       result.push(vnode)
   }
 

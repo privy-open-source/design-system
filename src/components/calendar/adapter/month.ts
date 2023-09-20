@@ -11,8 +11,8 @@ import {
 } from 'date-fns'
 import {
   defineAdapter,
-  formatDate,
 } from './adapter'
+import { formatDate } from '../../utils/date'
 
 function getInterval (date: Date) {
   const start = startOfYear(date)

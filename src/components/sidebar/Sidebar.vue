@@ -10,145 +10,110 @@
     <div
       ref="sidebarMenus"
       data-testid="sidebar-menus"
-      :data-sidebar-menu="brandHeight"
-      :data-bottom-menu="isBottomMenu"
-      class="sidebar__menus"
-      :style="{ 'padding-bottom': bottomHeight }">
-      <slot />
-
-      <div
-        v-if="$slots.bottom"
-        data-testid="sidebar-bottom"
-        class="sidebar__bottom">
-        <slot name="bottom" />
-      </div>
+      class="sidebar__menus">
+      <SidebarContent>
+        <slot />
+      </SidebarContent>
+    </div>
+    <div
+      ref="bottom"
+      data-testid="sidebar-bottom"
+      class="sidebar__bottom">
+      <SidebarContent bottom>
+        <slot />
+      </SidebarContent>
+      <slot name="bottom" />
     </div>
   </aside>
 </template>
 
-<script lang="ts">
-import { templateRef, useElementSize } from '@vueuse/core'
+<script lang="ts" setup>
 import {
-  defineComponent,
   PropType,
   computed,
-  ref,
   provide,
-  onMounted,
+  ref,
 } from 'vue-demi'
 import { SIDEBAR_SETTINGS, TypeVariant } from '.'
-import { useSelector } from '../pdf-object/utils/use-selector'
 import { useVModel } from '../input'
 import { StyleVariant, AlignVariant } from '../nav'
 import { ToggleableVariant } from '../navbar'
+import SidebarContent from './SidebarContent.vue'
 
-export default defineComponent({
-  props: {
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'pills',
-    },
-    align: {
-      type   : String as PropType<AlignVariant>,
-      default: 'left',
-    },
-    type: {
-      type   : String as PropType<TypeVariant>,
-      default: 'wide',
-    },
-    fixed: {
-      type   : Boolean,
-      default: false,
-    },
-    sticky: {
-      type   : Boolean,
-      default: false,
-    },
-    toggleable: {
-      type   : String as PropType<ToggleableVariant>,
-      default: undefined,
-    },
-    modelValue: {
-      type   : Boolean,
-      default: true,
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'pills',
   },
+  align: {
+    type   : String as PropType<AlignVariant>,
+    default: 'left',
+  },
+  type: {
+    type   : String as PropType<TypeVariant>,
+    default: 'wide',
+  },
+  fixed: {
+    type   : Boolean,
+    default: false,
+  },
+  sticky: {
+    type   : Boolean,
+    default: false,
+  },
+  toggleable: {
+    type   : String as PropType<ToggleableVariant>,
+    default: undefined,
+  },
+  modelValue: {
+    type   : Boolean,
+    default: true,
+  },
+})
 
+defineOptions({
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
+})
 
-  emits: ['update:modelValue'],
+defineEmits<{(event: 'update:modelValue', value: boolean): void }>()
 
-  setup (props, { slots }) {
-    provide(SIDEBAR_SETTINGS, {
-      variant: props.variant,
-      align  : props.align,
-      type   : props.type,
-    })
+const model  = useVModel(props)
+const bottom = ref<HTMLDivElement>()
 
-    const sidebar      = templateRef<HTMLDivElement>('sidebar')
-    const sidebarBrand = useSelector('.sidebar__brand', sidebar)
-    const brand        = useElementSize(sidebarBrand)
+const classNames = computed(() => {
+  const result: string[] = ['']
 
-    const sidebarMenus  = templateRef<HTMLDivElement>('sidebarMenus')
-    const sidebarBottom = useSelector('.sidebar__bottom', sidebarMenus)
-    const { height }    = useElementSize(sidebarBottom)
+  if (props.type)
+    result.push(`sidebar--${props.type}`)
 
-    const brandHeight = computed(() => {
-      return slots.brand ? `${brand.height.value + titleHeight.value + 16}px` : 0
-    })
+  if (props.align)
+    result.push(`sidebar--${props.align}`)
 
-    const bottomHeight = computed(() => {
-      return (isBottomMenu.value && !isDefault.value) || (!isBottomMenu.value && isDefault.value) ? 0 : `${height.value + 16}px`
-    })
+  if (props.variant)
+    result.push(`sidebar--${props.variant}`)
 
-    const model = useVModel(props)
+  if (props.fixed)
+    result.push('sidebar--fixed')
 
-    const classNames = computed(() => {
-      const result: string[] = ['']
+  if (props.sticky)
+    result.push('sidebar--sticky')
 
-      if (props.type)
-        result.push(`sidebar--${props.type}`)
+  if (props.toggleable)
+    result.push(`sidebar--toggleable sidebar--toggleable-${props.toggleable}`)
 
-      if (props.align)
-        result.push(`sidebar--${props.align}`)
+  if (props.toggleable && props.fixed && model.value)
+    result.push('sidebar--show')
 
-      if (props.variant)
-        result.push(`sidebar--${props.variant}`)
+  return result
+})
 
-      if (props.fixed)
-        result.push('sidebar--fixed')
-
-      if (props.sticky)
-        result.push('sidebar--sticky')
-
-      if (props.toggleable)
-        result.push(`sidebar--toggleable sidebar--toggleable-${props.toggleable}`)
-
-      if (props.toggleable && props.fixed && model.value)
-        result.push('sidebar--show')
-
-      return result
-    })
-
-    const titleHeight  = ref(0)
-    const isBottomMenu = ref(false)
-    const isDefault    = ref(false)
-
-    onMounted(() => {
-      titleHeight.value = (document.querySelectorAll('.sidebar .nav--has-title').length * 0.25) * 20
-
-      isBottomMenu.value = document.querySelectorAll('.sidebar .sidebar__nav--bottom').length > 0
-
-      isDefault.value = document.querySelectorAll('.sidebar .sidebar__nav:not(.sidebar__nav--bottom)').length > 0
-    })
-
-    return {
-      classNames, bottomHeight, brandHeight, isBottomMenu, isDefault,
-    }
-  },
+provide(SIDEBAR_SETTINGS, {
+  variant: props.variant,
+  align  : props.align,
+  type   : props.type,
 })
 </script>
 
@@ -163,7 +128,7 @@ export default defineComponent({
   --p-sidebar-padding-x: theme(spacing.2);
   --p-sidebar-padding-y: theme(spacing.4);
 
-  @apply bg-[color:var(--p-sidebar-bg)] px-[var(--p-sidebar-padding-x)] py-[var(--p-sidebar-padding-y)];
+  @apply bg-[color:var(--p-sidebar-bg)] px-[var(--p-sidebar-padding-x)] py-[var(--p-sidebar-padding-y)] flex flex-col items-stretch;
   @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
 
   /**
@@ -187,10 +152,10 @@ export default defineComponent({
   * Fixed sidebar
   */
   &&--fixed {
-    @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg overflow-y-auto;
+    @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg;
 
     .sidebar__menus {
-      @apply relative min-h-[calc(100%-v-bind(brandHeight))];
+      @apply flex-grow h-full overflow-y-auto py-2;
     }
 
     &:not(.sidebar--right) {
@@ -198,12 +163,8 @@ export default defineComponent({
     }
 
     .sidebar__bottom {
-      @apply absolute -bottom-2 w-[calc(100%+1rem)] -left-2 bg-[color:var(--p-sidebar-bg)];
+      @apply w-full bg-[color:var(--p-sidebar-bg)] flex-shrink-0 pt-2;
       @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
-
-      .sidebar__nav {
-        @apply px-2;
-      }
     }
 
     /**

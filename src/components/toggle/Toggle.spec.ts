@@ -309,3 +309,16 @@ it('should trigger event "change", when clicked', () => {
 
   expect(toggle).toHaveClass('toggle', 'toggle--labeled')
 })
+
+it('should be able to add custom switch class via `switch-class` props', () => {
+  const screen = render({
+    components: { Toggle },
+    template  : `
+      <Toggle switch-class="custom-class" />
+    `,
+  })
+
+  const toggle = screen.queryByTestId('toggle-switch')
+
+  expect(toggle).toHaveClass('custom-class')
+})

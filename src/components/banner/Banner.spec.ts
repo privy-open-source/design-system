@@ -150,3 +150,20 @@ it('should be able to add custom icon via slot `icon`', () => {
   expect(icon).toBeInTheDocument()
   expect(icon).toHaveClass('banner__icon--custom')
 })
+
+it('should be able to remove icon via slot `no-icon`', () => {
+  const screen = render({
+    components: { Banner },
+    template  : `
+    <Banner noIcon>
+      Text
+    </Banner>
+    `,
+  })
+
+  const banner = screen.queryByTestId('banner')
+  const icon   = screen.queryByTestId('banner-icon')
+
+  expect(banner).toBeInTheDocument()
+  expect(icon).not.toBeInTheDocument()
+})

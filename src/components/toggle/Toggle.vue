@@ -4,7 +4,10 @@
     class="toggle"
     :class="classNames"
     @click.prevent="toggle">
-    <div class="toggle__switch">
+    <div
+      class="toggle__switch"
+      data-testid="toggle-switch"
+      :class="switchClass">
       <span
         v-if="noLabel === false"
         class="toggle__label toggle__checked-label">
@@ -102,6 +105,14 @@ export default defineComponent({
     disabled: {
       type   : Boolean,
       default: false,
+    },
+    switchClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
     },
   },
   models: {

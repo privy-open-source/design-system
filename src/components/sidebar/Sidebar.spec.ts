@@ -3,7 +3,6 @@ import Sidebar from './Sidebar.vue'
 import SidebarBrand from './SidebarBrand.vue'
 import SidebarNav from './SidebarNav.vue'
 import { ref, nextTick } from 'vue-demi'
-import { delay } from 'nanodelay'
 
 it('should rendered properly without any props', () => {
   const screen = render({
@@ -76,16 +75,10 @@ it('should be able to make sidebar fixed via prop `fixed`', async () => {
     `,
   })
 
-  const sidebar   = screen.queryByTestId('sidebar')
-  let sidebarMenu = screen.queryByTestId('sidebar-menus')
+  const sidebar = screen.queryByTestId('sidebar')
 
   expect(sidebar).toBeInTheDocument()
   expect(sidebar).toHaveClass('sidebar--fixed')
-
-  await delay(1)
-  sidebarMenu = screen.queryByTestId('sidebar-menus')
-  expect(sidebarMenu).toHaveStyle('padding-bottom: 0px')
-  expect(sidebarMenu).toHaveAttribute('data-bottom-menu', 'false')
 })
 
 it('should be able to make sidebar sticky via prop `sticky`', () => {
@@ -167,45 +160,6 @@ it('able to add sidebar brand via `brand` slots', () => {
   expect(sidebarBrand).toHaveTextContent('brand')
 })
 
-it('should have style that contain variables to calculate sidebar__menus', async () => {
-  const screen = render({
-    components: { Sidebar, SidebarNav },
-    template  : `
-      <Sidebar fixed>
-        <SidebarNav bottom />
-      </Sidebar>
-    `,
-  })
-
-  let sidebarMenu = screen.queryByTestId('sidebar-menus')
-
-  expect(sidebarMenu).toHaveAttribute('data-sidebar-menu', '0')
-
-  await nextTick()
-  sidebarMenu = screen.queryByTestId('sidebar-menus')
-  expect(sidebarMenu).toHaveStyle('padding-bottom: 0px')
-  expect(sidebarMenu).toHaveAttribute('data-bottom-menu', 'true')
-})
-
-it('should have style to set padding bottom of sidebar__menus when bottom menu available', async () => {
-  const screen = render({
-    components: { Sidebar, SidebarNav },
-    template  : `
-      <Sidebar fixed>
-        <SidebarNav />
-        <SidebarNav bottom />
-      </Sidebar>
-    `,
-  })
-
-  let sidebarMenu = screen.queryByTestId('sidebar-menus')
-
-  await delay(1)
-  expect(sidebarMenu).toHaveStyle('padding-bottom: 16px')
-  sidebarMenu = screen.queryByTestId('sidebar-menus')
-  expect(sidebarMenu).toHaveAttribute('data-bottom-menu', 'true')
-})
-
 it('able to add sidebar bottom via `bottom` slots', async () => {
   const screen = render({
     components: { Sidebar, SidebarNav },
@@ -222,13 +176,8 @@ it('able to add sidebar bottom via `bottom` slots', async () => {
 
   const sidebarNav    = screen.queryByTestId('sidebar-nav')
   const sidebarBottom = screen.queryByTestId('sidebar-bottom')
-  let sidebarMenu     = screen.queryByTestId('sidebar-menus')
 
   expect(sidebarNav).toBeInTheDocument()
   expect(sidebarBottom).toBeInTheDocument()
   expect(sidebarNav).toHaveTextContent('Text')
-
-  await nextTick()
-  sidebarMenu = screen.queryByTestId('sidebar-menus')
-  expect(sidebarMenu).toHaveAttribute('data-bottom-menu', 'false')
 })

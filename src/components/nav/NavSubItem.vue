@@ -139,14 +139,10 @@ export default defineComponent({
     }
 
     .nav {
-      @apply pt-0 ml-5 select-none;
+      @apply pt-3 select-none;
     }
 
     &&--icon {
-      .nav {
-        @apply ml-5;
-      }
-
       .nav__link__icon {
         @apply grow-0;
 
@@ -156,7 +152,7 @@ export default defineComponent({
       }
 
       .nav__link__label {
-        @apply shrink ml-3 w-full select-none;
+        @apply shrink pl-3 w-full select-none;
 
         .badge {
           @apply ml-auto;
@@ -187,6 +183,10 @@ export default defineComponent({
         @apply text-subtle hover:text-default;
         @apply dark:text-dark-subtle hover:dark:text-dark-default;
       }
+    }
+
+    .sidebar__nav .nav__link__label {
+      @apply pl-8;
     }
   }
 
