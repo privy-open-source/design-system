@@ -259,6 +259,7 @@ Similar to [Checkbox](/components/checkbox/index), if v-model **state** is an *a
 | `disabled`       | `Boolean` | `false` | Disabled state                                                           |
 | `readonly`       | `Boolean` | `false` | Readonly state                                                           |
 | `modelValue`     |   `Any`   |   `-`   | `v-model` value                                                          |
+| `switchClass`    | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the toggle switch      |
 
 ### Slots
 
