@@ -21,6 +21,7 @@
     <div class="tour__body">
       <p-subheading
         v-if="title"
+        class="tour__title"
         size="sm">
         <span
           v-p-md.inline="title"
@@ -170,6 +171,11 @@ export default defineComponent({
 
   &__body {
     @apply p-4 space-y-3;
+
+    .tour__title {
+      @apply text-on-emphasis;
+      @apply dark:text-dark-on-emphasis;
+    }
 
     > * {
       @apply text-on-emphasis;
