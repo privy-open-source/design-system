@@ -12,8 +12,10 @@
   * Heading
   */
   h1, h2, h3, h4, h5, h6 {
-    --p-heading-margin-bottom: calc(var(--p-spacer) * .5);
-    @apply mb-[var(--p-heading-margin-bottom)];
+    &:not(.dropdown__header, .accordion__item__title, .card__header__title, .tour__title) {
+      --p-heading-margin-bottom: calc(var(--p-spacer) * .5);
+      @apply mb-[var(--p-heading-margin-bottom)];
+    }
   }
 
   /**
