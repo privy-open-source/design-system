@@ -72,13 +72,17 @@ export default defineComponent({
       return result
     })
 
-    function close (): void {
-      show.value = false
-      emit('dismissed')
+    function close (event: MouseEvent): void {
+      emit('dismissed', event)
+
+      if (!event.defaultPrevented)
+        show.value = false
     }
 
     return {
-      classNames, show, close,
+      classNames,
+      show,
+      close,
     }
   },
 

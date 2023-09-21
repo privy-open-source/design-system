@@ -6,6 +6,7 @@ export interface AdapterContext {
   keyword: Ref<string>,
   isOpen: Ref<boolean>,
   isLoading: Ref<boolean>,
+  menuEl: Ref<HTMLDivElement>,
 }
 
 export interface Adapter {

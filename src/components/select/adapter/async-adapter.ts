@@ -2,32 +2,41 @@ import { tryOnMounted } from '@vueuse/shared'
 import { SelectItem } from '..'
 import { defineAdapter } from './adapter'
 import { onFinishTyping, onStartTyping } from '../utils/use-on-typing'
-import {
-  getCurrentInstance,
-  ref,
-  watch,
-} from 'vue-demi'
+import { ref, watch } from 'vue-demi'
 import { onScrollBottom } from '../utils/use-on-scroll'
+import defu from 'defu'
 
 export type LoadFn = (keyword: string, page: number, perPage: number) => Promise<SelectItem[]>
 
 export type WatchDeps = Parameters<typeof watch>[0]
 
-export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps) {
+export interface AsyncAdapterOptions {
+  /**
+   * Default perPage
+   * @default 20
+   */
+  perPage: number,
+  /**
+   * Typing debounce time
+   * @default 500
+   */
+  debounceTime: number,
+}
+
+export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps, opts?: Partial<AsyncAdapterOptions>) {
+  const config = defu(opts, { perPage: 20, debounceTime: 500 })
+
   return defineAdapter({
-    setup ({ isLoading, keyword }) {
+    setup ({ isLoading, keyword, menuEl }) {
       const options  = ref([])
       const page     = ref(1)
       const isFinish = ref(false)
       const isTyping = ref(false)
 
-      const vm      = getCurrentInstance()
-      const menuDiv = ref<HTMLDivElement>()
-
       function load () {
         isLoading.value = true
 
-        loadFn(keyword.value, page.value, 20)
+        loadFn(keyword.value, page.value, config.perPage)
           .then((result) => {
             if (Array.isArray(result) && result.length > 0) {
               options.value.push(...result)
@@ -57,11 +66,6 @@ export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps) {
       }
 
       tryOnMounted(() => {
-        if (vm?.proxy?.$el) {
-          menuDiv.value = (vm.proxy.$el as HTMLElement)
-            .querySelector('.dropdown__menu')
-        }
-
         load()
       })
 
@@ -75,13 +79,13 @@ export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps) {
         isTyping.value = false
 
         load()
-      })
+      }, config.debounceTime)
 
       watch(isTyping, (value) => {
         isLoading.value = value
       })
 
-      onScrollBottom(menuDiv, () => {
+      onScrollBottom(menuEl, () => {
         if (!isLoading.value && !isFinish.value)
           load()
       })

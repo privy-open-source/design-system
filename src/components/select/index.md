@@ -30,15 +30,23 @@ description: Base form input.
       text: 'John Doe',
       value: {
         img: "https://picsum.photos/id/50/50",
-        id: 1
+        id : 1,
+      }
+    },
+    {
+      text: 'Tarjono',
+      value: {
+        img: "https://picsum.photos/id/51/50",
+        id : 2,
       }
     }
   ])
 
-  const value    = ref('')
-  const selected = ref()
-  const province = ref('')
-  const city     = ref('')
+  const value      = ref('')
+  const selected   = ref()
+  const province   = ref('')
+  const city       = ref('')
+  const multiValue = ref([])
 
   const provincesAdapter = defineAsyncAdapter(async (keyword, page, perPage) => {
     const response = await getProvinces(keyword, page, perPage)
@@ -112,7 +120,7 @@ description: Base form input.
 ### with Disabled option
 
 <preview>
-  <p-select :options="optionsC" v-model="value" />
+  <p-select :options="optionsC" v-model="value" multiple clearable />
 </preview>
 
 ```vue
@@ -217,6 +225,7 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
 ```
 
 ## Readonly State
+
 <preview>
   <p-select readonly />
 </preview>
@@ -228,6 +237,7 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
 ```
 
 ## Error State
+
 <preview>
   <p-select error />
 </preview>
@@ -235,6 +245,18 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
 ```vue
 <template>
   <p-select error />
+</template>
+```
+
+## Multiple Selection
+
+<preview>
+  <p-select :options="optionsB" v-model="multiValue" multiple />
+</preview>
+
+```vue
+<template>
+  <p-select :options="optionsB" v-model="multiValue" multiple />
 </template>
 ```
 
@@ -264,7 +286,8 @@ If you want to get original selected item (text and value) not value only. you c
   <p-select
     :options="optionsB"
     v-model="value"
-    v-model:selected="selected" />
+    v-model:selected="selected"
+    clearable />
 </preview>
 
 **v-model**
@@ -452,47 +475,17 @@ If you want to make custom option with slot, you can use `option` with scoped sl
 <script setup>
   const users = ref([
     {
-      text: 'John Doe',
+      text : 'John Doe',
       value: {
         img: "https://picsum.photos/id/50/50",
-        id: 1
+        id : 1,
       }
     }
   ])
 </script>
 ```
 
-## Caret
-
-### Custom Caret Icon
-
-By using the `caret` slot-scope, you can define your own custom icon for the caret, giving you the flexibility to choose a different icon or style that suits your design or preference.
-
-<preview>
-  <p-select :options="optionsA">
-    <template #caret="{ isOpen, toggle }">
-      <pi-caret-down-16 @click="toggle" />
-    </template>
-  </p-select>
-</preview>
-
-```vue
-<template>
-  <p-select :options="optionsA">
-    <template #caret="{ isOpen, toggle }">
-      <pi-caret-down-16 @click="toggle" />
-    </template>
-  </p-select>
-</template>
-
-<script setup>
-  import PiCaretDown16 from '@privyid/persona-icon/vue/caret-down/16.vue'
-
-  const options = ref(['Apple', 'Banana', 'Grape'])
-</script>
-```
-
-### Hide Caret
+## Hide Caret
 
 When you set the `no-caret` prop to true, it will hide the caret icon, and users won't see it in the component.
 
@@ -509,7 +502,6 @@ When you set the `no-caret` prop to true, it will hide the caret icon, and users
   const options = ref(['Apple', 'Banana', 'Grape'])
 </script>
 ```
-
 
 ## API
 

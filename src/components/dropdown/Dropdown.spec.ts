@@ -4,6 +4,7 @@ import { vi } from 'vitest'
 import { nextTick, ref } from 'vue-demi'
 import Dropdown from './Dropdown.vue'
 import DropdownItem from './DropdownItem.vue'
+import { until } from '@vueuse/core'
 
 const nextFocus = vi.fn()
 const prevFocus = vi.fn()
@@ -95,9 +96,9 @@ it('should be able to change placement via props `placement`', async () => {
     `,
   })
 
-  const menu = screen.queryByTestId('dropdown-menu')
-
   await delay(0)
+
+  const menu = screen.queryByTestId('dropdown-menu')
 
   expect(menu).toHaveAttribute('data-popper-placement', 'top-end')
 })
@@ -487,51 +488,6 @@ it('should be able to toggle dropdown via v-model', async () => {
   expect(model.value).toBe(false)
 })
 
-it('should trigger event `show` when Dropdown shown', async () => {
-  const spy    = vi.fn()
-  const screen = render({
-    components: { Dropdown, DropdownItem },
-    template  : `
-      <Dropdown @show="onShow">
-        <DropdownItem text="Item1" />
-        <DropdownItem text="Item2" />
-      </Dropdown>
-    `,
-    setup () {
-      return { onShow: spy }
-    },
-  })
-
-  const button = screen.queryByTestId('dropdown-activator')
-
-  await fireEvent.click(button)
-
-  expect(spy).toBeCalled()
-})
-
-it('should trigger event `show` when Dropdown shown', async () => {
-  const spy    = vi.fn()
-  const screen = render({
-    components: { Dropdown, DropdownItem },
-    template  : `
-      <Dropdown @hide="onHide">
-        <DropdownItem text="Item1" />
-        <DropdownItem text="Item2" />
-      </Dropdown>
-    `,
-    setup () {
-      return { onHide: spy }
-    },
-  })
-
-  const button = screen.queryByTestId('dropdown-activator')
-
-  await fireEvent.click(button)
-  await fireEvent.click(button)
-
-  expect(spy).toBeCalled()
-})
-
 it('should hide caret icon if props `no-caret` is provided', () => {
   const screen = render({
     components: { Dropdown, DropdownItem },
@@ -602,4 +558,80 @@ it('should be able to add button class in the dropdown via `button-class` props'
 
   expect(dropdownMenu).toBeInTheDocument()
   expect(dropdownMenu).toHaveClass('w-full')
+})
+
+it('should be able to header content inside dropdown menu using `prepend` slot', () => {
+  const screen = render({
+    components: { Dropdown },
+    template  : `
+      <Dropdown>
+        <template #prepend>
+          <button data-testid="test-prepend">
+            Coba
+          </button>
+        </template>
+      </Dropdown>
+    `,
+  })
+
+  const dropdownMenu = screen.queryByTestId('dropdown-menu')
+  const prepend      = screen.queryByTestId('test-prepend')
+
+  expect(dropdownMenu).toHaveClass('dropdown__menu--has-prepend')
+  expect(prepend).toBeInTheDocument()
+})
+
+it('should be able to header content inside dropdown menu using `append` slot', () => {
+  const screen = render({
+    components: { Dropdown },
+    template  : `
+      <Dropdown>
+        <template #append>
+          <button data-testid="test-append">
+            Coba
+          </button>
+        </template>
+      </Dropdown>
+    `,
+  })
+
+  const dropdownMenu = screen.queryByTestId('dropdown-menu')
+  const append       = screen.queryByTestId('test-append')
+
+  expect(dropdownMenu).toHaveClass('dropdown__menu--has-append')
+  expect(append).toBeInTheDocument()
+})
+
+it('should emit event `show` and `hide` when dropdown open/close (after animation complete)', async () => {
+  const isShow = ref(false)
+  const screen = render({
+    components: { Dropdown },
+    template  : `
+      <Dropdown
+        no-animation
+        @show="isShow = true"
+        @hide="isShow = false">
+        Coba
+      </Dropdown>
+    `,
+    setup () {
+      return { isShow }
+    },
+  }, { global: { stubs: { transition: false } } })
+
+  const dropdown     = screen.queryByTestId('dropdown')
+  const button       = screen.queryByTestId('dropdown-activator')
+  const dropdownMenu = screen.queryByTestId('dropdown-menu')
+
+  dropdownMenu.style.transitionDuration = '1ms'
+
+  await fireEvent.click(button)
+  await until(isShow).toBe(true)
+
+  expect(dropdown).toHaveClass('dropdown--open')
+
+  await fireEvent.click(button)
+  await until(isShow).toBe(false)
+
+  expect(dropdown).not.toHaveClass('dropdown--open')
 })

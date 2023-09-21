@@ -1,6 +1,6 @@
 <template>
   <div
-    ref="dropdown"
+    ref="root"
     class="dropdown"
     :class="[{ 'dropdown--open': isOpen, 'dropdown--no-caret' : noCaret }, classNames]"
     data-testid="dropdown">
@@ -31,26 +31,43 @@
       </Button>
     </slot>
 
-    <Transition name="fade">
+    <Transition
+      name="fade"
+      :css="!noAnimation"
+      @after-enter="$emit('show')"
+      @after-leave="$emit('hide')">
       <div
         v-show="isOpen && !isHidden"
         ref="menu"
         data-testid="dropdown-menu"
         class="dropdown__menu"
         :class="[menuClass, containerSize]">
-        <DropdownGroup
-          ref="wizard"
-          class="dropdown__menu__container">
-          <slot />
-        </DropdownGroup>
+        <div
+          v-if="$slots.prepend"
+          class="drowdown__menu__prepend">
+          <slot name="prepend" />
+        </div>
+        <div
+          ref="menuBody"
+          class="dropdown__menu__body">
+          <DropdownGroup
+            ref="wizard"
+            class="dropdown__menu__container">
+            <slot />
+          </DropdownGroup>
+        </div>
+        <div
+          v-if="$slots.append"
+          class="drowdown__menu__append">
+          <slot name="append" />
+        </div>
       </div>
     </Transition>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
-  defineComponent,
   PropType,
   provide,
   watch,
@@ -58,9 +75,9 @@ import {
   watchEffect,
   computed,
   ref,
+  VNode,
 } from 'vue-demi'
 import {
-  templateRef,
   onClickOutside,
   onKeyStroke,
 } from '@vueuse/core'
@@ -77,7 +94,7 @@ import {
   hide,
 } from '@floating-ui/dom'
 import { useVModel } from '../input'
-import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
+import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'
 import type {
   StyleVariant,
   ColorVariant,
@@ -90,239 +107,245 @@ import { DROPDOWN_CONTEXT } from '.'
 
 type DropdownSubitemElement = InstanceType<typeof DropdownGroup> & HTMLDivElement
 
-export default defineComponent({
-  components: {
-    Button,
-    DropdownGroup,
-    IconArrow,
-  },
-  props: {
-    modelValue: {
-      type   : Boolean,
-      default: false,
-    },
-    text: {
-      type   : String,
-      default: '',
-    },
-    placement: {
-      type   : String as PropType<Placement>,
-      default: 'bottom-start',
-    },
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'solid',
-    },
-    color: {
-      type   : String as PropType<ColorVariant>,
-      default: 'default',
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    icon: {
-      type   : Boolean,
-      default: false,
-    },
-    pill: {
-      type   : Boolean,
-      default: false,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    noCaret: {
-      type   : Boolean,
-      default: false,
-    },
-    divider: {
-      type   : Boolean,
-      default: false,
-    },
-    menuClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    buttonClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    menuSize: {
-      type   : String as PropType<MenuSizeVariant>,
-      default: 'sm',
-    },
-  },
+defineOptions({
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: [
-    'show',
-    'hide',
-    'update:modelValue',
-  ],
-  setup (props, { emit }) {
-    const target    = templateRef<HTMLDivElement>('dropdown')
-    const menu      = templateRef<HTMLDivElement>('menu')
-    const wizard    = templateRef<DropdownSubitemElement>('wizard')
-    const placement = toRef(props, 'placement')
-    const isOpen    = useVModel(props)
-    const isHidden  = ref(false)
+})
 
-    const { next: nextFocus, prev: prevFocus } = useFocus(menu)
-
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.divider)
-        result.push('dropdown--divider')
-
-      return result
-    })
-
-    const containerSize = computed(() => {
-      const result: string[] = ['']
-
-      if (props.menuSize)
-        result.push(`dropdown__menu--${props.menuSize}`)
-
-      return result
-    })
-
-    function toggle () {
-      if (!props.disabled) {
-        if (isOpen.value)
-          close()
-        else
-          open()
-      }
-    }
-
-    function open () {
-      if (!props.disabled) {
-        isOpen.value = true
-
-        emit('show')
-      }
-    }
-
-    function close () {
-      if (!props.disabled) {
-        isOpen.value = false
-
-        emit('hide')
-      }
-    }
-
-    onClickOutside(menu, () => {
-      if (isOpen.value) {
-        // Add little delay too prevent race condition with v-model changing
-        setTimeout(() => {
-          close()
-        })
-      }
-    }, { ignore: [target] })
-
-    onKeyStroke('Escape', (event) => {
-      const target = event.target as HTMLElement
-
-      if (isOpen.value) {
-        close()
-
-        /* In HappyDOM, blur() is undefined, which shouldn't happen in Real Browser */
-        /* c8 ignore next 2 */
-        if (typeof target.blur === 'function')
-          target.blur()
-      }
-    })
-
-    onKeyStroke(['ArrowUp'], (event) => {
-      if (isOpen.value) {
-        event.preventDefault()
-
-        prevFocus()
-      }
-    })
-
-    onKeyStroke(['ArrowDown'], (event) => {
-      if (isOpen.value) {
-        event.preventDefault()
-
-        nextFocus()
-      }
-    })
-
-    onKeyStroke(['Tab'], (event) => {
-      if (isOpen.value) {
-        event.preventDefault()
-
-        if (event.shiftKey)
-          prevFocus()
-        else
-          nextFocus()
-      }
-    })
-
-    watchEffect((onCleanup) => {
-      if (target.value && menu.value) {
-        const cleanup = autoUpdate(target.value, menu.value, () => {
-          computePosition(target.value, menu.value, {
-            strategy  : 'absolute',
-            placement : placement.value,
-            middleware: [
-              flip(),
-              shift(),
-              offset(8),
-              hide(),
-            ],
-          }).then(({ x, y, placement, middlewareData }) => {
-            if (menu.value) {
-              menu.value.dataset.popperPlacement = placement
-
-              menu.value.style.left = `${x || 0}px`
-              menu.value.style.top  = `${y || 0}px`
-
-              isHidden.value = middlewareData.hide.referenceHidden
-            }
-          })
-        })
-
-        onCleanup(cleanup)
-      }
-    }, { flush: 'post' })
-
-    watch(isOpen, (value) => {
-      if (!value && wizard.value)
-        wizard.value.reset()
-    }, { immediate: true })
-
-    provide(DROPDOWN_CONTEXT, {
-      isOpen,
-      toggle,
-      open,
-      close,
-    })
-
-    return {
-      isOpen,
-      isHidden,
-      classNames,
-      containerSize,
-      toggle,
-      open,
-      close,
-    }
+const props = defineProps({
+  modelValue: {
+    type   : Boolean,
+    default: false,
   },
+  text: {
+    type   : String,
+    default: '',
+  },
+  placement: {
+    type   : String as PropType<Placement>,
+    default: 'bottom-start',
+  },
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'solid',
+  },
+  color: {
+    type   : String as PropType<ColorVariant>,
+    default: 'default',
+  },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  icon: {
+    type   : Boolean,
+    default: false,
+  },
+  pill: {
+    type   : Boolean,
+    default: false,
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  noCaret: {
+    type   : Boolean,
+    default: false,
+  },
+  divider: {
+    type   : Boolean,
+    default: false,
+  },
+  menuClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  buttonClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  menuSize: {
+    type   : String as PropType<MenuSizeVariant>,
+    default: 'sm',
+  },
+  /**
+   * For testing only
+   */
+  noAnimation: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+defineEmits([
+  'show',
+  'hide',
+  'update:modelValue',
+])
+
+const slots = defineSlots<{
+  prepend(): VNode[],
+  append(): VNode[],
+}>()
+
+const root     = ref<HTMLDivElement>()
+const menu     = ref<HTMLDivElement>()
+const menuBody = ref<HTMLDivElement>()
+const wizard   = ref<DropdownSubitemElement>()
+
+const placement = toRef(props, 'placement')
+const isOpen    = useVModel(props)
+const isHidden  = ref(false)
+
+const { next: nextFocus, prev: prevFocus } = useFocus(menuBody)
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.divider)
+    result.push('dropdown--divider')
+
+  return result
+})
+
+const containerSize = computed(() => {
+  const result: string[] = ['']
+
+  if (props.menuSize)
+    result.push(`dropdown__menu--${props.menuSize}`)
+
+  if (slots.prepend)
+    result.push('dropdown__menu--has-prepend')
+
+  if (slots.append)
+    result.push('dropdown__menu--has-append')
+
+  return result
+})
+
+function toggle () {
+  if (!props.disabled) {
+    if (isOpen.value)
+      close()
+    else
+      open()
+  }
+}
+
+function open () {
+  if (!props.disabled)
+    isOpen.value = true
+}
+
+function close () {
+  if (!props.disabled)
+    isOpen.value = false
+}
+
+onClickOutside(menu, () => {
+  if (isOpen.value) {
+    // Add little delay too prevent race condition with v-model changing
+    setTimeout(() => {
+      close()
+    })
+  }
+}, { ignore: [root] })
+
+onKeyStroke('Escape', (event) => {
+  const target = event.target as HTMLElement
+
+  if (isOpen.value) {
+    close()
+
+    /* In HappyDOM, blur() is undefined, which shouldn't happen in Real Browser */
+    /* c8 ignore next 2 */
+    if (typeof target.blur === 'function')
+      target.blur()
+  }
+})
+
+onKeyStroke(['ArrowUp'], (event) => {
+  if (isOpen.value) {
+    event.preventDefault()
+
+    prevFocus()
+  }
+})
+
+onKeyStroke(['ArrowDown'], (event) => {
+  if (isOpen.value) {
+    event.preventDefault()
+
+    nextFocus()
+  }
+})
+
+onKeyStroke(['Tab'], (event) => {
+  if (isOpen.value) {
+    event.preventDefault()
+
+    if (event.shiftKey)
+      prevFocus()
+    else
+      nextFocus()
+  }
+})
+
+watchEffect((onCleanup) => {
+  if (root.value && menu.value) {
+    const cleanup = autoUpdate(root.value, menu.value, () => {
+      computePosition(root.value, menu.value, {
+        strategy  : 'absolute',
+        placement : placement.value,
+        middleware: [
+          flip(),
+          shift(),
+          offset(8),
+          hide(),
+        ],
+      }).then(({ x, y, placement, middlewareData }) => {
+        if (menu.value) {
+          menu.value.dataset.popperPlacement = placement
+
+          menu.value.style.left = `${x || 0}px`
+          menu.value.style.top  = `${y || 0}px`
+
+          isHidden.value = middlewareData.hide.referenceHidden
+        }
+      })
+    })
+
+    onCleanup(cleanup)
+  }
+}, { flush: 'post' })
+
+watch(isOpen, (value) => {
+  if (!value && wizard.value)
+    wizard.value.reset()
+}, { immediate: true })
+
+provide(DROPDOWN_CONTEXT, {
+  isOpen,
+  toggle,
+  open,
+  close,
+})
+
+defineExpose({
+  menuBody,
+  menu,
+  root,
 })
 </script>
 
@@ -338,16 +361,29 @@ export default defineComponent({
   @apply inline-flex;
 
   &__menu {
-    @apply max-h-[var(--p-dropdown-max-height)] border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl overflow-x-hidden overflow-y-auto absolute;
+    @apply border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl absolute flex flex-col;
     @apply dark:bg-dark-default dark:border-dark-default;
 
-    &__container {
+    &__prepend,
+    &__append {
+      @apply shrink-0;
+    }
+
+    &__body {
+      @apply max-h-[var(--p-dropdown-max-height)] overflow-x-hidden overflow-y-auto flex-grow;
+    }
+
+    &:not(&--has-prepend) &__container {
       > .dropdown__item {
         &:first-child,
         .dropdown__subitem:first-child & {
           @apply rounded-t-sm;
         }
+      }
+    }
 
+    &:not(&--has-append) &__container {
+      > .dropdown__item {
         &:last-child,
         .dropdown__subitem:last-child & {
           @apply rounded-b-sm;
