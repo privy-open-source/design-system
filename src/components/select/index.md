@@ -528,6 +528,9 @@ When you set the `no-caret` prop to true, it will hide the caret icon, and users
 | `modelValue`  |   `Any`   |      `-`      | `v-model` value                    |
 | `selected`    | `Object`  |      `-`      | `v-model:selected` value           |
 | `no-caret`    | `Boolean` |    `false`    | Hide caret icon                    |
+| `divider`     | `Boolean` |      `-`      | Enable divider in select-item      |
+| `menu-class`  | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the select menu container  |
+| `menu-size`   | `String`  |      `sm`     | Select menu size, valid value is `sm`, `md`, `lg` and `xl`  |
 
 ### Slots
 
