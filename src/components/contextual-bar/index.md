@@ -204,7 +204,7 @@ import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
   <p-contextual-bar
     title="Hey! This is Title Text"
     message="You will be unable to sign or seal a document"
-    background-url="/assets/images/img-contextualbar-bg.svg">
+    background-url="../../public/assets/images/img-contextualbar-bg.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
@@ -225,21 +225,29 @@ import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 </template>
 ```
 
-## Variants
-Contextual Bar have 2 variants: `light` and `dark`. Default is `light`
+## State
+Contextual Bar have 4 state variants: `error`, `warning`, `info` and `neutral`. Default is `info`
 
 <preview class="flex-col space-y-4 preview--bar">
-  <p-contextual-bar variant="light" v-model="sample06" title="Hey! This is Title Text and telling less" />
-  <p-contextual-bar variant="dark" v-model="sample07" title="Hey! This is Title Text and telling less" />
+  <p-contextual-bar state="error" v-model="sample06" title="Hey! This is Title Text and telling less" />
+  <p-contextual-bar state="warning" v-model="sample07" title="Hey! This is Title Text and telling less" />
+  <p-contextual-bar state="info" title="Hey! This is Title Text and telling less" />
+  <p-contextual-bar state="neutral" title="Hey! This is Title Text and telling less" />
 </preview>
 
 ```vue
 <template>
   <p-contextual-bar
-    variant="light"
+    state="error"
     v-model="sample" title="Hey! This is Title Text and telling less" />
   <p-contextual-bar
-    variant="dark"
+    state="warning"
+    v-model="sample" title="Hey! This is Title Text and telling less" />
+  <p-contextual-bar
+    state="info"
+    v-model="sample" title="Hey! This is Title Text and telling less" />
+  <p-contextual-bar
+    state="neutral"
     v-model="sample" title="Hey! This is Title Text and telling less" />
 </template>
 ```
@@ -273,7 +281,7 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
     v-model="sample1"
     color="light"
     title="Hey! This is Title Text and telling less as possible"
-    background-url="/assets/images/img-contextualbar-bg.svg">
+    background-url="../../public/assets/images/img-contextualbar-bg.svg">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
@@ -293,7 +301,7 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 
 | Props            |   Type    | Default | Description                                                          |
 |------------------|:---------:|:-------:|----------------------------------------------------------------------|
-| `variant`        | `String`  | `light` | Contextualbar variants, valid value is `light` and `dark`            |
+| `state`          | `String`  | `info` | Contextualbar state variants, valid value is `error`, `warning`, `info` and `neutral`            |
 | `align`          | `String`  | `left`  | Contextualbar alignment, valid value is `left`, `center` and `right` |
 | `dismissable`    | `Boolean` | `true`  | Show / Hide dismiss button                                           |
 | `title`          | `String`  |    -    | Content or title inside of Contextualbar                             |
