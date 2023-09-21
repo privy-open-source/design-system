@@ -12,7 +12,7 @@
         class="accordion__item__activator"
         data-testid="accordion-item-activator"
         @click="toggle">
-        <Subheading>
+        <Subheading class="accordion__item__title">
           {{ title }}
         </Subheading>
         <slot

@@ -5,6 +5,9 @@
     data-testid="select"
     aria-label="select"
     :disabled="disabled"
+    :divider="divider"
+    :menu-size="menuSize"
+    :menu-class="menuClass"
     :class="classNames">
     <template #activator>
       <p-input
@@ -113,6 +116,7 @@ import {
   onStartTyping,
 } from '@vueuse/core'
 import { SizeVariant } from '../button'
+import { MenuSizeVariant } from '../dropdown/'
 
 export default defineComponent({
   components: {
@@ -192,6 +196,22 @@ export default defineComponent({
     noCaret: {
       type   : Boolean,
       default: false,
+    },
+    divider: {
+      type   : Boolean,
+      default: false,
+    },
+    menuSize: {
+      type   : String as PropType<MenuSizeVariant>,
+      default: 'sm',
+    },
+    menuClass: {
+      type: [
+        String,
+        Array,
+        Object,
+      ],
+      default: undefined,
     },
   },
   models: {

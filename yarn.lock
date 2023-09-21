@@ -3685,7 +3685,7 @@ __metadata:
     marked: ^5.0.0
     nanodelay: 2.0.2
     pdfjs-dist: ^3.10.111
-    postcss: 8.4.29
+    postcss: 8.4.30
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
     postcss-nested: 6.0.1
@@ -14684,8 +14684,8 @@ __metadata:
   linkType: hard
 
 "postcss-custom-properties@npm:^13.0.0, postcss-custom-properties@npm:^13.2.0":
-  version: 13.3.0
-  resolution: "postcss-custom-properties@npm:13.3.0"
+  version: 13.3.1
+  resolution: "postcss-custom-properties@npm:13.3.1"
   dependencies:
     "@csstools/cascade-layer-name-parser": ^1.0.4
     "@csstools/css-parser-algorithms": ^2.3.1
@@ -14693,7 +14693,7 @@ __metadata:
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 7757a6a5a8cd4da7114e0680f503b0ab2e22d2d84cda2dd7938aad6f2233cd2daec11bb1b5a63b54d954683702a31a694499b3ae906451075ff8eb16316b946f
+  checksum: 8f54b5afef55368dd162e3c6455f504b309fedaf2e1e3ce6c7ede9ad7a9baa3162e9763a2342814c0e2af2a1a52adb490ec70e1d3419adeaaffc665bd3ca887b
   languageName: node
   linkType: hard
 
@@ -15184,14 +15184,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.29, postcss@npm:^8.4.27, postcss@npm:^8.4.29":
-  version: 8.4.29
-  resolution: "postcss@npm:8.4.29"
+"postcss@npm:8.4.30":
+  version: 8.4.30
+  resolution: "postcss@npm:8.4.30"
   dependencies:
     nanoid: ^3.3.6
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: dd6daa25e781db9ae5b651d9b7bfde0ec6e60e86a37da69a18eb4773d5ddd51e28fc4ff054fbdc04636a31462e6bf09a1e50986f69ac52b10d46b7457cd36d12
+  checksum: 6c810c10c9bd3e03ca016e0b6b6756261e640aba1a9a7b1200b55502bc34b9165e38f590aef3493afc2f30ab55cdfcd43fd0f8408d69a77318ddbcf2a8ad164b
   languageName: node
   linkType: hard
 
@@ -15258,6 +15258,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: 814e2126dacfea313588eda09cc99a9b4c26ec55c059188aa7a916d20d26d483483106dc5ff9e560731b59f45c5bb91b945dfadc670aed875cc90ddbbf4e787d
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.27, postcss@npm:^8.4.29":
+  version: 8.4.29
+  resolution: "postcss@npm:8.4.29"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: dd6daa25e781db9ae5b651d9b7bfde0ec6e60e86a37da69a18eb4773d5ddd51e28fc4ff054fbdc04636a31462e6bf09a1e50986f69ac52b10d46b7457cd36d12
   languageName: node
   linkType: hard
 
