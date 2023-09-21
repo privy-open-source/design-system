@@ -9,7 +9,7 @@ import {
   h,
   ref,
   watch,
-  KeepAlive,
+  resolveComponent,
 } from 'vue-demi'
 import { findAllChildren, toBoolean } from '../utils/vnode'
 
@@ -56,7 +56,7 @@ const render = () => {
 
   const body = () => {
     return props.keepAlive
-      ? h(KeepAlive, () => tab)
+      ? h(resolveComponent('keep-alive'), () => tab)
       : tab
   }
 
