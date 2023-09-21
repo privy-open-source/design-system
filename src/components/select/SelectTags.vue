@@ -4,6 +4,7 @@
       v-for="(item, i) in shownItems"
       :key="i">
       <p-label
+        data-testid="select-tag"
         variant="light"
         size="xs">
         {{ item.text }}
@@ -11,6 +12,7 @@
     </template>
     <template v-if="items.length > displayLimit">
       <p-label
+        data-testid="select-tag-others"
         variant="light"
         size="xs">
         {{ otherText }}
@@ -35,7 +37,7 @@ const props = defineProps({
   },
   limitText: {
     type   : String,
-    default: '{n} Other(s)',
+    default: '+{n} Other(s)',
   },
 })
 
@@ -50,6 +52,6 @@ const otherText = computed(() => {
 
 <style lang="postcss">
 .select__tags {
-  @apply flex space-x-1;
+  @apply flex space-x-1 items-center min-h-6;
 }
 </style>

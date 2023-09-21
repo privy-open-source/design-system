@@ -361,7 +361,7 @@ defineExpose({
   @apply inline-flex;
 
   &__menu {
-    @apply border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl absolute flex flex-col;
+    @apply border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl absolute flex flex-col overflow-hidden;
     @apply dark:bg-dark-default dark:border-dark-default;
 
     &__prepend,

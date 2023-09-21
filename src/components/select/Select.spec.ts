@@ -78,9 +78,33 @@ it('should focus on search input when opened', async () => {
 
   expect(select).toHaveClass('select--open')
 
-  await delay(5)
+  await nextTick()
 
   expect(screen.queryByTestId('select-search')).toHaveFocus()
+})
+
+it('should reset search keyword when closed', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select no-animation />
+    `,
+  }, { global: { stubs: { transition: false } } })
+
+  const select = screen.queryByTestId('select')
+  const caret  = screen.queryByTestId('select-caret-icon')
+
+  await fireEvent.click(caret)
+
+  expect(select).toHaveClass('select--open')
+
+  await fireEvent.update(screen.queryByTestId('select-search'), 'Hello World')
+
+  expect(screen.queryByTestId('select-search')).toHaveValue('Hello World')
+
+  await fireEvent.click(caret)
+
+  expect(screen.queryByTestId('select-search')).toHaveValue('')
 })
 
 it('should be able to set input placeholder with prop `placeholder`', () => {
@@ -512,4 +536,31 @@ it('should able to select multiple value if prop `multiple` was provided', async
 
   expect(model.value).toHaveLength(0)
   expect(model.value).toStrictEqual([])
+})
+
+it('should sync with v-model value (multiple)', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model="model"
+        :options="['apple', 'grape', 'orange']"
+        clearable
+        multiple
+      />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  model.value = ['apple', 'orange']
+
+  await nextTick()
+
+  const tags = screen.queryAllByTestId('select-tag')
+
+  expect(tags[0]).toHaveTextContent('apple')
+  expect(tags[1]).toHaveTextContent('orange')
 })

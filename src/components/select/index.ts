@@ -4,6 +4,7 @@ export interface SelectItem {
   text: string,
   value: unknown,
   disabled?: boolean,
+  [key: string]: unknown,
 }
 
 export interface SelectProps {

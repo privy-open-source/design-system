@@ -8,7 +8,7 @@ module.exports = function useBase (theme, onEnter, onLeave = onEnter) {
   return {
     '&-enter-active, &-leave-active': {
       transitionDuration      : theme('transitionDuration.150'),
-      transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+      transitionTimingFunction: theme('transitionTimingFunction.out'),
       transitionProperty      : willChange.join(', '),
       willChange              : willChange.join(', '),
     },

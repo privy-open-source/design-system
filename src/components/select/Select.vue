@@ -6,9 +6,13 @@
     data-testid="select"
     aria-label="select"
     :disabled="disabled"
+    :divider="divider"
+    :menu-size="menuSize"
+    :menu-class="menuClass"
     :class="classNames"
     :no-animation="noAnimation"
-    @show="onOpened">
+    @show="onOpened"
+    @hide="onClosed">
     <template #activator>
       <SelectInput
         data-testid="select-activator"
@@ -113,7 +117,7 @@
         data-testid="select-item"
         :class="{ selected: isSelected(item) }"
         :disabled="Boolean(item.disabled)"
-        @click="setValue(item)">
+        @click.prevent="setValue(item)">
         <div class="select__option">
           <div class="select__option-text">
             <slot
@@ -135,9 +139,7 @@
       <div
         data-testid="select-loading"
         class="select__loading">
-        <IconLoading
-          width="14"
-          height="14" />
+        <IconLoading />
         <slot name="loading">
           <span>{{ loadingText }}</span>
         </slot>
@@ -162,7 +164,8 @@ import {
   computed,
   PropType,
   ref,
-  watch,
+  HTMLAttributes,
+  nextTick,
 } from 'vue-demi'
 import {
   findSelected,
@@ -173,8 +176,9 @@ import { Adapter, AdapterContext } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
-import { onStartTyping } from '@vueuse/core'
+import { onStartTyping, watchPausable } from '@vueuse/core'
 import { SizeVariant } from '../button'
+import { MenuSizeVariant } from '../dropdown/'
 
 defineOptions({
   models: {
@@ -254,20 +258,40 @@ const props = defineProps({
   },
   displayLimit: {
     type   : Number,
-    default: 3,
+    default: undefined,
   },
   limitText: {
     type   : String,
-    default: '{n} Others',
+    default: undefined,
   },
   searchable: {
     type   : Boolean,
     default: true,
   },
+  menuSize: {
+    type   : String as PropType<MenuSizeVariant>,
+    default: undefined,
+  },
+  menuClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ] as PropType<HTMLAttributes['class']>,
+    default: undefined,
+  },
+  divider: {
+    type   : Boolean,
+    default: false,
+  },
   /**
-   * For testing only
+   * For testing only, disable transition animation
    */
   noAnimation: {
+    type   : Boolean,
+    default: false,
+  },
+  noCloseAfterSelect: {
     type   : Boolean,
     default: false,
   },
@@ -333,7 +357,7 @@ const hasValue = computed(() => {
     : (localModel.value as SelectItem)?.value
 })
 
-watch(() => props.modelValue, (value) => {
+const modelWatcher = watchPausable(() => props.modelValue, (value) => {
   localModel.value = props.multiple
     ? filterSelected(items.value, value as unknown[])
     : findSelected(items.value, value)
@@ -354,6 +378,8 @@ function setValue (item?: SelectItem) {
   } else
     value = item
 
+  modelWatcher.pause()
+
   localModel.value = value
 
   emit('change', value)
@@ -366,6 +392,13 @@ function setValue (item?: SelectItem) {
 
   if (isOpen.value)
     emit('userInput', value)
+
+  if (!props.noCloseAfterSelect)
+    isOpen.value = false
+
+  nextTick(() => {
+    modelWatcher.resume()
+  })
 }
 
 function onFocus () {
@@ -391,14 +424,15 @@ function onOpened () {
   inputEl.value?.focus()
 }
 
-watch(isOpen, (value) => {
-  if (!value)
-    keyword.value = ''
-}, { flush: 'post' })
+function onClosed () {
+  keyword.value = ''
+}
 
 onStartTyping(() => {
-  if (isOpen.value && inputEl.value && inputEl.value !== document.activeElement)
-    inputEl.value?.focus?.()
+  if (isOpen.value && inputEl.value && inputEl.value !== document.activeElement) {
+    inputEl.value.select()
+    inputEl.value.focus()
+  }
 })
 </script>
 

@@ -107,7 +107,7 @@ export default defineComponent({
   * Add dismiss button
   */
   &__dismiss {
-    @apply border-l ml-3 pl-1.5 hover:cursor-pointer border-subtle-alpha text-default/30 hover:text-default/50;
+    @apply border-l ml-2 pl-1.5 hover:cursor-pointer border-subtle-alpha text-default/30 hover:text-default/50;
     @apply dark:border-dark-subtle-alpha dark:text-dark-default/30 hover:dark:text-dark-default/50;
   }
 
@@ -117,19 +117,19 @@ export default defineComponent({
   * sm and xs
   */
   &--lg {
-    @apply text-base px-4 py-2 rounded;
+    @apply text-base px-3 py-1 rounded;
   }
 
   &--md {
-    @apply text-sm px-3 py-1 rounded-sm;
+    @apply text-sm px-2 py-[2px] rounded-sm;
   }
 
   &--sm {
-    @apply text-xs px-2 py-[0.125rem] rounded-xs;
+    @apply text-xs px-[6px] py-[2px] rounded-xs;
   }
 
   &--xs {
-    @apply px-2 py-0 text-tn rounded-tn;
+    @apply px-1 py-0 text-tn rounded-tn;
   }
 
   /**
