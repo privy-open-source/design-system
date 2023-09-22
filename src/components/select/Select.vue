@@ -103,12 +103,13 @@
         <template
           v-if="clearable"
           #action>
-          <a
+          <p-text
             data-testid="select-clear"
+            variant="caption2"
             href="javascript:void"
             @click.prevent="onClear">
             {{ clearLabel }}
-          </a>
+          </p-text>
         </template>
       </DropdownHeader>
       <DropdownItem
@@ -153,6 +154,7 @@ import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
 import DropdownHeader from '../dropdown/DropdownHeader.vue'
 import pInput from '../input/Input.vue'
+import pText from '../text/Text.vue'
 import SelectInput from './SelectInput.vue'
 import SelectTags from './SelectTags.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'

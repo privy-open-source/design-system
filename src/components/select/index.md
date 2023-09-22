@@ -255,7 +255,7 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
 ## Multiple Selection
 
 <preview>
-  <p-select :options="optionsD" v-model="multiValue" multiple no-close-after-select />
+  <p-select :options="optionsD" v-model="multiValue" multiple />
 </preview>
 
 ```vue
@@ -637,6 +637,7 @@ When you set the `no-caret` prop to true, it will hide the caret icon, and users
 | `error`              |            `Boolean`            |     `false`     | Error state                                                |
 | `emptyText`          |            `String`             |    `No Data`    | Label when options is empty                                |
 | `loadingText`        |            `String`             |  `Loading...`   | Label when loading                                         |
+| `sectionLabel`       |            `String`             |       `-`       | Add section label                                          |
 | `adapter`            |            `Adapter`            |  `BaseAdapter`  | Adapter for loading option's items                         |
 | `no-caret`           |            `Boolean`            |     `false`     | Hide caret icon                                            |
 | `divider`            |            `Boolean`            |       `-`       | Enable divider in select-item                              |
@@ -644,11 +645,11 @@ When you set the `no-caret` prop to true, it will hide the caret icon, and users
 | `menuSize`           |            `String`             |      `sm`       | Select menu size, valid value is `sm`, `md`, `lg` and `xl` |
 | `multiple`           |            `Boolean`            |     `false`     | Enable multiple select                                     |
 | `displayLimit`       |            `Number`             |       `2`       | Maximum of visible tags before truncated into single tag   |
-| `limitText`          |            `Number`             | `+{n} Other(s)` | Text on truncated tag **(Multiple Mode only)**             |
+| `limitText`          |            `String`             | `+{n} Other(s)` | Text on truncated tag **(Multiple Mode only)**             |
 | `searchable`         |            `Boolean`            |     `true`      | Enable searchbar                                           |
 | `noCloseAfterSelect` |            `Boolean`            |     `false`     | Disabled close popup after select an item                  |
 | `modelValue`         |              `Any`              |       `-`       | `v-model` value                                            |
-| `selected`           |            `Object`             |       `-`       | `v-model:selected` value                                   |
+| `selected`           |       `Object` \| `Array`       |       `-`       | `v-model:selected` value                                   |
 
 ### Slots
 
