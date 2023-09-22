@@ -20,11 +20,11 @@ description: Add object to PDF Viewer with Drag'n'Drop
   function onLanded (item) {
     objects.push({
       _id   : Symbol('ObjectId'),
-      page  : item.page,
-      x     : item.x,
-      y     : item.y,
-      width : item.width,
-      height: item.height,
+      page  : item?.page,
+      x     : item?.x,
+      y     : item?.y,
+      width : item?.width,
+      height: item?.height,
     })
   }
 
@@ -164,3 +164,4 @@ description: Add object to PDF Viewer with Drag'n'Drop
 | Name     | Arguments        | Description                       |
 |----------|------------------|-----------------------------------|
 | `landed` | PdfHelipadResult | Event object successfully dropped |
+| `click`  | InteractEvent    | Event object clicked              |

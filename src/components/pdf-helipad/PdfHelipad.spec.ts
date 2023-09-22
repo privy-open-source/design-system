@@ -4,6 +4,7 @@ import useDrag, {
   triggerDragStart,
   triggerDragMove,
   triggerDragEnd,
+  triggerTap,
 } from '../pdf-object/__mocks__/use-drag'
 import PdfHelipad from './PdfHelipad.vue'
 import PdfObject from '../pdf-object/PdfObject.vue'
@@ -158,4 +159,26 @@ it('should emit landed if object successfully dropped', async () => {
     width : 198,
     height: 106,
   })
+})
+
+it('should emit event click when clicked', async () => {
+  const onClick = vi.fn()
+
+  render({
+    components: {
+      PdfHelipad,
+      PdfObject,
+      PdfObjects,
+    },
+    template: `
+      <pdf-helipad @click="onClick" />
+    `,
+    setup () {
+      return { onClick }
+    },
+  })
+
+  await triggerTap()
+
+  expect(onClick).toBeCalled()
 })
