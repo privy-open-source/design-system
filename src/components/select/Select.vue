@@ -299,12 +299,12 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits([
-  'change',
-  'update:modelValue',
-  'update:selected',
-  'userInput',
-])
+const emit = defineEmits<{
+  'change': [unknown],
+  'update:modelValue': [unknown],
+  'update:selected': [unknown],
+  'userInput': [unknown],
+}>()
 
 const input    = ref<InstanceType<typeof pInput>>()
 const dropdown = ref<InstanceType<typeof Dropdown>>()

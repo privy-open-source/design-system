@@ -188,11 +188,11 @@ const props = defineProps({
   },
 })
 
-defineEmits([
-  'show',
-  'hide',
-  'update:modelValue',
-])
+defineEmits<{
+  'show': [],
+  'hide': [],
+  'update:modelValue': [boolean],
+}>()
 
 const slots = defineSlots<{
   prepend(): VNode[],

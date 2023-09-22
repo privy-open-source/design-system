@@ -17,13 +17,15 @@
     <template
       v-for="(item, i) in items"
       :key="i">
-      <Radio
-        v-model="model"
-        appearance="option"
-        :value="item.value"
-        @click="close">
-        {{ item.text }}
-      </Radio>
+      <DropdownItem>
+        <Radio
+          v-model="model"
+          appearance="option"
+          :value="item.value"
+          @click="close">
+          {{ item.text }}
+        </Radio>
+      </DropdownItem>
     </template>
   </Dropdown>
 </template>
@@ -36,6 +38,7 @@ import {
   ref,
 } from 'vue-demi'
 import Dropdown from '../../dropdown/Dropdown.vue'
+import DropdownItem from '../../dropdown/DropdownItem.vue'
 import DropdownHeader from '../../dropdown/DropdownHeader.vue'
 import Radio from '../../radio/Radio.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
@@ -47,6 +50,7 @@ import { SelectItem } from '../../select'
 export default defineComponent({
   components: {
     Dropdown,
+    DropdownItem,
     DropdownHeader,
     Radio,
   },

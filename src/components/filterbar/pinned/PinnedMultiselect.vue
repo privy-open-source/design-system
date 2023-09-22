@@ -28,12 +28,14 @@
     <template
       v-for="(item, i) in items"
       :key="i">
-      <Checkbox
-        v-model="model"
-        appearance="option"
-        :value="item.value">
-        {{ item.text }}
-      </Checkbox>
+      <DropdownItem>
+        <Checkbox
+          v-model="model"
+          appearance="option"
+          :value="item.value">
+          {{ item.text }}
+        </Checkbox>
+      </DropdownItem>
     </template>
   </Dropdown>
 </template>
@@ -48,6 +50,7 @@ import {
 import Badge from '../../badge/Badge.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
 import DropdownHeader from '../../dropdown/DropdownHeader.vue'
+import DropdownItem from '../../dropdown/DropdownItem.vue'
 import Checkbox from '../../checkbox/Checkbox.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
 import { useVModel } from '../../input'
@@ -59,6 +62,7 @@ export default defineComponent({
   components: {
     Badge,
     Dropdown,
+    DropdownItem,
     DropdownHeader,
     Checkbox,
   },

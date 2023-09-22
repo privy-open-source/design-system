@@ -180,11 +180,9 @@ const props = defineProps({
 })
 
 const model = useVModel(props)
-
-// eslint-disable-next-line func-call-spacing
-const emit = defineEmits<{
-  (event: 'update:modelValue', items: T[]): void,
-  (event: 'update:items', items: T[]): void,
+const emit  = defineEmits<{
+  'update:modelValue': [T[]],
+  'update:items': [T[]],
 }>()
 
 const rows = computed<T[]>({

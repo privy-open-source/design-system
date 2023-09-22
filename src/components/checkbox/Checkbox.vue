@@ -90,10 +90,9 @@ const props = defineProps({
   },
 })
 
-// eslint-disable-next-line func-call-spacing
 defineEmits<{
-  (event: 'change', value: boolean): void,
-  (event: 'update:modelValue', value: unknown): void,
+  'change': [boolean],
+  'update:modelValue': [unknown],
 }>()
 
 const model = useVModel(props)
