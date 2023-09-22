@@ -25,22 +25,22 @@ it('should rendered properly without any props', () => {
   const bar = screen.queryByTestId('contextual-bar')
 
   expect(bar).toBeInTheDocument()
-  expect(bar).toHaveClass('contextual-bar', 'contextual-bar--light')
+  expect(bar).toHaveClass('contextual-bar', 'contextual-bar--info')
 })
 
 it('should have `dark` style if variant set to `dark`', () => {
   const screen = render({
     components: { pContextualBar },
     template  : `
-      <p-contextual-bar variant="dark" />
+      <p-contextual-bar state="error" />
     `,
   })
 
   const bar = screen.queryByTestId('contextual-bar')
 
   expect(bar).toBeInTheDocument()
-  expect(bar).toHaveClass('contextual-bar', 'contextual-bar--dark')
-  expect(bar).not.toHaveClass('contextual-bar--light')
+  expect(bar).toHaveClass('contextual-bar', 'contextual-bar--error')
+  expect(bar).not.toHaveClass('contextual-bar--info')
 })
 
 it('should have `center` alignment if align set to `center`', () => {

@@ -1,1 +1,1 @@
-export type StyleVariant = 'light' | 'dark'
+export type StyleVariant = 'error' | 'warning' | 'info' | 'neutral'
