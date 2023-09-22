@@ -10,8 +10,8 @@ module.exports = {
     project: './tsconfig.eslint.json',
     parser : {
       'ts'        : '@typescript-eslint/parser',
+      '<template>': '@typescript-eslint/parser',
       'js'        : 'espree',
-      '<template>': 'espree',
     },
   },
   rules: {
