@@ -87,9 +87,9 @@ export default defineComponent({
   },
   inheritAttrs: false,
   props       : {
-    variant: {
+    state: {
       type   : String as PropType<StyleVariant>,
-      default: 'light',
+      default: 'info',
     },
     backgroundUrl: {
       type   : String,
@@ -141,8 +141,8 @@ export default defineComponent({
     const classNames = computed(() => {
       const result: string[] = ['']
 
-      if (props.variant)
-        result.push(`contextual-bar--${props.variant}`)
+      if (props.state)
+        result.push(`contextual-bar--${props.state}`)
 
       if (props.align)
         result.push(`contextual-bar--align-${props.align}`)
@@ -198,10 +198,6 @@ export default defineComponent({
     @apply transition-transform;
   }
 
-  &--background-image {
-    @apply bg-no-repeat bg-cover bg-[top_center];
-  }
-
   &__wrapper {
     @apply px-24 items-center flex mr-9;
 
@@ -220,6 +216,18 @@ export default defineComponent({
     }
   }
 
+  /**
+  * Custom background image
+  * are available
+  */
+  &--background-image {
+    @apply bg-no-repeat bg-cover bg-[top_center];
+  }
+
+  /**
+  * Contextualbar alignment:
+  * left, center and right
+  */
   &&--align-left {
     .contextual-bar__wrapper {
       @apply justify-start text-left;
@@ -274,6 +282,10 @@ export default defineComponent({
     }
   }
 
+  /**
+  * Contextualbar body
+  * content
+  */
   &__content {
     @apply flex-grow;
 
@@ -301,22 +313,21 @@ export default defineComponent({
     }
   }
 
+  /**
+  * Dismiss button of
+  * contextualbar
+  */
   &__close {
     @apply absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-default/30 hover:text-default/50;
     @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
   }
 
-  &&--dark {
-    @apply bg-inverse text-on-emphasis;
-    @apply dark:bg-dark-inverse dark:text-dark-on-emphasis;
-
-    .contextual-bar__close {
-      @apply text-on-emphasis/30 hover:text-on-emphasis/50;
-      @apply dark:text-dark-on-emphasis/30 hover:dark:text-dark-on-emphasis/50;
-    }
-  }
-
-  &&--light {
+  /**
+  * Contextualbar has 4 state
+  * variant: error, warning, info
+  * and neutral
+  */
+  &&--info {
     @apply bg-base text-default;
     @apply dark:bg-dark-base dark:text-dark-default;
 
@@ -325,6 +336,43 @@ export default defineComponent({
         @apply text-info;
         @apply dark:text-dark-info;
       }
+    }
+  }
+
+  &&--error,
+  &&--warning,
+  &&--neutral {
+    @apply text-state-emphasis;
+    @apply dark:text-dark-state-emphasis;
+  }
+
+  &&--error {
+    @apply bg-danger-emphasis;
+    @apply dark:bg-dark-danger-emphasis;
+
+    .contextual-bar__close {
+      @apply text-danger hover:text-danger/50;
+      @apply dark:text-dark-danger dark:hover:text-dark-danger/50;
+    }
+  }
+
+  &&--warning {
+    @apply bg-warning-emphasis;
+    @apply dark:bg-dark-warning-emphasis;
+
+    .contextual-bar__close {
+      @apply text-warning hover:text-warning/50;
+      @apply dark:text-dark-warning;
+    }
+  }
+
+  &&--neutral {
+    @apply bg-inverse text-on-emphasis;
+    @apply dark:bg-dark-inverse dark:text-dark-on-emphasis;
+
+    .contextual-bar__close {
+      @apply text-on-emphasis/30 hover:text-on-emphasis/50;
+      @apply dark:text-dark-on-emphasis/30 hover:dark:text-dark-on-emphasis/50;
     }
   }
 }
