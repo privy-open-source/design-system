@@ -1,112 +1,109 @@
 <template>
-  <div
+  <TableStaticRoot
     data-testid="table-static"
-    class="table-static"
-    :class="classNames">
-    <table
-      class="table-static__table"
-      :class="tableClass">
-      <thead
-        v-if="!noLabel"
-        class="table-static__headers">
-        <tr :class="trClass">
-          <th
-            v-if="draggable"
-            class="table-static__header table-static__drag" />
-          <th
-            v-if="selectable"
-            class="table-static__header table-static__checkbox">
-            <Checkbox
-              v-model="selectAll"
-              data-testid="table-static-select-all"
-              :indeterminate="indeterminate" />
-          </th>
-          <th
-            v-for="field in fields"
-            :key="field.key"
-            class="table-static__header"
-            data-testid="table-static-header"
-            :style="field.width ? { width: withUnit(field.width) } : {}"
-            :class="field.thClass"
-            :data-header="field.key">
-            <slot
-              :name="`head(${field.key})`"
-              :label="field.label"
-              :field="field">
-              {{ field.label }}
-            </slot>
-          </th>
-        </tr>
-      </thead>
-      <Draggable
-        v-if="items.length > 0"
-        v-model="rows"
-        class="table-static__body"
-        handle=".table-static__drag"
-        item-key="_key"
-        tag="tbody"
-        :disabled="!draggable">
-        <template #item="{ element, index }">
-          <tr
-            class="table-static__row"
-            :class="trClass"
-            data-role="row">
-            <slot
-              name="row"
-              :item="element"
-              :index="index">
-              <td
-                v-if="draggable"
-                class="table-static__cell table-static__drag"
-                data-testid="table-static-drag-handle">
-                <IconDrag />
-              </td>
-              <td
-                v-if="selectable"
-                class="table-static__cell table-static__checkbox">
-                <Checkbox
-                  v-model="model"
-                  data-testid="table-static-select"
-                  :value="withoutKey(element)"
-                  :disabled="element._selectable === false" />
-              </td>
-              <td
-                v-for="field in fields"
-                :key="field.key"
-                class="table-static__cell"
-                data-testid="table-static-cell"
-                :class="field.tdClass"
-                :data-cell="field.key">
-                <slot
-                  :name="`cell(${field.key})`"
-                  :index="index"
-                  :item="element">
-                  {{ field.formatter(element[field.key], element) }}
-                </slot>
-              </td>
-            </slot>
-          </tr>
-        </template>
-      </Draggable>
-      <tbody
-        v-else
-        class="table-static__body">
+    :scrollable="scrollable"
+    :class="classNames"
+    :table-class="tableClass">
+    <thead
+      v-if="!noLabel"
+      class="table-static__headers">
+      <tr :class="trClass">
+        <th
+          v-if="draggable"
+          class="table-static__header table-static__drag" />
+        <th
+          v-if="selectable"
+          class="table-static__header table-static__checkbox">
+          <Checkbox
+            v-model="selectAll"
+            data-testid="table-static-select-all"
+            :indeterminate="indeterminate" />
+        </th>
+        <th
+          v-for="field in fields"
+          :key="field.key"
+          class="table-static__header"
+          data-testid="table-static-header"
+          :style="field.width ? { width: withUnit(field.width) } : {}"
+          :class="field.thClass"
+          :data-header="field.key">
+          <slot
+            :name="`head(${field.key})`"
+            :label="field.label"
+            :field="field">
+            {{ field.label }}
+          </slot>
+        </th>
+      </tr>
+    </thead>
+    <Draggable
+      v-if="items.length > 0"
+      v-model="rows"
+      class="table-static__body"
+      handle=".table-static__drag"
+      item-key="_key"
+      tag="tbody"
+      :disabled="!draggable">
+      <template #item="{ element, index }">
         <tr
-          class="table-static__row">
-          <td
-            :colspan="fields.length"
-            data-testid="table-static-empty"
-            class="table-static__cell table-static__cell--empty datatable__state-empty">
-            <slot name="empty">
-              <span class="flex items-center justify-center text-subtle dark:text-dark-subtle">
-                {{ emptyLabel }}
-              </span>
-            </slot>
-          </td>
+          class="table-static__row"
+          :class="trClass"
+          data-role="row">
+          <slot
+            name="row"
+            :item="element"
+            :index="index">
+            <td
+              v-if="draggable"
+              class="table-static__cell table-static__drag"
+              data-testid="table-static-drag-handle">
+              <IconDrag />
+            </td>
+            <td
+              v-if="selectable"
+              class="table-static__cell table-static__checkbox">
+              <Checkbox
+                v-model="model"
+                data-testid="table-static-select"
+                :value="withoutKey(element)"
+                :disabled="element._selectable === false" />
+            </td>
+            <td
+              v-for="field in fields"
+              :key="field.key"
+              class="table-static__cell"
+              data-testid="table-static-cell"
+              :class="field.tdClass"
+              :data-cell="field.key">
+              <slot
+                :name="`cell(${field.key})`"
+                :index="index"
+                :item="element">
+                {{ field.formatter(element[field.key], element) }}
+              </slot>
+            </td>
+          </slot>
         </tr>
-      </tbody>
-    </table>
-  </div>
+      </template>
+    </Draggable>
+    <tbody
+      v-else
+      class="table-static__body">
+      <tr
+        class="table-static__row">
+        <td
+          :colspan="fields.length"
+          data-testid="table-static-empty"
+          class="table-static__cell table-static__cell--empty datatable__state-empty">
+          <slot name="empty">
+            <span class="flex items-center justify-center text-subtle dark:text-dark-subtle">
+              {{ emptyLabel }}
+            </span>
+          </slot>
+        </td>
+      </tr>
+    </tbody>
+  </TableStaticRoot>
 </template>
 
 <script lang="ts" setup generic="T extends Record<string, unknown>">
@@ -124,6 +121,7 @@ import {
   withUnit,
 } from '../table'
 import Checkbox from '../checkbox/Checkbox.vue'
+import TableStaticRoot from './TableStaticRoot.vue'
 import { useVModel } from '../input'
 import IconDrag from '@privyid/persona-icon/vue/draggable/20.vue'
 import Draggable from 'vuedraggable'
@@ -177,6 +175,10 @@ const props = defineProps({
     ] as PropType<HTMLAttributes['class']>,
     default: undefined,
   },
+  scrollable: {
+    type   : Boolean,
+    default: true,
+  },
 })
 
 const model = useVModel(props)
@@ -210,6 +212,9 @@ const classNames = computed(() => {
 
   if (props.noLabel)
     result.push('table-static--no-label')
+
+  if (props.scrollable)
+    result.push('table-static--scrollable')
 
   return result
 })
@@ -253,7 +258,7 @@ defineSlots<{
   --p-table-border: theme(borderColor.default.DEFAULT);
   --p-table-border-dark: theme(borderColor.dark.default.DEFAULT);
 
-  @apply w-full overflow-auto overscroll-contain;
+  @apply w-full;
 
   &__table {
     @apply min-w-full table;
@@ -326,6 +331,10 @@ defineSlots<{
         @apply rounded-r border-r;
       }
     }
+  }
+
+  &--scrollable {
+    @apply overflow-auto overscroll-contain;
   }
 }
 </style>
