@@ -30,7 +30,7 @@ description: Base dropdown button, suit for action menus
 ### Simple Usage
 <preview>
   <p-dropdown text="Click Here" button-class="w-full">
-    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item active>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
   </p-dropdown>

@@ -515,8 +515,8 @@ onStartTyping(() => {
     }
 
     .dropdown__item:disabled:not(.selected) .select__option-checked {
-      @apply bg-subtle border-subtle;
-      @apply dark:bg-dark-subtle dark:border-dark-subtle;
+      @apply bg-default/50 border-subtle;
+      @apply dark:bg-dark-default/50 dark:border-dark-subtle;
 
       > svg {
         @apply fill-subtle;
