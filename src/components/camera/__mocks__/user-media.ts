@@ -2,7 +2,9 @@ import { vi } from 'vitest'
 import {
   nextTick,
   ref,
+  watch,
 } from 'vue-demi'
+import type { UseUserMediaOptions } from '@vueuse/core'
 
 export function useDevicesList () {
   return {
@@ -31,13 +33,18 @@ export async function cameraOn () {
   await nextTick()
 }
 
-export function useUserMedia () {
+export function useUserMedia (opts: UseUserMediaOptions) {
   const start = vi.fn(async () => {
     enabled.value = true
   })
 
   const stop = vi.fn(() => {
     enabled.value = false
+  })
+
+  watch(opts.constraints, async () => {
+    await stop()
+    await start()
   })
 
   return {

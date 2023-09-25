@@ -462,6 +462,7 @@ Table use local CSS variables for enhanced real-time customization.
 | `no-label`    | `Boolean` |            `false`             | Hide headerlabel                                        |
 | `table-class` | `String`  |              `-`               | Add class to table element                              |
 | `tr-class`    | `String`  |              `-`               | Add class to table row element                          |
+| `scrollable`  | `Boolean` |             `true`             | Enable scroll when table overflow                       |
 
 In props `fields` contain
 

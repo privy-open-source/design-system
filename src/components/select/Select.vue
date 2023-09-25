@@ -1,5 +1,6 @@
 <template>
   <Dropdown
+    ref="dropdown"
     v-model="isOpen"
     class="select"
     data-testid="select"
@@ -8,19 +9,47 @@
     :divider="divider"
     :menu-size="menuSize"
     :menu-class="menuClass"
-    :class="classNames">
+    :class="classNames"
+    :no-animation="noAnimation"
+    @show="onOpened"
+    @hide="onClosed">
     <template #activator>
-      <p-input
-        v-model="search"
-        data-testid="select-search"
-        class="select__search"
+      <SelectInput
+        data-testid="select-activator"
+        class="select__activator"
         :size="size"
         :placeholder="placeholder"
         :disabled="disabled"
         :readonly="readonly"
-        :clearable="clearable"
-        @clear.prevent="onClear"
+        :error="error"
         @focus="onFocus">
+        <template #default>
+          <template v-if="hasValue">
+            <slot
+              name="selected"
+              :item="localModel"
+              :multiple="multiple">
+              <template v-if="props.multiple && Array.isArray(localModel)">
+                <SelectTags
+                  :items="localModel"
+                  :display-limit="displayLimit"
+                  :limit-text="limitText" />
+              </template>
+              <template v-else-if="!Array.isArray(localModel)">
+                {{ localModel?.text }}
+              </template>
+            </slot>
+          </template>
+          <template v-else>
+            <div data-testid="select-placeholder">
+              <slot name="placeholder">
+                <span class="input__form__placeholder">
+                  {{ placeholder }}
+                </span>
+              </slot>
+            </div>
+          </template>
+        </template>
         <template
           v-if="!noCaret"
           #append>
@@ -33,6 +62,22 @@
               data-testid="select-caret-icon"
               @click="toggleOpen" />
           </slot>
+        </template>
+      </SelectInput>
+    </template>
+
+    <template #prepend>
+      <p-input
+        v-if="searchable"
+        ref="input"
+        v-model="keyword"
+        data-testid="select-search"
+        class="select__search no--error"
+        :size="size"
+        :placeholder="searchText"
+        :clearable="true">
+        <template #append>
+          <IconSearch class="select__search-icon" />
         </template>
       </p-input>
     </template>
@@ -49,9 +94,23 @@
 
     <template v-else>
       <DropdownHeader
-        v-if="sectionLabel"
+        v-if="sectionLabel || clearable"
         data-testid="select-label">
-        {{ sectionLabel }}
+        <template #default>
+          {{ sectionLabel }}
+        </template>
+
+        <template
+          v-if="clearable"
+          #action>
+          <p-text
+            data-testid="select-clear"
+            variant="caption2"
+            href="javascript:void"
+            @click.prevent="onClear">
+            {{ clearLabel }}
+          </p-text>
+        </template>
       </DropdownHeader>
       <DropdownItem
         v-for="(item, i) in items"
@@ -59,7 +118,7 @@
         data-testid="select-item"
         :class="{ selected: isSelected(item) }"
         :disabled="Boolean(item.disabled)"
-        @click="select(item)">
+        @click.prevent="setValue(item)">
         <div class="select__option">
           <div class="select__option-text">
             <slot
@@ -69,8 +128,10 @@
               {{ item.text }}
             </slot>
           </div>
-          <IconCheck
-            class="select__option-checked" />
+          <div class="select__option-checked">
+            <IconCheckbox v-if="multiple" />
+            <IconCheck v-else />
+          </div>
         </div>
       </DropdownItem>
     </template>
@@ -79,9 +140,7 @@
       <div
         data-testid="select-loading"
         class="select__loading">
-        <IconLoading
-          width="14"
-          height="14" />
+        <IconLoading />
         <slot name="loading">
           <span>{{ loadingText }}</span>
         </slot>
@@ -90,264 +149,309 @@
   </Dropdown>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
 import DropdownHeader from '../dropdown/DropdownHeader.vue'
 import pInput from '../input/Input.vue'
+import pText from '../text/Text.vue'
+import SelectInput from './SelectInput.vue'
+import SelectTags from './SelectTags.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'
 import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
+import IconSearch from '@privyid/persona-icon/vue/search/20.vue'
+import IconCheckbox from '../checkbox/icon/IconCheckbox.vue'
 import IconLoading from '../spinner/SpinnerRing.vue'
 import {
   computed,
-  defineComponent,
-  getCurrentInstance,
   PropType,
   ref,
-  watch,
+  HTMLAttributes,
+  nextTick,
 } from 'vue-demi'
-import { findSelected, SelectItem } from '.'
-import { Adapter } from './adapter/adapter'
+import {
+  findSelected,
+  filterSelected,
+  SelectItem,
+} from '.'
+import { Adapter, AdapterContext } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
-import { tryOnMounted } from '@vueuse/shared'
-import {
-  onStartTyping,
-} from '@vueuse/core'
+import { onStartTyping, watchPausable } from '@vueuse/core'
 import { SizeVariant } from '../button'
 import { MenuSizeVariant } from '../dropdown/'
 
-export default defineComponent({
-  components: {
-    Dropdown,
-    DropdownItem,
-    DropdownHeader,
-    pInput,
-    IconArrow,
-    IconCheck,
-    IconLoading,
-  },
-  props: {
-    modelValue: {
-      type: [
-        String,
-        Number,
-        Boolean,
-        Array,
-        Object,
-        Date,
-      ],
-      default: undefined,
-    },
-    selected: {
-      type   : Object as PropType<SelectItem>,
-      default: () => {
-        return {
-          text : '',
-          value: undefined,
-        }
-      },
-    },
-    options: {
-      type   : Array as PropType<string[] | SelectItem[]>,
-      default: () => ([]),
-    },
-    placeholder: {
-      type   : String,
-      default: '',
-    },
-    emptyText: {
-      type   : String,
-      default: 'No Data',
-    },
-    loadingText: {
-      type   : String,
-      default: 'Loading...',
-    },
-    adapter: {
-      type   : Object as PropType<Adapter>,
-      default: () => BasicAdapter,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    readonly: {
-      type   : Boolean,
-      default: false,
-    },
-    error: {
-      type   : Boolean,
-      default: false,
-    },
-    clearable: {
-      type   : Boolean,
-      default: false,
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    sectionLabel: {
-      type   : String,
-      default: undefined,
-    },
-    noCaret: {
-      type   : Boolean,
-      default: false,
-    },
-    divider: {
-      type   : Boolean,
-      default: false,
-    },
-    menuSize: {
-      type   : String as PropType<MenuSizeVariant>,
-      default: 'sm',
-    },
-    menuClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-  },
+defineOptions({
   models: {
     prop : 'modelValue',
     event: 'update:modelValue',
   },
-  emits: [
-    'change',
-    'update:modelValue',
-    'update:selected',
-    'userInput',
-  ],
-  setup (props, { emit }) {
-    const vm        = getCurrentInstance()
-    const input     = ref<HTMLInputElement>()
-    const keyword   = ref('')
-    const isOpen    = ref(false)
-    const isLoading = useLoading({ elapsed: false })
-    const context   = {
-      props,
-      keyword,
-      isOpen,
-      isLoading,
-    }
+})
 
-    const items      = props.adapter.setup(context)
-    const localModel = ref<SelectItem>(findSelected(items.value, props.modelValue))
-
-    const toggleOpen = () => {
-      if (!props.disabled && !props.readonly)
-        isOpen.value = !isOpen.value
-    }
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (isOpen.value)
-        result.push('select--open')
-
-      if (props.disabled)
-        result.push('select--disabled')
-
-      if (props.readonly)
-        result.push('select--readonly')
-
-      if (props.error)
-        result.push('select--error', 'state--error')
-
-      return result
-    })
-
-    const search = computed({
-      get () {
-        return isOpen.value
-          ? keyword.value
-          : localModel.value?.text
-      },
-      set (value: string) {
-        if (value !== search.value)
-          keyword.value = value
-      },
-    })
-
-    watch(() => props.modelValue, (value) => {
-      localModel.value = findSelected(items.value, value)
-    })
-
-    function select (item?: SelectItem) {
-      localModel.value = item
-
-      emit('change', item)
-      emit('update:selected', item)
-      emit('update:modelValue', item?.value)
-
-      if (isOpen.value)
-        emit('userInput', item)
-    }
-
-    function onFocus () {
-      if (!props.disabled && !props.readonly)
-        isOpen.value = true
-    }
-
-    function onClear () {
-      if (isOpen.value)
-        keyword.value = ''
-      else
-        select()
-    }
-
-    function isSelected (item: SelectItem) {
-      return isEqual(item.value, localModel.value?.value)
-    }
-
-    watch(isOpen, (value) => {
-      if (!value)
-        keyword.value = ''
-    }, { flush: 'post' })
-
-    onStartTyping(() => {
-      if (isOpen.value && input.value && input.value !== document.activeElement)
-        input.value.focus()
-    })
-
-    tryOnMounted(() => {
-      if (vm?.proxy?.$el) {
-        input.value = (vm.proxy.$el as HTMLElement)
-          .querySelector('.select__search')
-      }
-    })
-
-    return {
-      classNames,
-      isOpen,
-      isLoading,
-      search,
-      items,
-      toggleOpen,
-      select,
-      onFocus,
-      onClear,
-      isSelected,
-    }
+const props = defineProps({
+  modelValue: {
+    type   : undefined,
+    default: undefined,
   },
+  selected: {
+    type   : [Object, Array] as PropType<SelectItem | SelectItem[]>,
+    default: undefined,
+  },
+  options: {
+    type   : Array as PropType<string[] | SelectItem[]>,
+    default: () => ([]),
+  },
+  placeholder: {
+    type   : String,
+    default: '\u00A0',
+  },
+  emptyText: {
+    type   : String,
+    default: 'No Data',
+  },
+  loadingText: {
+    type   : String,
+    default: 'Loading...',
+  },
+  searchText: {
+    type   : String,
+    default: 'Search...',
+  },
+  adapter: {
+    type   : Object as PropType<Adapter>,
+    default: () => BasicAdapter,
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
+  },
+  clearable: {
+    type   : Boolean,
+    default: false,
+  },
+  clearLabel: {
+    type   : String,
+    default: 'Clear',
+  },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  sectionLabel: {
+    type   : String,
+    default: undefined,
+  },
+  noCaret: {
+    type   : Boolean,
+    default: false,
+  },
+  multiple: {
+    type   : Boolean,
+    default: false,
+  },
+  displayLimit: {
+    type   : Number,
+    default: undefined,
+  },
+  limitText: {
+    type   : String,
+    default: undefined,
+  },
+  searchable: {
+    type   : Boolean,
+    default: true,
+  },
+  menuSize: {
+    type   : String as PropType<MenuSizeVariant>,
+    default: undefined,
+  },
+  menuClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ] as PropType<HTMLAttributes['class']>,
+    default: undefined,
+  },
+  divider: {
+    type   : Boolean,
+    default: false,
+  },
+  /**
+   * For testing only, disable transition animation
+   */
+  noAnimation: {
+    type   : Boolean,
+    default: false,
+  },
+  noCloseAfterSelect: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const emit = defineEmits<{
+  'change': [unknown],
+  'update:modelValue': [unknown],
+  'update:selected': [unknown],
+  'userInput': [unknown],
+}>()
+
+const input    = ref<InstanceType<typeof pInput>>()
+const dropdown = ref<InstanceType<typeof Dropdown>>()
+
+const inputEl = computed(() => input.value?.input)
+const menuEl  = computed(() => dropdown.value?.menuBody)
+
+const keyword   = ref('')
+const isOpen    = ref(false)
+const isLoading = useLoading({ elapsed: false })
+const context   = {
+  props,
+  keyword,
+  isOpen,
+  isLoading,
+  menuEl,
+} as AdapterContext
+
+const items      = props.adapter.setup(context)
+const localModel = ref<SelectItem | SelectItem[]>(
+  props.multiple
+    ? filterSelected(items.value, props.modelValue as unknown[])
+    : findSelected(items.value, props.modelValue),
+)
+
+const toggleOpen = () => {
+  if (!props.disabled && !props.readonly)
+    isOpen.value = !isOpen.value
+}
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (isOpen.value)
+    result.push('select--open')
+
+  if (props.disabled)
+    result.push('select--disabled')
+
+  if (props.readonly)
+    result.push('select--readonly')
+
+  if (props.multiple)
+    result.push('select--multiple')
+
+  return result
+})
+
+const hasValue = computed(() => {
+  return props.multiple
+    ? Array.isArray(localModel.value) && localModel.value.length > 0
+    : (localModel.value as SelectItem)?.value
+})
+
+const modelWatcher = watchPausable(() => props.modelValue, (value) => {
+  localModel.value = props.multiple
+    ? filterSelected(items.value, value as unknown[])
+    : findSelected(items.value, value)
+})
+
+function setValue (item?: SelectItem) {
+  let value: SelectItem | SelectItem[]
+
+  if (props.multiple) {
+    if (item) {
+      if (Array.isArray(localModel.value)) {
+        value = localModel.value.some((val) => isEqual(val.value, item.value))
+          ? localModel.value.filter((val) => !isEqual(val.value, item.value))
+          : [...localModel.value, item]
+      }
+    } else
+      value = []
+  } else
+    value = item
+
+  modelWatcher.pause()
+
+  localModel.value = value
+
+  emit('change', value)
+  emit('update:selected', value)
+  emit('update:modelValue',
+    props.multiple
+      ? (value as SelectItem[]).map((i) => i.value)
+      : (value as SelectItem)?.value,
+  )
+
+  if (isOpen.value)
+    emit('userInput', value)
+
+  if (!props.noCloseAfterSelect)
+    isOpen.value = false
+
+  nextTick(() => {
+    modelWatcher.resume()
+  })
+}
+
+function onFocus () {
+  if (!props.disabled && !props.readonly)
+    isOpen.value = true
+}
+
+function onClear () {
+  setValue()
+}
+
+function isSelected (item: SelectItem) {
+  if (!localModel.value)
+    return false
+
+  if (props.multiple && Array.isArray(localModel.value))
+    return localModel.value.some((model) => isEqual(item.value, model.value))
+
+  return isEqual(item.value, (localModel.value as SelectItem).value)
+}
+
+function onOpened () {
+  inputEl.value?.focus()
+}
+
+function onClosed () {
+  keyword.value = ''
+}
+
+onStartTyping(() => {
+  if (isOpen.value && inputEl.value && inputEl.value !== document.activeElement) {
+    inputEl.value.select()
+    inputEl.value.focus()
+  }
 })
 </script>
 
 <style lang="postcss">
 .select {
-  &__search {
-    @apply pr-8 truncate hover:cursor-default focus:cursor-text;
+  --p-select-min-width: 20ch;
 
-    .state--error &,
-    .select--error & {
-        @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
-        @apply dark:border-dark-danger-emphasis hover:dark:border-dark-danger-emphasis focus:dark:ring-dark-danger focus:dark:border-dark-danger-emphasis;
+  &__activator {
+    @apply min-w-[var(--p-select-min-width)] items-center flex;
+  }
+
+  &__search {
+    @apply pr-8 truncate hover:cursor-default focus:cursor-text rounded-b-none border-t-0 border-x-0;
+
+    &-icon {
+      @apply text-muted;
+      @apply dark:text-dark-muted;
     }
   }
 
@@ -387,6 +491,37 @@ export default defineComponent({
   &--open {
     .select__caret {
       @apply rotate-180;
+    }
+  }
+
+  &--multiple {
+    .select__option {
+      @apply flex-row-reverse;
+    }
+
+    .select__option-checked {
+      @apply w-5 h-5 inline-flex flex-shrink-0 border rounded-tn border-subtle items-center justify-center bg-default visible mr-4;
+      @apply dark:border-dark-subtle dark:bg-dark-default;
+
+      > svg {
+        @apply w-3 fill-default;
+        @apply dark:fill-dark-default;
+      }
+    }
+
+    .selected .select__option-checked {
+      @apply bg-info-emphasis border-info-emphasis;
+      @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis;
+    }
+
+    .dropdown__item:disabled:not(.selected) .select__option-checked {
+      @apply bg-subtle border-subtle;
+      @apply dark:bg-dark-subtle dark:border-dark-subtle;
+
+      > svg {
+        @apply fill-subtle;
+        @apply dark:fill-dark-subtle;
+      }
     }
   }
 }

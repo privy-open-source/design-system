@@ -43,7 +43,7 @@ export default defineComponent({
 
   &&--vertical,
   .input-group > & {
-    @apply flex items-center my-0 py-3 border-subtle bg-transparent z-1;
+    @apply flex items-center my-0 py-3 border-subtle bg-transparent z-1 border-y;
     @apply dark:border-dark-subtle dark:bg-transparent;
 
     &::before {

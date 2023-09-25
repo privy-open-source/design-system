@@ -25,20 +25,32 @@ description: Base form input.
     { text: '🍌 Bananen', value: 'Banana', disabled: false},
   ])
 
+  const optionsD = ref([
+    { text: '🍎 Apple', value: 'Apple' },
+    { text: '🍇 Grape', value: 'Grape' },
+    { text: '🍌 Banana', value: 'Banana'},
+    { text: '🍋 Lemon', value: 'Lemon'},
+    { text: '🥑 Avocado', value: 'Avocado'},
+  ])
+
   const users = ref([
     {
-      text: 'John Doe',
-      value: {
-        img: "https://picsum.photos/id/50/50",
-        id: 1
-      }
+      text : 'John Doe',
+      value: 1,
+      img  : "https://picsum.photos/id/50/50",
+    },
+    {
+      text : 'Tarjono',
+      value: 2,
+      img  : "https://picsum.photos/id/51/50",
     }
   ])
 
-  const value    = ref('')
-  const selected = ref()
-  const province = ref('')
-  const city     = ref('')
+  const value      = ref('')
+  const selected   = ref()
+  const province   = ref('')
+  const city       = ref('')
+  const multiValue = ref([])
 
   const provincesAdapter = defineAsyncAdapter(async (keyword, page, perPage) => {
     const response = await getProvinces(keyword, page, perPage)
@@ -217,6 +229,7 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
 ```
 
 ## Readonly State
+
 <preview>
   <p-select readonly />
 </preview>
@@ -228,6 +241,7 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
 ```
 
 ## Error State
+
 <preview>
   <p-select error />
 </preview>
@@ -235,6 +249,18 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
 ```vue
 <template>
   <p-select error />
+</template>
+```
+
+## Multiple Selection
+
+<preview>
+  <p-select :options="optionsD" v-model="multiValue" multiple />
+</preview>
+
+```vue
+<template>
+  <p-select :options="optionsD" v-model="multiValue" multiple />
 </template>
 ```
 
@@ -246,7 +272,7 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
 
 **Result :**
 
-<pre><code>{{ value }}</code></pre>
+<pre><code>{{ value || '-' }}</code></pre>
 
 ```vue
 <template>
@@ -264,7 +290,8 @@ If you want to get original selected item (text and value) not value only. you c
   <p-select
     :options="optionsB"
     v-model="value"
-    v-model:selected="selected" />
+    v-model:selected="selected"
+    clearable />
 </preview>
 
 **v-model**
@@ -410,21 +437,21 @@ To do this, you need add the province value as **watch dependencies**. It will a
 </script>
 ```
 
-## Custom Option with Slot
+## Customization
 
-If you want to make custom option with slot, you can use `option` with scoped slot. The scoped slot from `option` has two slot props `text` and `value`.
+### Custom Option
 
 <preview>
   <p-select :options="users">
-    <template #option="slot">
-      <div class="flex flex-row">
-        <div class="py-2 pr-3">
-          <p-avatar :src="slot.item.value.img" />
+    <template #option="{ item }">
+      <div class="flex flex-row space-x-2">
+        <div class="flex-shrink-0">
+          <p-avatar :src="item.img" />
         </div>
-        <div class="py-2 ">
-          <div class="font-sans text-base font-normal">{{ slot.item.text }}
+        <div class="flex-grow">
+          <div class="font-sans text-base font-normal">{{ item.text }}
           </div>
-            <div class="text-xs font-light option-text">ID: {{ slot.item.value.id }}
+            <div class="text-xs font-light option-text">ID: {{ item.value }}
           </div>
         </div>
       </div>
@@ -435,13 +462,15 @@ If you want to make custom option with slot, you can use `option` with scoped sl
 ```vue
 <template>
   <p-select :options="users">
-    <template #option="slot">
-      <div class="flex flex-row">
-        <div class="py-2 pr-3">
-          <p-avatar :src="slot.item.value.img" />
-          <div class="font-sans text-base font-normal">{{ slot.item.value.img }}
+    <template #option="{ item }">
+      <div class="flex flex-row space-x-2">
+        <div class="flex-shrink-0">
+          <p-avatar :src="item.img" />
+        </div>
+        <div class="flex-grow">
+          <div class="font-sans text-base font-normal">{{ item.text }}
           </div>
-            <div class="text-xs font-light option-text">{{ slot.item.text }}
+            <div class="text-xs font-light option-text">ID: {{ item.value }}
           </div>
         </div>
       </div>
@@ -452,47 +481,132 @@ If you want to make custom option with slot, you can use `option` with scoped sl
 <script setup>
   const users = ref([
     {
-      text: 'John Doe',
-      value: {
-        img: "https://picsum.photos/id/50/50",
-        id: 1
-      }
+      text : 'John Doe',
+      value: 1,
+      img  : "https://picsum.photos/id/50/50",
+    },
+    {
+      text : 'Tarjono',
+      value: 2,
+      img  : "https://picsum.photos/id/51/50",
     }
   ])
 </script>
 ```
 
-## Caret
-
-### Custom Caret Icon
-
-By using the `caret` slot-scope, you can define your own custom icon for the caret, giving you the flexibility to choose a different icon or style that suits your design or preference.
+### Custom Selected (Single)
 
 <preview>
-  <p-select :options="optionsA">
-    <template #caret="{ isOpen, toggle }">
-      <pi-caret-down-16 @click="toggle" />
+  <p-select :options="users">
+    <template #selected="{ item }">
+      <div class="flex flex-row space-x-2">
+        <div class="flex-shrink-0">
+          <p-avatar :src="item.img" />
+        </div>
+        <div class="flex-grow">
+          <div class="font-sans text-base font-normal">{{ item.text }}
+          </div>
+            <div class="text-xs font-light option-text">ID: {{ item.value }}
+          </div>
+        </div>
+      </div>
     </template>
   </p-select>
 </preview>
 
 ```vue
 <template>
-  <p-select :options="optionsA">
-    <template #caret="{ isOpen, toggle }">
-      <pi-caret-down-16 @click="toggle" />
+  <p-select :options="users">
+    <template #selected="{ item }">
+      <div class="flex flex-row space-x-2">
+        <div class="flex-shrink-0">
+          <p-avatar :src="item.img" />
+        </div>
+        <div class="flex-grow">
+          <div class="font-sans text-base font-normal">{{ item.text }}
+          </div>
+            <div class="text-xs font-light option-text">ID: {{ item.value }}
+          </div>
+        </div>
+      </div>
     </template>
   </p-select>
 </template>
 
 <script setup>
-  import PiCaretDown16 from '@privyid/persona-icon/vue/caret-down/16.vue'
-
-  const options = ref(['Apple', 'Banana', 'Grape'])
+  const users = ref([
+    {
+      text : 'John Doe',
+      value: 1,
+      img  : "https://picsum.photos/id/50/50",
+    },
+    {
+      text : 'Tarjono',
+      value: 2,
+      img  : "https://picsum.photos/id/51/50",
+    }
+  ])
 </script>
 ```
 
-### Hide Caret
+### Custom Selected (Multiple)
+
+<preview>
+  <p-select :options="users" multiple>
+    <template #selected="{ item }">
+      <div class="flex w-full">
+        <div class="flex items-center pl-3">
+          <p-avatar
+            v-for="obj of item"
+            :src="obj.img"
+            class="-ml-3"
+            size="xs" />
+        </div>
+        <div class="flex-grow pl-2">
+          {{ item.length }} People selected
+        </div>
+      </div>
+    </template>
+  </p-select>
+</preview>
+
+```vue
+<template>
+  <p-select :options="users" multiple>
+    <template #selected="{ item }">
+      <div class="flex w-full">
+        <div class="flex items-center pl-3">
+          <p-avatar
+            v-for="obj of item"
+            :src="obj.img"
+            class="-ml-3"
+            size="xs" />
+        </div>
+        <div class="flex-grow pl-2">
+          {{ item.length }} People selected
+        </div>
+      </div>
+    </template>
+  </p-select>
+</template>
+
+<script setup>
+  const users = ref([
+    {
+      text : 'John Doe',
+      value: 1,
+      img  : "https://picsum.photos/id/50/50",
+    },
+    {
+      text : 'Tarjono',
+      value: 2,
+      img  : "https://picsum.photos/id/51/50",
+    }
+  ])
+</script>
+```
+
+## Hide Caret
 
 When you set the `no-caret` prop to true, it will hide the caret icon, and users won't see it in the component.
 
@@ -510,36 +624,43 @@ When you set the `no-caret` prop to true, it will hide the caret icon, and users
 </script>
 ```
 
-
 ## API
 
 ### Props
 
-| Props         |   Type    |    Default    | Description                        |
-|---------------|:---------:|:-------------:|------------------------------------|
-| `options`     |  `Array`  |      `-`      | Select option's items              |
-| `placeholder` | `String`  |      `-`      | Input placeholder                  |
-| `disabled`    | `Boolean` |    `false`    | Disabled state                     |
-| `readonly`    | `Boolean` |    `false`    | Readonly state                     |
-| `error`       | `Boolean` |    `false`    | Error state                        |
-| `emptyText`   | `String`  |   `No Data`   | Label when options is empty        |
-| `loadingText` | `String`  | `Loading...`  | Label when loading                 |
-| `adapter`     | `Adapter` | `BaseAdapter` | Adapter for loading option's items |
-| `modelValue`  |   `Any`   |      `-`      | `v-model` value                    |
-| `selected`    | `Object`  |      `-`      | `v-model:selected` value           |
-| `no-caret`    | `Boolean` |    `false`    | Hide caret icon                    |
-| `divider`     | `Boolean` |      `-`      | Enable divider in select-item      |
-| `menu-class`  | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the select menu container  |
-| `menu-size`   | `String`  |      `sm`     | Select menu size, valid value is `sm`, `md`, `lg` and `xl`  |
+| Props                |              Type               |     Default     | Description                                                |
+|----------------------|:-------------------------------:|:---------------:|------------------------------------------------------------|
+| `options`            |             `Array`             |       `-`       | Select option's items                                      |
+| `placeholder`        |            `String`             |       `-`       | Input placeholder                                          |
+| `disabled`           |            `Boolean`            |     `false`     | Disabled state                                             |
+| `readonly`           |            `Boolean`            |     `false`     | Readonly state                                             |
+| `error`              |            `Boolean`            |     `false`     | Error state                                                |
+| `emptyText`          |            `String`             |    `No Data`    | Label when options is empty                                |
+| `loadingText`        |            `String`             |  `Loading...`   | Label when loading                                         |
+| `sectionLabel`       |            `String`             |       `-`       | Add section label                                          |
+| `adapter`            |            `Adapter`            |  `BaseAdapter`  | Adapter for loading option's items                         |
+| `no-caret`           |            `Boolean`            |     `false`     | Hide caret icon                                            |
+| `divider`            |            `Boolean`            |       `-`       | Enable divider in select-item                              |
+| `menuClass`          | `String` \| `Array` \| `Object` |       `-`       | CSS class to add in the select menu container              |
+| `menuSize`           |            `String`             |      `sm`       | Select menu size, valid value is `sm`, `md`, `lg` and `xl` |
+| `multiple`           |            `Boolean`            |     `false`     | Enable multiple select                                     |
+| `displayLimit`       |            `Number`             |       `2`       | Maximum of visible tags before truncated into single tag   |
+| `limitText`          |            `String`             | `+{n} Other(s)` | Text on truncated tag **(Multiple Mode only)**             |
+| `searchable`         |            `Boolean`            |     `true`      | Enable searchbar                                           |
+| `noCloseAfterSelect` |            `Boolean`            |     `false`     | Disabled close popup after select an item                  |
+| `modelValue`         |              `Any`              |       `-`       | `v-model` value                                            |
+| `selected`           |       `Object` \| `Array`       |       `-`       | `v-model:selected` value                                   |
 
 ### Slots
 
-| Name      | Description                                    |
-|-----------|------------------------------------------------|
-| `empty`   | Content when option is empty or not found      |
-| `loading` | Content when loading                           |
-| `option`  | Content to place in Option Items               |
-| `caret`   | Element for opening and closing the dropdown   |
+| Name          | Description                                  |
+|---------------|----------------------------------------------|
+| `empty`       | Content when option is empty or not found    |
+| `loading`     | Content when loading                         |
+| `option`      | Content to place in Option Items             |
+| `selected`    | Content to place for selected result         |
+| `placeholder` | Content to place for placeholder             |
+| `caret`       | Element for opening and closing the dropdown |
 
 ### Events
 

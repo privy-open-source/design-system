@@ -129,7 +129,7 @@ export default defineComponent({
   }
 
   &__item > &__link {
-    @apply no-underline;
+    @apply no-underline transition-colors duration-150 ease-out;
   }
 
   & > &__item {

@@ -5,6 +5,7 @@ import Vue from '@vitejs/plugin-vue'
 const config: UserConfig & Pick<VitestConfig, 'test'> = {
   plugins: [Vue()],
   build  : { sourcemap: true },
+  define : { 'import.meta.vitest': false },
   test   : {
     globals    : true,
     environment: 'happy-dom',

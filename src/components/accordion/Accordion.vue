@@ -54,7 +54,7 @@ const props = defineProps({
 })
 
 const emit = defineEmits<{
-  'update:modelValue': [value: string],
+  'update:modelValue': [string],
 }>()
 
 const modelValue = useVModel(props, 'modelValue', emit, { passive: true })

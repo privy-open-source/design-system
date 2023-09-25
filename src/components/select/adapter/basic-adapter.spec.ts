@@ -1,102 +1,80 @@
-import { fireEvent, render } from '@testing-library/vue'
-import Select from '../Select.vue'
-import { defineOptions } from '..'
 import Adapter from './basic-adapter'
+import { nextTick, ref } from 'vue-demi'
 
 it('should be able to display items from props `options`', async () => {
-  const screen = render({
-    components: { Select },
-    template  : `
-      <Select
-        :adapter="adapter"
-        :options="options" />
-    `,
-    setup () {
-      const options = [
-        {
-          text : 'Apple',
-          value: 'Apple',
-        },
-        {
-          text : 'Grape',
-          value: 'Grape',
-        },
-        {
-          text : 'Orange',
-          value: 'Orange',
-        },
-      ]
-
-      return {
-        options,
-        adapter: Adapter,
-      }
+  const items = Adapter.setup({
+    props: {
+      options: [
+        'Apple',
+        'Grape',
+        'Orange',
+      ],
+      modelValue: undefined,
+      selected  : undefined,
     },
+    isLoading: ref(false),
+    menuEl   : ref(),
+    keyword  : ref(''),
+    isOpen   : ref(true),
   })
 
-  const select = screen.queryByTestId('select')
-
-  await fireEvent.click(select)
-
-  const items  = screen.queryAllByTestId('select-item')
-  const apple  = screen.queryByText('Apple')
-  const grape  = screen.queryByText('Grape')
-  const orange = screen.queryByText('Orange')
-
-  expect(select).toBeInTheDocument()
-  expect(items).toHaveLength(3)
-
-  expect(apple).toBeInTheDocument()
-  expect(grape).toBeInTheDocument()
-  expect(orange).toBeInTheDocument()
+  expect(items.value).toStrictEqual([
+    {
+      text : 'Apple',
+      value: 'Apple',
+    },
+    {
+      text : 'Grape',
+      value: 'Grape',
+    },
+    {
+      text : 'Orange',
+      value: 'Orange',
+    },
+  ])
 })
 
 it('should be able to filter (search) items by keyword', async () => {
-  const screen = render({
-    components: { Select },
-    template  : `
-      <Select
-        :adapter="adapter"
-        :options="options" />
-    `,
-    setup () {
-      const options = defineOptions([
-        {
-          text : 'Apple',
-          value: 'Apple',
-        },
-        {
-          text : 'Grape',
-          value: 'Grape',
-        },
-        {
-          text : 'Orange',
-          value: 'Orange',
-        },
-      ])
-
-      return {
-        options,
-        adapter: Adapter,
-      }
+  const keyword = ref('')
+  const items   = Adapter.setup({
+    props: {
+      options: [
+        'Apple',
+        'Grape',
+        'Orange',
+      ],
+      modelValue: undefined,
+      selected  : undefined,
     },
+    isLoading: ref(false),
+    menuEl   : ref(),
+    keyword  : keyword,
+    isOpen   : ref(true),
   })
 
-  const select = screen.queryByTestId('select')
-  const search = screen.queryByTestId('select-search')
+  expect(items.value).toStrictEqual([
+    {
+      text : 'Apple',
+      value: 'Apple',
+    },
+    {
+      text : 'Grape',
+      value: 'Grape',
+    },
+    {
+      text : 'Orange',
+      value: 'Orange',
+    },
+  ])
 
-  await fireEvent.click(select)
+  keyword.value = 'orange'
 
-  expect(select).toBeInTheDocument()
+  await nextTick()
 
-  expect(screen.queryByText('Apple')).toBeInTheDocument()
-  expect(screen.queryByText('Grape')).toBeInTheDocument()
-  expect(screen.queryByText('Orange')).toBeInTheDocument()
-
-  search.focus()
-  await fireEvent.update(search, 'orange')
-
-  expect(screen.queryByText('Apple')).not.toBeInTheDocument()
-  expect(screen.queryByText('Grape')).not.toBeInTheDocument()
-  expect(screen.queryByText('Orange')).toBeInTheDocument()
+  expect(items.value).toStrictEqual([
+    {
+      text : 'Orange',
+      value: 'Orange',
+    },
+  ])
 })

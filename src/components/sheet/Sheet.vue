@@ -62,10 +62,9 @@ const props = defineProps({
   },
 })
 
-// eslint-disable-next-line func-call-spacing
 const emit = defineEmits<{
-  (event: 'update:modelValue', value: boolean): void,
-  (event: 'close', value: Event): void,
+  'update:modelValue': [boolean],
+  'close': [Event],
 }>()
 
 const target = ref<HTMLDivElement>()

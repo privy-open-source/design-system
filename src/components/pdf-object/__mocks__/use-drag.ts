@@ -37,3 +37,11 @@ export async function triggerDragEnd (relatedTarget?: HTMLDivElement) {
   await nextTick()
   await nextTick()
 }
+
+export async function triggerTap () {
+  options.ontap({} as unknown as InteractEvent)
+
+  await nextTick()
+  await nextTick()
+  await nextTick()
+}

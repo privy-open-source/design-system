@@ -99,7 +99,7 @@ description: Combine multiple input in singleline.
 ### Input and Select
 
 <preview>
-  <p-input-group>
+  <p-input-group error>
     <p-select v-model="select" :options="['A', 'B', 'C']" />
     <p-input />
   </p-input-group>

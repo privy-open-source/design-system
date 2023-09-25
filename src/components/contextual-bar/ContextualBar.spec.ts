@@ -242,6 +242,7 @@ it('should emit event `close` if close button clicked', async () => {
   await delay(0)
 
   bar = screen.queryByTestId('contextual-bar')
+
   expect(spy).toBeCalled()
   expect(bar).not.toBeVisible()
 })

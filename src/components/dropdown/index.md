@@ -449,22 +449,22 @@ Dropdown use local CSS variables for enhanced real-time customization.
 
 ### Props `<p-dropdown>`
 
-| Props        |   Type    |    Default     |  Description                                                                               |
-|--------------|:---------:|:--------------:|--------------------------------------------------------------------------------------------|
-| `text`       | `String`  |      `-`       | Dropdown's button text                                                                     |
-| `variant`    | `String`  |    `solid`     | Dropdown's button style variant, valid value is `solid`, `outline`, `ghost`, `link`        |
-| `color`      | `String`  |   `primary`    | Dropdown's button color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`                                                                                                             |
-| `size`       | `String`  |      `md`      | Size of button, valid value is `sm`, `md`, `lg`                                            |
-| `pill`       | `Boolean` |    `false`     | Enable pill mode                                                                           |
-| `icon`       | `Boolean` |    `false`     | Enable icon mode                                                                           |
-| `no-caret`   | `Boolean` |    `false`     | Hide caret icon                                                                            |
-| `disabled`   | `Boolean` |    `false`     | Disable state                                                                              |
-| `placement`  | `String`  | `bottom-start` | Menu placement, valid value is <br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
-| `modelValue` | `Boolean` |    `false`     | v-model value for menu visibilities                                                                                                                             |
-| `divider`       | `Boolean`  |      `-`       | Enable divider in dropdown-item  |
-| `menu-class`       | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the menu container  |
-| `button-class`     | `String` or `Array` or `Object`  |      `-`       | CSS class to add in the button dropdown  |
-| `menu-size`       | `String`  |      `sm`       | Dropdown menu size, valid value is `sm`, `md`, `lg` and `xl`  |
+| Props          |              Type               |    Default     | Description                                                                                                                                                                                  |
+|----------------|:-------------------------------:|:--------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`         |            `String`             |      `-`       | Dropdown's button text                                                                                                                                                                       |
+| `variant`      |            `String`             |    `solid`     | Dropdown's button style variant, valid value is `solid`, `outline`, `ghost`, `link`                                                                                                          |
+| `color`        |            `String`             |   `primary`    | Dropdown's button color variant, valid value is `primary`, `secondary`, `success`, `info`, `warning`, `danger`, `gold`                                                                       |
+| `size`         |            `String`             |      `md`      | Size of button, valid value is `sm`, `md`, `lg`                                                                                                                                              |
+| `pill`         |            `Boolean`            |    `false`     | Enable pill mode                                                                                                                                                                             |
+| `icon`         |            `Boolean`            |    `false`     | Enable icon mode                                                                                                                                                                             |
+| `no-caret`     |            `Boolean`            |    `false`     | Hide caret icon                                                                                                                                                                              |
+| `disabled`     |            `Boolean`            |    `false`     | Disable state                                                                                                                                                                                |
+| `placement`    |            `String`             | `bottom-start` | Menu placement, valid value is <br/>`top`, `top-start`, `top-end`,<br/>`bottom`, `bottom-start`, `bottom-end`,<br/>`right`, `right-start`, `right-end`,<br/>`left`, `left-start`, `left-end` |
+| `modelValue`   |            `Boolean`            |    `false`     | v-model value for menu visibilities                                                                                                                                                          |
+| `divider`      |            `Boolean`            |      `-`       | Enable divider in dropdown-item                                                                                                                                                              |
+| `menu-class`   | `String` \| `Array` \| `Object` |      `-`       | CSS class to add in the menu container                                                                                                                                                       |
+| `button-class` | `String` \| `Array` \| `Object` |      `-`       | CSS class to add in the button dropdown                                                                                                                                                      |
+| `menu-size`    |            `String`             |      `sm`      | Dropdown menu size, valid value is `sm`, `md`, `lg` and `xl`                                                                                                                                 |
 
 ### Slots `<p-dropdown>`
 
@@ -482,16 +482,16 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | `hide` | -         | Event when dropdown popup hidden |
 
 ### Props `<p-dropdown-item>`
-| Props        |   Type    |    Default     |       Description                          |
-|--------------|:---------:|:--------------:|--------------------------------------------|
-| `href`       | `String`  |    `-`         | Place url permalink in the `dropdown-item` |
-| `disabled`   | `Boolean` |    false       | Set disabled state in the `dropdown-item`  |
+| Props      |   Type    | Default | Description                                |
+|------------|:---------:|:-------:|--------------------------------------------|
+| `href`     | `String`  |   `-`   | Place url permalink in the `dropdown-item` |
+| `disabled` | `Boolean` |  false  | Set disabled state in the `dropdown-item`  |
 ### Slots `<p-dropdown-header>`
 
-| Name             | Description                                             |
-|------------------|---------------------------------------------------------|
-| `default`        | Dropdown header content                                 |
-| `action`         | Content to place in the dropdown header action          |
+| Name      | Description                                    |
+|-----------|------------------------------------------------|
+| `default` | Dropdown header content                        |
+| `action`  | Content to place in the dropdown header action |
 
 ## See Also
 - [Button][button]

@@ -92,8 +92,9 @@ it('should be able to set placement of dropdown with `placement` prop', async ()
     `,
   })
 
-  const dropdown = screen.queryByTestId('dropdown-menu')
   await delay(0)
+
+  const dropdown = screen.queryByTestId('dropdown-menu')
 
   expect(dropdown).toHaveAttribute('data-popper-placement', 'bottom-start')
 })

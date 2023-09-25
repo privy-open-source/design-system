@@ -74,11 +74,11 @@ const props = defineProps({
     default: false,
   },
 })
-const emit  = defineEmits([
-  'update:modelValue',
-  'expand',
-  'collapse',
-])
+const emit  = defineEmits<{
+  'update:modelValue': [boolean],
+  'expand': [],
+  'collapse': [],
+}>()
 
 const model = useVModel(props, 'modelValue', emit, { passive: true })
 

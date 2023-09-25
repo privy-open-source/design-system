@@ -12,6 +12,7 @@ export interface DragHooks {
   onstart?: (event: InteractEvent) => void,
   onmove?: (event: InteractEvent) => void,
   onend?: (event: InteractEvent) => void,
+  ontap?: (event: InteractEvent) => void,
 }
 
 export default function useDrag (target: Ref<HTMLElement>, hooks?: DragHooks) {
@@ -66,6 +67,7 @@ export default function useDrag (target: Ref<HTMLElement>, hooks?: DragHooks) {
             }),
           ],
         })
+        .on('tap', hooks.ontap)
     }
   }
 

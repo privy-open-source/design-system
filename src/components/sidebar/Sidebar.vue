@@ -78,7 +78,9 @@ defineOptions({
   },
 })
 
-defineEmits<{(event: 'update:modelValue', value: boolean): void }>()
+defineEmits<{
+  'update:modelValue': [boolean],
+}>()
 
 const model  = useVModel(props)
 const bottom = ref<HTMLDivElement>()

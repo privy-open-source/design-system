@@ -1,7 +1,10 @@
 import { onStartTyping, triggerTyping } from './__mocks__/on-start-typing'
 import { fireEvent, render } from '@testing-library/vue'
 import { vi } from 'vitest'
-import { ref, nextTick } from 'vue-demi'
+import {
+  ref,
+  nextTick,
+} from 'vue-demi'
 import Select from './Select.vue'
 import type * as VueUse from '@vueuse/core'
 import defineAsyncAdapter from './adapter/async-adapter'
@@ -28,7 +31,7 @@ it('should render properly without any prop', () => {
     `,
   })
 
-  const select = screen.getByTestId('select')
+  const select = screen.queryByTestId('select')
 
   expect(select).toBeInTheDocument()
   expect(select).toHaveClass('select')
@@ -42,8 +45,8 @@ it('should open if input is focused', async () => {
     `,
   })
 
-  const select = screen.getByTestId('select')
-  const input  = screen.getByTestId('select-search')
+  const select = screen.queryByTestId('select')
+  const input  = screen.queryByTestId('select-activator')
 
   expect(select).toBeInTheDocument()
   expect(select).toHaveClass('select')
@@ -55,6 +58,55 @@ it('should open if input is focused', async () => {
   expect(select).toHaveClass('select--open')
 })
 
+it('should focus on search input when opened', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select no-animation />
+    `,
+  }, { global: { stubs: { transition: false } } })
+
+  const select = screen.queryByTestId('select')
+  const input  = screen.queryByTestId('select-activator')
+
+  expect(select).toBeInTheDocument()
+  expect(select).toHaveClass('select')
+  expect(select).not.toHaveClass('select--open')
+
+  input.focus()
+  await nextTick()
+
+  expect(select).toHaveClass('select--open')
+
+  await nextTick()
+
+  expect(screen.queryByTestId('select-search')).toHaveFocus()
+})
+
+it('should reset search keyword when closed', async () => {
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select no-animation />
+    `,
+  }, { global: { stubs: { transition: false } } })
+
+  const select = screen.queryByTestId('select')
+  const caret  = screen.queryByTestId('select-caret-icon')
+
+  await fireEvent.click(caret)
+
+  expect(select).toHaveClass('select--open')
+
+  await fireEvent.update(screen.queryByTestId('select-search'), 'Hello World')
+
+  expect(screen.queryByTestId('select-search')).toHaveValue('Hello World')
+
+  await fireEvent.click(caret)
+
+  expect(screen.queryByTestId('select-search')).toHaveValue('')
+})
+
 it('should be able to set input placeholder with prop `placeholder`', () => {
   const screen = render({
     components: { Select },
@@ -63,9 +115,10 @@ it('should be able to set input placeholder with prop `placeholder`', () => {
     `,
   })
 
-  const input = screen.getByTestId('select-search')
+  const placeholder = screen.queryByTestId('select-placeholder')
 
-  expect(input).toHaveAttribute('placeholder', 'CobaLagi')
+  expect(placeholder).toBeInTheDocument()
+  expect(placeholder).toHaveTextContent('CobaLagi')
 })
 
 it('should be able to change empty text via `empty-text` prop', () => {
@@ -227,7 +280,7 @@ it('should trigger event `user-input` when real user selecting the item', async 
     },
   })
 
-  const input = screen.queryByTestId('select-search')
+  const input = screen.queryByTestId('select-activator')
 
   input.focus()
   await nextTick()
@@ -249,18 +302,20 @@ it('should re-focus to search input if user start typing while focus on items', 
     `,
   })
 
-  const input = screen.queryByTestId('select-search')
-  const items = screen.queryAllByTestId('select-item')
+  const input = screen.queryByTestId('select-activator')
 
   input.focus()
-  items.at(1).focus()
+  await nextTick()
 
-  expect(items.at(1)).toHaveFocus()
+  screen.queryAllByTestId('select-item').at(1).focus()
+  await nextTick()
+
+  expect(screen.queryAllByTestId('select-item').at(1)).toHaveFocus()
 
   triggerTyping()
   await nextTick()
 
-  expect(input).toHaveFocus()
+  expect(screen.queryByTestId('select-search')).toHaveFocus()
 })
 
 it('should have style error if `error` prop was provided', () => {
@@ -271,16 +326,19 @@ it('should have style error if `error` prop was provided', () => {
     `,
   })
 
-  const select = screen.queryByTestId('select')
+  const select = screen.queryByTestId('select-activator')
 
-  expect(select).toHaveClass('select--error', 'state--error')
+  expect(select).toHaveClass('state--error')
 })
 
 it('should able to add section label via `section-label` prop', () => {
   const screen = render({
     components: { Select },
     template  : `
-      <Select :options="['apple', 'grape', 'orange']" section-label="title" />
+      <Select
+        :options="['apple', 'grape', 'orange']"
+        section-label="title"
+      />
     `,
   })
 
@@ -298,7 +356,7 @@ it('should be toggle dropdown if caret icon is clicked', async () => {
     `,
   })
 
-  const select = screen.getByTestId('select')
+  const select = screen.queryByTestId('select')
 
   expect(select).toBeInTheDocument()
   expect(select).not.toHaveClass('select--open')
@@ -328,7 +386,7 @@ it('should be toggle dropdown via `caret` slot-scope function', async () => {
     `,
   })
 
-  const select = screen.getByTestId('select')
+  const select = screen.queryByTestId('select')
 
   expect(select).toBeInTheDocument()
   expect(select).not.toHaveClass('select--open')
@@ -357,22 +415,6 @@ it('should hide caret icon if props `no-caret` is provided', () => {
   const caret = screen.queryByTestId('select-caret-icon')
 
   expect(caret).not.toBeInTheDocument()
-})
-
-it('should have a clear button when `clearable` props is provided', async () => {
-  const screen = render({
-    components: { Select },
-    template  : `
-      <Select clearable />
-    `,
-  })
-  const select = screen.getByTestId('select')
-  expect(select).toBeInTheDocument()
-
-  await fireEvent.click(select)
-
-  const clearButton = screen.queryByTestId('input-clear')
-  expect(clearButton).toBeInTheDocument()
 })
 
 it('should have not able to open if `caret` icon is clicked and select is disabled', async () => {
@@ -413,10 +455,9 @@ it('should have clear button if prop `clearable` was provided', async () => {
     },
   })
 
-  const input = screen.queryByTestId('select-search')
+  const input = screen.queryByTestId('select-activator')
 
-  input.focus()
-  await nextTick()
+  await fireEvent.focus(input)
 
   const items = screen.queryAllByTestId('select-item')
 
@@ -424,7 +465,9 @@ it('should have clear button if prop `clearable` was provided', async () => {
 
   expect(model.value).toStrictEqual({ text: 'grape', value: 'grape' })
 
-  const clear = screen.queryByTestId('input-clear')
+  const clear = screen.queryByTestId('select-clear')
+
+  expect(clear).toBeInTheDocument()
 
   await fireEvent.click(clear)
 
@@ -437,7 +480,7 @@ it('should clear search keyword if click clear button when select was opened', a
     components: { Select },
     template  : `
       <Select
-        v-model:selected="model"
+        v-model="model"
         :options="['apple', 'grape', 'orange']"
         clearable
       />
@@ -447,18 +490,77 @@ it('should clear search keyword if click clear button when select was opened', a
     },
   })
 
-  const input = screen.queryByTestId('select-search')
+  await fireEvent.update(screen.queryByTestId('select-search'), 'Hello World')
 
-  input.focus()
+  expect(screen.queryByTestId('select-search')).toHaveValue('Hello World')
+
+  await fireEvent.click(screen.queryByTestId('input-clear'))
+
+  expect(screen.queryByTestId('select-search')).toHaveValue('')
+})
+
+it('should able to select multiple value if prop `multiple` was provided', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model="model"
+        :options="['apple', 'grape', 'orange']"
+        clearable
+        multiple
+      />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  await fireEvent.click(screen.queryAllByTestId('select-item').at(0))
+  await fireEvent.click(screen.queryAllByTestId('select-item').at(1))
+  await fireEvent.click(screen.queryAllByTestId('select-item').at(2))
+
+  expect(model.value).toHaveLength(3)
+  expect(model.value).toStrictEqual([
+    'apple',
+    'grape',
+    'orange',
+  ])
+
+  await fireEvent.click(screen.queryAllByTestId('select-item').at(1))
+
+  expect(model.value).toHaveLength(2)
+  expect(model.value).toStrictEqual(['apple', 'orange'])
+
+  await fireEvent.click(screen.queryByTestId('select-clear'))
+
+  expect(model.value).toHaveLength(0)
+  expect(model.value).toStrictEqual([])
+})
+
+it('should sync with v-model value (multiple)', async () => {
+  const model  = ref()
+  const screen = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model="model"
+        :options="['apple', 'grape', 'orange']"
+        clearable
+        multiple
+      />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  model.value = ['apple', 'orange']
+
   await nextTick()
 
-  await fireEvent.update(input, 'Hello World')
+  const tags = screen.queryAllByTestId('select-tag')
 
-  expect(input).toHaveValue('Hello World')
-
-  const clear = screen.queryByTestId('input-clear')
-
-  await fireEvent.click(clear)
-
-  expect(input).toHaveValue('')
+  expect(tags[0]).toHaveTextContent('apple')
+  expect(tags[1]).toHaveTextContent('orange')
 })

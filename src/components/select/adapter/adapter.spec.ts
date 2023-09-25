@@ -1,4 +1,8 @@
-import { SelectProps, SelectItem } from '..'
+import {
+  SelectProps,
+  SelectItem,
+  defineOptions,
+} from '..'
 import { useOptionsProp } from './adapter'
 
 it('should be able to convert Array of String into Array of SelectItem', () => {
@@ -52,8 +56,8 @@ it('should be return as is if options is already an Array of SelectItem', () => 
     ],
   }
 
-  const result                 = useOptionsProp(props)
-  const expected: SelectItem[] = [
+  const result   = useOptionsProp(props)
+  const expected = defineOptions([
     {
       text : 'Apple',
       value: 'Apple',
@@ -66,7 +70,7 @@ it('should be return as is if options is already an Array of SelectItem', () => 
       text : 'Orange',
       value: 'Orange',
     },
-  ]
+  ])
 
   expect(result.value).toBeArray()
   expect(result.value).toStrictEqual(expected)

@@ -9,6 +9,7 @@
       <slot name="prepend" />
     </span>
     <input
+      ref="input"
       v-model="model"
       class="input__form"
       data-testid="input"
@@ -36,6 +37,7 @@ import {
   defineComponent,
   inject,
   PropType,
+  ref,
 } from 'vue-demi'
 import { useVModel } from '.'
 import { SizeVariant } from '../button'
@@ -93,6 +95,7 @@ export default defineComponent({
   },
   emits: ['update:modelValue', 'clear'],
   setup (props, { emit, slots }) {
+    const input   = ref<HTMLInputElement>()
     const model   = useVModel(props)
     const setting = inject(INPUTGROUP_SETTING, undefined, false)
 
@@ -135,6 +138,7 @@ export default defineComponent({
     }
 
     return {
+      input,
       classNames,
       model,
       clear,
@@ -150,11 +154,18 @@ export default defineComponent({
   @apply dark:bg-dark-default;
 
   &__form {
-    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle text-default placeholder:text-muted w-full outline-none bg-transparent;
-    @apply dark:border-dark-muted hover:dark:border-dark-subtle dark:text-dark-default placeholder:dark:text-dark-muted dark:bg-transparent;
+    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle text-default w-full outline-none bg-transparent;
+    @apply dark:border-dark-muted hover:dark:border-dark-subtle dark:text-dark-default dark:bg-transparent;
+
+    &::placeholder,
+    &__placeholder {
+      @apply text-muted;
+      @apply dark:text-dark-muted;
+    }
 
     &:disabled,
     &--disabled,
+    &[disabled="true"],
     .state--disabled & {
       @apply bg-subtle border-subtle pointer-events-none text-muted;
       @apply dark:bg-dark-subtle dark:border-dark-subtle  dark:text-dark-muted;
@@ -183,9 +194,9 @@ export default defineComponent({
   }
 
   .state--error,
-  .state--error & > &__form,
+  .state--error & > &__form:not(.no--error),
   &--error,
-  &-group--error.input-group .input > .input__form {
+  &-group--error.input-group .input > .input__form:not(.no--error) {
     @apply border-danger-emphasis hover:border-danger-emphasis focus:ring-danger focus:border-danger-emphasis;
     @apply dark:border-dark-danger-emphasis hover:dark:border-dark-danger-emphasis focus:dark:ring-dark-danger focus:dark:border-dark-danger-emphasis;
   }
