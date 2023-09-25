@@ -1924,7 +1924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.9.2":
   version: 7.17.8
   resolution: "@babel/runtime@npm:7.17.8"
   dependencies:
@@ -3636,7 +3636,7 @@ __metadata:
     "@splidejs/splide": ^4.1.4
     "@testing-library/jest-dom": 6.1.3
     "@testing-library/user-event": ^14.4.3
-    "@testing-library/vue": 6.6.1
+    "@testing-library/vue": 7.0.0
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
     "@types/lodash-es": 4.17.9
@@ -4110,7 +4110,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:9.3.3":
+"@testing-library/dom@npm:9.3.3, @testing-library/dom@npm:^9.0.1":
   version: 9.3.3
   resolution: "@testing-library/dom@npm:9.3.3"
   dependencies:
@@ -4123,22 +4123,6 @@ __metadata:
     lz-string: ^1.5.0
     pretty-format: ^27.0.2
   checksum: 34e0a564da7beb92aa9cc44a9080221e2412b1a132eb37be3d513fe6c58027674868deb9f86195756d98d15ba969a30fe00632a4e26e25df2a5a4f6ac0686e37
-  languageName: node
-  linkType: hard
-
-"@testing-library/dom@npm:^8.5.0":
-  version: 8.20.1
-  resolution: "@testing-library/dom@npm:8.20.1"
-  dependencies:
-    "@babel/code-frame": ^7.10.4
-    "@babel/runtime": ^7.12.5
-    "@types/aria-query": ^5.0.1
-    aria-query: 5.1.3
-    chalk: ^4.1.0
-    dom-accessibility-api: ^0.5.9
-    lz-string: ^1.5.0
-    pretty-format: ^27.0.2
-  checksum: 06fc8dc67849aadb726cbbad0e7546afdf8923bd39acb64c576d706249bd7d0d05f08e08a31913fb621162e3b9c2bd0dce15964437f030f9fa4476326fdd3007
   languageName: node
   linkType: hard
 
@@ -4181,17 +4165,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/vue@npm:6.6.1":
-  version: 6.6.1
-  resolution: "@testing-library/vue@npm:6.6.1"
+"@testing-library/vue@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@testing-library/vue@npm:7.0.0"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@testing-library/dom": ^8.5.0
-    "@vue/test-utils": ^2.0.0
+    "@babel/runtime": ^7.21.0
+    "@testing-library/dom": ^9.0.1
+    "@vue/test-utils": ^2.3.1
   peerDependencies:
     "@vue/compiler-sfc": ">= 3"
     vue: ">= 3"
-  checksum: c05e043b7c33e8e17220c7766231235f75ab2056dfb205323f65a8d02d7b6914f26bd732701b6c83d3419583695e0eb016c92c7967f627963ec9a75ff2d75d6a
+  checksum: 73dc8112e576e2038004cf4d2b206d3d9de9b67407e74782b10e2d83eae9b1b92eab2925dfd0d2fc8a332846161bda5d9574504893a24da232af01765f88c5c9
   languageName: node
   linkType: hard
 
@@ -5221,7 +5205,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/test-utils@npm:^2.0.0":
+"@vue/test-utils@npm:^2.3.1":
   version: 2.4.1
   resolution: "@vue/test-utils@npm:2.4.1"
   dependencies:
