@@ -9,6 +9,8 @@
       {{ pageLabel }}
       <Select
         v-model="model"
+        :size="selectSize"
+        data-testid="pagination-select"
         :options="pageOptions"
         @change="({ value }) => selectPage(value)" />
       <slot
@@ -111,6 +113,7 @@
       {{ showRowsLabel }}
       <Select
         v-model="rowPerPage"
+        :size="selectSize"
         :options="rowPerPageOptions" />
     </div>
   </div>
@@ -131,6 +134,7 @@ import { SelectItem } from '../select'
 import { useVModel } from '../input'
 import { usePagination } from '.'
 import { getPageRange } from './utils/calculate-page'
+import { SizeVariant } from '../button'
 
 type NavigationVariant = 'none' | 'short' | 'far'
 
@@ -214,6 +218,10 @@ export default defineComponent({
     showRowsLabel: {
       type   : String,
       default: 'Show rows',
+    },
+    selectSize: {
+      type   : String as PropType<SizeVariant>,
+      default: 'md',
     },
   },
   models: {
