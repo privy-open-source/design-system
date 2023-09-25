@@ -12,6 +12,22 @@
 
 > Icons changelog
 
+## 0.22.0
+
+### Added
+
+- face-accessories
+- glasses
+- hat
+- mask
+
+### Changed
+
+- medal/32
+- megaphone/32
+- onsite/32
+- package-box/32
+
 ## 0.21.0
 
 ### Changed

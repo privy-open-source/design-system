@@ -1,7 +1,7 @@
 {
   "name": "@privyid/tailwind-animation",
   "description": "Collection animation class for vue `<transition>`",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "packageManager": "yarn@3.6.3",
   "license": "MIT",
   "repository": {
