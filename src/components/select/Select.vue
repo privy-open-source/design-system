@@ -73,7 +73,6 @@
         v-model="keyword"
         data-testid="select-search"
         class="select__search no--error"
-        :size="size"
         :placeholder="searchText"
         :clearable="true">
         <template #append>
