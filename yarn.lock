@@ -3695,7 +3695,7 @@ __metadata:
     tailwindcss: 3.3.3
     typescript: 5.2.2
     ufo: ^1.0.1
-    vitepress: 1.0.0-rc.15
+    vitepress: 1.0.0-rc.20
     vitest: 0.24.5
     vue-collapsed: ^1.2.5
     vue-content-loader: ^2.0.1
@@ -4424,6 +4424,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/linkify-it@npm:*":
+  version: 3.0.3
+  resolution: "@types/linkify-it@npm:3.0.3"
+  checksum: a734becc4e7476833b0e6951ec133c006a34809639c722d3e28b7cf88f5f6ccbb433f195788be5e56209b1e9e6e0778879291dd2db401acee3bb585c44dcc329
+  languageName: node
+  linkType: hard
+
 "@types/lodash-es@npm:4.17.9":
   version: 4.17.9
   resolution: "@types/lodash-es@npm:4.17.9"
@@ -4440,10 +4447,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/markdown-it@npm:^13.0.1":
+  version: 13.0.1
+  resolution: "@types/markdown-it@npm:13.0.1"
+  dependencies:
+    "@types/linkify-it": "*"
+    "@types/mdurl": "*"
+  checksum: 184d383ac21903a9e6be1639cde2b0cc082d0366b423fd8a69d0f37d9d1d36338f66611226ba4ef1da6148f370a62e08f688e8147ead43d429d6ff213c38c062
+  languageName: node
+  linkType: hard
+
 "@types/marked@npm:^5.0.1":
   version: 5.0.1
   resolution: "@types/marked@npm:5.0.1"
   checksum: 84323058e0a5127aeb67d709e1dcb0cc0024b190c337ca68813fcd1f271e7c7351ed14ea83e5e21a7a264fb87ba8767c0a98fb26d05a06181a7edd49299ef437
+  languageName: node
+  linkType: hard
+
+"@types/mdurl@npm:*":
+  version: 1.0.2
+  resolution: "@types/mdurl@npm:1.0.2"
+  checksum: 79c7e523b377f53cf1f5a240fe23d0c6cae856667692bd21bf1d064eafe5ccc40ae39a2aa0a9a51e8c94d1307228c8f6b121e847124591a9a828c3baf65e86e2
   languageName: node
   linkType: hard
 
@@ -18577,12 +18601,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-rc.15":
-  version: 1.0.0-rc.15
-  resolution: "vitepress@npm:1.0.0-rc.15"
+"vitepress@npm:1.0.0-rc.20":
+  version: 1.0.0-rc.20
+  resolution: "vitepress@npm:1.0.0-rc.20"
   dependencies:
     "@docsearch/css": ^3.5.2
     "@docsearch/js": ^3.5.2
+    "@types/markdown-it": ^13.0.1
     "@vue/devtools-api": ^6.5.0
     "@vueuse/core": ^10.4.1
     "@vueuse/integrations": ^10.4.1
@@ -18594,12 +18619,15 @@ __metadata:
     vue: ^3.3.4
   peerDependencies:
     markdown-it-mathjax3: ^4.3.2
+    postcss: ^8.4.30
   peerDependenciesMeta:
     markdown-it-mathjax3:
       optional: true
+    postcss:
+      optional: true
   bin:
     vitepress: bin/vitepress.js
-  checksum: afa2d2d699585de44a487990b93e535e5626d59121fee2008eff4a6424e1e5ec3181983700e895a399393682b9ee51d1a53000d8c6cccd4b288739c2516b2fb2
+  checksum: 8ae9326554ea0bd1a4037d275f05a3a37a2b5b34f5b40ac40058fdceba10848ff11cad5adb6b91db72e33e28389dfa6931213668f484db4202ad814b2b2d239c
   languageName: node
   linkType: hard
 
