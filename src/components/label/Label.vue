@@ -103,6 +103,10 @@ export default defineComponent({
 
   @apply inline-flex items-center border border-transparent;
 
+  &:not(.label--variant-dot) {
+    @apply space-x-[6px];
+  }
+
   /**
   * Add dismiss button
   */
@@ -137,13 +141,27 @@ export default defineComponent({
   * color variant
   */
   &--variant-default {
-    @apply text-state-emphasis;
-    @apply dark:text-dark-state-emphasis;
+    &:not(&.label--default) {
+      @apply text-state-emphasis;
+      @apply dark:text-dark-state-emphasis;
+    }
 
     &.label {
       &--default {
-        @apply bg-inverse;
-        @apply dark:bg-dark-inverse dark:text-dark-on-emphasis;
+        --p-bg-variant-default: theme(backgroundColor.inverse);
+        --p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
+        --p-text-variant-default: theme(textColor.state-emphasis);
+        --p-text-dark-variant-default: theme(textColor.dark.on-emphasis);
+
+        &:not([class^='bg-'], [class*='bg-']) {
+          @apply bg-[color:var(--p-bg-variant-default)];
+          @apply dark:bg-[color:var(--p-bg-dark-variant-default)];
+        }
+
+        &:not([class^='text-'], [class*='text-']) {
+          @apply text-[color:var(--p-text-variant-default)];
+          @apply dark:text-[color:var(--p-text-dark-variant-default)];
+        }
 
         .label__dismiss {
           @apply border-default/30 text-on-emphasis/30 hover:text-on-emphasis/50;
