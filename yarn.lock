@@ -3795,7 +3795,7 @@ __metadata:
     scroll-into-view: 1.16.2
     tabbable: 6.2.0
     tailwind: ^4.0.0
-    vue-collapsed: 1.2.7
+    vue-collapsed: 1.2.8
     vue-demi: 0.14.6
     vuedraggable: next
     webfontloader: 1.6.28
@@ -18736,14 +18736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-collapsed@npm:1.2.7":
-  version: 1.2.7
-  resolution: "vue-collapsed@npm:1.2.7"
-  checksum: dd176ba1d61f6ceec259458483a29bab024faa76f2b12cbe742fac2255f8a23061d0702e0d82d3b39d88a3053deb367ac243d4a9bac24c16117f74ef708be4bb
-  languageName: node
-  linkType: hard
-
-"vue-collapsed@npm:^1.2.5":
+"vue-collapsed@npm:1.2.8, vue-collapsed@npm:^1.2.5":
   version: 1.2.8
   resolution: "vue-collapsed@npm:1.2.8"
   checksum: 3ce0ba0dee81824e2b2436af567d04bf75087ea652e6f9e18fa93866f96e83e6fff52d5f7a63309c75aca14639473e5405dd093a38765f38f0bbb1356c5d0c54
