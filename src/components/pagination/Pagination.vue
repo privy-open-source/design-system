@@ -386,6 +386,8 @@ export default defineComponent({
   }
 
   .dropdown {
+    --p-select-min-width: auto;
+
     @apply max-w-[80px];
 
     &__menu {

@@ -338,5 +338,6 @@ Add prop `quick-jump` to change mode to quick jump.
 | `pagination-count` | `range` and `total` | Content to place in pagination counter when prop `show-detail` is provided                 |
 
 ## See Also
-- [Table](/components/table/index)
+- [Table Static](/components/table-static/)
+- [Table Flex](/components/table-flex/)
 
