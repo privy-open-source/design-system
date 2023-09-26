@@ -325,6 +325,7 @@ Add prop `quick-jump` to change mode to quick jump.
 | `first-nav-label`  |  `String`  |   `First`    | Label to place in the first navigation button                                                 |
 | `last-nav-label`   |  `String`  |    `Last`    | Label to place in the last navigation button                                                  |
 | `show-rows-label`  |  `String`  | `Show rows`  | Label to place in the per page options. Only works if `show-detail` is provided               |
+| `select-size`      |  `String`  |     `md`     | Set size of select input. Valid value is `xs`, `sm`, `md` and `lg`                            |
 
 ### Slots
 | Name               | Scoped              | Description                                                                                |
