@@ -7,6 +7,7 @@ description: Label of the thing they're quantifying, such as the number of notif
   import pBadge from './Badge.vue'
   import pBanner from '../banner/Banner.vue'
   import Icon from '@privyid/persona-icon/vue/persona/16.vue'
+  import IconEmaterai from '@privyid/persona-icon/vue/e-meterai/16.vue'
 </script>
 
 # Badge
@@ -19,13 +20,21 @@ description: Label of the thing they're quantifying, such as the number of notif
 
 Default color of badge are black.
 
-<preview>
+<preview class="flex-col space-y-4">
   <p-badge>25</p-badge>
+  <p-badge>
+    <IconEmaterai />
+    <span>2</span>
+  </p-badge>
 </preview>
 
 ```vue
 <template>
   <p-badge>25</p-badge>
+  <p-badge>
+    <pi-e-meterai-16 />
+    <span>2</span>
+  </p-badge>
 </template>
 ```
 
