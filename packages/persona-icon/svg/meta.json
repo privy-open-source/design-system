@@ -1,5 +1,36 @@
 [
   {
+    "name": "multiple-persons",
+    "aliases": [
+      "multiple-users"
+    ],
+    "category": "other",
+    "folder": "multiple-persons",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "multiple-persons/16",
+        "path": "multiple-persons/16.svg",
+        "hash": "a8c26c05d264c27ca6207e8e889a827841f7563e81ae98986743c9c1a76a7fb3"
+      },
+      {
+        "name": "multiple-persons/20",
+        "path": "multiple-persons/20.svg",
+        "hash": "6115fa88906d43ac3486a79e8db0905d49e8d98b381f546cb8c189a4f1471f66"
+      },
+      {
+        "name": "multiple-persons/24",
+        "path": "multiple-persons/24.svg",
+        "hash": "e356bc1778738a2c324ab550ec022f7360f54fd2669aad414895c8b28b10bc8b"
+      },
+      {
+        "name": "multiple-persons/32",
+        "path": "multiple-persons/32.svg",
+        "hash": "2bf27ed9783818609892a36bed2fffd8ef6260ee4525083fa47378497da1dbae"
+      }
+    ]
+  },
+  {
     "name": "redo",
     "aliases": [],
     "category": "actions",
