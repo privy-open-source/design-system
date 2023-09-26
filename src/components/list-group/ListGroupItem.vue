@@ -91,8 +91,8 @@ export default defineComponent({
     }
 
     &:is(&--disabled) {
-      @apply cursor-default bg-[color:var(--p-list-item-bg)/50] hover:bg-[color:var(--p-list-item-bg)/50] text-default/50 hover:text-default/50;
-      @apply dark:bg-[color:var(--p-list-item-bg-dark)/50] dark:hover:bg-[color:var(--p-list-item-bg-dark)/50] dark:text-dark-default/50 dark:hover:text-dark-default/50;
+      @apply cursor-default bg-[color:var(--p-list-item-bg)/50] hover:bg-[color:var(--p-list-item-bg)/50] text-subtlest hover:text-subtlest;
+      @apply dark:bg-[color:var(--p-list-item-bg-dark)/50] dark:hover:bg-[color:var(--p-list-item-bg-dark)/50] dark:text-dark-subtlest dark:hover:text-dark-subtlest;
     }
   }
 }

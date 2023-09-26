@@ -81,8 +81,8 @@ export default defineComponent({
 
 <style lang="postcss">
 .dropdown__item {
-  @apply px-4 py-2 block cursor-pointer text-default w-full select-none text-left;
-  @apply dark:text-dark-default;
+  @apply px-4 py-2 block cursor-pointer text-subtle w-full select-none text-left;
+  @apply dark:text-dark-subtle;
 
   &:is(a) {
     @apply no-underline hover:no-underline hover:text-default;
@@ -91,18 +91,18 @@ export default defineComponent({
 
   &:hover,
   &:focus-visible {
-    @apply bg-default-alpha;
-    @apply dark:bg-dark-default-alpha;
+    @apply bg-default-alpha text-default;
+    @apply dark:bg-dark-default-alpha dark:text-dark-default;
   }
 
   &&--active {
-    @apply bg-default-alpha;
-    @apply dark:bg-dark-default-alpha cursor-default;
+    @apply bg-default-alpha text-default;
+    @apply dark:bg-dark-default-alpha cursor-default dark:text-dark-default;
   }
 
   &:disabled {
-    @apply bg-subtle border-subtle pointer-events-none text-muted;
-    @apply dark:bg-dark-subtle dark:border-dark-subtle  dark:text-dark-muted;
+    @apply bg-default/50 border-subtle pointer-events-none text-subtlest;
+    @apply dark:bg-dark-default/50 dark:border-dark-subtle  dark:text-dark-subtlest;
   }
 }
 </style>
