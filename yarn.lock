@@ -14564,7 +14564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:3.10.111, pdfjs-dist@npm:^3.10.111":
+"pdfjs-dist@npm:3.10.111":
   version: 3.10.111
   resolution: "pdfjs-dist@npm:3.10.111"
   dependencies:
@@ -14576,6 +14576,21 @@ __metadata:
     path2d-polyfill:
       optional: true
   checksum: 719eff6525765c65ea527d2dca9f1a79369c8cd75c5d73db2c0089e9ac2215139faff9249287181625e37aa5a0bd92cde613d877f02662930cac842133a8f4e6
+  languageName: node
+  linkType: hard
+
+"pdfjs-dist@npm:^3.10.111":
+  version: 3.11.174
+  resolution: "pdfjs-dist@npm:3.11.174"
+  dependencies:
+    canvas: ^2.11.2
+    path2d-polyfill: ^2.0.1
+  dependenciesMeta:
+    canvas:
+      optional: true
+    path2d-polyfill:
+      optional: true
+  checksum: 62f5a64ca0b2dbc855701ebf9a65c3e48c3c9aa5d64c50eb42bb9ff50a326f3eddab7f2a134ef0398398b1ccff9d842935b9f31358c9103bdc71406632d1a7fa
   languageName: node
   linkType: hard
 
