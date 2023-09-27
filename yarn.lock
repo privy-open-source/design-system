@@ -3790,7 +3790,7 @@ __metadata:
     marked: 5.1.2
     nanodelay: 2.0.2
     nuxt: 3.7.3
-    pdfjs-dist: 3.10.111
+    pdfjs-dist: 3.11.174
     postcss-custom-properties: ^13.0.0
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
@@ -14564,22 +14564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:3.10.111":
-  version: 3.10.111
-  resolution: "pdfjs-dist@npm:3.10.111"
-  dependencies:
-    canvas: ^2.11.2
-    path2d-polyfill: ^2.0.1
-  dependenciesMeta:
-    canvas:
-      optional: true
-    path2d-polyfill:
-      optional: true
-  checksum: 719eff6525765c65ea527d2dca9f1a79369c8cd75c5d73db2c0089e9ac2215139faff9249287181625e37aa5a0bd92cde613d877f02662930cac842133a8f4e6
-  languageName: node
-  linkType: hard
-
-"pdfjs-dist@npm:^3.10.111":
+"pdfjs-dist@npm:3.11.174, pdfjs-dist@npm:^3.10.111":
   version: 3.11.174
   resolution: "pdfjs-dist@npm:3.11.174"
   dependencies:
