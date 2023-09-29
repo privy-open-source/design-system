@@ -35,8 +35,8 @@
                   :display-limit="displayLimit"
                   :limit-text="limitText" />
               </template>
-              <template v-else-if="!Array.isArray(localModel)">
-                {{ localModel?.text }}
+              <template v-else>
+                {{ (localModel as SelectItem)?.text }}
               </template>
             </slot>
           </template>
@@ -190,7 +190,14 @@ defineOptions({
 
 const props = defineProps({
   modelValue: {
-    type   : undefined,
+    type: [
+      String,
+      Number,
+      Boolean,
+      Array,
+      Object,
+      Date,
+    ],
     default: undefined,
   },
   selected: {

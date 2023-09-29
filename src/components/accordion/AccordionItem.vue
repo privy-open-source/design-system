@@ -44,7 +44,9 @@
 import { useVModel } from '@vueuse/core'
 import { ACCORDION_CONTEXT, generateId } from '.'
 import {
-  computed, inject, watch,
+  computed,
+  inject,
+  watch,
 } from 'vue-demi'
 
 import Subheading from '../subheading/Subheading.vue'
