@@ -20,7 +20,10 @@
 import { useVModel } from '@vueuse/core'
 import { type AccordionItem, ACCORDION_CONTEXT } from '.'
 import {
-  PropType, computed, provide, readonly,
+  PropType,
+  computed,
+  provide,
+  readonly,
 } from 'vue-demi'
 import Item from './AccordionItem.vue'
 

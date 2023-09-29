@@ -1,15 +1,17 @@
 <template>
   <div
+    v-if="title || titleActionLabel || collapsible"
     class="sidebar__title"
     data-testid="sidebar-title"
-    :class="[(!title && titleActionLabel) ? 'justify-end' : 'justify-between', {
+    :class="{
       'sidebar__title__collapsible': (collapsible && type !== 'narrow'),
       'sidebar__title--collapsed': !isExpand,
-    }]"
+    }"
     v-bind="$attrs"
     @click.prevent="toggleExpand">
     <Caption
       v-if="title"
+      class="sidebar__title__caption"
       weight="bold"
       transform="capitalize">
       {{ title }}
@@ -17,6 +19,7 @@
     <Text
       v-if="titleActionLabel && titleActionUrl"
       data-testid="sidebar-nav-action"
+      class="sidebar__title__action"
       variant="caption"
       :href="titleActionUrl">
       {{ titleActionLabel }}
@@ -128,6 +131,10 @@ function toggleExpand (): void {
     .nav__title {
       @apply hidden;
     }
+
+    .nav__subitem &.nav {
+      @apply pt-0;
+    }
   }
 
   &&--narrow {
@@ -196,7 +203,15 @@ function toggleExpand (): void {
   }
 
   &__title {
-    @apply relative z-1 flex items-center -mb-9 px-3 mt-5;
+    @apply relative z-1 flex items-center -mb-9 px-3 mt-5 justify-end;
+
+    &__caption {
+      @apply flex-grow;
+    }
+
+    &__action {
+      @apply flex-shrink-0;
+    }
 
     &__collapsible {
       @apply cursor-pointer select-none;

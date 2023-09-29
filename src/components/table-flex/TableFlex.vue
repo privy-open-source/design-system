@@ -107,7 +107,7 @@
   </div>
 </template>
 
-<script lang="ts" setup generic="T extends Record<string, unknown>">
+<script lang="ts" setup generic="T">
 import {
   computed,
   HTMLAttributes,
@@ -120,6 +120,7 @@ import {
   withKey,
   withoutKey,
   withUnit,
+  KeyType,
 } from '../table'
 import Checkbox from '../checkbox/Checkbox.vue'
 import { useVModel } from '../input'
@@ -186,7 +187,7 @@ const emit  = defineEmits<{
 const rows = computed<T[]>({
   get () {
     return props.items.map((item) => {
-      return withKey(item) as T
+      return withKey(item as Record<string, unknown>) as T
     })
   },
   set (items) {
@@ -213,10 +214,14 @@ const classNames = computed(() => {
 })
 
 defineSlots<{
-  empty:() => VNode,
-  row:(props: { index: number, item: T, [key: string]: any }) => VNode,
-  [colKey: `head(${string})`]:(props: { label: string, field: TableField<T>, [key: string]: any }) => VNode,
-  [colKey: `cell(${string})`]:(props: { index: number, item: T, [key: string]: any }) => VNode,
+  empty:() => VNode[],
+  row:(props: { index: number, item: T }) => VNode[],
+  [K: `cell(${string})`]:(props: { index: number }) => VNode[],
+  [K: `head(${string})`]:(props: { field: TableField<T>, label: string }) => VNode[],
+} & {
+  [K in KeyType<T> as `cell(${K})`]:(props: { item: T, index: number }) => VNode[]
+} & {
+  [K in KeyType<T> as `head(${K})`]:(props: { field: TableField<T>, label: string }) => VNode[]
 }>()
 </script>
 

@@ -7,9 +7,9 @@ import {
 import { HTMLAttributes } from 'vue-demi'
 import { LiteralUnion } from 'type-fest'
 
-type KeyType<T> = LiteralUnion<keyof T & string, string>
+export type KeyType<T> = LiteralUnion<keyof T & string, string>
 
-type LabelType<T> = LiteralUnion<Capitalize<keyof T & string>, string>
+export type LabelType<T> = LiteralUnion<Capitalize<keyof T & string>, string>
 
 export type ApperanceVariant = 'card' | 'table'
 
@@ -47,7 +47,7 @@ function normalizeField<T> (field: TableField<T>): TableField<T> {
   })
 }
 
-export function defineTable<T> (fields: Array<TableField<T>> | string[]): Array<TableField<T>> {
+export function defineTable<T = unknown> (fields: Array<TableField<T>> | string[]): Array<TableField<T>> {
   return fields.map((field: TableField<T> | string) => {
     return typeof field === 'string'
       ? normalizeField<T>({ key: field })
@@ -55,7 +55,7 @@ export function defineTable<T> (fields: Array<TableField<T>> | string[]): Array<
   })
 }
 
-export function withKey (item: Record<string, unknown>) {
+export function withKey (item: object) {
   return defu(item, { _key: Symbol('item-key') })
 }
 

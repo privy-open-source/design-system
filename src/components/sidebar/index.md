@@ -519,7 +519,6 @@ Action-permalink can also be added to the section-title via `title-action-label`
       </p-sidebar-brand>
     </template>
     <p-sidebar-nav
-      title="main"
       title-action-label="See More"
       title-action-url="#/categories">
       <p-nav-item active>

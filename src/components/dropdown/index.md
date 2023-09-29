@@ -468,11 +468,13 @@ Dropdown use local CSS variables for enhanced real-time customization.
 
 ### Slots `<p-dropdown>`
 
-| Name             | Description                           |
-|------------------|---------------------------------------|
-| `default`        | Dropdown menu content                 |
-| `button-content` | Content to placed in Activator Button |
-| `activator`      | Content to replace Activator Button   |
+| Name             | Description                                           |
+|------------------|-------------------------------------------------------|
+| `default`        | Dropdown menu content                                 |
+| `button-content` | Content to placed in Activator Button                 |
+| `activator`      | Content to replace Activator Button                   |
+| `prepend`        | Add addition content in beginning of Dropdown's menus |
+| `append`         | Add addition content in end of Dropdown's menus       |
 
 ### Events `<p-dropdown>`
 
@@ -482,10 +484,12 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | `hide` | -         | Event when dropdown popup hidden |
 
 ### Props `<p-dropdown-item>`
+
 | Props      |   Type    | Default | Description                                |
 |------------|:---------:|:-------:|--------------------------------------------|
 | `href`     | `String`  |   `-`   | Place url permalink in the `dropdown-item` |
 | `disabled` | `Boolean` |  false  | Set disabled state in the `dropdown-item`  |
+
 ### Slots `<p-dropdown-header>`
 
 | Name      | Description                                    |

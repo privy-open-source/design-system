@@ -152,6 +152,10 @@ export function useObjectModel (props: PdfObjectProp) {
   }
 }
 
+/**
+ * Reactive page element
+ * @param page page number
+ */
 export function usePage (page: MaybeRef<number>) {
   const { root }     = inject(PDF_OBJECTS_CONTEXT)
   const pageSelector = computed(() => `.page[data-page-number="${unref(page)}"]`)
@@ -160,6 +164,9 @@ export function usePage (page: MaybeRef<number>) {
   return pageEl
 }
 
+/**
+ * focus with debounce
+ */
 export const focus = debounce(focus_, 100)
 
 export type AddonPositionVariant = 'top' | 'left' | 'right' | 'bottom'
