@@ -12,6 +12,12 @@
 
 > Icons changelog
 
+## 0.23.0
+
+### Added
+
+- multiple-persons
+
 ## 0.22.0
 
 ### Added
