@@ -25,16 +25,6 @@ description: Define sidebar using JSON
           url  : '/',
           icon : IconDashboard
         },
-      ]
-    },
-    {
-      items: [
-        {
-          name : 'dashboard',
-          label: 'Dashboard',
-          url  : '/',
-          icon : IconDashboard
-        },
         {
           name : 'documents',
           label: 'Documents',
