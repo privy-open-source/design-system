@@ -69,8 +69,11 @@ export default defineComponent({
   * warning & danger
   */
   &&--default {
-    @apply bg-inverse;
-    @apply dark:bg-dark-inverse;
+    --p-dot-bg-default: theme(backgroundColor.inverse);
+    --p-dot-bg-dark-default: theme(backgroundColor.dark.inverse);
+
+    @apply bg-[color:var(--p-dot-bg-default)];
+    @apply dark:bg-[color:var(--p-dot-bg-dark-default)];
   }
 
   &&--primary {

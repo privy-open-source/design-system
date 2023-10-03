@@ -133,6 +133,16 @@ provide(SIDEBAR_SETTINGS, {
   @apply bg-[color:var(--p-sidebar-bg)] px-[var(--p-sidebar-padding-x)] py-[var(--p-sidebar-padding-y)] flex flex-col items-stretch;
   @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
 
+  &__menus {
+    .collapses {
+      /* + .sidebar__title {
+        + .collapses { */
+          @apply py-4;
+        /* }
+      } */
+    }
+  }
+
   /**
   * Default sidebar has
   * 230px width
