@@ -69,7 +69,7 @@
 
 <Main>
   <div class="flex flex-row h-screen">
-    <div class="flex-shrink-0 bg-base">
+    <div class="shrink-0 bg-base dark:bg-dark-base">
       <p-sidebar-menu :menus="basic" style="--p-sidebar-bg: rgb(243,243,243)">
       </p-sidebar-menu>
     </div>

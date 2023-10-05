@@ -79,7 +79,7 @@ export default defineComponent({
   @apply flex w-full space-x-4;
 
   &__bar {
-    @apply rounded-full h-1 bg-subtle-alpha flex-grow transition-colors duration-150;
+    @apply rounded-full h-1 bg-subtle-alpha grow transition-colors duration-150;
     @apply dark:bg-dark-subtle-alpha;
   }
 

@@ -266,7 +266,7 @@ defineSlots<{
     &.table-flex__checkbox,
     &.table-flex__drag {
       @apply max-sm:absolute max-sm:left-0 max-sm:top-1/2 max-sm:-translate-y-1/2;
-      @apply flex-shrink-0 flex-grow-0 self-center w-auto;
+      @apply shrink-0 grow-0 self-center w-auto;
     }
 
     &.table-flex__checkbox {

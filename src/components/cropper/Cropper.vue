@@ -87,7 +87,7 @@
 
       <p-button
         data-testid="cropper-reset"
-        class="flex-shrink-0"
+        class="shrink-0"
         size="xs"
         variant="link"
         @click="reset()">
@@ -435,12 +435,12 @@ export default defineComponent({
     @apply p-2 space-x-2 flex justify-between max-w-full overflow-hidden;
 
     &-bar {
-      @apply flex flex-grow max-w-md space-x-2;
+      @apply flex grow max-w-md space-x-2;
     }
   }
 
   &__slider {
-    @apply flex-grow w-full;
+    @apply grow w-full;
   }
 
   &--rounded {

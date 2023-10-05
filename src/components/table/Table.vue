@@ -299,7 +299,7 @@ export default defineComponent({
 
     &.datatable__checkbox,
     &.datatable__drag {
-      @apply flex-shrink-0 flex-grow-0;
+      @apply shrink-0 grow-0;
     }
 
     &.datatable__checkbox {
@@ -331,7 +331,7 @@ export default defineComponent({
 
     &.datatable__checkbox,
     &.datatable__drag {
-      @apply flex-shrink-0 flex-grow-0 self-center;
+      @apply shrink-0 grow-0 self-center;
     }
 
     &.datatable__checkbox {

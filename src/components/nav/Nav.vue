@@ -355,7 +355,7 @@ export default defineComponent({
   &&--justified {
     .nav {
       &__item {
-        @apply basis-0 flex-grow;
+        @apply basis-0 grow;
       }
     }
   }

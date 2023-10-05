@@ -29,7 +29,7 @@
         size="xs" />
       <span
         data-testid="pdf-total"
-        class="flex-shrink-0">of {{ totalPage }}</span>
+        class="shrink-0">of {{ totalPage }}</span>
       <p-button
         data-testid="pdf-prev"
         variant="ghost"

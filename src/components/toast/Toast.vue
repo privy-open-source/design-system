@@ -126,7 +126,7 @@ export default defineComponent({
 
   .toast__icon,
   .toast__close {
-    @apply flex-shrink-0 p-4;
+    @apply shrink-0 p-4;
   }
 
   .toast__icon {
@@ -139,7 +139,7 @@ export default defineComponent({
   }
 
   .toast__body {
-    @apply py-4 pr-4 flex-grow space-y-2 flex flex-col;
+    @apply py-4 pr-4 grow space-y-2 flex flex-col;
   }
 
   .toast__title {

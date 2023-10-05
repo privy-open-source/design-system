@@ -168,17 +168,17 @@ export default defineComponent({
     @apply flex items-center space-x-1;
 
     &--back {
-      @apply flex-shrink-0;
+      @apply shrink-0;
     }
   }
 
   &__content {
-    @apply flex-grow;
+    @apply grow;
   }
 
   &__next,
   &__back {
-    @apply flex-shrink-0;
+    @apply shrink-0;
   }
 }
 </style>

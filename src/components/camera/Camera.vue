@@ -372,7 +372,7 @@ export default defineComponent({
   @apply dark:bg-dark-inverse;
 
   &__video {
-    @apply flex-grow min-h-full max-w-full h-auto object-cover;
+    @apply grow min-h-full max-w-full h-auto object-cover;
   }
 
   &--mirror {
@@ -415,7 +415,7 @@ export default defineComponent({
   }
 
   &__controls {
-    @apply py-3 flex w-full flex-shrink-0 justify-center items-center absolute bottom-0 space-x-3;
+    @apply py-3 flex w-full shrink-0 justify-center items-center absolute bottom-0 space-x-3;
   }
 
   &__toast {

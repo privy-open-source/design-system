@@ -58,7 +58,7 @@ description: Headless Wizard.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 1</div>
+            <div class="grow">Step 1</div>
             <div class="space-gap-2">
               <p-button disabled color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -71,7 +71,7 @@ description: Headless Wizard.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 2</div>
+            <div class="grow">Step 2</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -84,7 +84,7 @@ description: Headless Wizard.
       <template #default="{ next, prev, toStep }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 3</div>
+            <div class="grow">Step 3</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Finish</p-button>
@@ -104,7 +104,7 @@ description: Headless Wizard.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 1</div>
+            <div class="grow">Step 1</div>
             <div class="space-gap-2">
               <p-button disabled color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -117,7 +117,7 @@ description: Headless Wizard.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 2</div>
+            <div class="grow">Step 2</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -130,7 +130,7 @@ description: Headless Wizard.
       <template #default="{ next, prev, toStep }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 3</div>
+            <div class="grow">Step 3</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Finish</p-button>
@@ -154,7 +154,7 @@ Set `direction` to `vertical` to enable Vertical mode.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 1</div>
+            <div class="grow">Step 1</div>
             <div class="space-gap-2">
               <p-button disabled color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -167,7 +167,7 @@ Set `direction` to `vertical` to enable Vertical mode.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 2</div>
+            <div class="grow">Step 2</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -180,7 +180,7 @@ Set `direction` to `vertical` to enable Vertical mode.
       <template #default="{ next, prev, toStep }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 3</div>
+            <div class="grow">Step 3</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Finish</p-button>
@@ -200,7 +200,7 @@ Set `direction` to `vertical` to enable Vertical mode.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 1</div>
+            <div class="grow">Step 1</div>
             <div class="space-gap-2">
               <p-button disabled color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -213,7 +213,7 @@ Set `direction` to `vertical` to enable Vertical mode.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 2</div>
+            <div class="grow">Step 2</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -226,7 +226,7 @@ Set `direction` to `vertical` to enable Vertical mode.
       <template #default="{ next, prev, toStep }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 3</div>
+            <div class="grow">Step 3</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Finish</p-button>
@@ -250,7 +250,7 @@ Add prop `loop` to enable Loop mode, it will loop over the steps and never finis
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 1</div>
+            <div class="grow">Step 1</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -263,7 +263,7 @@ Add prop `loop` to enable Loop mode, it will loop over the steps and never finis
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 2</div>
+            <div class="grow">Step 2</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -276,7 +276,7 @@ Add prop `loop` to enable Loop mode, it will loop over the steps and never finis
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 3</div>
+            <div class="grow">Step 3</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -295,7 +295,7 @@ Add prop `loop` to enable Loop mode, it will loop over the steps and never finis
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 1</div>
+            <div class="grow">Step 1</div>
             <div class="space-gap-2">
               <p-button disabled color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -308,7 +308,7 @@ Add prop `loop` to enable Loop mode, it will loop over the steps and never finis
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 2</div>
+            <div class="grow">Step 2</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -321,7 +321,7 @@ Add prop `loop` to enable Loop mode, it will loop over the steps and never finis
       <template #default="{ next, prev, toStep }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 3</div>
+            <div class="grow">Step 3</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Finish</p-button>
@@ -347,7 +347,7 @@ This hook ran when `next` function was called, suit for form validation.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">
+            <div class="grow">
               <label>Name</label>
               <p-input v-model="form.name" placeholder="Fill to next" />
             </div>
@@ -363,7 +363,7 @@ This hook ran when `next` function was called, suit for form validation.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">
+            <div class="grow">
               <label>Email</label>
               <p-input v-model="form.email" placeholder="Fill to next" />
             </div>
@@ -385,7 +385,7 @@ This hook ran when `next` function was called, suit for form validation.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">
+            <div class="grow">
               <label>Name</label>
               <p-input v-model="form.name" placeholder="Fill to next" />
             </div>
@@ -401,7 +401,7 @@ This hook ran when `next` function was called, suit for form validation.
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">
+            <div class="grow">
               <label>Email</label>
               <p-input v-model="form.email" placeholder="Fill to next" />
             </div>
@@ -467,7 +467,7 @@ This hook run when `next` function called in **last step**, and after `on-before
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">
+            <div class="grow">
               <label>Name</label>
               <p-input v-model="form.name" placeholder="Fill to next" />
             </div>
@@ -483,7 +483,7 @@ This hook run when `next` function called in **last step**, and after `on-before
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">
+            <div class="grow">
               <label>Email</label>
               <p-input v-model="form.email" placeholder="Fill to next" />
             </div>
@@ -507,7 +507,7 @@ This hook run when `next` function called in **last step**, and after `on-before
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">
+            <div class="grow">
               <label>Name</label>
               <p-input v-model="form.name" placeholder="Fill to next" />
             </div>
@@ -523,7 +523,7 @@ This hook run when `next` function called in **last step**, and after `on-before
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">
+            <div class="grow">
               <label>Email</label>
               <p-input v-model="form.email" placeholder="Fill to next" />
             </div>
@@ -569,7 +569,7 @@ You can binding current step with v-model
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 1</div>
+            <div class="grow">Step 1</div>
             <div class="space-gap-2">
               <p-button disabled color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -582,7 +582,7 @@ You can binding current step with v-model
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 2</div>
+            <div class="grow">Step 2</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Next</p-button>
@@ -595,7 +595,7 @@ You can binding current step with v-model
       <template #default="{ next, prev }">
         <p-card>
           <div class="flex flex-col h-52">
-            <div class="flex-grow">Step 3</div>
+            <div class="grow">Step 3</div>
             <div class="space-gap-2">
               <p-button @click="prev" color="info">Prev</p-button>
               <p-button @click="next" color="info">Finish</p-button>

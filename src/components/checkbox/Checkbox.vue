@@ -138,7 +138,7 @@ function toggle () {
   * with custom icon
   */
   &__icon {
-    @apply w-5 h-5 inline-flex flex-shrink-0 border rounded-tn border-subtle items-center justify-center bg-default;
+    @apply w-5 h-5 inline-flex shrink-0 border rounded-tn border-subtle items-center justify-center bg-default;
     @apply dark:border-dark-subtle dark:bg-dark-default;
 
     > svg {
