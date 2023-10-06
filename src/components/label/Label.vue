@@ -148,19 +148,19 @@ export default defineComponent({
 
     &.label {
       &--default {
-        --p-bg-variant-default: theme(backgroundColor.inverse);
-        --p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
-        --p-text-variant-default: theme(textColor.state-emphasis);
-        --p-text-dark-variant-default: theme(textColor.dark.on-emphasis);
+        --p-label-bg-variant-default: theme(backgroundColor.inverse);
+        --p-label-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
+        --p-label-text-variant-default: theme(textColor.state-emphasis);
+        --p-label-text-dark-variant-default: theme(textColor.dark.on-emphasis);
 
         &:not([class^='bg-'], [class*='bg-']) {
-          @apply bg-[color:var(--p-bg-variant-default)];
-          @apply dark:bg-[color:var(--p-bg-dark-variant-default)];
+          @apply bg-[color:var(--p-label-bg-variant-default)];
+          @apply dark:bg-[color:var(--p-label-bg-dark-variant-default)];
         }
 
         &:not([class^='text-'], [class*='text-']) {
-          @apply text-[color:var(--p-text-variant-default)];
-          @apply dark:text-[color:var(--p-text-dark-variant-default)];
+          @apply text-[color:var(--p-label-text-variant-default)];
+          @apply dark:text-[color:var(--p-label-text-dark-variant-default)];
         }
 
         .label__dismiss {
@@ -239,6 +239,14 @@ export default defineComponent({
   * in all color
   */
   &--variant-dot {
+    --p-label-dot-default: theme(backgroundColor.inverse);
+    --p-label-dot-dark-default: theme(backgroundColor.dark.inverse);
+
+    .dot--variant-default {
+      --p-dot-bg-default: var(--p-label-dot-default);
+      --p-dot-bg-dark-default: var(--p-label-dot-dark-default);
+    }
+
     /**
     * Dot variant have
     * white background and bordered
