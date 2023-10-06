@@ -201,6 +201,18 @@ function selectTab (index: number, tab: TabContext) {
   }
 
   /**
+  * left align for
+  * vertical navigation
+  */
+  &--vertical-align-left {
+    .nav {
+      &__item {
+        @apply -mr-[1px];
+      }
+    }
+  }
+
+  /**
   * right align for
   * vertical navigation
   */

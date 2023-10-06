@@ -173,8 +173,8 @@ export default defineComponent({
       &.router-link-active:not(.nav__link--exact),
       &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
-          @apply border-b-inverse;
-          @apply dark:border-b-dark-inverse;
+          @apply border-b-brand-accent;
+          @apply dark:border-b-dark-brand-accent;
         }
       }
     }
@@ -191,8 +191,8 @@ export default defineComponent({
         &.router-link-active:not(.nav__link--exact),
         &.router-link-exact-active.nav__link--exact {
           &:not(.nav__link--disabled) {
-            @apply border-r border-r-inverse rounded-tr-none;
-            @apply dark:border-r-dark-inverse;
+            @apply border-r border-r-brand-accent rounded-tr-none;
+            @apply dark:border-r-dark-brand-accent;
           }
         }
       }
@@ -205,8 +205,8 @@ export default defineComponent({
           &.router-link-active:not(.nav__link--exact),
           &.router-link-exact-active.nav__link--exact {
             &:not(.nav__link--disabled) {
-              @apply border-l border-l-inverse rounded-tl-none;
-              @apply dark:border-l-dark-inverse;
+              @apply border-l border-l-brand-accent rounded-tl-none;
+              @apply dark:border-l-dark-brand-accent;
             }
           }
         }
