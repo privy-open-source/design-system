@@ -87,7 +87,7 @@
 
       <p-button
         data-testid="cropper-reset"
-        class="shrink-0"
+        class="cropper__control__reset"
         size="xs"
         variant="link"
         @click="reset()">
@@ -436,6 +436,10 @@ export default defineComponent({
 
     &-bar {
       @apply flex grow max-w-md space-x-2;
+    }
+
+    &__reset {
+      @apply shrink-0;
     }
   }
 
