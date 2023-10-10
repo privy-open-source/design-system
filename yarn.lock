@@ -3810,7 +3810,7 @@ __metadata:
     "@vitest/browser": ^0.25.3
     "@vitest/coverage-c8": 0.24.5
     "@vue/eslint-config-typescript": 12.0.0
-    "@vueuse/core": 10.3.0
+    "@vueuse/core": 10.5.0
     "@vueuse/math": 10.3.0
     "@zxing/browser": 0.1.4
     "@zxing/library": 0.20.0
@@ -3929,7 +3929,7 @@ __metadata:
     "@testing-library/dom": 9.3.3
     "@testing-library/user-event": 14.5.1
     "@types/sanitize-html": ^2
-    "@vueuse/core": 10.3.0
+    "@vueuse/core": 10.5.0
     "@vueuse/math": 10.3.0
     "@zxing/browser": 0.1.4
     "@zxing/library": 0.20.0
@@ -4717,6 +4717,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/web-bluetooth@npm:^0.0.18":
+  version: 0.0.18
+  resolution: "@types/web-bluetooth@npm:0.0.18"
+  checksum: 5ab99b3f5bf1a7c86e35a463ad57fdd7bb570a49195d94dbdcd8dedc59067f11caddcda5dfee7b144c8f2e18d85b4b2922c0d5c78f7798686d8a8795fb1393f0
+  languageName: node
+  linkType: hard
+
 "@types/webfontloader@npm:1.6.35":
   version: 1.6.35
   resolution: "@types/webfontloader@npm:1.6.35"
@@ -5413,18 +5420,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:10.3.0, @vueuse/core@npm:^10.1.2":
-  version: 10.3.0
-  resolution: "@vueuse/core@npm:10.3.0"
-  dependencies:
-    "@types/web-bluetooth": ^0.0.17
-    "@vueuse/metadata": 10.3.0
-    "@vueuse/shared": 10.3.0
-    vue-demi: ">=0.14.5"
-  checksum: 54af7ab9f2aff8cc795dfc9d846aa9a27dc0949d7a6eec79697819e7dc8cb17b1682f267e7501382afa45736b6877363e640e381b7ac1fd6bc18dc860911afd8
-  languageName: node
-  linkType: hard
-
 "@vueuse/core@npm:10.4.1, @vueuse/core@npm:^10.4.1":
   version: 10.4.1
   resolution: "@vueuse/core@npm:10.4.1"
@@ -5434,6 +5429,30 @@ __metadata:
     "@vueuse/shared": 10.4.1
     vue-demi: ">=0.14.5"
   checksum: 2232ad6dd3af89aee80d38ffcbe6a3386d1f55f66ac212baac10c3a506f43ee58a4fffabaa7ec483e62dbf6f231ee7ce1fb82ab91f9312e2d9f8c554810d2773
+  languageName: node
+  linkType: hard
+
+"@vueuse/core@npm:10.5.0":
+  version: 10.5.0
+  resolution: "@vueuse/core@npm:10.5.0"
+  dependencies:
+    "@types/web-bluetooth": ^0.0.18
+    "@vueuse/metadata": 10.5.0
+    "@vueuse/shared": 10.5.0
+    vue-demi: ">=0.14.6"
+  checksum: 9144847c7ec3e2997e324946c573f0f2da32629d7db8c1e5bfc8fd99cc0eb8e2c129691631bd8f9bc3be8c56796d1f057f151b567c7c5a56b7a85dfe6e3c75d5
+  languageName: node
+  linkType: hard
+
+"@vueuse/core@npm:^10.1.2":
+  version: 10.3.0
+  resolution: "@vueuse/core@npm:10.3.0"
+  dependencies:
+    "@types/web-bluetooth": ^0.0.17
+    "@vueuse/metadata": 10.3.0
+    "@vueuse/shared": 10.3.0
+    vue-demi: ">=0.14.5"
+  checksum: 54af7ab9f2aff8cc795dfc9d846aa9a27dc0949d7a6eec79697819e7dc8cb17b1682f267e7501382afa45736b6877363e640e381b7ac1fd6bc18dc860911afd8
   languageName: node
   linkType: hard
 
@@ -5510,6 +5529,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vueuse/metadata@npm:10.5.0":
+  version: 10.5.0
+  resolution: "@vueuse/metadata@npm:10.5.0"
+  checksum: 8db966e86a7a3233d1c36c4aa46510b555f211a40899ab89cfd5f09280e6b325014722185bf0dbb9806b0ca5aff5c1217ded108aef79cd07c72800c573c4fc4a
+  languageName: node
+  linkType: hard
+
 "@vueuse/shared@npm:10.3.0":
   version: 10.3.0
   resolution: "@vueuse/shared@npm:10.3.0"
@@ -5525,6 +5551,15 @@ __metadata:
   dependencies:
     vue-demi: ">=0.14.5"
   checksum: e1cc0b970e0ce06c8bc2cbed3ce37a9ee7ff0667fc3f354398b4201259db1848da428d62c9ea19c3124f5eb80ce0b3f97328f537e3238ec68cdbb726ff3e3fe8
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:10.5.0":
+  version: 10.5.0
+  resolution: "@vueuse/shared@npm:10.5.0"
+  dependencies:
+    vue-demi: ">=0.14.6"
+  checksum: 8ec1b6e18ccdff2940efbee943539831ce54d59294bb1b1e309c82a845035807ee6b11cca29c3eca2df321e79136b13650399c54cde366212e8b2c69c4befb48
   languageName: node
   linkType: hard
 
@@ -18966,7 +19001,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.14.6":
+"vue-demi@npm:0.14.6, vue-demi@npm:>=0.14.6":
   version: 0.14.6
   resolution: "vue-demi@npm:0.14.6"
   peerDependencies:
