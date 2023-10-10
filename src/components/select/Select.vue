@@ -190,14 +190,7 @@ defineOptions({
 
 const props = defineProps({
   modelValue: {
-    type: [
-      String,
-      Number,
-      Boolean,
-      Array,
-      Object,
-      Date,
-    ],
+    type   : undefined as PropType<any>,
     default: undefined,
   },
   selected: {

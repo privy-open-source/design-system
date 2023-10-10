@@ -193,12 +193,17 @@ Use this variable for level color (like badge) customization.
 
 ### `.label.label--default`
 ```sass
---p-bg-variant-default: theme(backgroundColor.inverse);
---p-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
---p-text-variant-default: theme(textColor.state-emphasis);
---p-text-dark-variant-default: theme(textColor.dark.on-emphasis);
+--p-label-bg-variant-default: theme(backgroundColor.inverse);
+--p-label-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
+--p-label-text-variant-default: theme(textColor.state-emphasis);
+--p-label-text-dark-variant-default: theme(textColor.dark.on-emphasis);
 ```
 
+### `.label.label--variant-dot`
+```sass
+--p-label-dot-default: theme(backgroundColor.inverse);
+--p-label-dot-dark-default: theme(backgroundColor.dark.inverse);
+```
 ## API
 
 ### Props

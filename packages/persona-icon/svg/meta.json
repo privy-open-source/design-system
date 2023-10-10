@@ -3466,11 +3466,6 @@
     "variant": "outline",
     "files": [
       {
-        "name": "new-page/16",
-        "path": "new-page/16.svg",
-        "hash": "cf16a711df2744e5266c727f2d52706ad70398c552cb67460387037f46aeaf53"
-      },
-      {
         "name": "new-page/20",
         "path": "new-page/20.svg",
         "hash": "52391c7b7ddf3df96b56d9ba19e3912767def3a2bbfae0f846b708d21c8d0e34"
@@ -3484,6 +3479,11 @@
         "name": "new-page/32",
         "path": "new-page/32.svg",
         "hash": "9206495c63d26a73fc4e9ff7cf12b9b2cd41d3a99ef9a63c8f127353ea2551a4"
+      },
+      {
+        "name": "new-page/16",
+        "path": "new-page/16.svg",
+        "hash": "cf16a711df2744e5266c727f2d52706ad70398c552cb67460387037f46aeaf53"
       }
     ]
   },

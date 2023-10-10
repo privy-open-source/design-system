@@ -129,7 +129,7 @@ export default defineComponent({
       }
 
       .nav__link__label {
-        @apply ml-0;
+        @apply ml-0 justify-center;
       }
     }
   }

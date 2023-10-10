@@ -50,36 +50,15 @@ export default defineComponent({
       default: 'pill',
     },
     modelValue: {
-      type: [
-        String,
-        Number,
-        Boolean,
-        Array,
-        Object,
-        Date,
-      ],
+      type   : undefined as PropType<any>,
       default: false,
     },
     value: {
-      type: [
-        String,
-        Number,
-        Boolean,
-        Array,
-        Object,
-        Date,
-      ],
+      type   : undefined as PropType<any>,
       default: true,
     },
     uncheckedValue: {
-      type: [
-        String,
-        Number,
-        Boolean,
-        Array,
-        Object,
-        Date,
-      ],
+      type   : undefined as PropType<any>,
       default: false,
     },
     checked: {
