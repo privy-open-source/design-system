@@ -67,25 +67,11 @@ export default defineComponent({
       default: '',
     },
     modelValue: {
-      type: [
-        String,
-        Number,
-        Boolean,
-        Array,
-        Object,
-        Date,
-      ],
+      type   : undefined as PropType<any>,
       default: false,
     },
     value: {
-      type: [
-        String,
-        Number,
-        Boolean,
-        Array,
-        Object,
-        Date,
-      ],
+      type   : undefined as PropType<any>,
       default: true,
     },
     checked: {

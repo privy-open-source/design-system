@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { useVModel } from '.'
-import { computed } from 'vue-demi'
+import { PropType, computed } from 'vue-demi'
 import IconCheckbox from './icon/IconCheckbox.vue'
 import IconInderteminate from './icon/IconInderteminate.vue'
 
@@ -40,36 +40,15 @@ const props = defineProps({
     default: undefined,
   },
   modelValue: {
-    type: [
-      String,
-      Number,
-      Boolean,
-      Array,
-      Object,
-      Date,
-    ],
+    type   : undefined as PropType<any>,
     default: false,
   },
   value: {
-    type: [
-      String,
-      Number,
-      Boolean,
-      Array,
-      Object,
-      Date,
-    ],
+    type   : undefined as PropType<any>,
     default: true,
   },
   uncheckedValue: {
-    type: [
-      String,
-      Number,
-      Boolean,
-      Array,
-      Object,
-      Date,
-    ],
+    type   : undefined as PropType<any>,
     default: false,
   },
   checked: {
