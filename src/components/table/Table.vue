@@ -166,15 +166,15 @@ export default defineComponent({
       default: 'flexible',
     },
     modelValue: {
-      type   : Array as PropType<Record<string, unknown>[]>,
+      type   : Array as PropType<Record<string, any>[]>,
       default: () => ([]),
     },
     fields: {
-      type   : Array as PropType<TableField[]>,
+      type   : Array as PropType<TableField<Record<string, any>>[]>,
       default: () => ([]),
     },
     items: {
-      type   : Array as PropType<Record<string, unknown>[]>,
+      type   : Array as PropType<Record<string, any>[]>,
       default: () => ([]),
     },
     selectable: {
