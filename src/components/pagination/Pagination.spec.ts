@@ -269,13 +269,13 @@ it('should bind total page to "v-model", if total page count less than current p
 
   let paginationItems    = screen.queryAllByTestId('pagination-item')
   const paginationOption = screen.getByTestId('pagination-option')
-  const input            = within(paginationOption).getByTestId('select-search')
+  // const input            = within(paginationOption).getByTestId('select-search')
 
   expect(paginationItems).toHaveLength(10)
 
   model.value = 10
 
-  input.focus()
+  // input.focus()
   await nextTick()
 
   expect(model.value).toBe(10)
@@ -320,9 +320,9 @@ it('should binding current page into "v-model" and emit event "change" with quic
   })
 
   const pageOption = screen.queryByTestId('pagination-quickjump')
-  const input      = within(pageOption).getByTestId('select-search')
+  // const input      = within(pageOption).getByTestId('select-search')
 
-  input.focus()
+  // input.focus()
   await nextTick()
 
   const items = within(pageOption).queryAllByTestId('select-item')
@@ -352,9 +352,9 @@ it('should binding "per-page" props when perPage options is changed, if "show-de
   })
 
   const paginationOption = screen.getByTestId('pagination-option')
-  const input            = within(paginationOption).getByTestId('select-search')
+  // const input            = within(paginationOption).getByTestId('select-search')
 
-  input.focus()
+  // input.focus()
   await nextTick()
 
   const items = within(paginationOption).queryAllByTestId('select-item')

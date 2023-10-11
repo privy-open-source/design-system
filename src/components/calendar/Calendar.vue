@@ -384,8 +384,12 @@ export default defineComponent({
 
 <style lang="postcss">
 .calendar {
-  @apply flex flex-col space-y-2 text-sm shadow-xl border-transparent;
-  @apply dark:border-transparent;
+  @apply flex flex-col space-y-2 text-sm shadow-xl;
+
+  &.card {
+    @apply border-transparent;
+    @apply dark:border-transparent;
+  }
 
   &__nav {
     @apply flex justify-between space-x-2 mb-2;
