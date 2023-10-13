@@ -15,7 +15,18 @@
         :variant="item.variant"
         :duration="item.duration"
         :class="item.toastClass"
-        @dismissed="remove(i)" />
+        @dismissed="remove(i)">
+        <template #icon>
+          <template v-if="item.icon && typeof item.icon === 'string'">
+            <img
+              :src="item.icon"
+              alt="toast-icon">
+          </template>
+          <template v-else-if="item.icon">
+            <component :is="item.icon" />
+          </template>
+        </template>
+      </Toast>
     </TransitionGroup>
   </div>
 </template>
