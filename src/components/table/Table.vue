@@ -39,7 +39,7 @@
     </div>
 
     <Draggable
-      v-if="items.length > 0"
+      v-if="Array.isArray(items) && items.length > 0"
       v-model="rows"
       class="datatable__body"
       handle=".datatable__drag"

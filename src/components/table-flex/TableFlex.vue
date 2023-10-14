@@ -4,7 +4,7 @@
     class="table-flex"
     :class="classNames">
     <Draggable
-      v-if="items.length > 0"
+      v-if="Array.isArray(items) && items.length > 0"
       v-model="rows"
       class="table-flex__body"
       handle=".table-flex__drag"
