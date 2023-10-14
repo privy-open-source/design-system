@@ -36,7 +36,7 @@ description: Classic style Table.
     },
   ])
 
-  const items = ref([
+  const items1 = ref([
     {
       id    : 1,
       name  : 'Tarjono',
@@ -58,6 +58,7 @@ description: Classic style Table.
       status: true,
     },
   ])
+  const items = ref([])
 
   const itemsB = ref([
     {
@@ -106,7 +107,7 @@ description: Classic style Table.
 ### Simple Usage
 
 <preview class="flex-col space-y-2">
-  <p-table-static :fields="fields" :items="items" />
+  <p-table-static :fields="fields" :items="items" selectable />
 </preview>
 
 ```vue

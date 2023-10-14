@@ -92,7 +92,7 @@
       <tr
         class="table-static__row">
         <td
-          :colspan="fields.length"
+          :colspan="selectable ? fields.length+1 : fields.length"
           data-testid="table-static-empty"
           class="table-static__cell table-static__cell--empty datatable__state-empty">
           <slot name="empty">
