@@ -126,6 +126,22 @@ function toggleExpand (): void {
       .nav__link {
         @apply pr-3;
       }
+
+      .nav__item.nav__item--no-icon {
+        .nav__link__label {
+          @apply justify-start pl-8;
+        }
+
+        .nav__link {
+          @apply text-subtle hover:text-default;
+          @apply dark:text-dark-subtle dark:text-dark-default;
+
+          &:is(.router-link-active, .router-link-exact-active) {
+            @apply bg-transparent text-default hover:cursor-default;
+            @apply dark:bg-transparent dark:text-dark-default;
+          }
+        }
+      }
     }
 
     .nav__title {

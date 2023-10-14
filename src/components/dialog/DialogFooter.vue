@@ -121,13 +121,7 @@ export default defineComponent({
 
 <style lang="postcss">
 .footer {
-  @apply flex items-center;
-
-  .btn {
-    + .btn {
-      @apply ml-6;
-    }
-  }
+  @apply flex items-center space-x-3;
 
   &--align {
     &-left,
