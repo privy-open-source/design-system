@@ -29,7 +29,7 @@
         size="xs" />
       <span
         data-testid="pdf-total"
-        class="shrink-0">of {{ totalPage }}</span>
+        class="pdf__navigation-total">of {{ totalPage }}</span>
       <p-button
         data-testid="pdf-prev"
         variant="ghost"
@@ -144,6 +144,10 @@ export default defineComponent({
 
     &-page {
       @apply w-20 inline-flex;
+    }
+
+    &-total {
+      @apply shrink-0;
     }
   }
 }
