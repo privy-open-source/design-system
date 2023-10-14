@@ -395,7 +395,7 @@ export default defineComponent({
     @apply flex justify-between space-x-2 mb-2;
 
     &-title {
-      @apply flex-grow;
+      @apply grow;
     }
   }
 

@@ -288,7 +288,7 @@ export default defineComponent({
     }
 
     &-upper {
-      @apply flex-grow;
+      @apply grow;
     }
   }
 

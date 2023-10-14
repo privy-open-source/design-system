@@ -182,7 +182,7 @@ export default defineComponent({
   }
 
   &:is(&--xs, &--sm, &--md, &--lg) > &__addon {
-    @apply flex-shrink-0;
+    @apply shrink-0;
 
     + .input {
       > .input__form {

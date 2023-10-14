@@ -385,9 +385,9 @@ add prop `draggable` to enable drag-to-sort.
 <preview class="flex-col space-y-2">
   <p-table-flex :fields="fields" :items="items" draggable>
     <template #row="{ item }">
-      <div class="flex items-center flex-grow p-4 space-x-4 max-sm:w-full">
+      <div class="flex items-center p-4 space-x-4 grow max-sm:w-full">
         <p-avatar size="sm" :name="item.name" />
-        <div class="flex flex-col items-start flex-grow">
+        <div class="flex flex-col items-start grow">
           <span>{{ item.name }}</span>
           <p-label color="danger" variant="light" size="sm">Sign</p-label>
         </div>
@@ -403,9 +403,9 @@ add prop `draggable` to enable drag-to-sort.
 <template>
   <p-table-flex :fields="fields" :items="items" draggable>
     <template #row="{ item }">
-      <div class="flex items-center flex-grow p-4 space-x-4 max-sm:w-full">
+      <div class="flex items-center p-4 space-x-4 grow max-sm:w-full">
         <p-avatar size="sm" :name="item.name" />
-        <div class="flex flex-col items-start flex-grow">
+        <div class="flex flex-col items-start grow">
           <span>{{ item.name }}</span>
           <p-label color="danger" variant="light" size="sm">Sign</p-label>
         </div>

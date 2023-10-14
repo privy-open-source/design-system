@@ -157,7 +157,7 @@ provide(SIDEBAR_SETTINGS, {
     @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg;
 
     .sidebar__menus {
-      @apply flex-grow h-full overflow-y-auto py-2;
+      @apply grow h-full overflow-y-auto py-2;
     }
 
     &:not(.sidebar--right) {
@@ -165,7 +165,7 @@ provide(SIDEBAR_SETTINGS, {
     }
 
     .sidebar__bottom {
-      @apply w-full bg-[color:var(--p-sidebar-bg)] flex-shrink-0 pt-2;
+      @apply w-full bg-[color:var(--p-sidebar-bg)] shrink-0 pt-2;
       @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
     }
 

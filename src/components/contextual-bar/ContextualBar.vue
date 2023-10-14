@@ -278,7 +278,7 @@ export default defineComponent({
     }
 
     .contextual-bar__content {
-      @apply flex-grow-0;
+      @apply grow-0;
     }
   }
 
@@ -287,7 +287,7 @@ export default defineComponent({
   * content
   */
   &__content {
-    @apply flex-grow;
+    @apply grow;
 
     &__message {
       .caption {
@@ -302,11 +302,11 @@ export default defineComponent({
   }
 
   &__action {
-    @apply flex flex-shrink-0 ml-auto space-gap-3;
+    @apply flex shrink-0 ml-auto space-gap-3;
   }
 
   &__icon {
-    @apply relative mr-4 flex-shrink;
+    @apply relative mr-4 shrink;
 
     img {
       @apply max-w-[20px] w-auto;
