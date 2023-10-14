@@ -310,6 +310,7 @@ module.exports = {
         sticky  : 1030,
         fixed   : 1040,
         modal   : 1050,
+        dialog  : 1055,
         overlay : 1060,
         tooltip : 1070,
         tour    : {

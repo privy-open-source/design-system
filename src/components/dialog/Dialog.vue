@@ -3,6 +3,7 @@
     v-if="context"
     :key="id"
     v-model="modal"
+    class="dialog"
     :title="context.title"
     :size="context.size"
     :centered="context.centered"
@@ -89,3 +90,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="postcss">
+.dialog {
+  --p-modal-z-index: theme(zIndex.dialog);
+}
+</style>
