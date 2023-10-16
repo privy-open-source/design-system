@@ -282,7 +282,7 @@ export default defineComponent({
   @apply dark:bg-dark-subtle;
 
   &__wrapper {
-    @apply relative h-full w-full flex-grow;
+    @apply relative h-full w-full grow;
   }
 
   &__container {

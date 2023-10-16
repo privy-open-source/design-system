@@ -143,7 +143,7 @@ export default defineComponent({
   @apply dark:text-dark-default;
 
   &__switch {
-    @apply flex items-center justify-center relative bg-subtle border-default font-medium;
+    @apply flex shrink-0 items-center justify-center relative bg-subtle border-default font-medium;
     @apply dark:bg-dark-subtle dark:border-dark-default;
   }
 

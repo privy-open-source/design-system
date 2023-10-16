@@ -370,7 +370,7 @@ defineExpose({
     }
 
     &__body {
-      @apply max-h-[var(--p-dropdown-max-height)] overflow-x-hidden overflow-y-auto flex-grow;
+      @apply max-h-[var(--p-dropdown-max-height)] overflow-x-hidden overflow-y-auto grow;
     }
 
     &:not(&--has-prepend) &__container {

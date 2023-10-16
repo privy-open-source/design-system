@@ -185,7 +185,7 @@ export default defineComponent({
   }
 
   &--collapse {
-    @apply basis-full flex-grow items-center max-h-[var(--p-navbar-collapse-max-height)] overflow-y-auto;
+    @apply basis-full grow items-center max-h-[var(--p-navbar-collapse-max-height)] overflow-y-auto;
 
     &.collapse--show {
       @apply mt-3;

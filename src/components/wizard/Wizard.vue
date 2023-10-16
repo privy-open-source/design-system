@@ -79,11 +79,11 @@ export default defineComponent({
   @apply flex flex-col w-full space-y-3;
 
   &__header {
-    @apply flex-shrink-0;
+    @apply shrink-0;
   }
 
   &__body {
-    @apply flex-grow;
+    @apply grow;
   }
 }
 </style>

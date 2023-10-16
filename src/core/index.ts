@@ -131,3 +131,18 @@ export {
   installLocale,
   formatDate,
 } from '../components/utils/date'
+
+export {
+  default as useLoading,
+} from '../components/overlay/utils/use-loading'
+
+export {
+  findAllChildren,
+  toBoolean,
+} from '../components/utils/vnode'
+
+export {
+  createSpinner,
+  createAlias,
+  createText,
+} from '../components/avatar/utils/create-image'

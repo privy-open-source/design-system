@@ -188,12 +188,12 @@ export default defineComponent({
   }
 
   &__meta {
-    @apply text-xs text-muted flex-shrink-0;
+    @apply text-xs text-muted shrink-0;
     @apply dark:text-dark-muted;
   }
 
   &__controls {
-    @apply flex-grow flex space-x-2 justify-end items-center;
+    @apply grow flex space-x-2 justify-end items-center;
 
     > .btn--variant-link.btn--default {
       @apply text-on-emphasis hover:text-on-emphasis focus:text-on-emphasis;

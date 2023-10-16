@@ -187,7 +187,7 @@ export default defineComponent({
   @apply flex items-center justify-center w-full;
 
   &__progress {
-    @apply flex-shrink-0;
+    @apply shrink-0;
   }
 
   &--horizontal {

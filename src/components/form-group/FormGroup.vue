@@ -139,7 +139,7 @@ const classNames = computed(() => {
     }
 
     & > .form-group__inputs {
-      @apply flex-grow;
+      @apply grow;
     }
   }
 }

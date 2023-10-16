@@ -206,11 +206,11 @@ function toggleExpand (): void {
     @apply relative z-1 flex items-center -mb-9 px-3 mt-5 justify-end;
 
     &__caption {
-      @apply flex-grow;
+      @apply grow;
     }
 
     &__action {
-      @apply flex-shrink-0;
+      @apply shrink-0;
     }
 
     &__collapsible {

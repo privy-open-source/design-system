@@ -153,9 +153,9 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
   })
 
   onBeforeUnmount(async () => {
-    pdfViewer.value?.cleanup()
-
     await closeDoc()
+
+    pdfViewer.value?.cleanup()
   })
 
   return {

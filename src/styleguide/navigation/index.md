@@ -151,7 +151,7 @@ The navigation component is used to display the primary navigation in the sideba
 
 #### Navigation Bar - Dashboard
 
-<div class="flex-grow my-6">
+<div class="my-6 grow">
   <p-navbar>
     <div class="flex flex-row">
       <div class="transition-all duration-200 ease-in-out basis-2/4 focus-within:basis-full">
@@ -198,7 +198,7 @@ The navigation component is used to display the primary navigation in the sideba
 
 #### Navigation Bar - Landing
 
-<div class="flex-grow my-6">
+<div class="my-6 grow">
   <p-navbar>
     <p-navbar-brand>
       <img src="../../public/assets/images/logo-privy.svg" />
@@ -510,7 +510,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
 ### Navigation Bar Variant
 
 #### Navigation Bar – Landing
-<div class="flex-grow my-6">
+<div class="my-6 grow">
   <p-navbar>
     <p-navbar-brand>
       <img src="../../public/assets/images/logo-privy.svg" />
@@ -530,7 +530,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
 
 <div class="flex flex-row">
   <div class="w-1/2">
-    <div class="flex-grow my-6">
+    <div class="my-6 grow">
       <p-navbar toggleable="all">
         <p-navbar-brand>
           <img src="../../public/assets/images/logo-privy-icon.svg" />
@@ -558,7 +558,7 @@ The position of this nav tab can be place on right left, or top. It can be only 
 
 #### Navigation Bar – Dashboard
 
-<div class="flex-grow my-6">
+<div class="my-6 grow">
   <p-navbar>
     <div class="flex flex-row">
       <div class="transition-all duration-200 ease-in-out basis-2/4 focus-within:basis-full">

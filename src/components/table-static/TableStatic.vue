@@ -37,7 +37,7 @@
       </tr>
     </thead>
     <Draggable
-      v-if="items.length > 0"
+      v-if="Array.isArray(items) && items.length > 0"
       v-model="rows"
       class="table-static__body"
       handle=".table-static__drag"
@@ -92,7 +92,7 @@
       <tr
         class="table-static__row">
         <td
-          :colspan="fields.length"
+          :colspan="selectable ? fields.length+1 : fields.length"
           data-testid="table-static-empty"
           class="table-static__cell table-static__cell--empty datatable__state-empty">
           <slot name="empty">

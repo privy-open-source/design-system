@@ -9,6 +9,7 @@
       {{ pageLabel }}
       <Select
         v-model="model"
+        :searchable="false"
         :size="selectSize"
         data-testid="pagination-select"
         :options="pageOptions"
@@ -113,6 +114,7 @@
       {{ showRowsLabel }}
       <Select
         v-model="rowPerPage"
+        :searchable="false"
         :size="selectSize"
         :options="rowPerPageOptions" />
     </div>

@@ -68,7 +68,7 @@ description: Slideshow for cycling through a series of content.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           PrivyBalance
           <div class="text-lg font-bold text-info">
             999999
@@ -82,7 +82,7 @@ description: Slideshow for cycling through a series of content.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           E-materai Balance
           <div class="text-lg font-bold text-info">
             999999
@@ -102,7 +102,7 @@ description: Slideshow for cycling through a series of content.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           PrivyBalance
           <div class="text-lg font-bold text-info">
             999999
@@ -116,7 +116,7 @@ description: Slideshow for cycling through a series of content.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           E-materai Balance
           <div class="text-lg font-bold text-info">
             999999
@@ -184,7 +184,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           PrivyBalance
           <div class="text-lg font-bold text-info">
             999999
@@ -198,7 +198,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           E-materai Balance
           <div class="text-lg font-bold text-info">
             999999
@@ -215,7 +215,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           PrivyBalance
           <div class="text-lg font-bold text-info">
             999999
@@ -229,7 +229,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           E-materai Balance
           <div class="text-lg font-bold text-info">
             999999
@@ -249,7 +249,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           PrivyBalance
           <div class="text-lg font-bold text-info">
             999999
@@ -263,7 +263,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           E-materai Balance
           <div class="text-lg font-bold text-info">
             999999
@@ -280,7 +280,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           PrivyBalance
           <div class="text-lg font-bold text-info">
             999999
@@ -294,7 +294,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
         element="div"
         class="flex items-center w-full h-full p-4 space-x-4 bg-default dark:bg-dark-default text-default dark:text-dark-default"
         sectioned>
-        <div class="flex-grow">
+        <div class="grow">
           E-materai Balance
           <div class="text-lg font-bold text-info">
             999999

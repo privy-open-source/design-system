@@ -58,7 +58,7 @@ description: Fancy form wizard.
       </template>
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 1</div>
+          <div class="grow">Step 1</div>
           <div class="space-x-2">
             <p-button disabled color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -69,7 +69,7 @@ description: Fancy form wizard.
     <p-wizard-step title="Step 2">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 2</div>
+          <div class="grow">Step 2</div>
           <div class="space-x-2">
             <p-button @click="prev" color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -80,7 +80,7 @@ description: Fancy form wizard.
     <p-wizard-step title="Step 3">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 3</div>
+          <div class="grow">Step 3</div>
           <div class="space-x-2">
             <p-button @click="prev" color="info">Prev</p-button>
             <p-button disabled @click="next" color="info">Next</p-button>
@@ -100,7 +100,7 @@ description: Fancy form wizard.
       </template>
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 1</div>
+          <div class="grow">Step 1</div>
           <div class="space-x-2">
             <p-button disabled color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -111,7 +111,7 @@ description: Fancy form wizard.
     <p-wizard-step title="Step 2">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 2</div>
+          <div class="grow">Step 2</div>
           <div class="space-x-2">
             <p-button @click="prev" color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -122,7 +122,7 @@ description: Fancy form wizard.
     <p-wizard-step title="Step 3">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 3</div>
+          <div class="grow">Step 3</div>
           <div class="space-x-2">
             <p-button @click="prev" color="info">Prev</p-button>
             <p-button disabled @click="next" color="info">Next</p-button>
@@ -145,7 +145,7 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
     <p-wizard-step title="Step 1">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 1</div>
+          <div class="grow">Step 1</div>
           <div class="space-x-2">
             <p-button disabled color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -156,7 +156,7 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
     <p-wizard-step title="Step 2">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 2</div>
+          <div class="grow">Step 2</div>
           <div class="space-x-2">
             <p-button @click="prev" color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -167,7 +167,7 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
     <p-wizard-step title="Step 3">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 3</div>
+          <div class="grow">Step 3</div>
           <div class="space-x-2">
             <p-button @click="prev" color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -186,7 +186,7 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
     <p-wizard-step title="Step 1">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 1</div>
+          <div class="grow">Step 1</div>
           <div class="space-x-2">
             <p-button disabled color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -197,7 +197,7 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
     <p-wizard-step title="Step 2">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 2</div>
+          <div class="grow">Step 2</div>
           <div class="space-x-2">
             <p-button @click="prev" color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -208,7 +208,7 @@ Inherit from [Progress](/components/progress/), you can set progress `variant` a
     <p-wizard-step title="Step 3">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">Step 3</div>
+          <div class="grow">Step 3</div>
           <div class="space-x-2">
             <p-button @click="prev" color="info">Prev</p-button>
             <p-button @click="next" color="info">Next</p-button>
@@ -231,7 +231,7 @@ All hooks from [Steps](/components/steps/) like `on-before-next`, `on-before-pre
     <p-wizard-step title="Step 1">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">
+          <div class="grow">
             <label>Name</label>
             <p-input v-model="form.name" placeholder="Fill to next" />
           </div>
@@ -245,7 +245,7 @@ All hooks from [Steps](/components/steps/) like `on-before-next`, `on-before-pre
     <p-wizard-step title="Step 2">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">
+          <div class="grow">
             <label>Email</label>
             <p-input v-model="form.email" placeholder="Fill to next" />
           </div>
@@ -267,7 +267,7 @@ All hooks from [Steps](/components/steps/) like `on-before-next`, `on-before-pre
     <p-wizard-step title="Step 1">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">
+          <div class="grow">
             <label>Name</label>
             <p-input v-model="form.name" placeholder="Fill to next" />
           </div>
@@ -281,7 +281,7 @@ All hooks from [Steps](/components/steps/) like `on-before-next`, `on-before-pre
     <p-wizard-step title="Step 2">
       <template #default="{ next, prev }">
         <div class="flex flex-col h-52">
-          <div class="flex-grow">
+          <div class="grow">
             <label>Email</label>
             <p-input v-model="form.email" placeholder="Fill to next" />
           </div>

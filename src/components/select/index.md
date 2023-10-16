@@ -445,10 +445,10 @@ To do this, you need add the province value as **watch dependencies**. It will a
   <p-select :options="users">
     <template #option="{ item }">
       <div class="flex flex-row space-x-2">
-        <div class="flex-shrink-0">
+        <div class="shrink-0">
           <p-avatar :src="item.img" />
         </div>
-        <div class="flex-grow">
+        <div class="grow">
           <div class="font-sans text-base font-normal">{{ item.text }}
           </div>
             <div class="text-xs font-light option-text">ID: {{ item.value }}
@@ -464,10 +464,10 @@ To do this, you need add the province value as **watch dependencies**. It will a
   <p-select :options="users">
     <template #option="{ item }">
       <div class="flex flex-row space-x-2">
-        <div class="flex-shrink-0">
+        <div class="shrink-0">
           <p-avatar :src="item.img" />
         </div>
-        <div class="flex-grow">
+        <div class="grow">
           <div class="font-sans text-base font-normal">{{ item.text }}
           </div>
             <div class="text-xs font-light option-text">ID: {{ item.value }}
@@ -500,10 +500,10 @@ To do this, you need add the province value as **watch dependencies**. It will a
   <p-select :options="users">
     <template #selected="{ item }">
       <div class="flex flex-row space-x-2">
-        <div class="flex-shrink-0">
+        <div class="shrink-0">
           <p-avatar :src="item.img" />
         </div>
-        <div class="flex-grow">
+        <div class="grow">
           <div class="font-sans text-base font-normal">{{ item.text }}
           </div>
             <div class="text-xs font-light option-text">ID: {{ item.value }}
@@ -519,10 +519,10 @@ To do this, you need add the province value as **watch dependencies**. It will a
   <p-select :options="users">
     <template #selected="{ item }">
       <div class="flex flex-row space-x-2">
-        <div class="flex-shrink-0">
+        <div class="shrink-0">
           <p-avatar :src="item.img" />
         </div>
-        <div class="flex-grow">
+        <div class="grow">
           <div class="font-sans text-base font-normal">{{ item.text }}
           </div>
             <div class="text-xs font-light option-text">ID: {{ item.value }}
@@ -562,7 +562,7 @@ To do this, you need add the province value as **watch dependencies**. It will a
             class="-ml-3"
             size="xs" />
         </div>
-        <div class="flex-grow pl-2">
+        <div class="pl-2 grow">
           {{ item.length }} People selected
         </div>
       </div>
@@ -582,7 +582,7 @@ To do this, you need add the province value as **watch dependencies**. It will a
             class="-ml-3"
             size="xs" />
         </div>
-        <div class="flex-grow pl-2">
+        <div class="pl-2 grow">
           {{ item.length }} People selected
         </div>
       </div>

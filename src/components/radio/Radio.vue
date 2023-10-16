@@ -148,7 +148,7 @@ export default defineComponent({
   * with custom icon
   */
   &__icon {
-    @apply w-5 h-5 border rounded-full border-subtle inline-flex items-center justify-center bg-default;
+    @apply w-5 h-5 border shrink-0 rounded-full border-subtle inline-flex items-center justify-center bg-default;
     @apply dark:border-dark-subtle dark:bg-dark-default;
 
     > svg {
@@ -161,7 +161,7 @@ export default defineComponent({
   * give color of checkbox label
   */
   &__label {
-    @apply text-default;
+    @apply text-default grow;
     @apply dark:text-dark-default;
   }
 
@@ -226,7 +226,7 @@ export default defineComponent({
     }
 
     .radio__label {
-      @apply flex-grow;
+      @apply grow;
     }
 
     .dropdown__menu > .dropdown__subitem > & {

@@ -54,7 +54,7 @@ description: Base dashboard navbar.
 
 ### Simple Navbar
 
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar>
     <p-navbar-brand>
       <img src="../../public/assets/images/icon-privy.svg" />
@@ -86,7 +86,7 @@ description: Base dashboard navbar.
 Navbar brand is used for company, product, or project name. You can add permalink in navbar brand by prop `href`. Navbar brand can be an image or text and combination of both.
 
 #### Text
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar>
     <p-navbar-brand>
       Persona
@@ -105,7 +105,7 @@ Navbar brand is used for company, product, or project name. You can add permalin
 ```
 
 #### Image and Text
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar>
     <p-navbar-brand>
       <img src="../../public/assets/images/logo.svg" /> Persona
@@ -125,7 +125,7 @@ Navbar brand is used for company, product, or project name. You can add permalin
 
 ## Fixed Navbar
 Fixed navbar are using `z-fixed` for z-index value. It posible to change z-index value using CSS variable `--p-navbar-z-index`. But don't forget to see the all [z-index](/foundation/variables/#z-index) variant for layer-ordering component.
-<preview class="flex-grow preview--fixed">
+<preview class="grow preview--fixed">
   <p-navbar fixed>
     <p-navbar-brand>
       <img src="../../public/assets/images/logo.svg" />
@@ -154,7 +154,7 @@ Fixed navbar are using `z-fixed` for z-index value. It posible to change z-index
 ## Variants
 Navbar has 2 variant of nav type: `pills` and `lines`.
 
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar variant="pills" class="mb-5">
     <p-navbar-brand>
       <img src="../../public/assets/images/logo.svg" />
@@ -197,7 +197,7 @@ Navbar has 2 variant of nav type: `pills` and `lines`.
 ## Alignment
 To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `left`, `right` and `center`
 
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar class="mb-5">
     <p-navbar-nav align="left">
       <p-nav-item active>Label</p-nav-item>
@@ -242,7 +242,7 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
 ```
 
 ## With Icon
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar class="mb-5">
     <p-navbar-nav>
       <p-nav-item active>
@@ -283,7 +283,7 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
 ```
 
 ## With Form
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar>
     <p-navbar-brand>
       <img src="../../public/assets/images/logo.svg" />
@@ -324,7 +324,7 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
 ```
 
 ## Condensed Navigation
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar>
     <p-navbar-nav condensed>
       <p-nav-item active>Label</p-nav-item>
@@ -347,7 +347,7 @@ To align Navigation, use align prop in `<p-navbar-nav>`. Available value are `le
 ```
 
 ## Dropdown
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar>
     <p-navbar-nav>
       <p-nav-item active>
@@ -446,7 +446,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 ```
 
 ## Custom
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar>
     <div class="flex flex-row">
       <div class="transition-all duration-200 ease-in-out basis-2/4 focus-within:basis-full">
@@ -537,7 +537,7 @@ Navbar support responsive by adding `toggleable` prop in `<p-navbar>` with avail
 ```
 
 ## Navbar with CTA
-<preview class="flex-grow">
+<preview class="grow">
   <p-navbar>
     <p-navbar-brand>
       <img src="../../public/assets/images/logo-privy.svg" />

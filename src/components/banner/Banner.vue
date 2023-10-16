@@ -137,12 +137,12 @@ export default defineComponent({
   }
 
   &__body {
-    @apply flex-grow text-sm;
+    @apply grow text-sm;
   }
 
   &__icon,
   &__close {
-    @apply flex-shrink-0;
+    @apply shrink-0;
   }
 
   &__close {

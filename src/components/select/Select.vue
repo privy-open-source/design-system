@@ -464,11 +464,11 @@ onStartTyping(() => {
     @apply flex items-center justify-between;
 
     &-text {
-      @apply flex-grow truncate;
+      @apply grow truncate;
     }
 
     &-checked {
-      @apply flex-shrink-0 text-info invisible;
+      @apply shrink-0 text-info invisible;
       @apply dark:text-dark-info;
 
       .selected & {
@@ -499,7 +499,7 @@ onStartTyping(() => {
     }
 
     .select__option-checked {
-      @apply w-5 h-5 inline-flex flex-shrink-0 border rounded-tn border-subtle items-center justify-center bg-default visible mr-4;
+      @apply w-5 h-5 inline-flex shrink-0 border rounded-tn border-subtle items-center justify-center bg-default visible mr-4;
       @apply dark:border-dark-subtle dark:bg-dark-default;
 
       > svg {
