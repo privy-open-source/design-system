@@ -1,3 +1,4 @@
+import { Component } from 'vue-demi'
 import { useSingleton } from '../global/use-singleton'
 
 export type ToastTypeVariant = 'info' | 'success' | 'warning' | 'error'
@@ -8,7 +9,8 @@ export interface ToastOption {
   type?: ToastTypeVariant,
   variant?: ToastStyleVariant,
   title: string,
-  text: string,
+  text?: string,
+  icon?: string | Component,
   duration?: number,
   toastClass?: string | string[],
   position?: ToastPositionVariant,

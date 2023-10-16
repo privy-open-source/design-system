@@ -106,3 +106,20 @@ it('should dismiss if close button clicked', async () => {
 
   expect(spy).toBeCalled()
 })
+
+it('should render title and text properly', () => {
+  const screen = render({
+    components: { Toast },
+    template  : `
+      <Toast title="Toast title" />
+    `,
+  })
+
+  const toast = screen.queryByTestId('toast')
+  const title = screen.queryByText('Toast title')
+  const text  = screen.queryByTestId('toast-text')
+
+  expect(toast).toBeInTheDocument()
+  expect(title).toBeInTheDocument()
+  expect(text).not.toBeInTheDocument()
+})

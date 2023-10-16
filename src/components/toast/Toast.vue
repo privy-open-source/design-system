@@ -3,17 +3,21 @@
     data-testid="toast"
     :class="classNames">
     <div class="toast__icon">
-      <component
-        :is="icon"
-        v-if="icon" />
+      <slot name="icon">
+        <component
+          :is="toastIcon"
+          v-if="toastIcon" />
+      </slot>
     </div>
     <div class="toast__body">
-      <div class="toast__title">
-        {{ title }}
-      </div>
-      <div class="toast__text">
-        {{ text }}
-      </div>
+      <div
+        v-p-md.inline="title"
+        class="toast__title" />
+      <div
+        v-if="text"
+        v-p-md.inline="text"
+        class="toast__text"
+        data-testid="toast-text" />
     </div>
     <div
       data-testid="toast-close"
@@ -39,6 +43,7 @@ import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
 import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/24.vue'
 import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/24.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
+import { pMd } from '../markdown'
 
 const ToastIcons = {
   info   : IconInfo,
@@ -49,15 +54,13 @@ const ToastIcons = {
 
 export default defineComponent({
   components: { IconClose },
+  directives: { pMd },
   props     : {
     title: {
       type    : String,
       required: true,
     },
-    text: {
-      type    : String,
-      required: true,
-    },
+    text: { type: String },
     type: {
       type   : String as PropType<ToastTypeVariant>,
       default: 'info',
@@ -86,7 +89,7 @@ export default defineComponent({
       return result
     })
 
-    const icon = computed(() => {
+    const toastIcon = computed(() => {
       return ToastIcons[props.type]
     })
 
@@ -109,7 +112,7 @@ export default defineComponent({
 
     return {
       classNames,
-      icon,
+      toastIcon,
       close,
     }
   },
@@ -143,7 +146,7 @@ export default defineComponent({
   }
 
   .toast__title {
-    @apply text-sm font-medium;
+    @apply text-sm font-medium leading-[1.75];
   }
 
   .toast__text {

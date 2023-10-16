@@ -2,6 +2,7 @@ import { render, fireEvent } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { nextTick } from 'vue-demi'
 import ToastContainer from './ToastContainer.vue'
+import Icon from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
 
 beforeEach(() => {
   vi.useFakeTimers()
@@ -13,7 +14,7 @@ afterEach(() => {
 
 it('should be able to show all toast', async () => {
   const screen = render({
-    components: { ToastContainer },
+    components: { ToastContainer, Icon },
     template  : `
       <div>
         <ToastContainer ref="toast" />
@@ -25,6 +26,7 @@ it('should be able to show all toast', async () => {
         this.$refs.toast.add({
           title: 'This is title',
           text : 'This is text message',
+          icon : Icon,
         })
       },
     },
@@ -88,6 +90,7 @@ it('should removed when close clockid', async () => {
         this.$refs.toast.add({
           title: 'This is title',
           text : 'This is text message',
+          icon : './assets/images/img-flag.svg',
         })
       },
     },

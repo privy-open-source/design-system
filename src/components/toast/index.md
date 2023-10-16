@@ -7,6 +7,7 @@ description: Simple notification pop-up.
   import Button from '../button/Button.vue'
   import Toast from './Toast.vue'
   import toast from '.'
+  import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
 </script>
 
 # Toast
@@ -363,9 +364,10 @@ Toast use local CSS variables on `.toast-container` for enhanced real-time custo
 
 | Options      |   Type   | Default  | Description                                                               |
 |--------------|:--------:|:--------:|---------------------------------------------------------------------------|
-| `type`       | `String` |  `info`  | Toast type variant, valid value is `info`, `success`, `warning`, `error`     |
-| `title`      | `String` |    -     | Toast title message, **required**                                         |
-| `text`       | `String` |    -     | Toast text message, **required**                                          |
+| `type`       | `String` |  `info`  | Toast type variant, valid value is `info`, `success`, `warning`, `error`  |
+| `title`      | `String` |    -     | Toast title message, **required** (support markdown)                      |
+| `text`       | `String` |    -     | Toast text message (support markdown)                                     |
+| `icon`       | `String` or `Component`|    -    | Custom toast icon (will replace default icon)                |
 | `variant`    | `String` | `simple` | Toast style variant, valid value is `simple`, `filled`                    |
 | `duration`   | `Number` |  `3000`  | Duration for which the toast should be displayed. `-1` to permanent toast |
 | `position`   | `String` |  `bottom-left`  | Position for toast, valid value is `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right`|
