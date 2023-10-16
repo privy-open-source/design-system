@@ -244,6 +244,9 @@ export default defineComponent({
 
     const selectAll = computed({
       get () {
+        if (props.items.length === 0)
+          return false
+
         return model.value.length === selectableRows.value.length
       },
       set (value) {
