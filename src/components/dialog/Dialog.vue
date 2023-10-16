@@ -9,8 +9,16 @@
     :centered="context.centered"
     :dismissable="context.dismissable"
     :no-close-on-backdrop="context.noCloseOnBackdrop"
-    :text="context.text"
     @close="onCancel">
+    <template #header>
+      <Heading
+        v-p-md.inline="context.title"
+        class="modal__title"
+        element="h6" />
+    </template>
+    <template #default>
+      <span v-p-md.inline="context.text" />
+    </template>
     <template #footer>
       <dialog-footer
         :align="context.footerAlign"
@@ -37,11 +45,16 @@ import {
   ref,
 } from 'vue-demi'
 import Modal from '../modal/Modal.vue'
+import Heading from '../heading/Heading.vue'
 import DialogFooter from './DialogFooter.vue'
 import { DialogContext } from '.'
+import { pMd } from '../markdown'
 
 export default defineComponent({
-  components: { Modal, DialogFooter },
+  components: {
+    Modal, DialogFooter, Heading,
+  },
+  directives: { pMd },
   setup () {
     const id      = ref<symbol>()
     const modal   = ref(false)

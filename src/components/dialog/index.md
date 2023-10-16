@@ -83,7 +83,7 @@ dialog.confirm({
 | Options             |   Type   | Default  | Description                                                                     |
 |---------------------|:--------------:|:--------:|---------------------------------------------------------------------------|
 | `title`             | `String`       |    -     | Dialog title, **required**                                                |
-| `text`              | `String`       |    -     | Dialog text content                                                       |
+| `text`              | `String`       |    -     | Dialog text content (support markdown)                                    |
 | `size`              | `String`       |    -     | Dialog size, valid value is `sm`, `md`, `lg`, `xl`                        |
 | `centered`          | `Boolean`      | `false`  | Dialog vertically center in the viewport                                  |
 | `dismissable`       | `Boolean`      | `true`   | Show / Hide dismiss button                                                |
