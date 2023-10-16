@@ -4034,18 +4034,18 @@ __metadata:
   linkType: hard
 
 "@rollup/plugin-inject@npm:^5.0.3":
-  version: 5.0.4
-  resolution: "@rollup/plugin-inject@npm:5.0.4"
+  version: 5.0.5
+  resolution: "@rollup/plugin-inject@npm:5.0.5"
   dependencies:
     "@rollup/pluginutils": ^5.0.1
     estree-walker: ^2.0.2
-    magic-string: ^0.27.0
+    magic-string: ^0.30.3
   peerDependencies:
     rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
   peerDependenciesMeta:
     rollup:
       optional: true
-  checksum: 2c66795a51e09c707b4fabc66ce44a90c3b1a1ca7515fec5337cb706d6433e39949a6a421e89143672703729466bd55d4091a381ea2d8ed4428b7446deac09c8
+  checksum: 22cb772fd6f7178308b2ece95cdde5f8615f6257197832166294552a7e4c0d3976dc996cbfa6470af3151d8b86c00091aa93da5f4db6ec563f11b6db29fd1b63
   languageName: node
   linkType: hard
 
