@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
-    "@fontsource/dm-sans": "5.0.14",
+    "@fontsource/dm-sans": "5.0.15",
     "@juggle/resize-observer": "^3.4.0",
     "@privyid/persona-icon": "workspace:^",
     "@splidejs/splide": "^4.1.4",
