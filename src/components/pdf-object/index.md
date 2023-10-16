@@ -8,12 +8,14 @@ description: Add object to PDF Viewer
   import pPdfObject from './PdfObject.vue'
   import pPdfObjectAddon from './PdfObjectAddon.vue'
   import pButton from '../button/Button.vue'
-  import FILE from '../../public/assets/pdf/Calibrator-v3.pdf?url'
   import IconClose from '@privyid/persona-icon/vue/close/16.vue'
   import { reactive, ref, nextTick } from 'vue-demi'
   import { random } from 'lodash-es'
   import pDropdown from '../dropdown/Dropdown.vue'
   import pDropdownItem from '../dropdown/DropdownItem.vue'
+  import { withBase } from 'vitepress'
+
+  const FILE = withBase('/assets/pdf/Calibrator-v3.pdf')
 
   const object1 = reactive({
     page  : undefined,

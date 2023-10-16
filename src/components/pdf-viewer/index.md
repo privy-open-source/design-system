@@ -13,10 +13,12 @@ description: Open and View PDF Document
   import pInputPassword from '../input-password/InputPassword.vue'
   import pBanner from '../banner/Banner.vue'
   import pToggle from '../toggle/Toggle.vue'
-  import FILE from '../../public/assets/pdf/Calibrator-v3.pdf?url'
-  import FILE_PROTECT from '../../public/assets/pdf/Calibrator-v3_protected.pdf?url'
-  import IMG_FIXED_FIT from '../../public/assets/images/fixed-vs-fit.svg'
   import { ref } from 'vue-demi'
+  import { withBase } from 'vitepress'
+
+  const FILE          = withBase('/assets/pdf/Calibrator-v3.pdf')
+  const FILE_PROTECT  = withBase('/assets/pdf/Calibrator-v3_protected.pdf')
+  const IMG_FIXED_FIT = withBase('/assets/images/fixed-vs-fit.svg')
 
   const password = ref('')
   const layout   = ref('fixed')
@@ -56,7 +58,7 @@ description: Open and View PDF Document
     <template #header>
       <p-navbar>
         <p-navbar-brand>
-          <img src="../../public/assets/images/icon-privy.svg" />
+          <img :src="withBase('/assets/images/icon-privy.svg')" />
         </p-navbar-brand>
         <p-navbar-nav>
           <p-nav-item active>Label</p-nav-item>
