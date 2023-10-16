@@ -119,6 +119,20 @@ it('should enable checkbox if prop `selectable` is provided', () => {
   expect(checkboxs).toHaveLength(4)
 })
 
+it('should unchecked select all if items length is zero', () => {
+  const screen = render({
+    components: { Table },
+    template  : '<Table :fields="fields" :items="[]" selectable />',
+    setup () {
+      return { fields }
+    },
+  })
+
+  const selectAll = screen.getByTestId('table-static-select-all')
+
+  expect(selectAll).not.toBeChecked()
+})
+
 it('should binding checked item into `v-model`', async () => {
   const selected = ref([])
   const screen   = render({
