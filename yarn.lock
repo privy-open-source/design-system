@@ -4418,13 +4418,13 @@ __metadata:
   linkType: hard
 
 "@types/download@npm:^8":
-  version: 8.0.2
-  resolution: "@types/download@npm:8.0.2"
+  version: 8.0.3
+  resolution: "@types/download@npm:8.0.3"
   dependencies:
     "@types/decompress": "*"
     "@types/got": ^9
     "@types/node": "*"
-  checksum: 2f8817d976e7bd50ef1c7fb793d6c2ee8aee9b64cf083cd107905e5ba648cb5cf74cc9d9653264c5b2a522508a8698a73db6aca88103c7dc2047e30a66756e28
+  checksum: 23781bdeb928e36b84f67ca285fc5526767ea9c2164f6f17926522ff08927e4ee599109d2512793e5eea827e27120121c818284ac2e3fdd14235f9962ed4547f
   languageName: node
   linkType: hard
 
