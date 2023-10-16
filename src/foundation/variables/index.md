@@ -302,6 +302,7 @@ Some components that have fixed and absolute positions are given z-index values 
 | z-sticky        | 1030  | Navbar & Sidebar |
 | z-fixed         | 1040  | Navbar & Sidebar |
 | z-modal         | 1050  | Modal & Sheet    |
+| z-dialog        | 1050  | Dialog           |
 | z-overlay       | 1060  | Overlay          |
 | z-tooltip       | 1070  | Tooltip          |
 | z-tour-backdrop | 1080  | Tour backdrop    |

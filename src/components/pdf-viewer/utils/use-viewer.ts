@@ -116,11 +116,12 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
       pdfEventBus.value    = bus
       pdfLinkService.value = await createLinkService({ eventBus: pdfEventBus.value })
       pdfViewer.value      = await createViewer({
-        container        : container.value,
-        viewer           : viewer.value,
-        eventBus         : pdfEventBus.value,
-        linkService      : pdfLinkService.value,
-        removePageBorders: true,
+        container           : container.value,
+        viewer              : viewer.value,
+        eventBus            : pdfEventBus.value,
+        linkService         : pdfLinkService.value,
+        removePageBorders   : true,
+        annotationEditorMode: -1,
       })
 
       pdfLinkService.value.setViewer(pdfViewer.value)
