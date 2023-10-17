@@ -2,7 +2,10 @@
   <div
     data-testid="toast"
     :class="classNames">
-    <div class="toast__icon">
+    <div
+      class="toast__icon"
+      data-testid="toast-icon"
+      :class="classIcon">
       <slot name="icon">
         <component
           :is="toastIcon"
@@ -44,6 +47,7 @@ import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/24.v
 import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/24.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import { pMd } from '../markdown'
+import { ColorVariant } from '../button'
 
 const ToastIcons = {
   info   : IconInfo,
@@ -73,6 +77,10 @@ export default defineComponent({
       type   : Number,
       default: 3000,
     },
+    iconColor: {
+      type   : String as PropType<ColorVariant>,
+      default: undefined,
+    },
   },
   emits: ['dismissed'],
   setup (props, { emit }) {
@@ -85,6 +93,15 @@ export default defineComponent({
 
       if (props.variant)
         result.push(`toast--${props.variant}`)
+
+      return result
+    })
+
+    const classIcon = computed(() => {
+      const result: string[] = ['default']
+
+      if (props.iconColor)
+        result.push(`toast__icon--${props.iconColor}`)
 
       return result
     })
@@ -113,6 +130,7 @@ export default defineComponent({
     return {
       classNames,
       toastIcon,
+      classIcon,
       close,
     }
   },
@@ -121,6 +139,9 @@ export default defineComponent({
 
 <style lang="postcss">
 .toast {
+  --p-toast-icon-color-primary: theme(textColor.brand.accent);
+  --p-toast-icon-color-primary-dark: theme(textColor.dark.brand.accent);
+
   /**
   * global style
   * of toast
@@ -284,6 +305,31 @@ export default defineComponent({
   &&--filled {
     .toast__icon {
       @apply items-start;
+
+      &--default {
+        @apply text-on-emphasis;
+        @apply dark:text-dark-on-emphasis;
+      }
+
+      &--warning {
+        @apply text-warning;
+        @apply dark:text-dark-warning;
+      }
+
+      &--success {
+        @apply text-success;
+        @apply dark:text-dark-success;
+      }
+
+      &--primary {
+        @apply text-[color:var(--p-toast-icon-color-primary)];
+        @apply dark:text-[color:var(--p-toast-icon-color-primary-dark)];
+      }
+
+      &--danger {
+        @apply text-danger;
+        @apply dark:text-danger;
+      }
     }
 
     &:not(.toast--info) {

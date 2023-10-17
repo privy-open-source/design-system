@@ -123,3 +123,20 @@ it('should render title and text properly', () => {
   expect(title).toBeInTheDocument()
   expect(text).not.toBeInTheDocument()
 })
+
+it('should be able to custom icon color via `iconColor` props', () => {
+  const screen = render({
+    components: { Toast },
+    template  : `
+      <Toast title="Toast title" iconColor="warning" />
+    `,
+  })
+
+  const toast = screen.queryByTestId('toast')
+  const title = screen.queryByText('Toast title')
+  const icon  = screen.queryByTestId('toast-icon')
+
+  expect(toast).toBeInTheDocument()
+  expect(title).toBeInTheDocument()
+  expect(icon).toHaveClass('toast__icon--warning')
+})
