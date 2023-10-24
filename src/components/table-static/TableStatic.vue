@@ -200,7 +200,7 @@ const rows = computed<T[]>({
 })
 
 const classNames = computed(() => {
-  const result: string[] = []
+  const result: string[] = ['table-static']
 
   if (props.apperance)
     result.push(`table-static--${props.apperance}`)
@@ -269,7 +269,27 @@ defineSlots<{
   @apply w-full;
 
   &__table {
-    @apply min-w-full table;
+    @apply table;
+  }
+
+  &:not(&--scrollable) {
+    &.table-static__table {
+      @apply max-w-full;
+    }
+
+   & .table-static__row > .table-static__cell {
+      @apply whitespace-pre-wrap;
+    }
+  }
+
+  &:where(&--scrollable) {
+    .table-static__table {
+      @apply min-w-full;
+    }
+
+    & .table-static__row > .table-static__cell {
+      @apply whitespace-pre;
+    }
   }
 
   &__headers {
@@ -291,7 +311,7 @@ defineSlots<{
   }
 
   & &__row > &__cell {
-    @apply ml-2 py-4 px-3 text-sm text-default whitespace-pre;
+    @apply ml-2 py-4 px-3 text-sm text-default;
     @apply dark:text-dark-default;
 
     &.table-static__drag {
@@ -319,6 +339,10 @@ defineSlots<{
     .table-static__row .table-static__cell,
     .table-static__headers .table-static__header {
       @apply border-0;
+    }
+
+    .table-static__row .table-static__cell {
+      @apply align-top;
     }
   }
 
