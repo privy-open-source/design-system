@@ -564,3 +564,29 @@ it('should sync with v-model value (multiple)', async () => {
   expect(tags[0]).toHaveTextContent('apple')
   expect(tags[1]).toHaveTextContent('orange')
 })
+
+it('should show selected items when options updated', async () => {
+  const options = ref<string[]>([])
+  const model   = ref('orange')
+  const screen  = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model="model"
+        :options="options"
+      />
+    `,
+    setup () {
+      return { model, options }
+    },
+  })
+
+  const activator = screen.queryByTestId('select-activator')
+
+  expect(activator).toHaveTextContent('')
+
+  options.value.push('apple', 'grape', 'orange')
+  await nextTick()
+
+  expect(activator).toHaveTextContent('orange')
+})

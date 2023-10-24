@@ -167,6 +167,7 @@ import {
   ref,
   HTMLAttributes,
   nextTick,
+  watch,
 } from 'vue-demi'
 import {
   findSelected,
@@ -362,6 +363,14 @@ const modelWatcher = watchPausable(() => props.modelValue, (value) => {
   localModel.value = props.multiple
     ? filterSelected(items.value, value as unknown[])
     : findSelected(items.value, value)
+})
+
+watch(items, (options) => {
+  if (props.modelValue && options.length > 0) {
+    localModel.value = props.multiple
+      ? filterSelected(options, props.modelValue as unknown[])
+      : findSelected(options, props.modelValue)
+  }
 })
 
 function setValue (item?: SelectItem) {
