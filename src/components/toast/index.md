@@ -371,5 +371,6 @@ Toast use local CSS variables on `.toast-container` for enhanced real-time custo
 | `variant`    | `String` | `simple` | Toast style variant, valid value is `simple`, `filled`                    |
 | `duration`   | `Number` |  `3000`  | Duration for which the toast should be displayed. `-1` to permanent toast |
 | `position`   | `String` |  `bottom-left`  | Position for toast, valid value is `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right`|
+| `iconColor`  | `String` |    -     | Custom color of toast icon                                                |
 | `toastClass` | `String` |    -     | Add class to toast component                                              |
  
