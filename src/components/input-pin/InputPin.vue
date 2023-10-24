@@ -127,7 +127,7 @@ export default defineComponent({
       if (event.inputType === 'insertFromPaste')
         localModel.value = toArray(removeUnaccepted(props.accept, event.data), num.value)
 
-      else if (!event.data || isAccepted(props.accept, event.data)) {
+      else if (event.inputType !== 'insertLineBreak' && (!event.data || isAccepted(props.accept, event.data))) {
         localModel.value[index] = event.data
 
         if (root.value) {

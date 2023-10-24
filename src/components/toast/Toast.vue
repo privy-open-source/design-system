@@ -60,7 +60,10 @@ export default defineComponent({
       type    : String,
       required: true,
     },
-    text: { type: String },
+    text: {
+      type   : String,
+      default: '',
+    },
     type: {
       type   : String as PropType<ToastTypeVariant>,
       default: 'info',
