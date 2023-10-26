@@ -8,6 +8,8 @@ description: Simple notification pop-up.
   import Toast from './Toast.vue'
   import toast from '.'
   import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
+  import IconFailed from '@privyid/persona-icon/vue/trash/24.vue'
+  import Banner from '../banner/Banner.vue'
 </script>
 
 # Toast
@@ -326,6 +328,55 @@ toast({
 })
 ```
 
+## Icon
+
+It's possible to custom icon of toast, like color and icon-name.
+There are 6 icon colors available for toast: `default`, `primary`, `info`, `success`, `warning` and `danger`. Default icon color is toast icon color it's self.
+<Banner>
+Custom icon color just work in type-variant <code>info</code> with <code>simple</code> style-variant, 
+and or all type-variant with <code>filled</code> style-variant.
+</Banner>
+
+<div class="mt-3 space-x-5">
+  <Button type="" color="info" @click="toast({
+    title     : 'Member added to the group',
+    icon: IconSuccess,
+    iconColor : 'success',
+  })">
+    Show simple toast
+  </Button>
+  
+  <Button type="" color="info" @click="toast({
+    title     : 'Members removed from the group',
+    type: 'info',
+    variant: 'filled',
+    icon: IconFailed,
+    iconColor : 'default',
+  })">
+    Show filled toast
+  </Button>
+</div>
+
+```ts
+import { toast } from '@privyid/persona/core'
+import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
+import IconFailed from '@privyid/persona-icon/vue/trash/24.vue'
+
+toast({
+  title: 'Member added to the group',
+  icon: IconSuccess,
+  iconColor: 'success',
+})
+
+toast({
+  title: 'Members removed from the group',
+  type: 'info',
+  variant: 'filled',
+  icon: IconFailed,
+  iconColor: 'default',
+})
+```
+
 ## Customization
 
 You can add some custom class to Toast element via `toastClass`.
@@ -371,6 +422,6 @@ Toast use local CSS variables on `.toast-container` for enhanced real-time custo
 | `variant`    | `String` | `simple` | Toast style variant, valid value is `simple`, `filled`                    |
 | `duration`   | `Number` |  `3000`  | Duration for which the toast should be displayed. `-1` to permanent toast |
 | `position`   | `String` |  `bottom-left`  | Position for toast, valid value is `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right`|
-| `iconColor`  | `String` |    -     | Custom color of toast icon                                                |
+| `iconColor`  | `String` |    -     | Custom color of toast icon, valid value is `default`, `primary`, `info`, `success`, `warning`, `danger`                                                |
 | `toastClass` | `String` |    -     | Add class to toast component                                              |
  

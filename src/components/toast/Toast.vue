@@ -210,6 +210,31 @@ export default defineComponent({
       .toast__icon {
         @apply bg-base text-info;
         @apply dark:bg-dark-base dark:text-dark-info;
+
+        &--default {
+          @apply text-default;
+          @apply dark:text-dark-default;
+        }
+
+        &--warning {
+          @apply text-warning;
+          @apply dark:text-dark-warning;
+        }
+
+        &--success {
+          @apply text-success;
+          @apply dark:text-dark-success;
+        }
+
+        &--primary {
+          @apply text-[color:var(--p-toast-icon-color-primary)];
+          @apply dark:text-[color:var(--p-toast-icon-color-primary-dark)];
+        }
+
+        &--danger {
+          @apply text-danger;
+          @apply dark:text-danger;
+        }
       }
       .toast__title {
         @apply text-default;
