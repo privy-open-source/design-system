@@ -1331,35 +1331,6 @@
     ]
   },
   {
-    "name": "document-retract",
-    "aliases": [],
-    "category": "files",
-    "folder": "document-retract",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "document-retract/24",
-        "path": "document-retract/24.svg",
-        "hash": "6ab7665167cd403cb40aa3d11bc181eecf52ed34ac90e4a060774193d7c5f425"
-      },
-      {
-        "name": "document-retract/32",
-        "path": "document-retract/32.svg",
-        "hash": "efd9fad33430b0a63502cb65f3addcea87c37a5ee36d827292b22b9563cfd059"
-      },
-      {
-        "name": "document-retract/16",
-        "path": "document-retract/16.svg",
-        "hash": "bf6c035e6a68e27db67775b778cf8be7b55e78a54f34b2fd8592072b8ed5b50f"
-      },
-      {
-        "name": "document-retract/20",
-        "path": "document-retract/20.svg",
-        "hash": "5ece543feca31b5b17c40320acbb0fc2357744989f4b11b10ba49a7ba45f816a"
-      }
-    ]
-  },
-  {
     "name": "user-groups",
     "aliases": [],
     "category": "user",
@@ -9615,6 +9586,35 @@
         "name": "adjust/24",
         "path": "adjust/24.svg",
         "hash": "66175b49b652f91a59789d0b929435bbde75b142a0d80b6b9a2c956d42102ab8"
+      }
+    ]
+  },
+  {
+    "name": "document-retract",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-retract",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-retract/32",
+        "path": "document-retract/32.svg",
+        "hash": "efd9fad33430b0a63502cb65f3addcea87c37a5ee36d827292b22b9563cfd059"
+      },
+      {
+        "name": "document-retract/16",
+        "path": "document-retract/16.svg",
+        "hash": "bf6c035e6a68e27db67775b778cf8be7b55e78a54f34b2fd8592072b8ed5b50f"
+      },
+      {
+        "name": "document-retract/24",
+        "path": "document-retract/24.svg",
+        "hash": "6ab7665167cd403cb40aa3d11bc181eecf52ed34ac90e4a060774193d7c5f425"
+      },
+      {
+        "name": "document-retract/20",
+        "path": "document-retract/20.svg",
+        "hash": "5ece543feca31b5b17c40320acbb0fc2357744989f4b11b10ba49a7ba45f816a"
       }
     ]
   }
