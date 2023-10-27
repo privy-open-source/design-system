@@ -312,10 +312,10 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
 <preview>
   <p-carousel loop>
     <p-carousel-item>
-      <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/6/600/400" />
+      <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/5/600/400" />
     </p-carousel-item>
     <p-carousel-item>
-      <img class="object-cover w-full h-full" width="300" height="100" src="https://picsum.photos/id/6/300/100" />
+      <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/6/600/400" />
     </p-carousel-item>
     <p-carousel-item>
       <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/7/600/400" />
@@ -333,10 +333,10 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
 <template>
   <p-carousel loop>
     <p-carousel-item>
-      <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/6/600/400" />
+      <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/5/600/400" />
     </p-carousel-item>
     <p-carousel-item>
-      <img class="object-cover w-full h-full" width="300" height="100" src="https://picsum.photos/id/6/300/100" />
+      <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/6/600/400" />
     </p-carousel-item>
     <p-carousel-item>
       <img class="object-cover w-full h-full" width="600" height="400" src="https://picsum.photos/id/7/600/400" />
