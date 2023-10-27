@@ -6,7 +6,11 @@
     data-testid="btn"
     :class="classNames"
     :disabled="loading || disabled">
-    <spinner v-if="loading" />
+    <slot
+      v-if="loading"
+      name="loading">
+      <spinner />
+    </slot>
     <slot v-else />
   </component>
 </template>
@@ -16,6 +20,7 @@ import {
   computed,
   PropType,
   inject,
+  VNode,
 } from 'vue-demi'
 import type { RouteLocationRaw } from 'vue-router'
 import {
@@ -106,6 +111,11 @@ const tagName = computed(() => {
     ? 'nuxt-link'
     : 'button'
 })
+
+defineSlots<{
+  loading(): VNode[],
+  default(): VNode[],
+}>()
 </script>
 
 <style lang="postcss">
