@@ -102,7 +102,9 @@
       data-testid="pagination-count">
       <slot
         name="pagination-count"
+        :page="modelValue"
         :range="rowRange"
+        :total-page="totalPageCount"
         :total="total">
         {{ rowRange[0] }} - {{ rowRange[1] }} of {{ total }}
       </slot>
@@ -368,6 +370,7 @@ export default defineComponent({
 
     .btn--icon.btn--sm {
       @apply px-2 py-1 min-w-[34px];
+
       &:is(.pagination__items__nav-first, .pagination__items__nav-prev, .pagination__items__nav-next, .pagination__items__nav-last) > svg {
         @apply my-[0.15rem];
       }
@@ -388,8 +391,6 @@ export default defineComponent({
   }
 
   .dropdown {
-    --p-select-min-width: auto;
-
     @apply max-w-[80px];
 
     &__menu {

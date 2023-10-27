@@ -144,10 +144,10 @@ it('should be able to add size in the dropdown container via `menu-size` props',
     `,
   })
 
-  const menu = screen.queryByTestId('dropdown-menu')
+  const menu = screen.queryByTestId('dropdown')
   expect(menu).toBeInTheDocument()
-  expect(menu).toHaveClass('dropdown__menu--lg')
-  expect(menu).not.toHaveClass('dropdown__menu--sm')
+  expect(menu).toHaveClass('dropdown--menu-lg')
+  expect(menu).not.toHaveClass('dropdown--menu-sm')
 })
 
 it('should be able to add divider in the dropdown-item via `divider` props', () => {

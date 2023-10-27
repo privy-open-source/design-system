@@ -181,6 +181,7 @@ import { isEqual } from '../utils/value'
 import { onStartTyping, watchPausable } from '@vueuse/core'
 import { SizeVariant } from '../button'
 import { MenuSizeVariant } from '../dropdown/'
+import { isNil } from 'lodash-es'
 
 defineOptions({
   models: {
@@ -204,7 +205,7 @@ const props = defineProps({
   },
   placeholder: {
     type   : String,
-    default: '\u00A0',
+    default: '\u00A0' /* &nbsp; */,
   },
   emptyText: {
     type   : String,
@@ -356,7 +357,7 @@ const classNames = computed(() => {
 const hasValue = computed(() => {
   return props.multiple
     ? Array.isArray(localModel.value) && localModel.value.length > 0
-    : (localModel.value as SelectItem)?.value
+    : !isNil((localModel.value as SelectItem)?.value)
 })
 
 const modelWatcher = watchPausable(() => props.modelValue, (value) => {
@@ -448,10 +449,8 @@ onStartTyping(() => {
 
 <style lang="postcss">
 .select {
-  --p-select-min-width: 20ch;
-
   &__activator {
-    @apply min-w-[var(--p-select-min-width)] items-center flex;
+    @apply items-center flex;
   }
 
   &__search {
