@@ -47,7 +47,7 @@ import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/24.v
 import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/24.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import { pMd } from '../markdown'
-import { ColorVariant } from '../button'
+import type { ColorVariant } from '../button'
 
 const ToastIcons = {
   info   : IconInfo,

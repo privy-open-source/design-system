@@ -1,6 +1,6 @@
 import type { Component } from 'vue-demi'
 import { useSingleton } from '../global/use-singleton'
-import { ColorVariant } from '../button'
+import type { ColorVariant } from '../button'
 
 export type ToastTypeVariant = 'info' | 'success' | 'warning' | 'error'
 
