@@ -95,7 +95,8 @@ export default defineComponent({
     @apply dark:bg-dark-default-alpha dark:text-dark-default;
   }
 
-  &&--active {
+  &&--active,
+  &.selected {
     @apply bg-default-alpha text-default;
     @apply dark:bg-dark-default-alpha cursor-default dark:text-dark-default;
   }
