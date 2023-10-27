@@ -29,7 +29,7 @@ description: Base dropdown button, suit for action menus
 
 ### Simple Usage
 <preview>
-  <p-dropdown text="Click Here" button-class="w-full">
+  <p-dropdown text="Click Here" button-class="w-full" menu-size="lg">
     <p-dropdown-item active>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
@@ -443,6 +443,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 --p-dropdown-size-md: 20rem; /* 320px */
 --p-dropdown-size-sm: 15rem; /* 240px */
 --p-dropdown-max-height: theme(spacing.64);
+--p-dropdown-size: auto;
 ```
 
 ## API

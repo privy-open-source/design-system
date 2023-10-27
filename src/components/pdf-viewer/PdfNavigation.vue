@@ -124,6 +124,8 @@ export default defineComponent({
       }
 
       > .select {
+        --p-dropdown-size: theme(width.32);
+
         @apply w-16;
 
         > .input {

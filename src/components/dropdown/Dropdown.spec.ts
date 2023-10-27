@@ -540,10 +540,11 @@ it('should be able to add dropdown-menu-container size via `menu-size` props', (
     `,
   })
 
-  const dropdownMenu = screen.queryByTestId('dropdown-menu')
+  const dropdownMenu = screen.queryByTestId('dropdown')
+
   expect(dropdownMenu).toBeInTheDocument()
-  expect(dropdownMenu).toHaveClass('dropdown__menu--md')
-  expect(dropdownMenu).not.toHaveClass('dropdown__menu--sm')
+  expect(dropdownMenu).toHaveClass('dropdown--menu-md')
+  expect(dropdownMenu).not.toHaveClass('dropdown--menu-sm')
 })
 
 it('should be able to add button class in the dropdown via `button-class` props', () => {

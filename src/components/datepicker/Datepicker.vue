@@ -219,6 +219,7 @@ export default defineComponent({
   }
 
   > .dropdown__menu {
+    --p-dropdown-size: auto;
     --p-dropdown-max-height: 100%;
 
     @apply min-w-max max-h-min;
