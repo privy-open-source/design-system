@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "packageManager": "yarn@3.6.4",
   "private": true,
   "type": "module",
@@ -79,7 +79,7 @@
     "ufo": "^1.0.1",
     "vitepress": "1.0.0-rc.20",
     "vitest": "0.24.5",
-    "vue-tsc": "1.8.21"
+    "vue-tsc": "1.8.22"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
