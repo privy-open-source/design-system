@@ -65,11 +65,8 @@ export default defineComponent({
       return getAdapter(variant.value).getDatasets(slots.default())
     })
 
-    async function initChart () {
-      if (instance.value)
-        instance.value.destroy()
-
-      instance.value = await createChart(canvas.value, variant.value, data.value, {
+    const options = computed(() => {
+      return {
         plugins: {
           legend: {
             display : legend.value !== 'none',
@@ -85,7 +82,18 @@ export default defineComponent({
           },
         },
         ...getAdapter(variant.value).getStyle(),
-      },
+      }
+    })
+
+    async function initChart () {
+      if (instance.value)
+        instance.value.destroy()
+
+      instance.value = await createChart(
+        canvas.value,
+        variant.value,
+        data.value,
+        options.value,
       )
     }
 
