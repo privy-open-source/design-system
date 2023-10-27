@@ -145,15 +145,15 @@ export default defineComponent({
   }
 
   .toast__body {
-    @apply py-4 pr-4 grow space-y-2 flex flex-col;
+    @apply py-4 pr-4 grow space-y-2 flex flex-col overflow-hidden;
   }
 
   .toast__title {
-    @apply text-sm font-medium leading-[1.75];
+    @apply text-sm font-medium leading-[1.75] truncate;
   }
 
   .toast__text {
-    @apply text-xs;
+    @apply text-xs truncate;
   }
 
   /**

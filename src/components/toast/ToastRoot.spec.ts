@@ -1,11 +1,7 @@
-import {
-  render, fireEvent,
-} from '@testing-library/vue'
+import { render, fireEvent } from '@testing-library/vue'
 import ToastRoot from './ToastRoot.vue'
-// import { delay } from 'nanodelay'
 import { nextTick } from 'vue-demi'
 
-// not valid position
 it('should have class', async () => {
   const screen = render({
     components: { ToastRoot },
