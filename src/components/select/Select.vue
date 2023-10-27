@@ -161,26 +161,28 @@ import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
 import IconSearch from '@privyid/persona-icon/vue/search/20.vue'
 import IconCheckbox from '../checkbox/icon/IconCheckbox.vue'
 import IconLoading from '../spinner/SpinnerRing.vue'
+import type {
+  PropType,
+  HTMLAttributes,
+} from 'vue-demi'
 import {
   computed,
-  PropType,
   ref,
-  HTMLAttributes,
   nextTick,
   watch,
 } from 'vue-demi'
+import type { SelectItem } from '.'
 import {
   findSelected,
   filterSelected,
-  SelectItem,
 } from '.'
-import { Adapter, AdapterContext } from './adapter/adapter'
+import type { Adapter, AdapterContext } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
 import { onStartTyping, watchPausable } from '@vueuse/core'
-import { SizeVariant } from '../button'
-import { MenuSizeVariant } from '../dropdown/'
+import type { SizeVariant } from '../button'
+import type { MenuSizeVariant } from '../dropdown/'
 import { isNil } from 'lodash-es'
 
 defineOptions({

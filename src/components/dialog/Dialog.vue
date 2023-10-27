@@ -52,7 +52,7 @@ import {
 import Modal from '../modal/Modal.vue'
 import Heading from '../heading/Heading.vue'
 import DialogFooter from './DialogFooter.vue'
-import { DialogContext } from '.'
+import type { DialogContext } from '.'
 import { pMd } from '../markdown'
 
 export default defineComponent({

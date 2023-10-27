@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { Plugin } from 'vite'
+import type { Plugin } from 'vite'
 import { babel } from '@rollup/plugin-babel'
 import getTarget from 'browserslist-to-esbuild'
 import head from './head'

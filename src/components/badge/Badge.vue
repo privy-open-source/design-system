@@ -7,13 +7,13 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   computed,
 } from 'vue-demi'
-import { StyleVariant } from '.'
-import { ColorVariant } from '../button'
+import type { StyleVariant } from '.'
+import type { ColorVariant } from '../button'
 
 export default defineComponent({
   props: {

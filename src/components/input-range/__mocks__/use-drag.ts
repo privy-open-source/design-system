@@ -1,6 +1,6 @@
+import type { Ref } from 'vue-demi'
 import {
   nextTick,
-  Ref,
   watch,
 } from 'vue-demi'
 

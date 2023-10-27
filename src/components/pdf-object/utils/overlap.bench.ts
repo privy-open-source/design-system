@@ -7,9 +7,11 @@ import {
   set,
   memoize,
 } from 'lodash-es'
-import {
+import type {
   CheckOverlapFn,
   ObjectPosition,
+} from './overlap'
+import {
   getEmptyPosition,
 } from './overlap'
 

@@ -1,7 +1,7 @@
-import { MaybeRef } from '@vueuse/shared'
+import type { MaybeRef } from '@vueuse/shared'
 import { unref } from 'vue-demi'
 import { AbstractStep } from '../step'
-import { Tour } from '../tour'
+import type { Tour } from '../tour'
 
 export interface ConditionalOptions {
   condition: MaybeRef<boolean | (() => boolean | Promise<boolean>)>,

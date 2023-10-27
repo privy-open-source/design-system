@@ -1,4 +1,4 @@
-import { HeadConfig } from 'vitepress'
+import type { HeadConfig } from 'vitepress'
 import { joinURL } from 'ufo'
 
 const baseURL            = process.env.BASE_URL ?? '/design-system/'

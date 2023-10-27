@@ -1,8 +1,8 @@
 import { fromBase64 } from '../../utils/base64'
+import type { MotionTemplate } from '../utils/motion'
 import {
   createTemplate,
   motionDetection,
-  MotionTemplate,
   MOTION_AREA_SIZE,
   MOTION_FPS,
   MOTION_THRESHOLD,

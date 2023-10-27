@@ -1,8 +1,8 @@
 import 'pdfjs-dist/web/pdf_viewer.css'
+import type { Ref } from 'vue-demi'
 import {
   computed,
   onBeforeUnmount,
-  Ref,
   shallowRef,
   watch,
 } from 'vue-demi'

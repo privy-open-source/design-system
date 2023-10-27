@@ -1,8 +1,8 @@
 import type { InteractEvent, Interactable } from '@interactjs/types'
+import type { Ref } from 'vue-demi'
 import {
   inject,
   onScopeDispose,
-  Ref,
   shallowRef,
   watch,
 } from 'vue-demi'

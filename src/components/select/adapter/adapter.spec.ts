@@ -1,6 +1,8 @@
-import {
+import type {
   SelectProps,
   SelectItem,
+} from '..'
+import {
   defineOptions,
 } from '..'
 import { useOptionsProp } from './adapter'

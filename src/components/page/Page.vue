@@ -8,14 +8,14 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
 } from 'vue-demi'
 import { useVModel } from '../input'
-import { ToggleableVariant } from '../navbar'
-import { TypeVariant } from '../sidebar'
+import type { ToggleableVariant } from '../navbar'
+import type { TypeVariant } from '../sidebar'
 
 export default defineComponent({
   props: {

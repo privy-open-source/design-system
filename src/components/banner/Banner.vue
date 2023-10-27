@@ -31,13 +31,13 @@
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import IconDanger from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   ref,
   computed,
 } from 'vue-demi'
-import { StyleVariant } from '.'
+import type { StyleVariant } from '.'
 
 const BannerIcons = {
   danger: IconDanger,

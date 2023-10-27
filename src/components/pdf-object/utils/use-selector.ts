@@ -1,10 +1,10 @@
+import type { MaybeRef } from '@vueuse/core'
 import {
   tryOnMounted,
   useMutationObserver,
-  MaybeRef,
 } from '@vueuse/core'
+import type { Ref } from 'vue-demi'
 import {
-  Ref,
   watch,
   unref,
   shallowRef,

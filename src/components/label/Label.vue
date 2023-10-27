@@ -19,15 +19,15 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   computed,
   ref,
 } from 'vue-demi'
 import Dot from '../dot/Dot.vue'
-import { StyleVariant } from '.'
-import { ColorVariant, SizeVariant } from '../button'
+import type { StyleVariant } from '.'
+import type { ColorVariant, SizeVariant } from '../button'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 
 export default defineComponent({

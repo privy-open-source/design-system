@@ -32,19 +32,19 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   inject,
-  PropType,
   ref,
 } from 'vue-demi'
 import { useVModel } from '.'
-import { SizeVariant } from '../button'
+import type { SizeVariant } from '../button'
 import IconClear from '@privyid/persona-icon/vue/close-circle-solid/20.vue'
 import { INPUTGROUP_SETTING } from '../input-group'
+import type { AcceptVariant } from './utils/accept'
 import {
-  AcceptVariant,
   checkOnInput,
 } from './utils/accept'
 

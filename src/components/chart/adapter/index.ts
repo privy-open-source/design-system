@@ -1,4 +1,4 @@
-import { ChartAdapter } from './adapter'
+import type { ChartAdapter } from './adapter'
 import Line from './line'
 import Pie from './pie'
 

@@ -1,4 +1,4 @@
-import { Directive } from 'vue-demi'
+import type { Directive } from 'vue-demi'
 import { marked } from 'marked'
 import sanitizeHtml from 'sanitize-html'
 import defu from 'defu'

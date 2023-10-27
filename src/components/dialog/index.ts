@@ -7,8 +7,8 @@ import type {
 } from './DialogFooter.vue'
 import type { SizeVariant } from '../modal'
 import type { SizeVariant as InputSizeVariant } from '../button'
+import type { VNode } from 'vue-demi'
 import {
-  VNode,
   ref,
   h,
 } from 'vue-demi'

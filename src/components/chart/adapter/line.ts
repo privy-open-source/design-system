@@ -1,6 +1,6 @@
 import type { ChartDataset, ChartData } from 'chart.js/auto'
 import { startCase } from 'lodash-es'
-import { Slots, VNode } from 'vue-demi'
+import type { Slots, VNode } from 'vue-demi'
 import { defineAdapter } from './adapter'
 import { colorHash } from '../../avatar/utils/color-hash'
 import { findAllChildren } from '../../utils/vnode'

@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { defineComponent, provide } from 'vue-demi'
-import { BreadcrumbItems } from '.'
+import type { BreadcrumbItems } from '.'
 import BreadcrumbItem from './BreadcrumbItem.vue'
 import BreadcrumbItemDropdown from './BreadcrumbItemDropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'

@@ -15,20 +15,21 @@
 <script lang="ts">
 import type { Chart } from 'chart.js/auto'
 import { templateRef, watchPausable } from '@vueuse/core'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   onMounted,
   watch,
-  PropType,
   shallowRef,
   onBeforeUnmount,
   toRef,
   computed,
   nextTick,
 } from 'vue-demi'
-import getAdapter, { ChartType } from './adapter/index'
+import type { ChartType } from './adapter/index'
+import getAdapter from './adapter/index'
 import { createChart } from './utils/use-chart'
-import { LegendPosition } from '.'
+import type { LegendPosition } from '.'
 import { pAspectRatio } from '../aspect-ratio'
 
 export default defineComponent({

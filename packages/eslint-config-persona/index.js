@@ -97,10 +97,11 @@ module.exports = {
         multilineDetection: 'brackets',
       },
     ],
-    'align-assignments/align-assignments': [2, { requiresOnly: false }],
-    'vue/multi-word-component-names'     : 'off',
-    'vue/no-reserved-component-names'    : 'off',
-    'vue/html-closing-bracket-newline'   : [
+    '@typescript-eslint/consistent-type-imports': ['error'],
+    'align-assignments/align-assignments'       : [2, { requiresOnly: false }],
+    'vue/multi-word-component-names'            : 'off',
+    'vue/no-reserved-component-names'           : 'off',
+    'vue/html-closing-bracket-newline'          : [
       'error',
       {
         singleline: 'never',

@@ -65,19 +65,19 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   onMounted,
   onBeforeUnmount,
 } from 'vue-demi'
-import { AlignVariant } from '../nav'
+import type { AlignVariant } from '../nav'
 import { useVModel } from '../input'
 import pCaption from '../caption/Caption.vue'
 import pSubheading from '../subheading/Subheading.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
-import { StyleVariant } from '.'
+import type { StyleVariant } from '.'
 
 export default defineComponent({
   components: {

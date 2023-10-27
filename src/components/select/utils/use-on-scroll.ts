@@ -1,5 +1,5 @@
 import { useEventListener } from '@vueuse/core'
-import { Ref } from 'vue-demi'
+import type { Ref } from 'vue-demi'
 
 export function onScrollBottom (element: Ref<HTMLElement>, handler: (event: Event) => void) {
   useEventListener(element, 'scroll', (event) => {

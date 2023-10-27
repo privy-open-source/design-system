@@ -22,8 +22,8 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
-  PropType,
   computed,
   defineComponent,
   nextTick,
@@ -35,10 +35,11 @@ import {
 } from 'vue-demi'
 import CarouselBody from './CarouselBody.vue'
 import ProgressIndicator from '../progress-indicator/ProgressIndicator.vue'
-import { DirectionVariant } from '../steps'
+import type { DirectionVariant } from '../steps'
 import '@splidejs/splide/css/core'
 import { defu } from 'defu'
-import { AlignmentVariant, CAROUSEL_INSTANCE } from '.'
+import type { AlignmentVariant } from '.'
+import { CAROUSEL_INSTANCE } from '.'
 import type { Options, Splide } from '@splidejs/splide'
 import { useVModel } from '../input'
 

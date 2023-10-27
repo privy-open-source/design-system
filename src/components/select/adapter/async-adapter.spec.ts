@@ -1,7 +1,8 @@
 /* eslint-disable unicorn/no-useless-undefined */
 import { onScrollBottom, triggerScroll } from '../__mocks__/use-on-scroll'
 import { vi } from 'vitest'
-import defineAsyncAdapter, { LoadFn } from './async-adapter'
+import type { LoadFn } from './async-adapter'
+import defineAsyncAdapter from './async-adapter'
 import { nextTick, ref } from 'vue-demi'
 import { delay } from 'nanodelay'
 

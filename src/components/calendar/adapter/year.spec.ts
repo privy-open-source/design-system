@@ -1,4 +1,4 @@
-import { CalendarItem } from './adapter'
+import type { CalendarItem } from './adapter'
 import { createMockContext } from './date.spec'
 import Adapter from './year'
 

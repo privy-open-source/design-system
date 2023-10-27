@@ -1,7 +1,7 @@
-import { HTMLAttributes } from 'vue-demi'
-import { Component } from '../global/use-singleton'
-import { AlignVariant } from '../nav'
-import { LiteralUnion } from 'type-fest'
+import type { HTMLAttributes } from 'vue-demi'
+import type { Component } from '../global/use-singleton'
+import type { AlignVariant } from '../nav'
+import type { LiteralUnion } from 'type-fest'
 
 type Access = LiteralUnion<'*', string>
 

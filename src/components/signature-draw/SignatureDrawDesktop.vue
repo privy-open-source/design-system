@@ -32,10 +32,10 @@
 
 <script lang="ts">
 import { templateRef } from '@vueuse/core'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   onMounted,
-  PropType,
   ref,
   watch,
 } from 'vue-demi'
@@ -51,7 +51,7 @@ import { useVModel } from '../input'
 import { createLines } from './utils/smooth-line'
 import Caption from '../caption/Caption.vue'
 import Button from '../button/Button.vue'
-import { ModelModifier } from '../dropzone'
+import type { ModelModifier } from '../dropzone'
 import { usePreview } from '../cropper'
 import { fromBase64 } from '../utils/base64'
 

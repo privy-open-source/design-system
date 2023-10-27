@@ -20,7 +20,7 @@ import {
   computed,
 } from 'vue-demi'
 import { DROPDOWN_CONTEXT } from '.'
-import { TagVariant } from '../button'
+import type { TagVariant } from '../button'
 
 export default defineComponent({
   props: {

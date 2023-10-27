@@ -1,5 +1,5 @@
-import { InjectionKey, Ref } from 'vue-demi'
-import { StyleVariant } from '../nav'
+import type { InjectionKey, Ref } from 'vue-demi'
+import type { StyleVariant } from '../nav'
 
 export type ToggleableVariant = 'sm' | 'md' | 'lg' | 'all'
 

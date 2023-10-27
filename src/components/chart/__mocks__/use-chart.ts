@@ -1,5 +1,5 @@
 import { vi } from 'vitest'
-import {
+import type {
   ChartData,
   ChartOptions,
   ChartType,

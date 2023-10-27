@@ -1,8 +1,8 @@
 import { render } from '@testing-library/vue'
 import TabContent from './TabContent.vue'
 import Tab from './Tab.vue'
+import type { FunctionalComponent } from 'vue-demi'
 import {
-  FunctionalComponent,
   nextTick,
   ref,
 } from 'vue-demi'

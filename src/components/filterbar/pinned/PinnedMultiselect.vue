@@ -41,10 +41,10 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   ref,
 } from 'vue-demi'
 import Badge from '../../badge/Badge.vue'
@@ -55,8 +55,8 @@ import Checkbox from '../../checkbox/Checkbox.vue'
 import { useOptionsProp } from '../../select/adapter/adapter'
 import { useVModel } from '../../input'
 import { isEqual } from '../../utils/value'
-import { FilterSelect } from '..'
-import { SelectItem } from '../../select'
+import type { FilterSelect } from '..'
+import type { SelectItem } from '../../select'
 
 export default defineComponent({
   components: {

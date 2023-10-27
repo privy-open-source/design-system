@@ -1,4 +1,4 @@
-import { DrawLineCoordinate } from './canvas'
+import type { DrawLineCoordinate } from './canvas'
 
 /**
  * Smoothing Line for Signature Draw

@@ -30,13 +30,15 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  computed,
-  inject,
+import type {
   PropType,
   VNode,
 } from 'vue-demi'
-import { SizeVariant } from '../button'
+import {
+  computed,
+  inject,
+} from 'vue-demi'
+import type { SizeVariant } from '../button'
 import { INPUTGROUP_SETTING } from '../input-group'
 
 defineOptions({ inheritAttrs: false })

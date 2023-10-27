@@ -15,11 +15,11 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   onMounted,
-  PropType,
   ref,
   watch,
 } from 'vue-demi'
@@ -29,7 +29,7 @@ import {
   dummyAvatar,
 } from './utils/create-image'
 import loadImage from './utils/load-image'
-import { TypeVariant, SizeVariant } from '.'
+import type { TypeVariant, SizeVariant } from '.'
 
 export default defineComponent({
   props: {

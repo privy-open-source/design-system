@@ -36,10 +36,10 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
 } from 'vue-demi'
 import { useVModel } from '../input'
 import pDropzone from '../dropzone/Dropzone.vue'
@@ -47,8 +47,8 @@ import pInput from '../input/Input.vue'
 import pInputGroup from '../input-group/InputGroup.vue'
 import pInputGroupAddon from '../input-group/InputGroupAddon.vue'
 import pButton from '../button/Button.vue'
-import { ModelModifier, MultipleType } from '../dropzone'
-import { SizeVariant } from '../button'
+import type { ModelModifier, MultipleType } from '../dropzone'
+import type { SizeVariant } from '../button'
 import { templateRef } from '@vueuse/core'
 
 export default defineComponent({

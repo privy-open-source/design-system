@@ -12,22 +12,24 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   provide,
   ref,
 } from 'vue-demi'
 import StepSlider from './StepSlider.vue'
 import { useVModel } from '../input'
 import { findAllChildren } from '../utils/vnode'
-import {
+import type {
   TravelHook,
   FinishedHook,
-  STEPS_CONTEXT,
   DirectionVariant,
   AnimationVariant,
+} from '.'
+import {
+  STEPS_CONTEXT,
 } from '.'
 import { syncRef } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'

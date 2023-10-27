@@ -1,4 +1,4 @@
-import { InteractEvent } from '@interactjs/types'
+import type { InteractEvent } from '@interactjs/types'
 import type { Ref } from 'vue-demi'
 import type { DrawHooks } from '../utils/use-draw'
 

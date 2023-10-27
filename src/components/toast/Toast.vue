@@ -29,15 +29,15 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   computed,
   ref,
   onMounted,
   onUnmounted,
 } from 'vue-demi'
-import { ToastStyleVariant, ToastTypeVariant } from '.'
+import type { ToastStyleVariant, ToastTypeVariant } from '.'
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/24.vue'
 import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
 import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/24.vue'

@@ -19,8 +19,8 @@
 <script lang="ts" setup>
 import { useVModel } from '@vueuse/core'
 import { type AccordionItem, ACCORDION_CONTEXT } from '.'
+import type { PropType } from 'vue-demi'
 import {
-  PropType,
   computed,
   provide,
   readonly,

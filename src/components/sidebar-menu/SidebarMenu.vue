@@ -64,13 +64,13 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
+import type { PropType } from 'vue-demi'
 import Sidebar from '../sidebar/Sidebar.vue'
-import { TypeVariant } from '../sidebar'
+import type { TypeVariant } from '../sidebar'
 import SidebarNav from '../sidebar/SidebarNav.vue'
-import { Menu } from '.'
-import { AlignVariant } from '../nav'
-import { ToggleableVariant } from '../navbar'
+import type { Menu } from '.'
+import type { AlignVariant } from '../nav'
+import type { ToggleableVariant } from '../navbar'
 import NavCollapse from '../nav/NavCollapse.vue'
 import SidebarMenuItem from './SidebarMenuItem.vue'
 

@@ -1,8 +1,8 @@
 import type { Interactable, InteractEvent } from '@interactjs/types'
-import { MaybeRef } from '@vueuse/core'
+import type { MaybeRef } from '@vueuse/core'
+import type { Ref } from 'vue-demi'
 import {
   onScopeDispose,
-  Ref,
   shallowRef,
   unref,
   watch,

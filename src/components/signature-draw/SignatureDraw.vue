@@ -24,16 +24,16 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   onMounted,
-  PropType,
   ref,
 } from 'vue-demi'
 import SignatureDrawMobile from './SignatureDrawMobile.vue'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
-import { ModelModifier } from '../dropzone'
+import type { ModelModifier } from '../dropzone'
 import { useMediaQuery } from '@vueuse/core'
 import { createSpinner } from '../avatar/utils/create-image'
 

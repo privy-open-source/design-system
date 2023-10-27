@@ -1,11 +1,11 @@
 import { createSpinner } from '../avatar/utils/create-image'
+import type { MaybeRef } from '@vueuse/core'
 import {
-  MaybeRef,
   tryOnMounted,
   tryOnBeforeUnmount,
 } from '@vueuse/core'
+import type { Ref } from 'vue-demi'
 import {
-  Ref,
   ref,
   unref,
   watch,

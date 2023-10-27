@@ -8,12 +8,12 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
 } from 'vue-demi'
-import { AddonPositionVariant } from '.'
+import type { AddonPositionVariant } from '.'
 
 export default defineComponent({
   props: {

@@ -67,15 +67,17 @@
 </template>
 
 <script lang="ts" setup>
-import {
+import type {
   PropType,
+  VNode,
+} from 'vue-demi'
+import {
   provide,
   watch,
   toRef,
   watchEffect,
   computed,
   ref,
-  VNode,
 } from 'vue-demi'
 import {
   onClickOutside,
@@ -84,8 +86,8 @@ import {
 import Button from '../button/Button.vue'
 import DropdownGroup from '../dropdown-subitem/DropdownSubitem.vue'
 import { useFocus } from './utils/use-focus'
+import type { Placement } from '@floating-ui/dom'
 import {
-  Placement,
   autoUpdate,
   computePosition,
   offset,

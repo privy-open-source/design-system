@@ -7,13 +7,13 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   computed,
 } from 'vue-demi'
-import { SizeVariant } from '.'
-import { WeightVariant, TransformVariant } from '../heading'
+import type { SizeVariant } from '.'
+import type { WeightVariant, TransformVariant } from '../heading'
 
 export default defineComponent({
   props: {

@@ -24,15 +24,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue-demi'
+import type { PropType } from 'vue-demi'
+import { defineComponent } from 'vue-demi'
 import Dropdown from '../dropdown/Dropdown.vue'
-import { Placement } from '@floating-ui/core'
+import type { Placement } from '@floating-ui/core'
 import type {
   SizeVariant,
   StyleVariant,
 } from '../button'
 import { useVModel } from '../input'
-import { MenuSizeVariant } from '../dropdown'
+import type { MenuSizeVariant } from '../dropdown'
 
 export default defineComponent({
   components: { Dropdown },

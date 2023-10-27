@@ -32,14 +32,16 @@
 </template>
 
 <script lang="ts">
-import {
+import type {
   PropType,
   Ref,
+} from 'vue-demi'
+import {
   computed,
   defineComponent,
   ref,
 } from 'vue-demi'
-import { ToastOption, ToastPositionVariant } from '.'
+import type { ToastOption, ToastPositionVariant } from '.'
 import Toast from './Toast.vue'
 
 interface ToastItem extends ToastOption {

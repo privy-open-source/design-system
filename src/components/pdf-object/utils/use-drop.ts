@@ -3,12 +3,14 @@ import type {
   InteractEvent,
 } from '@interactjs/types'
 import { useMutationObserver } from '@vueuse/core'
-import {
+import type {
   InjectionKey,
+  Ref,
+} from 'vue-demi'
+import {
   onScopeDispose,
   provide,
   ref,
-  Ref,
   shallowRef,
 } from 'vue-demi'
 

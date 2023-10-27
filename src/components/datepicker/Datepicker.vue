@@ -49,17 +49,17 @@ import Dropdown from '../dropdown/Dropdown.vue'
 import Input from '../input/Input.vue'
 import Calendar from '../calendar/Calendar.vue'
 import { format as formatDate, isDate } from 'date-fns'
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   ref,
   watch,
 } from 'vue-demi'
-import { CalendarMode } from '../calendar/adapter/adapter'
+import type { CalendarMode } from '../calendar/adapter/adapter'
 import { useVModel } from '../input'
 import IconCalendar from '@privyid/persona-icon/vue/calendar/16.vue'
-import { SizeVariant } from '../button'
+import type { SizeVariant } from '../button'
 
 export default defineComponent({
   components: {

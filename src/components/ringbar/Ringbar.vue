@@ -30,8 +30,8 @@
 
 <script lang="ts">
 import { useProgressbar } from '../progressbar'
+import type { PropType } from 'vue-demi'
 import {
-  PropType,
   computed,
   defineComponent,
 } from 'vue-demi'

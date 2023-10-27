@@ -23,11 +23,13 @@
 
 <script lang="ts">
 import { findLast } from 'lodash-es'
+import type {
+  PropType,
+  Slots,
+} from 'vue-demi'
 import {
   defineComponent,
   computed,
-  PropType,
-  Slots,
 } from 'vue-demi'
 import { findAllChildren, toBoolean } from '../utils/vnode'
 

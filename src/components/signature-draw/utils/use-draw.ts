@@ -1,9 +1,9 @@
 import type { InteractEvent, Interactable } from '@interactjs/types'
 import { throttle } from 'lodash-es'
+import type { Ref } from 'vue-demi'
 import {
   onBeforeUnmount,
   onMounted,
-  Ref,
   shallowRef,
 } from 'vue-demi'
 

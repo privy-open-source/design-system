@@ -1,11 +1,11 @@
 import type { Interactable } from '@interactjs/types'
+import type { Ref } from 'vue-demi'
 import {
   onScopeDispose,
-  Ref,
   shallowRef,
   watch,
 } from 'vue-demi'
-import { DragHooks } from '../../pdf-object/utils/use-drag'
+import type { DragHooks } from '../../pdf-object/utils/use-drag'
 
 export default function useDrag (target: Ref<HTMLElement>, options: DragHooks = {}) {
   const enable   = shallowRef(true)

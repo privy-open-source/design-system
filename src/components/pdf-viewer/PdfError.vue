@@ -29,10 +29,10 @@
 
 <script lang="ts">
 import { pAspectRatio } from '../aspect-ratio'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   onMounted,
-  PropType,
   ref,
 } from 'vue-demi'
 import Heading from '../heading/Heading.vue'

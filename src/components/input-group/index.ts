@@ -1,5 +1,5 @@
-import { InjectionKey, Ref } from 'vue-demi'
-import { SizeVariant } from '../button'
+import type { InjectionKey, Ref } from 'vue-demi'
+import type { SizeVariant } from '../button'
 
 export interface InputGroupSetting {
   size?: Ref<SizeVariant>,

@@ -34,18 +34,18 @@
 <script lang="ts">
 import accept from './utils/accept'
 import { templateRef } from '@vueuse/core'
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   nextTick,
-  PropType,
   ref,
   toRef,
 } from 'vue-demi'
 import { useVModel } from '../input'
 import { toBase64 } from '../utils/base64'
 import { useToNumber } from '@vueuse/shared'
-import { ModelModifier, MultipleType } from '.'
+import type { ModelModifier, MultipleType } from '.'
 
 export default defineComponent({
   props: {

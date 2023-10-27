@@ -28,16 +28,17 @@
 </template>
 
 <script lang="ts" setup>
+import type { PropType } from 'vue-demi'
 import {
-  PropType,
   computed,
   provide,
   ref,
 } from 'vue-demi'
-import { SIDEBAR_SETTINGS, TypeVariant } from '.'
+import type { TypeVariant } from '.'
+import { SIDEBAR_SETTINGS } from '.'
 import { useVModel } from '../input'
-import { StyleVariant, AlignVariant } from '../nav'
-import { ToggleableVariant } from '../navbar'
+import type { StyleVariant, AlignVariant } from '../nav'
+import type { ToggleableVariant } from '../navbar'
 import SidebarContent from './SidebarContent.vue'
 
 const props = defineProps({

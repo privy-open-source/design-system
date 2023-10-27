@@ -10,12 +10,13 @@
   </component>
 </template>
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
-  defineComponent, computed, PropType, ref,
+  defineComponent, computed, ref,
 } from 'vue-demi'
 import IconCheck from '@privyid/persona-icon/vue/checkmark-circle/20.vue'
 import pCaption from '../caption/Caption.vue'
-import { ElementVariant } from '.'
+import type { ElementVariant } from '.'
 
 export default defineComponent({
   components: { pCaption, IconCheck },

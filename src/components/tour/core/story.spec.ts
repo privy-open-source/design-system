@@ -3,7 +3,8 @@ import StepAction from './step/action'
 import StepDelay from './step/delay'
 import StepDialog from './step/dialog'
 import StepVisit from './step/visit'
-import StepCondition, { ConditionalOptions } from './step/conditional'
+import type { ConditionalOptions } from './step/conditional'
+import StepCondition from './step/conditional'
 
 it('should able to add show step instance using `.dialog()`', () => {
   const tour = new TourStory()

@@ -124,21 +124,21 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   computed,
-  PropType,
   watch,
 } from 'vue-demi'
 import Button from '../button/Button.vue'
 import Select from '../select/Select.vue'
 import IconPrev from '@privyid/persona-icon/vue/chevron-left/20.vue'
 import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
-import { SelectItem } from '../select'
+import type { SelectItem } from '../select'
 import { useVModel } from '../input'
 import { usePagination } from '.'
 import { getPageRange } from './utils/calculate-page'
-import { SizeVariant } from '../button'
+import type { SizeVariant } from '../button'
 
 type NavigationVariant = 'none' | 'short' | 'far'
 

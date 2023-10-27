@@ -12,8 +12,8 @@ import {
   isBefore,
   isWithinInterval,
 } from 'date-fns'
+import type { CalendarItem } from './adapter'
 import {
-  CalendarItem,
   defineAdapter,
 } from './adapter'
 import { formatDate } from '../../utils/date'

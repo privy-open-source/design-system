@@ -11,16 +11,16 @@
 </template>
 
 <script lang="ts">
+import type { Ref } from 'vue-demi'
 import {
   ref,
   defineComponent,
-  Ref,
   shallowRef,
   triggerRef,
   nextTick,
 } from 'vue-demi'
 import ToastGroup from './ToastContainer.vue'
-import { ToastOption, ToastPositionVariant } from '.'
+import type { ToastOption, ToastPositionVariant } from '.'
 
 type ToastInstance = InstanceType<typeof ToastGroup>
 type ToastGroupMap = Map<ToastPositionVariant, {

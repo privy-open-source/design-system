@@ -47,12 +47,14 @@ import {
   useToNumber,
 } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'
+import type {
+  PropType,
+  StyleValue,
+} from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   ref,
-  StyleValue,
   toRef,
   watch,
 } from 'vue-demi'

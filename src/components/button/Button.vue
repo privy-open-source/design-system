@@ -16,14 +16,16 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  computed,
+import type {
   PropType,
-  inject,
   VNode,
 } from 'vue-demi'
-import type { RouteLocationRaw } from 'vue-router'
 import {
+  computed,
+  inject,
+} from 'vue-demi'
+import type { RouteLocationRaw } from 'vue-router'
+import type {
   ColorVariant,
   SizeVariant,
   StyleVariant,

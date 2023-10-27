@@ -1,7 +1,9 @@
-import {
+import type {
   Component,
-  Fragment,
   VNode,
+} from 'vue-demi'
+import {
+  Fragment,
 } from 'vue-demi'
 
 /**

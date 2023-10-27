@@ -1,5 +1,5 @@
-import { InjectionKey } from 'vue-demi'
-import { StyleVariant, AlignVariant } from '../nav'
+import type { InjectionKey } from 'vue-demi'
+import type { StyleVariant, AlignVariant } from '../nav'
 
 export type TypeVariant = 'wide' | 'narrow'
 

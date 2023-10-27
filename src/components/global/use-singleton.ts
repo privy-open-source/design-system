@@ -1,8 +1,11 @@
 import PQueue from './utils/queue'
-import {
+import type {
   DefineComponent,
   Ref,
   App,
+  InjectionKey,
+} from 'vue-demi'
+import {
   createApp,
   h,
   ref,
@@ -10,7 +13,6 @@ import {
   shallowRef,
   triggerRef,
   nextTick,
-  InjectionKey,
 } from 'vue-demi'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types

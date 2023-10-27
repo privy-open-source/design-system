@@ -108,19 +108,23 @@
 </template>
 
 <script lang="ts" setup generic="T">
-import {
-  computed,
+import type {
   HTMLAttributes,
   PropType,
   VNode,
 } from 'vue-demi'
 import {
+  computed,
+} from 'vue-demi'
+import type {
   ApperanceVariant,
   TableField,
+  KeyType,
+} from '../table'
+import {
   withKey,
   withoutKey,
   withUnit,
-  KeyType,
 } from '../table'
 import Checkbox from '../checkbox/Checkbox.vue'
 import { useVModel } from '../input'

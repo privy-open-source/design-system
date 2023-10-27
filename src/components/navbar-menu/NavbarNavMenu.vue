@@ -46,9 +46,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue-demi'
+import type { PropType } from 'vue-demi'
+import { defineComponent } from 'vue-demi'
 import NavbarNav from '../navbar/NavbarNav.vue'
-import { Menu } from '../sidebar-menu'
+import type { Menu } from '../sidebar-menu'
 
 export default defineComponent({
   components: { NavbarNav },

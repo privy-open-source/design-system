@@ -1,8 +1,10 @@
+import type {
+  InjectionKey,
+  Ref,
+} from 'vue-demi'
 import {
   inject,
-  InjectionKey,
   ref,
-  Ref,
 } from 'vue-demi'
 import { noop } from 'lodash-es'
 

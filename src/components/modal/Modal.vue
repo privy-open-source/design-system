@@ -108,11 +108,11 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   nextTick,
-  PropType,
   watch,
 } from 'vue-demi'
 import { onKeyStroke } from '@vueuse/core'
@@ -121,7 +121,7 @@ import Button from '../button/Button.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import IconCloseFull from '@privyid/persona-icon/vue/close/24.vue'
 import { useVModel } from '../input'
-import { SizeVariant } from '.'
+import type { SizeVariant } from '.'
 
 export default defineComponent({
   components: {

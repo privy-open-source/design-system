@@ -90,11 +90,11 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   onMounted,
-  PropType,
   provide,
   toRef,
   watch,
@@ -107,7 +107,8 @@ import {
   watchDebounced,
   syncRef,
 } from '@vueuse/core'
-import { LayoutVariant, PDF_VIEWER_CONTEXT } from '.'
+import type { LayoutVariant } from '.'
+import { PDF_VIEWER_CONTEXT } from '.'
 import { useSticky } from './utils/use-sticky'
 import PdfNavigation from './PdfNavigation.vue'
 import PdfLoading from './PdfLoading.vue'

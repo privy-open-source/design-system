@@ -20,11 +20,13 @@
 </template>
 
 <script lang="ts">
+import type {
+  Slots,
+  VNode,
+} from 'vue-demi'
 import {
   computed,
   defineComponent,
-  Slots,
-  VNode,
 } from 'vue-demi'
 import { findAllChildren } from '../utils/vnode'
 import Steps from '../steps/Steps.vue'

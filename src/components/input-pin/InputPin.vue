@@ -24,12 +24,12 @@
 
 <script lang="ts">
 import pInput from '../input/Input.vue'
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   toRef,
   ref,
-  PropType,
 } from 'vue-demi'
 import {
   syncRef,
@@ -37,13 +37,13 @@ import {
   useToNumber,
 } from '@vueuse/core'
 import { useFocus } from '../dropdown/utils/use-focus'
+import type { AcceptVariant } from '../input'
 import {
-  AcceptVariant,
   isAccepted,
   removeUnaccepted,
 } from '../input'
 import { toArray } from '.'
-import { SizeVariant } from '../button'
+import type { SizeVariant } from '../button'
 
 export default defineComponent({
   components  : { pInput },

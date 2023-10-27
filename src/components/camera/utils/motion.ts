@@ -133,12 +133,12 @@ export function motionDetection (imageData: ImageData, template: MotionTemplate)
   // now the most similar position of the template is (bestHitX, bestHitY). Calculate the difference from the origin:
   const distX        = bestHitX - template.xPos
   const distY        = bestHitY - template.yPos
-  const movementDiff = Math.sqrt(distX * distX + distY * distY)
+  const movementDiff = Math.hypot(distX, distY)
 
   // the maximum movement possible is a complete shift into one of the corners, i.e:
   const maxDistX        = searchWidth - template.width / 2
   const maxDistY        = searchHeight - template.height / 2
-  const maximumMovement = Math.sqrt(maxDistX * maxDistX + maxDistY * maxDistY)
+  const maximumMovement = Math.hypot(maxDistX, maxDistY)
 
   // the percentage of the detected movement is therefore:
   let movementPercentage = movementDiff / maximumMovement * 100

@@ -1,12 +1,14 @@
 import { tryOnUnmounted } from '@vueuse/core'
 import { runAllHooks } from './utils/hook'
 import { noop } from 'lodash-es'
-import {
+import type {
   ComputedRef,
-  inject,
   InjectionKey,
-  ref,
   Ref,
+} from 'vue-demi'
+import {
+  inject,
+  ref,
 } from 'vue-demi'
 
 export type TravelHook = (to: number, from: number) => boolean | Promise<boolean>

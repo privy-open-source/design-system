@@ -1,5 +1,5 @@
 import type { Splide } from '@splidejs/splide'
-import { InjectionKey, Ref } from 'vue-demi'
+import type { InjectionKey, Ref } from 'vue-demi'
 
 export type AlignmentVariant = 'start' | 'end'
 

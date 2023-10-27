@@ -53,14 +53,16 @@
 </template>
 
 <script lang="ts" setup>
-import {
+import type {
   VNode,
   PropType,
-  computed,
   Slots,
 } from 'vue-demi'
-import Nav from '../nav/Nav.vue'
 import {
+  computed,
+} from 'vue-demi'
+import Nav from '../nav/Nav.vue'
+import type {
   StyleVariant as TabsStyleVariant,
   AlignVariant as TabsAlignVariant,
 } from '../nav'

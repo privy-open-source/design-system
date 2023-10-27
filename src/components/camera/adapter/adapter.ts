@@ -1,4 +1,4 @@
-import { ComputedRef, Ref } from 'vue-demi'
+import type { ComputedRef, Ref } from 'vue-demi'
 
 export type MaskVariant = 'square' | 'round' | 'card' | 'none'
 

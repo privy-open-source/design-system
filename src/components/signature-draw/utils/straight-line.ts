@@ -1,4 +1,4 @@
-import { DrawLineCoordinate } from './canvas'
+import type { DrawLineCoordinate } from './canvas'
 
 export class StraightLine {
   protected lastX: number

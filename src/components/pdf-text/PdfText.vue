@@ -9,15 +9,15 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   onMounted,
-  PropType,
   ref,
 } from 'vue-demi'
 import { createSpinner } from '../avatar/utils/create-image'
 import { usePreview } from '../cropper'
-import { ModelModifier } from '../dropzone'
+import type { ModelModifier } from '../dropzone'
 import { useVModel } from '../input'
 import { fromBase64 } from '../utils/base64'
 import { watchDebounced } from '@vueuse/core'

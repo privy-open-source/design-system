@@ -1,6 +1,6 @@
 import { render } from '@testing-library/vue'
 import { vi } from 'vitest'
-import { FunctionalComponent } from 'vue-demi'
+import type { FunctionalComponent } from 'vue-demi'
 import Step from './Step.vue'
 import StepSlider from './StepSlider.vue'
 
