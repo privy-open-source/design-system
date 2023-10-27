@@ -3843,7 +3843,7 @@ __metadata:
     chart.js: 4.4.0
     core-js: 3
     date-fns: 2.30.0
-    defu: 6.1.2
+    defu: 6.1.3
     eslint: 8.51.0
     eslint-config-standard-with-typescript: latest
     eslint-formatter-pretty: 5.0.0
@@ -3960,7 +3960,7 @@ __metadata:
     chart.js: 4.4.0
     core-js: 3
     date-fns: 2.30.0
-    defu: 6.1.2
+    defu: 6.1.3
     fast-equals: ^5.0.0
     fuse.js: 6.6.2
     interactjs: 1.10.19
@@ -8072,10 +8072,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:6.1.2, defu@npm:^6.1.2":
-  version: 6.1.2
-  resolution: "defu@npm:6.1.2"
-  checksum: 2ec0ff8414d5a1ab2b8c7e9a79bbad6d97d23ea7ebf5dcf80c3c7ffd9715c30f84a3cc47b917379ea756b3db0dc4701ce6400e493a1ae1688dffcd0f884233b2
+"defu@npm:6.1.3, defu@npm:^6.1.3":
+  version: 6.1.3
+  resolution: "defu@npm:6.1.3"
+  checksum: c857a0cf854632e8528dad36454fd1c812bff8f5f091d5a6892e75d7f6b76d8319afbbfb8c504daab84ac86e40037ff37c544d50f89ed5b5419ba1989a226777
   languageName: node
   linkType: hard
 
@@ -8093,10 +8093,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:^6.1.3":
-  version: 6.1.3
-  resolution: "defu@npm:6.1.3"
-  checksum: c857a0cf854632e8528dad36454fd1c812bff8f5f091d5a6892e75d7f6b76d8319afbbfb8c504daab84ac86e40037ff37c544d50f89ed5b5419ba1989a226777
+"defu@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "defu@npm:6.1.2"
+  checksum: 2ec0ff8414d5a1ab2b8c7e9a79bbad6d97d23ea7ebf5dcf80c3c7ffd9715c30f84a3cc47b917379ea756b3db0dc4701ce6400e493a1ae1688dffcd0f884233b2
   languageName: node
   linkType: hard
 
