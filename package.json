@@ -74,7 +74,7 @@
     "nanodelay": "2.0.2",
     "postcss": "8.4.31",
     "postcss-nested": "6.0.1",
-    "tailwindcss": "3.3.3",
+    "tailwindcss": "3.3.5",
     "typescript": "5.2.2",
     "ufo": "^1.0.1",
     "vitepress": "1.0.0-rc.20",
