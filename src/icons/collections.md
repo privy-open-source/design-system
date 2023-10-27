@@ -73,7 +73,7 @@ function download (icon) {
 
 <style lang="postcss">
 #modal-icon {
-  li.nav__item + li.nav__item {
+  li.nav__item {
     @apply my-0;
   }
 

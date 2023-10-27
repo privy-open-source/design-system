@@ -134,7 +134,7 @@ function toggleExpand (): void {
 
         .nav__link {
           @apply text-subtle hover:text-default;
-          @apply dark:text-dark-subtle dark:text-dark-default;
+          @apply dark:text-dark-subtle dark:hover:text-dark-default;
 
           &:is(.router-link-active, .router-link-exact-active) {
             @apply bg-transparent text-default hover:cursor-default;
