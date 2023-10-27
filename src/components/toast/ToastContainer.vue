@@ -14,6 +14,7 @@
         :type="item.type"
         :variant="item.variant"
         :duration="item.duration"
+        :icon-color="item.iconColor"
         :class="item.toastClass"
         @dismissed="remove(i)">
         <template #icon>
