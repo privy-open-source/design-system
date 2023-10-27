@@ -1,1 +1,0 @@
-import{af as n,h as r}from"./framework.e7be1a03.js";let e;function o(){return n(!0).run(()=>r({lang:"en"}))}function s(t){e=t}function u(){const t=o();return s(t),t}function f(){var t;return(t=e==null?void 0:e.value.lang)!=null?t:"en"}export{f as g,u as i};
