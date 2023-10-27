@@ -6,18 +6,26 @@
     <label
       data-testid="form-group-label"
       class="form-group__label">
-      <IconInfo
-        v-if="hint"
-        v-p-tooltip="hint"
-        data-testid="form-group-hint"
-        class="form-group__hint" />
-      {{ label }}<sup
+      <template v-if="hint">
+        <slot name="hint">
+          <IconInfo
+            v-p-tooltip="hint"
+            data-testid="form-group-hint"
+            class="form-group__hint" />
+        </slot>
+      </template>
+      <slot name="label">
+        <span v-p-md.inline="label" />
+      </slot><sup
         v-if="required"
         data-testid="form-group-required">*</sup>
       <p-caption
         v-if="caption"
         data-testid="form-group-caption">
-        {{ caption }}</p-caption>
+        <slot name="caption">
+          <span v-p-md.inline="caption" />
+        </slot>
+      </p-caption>
     </label>
 
     <div class="form-group__inputs">
@@ -35,13 +43,17 @@
               v-if="errorIcon"
               data-testid="form-group-error-icon" />
           </slot>
-          {{ error }}
+          <slot name="error">
+            <span v-p-md.inline="error" />
+          </slot>
         </p>
         <p
           v-else-if="description"
           data-testid="form-group-description"
           class="form-group__description">
-          {{ description }}
+          <slot name="description">
+            <span v-p-md.inline="description" />
+          </slot>
         </p>
       </transition>
     </div>
@@ -51,7 +63,8 @@
 <script lang="ts" setup>
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import pCaption from '../caption/Caption.vue'
-import { pTooltip as vPTooltip } from '../tooltip'
+import { vPMd } from '../markdown/'
+import { vPTooltip } from '../tooltip'
 import { computed } from 'vue-demi'
 
 const props = defineProps({
