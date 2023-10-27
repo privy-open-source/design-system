@@ -105,9 +105,8 @@ description: Classic style Table.
 ## Usage
 
 ### Simple Usage
-
 <preview class="flex-col space-y-2">
-  <p-table-static :fields="fields" :items="items" selectable />
+  <p-table-static :fields="fields" :items="items1" selectable />
 </preview>
 
 ```vue
