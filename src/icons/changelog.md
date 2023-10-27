@@ -12,6 +12,10 @@
 
 > Icons changelog
 
+## 0.25.0
+
+Nothing Changed
+
 ## 0.24.0
 
 Nothing Changed
