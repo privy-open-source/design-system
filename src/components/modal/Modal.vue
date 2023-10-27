@@ -108,11 +108,11 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   nextTick,
-  PropType,
   watch,
 } from 'vue-demi'
 import { onKeyStroke } from '@vueuse/core'
@@ -121,7 +121,7 @@ import Button from '../button/Button.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import IconCloseFull from '@privyid/persona-icon/vue/close/24.vue'
 import { useVModel } from '../input'
-import { SizeVariant } from '.'
+import type { SizeVariant } from '.'
 
 export default defineComponent({
   components: {
@@ -323,7 +323,7 @@ export default defineComponent({
   * in white
   */
   &__content {
-    @apply my-8 bg-default rounded relative shadow-2xl max-w-[calc(100vw_-_theme('spacing.4'))];
+    @apply my-8 bg-default rounded relative shadow-2xl max-w-[calc(100vw_-_theme('spacing.4'))] w-[var(--p-modal-size)];
     @apply dark:bg-dark-default;
 
     .modal__dismiss {
@@ -386,25 +386,25 @@ export default defineComponent({
   */
   &&--xl {
     .modal__content {
-      @apply w-[var(--p-modal-size-xl)];
+      --p-modal-size: var(--p-modal-size-xl);
     }
   }
 
   &&--lg {
     .modal__content {
-      @apply w-[var(--p-modal-size-lg)];
+      --p-modal-size: var(--p-modal-size-lg);
     }
   }
 
   &&--md {
     .modal__content {
-      @apply w-[var(--p-modal-size-md)];
+      --p-modal-size: var(--p-modal-size-md);
     }
   }
 
   &&--sm {
     .modal__content {
-      @apply w-[var(--p-modal-size-sm)];
+      --p-modal-size: var(--p-modal-size-sm);
     }
   }
 
@@ -486,7 +486,7 @@ export default defineComponent({
       @apply dark:bg-dark-inverse/80;
 
       .modal__content {
-        @apply w-[var(--p-modal-size-full)];
+        --p-modal-size: var(--p-modal-size-full);
       }
 
       .modal__dismiss {

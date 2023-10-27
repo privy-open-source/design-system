@@ -57,12 +57,14 @@
 
 <script lang="ts">
 import { useWindowSize } from '@vueuse/core'
+import type {
+  PropType,
+  StyleValue,
+} from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   ref,
-  StyleValue,
   watch,
 } from 'vue-demi'
 import Button from '../button/Button.vue'
@@ -71,7 +73,7 @@ import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 import rotateImage from './utils/rotate-image'
 import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
 import { pAspectRatio } from '../aspect-ratio'
-import { ModelModifier } from '../dropzone'
+import type { ModelModifier } from '../dropzone'
 import { usePreview } from '../cropper'
 import { fromBase64 } from '../utils/base64'
 

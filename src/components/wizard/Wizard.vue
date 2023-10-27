@@ -24,12 +24,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue-demi'
+import type { PropType } from 'vue-demi'
+import { defineComponent } from 'vue-demi'
 import WizardHeader from './WizardHeader.vue'
 import WizardBody from './WizardBody.vue'
-import { TravelHook, FinishedHook } from '../steps'
+import type { TravelHook, FinishedHook } from '../steps'
 import { useVModel } from '../input'
-import { TitleVariant, IconVariant } from '../progress/Progress.vue'
+import type { TitleVariant, IconVariant } from '../progress/Progress.vue'
 
 export default defineComponent({
   components: {

@@ -4,8 +4,8 @@ import {
   isNil,
   omit,
 } from 'lodash-es'
-import { HTMLAttributes } from 'vue-demi'
-import { LiteralUnion } from 'type-fest'
+import type { HTMLAttributes } from 'vue-demi'
+import type { LiteralUnion } from 'type-fest'
 
 export type KeyType<T> = LiteralUnion<keyof T & string, string>
 

@@ -27,16 +27,16 @@
 </template>
 
 <script lang="ts" setup>
+import type { PropType } from 'vue-demi'
 import {
   computed,
   nextTick,
-  PropType,
   ref,
   watch,
 } from 'vue-demi'
 import { useVModel } from '../input'
-import { AddonPositionVariant } from '../pdf-object'
-import { SizeVariant } from '../modal'
+import type { AddonPositionVariant } from '../pdf-object'
+import type { SizeVariant } from '../modal'
 import { onKeyStroke } from '@vueuse/core'
 
 const props = defineProps({

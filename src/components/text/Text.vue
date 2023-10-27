@@ -10,13 +10,13 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   computed,
 } from 'vue-demi'
-import { StyleVariant, ElementVariant } from '.'
-import { WeightVariant, TransformVariant } from '../heading'
+import type { StyleVariant, ElementVariant } from '.'
+import type { WeightVariant, TransformVariant } from '../heading'
 
 export default defineComponent({
   props: {

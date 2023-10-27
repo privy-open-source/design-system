@@ -50,7 +50,8 @@ import {
   focus,
 } from '.'
 import { computePosition, getPosition } from './utils/position'
-import { getEmptyPosition, ObjectPosition } from './utils/overlap'
+import type { ObjectPosition } from './utils/overlap'
+import { getEmptyPosition } from './utils/overlap'
 import PdfObjectDebugger from './PdfObjectDebugger.vue'
 import { clamp } from 'lodash-es'
 

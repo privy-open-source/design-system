@@ -26,12 +26,12 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
-  PropType,
   computed,
   defineComponent,
 } from 'vue-demi'
-import {
+import type {
   RouteLocationRaw,
 } from 'vue-router'
 

@@ -1,11 +1,11 @@
 import Fuse from 'fuse.js'
+import type { Ref } from 'vue-demi'
 import {
   computed,
-  Ref,
   shallowRef,
   watch,
 } from 'vue-demi'
-import { SelectItem } from '..'
+import type { SelectItem } from '..'
 import { defineAdapter, useOptionsProp } from './adapter'
 
 export default defineAdapter({

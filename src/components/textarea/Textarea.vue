@@ -26,17 +26,17 @@
 </template>
 
 <script lang="ts">
+import type { AcceptVariant } from '../input'
 import {
-  AcceptVariant,
   checkOnInput,
   useVModel,
 } from '../input'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   computed,
   onMounted,
   watch,
-  PropType,
 } from 'vue-demi'
 import { templateRef } from '@vueuse/core'
 

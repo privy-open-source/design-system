@@ -19,8 +19,8 @@
 import pInput from '../input/Input.vue'
 import IconShow from '@privyid/persona-icon/vue/view/20.vue'
 import IconHide from '@privyid/persona-icon/vue/view-off/20.vue'
+import type { Ref } from 'vue-demi'
 import {
-  Ref,
   ref,
   defineComponent,
 } from 'vue-demi'

@@ -13,6 +13,8 @@
     "esModuleInterop": true,
     "downlevelIteration": true,
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "lib": [
       "ESNext",
       "DOM",

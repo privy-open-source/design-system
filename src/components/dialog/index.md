@@ -27,6 +27,20 @@ description: Instant Modal, alternative of window.alert or window.confirm
       }
     })
   }
+
+  function example3 () {
+    dialog.prompt({
+      title: 'Welcome',
+      text : 'What is your name?',
+    }).then((value) => {
+      if (value) {
+        dialog.alert({
+          title: 'Info',
+          text : `Hello ${value}`,
+        })
+      }
+    })
+  }
 </script>
 
 # Dialog
@@ -73,45 +87,95 @@ dialog.confirm({
 })
 ```
 
+### Prompt
+
+<div class="flex mt-5">
+  <Button @click="example3" color="info">Show Prompt</Button>
+</div>
+
+```ts
+import { dialog } from '@privyid/persona/core'
+
+dialog.prompt({
+  title: 'Welcome',
+  text : 'What is your name?',
+}).then((value) => {
+  if (value) {
+    dialog.alert({
+      title: 'Info',
+      text : `Hello ${value}`,
+    })
+  }
+})
+```
+
 
 ## API
 
 ### Confirm
 
-`confirm(options: DialogOptions): Promise<boolean>`
+`confirm(options: DialogConfirmOption): Promise<boolean>`
 
-| Options             |   Type   | Default  | Description                                                                     |
-|---------------------|:--------------:|:--------:|---------------------------------------------------------------------------|
-| `title`             | `String`       |    -     | Dialog title, **required**                                                |
-| `text`              | `String`       |    -     | Dialog text content (support markdown)                                    |
-| `size`              | `String`       |    -     | Dialog size, valid value is `sm`, `md`, `lg`, `xl`                        |
-| `centered`          | `Boolean`      | `false`  | Dialog vertically center in the viewport                                  |
-| `dismissable`       | `Boolean`      | `true`   | Show / Hide dismiss button                                                |
-| `noCloseOnBackdrop` | `Boolean`      | `false`  | No close dialog while dialog Backdrop was clicked                         |
-| `footerAlign`       | `Number`       | `start`  | The alignment of dialog footer, valid value is `start` and `end`          |
-| `cancel`            | `DialogButton` |    -     | Cancel button's options for dialog footer                                 |
-| `confirm`           | `DialogButton` |    -     | Confirm button's options for dialog footer                                |
+| Options             |      Type      | Default | Description                                                      |
+|---------------------|:--------------:|:-------:|------------------------------------------------------------------|
+| `title`             |    `String`    |    -    | Dialog title, **required**                                       |
+| `text`              |    `String`    |    -    | Dialog text content (support markdown)                           |
+| `size`              |    `String`    |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
+| `centered`          |   `Boolean`    | `false` | Dialog vertically center in the viewport                         |
+| `dismissable`       |   `Boolean`    | `true`  | Show / Hide dismiss button                                       |
+| `noCloseOnBackdrop` |   `Boolean`    | `false` | No close dialog while dialog Backdrop was clicked                |
+| `footerAlign`       |    `Number`    | `start` | The alignment of dialog footer, valid value is `start` and `end` |
+| `cancel`            | `DialogButton` |    -    | Cancel button's options for dialog footer                        |
+| `confirm`           | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
 
 `DialogButton`
 
-| Options       |   Type    | Default  | Description                                                               |
-|---------------|:---------:|:--------:|---------------------------------------------------------------------------|
-| `text`        | `String`  |    -     | Dialog button text                                                        |
-| `visible`     | `Boolean` |  `true`  | Show or hide dialog button                                                |
-| `className`   | `String`  | `-`      | Add class to dialog button                                                |
-| `closeModal`  | `Boolean` |  `true`  | Close dialog modal when dialog button was clicked                         |
-| `color`       | `String`  |    -     | Dialog button color variant, valid value is `default`, `primary`, `info`, `success`, `danger`, `warning`                                           |
-| `variant`     | `String`  |    -     | Dialog button style variant, valid value is `solid`, `outline`, `ghost`, and `link`                                              |
+| Options      |   Type    | Default | Description                                                                                              |
+|--------------|:---------:|:-------:|----------------------------------------------------------------------------------------------------------|
+| `text`       | `String`  |    -    | Dialog button text                                                                                       |
+| `visible`    | `Boolean` | `true`  | Show or hide dialog button                                                                               |
+| `className`  | `String`  |   `-`   | Add class to dialog button                                                                               |
+| `closeModal` | `Boolean` | `true`  | Close dialog modal when dialog button was clicked                                                        |
+| `color`      | `String`  |    -    | Dialog button color variant, valid value is `default`, `primary`, `info`, `success`, `danger`, `warning` |
+| `variant`    | `String`  |    -    | Dialog button style variant, valid value is `solid`, `outline`, `ghost`, and `link`                      |
 
 ### Alert
 
-`alert(options: Omit<DialogOptions, 'cancel'>): Promise<void>`
+`alert(options: DialogAlertOption): Promise<void>`
 
-| Options       |   Type   | Default  | Description                                                               |
-|---------------|:--------:|:--------:|---------------------------------------------------------------------------|
-| `title`       | `String` |    -     | Dialog title, **required**                                                |
-| `text`        | `String` |    -     | Dialog text content                                                       |
-| `size`        | `String` |    -     | Dialog size, valid value is `sm`, `md`, `lg`, `xl`                        |
-| `centered`    | `Boolean`|  `false` | Dialog vertically center in the viewport                                  |
-| `footerAlign` | `Number` |  `start` | The alignment of dialog footer, valid value is `start` and `end`          |
-| `confirm`     | `DialogButton` |    -     | Confirm button's options for dialog footer                          |
+| Options       |      Type      | Default | Description                                                      |
+|---------------|:--------------:|:-------:|------------------------------------------------------------------|
+| `title`       |    `String`    |    -    | Dialog title, **required**                                       |
+| `text`        |    `String`    |    -    | Dialog text content                                              |
+| `size`        |    `String`    |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
+| `centered`    |   `Boolean`    | `false` | Dialog vertically center in the viewport                         |
+| `footerAlign` |    `Number`    | `start` | The alignment of dialog footer, valid value is `start` and `end` |
+| `confirm`     | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
+
+### Prompt
+
+`prompt(options: DialogPromptOption): Promise<string>`
+
+| Options             |      Type      | Default | Description                                                      |
+|---------------------|:--------------:|:-------:|------------------------------------------------------------------|
+| `title`             |    `String`    |    -    | Dialog title, **required**                                       |
+| `text`              |    `String`    |    -    | Dialog text content (support markdown)                           |
+| `size`              |    `String`    |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
+| `centered`          |   `Boolean`    | `false` | Dialog vertically center in the viewport                         |
+| `dismissable`       |   `Boolean`    | `true`  | Show / Hide dismiss button                                       |
+| `noCloseOnBackdrop` |   `Boolean`    | `false` | No close dialog while dialog Backdrop was clicked                |
+| `footerAlign`       |    `Number`    | `start` | The alignment of dialog footer, valid value is `start` and `end` |
+| `cancel`            | `DialogButton` |    -    | Cancel button's options for dialog footer                        |
+| `confirm`           | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
+| `input`             | `DialogInput`  |    -    | Input's options                                                  |
+| `value`             |    `String`    |    -    | Default input value                                              |
+
+`DialogInput`
+
+| Options       |   Type    | Default | Description                                             |
+|---------------|:---------:|:-------:|---------------------------------------------------------|
+| `type`        | `String`  | `text`  | Input type                                              |
+| `size`        | `String`  |  `md`   | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
+| `placeholder` | `String`  |   `-`   | Input placeholder                                       |
+| `clearable`   | `Boolean` | `false` | Enable clear button                                     |
+| `accept`      | `String`  |   `-`   | Whitelist character can be inputted                     |

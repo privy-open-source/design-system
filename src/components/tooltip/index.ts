@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import type { Placement } from '@floating-ui/dom'
-import { Directive } from 'vue-demi'
+import type { Directive } from 'vue-demi'
 import { useSingleton } from '../global/use-singleton'
 import createHandler from './utils/create-handler'
 import {

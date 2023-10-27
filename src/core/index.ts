@@ -22,6 +22,7 @@ export {
 export * as dialog from '../components/dialog'
 
 export {
+  type SelectItem,
   defineOptions,
 } from '../components/select'
 
@@ -146,3 +147,7 @@ export {
   createAlias,
   createText,
 } from '../components/avatar/utils/create-image'
+
+export {
+  useSelector,
+} from '../components/pdf-object/utils/use-selector'

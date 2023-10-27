@@ -24,12 +24,12 @@
 
 <script lang="ts">
 import pInput from '../input/Input.vue'
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
   toRef,
   ref,
-  PropType,
 } from 'vue-demi'
 import {
   syncRef,
@@ -37,13 +37,13 @@ import {
   useToNumber,
 } from '@vueuse/core'
 import { useFocus } from '../dropdown/utils/use-focus'
+import type { AcceptVariant } from '../input'
 import {
-  AcceptVariant,
   isAccepted,
   removeUnaccepted,
 } from '../input'
 import { toArray } from '.'
-import { SizeVariant } from '../button'
+import type { SizeVariant } from '../button'
 
 export default defineComponent({
   components  : { pInput },
@@ -127,7 +127,7 @@ export default defineComponent({
       if (event.inputType === 'insertFromPaste')
         localModel.value = toArray(removeUnaccepted(props.accept, event.data), num.value)
 
-      else if (!event.data || isAccepted(props.accept, event.data)) {
+      else if (event.inputType !== 'insertLineBreak' && (!event.data || isAccepted(props.accept, event.data))) {
         localModel.value[index] = event.data
 
         if (root.value) {

@@ -1,8 +1,8 @@
 import { syncRef } from '@vueuse/shared'
+import type { Ref } from 'vue-demi'
 import {
   computed,
   getCurrentInstance,
-  Ref,
   ref,
 } from 'vue-demi'
 

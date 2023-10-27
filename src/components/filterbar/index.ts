@@ -1,9 +1,9 @@
 import defu from 'defu'
-import { SelectProps } from '../select'
-import { Adapter } from '../select/adapter/adapter'
+import type { SelectProps } from '../select'
+import type { Adapter } from '../select/adapter/adapter'
 import { startCase } from 'lodash-es'
-import { CalendarMode } from '../calendar/adapter/adapter'
-import { MaybeRef } from '@vueuse/core'
+import type { CalendarMode } from '../calendar/adapter/adapter'
+import type { MaybeRef } from '@vueuse/core'
 
 interface FilterType {
   key: string,

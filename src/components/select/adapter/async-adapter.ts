@@ -1,12 +1,12 @@
 import { tryOnMounted } from '@vueuse/shared'
-import { SelectItem } from '..'
+import type { SelectItem } from '..'
 import { defineAdapter } from './adapter'
 import { onFinishTyping, onStartTyping } from '../utils/use-on-typing'
 import { ref, watch } from 'vue-demi'
 import { onScrollBottom } from '../utils/use-on-scroll'
 import defu from 'defu'
 
-export type LoadFn = (keyword: string, page: number, perPage: number) => Promise<SelectItem[]>
+export type LoadFn = (keyword: string, page: number, perPage: number, value: unknown) => Promise<SelectItem[]>
 
 export type WatchDeps = Parameters<typeof watch>[0]
 
@@ -27,7 +27,7 @@ export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps, op
   const config = defu(opts, { perPage: 20, debounceTime: 500 })
 
   return defineAdapter({
-    setup ({ isLoading, keyword, menuEl }) {
+    setup ({ isLoading, keyword, menuEl, props }) {
       const options  = ref([])
       const page     = ref(1)
       const isFinish = ref(false)
@@ -36,7 +36,7 @@ export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps, op
       function load () {
         isLoading.value = true
 
-        loadFn(keyword.value, page.value, config.perPage)
+        loadFn(keyword.value, page.value, config.perPage, props.modelValue)
           .then((result) => {
             if (Array.isArray(result) && result.length > 0) {
               options.value.push(...result)

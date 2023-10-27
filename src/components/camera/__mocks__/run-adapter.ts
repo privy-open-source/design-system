@@ -1,9 +1,9 @@
 import defu from 'defu'
 import { vi } from 'vitest'
-import { Adapter, AdapterMeta } from '../adapter/adapter'
+import type { Adapter, AdapterMeta } from '../adapter/adapter'
+import type { ComputedRef } from 'vue-demi'
 import {
   computed,
-  ComputedRef,
   ref,
 } from 'vue-demi'
 

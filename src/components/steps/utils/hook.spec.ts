@@ -3,7 +3,7 @@ import {
   runAllHooks,
   runHook,
 } from './hook'
-import { TravelHook } from '..'
+import type { TravelHook } from '..'
 
 describe('runHook', () => {
   it('should execute hook', async () => {

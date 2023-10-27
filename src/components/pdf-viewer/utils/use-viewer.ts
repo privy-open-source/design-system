@@ -1,8 +1,8 @@
 import 'pdfjs-dist/web/pdf_viewer.css'
+import type { Ref } from 'vue-demi'
 import {
   computed,
   onBeforeUnmount,
-  Ref,
   shallowRef,
   watch,
 } from 'vue-demi'
@@ -15,6 +15,7 @@ import type {
 import useLoading from '../../overlay/utils/use-loading'
 import { useClamp } from '@vueuse/math'
 import { createEventHook } from '@vueuse/core'
+import { type EventHook } from '@vueuse/shared'
 import {
   createEventBus,
   createLinkService,
@@ -37,9 +38,9 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
   const ready     = shallowRef(false)
   const error     = shallowRef<Error>()
 
-  const loadEvent  = createEventHook<PDFJS.PDFDocumentProxy>()
-  const errorEvent = createEventHook<Error>()
-  const readyEvent = createEventHook<PDFViewer>()
+  const loadEvent: EventHook<PDFJS.PDFDocumentProxy> = createEventHook<PDFJS.PDFDocumentProxy>()
+  const errorEvent: EventHook<Error>                 = createEventHook<Error>()
+  const readyEvent: EventHook<PDFViewer>             = createEventHook<PDFViewer>()
 
   async function openDoc (url: string, password?: string) {
     loading.value = true
@@ -96,9 +97,10 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
       const bus = await createEventBus()
 
       bus.on('pagesinit', () => {
-        const isWide = viewer.value.clientWidth >= 793
+        const width    = viewer.value?.clientWidth ?? 0
+        const isMobile = width > 0 && width < 793
 
-        pdfViewer.value.currentScaleValue = isWide ? '1' : 'page-width'
+        pdfViewer.value.currentScaleValue = isMobile ? 'page-width' : '1'
         pdfViewer.value.currentPageNumber = page.value
         ready.value                       = true
 

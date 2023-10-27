@@ -1,20 +1,22 @@
+import type { MaybeRef } from '@vueuse/core'
 import {
-  MaybeRef,
   tryOnBeforeMount,
   tryOnBeforeUnmount,
   until,
 } from '@vueuse/core'
+import type {
+  InjectionKey,
+  Ref,
+} from 'vue-demi'
 import {
   computed,
   inject,
-  InjectionKey,
   reactive,
-  Ref,
   unref,
   ref,
   watch,
 } from 'vue-demi'
-import { PdfViewerContext } from '../pdf-viewer'
+import type { PdfViewerContext } from '../pdf-viewer'
 import { useSelector } from './utils/use-selector'
 import { focus as focus_ } from '../tour/utils/focus'
 import { useClamp } from '@vueuse/math'

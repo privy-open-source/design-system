@@ -102,7 +102,9 @@
       data-testid="pagination-count">
       <slot
         name="pagination-count"
+        :page="modelValue"
         :range="rowRange"
+        :total-page="totalPageCount"
         :total="total">
         {{ rowRange[0] }} - {{ rowRange[1] }} of {{ total }}
       </slot>
@@ -122,21 +124,21 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   computed,
-  PropType,
   watch,
 } from 'vue-demi'
 import Button from '../button/Button.vue'
 import Select from '../select/Select.vue'
 import IconPrev from '@privyid/persona-icon/vue/chevron-left/20.vue'
 import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
-import { SelectItem } from '../select'
+import type { SelectItem } from '../select'
 import { useVModel } from '../input'
 import { usePagination } from '.'
 import { getPageRange } from './utils/calculate-page'
-import { SizeVariant } from '../button'
+import type { SizeVariant } from '../button'
 
 type NavigationVariant = 'none' | 'short' | 'far'
 
@@ -368,6 +370,7 @@ export default defineComponent({
 
     .btn--icon.btn--sm {
       @apply px-2 py-1 min-w-[34px];
+
       &:is(.pagination__items__nav-first, .pagination__items__nav-prev, .pagination__items__nav-next, .pagination__items__nav-last) > svg {
         @apply my-[0.15rem];
       }
@@ -388,8 +391,6 @@ export default defineComponent({
   }
 
   .dropdown {
-    --p-select-min-width: auto;
-
     @apply max-w-[80px];
 
     &__menu {

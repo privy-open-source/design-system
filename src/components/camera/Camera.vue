@@ -117,13 +117,15 @@
 </template>
 
 <script lang="ts">
+import type {
+  ComputedRef,
+  PropType,
+} from 'vue-demi'
 import {
   computed,
-  ComputedRef,
   defineComponent,
   onBeforeUnmount,
   onMounted,
-  PropType,
   ref,
   toRef,
 } from 'vue-demi'
@@ -134,7 +136,7 @@ import IconRetake from '@privyid/persona-icon/vue/reset/24.vue'
 import ShutterWav from './assets/shutter.wav'
 import { useVModel } from '../input'
 import CaptureAdapter from './adapter/capture'
-import {
+import type {
   Adapter,
   AdapterMeta,
   MaskVariant,

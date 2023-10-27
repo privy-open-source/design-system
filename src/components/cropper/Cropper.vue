@@ -113,12 +113,14 @@ import {
   watchDebounced,
 } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'
+import type {
+  PropType,
+  StyleValue,
+} from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   ref,
-  StyleValue,
   toRef,
 } from 'vue-demi'
 import { usePinch } from './utils/use-pinch'
@@ -130,7 +132,7 @@ import IconZoomIn from '@privyid/persona-icon/vue/zoom-in/20.vue'
 import IconZoomOut from '@privyid/persona-icon/vue/zoom-out/20.vue'
 import { cropImage } from './utils/crop-image'
 import { useVModel } from '../input'
-import { ModelModifier } from '../camera/adapter/adapter'
+import type { ModelModifier } from '../camera/adapter/adapter'
 import { fromBase64 } from '../utils/base64'
 import {
   useRatio,

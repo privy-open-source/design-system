@@ -9,20 +9,20 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   ref,
   computed,
   defineComponent,
   onMounted,
   watch,
-  PropType,
 } from 'vue-demi'
 import { useVModel } from '../input'
 import { createSpinner } from '../avatar/utils/create-image'
 import { formatName } from './utils/formatter'
 import generate from './utils/generate-text'
 import { usePreview } from '../cropper'
-import { ModelModifier } from '../dropzone'
+import type { ModelModifier } from '../dropzone'
 import { fromBase64 } from '../utils/base64'
 
 export default defineComponent({

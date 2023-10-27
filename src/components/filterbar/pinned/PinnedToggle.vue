@@ -10,10 +10,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue-demi'
+import type { PropType } from 'vue-demi'
+import { defineComponent } from 'vue-demi'
 import Button from '../../button/Button.vue'
 import { useVModel } from '../../checkbox'
-import { FilterToggle } from '..'
+import type { FilterToggle } from '..'
 
 export default defineComponent({
   components: { Button },

@@ -15,20 +15,21 @@
 <script lang="ts">
 import type { Chart } from 'chart.js/auto'
 import { templateRef, watchPausable } from '@vueuse/core'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   onMounted,
   watch,
-  PropType,
   shallowRef,
   onBeforeUnmount,
   toRef,
   computed,
   nextTick,
 } from 'vue-demi'
-import getAdapter, { ChartType } from './adapter/index'
+import type { ChartType } from './adapter/index'
+import getAdapter from './adapter/index'
 import { createChart } from './utils/use-chart'
-import { LegendPosition } from '.'
+import type { LegendPosition } from '.'
 import { pAspectRatio } from '../aspect-ratio'
 
 export default defineComponent({
@@ -65,11 +66,8 @@ export default defineComponent({
       return getAdapter(variant.value).getDatasets(slots.default())
     })
 
-    async function initChart () {
-      if (instance.value)
-        instance.value.destroy()
-
-      instance.value = await createChart(canvas.value, variant.value, data.value, {
+    const options = computed(() => {
+      return {
         plugins: {
           legend: {
             display : legend.value !== 'none',
@@ -85,7 +83,18 @@ export default defineComponent({
           },
         },
         ...getAdapter(variant.value).getStyle(),
-      },
+      }
+    })
+
+    async function initChart () {
+      if (instance.value)
+        instance.value.destroy()
+
+      instance.value = await createChart(
+        canvas.value,
+        variant.value,
+        data.value,
+        options.value,
       )
     }
 

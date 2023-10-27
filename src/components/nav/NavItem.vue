@@ -25,11 +25,13 @@
 </template>
 
 <script lang="ts">
-import {
+import type {
   AnchorHTMLAttributes,
+  PropType,
+} from 'vue-demi'
+import {
   computed,
   defineComponent,
-  PropType,
 } from 'vue-demi'
 import { type RouteLocationRaw } from 'vue-router'
 

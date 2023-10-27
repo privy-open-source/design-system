@@ -24,9 +24,9 @@
 
 <script lang="ts">
 import Button from '../button/Button.vue'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   computed,
 } from 'vue-demi'
 import type {

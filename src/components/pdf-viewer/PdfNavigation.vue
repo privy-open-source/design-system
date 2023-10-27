@@ -63,7 +63,7 @@ import IconNext from '@privyid/persona-icon/vue/chevron-down/20.vue'
 import pButton from '../button/Button.vue'
 import pDivider from '../divider/Divider.vue'
 import pSelect from '../select/Select.vue'
-import { SelectItem } from '../select'
+import type { SelectItem } from '../select'
 
 export default defineComponent({
   components: {
@@ -124,6 +124,8 @@ export default defineComponent({
       }
 
       > .select {
+        --p-dropdown-size: theme(width.32);
+
         @apply w-16;
 
         > .input {

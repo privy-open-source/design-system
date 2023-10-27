@@ -1,7 +1,7 @@
 import defu from 'defu'
 import { isNumber } from 'lodash-es'
+import type { BaseTourOptions } from './base'
 import {
-  BaseTourOptions,
   AbstractTour,
   TourDirection,
 } from './base'

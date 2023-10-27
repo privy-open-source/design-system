@@ -1,5 +1,6 @@
-import { computed, Ref } from 'vue-demi'
-import { SelectItem, SelectProps } from '..'
+import type { Ref } from 'vue-demi'
+import { computed } from 'vue-demi'
+import type { SelectItem, SelectProps } from '..'
 
 export interface AdapterContext {
   props: SelectProps,

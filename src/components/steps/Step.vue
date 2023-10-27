@@ -14,11 +14,12 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
 } from 'vue-demi'
-import { useStep, TravelHook } from '.'
+import type { TravelHook } from '.'
+import { useStep } from '.'
 
 export default defineComponent({
   name : 'Step',

@@ -1,4 +1,4 @@
-import { Directive } from 'vue-demi'
+import type { Directive } from 'vue-demi'
 import { calculateRatio } from './utils/calculate-ratio'
 import { getObserver } from './utils/resize-observer'
 

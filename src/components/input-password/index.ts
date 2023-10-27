@@ -1,4 +1,5 @@
-import { MaybeRef, watchDebounced } from '@vueuse/core'
+import type { MaybeRef } from '@vueuse/core'
+import { watchDebounced } from '@vueuse/core'
 import {
   ref,
   unref,

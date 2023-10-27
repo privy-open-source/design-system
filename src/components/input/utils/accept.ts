@@ -1,4 +1,4 @@
-import { LiteralUnion } from 'type-fest'
+import type { LiteralUnion } from 'type-fest'
 
 const ALPHA   = 'A-Za-z'
 const NUMERIC = '\\d'

@@ -1,4 +1,5 @@
-import { computed, ComputedRef } from 'vue-demi'
+import type { ComputedRef } from 'vue-demi'
+import { computed } from 'vue-demi'
 
 export interface RatioProp {
   width?: number | string,

@@ -5,7 +5,7 @@
     <span
       :key="`${expand}`"
       v-p-tooltip="tooltip && !expandable && text.length > maxLength"
-      class="truncate"
+      class="truncated"
       data-testid="truncate"
       :title="text">
       {{ viewText }}
@@ -88,10 +88,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="postcss">
-.truncate {
-  @apply text-default;
-  @apply dark:text-dark-default;
-}
-</style>

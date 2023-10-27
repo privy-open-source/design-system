@@ -19,7 +19,7 @@ import {
   ref,
 } from 'vue-demi'
 import Tooltip from './Tooltip.vue'
-import { TooltipItem, TooltipOptions } from '.'
+import type { TooltipItem, TooltipOptions } from '.'
 import { uniqueId } from 'lodash-es'
 import { pMd } from '../markdown'
 

@@ -23,18 +23,18 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   ref,
 } from 'vue-demi'
 import Calendar from '../../calendar/Calendar.vue'
 import Dropdown from '../../dropdown/Dropdown.vue'
 import DropdownHeader from '../../dropdown/DropdownHeader.vue'
 import { useVModel } from '../../input'
-import { FilterDate } from '..'
-import { CalendarMode } from '../../calendar/adapter/adapter'
+import type { FilterDate } from '..'
+import type { CalendarMode } from '../../calendar/adapter/adapter'
 import { isDate, format as formatDate } from 'date-fns'
 
 export default defineComponent({

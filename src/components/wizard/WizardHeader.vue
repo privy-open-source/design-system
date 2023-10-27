@@ -1,9 +1,9 @@
 <script lang="ts">
+import type { Slots } from 'vue-demi'
 import {
   defineComponent,
   h,
   mergeProps,
-  Slots,
 } from 'vue-demi'
 import { findAllChildren } from '../utils/vnode'
 import Progress from '../progress/Progress.vue'

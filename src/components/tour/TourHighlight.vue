@@ -8,9 +8,9 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   toRef,
   watchEffect,
 } from 'vue-demi'

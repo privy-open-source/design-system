@@ -238,19 +238,13 @@ Easy add hint tooltip using prop `hint`.
 
 ### Slots
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2" class="text-center">There no slots here</td>
-    </tr>
-  </tbody>
-</table>
+| Name          | Description                    |
+|---------------|--------------------------------|
+| `label`       | Content to used as label       |
+| `caption`     | Content to used as caption     |
+| `description` | Content to used as description |
+| `hint`        | Content to used as hint        |
+| `error`       | Content to used as error       |
 
 ### Events
 

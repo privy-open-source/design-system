@@ -32,22 +32,22 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
-  PropType,
   computed,
   ref,
   onMounted,
   onUnmounted,
 } from 'vue-demi'
-import { ToastStyleVariant, ToastTypeVariant } from '.'
+import type { ToastStyleVariant, ToastTypeVariant } from '.'
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/24.vue'
 import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
 import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/24.vue'
 import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/24.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import { pMd } from '../markdown'
-import { ColorVariant } from '../button'
+import type { ColorVariant } from '../button'
 
 const ToastIcons = {
   info   : IconInfo,
@@ -64,7 +64,10 @@ export default defineComponent({
       type    : String,
       required: true,
     },
-    text: { type: String },
+    text: {
+      type   : String,
+      default: '',
+    },
     type: {
       type   : String as PropType<ToastTypeVariant>,
       default: 'info',
@@ -163,15 +166,15 @@ export default defineComponent({
   }
 
   .toast__body {
-    @apply py-4 pr-4 grow space-y-2 flex flex-col;
+    @apply py-4 pr-4 grow space-y-2 flex flex-col overflow-hidden;
   }
 
   .toast__title {
-    @apply text-sm font-medium leading-[1.75];
+    @apply text-sm font-medium leading-[1.75] truncate;
   }
 
   .toast__text {
-    @apply text-xs;
+    @apply text-xs truncate;
   }
 
   /**

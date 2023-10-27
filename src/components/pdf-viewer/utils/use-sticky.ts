@@ -1,11 +1,11 @@
+import type { MaybeRef } from '@vueuse/core'
 import {
-  MaybeRef,
   useElementBounding,
   useWindowSize,
 } from '@vueuse/core'
+import type { Ref } from 'vue-demi'
 import {
   computed,
-  Ref,
   ref,
   unref,
   watchEffect,

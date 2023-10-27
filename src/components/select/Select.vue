@@ -157,29 +157,33 @@ import pText from '../text/Text.vue'
 import SelectInput from './SelectInput.vue'
 import SelectTags from './SelectTags.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/20.vue'
-import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
+import IconCheck from '@privyid/persona-icon/vue/checkmark/20.vue'
 import IconSearch from '@privyid/persona-icon/vue/search/20.vue'
 import IconCheckbox from '../checkbox/icon/IconCheckbox.vue'
 import IconLoading from '../spinner/SpinnerRing.vue'
+import type {
+  PropType,
+  HTMLAttributes,
+} from 'vue-demi'
 import {
   computed,
-  PropType,
   ref,
-  HTMLAttributes,
   nextTick,
+  watch,
 } from 'vue-demi'
+import type { SelectItem } from '.'
 import {
   findSelected,
   filterSelected,
-  SelectItem,
 } from '.'
-import { Adapter, AdapterContext } from './adapter/adapter'
+import type { Adapter, AdapterContext } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
 import { onStartTyping, watchPausable } from '@vueuse/core'
-import { SizeVariant } from '../button'
-import { MenuSizeVariant } from '../dropdown/'
+import type { SizeVariant } from '../button'
+import type { MenuSizeVariant } from '../dropdown/'
+import { isNil } from 'lodash-es'
 
 defineOptions({
   models: {
@@ -203,7 +207,7 @@ const props = defineProps({
   },
   placeholder: {
     type   : String,
-    default: '\u00A0',
+    default: '\u00A0' /* &nbsp; */,
   },
   emptyText: {
     type   : String,
@@ -355,13 +359,21 @@ const classNames = computed(() => {
 const hasValue = computed(() => {
   return props.multiple
     ? Array.isArray(localModel.value) && localModel.value.length > 0
-    : (localModel.value as SelectItem)?.value
+    : !isNil((localModel.value as SelectItem)?.value)
 })
 
 const modelWatcher = watchPausable(() => props.modelValue, (value) => {
   localModel.value = props.multiple
     ? filterSelected(items.value, value as unknown[])
     : findSelected(items.value, value)
+})
+
+watch(items, (options) => {
+  if (props.modelValue && options.length > 0) {
+    localModel.value = props.multiple
+      ? filterSelected(options, props.modelValue as unknown[])
+      : findSelected(options, props.modelValue)
+  }
 })
 
 function setValue (item?: SelectItem) {
@@ -439,10 +451,8 @@ onStartTyping(() => {
 
 <style lang="postcss">
 .select {
-  --p-select-min-width: 20ch;
-
   &__activator {
-    @apply min-w-[var(--p-select-min-width)] items-center flex;
+    @apply items-center flex;
   }
 
   &__search {

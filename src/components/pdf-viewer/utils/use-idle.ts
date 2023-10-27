@@ -1,5 +1,5 @@
+import type { MaybeRef } from '@vueuse/core'
 import {
-  MaybeRef,
   useEventListener,
 } from '@vueuse/core'
 import { ref } from 'vue-demi'

@@ -33,15 +33,17 @@
 </template>
 
 <script lang="ts">
-import {
+import type {
   PropType,
+  Ref,
+} from 'vue-demi'
+import {
   computed,
   defineComponent,
   ref,
 } from 'vue-demi'
-import { ToastOption, ToastPositionVariant } from '.'
+import type { ToastOption, ToastPositionVariant } from '.'
 import Toast from './Toast.vue'
-import { startsWith } from 'lodash-es'
 
 interface ToastItem extends ToastOption {
   _id: symbol,
@@ -56,7 +58,7 @@ export default defineComponent({
     },
   },
   setup (props) {
-    const items = ref<ToastItem[]>([])
+    const items: Ref<ToastItem[]> = ref([])
 
     const classNames = computed(() => {
       const result: string[] = []
@@ -68,17 +70,12 @@ export default defineComponent({
     })
 
     function add (option: ToastOption) {
-      if (startsWith(option.position, 'bottom')) {
-        items.value.push({
-          ...option,
-          _id: Symbol('id'),
-        })
-      } else {
-        items.value.unshift({
-          ...option,
-          _id: Symbol('id'),
-        })
-      }
+      const item = { ...option, _id: Symbol('id') }
+
+      if (props.position.startsWith('bottom'))
+        items.value.push(item)
+      else
+        items.value.unshift(item)
     }
 
     function remove (index: number) {

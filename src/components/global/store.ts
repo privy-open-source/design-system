@@ -1,10 +1,10 @@
+import type { Ref } from 'vue-demi'
 import {
-  Ref,
   effectScope,
   ref,
   toRef,
 } from 'vue-demi'
-import { LiteralUnion } from 'type-fest'
+import type { LiteralUnion } from 'type-fest'
 
 type Lang = LiteralUnion<'id' | 'en', string>
 

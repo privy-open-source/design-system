@@ -1,4 +1,4 @@
-import { DirectiveBinding } from 'vue'
+import type { DirectiveBinding } from 'vue'
 import {
   parseAction, parseColor, parsePlacement, parseText,
 } from './parse-bindings'

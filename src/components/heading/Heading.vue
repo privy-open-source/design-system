@@ -9,12 +9,12 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   computed,
-  PropType,
 } from 'vue-demi'
-import {
+import type {
   ElementVariant,
   TransformVariant,
   WeightVariant,

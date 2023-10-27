@@ -42,10 +42,10 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
 } from 'vue-demi'
 import { useClipboard } from '@vueuse/core'
 import { pTooltip } from '../../components/tooltip'

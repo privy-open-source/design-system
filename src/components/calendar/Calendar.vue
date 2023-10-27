@@ -77,19 +77,21 @@ import pButton from '../button/Button.vue'
 import pCard from '../card/Card.vue'
 import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
 import IconBack from '@privyid/persona-icon/vue/chevron-left/20.vue'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   ref,
   computed,
   watch,
-  PropType,
 } from 'vue-demi'
-import {
+import type {
   CalendarAdapter,
   CalendarContext,
-  CalendarFormat,
   CalendarItem,
   CalendarMode,
+} from './adapter/adapter'
+import {
+  CalendarFormat,
   validateDuration,
   parseDuration,
 } from './adapter/adapter'

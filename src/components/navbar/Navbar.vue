@@ -9,22 +9,22 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
   provide,
   toRef,
   watchEffect,
 } from 'vue-demi'
-import { StyleVariant } from '../nav'
+import type { StyleVariant } from '../nav'
 import {
   templateRef,
   useElementBounding,
   useWindowScroll,
 } from '@vueuse/core'
+import type { ToggleableVariant } from '.'
 import {
-  ToggleableVariant,
   NAVBAR_SETTINGS,
 } from '.'
 

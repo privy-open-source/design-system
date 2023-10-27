@@ -140,12 +140,12 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
 } from 'vue-demi'
-import { TableField } from '.'
+import type { TableField } from '.'
 import Checkbox from '../checkbox/Checkbox.vue'
 import { useVModel } from '../input'
 import IconDrag from '@privyid/persona-icon/vue/draggable/20.vue'

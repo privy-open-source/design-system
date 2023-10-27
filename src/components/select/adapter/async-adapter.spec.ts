@@ -1,6 +1,8 @@
+/* eslint-disable unicorn/no-useless-undefined */
 import { onScrollBottom, triggerScroll } from '../__mocks__/use-on-scroll'
 import { vi } from 'vitest'
-import defineAsyncAdapter, { LoadFn } from './async-adapter'
+import type { LoadFn } from './async-adapter'
+import defineAsyncAdapter from './async-adapter'
 import { nextTick, ref } from 'vue-demi'
 import { delay } from 'nanodelay'
 
@@ -59,7 +61,7 @@ it('should be call Async Handler', async () => {
   await delay(2)
 
   expect(handler).toBeCalled()
-  expect(handler).toBeCalledWith('', 1, 3)
+  expect(handler).toBeCalledWith('', 1, 3, undefined)
 
   expect(items.value).toStrictEqual([
     {
@@ -162,7 +164,7 @@ it('should be reload when user finish typing', async () => {
   await delay(4)
 
   expect(handler).toBeCalledTimes(2)
-  expect(handler).toBeCalledWith('nn', 1, 3)
+  expect(handler).toBeCalledWith('nn', 1, 3, undefined)
 
   await delay(2)
 
@@ -186,7 +188,7 @@ it('should load next items if user scroll to bottom', async () => {
   await delay(2)
 
   expect(handler).toBeCalled()
-  expect(handler).toBeCalledWith('', 1, 3)
+  expect(handler).toBeCalledWith('', 1, 3, undefined)
 
   expect(items.value).toStrictEqual([
     {
@@ -208,7 +210,7 @@ it('should load next items if user scroll to bottom', async () => {
   triggerScroll()
 
   expect(handler).toBeCalledTimes(2)
-  expect(handler).toBeCalledWith('', 2, 3)
+  expect(handler).toBeCalledWith('', 2, 3, undefined)
 })
 
 it('should not load next items if all items already loaded (finished loaded)', async () => {
@@ -245,7 +247,7 @@ it('should not load next items if all items already loaded (finished loaded)', a
   triggerScroll()
 
   expect(handler).toBeCalledTimes(2)
-  expect(handler).toBeCalledWith('', 2, 3)
+  expect(handler).toBeCalledWith('', 2, 3, undefined)
 
   triggerScroll()
 
@@ -338,7 +340,7 @@ it('should no nothing if handler throw an error', async () => {
   await delay(4)
 
   expect(handler).toBeCalledTimes(2)
-  expect(handler).toBeCalledWith('fail', 1, 3)
+  expect(handler).toBeCalledWith('fail', 1, 3, undefined)
 
   await delay(2)
 

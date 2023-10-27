@@ -17,7 +17,12 @@
         element="h6" />
     </template>
     <template #default>
-      <span v-p-md.inline="context.text" />
+      <template v-if="(typeof context.content === 'function')">
+        <component :is="context.content" />
+      </template>
+      <template v-else>
+        <span v-p-md.inline="context.text" />
+      </template>
     </template>
     <template #footer>
       <dialog-footer
@@ -47,12 +52,14 @@ import {
 import Modal from '../modal/Modal.vue'
 import Heading from '../heading/Heading.vue'
 import DialogFooter from './DialogFooter.vue'
-import { DialogContext } from '.'
+import type { DialogContext } from '.'
 import { pMd } from '../markdown'
 
 export default defineComponent({
   components: {
-    Modal, DialogFooter, Heading,
+    Modal,
+    Heading,
+    DialogFooter,
   },
   directives: { pMd },
   setup () {

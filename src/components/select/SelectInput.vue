@@ -8,6 +8,9 @@
       class="input__prepend">
       <slot name="prepend" />
     </span>
+    <input
+      class="input__hidden"
+      type="text">
     <div
       class="input__form"
       data-testid="input"
@@ -27,13 +30,15 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  computed,
-  inject,
+import type {
   PropType,
   VNode,
 } from 'vue-demi'
-import { SizeVariant } from '../button'
+import {
+  computed,
+  inject,
+} from 'vue-demi'
+import type { SizeVariant } from '../button'
 import { INPUTGROUP_SETTING } from '../input-group'
 
 defineOptions({ inheritAttrs: false })
@@ -100,3 +105,9 @@ const classNames = computed(() => {
   return result
 })
 </script>
+
+<style lang="postcss">
+.input .input__hidden {
+  @apply h-0 block p-0 leading-[0];
+}
+</style>

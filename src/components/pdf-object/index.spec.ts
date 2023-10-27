@@ -1,6 +1,7 @@
 import { round } from 'lodash-es'
 import { nextTick, reactive } from 'vue-demi'
-import { useSizeModel, PdfObjectSize } from '.'
+import type { PdfObjectSize } from '.'
+import { useSizeModel } from '.'
 
 describe('useSizeModel', () => {
   it('should return ref from prop width and height', () => {

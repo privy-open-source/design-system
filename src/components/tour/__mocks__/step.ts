@@ -1,4 +1,5 @@
-import { vi, Mock } from 'vitest'
+import type { Mock } from 'vitest'
+import { vi } from 'vitest'
 import { AbstractStep } from '../core/step'
 
 export class MockStep extends AbstractStep<{ id?: string }> {

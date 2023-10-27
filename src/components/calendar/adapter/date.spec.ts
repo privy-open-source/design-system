@@ -1,6 +1,6 @@
 import Adapter from './date'
 import { ref } from 'vue-demi'
-import { CalendarContext, CalendarItem } from './adapter'
+import type { CalendarContext, CalendarItem } from './adapter'
 import { initStore, setLang } from '../../global/store'
 import {
   minTime as MIN_TIME,

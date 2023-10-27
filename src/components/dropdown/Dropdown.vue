@@ -67,15 +67,17 @@
 </template>
 
 <script lang="ts" setup>
-import {
+import type {
   PropType,
+  VNode,
+} from 'vue-demi'
+import {
   provide,
   watch,
   toRef,
   watchEffect,
   computed,
   ref,
-  VNode,
 } from 'vue-demi'
 import {
   onClickOutside,
@@ -84,8 +86,8 @@ import {
 import Button from '../button/Button.vue'
 import DropdownGroup from '../dropdown-subitem/DropdownSubitem.vue'
 import { useFocus } from './utils/use-focus'
+import type { Placement } from '@floating-ui/dom'
 import {
-  Placement,
   autoUpdate,
   computePosition,
   offset,
@@ -216,14 +218,14 @@ const classNames = computed(() => {
   if (props.divider)
     result.push('dropdown--divider')
 
+  if (props.menuSize)
+    result.push(`dropdown--menu-${props.menuSize}`)
+
   return result
 })
 
 const containerSize = computed(() => {
   const result: string[] = ['']
-
-  if (props.menuSize)
-    result.push(`dropdown__menu--${props.menuSize}`)
 
   if (slots.prepend)
     result.push('dropdown__menu--has-prepend')
@@ -360,8 +362,24 @@ defineExpose({
 
   @apply inline-flex;
 
+  &--menu-xl {
+    --p-dropdown-size: var(--p-dropdown-size-xl);
+  }
+
+  &--menu-lg {
+    --p-dropdown-size: var(--p-dropdown-size-lg);
+  }
+
+  &--menu-md {
+    --p-dropdown-size: var(--p-dropdown-size-md);
+  }
+
+  &--menu-sm {
+    --p-dropdown-size: var(--p-dropdown-size-sm);
+  }
+
   &__menu {
-    @apply border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl absolute flex flex-col overflow-hidden;
+    @apply border rounded bg-default z-[var(--p-dropdown-z-index)] border-default shadow-xl absolute flex flex-col overflow-hidden w-[var(--p-dropdown-size)];
     @apply dark:bg-dark-default dark:border-dark-default;
 
     &__prepend,
@@ -389,22 +407,6 @@ defineExpose({
           @apply rounded-b-sm;
         }
       }
-    }
-
-    &--xl {
-      @apply w-[var(--p-dropdown-size-xl)];
-    }
-
-    &--lg {
-      @apply w-[var(--p-dropdown-size-lg)];
-    }
-
-    &--md {
-      @apply w-[var(--p-dropdown-size-md)];
-    }
-
-    &--sm {
-      @apply w-[var(--p-dropdown-size-sm)];
     }
   }
 

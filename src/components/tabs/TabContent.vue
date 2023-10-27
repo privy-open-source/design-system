@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts" setup>
+import type { VNode } from 'vue-demi'
 import {
-  VNode,
   Transition,
   h,
   ref,

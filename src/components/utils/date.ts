@@ -1,7 +1,8 @@
 import id from 'date-fns/locale/id/index'
 import en from 'date-fns/locale/en-US/index'
 import { getLang } from '../global/store'
-import { format, Locale } from 'date-fns'
+import type { Locale } from 'date-fns'
+import { format } from 'date-fns'
 import defu from 'defu'
 
 const localePacks = { en, id }

@@ -1,4 +1,4 @@
-import { Ref } from 'vue-demi'
+import type { Ref } from 'vue-demi'
 import { type Duration } from 'date-fns'
 import { chunk } from 'lodash-es'
 

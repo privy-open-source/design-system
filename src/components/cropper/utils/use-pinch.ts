@@ -1,7 +1,7 @@
+import type { Ref } from 'vue-demi'
 import {
   onBeforeUnmount,
   onMounted,
-  Ref,
   shallowRef,
 } from 'vue-demi'
 import type {

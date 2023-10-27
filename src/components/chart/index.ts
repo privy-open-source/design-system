@@ -1,3 +1,3 @@
-import { LayoutPosition } from 'chart.js'
+import type { LayoutPosition } from 'chart.js'
 
 export type LegendPosition = 'none' | LayoutPosition

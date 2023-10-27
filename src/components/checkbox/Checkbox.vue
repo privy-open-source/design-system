@@ -23,7 +23,8 @@
 
 <script lang="ts" setup>
 import { useVModel } from '.'
-import { PropType, computed } from 'vue-demi'
+import type { PropType } from 'vue-demi'
+import { computed } from 'vue-demi'
 import IconCheckbox from './icon/IconCheckbox.vue'
 import IconInderteminate from './icon/IconInderteminate.vue'
 
@@ -117,7 +118,7 @@ function toggle () {
   * with custom icon
   */
   &__icon {
-    @apply w-5 h-5 inline-flex shrink-0 border rounded-tn border-subtle items-center justify-center bg-default;
+    @apply w-4 h-4 inline-flex shrink-0 border rounded-tn border-subtle items-center justify-center bg-default;
     @apply dark:border-dark-subtle dark:bg-dark-default;
 
     > svg {

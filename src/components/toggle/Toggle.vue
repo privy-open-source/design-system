@@ -34,10 +34,10 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
 } from 'vue-demi'
 import { useVModel } from '../checkbox'
 

@@ -316,6 +316,7 @@ Button use local CSS variables on `.btn` for enhanced real-time customization.
 | Name      | Description                |
 |-----------|----------------------------|
 | `default` | Content to place in button |
+| `loading` | Content when loading       |
 
 ### Events
 

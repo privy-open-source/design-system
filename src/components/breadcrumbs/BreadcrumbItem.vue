@@ -26,7 +26,7 @@ import {
   h,
 } from 'vue-demi'
 import IconChevron from '@privyid/persona-icon/vue/chevron-right/20.vue'
-import { TagVariant } from '.'
+import type { TagVariant } from '.'
 
 export default defineComponent({
   props: {

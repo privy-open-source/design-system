@@ -1,5 +1,5 @@
-import { Side, Placement } from '@floating-ui/dom'
-import { DirectiveBinding } from 'vue-demi'
+import type { Side, Placement } from '@floating-ui/dom'
+import type { DirectiveBinding } from 'vue-demi'
 import type { ColorVariant } from '..'
 
 /**

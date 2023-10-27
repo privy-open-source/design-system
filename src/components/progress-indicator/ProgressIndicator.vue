@@ -24,14 +24,16 @@
 import { useVModel } from '../input'
 import { useToNumber } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'
-import {
-  computed,
+import type {
   StyleValue,
-  defineComponent,
-  toRef,
   PropType,
 } from 'vue-demi'
-import { DirectionVariant } from '../steps'
+import {
+  computed,
+  defineComponent,
+  toRef,
+} from 'vue-demi'
+import type { DirectionVariant } from '../steps'
 
 export default defineComponent({
   props: {

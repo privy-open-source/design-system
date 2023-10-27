@@ -15,18 +15,18 @@
 
 <script lang="ts">
 import { templateRef } from '@vueuse/core'
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   toRef,
-  PropType,
   watch,
   computed,
   watchEffect,
 } from 'vue-demi'
-import { ColorVariant } from '.'
+import type { ColorVariant } from '.'
 import { useVModel } from '../input'
+import type { Placement } from '@floating-ui/dom'
 import {
-  Placement,
   autoUpdate,
   computePosition,
   arrow,

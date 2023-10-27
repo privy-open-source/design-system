@@ -46,10 +46,10 @@
 <script lang="ts">
 import { useVModel } from '.'
 import IconCheck from '@privyid/persona-icon/vue/checkmark/20.vue'
+import type { PropType } from 'vue-demi'
 import {
   computed,
   defineComponent,
-  PropType,
 } from 'vue-demi'
 
 export interface ChangedInteface {

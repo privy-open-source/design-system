@@ -22,8 +22,9 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType, computed } from 'vue-demi'
-import { SelectItem } from '.'
+import type { PropType } from 'vue-demi'
+import { computed } from 'vue-demi'
+import type { SelectItem } from '.'
 import pLabel from '../label/Label.vue'
 
 const props = defineProps({
