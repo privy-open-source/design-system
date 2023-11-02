@@ -1935,6 +1935,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.23.2":
+  version: 7.23.2
+  resolution: "@babel/runtime@npm:7.23.2"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: 6c4df4839ec75ca10175f636d6362f91df8a3137f86b38f6cd3a4c90668a0fe8e9281d320958f4fbd43b394988958585a17c3aab2a4ea6bf7316b22916a371fb
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.8.4":
   version: 7.20.0
   resolution: "@babel/runtime@npm:7.20.0"
@@ -3817,7 +3826,7 @@ __metadata:
     "@splidejs/splide": ^4.1.4
     "@testing-library/jest-dom": 6.1.4
     "@testing-library/user-event": ^14.4.3
-    "@testing-library/vue": 7.0.0
+    "@testing-library/vue": 8.0.0
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
     "@types/lodash-es": 4.17.10
@@ -4291,7 +4300,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:9.3.3, @testing-library/dom@npm:^9.0.1":
+"@testing-library/dom@npm:9.3.3, @testing-library/dom@npm:^9.3.3":
   version: 9.3.3
   resolution: "@testing-library/dom@npm:9.3.3"
   dependencies:
@@ -4346,17 +4355,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/vue@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@testing-library/vue@npm:7.0.0"
+"@testing-library/vue@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@testing-library/vue@npm:8.0.0"
   dependencies:
-    "@babel/runtime": ^7.21.0
-    "@testing-library/dom": ^9.0.1
-    "@vue/test-utils": ^2.3.1
+    "@babel/runtime": ^7.23.2
+    "@testing-library/dom": ^9.3.3
+    "@vue/test-utils": ^2.4.1
   peerDependencies:
     "@vue/compiler-sfc": ">= 3"
     vue: ">= 3"
-  checksum: 73dc8112e576e2038004cf4d2b206d3d9de9b67407e74782b10e2d83eae9b1b92eab2925dfd0d2fc8a332846161bda5d9574504893a24da232af01765f88c5c9
+  checksum: d8a8f68e09244301774067878980b74c1c3fed5340f29084ea5919842d9b062e31008ce00d4c89e5622bc2efc9034ada8ead32254fd2bc43f821ce7d8b1c2b00
   languageName: node
   linkType: hard
 
@@ -5434,7 +5443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/test-utils@npm:^2.3.1":
+"@vue/test-utils@npm:^2.4.1":
   version: 2.4.1
   resolution: "@vue/test-utils@npm:2.4.1"
   dependencies:
@@ -16163,6 +16172,13 @@ __metadata:
   version: 0.13.9
   resolution: "regenerator-runtime@npm:0.13.9"
   checksum: 65ed455fe5afd799e2897baf691ca21c2772e1a969d19bb0c4695757c2d96249eb74ee3553ea34a91062b2a676beedf630b4c1551cc6299afb937be1426ec55e
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "regenerator-runtime@npm:0.14.0"
+  checksum: 1c977ad82a82a4412e4f639d65d22be376d3ebdd30da2c003eeafdaaacd03fc00c2320f18120007ee700900979284fc78a9f00da7fb593f6e6eeebc673fba9a3
   languageName: node
   linkType: hard
 
