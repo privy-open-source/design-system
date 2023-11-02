@@ -1,7 +1,7 @@
 ##############################
 ## Building
 ##############################
-FROM node:20-alpine as builder
+FROM node:21-alpine as builder
 
 # RUN apk update && apk upgrade
 
