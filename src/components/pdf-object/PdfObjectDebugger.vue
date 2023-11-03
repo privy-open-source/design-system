@@ -50,7 +50,7 @@ export default defineComponent({
               target.value.style.top  = `${y || 0}px`
             }
           })
-        })
+        }, { animationFrame: true })
 
         onCleanup(cleanup)
       }

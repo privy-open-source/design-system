@@ -326,7 +326,7 @@ watchEffect((onCleanup) => {
           isHidden.value = middlewareData.hide.referenceHidden
         }
       })
-    })
+    }, { animationFrame: true })
 
     onCleanup(cleanup)
   }
@@ -348,6 +348,8 @@ defineExpose({
   menuBody,
   menu,
   root,
+  open,
+  close,
 })
 </script>
 

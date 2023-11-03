@@ -67,7 +67,7 @@ export default defineComponent({
                 : 'visible'
             }
           })
-        })
+        }, { animationFrame: true })
 
         onCleanup(cleanup)
       }
