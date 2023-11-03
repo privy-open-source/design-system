@@ -111,7 +111,7 @@ export default defineComponent({
               tooltipArrow.value.style.top  = `${middlewareData.arrow.y}px`
             }
           })
-        })
+        }, { animationFrame: true })
 
         onCleanup(cleanup)
       }

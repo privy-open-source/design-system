@@ -39,7 +39,7 @@ export default defineComponent({
           hightlight.value.style.height = `${bounding.height + padding}px`
           hightlight.value.style.left   = `${bounding.left - padding / 2}px`
           hightlight.value.style.top    = `${bounding.top - padding / 2}px`
-        })
+        }, { animationFrame: true })
 
         onCleanup(cleanup)
       }
