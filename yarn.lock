@@ -3265,16 +3265,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@koa/router@npm:^9.0.1":
-  version: 9.4.0
-  resolution: "@koa/router@npm:9.4.0"
+"@koa/router@npm:^12.0.1":
+  version: 12.0.1
+  resolution: "@koa/router@npm:12.0.1"
   dependencies:
-    debug: ^4.1.1
-    http-errors: ^1.7.3
+    debug: ^4.3.4
+    http-errors: ^2.0.0
     koa-compose: ^4.1.0
     methods: ^1.1.2
-    path-to-regexp: ^6.1.0
-  checksum: 80712e72e466f71ea118ab206ad54f4b341797728c04e556f00af939303d5da4459375440500bc360de77995794401459a23ec3a3f9c321386ef7c184643e39b
+    path-to-regexp: ^6.2.1
+  checksum: 4b8d3940cbf898bca86bfe62d5d4633c4e436a537410c801f6ac3f5e804bdd257559439ab94408a22f3bd0f6b25d88859bfb80fe3a6f3954b73f79a6fb04a339
   languageName: node
   linkType: hard
 
@@ -3612,8 +3612,8 @@ __metadata:
   linkType: hard
 
 "@nuxtjs/tailwindcss@npm:^6.2.0":
-  version: 6.8.1
-  resolution: "@nuxtjs/tailwindcss@npm:6.8.1"
+  version: 6.9.3
+  resolution: "@nuxtjs/tailwindcss@npm:6.9.3"
   dependencies:
     "@nuxt/kit": ^3.8.0
     "@nuxt/postcss8": ^1.1.3
@@ -3632,11 +3632,11 @@ __metadata:
     postcss-custom-properties: ^13.3.2
     postcss-nesting: ^12.0.1
     radix3: ^1.1.0
-    tailwind-config-viewer: ^1.7.2
-    tailwindcss: ~3.3.4
+    tailwind-config-viewer: ^1.7.3
+    tailwindcss: ~3.3.5
     ufo: ^1.3.1
     uncrypto: ^0.1.3
-  checksum: c48ebdd1727d34913f07209d0e8aea822e206bb05fad5fcd8a08b54cafc4f3ae3ca52456d25d6053eaec9aad500eed8caa75345ade7c8bb7e2e42152c6b0568e
+  checksum: 7c43c07ac39c62ccbe1b0eb26c28c84b50e17250c1c55ebc0e4c599acbfa64b48ff12c991761942a74dd1932a3f7a8b9f9580391d9ed11dd3c035776b5414c56
   languageName: node
   linkType: hard
 
@@ -11455,7 +11455,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"http-errors@npm:2.0.0":
+"http-errors@npm:2.0.0, http-errors@npm:^2.0.0":
   version: 2.0.0
   resolution: "http-errors@npm:2.0.0"
   dependencies:
@@ -12703,9 +12703,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"koa@npm:^2.12.0":
-  version: 2.14.1
-  resolution: "koa@npm:2.14.1"
+"koa@npm:^2.14.2":
+  version: 2.14.2
+  resolution: "koa@npm:2.14.2"
   dependencies:
     accepts: ^1.3.5
     cache-content-type: ^1.0.0
@@ -12730,7 +12730,7 @@ __metadata:
     statuses: ^1.5.0
     type-is: ^1.6.16
     vary: ^1.1.2
-  checksum: 84cfce48d72cf434831bd9f4f06beb3815da030325a7e89b13ee684f5afd158221e16c2d450ca637b221aa0c4a0ab235edd129e4efea656dc5d8384801d3e90f
+  checksum: 17fe3b8f5e0b4759004a942cc6ba2a9507299943a697dff9766b85f41f45caed4077ca2645ac9ad254d3359fffedfc4c9ebdd7a70493e5df8cdfac159a8ee835
   languageName: node
   linkType: hard
 
@@ -14937,7 +14937,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-to-regexp@npm:^6.1.0":
+"path-to-regexp@npm:^6.2.1":
   version: 6.2.1
   resolution: "path-to-regexp@npm:6.2.1"
   checksum: f0227af8284ea13300f4293ba111e3635142f976d4197f14d5ad1f124aebd9118783dd2e5f1fe16f7273743cc3dbeddfb7493f237bb27c10fdae07020cc9b698
@@ -17746,14 +17746,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-config-viewer@npm:^1.7.2":
-  version: 1.7.2
-  resolution: "tailwind-config-viewer@npm:1.7.2"
+"tailwind-config-viewer@npm:^1.7.3":
+  version: 1.7.3
+  resolution: "tailwind-config-viewer@npm:1.7.3"
   dependencies:
-    "@koa/router": ^9.0.1
+    "@koa/router": ^12.0.1
     commander: ^6.0.0
     fs-extra: ^9.0.1
-    koa: ^2.12.0
+    koa: ^2.14.2
     koa-static: ^5.0.0
     open: ^7.0.4
     portfinder: ^1.0.26
@@ -17763,7 +17763,7 @@ __metadata:
   bin:
     tailwind-config-viewer: cli/index.js
     tailwindcss-config-viewer: cli/index.js
-  checksum: c1d5cdee07d1d97ad0a5c958b67ab786908e2d1a2290bc52714f4e02fd7a3f3315352721f05f010956f65400bd37a3d318f9b0930c91b3f93436336c543e195e
+  checksum: a6a5c5ab341d9d57066f9024d67f564e55a83b60de983a55ada4e1746f6f3b3257fae8b1301d9c81e0bd9e3a6f9b200617c1fbcfe81c6716c2ece1af87a48d4f
   languageName: node
   linkType: hard
 
@@ -17802,7 +17802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.3.5, tailwindcss@npm:~3.3.4":
+"tailwindcss@npm:3.3.5, tailwindcss@npm:~3.3.5":
   version: 3.3.5
   resolution: "tailwindcss@npm:3.3.5"
   dependencies:
