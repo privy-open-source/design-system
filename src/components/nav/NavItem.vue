@@ -46,7 +46,7 @@ export default defineComponent({
       default: false,
     },
     href: {
-      type   : [String, Object] as PropType<string | RouteLocationRaw>,
+      type   : [String, Object] as PropType<RouteLocationRaw>,
       default: undefined,
     },
     target: {

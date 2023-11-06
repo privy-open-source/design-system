@@ -35,6 +35,7 @@ import {
 import type { AlignVariant, StyleVariant } from '.'
 import Caption from '../caption/Caption.vue'
 import Text from '../text/Text.vue'
+import type { RouteLocationRaw } from 'vue-router'
 
 export default defineComponent({
   components: { Caption, Text },
@@ -64,7 +65,7 @@ export default defineComponent({
       default: undefined,
     },
     titleActionLabel: {
-      type   : String,
+      type   : [String, Object] as PropType<RouteLocationRaw>,
       default: undefined,
     },
     titleActionUrl: {

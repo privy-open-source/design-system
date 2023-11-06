@@ -9,6 +9,7 @@
     <template #brand>
       <slot />
     </template>
+    <slot name="prepend" />
     <SidebarNav
       v-for="(menu, id) in menus"
       :key="id"
@@ -55,6 +56,7 @@
         </template>
       </template>
     </SidebarNav>
+    <slot name="append" />
     <template
       v-if="$slots.bottom"
       #bottom>
