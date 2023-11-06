@@ -20,6 +20,7 @@ import {
   ref,
   shallowRef,
   watchEffect,
+  onBeforeUnmount,
 } from 'vue-demi'
 import TourDialog from './TourDialog.vue'
 import TourHighlight from './TourHighlight.vue'
@@ -91,6 +92,10 @@ export default defineComponent({
     function hide () {
       isShow.value = false
     }
+
+    onBeforeUnmount(() => {
+      hide()
+    })
 
     return {
       isShow,

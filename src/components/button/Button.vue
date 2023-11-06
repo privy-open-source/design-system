@@ -57,7 +57,7 @@ const props = defineProps({
     default: false,
   },
   href: {
-    type   : [String, Object] as PropType<string | RouteLocationRaw>,
+    type   : [String, Object] as PropType<RouteLocationRaw>,
     default: undefined,
   },
   type: {

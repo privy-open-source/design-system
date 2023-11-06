@@ -65,7 +65,11 @@ export {
 } from '../components/camera/adapter/qr-code'
 
 export {
-  defineAdapter,
+  defineAdapter as defineSelectAdapter,
+} from '../components/select/adapter/adapter'
+
+export {
+  defineAdapter as defineCameraAdapter,
 } from '../components/camera/adapter/adapter'
 
 export {
