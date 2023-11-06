@@ -17,6 +17,7 @@ import {
 } from 'vue-demi'
 import type { StyleVariant, ElementVariant } from '.'
 import type { WeightVariant, TransformVariant } from '../heading'
+import type { RouteLocationRaw } from 'vue-router'
 
 export default defineComponent({
   props: {
@@ -25,7 +26,7 @@ export default defineComponent({
       default: 'body',
     },
     href: {
-      type   : String,
+      type   : [String, Object] as PropType<RouteLocationRaw>,
       default: undefined,
     },
     weight: {
@@ -44,7 +45,7 @@ export default defineComponent({
 
   setup (props) {
     const elementNames = computed(() => {
-      return props.href ? 'a' : props.element
+      return props.href ? 'nuxt-link' : props.element
     })
 
     const classNames = computed(() => {

@@ -19,6 +19,7 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   computed,
@@ -27,11 +28,12 @@ import {
 } from 'vue-demi'
 import IconChevron from '@privyid/persona-icon/vue/chevron-right/20.vue'
 import type { TagVariant } from '.'
+import type { RouteLocationRaw } from 'vue-router'
 
 export default defineComponent({
   props: {
     href: {
-      type   : String,
+      type   : [String, Object] as PropType<RouteLocationRaw>,
       default: '#',
     },
     active: {
@@ -51,7 +53,7 @@ export default defineComponent({
     })
 
     const tagName = computed(() => {
-      let tag: TagVariant = 'a'
+      let tag: TagVariant = 'nuxt-link'
 
       if (props.active)
         tag = 'span'

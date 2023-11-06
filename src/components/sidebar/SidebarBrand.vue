@@ -4,12 +4,12 @@
     :class="classNames"
     data-testid="sidebar-brand"
     class="sidebar__brand">
-    <a
+    <nuxt-link
       v-if="href"
       :href="href"
       data-testid="sidebar-brand-link">
       <slot />
-    </a>
+    </nuxt-link>
     <template v-else>
       <slot />
     </template>
@@ -17,12 +17,14 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import { defineComponent, computed } from 'vue-demi'
+import type { RouteLocationRaw } from 'vue-router'
 
 export default defineComponent({
   props: {
     href: {
-      type   : String,
+      type   : [String, Object] as PropType<RouteLocationRaw>,
       default: undefined,
     },
     sticky: {

@@ -2,6 +2,7 @@ import type { HTMLAttributes } from 'vue-demi'
 import type { Component } from '../global/use-singleton'
 import type { AlignVariant } from '../nav'
 import type { LiteralUnion } from 'type-fest'
+import type { RouteLocationRaw } from 'vue-router'
 
 type Access = LiteralUnion<'*', string>
 
@@ -30,7 +31,7 @@ export interface SubMenu {
   /**
    * Menu URL
    */
-  url?: string,
+  url?: RouteLocationRaw,
   /**
    * Access Role
    */
@@ -58,7 +59,7 @@ export interface MenuItem {
   /**
    * Menu URL
    */
-  url?: string,
+  url?: RouteLocationRaw,
   /**
    * Menu Icon
    */
@@ -98,7 +99,7 @@ export interface Menu {
   /**
    * Action URL
    */
-  titleActionUrl?: string,
+  titleActionUrl?: RouteLocationRaw,
   /**
    * Enable collapse
    * @default false

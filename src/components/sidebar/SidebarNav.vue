@@ -62,6 +62,7 @@
 </template>
 
 <script lang="ts" setup>
+import type { PropType } from 'vue-demi'
 import {
   inject,
   ref,
@@ -72,6 +73,7 @@ import Text from '../text/Text.vue'
 import { SIDEBAR_SETTINGS } from '.'
 import Collapse from '../collapse/Collapse.vue'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
+import type { RouteLocationRaw } from 'vue-router'
 
 defineOptions({
   name        : 'SidebarNav',
@@ -88,7 +90,7 @@ const props = defineProps({
     default: undefined,
   },
   titleActionUrl: {
-    type   : String,
+    type   : [String, Object] as PropType<RouteLocationRaw>,
     default: undefined,
   },
   bottom: {

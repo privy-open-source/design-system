@@ -95,6 +95,7 @@ export default defineComponent({
 <style lang="postcss">
 .toast-container {
   --p-toast-z-index: theme(zIndex.toast);
+
   @apply z-[var(--p-toast-z-index)] fixed flex flex-col space-y-2 max-h-screen overflow-visible;
 
   &--top-right {
@@ -161,6 +162,18 @@ export default defineComponent({
         @apply opacity-0 -translate-x-20;
       }
     }
+  }
+
+  &--top-left,
+  &--top-center,
+  &--top-right {
+    @apply justify-start;
+  }
+
+  &--bottom-left,
+  &--bottom-center,
+  &--bottom-right {
+    @apply justify-end;
   }
 }
 
