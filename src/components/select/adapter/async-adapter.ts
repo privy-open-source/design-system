@@ -41,7 +41,9 @@ export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps, op
             if (Array.isArray(result) && result.length > 0) {
               options.value = [...options.value, ...result]
               page.value    = page.value + 1
-            } else if (!Array.isArray(result) || result.length < config.perPage)
+            }
+
+            if (!Array.isArray(result) || result.length < config.perPage)
               isFinish.value = true
           })
           .catch(console.error)
