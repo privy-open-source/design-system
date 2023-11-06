@@ -39,9 +39,9 @@ export default function defineAsyncAdapter (loadFn: LoadFn, deps?: WatchDeps, op
         loadFn(keyword.value, page.value, config.perPage, props.modelValue)
           .then((result) => {
             if (Array.isArray(result) && result.length > 0) {
-              options.value.push(...result)
-              page.value++
-            } else
+              options.value = [...options.value, ...result]
+              page.value    = page.value + 1
+            } else if (!Array.isArray(result) || result.length < config.perPage)
               isFinish.value = true
           })
           .catch(console.error)
