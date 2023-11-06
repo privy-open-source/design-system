@@ -3125,6 +3125,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@interactjs/types@npm:1.10.20":
+  version: 1.10.20
+  resolution: "@interactjs/types@npm:1.10.20"
+  checksum: 1090c5a6867241597cb3ce774299759a8108a69f1978f8b60dc9d90a20090b5ececef01c7cbbdf68ba3274e95515a7ad116f0fe635b695bbd99e931772baeac2
+  languageName: node
+  linkType: hard
+
 "@ioredis/commands@npm:^1.1.1":
   version: 1.2.0
   resolution: "@ioredis/commands@npm:1.2.0"
@@ -3813,7 +3820,7 @@ __metadata:
     "@babel/preset-env": ^7.19.4
     "@floating-ui/dom": ^1.0.4
     "@fontsource/dm-sans": 5.0.17
-    "@interactjs/types": 1.10.19
+    "@interactjs/types": 1.10.20
     "@juggle/resize-observer": ^3.4.0
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/eslint-config-persona": "workspace:^"
