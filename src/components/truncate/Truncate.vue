@@ -12,7 +12,7 @@
       <template v-if="expandable && text.length > maxLength">
         <a
           data-testid="truncate-expand"
-          href="#"
+          href="javascript:void"
           @click.stop.prevent="toggle">
           {{ expand ? showLessText : showMoreText }}
         </a>

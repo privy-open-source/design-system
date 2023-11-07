@@ -14,6 +14,7 @@
 </template>
 
 <script lang="ts">
+import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   inject,
@@ -21,6 +22,7 @@ import {
 } from 'vue-demi'
 import { DROPDOWN_CONTEXT } from '.'
 import type { TagVariant } from '../button'
+import type { RouteLocationRaw } from 'vue-router'
 
 export default defineComponent({
   props: {
@@ -29,7 +31,7 @@ export default defineComponent({
       default: '',
     },
     href: {
-      type   : String,
+      type   : [String, Object] as PropType<RouteLocationRaw>,
       default: undefined,
     },
     active: {

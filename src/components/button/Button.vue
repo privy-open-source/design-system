@@ -23,6 +23,7 @@ import type {
 import {
   computed,
   inject,
+  resolveComponent,
 } from 'vue-demi'
 import type { RouteLocationRaw } from 'vue-router'
 import type {
@@ -110,7 +111,7 @@ const classNames = computed(() => {
 
 const tagName = computed(() => {
   return props.href
-    ? 'nuxt-link'
+    ? resolveComponent('nuxt-link')
     : 'button'
 })
 

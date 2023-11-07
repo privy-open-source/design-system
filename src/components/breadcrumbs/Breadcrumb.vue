@@ -41,12 +41,14 @@ import DropdownItem from '../dropdown/DropdownItem.vue'
 
 export default defineComponent({
   components: {
-    BreadcrumbItem, BreadcrumbItemDropdown, DropdownItem,
+    BreadcrumbItem,
+    BreadcrumbItemDropdown,
+    DropdownItem,
   },
   props: {
     items: {
       type   : Array<BreadcrumbItems>,
-      default: () => {},
+      default: () => ([]),
     },
   },
   setup (_, { slots }) {

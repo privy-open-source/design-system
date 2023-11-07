@@ -155,3 +155,7 @@ export {
 export {
   useSelector,
 } from '../components/pdf-object/utils/use-selector'
+
+export {
+  getDocument,
+} from '../components/pdf-viewer/utils/pdfjs'

@@ -1,8 +1,8 @@
 import { defineNuxtPlugin, useRouter } from '#imports'
+import type { State } from '@privyid/persona/core'
 import {
   initStore,
   installRouter,
-  State,
 } from '@privyid/persona/core'
 
 export default defineNuxtPlugin((nuxtApp) => {

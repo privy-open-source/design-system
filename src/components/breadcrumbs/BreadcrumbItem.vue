@@ -25,16 +25,16 @@ import {
   computed,
   inject,
   h,
+  resolveComponent,
 } from 'vue-demi'
 import IconChevron from '@privyid/persona-icon/vue/chevron-right/20.vue'
-import type { TagVariant } from '.'
 import type { RouteLocationRaw } from 'vue-router'
 
 export default defineComponent({
   props: {
     href: {
       type   : [String, Object] as PropType<RouteLocationRaw>,
-      default: '#',
+      default: '#' as RouteLocationRaw,
     },
     active: {
       type   : Boolean,
@@ -53,12 +53,9 @@ export default defineComponent({
     })
 
     const tagName = computed(() => {
-      let tag: TagVariant = 'nuxt-link'
-
-      if (props.active)
-        tag = 'span'
-
-      return tag
+      return props.active
+        ? 'span'
+        : resolveComponent('nuxt-link')
     })
 
     const permalink = computed(() => {
