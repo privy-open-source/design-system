@@ -14,6 +14,7 @@ import type { PropType } from 'vue-demi'
 import {
   defineComponent,
   computed,
+  resolveComponent,
 } from 'vue-demi'
 import type { StyleVariant, ElementVariant } from '.'
 import type { WeightVariant, TransformVariant } from '../heading'
@@ -45,7 +46,9 @@ export default defineComponent({
 
   setup (props) {
     const elementNames = computed(() => {
-      return props.href ? 'nuxt-link' : props.element
+      return props.href
+        ? resolveComponent('nuxt-link')
+        : props.element
     })
 
     const classNames = computed(() => {
