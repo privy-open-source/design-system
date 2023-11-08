@@ -1,36 +1,5 @@
 [
   {
-    "name": "multiple-persons",
-    "aliases": [
-      "multiple-users"
-    ],
-    "category": "other",
-    "folder": "multiple-persons",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "multiple-persons/16",
-        "path": "multiple-persons/16.svg",
-        "hash": "a8c26c05d264c27ca6207e8e889a827841f7563e81ae98986743c9c1a76a7fb3"
-      },
-      {
-        "name": "multiple-persons/20",
-        "path": "multiple-persons/20.svg",
-        "hash": "6115fa88906d43ac3486a79e8db0905d49e8d98b381f546cb8c189a4f1471f66"
-      },
-      {
-        "name": "multiple-persons/24",
-        "path": "multiple-persons/24.svg",
-        "hash": "e356bc1778738a2c324ab550ec022f7360f54fd2669aad414895c8b28b10bc8b"
-      },
-      {
-        "name": "multiple-persons/32",
-        "path": "multiple-persons/32.svg",
-        "hash": "2bf27ed9783818609892a36bed2fffd8ef6260ee4525083fa47378497da1dbae"
-      }
-    ]
-  },
-  {
     "name": "redo",
     "aliases": [],
     "category": "actions",
@@ -5774,6 +5743,128 @@
     ]
   },
   {
+    "name": "read-message",
+    "aliases": [
+      "unread-message"
+    ],
+    "category": "communication",
+    "folder": "read-message",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "read-message/32",
+        "path": "read-message/32.svg",
+        "hash": "59ea57659cc10fb44c98aeb4e19ebe7044e0453125979d9b68a8e903d7d28156"
+      },
+      {
+        "name": "read-message/24",
+        "path": "read-message/24.svg",
+        "hash": "5f2707dca8c6965421d68a40744d93c0eff08f155d2b206e12a8f25b9be6580a"
+      },
+      {
+        "name": "read-message/20",
+        "path": "read-message/20.svg",
+        "hash": "e8a71301ff6f2a75b6b68789a572d6ea6ec9195558d0a83fb84cc7854a2f3eb5"
+      },
+      {
+        "name": "read-message/16",
+        "path": "read-message/16.svg",
+        "hash": "2c97c220bdec7708a721b6fdd11753c60484fa636196e15ff30c7681998d125c"
+      }
+    ]
+  },
+  {
+    "name": "star-favorite",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "star-favorite-refinement",
+    "variant": "refinement",
+    "files": [
+      {
+        "name": "star-favorite-refinement/16",
+        "path": "star-favorite-refinement/16.svg",
+        "hash": "5b89df8332e6a7bebf2fcc0f3f185257dca924686a2273ca5f876ab234ce915c"
+      },
+      {
+        "name": "star-favorite-refinement/20",
+        "path": "star-favorite-refinement/20.svg",
+        "hash": "346ddb1bfc08b2d7a1b8583f47c5a56a132cdf6061a88213118857162ca1b7f9"
+      },
+      {
+        "name": "star-favorite-refinement/24",
+        "path": "star-favorite-refinement/24.svg",
+        "hash": "cac4ceefa5253823a1b2efbeffc27c8a2a976cde7f3ad0bb3a85cf15a02ee5a7"
+      },
+      {
+        "name": "star-favorite-refinement/32",
+        "path": "star-favorite-refinement/32.svg",
+        "hash": "cd402217f691f2a405995bc25ab2f13c6347a71419ffa6db3c3a6f60b2b4f08f"
+      }
+    ]
+  },
+  {
+    "name": "multiple-persons",
+    "aliases": [
+      "multiple-users"
+    ],
+    "category": "other",
+    "folder": "multiple-persons",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "multiple-persons/20",
+        "path": "multiple-persons/20.svg",
+        "hash": "6115fa88906d43ac3486a79e8db0905d49e8d98b381f546cb8c189a4f1471f66"
+      },
+      {
+        "name": "multiple-persons/24",
+        "path": "multiple-persons/24.svg",
+        "hash": "e356bc1778738a2c324ab550ec022f7360f54fd2669aad414895c8b28b10bc8b"
+      },
+      {
+        "name": "multiple-persons/32",
+        "path": "multiple-persons/32.svg",
+        "hash": "2bf27ed9783818609892a36bed2fffd8ef6260ee4525083fa47378497da1dbae"
+      },
+      {
+        "name": "multiple-persons/16",
+        "path": "multiple-persons/16.svg",
+        "hash": "a8c26c05d264c27ca6207e8e889a827841f7563e81ae98986743c9c1a76a7fb3"
+      }
+    ]
+  },
+  {
+    "name": "onsite",
+    "aliases": [
+      "pin"
+    ],
+    "category": "other",
+    "folder": "onsite",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "onsite/24",
+        "path": "onsite/24.svg",
+        "hash": "ed057c56820fbd1b61d29fc131b712fc22d63bc9bcdd628c22c2478e053d8549"
+      },
+      {
+        "name": "onsite/20",
+        "path": "onsite/20.svg",
+        "hash": "e219d1bb6ad220466b737082743093127806b4aab019ff9cee55e2cd3c7421bd"
+      },
+      {
+        "name": "onsite/32",
+        "path": "onsite/32.svg",
+        "hash": "bcfbbc123e6776e0c4c8c7ad6741462c7c01a32b73571d023322b6bbf24fe2d7"
+      },
+      {
+        "name": "onsite/16",
+        "path": "onsite/16.svg",
+        "hash": "c4a9eb2a0f50f0e5e91eb31baf69f73e6239b5f04d4cc58d9c28cf11b35dbaa7"
+      }
+    ]
+  },
+  {
     "name": "qr-position-top-left",
     "aliases": [],
     "category": "formatting",
@@ -8192,37 +8283,6 @@
         "name": "stopwatch/20",
         "path": "stopwatch/20.svg",
         "hash": "879ac51f92430ecd0e162952ac91c9835f602c5c9d0f6fcec593345a275c300c"
-      }
-    ]
-  },
-  {
-    "name": "onsite",
-    "aliases": [
-      "pin"
-    ],
-    "category": "other",
-    "folder": "onsite",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "onsite/24",
-        "path": "onsite/24.svg",
-        "hash": "676fe8b18c7683dc98795fed81365aebd0d7dcecc31eafca88fde1d76250519d"
-      },
-      {
-        "name": "onsite/20",
-        "path": "onsite/20.svg",
-        "hash": "ec31d96f12368100865c3a3c1b105948bdf20793ddb709e070ce6a6b9f4a31f2"
-      },
-      {
-        "name": "onsite/32",
-        "path": "onsite/32.svg",
-        "hash": "f6cd381af27ed2533404fe6e1904551f4e1381bb7a1b63ec9f457baae6fb5b92"
-      },
-      {
-        "name": "onsite/16",
-        "path": "onsite/16.svg",
-        "hash": "a0d093e7200c20a730bf977e2b1a8fd76f270e42737c482ee7e0b6edefcf9bec"
       }
     ]
   },
