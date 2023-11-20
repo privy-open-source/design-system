@@ -7635,38 +7635,6 @@
     ]
   },
   {
-    "name": "pallete",
-    "aliases": [
-      "theme",
-      "style"
-    ],
-    "category": "formatting",
-    "folder": "pallete",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "pallete/32",
-        "path": "pallete/32.svg",
-        "hash": "47a4d971666c783cd536943766ff409dfc4dbd4442cb37dcaf9f46adefe52383"
-      },
-      {
-        "name": "pallete/24",
-        "path": "pallete/24.svg",
-        "hash": "3ae1ced26fcbcbbe72f2871717d9a95b72bdcb560043cf86848993d1d33c1075"
-      },
-      {
-        "name": "pallete/16",
-        "path": "pallete/16.svg",
-        "hash": "a427356acfcfce72eea7ae9e0fefa7dbb365b931939c8f060ffa2fc2e54ecb31"
-      },
-      {
-        "name": "pallete/20",
-        "path": "pallete/20.svg",
-        "hash": "ba27128e54c8fa0f02efb828c244ca0f1190daea4afa81f40067d3b983a976fa"
-      }
-    ]
-  },
-  {
     "name": "chevron-circle-down",
     "aliases": [],
     "category": "navigation",
@@ -9675,6 +9643,38 @@
         "name": "document-retract/20",
         "path": "document-retract/20.svg",
         "hash": "5ece543feca31b5b17c40320acbb0fc2357744989f4b11b10ba49a7ba45f816a"
+      }
+    ]
+  },
+  {
+    "name": "pallete",
+    "aliases": [
+      "theme",
+      "style"
+    ],
+    "category": "formatting",
+    "folder": "pallete",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "pallete/32",
+        "path": "pallete/32.svg",
+        "hash": "47a4d971666c783cd536943766ff409dfc4dbd4442cb37dcaf9f46adefe52383"
+      },
+      {
+        "name": "pallete/24",
+        "path": "pallete/24.svg",
+        "hash": "3ae1ced26fcbcbbe72f2871717d9a95b72bdcb560043cf86848993d1d33c1075"
+      },
+      {
+        "name": "pallete/16",
+        "path": "pallete/16.svg",
+        "hash": "a427356acfcfce72eea7ae9e0fefa7dbb365b931939c8f060ffa2fc2e54ecb31"
+      },
+      {
+        "name": "pallete/20",
+        "path": "pallete/20.svg",
+        "hash": "1431149d391be24e7fe4eb09589a7a1f489af1392b9297dd13f93d54d60eb23a"
       }
     ]
   }
