@@ -4049,7 +4049,7 @@ __metadata:
     "@testing-library/vue": 8.0.0
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
-    "@types/lodash-es": 4.17.10
+    "@types/lodash-es": 4.17.11
     "@types/marked": ^5.0.1
     "@types/sanitize-html": ^2
     "@types/scroll-into-view": ^1
@@ -4963,12 +4963,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash-es@npm:4.17.10":
-  version: 4.17.10
-  resolution: "@types/lodash-es@npm:4.17.10"
+"@types/lodash-es@npm:4.17.11":
+  version: 4.17.11
+  resolution: "@types/lodash-es@npm:4.17.11"
   dependencies:
     "@types/lodash": "*"
-  checksum: 129e9dde830815a72f9bd17c3a7b7ffb10a9cf76d65c7bb4f14df13b38411ed3ebe9ebbc2f9059c4e61198e784d499e48d0a281e27a4defbbba748dd8a4cfd9d
+  checksum: bd8f3cd65fb1b2b54f18269a44847b159bbb8dd0a3ff33d26f06b68fca727d4cc079cf734e1d5dbf140563cc00e11f91c5a9d6c36ac1e66087875ae090b60b06
   languageName: node
   linkType: hard
 
