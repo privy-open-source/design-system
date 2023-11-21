@@ -5055,11 +5055,11 @@ __metadata:
   linkType: hard
 
 "@types/sanitize-html@npm:^2":
-  version: 2.9.3
-  resolution: "@types/sanitize-html@npm:2.9.3"
+  version: 2.9.5
+  resolution: "@types/sanitize-html@npm:2.9.5"
   dependencies:
     htmlparser2: ^8.0.0
-  checksum: 882a39ec767e0c5fd4402108db4b8e4f85ff555cf490ad8c7340d9c58c57c3ffefa33c0d248d5e67047df6f744ca60e125da5485efc18ac450783f3900178373
+  checksum: fd0afee5dac91aa2c42391f0c8c9254204f4ee1f10b902aa04e8f7809043d785e28af2732f75277ef09e46838013ad60abedb02ba1424b6218264f3333437fb5
   languageName: node
   linkType: hard
 
