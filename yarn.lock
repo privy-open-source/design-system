@@ -5064,9 +5064,9 @@ __metadata:
   linkType: hard
 
 "@types/scroll-into-view@npm:^1":
-  version: 1.16.3
-  resolution: "@types/scroll-into-view@npm:1.16.3"
-  checksum: ed62cba19d804387fc0dbfe2d837f4fe6f9052e26220df8c744d9225800aa4bdc62836524a21d0fedec522e7e5d6425c81984e21bfe92dd701651e6db8c2a03a
+  version: 1.16.4
+  resolution: "@types/scroll-into-view@npm:1.16.4"
+  checksum: e43b3b3bda8aa8d9c8548396ed5f38e783b5ae030f1357c015fccc396aa488b58646237377880d0763d01ffef8ae11bfc670dcfaa2ddc9a3c46d762c7d7121e1
   languageName: node
   linkType: hard
 
