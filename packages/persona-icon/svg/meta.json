@@ -29,6 +29,184 @@
     ]
   },
   {
+    "name": "format-painter",
+    "aliases": [
+      "paint-brush"
+    ],
+    "category": "other",
+    "folder": "format-painter",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "format-painter/16",
+        "path": "format-painter/16.svg",
+        "hash": "313943aa85a3d71d17666a718712600b6dc600a0a06e3cb9f80a6fcb33827cf6"
+      },
+      {
+        "name": "format-painter/32",
+        "path": "format-painter/32.svg",
+        "hash": "e920e60d0782f28d032b681c9b7cadf5e8b766b2601b45b864e541fbdb011bbb"
+      },
+      {
+        "name": "format-painter/20",
+        "path": "format-painter/20.svg",
+        "hash": "01206142a2d00450b47c9e88f2c9a5e141f39638c77f5d7526a33622b413bfc0"
+      },
+      {
+        "name": "format-painter/24",
+        "path": "format-painter/24.svg",
+        "hash": "18ab290905fca9ae3123ba2a8372225ac53fa35a68b93b6420312d056f8eb093"
+      }
+    ]
+  },
+  {
+    "name": "appreance",
+    "aliases": [
+      "brush"
+    ],
+    "category": "other",
+    "folder": "appreance",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "appreance/16",
+        "path": "appreance/16.svg",
+        "hash": "8213d2066b4801cc465b1568073831ad41216ea69d0c9d6ef5af2fa7e5817078"
+      },
+      {
+        "name": "appreance/32",
+        "path": "appreance/32.svg",
+        "hash": "1864cbe7f1a9c9c048f4a3606f774b35253d7966feca0f16806ea237c8b78a92"
+      },
+      {
+        "name": "appreance/20",
+        "path": "appreance/20.svg",
+        "hash": "4982befaeef5ced689e3d5c324cbd7e281af9ee98b95695596fbaafd7e71cf90"
+      },
+      {
+        "name": "appreance/24",
+        "path": "appreance/24.svg",
+        "hash": "1bc6374d1489facf57de6e4c40e1d185a1bdff81ca3635273622c098f56c7a80"
+      }
+    ]
+  },
+  {
+    "name": "speaker-off",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "speaker-off",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "speaker-off/16",
+        "path": "speaker-off/16.svg",
+        "hash": "fba4d038ec7b0fb7b1d6aabfbabf6f50db605db6663f8cad9d8012e66fd037da"
+      },
+      {
+        "name": "speaker-off/20",
+        "path": "speaker-off/20.svg",
+        "hash": "0938abdd92f62d772a93560d7d5e7ce869c0b48398bc2deb9963c5b06a75dd89"
+      },
+      {
+        "name": "speaker-off/24",
+        "path": "speaker-off/24.svg",
+        "hash": "985c687827bcfa720472c228fb0486ba7a2a4ff6b577c8dc04c35ac4590fde60"
+      },
+      {
+        "name": "speaker-off/32",
+        "path": "speaker-off/32.svg",
+        "hash": "0ca7a46daaa3d9fe9e43c374ef170ee4195b7989d5062232cf4b8cbe48a9f2c3"
+      }
+    ]
+  },
+  {
+    "name": "switch",
+    "aliases": [],
+    "category": "technology",
+    "folder": "switch",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "switch/16",
+        "path": "switch/16.svg",
+        "hash": "d0f1b380d2bc094f2793f52c233ee136d7dc99d21aad38ab7f270f20a1b8b588"
+      },
+      {
+        "name": "switch/20",
+        "path": "switch/20.svg",
+        "hash": "0deb6f2ccb34914ef3023e8b7cde3dd74301b0e843ef0c55f3a6c08b8a3443ec"
+      },
+      {
+        "name": "switch/24",
+        "path": "switch/24.svg",
+        "hash": "d56df8ff58e1c3e061ba3dac6ed37152d2e41ea037b77f631ab7edf819377fb5"
+      },
+      {
+        "name": "switch/32",
+        "path": "switch/32.svg",
+        "hash": "cc420f124d9a455add2e2d1207aa74042f5de59792a0a7040348cebe083424da"
+      }
+    ]
+  },
+  {
+    "name": "speaker-on",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "speaker-on",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "speaker-on/16",
+        "path": "speaker-on/16.svg",
+        "hash": "ad2920053cab5f60c7de80e2867598fe9bfdd09c83c678fdfc3362448b840a31"
+      },
+      {
+        "name": "speaker-on/20",
+        "path": "speaker-on/20.svg",
+        "hash": "7e278b8bbf790193937a099ed7b633a4378fcb993d73c76b8c8d12ecb9204ab4"
+      },
+      {
+        "name": "speaker-on/24",
+        "path": "speaker-on/24.svg",
+        "hash": "984241cf1d4c75103325170c92fb20d29c0eae0c51431eaf5198695f94078d33"
+      },
+      {
+        "name": "speaker-on/32",
+        "path": "speaker-on/32.svg",
+        "hash": "81287b0b45996a9743bb317bedb123f17b4ab278b6b81028ac6b32e2f9e8d122"
+      }
+    ]
+  },
+  {
+    "name": "speaker-mute",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "speaker-mute",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "speaker-mute/16",
+        "path": "speaker-mute/16.svg",
+        "hash": "3c386afc6869f76dd01ef5fd15da87928b6990505666d736fb12633667345968"
+      },
+      {
+        "name": "speaker-mute/20",
+        "path": "speaker-mute/20.svg",
+        "hash": "39356cde49b43706758f7ee1c48a790ad982224aec012ee6cb42c1f38a97da22"
+      },
+      {
+        "name": "speaker-mute/24",
+        "path": "speaker-mute/24.svg",
+        "hash": "df7cb8d3eedc49e174edef3260ee9cfe81e2407e808b6810d72b4b647de158fc"
+      },
+      {
+        "name": "speaker-mute/32",
+        "path": "speaker-mute/32.svg",
+        "hash": "1bbd2e4b1cf9591b0f4c78ecc90616e7705a0f1e0d6c5e778e7767105d8272e6"
+      }
+    ]
+  },
+  {
     "name": "blog",
     "aliases": [],
     "category": "technology",
@@ -2036,7 +2214,7 @@
       {
         "name": "map/32",
         "path": "map/32.svg",
-        "hash": "735a3f46a862e37eb5f27dce8bb6d5566ba4f89738f1def7d64ddf3fdc7743dd"
+        "hash": "9aa646a4344da96b7d0baec23affcd4cbe50b105e4170f011713d88e03f4dbd1"
       },
       {
         "name": "map/24",
@@ -2645,7 +2823,7 @@
       {
         "name": "sun/32",
         "path": "sun/32.svg",
-        "hash": "26f74f14c7fca106c9b06b4949c1eee94391609942300a24fc2ebf4faa0bec69"
+        "hash": "11cb817769042f2ab0506030282315896a52c21129cabd3ec4ff40de3562ff87"
       },
       {
         "name": "sun/16",
@@ -5170,7 +5348,7 @@
       {
         "name": "unlock/32",
         "path": "unlock/32.svg",
-        "hash": "8db0b93be9b7e1c0e948d64f3148bc238bb38c7b23dcf36bcf72d4a23816f307"
+        "hash": "0f574ec43d9cdefb0e02120bf38562c00f445061e9281b76745ed535952e60fe"
       },
       {
         "name": "unlock/20",
@@ -8662,7 +8840,7 @@
       {
         "name": "two-grid-view/32",
         "path": "two-grid-view/32.svg",
-        "hash": "6caf802671dd9a8973fb61663479b2cb1baf14873d001456225341108845b7ce"
+        "hash": "8bc1925899fef2f059733bc70d703545eb24efa5bd2d100cd709c1f1b30f6dc7"
       },
       {
         "name": "two-grid-view/20",
