@@ -4046,7 +4046,7 @@ __metadata:
     "@splidejs/splide": ^4.1.4
     "@testing-library/jest-dom": 6.1.4
     "@testing-library/user-event": ^14.4.3
-    "@testing-library/vue": 8.0.0
+    "@testing-library/vue": 8.0.1
     "@types/babel__core": ^7
     "@types/babel__preset-env": ^7
     "@types/lodash-es": 4.17.11
@@ -4696,9 +4696,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/vue@npm:8.0.0":
-  version: 8.0.0
-  resolution: "@testing-library/vue@npm:8.0.0"
+"@testing-library/vue@npm:8.0.1":
+  version: 8.0.1
+  resolution: "@testing-library/vue@npm:8.0.1"
   dependencies:
     "@babel/runtime": ^7.23.2
     "@testing-library/dom": ^9.3.3
@@ -4706,7 +4706,7 @@ __metadata:
   peerDependencies:
     "@vue/compiler-sfc": ">= 3"
     vue: ">= 3"
-  checksum: d8a8f68e09244301774067878980b74c1c3fed5340f29084ea5919842d9b062e31008ce00d4c89e5622bc2efc9034ada8ead32254fd2bc43f821ce7d8b1c2b00
+  checksum: 2f3b2573ba00be61fad2e98b2ce37feb6b8412df8ae10867f357bba8b409c0b93821f7fbd28beb1c4d40690c665d319eb32b27b334e310055eec642af098d2e0
   languageName: node
   linkType: hard
 
