@@ -115,11 +115,12 @@ it('should draw line with color if `color` prop is provided', () => {
 
 it('should replace existing drawn line if color changed', async () => {
   const color  = ref('#000000')
+  const model  = ref('')
   const screen = render({
     components: { SignatureDrawDesktop },
-    template  : '<SignatureDrawDesktop :color="color" />',
+    template  : '<SignatureDrawDesktop v-model="model" :color="color" />',
     setup () {
-      return { color }
+      return { color, model }
     },
   })
 
@@ -132,6 +133,7 @@ it('should replace existing drawn line if color changed', async () => {
 
   expect(drawCanvas).toBeInTheDocument()
   expect(canvas.replaceColor).toBeCalledWith(drawCanvas, '#398A87')
+  expect(model.value).toBeInstanceOf(File)
 })
 
 it('should reset and clear all the canvas if reset clicked', async () => {
@@ -170,11 +172,15 @@ it('should change reset button label if prop `resetLabel` is provided', async ()
 
 it('should modify state in v-model', async () => {
   const model  = ref('')
+  const color  = ref('#000000')
   const screen = render({
     components: { SignatureDrawDesktop },
-    template  : '<SignatureDrawDesktop v-model.base64="model" />',
+    template  : `<SignatureDrawDesktop
+      v-model.base64="model"
+      :color="color"
+    />`,
     setup () {
-      return { model }
+      return { model, color }
     },
   })
 
@@ -190,6 +196,14 @@ it('should modify state in v-model', async () => {
   await fireEvent.click(reset)
 
   expect(model.value).toBe('')
+
+  triggerDraw()
+  await nextTick()
+
+  color.value = '#398A87'
+  await nextTick()
+
+  expect(model.value).toStartWith('data:image/png')
 })
 
 it('should place the image if v-model data is provided', async () => {
