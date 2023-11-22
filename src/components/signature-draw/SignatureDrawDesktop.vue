@@ -111,7 +111,10 @@ export default defineComponent({
       if (!isBlank.value) {
         replaceColor(canvas.value, color)
 
-        model.value = toDataURL(canvas.value)
+        const result = toDataURL(canvas.value)
+        const value  = props.modelModifiers.base64 ? result : fromBase64(result)
+
+        model.value = value
       }
     }
 
