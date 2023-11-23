@@ -1,0 +1,1 @@
+import{b as o}from"./isObjectLike.OM1Hublo.js";import{i as r}from"./isObject.mlSoqgao.js";var c="[object AsyncFunction]",a="[object Function]",i="[object GeneratorFunction]",e="[object Proxy]";function f(t){if(!r(t))return!1;var n=o(t);return n==a||n==i||n==c||n==e}function g(t,n){return t===n||t!==t&&n!==n}export{g as e,f as i};

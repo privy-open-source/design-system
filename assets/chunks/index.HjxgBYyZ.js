@@ -1,0 +1,1 @@
+import{b as r}from"./index.tFUNc-ed.js";import{V as a,g as u}from"./framework.Fa1wspga.js";function l(e){const n=r(a(e,"min"),{nanToZero:!0}),o=r(a(e,"max"),{nanToZero:!0}),t=r(a(e,"value"),{nanToZero:!0});return u(()=>(t.value-n.value)/(o.value-n.value))}export{l as u};
