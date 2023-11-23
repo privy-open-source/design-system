@@ -7,5 +7,5 @@
     class="persona-icon"
     viewBox="0 0 20 20"><path
       fill="currentColor"
-      d="m10 7-5 6h10l-5-6Z" /></svg>
+      d="m10 7-5 6h10l-5-6" /></svg>
 </template>
