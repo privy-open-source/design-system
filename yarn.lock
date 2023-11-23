@@ -4185,7 +4185,7 @@ __metadata:
     "@rollup/plugin-babel": ^6.0.2
     "@rollup/plugin-inject": ^5.0.3
     "@rollup/plugin-replace": ^5.0.1
-    "@rushstack/eslint-patch": 1.5.1
+    "@rushstack/eslint-patch": 1.6.0
     "@splidejs/splide": ^4.1.4
     "@testing-library/jest-dom": 6.1.4
     "@testing-library/user-event": ^14.4.3
@@ -4803,10 +4803,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:1.5.1":
-  version: 1.5.1
-  resolution: "@rushstack/eslint-patch@npm:1.5.1"
-  checksum: e4c25322312dbaa29e835a7ab4fbac53c8731dd0da65e46646e38945e296429e7fb91c2ef3da5af5d5938d44b0cde1d5290438ebb3dcb015e02b80b5e2530d24
+"@rushstack/eslint-patch@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@rushstack/eslint-patch@npm:1.6.0"
+  checksum: 9fbc39e6070508139ac9ded5cc223780315a1e65ccb7612dd3dff07a0957fa9985a2b049bb5cae21d7eeed44ed315e2868b8755941500dc64ed9932c5760c80d
   languageName: node
   linkType: hard
 
