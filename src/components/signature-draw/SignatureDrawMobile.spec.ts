@@ -5,7 +5,7 @@ import type * as VueUse from '@vueuse/core'
 import { vi } from 'vitest'
 import { nextTick, ref } from 'vue-demi'
 import { setWindow, useWindowSize } from './__mocks__/use-window-size'
-import rotateImage from './__mocks__/rotate-image'
+import * as image from './__mocks__/image'
 import SignatureDrawMobile from './SignatureDrawMobile.vue'
 import { delay } from 'nanodelay'
 
@@ -13,7 +13,7 @@ vi.mock('./utils/use-draw.ts', () => ({ default: useDraw }))
 
 vi.mock('./utils/canvas.ts', () => canvas)
 
-vi.mock('./utils/rotate-image.ts', () => ({ default: rotateImage }))
+vi.mock('./utils/image.ts', () => image)
 
 vi.mock('@vueuse/core', async () => {
   const vueuse = await vi.importActual('@vueuse/core')
@@ -259,4 +259,72 @@ it('should change save button label if `closeDrawLabel` prop is provided', async
 
   expect(close).toBeInTheDocument()
   expect(close).toHaveTextContent('Simpan')
+})
+
+it('should able to replace color', async () => {
+  const color  = ref('#000000')
+  const model  = ref('data:image/png;base64,123456789')
+  const screen = render({
+    components: { SignatureDrawMobile },
+    template  : '<SignatureDrawMobile v-model.base64="model" :color="color" />',
+    setup () {
+      return {
+        color,
+        model,
+      }
+    },
+  })
+
+  const draw = screen.queryByTestId('signature-draw-mobile')
+
+  expect(draw).toBeInTheDocument()
+
+  color.value = '#abcdef'
+  await nextTick()
+  await delay(1)
+
+  expect(image.replaceColor).toHaveBeenCalledWith('data:image/png;base64,123456789', '#abcdef')
+  expect(model.value).toEndWith('color(#abcdef)')
+})
+
+it('should modify state in v-model when change color', async () => {
+  const model  = ref()
+  const color  = ref('#000000')
+  const screen = render({
+    components: { SignatureDrawMobile },
+    template  : '<SignatureDrawMobile v-model="model" :color="color" />',
+    setup () {
+      return { model, color }
+    },
+  })
+
+  setWindow(800, 400)
+
+  const draw = screen.queryByTestId('signature-draw-mobile')
+  const open = screen.queryByText('Click to Draw')
+
+  expect(draw).toBeInTheDocument()
+  expect(open).toBeInTheDocument()
+
+  await fireEvent.click(open)
+
+  triggerDraw()
+  await nextTick()
+
+  const save  = screen.queryByTestId('signature-draw-close')
+  const modal = screen.queryByTestId('signature-draw-modal')
+
+  await fireEvent.click(save)
+  await delay(1)
+
+  expect(model.value).toBeInstanceOf(File)
+  expect(modal).not.toBeInTheDocument()
+
+  const oldFile = model.value
+
+  color.value = '#abcdef'
+  await nextTick()
+  await delay(1)
+
+  expect(model.value).not.toBe(oldFile)
 })

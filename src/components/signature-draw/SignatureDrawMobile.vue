@@ -70,7 +70,7 @@ import {
 import Button from '../button/Button.vue'
 import { useVModel } from '../input'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
-import rotateImage from './utils/rotate-image'
+import { replaceColor, rotateImage } from './utils/image'
 import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
 import { pAspectRatio } from '../aspect-ratio'
 import type { ModelModifier } from '../dropzone'
@@ -174,9 +174,23 @@ export default defineComponent({
         ? result
         : fromBase64(result)
 
+      // console.log('close', result, value)
+
       model.value  = value
       isOpen.value = false
     }
+
+    watch(() => props.color, async (color) => {
+      if (!isOpen.value && preview.value) {
+        const result = await replaceColor(preview.value, color)
+        const value  = props.modelModifiers.base64
+          ? result
+          : fromBase64(result)
+
+        model.value  = value
+        isOpen.value = false
+      }
+    })
 
     watch(isOpen, (value) => {
       if (value)

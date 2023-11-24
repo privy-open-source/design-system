@@ -5,12 +5,15 @@ import type * as VueUse from '@vueuse/core'
 import { useMediaQuery, setMediaQuery } from './__mocks__/use-window-size'
 import { triggerDraw, useDraw } from './__mocks__/use-draw'
 import * as canvas from './__mocks__/canvas'
+import * as image from './__mocks__/image'
 import SignatureDraw from './SignatureDraw.vue'
 import { delay } from 'nanodelay'
 
 vi.mock('./utils/use-draw.ts', () => ({ default: useDraw }))
 
 vi.mock('./utils/canvas.ts', () => canvas)
+
+vi.mock('./utils/image.ts', () => image)
 
 vi.mock('@vueuse/core', async () => {
   const vueuse = await vi.importActual('@vueuse/core')
