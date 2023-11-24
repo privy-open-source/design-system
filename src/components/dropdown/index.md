@@ -17,7 +17,7 @@ description: Base dropdown button, suit for action menus
   import pText from '../text/Text.vue'
   import { ref } from "vue-demi"
 
-  const show = ref(false)
+  const show     = ref(false)
   const selected = ref('')
 </script>
 
@@ -29,7 +29,7 @@ description: Base dropdown button, suit for action menus
 
 ### Simple Usage
 <preview>
-  <p-dropdown text="Click Here" button-class="w-full" menu-size="lg">
+  <p-dropdown text="Click Here">
     <p-dropdown-item active>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
