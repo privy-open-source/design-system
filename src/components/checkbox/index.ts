@@ -22,23 +22,20 @@ export interface CheckboxProps extends InputProps<unknown> {
 
 export function useVModel (props: CheckboxProps) {
   const { emit }   = getCurrentInstance()
-  const checked    = props.value
-  const unchecked  = props.uncheckedValue
-  const localValue = ref(isChecked(props.modelValue, checked) || props.checked)
-
-  const model = computed({
+  const localValue = ref(isChecked(props.modelValue, props.value) || props.checked)
+  const model      = computed({
     get () {
-      return isChecked(props.modelValue, checked) || props.checked
+      return isChecked(props.modelValue, props.value) || props.checked
     },
     set (value: boolean) {
-      const newValue = value ? checked : unchecked
+      const newValue = value ? props.value : props.uncheckedValue
 
       if (Array.isArray(props.modelValue)) {
         if (value) {
           if (!valueIn(props.modelValue, newValue))
             emit('update:modelValue', [...props.modelValue, newValue])
         } else
-          emit('update:modelValue', props.modelValue.filter((old) => !isEqual(old, checked)))
+          emit('update:modelValue', props.modelValue.filter((old) => !isEqual(old, props.value)))
       } else
         emit('update:modelValue', newValue)
 
