@@ -7,7 +7,9 @@
       :key="id"
       v-model="item.isShow"
       v-bind="item">
-      <span v-p-md.inline="item.text" />
+      <span
+        v-p-md.inline="item.text"
+        class="tooltip__text" />
     </Tooltip>
   </div>
 </template>

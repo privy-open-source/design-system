@@ -397,6 +397,10 @@ export default defineConfig({
               link: '/components/dropzone/',
             },
             {
+              text: 'Popover',
+              link: '/components/popover/',
+            },
+            {
               text: 'Spread',
               link: '/components/spread/',
             },
