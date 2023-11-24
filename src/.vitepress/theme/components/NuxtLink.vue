@@ -27,6 +27,7 @@
 
 <script lang="ts">
 import type { PropType } from 'vue-demi'
+import { hasProtocol } from 'ufo'
 import {
   computed,
   defineComponent,
@@ -50,7 +51,7 @@ export default defineComponent({
   setup (props) {
     const isExternalLink = computed(() => {
       return typeof props.href === 'string'
-        && (props.href.startsWith('http') || props.href.startsWith('#'))
+        && (hasProtocol(props.href) || props.href.startsWith('#'))
     })
 
     return { isExternalLink }

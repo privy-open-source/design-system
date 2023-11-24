@@ -11,7 +11,7 @@ import {
   basename,
 } from 'node:path'
 import { createHash } from 'node:crypto'
-import { Result } from 'webfont/dist/src/types/Result'
+import type { Result } from 'webfont/dist/src/types/Result'
 import { EOL } from 'node:os'
 
 const SVG_DIR  = resolve(__dirname, '../svg/')

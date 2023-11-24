@@ -660,6 +660,7 @@ When you set the `no-caret` prop to true, it will hide the caret icon, and users
 | `option`      | Content to place in Option Items             |
 | `selected`    | Content to place for selected result         |
 | `placeholder` | Content to place for placeholder             |
+| `activator`   | Content to replace Select's input            |
 | `caret`       | Element for opening and closing the dropdown |
 
 ### Events

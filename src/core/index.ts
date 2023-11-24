@@ -159,3 +159,7 @@ export {
 export {
   getDocument,
 } from '../components/pdf-viewer/utils/pdfjs'
+
+export {
+  usePopoverPromise,
+} from '../components/popover'

@@ -132,7 +132,7 @@ export default defineComponent({
   @apply z-[var(--p-tooltip-z-index)] px-4 py-3 rounded text-xs inline-block absolute drop-shadow-sm;
 
   &__arrow {
-    @apply absolute after:w-4 after:h-4 after:block after:rounded-[3px] after:rotate-45 after:left-0 after:content-[''] after:z-0;
+    @apply absolute text-xs after:w-4 after:h-4 after:block after:rounded-[3px] after:rotate-45 after:left-0 after:content-[''] after:z-0;
 
     [data-popper-placement^="left"] > & {
       @apply -right-[6px];

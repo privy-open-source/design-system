@@ -6,17 +6,15 @@ export type RadioProps = Omit<CheckboxProps, 'uncheckedValue'>
 
 export function useVModel (props: RadioProps) {
   const { emit } = getCurrentInstance()
-  const checked  = props.value
-
-  const model = computed({
+  const model    = computed({
     get () {
-      return isEqual(props.modelValue, checked) || props.checked
+      return isEqual(props.modelValue, props.value) || props.checked
     },
     set (value: boolean) {
       emit('change', value)
 
       if (value)
-        emit('update:modelValue', checked)
+        emit('update:modelValue', props.value)
     },
   })
 

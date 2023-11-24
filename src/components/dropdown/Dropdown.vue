@@ -197,8 +197,10 @@ defineEmits<{
 }>()
 
 const slots = defineSlots<{
-  prepend(): VNode[],
-  append(): VNode[],
+  'activator'(props: { isOpen: boolean, open: () => void, close: () => void, toggle: () => void }): VNode[],
+  'button-content'(): VNode[],
+  'prepend'(): VNode[],
+  'append'(): VNode[],
 }>()
 
 const root     = ref<HTMLDivElement>()
