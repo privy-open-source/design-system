@@ -1,0 +1,1 @@
+import{c as s,t}from"./index.dnE_v7BF.js";import{am as n,g as u,h as p}from"./framework.e_h4aueT.js";function i(e,o,r){if(typeof e=="function"||n(e))return u(()=>s(t(e),t(o),t(r)));const a=p(e);return u({get(){return a.value=s(a.value,t(o),t(r))},set(f){a.value=s(f,t(o),t(r))}})}export{i as u};
