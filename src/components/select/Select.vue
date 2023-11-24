@@ -13,57 +13,61 @@
     :no-animation="noAnimation"
     @show="onOpened"
     @hide="onClosed">
-    <template #activator>
-      <SelectInput
-        data-testid="select-activator"
-        class="select__activator"
-        :size="size"
-        :placeholder="placeholder"
-        :disabled="disabled"
-        :readonly="readonly"
-        :error="error"
-        @focus="onFocus">
-        <template #default>
-          <template v-if="hasValue">
+    <template #activator="dropdownAttrs">
+      <slot
+        name="activator"
+        v-bind="dropdownAttrs">
+        <SelectInput
+          data-testid="select-activator"
+          class="select__activator"
+          :size="size"
+          :placeholder="placeholder"
+          :disabled="disabled"
+          :readonly="readonly"
+          :error="error"
+          @focus="onFocus">
+          <template #default>
+            <template v-if="hasValue">
+              <slot
+                name="selected"
+                :item="localModel"
+                :multiple="multiple">
+                <template v-if="props.multiple && Array.isArray(localModel)">
+                  <SelectTags
+                    :items="localModel"
+                    :display-limit="displayLimit"
+                    :limit-text="limitText" />
+                </template>
+                <template v-else>
+                  {{ (localModel as SelectItem)?.text }}
+                </template>
+              </slot>
+            </template>
+            <template v-else>
+              <div data-testid="select-placeholder">
+                <slot name="placeholder">
+                  <span class="input__form__placeholder">
+                    {{ placeholder }}
+                  </span>
+                </slot>
+              </div>
+            </template>
+          </template>
+          <template
+            v-if="!noCaret"
+            #append>
             <slot
-              name="selected"
-              :item="localModel"
-              :multiple="multiple">
-              <template v-if="props.multiple && Array.isArray(localModel)">
-                <SelectTags
-                  :items="localModel"
-                  :display-limit="displayLimit"
-                  :limit-text="limitText" />
-              </template>
-              <template v-else>
-                {{ (localModel as SelectItem)?.text }}
-              </template>
+              name="caret"
+              :is-open="isOpen"
+              :toggle="toggle">
+              <IconArrow
+                class="select__caret"
+                data-testid="select-caret-icon"
+                @click="toggle" />
             </slot>
           </template>
-          <template v-else>
-            <div data-testid="select-placeholder">
-              <slot name="placeholder">
-                <span class="input__form__placeholder">
-                  {{ placeholder }}
-                </span>
-              </slot>
-            </div>
-          </template>
-        </template>
-        <template
-          v-if="!noCaret"
-          #append>
-          <slot
-            name="caret"
-            :is-open="isOpen"
-            :toggle="toggleOpen">
-            <IconArrow
-              class="select__caret"
-              data-testid="select-caret-icon"
-              @click="toggleOpen" />
-          </slot>
-        </template>
-      </SelectInput>
+        </SelectInput>
+      </slot>
     </template>
 
     <template #prepend>
@@ -333,7 +337,7 @@ const localModel = ref<SelectItem | SelectItem[]>(
     : findSelected(items.value, props.modelValue),
 )
 
-const toggleOpen = () => {
+const toggle = () => {
   if (!props.disabled && !props.readonly)
     isOpen.value = !isOpen.value
 }
@@ -446,6 +450,14 @@ onStartTyping(() => {
     inputEl.value.select()
     inputEl.value.focus()
   }
+})
+
+defineExpose({
+  keyword,
+  isOpen,
+  isLoading,
+  menuEl,
+  toggle,
 })
 </script>
 
