@@ -3,7 +3,7 @@
 /* eslint-disable unicorn/prefer-top-level-await */
 import { readJSON } from 'fs-extra'
 import { resolve } from 'node:path'
-import { MetaData } from './types'
+import type { MetaData } from './types'
 
 const META_FILE = resolve(__dirname, '../svg/meta.json')
 

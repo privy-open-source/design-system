@@ -5,7 +5,7 @@
 import { resolve } from 'node:path'
 import { readJSON } from 'fs-extra'
 import { name } from '../package.json'
-import { MetaData } from './types'
+import type { MetaData } from './types'
 import got from 'got'
 import ohash from 'ohash'
 import minimist from 'minimist'

@@ -1,4 +1,5 @@
-import SVGPath, { PathArray } from 'svg-path-commander'
+import type { PathArray } from 'svg-path-commander'
+import SVGPath from 'svg-path-commander'
 import { orderBy } from 'lodash-es'
 
 type Point = ReturnType<typeof SVGPath['getPointAtLength']>
