@@ -4238,7 +4238,7 @@ __metadata:
     tailwindcss: 3.3.5
     typescript: 5.3.2
     ufo: ^1.0.1
-    vitepress: 1.0.0-rc.30
+    vitepress: 1.0.0-rc.31
     vitest: 0.24.5
     vue-collapsed: ^1.2.5
     vue-content-loader: ^2.0.1
@@ -18453,21 +18453,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shikiji-transformers@npm:^0.7.2":
-  version: 0.7.3
-  resolution: "shikiji-transformers@npm:0.7.3"
+"shikiji-transformers@npm:^0.7.4":
+  version: 0.7.5
+  resolution: "shikiji-transformers@npm:0.7.5"
   dependencies:
-    shikiji: 0.7.3
-  checksum: f0553e2878613220637f3d53421a95b80ed326dd39cb4e0339a33a8a6628a3ed064cbd5bdecccf575bb9a29f2f2724c6ccd918691e7e87aeec9af9b3adde27eb
+    shikiji: 0.7.5
+  checksum: c036379fa2afe8c3e8b7659f019eadec733fe53b726a92b7b0a4b0f5ec74b916bc94fb79023ed4b7ce555013d4da03df2ceca257c8cde155a9fab60cb77fa73f
   languageName: node
   linkType: hard
 
-"shikiji@npm:0.7.3, shikiji@npm:^0.7.2":
-  version: 0.7.3
-  resolution: "shikiji@npm:0.7.3"
+"shikiji@npm:0.7.5, shikiji@npm:^0.7.4":
+  version: 0.7.5
+  resolution: "shikiji@npm:0.7.5"
   dependencies:
     hast-util-to-html: ^9.0.0
-  checksum: 5beaf443b20e22bb73b12152e62b586bf7eda3c3c822c776d24120c36111d3b38ed8d9de4d876d43a71e3482630ecdce4713ecd8a1b5660ad48036330f2b0155
+  checksum: a366103a41742ecf84d140ec4acd3db2aaece65cb5e8d40ba61d724610bbe20869bcf6561825a312a11e4fad147097468b18e41e4853de151025110277190b50
   languageName: node
   linkType: hard
 
@@ -20915,9 +20915,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-rc.30":
-  version: 1.0.0-rc.30
-  resolution: "vitepress@npm:1.0.0-rc.30"
+"vitepress@npm:1.0.0-rc.31":
+  version: 1.0.0-rc.31
+  resolution: "vitepress@npm:1.0.0-rc.31"
   dependencies:
     "@docsearch/css": ^3.5.2
     "@docsearch/js": ^3.5.2
@@ -20930,8 +20930,8 @@ __metadata:
     mark.js: 8.11.1
     minisearch: ^6.3.0
     mrmime: ^1.0.1
-    shikiji: ^0.7.2
-    shikiji-transformers: ^0.7.2
+    shikiji: ^0.7.4
+    shikiji-transformers: ^0.7.4
     vite: ^5.0.2
     vue: ^3.3.8
   peerDependencies:
@@ -20944,7 +20944,7 @@ __metadata:
       optional: true
   bin:
     vitepress: bin/vitepress.js
-  checksum: c5f18baf827e63d394e532875ef74f582aef1c1824a1cefb9d4e462261301463f3752d4d0b3b444404c5037995bbe42fc3413524524b59a5a2d1b6eb4f10acc5
+  checksum: 34f1d2a825bdd7d39200d76039bde8f15b1f6454e3ea4c27396e9cbc19fdd43991fbca1a345e6e6e0c9248034bdc242a0a99cb933d4ce5c4df9a111f6167e1d7
   languageName: node
   linkType: hard
 
