@@ -28,7 +28,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
-    "@interactjs/types": "1.10.21",
+    "@interactjs/types": "1.10.23",
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/eslint-config-persona": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
