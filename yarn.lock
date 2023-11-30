@@ -4927,10 +4927,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@thednp/dommatrix@npm:^2.0.5":
-  version: 2.0.5
-  resolution: "@thednp/dommatrix@npm:2.0.5"
-  checksum: fae6b87e9d2a17de7bcd073e28735ace996a51299046f43c7afade3de075bd6e417d4d1f5662a1ed69ebe29e5daee43b94771f73f93ea9254765f904c150ad39
+"@thednp/dommatrix@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "@thednp/dommatrix@npm:2.0.6"
+  checksum: e52624e43b942813130d34f3c0257d6f2152aa8a25d7277ae4929f143008a06fc823dc8e40db84565487c1256fd810f2d01cf3af556c0df14a6b448f0f28ebaa
   languageName: node
   linkType: hard
 
@@ -19222,11 +19222,11 @@ __metadata:
   linkType: hard
 
 "svg-path-commander@npm:^2.0.5":
-  version: 2.0.8
-  resolution: "svg-path-commander@npm:2.0.8"
+  version: 2.0.9
+  resolution: "svg-path-commander@npm:2.0.9"
   dependencies:
-    "@thednp/dommatrix": ^2.0.5
-  checksum: 7a8d6393698235470de771a3baf9e8766c82ee44d9531595158bbed673c2788e31aa2a1671f2ca1cbfae8cbf0ad905acf3733a412ca527fc078234b86fc13742
+    "@thednp/dommatrix": ^2.0.6
+  checksum: 44014790b2e04cfd82ed530571d2f33dcb655e6574c880b01a050e827c60b7ab911e51766889f143d553135c7192e9fda41391e34bb881f50cbb6141a94f08e0
   languageName: node
   linkType: hard
 
