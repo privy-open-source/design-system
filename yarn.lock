@@ -19349,8 +19349,8 @@ __metadata:
   linkType: hard
 
 "svgo@npm:^3.0.2":
-  version: 3.0.4
-  resolution: "svgo@npm:3.0.4"
+  version: 3.0.5
+  resolution: "svgo@npm:3.0.5"
   dependencies:
     "@trysound/sax": "npm:0.2.0"
     commander: "npm:^7.2.0"
@@ -19361,7 +19361,7 @@ __metadata:
     picocolors: "npm:^1.0.0"
   bin:
     svgo: ./bin/svgo
-  checksum: 077858c571b3ad988b0cf72c132fb766b293a6edeab62c5da648050473622c9ffdcf7870d3dd87cd7a74e2a71a43d382221dff79f6094f0bd63c382361dcab8f
+  checksum: 9bd9ff340b3870e0e45b274a74dd9fadbddd09e268d03a3c14d74f96a23b446e2e6a4b2e300d577474c7a3249e7d31b09bb498415b9ffd7cfe88e8e1e145299f
   languageName: node
   linkType: hard
 
