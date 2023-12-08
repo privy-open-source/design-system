@@ -1,3 +1,8 @@
+---
+title: Avatar · Style guide
+description: Avatar style guide
+---
+
 <script setup>
   import pAvatar from '../../components/avatar/Avatar.vue'
   import pCaption from '../../components/caption/Caption.vue'
@@ -23,7 +28,7 @@
         <span class="block font-bold">Medium (40p)</span>
         use as the default size
       </li>
-    </ul> 
+    </ul>
   </div>
   <div class="w-1/2">
     <div class="flex justify-center space-x-12">
@@ -57,7 +62,7 @@
         <span class="block font-bold">Large (40p) and Extra Large (60p)</span>
         use when an avatar is a focal point, such as on a single customer card or in user profile page
       </li>
-    </ul> 
+    </ul>
   </div>
   <div class="w-1/2">
     <div class="flex justify-end space-x-12">
@@ -87,9 +92,9 @@
 
 <div class="flex py-8">
   <div class="w-1/2">
-    Use avatar group when you want to display a collection of avatars. 
-    You can also use them for easy collapse states for a set number 
-    of avatars and with a dropdown to show hidden avatars. 
+    Use avatar group when you want to display a collection of avatars.
+    You can also use them for easy collapse states for a set number
+    of avatars and with a dropdown to show hidden avatars.
     Use extra small size only for this type of set.
   </div>
   <div class="w-1/2">
@@ -117,7 +122,7 @@
         <span class="block font-bold">Icon</span>
         avatar icon hanya digunakan selain untuk profile, misal mewakili bisnis, jenis akun atau enterprise
       </li>
-    </ul> 
+    </ul>
   </div>
   <div class="w-1/2">
     <div class="flex justify-end space-x-12">
@@ -165,7 +170,7 @@
         <span class="block font-bold">Hover</span>
         this case is a condition where the avatar is set up and hovered by the cursor to indicate that the avatar is editable
       </li>
-    </ul> 
+    </ul>
   </div>
   <div class="w-1/2">
     <div class="flex justify-end space-x-12">
@@ -197,7 +202,7 @@
 <div class="flex pb-8">
   <div class="w-1/2">
     <p-caption class="!text-subtle">
-      each size avatar has its size camera icon, xsmall and small avatar use 16p icon, medium use 20p icon, large use 24p icon and the xlarge avatar will be use 32p icon size  
+      each size avatar has its size camera icon, xsmall and small avatar use 16p icon, medium use 20p icon, large use 24p icon and the xlarge avatar will be use 32p icon size
     </p-caption>
   </div>
 </div>
@@ -213,7 +218,7 @@
       <li>Small (32 × 32 px): use when the medium size is too big for the layout, or when the avatar has less importance.</li>
       <li>Medium (40 × 40 px): use as the default size.</li>
       <li>Large (60 × 60 px): use when an avatar is a focal point, such as on a single customer card.</li>
-    </ul> 
+    </ul>
   </div>
 </div>
 
@@ -224,7 +229,7 @@
     <ul>
       <li>Always add the name of the person using the name property.</li>
       <li>For the best results, use square images or images cropped into a square.</li>
-    </ul> 
+    </ul>
   </div>
 </div>
 
@@ -234,10 +239,10 @@
   <div class="w-2/3">
     <ul>
       <li>
-        Try to avoid using landscape or portrait images as avatars. Let users crop their images 
+        Try to avoid using landscape or portrait images as avatars. Let users crop their images
         before or after uploading if possible.
       </li>
-    </ul> 
+    </ul>
   </div>
 </div>
 

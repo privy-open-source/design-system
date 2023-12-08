@@ -1,3 +1,8 @@
+---
+title: Pagination · Components
+description: Table pagination control.
+---
+
 <script setup>
 import { ref } from 'vue-demi'
 import pPagination from './Pagination.vue'
@@ -32,6 +37,8 @@ const quickPerPageOptions = ref([5,10,15])
 
 
 # Pagination
+
+> Table pagination control.
 
 ## Usage
 

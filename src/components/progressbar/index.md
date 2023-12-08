@@ -1,3 +1,8 @@
+---
+title: Progress · Components
+description: Progress loading bar.
+---
+
 <script setup>
   import pProgressbar from './Progressbar.vue'
   import pInputRange from '../input-range/InputRange.vue'
@@ -8,7 +13,7 @@
 
 # Progressbar
 
-> TODO
+> Progress loading bar.
 
 ## Usage
 
