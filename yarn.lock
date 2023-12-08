@@ -3358,17 +3358,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interactjs/types@npm:1.10.23":
-  version: 1.10.23
-  resolution: "@interactjs/types@npm:1.10.23"
-  checksum: d7e0a34ed8d2c0a522558f0dd4c1454f9fa21daf18d137b38a009b033d9ce97a0d5493a463c4e2b84bdf2ddfaea59a0b4c95ce6aca74db70be5a5c40794a94e7
-  languageName: node
-  linkType: hard
-
-"@interactjs/types@npm:1.10.25":
-  version: 1.10.25
-  resolution: "@interactjs/types@npm:1.10.25"
-  checksum: e6b1679e58dab9df5dff3e017213a0e22c1876f9f787b0637effdcd56e22aee14fb91aec5537b7c757f62cc7e0af1b486594f3d89b105cf298448bfa2ca8645b
+"@interactjs/types@npm:1.10.26":
+  version: 1.10.26
+  resolution: "@interactjs/types@npm:1.10.26"
+  checksum: 76fb5e0718347601a90f090afc7f9df5be65358da16a25c433aa6cff2e28962003a3ca32aa405f759374bfd89f2e564b7a97a6bf9be5d8a30acbb7e57d4fe912
   languageName: node
   linkType: hard
 
@@ -4211,7 +4204,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.19.4"
     "@floating-ui/dom": "npm:^1.0.4"
     "@fontsource/dm-sans": "npm:5.0.17"
-    "@interactjs/types": "npm:1.10.25"
+    "@interactjs/types": "npm:1.10.26"
     "@juggle/resize-observer": "npm:^3.4.0"
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/eslint-config-persona": "workspace:^"
@@ -4236,7 +4229,7 @@ __metadata:
     "@types/zxcvbn": "npm:^4"
     "@typescript-eslint/eslint-plugin": "npm:5.62.0"
     "@typescript-eslint/parser": "npm:5.62.0"
-    "@vitejs/plugin-vue": "npm:4.5.1"
+    "@vitejs/plugin-vue": "npm:4.5.2"
     "@vitest/browser": "npm:^0.25.3"
     "@vitest/coverage-c8": "npm:0.24.5"
     "@vue/eslint-config-typescript": "npm:12.0.0"
@@ -4266,7 +4259,7 @@ __metadata:
     fuse.js: "npm:7.0.0"
     happy-dom: "npm:8.9.0"
     husky: "npm:8.0.3"
-    interactjs: "npm:1.10.23"
+    interactjs: "npm:1.10.26"
     jest-extended: "npm:4.0.2"
     lint-staged: "npm:15.1.0"
     lodash-es: "npm:4.17.21"
@@ -4289,7 +4282,7 @@ __metadata:
     vue-content-loader: "npm:^2.0.1"
     vue-demi: "npm:0.14.6"
     vue-router: "npm:4.2.5"
-    vue-tsc: "npm:1.8.24"
+    vue-tsc: "npm:1.8.25"
     vue3-iframe: "npm:^0.0.7"
     vuedraggable: "npm:next"
     webfontloader: "npm:1.6.28"
@@ -4370,7 +4363,7 @@ __metadata:
     defu: "npm:6.1.3"
     fast-equals: "npm:^5.0.0"
     fuse.js: "npm:7.0.0"
-    interactjs: "npm:1.10.23"
+    interactjs: "npm:1.10.26"
     lodash-es: "npm:4.17.21"
     marked: "npm:5.1.2"
     nanodelay: "npm:2.0.2"
@@ -5815,13 +5808,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:4.5.1":
-  version: 4.5.1
-  resolution: "@vitejs/plugin-vue@npm:4.5.1"
+"@vitejs/plugin-vue@npm:4.5.2":
+  version: 4.5.2
+  resolution: "@vitejs/plugin-vue@npm:4.5.2"
   peerDependencies:
     vite: ^4.0.0 || ^5.0.0
     vue: ^3.2.25
-  checksum: cc0e2b4ca03d63f4eda541275fadc7a48fb7a887ccc65de29a73f93a7791c4071854c98765e6f6a019cb5e86f2c756ff83aeffd12cca8543a7b1d079698f0e4a
+  checksum: 4d01d5222e5b96f5c90ef34260c57ff296d141a76011f9a41af0c4583a52b8666a8e14aed703fac7f53e0120fe3316f208c22d65af4a94efa92c7a53c36993c1
   languageName: node
   linkType: hard
 
@@ -6063,9 +6056,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/language-core@npm:1.8.24":
-  version: 1.8.24
-  resolution: "@vue/language-core@npm:1.8.24"
+"@vue/language-core@npm:1.8.25":
+  version: 1.8.25
+  resolution: "@vue/language-core@npm:1.8.25"
   dependencies:
     "@volar/language-core": "npm:~1.11.1"
     "@volar/source-map": "npm:~1.11.1"
@@ -6081,7 +6074,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 4d0b18dc160303facd715064ecffe7c01c61a84e9161b8795f98db5b7b849973ba2ca0c77affe2c263be37501fe1bef9f68320dbd685da4bdf4ba555fdbe283a
+  checksum: 680d2337423a2a2f0cbe70c1c6663c3498fcec6bae7688e83d21d3c1f2a6785fb4a71492fdb318f1f4ef962d0ea985dd22978140dff7f90ac1e1d0dfed2d17ba
   languageName: node
   linkType: hard
 
@@ -12772,12 +12765,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"interactjs@npm:1.10.23":
-  version: 1.10.23
-  resolution: "interactjs@npm:1.10.23"
+"interactjs@npm:1.10.26":
+  version: 1.10.26
+  resolution: "interactjs@npm:1.10.26"
   dependencies:
-    "@interactjs/types": "npm:1.10.23"
-  checksum: 5121b39838a7416222d4068783882d8c62f8b78a746b6f3e2d4c607f55f41cac9e04a6ed428bdc6c301425dd8f04a4aa896d8c76f5d14d0870130d8282be9c8c
+    "@interactjs/types": "npm:1.10.26"
+  checksum: d94634b1474fa7a5f08b339683c8965c4622029f9659851ae083d654e26d1cda39a45d5312078d71b8917f368050c4baaf3326faba10a20a6baad9c059cc9395
   languageName: node
   linkType: hard
 
@@ -21265,18 +21258,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-tsc@npm:1.8.24":
-  version: 1.8.24
-  resolution: "vue-tsc@npm:1.8.24"
+"vue-tsc@npm:1.8.25":
+  version: 1.8.25
+  resolution: "vue-tsc@npm:1.8.25"
   dependencies:
     "@volar/typescript": "npm:~1.11.1"
-    "@vue/language-core": "npm:1.8.24"
+    "@vue/language-core": "npm:1.8.25"
     semver: "npm:^7.5.4"
   peerDependencies:
     typescript: "*"
   bin:
     vue-tsc: bin/vue-tsc.js
-  checksum: 185c8360ef7ff78446d1d8542f83c4281deac7abe05d10a9f46646a676272c95f2289435505bd4f453d0c28bd4d23cb514d8beb6a8375730f616e2512c9721da
+  checksum: a2be9afcc26ad036238cfc200b471ea5597a05482c86a76afa3fafbaca2cc0fe94108ee7f1ac87f3847a622fcf16fab2d234f9086fdefdb6a6b26d3f278d274d
   languageName: node
   linkType: hard
 
