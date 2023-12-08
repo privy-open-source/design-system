@@ -268,6 +268,10 @@ export default defineConfig({
               link: '/components/input/',
             },
             {
+              text: 'Input Color',
+              link: '/components/input-color/',
+            },
+            {
               text: 'Input File',
               link: '/components/input-file/',
             },
