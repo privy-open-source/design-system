@@ -4289,7 +4289,7 @@ __metadata:
     vue-content-loader: "npm:^2.0.1"
     vue-demi: "npm:0.14.6"
     vue-router: "npm:4.2.5"
-    vue-tsc: "npm:1.8.24"
+    vue-tsc: "npm:1.8.25"
     vue3-iframe: "npm:^0.0.7"
     vuedraggable: "npm:next"
     webfontloader: "npm:1.6.28"
@@ -6063,9 +6063,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/language-core@npm:1.8.24":
-  version: 1.8.24
-  resolution: "@vue/language-core@npm:1.8.24"
+"@vue/language-core@npm:1.8.25":
+  version: 1.8.25
+  resolution: "@vue/language-core@npm:1.8.25"
   dependencies:
     "@volar/language-core": "npm:~1.11.1"
     "@volar/source-map": "npm:~1.11.1"
@@ -6081,7 +6081,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 4d0b18dc160303facd715064ecffe7c01c61a84e9161b8795f98db5b7b849973ba2ca0c77affe2c263be37501fe1bef9f68320dbd685da4bdf4ba555fdbe283a
+  checksum: 680d2337423a2a2f0cbe70c1c6663c3498fcec6bae7688e83d21d3c1f2a6785fb4a71492fdb318f1f4ef962d0ea985dd22978140dff7f90ac1e1d0dfed2d17ba
   languageName: node
   linkType: hard
 
@@ -21265,18 +21265,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-tsc@npm:1.8.24":
-  version: 1.8.24
-  resolution: "vue-tsc@npm:1.8.24"
+"vue-tsc@npm:1.8.25":
+  version: 1.8.25
+  resolution: "vue-tsc@npm:1.8.25"
   dependencies:
     "@volar/typescript": "npm:~1.11.1"
-    "@vue/language-core": "npm:1.8.24"
+    "@vue/language-core": "npm:1.8.25"
     semver: "npm:^7.5.4"
   peerDependencies:
     typescript: "*"
   bin:
     vue-tsc: bin/vue-tsc.js
-  checksum: 185c8360ef7ff78446d1d8542f83c4281deac7abe05d10a9f46646a676272c95f2289435505bd4f453d0c28bd4d23cb514d8beb6a8375730f616e2512c9721da
+  checksum: a2be9afcc26ad036238cfc200b471ea5597a05482c86a76afa3fafbaca2cc0fe94108ee7f1ac87f3847a622fcf16fab2d234f9086fdefdb6a6b26d3f278d274d
   languageName: node
   linkType: hard
 
