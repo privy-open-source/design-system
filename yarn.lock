@@ -3319,10 +3319,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:5.0.17":
-  version: 5.0.17
-  resolution: "@fontsource/dm-sans@npm:5.0.17"
-  checksum: 1cb49cf606f2c384383059b8fd7fdb2fdb04e878d4d84b74a8765faf965f73bf228fd3f8b81be32fa898e4df9ec605de2cd76d5d30dc62b931d5bbc0aa76c65b
+"@fontsource/dm-sans@npm:5.0.18":
+  version: 5.0.18
+  resolution: "@fontsource/dm-sans@npm:5.0.18"
+  checksum: eb8a6396f9cb0b46395e19d4026c9e7b7fa322990eecf69e9bc832ff2aa3032b6a6ded7274ae149d157c1b7233880b2b48dd455692c46b0331b5cc26145fe995
   languageName: node
   linkType: hard
 
@@ -4203,7 +4203,7 @@ __metadata:
     "@babel/core": "npm:^7.19.6"
     "@babel/preset-env": "npm:^7.19.4"
     "@floating-ui/dom": "npm:^1.0.4"
-    "@fontsource/dm-sans": "npm:5.0.17"
+    "@fontsource/dm-sans": "npm:5.0.18"
     "@interactjs/types": "npm:1.10.26"
     "@juggle/resize-observer": "npm:^3.4.0"
     "@privyid/browserslist-config": "workspace:^"
@@ -4274,7 +4274,7 @@ __metadata:
     scroll-into-view: "npm:^1.16.2"
     tabbable: "npm:6.2.0"
     tailwindcss: "npm:3.3.6"
-    typescript: "npm:5.3.2"
+    typescript: "npm:5.3.3"
     ufo: "npm:^1.0.1"
     vitepress: "npm:1.0.0-rc.31"
     vitest: "npm:0.24.5"
@@ -19959,23 +19959,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.3.2":
-  version: 5.3.2
-  resolution: "typescript@npm:5.3.2"
+"typescript@npm:5.3.3":
+  version: 5.3.3
+  resolution: "typescript@npm:5.3.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 415e5fb6611f5713e460bad48039f00bcfdbde53a2f911727862d5aa9c5d5edd250059a419df382d8f031709e15a169c41eb62b6a401da5eec7ac0f4e359d6ac
+  checksum: 6e4e6a14a50c222b3d14d4ea2f729e79f972fa536ac1522b91202a9a65af3605c2928c4a790a4a50aa13694d461c479ba92cedaeb1e7b190aadaa4e4b96b8e18
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>":
-  version: 5.3.2
-  resolution: "typescript@patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"
+"typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>":
+  version: 5.3.3
+  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 1b45cdfb577a78ae7a9a9d0b77a7b772142cb98ba05e4e5aefba7044a028ded885bcecef63166407a5986645cea816fe4986894336aacd5e791796ea79a6a7ed
+  checksum: c93786fcc9a70718ba1e3819bab56064ead5817004d1b8186f8ca66165f3a2d0100fee91fa64c840dcd45f994ca5d615d8e1f566d39a7470fc1e014dbb4cf15d
   languageName: node
   linkType: hard
 
