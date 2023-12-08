@@ -1,1 +1,0 @@
-import{ai as n,h as r}from"./framework.e_h4aueT.js";let e;function o(){return n(!0).run(()=>r({lang:"en"}))}function s(t){e=t}function u(){const t=o();return s(t),t}function i(){var t;return(t=e==null?void 0:e.value.lang)!=null?t:"en"}export{i as g,u as i};

@@ -1,1 +1,0 @@
-import{s as l}from"./index.dnE_v7BF.js";import{h as m,g as u,ac as n}from"./framework.e_h4aueT.js";function d(e){const t=m(e.modelValue),{emit:a}=n(),o=u({get(){return e.modelValue},set(s){a("update:modelValue",s)}});return l(t,o,{immediate:!1}),t}export{d as u};

@@ -1,0 +1,1 @@
+import{aj as n,h as r}from"./framework.5W3OCrpp.js";let e;function o(){return n(!0).run(()=>r({lang:"en"}))}function s(t){e=t}function u(){const t=o();return s(t),t}function f(){var t;return(t=e==null?void 0:e.value.lang)!=null?t:"en"}export{f as g,u as i};
