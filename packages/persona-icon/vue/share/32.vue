@@ -12,7 +12,7 @@
       clip-rule="evenodd" /><path
         fill="currentColor"
         fill-rule="evenodd"
-        d="m21.783 10.23-10.667 5.333-.894-1.788L20.888 8.44l.895 1.79M22.335 21.726l-11.333-4-.666 1.886 11.333 4 .666-1.886"
+        d="m21.783 10.23-10.667 5.333-.894-1.788L20.888 8.44zM22.335 21.726l-11.333-4-.666 1.886 11.333 4z"
         clip-rule="evenodd" /><path
           fill="currentColor"
           fill-rule="evenodd"
