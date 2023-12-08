@@ -9,6 +9,7 @@ export default defineConfig({
   title      : 'Persona',
   description: 'Persona - PrivyID\'s Design System, built on top Nuxt3, Typescript and Tailwind',
   head       : head,
+  sitemap    : { hostname: 'https://github.com/privy-open-source/design-system/' },
   themeConfig: {
     logo    : '/assets/images/logo.svg',
     editLink: { pattern: 'https://github.com/privy-open-source/design-system/edit/main/src/:path' },
@@ -179,6 +180,10 @@ export default defineConfig({
             {
               text: 'Sheet',
               link: '/components/sheet/',
+            },
+            {
+              text: 'Shimmer',
+              link: '/components/shimmer/',
             },
             {
               text: 'Spinner',
