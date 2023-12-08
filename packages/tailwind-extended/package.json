@@ -1,7 +1,7 @@
 {
   "name": "@privyid/tailwind-extended",
   "description": "Add missing tailwind utilities",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "packageManager": "yarn@4.0.2",
   "license": "MIT",
   "repository": {
@@ -16,6 +16,9 @@
   "homepage": "https://privy-open-source.github.io/design-system/",
   "main": "./index.js",
   "types": "./index.d.ts",
+  "files": [
+    "./index.d.ts"
+  ],
   "peerDependencies": {
     "tailwind": ">= 3.0.0"
   },
