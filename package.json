@@ -35,7 +35,7 @@
     "@rollup/plugin-babel": "^6.0.2",
     "@rollup/plugin-inject": "^5.0.3",
     "@rollup/plugin-replace": "^5.0.1",
-    "@rushstack/eslint-patch": "1.6.0",
+    "@rushstack/eslint-patch": "1.6.1",
     "@testing-library/jest-dom": "6.1.5",
     "@testing-library/vue": "8.0.1",
     "@types/babel__core": "^7",
