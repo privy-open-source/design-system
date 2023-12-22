@@ -16,6 +16,7 @@
         :duration="item.duration"
         :icon-color="item.iconColor"
         :class="item.toastClass"
+        :dismissable="item.dismissable"
         @dismissed="remove(i)">
         <template #icon>
           <template v-if="item.icon && typeof item.icon === 'string'">

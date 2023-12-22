@@ -23,6 +23,7 @@
         data-testid="toast-text" />
     </div>
     <div
+      v-if="dismissable"
       data-testid="toast-close"
       class="toast__close"
       @click="close">
@@ -83,6 +84,10 @@ export default defineComponent({
     iconColor: {
       type   : String as PropType<ColorVariant>,
       default: undefined,
+    },
+    dismissable: {
+      type   : Boolean,
+      default: true,
     },
   },
   emits: ['dismissed'],
@@ -161,8 +166,8 @@ export default defineComponent({
   }
 
   .toast__close {
-    @apply cursor-pointer text-dark-default/50 hover:text-default/50;
-    @apply dark:text-default/30;
+    @apply cursor-pointer text-default/30 hover:text-default/50;
+    @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
   }
 
   .toast__body {
@@ -247,6 +252,11 @@ export default defineComponent({
     &.toast--filled {
       @apply bg-inverse text-info;
       @apply dark:bg-dark-inverse dark:text-dark-info;
+
+      .toast__close {
+        @apply cursor-pointer text-on-emphasis/30 hover:text-on-emphasis/50;
+        @apply dark:text-dark-on-emphasis/30 hover:dark:text-dark-on-emphasis/50;
+      }
     }
   }
 

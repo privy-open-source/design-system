@@ -400,6 +400,26 @@ toast({
   toastClass: 'mt-28 mr-10',
 })
 ```
+
+## Dismissible
+Dismiss button of toast can be show or hide by `dismissable` props. If `dismissable`
+set to `true`, dismiss button will show.
+
+<preview class="flex-col items-center space-y-3">
+  <Toast :dismissable="true" variant="filled" title="Lorem ipsum dolor sit amet." />
+</preview>
+
+```ts
+import { toast } from '@privyid/persona/core'
+
+// top-left
+toast({
+  title: 'Lorem ipsum dolor sit amet.',
+  variant: 'filled',
+  dismissable: true,
+})
+```
+
 ## Variables
 Toast use local CSS variables on `.toast-container` for enhanced real-time customization.
 

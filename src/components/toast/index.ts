@@ -16,6 +16,7 @@ export interface ToastOption {
   toastClass?: string | string[],
   position?: ToastPositionVariant,
   iconColor?: ColorVariant,
+  dismissable?: boolean,
 }
 
 export type ToastPositionVariant = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
