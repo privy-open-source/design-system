@@ -19,7 +19,9 @@
       :class="classNames"
       :tabindex="1"
       v-bind="$attrs">
-      <slot />
+      <div class="input__form__activator">
+        <slot />
+      </div>
     </div>
     <span
       v-if="$slots.append"
@@ -107,7 +109,15 @@ const classNames = computed(() => {
 </script>
 
 <style lang="postcss">
-.input .input__hidden {
-  @apply h-0 block p-0 leading-[0];
+.input {
+  & > &__hidden {
+    @apply h-0 block p-0 leading-[0];
+  }
+
+  &__form {
+    &__activator {
+      @apply truncate;
+    }
+  }
 }
 </style>

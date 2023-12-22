@@ -206,23 +206,9 @@ export default defineComponent({
     @apply dark:text-dark-default/30 hover:dark:text-dark-danger;
   }
 
-  &--clearable {
-    @apply pr-9;
-
-    + .input__clear {
-      @apply absolute right-3 top-1/2 -translate-y-1/2;
-    }
-
-    &:where(.input--has-append) {
-      + .input__clear {
-        @apply right-10;
-      }
-    }
-  }
-
   &__prepend,
   &__append {
-    @apply absolute top-0 h-full flex items-center z-1;
+    @apply absolute top-0 h-full flex items-center z-[2];
   }
 
   &__prepend {
@@ -240,6 +226,21 @@ export default defineComponent({
 
     &-append {
       @apply pr-9;
+    }
+  }
+
+  &--clearable {
+    @apply pr-9;
+
+    + .input__clear {
+      @apply absolute right-3 top-1/2 -translate-y-1/2;
+    }
+
+    &:where(.input--has-append) {
+      @apply pr-[4.15rem];
+      + .input__clear {
+        @apply right-[2.45rem];
+      }
     }
   }
 }

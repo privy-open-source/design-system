@@ -135,6 +135,7 @@ Input has append & prepend feature to place content inside input field. But the 
 ```
 
 ### Append
+
 <preview class="flex-col space-y-3">
   <p-input>
     <template #append>
