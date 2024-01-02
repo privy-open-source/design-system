@@ -140,3 +140,16 @@ it('should be able to custom icon color via `iconColor` props', () => {
   expect(title).toBeInTheDocument()
   expect(icon).toHaveClass('toast__icon--warning')
 })
+
+it('should be able to show or hide close button via `dismissable` props', () => {
+  const screen = render({
+    components: { Toast },
+    template  : `
+      <Toast :dismissable="false" title="Toast title" variant="filled" />
+    `,
+  })
+
+  const close = screen.queryByTestId('toast-close')
+
+  expect(close).not.toBeInTheDocument()
+})
