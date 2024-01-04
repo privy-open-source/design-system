@@ -77,7 +77,7 @@
     "tailwindcss": "3.3.6",
     "typescript": "5.3.3",
     "ufo": "^1.0.1",
-    "vitepress": "1.0.0-rc.34",
+    "vitepress": "1.0.0-rc.35",
     "vitest": "0.24.5",
     "vue-tsc": "1.8.27"
   },
