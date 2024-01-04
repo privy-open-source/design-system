@@ -22,8 +22,7 @@ description: Simple notification pop-up.
 
 <div class="flex mt-3">
   <Button color="info" @click="toast({
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
+    text : 'Far far away, behind the word.',
   })">
     Show Toast
   </Button>
@@ -33,8 +32,7 @@ description: Simple notification pop-up.
 import { toast } from '@privyid/persona/core'
 
 toast({
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
+  text : 'Far far away, behind the word.',
 })
 ```
 
@@ -42,12 +40,8 @@ toast({
 
 <div class="flex mt-3">
   <Button color="info" @click="toast({
-    type      : 'error',
-    title     : 'Lorem ipsum',
-    text      : 'Lorem ipsum dolor sit amet.',
-    variant   : 'filled',
+    text      : `Far far away, behind the word.`,
     duration  : 5000,
-    toastClass: 'custom-toast',
   })">
     Show Toast
   </Button>
@@ -57,172 +51,8 @@ toast({
 import { toast } from '@privyid/persona/core'
 
 toast({
-  type      : 'error',
-  title     : 'Lorem ipsum',
-  text      : 'Lorem ipsum dolor sit amet.',
-  variant   : 'filled',
+  text      : 'Far far away, behind the word.',
   duration  : 5000,
-  toastClass: 'custom-toast',
-})
-```
-
-## Type Variant
-
-There available 4 type variants: `info`, `success`, `warning`, `error`. default is `info`
-
-<preview class="flex-col items-center space-y-3">
-  <Toast type="info" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-  <Toast type="success" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-  <Toast type="warning" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-  <Toast type="error" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-</preview>
-
-**Try it:**
-
-<div class="mt-3 space-gap-3">
-  <Button color="info" @click="toast({
-    type : 'info',
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
-  })">
-    Info
-  </Button>
-  <Button color="success" @click="toast({
-    type : 'success',
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
-  })">
-    Success
-  </Button>
-  <Button color="warning" @click="toast({
-    type : 'warning',
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
-  })">
-    Warning
-  </Button>
-  <Button color="danger" @click="toast({
-    type : 'error',
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
-  })">
-    Error
-  </Button>
-</div>
-
-```ts
-import { toast } from '@privyid/persona/core'
-
-// info
-toast({
-  type : 'info',
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-})
-
-// success
-toast({
-  type : 'success',
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-})
-
-// warning
-toast({
-  type : 'warning',
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-})
-
-// error
-toast({
-  type : 'error',
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-})
-```
-
-## Style Variant
-
-There available 2 style variant: `simple` and `filled`. default is `simple`
-
-<preview class="flex-col items-center space-y-3">
-  <Toast variant="filled" type="info" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-  <Toast variant="filled" type="success" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-  <Toast variant="filled" type="warning" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-  <Toast variant="filled" type="error" title="Lorem ipsum" text="Lorem ipsum dolor sit amet." />
-</preview>
-
-**Try it:**
-
-<div class="mt-3 space-gap-3">
-  <Button color="info" @click="toast({
-    type   : 'info',
-    variant: 'filled',
-    title  : 'Lorem ipsum',
-    text   : 'Lorem ipsum dolor sit amet.',
-  })">
-    Info
-  </Button>
-  <Button color="success" @click="toast({
-    type   : 'success',
-    variant: 'filled',
-    title  : 'Lorem ipsum',
-    text   : 'Lorem ipsum dolor sit amet.',
-  })">
-    Success
-  </Button>
-  <Button color="warning" @click="toast({
-    type   : 'warning',
-    variant: 'filled',
-    title  : 'Lorem ipsum',
-    text   : 'Lorem ipsum dolor sit amet.',
-  })">
-    Warning
-  </Button>
-  <Button color="danger" @click="toast({
-    type   : 'error',
-    variant: 'filled',
-    title  : 'Lorem ipsum',
-    text   : 'Lorem ipsum dolor sit amet.',
-  })">
-    Error
-  </Button>
-</div>
-
-```ts
-import { toast } from '@privyid/persona/core'
-
-// info
-toast({
-  type   : 'info',
-  variant: 'filled',
-  title  : 'Lorem ipsum',
-  text   : 'Lorem ipsum dolor sit amet.',
-})
-
-// success
-toast({
-  type   : 'success',
-  variant: 'filled',
-  title  : 'Lorem ipsum',
-  text   : 'Lorem ipsum dolor sit amet.',
-})
-
-// warning
-toast({
-  type   : 'warning',
-  variant: 'filled',
-  title  : 'Lorem ipsum',
-  text   : 'Lorem ipsum dolor sit amet.',
-})
-
-// error
-toast({
-  type   : 'error',
-  variant: 'filled',
-  title  : 'Lorem ipsum',
-  text   : 'Lorem ipsum dolor sit amet.',
 })
 ```
 
@@ -234,48 +64,42 @@ There available 6 position for toast: `top-left`, `top-center`, `top-right`, `bo
 
 <div class="mt-3 space-gap-3">
   <Button color="info" @click="toast({
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
+    text : 'Far far away, behind the word.',
     position : 'top-left'
   })">
     Top Left
   </Button>
 
   <Button color="info" @click="toast({
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
+    text : 'Far far away, behind the word.',
     position : 'top-center'
   })">
     Top Center
   </Button>
 
   <Button color="info" @click="toast({
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
+    text : 'Far far away, behind the word.',
     position : 'top-right'
   })">
     Top Right
   </Button>
 
   <Button color="info" @click="toast({
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
+    text : 'Far far away, behind the word.',
     position : 'bottom-left'
   })">
     Bottom Left
   </Button>
 
   <Button color="info" @click="toast({
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
+    text : 'Far far away, behind the word.',
     position : 'bottom-center'
   })">
     Bottom Center
   </Button>
 
   <Button color="info" @click="toast({
-    title: 'Lorem ipsum',
-    text : 'Lorem ipsum dolor sit amet.',
+    text : 'Far far away, behind the word.',
     position : 'bottom-right'
   })">
     Bottom Right
@@ -287,44 +111,38 @@ import { toast } from '@privyid/persona/core'
 
 // top-left
 toast({
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-  position : 'top-left'
+  text: 'Far far away, behind the word.',
+  position: 'top-left'
 })
 
 // top-center
 toast({
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-  position : 'top-center'
+  text: 'Far far away, behind the word.',
+  position: 'top-center'
 })
 
 // top-right
 toast({
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-  position : 'top-right'
+  text: 'Far far away, behind the word.',
+  position: 'top-right'
 })
 
 // bottom-left
 toast({
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-  position : 'bottom-left'
+  text: 'Far far away, behind the word.',
+  position: 'bottom-left'
 })
 
 // bottom-center
 toast({
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-  position : 'bottom-center'
+  text: 'Far far away, behind the word.',
+  position: 'bottom-center'
 })
 
 // bottom-right
 toast({
-  title: 'Lorem ipsum',
-  text : 'Lorem ipsum dolor sit amet.',
-  position : 'bottom-right'
+  text: 'Far far away, behind the word.',
+  position: 'bottom-right'
 })
 ```
 
@@ -332,48 +150,25 @@ toast({
 
 It's possible to custom icon of toast, like color and icon-name.
 There are 6 icon colors available for toast: `default`, `primary`, `info`, `success`, `warning` and `danger`. Default icon color is toast icon color it's self.
-<Banner>
-Custom icon color just work in type-variant <code>info</code> with <code>simple</code> style-variant, 
-and or all type-variant with <code>filled</code> style-variant.
-</Banner>
 
 <div class="mt-3 space-x-5">
-  <Button type="" color="info" @click="toast({
-    title     : 'Member added to the group',
+  <Button color="info" @click="toast({
+    text     : 'Member added to the group',
     icon: IconSuccess,
     iconColor : 'success',
   })">
-    Show simple toast
-  </Button>
-  
-  <Button type="" color="info" @click="toast({
-    title     : 'Members removed from the group',
-    type: 'info',
-    variant: 'filled',
-    icon: IconFailed,
-    iconColor : 'default',
-  })">
-    Show filled toast
+    Show toast
   </Button>
 </div>
 
 ```ts
 import { toast } from '@privyid/persona/core'
 import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
-import IconFailed from '@privyid/persona-icon/vue/trash/24.vue'
 
 toast({
-  title: 'Member added to the group',
+  text: 'Member added to the group',
   icon: IconSuccess,
   iconColor: 'success',
-})
-
-toast({
-  title: 'Members removed from the group',
-  type: 'info',
-  variant: 'filled',
-  icon: IconFailed,
-  iconColor: 'default',
 })
 ```
 
@@ -383,8 +178,7 @@ You can add some custom class to Toast element via `toastClass`.
 
 <div class="mt-3">
   <Button type="" color="info" @click="toast({
-    title     : 'Lorem ipsum',
-    text      : 'Lorem ipsum dolor sit amet.',
+    text      : 'A wonderful serenity has taken.',
     toastClass: 'mt-28 mr-10',
   })">
     Custom Toast
@@ -395,8 +189,7 @@ You can add some custom class to Toast element via `toastClass`.
 import { toast } from '@privyid/persona/core'
 
 toast({
-  title     : 'Lorem ipsum',
-  text      : 'Lorem ipsum dolor sit amet.',
+  text      : 'A wonderful serenity has taken.',
   toastClass: 'mt-28 mr-10',
 })
 ```
@@ -413,15 +206,14 @@ Toast use local CSS variables on `.toast-container` for enhanced real-time custo
 
 `toast(options: ToastOptions): Promise<void>`
 
-| Options      |   Type   | Default  | Description                                                               |
-|--------------|:--------:|:--------:|---------------------------------------------------------------------------|
-| `type`       | `String` |  `info`  | Toast type variant, valid value is `info`, `success`, `warning`, `error`  |
-| `title`      | `String` |    -     | Toast title message, **required** (support markdown)                      |
-| `text`       | `String` |    -     | Toast text message (support markdown)                                     |
-| `icon`       | `String` or `Component`|    -    | Custom toast icon (will replace default icon)                |
-| `variant`    | `String` | `simple` | Toast style variant, valid value is `simple`, `filled`                    |
-| `duration`   | `Number` |  `3000`  | Duration for which the toast should be displayed. `-1` to permanent toast |
-| `position`   | `String` |  `bottom-left`  | Position for toast, valid value is `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right`|
-| `iconColor`  | `String` |    -     | Custom color of toast icon, valid value is `default`, `primary`, `info`, `success`, `warning`, `danger`                                                |
-| `toastClass` | `String` |    -     | Add class to toast component                                              |
+| Options       |   Type   | Default  | Description                                                               |
+|---------------|:--------:|:--------:|---------------------------------------------------------------------------|
+| `text`        | `String` |    -     | Toast text message (support markdown)                                     |
+| `icon`        | `String` or `Component`|    -    | Custom toast icon (will replace default icon)                |
+| `duration`    | `Number` |  `3000`  | Duration for which the toast should be displayed. `-1` to permanent toast |
+| `position`    | `String` |  `bottom-left`  | Position for toast, valid value is `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right`|
+| `iconColor`   | `String` |    -     | Custom color of toast icon, valid value is `default`, `primary`, `info`, `success`, `warning`, `danger`                                                |
+| `toastClass`  | `String` |    -     | Add class to toast component                                              |
+| `dismissText` | `String` |    -     | Add custom dismiss text of toast                                             |
+| `dismissVariant`   | `String` |    -     | Custom dismiss button style variant, valid value is `solid`, `outline`, `ghost` and `link`                                                |
  

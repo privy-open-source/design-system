@@ -1,7 +1,7 @@
 import { render, fireEvent } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { nextTick } from 'vue-demi'
-import ToastContainer from './ToastContainer.vue'
+import PopupContainer from './PopupContainer.vue'
 import Icon from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
 
 beforeEach(() => {
@@ -12,20 +12,21 @@ afterEach(() => {
   vi.resetAllMocks()
 })
 
-it('should be able to show all toast', async () => {
+it('should be able to show all popup', async () => {
   const screen = render({
-    components: { ToastContainer, Icon },
+    components: { PopupContainer, Icon },
     template  : `
       <div>
-        <ToastContainer ref="toast" />
-        <button @click="addToast">Show</button>
+        <PopupContainer ref="popup" />
+        <button @click="addPopup">Show</button>
       </div>
     `,
     methods: {
-      addToast () {
-        this.$refs.toast.add({
-          text: 'This is text message',
-          icon: Icon,
+      addPopup () {
+        this.$refs.popup.add({
+          title: 'This is title',
+          text : 'This is text message',
+          icon : Icon,
         })
       },
     },
@@ -36,23 +37,24 @@ it('should be able to show all toast', async () => {
   await fireEvent.click(button)
   await fireEvent.click(button)
 
-  const toasts = screen.queryAllByTestId('toast')
+  const popups = screen.queryAllByTestId('popup')
 
-  expect(toasts).toHaveLength(2)
+  expect(popups).toHaveLength(2)
 })
 
 it('should removed automatically when duration timeout', async () => {
   const screen = render({
-    components: { ToastContainer },
+    components: { PopupContainer },
     template  : `
       <div>
-        <ToastContainer ref="toast" />
-        <button @click="addToast">Show</button>
+        <PopupContainer ref="popup" />
+        <button @click="addPopup">Show</button>
       </div>
     `,
     methods: {
-      addToast () {
-        this.$refs.toast.add({
+      addPopup () {
+        this.$refs.popup.add({
+          title   : 'This is title',
           text    : 'This is text message',
           duration: 10,
         })
@@ -64,30 +66,31 @@ it('should removed automatically when duration timeout', async () => {
 
   await fireEvent.click(button)
 
-  const toast = screen.queryByTestId('toast')
+  const popup = screen.queryByTestId('popup')
 
-  expect(toast).toBeInTheDocument()
+  expect(popup).toBeInTheDocument()
 
   vi.advanceTimersByTime(11)
   await nextTick()
 
-  expect(toast).not.toBeInTheDocument()
+  expect(popup).not.toBeInTheDocument()
 })
 
 it('should removed when close clockid', async () => {
   const screen = render({
-    components: { ToastContainer },
+    components: { PopupContainer },
     template  : `
       <div>
-        <ToastContainer ref="toast" />
-        <button @click="addToast">Show</button>
+        <PopupContainer ref="popup" />
+        <button @click="addPopup">Show</button>
       </div>
     `,
     methods: {
-      addToast () {
-        this.$refs.toast.add({
-          text: 'This is text message',
-          icon: './assets/images/img-flag.svg',
+      addPopup () {
+        this.$refs.popup.add({
+          title: 'This is title',
+          text : 'This is text message',
+          icon : './assets/images/img-flag.svg',
         })
       },
     },
@@ -97,35 +100,37 @@ it('should removed when close clockid', async () => {
 
   await fireEvent.click(button)
 
-  const toast = screen.queryByTestId('toast')
-  const close = screen.queryByTestId('toast-dismiss')
+  const popup = screen.queryByTestId('popup')
+  const close = screen.queryByTestId('popup-close')
 
-  expect(toast).toBeInTheDocument()
+  expect(popup).toBeInTheDocument()
 
   await fireEvent.click(close)
 
-  expect(toast).not.toBeInTheDocument()
+  expect(popup).not.toBeInTheDocument()
 })
 
 it('should be able to have class', async () => {
   const screen = render({
-    components: { ToastContainer },
+    components: { PopupContainer },
     template  : `
           <div>
-            <ToastContainer ref="toast" />
-            <button @click="addToast">Show</button>
-            <button @click="addToast2">Show-2</button>
+            <PopupContainer ref="toast" />
+            <button @click="addPopup">Show</button>
+            <button @click="addPopup2">Show-2</button>
           </div>
       `,
     methods: {
-      addToast () {
+      addPopup () {
         this.$refs.toast.add({
+          title   : 'This is title',
           text    : 'This is text message',
           position: 'bottom-left',
         })
       },
-      addToast2 () {
+      addPopup2 () {
         this.$refs.toast.add({
+          title   : 'This is title 2',
           text    : 'This is text message 2',
           position: 'bottom-left',
         })
@@ -140,7 +145,7 @@ it('should be able to have class', async () => {
   await fireEvent.click(button2)
   await nextTick()
 
-  const toast = screen.queryAllByTestId('toast')
+  const popup = screen.queryAllByTestId('popup')
 
-  expect(toast.at(1)).toHaveTextContent('This is text message')
+  expect(popup.at(1)).toHaveTextContent('This is text message')
 })

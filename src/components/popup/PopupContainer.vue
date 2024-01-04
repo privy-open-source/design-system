@@ -1,35 +1,33 @@
 <template>
   <div
-    data-testid="toast-container"
-    class="toast-container"
+    data-testid="popup-container"
+    class="popup-container"
     :class="classNames">
     <TransitionGroup
       tag="div"
-      name="toast">
-      <Toast
+      name="popup">
+      <Popup
         v-for="(item, i) in items"
         :key="item._id"
+        :title="item.title"
         :text="item.text"
+        :type="item.type"
+        :variant="item.variant"
         :duration="item.duration"
         :icon-color="item.iconColor"
-        :dismiss-variant="item.dismissVariant"
-        :dismiss-text="item.dismissText"
-        :loading="item.loading"
-        :class="item.toastClass"
+        :class="item.popupClass"
         @dismissed="remove(i)">
-        <template
-          v-if="item.icon"
-          #icon>
+        <template #icon>
           <template v-if="item.icon && typeof item.icon === 'string'">
             <img
               :src="item.icon"
-              alt="toast-icon">
+              alt="popup-icon">
           </template>
           <template v-else-if="item.icon">
             <component :is="item.icon" />
           </template>
         </template>
-      </Toast>
+      </Popup>
     </TransitionGroup>
   </div>
 </template>
@@ -44,34 +42,34 @@ import {
   defineComponent,
   ref,
 } from 'vue-demi'
-import type { ToastOption, ToastPositionVariant } from '.'
-import Toast from './Toast.vue'
+import type { PopupOption, PopupPositionVariant } from '.'
+import Popup from './Popup.vue'
 
-interface ToastItem extends ToastOption {
+interface PopupItem extends PopupOption {
   _id: symbol,
 }
 
 export default defineComponent({
-  components: { Toast },
+  components: { Popup },
   props     : {
     position: {
-      type   : String as PropType<ToastPositionVariant>,
+      type   : String as PropType<PopupPositionVariant>,
       default: 'bottom-left',
     },
   },
   setup (props) {
-    const items: Ref<ToastItem[]> = ref([])
+    const items: Ref<PopupItem[]> = ref([])
 
     const classNames = computed(() => {
       const result: string[] = []
 
       if (props.position)
-        result.push(`toast-container--${props.position}`)
+        result.push(`popup-container--${props.position}`)
 
       return result
     })
 
-    function add (option: ToastOption) {
+    function add (option: PopupOption) {
       const item = { ...option, _id: Symbol('id') }
 
       if (props.position.startsWith('bottom'))
@@ -95,15 +93,15 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-.toast-container {
-  --p-toast-z-index: theme(zIndex.toast);
+.popup-container {
+  --p-popup-z-index: theme(zIndex.toast);
 
-  @apply z-[var(--p-toast-z-index)] fixed flex flex-col space-y-2 max-h-screen overflow-visible;
+  @apply z-[var(--p-popup-z-index)] fixed flex flex-col space-y-2 max-h-screen overflow-visible;
 
   &--top-right {
     @apply top-2 right-4;
 
-    .toast {
+    .popup {
       &-enter-from,
       &-leave-to {
         @apply opacity-0 translate-x-20;
@@ -114,7 +112,7 @@ export default defineComponent({
   &--top-center {
     @apply top-2 left-1/2 -translate-x-1/2;
 
-    .toast {
+    .popup {
       &-enter-from,
       &-leave-to {
         @apply opacity-0 -translate-y-20;
@@ -125,7 +123,7 @@ export default defineComponent({
   &--top-left {
     @apply top-2 left-4;
 
-    .toast {
+    .popup {
       &-enter-from,
       &-leave-to {
         @apply opacity-0 -translate-x-20;
@@ -136,7 +134,7 @@ export default defineComponent({
   &--bottom-right {
     @apply bottom-2 right-4;
 
-    .toast {
+    .popup {
       &-enter-from,
       &-leave-to {
         @apply opacity-0 translate-x-20;
@@ -147,7 +145,7 @@ export default defineComponent({
   &--bottom-center {
     @apply  bottom-2 left-1/2 -translate-x-1/2;
 
-    .toast {
+    .popup {
       &-enter-from,
       &-leave-to {
         @apply opacity-0 translate-y-20;
@@ -158,7 +156,7 @@ export default defineComponent({
   &--bottom-left {
     @apply bottom-2 left-4;
 
-    .toast {
+    .popup {
       &-enter-from,
       &-leave-to {
         @apply opacity-0 -translate-x-20;
@@ -179,7 +177,7 @@ export default defineComponent({
   }
 }
 
-.toast {
+.popup {
   @apply will-change-[opacity,transform] my-2;
 
   &-enter-active,

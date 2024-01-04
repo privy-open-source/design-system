@@ -1,21 +1,19 @@
 import type { Component } from 'vue-demi'
 import { useSingleton } from '../global/use-singleton'
-import type { ColorVariant } from '../button'
-
-export type ToastTypeVariant = 'info' | 'success' | 'warning' | 'error'
+import type { ColorVariant, StyleVariant } from '../button'
 
 export type ToastStyleVariant = 'simple' | 'filled'
 
 export interface ToastOption {
-  type?: ToastTypeVariant,
-  variant?: ToastStyleVariant,
-  title: string,
   text?: string,
   icon?: string | Component,
   duration?: number,
   toastClass?: string | string[],
   position?: ToastPositionVariant,
   iconColor?: ColorVariant,
+  dismissText?: string,
+  dismissVariant?: StyleVariant,
+  loading?: boolean,
 }
 
 export type ToastPositionVariant = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'

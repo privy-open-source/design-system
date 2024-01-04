@@ -1,32 +1,36 @@
 <template>
   <div
     data-testid="toast"
-    :class="classNames">
+    class="toast">
     <div
+      v-if="$slots.icon"
       class="toast__icon"
       data-testid="toast-icon"
       :class="classIcon">
-      <slot name="icon">
-        <component
-          :is="toastIcon"
-          v-if="toastIcon" />
-      </slot>
+      <slot name="icon" />
     </div>
     <div class="toast__body">
       <div
-        v-p-md.inline="title"
-        class="toast__title" />
-      <div
-        v-if="text"
         v-p-md.inline="text"
-        class="toast__text"
-        data-testid="toast-text" />
+        data-testid="toast-text"
+        class="toast__text" />
     </div>
     <div
       data-testid="toast-close"
-      class="toast__close"
-      @click="close">
-      <IconClose />
+      class="toast__close">
+      <SpinnerRinggo
+        v-if="loading"
+        class="text-subtle dark:text-dark-subtle"
+        data-testid="toast-loading" />
+      <Button
+        v-else
+        size="xs"
+        :variant="dismissVariant"
+        color="info"
+        data-testid="toast-dismiss"
+        @click="close">
+        {{ dismissText }}
+      </Button>
     </div>
   </div>
 </template>
@@ -40,41 +44,18 @@ import {
   onMounted,
   onUnmounted,
 } from 'vue-demi'
-import type { ToastStyleVariant, ToastTypeVariant } from '.'
-import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/24.vue'
-import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
-import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/24.vue'
-import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/24.vue'
-import IconClose from '@privyid/persona-icon/vue/close/16.vue'
+import SpinnerRinggo from '../spinner/SpinnerRinggo.vue'
 import { pMd } from '../markdown'
-import type { ColorVariant } from '../button'
-
-const ToastIcons = {
-  info   : IconInfo,
-  success: IconSuccess,
-  warning: IconWarning,
-  error  : IconError,
-}
+import type { ColorVariant, StyleVariant } from '../button'
+import Button from '../button/Button.vue'
 
 export default defineComponent({
-  components: { IconClose },
+  components: { SpinnerRinggo, Button },
   directives: { pMd },
   props     : {
-    title: {
-      type    : String,
-      required: true,
-    },
     text: {
       type   : String,
       default: '',
-    },
-    type: {
-      type   : String as PropType<ToastTypeVariant>,
-      default: 'info',
-    },
-    variant: {
-      type   : String as PropType<ToastStyleVariant>,
-      default: 'simple',
     },
     duration: {
       type   : Number,
@@ -84,33 +65,30 @@ export default defineComponent({
       type   : String as PropType<ColorVariant>,
       default: undefined,
     },
+    dismissVariant: {
+      type   : String as PropType<StyleVariant>,
+      default: 'ghost',
+    },
+    dismissText: {
+      type   : String,
+      default: 'Dismiss',
+    },
+    loading: {
+      type   : Boolean,
+      default: false,
+    },
   },
   emits: ['dismissed'],
   setup (props, { emit }) {
-    const timeout    = ref<ReturnType<typeof setTimeout>>()
-    const classNames = computed(() => {
-      const result: string[] = ['toast']
-
-      if (props.type)
-        result.push(`toast--${props.type}`)
-
-      if (props.variant)
-        result.push(`toast--${props.variant}`)
-
-      return result
-    })
+    const timeout = ref<ReturnType<typeof setTimeout>>()
 
     const classIcon = computed(() => {
-      const result: string[] = ['default']
+      const result: string[] = ['toast__icon--default']
 
       if (props.iconColor)
         result.push(`toast__icon--${props.iconColor}`)
 
       return result
-    })
-
-    const toastIcon = computed(() => {
-      return ToastIcons[props.type]
     })
 
     function close () {
@@ -131,8 +109,6 @@ export default defineComponent({
     })
 
     return {
-      classNames,
-      toastIcon,
       classIcon,
       close,
     }
@@ -149,49 +125,96 @@ export default defineComponent({
   * global style
   * of toast
   */
-  @apply flex shadow-xl rounded w-72 md:w-96 overflow-hidden;
+  @apply flex shadow-xl rounded w-72 md:w-96 overflow-hidden bg-inverse;
+  @apply dark:bg-dark-inverse;
 
-  .toast__icon,
-  .toast__close {
+  &__icon,
+  &__close {
     @apply shrink-0 p-4;
   }
 
-  .toast__icon {
+  &__close {
+    @apply items-center flex;
+  }
+
+  &__icon {
     @apply flex items-center justify-center;
+
+    &--default {
+      @apply text-on-emphasis;
+      @apply dark:text-dark-on-emphasis;
+    }
+
+    &--warning {
+      @apply text-warning;
+      @apply dark:text-dark-warning;
+    }
+
+    &--success {
+      @apply text-success;
+      @apply dark:text-dark-success;
+    }
+
+    &--primary {
+      @apply text-[color:var(--p-toast-icon-color-primary)];
+      @apply dark:text-[color:var(--p-toast-icon-color-primary-dark)];
+    }
+
+    &--danger {
+      @apply text-danger;
+      @apply dark:text-danger;
+    }
+
+    + .toast__body {
+      @apply pl-0;
+    }
   }
 
-  .toast__close {
-    @apply cursor-pointer text-dark-default/50 hover:text-default/50;
-    @apply dark:text-default/30;
+  &__close {
+    @apply cursor-pointer text-info hover:text-info/70;
+    @apply dark:text-dark-info dark:hover:text-dark-info/70;
+
+    .btn {
+      &.btn--variant-ghost {
+        @apply text-dark-link;
+        @apply dark:text-link;
+      }
+
+      &.btn--variant-outline {
+        @apply text-dark-default;
+        @apply dark:text-default;
+      }
+    }
   }
 
-  .toast__body {
-    @apply py-4 pr-4 grow space-y-2 flex flex-col overflow-hidden;
+  &__body {
+    @apply py-4 px-4 grow space-y-2 flex flex-col overflow-hidden;
   }
 
-  .toast__title {
-    @apply text-sm font-medium leading-[1.75] truncate;
+  &__text {
+    @apply text-sm font-medium leading-[1.75] truncate text-on-emphasis;
+    @apply dark:text-dark-on-emphasis;
   }
 
-  .toast__text {
+  /* .toast__text {
     @apply text-xs truncate;
-  }
+  } */
 
   /**
   * Give padding-left when
   * toast variant is not filled
   */
-  &:not(.toast--filled) {
+  /* &:not(.toast--filled) {
     .toast__body {
       @apply pl-4;
     }
-  }
+  } */
 
   /**
   * set toast info title
   * and text color
   */
-  &:is(.toast--info) {
+  /* &:is(.toast--info) {
     .toast__title {
       @apply text-on-emphasis;
       @apply dark:text-dark-on-emphasis;
@@ -201,14 +224,14 @@ export default defineComponent({
       @apply text-on-emphasis;
       @apply dark:text-dark-on-emphasis;
     }
-  }
+  } */
 
   /**
   * set toast info icon color.
   * provide background when
   * variant is filled
   */
-  &&--info {
+  /* &&--info {
     &:is(.toast--simple) {
       .toast__icon {
         @apply bg-base text-info;
@@ -248,7 +271,7 @@ export default defineComponent({
       @apply bg-inverse text-info;
       @apply dark:bg-dark-inverse dark:text-dark-info;
     }
-  }
+  } */
 
   /**
   * provide title color
@@ -257,7 +280,7 @@ export default defineComponent({
   * provide background color when
   * variant is filled
   */
-  &&--error {
+  /* &&--error {
     &.toast--simple {
       .toast__title {
         @apply text-danger;
@@ -300,14 +323,14 @@ export default defineComponent({
       @apply bg-warning-emphasis;
       @apply dark:bg-dark-warning-emphasis;
     }
-  }
+  } */
 
   /**
   * set global style
   * of toast in simple
   * variant
   */
-  &&--simple {
+  /* &&--simple {
     @apply bg-default;
     @apply dark:bg-dark-default;
 
@@ -322,7 +345,7 @@ export default defineComponent({
         @apply dark:text-dark-state-emphasis;
       }
     }
-  }
+  } */
 
   /**
   * aligning toast icon
@@ -330,7 +353,7 @@ export default defineComponent({
   * provide text color
   * when toast color isn't info
   */
-  &&--filled {
+  /* &&--filled {
     .toast__icon {
       @apply items-start;
 
@@ -364,7 +387,7 @@ export default defineComponent({
       @apply text-state-emphasis;
       @apply dark:text-dark-state-emphasis;
     }
-  }
+  } */
 }
 
 </style>
