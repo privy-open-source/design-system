@@ -1,0 +1,1 @@
+import{k as a}from"./index.0_XlVUlk.js";import{aa as r,l as u}from"./framework.df26sawU.js";function c(e){const n=a(r(e,"min"),{nanToZero:!0}),o=a(r(e,"max"),{nanToZero:!0}),t=a(r(e,"value"),{nanToZero:!0});return u(()=>(t.value-n.value)/(o.value-n.value))}export{c as u};
