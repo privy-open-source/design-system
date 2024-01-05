@@ -52,85 +52,83 @@
   </component>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-  ref,
-} from 'vue-demi'
+<script lang="ts" setup>
+import type { PropType, VNode } from 'vue-demi'
+import { computed, ref } from 'vue-demi'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import Heading from '../heading/Heading.vue'
 import type { ElementVariant } from '.'
 
-export default defineComponent({
-  components: { Heading, IconClose },
-  props     : {
-    element: {
-      type   : String as PropType<ElementVariant>,
-      default: 'section',
-    },
-    title: {
-      type   : String,
-      default: undefined,
-    },
-    sectioned: {
-      type   : Boolean,
-      default: false,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    callout: {
-      type   : Boolean,
-      default: false,
-    },
-    dismissable: {
-      type   : Boolean,
-      default: true,
-    },
-    bodyClass: {
-      type   : [String, Array],
-      default: undefined,
-    },
+const props = defineProps({
+  element: {
+    type   : String as PropType<ElementVariant>,
+    default: 'section',
   },
-  emits: ['dismissed'],
-  setup (props, { emit }) {
-    const show = ref(true)
-
-    const classNames = computed(() => {
-      const result: string[] = ['card']
-
-      if (props.sectioned)
-        result.push('card--sectioned')
-
-      if (props.disabled)
-        result.push('card--disabled')
-
-      if (props.callout)
-        result.push('card--callout')
-
-      return result
-    })
-
-    const elementNames = computed(() => {
-      return props.element
-    })
-
-    function close (): void {
-      show.value = false
-      emit('dismissed')
-    }
-
-    return {
-      classNames,
-      elementNames,
-      show,
-      close,
-    }
+  title: {
+    type   : String,
+    default: undefined,
+  },
+  sectioned: {
+    type   : Boolean,
+    default: false,
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  callout: {
+    type   : Boolean,
+    default: false,
+  },
+  dismissable: {
+    type   : Boolean,
+    default: true,
+  },
+  bodyClass: {
+    type   : [String, Array],
+    default: undefined,
   },
 })
+
+const emit = defineEmits<{
+  'dismissed': [],
+}>()
+
+const show = ref(true)
+
+const classNames = computed(() => {
+  const result: string[] = ['card']
+
+  if (props.sectioned)
+    result.push('card--sectioned')
+
+  if (props.disabled)
+    result.push('card--disabled')
+
+  if (props.callout)
+    result.push('card--callout')
+
+  return result
+})
+
+const elementNames = computed(() => {
+  return props.element
+})
+
+function close (): void {
+  show.value = false
+
+  emit('dismissed')
+}
+
+defineExpose({ close })
+
+defineSlots<{
+  'header':() => VNode[],
+  'action':() => VNode[],
+  'footer':() => VNode[],
+  'default':() => VNode[],
+}>()
 </script>
 
 <style lang="postcss">

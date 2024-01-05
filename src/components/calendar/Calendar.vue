@@ -72,14 +72,13 @@
   </p-card>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import pButton from '../button/Button.vue'
 import pCard from '../card/Card.vue'
 import IconNext from '@privyid/persona-icon/vue/chevron-right/20.vue'
 import IconBack from '@privyid/persona-icon/vue/chevron-left/20.vue'
 import type { PropType } from 'vue-demi'
 import {
-  defineComponent,
   ref,
   computed,
   watch,
@@ -118,269 +117,244 @@ const Adapters: Record<CalendarMode, CalendarAdapter> = {
 
 type TransitionMode = 'slide-left' | 'slide-right' | 'zoom-in' | 'zoom-out'
 
-export default defineComponent({
-  components: {
-    pButton,
-    pCard,
-    IconNext,
-    IconBack,
+const props = defineProps({
+  modelValue: {
+    type   : [Date, Array] as PropType<Date | [Date, Date]>,
+    default: undefined,
   },
-  props: {
-    modelValue: {
-      type   : [Date, Array] as PropType<Date | [Date, Date]>,
-      default: undefined,
-    },
-    start: {
-      type   : Date,
-      default: undefined,
-    },
-    end: {
-      type   : Date,
-      default: undefined,
-    },
-    disabled: {
-      type   : Boolean,
-      default: undefined,
-    },
-    readonly: {
-      type   : Boolean,
-      default: undefined,
-    },
-    min: {
-      type   : Date,
-      default: () => new Date(MIN_TIME),
-    },
-    max: {
-      type   : Date,
-      default: () => new Date(MAX_TIME),
-    },
-    mode: {
-      type   : String as PropType<CalendarMode>,
-      default: 'date',
-    },
-    range: {
-      type   : Boolean,
-      default: false,
-    },
-    minRange: {
-      type   : String,
-      default: undefined,
-      validator (value: string) {
-        return validateDuration(value)
-      },
-    },
-    maxRange: {
-      type   : String,
-      default: undefined,
-      validator (value: string) {
-        return validateDuration(value)
-      },
+  start: {
+    type   : Date,
+    default: undefined,
+  },
+  end: {
+    type   : Date,
+    default: undefined,
+  },
+  disabled: {
+    type   : Boolean,
+    default: undefined,
+  },
+  readonly: {
+    type   : Boolean,
+    default: undefined,
+  },
+  min: {
+    type   : Date,
+    default: () => new Date(MIN_TIME),
+  },
+  max: {
+    type   : Date,
+    default: () => new Date(MAX_TIME),
+  },
+  mode: {
+    type   : String as PropType<CalendarMode>,
+    default: 'date',
+  },
+  range: {
+    type   : Boolean,
+    default: false,
+  },
+  minRange: {
+    type   : String,
+    default: undefined,
+    validator (value: string) {
+      return validateDuration(value)
     },
   },
-  emits: [
-    'update:modelValue',
-    'update:start',
-    'update:end',
-    'change',
-  ],
-  setup (props, { emit }) {
-    const viewmode   = ref<CalendarMode>(props.mode)
-    const transition = ref<TransitionMode>('slide-left')
+  maxRange: {
+    type   : String,
+    default: undefined,
+    validator (value: string) {
+      return validateDuration(value)
+    },
+  },
+})
 
-    const localStart = ref(Array.isArray(props.modelValue) ? props.modelValue[0] : (props.start ?? props.modelValue))
-    const localEnd   = ref(Array.isArray(props.modelValue) ? props.modelValue[1] : (props.end ?? props.modelValue))
+const emit = defineEmits<{
+  'update:modelValue': [unknown],
+  'update:start': [Date],
+  'update:end': [Date],
+  'change': [unknown],
+}>()
 
-    /**
+const viewmode   = ref<CalendarMode>(props.mode)
+const transition = ref<TransitionMode>('slide-left')
+
+const localStart = ref(Array.isArray(props.modelValue) ? props.modelValue[0] : (props.start ?? props.modelValue))
+const localEnd   = ref(Array.isArray(props.modelValue) ? props.modelValue[1] : (props.end ?? props.modelValue))
+
+/**
      * v-model:start
      */
-    const vStart = computed({
-      get () {
-        return Array.isArray(props.modelValue)
-          ? props.modelValue?.[0]
-          : (props.start ?? props.modelValue)
-      },
-      set (value: Date) {
-        emit('update:start', value)
-      },
-    })
+const vStart = computed({
+  get () {
+    return Array.isArray(props.modelValue)
+      ? props.modelValue?.[0]
+      : (props.start ?? props.modelValue)
+  },
+  set (value: Date) {
+    emit('update:start', value)
+  },
+})
 
-    /**
+/**
      * v-model:end
      */
-    const vEnd = computed({
-      get () {
-        return Array.isArray(props.modelValue)
-          ? props.modelValue?.[1]
-          : (props.end ?? props.modelValue)
-      },
-      set (value: Date) {
-        emit('update:end', value)
-      },
-    })
-
-    const cursor = ref(startOfMonth(localStart.value ?? new Date()))
-    const hover  = ref<Date>()
-
-    const minRange   = computed(() => parseDuration(props.minRange))
-    const maxRange   = computed(() => parseDuration(props.maxRange))
-    const isTempLock = computed(() => props.range && localStart.value && !localEnd.value)
-
-    const min = computed(() => {
-      return isTempLock.value
-        ? maxDate([add(localStart.value, minRange.value ?? {}), props.min])
-        : props.min
-    })
-
-    const max = computed(() => {
-      return isTempLock.value && maxRange.value
-        ? minDate([add(localStart.value, maxRange.value), props.max])
-        : sub(props.max, minRange.value ?? {})
-    })
-
-    const context: CalendarContext = {
-      cursor: cursor,
-      start : localStart,
-      end   : localEnd,
-      min   : min,
-      max   : max,
-    }
-
-    const adapter = computed(() => {
-      return Adapters[viewmode.value]
-    })
-
-    const title = computed(() => {
-      return adapter.value.getTitle(context)
-    })
-
-    const items = computed(() => {
-      return adapter.value.getItems(context)
-    })
-
-    const canNext = computed(() => {
-      return adapter.value.canNext(context)
-    })
-
-    const canPrev = computed(() => {
-      return adapter.value.canPrev(context)
-    })
-
-    const classNames = computed(() => {
-      const result = []
-
-      if (props.disabled)
-        result.push('calendar--disabled')
-
-      if (props.readonly)
-        result.push('calendar--readonly')
-
-      if (props.range)
-        result.push('calendar--range')
-
-      return result
-    })
-
-    function next () {
-      if (!props.disabled && !props.readonly)
-        cursor.value = adapter.value.getNextCursor(context)
-    }
-
-    function prev () {
-      if (!props.disabled && !props.readonly)
-        cursor.value = adapter.value.getPrevCursor(context)
-    }
-
-    function changeMode (step = 1) {
-      if (!props.disabled && !props.readonly) {
-        const index   = CalendarFormat.indexOf(viewmode.value)
-        const newMode = CalendarFormat[index + step]
-
-        if (newMode)
-          viewmode.value = newMode
-      }
-    }
-
-    function selectItem (item: CalendarItem) {
-      if (viewmode.value === props.mode) {
-        if (props.range && (localStart.value && !localEnd.value)) {
-          localEnd.value   = maxDate([localStart.value, item.value])
-          localStart.value = minDate([localStart.value, item.value])
-        } else {
-          localStart.value = item.value
-          localEnd.value   = undefined
-        }
-      } else {
-        cursor.value = item.value
-
-        changeMode(-1)
-      }
-    }
-
-    function setHover (item: CalendarItem) {
-      if (props.range && !item.readonly && !item.disabled)
-        hover.value = item.value
-    }
-
-    function isInRange (item: CalendarItem) {
-      if (props.range && localStart.value && (localEnd.value || hover.value) && !item.readonly && !item.active) {
-        return isWithinInterval(item.value, {
-          start: minDate([localStart.value, localEnd.value ?? hover.value]),
-          end  : maxDate([localStart.value, localEnd.value ?? hover.value]),
-        })
-      }
-
-      return false
-    }
-
-    syncRef(localStart, vStart, { immediate: false })
-    syncRef(localEnd, vEnd, { immediate: false })
-
-    watch([localStart, localEnd], ([startVal, endVal]) => {
-      if (props.range) {
-        if (startVal && endVal) {
-          emit('update:modelValue', [startVal, endVal])
-          emit('change', [startVal, endVal])
-        }
-      } else {
-        emit('update:modelValue', startVal)
-        emit('change', startVal)
-      }
-    })
-
-    watch(() => props.mode, (value) => {
-      const newIndex     = CalendarFormat.indexOf(value)
-      const currentIndex = CalendarFormat.indexOf(viewmode.value)
-
-      if (newIndex > currentIndex)
-        viewmode.value = value
-    })
-
-    watch([viewmode, cursor], ([vm, cursor], [vmOld, cursorOld]) => {
-      const mode = CalendarFormat.indexOf(vm) - CalendarFormat.indexOf(vmOld)
-
-      if (mode === 0)
-        transition.value = cursor > cursorOld ? 'slide-left' : 'slide-right'
-      else
-        transition.value = mode > 0 ? 'zoom-out' : 'zoom-in'
-    })
-
-    return {
-      transition,
-      title,
-      items,
-      viewmode,
-      cursor,
-      canNext,
-      canPrev,
-      classNames,
-      next,
-      prev,
-      changeMode,
-      selectItem,
-      isInRange,
-      setHover,
-    }
+const vEnd = computed({
+  get () {
+    return Array.isArray(props.modelValue)
+      ? props.modelValue?.[1]
+      : (props.end ?? props.modelValue)
   },
+  set (value: Date) {
+    emit('update:end', value)
+  },
+})
+
+const cursor = ref(startOfMonth(localStart.value ?? new Date()))
+const hover  = ref<Date>()
+
+const minRange   = computed(() => parseDuration(props.minRange))
+const maxRange   = computed(() => parseDuration(props.maxRange))
+const isTempLock = computed(() => props.range && localStart.value && !localEnd.value)
+
+const min = computed(() => {
+  return isTempLock.value
+    ? maxDate([add(localStart.value, minRange.value ?? {}), props.min])
+    : props.min
+})
+
+const max = computed(() => {
+  return isTempLock.value && maxRange.value
+    ? minDate([add(localStart.value, maxRange.value), props.max])
+    : sub(props.max, minRange.value ?? {})
+})
+
+const context: CalendarContext = {
+  cursor: cursor,
+  start : localStart,
+  end   : localEnd,
+  min   : min,
+  max   : max,
+}
+
+const adapter = computed(() => {
+  return Adapters[viewmode.value]
+})
+
+const title = computed(() => {
+  return adapter.value.getTitle(context)
+})
+
+const items = computed(() => {
+  return adapter.value.getItems(context)
+})
+
+const canNext = computed(() => {
+  return adapter.value.canNext(context)
+})
+
+const canPrev = computed(() => {
+  return adapter.value.canPrev(context)
+})
+
+const classNames = computed(() => {
+  const result = []
+
+  if (props.disabled)
+    result.push('calendar--disabled')
+
+  if (props.readonly)
+    result.push('calendar--readonly')
+
+  if (props.range)
+    result.push('calendar--range')
+
+  return result
+})
+
+function next () {
+  if (!props.disabled && !props.readonly)
+    cursor.value = adapter.value.getNextCursor(context)
+}
+
+function prev () {
+  if (!props.disabled && !props.readonly)
+    cursor.value = adapter.value.getPrevCursor(context)
+}
+
+function changeMode (step = 1) {
+  if (!props.disabled && !props.readonly) {
+    const index   = CalendarFormat.indexOf(viewmode.value)
+    const newMode = CalendarFormat[index + step]
+
+    if (newMode)
+      viewmode.value = newMode
+  }
+}
+
+function selectItem (item: CalendarItem) {
+  if (viewmode.value === props.mode) {
+    if (props.range && (localStart.value && !localEnd.value)) {
+      localEnd.value   = maxDate([localStart.value, item.value])
+      localStart.value = minDate([localStart.value, item.value])
+    } else {
+      localStart.value = item.value
+      localEnd.value   = undefined
+    }
+  } else {
+    cursor.value = item.value
+
+    changeMode(-1)
+  }
+}
+
+function setHover (item: CalendarItem) {
+  if (props.range && !item.readonly && !item.disabled)
+    hover.value = item.value
+}
+
+function isInRange (item: CalendarItem) {
+  if (props.range && localStart.value && (localEnd.value || hover.value) && !item.readonly && !item.active) {
+    return isWithinInterval(item.value, {
+      start: minDate([localStart.value, localEnd.value ?? hover.value]),
+      end  : maxDate([localStart.value, localEnd.value ?? hover.value]),
+    })
+  }
+
+  return false
+}
+
+syncRef(localStart, vStart, { immediate: false })
+syncRef(localEnd, vEnd, { immediate: false })
+
+watch([localStart, localEnd], ([startVal, endVal]) => {
+  if (props.range) {
+    if (startVal && endVal) {
+      emit('update:modelValue', [startVal, endVal])
+      emit('change', [startVal, endVal])
+    }
+  } else {
+    emit('update:modelValue', startVal)
+    emit('change', startVal)
+  }
+})
+
+watch(() => props.mode, (value) => {
+  const newIndex     = CalendarFormat.indexOf(value)
+  const currentIndex = CalendarFormat.indexOf(viewmode.value)
+
+  if (newIndex > currentIndex)
+    viewmode.value = value
+})
+
+watch([viewmode, cursor], ([vm, cursor], [vmOld, cursorOld]) => {
+  const mode = CalendarFormat.indexOf(vm) - CalendarFormat.indexOf(vmOld)
+
+  if (mode === 0)
+    transition.value = cursor > cursorOld ? 'slide-left' : 'slide-right'
+  else
+    transition.value = mode > 0 ? 'zoom-out' : 'zoom-in'
 })
 </script>
 

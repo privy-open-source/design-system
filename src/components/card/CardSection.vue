@@ -40,34 +40,35 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import Subheading from '../subheading/Subheading.vue'
-import { defineComponent, computed } from 'vue-demi'
+import type { VNode } from 'vue-demi'
+import { computed } from 'vue-demi'
 
-export default defineComponent({
-  components: { Subheading },
-  props     : {
-    title: {
-      type   : String,
-      default: undefined,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  title: {
+    type   : String,
+    default: undefined,
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: String[] = ['card__section']
-
-      if (props.disabled)
-        result.push('card__section--disabled')
-
-      return result
-    })
-
-    return { classNames }
+  disabled: {
+    type   : Boolean,
+    default: false,
   },
 })
+
+const classNames = computed(() => {
+  const result: String[] = ['card__section']
+
+  if (props.disabled)
+    result.push('card__section--disabled')
+
+  return result
+})
+
+defineSlots<{
+  'header':() => VNode[],
+  'action':() => VNode[],
+  'footer':() => VNode[],
+  'default':() => VNode[],
+}>()
 </script>

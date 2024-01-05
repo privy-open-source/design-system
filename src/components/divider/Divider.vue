@@ -5,30 +5,25 @@
     :class="classNames" />
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue-demi'
+<script lang="ts" setup>
+import { computed } from 'vue-demi'
 
-export default defineComponent({
-  props: {
-    vertical: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  vertical: {
+    type   : Boolean,
+    default: false,
   },
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = []
+})
 
-      if (props.vertical)
-        result.push('divider--vertical')
-      else
-        result.push('divider--horizontal')
+const classNames = computed(() => {
+  const result: string[] = []
 
-      return result
-    })
+  if (props.vertical)
+    result.push('divider--vertical')
+  else
+    result.push('divider--horizontal')
 
-    return { classNames }
-  },
+  return result
 })
 </script>
 

@@ -12,7 +12,7 @@
 
     <p-tooltip
       ref="tooltip"
-      v-model="isShow"
+      :show="isShow"
       class="popover__tooltip"
       data-testid="popover-tooltip"
       :color="color"

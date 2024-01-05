@@ -31,8 +31,7 @@ description: Display content with collapse behavior
     },
   ])
 
-  const active = ref('')
-
+  const active   = ref()
   const expanded = ref(false)
 </script>
 
@@ -405,7 +404,7 @@ Add props `no-caret` to hide caret icon. Add on `p-accordion` to hide globally, 
 
 **Active :**
 
-<pre><code>{{ active }}</code></pre>
+<pre><code>{{ active ?? '-' }}</code></pre>
 
 ```vue
 <template>

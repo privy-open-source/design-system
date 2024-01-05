@@ -6,50 +6,41 @@
   </span>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import type { WeightVariant, TransformVariant } from '../heading'
 import type { SizeVariant } from '.'
 
-export default defineComponent({
-  props: {
-    weight: {
-      type   : String as PropType<WeightVariant>,
-      default: 'normal',
-    },
-    transform: {
-      type   : String as PropType<TransformVariant>,
-      default: 'normalcase',
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'xs',
-    },
+const props = defineProps({
+  weight: {
+    type   : String as PropType<WeightVariant>,
+    default: 'normal',
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['caption']
-
-      if (props.transform)
-        result.push(`caption--${props.transform}`)
-
-      if (props.weight)
-        result.push(`caption--${props.weight}`)
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
-        result.push(`caption--${props.size}`)
-
-      return result
-    })
-
-    return { classNames }
+  transform: {
+    type   : String as PropType<TransformVariant>,
+    default: 'normalcase',
   },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'xs',
+  },
+})
+
+const classNames = computed(() => {
+  const result: string[] = ['caption']
+
+  if (props.transform)
+    result.push(`caption--${props.transform}`)
+
+  if (props.weight)
+    result.push(`caption--${props.weight}`)
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (props.size)
+    result.push(`caption--${props.size}`)
+
+  return result
 })
 </script>
 

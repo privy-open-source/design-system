@@ -6,10 +6,9 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
-  defineComponent,
   computed,
   provide,
   toRef,
@@ -17,38 +16,31 @@ import {
 import { BUTTONGROUP_SETTING } from '.'
 import type { SizeVariant } from '../button'
 
-export default defineComponent({
-  props: {
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    pill: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
   },
-
-  setup (props) {
-    provide(BUTTONGROUP_SETTING, { size: toRef(props, 'size') })
-
-    const classNames = computed(() => {
-      const result: string[] = ['btn-group']
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
-        result.push(`btn-group--${props.size}`)
-
-      if (props.pill)
-        result.push('btn-group--pill')
-
-      return result
-    })
-
-    return { classNames }
+  pill: {
+    type   : Boolean,
+    default: false,
   },
 })
 
+const classNames = computed(() => {
+  const result: string[] = ['btn-group']
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (props.size)
+    result.push(`btn-group--${props.size}`)
+
+  if (props.pill)
+    result.push('btn-group--pill')
+
+  return result
+})
+
+provide(BUTTONGROUP_SETTING, { size: toRef(props, 'size') })
 </script>
 
 <style lang="postcss">

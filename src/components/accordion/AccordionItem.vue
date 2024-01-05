@@ -2,8 +2,7 @@
   <div
     :class="classNames"
     data-testid="accordion-item"
-    :disabled="disabled"
-    :data-accordion-item-id="uid">
+    :disabled="disabled">
     <slot
       name="activator"
       :toggle="toggle"
@@ -16,7 +15,7 @@
           {{ title }}
         </Subheading>
         <slot
-          v-if="!hideCaret"
+          v-if="!noCaret"
           name="caret"
           :expanded="model">
           <ChevronUp
@@ -31,32 +30,26 @@
       </div>
     </slot>
 
-    <Collapse
-      :when="model"
+    <p-collapse
+      :model-value="model"
       class="accordion__item__content"
       data-testid="accordion-item-content">
       <slot :expanded="model" />
-    </Collapse>
+    </p-collapse>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useVModel } from '@vueuse/core'
-import { ACCORDION_CONTEXT, generateId } from '.'
-import {
-  computed,
-  inject,
-  watch,
-} from 'vue-demi'
+import { useVModel } from '../input'
+import type { VNode } from 'vue-demi'
+import { computed, watch } from 'vue-demi'
 
 import Subheading from '../subheading/Subheading.vue'
-import { Collapse } from 'vue-collapsed'
+import pCollapse from '../collapse/Collapse.vue'
 import ChevronUp from '@privyid/persona-icon/vue/chevron-up/16.vue'
 import ChevronDown from '@privyid/persona-icon/vue/chevron-down/16.vue'
 
-const uid = generateId(undefined, 'accordion-item')
-
-const parentData = inject(ACCORDION_CONTEXT)
+defineOptions({ name: 'AccordionItem' })
 
 const props = defineProps({
   modelValue: {
@@ -82,11 +75,7 @@ const emit  = defineEmits<{
   'collapse': [],
 }>()
 
-const model = useVModel(props, 'modelValue', emit, { passive: true })
-
-const hideCaret = computed(() => {
-  return props.noCaret || (parentData?.noCaret)
-})
+const model = useVModel(props)
 
 const classNames = computed(() => {
   const result: string[] = ['accordion__item']
@@ -103,32 +92,22 @@ const classNames = computed(() => {
 })
 
 function toggle () {
-  if (props.disabled)
-    return
-
-  model.value = !model.value
-
-  if (!model.value && !parentData?.multiple)
-    parentData?.setOpenItem('')
+  if (!props.disabled)
+    model.value = !model.value
 }
 
-watch(
-  () => parentData?.openItem.value,
-  () => {
-    model.value = parentData?.openItem.value === uid.value && !parentData?.multiple
-  },
-)
-watch(
-  () => model.value,
-  (value) => {
-    if (value && !parentData?.multiple) parentData?.setOpenItem(uid.value)
+watch(model, (value) => {
+  if (value)
+    emit('expand')
+  else
+    emit('collapse')
+})
 
-    if (value)
-      emit('expand')
-    else
-      emit('collapse')
-  },
-)
+defineSlots<{
+  'activator':(props: { toggle: () => void, expanded: boolean }) => VNode[],
+  'caret':(props: { expanded: boolean }) => VNode[],
+  'default':(props: { expanded: boolean }) => VNode[],
+}>()
 </script>
 
 <style lang="postcss">
@@ -177,10 +156,6 @@ watch(
     > .accordion__item__activator {
       @apply opacity-50;
     }
-  }
-
-  &__content {
-    @apply transition-[height] duration-300 ease-out;
   }
 }
 </style>

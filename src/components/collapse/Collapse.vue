@@ -82,6 +82,6 @@ export default defineComponent({
 
 <style lang="postcss">
 .collapses {
-  @apply transition-[height] duration-300 ease-out block;
+  @apply transition-[height] duration-300 ease-out;
 }
 </style>

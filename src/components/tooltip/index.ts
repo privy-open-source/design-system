@@ -20,7 +20,7 @@ export interface TooltipOptions {
 }
 
 export interface TooltipItem extends TooltipOptions {
-  isShow: boolean,
+  show: boolean,
 }
 
 const handleClick      = createHandler('click', 'toggle', true)
