@@ -4,6 +4,7 @@ import type { Slots, VNode } from 'vue-demi'
 import { defineAdapter } from './adapter'
 import { colorHash } from '../../avatar/utils/color-hash'
 import { findAllChildren } from '../../utils/vnode'
+import defu from 'defu'
 
 export default defineAdapter({
   getDatasets (vnodes: VNode[]): ChartData {
@@ -17,18 +18,20 @@ export default defineAdapter({
       for (const value of values) {
         const item  = datasets.get(value.props.name)
         const color = value.props.color ?? colorHash(value.props.name).at(1)
+        const fill  = value.props.fill ?? color
 
         if (item) {
           item.data.push(value.props.value);
           (item.borderColor as string[]).push(color);
-          (item.backgroundColor as string[]).push(color)
+          (item.backgroundColor as string[]).push(fill)
         } else {
-          datasets.set(value.props.name, {
+          datasets.set(value.props.name, defu(value.props.options, {
             label          : startCase(value.props.name),
             data           : [value.props.value],
             borderColor    : [color],
-            backgroundColor: [color],
-          })
+            backgroundColor: [fill],
+            fill           : !!value.props.fill,
+          }))
         }
       }
 
@@ -47,7 +50,7 @@ export default defineAdapter({
             font : {
               family: 'DM Sans',
               size  : 12,
-              weight: '600',
+              weight: 600,
             },
           },
           border: { color: '#BFBFBF' },
@@ -58,7 +61,7 @@ export default defineAdapter({
             font : {
               family: 'DM Sans',
               size  : 12,
-              weight: '600',
+              weight: 600,
             },
           },
           border: {
