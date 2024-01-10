@@ -4360,7 +4360,7 @@ __metadata:
     "@privyid/tailwind-preset": "workspace:^"
     "@splidejs/splide": "npm:4.1.4"
     "@testing-library/dom": "npm:9.3.3"
-    "@testing-library/user-event": "npm:14.5.1"
+    "@testing-library/user-event": "npm:14.5.2"
     "@types/sanitize-html": "npm:^2"
     "@vueuse/core": "npm:10.7.0"
     "@vueuse/math": "npm:10.3.0"
@@ -4959,16 +4959,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/user-event@npm:14.5.1":
-  version: 14.5.1
-  resolution: "@testing-library/user-event@npm:14.5.1"
-  peerDependencies:
-    "@testing-library/dom": ">=7.21.4"
-  checksum: 696e1328c230b0a7063a41d82b5350c6be926696106809a4d79d446d190ff56bebb850fe564ff0952cb74ae81e59a6f10534a88ecbb3792083271a249e04e728
-  languageName: node
-  linkType: hard
-
-"@testing-library/user-event@npm:^14.4.3":
+"@testing-library/user-event@npm:14.5.2, @testing-library/user-event@npm:^14.4.3":
   version: 14.5.2
   resolution: "@testing-library/user-event@npm:14.5.2"
   peerDependencies:
