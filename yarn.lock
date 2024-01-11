@@ -6924,7 +6924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-tree@npm:^2.2.1, css-tree@npm:^2.3.1":
+"css-tree@npm:^2.3.1":
   version: 2.3.1
   resolution: "css-tree@npm:2.3.1"
   dependencies:
@@ -7027,7 +7027,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csso@npm:5.0.5, csso@npm:^5.0.5":
+"csso@npm:^5.0.5":
   version: 5.0.5
   resolution: "csso@npm:5.0.5"
   dependencies:
@@ -17325,24 +17325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svgo@npm:^3.0.2":
-  version: 3.1.0
-  resolution: "svgo@npm:3.1.0"
-  dependencies:
-    "@trysound/sax": "npm:0.2.0"
-    commander: "npm:^7.2.0"
-    css-select: "npm:^5.1.0"
-    css-tree: "npm:^2.2.1"
-    css-what: "npm:^6.1.0"
-    csso: "npm:5.0.5"
-    picocolors: "npm:^1.0.0"
-  bin:
-    svgo: ./bin/svgo
-  checksum: 7af91ef9439aaed6c74a7dc4f2405b39bb5d74719085023265f3a8cd9f2f1d6bc3e70036866d0f52e0cee027285dc49a41b7b21893571e15c61c060155b769ff
-  languageName: node
-  linkType: hard
-
-"svgo@npm:^3.2.0":
+"svgo@npm:^3.0.2, svgo@npm:^3.2.0":
   version: 3.2.0
   resolution: "svgo@npm:3.2.0"
   dependencies:
