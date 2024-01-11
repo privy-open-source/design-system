@@ -1,0 +1,1 @@
+import{ak as a,a9 as n,l as t}from"./framework.JO26iv-T.js";function l(e){const r=a(n(e,"min"),{nanToZero:!0}),u=a(n(e,"max"),{nanToZero:!0}),o=a(n(e,"value"),{nanToZero:!0});return t(()=>(o.value-r.value)/(u.value-r.value))}export{l as u};

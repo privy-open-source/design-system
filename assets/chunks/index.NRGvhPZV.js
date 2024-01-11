@@ -1,1 +1,0 @@
-import{c as s,t}from"./index.wF1wFnyO.js";import{aq as n,l as u,r as p}from"./framework.df26sawU.js";function i(e,r,o){if(typeof e=="function"||n(e))return u(()=>s(t(e),t(r),t(o)));const a=p(e);return u({get(){return a.value=s(a.value,t(r),t(o))},set(f){a.value=s(f,t(r),t(o))}})}export{i as u};
