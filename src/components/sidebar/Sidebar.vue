@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { PropType } from 'vue-demi'
+import type { PropType, VNode } from 'vue-demi'
 import {
   computed,
   provide,
@@ -81,6 +81,11 @@ defineOptions({
 
 defineEmits<{
   'update:modelValue': [boolean],
+}>()
+
+defineSlots<{
+  'brand'(): VNode[],
+  'bottom'(): VNode[],
 }>()
 
 const model  = useVModel(props)

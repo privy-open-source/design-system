@@ -44,7 +44,7 @@
   </Dropdown>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import Dropdown from '../dropdown/Dropdown.vue'
 import Input from '../input/Input.vue'
 import Calendar from '../calendar/Calendar.vue'
@@ -52,7 +52,6 @@ import { format as formatDate, isDate } from 'date-fns'
 import type { PropType } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   ref,
   watch,
 } from 'vue-demi'
@@ -61,150 +60,129 @@ import { useVModel } from '../input'
 import IconCalendar from '@privyid/persona-icon/vue/calendar/16.vue'
 import type { SizeVariant } from '../button'
 
-export default defineComponent({
-  components: {
-    Dropdown,
-    Input,
-    Calendar,
-    IconCalendar,
+const props = defineProps({
+  modelValue: {
+    type   : [Date, Array] as PropType<Date | [Date, Date]>,
+    default: undefined,
   },
-  props: {
-    modelValue: {
-      type   : [Date, Array] as PropType<Date | [Date, Date]>,
-      default: undefined,
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    start: {
-      type   : Date,
-      default: undefined,
-    },
-    end: {
-      type   : Date,
-      default: undefined,
-    },
-    placeholder: {
-      type   : String,
-      default: '',
-    },
-    format: {
-      type   : String,
-      default: 'dd/MM/yyyy',
-    },
-    disabled: {
-      type   : Boolean,
-      default: undefined,
-    },
-    readonly: {
-      type   : Boolean,
-      default: undefined,
-    },
-    error: {
-      type   : Boolean,
-      default: undefined,
-    },
-    max: {
-      type   : Date,
-      default: undefined,
-    },
-    min: {
-      type   : Date,
-      default: undefined,
-    },
-    mode: {
-      type   : String as PropType<CalendarMode>,
-      default: 'date',
-    },
-    range: {
-      type   : Boolean,
-      default: false,
-    },
-    minRange: {
-      type   : String,
-      default: undefined,
-    },
-    maxRange: {
-      type   : String,
-      default: undefined,
-    },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  start: {
+    type   : Date,
+    default: undefined,
   },
-  emits: [
-    'change',
-    'update:modelValue',
-    'update:start',
-    'update:end',
-  ],
-  setup (props, { emit }) {
-    const model  = useVModel(props)
-    const isOpen = ref(false)
-
-    const value = computed(() => {
-      const dates = Array.isArray(model.value)
-        ? model.value
-        : [model.value]
-
-      return dates.map((date) => {
-        return isDate(date)
-          ? formatDate(date as Date, props.format)
-          : ''
-      }).filter(Boolean).join(' - ')
-    })
-
-    watch(() => props.start, (start) => {
-      if (Array.isArray(model.value))
-        model.value[0] = start
-    })
-
-    watch(() => props.end, (end) => {
-      if (Array.isArray(model.value))
-        model.value[1] = end
-    })
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (isOpen.value)
-        result.push('datepicker--open')
-
-      if (props.disabled)
-        result.push('datepicker--disabled')
-
-      if (props.readonly)
-        result.push('datepicker--readonly')
-
-      if (props.error)
-        result.push('datepicker--error', 'state--error')
-
-      return result
-    })
-
-    function onFocus () {
-      if (!props.disabled && !props.readonly)
-        isOpen.value = true
-    }
-
-    function onSelected (event: Event) {
-      isOpen.value = false
-
-      emit('change', event)
-    }
-
-    return {
-      isOpen,
-      classNames,
-      model,
-      value,
-      onFocus,
-      onSelected,
-    }
+  end: {
+    type   : Date,
+    default: undefined,
+  },
+  placeholder: {
+    type   : String,
+    default: '',
+  },
+  format: {
+    type   : String,
+    default: 'dd/MM/yyyy',
+  },
+  disabled: {
+    type   : Boolean,
+    default: undefined,
+  },
+  readonly: {
+    type   : Boolean,
+    default: undefined,
+  },
+  error: {
+    type   : Boolean,
+    default: undefined,
+  },
+  max: {
+    type   : Date,
+    default: undefined,
+  },
+  min: {
+    type   : Date,
+    default: undefined,
+  },
+  mode: {
+    type   : String as PropType<CalendarMode>,
+    default: 'date',
+  },
+  range: {
+    type   : Boolean,
+    default: false,
+  },
+  minRange: {
+    type   : String,
+    default: undefined,
+  },
+  maxRange: {
+    type   : String,
+    default: undefined,
   },
 })
+
+const emit = defineEmits<{
+  'change': [unknown],
+  'update:modelValue': [unknown],
+  'update:start': [Date],
+  'update:end': [Date],
+}>()
+
+const model  = useVModel(props)
+const isOpen = ref(false)
+
+const value = computed(() => {
+  const dates = Array.isArray(model.value)
+    ? model.value
+    : [model.value]
+
+  return dates.map((date) => {
+    return isDate(date)
+      ? formatDate(date as Date, props.format)
+      : ''
+  }).filter(Boolean).join(' - ')
+})
+
+watch(() => props.start, (start) => {
+  if (Array.isArray(model.value))
+    model.value[0] = start
+})
+
+watch(() => props.end, (end) => {
+  if (Array.isArray(model.value))
+    model.value[1] = end
+})
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (isOpen.value)
+    result.push('datepicker--open')
+
+  if (props.disabled)
+    result.push('datepicker--disabled')
+
+  if (props.readonly)
+    result.push('datepicker--readonly')
+
+  if (props.error)
+    result.push('datepicker--error', 'state--error')
+
+  return result
+})
+
+function onFocus () {
+  if (!props.disabled && !props.readonly)
+    isOpen.value = true
+}
+
+function onSelected (event: Event) {
+  isOpen.value = false
+
+  emit('change', event)
+}
 </script>
 
 <style lang="postcss">

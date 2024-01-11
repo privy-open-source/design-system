@@ -27,39 +27,28 @@
   </div>
 </template>
 
-<script lang="ts">
-import { pAspectRatio } from '../aspect-ratio'
+<script lang="ts" setup>
+import { vPAspectRatio } from '../aspect-ratio'
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  onMounted,
-  ref,
-} from 'vue-demi'
+import { onMounted, ref } from 'vue-demi'
 import Heading from '../heading/Heading.vue'
 import { getVersion } from './utils/pdfjs'
 
-export default defineComponent({
-  directives: { pAspectRatio },
-  components: { Heading },
-  props     : {
-    url: {
-      type   : String,
-      default: '',
-    },
-    error: {
-      type   : Object as PropType<Error>,
-      default: () => ({} as Error),
-    },
+defineProps({
+  url: {
+    type   : String,
+    default: '',
   },
-  setup () {
-    const version = ref('')
-
-    onMounted(async () => {
-      version.value = await getVersion()
-    })
-
-    return { version }
+  error: {
+    type   : Object as PropType<Error>,
+    default: () => ({} as Error),
   },
+})
+
+const version = ref('')
+
+onMounted(async () => {
+  version.value = await getVersion()
 })
 </script>
 

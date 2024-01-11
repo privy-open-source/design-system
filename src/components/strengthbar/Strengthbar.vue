@@ -10,67 +10,57 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useToNumber } from '@vueuse/core'
 import {
   computed,
-  defineComponent,
   toRef,
 } from 'vue-demi'
 
-export default defineComponent({
-  props: {
-    length: {
-      type   : [Number, String],
-      default: 6,
-    },
-    value: {
-      type   : [Number, String],
-      default: 0,
-    },
-    min: {
-      type   : [Number, String],
-      default: 0,
-    },
-    max: {
-      type   : [Number, String],
-      default: 6,
-    },
+const props = defineProps({
+  length: {
+    type   : [Number, String],
+    default: 6,
   },
-  setup (props) {
-    const min    = useToNumber(toRef(props, 'min'), { nanToZero: true })
-    const max    = useToNumber(toRef(props, 'max'), { nanToZero: true })
-    const value  = useToNumber(toRef(props, 'value'), { nanToZero: true })
-    const length = useToNumber(toRef(props, 'length'), { nanToZero: true })
-
-    const strength = computed(() => {
-      return (value.value - min.value) / (max.value - min.value)
-    })
-
-    const items = computed(() => {
-      return Array.from({ length: length.value })
-        .map((_, i) => {
-          return Math.round(strength.value * length.value) >= (i + 1)
-        })
-    })
-
-    const status = computed(() => {
-      const val = strength.value * 3
-
-      if (val > 2)
-        return 'high'
-      else if (val > 1)
-        return 'mid'
-      else
-        return 'low'
-    })
-
-    return {
-      strength,
-      items,
-      status,
-    }
+  value: {
+    type   : [Number, String],
+    default: 0,
   },
+  min: {
+    type   : [Number, String],
+    default: 0,
+  },
+  max: {
+    type   : [Number, String],
+    default: 6,
+  },
+})
+
+const minValue    = useToNumber(toRef(props, 'min'), { nanToZero: true })
+const maxValue    = useToNumber(toRef(props, 'max'), { nanToZero: true })
+const localValue  = useToNumber(toRef(props, 'value'), { nanToZero: true })
+const lengthValue = useToNumber(toRef(props, 'length'), { nanToZero: true })
+
+const strength = computed(() => {
+  return (localValue.value - minValue.value) / (maxValue.value - minValue.value)
+})
+
+const items = computed(() => {
+  return Array.from({ length: lengthValue.value })
+    .map((_, i) => {
+      return Math.round(strength.value * lengthValue.value) >= (i + 1)
+    })
+})
+
+const status = computed(() => {
+  const val = strength.value * 3
+
+  if (val > 2)
+    return 'high'
+  else if (val > 1)
+    return 'mid'
+  else
+    return 'low'
 })
 </script>
 

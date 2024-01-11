@@ -1,7 +1,17 @@
 <template>
   <p-input
     class="input-password"
-    :type="isShow ? 'text' : 'password'">
+    :model-value="modelValue"
+    :size="size"
+    :disabled="disabled"
+    :readonly="readonly"
+    :error="error"
+    :clearable="clearable"
+    :container-class="containerClass"
+    :accept="accept"
+    :type="isShow ? 'text' : 'password'"
+    @clear="$emit('clear', $event)"
+    @update:model-value="$emit('update:modelValue', $event)">
     <template #append>
       <IconHide
         v-if="isShow"
@@ -15,42 +25,64 @@
   </p-input>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import pInput from '../input/Input.vue'
 import IconShow from '@privyid/persona-icon/vue/view/20.vue'
 import IconHide from '@privyid/persona-icon/vue/view-off/20.vue'
-import type { Ref } from 'vue-demi'
-import {
-  ref,
-  defineComponent,
-} from 'vue-demi'
+import { ref } from 'vue-demi'
+import type { PropType } from 'vue-demi'
+import type { SizeVariant } from '../button'
+import type { AcceptVariant } from '../input/utils/accept'
 
-type Props = InstanceType<typeof pInput>['$props']
-
-type Bindings = {
-  isShow: Ref<boolean>,
-  toggle: () => void,
-}
-
-export default defineComponent<Props, Bindings>({
-  components: {
-    pInput,
-    IconShow,
-    IconHide,
+defineProps({
+  modelValue: {
+    type   : [String, Number],
+    default: undefined,
   },
-  setup () {
-    const isShow = ref(false)
-
-    function toggle () {
-      isShow.value = !isShow.value
-    }
-
-    return {
-      isShow,
-      toggle,
-    }
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
+  },
+  clearable: {
+    type   : Boolean,
+    default: false,
+  },
+  containerClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  accept: {
+    type   : String as PropType<AcceptVariant>,
+    default: undefined,
   },
 })
+
+defineEmits<{
+  'update:modelValue': [string | number],
+  'clear': [MouseEvent],
+}>()
+
+const isShow = ref(false)
+
+function toggle () {
+  isShow.value = !isShow.value
+}
 </script>
 
 <style lang="postcss">

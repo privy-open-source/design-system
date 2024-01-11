@@ -43,71 +43,52 @@
   </Modal>
 </template>
 
-<script lang="ts">
-import {
-  defineComponent,
-  nextTick,
-  ref,
-} from 'vue-demi'
+<script lang="ts" setup>
+import { nextTick, ref } from 'vue-demi'
 import Modal from '../modal/Modal.vue'
 import Heading from '../heading/Heading.vue'
 import DialogFooter from './DialogFooter.vue'
 import type { DialogContext } from '.'
-import { pMd } from '../markdown'
+import { vPMd } from '../markdown'
 
-export default defineComponent({
-  components: {
-    Modal,
-    Heading,
-    DialogFooter,
-  },
-  directives: { pMd },
-  setup () {
-    const id      = ref<symbol>()
-    const modal   = ref(false)
-    const context = ref<DialogContext>()
+const id      = ref<symbol>()
+const modal   = ref(false)
+const context = ref<DialogContext>()
 
-    function show (options: DialogContext) {
-      id.value      = Symbol('DialogId')
-      context.value = options
+function show (options: DialogContext) {
+  id.value      = Symbol('DialogId')
+  context.value = options
 
-      nextTick(() => {
-        modal.value = true
-      })
-    }
+  nextTick(() => {
+    modal.value = true
+  })
+}
 
-    function hide () {
-      modal.value = false
-    }
+function hide () {
+  modal.value = false
+}
 
-    function onConfirm () {
-      hide()
+function onConfirm () {
+  hide()
 
-      // Wait animation done
-      setTimeout(() => {
-        context.value.onConfirm()
-      }, 150)
-    }
+  // Wait animation done
+  setTimeout(() => {
+    context.value.onConfirm()
+  }, 150)
+}
 
-    function onCancel () {
-      hide()
+function onCancel () {
+  hide()
 
-      // Wait animation done
-      setTimeout(() => {
-        context.value.onCancel()
-      }, 150)
-    }
+  // Wait animation done
+  setTimeout(() => {
+    context.value.onCancel()
+  }, 150)
+}
 
-    return {
-      id,
-      modal,
-      context,
-      show,
-      hide,
-      onConfirm,
-      onCancel,
-    }
-  },
+defineExpose({
+  show,
+  hide,
 })
 </script>
 

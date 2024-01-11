@@ -12,67 +12,58 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue-demi'
+<script lang="ts" setup>
+import { computed } from 'vue-demi'
 import { useProgressbar } from '.'
 
-export default defineComponent({
-  props: {
-    value: {
-      type   : [Number, String],
-      default: 0,
-    },
-    min: {
-      type   : [Number, String],
-      default: 0,
-    },
-    max: {
-      type   : [Number, String],
-      default: 100,
-    },
-    success: {
-      type   : Boolean,
-      default: false,
-    },
-    error: {
-      type   : Boolean,
-      default: false,
-    },
-    indeterminate: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  value: {
+    type   : [Number, String],
+    default: 0,
   },
-  setup (props) {
-    const percentage = useProgressbar(props)
-
-    const width = computed(() => {
-      if (props.success || props.error)
-        return '100%'
-
-      return `${percentage.value * 100}%`
-    })
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.indeterminate)
-        result.push('progressbar--indeterminate')
-
-      if (props.error)
-        result.push('progressbar--error')
-      else if (props.success)
-        result.push('progressbar--success')
-
-      return result
-    })
-
-    return {
-      width,
-      percentage,
-      classNames,
-    }
+  min: {
+    type   : [Number, String],
+    default: 0,
   },
+  max: {
+    type   : [Number, String],
+    default: 100,
+  },
+  success: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
+  },
+  indeterminate: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const percentage = useProgressbar(props)
+
+const width = computed(() => {
+  if (props.success || props.error)
+    return '100%'
+
+  return `${percentage.value * 100}%`
+})
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.indeterminate)
+    result.push('progressbar--indeterminate')
+
+  if (props.error)
+    result.push('progressbar--error')
+  else if (props.success)
+    result.push('progressbar--success')
+
+  return result
 })
 </script>
 

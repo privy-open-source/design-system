@@ -48,12 +48,12 @@
   </Transition>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import DropdownItem from '../dropdown/DropdownItem.vue'
 import IconNext from '@privyid/persona-icon/vue/chevron-right/16.vue'
 import IconBack from '@privyid/persona-icon/vue/arrow-left/16.vue'
+import type { VNode } from 'vue-demi'
 import {
-  defineComponent,
   inject,
   provide,
   ref,
@@ -64,102 +64,99 @@ import {
 import type { DropdownContext } from '.'
 import { DROPDOWN_TREE } from '.'
 
-export default defineComponent({
-  components: {
-    DropdownItem,
-    IconNext,
-    IconBack,
+defineProps({
+  text: {
+    type   : String,
+    default: '',
   },
-  props: {
-    text: {
-      type   : String,
-      default: '',
-    },
-    noCaret: {
-      type   : Boolean,
-      default: false,
-    },
+  noCaret: {
+    type   : Boolean,
+    default: false,
   },
-  emits: ['click'],
-  setup (props, { slots, emit }) {
-    const context    = inject(DROPDOWN_TREE, undefined, true)
-    const transition = ref<'slide-left' | 'slide-right' | 'none'>('slide-left')
+})
 
-    const isRoot = computed(() => {
-      return context === undefined
-    })
+const slots = defineSlots<{
+  'button-back'(): VNode[],
+  'button-content'(props: {
+    next: () => void,
+    back: () => void,
+  }): VNode[],
+}>()
 
-    const tree: DropdownContext['tree'] = context?.tree ?? shallowRef({
+const emit = defineEmits<{
+  'click': [MouseEvent],
+}>()
+
+const context    = inject(DROPDOWN_TREE, undefined, true)
+const transition = ref<'slide-left' | 'slide-right' | 'none'>('slide-left')
+
+const isRoot = computed(() => {
+  return context === undefined
+})
+
+const tree: DropdownContext['tree'] = context?.tree ?? shallowRef({
+  _level: 0,
+  slots : slots,
+})
+
+const next: DropdownContext['next'] = () => {
+  tree.value = {
+    _level: tree.value._level + 1,
+    prev  : tree.value,
+    slots : slots,
+  }
+}
+
+const back: DropdownContext['back'] = () => {
+  if (tree.value.prev)
+    tree.value = tree.value.prev
+}
+
+const view = computed(() => {
+  return tree.value.slots.default
+})
+
+const canBack = computed(() => {
+  return Boolean(isRoot.value && tree.value.prev)
+})
+
+watch(tree, (value, oldValue) => {
+  transition.value = value._level > oldValue._level
+    ? 'slide-left'
+    : 'slide-right'
+})
+
+if (isRoot.value) {
+  provide(DROPDOWN_TREE, {
+    tree,
+    next,
+    back,
+  })
+}
+
+function reset () {
+  if (isRoot.value) {
+    tree.value = {
+      prev  : undefined,
       _level: 0,
       slots : slots,
-    })
-
-    const next: DropdownContext['next'] = () => {
-      tree.value = {
-        _level: tree.value._level + 1,
-        prev  : tree.value,
-        slots : slots,
-      }
     }
+  }
+}
 
-    const back: DropdownContext['back'] = () => {
-      if (tree.value.prev)
-        tree.value = tree.value.prev
-    }
+function handleOnClick () {
+  const event = new MouseEvent('click')
 
-    const view = computed(() => {
-      return tree.value.slots.default
-    })
+  emit('click', event)
 
-    const canBack = computed(() => {
-      return Boolean(isRoot.value && tree.value.prev)
-    })
+  if (!event.defaultPrevented)
+    next()
+}
 
-    watch(tree, (value, oldValue) => {
-      transition.value = value._level > oldValue._level
-        ? 'slide-left'
-        : 'slide-right'
-    })
-
-    if (isRoot.value) {
-      provide(DROPDOWN_TREE, {
-        tree,
-        next,
-        back,
-      })
-    }
-
-    function reset () {
-      if (isRoot.value) {
-        tree.value = {
-          prev  : undefined,
-          _level: 0,
-          slots : slots,
-        }
-      }
-    }
-
-    function handleOnClick () {
-      const event = new MouseEvent('click')
-
-      emit('click', event)
-
-      if (!event.defaultPrevented)
-        next()
-    }
-
-    return {
-      isRoot,
-      tree,
-      view,
-      next,
-      back,
-      reset,
-      canBack,
-      transition,
-      handleOnClick,
-    }
-  },
+defineExpose({
+  reset,
+  next,
+  back,
 })
 </script>
 

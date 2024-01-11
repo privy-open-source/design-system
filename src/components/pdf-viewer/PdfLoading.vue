@@ -9,15 +9,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
+<script lang="ts" setup>
 import PDF_LOADING_IMG from './assets/pdf-loading.svg'
-
-export default defineComponent({
-  setup () {
-    return { PDF_LOADING_IMG }
-  },
-})
 </script>
 
 <style lang="postcss">

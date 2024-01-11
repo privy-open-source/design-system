@@ -73,8 +73,8 @@ const props = defineProps({
 })
 
 const slots = defineSlots<{
-  prepend(): VNode[],
-  append(): VNode[],
+  'prepend'(): VNode[],
+  'append'(): VNode[],
 }>()
 
 const setting = inject(INPUTGROUP_SETTING, undefined, false)

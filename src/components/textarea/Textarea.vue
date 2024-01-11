@@ -25,7 +25,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { AcceptVariant } from '../input'
 import {
   checkOnInput,
@@ -33,129 +33,117 @@ import {
 } from '../input'
 import type { PropType } from 'vue-demi'
 import {
-  defineComponent,
   computed,
   onMounted,
   watch,
+  ref,
 } from 'vue-demi'
-import { templateRef } from '@vueuse/core'
 
-export default defineComponent({
-  inheritAttrs: false,
-  props       : {
-    modelValue: {
-      type   : String,
-      default: undefined,
-    },
-    placeholder: {
-      type   : String,
-      default: '',
-    },
-    readonly: {
-      type   : Boolean,
-      default: false,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    error: {
-      type   : Boolean,
-      default: false,
-    },
-    autoGrow: {
-      type   : Boolean,
-      default: false,
-    },
-    resize: {
-      type   : Boolean,
-      default: false,
-    },
-    showCounter: {
-      type   : Boolean,
-      default: false,
-    },
-    rows: {
-      type   : [Number, String],
-      default: 3,
-    },
-    maxlength: {
-      type   : [Number, String],
-      default: undefined,
-    },
-    accept: {
-      type   : String as PropType<AcceptVariant>,
-      default: undefined,
-    },
+defineOptions({ inheritAttrs: false })
+
+const props = defineProps({
+  modelValue: {
+    type   : String,
+    default: undefined,
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  placeholder: {
+    type   : String,
+    default: '',
   },
-  emits: ['input', 'update:modelValue'],
-  setup (props) {
-    const textarea = templateRef<HTMLTextAreaElement>('textarea')
-    const model    = useVModel(props)
-
-    /** define computed property */
-    const classNames = computed(() => {
-      const results: string[] = ['textarea']
-
-      if (props.resize)
-        results.push('textarea--resize')
-
-      if (props.disabled)
-        results.push('textarea--disabled')
-
-      if (props.autoGrow)
-        results.push('textarea--autogrow')
-
-      if (props.readonly)
-        results.push('textarea--readonly')
-
-      if (props.error)
-        results.push('textarea--error', 'state--error')
-
-      return results
-    })
-
-    const charactersLength = computed(() => model.value ? model.value.length : '0')
-
-    /** define lifecycle hooks */
-    watch(() => props.autoGrow, (value) => {
-      if (value)
-        calculateRowHeight()
-      else
-        textarea.value.style.removeProperty('height')
-    }, { flush: 'post' })
-
-    onMounted(() => {
-      if (props.autoGrow && textarea.value)
-        calculateRowHeight()
-    })
-
-    /** define functions */
-    function calculateRowHeight () {
-      // reset height and max height to zero
-      textarea.value.style.height = 'auto'
-      textarea.value.style.height = `${textarea.value.scrollHeight}px`
-    }
-
-    function handleInput () {
-      if (props.autoGrow)
-        calculateRowHeight()
-    }
-
-    return {
-      model,
-      classNames,
-      handleInput,
-      checkOnInput,
-      charactersLength,
-      calculateRowHeight,
-    }
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
+  },
+  autoGrow: {
+    type   : Boolean,
+    default: false,
+  },
+  resize: {
+    type   : Boolean,
+    default: false,
+  },
+  showCounter: {
+    type   : Boolean,
+    default: false,
+  },
+  rows: {
+    type   : [Number, String],
+    default: 3,
+  },
+  maxlength: {
+    type   : [Number, String],
+    default: undefined,
+  },
+  accept: {
+    type   : String as PropType<AcceptVariant>,
+    default: undefined,
   },
 })
+
+defineEmits<{
+  'input': [string],
+  'update:modelValue': [string],
+}>()
+
+const textarea = ref<HTMLTextAreaElement>()
+const model    = useVModel(props)
+
+/** define computed property */
+const classNames = computed(() => {
+  const results: string[] = ['textarea']
+
+  if (props.resize)
+    results.push('textarea--resize')
+
+  if (props.disabled)
+    results.push('textarea--disabled')
+
+  if (props.autoGrow)
+    results.push('textarea--autogrow')
+
+  if (props.readonly)
+    results.push('textarea--readonly')
+
+  if (props.error)
+    results.push('textarea--error', 'state--error')
+
+  return results
+})
+
+const charactersLength = computed(() => model.value ? model.value.length : '0')
+
+/** define lifecycle hooks */
+watch(() => props.autoGrow, (value) => {
+  if (value)
+    calculateRowHeight()
+  else
+    textarea.value.style.removeProperty('height')
+}, { flush: 'post' })
+
+onMounted(() => {
+  if (props.autoGrow && textarea.value)
+    calculateRowHeight()
+})
+
+/** define functions */
+function calculateRowHeight () {
+  // reset height and max height to zero
+  textarea.value.style.height = 'auto'
+  textarea.value.style.height = `${textarea.value.scrollHeight}px`
+}
+
+function handleInput () {
+  if (props.autoGrow)
+    calculateRowHeight()
+}
 </script>
 
 <style lang="postcss">

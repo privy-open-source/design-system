@@ -7,61 +7,55 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   provide,
   toRef,
 } from 'vue-demi'
 import type { SizeVariant } from '../button'
 import { INPUTGROUP_SETTING } from '.'
 
-export default defineComponent({
-  props: {
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    readonly: {
-      type   : Boolean,
-      default: false,
-    },
-    error: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
   },
-  setup (props) {
-    provide(INPUTGROUP_SETTING, { size: toRef(props, 'size') })
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
-        result.push(`input-group--${props.size}`)
-
-      if (props.disabled)
-        result.push('input-group--disabled', 'state--disabled')
-
-      if (props.readonly)
-        result.push('input-group--readonly')
-
-      if (props.error)
-        result.push('input-group--error', 'state--error')
-
-      return result
-    })
-
-    return { classNames }
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
   },
 })
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (props.size)
+    result.push(`input-group--${props.size}`)
+
+  if (props.disabled)
+    result.push('input-group--disabled', 'state--disabled')
+
+  if (props.readonly)
+    result.push('input-group--readonly')
+
+  if (props.error)
+    result.push('input-group--error', 'state--error')
+
+  return result
+})
+
+provide(INPUTGROUP_SETTING, { size: toRef(props, 'size') })
 </script>
 
 <style lang="postcss">

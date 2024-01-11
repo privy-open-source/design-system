@@ -7,46 +7,41 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
-  defineComponent,
+  ref,
   toRef,
   watchEffect,
 } from 'vue-demi'
 import { autoUpdate } from '@floating-ui/dom'
-import { templateRef } from '@vueuse/core'
 
-export default defineComponent({
-  inheritAttrs: false,
-  props       : {
-    target: {
-      type   : Object as PropType<HTMLElement>,
-      default: undefined,
-    },
+defineOptions({ inheritAttrs: false })
+
+const props = defineProps({
+  target: {
+    type   : Object as PropType<HTMLElement>,
+    default: undefined,
   },
-  setup (props) {
-    const target     = toRef(props, 'target')
-    const hightlight = templateRef<HTMLDivElement>('highlight')
+})
 
-    watchEffect((onCleanup) => {
-      if (hightlight.value && target.value) {
-        const cleanup = autoUpdate(target.value, hightlight.value, () => {
-          const bounding = target.value.getBoundingClientRect()
-          const padding  = 16
+const target    = toRef(props, 'target')
+const highlight = ref<HTMLDivElement>()
 
-          hightlight.value.style.width  = `${bounding.width + padding}px`
-          hightlight.value.style.height = `${bounding.height + padding}px`
-          hightlight.value.style.left   = `${bounding.left - padding / 2}px`
-          hightlight.value.style.top    = `${bounding.top - padding / 2}px`
-        }, { animationFrame: true })
+watchEffect((onCleanup) => {
+  if (highlight.value && target.value) {
+    const cleanup = autoUpdate(target.value, highlight.value, () => {
+      const bounding = target.value.getBoundingClientRect()
+      const padding  = 16
 
-        onCleanup(cleanup)
-      }
-    })
+      highlight.value.style.width  = `${bounding.width + padding}px`
+      highlight.value.style.height = `${bounding.height + padding}px`
+      highlight.value.style.left   = `${bounding.left - padding / 2}px`
+      highlight.value.style.top    = `${bounding.top - padding / 2}px`
+    }, { animationFrame: true })
 
-    return {}
-  },
+    onCleanup(cleanup)
+  }
 })
 </script>
 

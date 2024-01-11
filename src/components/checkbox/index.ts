@@ -38,8 +38,6 @@ export function useVModel (props: CheckboxProps) {
           emit('update:modelValue', props.modelValue.filter((old) => !isEqual(old, props.value)))
       } else
         emit('update:modelValue', newValue)
-
-      emit('change', value)
     },
   })
 

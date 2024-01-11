@@ -45,20 +45,15 @@
   </NavbarNav>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import { defineComponent } from 'vue-demi'
 import NavbarNav from '../navbar/NavbarNav.vue'
 import type { Menu } from '../sidebar-menu'
 
-export default defineComponent({
-  components: { NavbarNav },
-  props     : {
-    menus: {
-      type   : Array as PropType<Menu[]>,
-      default: () => ([] as Menu[]),
-    },
+defineProps({
+  menus: {
+    type   : Array as PropType<Menu[]>,
+    default: () => ([] as Menu[]),
   },
-  setup () {},
 })
 </script>

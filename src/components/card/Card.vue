@@ -124,10 +124,10 @@ function close (): void {
 defineExpose({ close })
 
 defineSlots<{
-  'header':() => VNode[],
-  'action':() => VNode[],
-  'footer':() => VNode[],
-  'default':() => VNode[],
+  'header'(): VNode[],
+  'action'(): VNode[],
+  'footer'(): VNode[],
+  'default'(): VNode[],
 }>()
 </script>
 

@@ -39,11 +39,15 @@ export {
 } from '../components/select/adapter/basic-adapter'
 
 export {
+  type Menu,
+  type MenuItem,
+  type SubMenu,
   defineMenu,
   filterMenu,
 } from '../components/sidebar-menu'
 
 export {
+  type TableField,
   defineTable,
 } from '../components/table'
 

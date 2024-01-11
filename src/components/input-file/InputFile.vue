@@ -35,12 +35,9 @@
   </p-dropzone>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+import { computed, ref } from 'vue-demi'
 import { useVModel } from '../input'
 import pDropzone from '../dropzone/Dropzone.vue'
 import pInput from '../input/Input.vue'
@@ -49,122 +46,107 @@ import pInputGroupAddon from '../input-group/InputGroupAddon.vue'
 import pButton from '../button/Button.vue'
 import type { ModelModifier, MultipleType } from '../dropzone'
 import type { SizeVariant } from '../button'
-import { templateRef } from '@vueuse/core'
 
-export default defineComponent({
-  components: {
-    pDropzone,
-    pInput,
-    pInputGroup,
-    pInputGroupAddon,
-    pButton,
+const props = defineProps({
+  modelValue: {
+    type: [
+      globalThis.File,
+      Array,
+      String,
+    ] as PropType<globalThis.File | globalThis.File[] | string | string[]>,
+    default: undefined,
   },
-  props: {
-    modelValue: {
-      type: [
-        globalThis.File,
-        Array,
-        String,
-      ] as PropType<globalThis.File | globalThis.File[] | string | string[]>,
-      default: undefined,
-    },
-    modelModifiers: {
-      type   : Object as PropType<ModelModifier>,
-      default: () => ({} as ModelModifier),
-    },
-    multiple: {
-      type   : [Boolean, String] as PropType<boolean | MultipleType>,
-      default: false,
-    },
-    maxlength: {
-      type   : [Number, String],
-      default: undefined,
-    },
-    accept: {
-      type   : String,
-      default: '',
-    },
-    clearable: {
-      type   : Boolean,
-      default: false,
-    },
-    clearOnCancel: {
-      type   : Boolean,
-      default: false,
-    },
-    placeholder: {
-      type   : String,
-      default: 'No file chosen',
-    },
-    browseLabel: {
-      type   : String,
-      default: 'Choose file',
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    readonly: {
-      type   : Boolean,
-      default: false,
-    },
-    error: {
-      type   : Boolean,
-      default: false,
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
+  modelModifiers: {
+    type   : Object as PropType<ModelModifier>,
+    default: () => ({} as ModelModifier),
   },
-  emits: [
-    'update:modelValue',
-    'clear',
-    'change',
-    'cancel',
-  ],
-  setup (props, { emit }) {
-    const model    = useVModel(props)
-    const dropzone = templateRef<InstanceType<typeof pDropzone>>('dropzone')
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.readonly)
-        result.push('input-file--readonly')
-
-      if (props.disabled)
-        result.push('input-file--disabled')
-
-      if (props.error)
-        result.push('input-file--error')
-
-      return result
-    })
-
-    function getFileNames (files: Array<globalThis.File> | globalThis.File) {
-      return Array.isArray(files)
-        ? files.map((file) => file.name).join(', ')
-        : files?.name ?? ''
-    }
-
-    function clear () {
-      const event = new Event('clear')
-
-      emit('clear', event)
-
-      if (!props.disabled && !props.readonly && !event.defaultPrevented)
-        dropzone.value.clear()
-    }
-
-    return {
-      model,
-      classNames,
-      getFileNames,
-      clear,
-    }
+  multiple: {
+    type   : [Boolean, String] as PropType<boolean | MultipleType>,
+    default: false,
+  },
+  maxlength: {
+    type   : [Number, String],
+    default: undefined,
+  },
+  accept: {
+    type   : String,
+    default: '',
+  },
+  clearable: {
+    type   : Boolean,
+    default: false,
+  },
+  clearOnCancel: {
+    type   : Boolean,
+    default: false,
+  },
+  placeholder: {
+    type   : String,
+    default: 'No file chosen',
+  },
+  browseLabel: {
+    type   : String,
+    default: 'Choose file',
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
+  },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
   },
 })
+
+const emit = defineEmits<{
+  'update:modelValue': [unknown],
+  'clear': [Event],
+  'change': [unknown],
+  'cancel': [],
+}>()
+
+const model    = useVModel(props)
+const dropzone = ref<InstanceType<typeof pDropzone>>()
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.readonly)
+    result.push('input-file--readonly')
+
+  if (props.disabled)
+    result.push('input-file--disabled')
+
+  if (props.error)
+    result.push('input-file--error')
+
+  return result
+})
+
+function getFileNames (files: Array<globalThis.File> | globalThis.File) {
+  return Array.isArray(files)
+    ? files.map((file) => file.name).join(', ')
+    : files?.name ?? ''
+}
+
+function clear () {
+  const event = new Event('clear')
+
+  emit('clear', event)
+
+  if (!props.disabled && !props.readonly && !event.defaultPrevented)
+    dropzone.value.clear()
+}
+
+defineExpose({ dropzone })
 </script>
 
 <style lang="postcss">

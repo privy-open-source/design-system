@@ -23,32 +23,34 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue-demi'
+<script lang="ts" setup>
+import type { VNode } from 'vue-demi'
+import { computed } from 'vue-demi'
 
-export default defineComponent({
-  name : 'ProgressItem',
-  props: {
-    title: {
-      type   : String,
-      default: '',
-    },
-    active: {
-      type   : Boolean,
-      default: false,
-    },
+defineOptions({ name: 'ProgressItem' })
+
+const props = defineProps({
+  title: {
+    type   : String,
+    default: '',
   },
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.active)
-        result.push('progress--active')
-
-      return result
-    })
-
-    return { classNames }
+  active: {
+    type   : Boolean,
+    default: false,
   },
 })
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.active)
+    result.push('progress--active')
+
+  return result
+})
+
+defineSlots<{
+  'icon'(): VNode[],
+  'title'(): VNode[],
+}>()
 </script>

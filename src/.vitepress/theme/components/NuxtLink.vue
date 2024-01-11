@@ -25,36 +25,27 @@
   </router-link>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import { hasProtocol } from 'ufo'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
-import type {
-  RouteLocationRaw,
-} from 'vue-router'
+import { computed } from 'vue-demi'
+import type { RouteLocationRaw } from 'vue-router'
 
-export default defineComponent({
-  inheritAttrs: false,
-  props       : {
-    href: {
-      type   : [String, Object] as PropType<RouteLocationRaw>,
-      default: undefined,
-    },
-    replace: {
-      type   : Boolean,
-      default: false,
-    },
-  },
-  setup (props) {
-    const isExternalLink = computed(() => {
-      return typeof props.href === 'string'
-        && (hasProtocol(props.href) || props.href.startsWith('#'))
-    })
+defineOptions({ inheritAttrs: false })
 
-    return { isExternalLink }
+const props = defineProps({
+  href: {
+    type   : [String, Object] as PropType<RouteLocationRaw>,
+    default: undefined,
   },
+  replace: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const isExternalLink = computed(() => {
+  return typeof props.href === 'string'
+    && (hasProtocol(props.href) || props.href.startsWith('#'))
 })
 </script>

@@ -65,6 +65,7 @@ import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import pCaption from '../caption/Caption.vue'
 import { vPMd } from '../markdown/'
 import { vPTooltip } from '../tooltip'
+import type { VNode } from 'vue-demi'
 import { computed } from 'vue-demi'
 
 const props = defineProps({
@@ -113,6 +114,15 @@ const classNames = computed(() => {
 
   return result
 })
+
+defineSlots<{
+  'hint'(): VNode[],
+  'label'(): VNode[],
+  'caption'(): VNode[],
+  'error-icon'(): VNode[],
+  'error'(): VNode[],
+  'description'(): VNode[],
+}>()
 </script>
 
 <style lang="postcss">

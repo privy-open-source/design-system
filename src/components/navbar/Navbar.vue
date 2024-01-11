@@ -8,95 +8,82 @@
   </nav>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   provide,
+  ref,
   toRef,
   watchEffect,
 } from 'vue-demi'
 import type { StyleVariant } from '../nav'
 import {
-  templateRef,
   useElementBounding,
   useWindowScroll,
 } from '@vueuse/core'
 import type { ToggleableVariant } from '.'
-import {
-  NAVBAR_SETTINGS,
-} from '.'
+import { NAVBAR_SETTINGS } from '.'
 
-export default defineComponent({
-  props: {
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'pills',
-    },
-    toggleable: {
-      type   : String as PropType<ToggleableVariant | undefined>,
-      default: undefined,
-    },
-    fixed: {
-      type   : Boolean,
-      default: false,
-    },
-    sticky: {
-      type   : Boolean,
-      default: false,
-    },
-    condensed: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'pills',
   },
-
-  setup (props) {
-    const { y }      = useWindowScroll()
-    const navbar     = templateRef<HTMLElement>('navbar')
-    const { height } = useElementBounding(navbar)
-
-    provide(NAVBAR_SETTINGS, {
-      variant   : toRef(props, 'variant'),
-      toggleable: toRef(props, 'toggleable'),
-      condensed : toRef(props, 'condensed'),
-    })
-
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.fixed)
-        result.push('navbar--fixed')
-
-      if (props.sticky)
-        result.push('navbar--sticky')
-
-      if (props.variant)
-        result.push(`navbar--${props.variant}`)
-
-      if (props.toggleable)
-        result.push(`navbar--expand-${props.toggleable}`)
-
-      return result
-    })
-
-    watchEffect((onCleanup) => {
-      if (typeof document !== 'undefined' && document.body && props.fixed) {
-        document.body.style.setProperty('padding-top', `${height.value}px`)
-
-        onCleanup(() => {
-          document.body.style.removeProperty('padding-top')
-        })
-      }
-    })
-
-    return {
-      classNames,
-      y,
-      height,
-    }
+  toggleable: {
+    type   : String as PropType<ToggleableVariant | undefined>,
+    default: undefined,
   },
+  fixed: {
+    type   : Boolean,
+    default: false,
+  },
+  sticky: {
+    type   : Boolean,
+    default: false,
+  },
+  condensed: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const { y }      = useWindowScroll()
+const navbar     = ref<HTMLElement>()
+const { height } = useElementBounding(navbar)
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.fixed)
+    result.push('navbar--fixed')
+
+  if (props.sticky)
+    result.push('navbar--sticky')
+
+  if (props.variant)
+    result.push(`navbar--${props.variant}`)
+
+  if (props.toggleable)
+    result.push(`navbar--expand-${props.toggleable}`)
+
+  return result
+})
+
+watchEffect((onCleanup) => {
+  if (typeof document !== 'undefined' && document.body && props.fixed) {
+    document.body.style.setProperty('padding-top', `${height.value}px`)
+
+    onCleanup(() => {
+      document.body.style.removeProperty('padding-top')
+    })
+  }
+})
+
+provide(NAVBAR_SETTINGS, {
+  variant   : toRef(props, 'variant'),
+  toggleable: toRef(props, 'toggleable'),
+  condensed : toRef(props, 'condensed'),
 })
 </script>
 

@@ -7,7 +7,6 @@ description: Preview and crop image
 import pButton from '../button/Button.vue'
 import pCropper from './Cropper.vue'
 import { ref } from 'vue-demi'
-import { templateRef } from '@vueuse/core'
 import { withBase } from 'vitepress'
 
 const SAMPLE_IMG = withBase('/assets/images/img-sample-crop.jpg')
@@ -17,7 +16,7 @@ const result    = ref()
 const resultB64 = ref()
 const result2   = ref()
 
-const cropper = templateRef('cropper')
+const cropper = ref()
 
 function doCrop () {
   if (cropper.value)
@@ -164,10 +163,8 @@ You can disabled it using prop `no-autocrop`. And to trigger the cropping, you c
   <p-button @click="doCrop">Do Crop</p-button>
 </template>
 
-<script setup>
-  import { templateRef } from '@vueuse/core'
-
-  const cropper = templateRef('cropper')
+<script setup lang="ts">
+  const cropper = ref<InstanceType<typeof PCropper>>()
 
   function doCrop () {
     if (cropper.value)

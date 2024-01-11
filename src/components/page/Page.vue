@@ -7,59 +7,47 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import { useVModel } from '../input'
 import type { ToggleableVariant } from '../navbar'
 import type { TypeVariant } from '../sidebar'
 
-export default defineComponent({
-  props: {
-    expand: {
-      type   : String as PropType<ToggleableVariant>,
-      default: undefined,
-    },
-    type: {
-      type   : String as PropType<TypeVariant>,
-      default: 'narrow',
-    },
-    modelValue: {
-      type   : Boolean,
-      default: true,
-    },
+const props = defineProps({
+  expand: {
+    type   : String as PropType<ToggleableVariant>,
+    default: undefined,
   },
-
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  type: {
+    type   : String as PropType<TypeVariant>,
+    default: 'narrow',
   },
-
-  emits: ['update:modelValue'],
-
-  setup (props) {
-    const model = useVModel(props)
-
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.expand)
-        result.push(`page--expand page--expand-${props.expand}`)
-
-      if (props.expand && model.value)
-        result.push('page--expanded')
-
-      if (props.type)
-        result.push(`page--type-${props.type}`)
-
-      return result
-    })
-
-    return { classNames }
+  modelValue: {
+    type   : Boolean,
+    default: true,
   },
+})
+
+defineEmits<{
+  'update:modelValue': [boolean],
+}>()
+
+const model = useVModel(props)
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.expand)
+    result.push(`page--expand page--expand-${props.expand}`)
+
+  if (props.expand && model.value)
+    result.push('page--expanded')
+
+  if (props.type)
+    result.push(`page--type-${props.type}`)
+
+  return result
 })
 </script>
 

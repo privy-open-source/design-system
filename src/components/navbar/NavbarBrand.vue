@@ -7,18 +7,13 @@
   </a>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
-
-export default defineComponent({
-  props: {
-    href: {
-      type   : String,
-      default: undefined,
-    },
+<script lang="ts" setup>
+defineProps({
+  href: {
+    type   : String,
+    default: undefined,
   },
 })
-
 </script>
 
 <style lang="postcss">

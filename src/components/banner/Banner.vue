@@ -83,8 +83,8 @@ function close (): void {
 defineExpose({ close })
 
 defineSlots<{
-  'icon':() => VNode[],
-  'default':(props: { close: () => void }) => VNode[],
+  'icon'(): VNode[],
+  'default'(props: { close: () => void }): VNode[],
 }>()
 </script>
 

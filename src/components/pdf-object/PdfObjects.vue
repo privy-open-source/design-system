@@ -7,10 +7,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { templateRef } from '@vueuse/core'
+<script lang="ts" setup>
 import {
-  defineComponent,
+  ref,
   provide,
   toRef,
 } from 'vue-demi'
@@ -18,28 +17,23 @@ import { PDF_OBJECTS_CONTEXT } from '.'
 import { usePdfContext } from '../pdf-viewer'
 import useDrop from './utils/use-drop'
 
-export default defineComponent({
-  props: {
-    dropTarget: {
-      type   : String,
-      default: '.pdfViewer > .page',
-    },
+const props = defineProps({
+  dropTarget: {
+    type   : String,
+    default: '.pdfViewer > .page',
   },
-  setup (props) {
-    const objects    = new Map()
-    const root       = templateRef<HTMLDivElement>('root')
-    const pdfContext = usePdfContext()
-    const dropTarget = toRef(props, 'dropTarget')
+})
 
-    provide(PDF_OBJECTS_CONTEXT, {
-      ...pdfContext,
-      objects,
-      root,
-    })
+const objects    = new Map()
+const root       = ref<HTMLDivElement>()
+const pdfContext = usePdfContext()
+const dropTarget = toRef(props, 'dropTarget')
 
-    useDrop(root, dropTarget)
+useDrop(root, dropTarget)
 
-    return {}
-  },
+provide(PDF_OBJECTS_CONTEXT, {
+  ...pdfContext,
+  objects,
+  root,
 })
 </script>

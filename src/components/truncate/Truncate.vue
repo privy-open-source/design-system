@@ -21,70 +21,55 @@
   </transition>
 </template>
 
-<script lang="ts">
-import {
-  defineComponent,
-  ref,
-  computed,
-} from 'vue-demi'
-import { pTooltip } from '../tooltip'
+<script lang="ts" setup>
+import { ref, computed } from 'vue-demi'
+import { vPTooltip } from '../tooltip'
 
-export default defineComponent({
-  directives: { pTooltip },
-  props     : {
-    text: {
-      type   : String,
-      default: '',
-    },
-    length: {
-      type   : [Number, String],
-      default: 100,
-    },
-    omission: {
-      type   : String,
-      default: '...',
-    },
-    expandable: {
-      type   : Boolean,
-      default: false,
-    },
-    showMoreText: {
-      type   : String,
-      default: 'Show More',
-    },
-    showLessText: {
-      type   : String,
-      default: 'Show Less',
-    },
-    tooltip: {
-      type   : Boolean,
-      default: true,
-    },
+const props = defineProps({
+  text: {
+    type   : String,
+    default: '',
   },
-  setup (props) {
-    const expand = ref(false)
-
-    const maxLength = computed(() => {
-      return Number.parseInt(`${props.length}`)
-    })
-
-    const viewText = computed(() => {
-      if (expand.value || Number.isNaN(maxLength.value) || props.text.length <= maxLength.value)
-        return props.text
-
-      return `${props.text.slice(0, maxLength.value - props.omission.length)}${props.omission}`
-    })
-
-    function toggle () {
-      expand.value = !expand.value
-    }
-
-    return {
-      expand,
-      viewText,
-      toggle,
-      maxLength,
-    }
+  length: {
+    type   : [Number, String],
+    default: 100,
+  },
+  omission: {
+    type   : String,
+    default: '...',
+  },
+  expandable: {
+    type   : Boolean,
+    default: false,
+  },
+  showMoreText: {
+    type   : String,
+    default: 'Show More',
+  },
+  showLessText: {
+    type   : String,
+    default: 'Show Less',
+  },
+  tooltip: {
+    type   : Boolean,
+    default: true,
   },
 })
+
+const expand = ref(false)
+
+const maxLength = computed(() => {
+  return Number.parseInt(`${props.length}`)
+})
+
+const viewText = computed(() => {
+  if (expand.value || Number.isNaN(maxLength.value) || props.text.length <= maxLength.value)
+    return props.text
+
+  return `${props.text.slice(0, maxLength.value - props.omission.length)}${props.omission}`
+})
+
+function toggle () {
+  expand.value = !expand.value
+}
 </script>

@@ -11,60 +11,47 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
   autoPlacement,
   autoUpdate,
   computePosition,
   offset,
 } from '@floating-ui/dom'
-import { templateRef } from '@vueuse/core'
 import {
-  defineComponent,
   inject,
+  ref,
   watchEffect,
 } from 'vue-demi'
 import { PDF_OBJECT_CONTEXT } from '.'
 
-export default defineComponent({
-  setup () {
-    const {
-      x,
-      y,
-      page,
-      width,
-      height,
-    } = inject(PDF_OBJECT_CONTEXT)
+const {
+  x,
+  y,
+  page,
+  width,
+  height,
+} = inject(PDF_OBJECT_CONTEXT)
 
-    const target = templateRef<HTMLDivElement>('target')
+const target = ref<HTMLDivElement>()
 
-    watchEffect((onCleanup) => {
-      if (target.value) {
-        const cleanup = autoUpdate(target.value.parentElement, target.value, () => {
-          computePosition(target.value.parentElement, target.value, {
-            strategy  : 'absolute',
-            middleware: [autoPlacement(), offset(12)],
-          }).then(({ x, y }) => {
-            if (target.value) {
-              target.value.style.left = `${x || 0}px`
-              target.value.style.top  = `${y || 0}px`
-            }
-          })
-        }, { animationFrame: true })
+watchEffect((onCleanup) => {
+  if (target.value) {
+    const cleanup = autoUpdate(target.value.parentElement, target.value, () => {
+      computePosition(target.value.parentElement, target.value, {
+        strategy  : 'absolute',
+        middleware: [autoPlacement(), offset(12)],
+      }).then(({ x, y }) => {
+        if (target.value) {
+          target.value.style.left = `${x || 0}px`
+          target.value.style.top  = `${y || 0}px`
+        }
+      })
+    }, { animationFrame: true })
 
-        onCleanup(cleanup)
-      }
-    }, { flush: 'post' })
-
-    return {
-      x,
-      y,
-      page,
-      width,
-      height,
-    }
-  },
-})
+    onCleanup(cleanup)
+  }
+}, { flush: 'post' })
 </script>
 
 <style lang="postcss">

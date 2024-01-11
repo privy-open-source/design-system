@@ -13,10 +13,9 @@
   </component>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
-  defineComponent,
   inject,
   computed,
 } from 'vue-demi'
@@ -24,60 +23,54 @@ import { DROPDOWN_CONTEXT } from '.'
 import type { TagVariant } from '../button'
 import type { RouteLocationRaw } from 'vue-router'
 
-export default defineComponent({
-  props: {
-    text: {
-      type   : String,
-      default: '',
-    },
-    href: {
-      type   : [String, Object] as PropType<RouteLocationRaw>,
-      default: undefined,
-    },
-    active: {
-      type   : Boolean,
-      default: false,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  text: {
+    type   : String,
+    default: '',
   },
-  emits: ['click'],
-  setup (props, { emit }) {
-    const context = inject(DROPDOWN_CONTEXT, undefined, true)
-
-    function handleOnClick (event: Event) {
-      emit('click', event)
-
-      if ((context?.close && !event.defaultPrevented) || (event.defaultPrevented && props.href))
-        context.close()
-    }
-
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.active)
-        result.push('dropdown__item--active')
-
-      return result
-    })
-
-    const tagName = computed(() => {
-      let tag: TagVariant = 'button'
-
-      if (props.href)
-        tag = 'a'
-
-      return tag
-    })
-
-    return {
-      handleOnClick,
-      classNames,
-      tagName,
-    }
+  href: {
+    type   : [String, Object] as PropType<RouteLocationRaw>,
+    default: undefined,
   },
+  active: {
+    type   : Boolean,
+    default: false,
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const emit = defineEmits<{
+  'click': [Event],
+}>()
+
+const context = inject(DROPDOWN_CONTEXT, undefined, true)
+
+function handleOnClick (event: Event) {
+  emit('click', event)
+
+  if ((context?.close && !event.defaultPrevented) || (event.defaultPrevented && props.href))
+    context.close()
+}
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.active)
+    result.push('dropdown__item--active')
+
+  return result
+})
+
+const tagName = computed(() => {
+  let tag: TagVariant = 'button'
+
+  if (props.href)
+    tag = 'a'
+
+  return tag
 })
 </script>
 

@@ -6,46 +6,41 @@
     <slot />
   </span>
 </template>
-<script lang="ts">
-import { defineComponent, computed } from 'vue-demi'
+<script lang="ts" setup>
+import { computed } from 'vue-demi'
 
-export default defineComponent({
-  props: {
-    flush: {
-      type   : Boolean,
-      default: false,
-    },
-    horizontal: {
-      type   : Boolean,
-      default: false,
-    },
-    borderless: {
-      type   : Boolean,
-      default: false,
-    },
-    rounded: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  flush: {
+    type   : Boolean,
+    default: false,
   },
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.flush)
-        result.push('list-group--flush')
-      if (props.horizontal)
-        result.push('list-group--horizontal')
-      if (props.borderless)
-        result.push('list-group--borderless')
-      if (props.rounded)
-        result.push('list-group--rounded')
-
-      return result
-    })
-
-    return { classNames }
+  horizontal: {
+    type   : Boolean,
+    default: false,
   },
+  borderless: {
+    type   : Boolean,
+    default: false,
+  },
+  rounded: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.flush)
+    result.push('list-group--flush')
+  if (props.horizontal)
+    result.push('list-group--horizontal')
+  if (props.borderless)
+    result.push('list-group--borderless')
+  if (props.rounded)
+    result.push('list-group--rounded')
+
+  return result
 })
 </script>
 <style lang="postcss">

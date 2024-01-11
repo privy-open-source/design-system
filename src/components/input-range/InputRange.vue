@@ -15,18 +15,17 @@
         @click.capture="onClickLowerTrack" />
       <!-- Active Track -->
       <div
-        ref="track-active"
         data-testid="track-active"
         class="input-range__track input-range__track-active"
         :style="upperStyle"
         @click.capture="onClickActiveTrack">
         <div
           v-show="multiple"
-          ref="thumb-start"
+          ref="thumbStart"
           data-testid="thumb-start"
           class="input-range__thumb input-range__thumb-start" />
         <div
-          ref="thumb-end"
+          ref="thumbEnd"
           data-testid="thumb-end"
           class="input-range__thumb input-range__thumb-end" />
       </div>
@@ -39,10 +38,9 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
   syncRef,
-  templateRef,
   useElementBounding,
   useToNumber,
 } from '@vueuse/core'
@@ -53,222 +51,206 @@ import type {
 } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   ref,
   toRef,
   watch,
 } from 'vue-demi'
 import useDrag from './utils/use-drag'
 
-export default defineComponent({
-  props: {
-    modelValue: {
-      type   : [Number, Array] as PropType<number | [number, number]>,
-      default: undefined,
-    },
-    start: {
-      type   : Number,
-      default: undefined,
-    },
-    end: {
-      type   : Number,
-      default: undefined,
-    },
-    step: {
-      type   : [String, Number],
-      default: 1,
-    },
-    min: {
-      type   : [String, Number],
-      default: 0,
-    },
-    max: {
-      type   : [String, Number],
-      default: 100,
-    },
-    multiple: {
-      type   : Boolean,
-      default: false,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    readonly: {
-      type   : Boolean,
-      default: false,
-    },
-    error: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  modelValue: {
+    type   : [Number, Array] as PropType<number | [number, number]>,
+    default: undefined,
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  start: {
+    type   : Number,
+    default: undefined,
   },
-  emits: [
-    'change',
-    'update:modelValue',
-    'update:end',
-    'update:start',
-  ],
-  setup (props, { emit }) {
-    const track      = templateRef<HTMLDivElement>('track')
-    const thumbStart = templateRef<HTMLDivElement>('thumb-start')
-    const thumbEnd   = templateRef<HTMLDivElement>('thumb-end')
+  end: {
+    type   : Number,
+    default: undefined,
+  },
+  step: {
+    type   : [String, Number],
+    default: 1,
+  },
+  min: {
+    type   : [String, Number],
+    default: 0,
+  },
+  max: {
+    type   : [String, Number],
+    default: 100,
+  },
+  multiple: {
+    type   : Boolean,
+    default: false,
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
+  },
+})
 
-    const min  = useToNumber(toRef(props, 'min'))
-    const max  = useToNumber(toRef(props, 'max'))
-    const step = useToNumber(toRef(props, 'step'))
+const emit = defineEmits<{
+  'change': [unknown],
+  'update:modelValue': [unknown],
+  'update:end': [number],
+  'update:start': [number],
+}>()
 
-    // Initial value
-    const localStart = ref(Array.isArray(props.modelValue) ? props.modelValue[0] : (props.start ?? min.value))
-    const localEnd   = ref(Array.isArray(props.modelValue) ? props.modelValue[1] : (props.end ?? props.modelValue ?? max.value))
+const track      = ref<HTMLDivElement>()
+const thumbStart = ref<HTMLDivElement>()
+const thumbEnd   = ref<HTMLDivElement>()
 
-    const minDrag = computed(() => props.multiple ? localStart.value + step.value : min.value)
-    const maxDrag = computed(() => props.multiple ? localEnd.value - step.value : max.value)
+const minimum = useToNumber(toRef(props, 'min'))
+const maximum = useToNumber(toRef(props, 'max'))
+const perStep = useToNumber(toRef(props, 'step'))
 
-    const start = useClamp(localStart.value, min, maxDrag)
-    const end   = useClamp(localEnd.value, minDrag, max)
+// Initial value
+const localStart = ref(Array.isArray(props.modelValue) ? props.modelValue[0] : (props.start ?? minimum.value))
+const localEnd   = ref(Array.isArray(props.modelValue) ? props.modelValue[1] : (props.end ?? props.modelValue ?? maximum.value))
 
-    const { width, left } = useElementBounding(track)
+const minDrag = computed(() => props.multiple ? localStart.value + perStep.value : minimum.value)
+const maxDrag = computed(() => props.multiple ? localEnd.value - perStep.value : maximum.value)
 
-    const vStart = computed({
-      get () {
-        if (Array.isArray(props.modelValue))
-          return props.modelValue[0]
+const startValue = useClamp(localStart.value, minimum, maxDrag)
+const endValue   = useClamp(localEnd.value, minDrag, maximum)
 
-        return props.start ?? min.value
-      },
-      set (value: number) {
-        emit('update:start', value)
-      },
-    })
+const { width, left } = useElementBounding(track)
 
-    const vEnd = computed({
-      get () {
-        if (Array.isArray(props.modelValue))
-          return props.modelValue[1]
+const vStart = computed({
+  get () {
+    if (Array.isArray(props.modelValue))
+      return props.modelValue[0]
 
-        if (Number.isFinite(props.modelValue))
-          return props.modelValue
+    return props.start ?? minimum.value
+  },
+  set (value: number) {
+    emit('update:start', value)
+  },
+})
 
-        return props.end ?? max.value
-      },
-      set (value: number) {
-        emit('update:end', value)
-      },
-    })
+const vEnd = computed({
+  get () {
+    if (Array.isArray(props.modelValue))
+      return props.modelValue[1]
 
-    const startPercentage = computed(() => {
-      return (start.value - min.value) / (max.value - min.value) * 100
-    })
+    if (Number.isFinite(props.modelValue))
+      return props.modelValue
 
-    const endPercentage = computed(() => {
-      return (end.value - min.value) / (max.value - min.value) * 100
-    })
+    return props.end ?? maximum.value
+  },
+  set (value: number) {
+    emit('update:end', value)
+  },
+})
 
-    const classNames = computed(() => {
-      const result: string[] = []
+const startPercentage = computed(() => {
+  return (startValue.value - minimum.value) / (maximum.value - minimum.value) * 100
+})
 
-      if (props.disabled)
-        result.push('input-range--disabled')
+const endPercentage = computed(() => {
+  return (endValue.value - minimum.value) / (maximum.value - minimum.value) * 100
+})
 
-      if (props.readonly)
-        result.push('input-range--readonly')
+const classNames = computed(() => {
+  const result: string[] = []
 
-      if (props.error)
-        result.push('input-range--error', 'state--error')
+  if (props.disabled)
+    result.push('input-range--disabled')
 
-      return result
-    })
+  if (props.readonly)
+    result.push('input-range--readonly')
 
-    const lowerStyle = computed<StyleValue>(() => {
-      return { width: `${startPercentage.value}%` }
-    })
+  if (props.error)
+    result.push('input-range--error', 'state--error')
 
-    const upperStyle = computed<StyleValue>(() => {
-      return { width: `${(endPercentage.value - startPercentage.value)}%` }
-    })
+  return result
+})
 
-    function getValue (event: { pageX: number }): number {
-      const offset  = event.pageX - left.value
-      const percent = offset / width.value
-      const value   = percent * (max.value - min.value) + min.value
-      const nearest = Math.round(value / step.value) * step.value
+const lowerStyle = computed<StyleValue>(() => {
+  return { width: `${startPercentage.value}%` }
+})
 
-      return nearest
-    }
+const upperStyle = computed<StyleValue>(() => {
+  return { width: `${(endPercentage.value - startPercentage.value)}%` }
+})
 
-    function onClickLowerTrack (event: MouseEvent) {
-      if (!props.disabled && !props.readonly)
-        start.value = getValue(event)
-    }
+function getValue (event: { pageX: number }): number {
+  const offset  = event.pageX - left.value
+  const percent = offset / width.value
+  const value   = percent * (maximum.value - minimum.value) + minimum.value
+  const nearest = Math.round(value / perStep.value) * perStep.value
 
-    function onClickActiveTrack (event: MouseEvent) {
-      if (!props.disabled && !props.readonly) {
-        const value = getValue(event)
+  return nearest
+}
 
-        if (props.multiple) {
-          const ds = Math.abs(value - start.value)
-          const de = Math.abs(value - end.value)
+function onClickLowerTrack (event: MouseEvent) {
+  if (!props.disabled && !props.readonly)
+    startValue.value = getValue(event)
+}
 
-          /**
-           * if clicked near thumbStart, it changed the start value
-           * If not, change the end value
-           */
-          if (ds < de) {
-            start.value = value
+function onClickActiveTrack (event: MouseEvent) {
+  if (!props.disabled && !props.readonly) {
+    const value = getValue(event)
 
-            return
-          }
-        }
+    if (props.multiple) {
+      const ds = Math.abs(value - startValue.value)
+      const de = Math.abs(value - endValue.value)
 
-        end.value = value
+      /**
+       * if clicked near thumbStart, it changed the start value
+       * If not, change the end value
+       */
+      if (ds < de) {
+        startValue.value = value
+
+        return
       }
     }
 
-    function onClickUpperTrack (event: MouseEvent) {
-      if (!props.disabled && !props.readonly)
-        end.value = getValue(event)
-    }
+    endValue.value = value
+  }
+}
 
-    useDrag(thumbStart, (event) => {
-      if (!props.disabled && !props.readonly)
-        start.value = getValue(event)
-    })
+function onClickUpperTrack (event: MouseEvent) {
+  if (!props.disabled && !props.readonly)
+    endValue.value = getValue(event)
+}
 
-    useDrag(thumbEnd, (event) => {
-      if (!props.disabled && !props.readonly)
-        end.value = getValue(event)
-    })
+useDrag(thumbStart, (event) => {
+  if (!props.disabled && !props.readonly)
+    startValue.value = getValue(event)
+})
 
-    syncRef(start, vStart, { immediate: false })
-    syncRef(end, vEnd, { immediate: false })
+useDrag(thumbEnd, (event) => {
+  if (!props.disabled && !props.readonly)
+    endValue.value = getValue(event)
+})
 
-    watch([start, end], ([startVal, endVal]) => {
-      localStart.value = startVal
-      localEnd.value   = endVal
+syncRef(startValue, vStart, { immediate: false })
+syncRef(endValue, vEnd, { immediate: false })
 
-      if (props.multiple) {
-        emit('update:modelValue', [startVal, endVal])
-        emit('change', [startVal, endVal])
-      } else {
-        emit('update:modelValue', endVal)
-        emit('change', endVal)
-      }
-    })
+watch([startValue, endValue], ([startVal, endVal]) => {
+  localStart.value = startVal
+  localEnd.value   = endVal
 
-    return {
-      classNames,
-      lowerStyle,
-      upperStyle,
-      onClickLowerTrack,
-      onClickActiveTrack,
-      onClickUpperTrack,
-    }
-  },
+  if (props.multiple) {
+    emit('update:modelValue', [startVal, endVal])
+    emit('change', [startVal, endVal])
+  } else {
+    emit('update:modelValue', endVal)
+    emit('change', endVal)
+  }
 })
 </script>
 

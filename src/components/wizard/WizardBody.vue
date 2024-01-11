@@ -19,38 +19,32 @@
   </Steps>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type {
   Slots,
   VNode,
 } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import { findAllChildren } from '../utils/vnode'
 import Steps from '../steps/Steps.vue'
 import Step from '../steps/Step.vue'
 
-export default defineComponent({
-  components: { Steps, Step },
-  props     : {
-    modelValue: {
-      type   : Number,
-      default: 1,
-    },
+defineProps({
+  modelValue: {
+    type   : Number,
+    default: 1,
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
-  },
-  emits: ['update:modelValue'],
-  setup (props, { slots }) {
-    const steps = computed(() => {
-      return findAllChildren(slots.default(), 'WizardStep') as Array<VNode & { children: Slots }>
-    })
+})
 
-    return { steps }
-  },
+defineEmits<{
+  'update:modelValue': [number],
+}>()
+
+const slots = defineSlots<{
+  'default'(): VNode[],
+}>()
+
+const steps = computed(() => {
+  return findAllChildren(slots.default(), 'WizardStep') as Array<VNode & { children: Slots }>
 })
 </script>

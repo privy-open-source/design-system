@@ -122,7 +122,7 @@ const classNames = computed(() => {
 })
 
 const slots = defineSlots<{
-  default:() => VNode[],
+  'default'(): VNode[],
 }>()
 
 const active = useVModel(props)

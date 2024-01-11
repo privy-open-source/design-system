@@ -250,8 +250,8 @@ const indeterminate = computed(() => {
 })
 
 defineSlots<{
-  empty:() => VNode[],
-  row:(props: { index: number, item: T }) => VNode[],
+  'empty'(): VNode[],
+  'row'(props: { index: number, item: T }): VNode[],
   [K: `cell(${string})`]:(props: { index: number }) => VNode[],
   [K: `head(${string})`]:(props: { field: TableField<T>, label: string }) => VNode[],
 } & {

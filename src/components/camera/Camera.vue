@@ -340,14 +340,14 @@ defineExpose({
 })
 
 defineSlots<{
-  'default':(props: {
+  'default'(props: {
     cameras: MediaDeviceInfo[],
     preview: string,
     stream: MediaStream,
     video: HTMLVideoElement,
     shutter: HTMLAudioElement,
     toast: (message: string) => void,
-  }) => VNode[],
+  }): VNode[],
 }>()
 </script>
 

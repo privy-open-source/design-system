@@ -104,9 +104,9 @@ watch(model, (value) => {
 })
 
 defineSlots<{
-  'activator':(props: { toggle: () => void, expanded: boolean }) => VNode[],
-  'caret':(props: { expanded: boolean }) => VNode[],
-  'default':(props: { expanded: boolean }) => VNode[],
+  'activator'(props: { toggle: () => void, expanded: boolean }): VNode[],
+  'caret'(props: { expanded: boolean }): VNode[],
+  'default'(props: { expanded: boolean }): VNode[],
 }>()
 </script>
 

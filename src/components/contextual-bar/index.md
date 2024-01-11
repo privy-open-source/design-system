@@ -1,3 +1,8 @@
+---
+title: Contextual Bar · Components
+description: App-level notification bar.
+---
+
 <script setup>
 import pContextualBar from './ContextualBar.vue'
 import pButton from '../button/Button.vue'

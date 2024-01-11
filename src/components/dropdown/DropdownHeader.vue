@@ -16,11 +16,8 @@
   </Subheading>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
+<script lang="ts" setup>
 import Subheading from '../subheading/Subheading.vue'
-
-export default defineComponent({ components: { Subheading } })
 </script>
 
 <style lang="postcss">

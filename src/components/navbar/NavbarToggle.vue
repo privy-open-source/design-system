@@ -13,9 +13,8 @@
   </Button>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
-  defineComponent,
   inject,
   ref,
   computed,
@@ -25,37 +24,22 @@ import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
 import IconClose from '@privyid/persona-icon/vue/close/20.vue'
 import { NAVBAR_SETTINGS } from '.'
 
-export default defineComponent({
-  components: {
-    Button,
-    IconMenu,
-    IconClose,
-  },
-  setup () {
-    const expand     = ref(false)
-    const settings   = inject(NAVBAR_SETTINGS, undefined, false)
-    const toggleable = settings?.toggleable
+const expand     = ref(false)
+const settings   = inject(NAVBAR_SETTINGS, undefined, false)
+const toggleable = settings?.toggleable
 
-    const classNames = computed(() => {
-      const result: string[] = []
+const classNames = computed(() => {
+  const result: string[] = []
 
-      if (toggleable?.value)
-        result.push(`navbar__toggle--${toggleable?.value}`)
+  if (toggleable?.value)
+    result.push(`navbar__toggle--${toggleable?.value}`)
 
-      return result
-    })
-
-    function expanded () {
-      expand.value = !expand.value
-    }
-
-    return {
-      expanded,
-      expand,
-      classNames,
-    }
-  },
+  return result
 })
+
+function expanded () {
+  expand.value = !expand.value
+}
 </script>
 
 <style lang="postcss">

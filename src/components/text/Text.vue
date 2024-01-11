@@ -9,10 +9,9 @@
   </component>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
-  defineComponent,
   computed,
   resolveComponent,
 } from 'vue-demi'
@@ -20,63 +19,54 @@ import type { StyleVariant, ElementVariant } from '.'
 import type { WeightVariant, TransformVariant } from '../heading'
 import type { RouteLocationRaw } from 'vue-router'
 
-export default defineComponent({
-  props: {
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'body',
-    },
-    href: {
-      type   : [String, Object] as PropType<RouteLocationRaw>,
-      default: undefined,
-    },
-    weight: {
-      type   : String as PropType<WeightVariant>,
-      default: 'normal',
-    },
-    transform: {
-      type   : String as PropType<TransformVariant>,
-      default: 'normalcase',
-    },
-    element: {
-      type   : String as PropType<ElementVariant>,
-      default: 'span',
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'body',
   },
-
-  setup (props) {
-    const elementNames = computed(() => {
-      return props.href
-        ? resolveComponent('nuxt-link')
-        : props.element
-    })
-
-    const classNames = computed(() => {
-      const result : string[] = ['']
-
-      if (props.variant)
-        result.push(`freetext--${props.variant}`)
-
-      if (props.weight)
-        result.push(`freetext--${props.weight}`)
-
-      if (props.transform)
-        result.push(`freetext--${props.transform}`)
-
-      if (props.href)
-        result.push('freetext--hyperlink')
-
-      if (props.href && (props.variant === 'caption' || props.variant === 'caption2'))
-        result.push('freetext--medium')
-
-      return result
-    })
-
-    return {
-      classNames,
-      elementNames,
-    }
+  href: {
+    type   : [String, Object] as PropType<RouteLocationRaw>,
+    default: undefined,
   },
+  weight: {
+    type   : String as PropType<WeightVariant>,
+    default: 'normal',
+  },
+  transform: {
+    type   : String as PropType<TransformVariant>,
+    default: 'normalcase',
+  },
+  element: {
+    type   : String as PropType<ElementVariant>,
+    default: 'span',
+  },
+})
+
+const elementNames = computed(() => {
+  return props.href
+    ? resolveComponent('nuxt-link')
+    : props.element
+})
+
+const classNames = computed(() => {
+  const result : string[] = ['']
+
+  if (props.variant)
+    result.push(`freetext--${props.variant}`)
+
+  if (props.weight)
+    result.push(`freetext--${props.weight}`)
+
+  if (props.transform)
+    result.push(`freetext--${props.transform}`)
+
+  if (props.href)
+    result.push('freetext--hyperlink')
+
+  if (props.href && (props.variant === 'caption' || props.variant === 'caption2'))
+    result.push('freetext--medium')
+
+  return result
 })
 </script>
 

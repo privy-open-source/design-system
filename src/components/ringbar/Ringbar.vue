@@ -28,70 +28,48 @@
   </svg>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useProgressbar } from '../progressbar'
 import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import { type SizeVariant } from '../button'
 
-/**
- * How to count dashoffset
- *
- *  offset = 2 * r * π
- *
- * ex:
- *  r = 8
- *
- *  offset = 2 * 8 * 3.14
- *         = 50.2654825
- */
-export default defineComponent({
-  props: {
-    value: {
-      type   : [Number, String],
-      default: 0,
-    },
-    min: {
-      type   : [Number, String],
-      default: 0,
-    },
-    max: {
-      type   : [Number, String],
-      default: 100,
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    indeterminate: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  value: {
+    type   : [Number, String],
+    default: 0,
   },
-  setup (props) {
-    const presentage = useProgressbar(props)
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.indeterminate)
-        result.push('ringbar--indeterminate')
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
-        result.push(`ringbar--${props.size}`)
-
-      return result
-    })
-
-    return {
-      presentage,
-      classNames,
-    }
+  min: {
+    type   : [Number, String],
+    default: 0,
   },
+  max: {
+    type   : [Number, String],
+    default: 100,
+  },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  indeterminate: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const presentage = useProgressbar(props)
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.indeterminate)
+    result.push('ringbar--indeterminate')
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (props.size)
+    result.push(`ringbar--${props.size}`)
+
+  return result
 })
 </script>
 

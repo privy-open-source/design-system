@@ -1,4 +1,8 @@
 <script lang="ts">
+/**
+ * TODO: Migrate this component to script setup after defineRender has been release
+ * https://github.com/vuejs/rfcs/discussions/585
+ */
 import type { Slots } from 'vue-demi'
 import {
   defineComponent,

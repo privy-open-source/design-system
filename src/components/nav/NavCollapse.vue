@@ -16,54 +16,36 @@
   </Collapse>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import Collapse from '../collapse/Collapse.vue'
 import NavItem from '../nav/NavItem.vue'
 import IconMore from '@privyid/persona-icon/vue/chevron-down/20.vue'
-import {
-  defineComponent,
-  onMounted,
-  ref,
-} from 'vue-demi'
-import { templateRef } from '@vueuse/core'
+import { onMounted, ref } from 'vue-demi'
 
-export default defineComponent({
-  components: {
-    Collapse,
-    NavItem,
-    IconMore,
+defineProps({
+  showMoreText: {
+    type   : String,
+    default: 'More',
   },
-  props: {
-    showMoreText: {
-      type   : String,
-      default: 'More',
-    },
-    showLessText: {
-      type   : String,
-      default: 'Less',
-    },
+  showLessText: {
+    type   : String,
+    default: 'Less',
   },
-  setup () {
-    const nav      = templateRef<InstanceType<typeof NavItem>>('root')
-    const isExpand = ref(false)
+})
 
-    function toggleExpand () {
-      isExpand.value = !isExpand.value
-    }
+const root     = ref<InstanceType<typeof NavItem>>()
+const isExpand = ref(false)
 
-    onMounted(() => {
-      if (nav.value.$el) {
-        isExpand.value = nav.value.$el
-          .querySelectorAll('.router-link-active:not(.nav__link--exact),.router-link-exact-active.nav__link--exact')
-          .length > 0
-      }
-    })
+function toggleExpand () {
+  isExpand.value = !isExpand.value
+}
 
-    return {
-      isExpand,
-      toggleExpand,
-    }
-  },
+onMounted(() => {
+  if (root.value.$el) {
+    isExpand.value = root.value.$el
+      .querySelectorAll('.router-link-active:not(.nav__link--exact),.router-link-exact-active.nav__link--exact')
+      .length > 0
+  }
 })
 </script>
 

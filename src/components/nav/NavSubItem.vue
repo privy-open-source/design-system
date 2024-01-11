@@ -26,9 +26,9 @@
   </li>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import type { VNode } from 'vue-demi'
 import {
-  defineComponent,
   computed,
   inject,
   ref,
@@ -36,65 +36,58 @@ import {
 } from 'vue-demi'
 import { SIDEBAR_SETTINGS } from '../sidebar'
 import IconArrow from '@privyid/persona-icon/vue/chevron-down/16.vue'
-import { templateRef } from '@vueuse/core'
 import Collapse from '../collapse/Collapse.vue'
 
-export default defineComponent({
-  components: { IconArrow, Collapse },
-  props     : {
-    text: {
-      type   : String,
-      default: undefined,
-    },
-    collapsible: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  text: {
+    type   : String,
+    default: undefined,
   },
-
-  setup (props, { slots }) {
-    const settings    = inject(SIDEBAR_SETTINGS, undefined, true)
-    const root        = templateRef<HTMLLIElement>('root')
-    const collapsible = computed(() => props.collapsible && settings?.type !== 'narrow')
-    const isExpand    = ref(!props.collapsible)
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (slots.icon)
-        result.push('nav__subitem--icon')
-
-      if (collapsible.value) {
-        result.push('nav__subitem--collapsible')
-
-        if (isExpand.value)
-          result.push('nav__subitem--expanded')
-        else
-          result.push('nav__subitem--collapsed')
-      }
-
-      return result
-    })
-
-    function toggleExpand () {
-      if (collapsible.value)
-        isExpand.value = !isExpand.value
-    }
-
-    onMounted(() => {
-      if (collapsible.value && root.value) {
-        isExpand.value = root.value
-          .querySelectorAll('.router-link-active:not(.nav__link--exact),.router-link-exact-active.nav__link--exact')
-          .length > 0
-      }
-    })
-
-    return {
-      classNames,
-      toggleExpand,
-      isExpand,
-    }
+  collapsible: {
+    type   : Boolean,
+    default: false,
   },
+})
+
+const slots = defineSlots<{
+  'icon'(): VNode[],
+  'default'(): VNode[],
+}>()
+
+const settings    = inject(SIDEBAR_SETTINGS, undefined, true)
+const root        = ref<HTMLLIElement>()
+const collapsible = computed(() => props.collapsible && settings?.type !== 'narrow')
+const isExpand    = ref(!props.collapsible)
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (slots.icon)
+    result.push('nav__subitem--icon')
+
+  if (collapsible.value) {
+    result.push('nav__subitem--collapsible')
+
+    if (isExpand.value)
+      result.push('nav__subitem--expanded')
+    else
+      result.push('nav__subitem--collapsed')
+  }
+
+  return result
+})
+
+function toggleExpand () {
+  if (collapsible.value)
+    isExpand.value = !isExpand.value
+}
+
+onMounted(() => {
+  if (collapsible.value && root.value) {
+    isExpand.value = root.value
+      .querySelectorAll('.router-link-active:not(.nav__link--exact),.router-link-exact-active.nav__link--exact')
+      .length > 0
+  }
 })
 </script>
 

@@ -39,8 +39,9 @@
     </slot>
   </div>
 </template>
+
 <script lang="ts" setup>
-import type { PropType } from 'vue-demi'
+import type { PropType, VNode } from 'vue-demi'
 import { computed } from 'vue-demi'
 import { useVModel } from '../input'
 import IconCheckmarkCircleSolid20 from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
@@ -111,9 +112,15 @@ const inputClass = computed(() => {
 
 function clear () {
   emit('clear')
+
   model.value = ''
 }
+
+defineSlots<{
+  'clearable'(props: { clear: () => void }): VNode[],
+}>()
 </script>
+
 <style lang="postcss">
 .input-color {
   /**
