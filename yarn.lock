@@ -1082,12 +1082,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/selector-specificity@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@csstools/selector-specificity@npm:3.0.0"
+"@csstools/selector-specificity@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@csstools/selector-specificity@npm:3.0.1"
   peerDependencies:
     postcss-selector-parser: ^6.0.13
-  checksum: 4a2dfe69998a499155d9dab4c2a0e7ae7594d8db98bb8a487d2d5347c0c501655051eb5eacad3fe323c86b0ba8212fe092c27fc883621e6ac2a27662edfc3528
+  checksum: e4b5aac3bd3ca1f824cb9578f52b16046a519aa8050ce291da37e611976a83cd3b2b2f908d2678dd4cbbe00bbde8ec28c34fffc40dbbf9a13608dfcaf382ee80
   languageName: node
   linkType: hard
 
@@ -2444,6 +2444,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nuxt/kit@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "@nuxt/kit@npm:3.9.1"
+  dependencies:
+    "@nuxt/schema": "npm:3.9.1"
+    c12: "npm:^1.6.1"
+    consola: "npm:^3.2.3"
+    defu: "npm:^6.1.4"
+    globby: "npm:^14.0.0"
+    hash-sum: "npm:^2.0.0"
+    ignore: "npm:^5.3.0"
+    jiti: "npm:^1.21.0"
+    knitwork: "npm:^1.0.0"
+    mlly: "npm:^1.4.2"
+    pathe: "npm:^1.1.1"
+    pkg-types: "npm:^1.0.3"
+    scule: "npm:^1.1.1"
+    semver: "npm:^7.5.4"
+    ufo: "npm:^1.3.2"
+    unctx: "npm:^2.3.1"
+    unimport: "npm:^3.7.1"
+    untyped: "npm:^1.4.0"
+  checksum: 0362b70efd2a46de037a29772a1b3f68e689b789b278caaeeb67b5cc3042b1c2f9199467580d91f97cf10bdabcbe25298ade0dd137de47477241ebfd84b953d0
+  languageName: node
+  linkType: hard
+
 "@nuxt/module-builder@npm:^0.5.0":
   version: 0.5.5
   resolution: "@nuxt/module-builder@npm:0.5.5"
@@ -2498,6 +2524,25 @@ __metadata:
     unimport: "npm:^3.7.0"
     untyped: "npm:^1.4.0"
   checksum: 49164c93b643621cfc5ccaf9716b671c00340e168397610491024541f887d09d8fdb9d90cf53fc2b0df852fb21bc6c5dc5e72604f0c551d0e58ad6e70146f7dc
+  languageName: node
+  linkType: hard
+
+"@nuxt/schema@npm:3.9.1":
+  version: 3.9.1
+  resolution: "@nuxt/schema@npm:3.9.1"
+  dependencies:
+    "@nuxt/ui-templates": "npm:^1.3.1"
+    consola: "npm:^3.2.3"
+    defu: "npm:^6.1.4"
+    hookable: "npm:^5.5.3"
+    pathe: "npm:^1.1.1"
+    pkg-types: "npm:^1.0.3"
+    scule: "npm:^1.1.1"
+    std-env: "npm:^3.7.0"
+    ufo: "npm:^1.3.2"
+    unimport: "npm:^3.7.1"
+    untyped: "npm:^1.4.0"
+  checksum: d1da137d80c3f99e8bb483621e25752013c5152638032215b779485cf5a65ec27601be3fddbe4d051bc3f8fe4999a48e3f46ec631d4a2ffd1a5c5ac43e803ebf
   languageName: node
   linkType: hard
 
@@ -2579,26 +2624,26 @@ __metadata:
   linkType: hard
 
 "@nuxtjs/tailwindcss@npm:^6.2.0":
-  version: 6.10.3
-  resolution: "@nuxtjs/tailwindcss@npm:6.10.3"
+  version: 6.10.4
+  resolution: "@nuxtjs/tailwindcss@npm:6.10.4"
   dependencies:
-    "@nuxt/kit": "npm:^3.8.2"
+    "@nuxt/kit": "npm:^3.9.1"
     autoprefixer: "npm:^10.4.16"
     chokidar: "npm:^3.5.3"
     clear-module: "npm:^4.1.2"
     colorette: "npm:^2.0.20"
     consola: "npm:^3.2.3"
-    defu: "npm:^6.1.3"
-    h3: "npm:^1.9.0"
+    defu: "npm:^6.1.4"
+    h3: "npm:^1.10.0"
     micromatch: "npm:^4.0.5"
     pathe: "npm:^1.1.1"
-    postcss: "npm:^8.4.31"
-    postcss-custom-properties: "npm:^13.3.2"
-    postcss-nesting: "npm:^12.0.1"
+    postcss: "npm:^8.4.33"
+    postcss-custom-properties: "npm:^13.3.4"
+    postcss-nesting: "npm:^12.0.2"
     tailwind-config-viewer: "npm:^1.7.3"
-    tailwindcss: "npm:~3.4.0"
+    tailwindcss: "npm:~3.4.1"
     ufo: "npm:^1.3.2"
-  checksum: 8520b342dc51e9f00726a5883f966dc81096ac7554b2bf028a59d1c928d14321f8020a69af47c833313e2a653b9d8204061e637955fed9d5529d1d00ac6fe5f9
+  checksum: 5e69d1309ce32f03c078cbdc0ab829093509ff18da8ad2b668240fac6c33b58d9091811bc30b767f929b8ef4c9aa22862c39dcdc3edb542073bc97155e13fdf3
   languageName: node
   linkType: hard
 
@@ -6005,6 +6050,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"c12@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "c12@npm:1.6.1"
+  dependencies:
+    chokidar: "npm:^3.5.3"
+    defu: "npm:^6.1.3"
+    dotenv: "npm:^16.3.1"
+    giget: "npm:^1.2.1"
+    jiti: "npm:^1.21.0"
+    mlly: "npm:^1.4.2"
+    ohash: "npm:^1.1.3"
+    pathe: "npm:^1.1.1"
+    perfect-debounce: "npm:^1.0.0"
+    pkg-types: "npm:^1.0.3"
+    rc9: "npm:^2.1.1"
+  checksum: a26d1ce0c369213d0c8199fb4d0e80b549743e2228ad6eaf35557db0929d584f9d4267c63fbbdcdaa25f2df98ec16067eb82e26009f1d764c519d794038cfbba
+  languageName: node
+  linkType: hard
+
 "c8@npm:^7.12.0":
   version: 7.12.0
   resolution: "c8@npm:7.12.0"
@@ -7335,6 +7399,13 @@ __metadata:
   version: 6.1.2
   resolution: "defu@npm:6.1.2"
   checksum: 5704aa6ea0b503004ee25b2ce909af8e6dc7c472d2d41e293f5a879534a0a7827a37e6692e0ca0c6e8d3ef6b00651d50089be681c814832cbed98f0f206ef25b
+  languageName: node
+  linkType: hard
+
+"defu@npm:^6.1.4":
+  version: 6.1.4
+  resolution: "defu@npm:6.1.4"
+  checksum: aeffdb47300f45b4fdef1c5bd3880ac18ea7a1fd5b8a8faf8df29350ff03bf16dd34f9800205cab513d476e4c0a3783aa0cff0a433aff0ac84a67ddc4c8a2d64
   languageName: node
   linkType: hard
 
@@ -10074,6 +10145,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"giget@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "giget@npm:1.2.1"
+  dependencies:
+    citty: "npm:^0.1.5"
+    consola: "npm:^3.2.3"
+    defu: "npm:^6.1.3"
+    node-fetch-native: "npm:^1.6.1"
+    nypm: "npm:^0.3.3"
+    ohash: "npm:^1.1.3"
+    pathe: "npm:^1.1.1"
+    tar: "npm:^6.2.0"
+  bin:
+    giget: dist/cli.mjs
+  checksum: 5d50c70754fef1f199547fc58ad8ad18fed7f4ee3a2e624827d3f214476b731492ee96bd14934ae23b863524369801b23fd0785028576837be0c23bf2031c2b7
+  languageName: node
+  linkType: hard
+
 "git-config-path@npm:^2.0.0":
   version: 2.0.0
   resolution: "git-config-path@npm:2.0.0"
@@ -10344,6 +10433,22 @@ __metadata:
   dependencies:
     duplexer: "npm:^0.1.2"
   checksum: 52d0bf586307082428b99f7b04d56d756d640e1f84d4a56debf9fb8c972d9db679143b067dd4024ebef42e9f6787e9dc8b9dcad344372b9dc87e55d942276f49
+  languageName: node
+  linkType: hard
+
+"h3@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "h3@npm:1.10.0"
+  dependencies:
+    cookie-es: "npm:^1.0.0"
+    defu: "npm:^6.1.3"
+    destr: "npm:^2.0.2"
+    iron-webcrypto: "npm:^1.0.0"
+    radix3: "npm:^1.1.0"
+    ufo: "npm:^1.3.2"
+    uncrypto: "npm:^0.1.3"
+    unenv: "npm:^1.8.0"
+  checksum: 33c84658ade5ee75d84c46a1429db92c3965a08658ee79ede88a1ab7826e4a1a66c59a77d8d4766d6c4d270c39290b0133e5aaaac74a6aed66c99d3852f2af69
   languageName: node
   linkType: hard
 
@@ -13350,6 +13455,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-fetch-native@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "node-fetch-native@npm:1.6.1"
+  checksum: 83fbe9abea807fe479b45f5512389c71be1328b211bfd2aab39ce56356e6e8b74df41b50f4b7954eac8869c0f09b61dd0e563f28df90218e77ecf3977ed72065
+  languageName: node
+  linkType: hard
+
 "node-fetch@npm:^2.6.7, node-fetch@npm:^2.x.x":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
@@ -14642,7 +14754,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-custom-properties@npm:^13.0.0, postcss-custom-properties@npm:^13.3.2":
+"postcss-custom-properties@npm:^13.0.0, postcss-custom-properties@npm:^13.3.4":
   version: 13.3.4
   resolution: "postcss-custom-properties@npm:13.3.4"
   dependencies:
@@ -14842,15 +14954,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nesting@npm:^12.0.1":
-  version: 12.0.1
-  resolution: "postcss-nesting@npm:12.0.1"
+"postcss-nesting@npm:^12.0.2":
+  version: 12.0.2
+  resolution: "postcss-nesting@npm:12.0.2"
   dependencies:
-    "@csstools/selector-specificity": "npm:^3.0.0"
+    "@csstools/selector-specificity": "npm:^3.0.1"
     postcss-selector-parser: "npm:^6.0.13"
   peerDependencies:
     postcss: ^8.4
-  checksum: a62ea2d4c6d155bb1f7f6893976141239b0376f8a92e785e17965ca816cd1be843ab5c99435e2e5b6ffa028626096be51683fb044b617e85ed693ce1206002bb
+  checksum: 8934338f57cebb5ed767ee69cefa224739095dd49e42f4d1bf119d7d9ae4f8ebb3fe282063c744d1d98d1e4400b24abc19759c744cb97fd81cc310e8a1701f76
   languageName: node
   linkType: hard
 
@@ -15047,7 +15159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.33":
+"postcss@npm:8.4.33, postcss@npm:^8.4.33":
   version: 8.4.33
   resolution: "postcss@npm:8.4.33"
   dependencies:
@@ -15099,17 +15211,6 @@ __metadata:
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.0.2"
   checksum: 4171086e54a90b5d9e7e043b3ea4acf5dce808f3501ebf7bf10caaff73f69a5c8d0dff7036752a648beb6317777d144af5b5b8b3ef9a84428630308735df07c2
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.31":
-  version: 8.4.31
-  resolution: "postcss@npm:8.4.31"
-  dependencies:
-    nanoid: "npm:^3.3.6"
-    picocolors: "npm:^1.0.0"
-    source-map-js: "npm:^1.0.2"
-  checksum: 1a6653e72105907377f9d4f2cd341d8d90e3fde823a5ddea1e2237aaa56933ea07853f0f2758c28892a1d70c53bbaca200eb8b80f8ed55f13093003dbec5afa0
   languageName: node
   linkType: hard
 
@@ -17370,9 +17471,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:~3.4.0":
-  version: 3.4.0
-  resolution: "tailwindcss@npm:3.4.0"
+"tailwindcss@npm:~3.4.1":
+  version: 3.4.1
+  resolution: "tailwindcss@npm:3.4.1"
   dependencies:
     "@alloc/quick-lru": "npm:^5.2.0"
     arg: "npm:^5.0.2"
@@ -17399,7 +17500,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: e69de4856308b3a6bcd084cc6745b6e3dcf6623553414f042d0365adceb70d79e41ec97a2a38c3aea0d5a875aa1eb4e84e04ad35ea1f0f7debcb7150779eae52
+  checksum: bf460657c674b1fb22ad7017ab5a9771c2884a3089d7767cee2395e8d9a54d74846170934ee00e285f39622c8e9e54d6f0e54bf38344efdc61544291c4d325c2
   languageName: node
   linkType: hard
 
@@ -18028,7 +18129,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unimport@npm:^3.6.0, unimport@npm:^3.6.1, unimport@npm:^3.7.0":
+"unimport@npm:^3.6.0, unimport@npm:^3.6.1, unimport@npm:^3.7.0, unimport@npm:^3.7.1":
   version: 3.7.1
   resolution: "unimport@npm:3.7.1"
   dependencies:
