@@ -13,52 +13,37 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-} from 'vue-demi'
 import type { TravelHook } from '.'
 import { useStep } from '.'
 
-export default defineComponent({
-  name : 'Step',
-  props: {
-    onBeforePrev: {
-      type   : Function as PropType<TravelHook>,
-      default: () => true,
-    },
-    onBeforeNext: {
-      type   : Function as PropType<TravelHook>,
-      default: () => true,
-    },
+defineOptions({ name: 'Step' })
+
+const props = defineProps({
+  onBeforePrev: {
+    type   : Function as PropType<TravelHook>,
+    default: () => true,
   },
-  setup (props) {
-    const {
-      canNext,
-      canPrev,
-      toStep,
-      step,
-      total,
-      next,
-      prev,
-      onBeforeNext,
-      onBeforePrev,
-    } = useStep()
-
-    // Registering Hooks
-    onBeforeNext(props.onBeforeNext)
-    onBeforePrev(props.onBeforePrev)
-
-    return {
-      canNext,
-      canPrev,
-      toStep,
-      prev,
-      next,
-      total,
-      step,
-    }
+  onBeforeNext: {
+    type   : Function as PropType<TravelHook>,
+    default: () => true,
   },
 })
+
+const {
+  canNext,
+  canPrev,
+  toStep,
+  step,
+  total,
+  next,
+  prev,
+  onBeforeNext: addOnBeforeNext,
+  onBeforePrev: addOnBeforePrev,
+} = useStep()
+
+// Registering Hooks
+addOnBeforeNext(props.onBeforeNext)
+addOnBeforePrev(props.onBeforePrev)
 </script>

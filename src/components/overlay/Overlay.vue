@@ -11,35 +11,30 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
+<script lang="ts" setup>
 import useLoading from './utils/use-loading'
 import Icon from './assets/icon-white.svg'
 
-export default defineComponent({
-  props: {
-    icon: {
-      type   : String,
-      default: Icon,
-    },
+defineProps({
+  icon: {
+    type   : String,
+    default: Icon,
   },
-  setup () {
-    const loading = useLoading({ elapsed: false })
+})
 
-    function show () {
-      loading.value = true
-    }
+const loading = useLoading({ elapsed: false })
 
-    function hide () {
-      loading.value = false
-    }
+function show () {
+  loading.value = true
+}
 
-    return {
-      show,
-      hide,
-      loading,
-    }
-  },
+function hide () {
+  loading.value = false
+}
+
+defineExpose({
+  show,
+  hide,
 })
 </script>
 

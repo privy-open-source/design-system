@@ -107,11 +107,10 @@
   </transition>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
+<script lang="ts" setup>
+import type { PropType, VNode } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   nextTick,
   watch,
 } from 'vue-demi'
@@ -123,155 +122,149 @@ import IconCloseFull from '@privyid/persona-icon/vue/close/24.vue'
 import { useVModel } from '../input'
 import type { SizeVariant } from '.'
 
-export default defineComponent({
-  components: {
-    Heading, Button, IconClose, IconCloseFull,
+const props = defineProps({
+  title: {
+    type   : String,
+    default: undefined,
   },
-  props: {
-    title: {
-      type   : String,
-      default: undefined,
-    },
-    text: {
-      type   : String,
-      default: undefined,
-    },
-    modelValue: {
-      type   : Boolean,
-      default: false,
-    },
-    dismissable: {
-      type   : Boolean,
-      default: true,
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    noCloseOnEsc: {
-      type   : Boolean,
-      default: false,
-    },
-    banner: {
-      type   : Boolean,
-      default: false,
-    },
-    noCloseOnBackdrop: {
-      type   : Boolean,
-      default: false,
-    },
-    modalBodyScrollable: {
-      type   : Boolean,
-      default: false,
-    },
-    centered: {
-      type   : Boolean,
-      default: false,
-    },
-    freeDistraction: {
-      type   : Boolean,
-      default: false,
-    },
-    headerClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    dialogClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    contentClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    bodyClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    footerClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
+  text: {
+    type   : String,
+    default: undefined,
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  modelValue: {
+    type   : Boolean,
+    default: false,
   },
-  emits: ['update:modelValue', 'close'],
-  setup (props, { emit }) {
-    const model      = useVModel(props)
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
-        result.push(`modal--${props.size}`)
-
-      if (props.centered)
-        result.push('modal--centered')
-
-      if (props.banner)
-        result.push('modal--banner')
-
-      if (props.freeDistraction && props.size === 'full')
-        result.push('modal--free-distraction')
-
-      return result
-    })
-
-    function close (event: Event): void {
-      emit('close', event)
-
-      if (!event.defaultPrevented)
-        model.value = false
-    }
-
-    function closeOnBackdrop (event: Event): void {
-      if (!props.noCloseOnBackdrop)
-        close(event)
-    }
-
-    onKeyStroke('Escape', (event) => {
-      if (!props.noCloseOnEsc)
-        close(event)
-    }, { eventName: 'keydown' })
-
-    watch(model, (value) => {
-      if (value === false) {
-        nextTick(() => {
-          emit('close', new CustomEvent('close'))
-        })
-      }
-    })
-
-    return {
-      model,
-      classNames,
-      closeOnBackdrop,
-      close,
-    }
+  dismissable: {
+    type   : Boolean,
+    default: true,
+  },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  noCloseOnEsc: {
+    type   : Boolean,
+    default: false,
+  },
+  banner: {
+    type   : Boolean,
+    default: false,
+  },
+  noCloseOnBackdrop: {
+    type   : Boolean,
+    default: false,
+  },
+  modalBodyScrollable: {
+    type   : Boolean,
+    default: false,
+  },
+  centered: {
+    type   : Boolean,
+    default: false,
+  },
+  freeDistraction: {
+    type   : Boolean,
+    default: false,
+  },
+  headerClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  dialogClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  contentClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  bodyClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  footerClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
   },
 })
+
+const emit = defineEmits<{
+  'update:modelValue': [boolean],
+  'close': [Event],
+}>()
+
+const model      = useVModel(props)
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (props.size)
+    result.push(`modal--${props.size}`)
+
+  if (props.centered)
+    result.push('modal--centered')
+
+  if (props.banner)
+    result.push('modal--banner')
+
+  if (props.freeDistraction && props.size === 'full')
+    result.push('modal--free-distraction')
+
+  return result
+})
+
+function close (event: Event): void {
+  emit('close', event)
+
+  if (!event.defaultPrevented)
+    model.value = false
+}
+
+function closeOnBackdrop (event: Event): void {
+  if (!props.noCloseOnBackdrop)
+    close(event)
+}
+
+onKeyStroke('Escape', (event) => {
+  if (!props.noCloseOnEsc)
+    close(event)
+}, { eventName: 'keydown' })
+
+watch(model, (value) => {
+  if (value === false) {
+    nextTick(() => {
+      emit('close', new CustomEvent('close'))
+    })
+  }
+})
+
+defineSlots<{
+  'header'(): VNode[],
+  'body'(): VNode[],
+  'footer'(): VNode[],
+  'default'(): VNode[],
+}>()
 </script>
 
 <style lang="postcss">

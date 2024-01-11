@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useVModel } from '../input'
 import { useToNumber } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'
@@ -28,72 +28,58 @@ import type {
   StyleValue,
   PropType,
 } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-  toRef,
-} from 'vue-demi'
+import { computed, toRef } from 'vue-demi'
 import type { DirectionVariant } from '../steps'
 
-export default defineComponent({
-  props: {
-    modelValue: {
-      type   : Number,
-      default: 1,
-    },
-    direction: {
-      type   : String as PropType<DirectionVariant>,
-      default: 'horizontal',
-    },
-    length: {
-      type   : [Number, String],
-      default: 6,
-    },
+const props = defineProps({
+  modelValue: {
+    type   : Number,
+    default: 1,
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  direction: {
+    type   : String as PropType<DirectionVariant>,
+    default: 'horizontal',
   },
-  emits: ['update:modelValue', 'change'],
-  setup (props, { emit }) {
-    const model  = useVModel(props)
-    const nums   = useToNumber(toRef(props, 'length'), { nanToZero: true, method: 'parseInt' })
-    const active = useClamp(model, 1, nums)
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.direction)
-        result.push(`progress-indicator--${props.direction}`)
-
-      return result
-    })
-
-    const activeStyle = computed<StyleValue>(() => {
-      if (props.direction === 'vertical') {
-        return {
-          transform: `translateY(calc((100% + .25rem) * ${active.value - 1}))`,
-          height   : `calc((100% - (.25rem * (${nums.value} - 1))) / ${nums.value} )`,
-        }
-      }
-
-      return { transform: `translateX(calc((100% + .25rem) * ${active.value - 1}))` }
-    })
-
-    function setValue (value: number) {
-      active.value = value
-
-      emit('change', value)
-    }
-
-    return {
-      nums,
-      setValue,
-      activeStyle,
-      classNames,
-    }
+  length: {
+    type   : [Number, String],
+    default: 6,
   },
 })
+
+const emit = defineEmits<{
+  'update:modelValue': [number],
+  'change': [number],
+}>()
+
+const model  = useVModel(props)
+const nums   = useToNumber(toRef(props, 'length'), { nanToZero: true, method: 'parseInt' })
+const active = useClamp(model, 1, nums)
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.direction)
+    result.push(`progress-indicator--${props.direction}`)
+
+  return result
+})
+
+const activeStyle = computed<StyleValue>(() => {
+  if (props.direction === 'vertical') {
+    return {
+      transform: `translateY(calc((100% + .25rem) * ${active.value - 1}))`,
+      height   : `calc((100% - (.25rem * (${nums.value} - 1))) / ${nums.value} )`,
+    }
+  }
+
+  return { transform: `translateX(calc((100% + .25rem) * ${active.value - 1}))` }
+})
+
+function setValue (value: number) {
+  active.value = value
+
+  emit('change', value)
+}
 </script>
 
 <style lang="postcss">

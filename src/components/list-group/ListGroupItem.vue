@@ -9,55 +9,43 @@
     <slot />
   </component>
 </template>
-<script lang="ts">
+
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent, computed, ref,
-} from 'vue-demi'
-import IconCheck from '@privyid/persona-icon/vue/checkmark-circle/20.vue'
-import pCaption from '../caption/Caption.vue'
+import { computed, resolveComponent } from 'vue-demi'
 import type { ElementVariant } from '.'
 
-export default defineComponent({
-  components: { pCaption, IconCheck },
-  props     : {
-    active: {
-      type   : Boolean,
-      default: undefined,
-    },
-    disabled: {
-      type   : Boolean,
-      default: undefined,
-    },
-    element: {
-      type   : String as PropType<ElementVariant>,
-      default: 'span',
-    },
+const props = defineProps({
+  active: {
+    type   : Boolean,
+    default: undefined,
   },
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.active)
-        result.push('list-group__item--active')
-      if (props.disabled)
-        result.push('list-group__item--disabled')
-
-      return result
-    })
-
-    const elementNames = computed(() => {
-      const el = ref<string>('')
-      el.value = props.element === 'link' ? 'a' : props.element
-
-      return el.value
-    })
-
-    return {
-      classNames,
-      elementNames,
-    }
+  disabled: {
+    type   : Boolean,
+    default: undefined,
   },
+  element: {
+    type   : String as PropType<ElementVariant>,
+    default: 'span',
+  },
+})
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.active)
+    result.push('list-group__item--active')
+
+  if (props.disabled)
+    result.push('list-group__item--disabled')
+
+  return result
+})
+
+const elementNames = computed(() => {
+  return props.element === 'link'
+    ? resolveComponent('nuxt-link')
+    : props.element
 })
 </script>
 <style lang="postcss">

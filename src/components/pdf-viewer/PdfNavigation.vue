@@ -50,11 +50,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+<script lang="ts" setup>
+import { computed } from 'vue-demi'
 import { usePdfContext } from '.'
 import IconZoomIn from '@privyid/persona-icon/vue/zoom-in/20.vue'
 import IconZoomOut from '@privyid/persona-icon/vue/zoom-out/20.vue'
@@ -65,47 +62,23 @@ import pDivider from '../divider/Divider.vue'
 import pSelect from '../select/Select.vue'
 import type { SelectItem } from '../select'
 
-export default defineComponent({
-  components: {
-    IconZoomIn,
-    IconZoomOut,
-    IconPrev,
-    IconNext,
-    pButton,
-    pDivider,
-    pSelect,
-  },
-  setup () {
-    const {
-      page,
-      scale,
-      totalPage,
-      zoomIn,
-      zoomOut,
-      next,
-      prev,
-    } = usePdfContext()
+const {
+  page,
+  scale,
+  totalPage,
+  zoomIn,
+  zoomOut,
+  next,
+  prev,
+} = usePdfContext()
 
-    const pages = computed<SelectItem[]>(() => {
-      return Array.from({ length: totalPage.value }).map((_, i) => {
-        return {
-          text : `${i + 1}`,
-          value: i + 1,
-        }
-      })
-    })
-
+const pages = computed<SelectItem[]>(() => {
+  return Array.from({ length: totalPage.value }).map((_, i) => {
     return {
-      page,
-      pages,
-      scale,
-      totalPage,
-      zoomIn,
-      zoomOut,
-      next,
-      prev,
+      text : `${i + 1}`,
+      value: i + 1,
     }
-  },
+  })
 })
 </script>
 

@@ -6,57 +6,48 @@
   </h6>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  computed,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import type { SizeVariant } from '.'
 import type { WeightVariant, TransformVariant } from '../heading'
 
-export default defineComponent({
-  props: {
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    weight: {
-      type   : String as PropType<WeightVariant>,
-      default: 'normal',
-    },
-    transform: {
-      type   : String as PropType<TransformVariant>,
-      default: 'normalcase',
-    },
-    overline: {
-      type   : Boolean,
-      default: undefined,
-    },
+const props = defineProps({
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: String[] = ['subheading']
-
-      if (props.overline)
-        result.push('subheading--overline')
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      else if (props.size)
-        result.push(`subheading--${props.size}`)
-
-      if (props.transform)
-        result.push(`subheading--${props.transform}`)
-
-      if (props.weight)
-        result.push(`subheading--${props.weight}`)
-
-      return result
-    })
-
-    return { classNames }
+  weight: {
+    type   : String as PropType<WeightVariant>,
+    default: 'normal',
   },
+  transform: {
+    type   : String as PropType<TransformVariant>,
+    default: 'normalcase',
+  },
+  overline: {
+    type   : Boolean,
+    default: undefined,
+  },
+})
+
+const classNames = computed(() => {
+  const result: String[] = ['subheading']
+
+  if (props.overline)
+    result.push('subheading--overline')
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  else if (props.size)
+    result.push(`subheading--${props.size}`)
+
+  if (props.transform)
+    result.push(`subheading--${props.transform}`)
+
+  if (props.weight)
+    result.push(`subheading--${props.weight}`)
+
+  return result
 })
 </script>
 

@@ -55,7 +55,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useWindowSize } from '@vueuse/core'
 import type {
   PropType,
@@ -63,7 +63,6 @@ import type {
 } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   ref,
   watch,
 } from 'vue-demi'
@@ -72,145 +71,119 @@ import { useVModel } from '../input'
 import SignatureDrawDesktop from './SignatureDrawDesktop.vue'
 import { replaceColor, rotateImage } from './utils/image'
 import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
-import { pAspectRatio } from '../aspect-ratio'
+import { vPAspectRatio } from '../aspect-ratio'
 import type { ModelModifier } from '../dropzone'
 import { usePreview } from '../cropper'
 import { fromBase64 } from '../utils/base64'
 
-export default defineComponent({
-  components: {
-    Button,
-    IconEdit,
-    SignatureDrawDesktop,
+const props = defineProps({
+  modelValue: {
+    type   : [String, globalThis.File],
+    default: '',
   },
-  directives: { pAspectRatio },
-  props     : {
-    modelValue: {
-      type   : [String, globalThis.File],
-      default: '',
-    },
-    modelModifiers: {
-      type   : Object as PropType<ModelModifier>,
-      default: () => ({} as ModelModifier),
-    },
-    width: {
-      type   : Number,
-      default: 430,
-    },
-    height: {
-      type   : Number,
-      default: 230,
-    },
-    color: {
-      type   : String,
-      default: '#000000',
-    },
-    placeholder: {
-      type   : String,
-      default: '',
-    },
-    resetLabel: {
-      type   : String,
-      default: 'Reset',
-    },
-    openDrawLabel: {
-      type   : String,
-      default: 'Click to Draw',
-    },
-    closeDrawLabel: {
-      type   : String,
-      default: 'Save',
-    },
+  modelModifiers: {
+    type   : Object as PropType<ModelModifier>,
+    default: () => ({} as ModelModifier),
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  width: {
+    type   : Number,
+    default: 430,
   },
-  emits: ['update:modelValue'],
-  setup (props) {
-    const model    = useVModel(props)
-    const preview  = usePreview(model, '')
-    const rawModel = ref('')
-    const isOpen   = ref(false)
-    const screen   = useWindowSize()
-
-    const mode = computed(() => {
-      return screen.width.value < props.width + 32 /* 2rem */
-        ? 'rotate'
-        : 'normal'
-    })
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (mode.value)
-        result.push(`signature-draw--${mode.value}`)
-
-      return result
-    })
-
-    const style = computed(() => {
-      return {
-        width      : `${props.width}px`,
-        aspectRatio: `${props.width / props.height}`,
-      } as StyleValue
-    })
-
-    async function open () {
-      const result = preview.value && mode.value === 'rotate'
-        ? await rotateImage(preview.value, 90)
-        : preview.value
-
-      rawModel.value = result
-      isOpen.value   = true
-    }
-
-    async function close () {
-      const result = rawModel.value && mode.value === 'rotate'
-        ? await rotateImage(rawModel.value, -90)
-        : rawModel.value
-
-      const value = props.modelModifiers.base64
-        ? result
-        : fromBase64(result)
-
-      // console.log('close', result, value)
-
-      model.value  = value
-      isOpen.value = false
-    }
-
-    watch(() => props.color, async (color) => {
-      if (!isOpen.value && preview.value) {
-        const result = await replaceColor(preview.value, color)
-        const value  = props.modelModifiers.base64
-          ? result
-          : fromBase64(result)
-
-        model.value  = value
-        isOpen.value = false
-      }
-    })
-
-    watch(isOpen, (value) => {
-      if (value)
-        document.body.style.setProperty('overflow-y', 'hidden')
-      else
-        document.body.style.removeProperty('overflow-y')
-    })
-
-    return {
-      classNames,
-      style,
-      rawModel,
-      preview,
-      model,
-      isOpen,
-      mode,
-      open,
-      close,
-    }
+  height: {
+    type   : Number,
+    default: 230,
   },
+  color: {
+    type   : String,
+    default: '#000000',
+  },
+  placeholder: {
+    type   : String,
+    default: '',
+  },
+  resetLabel: {
+    type   : String,
+    default: 'Reset',
+  },
+  openDrawLabel: {
+    type   : String,
+    default: 'Click to Draw',
+  },
+  closeDrawLabel: {
+    type   : String,
+    default: 'Save',
+  },
+})
+
+const model    = useVModel(props)
+const preview  = usePreview(model, '')
+const rawModel = ref('')
+const isOpen   = ref(false)
+const screen   = useWindowSize()
+
+const mode = computed(() => {
+  return screen.width.value < props.width + 32 /* 2rem */
+    ? 'rotate'
+    : 'normal'
+})
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (mode.value)
+    result.push(`signature-draw--${mode.value}`)
+
+  return result
+})
+
+const style = computed(() => {
+  return {
+    width      : `${props.width}px`,
+    aspectRatio: `${props.width / props.height}`,
+  } as StyleValue
+})
+
+async function open () {
+  const result = preview.value && mode.value === 'rotate'
+    ? await rotateImage(preview.value, 90)
+    : preview.value
+
+  rawModel.value = result
+  isOpen.value   = true
+}
+
+async function close () {
+  const result = rawModel.value && mode.value === 'rotate'
+    ? await rotateImage(rawModel.value, -90)
+    : rawModel.value
+
+  const value = props.modelModifiers.base64
+    ? result
+    : fromBase64(result)
+
+  // console.log('close', result, value)
+
+  model.value  = value
+  isOpen.value = false
+}
+
+watch(() => props.color, async (color) => {
+  if (!isOpen.value && preview.value) {
+    const result = await replaceColor(preview.value, color)
+    const value  = props.modelModifiers.base64
+      ? result
+      : fromBase64(result)
+
+    model.value  = value
+    isOpen.value = false
+  }
+})
+
+watch(isOpen, (value) => {
+  if (value)
+    document.body.style.setProperty('overflow-y', 'hidden')
+  else
+    document.body.style.removeProperty('overflow-y')
 })
 </script>
 

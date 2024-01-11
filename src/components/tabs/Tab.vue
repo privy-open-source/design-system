@@ -11,6 +11,8 @@
 </template>
 
 <script lang="ts" setup>
+import type { VNode } from 'vue-demi'
+
 defineProps({
   title: {
     type   : String,
@@ -23,4 +25,10 @@ defineProps({
 })
 
 defineOptions({ name: 'Tab' })
+
+defineSlots<{
+  'title'(): VNode[],
+  'icon'(): VNode[],
+  'default'(): VNode[],
+}>()
 </script>

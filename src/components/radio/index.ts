@@ -4,6 +4,11 @@ import { isEqual } from '../utils/value'
 
 export type RadioProps = Omit<CheckboxProps, 'uncheckedValue'>
 
+export interface ChangedInteface {
+  value: any,
+  state: boolean,
+}
+
 export function useVModel (props: RadioProps) {
   const { emit } = getCurrentInstance()
   const model    = computed({

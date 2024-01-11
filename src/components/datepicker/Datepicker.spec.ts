@@ -2,6 +2,7 @@ import { fireEvent, render } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { nextTick, ref } from 'vue-demi'
 import Datepicker from './Datepicker.vue'
+import { delay } from 'nanodelay'
 
 const CalendarStub = vi.fn()
 
@@ -36,6 +37,12 @@ it('should open if input is focused', async () => {
 
   expect(picker).toHaveClass('datepicker--open')
   expect(calendar).toBeVisible()
+
+  await fireEvent.click(window)
+  await delay(0)
+
+  expect(picker).not.toHaveClass('datepicker--open')
+  expect(calendar).not.toBeVisible()
 })
 
 it('should be able set input placeholder via prop `placeholder`', () => {

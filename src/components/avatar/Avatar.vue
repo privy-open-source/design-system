@@ -14,11 +14,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   onMounted,
   ref,
   watch,
@@ -31,105 +30,100 @@ import {
 import loadImage from './utils/load-image'
 import type { TypeVariant, SizeVariant } from '.'
 
-export default defineComponent({
-  props: {
-    variant: {
-      type   : String as PropType<TypeVariant>,
-      default: undefined,
-    },
-    src: {
-      type   : String,
-      default: undefined,
-    },
-    fallbackSrc: {
-      type   : String,
-      default: dummyAvatar(),
-    },
-    name: {
-      type   : String,
-      default: undefined,
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    imgClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<TypeVariant>,
+    default: undefined,
   },
-  emits: ['imgloaded', 'imgerror'],
-  setup (props, { emit }) {
-    const imageSrc = ref(createSpinner(50))
-
-    const classNames = computed(() => {
-      const result: string[] = ['avatar']
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
-        result.push(`avatar--${props.size}`)
-
-      return result
-    })
-
-    const type = computed<TypeVariant>(() => {
-      if (props.variant)
-        return props.variant
-
-      if (!props.src && props.name)
-        return 'alias'
-
-      return 'image'
-    })
-
-    function init () {
-      if (type.value === 'alias')
-        loadAlias()
-      else
-        load()
-    }
-
-    function load () {
-      imageSrc.value = createSpinner(50)
-
-      loadImage(props.src)
-        .then(() => {
-          imageSrc.value = props.src
-
-          emit('imgloaded', props.src)
-        })
-        .catch((error) => {
-          imageSrc.value = props.fallbackSrc
-          emit('imgerror', error)
-        })
-    }
-
-    function loadAlias () {
-      imageSrc.value = createAlias(props.name)
-    }
-
-    watch(() => [
-      props.src,
-      props.name,
-      props.variant,
-    ], () => {
-      init()
-    })
-
-    onMounted(() => {
-      init()
-    })
-
-    return {
-      classNames,
-      type,
-      imageSrc,
-    }
+  src: {
+    type   : String,
+    default: undefined,
   },
+  fallbackSrc: {
+    type   : String,
+    default: dummyAvatar(),
+  },
+  name: {
+    type   : String,
+    default: undefined,
+  },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  imgClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+})
+
+const emit = defineEmits<{
+  'imgloaded': [string],
+  'imgerror': [Error],
+}>()
+
+const imageSrc = ref(createSpinner(50))
+
+const classNames = computed(() => {
+  const result: string[] = ['avatar']
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (props.size)
+    result.push(`avatar--${props.size}`)
+
+  return result
+})
+
+const type = computed<TypeVariant>(() => {
+  if (props.variant)
+    return props.variant
+
+  if (!props.src && props.name)
+    return 'alias'
+
+  return 'image'
+})
+
+function init () {
+  if (type.value === 'alias')
+    loadAlias()
+  else
+    load()
+}
+
+function load () {
+  imageSrc.value = createSpinner(50)
+
+  loadImage(props.src)
+    .then(() => {
+      imageSrc.value = props.src
+
+      emit('imgloaded', props.src)
+    })
+    .catch((error) => {
+      imageSrc.value = props.fallbackSrc
+      emit('imgerror', error)
+    })
+}
+
+function loadAlias () {
+  imageSrc.value = createAlias(props.name)
+}
+
+watch(() => [
+  props.src,
+  props.name,
+  props.variant,
+], () => {
+  init()
+})
+
+onMounted(() => {
+  init()
 })
 </script>
 

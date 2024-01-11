@@ -1,4 +1,4 @@
-import { syncRef } from '@vueuse/shared'
+import { syncRef } from '@vueuse/core'
 import type { Ref } from 'vue-demi'
 import {
   computed,
@@ -23,7 +23,7 @@ export function useVModel<V> (props: InputProps<V>): Ref<V> {
     },
   })
 
-  syncRef(localValue, model, { immediate: false })
+  syncRef<unknown, unknown>(localValue, model, { immediate: false })
 
   return localValue
 }

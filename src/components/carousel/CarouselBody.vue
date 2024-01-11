@@ -6,23 +6,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import {
-  defineComponent,
-  inject,
-  onUpdated,
-} from 'vue-demi'
+<script lang="ts" setup>
+import { inject, onUpdated } from 'vue-demi'
 import { CAROUSEL_INSTANCE } from '.'
 
-export default defineComponent({
-  setup () {
-    const slider = inject(CAROUSEL_INSTANCE)
+const slider = inject(CAROUSEL_INSTANCE)
 
-    onUpdated(() => {
-      slider.value?.refresh()
-    })
-
-    return {}
-  },
+onUpdated(() => {
+  slider.value?.refresh()
 })
 </script>

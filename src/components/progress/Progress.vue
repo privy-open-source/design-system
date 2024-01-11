@@ -21,77 +21,69 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { findLast } from 'lodash-es'
 import type {
   PropType,
   Slots,
+  VNode,
 } from 'vue-demi'
-import {
-  defineComponent,
-  computed,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import { findAllChildren, toBoolean } from '../utils/vnode'
-
-export type IconVariant = 'dot' | 'counter'
-
-export type TitleVariant = 'specific' | 'general'
+import type { IconVariant, TitleVariant } from '.'
 
 interface ProgressLabel {
   title: string,
   slots: Slots,
 }
 
-export default defineComponent({
-  props: {
-    variant: {
-      type   : String as PropType<IconVariant>,
-      default: 'dot',
-    },
-    titleVariant: {
-      type   : String as PropType<TitleVariant>,
-      default: 'specific',
-    },
-    vertical: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<IconVariant>,
+    default: 'dot',
   },
-  setup (props, { slots }) {
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.variant)
-        result.push(`progress--${props.variant}`)
-
-      if (props.titleVariant)
-        result.push(`progress--${props.titleVariant}`)
-
-      if (props.vertical)
-        result.push('progress--vertical')
-      else
-        result.push('progress--horizontal')
-
-      return result
-    })
-
-    const item = computed<ProgressLabel>(() => {
-      const vnodes     = findAllChildren(slots.default(), 'ProgressItem')
-      const activeNode = findLast(vnodes, (vnode) => {
-        return toBoolean(vnode.props?.active)
-      })
-
-      return {
-        title: activeNode?.props?.title ?? '',
-        slots: activeNode?.children as Slots ?? {},
-      }
-    })
-
-    return {
-      classNames,
-      item,
-    }
+  titleVariant: {
+    type   : String as PropType<TitleVariant>,
+    default: 'specific',
   },
+  vertical: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const slots = defineSlots<{
+  'title'(): VNode[],
+  'default'(): VNode[],
+}>()
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.variant)
+    result.push(`progress--${props.variant}`)
+
+  if (props.titleVariant)
+    result.push(`progress--${props.titleVariant}`)
+
+  if (props.vertical)
+    result.push('progress--vertical')
+  else
+    result.push('progress--horizontal')
+
+  return result
+})
+
+const item = computed<ProgressLabel>(() => {
+  const vnodes     = findAllChildren(slots.default(), 'ProgressItem')
+  const activeNode = findLast(vnodes, (vnode) => {
+    return toBoolean(vnode.props?.active)
+  })
+
+  return {
+    title: activeNode?.props?.title ?? '',
+    slots: activeNode?.children as Slots ?? {},
+  }
 })
 </script>
 

@@ -10,7 +10,7 @@
       <icon-checkbox v-else />
     </span>
     <span class="checkbox__label">
-      <slot />
+      <slot :is-checked="model" />
     </span>
     <input
       type="checkbox"
@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { useVModel } from '.'
-import type { PropType } from 'vue-demi'
+import type { PropType, VNode } from 'vue-demi'
 import { computed } from 'vue-demi'
 import IconCheckbox from './icon/IconCheckbox.vue'
 import IconInderteminate from './icon/IconInderteminate.vue'
@@ -70,7 +70,7 @@ const props = defineProps({
   },
 })
 
-defineEmits<{
+const emit = defineEmits<{
   'change': [boolean],
   'update:modelValue': [unknown],
 }>()
@@ -96,9 +96,17 @@ const classNames = computed(() => {
 })
 
 function toggle () {
-  if (!props.readonly && !props.disabled)
-    model.value = !model.value
+  if (!props.readonly && !props.disabled) {
+    const value = !model.value
+
+    model.value = value
+    emit('change', value)
+  }
 }
+
+defineSlots<{
+  'default'(props: { isChecked: boolean }): VNode[],
+}>()
 </script>
 
 <style lang="postcss">

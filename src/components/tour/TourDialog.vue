@@ -84,77 +84,65 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
+<script lang="ts" setup>
 import pSubheading from '../subheading/Subheading.vue'
 import pCaption from '../caption/Caption.vue'
 import pButton from '../button/Button.vue'
-import { pMd } from '../markdown'
+import { vPMd } from '../markdown'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 
-export default defineComponent({
-  components: {
-    pSubheading,
-    pCaption,
-    pButton,
-    IconClose,
+defineProps({
+  title: {
+    type   : String,
+    default: undefined,
   },
-  directives: { pMd },
-  props     : {
-    title: {
-      type   : String,
-      default: undefined,
-    },
-    text: {
-      type   : String,
-      default: '',
-    },
-    image: {
-      type   : String,
-      default: undefined,
-    },
-    highlight: {
-      type   : Boolean,
-      default: true,
-    },
-    step: {
-      type   : Number,
-      default: 0,
-    },
-    totalStep: {
-      type   : Number,
-      default: 0,
-    },
-    dismissable: {
-      type   : Boolean,
-      default: true,
-    },
-    prevLabel: {
-      type   : String,
-      default: 'Previous',
-    },
-    nextLabel: {
-      type   : String,
-      default: 'Next',
-    },
-    dismissLabel: {
-      type   : String,
-      default: 'Dismiss',
-    },
-    finishLabel: {
-      type   : String,
-      default: 'Finish',
-    },
+  text: {
+    type   : String,
+    default: '',
   },
-  emits: [
-    'prev',
-    'next',
-    'dismiss',
-  ],
-  setup () {
-    return {}
+  image: {
+    type   : String,
+    default: undefined,
+  },
+  highlight: {
+    type   : Boolean,
+    default: true,
+  },
+  step: {
+    type   : Number,
+    default: 0,
+  },
+  totalStep: {
+    type   : Number,
+    default: 0,
+  },
+  dismissable: {
+    type   : Boolean,
+    default: true,
+  },
+  prevLabel: {
+    type   : String,
+    default: 'Previous',
+  },
+  nextLabel: {
+    type   : String,
+    default: 'Next',
+  },
+  dismissLabel: {
+    type   : String,
+    default: 'Dismiss',
+  },
+  finishLabel: {
+    type   : String,
+    default: 'Finish',
   },
 })
+
+defineEmits<{
+  'prev': [MouseEvent],
+  'next': [MouseEvent],
+  'dismiss': [MouseEvent],
+}>()
 </script>
 
 <style lang="postcss">

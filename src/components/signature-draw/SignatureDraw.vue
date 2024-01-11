@@ -23,11 +23,10 @@
   </template>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   onMounted,
   ref,
 } from 'vue-demi'
@@ -37,69 +36,59 @@ import type { ModelModifier } from '../dropzone'
 import { useMediaQuery } from '@vueuse/core'
 import { createSpinner } from '../avatar/utils/create-image'
 
-export default defineComponent({
-  props: {
-    modelValue: {
-      type   : [String, globalThis.File],
-      default: '',
-    },
-    modelModifiers: {
-      type   : Object as PropType<ModelModifier>,
-      default: () => ({} as ModelModifier),
-    },
-    width: {
-      type   : Number,
-      default: 430,
-    },
-    height: {
-      type   : Number,
-      default: 230,
-    },
-    color: {
-      type   : String,
-      default: '#000000',
-    },
-    placeholder: {
-      type   : String,
-      default: '',
-    },
-    resetLabel: {
-      type   : String,
-      default: 'Reset',
-    },
-    openDrawLabel: {
-      type   : String,
-      default: 'Click to Draw',
-    },
-    closeDrawLabel: {
-      type   : String,
-      default: 'Save',
-    },
+defineProps({
+  modelValue: {
+    type   : [String, globalThis.File],
+    default: '',
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  modelModifiers: {
+    type   : Object as PropType<ModelModifier>,
+    default: () => ({} as ModelModifier),
   },
-  emits: ['update:modelValue'],
-  setup () {
-    const ready     = ref(false)
-    const isDesktop = useMediaQuery('(min-width: 768px)')
-    const view      = computed(() => {
-      return isDesktop.value
-        ? SignatureDrawDesktop
-        : SignatureDrawMobile
-    })
+  width: {
+    type   : Number,
+    default: 430,
+  },
+  height: {
+    type   : Number,
+    default: 230,
+  },
+  color: {
+    type   : String,
+    default: '#000000',
+  },
+  placeholder: {
+    type   : String,
+    default: '',
+  },
+  resetLabel: {
+    type   : String,
+    default: 'Reset',
+  },
+  openDrawLabel: {
+    type   : String,
+    default: 'Click to Draw',
+  },
+  closeDrawLabel: {
+    type   : String,
+    default: 'Save',
+  },
+})
 
-    onMounted(() => {
-      ready.value = true
-    })
+defineEmits<{
+  'update:modelValue': [unknown],
+}>()
 
-    return {
-      view,
-      ready,
-      createSpinner,
-    }
-  },
+const ready     = ref(false)
+const isDesktop = useMediaQuery('(min-width: 768px)')
+const view      = computed(() => {
+  return isDesktop.value
+    ? SignatureDrawDesktop
+    : SignatureDrawMobile
+})
+
+onMounted(() => {
+  ready.value = true
 })
 </script>
 

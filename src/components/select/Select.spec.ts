@@ -81,6 +81,11 @@ it('should focus on search input when opened', async () => {
   await nextTick()
 
   expect(screen.queryByTestId('select-search')).toHaveFocus()
+
+  await fireEvent.click(window)
+  await delay(0)
+
+  expect(select).not.toHaveClass('select--open')
 })
 
 it('should reset search keyword when closed', async () => {

@@ -1,12 +1,11 @@
 import { useSingleton } from '../global/use-singleton'
 import defu from 'defu'
-import type {
-  FooterAlignVariant,
-  FooterButtonColorVariant,
-  FooterButtonStyleVariant,
-} from './DialogFooter.vue'
 import type { SizeVariant } from '../modal'
-import type { SizeVariant as InputSizeVariant } from '../button'
+import type {
+  SizeVariant as InputSizeVariant,
+  StyleVariant as FooterButtonStyleVariant,
+  ColorVariant as FooterButtonColorVariant,
+} from '../button'
 import type { VNode } from 'vue-demi'
 import {
   ref,
@@ -15,6 +14,8 @@ import {
 import pInput from '../input/Input.vue'
 import pFormGroup from '../form-group/FormGroup.vue'
 import type { AcceptVariant } from '../input'
+
+export type FooterAlignVariant = 'start' | 'end'
 
 interface DialogButton {
   text?: string,

@@ -11,7 +11,9 @@
       <span
         v-if="noLabel === false"
         class="toggle__label toggle__checked-label">
-        <slot name="checked">
+        <slot
+          name="checked"
+          :is-checked="model">
           {{ checkedLabel }}
         </slot>
       </span>
@@ -24,117 +26,117 @@
       <span
         v-if="noLabel === false"
         class="toggle__label toggle__unchecked-label">
-        <slot name="unchecked">
+        <slot
+          name="unchecked"
+          :is-checked="model">
           {{ uncheckedLabel }}
         </slot>
       </span>
     </div>
-    <slot />
+    <slot :is-checked="model" />
   </label>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+<script lang="ts" setup>
+import type { PropType, VNode } from 'vue-demi'
+import { computed } from 'vue-demi'
 import { useVModel } from '../checkbox'
 
 type StyleVariant = 'pill' | 'flat'
 
-export default defineComponent({
-  props: {
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'pill',
-    },
-    modelValue: {
-      type   : undefined as PropType<any>,
-      default: false,
-    },
-    value: {
-      type   : undefined as PropType<any>,
-      default: true,
-    },
-    uncheckedValue: {
-      type   : undefined as PropType<any>,
-      default: false,
-    },
-    checked: {
-      type   : Boolean,
-      default: false,
-    },
-    checkedLabel: {
-      type   : String,
-      default: 'on',
-    },
-    uncheckedLabel: {
-      type   : String,
-      default: 'off',
-    },
-    noLabel: {
-      type   : Boolean,
-      default: false,
-    },
-    readonly: {
-      type   : Boolean,
-      default: false,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    switchClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'pill',
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  modelValue: {
+    type   : undefined as PropType<any>,
+    default: false,
   },
-  emits: ['update:modelValue', 'change'],
-  setup (props, { slots }) {
-    const model = useVModel(props)
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (props.variant)
-        result.push(`toggle--${props.variant}`)
-
-      if (model.value)
-        result.push('toggle--checked')
-
-      if (props.disabled)
-        result.push('toggle--disabled')
-
-      if (props.readonly)
-        result.push('toggle--readonly')
-
-      if (slots.default)
-        result.push('toggle--labeled')
-
-      return result
-    })
-
-    function toggle () {
-      if (!props.readonly && !props.disabled)
-        model.value = !model.value
-    }
-
-    return {
-      classNames,
-      model,
-      toggle,
-    }
+  value: {
+    type   : undefined as PropType<any>,
+    default: true,
+  },
+  uncheckedValue: {
+    type   : undefined as PropType<any>,
+    default: false,
+  },
+  checked: {
+    type   : Boolean,
+    default: false,
+  },
+  checkedLabel: {
+    type   : String,
+    default: 'on',
+  },
+  uncheckedLabel: {
+    type   : String,
+    default: 'off',
+  },
+  noLabel: {
+    type   : Boolean,
+    default: false,
+  },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  switchClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
   },
 })
+
+const emit = defineEmits<{
+  'update:modelValue': [unknown],
+  'change': [boolean],
+}>()
+
+const slots = defineSlots<{
+  'checked'(props: { isChecked: boolean }): VNode[],
+  'unchecked'(props: { isChecked: boolean }): VNode[],
+  'default'(props: { isChecked: boolean }): VNode[],
+}>()
+
+const model = useVModel(props)
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (props.variant)
+    result.push(`toggle--${props.variant}`)
+
+  if (model.value)
+    result.push('toggle--checked')
+
+  if (props.disabled)
+    result.push('toggle--disabled')
+
+  if (props.readonly)
+    result.push('toggle--readonly')
+
+  if (slots.default)
+    result.push('toggle--labeled')
+
+  return result
+})
+
+function toggle () {
+  if (!props.readonly && !props.disabled) {
+    const value = !model.value
+
+    model.value = value
+    emit('change', value)
+  }
+}
 </script>
 
 <style lang="postcss">

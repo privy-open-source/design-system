@@ -5,7 +5,6 @@
     <Tooltip
       v-for="[id, item] in items"
       :key="id"
-      v-model="item.isShow"
       v-bind="item">
       <span
         v-p-md.inline="item.text"
@@ -14,85 +13,77 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
-  defineComponent,
   reactive,
   ref,
 } from 'vue-demi'
 import Tooltip from './Tooltip.vue'
 import type { TooltipItem, TooltipOptions } from '.'
 import { uniqueId } from 'lodash-es'
-import { pMd } from '../markdown'
+import { vPMd } from '../markdown'
 
-export default defineComponent({
-  components: { Tooltip },
-  directives: { pMd },
-  setup () {
-    const items = ref<Map<string, TooltipItem>>(new Map())
+const items = ref<Map<string, TooltipItem>>(new Map())
 
-    function add (options: TooltipOptions): string {
-      const id = uniqueId('tooltip_')
+function add (options: TooltipOptions): string {
+  const id = uniqueId('tooltip_')
 
-      items.value.set(id, reactive({ ...options, isShow: false }) as TooltipItem)
+  items.value.set(id, reactive({ ...options, show: false }) as TooltipItem)
 
-      return id
-    }
+  return id
+}
 
-    function update (id: string, options: TooltipOptions) {
-      const item = items.value.get(id)
+function update (id: string, options: TooltipOptions) {
+  const item = items.value.get(id)
 
-      if (item) {
-        item.target    = options.target
-        item.text      = options.text
-        item.placement = options.placement
-      }
-    }
+  if (item) {
+    item.target    = options.target
+    item.text      = options.text
+    item.placement = options.placement
+  }
+}
 
-    function show (id: string) {
-      const item   = items.value.get(id)
-      const result = item.target.dispatchEvent(new CustomEvent('tooltip:show', {
-        detail    : item,
-        cancelable: true,
-      }))
+function show (id: string) {
+  const item   = items.value.get(id)
+  const result = item.target.dispatchEvent(new CustomEvent('tooltip:show', {
+    detail    : item,
+    cancelable: true,
+  }))
 
-      if (result)
-        item.isShow = true
-    }
+  if (result)
+    item.show = true
+}
 
-    function hide (id: string) {
-      const item   = items.value.get(id)
-      const result = item.target.dispatchEvent(new CustomEvent('tooltip:hide', {
-        detail    : item,
-        cancelable: true,
-      }))
+function hide (id: string) {
+  const item   = items.value.get(id)
+  const result = item.target.dispatchEvent(new CustomEvent('tooltip:hide', {
+    detail    : item,
+    cancelable: true,
+  }))
 
-      if (result)
-        item.isShow = false
-    }
+  if (result)
+    item.show = false
+}
 
-    function toggle (id: string) {
-      const item = items.value.get(id)
+function toggle (id: string) {
+  const item = items.value.get(id)
 
-      if (item.isShow)
-        hide(id)
-      else
-        show(id)
-    }
+  if (item.show)
+    hide(id)
+  else
+    show(id)
+}
 
-    function remove (id: string) {
-      items.value.delete(id)
-    }
+function remove (id: string) {
+  items.value.delete(id)
+}
 
-    return {
-      items,
-      add,
-      update,
-      show,
-      hide,
-      toggle,
-      remove,
-    }
-  },
+defineExpose({
+  add,
+  update,
+  show,
+  hide,
+  toggle,
+  remove,
 })
 </script>

@@ -41,33 +41,29 @@
   </div>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+<script lang="ts" setup>
+import type { PropType, VNode } from 'vue-demi'
+import { computed } from 'vue-demi'
 import { useClipboard } from '@vueuse/core'
-import { pTooltip } from '../../components/tooltip'
+import { vPTooltip } from '../../components/tooltip'
 import pCaption from '../../components/caption/Caption.vue'
 import type { Color } from '.'
 
-export default defineComponent({
-  directives: { pTooltip },
-  components: { pCaption },
-  props     : {
-    color: {
-      type   : Object as PropType<Color>,
-      default: () => ({} as Color),
-    },
-  },
-  setup (props) {
-    const source           = computed(() => props.color.overlay || props.color.hex)
-    const { copy, copied } = useClipboard({ source })
-
-    return { copy, copied }
+const props = defineProps({
+  color: {
+    type   : Object as PropType<Color>,
+    default: () => ({} as Color),
   },
 })
+
+const source           = computed(() => props.color.overlay || props.color.hex)
+const { copy, copied } = useClipboard({ source })
+
+defineSlots<{
+  'token'(): VNode[],
+  'figma'(): VNode[],
+  'hex'(): VNode[],
+}>()
 </script>
 
 <style lang="postcss" scoped>

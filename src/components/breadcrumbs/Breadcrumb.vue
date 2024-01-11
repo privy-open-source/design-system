@@ -4,16 +4,16 @@
     data-testid="breadcrumbs">
     <slot>
       <template
-        v-for="(item, id) in items"
-        :key="id">
+        v-for="(item, i) in items"
+        :key="i">
         <BreadcrumbItemDropdown
           v-if="item.subitem"
           :text="item.text"
           :active="item.active"
           :href="item.href">
           <template
-            v-for="(subitem, idx) in item.subitem"
-            :key="idx">
+            v-for="(subitem, j) in item.subitem"
+            :key="j">
             <DropdownItem
               :active="subitem.active"
               :href="subitem.href">
@@ -32,30 +32,27 @@
   </ul>
 </template>
 
-<script lang="ts">
-import { defineComponent, provide } from 'vue-demi'
+<script lang="ts" setup>
+import type { VNode } from 'vue-demi'
+import { provide } from 'vue-demi'
 import type { BreadcrumbItems } from '.'
 import BreadcrumbItem from './BreadcrumbItem.vue'
 import BreadcrumbItemDropdown from './BreadcrumbItemDropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
 
-export default defineComponent({
-  components: {
-    BreadcrumbItem,
-    BreadcrumbItemDropdown,
-    DropdownItem,
-  },
-  props: {
-    items: {
-      type   : Array<BreadcrumbItems>,
-      default: () => ([]),
-    },
-  },
-  setup (_, { slots }) {
-    if (slots.divider)
-      provide('divider', slots.divider)
+defineProps({
+  items: {
+    type   : Array<BreadcrumbItems>,
+    default: () => ([]),
   },
 })
+
+const slots = defineSlots<{
+  'divider'(): VNode[],
+}>()
+
+if (slots.divider)
+  provide('divider', slots.divider)
 </script>
 
 <style lang="postcss">

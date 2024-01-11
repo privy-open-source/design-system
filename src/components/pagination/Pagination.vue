@@ -103,6 +103,7 @@
       <slot
         name="pagination-count"
         :page="modelValue"
+        :per-page="perPage"
         :range="rowRange"
         :total-page="totalPageCount"
         :total="total">
@@ -123,13 +124,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  computed,
-  watch,
-} from 'vue-demi'
+<script lang="ts" setup>
+import type { PropType, VNode } from 'vue-demi'
+import { computed, watch } from 'vue-demi'
 import Button from '../button/Button.vue'
 import Select from '../select/Select.vue'
 import IconPrev from '@privyid/persona-icon/vue/chevron-left/20.vue'
@@ -142,192 +139,187 @@ import type { SizeVariant } from '../button'
 
 type NavigationVariant = 'none' | 'short' | 'far'
 
-export default defineComponent({
-  components: {
-    IconPrev, Button, IconNext, Select,
+const props = defineProps({
+  modelValue: {
+    type   : Number,
+    default: 1,
   },
-  props: {
-    modelValue: {
-      type   : Number,
-      default: 1,
-    },
-    quickJump: {
-      type   : Boolean,
-      default: false,
-    },
-    showCounter: {
-      type   : Boolean,
-      default: false,
-    },
-    showPerPage: {
-      type   : Boolean,
-      default: false,
-    },
-    showDetail: {
-      type   : Boolean,
-      default: false,
-    },
-    navigationText: {
-      type   : Boolean,
-      default: false,
-    },
-    navigationOnly: {
-      type   : Boolean,
-      default: false,
-    },
-    variant: {
-      type   : String as PropType<NavigationVariant>,
-      default: 'short',
-    },
-    perPage: {
-      type   : Number,
-      default: 10,
-    },
-    perPageOptions: {
-      type   : Array<Number>,
-      default: () => [
-        10,
-        20,
-        30,
-      ],
-    },
-    total: {
-      type   : Number,
-      default: 0,
-    },
-    displayLimit: {
-      type   : Number,
-      default: 10,
-    },
-    pageLabel: {
-      type   : String,
-      default: 'Page',
-    },
-    prevNavLabel: {
-      type   : String,
-      default: 'Previous',
-    },
-    nextNavLabel: {
-      type   : String,
-      default: 'Next',
-    },
-    firstNavLabel: {
-      type   : String,
-      default: 'First',
-    },
-    lastNavLabel: {
-      type   : String,
-      default: 'Last',
-    },
-    showRowsLabel: {
-      type   : String,
-      default: 'Show rows',
-    },
-    selectSize: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
+  quickJump: {
+    type   : Boolean,
+    default: false,
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  showCounter: {
+    type   : Boolean,
+    default: false,
   },
-  emits: [
-    'update:modelValue',
-    'update:perPage',
-    'change',
-  ],
-  setup (props, { emit }) {
-    const classNames = computed(() => {
-      const results: string [] = ['pagination']
-
-      if (props.navigationOnly)
-        results.push('pagination--navonly')
-
-      return results
-    })
-
-    const model = useVModel(props)
-
-    const {
-      pageItems,
-      rowRange,
-      totalPageCount,
-      canNext,
-      canPrev,
-    } = usePagination(props)
-
-    const pageOptions = computed<SelectItem[]>(() => {
-      return getPageRange(1, totalPageCount.value).map((page) => {
-        return {
-          text : String(page),
-          value: page,
-        }
-      })
-    })
-
-    const rowPerPageOptions = computed<SelectItem[]>(() => {
-      return props.perPageOptions.map((option) => {
-        return {
-          text : String(option),
-          value: option,
-        }
-      })
-    })
-
-    const rowPerPage = computed({
-      get () {
-        return props.perPage
-      },
-      set (value) {
-        emit('update:perPage', value)
-      },
-    })
-
-    watch(totalPageCount, (value) => {
-      if (model.value > value)
-        model.value = value
-    })
-
-    function next () {
-      model.value = Math.min(model.value + 1, totalPageCount.value)
-
-      emit('change', model.value)
-    }
-
-    function prev () {
-      model.value = Math.max(model.value - 1, 1)
-
-      emit('change', model.value)
-    }
-
-    function selectPage (page: number | string) {
-      if (typeof page === 'string') return
-
-      if (model.value !== page) {
-        model.value = page
-
-        emit('change', page)
-      }
-    }
-
-    return {
-      model,
-      classNames,
-      pageOptions,
-      rowPerPageOptions,
-      pageItems,
-      rowRange,
-      totalPageCount,
-      rowPerPage,
-      canNext,
-      canPrev,
-      selectPage,
-      next,
-      prev,
-    }
+  showPerPage: {
+    type   : Boolean,
+    default: false,
+  },
+  showDetail: {
+    type   : Boolean,
+    default: false,
+  },
+  navigationText: {
+    type   : Boolean,
+    default: false,
+  },
+  navigationOnly: {
+    type   : Boolean,
+    default: false,
+  },
+  variant: {
+    type   : String as PropType<NavigationVariant>,
+    default: 'short',
+  },
+  perPage: {
+    type   : Number,
+    default: 10,
+  },
+  perPageOptions: {
+    type   : Array<Number>,
+    default: () => [
+      10,
+      20,
+      30,
+    ],
+  },
+  total: {
+    type   : Number,
+    default: 0,
+  },
+  displayLimit: {
+    type   : Number,
+    default: 10,
+  },
+  pageLabel: {
+    type   : String,
+    default: 'Page',
+  },
+  prevNavLabel: {
+    type   : String,
+    default: 'Previous',
+  },
+  nextNavLabel: {
+    type   : String,
+    default: 'Next',
+  },
+  firstNavLabel: {
+    type   : String,
+    default: 'First',
+  },
+  lastNavLabel: {
+    type   : String,
+    default: 'Last',
+  },
+  showRowsLabel: {
+    type   : String,
+    default: 'Show rows',
+  },
+  selectSize: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
   },
 })
+
+const emit = defineEmits<{
+  'update:modelValue': [number],
+  'update:perPage': [number],
+  'change': [number],
+}>()
+
+const classNames = computed(() => {
+  const results: string [] = ['pagination']
+
+  if (props.navigationOnly)
+    results.push('pagination--navonly')
+
+  return results
+})
+
+const model = useVModel(props)
+
+const {
+  pageItems,
+  rowRange,
+  totalPageCount,
+  canNext,
+  canPrev,
+} = usePagination(props)
+
+const pageOptions = computed<SelectItem[]>(() => {
+  return getPageRange(1, totalPageCount.value).map((page) => {
+    return {
+      text : String(page),
+      value: page,
+    }
+  })
+})
+
+const rowPerPageOptions = computed<SelectItem[]>(() => {
+  return props.perPageOptions.map((option) => {
+    return {
+      text : String(option),
+      value: option,
+    }
+  })
+})
+
+const rowPerPage = computed({
+  get () {
+    return props.perPage
+  },
+  set (value) {
+    emit('update:perPage', value)
+  },
+})
+
+watch(totalPageCount, (value) => {
+  if (model.value > value)
+    model.value = value
+})
+
+function next () {
+  model.value = Math.min(model.value + 1, totalPageCount.value)
+
+  emit('change', model.value)
+}
+
+function prev () {
+  model.value = Math.max(model.value - 1, 1)
+
+  emit('change', model.value)
+}
+
+function selectPage (page: number | string) {
+  if (typeof page === 'string') return
+
+  if (model.value !== page) {
+    model.value = page
+
+    emit('change', page)
+  }
+}
+
+defineExpose({
+  next,
+  prev,
+})
+
+defineSlots<{
+  'quick-jump-count'(props: { total: number }): VNode[],
+  'pagination-count'(props: {
+    page: number,
+    perPage: number,
+    total: number,
+    totalPage: number,
+    range: number[],
+  }): VNode[],
+  'first-navigation'(): VNode[],
+  'prev-navigation'(): VNode[],
+  'next-navigation'(): VNode[],
+  'last-navigation'(): VNode[],
+}>()
 </script>
 
 <style lang="postcss">

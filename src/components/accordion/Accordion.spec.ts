@@ -57,9 +57,11 @@ it('should hide caret icon if props `no-caret` is provided', () => {
   })
 
   const accordion = screen.getByTestId('accordion')
+
   expect(accordion).toBeInTheDocument()
 
   const items = screen.queryAllByTestId('accordion-item')
+
   for (const item of items) {
     const caret = item.querySelector('.accordion__item__caret')
 
@@ -91,20 +93,17 @@ it('should collapse other items if expanding one', async () => {
   const items      = screen.queryAllByTestId('accordion-item')
   const activators = screen.queryAllByTestId('accordion-item-activator')
 
-  const id0 = items.at(0).dataset.accordionItemId
-  const id1 = items.at(1).dataset.accordionItemId
-
   expect(accordion).toBeInTheDocument()
 
   await fireEvent.click(activators.at(0))
 
-  expect(model.value).toBe(id0)
+  expect(model.value).toBe(0)
   expect(items.at(0)).toHaveClass('expanded')
   expect(items.at(1)).toHaveClass('collapsed')
 
   await fireEvent.click(activators.at(1))
 
-  expect(model.value).toBe(id1)
+  expect(model.value).toBe(1)
   expect(items.at(0)).toHaveClass('collapsed')
   expect(items.at(1)).toHaveClass('expanded')
 })
@@ -135,6 +134,11 @@ it('should be support expand multiple accordion items if props `multiple` is pro
 
   expect(items.at(0)).toHaveClass('expanded')
   expect(items.at(1)).toHaveClass('expanded')
+
+  await fireEvent.click(activators.at(1))
+
+  expect(items.at(0)).toHaveClass('expanded')
+  expect(items.at(1)).not.toHaveClass('expanded')
 })
 
 it('should be render accordion items with same length if props `items` is provided', async () => {
@@ -193,18 +197,15 @@ it('should be unset v-model value if no expanded accordion items', async () => {
   })
 
   const accordion  = screen.getByTestId('accordion')
-  const items      = screen.queryAllByTestId('accordion-item')
   const activators = screen.queryAllByTestId('accordion-item-activator')
-
-  const id0 = items.at(0).dataset.accordionItemId
 
   expect(accordion).toBeInTheDocument()
 
   await fireEvent.click(activators.at(0))
 
-  expect(model.value).toBe(id0)
+  expect(model.value).toBe(0)
 
   await fireEvent.click(activators.at(0))
 
-  expect(model.value).not.toBe(id0)
+  expect(model.value).toBeUndefined()
 })

@@ -31,11 +31,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
+<script lang="ts" setup>
+import type { PropType, VNode } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   inject,
   ref,
 } from 'vue-demi'
@@ -44,107 +43,104 @@ import type { SizeVariant } from '../button'
 import IconClear from '@privyid/persona-icon/vue/close-circle-solid/20.vue'
 import { INPUTGROUP_SETTING } from '../input-group'
 import type { AcceptVariant } from './utils/accept'
-import {
-  checkOnInput,
-} from './utils/accept'
+import { checkOnInput } from './utils/accept'
 
-export default defineComponent({
-  components  : { IconClear },
-  inheritAttrs: false,
-  props       : {
-    modelValue: {
-      type   : [String, Number],
-      default: undefined,
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    readonly: {
-      type   : Boolean,
-      default: false,
-    },
-    error: {
-      type   : Boolean,
-      default: false,
-    },
-    clearable: {
-      type   : Boolean,
-      default: false,
-    },
-    containerClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    accept: {
-      type   : String as PropType<AcceptVariant>,
-      default: undefined,
-    },
+defineOptions({ inheritAttrs: false })
+
+const props = defineProps({
+  modelValue: {
+    type   : [String, Number],
+    default: undefined,
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
   },
-  emits: ['update:modelValue', 'clear'],
-  setup (props, { emit, slots }) {
-    const input   = ref<HTMLInputElement>()
-    const model   = useVModel(props)
-    const setting = inject(INPUTGROUP_SETTING, undefined, false)
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (setting?.size.value)
-        result.push(`input--${setting?.size.value}`)
-      // eslint-disable-next-line unicorn/explicit-length-check
-      else if (props.size)
-        result.push(`input--${props.size}`)
-
-      if (props.disabled)
-        result.push('input--disabled')
-
-      if (props.readonly)
-        result.push('input--readonly')
-
-      if (props.error)
-        result.push('input--error', 'state--error')
-
-      if (props.clearable)
-        result.push('input--clearable')
-
-      if (slots.prepend)
-        result.push('input--has-prepend')
-
-      if (slots.append)
-        result.push('input--has-append')
-
-      return result
-    })
-
-    function clear (event: MouseEvent) {
-      emit('clear', event)
-
-      if (!props.disabled && !props.readonly && !event.defaultPrevented)
-        model.value = ''
-    }
-
-    return {
-      input,
-      classNames,
-      model,
-      clear,
-      checkOnInput,
-    }
+  disabled: {
+    type   : Boolean,
+    default: false,
   },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
+  },
+  clearable: {
+    type   : Boolean,
+    default: false,
+  },
+  containerClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  accept: {
+    type   : String as PropType<AcceptVariant>,
+    default: undefined,
+  },
+})
+
+const emit = defineEmits<{
+  'update:modelValue': [string | number],
+  'clear': [MouseEvent],
+}>()
+
+const slots = defineSlots<{
+  'prepend'(): VNode[],
+  'append'(): VNode[],
+}>()
+
+const input   = ref<HTMLInputElement>()
+const model   = useVModel(props)
+const setting = inject(INPUTGROUP_SETTING, undefined, false)
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (setting?.size.value)
+    result.push(`input--${setting?.size.value}`)
+  // eslint-disable-next-line unicorn/explicit-length-check
+  else if (props.size)
+    result.push(`input--${props.size}`)
+
+  if (props.disabled)
+    result.push('input--disabled')
+
+  if (props.readonly)
+    result.push('input--readonly')
+
+  if (props.error)
+    result.push('input--error', 'state--error')
+
+  if (props.clearable)
+    result.push('input--clearable')
+
+  if (slots.prepend)
+    result.push('input--has-prepend')
+
+  if (slots.append)
+    result.push('input--has-append')
+
+  return result
+})
+
+function clear (event: MouseEvent) {
+  emit('clear', event)
+
+  if (!props.disabled && !props.readonly && !event.defaultPrevented)
+    model.value = ''
+}
+
+defineExpose({
+  input,
+  clear,
 })
 </script>
 

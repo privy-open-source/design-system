@@ -64,11 +64,10 @@
   </transition>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
+<script lang="ts" setup>
+import type { PropType, VNode } from 'vue-demi'
 import {
   computed,
-  defineComponent,
   onMounted,
   onBeforeUnmount,
 } from 'vue-demi'
@@ -79,115 +78,102 @@ import pSubheading from '../subheading/Subheading.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import type { StyleVariant } from '.'
 
-export default defineComponent({
-  components: {
-    IconClose,
-    pCaption,
-    pSubheading,
+defineOptions({ inheritAttrs: false })
+
+const props = defineProps({
+  state: {
+    type   : String as PropType<StyleVariant>,
+    default: 'info',
   },
-  inheritAttrs: false,
-  props       : {
-    state: {
-      type   : String as PropType<StyleVariant>,
-      default: 'info',
-    },
-    backgroundUrl: {
-      type   : String,
-      default: undefined,
-    },
-    dismissable: {
-      type   : Boolean,
-      default: true,
-    },
-    title: {
-      type   : String,
-      default: undefined,
-    },
-    message: {
-      type   : String,
-      default: undefined,
-    },
-    align: {
-      type   : String as PropType<AlignVariant>,
-      default: 'left',
-    },
-    modelValue: {
-      type   : Boolean,
-      default: true,
-    },
+  backgroundUrl: {
+    type   : String,
+    default: undefined,
   },
-
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  dismissable: {
+    type   : Boolean,
+    default: true,
   },
-  emits: [
-    'update:modelValue',
-    'close',
-    'show',
-    'hide',
-  ],
-
-  setup (props, { emit }) {
-    const model = useVModel(props)
-
-    function close (event: Event) : void {
-      emit('close', event)
-
-      if (!event.defaultPrevented)
-        model.value = false
-    }
-
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.state)
-        result.push(`contextual-bar--${props.state}`)
-
-      if (props.align)
-        result.push(`contextual-bar--align-${props.align}`)
-
-      if (props.backgroundUrl)
-        result.push('contextual-bar--background-image')
-
-      return result
-    })
-
-    function onEnter (target: HTMLDivElement) {
-      target.style.setProperty('transform', `translateY(-${target.clientHeight}px)`)
-
-      document.body.classList.add('contextual-bar__body--active')
-      document.body.style.setProperty('transform', `translateY(${target.clientHeight}px)`)
-
-      emit('show')
-    }
-
-    function onLeave (target: HTMLDivElement) {
-      target.style.setProperty('transform', 'translateY(0px)')
-
-      document.body.classList.remove('contextual-bar__body--active')
-      document.body.style.removeProperty('transform')
-
-      emit('hide')
-    }
-
-    onMounted(() => {
-      document.body.classList.add('contextual-bar__body')
-    })
-
-    onBeforeUnmount(() => {
-      document.body.classList.remove('contextual-bar__body')
-    })
-
-    return {
-      model,
-      classNames,
-      close,
-      onEnter,
-      onLeave,
-    }
+  title: {
+    type   : String,
+    default: undefined,
+  },
+  message: {
+    type   : String,
+    default: undefined,
+  },
+  align: {
+    type   : String as PropType<AlignVariant>,
+    default: 'left',
+  },
+  modelValue: {
+    type   : Boolean,
+    default: true,
   },
 })
+
+const emit = defineEmits<{
+  'update:modelValue': [boolean],
+  'close': [Event],
+  'show': [],
+  'hide': [],
+}>()
+
+const model = useVModel(props)
+
+function close (event: Event) : void {
+  emit('close', event)
+
+  if (!event.defaultPrevented)
+    model.value = false
+}
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.state)
+    result.push(`contextual-bar--${props.state}`)
+
+  if (props.align)
+    result.push(`contextual-bar--align-${props.align}`)
+
+  if (props.backgroundUrl)
+    result.push('contextual-bar--background-image')
+
+  return result
+})
+
+function onEnter (target: HTMLDivElement) {
+  target.style.setProperty('transform', `translateY(-${target.clientHeight}px)`)
+
+  document.body.classList.add('contextual-bar__body--active')
+  document.body.style.setProperty('transform', `translateY(${target.clientHeight}px)`)
+
+  emit('show')
+}
+
+function onLeave (target: HTMLDivElement) {
+  target.style.setProperty('transform', 'translateY(0px)')
+
+  document.body.classList.remove('contextual-bar__body--active')
+  document.body.style.removeProperty('transform')
+
+  emit('hide')
+}
+
+onMounted(() => {
+  document.body.classList.add('contextual-bar__body')
+})
+
+onBeforeUnmount(() => {
+  document.body.classList.remove('contextual-bar__body')
+})
+
+defineSlots<{
+  'icon'(): VNode[],
+  'title'(): VNode[],
+  'message'(): VNode[],
+  'action'(): VNode[],
+}>()
 </script>
 
 <style lang="postcss">

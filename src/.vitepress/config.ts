@@ -1,6 +1,4 @@
 import { defineConfig } from 'vitepress'
-import type { Plugin } from 'vite'
-import { babel } from '@rollup/plugin-babel'
 import getTarget from 'browserslist-to-esbuild'
 import head from './head'
 
@@ -509,21 +507,6 @@ export default defineConfig({
   },
   vite: {
     build  : { target: getTarget('extends @privyid/browserslist-config') },
-    plugins: [
-      babel({
-        babelHelpers: 'bundled',
-        exclude     : /node_modules/,
-        presets     : [
-          [
-            '@babel/preset-env',
-            {
-              targets    : ['extends @privyid/browserslist-config'],
-              useBuiltIns: 'entry',
-              corejs     : '3.36',
-            },
-          ],
-        ],
-      }) as unknown as Plugin,
-    ],
+    plugins: [],
   },
 })

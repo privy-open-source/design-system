@@ -6,43 +6,33 @@
   </span>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  computed,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import type { StyleVariant } from '.'
 import type { ColorVariant } from '../button'
 
-export default defineComponent({
-  props: {
-    color: {
-      type   : String as PropType<ColorVariant>,
-      default: 'default',
-    },
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'default',
-    },
+const props = defineProps({
+  color: {
+    type   : String as PropType<ColorVariant>,
+    default: 'default',
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['badge']
-
-      if (props.color)
-        result.push(`badge--${props.color}`)
-
-      if (props.variant)
-        result.push(`badge--variant-${props.variant}`)
-
-      return result
-    })
-
-    return { classNames }
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'default',
   },
+})
 
+const classNames = computed(() => {
+  const result: string[] = ['badge']
+
+  if (props.color)
+    result.push(`badge--${props.color}`)
+
+  if (props.variant)
+    result.push(`badge--variant-${props.variant}`)
+
+  return result
 })
 </script>
 
@@ -92,7 +82,7 @@ export default defineComponent({
 
         &:not([class^='text-'], [class*='text-']) {
           @apply text-state-emphasis;
-          @apply dark:text-dark-state-emphasis dark:text-dark-on-emphasis;
+          @apply dark:text-dark-on-emphasis;
         }
       }
 

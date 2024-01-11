@@ -7,33 +7,25 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import type { AddonPositionVariant } from '.'
 
-export default defineComponent({
-  props: {
-    position: {
-      type   : String as PropType<AddonPositionVariant>,
-      default: 'right',
-    },
+const props = defineProps({
+  position: {
+    type   : String as PropType<AddonPositionVariant>,
+    default: 'right',
   },
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = []
+})
 
-      if (props.position)
-        result.push(`pdf-object__addon--${props.position}`)
+const classNames = computed(() => {
+  const result: string[] = []
 
-      return result
-    })
+  if (props.position)
+    result.push(`pdf-object__addon--${props.position}`)
 
-    return { classNames }
-  },
+  return result
 })
 </script>
 

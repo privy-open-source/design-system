@@ -48,3 +48,9 @@ it('should randomly color by name (hashing color) if color not provided', () => 
     ],
   })
 })
+
+it('should return style', () => {
+  const style = Adapter.getStyle()
+
+  expect(style).toStrictEqual({})
+})

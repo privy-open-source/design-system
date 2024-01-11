@@ -24,7 +24,6 @@
 
 <script lang="ts" setup>
 import '../pdf-object/PdfObject.vue'
-import { templateRef } from '@vueuse/core'
 import {
   computed,
   ref,
@@ -61,7 +60,7 @@ const emit = defineEmits<{
   'click': [InteractEvent],
 }>()
 
-const object = templateRef<HTMLDivElement>('object')
+const object = ref<HTMLDivElement>()
 const scale  = toRef(props, 'scale')
 const width  = toRef(props, 'width')
 const height = toRef(props, 'height')

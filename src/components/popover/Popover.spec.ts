@@ -11,13 +11,13 @@ it('should able to show tooltip over activator element', async () => {
               Remove?
             </a>
           </template>
-          <template #default>
+          <template #default="{ hide }">
             <div class="flex items-center space-x-2">
               <span>Are you sure?</span>
-              <p-button data-testid="confirm" @click="popoverPromise.finish(true)">
+              <p-button data-testid="confirm" @click="hide()">
                 Yes
               </p-button>
-              <p-button data-testid="cancel" @click="popoverPromise.finish(false)">
+              <p-button data-testid="cancel" @click="hide()">
                 Cancel
               </p-button>
             </div>

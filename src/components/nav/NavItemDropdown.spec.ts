@@ -1,4 +1,4 @@
-import { render } from '@testing-library/vue'
+import { fireEvent, render } from '@testing-library/vue'
 import { delay } from 'nanodelay'
 import { ref, nextTick } from 'vue-demi'
 import Nav from './Nav.vue'
@@ -121,6 +121,12 @@ it('should be able to toggle dropdown via v-model', async () => {
 
   dropdown = screen.queryByTestId('dropdown-menu')
   expect(dropdown).toBeVisible()
+
+  await fireEvent.click(window)
+  await delay(0)
+
+  expect(model.value).toBe(false)
+  expect(dropdown).not.toBeVisible()
 })
 
 it('should be able to add class in the dropdown container via `menu-class` props', () => {

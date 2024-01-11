@@ -9,32 +9,23 @@
   </Nav>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  inject,
-} from 'vue-demi'
+import { inject } from 'vue-demi'
 import Nav from '../nav/Nav.vue'
 import type { AlignVariant } from '../nav'
 import { NAVBAR_SETTINGS } from '.'
 
-export default defineComponent({
-  components: { Nav },
-  props     : {
-    align: {
-      type   : String as PropType<AlignVariant>,
-      default: 'left',
-    },
-  },
-  setup () {
-    const settings  = inject(NAVBAR_SETTINGS, undefined, false)
-    const variant   = settings?.variant
-    const condensed = settings?.condensed
-
-    return { variant, condensed }
+defineProps({
+  align: {
+    type   : String as PropType<AlignVariant>,
+    default: 'left',
   },
 })
+
+const settings  = inject(NAVBAR_SETTINGS, undefined, false)
+const variant   = settings?.variant
+const condensed = settings?.condensed
 </script>
 
 <style lang="postcss">

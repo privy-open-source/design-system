@@ -16,42 +16,36 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import { defineComponent, computed } from 'vue-demi'
+import { computed } from 'vue-demi'
 import type { RouteLocationRaw } from 'vue-router'
 
-export default defineComponent({
-  props: {
-    href: {
-      type   : [String, Object] as PropType<RouteLocationRaw>,
-      default: undefined,
-    },
-    sticky: {
-      type   : Boolean,
-      default: false,
-    },
-    fixed: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  href: {
+    type   : [String, Object] as PropType<RouteLocationRaw>,
+    default: undefined,
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.sticky)
-        result.push('sidebar__brand--sticky')
-
-      if (props.fixed)
-        result.push('sidebar__brand--fixed')
-
-      return result
-    })
-
-    return { classNames }
+  sticky: {
+    type   : Boolean,
+    default: false,
   },
+  fixed: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.sticky)
+    result.push('sidebar__brand--sticky')
+
+  if (props.fixed)
+    result.push('sidebar__brand--fixed')
+
+  return result
 })
 </script>
 

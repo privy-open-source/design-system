@@ -210,3 +210,7 @@ Alternatively, you can manual trigger tooltip using `showTooltip`, `hideToolip`,
 |----------------|-------------------------|---------------------------------|
 | `tooltip:show` | Native DOM Event object | Event when tooltip will be show |
 | `tooltip:hide` | Native DOM Event object | Event when tooltip will be hide |
+
+## See Also
+
+- [Popover](../popover/)

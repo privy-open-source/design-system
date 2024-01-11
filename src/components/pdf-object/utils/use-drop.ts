@@ -34,7 +34,7 @@ export default function useDrop (target: Ref<HTMLElement>, dropTarget: Ref<strin
     if (target.value) {
       const { default: Interact } = await import('interactjs')
 
-      // Interact.dynamicDrop(true)
+      Interact.dynamicDrop(true)
 
       instance.value = Interact(dropTarget.value, { context: target.value })
         .dropzone({

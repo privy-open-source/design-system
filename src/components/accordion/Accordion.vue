@@ -2,34 +2,38 @@
   <div
     :class="classNames"
     data-testid="accordion">
-    <slot>
-      <Item
-        v-for="(item, i) in items"
-        :key="i"
-        :title="item.title"
-        :disabled="item.disabled">
-        <div class="p-4">
-          {{ item.content }}
-        </div>
-      </Item>
-    </slot>
+    <AccordionItems
+      v-model="model"
+      :no-caret="noCaret"
+      :multiple="multiple">
+      <slot>
+        <Item
+          v-for="(item, i) in items"
+          :key="i"
+          :title="item.title"
+          :disabled="item.disabled">
+          <div class="p-4">
+            {{ item.content }}
+          </div>
+        </Item>
+      </slot>
+    </AccordionItems>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useVModel } from '@vueuse/core'
-import { type AccordionItem, ACCORDION_CONTEXT } from '.'
+import { useVModel } from '../input'
+import { type AccordionItem } from '.'
 import type { PropType } from 'vue-demi'
-import {
-  computed,
-  provide,
-  readonly,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import Item from './AccordionItem.vue'
-
-defineOptions({ name: 'Accordion' })
+import AccordionItems from './AccordionItems.vue'
 
 const props = defineProps({
+  modelValue: {
+    type   : [Number, Array] as PropType<number | number[]>,
+    default: undefined,
+  },
   multiple: {
     type   : Boolean,
     default: false,
@@ -42,10 +46,6 @@ const props = defineProps({
     type   : Boolean,
     default: false,
   },
-  modelValue: {
-    type   : String,
-    default: undefined,
-  },
   noCaret: {
     type   : Boolean,
     default: false,
@@ -56,11 +56,11 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits<{
-  'update:modelValue': [string],
+defineEmits<{
+  'update:modelValue': [unknown],
 }>()
 
-const modelValue = useVModel(props, 'modelValue', emit, { passive: true })
+const model = useVModel(props)
 
 const classNames = computed(() => {
   const result: string[] = ['accordion']
@@ -72,17 +72,6 @@ const classNames = computed(() => {
     result.push('accordion--pills')
 
   return result
-})
-
-function setOpenItem (id: string): void {
-  modelValue.value = id
-}
-
-provide(ACCORDION_CONTEXT, {
-  openItem: readonly(modelValue),
-  multiple: props.multiple,
-  noCaret : props.noCaret,
-  setOpenItem,
 })
 </script>
 

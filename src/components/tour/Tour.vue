@@ -13,10 +13,9 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
   computed,
-  defineComponent,
   ref,
   shallowRef,
   watchEffect,
@@ -36,76 +35,64 @@ import {
 
 type TourDialogProps = Partial<InstanceType<typeof TourDialog>['$props']>
 
-export default defineComponent({
-  components: {
-    TourDialog,
-    TourHighlight,
-  },
-  setup () {
-    const isShow = ref(false)
-    const dialog = shallowRef<InstanceType<typeof TourDialog>>()
-    const target = shallowRef<HTMLElement>()
-    const config = shallowRef<TourDialogProps>()
-    const tour   = computed<HTMLElement>(() => dialog.value?.$el)
+const isShow = ref(false)
+const dialog = shallowRef<InstanceType<typeof TourDialog>>()
+const target = shallowRef<HTMLElement>()
+const config = shallowRef<TourDialogProps>()
+const tour   = computed<HTMLElement>(() => dialog.value?.$el)
 
-    watchEffect((onCleanup) => {
-      if (target.value && tour.value) {
-        const cleanup = autoUpdate(target.value, tour.value, async () => {
-          computePosition(target.value, tour.value, {
-            strategy  : 'absolute',
-            middleware: [
-              autoPlacement({ altBoundary: true }),
-              shift({ padding: 16 }),
-              inline(),
-              hidden(),
-              offset(16),
-            ],
-          }).then(({ x, y, middlewareData }) => {
-            if (tour.value) {
-              tour.value.style.transform  = `translate3d(${x || 0}px, ${y || 0}px, 0)`
-              tour.value.style.visibility = middlewareData.hide.referenceHidden
-                ? 'hidden'
-                : 'visible'
-            }
-          })
-        }, { animationFrame: true })
-
-        onCleanup(cleanup)
-      }
-    })
-
-    watchEffect((onCleanup) => {
-      if (isShow.value)
-        document.body.classList.add('tour--active')
-
-      onCleanup(() => {
-        document.body.classList.remove('tour--active')
+watchEffect((onCleanup) => {
+  if (target.value && tour.value) {
+    const cleanup = autoUpdate(target.value, tour.value, async () => {
+      computePosition(target.value, tour.value, {
+        strategy  : 'absolute',
+        middleware: [
+          autoPlacement({ altBoundary: true }),
+          shift({ padding: 16 }),
+          inline(),
+          hidden(),
+          offset(16),
+        ],
+      }).then(({ x, y, middlewareData }) => {
+        if (tour.value) {
+          tour.value.style.transform  = `translate3d(${x || 0}px, ${y || 0}px, 0)`
+          tour.value.style.visibility = middlewareData.hide.referenceHidden
+            ? 'hidden'
+            : 'visible'
+        }
       })
-    })
+    }, { animationFrame: true })
 
-    function show (targetEl: HTMLElement, options: TourDialogProps) {
-      target.value = targetEl
-      config.value = options
-      isShow.value = true
-    }
+    onCleanup(cleanup)
+  }
+})
 
-    function hide () {
-      isShow.value = false
-    }
+watchEffect((onCleanup) => {
+  if (isShow.value)
+    document.body.classList.add('tour--active')
 
-    onBeforeUnmount(() => {
-      hide()
-    })
+  onCleanup(() => {
+    document.body.classList.remove('tour--active')
+  })
+})
 
-    return {
-      isShow,
-      dialog,
-      target,
-      show,
-      hide,
-      config,
-    }
-  },
+function show (targetEl: HTMLElement, options: TourDialogProps) {
+  target.value = targetEl
+  config.value = options
+  isShow.value = true
+}
+
+function hide () {
+  isShow.value = false
+}
+
+onBeforeUnmount(() => {
+  hide()
+})
+
+defineExpose({
+  show,
+  hide,
 })
 </script>
 

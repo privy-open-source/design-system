@@ -27,17 +27,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
+<script lang="ts" setup>
 import Color from './Color.vue'
 
-export default defineComponent({
-  components: { Color },
-  props     : {
-    item: {
-      type   : Object,
-      default: () => ({}),
-    },
+defineProps({
+  item: {
+    type   : Object,
+    default: () => ({}),
   },
 })
 </script>

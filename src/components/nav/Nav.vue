@@ -26,88 +26,78 @@
   </ul>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import type { AlignVariant, StyleVariant } from '.'
 import Caption from '../caption/Caption.vue'
 import Text from '../text/Text.vue'
 import type { RouteLocationRaw } from 'vue-router'
 
-export default defineComponent({
-  components: { Caption, Text },
-  props     : {
-    fill: {
-      type   : Boolean,
-      default: false,
-    },
-    justified: {
-      type   : Boolean,
-      default: false,
-    },
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'pills',
-    },
-    align: {
-      type   : String as PropType<AlignVariant>,
-      default: 'left',
-    },
-    vertical: {
-      type   : Boolean,
-      default: false,
-    },
-    title: {
-      type   : String,
-      default: undefined,
-    },
-    titleActionLabel: {
-      type   : [String, Object] as PropType<RouteLocationRaw>,
-      default: undefined,
-    },
-    titleActionUrl: {
-      type   : String,
-      default: undefined,
-    },
-    condensed: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  fill: {
+    type   : Boolean,
+    default: false,
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['nav']
-
-      if (props.fill)
-        result.push('nav--fill')
-
-      if (props.justified)
-        result.push('nav--justified')
-
-      if (props.variant)
-        result.push(`nav--${props.variant}`)
-
-      if (props.align)
-        result.push(`nav--align-${props.align}`)
-
-      if (props.vertical)
-        result.push('nav--vertical')
-
-      if (props.title || props.titleActionLabel)
-        result.push('nav--has-title')
-
-      if (props.condensed)
-        result.push('nav--condensed')
-
-      return result
-    })
-
-    return { classNames }
+  justified: {
+    type   : Boolean,
+    default: false,
   },
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'pills',
+  },
+  align: {
+    type   : String as PropType<AlignVariant>,
+    default: 'left',
+  },
+  vertical: {
+    type   : Boolean,
+    default: false,
+  },
+  title: {
+    type   : String,
+    default: undefined,
+  },
+  titleActionLabel: {
+    type   : [String, Object] as PropType<RouteLocationRaw>,
+    default: undefined,
+  },
+  titleActionUrl: {
+    type   : String,
+    default: undefined,
+  },
+  condensed: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const classNames = computed(() => {
+  const result: string[] = ['nav']
+
+  if (props.fill)
+    result.push('nav--fill')
+
+  if (props.justified)
+    result.push('nav--justified')
+
+  if (props.variant)
+    result.push(`nav--${props.variant}`)
+
+  if (props.align)
+    result.push(`nav--align-${props.align}`)
+
+  if (props.vertical)
+    result.push('nav--vertical')
+
+  if (props.title || props.titleActionLabel)
+    result.push('nav--has-title')
+
+  if (props.condensed)
+    result.push('nav--condensed')
+
+  return result
 })
 </script>
 

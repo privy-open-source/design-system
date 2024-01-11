@@ -24,94 +24,88 @@
   </li>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type {
   AnchorHTMLAttributes,
   PropType,
+  VNode,
 } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
-import { type RouteLocationRaw } from 'vue-router'
+import { computed } from 'vue-demi'
+import type { RouteLocationRaw } from 'vue-router'
 
-export default defineComponent({
-  props: {
-    active: {
-      type   : Boolean,
-      default: false,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    href: {
-      type   : [String, Object] as PropType<RouteLocationRaw>,
-      default: undefined,
-    },
-    target: {
-      type   : String as PropType<AnchorHTMLAttributes['target']>,
-      default: '_self',
-    },
-    linkClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    exact: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  active: {
+    type   : Boolean,
+    default: false,
   },
-  setup (props, { slots }) {
-    const classNames = computed(() => {
-      const result: string[] = ['nav__link']
-
-      if (props.active)
-        result.push('nav__link--active')
-
-      if (props.disabled)
-        result.push('nav__link--disabled')
-
-      if (slots.icon)
-        result.push('nav__link--icon')
-
-      if (props.exact)
-        result.push('nav__link--exact')
-
-      return result
-    })
-
-    const navItemClass = computed(() => {
-      const result: string[] = ['']
-
-      if (props.active)
-        result.push('nav__item--active')
-
-      if (props.disabled)
-        result.push('nav__item--disabled')
-
-      return result
-    })
-
-    const link = computed(() => {
-      let permalink: string | undefined
-
-      if (!props.disabled)
-        permalink = props.href
-
-      return permalink
-    })
-
-    return {
-      classNames,
-      navItemClass,
-      link,
-    }
+  disabled: {
+    type   : Boolean,
+    default: false,
   },
+  href: {
+    type   : [String, Object] as PropType<RouteLocationRaw>,
+    default: undefined,
+  },
+  target: {
+    type   : String as PropType<AnchorHTMLAttributes['target']>,
+    default: '_self',
+  },
+  linkClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  exact: {
+    type   : Boolean,
+    default: false,
+  },
+})
+
+const slots = defineSlots<{
+  'icon'(): VNode[],
+  'default'(): VNode[],
+}>()
+
+const classNames = computed(() => {
+  const result: string[] = ['nav__link']
+
+  if (props.active)
+    result.push('nav__link--active')
+
+  if (props.disabled)
+    result.push('nav__link--disabled')
+
+  if (slots.icon)
+    result.push('nav__link--icon')
+
+  if (props.exact)
+    result.push('nav__link--exact')
+
+  return result
+})
+
+const navItemClass = computed(() => {
+  const result: string[] = ['']
+
+  if (props.active)
+    result.push('nav__item--active')
+
+  if (props.disabled)
+    result.push('nav__item--disabled')
+
+  return result
+})
+
+const link = computed(() => {
+  let permalink: string | undefined
+
+  if (!props.disabled)
+    permalink = props.href
+
+  return permalink
 })
 </script>
 

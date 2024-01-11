@@ -18,75 +18,61 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  computed,
-  ref,
-} from 'vue-demi'
+import { computed, ref } from 'vue-demi'
 import Dot from '../dot/Dot.vue'
 import type { StyleVariant } from '.'
 import type { ColorVariant, SizeVariant } from '../button'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 
-export default defineComponent({
-  components: { Dot, IconClose },
-  props     : {
-    color: {
-      type   : String as PropType<ColorVariant>,
-      default: 'default',
-    },
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'default',
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    dismissable: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  color: {
+    type   : String as PropType<ColorVariant>,
+    default: 'default',
   },
-
-  emits: ['dismissed'],
-
-  setup (props, { emit }) {
-    const show = ref(true)
-
-    const classNames = computed(() => {
-      const result: string[] = ['label']
-
-      if (props.color)
-        result.push(`label--${props.color}`)
-
-      if (props.variant)
-        result.push(`label--variant-${props.variant}`)
-
-      // eslint-disable-next-line unicorn/explicit-length-check
-      if (props.size)
-        result.push(`label--${props.size}`)
-
-      return result
-    })
-
-    function close (event: MouseEvent): void {
-      emit('dismissed', event)
-
-      if (!event.defaultPrevented)
-        show.value = false
-    }
-
-    return {
-      classNames,
-      show,
-      close,
-    }
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'default',
   },
-
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  dismissable: {
+    type   : Boolean,
+    default: false,
+  },
 })
+
+const emit = defineEmits<{
+  'dismissed': [MouseEvent],
+}>()
+
+const show = ref(true)
+
+const classNames = computed(() => {
+  const result: string[] = ['label']
+
+  if (props.color)
+    result.push(`label--${props.color}`)
+
+  if (props.variant)
+    result.push(`label--variant-${props.variant}`)
+
+  // eslint-disable-next-line unicorn/explicit-length-check
+  if (props.size)
+    result.push(`label--${props.size}`)
+
+  return result
+})
+
+function close (event: MouseEvent): void {
+  emit('dismissed', event)
+
+  if (!event.defaultPrevented)
+    show.value = false
+}
 </script>
 
 <style lang="postcss">

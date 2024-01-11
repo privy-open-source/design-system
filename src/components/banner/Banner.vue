@@ -7,7 +7,7 @@
       v-if="!noIcon"
       class="banner__icon"
       data-testid="banner-icon"
-      :class="{ 'banner__icon--custom' : $slots.icon }">
+      :class="{ 'banner__icon--custom': $slots.icon }">
       <slot name="icon">
         <component
           :is="icon"
@@ -27,16 +27,12 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import IconDanger from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
-import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  ref,
-  computed,
-} from 'vue-demi'
+import type { PropType, VNode } from 'vue-demi'
+import { ref, computed } from 'vue-demi'
 import type { StyleVariant } from '.'
 
 const BannerIcons = {
@@ -44,56 +40,52 @@ const BannerIcons = {
   info  : IconInfo,
 }
 
-export default defineComponent({
-  components: {
-    IconInfo,
-    IconClose,
-    IconDanger,
+const props = defineProps({
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'info',
   },
-  props: {
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'info',
-    },
-    dismissable: {
-      type   : Boolean,
-      default: true,
-    },
-    noIcon: {
-      type   : Boolean,
-      default: false,
-    },
+  dismissable: {
+    type   : Boolean,
+    default: true,
   },
-  emits: ['dismissed'],
-  setup (props, { emit }) {
-    const show = ref(true)
-
-    const classNames = computed(() => {
-      const result: string[] = ['banner']
-
-      if (props.variant)
-        result.push(`banner--${props.variant}`)
-
-      return result
-    })
-
-    const icon = computed(() => {
-      return BannerIcons[props.variant]
-    })
-
-    function close (): void {
-      show.value = false
-      emit('dismissed')
-    }
-
-    return {
-      classNames,
-      show,
-      icon,
-      close,
-    }
+  noIcon: {
+    type   : Boolean,
+    default: false,
   },
 })
+
+const emit = defineEmits<{
+  'dismissed': [],
+}>()
+
+const show = ref(true)
+
+const classNames = computed(() => {
+  const result: string[] = ['banner']
+
+  if (props.variant)
+    result.push(`banner--${props.variant}`)
+
+  return result
+})
+
+const icon = computed(() => {
+  return BannerIcons[props.variant]
+})
+
+function close (): void {
+  show.value = false
+
+  emit('dismissed')
+}
+
+defineExpose({ close })
+
+defineSlots<{
+  'icon'(): VNode[],
+  'default'(props: { close: () => void }): VNode[],
+}>()
 </script>
 
 <style lang="postcss">

@@ -23,9 +23,8 @@
   </li>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
-import { defineComponent } from 'vue-demi'
+<script lang="ts" setup>
+import type { PropType, VNode } from 'vue-demi'
 import Dropdown from '../dropdown/Dropdown.vue'
 import type { Placement } from '@floating-ui/core'
 import type {
@@ -35,66 +34,63 @@ import type {
 import { useVModel } from '../input'
 import type { MenuSizeVariant } from '../dropdown'
 
-export default defineComponent({
-  components: { Dropdown },
-  props     : {
-    modelValue: {
-      type   : Boolean,
-      default: false,
-    },
-    text: {
-      type   : String,
-      default: '',
-    },
-    icon: {
-      type   : Boolean,
-      default: false,
-    },
-    size: {
-      type   : String as PropType<SizeVariant>,
-      default: 'md',
-    },
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'ghost',
-    },
-    noCaret: {
-      type   : Boolean,
-      default: false,
-    },
-    placement: {
-      type   : String as PropType<Placement>,
-      default: 'bottom-end',
-    },
-    menuClass: {
-      type: [
-        String,
-        Array,
-        Object,
-      ],
-      default: undefined,
-    },
-    menuSize: {
-      type   : String as PropType<MenuSizeVariant>,
-      default: 'sm',
-    },
-    divider: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  modelValue: {
+    type   : Boolean,
+    default: false,
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  text: {
+    type   : String,
+    default: '',
   },
-  emits: ['update:modelValue'],
-
-  setup (props) {
-    const model = useVModel(props)
-
-    return { model }
+  icon: {
+    type   : Boolean,
+    default: false,
+  },
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'md',
+  },
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'ghost',
+  },
+  noCaret: {
+    type   : Boolean,
+    default: false,
+  },
+  placement: {
+    type   : String as PropType<Placement>,
+    default: 'bottom-end',
+  },
+  menuClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  menuSize: {
+    type   : String as PropType<MenuSizeVariant>,
+    default: 'sm',
+  },
+  divider: {
+    type   : Boolean,
+    default: false,
   },
 })
+
+defineEmits<{
+  'update:modelValue': [boolean],
+}>()
+
+const model = useVModel(props)
+
+defineSlots<{
+  'default'(): VNode[],
+  'button-content'(): VNode[],
+}>()
 </script>
 
 <style lang="postcss">

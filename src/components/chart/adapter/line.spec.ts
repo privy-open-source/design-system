@@ -61,6 +61,7 @@ it('should able to convert vnode to chart.js datasets', () => {
           '#23b242',
           '#23b242',
         ],
+        fill: false,
       },
       {
         label: 'Failed',
@@ -85,6 +86,7 @@ it('should able to convert vnode to chart.js datasets', () => {
           '#e42e2c',
           '#e42e2c',
         ],
+        fill: false,
       },
     ],
   })
@@ -129,6 +131,7 @@ it('should randomly color by name (hashing color) if color not provided', () => 
     datasets: [
       {
         label: 'Success',
+        fill : false,
         data : [
           '30',
           '20',
@@ -153,6 +156,7 @@ it('should randomly color by name (hashing color) if color not provided', () => 
       },
       {
         label: 'Failed',
+        fill : false,
         data : [
           '10',
           '10',
@@ -176,5 +180,39 @@ it('should randomly color by name (hashing color) if color not provided', () => 
         ],
       },
     ],
+  })
+})
+
+it('should return style', () => {
+  const style = Adapter.getStyle()
+
+  expect(style).toStrictEqual({
+    scales: {
+      x: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: 600,
+          },
+        },
+        border: { color: '#BFBFBF' },
+      },
+      y: {
+        ticks: {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: 600,
+          },
+        },
+        border: {
+          color: '#BFBFBF',
+          dash : [4],
+        },
+      },
+    },
   })
 })

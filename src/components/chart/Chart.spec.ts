@@ -1,7 +1,7 @@
 import { createChart, updateChart } from './__mocks__/use-chart'
 import { render } from '@testing-library/vue'
 import { vi } from 'vitest'
-import { ref } from 'vue-demi'
+import { computed, ref } from 'vue-demi'
 import { delay } from 'nanodelay'
 import pChart from './Chart.vue'
 import pChartSet from './ChartSet.vue'
@@ -123,12 +123,14 @@ it('should re-render if data changed', async () => {
         data           : ['30'],
         borderColor    : ['#23b242'],
         backgroundColor: ['#23b242'],
+        fill           : false,
       },
       {
         label          : 'Failed',
         data           : ['10'],
         borderColor    : ['#e42e2c'],
         backgroundColor: ['#e42e2c'],
+        fill           : false,
       },
     ],
   }, {
@@ -141,7 +143,7 @@ it('should re-render if data changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
       },
@@ -153,7 +155,7 @@ it('should re-render if data changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
         border: { color: '#BFBFBF' },
@@ -164,7 +166,7 @@ it('should re-render if data changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
         border: { color: '#BFBFBF', dash: [4] },
@@ -184,12 +186,14 @@ it('should re-render if data changed', async () => {
         data           : ['30', '20'],
         borderColor    : ['#23b242', '#23b242'],
         backgroundColor: ['#23b242', '#23b242'],
+        fill           : false,
       },
       {
         label          : 'Failed',
         data           : ['10', '10'],
         borderColor    : ['#e42e2c', '#e42e2c'],
         backgroundColor: ['#e42e2c', '#e42e2c'],
+        fill           : false,
       },
     ],
   })
@@ -229,12 +233,14 @@ it('should re-render if variant changed', async () => {
         data           : ['30'],
         borderColor    : ['#23b242'],
         backgroundColor: ['#23b242'],
+        fill           : false,
       },
       {
         label          : 'Failed',
         data           : ['10'],
         borderColor    : ['#e42e2c'],
         backgroundColor: ['#e42e2c'],
+        fill           : false,
       },
     ],
   }, {
@@ -247,7 +253,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
       },
@@ -259,7 +265,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
         border: { color: '#BFBFBF' },
@@ -270,7 +276,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
         border: { color: '#BFBFBF', dash: [4] },
@@ -301,7 +307,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
       },
@@ -343,12 +349,14 @@ it('should re-render if variant changed', async () => {
         data           : ['30'],
         borderColor    : ['#23b242'],
         backgroundColor: ['#23b242'],
+        fill           : false,
       },
       {
         label          : 'Failed',
         data           : ['10'],
         borderColor    : ['#e42e2c'],
         backgroundColor: ['#e42e2c'],
+        fill           : false,
       },
     ],
   }, {
@@ -361,7 +369,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
       },
@@ -373,7 +381,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
         border: { color: '#BFBFBF' },
@@ -384,7 +392,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
         border: { color: '#BFBFBF', dash: [4] },
@@ -404,12 +412,14 @@ it('should re-render if variant changed', async () => {
         data           : ['30'],
         borderColor    : ['#23b242'],
         backgroundColor: ['#23b242'],
+        fill           : false,
       },
       {
         label          : 'Failed',
         data           : ['10'],
         borderColor    : ['#e42e2c'],
         backgroundColor: ['#e42e2c'],
+        fill           : false,
       },
     ],
   }, {
@@ -422,7 +432,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
       },
@@ -434,7 +444,7 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
         border: { color: '#BFBFBF' },
@@ -445,11 +455,128 @@ it('should re-render if variant changed', async () => {
           font : {
             family: 'DM Sans',
             size  : 12,
-            weight: '600',
+            weight: 600,
           },
         },
         border: { color: '#BFBFBF', dash: [4] },
       },
     },
+  })
+})
+
+it('should able customize using props `data` and `options`', async () => {
+  const screen = render({
+    components: {
+      pChart,
+      pChartSet,
+      pChartVal,
+    },
+    template: `
+      <p-chart
+        variant="scatter"
+        :data="data"
+        :options="options"
+      />
+    `,
+    setup () {
+      const data = computed(() => {
+        return {
+          labels: [
+            'January',
+            'February',
+            'March',
+            'April',
+          ],
+          datasets: [
+            {
+              type : 'bar',
+              label: 'Bar Dataset',
+              data : [
+                10,
+                20,
+                30,
+                40,
+              ],
+              borderColor    : 'rgb(255, 99, 132)',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            },
+            {
+              type : 'line',
+              label: 'Line Dataset',
+              data : [
+                10,
+                20,
+                30,
+                40,
+              ],
+              fill       : false,
+              borderColor: 'rgb(54, 162, 235)',
+            },
+          ],
+        }
+      })
+
+      const options = computed(() => {
+        return { scales: { y: { beginAtZero: true } } }
+      })
+
+      return { data, options }
+    },
+  })
+
+  await delay(1)
+
+  const canvas = screen.queryByTestId('chart-canvas')
+
+  expect(createChart).toBeCalledTimes(1)
+  expect(createChart).lastCalledWith(canvas, 'scatter', {
+    labels: [
+      'January',
+      'February',
+      'March',
+      'April',
+    ],
+    datasets: [
+      {
+        type : 'bar',
+        label: 'Bar Dataset',
+        data : [
+          10,
+          20,
+          30,
+          40,
+        ],
+        borderColor    : 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      },
+      {
+        type : 'line',
+        label: 'Line Dataset',
+        data : [
+          10,
+          20,
+          30,
+          40,
+        ],
+        fill       : false,
+        borderColor: 'rgb(54, 162, 235)',
+      },
+    ],
+  }, {
+    plugins: {
+      legend: {
+        display : true,
+        position: 'bottom',
+        labels  : {
+          color: '#9CA3AF',
+          font : {
+            family: 'DM Sans',
+            size  : 12,
+            weight: 600,
+          },
+        },
+      },
+    },
+    scales: { y: { beginAtZero: true } },
   })
 })

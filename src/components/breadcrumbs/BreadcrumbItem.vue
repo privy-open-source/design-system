@@ -18,10 +18,9 @@
   </li>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
-  defineComponent,
   computed,
   inject,
   h,
@@ -30,51 +29,40 @@ import {
 import IconChevron from '@privyid/persona-icon/vue/chevron-right/20.vue'
 import type { RouteLocationRaw } from 'vue-router'
 
-export default defineComponent({
-  props: {
-    href: {
-      type   : [String, Object] as PropType<RouteLocationRaw>,
-      default: '#' as RouteLocationRaw,
-    },
-    active: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  href: {
+    type   : [String, Object] as PropType<RouteLocationRaw>,
+    default: '#' as RouteLocationRaw,
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['']
-
-      if (props.active)
-        result.push('breadcrumbs__item--active')
-
-      return result
-    })
-
-    const tagName = computed(() => {
-      return props.active
-        ? 'span'
-        : resolveComponent('nuxt-link')
-    })
-
-    const permalink = computed(() => {
-      if (props.active)
-        return
-
-      return props.href
-    })
-
-    const divider = inject('divider', () => h(IconChevron))
-
-    return {
-      classNames,
-      tagName,
-      permalink,
-      divider,
-    }
+  active: {
+    type   : Boolean,
+    default: false,
   },
 })
+
+const classNames = computed(() => {
+  const result: string[] = ['']
+
+  if (props.active)
+    result.push('breadcrumbs__item--active')
+
+  return result
+})
+
+const tagName = computed(() => {
+  return props.active
+    ? 'span'
+    : resolveComponent('nuxt-link')
+})
+
+const permalink = computed(() => {
+  if (props.active)
+    return
+
+  return props.href
+})
+
+const divider = inject('divider', () => h(IconChevron))
 </script>
 
 <style lang="postcss">

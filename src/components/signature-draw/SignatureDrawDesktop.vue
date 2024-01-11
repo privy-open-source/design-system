@@ -30,11 +30,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { templateRef } from '@vueuse/core'
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
 import {
-  defineComponent,
   onMounted,
   ref,
   watch,
@@ -55,107 +53,91 @@ import type { ModelModifier } from '../dropzone'
 import { usePreview } from '../cropper'
 import { fromBase64 } from '../utils/base64'
 
-export default defineComponent({
-  components: { Caption, Button },
-  props     : {
-    modelValue: {
-      type   : [String, globalThis.File],
-      default: '',
-    },
-    modelModifiers: {
-      type   : Object as PropType<ModelModifier>,
-      default: () => ({} as ModelModifier),
-    },
-    width: {
-      type   : Number,
-      default: 430,
-    },
-    height: {
-      type   : Number,
-      default: 230,
-    },
-    color: {
-      type   : String,
-      default: '#000000',
-    },
-    placeholder: {
-      type   : String,
-      default: '',
-    },
-    resetLabel: {
-      type   : String,
-      default: 'Reset',
-    },
+const props = defineProps({
+  modelValue: {
+    type   : [String, globalThis.File],
+    default: '',
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  modelModifiers: {
+    type   : Object as PropType<ModelModifier>,
+    default: () => ({} as ModelModifier),
   },
-  emits: ['update:modelValue'],
-  setup (props) {
-    const model   = useVModel(props)
-    const preview = usePreview(model, '')
-    const isBlank = ref(true)
+  width: {
+    type   : Number,
+    default: 430,
+  },
+  height: {
+    type   : Number,
+    default: 230,
+  },
+  color: {
+    type   : String,
+    default: '#000000',
+  },
+  placeholder: {
+    type   : String,
+    default: '',
+  },
+  resetLabel: {
+    type   : String,
+    default: 'Reset',
+  },
+})
 
-    const canvas = templateRef<HTMLCanvasElement>('canvas')
-    const lines  = createLines(15)
+const model   = useVModel(props)
+const preview = usePreview(model, '')
+const isBlank = ref(true)
 
-    function reset () {
-      clearAll(canvas.value)
+const canvas = ref<HTMLCanvasElement>()
+const lines  = createLines(15)
 
-      isBlank.value = true
-      model.value   = ''
+function reset () {
+  clearAll(canvas.value)
+
+  isBlank.value = true
+  model.value   = ''
+}
+
+function setColor (color: string) {
+  if (!isBlank.value) {
+    replaceColor(canvas.value, color)
+
+    const result = toDataURL(canvas.value)
+    const value  = props.modelModifiers.base64 ? result : fromBase64(result)
+
+    model.value = value
+  }
+}
+
+watch(() => props.color, setColor)
+
+useDraw(canvas, {
+  onstart (event) {
+    for (const line of lines)
+      line.start(event.pageX, event.pageY)
+  },
+  onmove (event) {
+    for (const line of lines) {
+      const coordinate = line.move(event.pageX, event.pageY)
+      const options    = { color: props.color }
+
+      drawLine(canvas.value, coordinate, options)
     }
 
-    function setColor (color: string) {
-      if (!isBlank.value) {
-        replaceColor(canvas.value, color)
+    const result = toDataURL(canvas.value)
+    const value  = props.modelModifiers.base64 ? result : fromBase64(result)
 
-        const result = toDataURL(canvas.value)
-        const value  = props.modelModifiers.base64 ? result : fromBase64(result)
-
-        model.value = value
-      }
-    }
-
-    watch(() => props.color, setColor)
-
-    useDraw(canvas, {
-      onstart (event) {
-        for (const line of lines)
-          line.start(event.pageX, event.pageY)
-      },
-      onmove (event) {
-        for (const line of lines) {
-          const coordinate = line.move(event.pageX, event.pageY)
-          const options    = { color: props.color }
-
-          drawLine(canvas.value, coordinate, options)
-        }
-
-        const result = toDataURL(canvas.value)
-        const value  = props.modelModifiers.base64 ? result : fromBase64(result)
-
-        isBlank.value = false
-        model.value   = value
-      },
-    })
-
-    onMounted(() => {
-      if (model.value && preview.value) {
-        placeImage(canvas.value, preview.value)
-
-        isBlank.value = false
-      }
-    })
-
-    return {
-      model,
-      reset,
-      isBlank,
-      setColor,
-    }
+    isBlank.value = false
+    model.value   = value
   },
+})
+
+onMounted(() => {
+  if (model.value && preview.value) {
+    placeImage(canvas.value, preview.value)
+
+    isBlank.value = false
+  }
 })
 </script>
 

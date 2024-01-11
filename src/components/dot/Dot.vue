@@ -4,42 +4,33 @@
     :class="classNames" />
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  computed,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import type { StyleVariant } from '.'
 import type { ColorVariant } from '../button'
 
-export default defineComponent({
-  props: {
-    color: {
-      type   : String as PropType<ColorVariant>,
-      default: 'default',
-    },
-    variant: {
-      type   : String as PropType<StyleVariant>,
-      default: 'default',
-    },
+const props = defineProps({
+  color: {
+    type   : String as PropType<ColorVariant>,
+    default: 'default',
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['dot']
-
-      if (props.color)
-        result.push(`dot--${props.color}`)
-
-      if (props.variant)
-        result.push(`dot--variant-${props.variant}`)
-
-      return result
-    })
-
-    return { classNames }
+  variant: {
+    type   : String as PropType<StyleVariant>,
+    default: 'default',
   },
+})
+
+const classNames = computed(() => {
+  const result: string[] = ['dot']
+
+  if (props.color)
+    result.push(`dot--${props.color}`)
+
+  if (props.variant)
+    result.push(`dot--variant-${props.variant}`)
+
+  return result
 })
 </script>
 

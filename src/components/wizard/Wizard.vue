@@ -23,56 +23,50 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import { defineComponent } from 'vue-demi'
 import WizardHeader from './WizardHeader.vue'
 import WizardBody from './WizardBody.vue'
 import type { TravelHook, FinishedHook } from '../steps'
 import { useVModel } from '../input'
-import type { TitleVariant, IconVariant } from '../progress/Progress.vue'
+import type { TitleVariant, IconVariant } from '../progress'
 
-export default defineComponent({
-  components: {
-    WizardHeader,
-    WizardBody,
+const props = defineProps({
+  modelValue: {
+    type   : Number,
+    default: 1,
   },
-  props: {
-    modelValue: {
-      type   : Number,
-      default: 1,
-    },
-    variant: {
-      type   : String as PropType<IconVariant>,
-      default: 'dot',
-    },
-    titleVariant: {
-      type   : String as PropType<TitleVariant>,
-      default: 'specific',
-    },
-    keepAlive: {
-      type   : Boolean,
-      default: false,
-    },
-    onBeforePrev: {
-      type   : Function as PropType<TravelHook>,
-      default: undefined,
-    },
-    onBeforeNext: {
-      type   : Function as PropType<TravelHook>,
-      default: undefined,
-    },
-    onFinished: {
-      type   : Function as PropType<FinishedHook>,
-      default: undefined,
-    },
+  variant: {
+    type   : String as PropType<IconVariant>,
+    default: 'dot',
   },
-  setup (props) {
-    const model = useVModel(props)
-
-    return { model }
+  titleVariant: {
+    type   : String as PropType<TitleVariant>,
+    default: 'specific',
+  },
+  keepAlive: {
+    type   : Boolean,
+    default: false,
+  },
+  onBeforePrev: {
+    type   : Function as PropType<TravelHook>,
+    default: undefined,
+  },
+  onBeforeNext: {
+    type   : Function as PropType<TravelHook>,
+    default: undefined,
+  },
+  onFinished: {
+    type   : Function as PropType<FinishedHook>,
+    default: undefined,
   },
 })
+
+defineEmits<{
+  'update:modelValue': [number],
+}>()
+
+const model = useVModel(props)
 </script>
 
 <style lang="postcss">

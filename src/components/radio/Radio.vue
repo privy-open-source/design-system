@@ -43,92 +43,78 @@
   </label>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useVModel } from '.'
 import IconCheck from '@privyid/persona-icon/vue/checkmark/20.vue'
-import type { PropType } from 'vue-demi'
-import {
-  computed,
-  defineComponent,
-} from 'vue-demi'
-
-export interface ChangedInteface {
-  value: any,
-  state: boolean,
-}
+import type { PropType, VNode } from 'vue-demi'
+import { computed } from 'vue-demi'
 
 type AppearanceType = 'radio' | 'checkbox' | 'option' | 'none'
 
-export default defineComponent({
-  components: { IconCheck },
-  props     : {
-    name: {
-      type   : String,
-      default: '',
-    },
-    modelValue: {
-      type   : undefined as PropType<any>,
-      default: false,
-    },
-    value: {
-      type   : undefined as PropType<any>,
-      default: true,
-    },
-    checked: {
-      type   : Boolean,
-      default: false,
-    },
-    readonly: {
-      type   : Boolean,
-      default: false,
-    },
-    disabled: {
-      type   : Boolean,
-      default: false,
-    },
-    appearance: {
-      type   : String as PropType<AppearanceType>,
-      default: 'radio',
-    },
+const props = defineProps({
+  name: {
+    type   : String,
+    default: '',
   },
-  models: {
-    prop : 'modelValue',
-    event: 'update:modelValue',
+  modelValue: {
+    type   : undefined as PropType<any>,
+    default: false,
   },
-  emits: ['update:modelValue', 'change'],
-  setup (props) {
-    const model = useVModel(props)
-
-    const classNames = computed(() => {
-      const result: string[] = []
-
-      if (model.value)
-        result.push('radio--checked')
-
-      if (props.readonly)
-        result.push('radio--readonly')
-
-      if (props.disabled)
-        result.push('radio--disabled')
-
-      if (props.appearance)
-        result.push(`radio--${props.appearance}`)
-
-      return result
-    })
-
-    function toggle () {
-      if (!props.disabled && !props.readonly)
-        model.value = true
-    }
-
-    return {
-      model,
-      classNames,
-      toggle,
-    }
+  value: {
+    type   : undefined as PropType<any>,
+    default: true,
+  },
+  checked: {
+    type   : Boolean,
+    default: false,
+  },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  appearance: {
+    type   : String as PropType<AppearanceType>,
+    default: 'radio',
   },
 })
+
+defineEmits<{
+  'update:modelValue': [boolean],
+  'change': [boolean],
+}>()
+
+const model = useVModel(props)
+
+const classNames = computed(() => {
+  const result: string[] = []
+
+  if (model.value)
+    result.push('radio--checked')
+
+  if (props.readonly)
+    result.push('radio--readonly')
+
+  if (props.disabled)
+    result.push('radio--disabled')
+
+  if (props.appearance)
+    result.push(`radio--${props.appearance}`)
+
+  return result
+})
+
+function toggle () {
+  if (!props.disabled && !props.readonly)
+    model.value = true
+}
+
+defineSlots<{
+  'default'(props: { isChecked: boolean }): VNode[],
+}>()
 </script>
 
 <style lang="postcss">

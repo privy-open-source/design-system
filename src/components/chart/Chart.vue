@@ -12,12 +12,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import type { Chart } from 'chart.js/auto'
-import { templateRef, watchPausable } from '@vueuse/core'
-import type { PropType } from 'vue-demi'
+<script lang="ts" setup>
+import type {
+  Chart,
+  ChartData,
+  ChartType,
+  ChartOptions,
+} from 'chart.js/auto'
+import { watchPausable } from '@vueuse/core'
+import type { PropType, VNode } from 'vue-demi'
 import {
-  defineComponent,
   onMounted,
   watch,
   shallowRef,
@@ -25,107 +29,121 @@ import {
   toRef,
   computed,
   nextTick,
+  ref,
 } from 'vue-demi'
-import type { ChartType } from './adapter/index'
+import type { LegendPosition } from '.'
+import { defuFn } from 'defu'
 import getAdapter from './adapter/index'
 import { createChart } from './utils/use-chart'
-import type { LegendPosition } from '.'
-import { pAspectRatio } from '../aspect-ratio'
+import { vPAspectRatio } from '../aspect-ratio'
 
-export default defineComponent({
-  directives: { pAspectRatio },
-  props     : {
-    variant: {
-      type   : String as PropType<ChartType>,
-      default: 'line',
-    },
-    legend: {
-      type   : String as PropType<LegendPosition>,
-      default: 'bottom',
-    },
+const props = defineProps({
+  variant: {
+    type   : String as PropType<ChartType>,
+    default: 'line',
   },
-  setup (props, { slots }) {
-    const instance = shallowRef<Chart>()
-    const canvas   = templateRef<HTMLCanvasElement>('canvas')
-    const variant  = toRef(props, 'variant')
-    const legend   = toRef(props, 'legend')
+  legend: {
+    type   : String as PropType<LegendPosition>,
+    default: 'bottom',
+  },
+  data: {
+    type   : Object as PropType<ChartData>,
+    default: undefined,
+  },
+  options: {
+    type   : Object as PropType<ChartOptions>,
+    default: undefined,
+  },
+})
 
-    const classNames = computed(() => {
-      const result: string[] = []
+const slots = defineSlots<{
+  'default'(): VNode[],
+}>()
 
-      if (props.variant)
-        result.push(`chart--${props.variant}`)
+const instance = shallowRef<Chart>()
+const canvas   = ref<HTMLCanvasElement>()
+const variant  = toRef(props, 'variant')
+const legend   = toRef(props, 'legend')
 
-      if (props.legend)
-        result.push(`chart--${props.legend}`)
+const classNames = computed(() => {
+  const result: string[] = []
 
-      return result
-    })
+  if (props.variant)
+    result.push(`chart--${props.variant}`)
 
-    const data = computed(() => {
-      return getAdapter(variant.value).getDatasets(slots.default())
-    })
+  if (props.legend)
+    result.push(`chart--${props.legend}`)
 
-    const options = computed(() => {
-      return {
-        plugins: {
-          legend: {
-            display : legend.value !== 'none',
-            position: legend.value === 'none' ? undefined : legend.value,
-            labels  : {
-              color: '#9CA3AF',
-              font : {
-                family: 'DM Sans',
-                size  : 12,
-                weight: '600',
-              },
+  return result
+})
+
+const data = computed(() => {
+  return defuFn(
+    props.data,
+    getAdapter(variant.value)?.getDatasets(slots?.default?.() ?? []),
+  )
+})
+
+const options = computed<ChartOptions>(() => {
+  return defuFn(
+    props.options,
+    {
+      plugins: {
+        legend: {
+          display : legend.value !== 'none',
+          position: legend.value === 'none' ? undefined : legend.value,
+          labels  : {
+            color: '#9CA3AF',
+            font : {
+              family: 'DM Sans',
+              size  : 12,
+              weight: 600,
             },
           },
         },
-        ...getAdapter(variant.value).getStyle(),
-      }
-    })
-
-    async function initChart () {
-      if (instance.value)
-        instance.value.destroy()
-
-      instance.value = await createChart(
-        canvas.value,
-        variant.value,
-        data.value,
-        options.value,
-      )
-    }
-
-    const dataWatcher = watchPausable(data, (newData) => {
-      if (instance.value) {
-        instance.value.data = newData
-        instance.value.update()
-      }
-    })
-
-    watch([variant, legend], async () => {
-      dataWatcher.pause()
-
-      await initChart()
-      await nextTick()
-
-      dataWatcher.resume()
-    }, { flush: 'pre' })
-
-    onMounted(() => {
-      initChart()
-    })
-
-    onBeforeUnmount(() => {
-      if (instance.value)
-        instance.value.destroy()
-    })
-
-    return { canvas, classNames }
-  },
+      },
+    },
+    getAdapter(variant.value)?.getStyle(),
+  )
 })
+
+async function initChart () {
+  if (instance.value)
+    instance.value.destroy()
+
+  instance.value = await createChart(
+    canvas.value,
+    variant.value,
+    data.value,
+    options.value,
+  )
+}
+
+const dataWatcher = watchPausable(data, (newData) => {
+  if (instance.value) {
+    instance.value.data = newData
+    instance.value.update()
+  }
+})
+
+watch([variant, legend], async () => {
+  dataWatcher.pause()
+
+  await initChart()
+  await nextTick()
+
+  dataWatcher.resume()
+}, { flush: 'pre' })
+
+onMounted(() => {
+  initChart()
+})
+
+onBeforeUnmount(() => {
+  if (instance.value)
+    instance.value.destroy()
+})
+
 </script>
 
 <style lang="postcss">

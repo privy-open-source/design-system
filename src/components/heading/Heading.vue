@@ -8,57 +8,44 @@
   </component>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  computed,
-} from 'vue-demi'
+import { computed } from 'vue-demi'
 import type {
   ElementVariant,
   TransformVariant,
   WeightVariant,
 } from '.'
 
-export default defineComponent({
-  props: {
-    element: {
-      type   : String as PropType<ElementVariant>,
-      default: 'h3',
-    },
-    weight: {
-      type   : String as PropType<WeightVariant>,
-      default: 'normal',
-    },
-    transform: {
-      type   : String as PropType<TransformVariant>,
-      default: 'normalcase',
-    },
+const props = defineProps({
+  element: {
+    type   : String as PropType<ElementVariant>,
+    default: 'h3',
   },
-
-  setup (props) {
-    const elementNames = computed(() => {
-      return props.element
-    })
-
-    const classNames = computed(() => {
-      const result: string[] = [`${props.element}`]
-
-      if (props.transform)
-        result.push(`heading--${props.transform}`)
-
-      if (props.weight)
-        result.push(`heading--${props.weight}`)
-
-      return result
-    })
-
-    return {
-      elementNames,
-      classNames,
-    }
+  weight: {
+    type   : String as PropType<WeightVariant>,
+    default: 'normal',
   },
+  transform: {
+    type   : String as PropType<TransformVariant>,
+    default: 'normalcase',
+  },
+})
 
+const elementNames = computed(() => {
+  return props.element
+})
+
+const classNames = computed(() => {
+  const result: string[] = [`${props.element}`]
+
+  if (props.transform)
+    result.push(`heading--${props.transform}`)
+
+  if (props.weight)
+    result.push(`heading--${props.weight}`)
+
+  return result
 })
 </script>
 

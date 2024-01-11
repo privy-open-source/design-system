@@ -56,12 +56,9 @@
   </svg>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
-
+<script lang="ts" setup>
 /**
  * Special thank to: Glenn McComb
  * https://glennmccomb.com/articles/building-a-pure-css-animated-svg-spinner/
  */
-export default defineComponent({})
 </script>

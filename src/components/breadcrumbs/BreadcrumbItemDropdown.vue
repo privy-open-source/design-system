@@ -18,9 +18,8 @@
   </li>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import {
-  defineComponent,
   computed,
   inject,
   h,
@@ -28,34 +27,27 @@ import {
 import Dropdown from '../dropdown/Dropdown.vue'
 import IconChevron from '@privyid/persona-icon/vue/chevron-right/20.vue'
 
-export default defineComponent({
-  components: { Dropdown },
-  props     : {
-    text: {
-      type   : String,
-      default: '',
-    },
-    active: {
-      type   : Boolean,
-      default: false,
-    },
+const props = defineProps({
+  text: {
+    type   : String,
+    default: '',
   },
-
-  setup (props) {
-    const classNames = computed(() => {
-      const result: string[] = ['breadcrumbs__item--dropdown']
-
-      if (props.active)
-        result.push('breadcrumbs__item--active')
-
-      return result
-    })
-
-    const divider = inject('divider', () => h(IconChevron))
-
-    return { classNames, divider }
+  active: {
+    type   : Boolean,
+    default: false,
   },
 })
+
+const classNames = computed(() => {
+  const result: string[] = ['breadcrumbs__item--dropdown']
+
+  if (props.active)
+    result.push('breadcrumbs__item--active')
+
+  return result
+})
+
+const divider = inject('divider', () => h(IconChevron))
 </script>
 
 <style lang="postcss">

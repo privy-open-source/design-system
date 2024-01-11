@@ -5,15 +5,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
-
-export default defineComponent({
-  props: {
-    label: {
-      type   : String,
-      default: 'preview',
-    },
+<script lang="ts" setup>
+defineProps({
+  label: {
+    type   : String,
+    default: 'preview',
   },
 })
 </script>
