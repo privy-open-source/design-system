@@ -1848,15 +1848,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/core@npm:^1.4.2":
-  version: 1.5.0
-  resolution: "@floating-ui/core@npm:1.5.0"
-  dependencies:
-    "@floating-ui/utils": "npm:^0.1.3"
-  checksum: 3182715a30493f44a32158f4d77ab5b6c212064b160cb84b5b8405ec2845bd8a9167c25292709e841cad9e70c6b9efdc30f876044e3b0909139fea8eca00c631
-  languageName: node
-  linkType: hard
-
 "@floating-ui/core@npm:^1.5.3":
   version: 1.5.3
   resolution: "@floating-ui/core@npm:1.5.3"
@@ -1866,30 +1857,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/dom@npm:1.5.3":
-  version: 1.5.3
-  resolution: "@floating-ui/dom@npm:1.5.3"
-  dependencies:
-    "@floating-ui/core": "npm:^1.4.2"
-    "@floating-ui/utils": "npm:^0.1.3"
-  checksum: d2d5ae7a0949c0ebf7fbf97a21612bf94dbd29cb6c847e00588b8e2a5575ade27c47cb19f5d230fc21a571d99aa0c714b301c9221d33921047408c0ed9d91a30
-  languageName: node
-  linkType: hard
-
-"@floating-ui/dom@npm:^1.0.4":
+"@floating-ui/dom@npm:1.5.4, @floating-ui/dom@npm:^1.0.4":
   version: 1.5.4
   resolution: "@floating-ui/dom@npm:1.5.4"
   dependencies:
     "@floating-ui/core": "npm:^1.5.3"
     "@floating-ui/utils": "npm:^0.2.0"
   checksum: 3ba02ba2b4227c1e18df6ccdd029a1c100058db2e76ca1dac60a593ec72b2d4d995fa5c2d1639a5c38adb17e12398fbfe4f6cf5fd45f2ee6170ed0cf64acea06
-  languageName: node
-  linkType: hard
-
-"@floating-ui/utils@npm:^0.1.3":
-  version: 0.1.3
-  resolution: "@floating-ui/utils@npm:0.1.3"
-  checksum: 06d61a22d3a82584cdd38e1c0d4cf6d82bb376b6582b00a3c041c437cac4ff4d2db74329c51b52fb4df8beab70f6564418a296ddb6f8854d103474eda6c1bbb9
   languageName: node
   linkType: hard
 
@@ -2981,7 +2955,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
-    "@floating-ui/dom": "npm:1.5.3"
+    "@floating-ui/dom": "npm:1.5.4"
     "@juggle/resize-observer": "npm:3.4.0"
     "@nuxt/kit": "npm:3.9.0"
     "@nuxt/module-builder": "npm:^0.5.0"
