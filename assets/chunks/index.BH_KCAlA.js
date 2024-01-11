@@ -1,0 +1,1 @@
+import{r as s,l as u,al as m,am as n}from"./framework.95PECLjQ.js";function c(e){const t=s(e.modelValue),{emit:a}=n(),l=u({get(){return e.modelValue},set(o){a("update:modelValue",o)}});return m(t,l,{immediate:!1}),t}export{c as u};
