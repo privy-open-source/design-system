@@ -81,7 +81,7 @@
     "@splidejs/splide": "^4.1.4",
     "@testing-library/user-event": "^14.4.3",
     "@vueuse/core": "10.7.1",
-    "@vueuse/math": "10.7.1",
+    "@vueuse/math": "10.7.2",
     "@zxing/browser": "0.1.4",
     "@zxing/library": "0.20.0",
     "chart.js": "4.4.1",

@@ -2779,7 +2779,7 @@ __metadata:
     "@vitest/coverage-c8": "npm:0.24.5"
     "@vue/eslint-config-typescript": "npm:12.0.0"
     "@vueuse/core": "npm:10.7.1"
-    "@vueuse/math": "npm:10.7.1"
+    "@vueuse/math": "npm:10.7.2"
     "@zxing/browser": "npm:0.1.4"
     "@zxing/library": "npm:0.20.0"
     autoprefixer: "npm:10.4.16"
@@ -2897,7 +2897,7 @@ __metadata:
     "@testing-library/user-event": "npm:14.5.2"
     "@types/sanitize-html": "npm:^2"
     "@vueuse/core": "npm:10.7.1"
-    "@vueuse/math": "npm:10.7.1"
+    "@vueuse/math": "npm:10.7.2"
     "@zxing/browser": "npm:0.1.4"
     "@zxing/library": "npm:0.20.0"
     browserslist-to-esbuild: "npm:^1.2.0"
@@ -4889,13 +4889,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/math@npm:10.7.1":
-  version: 10.7.1
-  resolution: "@vueuse/math@npm:10.7.1"
+"@vueuse/math@npm:10.7.2":
+  version: 10.7.2
+  resolution: "@vueuse/math@npm:10.7.2"
   dependencies:
-    "@vueuse/shared": "npm:10.7.1"
+    "@vueuse/shared": "npm:10.7.2"
     vue-demi: "npm:>=0.14.6"
-  checksum: a5c1b89e49789248233793506fa7af2baea3de0bb56c28438402ecbe7c6e66553395ecfe6c82fd18cb6ae38104d9e1422aa797a9908359d9e23810d4f31f20cc
+  checksum: f3ccc3fa4929f448d10921b7ab03d09af608d0985dd48a5c51ee9855c40f4b8573933b11d525dfb177b06593059b5ba1105f106e2b05a7817ad25bdd1e06400b
   languageName: node
   linkType: hard
 
@@ -4928,6 +4928,15 @@ __metadata:
   dependencies:
     vue-demi: "npm:>=0.14.6"
   checksum: 60f456461170efb7bc60d17f49d4f706bf93846c2cc8bb748d8235486db8b9cefe9c96fb4e713ec74b8f478e0926176af7ac7ee35c92fce16c45de913a18dceb
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:10.7.2":
+  version: 10.7.2
+  resolution: "@vueuse/shared@npm:10.7.2"
+  dependencies:
+    vue-demi: "npm:>=0.14.6"
+  checksum: 9fb3d5f85ea626266eabf9721b941dee770694a653f46aac3ec9804cf728a84020370ee49e2d98ec61a44c0bd77f540dc117da75a783451f9f3546ec80969f37
   languageName: node
   linkType: hard
 
