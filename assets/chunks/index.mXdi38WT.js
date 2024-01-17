@@ -1,1 +1,0 @@
-import{as as f,l as o,at as u,au as t,r as l}from"./framework.95PECLjQ.js";function c(e,a,r){if(typeof e=="function"||f(e))return o(()=>u(t(e),t(a),t(r)));const s=l(e);return o({get(){return s.value=u(s.value,t(a),t(r))},set(n){s.value=u(n,t(a),t(r))}})}export{c as u};
