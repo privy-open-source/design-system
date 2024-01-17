@@ -2778,7 +2778,7 @@ __metadata:
     "@vitest/browser": "npm:^0.25.3"
     "@vitest/coverage-c8": "npm:0.24.5"
     "@vue/eslint-config-typescript": "npm:12.0.0"
-    "@vueuse/core": "npm:10.7.1"
+    "@vueuse/core": "npm:10.7.2"
     "@vueuse/math": "npm:10.7.2"
     "@zxing/browser": "npm:0.1.4"
     "@zxing/library": "npm:0.20.0"
@@ -2896,7 +2896,7 @@ __metadata:
     "@testing-library/dom": "npm:9.3.4"
     "@testing-library/user-event": "npm:14.5.2"
     "@types/sanitize-html": "npm:^2"
-    "@vueuse/core": "npm:10.7.1"
+    "@vueuse/core": "npm:10.7.2"
     "@vueuse/math": "npm:10.7.2"
     "@zxing/browser": "npm:0.1.4"
     "@zxing/library": "npm:0.20.0"
@@ -4828,6 +4828,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vueuse/core@npm:10.7.2":
+  version: 10.7.2
+  resolution: "@vueuse/core@npm:10.7.2"
+  dependencies:
+    "@types/web-bluetooth": "npm:^0.0.20"
+    "@vueuse/metadata": "npm:10.7.2"
+    "@vueuse/shared": "npm:10.7.2"
+    vue-demi: "npm:>=0.14.6"
+  checksum: 7d5877397f79bc621777a5cf401262f3cf4aab6fa1a7404fc151a5c2e0420fe850c37857d6ac10ac939e1326446f52c9ab26275123da1f48fcb0f6926269700e
+  languageName: node
+  linkType: hard
+
 "@vueuse/core@npm:^10.1.2":
   version: 10.3.0
   resolution: "@vueuse/core@npm:10.3.0"
@@ -4910,6 +4922,13 @@ __metadata:
   version: 10.7.1
   resolution: "@vueuse/metadata@npm:10.7.1"
   checksum: 9c1fe620f416ce0f03f73122447f6825fcda8c9053bb7088812971e8e18933bfc34c7f6249a43e89398f3185addabac2c85d97d3b5060d033ed6562e10b7f427
+  languageName: node
+  linkType: hard
+
+"@vueuse/metadata@npm:10.7.2":
+  version: 10.7.2
+  resolution: "@vueuse/metadata@npm:10.7.2"
+  checksum: b681891d6020371dd16777046f2131afca8b58e37be238908890430efe4e08f99adb3e8b4c2a74b102fe9d22906e10a52a5877e980a9552861f1f647341b7400
   languageName: node
   linkType: hard
 
