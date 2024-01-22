@@ -1,7 +1,7 @@
 import type { Directive } from 'vue-demi'
 import type { MarkedOptions } from 'marked'
 import { parse, parseInline } from 'marked'
-import sanitizeHtml from 'sanitize-html'
+import { sanitize } from '@jill64/universal-sanitizer'
 import defu from 'defu'
 
 export interface MarkdownOption {
@@ -37,7 +37,7 @@ export function markdown (text = '', _option: Partial<MarkdownOption> = {}) {
     : parse(text, options.marked) as string
 
   if (html && !options.unsecure)
-    return sanitizeHtml(html)
+    return sanitize(html)
 
   return html
 }
