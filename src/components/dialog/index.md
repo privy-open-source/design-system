@@ -1,6 +1,6 @@
 ---
 title: Dialog · Components
-description: Instant Modal, alternative of window.alert or window.confirm
+description: Instant Modal, alternative of native window.alert, window.confirm, and window.prompt
 ---
 
 <script setup>
@@ -45,7 +45,7 @@ description: Instant Modal, alternative of window.alert or window.confirm
 
 # Dialog
 
-> Instant Modal, alternative of window.alert or window.confirm
+> Instant Modal, alternative of native window.alert, window.confirm, and window.prompt
 
 ## Usage
 
@@ -76,7 +76,7 @@ import { dialog } from '@privyid/persona/core'
 dialog.confirm({
   title: 'Delete Confirmation',
   text : 'Are you sure?',
-  size: 'sm',
+  size : 'sm',
 }).then((value) => {
   if (value === true) {
     dialog.alert({
@@ -127,6 +127,7 @@ dialog.prompt({
 | `footerAlign`       |    `Number`    | `start` | The alignment of dialog footer, valid value is `start` and `end` |
 | `cancel`            | `DialogButton` |    -    | Cancel button's options for dialog footer                        |
 | `confirm`           | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
+| `attrs`             |    `Object`    |    -    | Additional attributes placed modal dialog                        |
 
 `DialogButton`
 
@@ -138,6 +139,7 @@ dialog.prompt({
 | `closeModal` | `Boolean` | `true`  | Close dialog modal when dialog button was clicked                                                        |
 | `color`      | `String`  |    -    | Dialog button color variant, valid value is `default`, `primary`, `info`, `success`, `danger`, `warning` |
 | `variant`    | `String`  |    -    | Dialog button style variant, valid value is `solid`, `outline`, `ghost`, and `link`                      |
+| `attrs`      | `Object`  |    -    | Additional attributes placed on button                                                                   |
 
 ### Alert
 
@@ -151,6 +153,7 @@ dialog.prompt({
 | `centered`    |   `Boolean`    | `false` | Dialog vertically center in the viewport                         |
 | `footerAlign` |    `Number`    | `start` | The alignment of dialog footer, valid value is `start` and `end` |
 | `confirm`     | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
+| `attrs`       |    `Object`    |    -    | Additional attributes placed on modal dialog                     |
 
 ### Prompt
 
@@ -169,6 +172,7 @@ dialog.prompt({
 | `confirm`           | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
 | `input`             | `DialogInput`  |    -    | Input's options                                                  |
 | `value`             |    `String`    |    -    | Default input value                                              |
+| `attrs`             |    `Object`    |    -    | Additional attributes placed on modal dialog                     |
 
 `DialogInput`
 
@@ -179,3 +183,4 @@ dialog.prompt({
 | `placeholder` | `String`  |   `-`   | Input placeholder                                       |
 | `clearable`   | `Boolean` | `false` | Enable clear button                                     |
 | `accept`      | `String`  |   `-`   | Whitelist character can be inputted                     |
+| `attrs`       | `Object`  |    -    | Additional attributes placed on input                   |

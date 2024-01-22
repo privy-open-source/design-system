@@ -4,6 +4,7 @@
     :class="footerClassNames">
     <Button
       v-if="cancelVisible"
+      v-bind="cancelAttrs"
       :class="cancelClass"
       :color="cancelColor"
       :variant="cancelVariant"
@@ -13,6 +14,7 @@
 
     <Button
       v-if="confirmVisible"
+      v-bind="confirmAttrs"
       :class="confirmClass"
       :color="confirmColor"
       :variant="confirmVariant"
@@ -31,6 +33,7 @@ import type {
   ColorVariant as FooterButtonColorVariant,
 } from '../button'
 import type { FooterAlignVariant } from '.'
+import type { AdditionalAttr } from '../global/types'
 
 const props = defineProps({
   align: {
@@ -57,6 +60,10 @@ const props = defineProps({
     type   : String,
     default: 'Cancel',
   },
+  cancelAttrs: {
+    type   : Object as PropType<AdditionalAttr>,
+    default: undefined,
+  },
   confirmClass: {
     type   : String,
     default: undefined,
@@ -76,6 +83,10 @@ const props = defineProps({
   confirmText: {
     type   : String,
     default: 'Confirm',
+  },
+  confirmAttrs: {
+    type   : Object as PropType<AdditionalAttr>,
+    default: undefined,
   },
 })
 
