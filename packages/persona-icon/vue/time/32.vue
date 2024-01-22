@@ -12,6 +12,6 @@
       clip-rule="evenodd" /><path
         fill="currentColor"
         fill-rule="evenodd"
-        d="M16.002 8.336a1 1 0 0 1 1 1v6.252l3.707 3.707a1 1 0 0 1-1.414 1.414l-4.293-4.293v-7.08a1 1 0 0 1 1-1"
+        d="M16.002 8.335a1 1 0 0 1 1 1v6.253l3.707 3.707a1 1 0 0 1-1.414 1.414l-4.293-4.293v-7.08a1 1 0 0 1 1-1"
         clip-rule="evenodd" /></svg>
 </template>
