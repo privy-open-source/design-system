@@ -19,6 +19,15 @@ export {
   default as toast,
 } from '../components/toast'
 
+export {
+  default as popup,
+} from '../components/popup'
+
+export {
+  default as notify,
+  useNotifyItem,
+} from '../components/notify'
+
 export * as dialog from '../components/dialog'
 
 export {

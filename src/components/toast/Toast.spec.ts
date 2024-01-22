@@ -1,6 +1,8 @@
 import { render, fireEvent } from '@testing-library/vue'
 import { vi } from 'vitest'
 import Toast from './Toast.vue'
+import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
+import { markRaw } from 'vue-demi'
 
 beforeEach(() => {
   vi.useFakeTimers()
@@ -10,76 +12,20 @@ afterEach(() => {
   vi.resetAllMocks()
 })
 
-it('should render title and text properly', () => {
+it('should render text properly', () => {
   const screen = render({
     components: { Toast },
     template  : `
-      <Toast title="This is title" text="this is text body" />
+      <Toast text="this is text body" />
     `,
   })
 
   const toast = screen.queryByTestId('toast')
-  const title = screen.queryByText('This is title')
   const text  = screen.queryByText('this is text body')
 
   expect(toast).toBeInTheDocument()
-  expect(toast).toHaveClass('toast', 'toast--info', 'toast--simple')
-  expect(title).toBeInTheDocument()
+  expect(toast).toHaveClass('toast')
   expect(text).toBeInTheDocument()
-})
-
-it('should have class "success" if type prop set to "success"', () => {
-  const screen = render({
-    components: { Toast },
-    template  : `
-      <Toast type="success" title="This is title" text="this is text body" />
-    `,
-  })
-
-  const toast = screen.queryByTestId('toast')
-
-  expect(toast).toBeInTheDocument()
-  expect(toast).toHaveClass('toast', 'toast--success', 'toast--simple')
-  expect(toast).not.toHaveClass('toast--info')
-})
-
-it('should have class "filled" if variant prop set to "filled"', () => {
-  const screen = render({
-    components: { Toast },
-    template  : `
-      <Toast variant="filled" title="This is title" text="this is text body" />
-    `,
-  })
-
-  const toast = screen.queryByTestId('toast')
-
-  expect(toast).toBeInTheDocument()
-  expect(toast).toHaveClass('toast', 'toast--info', 'toast--filled')
-  expect(toast).not.toHaveClass('toast--simple')
-})
-
-it('should dismiss automatically if toast out of duration', () => {
-  const spy    = vi.fn()
-  const screen = render({
-    components: { Toast },
-    template  : `
-      <Toast
-        :duration="100"
-        title="This is title"
-        text="this is text body"
-        @dismissed="onDismissed" />
-    `,
-    methods: { onDismissed: spy },
-  })
-
-  const toast = screen.queryByTestId('toast')
-
-  expect(toast).toBeInTheDocument()
-  expect(spy).not.toBeCalled()
-
-  vi.advanceTimersByTime(200)
-
-  expect(spy).toBeCalled()
 })
 
 it('should dismiss if close button clicked', async () => {
@@ -88,7 +34,6 @@ it('should dismiss if close button clicked', async () => {
     components: { Toast },
     template  : `
       <Toast
-        title="This is title"
         text="this is text body"
         @dismissed="onDismissed" />
     `,
@@ -111,34 +56,60 @@ it('should render title and text properly', () => {
   const screen = render({
     components: { Toast },
     template  : `
-      <Toast title="Toast title" />
+      <Toast text="Toast text" />
     `,
   })
 
   const toast = screen.queryByTestId('toast')
-  const title = screen.queryByText('Toast title')
   const text  = screen.queryByTestId('toast-text')
 
   expect(toast).toBeInTheDocument()
-  expect(title).toBeInTheDocument()
-  expect(text).not.toBeInTheDocument()
+  expect(text).toBeInTheDocument()
 })
 
 it('should be able to custom icon color via `iconColor` props', () => {
   const screen = render({
-    components: { Toast },
-    template  : `
-      <Toast title="Toast title" iconColor="warning" />
+    components: {
+      Toast,
+      IconSuccess,
+    },
+    template: `
+      <Toast
+        :icon="icon"
+        text="Toast text" iconColor="success" />
     `,
+    setup () {
+      return { icon: markRaw(IconSuccess) }
+    },
   })
 
   const toast = screen.queryByTestId('toast')
-  const title = screen.queryByText('Toast title')
+  const text  = screen.queryByText('Toast text')
   const icon  = screen.queryByTestId('toast-icon')
 
   expect(toast).toBeInTheDocument()
-  expect(title).toBeInTheDocument()
-  expect(icon).toHaveClass('toast__icon--warning')
+  expect(text).toBeInTheDocument()
+  expect(icon).toHaveClass('toast__icon--success')
+})
+
+it('should be able to custom icon using url', () => {
+  const screen = render({
+    components: { Toast },
+    template  : `
+      <Toast
+        title="Popup title"
+        icon="http://lorem-picsum.com" />
+    `,
+  })
+
+  const popup = screen.queryByTestId('toast')
+  const icon  = screen.queryByTestId('toast-icon-image')
+
+  expect(popup).toBeInTheDocument()
+  expect(icon).toBeInTheDocument()
+
+  expect(icon).toBeInstanceOf(HTMLImageElement)
+  expect(icon).toHaveAttribute('src', 'http://lorem-picsum.com')
 })
 
 it('should be able to show or hide close button via `dismissable` props', () => {
@@ -152,4 +123,68 @@ it('should be able to show or hide close button via `dismissable` props', () => 
   const close = screen.queryByTestId('toast-close')
 
   expect(close).not.toBeInTheDocument()
+})
+
+it('should be able to show or hide close button via `dismissable` props', () => {
+  const screen = render({
+    components: { Toast },
+    template  : `
+      <Toast
+        :dismissable="false"
+        title="Toast title"
+        variant="filled" />
+    `,
+  })
+
+  const close = screen.queryByTestId('toast-close')
+
+  expect(close).not.toBeInTheDocument()
+})
+
+it('should be able to show progress loading using `loading` props', () => {
+  const screen = render({
+    components: { Toast },
+    template  : `
+      <Toast
+        loading
+        loading-text="99%" />
+    `,
+  })
+
+  const loading     = screen.queryByTestId('toast-loading')
+  const loadingText = screen.queryByTestId('toast-loading-text')
+
+  expect(loading).toBeInTheDocument()
+  expect(loadingText).toBeInTheDocument()
+  expect(loadingText).toHaveTextContent('99%')
+})
+
+it('should able to add action button', async () => {
+  const onClick = vi.fn()
+  const screen  = render({
+    components: { Toast },
+    template  : `
+      <Toast
+        text="Lorem ipsum"
+        :actions="actions" />
+    `,
+    setup () {
+      return {
+        actions: [
+          {
+            text   : 'View Doc',
+            onClick: onClick,
+          },
+        ],
+      }
+    },
+  })
+
+  const action = screen.queryByText('View Doc')
+
+  expect(action).toBeInTheDocument()
+
+  await fireEvent.click(action)
+
+  expect(onClick).toBeCalled()
 })

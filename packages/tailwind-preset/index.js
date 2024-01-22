@@ -317,7 +317,7 @@ module.exports = {
           DEFAULT : 1085,
           backdrop: 1080,
         },
-        toast: 1090,
+        notify: 1090,
       },
       minWidth : ({ theme }) => ({ ...theme('spacing') }),
       maxWidth : ({ theme }) => ({ ...theme('spacing') }),

@@ -386,6 +386,10 @@ export default defineConfig({
               link: '/components/overlay/',
             },
             {
+              text: 'Popup',
+              link: '/components/popup/',
+            },
+            {
               text: 'Toast',
               link: '/components/toast/',
             },

@@ -62,7 +62,7 @@ export default defineNuxtModule<ModuleOptions>({
       config.optimizeDeps?.include?.push(
         '@testing-library/user-event',
         'interactjs',
-        'sanitize-html',
+        '@jill64/universal-sanitizer',
         'scroll-into-view',
         'webfontloader',
         'zxcvbn',

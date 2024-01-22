@@ -16,7 +16,7 @@ import {
 } from 'vue-demi'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
-export type Component = DefineComponent<{}, {}, any>
+export type Component = DefineComponent<any, any, any>
 export type ComponentInstance<C extends Component> = InstanceType<C>
 
 export interface GlobalInstance<C extends Component> { component: C, ref: Ref<ComponentInstance<C>> }
