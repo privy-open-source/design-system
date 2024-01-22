@@ -109,7 +109,7 @@
 </template>
 
 <script lang="ts" setup>
-import { watchDebounced } from '@vueuse/core'
+import { watchDebounced, useThrottleFn } from '@vueuse/core'
 import { useClamp } from '@vueuse/math'
 import type {
   PropType,
@@ -322,15 +322,12 @@ function crop (): string {
   }
 }
 
-function onMouseWheel (event: WheelEvent) {
+const onMouseWheel = useThrottleFn((event: WheelEvent) => {
   if (image.value)
     image.value.focus()
 
-  if (event.deltaY > 0)
-    zoomIn()
-  else
-    zoomOut()
-}
+  scale.value += event.deltaY * 0.01
+}, 1000 / 30 /* Limit 30 Fps */)
 
 function onImageLoaded () {
   emit('load')
