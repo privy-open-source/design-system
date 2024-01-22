@@ -470,7 +470,7 @@ import IconUsers from '@privyid/persona-icon/vue/user-groups/20.vue'
 const limit = defineMenu([
   {
     maxLength: 2,
-    items: [
+    items    : [
       {
         name : 'dashboard',
         label: 'Dashboard',

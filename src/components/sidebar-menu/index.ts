@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'vue-demi'
+import type { AdditionalAttr } from '../global/types'
 import type { Component } from '../global/use-singleton'
 import type { AlignVariant } from '../nav'
 import type { LiteralUnion } from 'type-fest'
@@ -13,10 +13,6 @@ function hasAccess (access: Access | Access[] | undefined, role: string) {
   return Array.isArray(access)
     ? access.some((acc) => acc === '*' || acc === role)
     : access === role
-}
-
-interface AdditionalAttr extends HTMLAttributes {
-  [key: string]: unknown,
 }
 
 export interface SubMenu {

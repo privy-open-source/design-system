@@ -251,6 +251,7 @@ it('If "no-close-on-backdrop" props is true, Modal will not close while modal ba
   })
 
   let modal = screen.queryByTestId('modal')
+
   expect(modal).toBeInTheDocument()
   expect(modal).not.toBeVisible()
 
@@ -595,5 +596,54 @@ it('should emit event "close" if close button in modal free distraction type is 
 
   modal = screen.queryByTestId('modal')
   expect(spy).toBeCalled()
+  expect(modal).not.toBeVisible()
+})
+
+it('should emit event "show" and "hide" when modal show / hide', async () => {
+  const model  = ref(false)
+  const onShow = vi.fn()
+  const onHide = vi.fn()
+
+  const screen = render({
+    components: { Modal },
+    template  : `
+      <Modal
+        v-model="model"
+        title="Modal Title"
+        no-animation
+        @show="onShow"
+        @hide="onHide">
+        Modal Text
+      </Modal>
+    `,
+    setup () {
+      return {
+        model,
+        onShow,
+        onHide,
+      }
+    },
+  }, { global: { stubs: { transition: false } } })
+
+  let modal = screen.queryByTestId('modal')
+
+  expect(modal).toBeInTheDocument()
+
+  model.value = true
+  await nextTick()
+  await delay(0)
+
+  modal = screen.queryByTestId('modal')
+
+  expect(modal).toBeVisible()
+  expect(onShow).toBeCalled()
+
+  model.value = false
+  await nextTick()
+  await delay(0)
+
+  modal = screen.queryByTestId('modal')
+
+  expect(onHide).toBeCalled()
   expect(modal).not.toBeVisible()
 })
