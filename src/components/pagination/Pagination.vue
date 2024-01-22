@@ -276,7 +276,7 @@ const rowPerPage = computed({
 
 watch(totalPageCount, (value) => {
   if (model.value > value)
-    model.value = value
+    model.value = value || 1
 })
 
 function next () {
