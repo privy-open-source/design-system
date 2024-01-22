@@ -38,10 +38,7 @@ export function fromBase64 (dataurl: string, filename?: string, mimeType?: strin
     const [meta, body] = dataurl.split(',')
     const mime         = mimeType ?? meta.match(/:(.*?);/)[1]
     const buffer       = window.atob(body)
-    const uint8        = new Uint8Array(buffer.length)
-
-    for (let i = 0; i < buffer.length; i++)
-      uint8[i] = buffer.codePointAt(i)
+    const uint8        = Uint8Array.from(buffer, (c) => c.codePointAt(0))
 
     return new globalThis.File([uint8], name, { type: mime })
   } catch (error) {

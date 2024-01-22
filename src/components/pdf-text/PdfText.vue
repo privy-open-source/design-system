@@ -88,7 +88,6 @@ const props = defineProps({
     type   : Number,
     default: 12,
   },
-
 })
 
 const model   = useVModel(props)
