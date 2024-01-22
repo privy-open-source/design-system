@@ -32,6 +32,19 @@ it('should render pagination items if "total" props is provided', () => {
   expect(paginationItems).toHaveLength(5)
 })
 
+it('should render no pagination item if "total" props less than zero', () => {
+  const screen = render({
+    components: { Pagination },
+    template  : '<Pagination :total="-100" />',
+  })
+
+  const pagination      = screen.getByTestId('pagination')
+  const paginationItems = screen.queryAllByTestId('pagination-item')
+
+  expect(pagination).toBeInTheDocument()
+  expect(paginationItems).toHaveLength(0)
+})
+
 it('should render only one page item if "total" props less than provided or default "per-page" props', () => {
   const screen = render({
     components: { Pagination },
@@ -288,6 +301,26 @@ it('should bind total page to "v-model", if total page count less than current p
 
   expect(paginationItems).toHaveLength(5)
   expect(model.value).toBe(5)
+})
+
+it('should not change "v-model" to zero, if total pagination changed to zero', async () => {
+  const model = ref(1)
+  const total = ref(100)
+
+  render({
+    components: { Pagination },
+    template  : '<Pagination v-model="model" :total="total" :per-page="10" />',
+    setup () {
+      return { model, total }
+    },
+  })
+
+  expect(model.value).toBe(1)
+
+  total.value = 0
+  await nextTick()
+
+  expect(model.value).toBe(1)
 })
 
 it('should not change "v-model", if ellipsis is clicked', async () => {
