@@ -13,6 +13,7 @@ import { resolve } from 'node:path'
 import { delay } from 'nanodelay'
 import { nextTick, ref } from 'vue-demi'
 import { createSpinner } from '../avatar/utils/create-image'
+import type * as VueUse from '@vueuse/core'
 
 // eslint-disable-next-line unicorn/prefer-module
 const blob = readFileSync(resolve(__dirname, '../../public/assets/images/img-sample-crop.jpg'))
@@ -23,6 +24,20 @@ vi.mock('./utils/crop-image.ts', () => ({ cropImage }))
 vi.mock('./utils/use-pinch.ts', () => ({ usePinch }))
 
 vi.mock('../input-range/utils/use-drag.ts', () => ({ default: vi.fn() }))
+
+vi.mock('@vueuse/core', async () => {
+  const vueuse        = await vi.importActual('@vueuse/core')
+  const useThrottleFn = (handler: () => void) => {
+    return (...args: any[]) => {
+      handler.apply(this, args)
+    }
+  }
+
+  return {
+    ...vueuse as typeof VueUse,
+    useThrottleFn,
+  }
+})
 
 afterEach(() => {
   vi.restoreAllMocks()
@@ -183,13 +198,13 @@ it('should able to zoomIn / zoomOut using mouse wheel', async () => {
   // Zoom in
   await fireEvent.wheel(container, { deltaY: 60 })
 
-  expect(preview).toHaveStyle({ transform: 'rotate(0deg) translate(0px, 0px) scale(1.1)' })
+  expect(preview).toHaveStyle({ transform: 'rotate(0deg) translate(0px, 0px) scale(1.6)' })
 
   // Zoom out
   await fireEvent.wheel(container, { deltaY: -60 })
   await fireEvent.wheel(container, { deltaY: -60 })
 
-  expect(preview).toHaveStyle({ transform: 'rotate(0deg) translate(0px, 0px) scale(0.9)' })
+  expect(preview).toHaveStyle({ transform: 'rotate(0deg) translate(0px, 0px) scale(0.5)' })
 })
 
 it('should able to move using keyboard arrow', async () => {

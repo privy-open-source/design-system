@@ -3,12 +3,15 @@
     v-if="context"
     :key="id"
     v-model="modal"
+    v-bind="context.attrs"
     class="dialog"
     :title="context.title"
     :size="context.size"
     :centered="context.centered"
     :dismissable="context.dismissable"
     :no-close-on-backdrop="context.noCloseOnBackdrop"
+    @show="onModalShow"
+    @hide="onModalHide"
     @close="onCancel">
     <template #header>
       <Heading
@@ -32,11 +35,13 @@
         :cancel-color="context.cancel.color"
         :cancel-variant="context.cancel.variant"
         :cancel-text="context.cancel.text"
+        :cancel-attrs="context.cancel.attrs"
         :confirm-class="context.confirm.className"
         :confirm-visible="context.confirm.visible"
         :confirm-color="context.confirm.color"
         :confirm-variant="context.confirm.variant"
         :confirm-text="context.confirm.text"
+        :confirm-attrs="context.confirm.attrs"
         @confirm="onConfirm"
         @cancel="onCancel" />
     </template>
@@ -50,40 +55,52 @@ import Heading from '../heading/Heading.vue'
 import DialogFooter from './DialogFooter.vue'
 import type { DialogContext } from '.'
 import { vPMd } from '../markdown'
+import { until } from '@vueuse/core'
 
-const id      = ref<symbol>()
-const modal   = ref(false)
-const context = ref<DialogContext>()
+const id         = ref<symbol>()
+const modal      = ref(false)
+const processing = ref(false)
+const context    = ref<DialogContext>()
 
-function show (options: DialogContext) {
+async function show (options: DialogContext) {
   id.value      = Symbol('DialogId')
   context.value = options
 
-  nextTick(() => {
-    modal.value = true
-  })
-}
+  await nextTick()
 
-function hide () {
-  modal.value = false
-}
-
-function onConfirm () {
-  hide()
+  modal.value      = true
+  processing.value = true
 
   // Wait animation done
-  setTimeout(() => {
-    context.value.onConfirm()
-  }, 150)
+  await until(processing).toBe(false)
 }
 
-function onCancel () {
-  hide()
+async function hide () {
+  modal.value      = false
+  processing.value = true
 
   // Wait animation done
-  setTimeout(() => {
-    context.value.onCancel()
-  }, 150)
+  await until(processing).toBe(false)
+}
+
+async function onConfirm () {
+  await hide()
+
+  context.value.onConfirm()
+}
+
+async function onCancel () {
+  await hide()
+
+  context.value.onCancel()
+}
+
+function onModalHide () {
+  processing.value = false
+}
+
+function onModalShow () {
+  processing.value = false
 }
 
 defineExpose({

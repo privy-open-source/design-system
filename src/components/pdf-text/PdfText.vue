@@ -22,7 +22,7 @@ import generate from './utils/text-to-image'
 const props = defineProps({
   modelValue: {
     type   : [String, globalThis.File],
-    default: '',
+    default: undefined,
   },
   modelModifiers: {
     type   : Object as PropType<ModelModifier>,
@@ -88,7 +88,6 @@ const props = defineProps({
     type   : Number,
     default: 12,
   },
-
 })
 
 const model   = useVModel(props)

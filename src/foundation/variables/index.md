@@ -307,6 +307,6 @@ Some components that have fixed and absolute positions are given z-index values 
 | z-tooltip       | 1070  | Tooltip          |
 | z-tour-backdrop | 1080  | Tour backdrop    |
 | z-tour          | 1085  | Tour             |
-| z-toast         | 1090  | Toast            |
+| z-toast         | 1090  | Toast & Popup    |
 
 </div>

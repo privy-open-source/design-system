@@ -1,26 +1,51 @@
 <template>
   <div
     data-testid="toast"
-    :class="classNames">
+    class="toast"
+    :class="toastClass"
+    v-bind="toastAttrs">
     <div
+      v-if="toastIcon"
       class="toast__icon"
       data-testid="toast-icon"
       :class="classIcon">
-      <slot name="icon">
-        <component
-          :is="toastIcon"
-          v-if="toastIcon" />
-      </slot>
+      <component
+        :is="toastIcon" />
     </div>
     <div class="toast__body">
       <div
-        v-p-md.inline="title"
-        class="toast__title" />
-      <div
-        v-if="text"
-        v-p-md.inline="text"
-        class="toast__text"
-        data-testid="toast-text" />
+        v-p-md.inline="text || title"
+        data-testid="toast-text"
+        class="toast__text" />
+    </div>
+    <div
+      v-if="loading"
+      data-testid="toast-loading"
+      class="toast__loading">
+      <span
+        v-p-md.inline="loadingText"
+        data-testid="toast-loading-text" />
+      <SpinnerRinggo
+        v-if="loadingSpinner"
+        data-testid="toast-loading-spinner" />
+    </div>
+    <div
+      v-if="actions.length > 0"
+      class="toast__actions">
+      <template
+        v-for="(action, i) in actions"
+        :key="i">
+        <p-button
+          class="toast__action"
+          data-testid="toast-action"
+          v-bind="action.attrs"
+          :size="action.size ?? 'xs'"
+          :color="action.color"
+          :variant="action.variant ?? 'ghost'"
+          @click.prevent="onActionClick(action)">
+          <span v-p-md.inline="action.text" />
+        </p-button>
+      </template>
     </div>
     <div
       v-if="dismissable"
@@ -32,117 +57,126 @@
   </div>
 </template>
 
-<script lang="ts">
-import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  computed,
-  ref,
-  onMounted,
-  onUnmounted,
+<script lang="ts" setup>
+import type {
+  PropType,
+  Component,
 } from 'vue-demi'
-import type { ToastStyleVariant, ToastTypeVariant } from '.'
-import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/24.vue'
-import IconSuccess from '@privyid/persona-icon/vue/checkmark/24.vue'
-import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/24.vue'
-import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/24.vue'
+import {
+  computed,
+  h,
+} from 'vue-demi'
+import SpinnerRinggo from '../spinner/SpinnerRinggo.vue'
+import { vPMd } from '../markdown'
+import pButton from '../button/Button.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
-import { pMd } from '../markdown'
 import type { ColorVariant } from '../button'
+import type { AdditionalAttr } from '../global/types'
+import type { ToastActionOption } from '.'
+import { useNotifyItem } from '../notify'
 
-const ToastIcons = {
-  info   : IconInfo,
-  success: IconSuccess,
-  warning: IconWarning,
-  error  : IconError,
-}
-
-export default defineComponent({
-  components: { IconClose },
-  directives: { pMd },
-  props     : {
-    title: {
-      type    : String,
-      required: true,
-    },
-    text: {
-      type   : String,
-      default: '',
-    },
-    type: {
-      type   : String as PropType<ToastTypeVariant>,
-      default: 'info',
-    },
-    variant: {
-      type   : String as PropType<ToastStyleVariant>,
-      default: 'simple',
-    },
-    duration: {
-      type   : Number,
-      default: 3000,
-    },
-    iconColor: {
-      type   : String as PropType<ColorVariant>,
-      default: undefined,
-    },
-    dismissable: {
-      type   : Boolean,
-      default: true,
-    },
+const props = defineProps({
+  text: {
+    type   : String,
+    default: '',
   },
-  emits: ['dismissed'],
-  setup (props, { emit }) {
-    const timeout    = ref<ReturnType<typeof setTimeout>>()
-    const classNames = computed(() => {
-      const result: string[] = ['toast']
-
-      if (props.type)
-        result.push(`toast--${props.type}`)
-
-      if (props.variant)
-        result.push(`toast--${props.variant}`)
-
-      return result
-    })
-
-    const classIcon = computed(() => {
-      const result: string[] = ['default']
-
-      if (props.iconColor)
-        result.push(`toast__icon--${props.iconColor}`)
-
-      return result
-    })
-
-    const toastIcon = computed(() => {
-      return ToastIcons[props.type]
-    })
-
-    function close () {
-      emit('dismissed')
-    }
-
-    onMounted(() => {
-      if (Number.isFinite(props.duration) && props.duration > 0) {
-        timeout.value = setTimeout(() => {
-          emit('dismissed')
-        }, props.duration)
-      }
-    })
-
-    onUnmounted(() => {
-      if (timeout.value)
-        clearTimeout(timeout.value)
-    })
-
-    return {
-      classNames,
-      toastIcon,
-      classIcon,
-      close,
-    }
+  /**
+   * @deprecated use `text` instead
+   */
+  title: {
+    type   : String,
+    default: '',
+  },
+  icon: {
+    type: [
+      String,
+      Object,
+      Function,
+    ] as PropType<string | Component>,
+    default: undefined,
+  },
+  iconColor: {
+    type   : String as PropType<ColorVariant>,
+    default: undefined,
+  },
+  toastAttrs: {
+    type   : Object as PropType<AdditionalAttr>,
+    default: undefined,
+  },
+  toastClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  actions: {
+    type   : Array as PropType<ToastActionOption[]>,
+    default: () => ([]),
+  },
+  dismissable: {
+    type   : Boolean,
+    default: true,
+  },
+  loading: {
+    type   : Boolean,
+    default: false,
+  },
+  loadingText: {
+    type   : String,
+    default: '',
+  },
+  loadingSpinner: {
+    type   : Boolean,
+    default: true,
   },
 })
+
+const notify = useNotifyItem()
+const emit   = defineEmits<{
+  'dismissed': [],
+}>()
+
+const classIcon = computed(() => {
+  const result: string[] = ['toast__icon--default']
+
+  if (props.iconColor)
+    result.push(`toast__icon--${props.iconColor}`)
+
+  return result
+})
+
+const toastIcon = computed(() => {
+  if (props.icon) {
+    if (typeof props.icon === 'string') {
+      return () => h('img', {
+        'src'        : props.icon,
+        'width'      : 16,
+        'height'     : 16,
+        'data-testid': 'toast-icon-image',
+      })
+    }
+
+    return props.icon
+  }
+})
+
+function close () {
+  notify.close()
+
+  emit('dismissed')
+}
+
+async function onActionClick (action: ToastActionOption) {
+  const event = new MouseEvent('click')
+
+  if (typeof action.onClick === 'function')
+    await action.onClick(Object.assign(event, { close }))
+
+  if (!event.defaultPrevented)
+    close()
+}
 </script>
 
 <style lang="postcss">
@@ -154,226 +188,81 @@ export default defineComponent({
   * global style
   * of toast
   */
-  @apply flex shadow-xl rounded w-72 md:w-96 overflow-hidden;
+  @apply flex items-center shadow-xl rounded w-72 md:w-96 overflow-hidden bg-inverse px-4 py-3 space-x-2;
+  @apply dark:bg-dark-inverse;
 
-  .toast__icon,
-  .toast__close {
-    @apply shrink-0 p-4;
+  &__icon,
+  &__close,
+  &__action {
+    @apply shrink-0;
   }
 
-  .toast__icon {
+  &__icon {
     @apply flex items-center justify-center;
-  }
 
-  .toast__close {
-    @apply cursor-pointer text-default/30 hover:text-default/50;
-    @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
-  }
-
-  .toast__body {
-    @apply py-4 pr-4 grow space-y-2 flex flex-col overflow-hidden;
-  }
-
-  .toast__title {
-    @apply text-sm font-medium leading-[1.75] truncate;
-  }
-
-  .toast__text {
-    @apply text-xs truncate;
-  }
-
-  /**
-  * Give padding-left when
-  * toast variant is not filled
-  */
-  &:not(.toast--filled) {
-    .toast__body {
-      @apply pl-4;
-    }
-  }
-
-  /**
-  * set toast info title
-  * and text color
-  */
-  &:is(.toast--info) {
-    .toast__title {
+    &--default {
       @apply text-on-emphasis;
       @apply dark:text-dark-on-emphasis;
     }
 
-    .toast__text {
-      @apply text-on-emphasis;
-      @apply dark:text-dark-on-emphasis;
+    &--warning {
+      @apply text-warning;
+      @apply dark:text-dark-warning;
+    }
+
+    &--success {
+      @apply text-success;
+      @apply dark:text-dark-success;
+    }
+
+    &--primary {
+      @apply text-[color:var(--p-toast-icon-color-primary)];
+      @apply dark:text-[color:var(--p-toast-icon-color-primary-dark)];
+    }
+
+    &--danger {
+      @apply text-danger;
+      @apply dark:text-danger;
+    }
+
+    + .toast__body {
+      @apply pl-0;
     }
   }
 
-  /**
-  * set toast info icon color.
-  * provide background when
-  * variant is filled
-  */
-  &&--info {
-    &:is(.toast--simple) {
-      .toast__icon {
-        @apply bg-base text-info;
-        @apply dark:bg-dark-base dark:text-dark-info;
+  &__action {
+    @apply px-2;
 
-        &--default {
-          @apply text-default;
-          @apply dark:text-dark-default;
-        }
-
-        &--warning {
-          @apply text-warning;
-          @apply dark:text-dark-warning;
-        }
-
-        &--success {
-          @apply text-success;
-          @apply dark:text-dark-success;
-        }
-
-        &--primary {
-          @apply text-[color:var(--p-toast-icon-color-primary)];
-          @apply dark:text-[color:var(--p-toast-icon-color-primary-dark)];
-        }
-
-        &--danger {
-          @apply text-danger;
-          @apply dark:text-danger;
-        }
+    &.btn {
+      &.btn--variant-ghost {
+        @apply text-dark-link;
+        @apply dark:text-link;
       }
-      .toast__title {
-        @apply text-default;
-        @apply dark:text-dark-default;
-      }
-    }
-    &.toast--filled {
-      @apply bg-inverse text-info;
-      @apply dark:bg-dark-inverse dark:text-dark-info;
 
-      .toast__close {
-        @apply cursor-pointer text-on-emphasis/30 hover:text-on-emphasis/50;
-        @apply dark:text-dark-on-emphasis/30 hover:dark:text-dark-on-emphasis/50;
+      &.btn--variant-outline {
+        @apply text-dark-default;
+        @apply dark:text-default;
       }
     }
   }
 
-  /**
-  * provide title color
-  * in simple variant.
-  * set toast icon color and background.
-  * provide background color when
-  * variant is filled
-  */
-  &&--error {
-    &.toast--simple {
-      .toast__title {
-        @apply text-danger;
-        @apply dark:text-dark-danger;
-      }
-    }
-
-    .toast__icon,
-    &.toast--filled {
-      @apply bg-danger-emphasis;
-      @apply dark:bg-dark-danger-emphasis;
-    }
+  &__loading {
+    @apply flex items-center space-x-3 text-sm text-muted;
+    @apply dark:text-dark-muted;
   }
 
-  &&--success {
-    &.toast--simple {
-      .toast__title {
-        @apply text-success;
-        @apply dark:text-dark-success;
-      }
-    }
-
-    .toast__icon,
-    &.toast--filled {
-      @apply bg-success-emphasis;
-      @apply dark:bg-dark-success-emphasis;
-    }
+  &__close {
+    @apply shrink-0 cursor-pointer text-muted/70 hover:text-muted;
+    @apply dark:text-dark-muted/70 dark:hover:text-dark-muted;
   }
 
-  &&--warning {
-    &.toast--simple {
-      .toast__title {
-        @apply text-warning;
-        @apply dark:text-dark-warning;
-      }
-    }
-
-    .toast__icon,
-    &.toast--filled {
-      @apply bg-warning-emphasis;
-      @apply dark:bg-dark-warning-emphasis;
-    }
+  &__body {
+    @apply grow space-y-2 flex flex-col overflow-hidden;
   }
 
-  /**
-  * set global style
-  * of toast in simple
-  * variant
-  */
-  &&--simple {
-    @apply bg-default;
-    @apply dark:bg-dark-default;
-
-    .toast__text {
-      @apply text-subtle;
-      @apply dark:text-dark-subtle;
-    }
-
-    &:not(.toast--info) {
-      .toast__icon {
-        @apply text-state-emphasis;
-        @apply dark:text-dark-state-emphasis;
-      }
-    }
-  }
-
-  /**
-  * aligning toast icon
-  * when variant is filled.
-  * provide text color
-  * when toast color isn't info
-  */
-  &&--filled {
-    .toast__icon {
-      @apply items-start;
-
-      &--default {
-        @apply text-on-emphasis;
-        @apply dark:text-dark-on-emphasis;
-      }
-
-      &--warning {
-        @apply text-warning;
-        @apply dark:text-dark-warning;
-      }
-
-      &--success {
-        @apply text-success;
-        @apply dark:text-dark-success;
-      }
-
-      &--primary {
-        @apply text-[color:var(--p-toast-icon-color-primary)];
-        @apply dark:text-[color:var(--p-toast-icon-color-primary-dark)];
-      }
-
-      &--danger {
-        @apply text-danger;
-        @apply dark:text-danger;
-      }
-    }
-
-    &:not(.toast--info) {
-      @apply text-state-emphasis;
-      @apply dark:text-dark-state-emphasis;
-    }
+  &__text {
+    @apply text-sm font-medium leading-[1.75] truncate text-on-emphasis;
+    @apply dark:text-dark-on-emphasis;
   }
 }
 

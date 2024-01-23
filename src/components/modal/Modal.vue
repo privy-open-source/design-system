@@ -1,7 +1,10 @@
 <template>
   <transition
     name="fade"
-    mode="out-in">
+    mode="out-in"
+    :css="!noAnimation"
+    @after-enter="$emit('show')"
+    @after-leave="$emit('hide')">
     <div
       v-show="model"
       class="modal"
@@ -51,7 +54,11 @@
             </div>
             <div
               data-testid="modal-body"
-              :class="[ { 'modal__body--scroll' : modalBodyScrollable}, (size !== 'full' || freeDistraction) ? bodyClass : '', 'modal__body' ]">
+              class="modal__body"
+              :class="[
+                { 'modal__body--scroll': modalBodyScrollable },
+                (size !== 'full' || freeDistraction) ? bodyClass : '',
+              ]">
               <div
                 v-if="size === 'full' && !freeDistraction"
                 class="modal--full__content">
@@ -207,10 +214,16 @@ const props = defineProps({
     ],
     default: undefined,
   },
+  noAnimation: {
+    type   : Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits<{
   'update:modelValue': [boolean],
+  'show': [],
+  'hide': [],
   'close': [Event],
 }>()
 

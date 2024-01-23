@@ -5,6 +5,7 @@ description: ase component for modal dialog.
 
 <script setup>
   import { ref } from 'vue-demi'
+  import pText from '../text/Text.vue'
   import pButton from '../button/Button.vue'
   import pModal from './Modal.vue'
   import pHeading from '../heading/Heading.vue'
@@ -20,29 +21,29 @@ description: ase component for modal dialog.
   import IconDocument from '@privyid/persona-icon/vue/document-empty/20.vue'
   import IconClose from '@privyid/persona-icon/vue/close/20.vue'
 
-  const basicModal  = ref(true)
-  const showModal   = ref(false)
-  const advanceModal = ref(true)
-  const previewAdvance = ref(false)
-  const banner1     = ref(true)
-  const bannerSheet = ref(false)
-  const banner2     = ref(true)
-  const bottomSheet = ref(false)
-  const scrollModal = ref(true)
-  const bodyScroll  = ref(false)
-  const modalBanner = ref(true)
-  const previewBanner = ref(false)
-  const modalSize   = ref(true)
-  const size        = ref(false)
-  const modalCenter   = ref(true)
+  const basicModal      = ref(true)
+  const showModal       = ref(false)
+  const advanceModal    = ref(true)
+  const previewAdvance  = ref(false)
+  const banner1         = ref(true)
+  const bannerSheet     = ref(false)
+  const banner2         = ref(true)
+  const bottomSheet     = ref(false)
+  const scrollModal     = ref(true)
+  const bodyScroll      = ref(false)
+  const modalBanner     = ref(true)
+  const previewBanner   = ref(false)
+  const modalSize       = ref(true)
+  const size            = ref(false)
+  const modalCenter     = ref(true)
   const centered        = ref(false)
-  const modalFull = ref(true)
-  const fullscreen = ref(false)
-  const modalFullHead = ref(true)
-  const fullscreenHead = ref(false)
-  const modalFullBody = ref(true)
-  const fullscreenBody = ref(false)
-  const modalFree = ref(true)
+  const modalFull       = ref(true)
+  const fullscreen      = ref(false)
+  const modalFullHead   = ref(true)
+  const fullscreenHead  = ref(false)
+  const modalFullBody   = ref(true)
+  const fullscreenBody  = ref(false)
+  const modalFree       = ref(true)
   const freedistraction = ref(false)
 
   const flscrn = ref(false)
@@ -969,35 +970,37 @@ Modal use local CSS variables on `.modal` for enhanced real-time customization.
 
 ### Props
 
-| Props                      |   Type    | Default | Description                                                |
-|----------------------------|:---------:|:-------:|------------------------------------------------------------|
-| `modelValue`          | `Boolean` | `false` | `v-model` value for show / hide modal                     |
-| `title`               | `String`  |    -    | Modal Title                                               |
-| `text`                | `String`  |    -    | Text inside of Modal Body                                 |
-| `dismissable`         | `Boolean` | `true`  | Show / Hide dismiss button                                |
-| `size`                | `String`  |  `md`   | Size of modal, valid value is `sm`, `md`, `lg` and `xl`   |
-| `banner`              | `Boolean` | `false` | Give modal no-padding to place image for specific purpose |
-| `noCloseOnEsc`        | `Boolean` | `false` | No close modal while Escape was pressed                   |
-| `noCloseOnBackdrop`   | `Boolean` | `false` | No close modal while Modal Backdrop was clicked           |
-| `modalBodyScrollable` | `Boolean` | `false` | Scrollable modal body when content is to long             |
-| `centered`            | `Boolean` | `false` | Handle center vertically of the viewport                  |
-| `freeDistraction`     | `Boolean` | `false` | Activate modal free distraction type when size are `full`    |
-| `headerClass`         | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal header  |
-| `dialogClass`         | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal dialog  |
-| `contentClass`        | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal content |
-| `bodyClass`           | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal body  |
-| `footerClass`         | `String` or `Array` or `Object`  |  `-`  | CSS class to add in the modal footer  |
+| Props                 |              Type               | Default | Description                                               |
+|-----------------------|:-------------------------------:|:-------:|-----------------------------------------------------------|
+| `modelValue`          |            `Boolean`            | `false` | `v-model` value for show / hide modal                     |
+| `title`               |            `String`             |    -    | Modal Title                                               |
+| `text`                |            `String`             |    -    | Text inside of Modal Body                                 |
+| `dismissable`         |            `Boolean`            | `true`  | Show / Hide dismiss button                                |
+| `size`                |            `String`             |  `md`   | Size of modal, valid value is `sm`, `md`, `lg` and `xl`   |
+| `banner`              |            `Boolean`            | `false` | Give modal no-padding to place image for specific purpose |
+| `noCloseOnEsc`        |            `Boolean`            | `false` | No close modal while Escape was pressed                   |
+| `noCloseOnBackdrop`   |            `Boolean`            | `false` | No close modal while Modal Backdrop was clicked           |
+| `modalBodyScrollable` |            `Boolean`            | `false` | Scrollable modal body when content is to long             |
+| `centered`            |            `Boolean`            | `false` | Handle center vertically of the viewport                  |
+| `freeDistraction`     |            `Boolean`            | `false` | Activate modal free distraction type when size are `full` |
+| `headerClass`         | `String` or `Array` or `Object` |   `-`   | CSS class to add in the modal header                      |
+| `dialogClass`         | `String` or `Array` or `Object` |   `-`   | CSS class to add in the modal dialog                      |
+| `contentClass`        | `String` or `Array` or `Object` |   `-`   | CSS class to add in the modal content                     |
+| `bodyClass`           | `String` or `Array` or `Object` |   `-`   | CSS class to add in the modal body                        |
+| `footerClass`         | `String` or `Array` or `Object` |   `-`   | CSS class to add in the modal footer                      |
 
 ### Slots
-| Name      | Description                                                                                      |
-|-----------|--------------------------------------------------------------------------------------------------|
-| `header ` | Content (in the form of— permalink or button) to place in Modal Header                           |
-| `body `   | Content to place in Modal body of size full with default type only                               |
-| `footer ` | Content (in the form of— permalink or button) to place in Modal Footer. Modal size full with default type **not supported** this slot.                           |
+| Name      | Description                                                                                                                            |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------|
+| `header ` | Content (in the form of— permalink or button) to place in Modal Header                                                                 |
+| `body `   | Content to place in Modal body of size full with default type only                                                                     |
+| `footer ` | Content (in the form of— permalink or button) to place in Modal Footer. Modal size full with default type **not supported** this slot. |
 
 ### Events
 
 | Name    | Arguments | Description                     |
 |---------|-----------|---------------------------------|
 | `close` | -         | Event when close button clicked |
+| `hide`  | -         | Event when modal hidden         |
+| `show`  | -         | Event when modal shown          |
 

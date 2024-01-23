@@ -10,10 +10,12 @@ import type { VNode } from 'vue-demi'
 import {
   ref,
   h,
+  mergeProps,
 } from 'vue-demi'
 import pInput from '../input/Input.vue'
 import pFormGroup from '../form-group/FormGroup.vue'
 import type { AcceptVariant } from '../input'
+import type { AdditionalAttr } from '../global/types'
 
 export type FooterAlignVariant = 'start' | 'end'
 
@@ -24,6 +26,7 @@ interface DialogButton {
   closeModal?: boolean,
   color?: FooterButtonColorVariant,
   variant?: FooterButtonStyleVariant,
+  attrs?: AdditionalAttr,
 }
 
 export interface DialogOptions {
@@ -36,6 +39,7 @@ export interface DialogOptions {
   footerAlign?: FooterAlignVariant,
   cancel?: DialogButton,
   confirm?: DialogButton,
+  attrs?: AdditionalAttr,
 }
 
 export type DialogConfirmOption = DialogOptions
@@ -50,6 +54,7 @@ export interface DialogPromptOption extends DialogOptions {
     size?: InputSizeVariant,
     clearable?: boolean,
     accept?: AcceptVariant,
+    attrs?: AdditionalAttr,
   },
 }
 
@@ -92,26 +97,36 @@ export async function alert (options: DialogConfirmOption): Promise<void> {
   ))
 }
 
-export async function prompt (options: DialogPromptOption) {
+export async function prompt (options: DialogPromptOption): Promise<string> {
   const { default: Dialog } = await import('./Dialog.vue')
   const model               = ref(options.value)
+  const input               = ref<InstanceType<typeof pInput>>()
   const modal               = await useSingleton(Dialog)
   const result              = await new Promise<string>((resolve) => {
     modal.show(defu(
       {
         content: () => {
-          return h(pFormGroup, { label: options.text }, () => [
-            h(pInput, {
-              'type'               : options.input?.type,
-              'placeholder'        : options.input?.placeholder,
-              'size'               : options.input?.size,
-              'clearable'          : options.input?.clearable,
-              'accept'             : options.input?.accept,
-              'modelValue'         : model.value,
-              'onUpdate:modelValue': (value: string) => {
-                model.value = value
-              },
-            }),
+          return h('form', {
+            onSubmit (event) {
+              event.preventDefault()
+
+              resolve(model.value)
+            },
+          }, [
+            h(pFormGroup, { label: options.text }, () => [
+              h(pInput, mergeProps(options.input?.attrs, {
+                'ref'                : input,
+                'type'               : options.input?.type,
+                'placeholder'        : options.input?.placeholder,
+                'size'               : options.input?.size,
+                'clearable'          : options.input?.clearable,
+                'accept'             : options.input?.accept,
+                'modelValue'         : model.value,
+                'onUpdate:modelValue': (value: string) => {
+                  model.value = value
+                },
+              })),
+            ]),
           ])
         },
         onConfirm: () => resolve(model.value),
@@ -124,7 +139,9 @@ export async function prompt (options: DialogPromptOption) {
         cancel  : {},
         centered: true,
       },
-    ))
+    )).then(() => {
+      input.value?.input.focus()
+    })
   })
 
   return result
