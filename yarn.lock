@@ -2760,7 +2760,7 @@ __metadata:
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": "npm:1.6.1"
     "@splidejs/splide": "npm:^4.1.4"
-    "@testing-library/jest-dom": "npm:6.2.0"
+    "@testing-library/jest-dom": "npm:6.2.1"
     "@testing-library/user-event": "npm:^14.4.3"
     "@testing-library/vue": "npm:8.0.1"
     "@types/lodash-es": "npm:4.17.12"
@@ -3563,9 +3563,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:6.2.0":
-  version: 6.2.0
-  resolution: "@testing-library/jest-dom@npm:6.2.0"
+"@testing-library/jest-dom@npm:6.2.1":
+  version: 6.2.1
+  resolution: "@testing-library/jest-dom@npm:6.2.1"
   dependencies:
     "@adobe/css-tools": "npm:^4.3.2"
     "@babel/runtime": "npm:^7.9.2"
@@ -3577,11 +3577,14 @@ __metadata:
     redent: "npm:^3.0.0"
   peerDependencies:
     "@jest/globals": ">= 28"
+    "@types/bun": "*"
     "@types/jest": ">= 28"
     jest: ">= 28"
     vitest: ">= 0.32"
   peerDependenciesMeta:
     "@jest/globals":
+      optional: true
+    "@types/bun":
       optional: true
     "@types/jest":
       optional: true
@@ -3589,7 +3592,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 4af88d4b6208eda58fad47a520057893a381b972e7b043d7787c0111c887bdc82ed959bed07c21700f2816d4a1e315a519a0aabce120708ad7ba79577374f0fd
+  checksum: e522314c4623d2030146570ed5907c71126477272760fa6bce7a2db4ee5dd1edf492ebc9a5f442e99f69d4d6e2a9d0aac49fae41323211dbcee186a1eca04707
   languageName: node
   linkType: hard
 
