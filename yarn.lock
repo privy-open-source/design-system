@@ -2401,7 +2401,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.9.3, @nuxt/kit@npm:^3.4.3, @nuxt/kit@npm:^3.8.2, @nuxt/kit@npm:^3.9.1":
+"@nuxt/kit@npm:3.9.3, @nuxt/kit@npm:^3.4.3, @nuxt/kit@npm:^3.8.2, @nuxt/kit@npm:^3.9.1, @nuxt/kit@npm:^3.9.3":
   version: 3.9.3
   resolution: "@nuxt/kit@npm:3.9.3"
   dependencies:
@@ -2543,11 +2543,11 @@ __metadata:
   linkType: hard
 
 "@nuxtjs/tailwindcss@npm:^6.2.0":
-  version: 6.10.4
-  resolution: "@nuxtjs/tailwindcss@npm:6.10.4"
+  version: 6.11.0
+  resolution: "@nuxtjs/tailwindcss@npm:6.11.0"
   dependencies:
-    "@nuxt/kit": "npm:^3.9.1"
-    autoprefixer: "npm:^10.4.16"
+    "@nuxt/kit": "npm:^3.9.3"
+    autoprefixer: "npm:^10.4.17"
     chokidar: "npm:^3.5.3"
     clear-module: "npm:^4.1.2"
     colorette: "npm:^2.0.20"
@@ -2555,14 +2555,14 @@ __metadata:
     defu: "npm:^6.1.4"
     h3: "npm:^1.10.0"
     micromatch: "npm:^4.0.5"
-    pathe: "npm:^1.1.1"
+    pathe: "npm:^1.1.2"
     postcss: "npm:^8.4.33"
     postcss-custom-properties: "npm:^13.3.4"
     postcss-nesting: "npm:^12.0.2"
     tailwind-config-viewer: "npm:^1.7.3"
     tailwindcss: "npm:~3.4.1"
     ufo: "npm:^1.3.2"
-  checksum: 5e69d1309ce32f03c078cbdc0ab829093509ff18da8ad2b668240fac6c33b58d9091811bc30b767f929b8ef4c9aa22862c39dcdc3edb542073bc97155e13fdf3
+  checksum: 650b66bec1b0d0f77966117c2a57b285ed4ea9f62d90fd72253a57df34f71b258dab56656da8b6ee2c04de3998b2af8fd1f81bd43d5322ab7a01496a0cc778ad
   languageName: node
   linkType: hard
 
@@ -5631,7 +5631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:10.4.17":
+"autoprefixer@npm:10.4.17, autoprefixer@npm:^10.4.17":
   version: 10.4.17
   resolution: "autoprefixer@npm:10.4.17"
   dependencies:
