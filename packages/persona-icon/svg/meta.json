@@ -9001,35 +9001,6 @@
     ]
   },
   {
-    "name": "message",
-    "aliases": [],
-    "category": "apps",
-    "folder": "message-apps",
-    "variant": "apps",
-    "files": [
-      {
-        "name": "message-apps/24",
-        "path": "message-apps/24.svg",
-        "hash": "c0134d00e2aa0370f1aab7096e2c2954d1477aa776bfa538e14370a2dabc392b"
-      },
-      {
-        "name": "message-apps/16",
-        "path": "message-apps/16.svg",
-        "hash": "272685ce9fe40f871927a9bad6c7c7fd0879fb61403205c2bb5e594258d01e4b"
-      },
-      {
-        "name": "message-apps/32",
-        "path": "message-apps/32.svg",
-        "hash": "6b7e09253d07595b50ee375086dd580e866c3815af55f28c920c8637791ba346"
-      },
-      {
-        "name": "message-apps/20",
-        "path": "message-apps/20.svg",
-        "hash": "6441db7afe165bbd1fd9fd07c19843930a473eacf533cfb8ef09d5a836d4bad2"
-      }
-    ]
-  },
-  {
     "name": "flash-off",
     "aliases": [],
     "category": "toggle",
@@ -9884,6 +9855,64 @@
         "name": "stamp/16",
         "path": "stamp/16.svg",
         "hash": "ef9ee69044ee4f55f506e0f11fc4678bc1a02dda9c57a23aaa068f713c63c18a"
+      }
+    ]
+  },
+  {
+    "name": "preview",
+    "aliases": [],
+    "category": "actions",
+    "folder": "preview",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "preview/16",
+        "path": "preview/16.svg",
+        "hash": "c0915499b8595fca1ad87b2e062f6377b3419f7ec7807a20195bd192771c12bf"
+      },
+      {
+        "name": "preview/32",
+        "path": "preview/32.svg",
+        "hash": "6941b261b40676f5771b5f29ec899ccc7c43e9f8ad90020f70f61cfcfebf4348"
+      },
+      {
+        "name": "preview/20",
+        "path": "preview/20.svg",
+        "hash": "5246956934fd9e999af1090f2961d8a7ae05e623aa962ab9521dcb436da41a9f"
+      },
+      {
+        "name": "preview/24",
+        "path": "preview/24.svg",
+        "hash": "53c534f21b790f4672ac5ff6f1198ee78cd74f33cbee00f3bca768759f59e3b7"
+      }
+    ]
+  },
+  {
+    "name": "message",
+    "aliases": [],
+    "category": "apps",
+    "folder": "message-apps",
+    "variant": "apps",
+    "files": [
+      {
+        "name": "message-apps/24",
+        "path": "message-apps/24.svg",
+        "hash": "c0134d00e2aa0370f1aab7096e2c2954d1477aa776bfa538e14370a2dabc392b"
+      },
+      {
+        "name": "message-apps/16",
+        "path": "message-apps/16.svg",
+        "hash": "272685ce9fe40f871927a9bad6c7c7fd0879fb61403205c2bb5e594258d01e4b"
+      },
+      {
+        "name": "message-apps/32",
+        "path": "message-apps/32.svg",
+        "hash": "6b7e09253d07595b50ee375086dd580e866c3815af55f28c920c8637791ba346"
+      },
+      {
+        "name": "message-apps/20",
+        "path": "message-apps/20.svg",
+        "hash": "6441db7afe165bbd1fd9fd07c19843930a473eacf533cfb8ef09d5a836d4bad2"
       }
     ]
   }
