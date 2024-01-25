@@ -1958,14 +1958,15 @@ __metadata:
   linkType: hard
 
 "@jill64/universal-sanitizer@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@jill64/universal-sanitizer@npm:1.0.2"
+  version: 1.1.0
+  resolution: "@jill64/universal-sanitizer@npm:1.1.0"
   dependencies:
     "@types/dompurify": "npm:3.0.5"
     "@types/sanitize-html": "npm:2.9.5"
     dompurify: "npm:3.0.8"
+    postcss: "npm:8.4.33"
     sanitize-html: "npm:2.11.0"
-  checksum: 4c90a72783dbfd8526d3425d9bf1c3622cbf2fb19013f7f3e49e2be2b5c1ff55c861575dd767addc2d015300c78045be689ae662b046b07d1b3fd4086212afd8
+  checksum: 1fc6d5d819d270288c60b984bfc78d18575f933f1070faf520153757185b6f5c389fec3be229bc4f01d968a8b5abe0ef4bff5a9b0da46a8e5bce9dae91c47d31
   languageName: node
   linkType: hard
 
