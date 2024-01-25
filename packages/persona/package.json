@@ -107,7 +107,7 @@
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@types/sanitize-html": "^2",
-    "browserslist-to-esbuild": "^1.2.0",
+    "browserslist-to-esbuild": "^2.0.0",
     "nuxt": "3.9.3",
     "postcss-custom-properties": "^13.0.0",
     "postcss-hexrgba": "^2.1.0",
