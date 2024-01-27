@@ -2907,7 +2907,7 @@ __metadata:
     fuse.js: "npm:7.0.0"
     interactjs: "npm:1.10.26"
     lodash-es: "npm:4.17.21"
-    marked: "npm:11.1.1"
+    marked: "npm:11.2.0"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.9.3"
     pdfjs-dist: "npm:3.11.174"
@@ -12729,7 +12729,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:11.1.1, marked@npm:^11.0.0":
+"marked@npm:11.2.0":
+  version: 11.2.0
+  resolution: "marked@npm:11.2.0"
+  bin:
+    marked: bin/marked.js
+  checksum: 0c8c0d263617a04f066db6f5adfed811a8eb78a685850d4d0b8b9ef351e416fb871813ea7ee7f94f4d5f67da98c3a2a4259b8684e4f93a6a673733fe9d9f2868
+  languageName: node
+  linkType: hard
+
+"marked@npm:^11.0.0":
   version: 11.1.1
   resolution: "marked@npm:11.1.1"
   bin:
