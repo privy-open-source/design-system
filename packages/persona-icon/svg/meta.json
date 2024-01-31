@@ -118,37 +118,6 @@
     ]
   },
   {
-    "name": "multiple-persons",
-    "aliases": [
-      "multiple-users"
-    ],
-    "category": "other",
-    "folder": "multiple-persons",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "multiple-persons/20",
-        "path": "multiple-persons/20.svg",
-        "hash": "c0af0b3c75c648a79c54aec1f93d400f921157c002cf770979293e6ed1d77af4"
-      },
-      {
-        "name": "multiple-persons/24",
-        "path": "multiple-persons/24.svg",
-        "hash": "4e4cfafe121891e5a6d63f6934b735c7131181e5c73902e5f02b4bca83121965"
-      },
-      {
-        "name": "multiple-persons/32",
-        "path": "multiple-persons/32.svg",
-        "hash": "3a9c87c4ced23ef0d6916d25c3cfe76203f7b8535d7c5614b81bb1be95571f93"
-      },
-      {
-        "name": "multiple-persons/16",
-        "path": "multiple-persons/16.svg",
-        "hash": "b2038d75dfacddb0b8e404b016266bf69780ff75b1dc85e1da824e2c052bc299"
-      }
-    ]
-  },
-  {
     "name": "switch",
     "aliases": [],
     "category": "technology",
@@ -6339,35 +6308,6 @@
     ]
   },
   {
-    "name": "mask",
-    "aliases": [],
-    "category": "other",
-    "folder": "mask",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "mask/24",
-        "path": "mask/24.svg",
-        "hash": "7861c9bb114ce732f031507557734418488e033fbb2cf68f2e203e8db8e3fdce"
-      },
-      {
-        "name": "mask/32",
-        "path": "mask/32.svg",
-        "hash": "2995155e3119bda1ee51df22a83d4e343cfd53312a5fb80ac30215e4ad9cb952"
-      },
-      {
-        "name": "mask/20",
-        "path": "mask/20.svg",
-        "hash": "62068a15d0776b08bfc5d209727e6155b7702a8243ce34472607e2773e531341"
-      },
-      {
-        "name": "mask/16",
-        "path": "mask/16.svg",
-        "hash": "6ef013e7bd8775279a8ec3f1b3d0a6bb09d20fb1c00cb366455046b652486841"
-      }
-    ]
-  },
-  {
     "name": "bus",
     "aliases": [],
     "category": "life-style",
@@ -6545,35 +6485,6 @@
         "name": "shop/20",
         "path": "shop/20.svg",
         "hash": "63565c1bf3ca84658a30a2aa057354e95e7a6166b0d5a64f0074795205a0853f"
-      }
-    ]
-  },
-  {
-    "name": "hat",
-    "aliases": [],
-    "category": "other",
-    "folder": "hat",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "hat/16",
-        "path": "hat/16.svg",
-        "hash": "26d825f8bedb427ae57b60e2def06c4855ffaa3323a97063d2e99b667820cb34"
-      },
-      {
-        "name": "hat/24",
-        "path": "hat/24.svg",
-        "hash": "05c65bb98e244bf49766ab7766a1e2c56c8c5a428abcaca21a9f59f5f341a5e6"
-      },
-      {
-        "name": "hat/20",
-        "path": "hat/20.svg",
-        "hash": "34e3b61ecd0edf128eaa11968da0c62f3e65edb368d3566ea6ede9afc54f1d5c"
-      },
-      {
-        "name": "hat/32",
-        "path": "hat/32.svg",
-        "hash": "74795320871bf829764d161fb31f187545a5de5a8d7708b743cc84f5623e9ea1"
       }
     ]
   },
@@ -7931,35 +7842,6 @@
     ]
   },
   {
-    "name": "face-accessories",
-    "aliases": [],
-    "category": "other",
-    "folder": "face-accessories",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "face-accessories/20",
-        "path": "face-accessories/20.svg",
-        "hash": "52facef402990f7666a949347c49e51bcdb5e0ab10f80d57108087ba5a85b51a"
-      },
-      {
-        "name": "face-accessories/32",
-        "path": "face-accessories/32.svg",
-        "hash": "fd692a1dc007d67c2ce713b8661880cb018a95809ccb334434e1e877fabe0dd9"
-      },
-      {
-        "name": "face-accessories/16",
-        "path": "face-accessories/16.svg",
-        "hash": "eb778daff94f1f48233fb4af356d75b8a3f677a399d47c318eacc19c761c4088"
-      },
-      {
-        "name": "face-accessories/24",
-        "path": "face-accessories/24.svg",
-        "hash": "c2cac31be3925381e4ebc1ad02ed8a2971003a13a7fb45fb3bc5236b9ab2c78f"
-      }
-    ]
-  },
-  {
     "name": "caret-sort",
     "aliases": [],
     "category": "operation",
@@ -8943,35 +8825,6 @@
     ]
   },
   {
-    "name": "glasses",
-    "aliases": [],
-    "category": "other",
-    "folder": "glasses",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "glasses/16",
-        "path": "glasses/16.svg",
-        "hash": "6f78226fc5cc12d1466e6df49c2fe98421ed69e576463881acaad4793ebd4232"
-      },
-      {
-        "name": "glasses/24",
-        "path": "glasses/24.svg",
-        "hash": "bc8dc6b10722a03ce9bd4f84d0f60d73b4ae1f06e2f4a43a4625ac35123a52b4"
-      },
-      {
-        "name": "glasses/32",
-        "path": "glasses/32.svg",
-        "hash": "9a9166fe5e551f6fabda05b5e519a6dcfe87532491598774e6c1cf586454cd08"
-      },
-      {
-        "name": "glasses/20",
-        "path": "glasses/20.svg",
-        "hash": "7021757ef8cbbcdcf342f186e2f2fc5dc6087d9a9f4f835035b0ba9e73e90024"
-      }
-    ]
-  },
-  {
     "name": "chevron-down",
     "aliases": [],
     "category": "navigation",
@@ -9826,6 +9679,185 @@
         "name": "pallete/20",
         "path": "pallete/20.svg",
         "hash": "ad565069a609eae603c8bb6404cb710ee977b5b0e714976a67e68332db1c6e7f"
+      }
+    ]
+  },
+  {
+    "name": "unlimited",
+    "aliases": [
+      "infinity",
+      "loop"
+    ],
+    "category": "actions",
+    "folder": "unlimited",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "unlimited/16",
+        "path": "unlimited/16.svg",
+        "hash": "b7bf8ab7cc19fe13d0773085fed6a2aad3823329083db25160a97fce16713f75"
+      },
+      {
+        "name": "unlimited/32",
+        "path": "unlimited/32.svg",
+        "hash": "4fd49b5c481bf26d308c83889001cde65ccf9d4f7dde9dd92d507a1a37761315"
+      },
+      {
+        "name": "unlimited/20",
+        "path": "unlimited/20.svg",
+        "hash": "0fcf4a3c3240bfee82193402da6b44dd3e632748f38d9e91fa99920ea304d96a"
+      },
+      {
+        "name": "unlimited/24",
+        "path": "unlimited/24.svg",
+        "hash": "2787daff4d8af3a43329988f031090c79f5232e2f49a250ec1810ca0b2a5de08"
+      }
+    ]
+  },
+  {
+    "name": "glasses",
+    "aliases": [],
+    "category": "other",
+    "folder": "glasses",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "glasses/32",
+        "path": "glasses/32.svg",
+        "hash": "9a9166fe5e551f6fabda05b5e519a6dcfe87532491598774e6c1cf586454cd08"
+      },
+      {
+        "name": "glasses/24",
+        "path": "glasses/24.svg",
+        "hash": "bc8dc6b10722a03ce9bd4f84d0f60d73b4ae1f06e2f4a43a4625ac35123a52b4"
+      },
+      {
+        "name": "glasses/16",
+        "path": "glasses/16.svg",
+        "hash": "6f78226fc5cc12d1466e6df49c2fe98421ed69e576463881acaad4793ebd4232"
+      },
+      {
+        "name": "glasses/20",
+        "path": "glasses/20.svg",
+        "hash": "7021757ef8cbbcdcf342f186e2f2fc5dc6087d9a9f4f835035b0ba9e73e90024"
+      }
+    ]
+  },
+  {
+    "name": "hat",
+    "aliases": [],
+    "category": "other",
+    "folder": "hat",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "hat/16",
+        "path": "hat/16.svg",
+        "hash": "26d825f8bedb427ae57b60e2def06c4855ffaa3323a97063d2e99b667820cb34"
+      },
+      {
+        "name": "hat/32",
+        "path": "hat/32.svg",
+        "hash": "74795320871bf829764d161fb31f187545a5de5a8d7708b743cc84f5623e9ea1"
+      },
+      {
+        "name": "hat/24",
+        "path": "hat/24.svg",
+        "hash": "05c65bb98e244bf49766ab7766a1e2c56c8c5a428abcaca21a9f59f5f341a5e6"
+      },
+      {
+        "name": "hat/20",
+        "path": "hat/20.svg",
+        "hash": "34e3b61ecd0edf128eaa11968da0c62f3e65edb368d3566ea6ede9afc54f1d5c"
+      }
+    ]
+  },
+  {
+    "name": "multiple-persons",
+    "aliases": [
+      "multiple-users"
+    ],
+    "category": "other",
+    "folder": "multiple-persons",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "multiple-persons/20",
+        "path": "multiple-persons/20.svg",
+        "hash": "c0af0b3c75c648a79c54aec1f93d400f921157c002cf770979293e6ed1d77af4"
+      },
+      {
+        "name": "multiple-persons/24",
+        "path": "multiple-persons/24.svg",
+        "hash": "4e4cfafe121891e5a6d63f6934b735c7131181e5c73902e5f02b4bca83121965"
+      },
+      {
+        "name": "multiple-persons/32",
+        "path": "multiple-persons/32.svg",
+        "hash": "3a9c87c4ced23ef0d6916d25c3cfe76203f7b8535d7c5614b81bb1be95571f93"
+      },
+      {
+        "name": "multiple-persons/16",
+        "path": "multiple-persons/16.svg",
+        "hash": "b2038d75dfacddb0b8e404b016266bf69780ff75b1dc85e1da824e2c052bc299"
+      }
+    ]
+  },
+  {
+    "name": "mask",
+    "aliases": [],
+    "category": "other",
+    "folder": "mask",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "mask/20",
+        "path": "mask/20.svg",
+        "hash": "62068a15d0776b08bfc5d209727e6155b7702a8243ce34472607e2773e531341"
+      },
+      {
+        "name": "mask/32",
+        "path": "mask/32.svg",
+        "hash": "2995155e3119bda1ee51df22a83d4e343cfd53312a5fb80ac30215e4ad9cb952"
+      },
+      {
+        "name": "mask/24",
+        "path": "mask/24.svg",
+        "hash": "7861c9bb114ce732f031507557734418488e033fbb2cf68f2e203e8db8e3fdce"
+      },
+      {
+        "name": "mask/16",
+        "path": "mask/16.svg",
+        "hash": "6ef013e7bd8775279a8ec3f1b3d0a6bb09d20fb1c00cb366455046b652486841"
+      }
+    ]
+  },
+  {
+    "name": "face-accessories",
+    "aliases": [],
+    "category": "other",
+    "folder": "face-accessories",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "face-accessories/32",
+        "path": "face-accessories/32.svg",
+        "hash": "fd692a1dc007d67c2ce713b8661880cb018a95809ccb334434e1e877fabe0dd9"
+      },
+      {
+        "name": "face-accessories/20",
+        "path": "face-accessories/20.svg",
+        "hash": "52facef402990f7666a949347c49e51bcdb5e0ab10f80d57108087ba5a85b51a"
+      },
+      {
+        "name": "face-accessories/24",
+        "path": "face-accessories/24.svg",
+        "hash": "c2cac31be3925381e4ebc1ad02ed8a2971003a13a7fb45fb3bc5236b9ab2c78f"
+      },
+      {
+        "name": "face-accessories/16",
+        "path": "face-accessories/16.svg",
+        "hash": "eb778daff94f1f48233fb4af356d75b8a3f677a399d47c318eacc19c761c4088"
       }
     ]
   },
