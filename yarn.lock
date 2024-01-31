@@ -2797,7 +2797,7 @@ __metadata:
     eslint-plugin-promise: "npm:6.1.1"
     eslint-plugin-unicorn: "npm:48.0.1"
     eslint-plugin-varspacing: "npm:1.2.2"
-    eslint-plugin-vue: "npm:9.20.1"
+    eslint-plugin-vue: "npm:9.21.0"
     fast-equals: "npm:^5.0.0"
     fuse.js: "npm:7.0.0"
     happy-dom: "npm:8.9.0"
@@ -8986,20 +8986,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vue@npm:9.20.1":
-  version: 9.20.1
-  resolution: "eslint-plugin-vue@npm:9.20.1"
+"eslint-plugin-vue@npm:9.21.0":
+  version: 9.21.0
+  resolution: "eslint-plugin-vue@npm:9.21.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.4.0"
     natural-compare: "npm:^1.4.0"
     nth-check: "npm:^2.1.1"
     postcss-selector-parser: "npm:^6.0.13"
     semver: "npm:^7.5.4"
-    vue-eslint-parser: "npm:^9.4.0"
+    vue-eslint-parser: "npm:^9.4.2"
     xml-name-validator: "npm:^4.0.0"
   peerDependencies:
     eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
-  checksum: b9d2d2400aad7a77b3da6844f261cc2d9e86d99ae0febd7d544ababbf316be7eddfc3ff610e5d1d0ea3c9db0d24bbafe3129b1b8472ff10fe81162ded402736c
+  checksum: 10c4192c66124a304f40da5f69e8d5e91c0554bbbbdb7b6f59a066a7cd3612da3bfe1a7293cfa217b7b499a05108f208df4169a824cc15d78f58003ff6cffce8
   languageName: node
   linkType: hard
 
@@ -19065,9 +19065,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-eslint-parser@npm:^9.4.0":
-  version: 9.4.0
-  resolution: "vue-eslint-parser@npm:9.4.0"
+"vue-eslint-parser@npm:^9.4.2":
+  version: 9.4.2
+  resolution: "vue-eslint-parser@npm:9.4.2"
   dependencies:
     debug: "npm:^4.3.4"
     eslint-scope: "npm:^7.1.1"
@@ -19078,7 +19078,7 @@ __metadata:
     semver: "npm:^7.3.6"
   peerDependencies:
     eslint: ">=6.0.0"
-  checksum: a5e31ac1ab91ecc2f7f3222fe505f92aa453de238645e0fb691fdf14be50aa1e98161c530b37540f5ea241f1a26bfb1aa2bf449be7838203d78fff51921d7a44
+  checksum: 59ee81f32a1ac9014671eac3d56fa0eb1a2d24e00c811f21aa0652617d216293ab8f7d31971146995018d074e321d3781609670a14a0190c20f5138f6eb716cf
   languageName: node
   linkType: hard
 
