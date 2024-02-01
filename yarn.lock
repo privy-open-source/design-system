@@ -2761,7 +2761,7 @@ __metadata:
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": "npm:1.7.2"
     "@splidejs/splide": "npm:^4.1.4"
-    "@testing-library/jest-dom": "npm:6.4.0"
+    "@testing-library/jest-dom": "npm:6.4.1"
     "@testing-library/user-event": "npm:^14.4.3"
     "@testing-library/vue": "npm:8.0.1"
     "@types/lodash-es": "npm:4.17.12"
@@ -3564,9 +3564,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:6.4.0":
-  version: 6.4.0
-  resolution: "@testing-library/jest-dom@npm:6.4.0"
+"@testing-library/jest-dom@npm:6.4.1":
+  version: 6.4.1
+  resolution: "@testing-library/jest-dom@npm:6.4.1"
   dependencies:
     "@adobe/css-tools": "npm:^4.3.2"
     "@babel/runtime": "npm:^7.9.2"
@@ -3593,7 +3593,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10/09179611c61357925ca26a9cde4398a6ceee87940ab1c991c61d76fa74adb80e637f60e2ad1443e2cc75f1d336dc6285d5f50419e37b9bd04ad585233f913fc8
+  checksum: 10/ae042927361fb0c1bfe9fb5ed7cbcb7d5acff3236bfad203e4cd99d83e4b6047624df3b9c5fa3199534e6885e4ac5d3777a2a5f536f3b65390218ac48fae50a1
   languageName: node
   linkType: hard
 
