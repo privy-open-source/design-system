@@ -315,10 +315,10 @@ export default defineConfig({
               text: 'Breadcrumbs',
               link: '/components/breadcrumbs/',
             },
-            {
-              text: 'Filterbar',
-              link: '/components/filterbar/',
-            },
+            // {
+            //   text: 'Filterbar',
+            //   link: '/components/filterbar/',
+            // },
             {
               text: 'Navbar',
               link: '/components/navbar/',
