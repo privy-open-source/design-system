@@ -2544,8 +2544,8 @@ __metadata:
   linkType: hard
 
 "@nuxtjs/tailwindcss@npm:^6.2.0":
-  version: 6.11.2
-  resolution: "@nuxtjs/tailwindcss@npm:6.11.2"
+  version: 6.11.3
+  resolution: "@nuxtjs/tailwindcss@npm:6.11.3"
   dependencies:
     "@nuxt/kit": "npm:^3.9.3"
     autoprefixer: "npm:^10.4.17"
@@ -2563,7 +2563,7 @@ __metadata:
     tailwind-config-viewer: "npm:^1.7.3"
     tailwindcss: "npm:~3.4.1"
     ufo: "npm:^1.3.2"
-  checksum: 10/2c87302bf0d0225b1adf5797ab30452187782413f08531fa7dba7146bab06de6e7371aef2a705294b6a37870e53057cdf559ee0a681b58d9c8fb6bbce25b1a57
+  checksum: 10/70626c05281b378a113d2bbdb41b926ab1c0c93c0a729419b363257c332e955129efe05fd716c294076979049be0dc53206060ab27897f77add66d8771176c3b
   languageName: node
   linkType: hard
 
