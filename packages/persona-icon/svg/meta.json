@@ -4765,7 +4765,7 @@
       {
         "name": "star-favorite/16",
         "path": "star-favorite/16.svg",
-        "hash": "5ac8926255fa4d3247f8b4224febfa5a61c5e6a06174cc81c6ea26e83761ce27"
+        "hash": "e7a7a043dc49e1891945689af39b041f1ce25e51b731dfc024bd7f611fb3bb72"
       },
       {
         "name": "star-favorite/24",
@@ -4780,7 +4780,7 @@
       {
         "name": "star-favorite/32",
         "path": "star-favorite/32.svg",
-        "hash": "f481362e93d212531f17c9c4faf71a609517250ebdec5872e6ed1ff6480fb7a8"
+        "hash": "1a8e2b11cd06fcd3c56df21b9fb56b01ed83f6fc7801c95b63bedfc17702e3b5"
       }
     ]
   },
@@ -5951,7 +5951,7 @@
       {
         "name": "video-camera/16",
         "path": "video-camera/16.svg",
-        "hash": "1510d1d84544eddad3edca33128729709633fa16fadbfe638f6c91fb419d2681"
+        "hash": "a96396612dedab5cf0b9e87dd23b120b848d924f22178efa8745fb618e251100"
       }
     ]
   },
@@ -9010,7 +9010,7 @@
       {
         "name": "document-seal/32",
         "path": "document-seal/32.svg",
-        "hash": "9f375b271ff41f5f7b63367711bb82cc6f852c068ba4a31e4392ba7c9f12a0a6"
+        "hash": "c82182f36d92753a5d3f2bc7443ec20af545a0079b950a42014f94dd4b458547"
       },
       {
         "name": "document-seal/16",
@@ -9858,6 +9858,124 @@
         "name": "face-accessories/16",
         "path": "face-accessories/16.svg",
         "hash": "eb778daff94f1f48233fb4af356d75b8a3f677a399d47c318eacc19c761c4088"
+      }
+    ]
+  },
+  {
+    "name": "pin",
+    "aliases": [
+      "numpad"
+    ],
+    "category": "technology",
+    "folder": "pin",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "pin/16",
+        "path": "pin/16.svg",
+        "hash": "81b31f78acc339fbf9a8f2f09fd25330a0c6587c6fac48bf4b71fbbc33c26a27"
+      },
+      {
+        "name": "pin/20",
+        "path": "pin/20.svg",
+        "hash": "00bac55757dadb9a981ae715f5e0944557c75f2281d5929fa4b990f5ee06046b"
+      },
+      {
+        "name": "pin/24",
+        "path": "pin/24.svg",
+        "hash": "b3f4c1a00259c17726d8880d16aaffac662c8ab4afa2c8670842e79e262f0176"
+      },
+      {
+        "name": "pin/32",
+        "path": "pin/32.svg",
+        "hash": "415a9265902e3c35be99df37d67f1fadf9f92e63c7f16080729991ff3300d2c1"
+      }
+    ]
+  },
+  {
+    "name": "unarchive",
+    "aliases": [],
+    "category": "other",
+    "folder": "unarchive",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "unarchive/16",
+        "path": "unarchive/16.svg",
+        "hash": "e15a9fdc114213457cc64d03e8579eba73bf4053eefaf3ea6dbb2b8bee2cfbff"
+      },
+      {
+        "name": "unarchive/20",
+        "path": "unarchive/20.svg",
+        "hash": "fe26c77daf06da04c85105e639e80ea5f35ef6fc69ddfba5da5b8b569ed961cd"
+      },
+      {
+        "name": "unarchive/24",
+        "path": "unarchive/24.svg",
+        "hash": "9e3d2f9f7867159f62f8f22e030618c4f8754c8d0014c36158a2ba41f31bf9db"
+      },
+      {
+        "name": "unarchive/32",
+        "path": "unarchive/32.svg",
+        "hash": "78ce62629022ea453b7364fc4c2c3d9d45064e884a6b6ed189561e26e0f898b7"
+      }
+    ]
+  },
+  {
+    "name": "add-document",
+    "aliases": [],
+    "category": "files",
+    "folder": "add-document",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "add-document/16",
+        "path": "add-document/16.svg",
+        "hash": "b999493797487d57d8acf021b3a3ee85d7d7450401202aaf743e8778930d7654"
+      },
+      {
+        "name": "add-document/20",
+        "path": "add-document/20.svg",
+        "hash": "d70fdf7cbfa5c6def313edad3e0005f27a1f9bc132245b717d52c52c34b2014e"
+      },
+      {
+        "name": "add-document/24",
+        "path": "add-document/24.svg",
+        "hash": "4d5ca608aa19f7799eec70a16f74cc7ef2ef7cfdbeea38213a4736f5178368f6"
+      },
+      {
+        "name": "add-document/32",
+        "path": "add-document/32.svg",
+        "hash": "c9f3278581275933330eeb7b12373c5528de0d9901f9f8692d26bcee7e5d9cc3"
+      }
+    ]
+  },
+  {
+    "name": "sidebar",
+    "aliases": [],
+    "category": "toggle",
+    "folder": "sidebar",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "sidebar/16",
+        "path": "sidebar/16.svg",
+        "hash": "03298fb986311ce16091c721a10cafa3092a3686a2f036ef63a5165cb6505662"
+      },
+      {
+        "name": "sidebar/20",
+        "path": "sidebar/20.svg",
+        "hash": "f94f924667725e1f1cb4e90371f3a9900562930de38b2f71958a57192a185bec"
+      },
+      {
+        "name": "sidebar/24",
+        "path": "sidebar/24.svg",
+        "hash": "d1a640dcc76c7d16df7033d8da9d5aa4e90a2f5fbe4b30e30a4282d4f3f09a7b"
+      },
+      {
+        "name": "sidebar/32",
+        "path": "sidebar/32.svg",
+        "hash": "47e92c32807b08158a8fb46ff59928dccbab4321769abf77e13942b27a1cb84b"
       }
     ]
   },
