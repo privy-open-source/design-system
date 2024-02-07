@@ -102,7 +102,7 @@
     "tabbable": "6.2.0",
     "vue-collapsed": "^1.2.5",
     "vue-content-loader": "^2.0.1",
-    "vue-demi": "0.14.6",
+    "vue-demi": "0.14.7",
     "vue-router": "4.2.5",
     "vuedraggable": "next",
     "webfontloader": "1.6.28",
