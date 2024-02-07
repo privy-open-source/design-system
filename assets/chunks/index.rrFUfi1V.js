@@ -1,1 +1,0 @@
-import{au as f,l as s,av as o,aw as e,r as l}from"./framework.pPTQOZ96.js";function c(t,a,r){if(typeof t=="function"||f(t))return s(()=>o(e(t),e(a),e(r)));const u=l(t);return s({get(){return u.value=o(u.value,e(a),e(r))},set(n){u.value=o(n,e(a),e(r))}})}export{c as u};
