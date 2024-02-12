@@ -2763,7 +2763,7 @@ __metadata:
     "@splidejs/splide": "npm:^4.1.4"
     "@testing-library/jest-dom": "npm:6.4.2"
     "@testing-library/user-event": "npm:^14.4.3"
-    "@testing-library/vue": "npm:8.0.1"
+    "@testing-library/vue": "npm:8.0.2"
     "@types/lodash-es": "npm:4.17.12"
     "@types/marked": "npm:^5.0.1"
     "@types/sanitize-html": "npm:^2"
@@ -3622,9 +3622,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/vue@npm:8.0.1":
-  version: 8.0.1
-  resolution: "@testing-library/vue@npm:8.0.1"
+"@testing-library/vue@npm:8.0.2":
+  version: 8.0.2
+  resolution: "@testing-library/vue@npm:8.0.2"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
     "@testing-library/dom": "npm:^9.3.3"
@@ -3632,7 +3632,10 @@ __metadata:
   peerDependencies:
     "@vue/compiler-sfc": ">= 3"
     vue: ">= 3"
-  checksum: 10/5adc2c3d3019bcca8ea621ee1343b79811c80f67282cdc880b91c04b5ea4fa93c51579f1a9720ab691ef372e487fc509a80f005a3a4b75cd510399d516e3bfb4
+  peerDependenciesMeta:
+    "@vue/compiler-sfc":
+      optional: true
+  checksum: 10/654b1f059b85ffc54e78f757256a1b8112144a8bbe8fe8749aaf2078e97708ab970add0f6d470628602c83f8b160fb56cdd197dcfb5594bb59f3d7fb9b5a348d
   languageName: node
   linkType: hard
 
