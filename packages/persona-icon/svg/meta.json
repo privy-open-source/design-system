@@ -1455,35 +1455,6 @@
     ]
   },
   {
-    "name": "restart",
-    "aliases": [],
-    "category": "operation",
-    "folder": "restart",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "restart/32",
-        "path": "restart/32.svg",
-        "hash": "10a458e201d8d0175f67bbdcfad9b312ecf32e6fa9c9acfb742f754e0e0aebf6"
-      },
-      {
-        "name": "restart/20",
-        "path": "restart/20.svg",
-        "hash": "872e39db76c386be666aa942f3831a88007a4135fe97da3c40754f33944e0420"
-      },
-      {
-        "name": "restart/16",
-        "path": "restart/16.svg",
-        "hash": "465947b9c88e3af90adfdf5a49c3365f1582b23cfe88aef5282ca1cd84ffb5a9"
-      },
-      {
-        "name": "restart/24",
-        "path": "restart/24.svg",
-        "hash": "253267de6ff2fd832f3b0e4f611d2dda88a7dcee0ef46176b7ebb424d55d00c4"
-      }
-    ]
-  },
-  {
     "name": "profile",
     "aliases": [],
     "category": "user",
@@ -9976,6 +9947,35 @@
         "name": "sidebar/32",
         "path": "sidebar/32.svg",
         "hash": "47e92c32807b08158a8fb46ff59928dccbab4321769abf77e13942b27a1cb84b"
+      }
+    ]
+  },
+  {
+    "name": "restart",
+    "aliases": [],
+    "category": "operation",
+    "folder": "restart",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "restart/24",
+        "path": "restart/24.svg",
+        "hash": "253267de6ff2fd832f3b0e4f611d2dda88a7dcee0ef46176b7ebb424d55d00c4"
+      },
+      {
+        "name": "restart/16",
+        "path": "restart/16.svg",
+        "hash": "465947b9c88e3af90adfdf5a49c3365f1582b23cfe88aef5282ca1cd84ffb5a9"
+      },
+      {
+        "name": "restart/32",
+        "path": "restart/32.svg",
+        "hash": "10a458e201d8d0175f67bbdcfad9b312ecf32e6fa9c9acfb742f754e0e0aebf6"
+      },
+      {
+        "name": "restart/20",
+        "path": "restart/20.svg",
+        "hash": "872e39db76c386be666aa942f3831a88007a4135fe97da3c40754f33944e0420"
       }
     ]
   },
