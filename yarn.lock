@@ -4797,22 +4797,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/reactivity@npm:3.4.15":
-  version: 3.4.15
-  resolution: "@vue/reactivity@npm:3.4.15"
+"@vue/reactivity@npm:3.4.19":
+  version: 3.4.19
+  resolution: "@vue/reactivity@npm:3.4.19"
   dependencies:
-    "@vue/shared": "npm:3.4.15"
-  checksum: 10/7495b0ce0e57931b79a00ef7bb38ca5f0f6b16ff18ab7c6697a53ce73f9d62f63d60b4ed04fa61e0037468bcc3b9582af88f2ef10c83030fbdf472e80d84c0ec
+    "@vue/shared": "npm:3.4.19"
+  checksum: 10/58411988a4716ef38f4521137bbe3885f5b4c9d67f37d3b5553d4a5aee24dda63abc6ee5549af9cfb62122dc74dcf48df7d581dd449cabf479831b5386cff988
   languageName: node
   linkType: hard
 
-"@vue/runtime-core@npm:3.4.15":
-  version: 3.4.15
-  resolution: "@vue/runtime-core@npm:3.4.15"
+"@vue/runtime-core@npm:3.4.19":
+  version: 3.4.19
+  resolution: "@vue/runtime-core@npm:3.4.19"
   dependencies:
-    "@vue/reactivity": "npm:3.4.15"
-    "@vue/shared": "npm:3.4.15"
-  checksum: 10/1bcc79c1d23bdb15523654dfe9c0fc5170d4dabc7cd702751e23d809e99ca6442863184a425e70da5c4b8a16ee623e6b86234c890bc87189ca1cfb6f4f58409d
+    "@vue/reactivity": "npm:3.4.19"
+    "@vue/shared": "npm:3.4.19"
+  checksum: 10/1fc7002850231d21f23253e0cde77b1e786cf7e5307bf24ae596aa1c47e29415ddd315a254e793b6ad741ccc7cfca0d91a528527a01ba441c69343c7c0e22676
   languageName: node
   linkType: hard
 
@@ -4887,6 +4887,13 @@ __metadata:
   version: 3.4.15
   resolution: "@vue/shared@npm:3.4.15"
   checksum: 10/d8d17e8a39d469c000338685a5c20c92c46474837856f2074e90b44c63f257c3c75f0a3997e24dd8ee246eb982d3854d92c778e17f41a6e65628562be4dd7c1f
+  languageName: node
+  linkType: hard
+
+"@vue/shared@npm:3.4.19":
+  version: 3.4.19
+  resolution: "@vue/shared@npm:3.4.19"
+  checksum: 10/2048de92283de8a10ad71f4248786fd9191770cd6a0137c60739838f544a222124526d46af905fe26eb46901ae8c9135c186e8f5f00824f94969335efb9a14f5
   languageName: node
   linkType: hard
 
