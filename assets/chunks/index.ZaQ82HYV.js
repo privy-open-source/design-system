@@ -1,1 +1,0 @@
-import{r as n,l as s,an as u,ao as m}from"./framework.1iuB3FAc.js";function c(e){const t=n(e.modelValue),{emit:a}=m(),o=s({get(){return e.modelValue},set(l){a("update:modelValue",l)}});return u(t,o,{immediate:!1}),t}export{c as u};

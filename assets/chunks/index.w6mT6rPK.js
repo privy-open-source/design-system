@@ -1,0 +1,1 @@
+import{av as f,l as u,aw as s,ax as e,r as l}from"./framework.UVGMWIV8.js";function c(t,a,r){if(typeof t=="function"||f(t))return u(()=>s(e(t),e(a),e(r)));const o=l(t);return u({get(){return o.value=s(o.value,e(a),e(r))},set(n){o.value=s(n,e(a),e(r))}})}export{c as u};
