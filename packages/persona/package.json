@@ -58,7 +58,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@floating-ui/dom": "1.6.1",
+    "@floating-ui/dom": "1.6.3",
     "@jill64/universal-sanitizer": "^1.0.2",
     "@juggle/resize-observer": "3.4.0",
     "@nuxt/kit": "3.9.3",
