@@ -1967,15 +1967,14 @@ __metadata:
   linkType: hard
 
 "@jill64/universal-sanitizer@npm:^1.0.2":
-  version: 1.1.0
-  resolution: "@jill64/universal-sanitizer@npm:1.1.0"
+  version: 1.2.0
+  resolution: "@jill64/universal-sanitizer@npm:1.2.0"
   dependencies:
     "@types/dompurify": "npm:3.0.5"
-    "@types/sanitize-html": "npm:2.9.5"
+    "@types/sanitize-html": "npm:2.11.0"
     dompurify: "npm:3.0.8"
-    postcss: "npm:8.4.33"
     sanitize-html: "npm:2.11.0"
-  checksum: 10/1fc6d5d819d270288c60b984bfc78d18575f933f1070faf520153757185b6f5c389fec3be229bc4f01d968a8b5abe0ef4bff5a9b0da46a8e5bce9dae91c47d31
+  checksum: 10/bced6ad862a1d3037921882ad6bd0c94682cdaee8321665a88cbff8d998648318d407a6619c9cffe27168e896627a7ecb15bb3d198f2c73e4e2b0ceeaf9a3576
   languageName: node
   linkType: hard
 
@@ -3945,16 +3944,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/sanitize-html@npm:2.9.5":
-  version: 2.9.5
-  resolution: "@types/sanitize-html@npm:2.9.5"
-  dependencies:
-    htmlparser2: "npm:^8.0.0"
-  checksum: 10/fd0afee5dac91aa2c42391f0c8c9254204f4ee1f10b902aa04e8f7809043d785e28af2732f75277ef09e46838013ad60abedb02ba1424b6218264f3333437fb5
-  languageName: node
-  linkType: hard
-
-"@types/sanitize-html@npm:^2":
+"@types/sanitize-html@npm:2.11.0, @types/sanitize-html@npm:^2":
   version: 2.11.0
   resolution: "@types/sanitize-html@npm:2.11.0"
   dependencies:
@@ -15312,17 +15302,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.33, postcss@npm:^8.4.33":
-  version: 8.4.33
-  resolution: "postcss@npm:8.4.33"
-  dependencies:
-    nanoid: "npm:^3.3.7"
-    picocolors: "npm:^1.0.0"
-    source-map-js: "npm:^1.0.2"
-  checksum: 10/e22a4594c255f26117f38419fb494d7ecab0f596cd409f7aadc8a6173abf180ed7ea970cd13fd366ab12b5840be901d2a09b25197700c2ebcb5a8077326bf519
-  languageName: node
-  linkType: hard
-
 "postcss@npm:8.4.35, postcss@npm:^8.4.35":
   version: 8.4.35
   resolution: "postcss@npm:8.4.35"
@@ -15386,6 +15365,17 @@ __metadata:
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.0.2"
   checksum: 10/28084864122f29148e1f632261c408444f5ead0e0b9ea9bd9729d0468818ebe73fe5dc0075acd50c1365dbe639b46a79cba27d355ec857723a24bc9af0f18525
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.33":
+  version: 8.4.33
+  resolution: "postcss@npm:8.4.33"
+  dependencies:
+    nanoid: "npm:^3.3.7"
+    picocolors: "npm:^1.0.0"
+    source-map-js: "npm:^1.0.2"
+  checksum: 10/e22a4594c255f26117f38419fb494d7ecab0f596cd409f7aadc8a6173abf180ed7ea970cd13fd366ab12b5840be901d2a09b25197700c2ebcb5a8077326bf519
   languageName: node
   linkType: hard
 
