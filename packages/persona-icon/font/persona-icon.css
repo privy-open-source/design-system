@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Persona Icon';
-  src: url('../font/persona-icon.eot?8d81556d');
-  src: url('../font/persona-icon.eot?8d81556d#iefix') format('embedded-opentype'),
-       url('../font/persona-icon.woff2?4e620c17') format('woff2'),
-       url('../font/persona-icon.woff?ee6ae2c2') format('woff'),
-       url('../font/persona-icon.ttf?5206b276') format('truetype'),
-       url('../font/persona-icon.svg?c3a9221b#Persona%20Icon') format('svg');
+  src: url('../font/persona-icon.eot?6bbe5673');
+  src: url('../font/persona-icon.eot?6bbe5673#iefix') format('embedded-opentype'),
+       url('../font/persona-icon.woff2?77e89792') format('woff2'),
+       url('../font/persona-icon.woff?9ad4a256') format('woff'),
+       url('../font/persona-icon.ttf?5536e856') format('truetype'),
+       url('../font/persona-icon.svg?d234aa7e#Persona%20Icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -357,15 +357,16 @@
 .pi-user-plus::before { content: '\eb49' }
 .pi-user-settings::before { content: '\eb4a' }
 .pi-user-square::before { content: '\eb4b' }
-.pi-user-transfer::before { content: '\eb4c' }
-.pi-user-verified::before { content: '\eb4d' }
-.pi-user-wait::before { content: '\eb4e' }
-.pi-video-camera::before { content: '\eb4f' }
-.pi-view-off::before { content: '\eb50' }
-.pi-view::before { content: '\eb51' }
-.pi-voucher::before { content: '\eb52' }
-.pi-wallet::before { content: '\eb53' }
-.pi-whatsapp::before { content: '\eb54' }
-.pi-zoom-in::before { content: '\eb55' }
-.pi-zoom-out::before { content: '\eb56' }
+.pi-user-suspend::before { content: '\eb4c' }
+.pi-user-transfer::before { content: '\eb4d' }
+.pi-user-verified::before { content: '\eb4e' }
+.pi-user-wait::before { content: '\eb4f' }
+.pi-video-camera::before { content: '\eb50' }
+.pi-view-off::before { content: '\eb51' }
+.pi-view::before { content: '\eb52' }
+.pi-voucher::before { content: '\eb53' }
+.pi-wallet::before { content: '\eb54' }
+.pi-whatsapp::before { content: '\eb55' }
+.pi-zoom-in::before { content: '\eb56' }
+.pi-zoom-out::before { content: '\eb57' }
 
