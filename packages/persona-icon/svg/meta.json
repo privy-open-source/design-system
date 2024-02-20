@@ -300,6 +300,37 @@
     ]
   },
   {
+    "name": "pin",
+    "aliases": [
+      "numpad"
+    ],
+    "category": "technology",
+    "folder": "pin",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "pin/32",
+        "path": "pin/32.svg",
+        "hash": "ce8fd102975bb65791246671c163eb0261ceb4630b97cadd10687fb2609dc892"
+      },
+      {
+        "name": "pin/24",
+        "path": "pin/24.svg",
+        "hash": "f9a986a0e2912cdbe7c0b6cf2e36f6e964894860564a26712972c7c7e430a082"
+      },
+      {
+        "name": "pin/20",
+        "path": "pin/20.svg",
+        "hash": "5dcd4dc8337198c5767ce3522f71359cfd7f3903c68b64908c0ec715fe52a118"
+      },
+      {
+        "name": "pin/16",
+        "path": "pin/16.svg",
+        "hash": "5d68d2f9ae71ee22ecd5327a3489ac57cc6d5141bb8457eef58f9de8dd11d383"
+      }
+    ]
+  },
+  {
     "name": "blog",
     "aliases": [],
     "category": "technology",
@@ -5577,6 +5608,35 @@
     ]
   },
   {
+    "name": "user-suspend",
+    "aliases": [],
+    "category": "user",
+    "folder": "user-suspend",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "user-suspend/16",
+        "path": "user-suspend/16.svg",
+        "hash": "457abb576004bb84d709551ebcb203e0e3181d27e79ca102b4c294ad6d9567ef"
+      },
+      {
+        "name": "user-suspend/32",
+        "path": "user-suspend/32.svg",
+        "hash": "52884e206cc559a160e8ea64dd2eb3739e01c9242dd3bcab2190a90b4562dc65"
+      },
+      {
+        "name": "user-suspend/20",
+        "path": "user-suspend/20.svg",
+        "hash": "618fb804a3fc323406cfa4022385d8f3c8101bf11106c7cd7f51633b0861f217"
+      },
+      {
+        "name": "user-suspend/24",
+        "path": "user-suspend/24.svg",
+        "hash": "aaa55fc34a7b0c5c07da8c2cd6fd30bed85f9dad411d242e83ff8b278874f95d"
+      }
+    ]
+  },
+  {
     "name": "tablet-landscape",
     "aliases": [],
     "category": "technology",
@@ -9829,37 +9889,6 @@
         "name": "face-accessories/16",
         "path": "face-accessories/16.svg",
         "hash": "eb778daff94f1f48233fb4af356d75b8a3f677a399d47c318eacc19c761c4088"
-      }
-    ]
-  },
-  {
-    "name": "pin",
-    "aliases": [
-      "numpad"
-    ],
-    "category": "technology",
-    "folder": "pin",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "pin/16",
-        "path": "pin/16.svg",
-        "hash": "81b31f78acc339fbf9a8f2f09fd25330a0c6587c6fac48bf4b71fbbc33c26a27"
-      },
-      {
-        "name": "pin/20",
-        "path": "pin/20.svg",
-        "hash": "00bac55757dadb9a981ae715f5e0944557c75f2281d5929fa4b990f5ee06046b"
-      },
-      {
-        "name": "pin/24",
-        "path": "pin/24.svg",
-        "hash": "b3f4c1a00259c17726d8880d16aaffac662c8ab4afa2c8670842e79e262f0176"
-      },
-      {
-        "name": "pin/32",
-        "path": "pin/32.svg",
-        "hash": "415a9265902e3c35be99df37d67f1fadf9f92e63c7f16080729991ff3300d2c1"
       }
     ]
   },
