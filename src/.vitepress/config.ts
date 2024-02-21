@@ -302,6 +302,14 @@ export default defineConfig({
               link: '/components/textarea/',
             },
             {
+              text: 'Time',
+              link: '/components/time/',
+            },
+            {
+              text: 'Timepicker',
+              link: '/components/timepicker/',
+            },
+            {
               text: 'Toggle',
               link: '/components/toggle/',
             },
