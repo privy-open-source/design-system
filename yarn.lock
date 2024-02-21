@@ -3056,7 +3056,7 @@ __metadata:
     "@vitest/coverage-c8": "npm:0.24.5"
     "@vue/eslint-config-typescript": "npm:12.0.0"
     "@vueuse/core": "npm:10.7.2"
-    "@vueuse/math": "npm:10.7.2"
+    "@vueuse/math": "npm:10.8.0"
     "@zxing/browser": "npm:0.1.4"
     "@zxing/library": "npm:0.20.0"
     autoprefixer: "npm:10.4.17"
@@ -3173,7 +3173,7 @@ __metadata:
     "@testing-library/user-event": "npm:14.5.2"
     "@types/sanitize-html": "npm:^2"
     "@vueuse/core": "npm:10.7.2"
-    "@vueuse/math": "npm:10.7.2"
+    "@vueuse/math": "npm:10.8.0"
     "@zxing/browser": "npm:0.1.4"
     "@zxing/library": "npm:0.20.0"
     browserslist-to-esbuild: "npm:^2.0.0"
@@ -5173,13 +5173,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/math@npm:10.7.2":
-  version: 10.7.2
-  resolution: "@vueuse/math@npm:10.7.2"
+"@vueuse/math@npm:10.8.0":
+  version: 10.8.0
+  resolution: "@vueuse/math@npm:10.8.0"
   dependencies:
-    "@vueuse/shared": "npm:10.7.2"
-    vue-demi: "npm:>=0.14.6"
-  checksum: 10/f3ccc3fa4929f448d10921b7ab03d09af608d0985dd48a5c51ee9855c40f4b8573933b11d525dfb177b06593059b5ba1105f106e2b05a7817ad25bdd1e06400b
+    "@vueuse/shared": "npm:10.8.0"
+    vue-demi: "npm:>=0.14.7"
+  checksum: 10/8f21fefd2c09d3e028c1ee6d699d4e9ffdf3496a1196660961b8b8d5dc09a96fcacb99b9ed03898e1526bd7bae11a14f32510cc40d6d93de89a4d44f0d36755f
   languageName: node
   linkType: hard
 
@@ -5196,6 +5196,15 @@ __metadata:
   dependencies:
     vue-demi: "npm:>=0.14.6"
   checksum: 10/9fb3d5f85ea626266eabf9721b941dee770694a653f46aac3ec9804cf728a84020370ee49e2d98ec61a44c0bd77f540dc117da75a783451f9f3546ec80969f37
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:10.8.0":
+  version: 10.8.0
+  resolution: "@vueuse/shared@npm:10.8.0"
+  dependencies:
+    vue-demi: "npm:>=0.14.7"
+  checksum: 10/cedfb3b3a6198170438f5a58a7dd8cbb959afd9c4cf1075aba96d40a0785e60c8b4592d10b0ed5fd91ecd0459f2fbe33d013cdbc4ca6675a782629bd12fc671e
   languageName: node
   linkType: hard
 
@@ -19403,7 +19412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.14.7":
+"vue-demi@npm:0.14.7, vue-demi@npm:>=0.14.7":
   version: 0.14.7
   resolution: "vue-demi@npm:0.14.7"
   peerDependencies:
