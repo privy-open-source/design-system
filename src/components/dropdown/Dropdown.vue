@@ -197,7 +197,12 @@ defineEmits<{
 }>()
 
 const slots = defineSlots<{
-  'activator'(props: { isOpen: boolean, open: () => void, close: () => void, toggle: () => void }): VNode[],
+  'activator'(props: {
+    isOpen: boolean,
+    open: () => void,
+    close: () => void,
+    toggle: () => void,
+  }): VNode[],
   'button-content'(): VNode[],
   'prepend'(): VNode[],
   'append'(): VNode[],

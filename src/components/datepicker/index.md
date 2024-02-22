@@ -29,7 +29,7 @@ description: Base button component
 ### Simple Usage
 
 <preview>
-  <p-datepicker />
+  <p-datepicker clearable />
 </preview>
 
 ```vue
@@ -214,6 +214,20 @@ You can limit minimal and maximal date range to pick using prop `min-range` and 
 </template>
 ```
 
+## Clearable
+
+Add clear button to input with prop `clearable`.
+
+<preview class="flex-col space-y-3">
+  <p-datepicker clearable />
+</preview>
+
+```vue
+<template>
+  <p-datepicker clearable />
+</template>
+```
+
 ## Binding v-model
 
 <preview>
@@ -284,23 +298,25 @@ You can specific binding the value using `v-model:start` or `v-model:end`
 
 ### Props
 
-| Props         |   Type    |   Default    | Description                                             |
-|---------------|:---------:|:------------:|---------------------------------------------------------|
-| `modelValue`  |  `Date`   |     `-`      | `v-model` value                                         |
-| `size`        | `String`  |     `md`     | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
-| `start`       |  `Date`   |     `-`      | `v-model:start` value                                   |
-| `end`         |  `Date`   |     `-`      | `v-model:end` value                                     |
-| `placeholder` | `String`  |     `-`      | Input placeholder                                       |
-| `format`      | `String`  | `dd/MM/yyyy` | Date format                                             |
-| `disabled`    | `Boolean` |   `false`    | Disabled state                                          |
-| `readonly`    | `Boolean` |   `false`    | Readonly state                                          |
-| `error`       | `Boolean` |   `false`    | Error state                                             |
-| `mode`        | `String`  |     `-`      | Calendar mode valid value: `date`, `month`, `year`      |
-| `min`         |  `Date`   |     `-`      | Minimum date can be selected                            |
-| `max`         |  `Date`   |     `-`      | Maximum date can be selected                            |
-| `range`       | `Boolean` |   `false`    | Enable range picker mode                                |
-| `minRange`    | `String`  |     `-`      | Minimum range date should be selected                   |
-| `maxRange`    | `String`  |     `-`      | Maximum range date should be selected                   |
+| Props             |              Type               |   Default    | Description                                             |
+|-------------------|:-------------------------------:|:------------:|---------------------------------------------------------|
+| `modelValue`      |             `Date`              |     `-`      | `v-model` value                                         |
+| `size`            |            `String`             |     `md`     | Input size variant, valid value: `xs`, `sm`, `md`, `lg` |
+| `start`           |             `Date`              |     `-`      | `v-model:start` value                                   |
+| `end`             |             `Date`              |     `-`      | `v-model:end` value                                     |
+| `placeholder`     |            `String`             |     `-`      | Input placeholder                                       |
+| `format`          |            `String`             | `dd/MM/yyyy` | Date format                                             |
+| `disabled`        |            `Boolean`            |   `false`    | Disabled state                                          |
+| `readonly`        |            `Boolean`            |   `false`    | Readonly state                                          |
+| `error`           |            `Boolean`            |   `false`    | Error state                                             |
+| `clearable`       |            `Boolean`            |   `false`    | Enable clear                                            |
+| `mode`            |            `String`             |     `-`      | Calendar mode valid value: `date`, `month`, `year`      |
+| `min`             |             `Date`              |     `-`      | Minimum date can be selected                            |
+| `max`             |             `Date`              |     `-`      | Maximum date can be selected                            |
+| `range`           |            `Boolean`            |   `false`    | Enable range picker mode                                |
+| `minRange`        |            `String`             |     `-`      | Minimum range date should be selected                   |
+| `maxRange`        |            `String`             |     `-`      | Maximum range date should be selected                   |
+| `container-class` | `String` or `Array` or `Object` |     `-`      | CSS class to add in the input container                 |
 
 ### Slots
 

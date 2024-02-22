@@ -8,6 +8,7 @@
     :disabled="disabled">
     <template #activator>
       <Input
+        v-bind="$attrs"
         :value="value"
         :model-value="value"
         data-testid="datepicker-input"
@@ -16,7 +17,10 @@
         :disabled="disabled"
         :error="error"
         :size="size"
+        :clearable="clearable"
+        :container-class="containerClass"
         readonly
+        @clear="onClear"
         @focus="onFocus">
         <template #append>
           <IconCalendar
@@ -27,6 +31,7 @@
 
     <Calendar
       v-model="model"
+      class="datepicker__calendar"
       :start="start"
       :end="end"
       :disabled="disabled"
@@ -37,7 +42,6 @@
       :range="range"
       :min-range="minRange"
       :max-range="maxRange"
-      class="datepicker__calendar"
       @change="onSelected"
       @update:start="$emit('update:start', $event)"
       @update:end="$emit('update:end', $event)" />
@@ -60,6 +64,8 @@ import { useVModel } from '../input'
 import IconCalendar from '@privyid/persona-icon/vue/calendar/16.vue'
 import type { SizeVariant } from '../button'
 
+defineOptions({ inheritAttrs: false })
+
 const props = defineProps({
   modelValue: {
     type   : [Date, Array] as PropType<Date | [Date, Date]>,
@@ -68,6 +74,30 @@ const props = defineProps({
   size: {
     type   : String as PropType<SizeVariant>,
     default: 'md',
+  },
+  disabled: {
+    type   : Boolean,
+    default: false,
+  },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
+  error: {
+    type   : Boolean,
+    default: false,
+  },
+  clearable: {
+    type   : Boolean,
+    default: false,
+  },
+  containerClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
   },
   start: {
     type   : Date,
@@ -84,18 +114,6 @@ const props = defineProps({
   format: {
     type   : String,
     default: 'dd/MM/yyyy',
-  },
-  disabled: {
-    type   : Boolean,
-    default: undefined,
-  },
-  readonly: {
-    type   : Boolean,
-    default: undefined,
-  },
-  error: {
-    type   : Boolean,
-    default: undefined,
   },
   max: {
     type   : Date,
@@ -176,6 +194,11 @@ const classNames = computed(() => {
 function onFocus () {
   if (!props.disabled && !props.readonly)
     isOpen.value = true
+}
+
+function onClear () {
+  if (!props.disabled && !props.readonly)
+    model.value = undefined
 }
 
 function onSelected (event: Event) {
