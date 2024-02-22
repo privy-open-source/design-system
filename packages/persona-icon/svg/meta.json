@@ -10094,5 +10094,36 @@
         "hash": "6441db7afe165bbd1fd9fd07c19843930a473eacf533cfb8ef09d5a836d4bad2"
       }
     ]
+  },
+  {
+    "name": "trasmit-data",
+    "aliases": [
+      "transfer-data"
+    ],
+    "category": "technology",
+    "folder": "trasmit-data",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "trasmit-data/32",
+        "path": "trasmit-data/32.svg",
+        "hash": "648718d262b18cce739e9b5d5dc6146765d9a043bde2c4b69e0c4ccd1a266a3d"
+      },
+      {
+        "name": "trasmit-data/24",
+        "path": "trasmit-data/24.svg",
+        "hash": "71d26bce6de9ba0d27864da0ffefdeee470fb0b244ba3a5de086dbb815c54992"
+      },
+      {
+        "name": "trasmit-data/20",
+        "path": "trasmit-data/20.svg",
+        "hash": "df87b6c14752a8a19aabab0f3f4e4b920ccad5decb3a2ad735d2d7d145f1451f"
+      },
+      {
+        "name": "trasmit-data/16",
+        "path": "trasmit-data/16.svg",
+        "hash": "e7d238469309bd0c20856f077a4a250ddfe96d78cd0450ccf563a85f622e28ae"
+      }
+    ]
   }
 ]

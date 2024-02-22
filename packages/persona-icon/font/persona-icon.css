@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Persona Icon';
-  src: url('../font/persona-icon.eot?6bbe5673');
-  src: url('../font/persona-icon.eot?6bbe5673#iefix') format('embedded-opentype'),
-       url('../font/persona-icon.woff2?77e89792') format('woff2'),
-       url('../font/persona-icon.woff?9ad4a256') format('woff'),
-       url('../font/persona-icon.ttf?5536e856') format('truetype'),
-       url('../font/persona-icon.svg?d234aa7e#Persona%20Icon') format('svg');
+  src: url('../font/persona-icon.eot?f543ed0a');
+  src: url('../font/persona-icon.eot?f543ed0a#iefix') format('embedded-opentype'),
+       url('../font/persona-icon.woff2?4632b5ca') format('woff2'),
+       url('../font/persona-icon.woff?03162eca') format('woff'),
+       url('../font/persona-icon.ttf?18111717') format('truetype'),
+       url('../font/persona-icon.svg?8b79d82d#Persona%20Icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -333,40 +333,41 @@
 .pi-time::before { content: '\eb31' }
 .pi-translates::before { content: '\eb32' }
 .pi-trash::before { content: '\eb33' }
-.pi-twitter::before { content: '\eb34' }
-.pi-two-grid-view::before { content: '\eb35' }
-.pi-unarchive::before { content: '\eb36' }
-.pi-underlined::before { content: '\eb37' }
-.pi-undo::before { content: '\eb38' }
-.pi-unlimited::before { content: '\eb39' }
-.pi-unlink::before { content: '\eb3a' }
-.pi-unlock::before { content: '\eb3b' }
-.pi-upload::before { content: '\eb3c' }
-.pi-user-biometric::before { content: '\eb3d' }
-.pi-user-checkmark::before { content: '\eb3e' }
-.pi-user-circle::before { content: '\eb3f' }
-.pi-user-cross::before { content: '\eb40' }
-.pi-user-event::before { content: '\eb41' }
-.pi-user-exclamation::before { content: '\eb42' }
-.pi-user-find::before { content: '\eb43' }
-.pi-user-groups::before { content: '\eb44' }
-.pi-user-logs::before { content: '\eb45' }
-.pi-user-minus::before { content: '\eb46' }
-.pi-user-multiple-edit::before { content: '\eb47' }
-.pi-user-multiple::before { content: '\eb48' }
-.pi-user-plus::before { content: '\eb49' }
-.pi-user-settings::before { content: '\eb4a' }
-.pi-user-square::before { content: '\eb4b' }
-.pi-user-suspend::before { content: '\eb4c' }
-.pi-user-transfer::before { content: '\eb4d' }
-.pi-user-verified::before { content: '\eb4e' }
-.pi-user-wait::before { content: '\eb4f' }
-.pi-video-camera::before { content: '\eb50' }
-.pi-view-off::before { content: '\eb51' }
-.pi-view::before { content: '\eb52' }
-.pi-voucher::before { content: '\eb53' }
-.pi-wallet::before { content: '\eb54' }
-.pi-whatsapp::before { content: '\eb55' }
-.pi-zoom-in::before { content: '\eb56' }
-.pi-zoom-out::before { content: '\eb57' }
+.pi-trasmit-data::before { content: '\eb34' }
+.pi-twitter::before { content: '\eb35' }
+.pi-two-grid-view::before { content: '\eb36' }
+.pi-unarchive::before { content: '\eb37' }
+.pi-underlined::before { content: '\eb38' }
+.pi-undo::before { content: '\eb39' }
+.pi-unlimited::before { content: '\eb3a' }
+.pi-unlink::before { content: '\eb3b' }
+.pi-unlock::before { content: '\eb3c' }
+.pi-upload::before { content: '\eb3d' }
+.pi-user-biometric::before { content: '\eb3e' }
+.pi-user-checkmark::before { content: '\eb3f' }
+.pi-user-circle::before { content: '\eb40' }
+.pi-user-cross::before { content: '\eb41' }
+.pi-user-event::before { content: '\eb42' }
+.pi-user-exclamation::before { content: '\eb43' }
+.pi-user-find::before { content: '\eb44' }
+.pi-user-groups::before { content: '\eb45' }
+.pi-user-logs::before { content: '\eb46' }
+.pi-user-minus::before { content: '\eb47' }
+.pi-user-multiple-edit::before { content: '\eb48' }
+.pi-user-multiple::before { content: '\eb49' }
+.pi-user-plus::before { content: '\eb4a' }
+.pi-user-settings::before { content: '\eb4b' }
+.pi-user-square::before { content: '\eb4c' }
+.pi-user-suspend::before { content: '\eb4d' }
+.pi-user-transfer::before { content: '\eb4e' }
+.pi-user-verified::before { content: '\eb4f' }
+.pi-user-wait::before { content: '\eb50' }
+.pi-video-camera::before { content: '\eb51' }
+.pi-view-off::before { content: '\eb52' }
+.pi-view::before { content: '\eb53' }
+.pi-voucher::before { content: '\eb54' }
+.pi-wallet::before { content: '\eb55' }
+.pi-whatsapp::before { content: '\eb56' }
+.pi-zoom-in::before { content: '\eb57' }
+.pi-zoom-out::before { content: '\eb58' }
 
