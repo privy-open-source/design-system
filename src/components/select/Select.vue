@@ -89,7 +89,9 @@
       <div
         data-testid="select-no-data"
         class="select__empty">
-        <slot name="empty">
+        <slot
+          name="empty"
+          :keyword="keyword">
           {{ emptyText }}
         </slot>
       </div>
@@ -168,6 +170,7 @@ import IconLoading from '../spinner/SpinnerRing.vue'
 import type {
   PropType,
   HTMLAttributes,
+  VNode,
 } from 'vue-demi'
 import {
   computed,
@@ -459,6 +462,23 @@ defineExpose({
   menuEl,
   toggle,
 })
+
+defineSlots<{
+  'activator'(props: {
+    isOpen: boolean,
+    open: () => void,
+    close: () => void,
+    toggle: () => void,
+  }): VNode[],
+  'selected'(props: { item: unknown, multiple: boolean }): VNode[],
+  'placeholder'(): VNode[],
+  'empty'(props: { keyword: string }): VNode[],
+  'option'(props: {
+    item: SelectItem,
+    isSelected: boolean,
+  }): VNode[],
+  'loading'(): VNode[],
+}>()
 </script>
 
 <style lang="postcss">
