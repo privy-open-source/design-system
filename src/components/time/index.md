@@ -13,8 +13,8 @@ description: Sub-component for Timepicker
   const minTime = ref(set(new Date(), { hours: 1, minutes: 20 }))
   const maxTime = ref(set(new Date(), { hours: 17, minutes: 30 }))
 
-  const is12Hour = ref(false)
-  const model = ref(new Date())
+  const is12Hour  = ref(false)
+  const model     = ref(new Date())
   const timeModel = ref({
     hh: '01',
     mm: '30'

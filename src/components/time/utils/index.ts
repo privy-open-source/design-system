@@ -54,6 +54,7 @@ export function getMinuteUnits (model: Date, currentHour: number, step: number =
 
   if (min)
     start = maxDate([model, min])
+
   if (max)
     end = minDate([endOfDay(start), max])
 
