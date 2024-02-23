@@ -286,3 +286,31 @@ it('should modify v-model:start and v-model:end when using props `range`', async
 
   expect(input).toHaveValue('01/01/2023 - 01/02/2023')
 })
+
+it('should show clear button when prop `clearable`', async () => {
+  const model  = ref(new Date(2022, 0, 1))
+  const screen = render({
+    components: { Datepicker },
+    template  : `
+      <Datepicker
+        v-model="model"
+        format="yyyy-MM-dd"
+        placeholder="Pick A Date"
+        clearable />
+    `,
+    setup () {
+      return { model }
+    },
+  })
+
+  const input = screen.queryByTestId('datepicker-input')
+  const clear = screen.queryByTestId('input-clear')
+
+  expect(input).toHaveValue('2022-01-01')
+  expect(clear).toBeVisible()
+
+  await fireEvent.click(clear)
+
+  expect(model.value).toBeUndefined()
+  expect(clear).not.toBeVisible()
+})

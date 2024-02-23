@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona",
   "description": "Persona core package",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
@@ -28,7 +28,7 @@
       "import": "./dist/directive/index.mjs",
       "types": "./dist/directive/index.d.ts"
     },
-    "./components/": "./dist/components/"
+    "./components/*": "./dist/components/*"
   },
   "typesVersions": {
     "*": {

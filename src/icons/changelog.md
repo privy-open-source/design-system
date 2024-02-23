@@ -12,6 +12,31 @@
 
 > Icons changelog
 
+## 1.0.0-rc.2
+
+### Added
+
+- add-document
+- admin-center-logo-apps
+- message-logo-apps
+- pin
+- sidebar
+- transmit-data
+- unarchive
+- user-suspend
+
+### Changed
+
+- document-seal/32
+- star-favorite/16
+- star-favorite/32
+- video-camera/16
+
+### Removed
+
+- admin-center-apps
+- message-apps
+
 ## 1.0.0-rc.1
 
 ### Added

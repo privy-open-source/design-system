@@ -51,11 +51,18 @@ import {
 import { watchDebounced } from '@vueuse/core'
 import { useVModel } from '../input'
 import {
-  format, formatISO, isDate, parse, startOfDay,
+  format,
+  formatISO,
+  isDate,
+  parse,
+  startOfDay,
 } from 'date-fns'
 import type { TimeModel, TimeContext } from './index'
 import {
-  getHourUnits, getMinuteUnits, parseTime, validateInterval,
+  getHourUnits,
+  getMinuteUnits,
+  parseTime,
+  validateInterval,
 } from './utils'
 
 const props = defineProps({

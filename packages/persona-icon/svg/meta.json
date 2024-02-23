@@ -6190,35 +6190,6 @@
     ]
   },
   {
-    "name": "admin-center",
-    "aliases": [],
-    "category": "apps",
-    "folder": "admin-center-apps",
-    "variant": "apps",
-    "files": [
-      {
-        "name": "admin-center-apps/20",
-        "path": "admin-center-apps/20.svg",
-        "hash": "48820b7af042d1de3aede09f756b2355ce9b507603acfd541ba4e60edca35ebd"
-      },
-      {
-        "name": "admin-center-apps/16",
-        "path": "admin-center-apps/16.svg",
-        "hash": "20eab57d4321c8cde1a5c4fdd656bc94da98eafb63c4e34b481b6ba9dd624fd4"
-      },
-      {
-        "name": "admin-center-apps/32",
-        "path": "admin-center-apps/32.svg",
-        "hash": "36e83ef81fd02e1f81ad3f7c7edd66436cd363006c6f340e499320efd14f47ed"
-      },
-      {
-        "name": "admin-center-apps/24",
-        "path": "admin-center-apps/24.svg",
-        "hash": "4983955e6395093da2b9cefeef3c87a83b42a3bda6078370d9d83474d396d817"
-      }
-    ]
-  },
-  {
     "name": "smartphone",
     "aliases": [
       "mobile"
@@ -10067,62 +10038,91 @@
     ]
   },
   {
-    "name": "message",
-    "aliases": [],
-    "category": "apps",
-    "folder": "message-apps",
-    "variant": "apps",
-    "files": [
-      {
-        "name": "message-apps/24",
-        "path": "message-apps/24.svg",
-        "hash": "c0134d00e2aa0370f1aab7096e2c2954d1477aa776bfa538e14370a2dabc392b"
-      },
-      {
-        "name": "message-apps/16",
-        "path": "message-apps/16.svg",
-        "hash": "272685ce9fe40f871927a9bad6c7c7fd0879fb61403205c2bb5e594258d01e4b"
-      },
-      {
-        "name": "message-apps/32",
-        "path": "message-apps/32.svg",
-        "hash": "6b7e09253d07595b50ee375086dd580e866c3815af55f28c920c8637791ba346"
-      },
-      {
-        "name": "message-apps/20",
-        "path": "message-apps/20.svg",
-        "hash": "6441db7afe165bbd1fd9fd07c19843930a473eacf533cfb8ef09d5a836d4bad2"
-      }
-    ]
-  },
-  {
-    "name": "trasmit-data",
+    "name": "transmit-data",
     "aliases": [
       "transfer-data"
     ],
     "category": "technology",
-    "folder": "trasmit-data",
+    "folder": "transmit-data",
     "variant": "outline",
     "files": [
       {
-        "name": "trasmit-data/32",
-        "path": "trasmit-data/32.svg",
-        "hash": "648718d262b18cce739e9b5d5dc6146765d9a043bde2c4b69e0c4ccd1a266a3d"
+        "name": "transmit-data/20",
+        "path": "transmit-data/20.svg",
+        "hash": "5179fb7c5b3fd65e1fbb629839707a4c9ee89a6b09ce4a13320634f116e5edc2"
       },
       {
-        "name": "trasmit-data/24",
-        "path": "trasmit-data/24.svg",
-        "hash": "71d26bce6de9ba0d27864da0ffefdeee470fb0b244ba3a5de086dbb815c54992"
+        "name": "transmit-data/24",
+        "path": "transmit-data/24.svg",
+        "hash": "32ecd8b5531a7943e7e7beeee4fc2ab921b8aefdda36b3650f2c389b8ad5a04d"
       },
       {
-        "name": "trasmit-data/20",
-        "path": "trasmit-data/20.svg",
-        "hash": "df87b6c14752a8a19aabab0f3f4e4b920ccad5decb3a2ad735d2d7d145f1451f"
+        "name": "transmit-data/16",
+        "path": "transmit-data/16.svg",
+        "hash": "e2b485303cc5bf420430ba2289e36baa55ba3c5e7841e5ea3960e144b687f678"
       },
       {
-        "name": "trasmit-data/16",
-        "path": "trasmit-data/16.svg",
-        "hash": "e7d238469309bd0c20856f077a4a250ddfe96d78cd0450ccf563a85f622e28ae"
+        "name": "transmit-data/32",
+        "path": "transmit-data/32.svg",
+        "hash": "ca080e50d6c32204e54568ee1168bbe2c8d32cb3d94b63dd154b81dc8990aef9"
+      }
+    ]
+  },
+  {
+    "name": "admin-center",
+    "aliases": [],
+    "category": "apps",
+    "folder": "admin-center-logo-apps",
+    "variant": "logo-apps",
+    "files": [
+      {
+        "name": "admin-center-logo-apps/20",
+        "path": "admin-center-logo-apps/20.svg",
+        "hash": "48820b7af042d1de3aede09f756b2355ce9b507603acfd541ba4e60edca35ebd"
+      },
+      {
+        "name": "admin-center-logo-apps/16",
+        "path": "admin-center-logo-apps/16.svg",
+        "hash": "20eab57d4321c8cde1a5c4fdd656bc94da98eafb63c4e34b481b6ba9dd624fd4"
+      },
+      {
+        "name": "admin-center-logo-apps/32",
+        "path": "admin-center-logo-apps/32.svg",
+        "hash": "36e83ef81fd02e1f81ad3f7c7edd66436cd363006c6f340e499320efd14f47ed"
+      },
+      {
+        "name": "admin-center-logo-apps/24",
+        "path": "admin-center-logo-apps/24.svg",
+        "hash": "4983955e6395093da2b9cefeef3c87a83b42a3bda6078370d9d83474d396d817"
+      }
+    ]
+  },
+  {
+    "name": "message",
+    "aliases": [],
+    "category": "apps",
+    "folder": "message-logo-apps",
+    "variant": "logo-apps",
+    "files": [
+      {
+        "name": "message-logo-apps/24",
+        "path": "message-logo-apps/24.svg",
+        "hash": "c0134d00e2aa0370f1aab7096e2c2954d1477aa776bfa538e14370a2dabc392b"
+      },
+      {
+        "name": "message-logo-apps/16",
+        "path": "message-logo-apps/16.svg",
+        "hash": "272685ce9fe40f871927a9bad6c7c7fd0879fb61403205c2bb5e594258d01e4b"
+      },
+      {
+        "name": "message-logo-apps/32",
+        "path": "message-logo-apps/32.svg",
+        "hash": "6b7e09253d07595b50ee375086dd580e866c3815af55f28c920c8637791ba346"
+      },
+      {
+        "name": "message-logo-apps/20",
+        "path": "message-logo-apps/20.svg",
+        "hash": "6441db7afe165bbd1fd9fd07c19843930a473eacf533cfb8ef09d5a836d4bad2"
       }
     ]
   }
