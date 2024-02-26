@@ -1,0 +1,1 @@
+import{c as a}from"./index.sg1xqjjR.js";import{ab as r,l as u}from"./framework.Bbc-9rUu.js";function l(e){const n=a(r(e,"min"),{nanToZero:!0}),o=a(r(e,"max"),{nanToZero:!0}),t=a(r(e,"value"),{nanToZero:!0});return u(()=>(t.value-n.value)/(o.value-n.value))}export{l as u};
