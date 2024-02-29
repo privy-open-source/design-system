@@ -261,7 +261,7 @@ async function onActionClick (action: ToastActionOption) {
   }
 
   &__text {
-    @apply text-sm font-medium leading-[1.75] truncate text-on-emphasis;
+    @apply text-sm font-medium leading-[1.75] text-on-emphasis line-clamp-2;
     @apply dark:text-dark-on-emphasis;
   }
 }
