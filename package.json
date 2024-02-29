@@ -85,7 +85,7 @@
     "@vueuse/math": "10.8.0",
     "@zxing/browser": "0.1.4",
     "@zxing/library": "0.20.0",
-    "chart.js": "4.4.1",
+    "chart.js": "4.4.2",
     "core-js": "3",
     "date-fns": "2.30.0",
     "defu": "6.1.4",
