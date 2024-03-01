@@ -1,0 +1,1 @@
+import{m as a}from"./index._a_gv1EO.js";import{ab as r,l as u}from"./framework.2aAv_iMK.js";function c(e){const n=a(r(e,"min"),{nanToZero:!0}),o=a(r(e,"max"),{nanToZero:!0}),t=a(r(e,"value"),{nanToZero:!0});return u(()=>(t.value-n.value)/(o.value-n.value))}export{c as u};
