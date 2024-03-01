@@ -81,7 +81,7 @@
     "@privyid/persona-icon": "workspace:^",
     "@splidejs/splide": "^4.1.4",
     "@testing-library/user-event": "^14.4.3",
-    "@vueuse/core": "10.8.0",
+    "@vueuse/core": "10.9.0",
     "@vueuse/math": "10.8.0",
     "@zxing/browser": "0.1.4",
     "@zxing/library": "0.20.0",
