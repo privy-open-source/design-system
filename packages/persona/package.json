@@ -79,7 +79,7 @@
     "lodash-es": "4.17.21",
     "marked": "11.2.0",
     "nanodelay": "2.0.2",
-    "pdfjs-dist": "3.11.174",
+    "pdfjs-dist": "4.0.379",
     "scroll-into-view": "1.16.2",
     "tabbable": "6.2.0",
     "vue-collapsed": "1.3.0",
