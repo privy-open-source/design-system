@@ -462,37 +462,37 @@ const expanded = ref(false)
 
 ### Props `<p-accordion>`
 
-| Props         |   Type    |  Default  | Description                                               |
-|---------------|:---------:|:---------:|-----------------------------------------------------------|
-| `flush`       | `Boolean` |  `false`  | Enable flush, accordion without container-border            |
-| `pill`       | `Boolean` |  `false`  | Enable pill, accordion with space on each accordion item   |
-| `multiple`   | `Boolean` |  `false`  | Allow expand multiple accordion item                       |
-| `no-caret`   | `Boolean` |  `false`  | Hide caret icon                                            |
-| `items`      | `Array`   |   `-`     | Accordion items                                            |
-| `v-model`    | `String`  |   `-`     | ID of current expanded accordion item                      |
+| Props      |   Type    | Default | Description                                              |
+|------------|:---------:|:-------:|----------------------------------------------------------|
+| `flush`    | `Boolean` | `false` | Enable flush, accordion without container-border         |
+| `pill`     | `Boolean` | `false` | Enable pill, accordion with space on each accordion item |
+| `multiple` | `Boolean` | `false` | Allow expand multiple accordion item                     |
+| `no-caret` | `Boolean` | `false` | Hide caret icon                                          |
+| `items`    |  `Array`  |   `-`   | Accordion items                                          |
+| `v-model`  | `String`  |   `-`   | ID of current expanded accordion item                    |
 
 ### Slots `<p-accordion>`
 
-| Name             | Description                           |
-|------------------|---------------------------------------|
-| `default`        | Accordion content                     |
+| Name      | Description       |
+|-----------|-------------------|
+| `default` | Accordion content |
 
 ### Props `<p-accordion-item>`
 
-| Props         |   Type    |  Default  | Description                                                  |
-|---------------|:---------:|:---------:|--------------------------------------------------------------|
-| `title`       | `String`  |     -     | Accordion Item Header Title                                  |
-| `disabled`    | `Boolean` |  `false`  | Disable state of accordion item                              |
-| `no-caret`    | `Boolean` |  `false`  | Hide caret icon                                              |
-| `v-model`     | `Boolean` |  `false`  | v-model value for expand or collapse the accordion item      |
+| Props      |   Type    | Default | Description                                             |
+|------------|:---------:|:-------:|---------------------------------------------------------|
+| `title`    | `String`  |    -    | Accordion Item Header Title                             |
+| `disabled` | `Boolean` | `false` | Disable state of accordion item                         |
+| `no-caret` | `Boolean` | `false` | Hide caret icon                                         |
+| `v-model`  | `Boolean` | `false` | v-model value for expand or collapse the accordion item |
 
 ### Slots `<p-accordion-item>`
 
-| Name             | Description                           |
-|------------------|---------------------------------------|
-| `default`        | Accordion item content                |
-| `activator`      | Content to replace Item Activator     |
-| `caret`          | Content to replace Caret Icon         |
+| Name        | Description                       |
+|-------------|-----------------------------------|
+| `default`   | Accordion item content            |
+| `activator` | Content to replace Item Activator |
+| `caret`     | Content to replace Caret Icon     |
 
 ### Events `<p-accordion-item>`
 

@@ -69,7 +69,8 @@ const props = defineProps({
     default: false,
   },
 })
-const emit  = defineEmits<{
+
+const emit = defineEmits<{
   'update:modelValue': [boolean],
   'expand': [],
   'collapse': [],
