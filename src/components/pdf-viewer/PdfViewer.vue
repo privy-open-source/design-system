@@ -252,6 +252,10 @@ syncRef(pdfScale, vScale)
 defineExpose({
   page : pdfPage,
   scale: pdfScale,
+  root,
+  container,
+  viewer,
+  loading,
   totalPage,
   zoomIn,
   zoomOut,
