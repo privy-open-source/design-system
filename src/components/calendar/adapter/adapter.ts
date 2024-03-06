@@ -28,6 +28,8 @@ export interface CalendarAdapter {
 
   canNext: (this: this, context: CalendarContext) => boolean,
   canPrev: (this: this, context: CalendarContext) => boolean,
+
+  setValue: (this: this, value: Date, lastValue?: Date) => Date,
 }
 
 export const CalendarFormat = [
