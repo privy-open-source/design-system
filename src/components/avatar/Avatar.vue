@@ -21,6 +21,7 @@ import {
   onMounted,
   ref,
   watch,
+  inject,
 } from 'vue-demi'
 import {
   createAlias,
@@ -29,6 +30,7 @@ import {
 } from './utils/create-image'
 import loadImage from './utils/load-image'
 import type { TypeVariant, SizeVariant } from '.'
+import { AVATARGROUP_SETTING } from '.'
 
 const props = defineProps({
   variant: {
@@ -68,11 +70,16 @@ const emit = defineEmits<{
 
 const imageSrc = ref(createSpinner(50))
 
+const avatarSetting = inject(AVATARGROUP_SETTING, undefined, false)
+
 const classNames = computed(() => {
   const result: string[] = ['avatar']
 
   // eslint-disable-next-line unicorn/explicit-length-check
-  if (props.size)
+  if (avatarSetting?.size?.value)
+    result.push(`avatar--${avatarSetting?.size?.value}`)
+  // eslint-disable-next-line unicorn/explicit-length-check
+  else if (props.size)
     result.push(`avatar--${props.size}`)
 
   return result
@@ -137,23 +144,23 @@ onMounted(() => {
   }
 
   &--xs {
-    @apply w-6 h-6;
+    @apply w-6 h-6 text-tn;
   }
 
   &--sm {
-    @apply w-8 h-8;
+    @apply w-8 h-8 text-xs;
   }
 
   &--md {
-    @apply w-10 h-10;
+    @apply w-10 h-10 text-sm;
   }
 
   &--lg {
-    @apply w-14 h-14;
+    @apply w-14 h-14 text-base;
   }
 
   &--xl {
-    @apply w-24 h-24;
+    @apply w-24 h-24 text-lg;
   }
 }
 </style>
