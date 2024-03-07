@@ -1,5 +1,6 @@
+/* eslint-disable unicorn/prefer-export-from */
 import type * as PDFJS from 'pdfjs-dist'
-import type * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer'
+import type * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer.mjs'
 
 let pdfjsLib: typeof PDFJS
 
@@ -10,7 +11,7 @@ async function importPdfJS () {
     const pdfjs = await import('pdfjs-dist')
 
     if (typeof window !== 'undefined' && 'Worker' in window)
-      pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
+      pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 
     pdfjsLib = pdfjs
   }
@@ -22,7 +23,7 @@ async function importPdfJSViewer () {
   await importPdfJS()
 
   if (!pdfjsViewer)
-    pdfjsViewer = await import('pdfjs-dist/web/pdf_viewer')
+    pdfjsViewer = await import('pdfjs-dist/web/pdf_viewer.mjs')
 
   return pdfjsViewer
 }
@@ -59,4 +60,9 @@ export async function createLinkService (...params: ConstructorParameters<typeof
   await importPdfJSViewer()
 
   return new pdfjsViewer.PDFLinkService(...params)
+}
+
+export type {
+  PDFJS,
+  PDFJSViewer,
 }

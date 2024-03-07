@@ -1,4 +1,4 @@
-import type * as PDFJS from 'pdfjs-dist'
+import type { PDFJS } from '@privyid/persona-pdf'
 import { vi } from 'vitest'
 import { createEventHook } from '@vueuse/core'
 import { reactive, toRefs } from 'vue-demi'

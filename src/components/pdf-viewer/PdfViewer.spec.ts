@@ -9,7 +9,7 @@ vi.mock('../pdf-object/utils/use-drop.ts', () => ({ default: vi.fn(() => ref(tru
 
 vi.mock('./utils/use-viewer.ts', () => useViewer)
 
-vi.mock('./utils/pdfjs.ts', () => ({ getVersion: vi.fn(() => '3.10.x') }))
+vi.mock('@privyid/persona-pdf', () => ({ getVersion: vi.fn(() => '3.10.x') }))
 
 it('should rendery properly', () => {
   const screen = render({
@@ -34,7 +34,7 @@ it('should load document from src url', async () => {
 
   expect(viewer).toBeInTheDocument()
   // eslint-disable-next-line unicorn/no-useless-undefined
-  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', undefined)
+  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', undefined, { noStream: false })
 })
 
 it('should load document with password if prop password given', async () => {
@@ -53,7 +53,26 @@ it('should load document with password if prop password given', async () => {
   await delay(2)
 
   expect(viewer).toBeInTheDocument()
-  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', '123456')
+  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', '123456', { noStream: false })
+})
+
+it('should load document without stream mode if prop no-stream set to true', async () => {
+  const screen = render({
+    components: { PdfViewer },
+    template  : `
+      <pdf-viewer
+        src="http://sample.pdf"
+        no-stream
+      />
+      `,
+  })
+
+  const viewer = screen.queryByTestId('pdf-viewer')
+
+  await delay(2)
+
+  expect(viewer).toBeInTheDocument()
+  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', undefined, { noStream: true })
 })
 
 it('should have style layout fit if prop `layout` set to "fit"', () => {
@@ -86,21 +105,21 @@ it('should reload document if src changed', async () => {
   vi.advanceTimersByTime(2)
 
   expect(viewer).toBeInTheDocument()
-  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', '')
+  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', '', { noStream: false })
 
   src.value = 'http://sample-3.pdf'
   await nextTick()
 
   vi.advanceTimersByTime(502) // skip debounce
 
-  expect(useViewer.openDoc).lastCalledWith('http://sample-3.pdf', '')
+  expect(useViewer.openDoc).lastCalledWith('http://sample-3.pdf', '', { noStream: false })
 
   password.value = '123456'
   await nextTick()
 
   vi.advanceTimersByTime(502) // skip debounce
 
-  expect(useViewer.openDoc).lastCalledWith('http://sample-3.pdf', '123456')
+  expect(useViewer.openDoc).lastCalledWith('http://sample-3.pdf', '123456', { noStream: false })
 
   vi.useRealTimers()
 })

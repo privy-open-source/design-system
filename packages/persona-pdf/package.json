@@ -1,0 +1,40 @@
+{
+  "name": "@privyid/persona-pdf",
+  "description": "PDFjs wrapper for Persona",
+  "packageManager": "yarn@4.1.0",
+  "version": "1.0.0-rc.2",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/privy-open-source/design-system.git",
+    "type": "git",
+    "directory": "packages/persona-pdf"
+  },
+  "author": "Ade Novid <adenvt@gmail.com> (https://github.com/adenvt)",
+  "bugs": {
+    "url": "https://github.com/privy-open-source/design-system/issues"
+  },
+  "homepage": "https://privy-open-source.github.io/design-system/",
+  "type": "module",
+  "scripts": {
+    "prepack": "yarn build",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "main": "./dist/persona-pdf.js",
+  "module": "./dist/persona-pdf.js",
+  "types": "./dist/persona-pdf.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@privyid/browserslist-config": "workspace:^",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.5",
+    "vite-plugin-dts": "^3.7.3",
+    "vite-plugin-top-level-await": "^1.4.1"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^4.0.379"
+  }
+}
