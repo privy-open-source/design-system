@@ -85,7 +85,7 @@ There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is
 
 ## Avatar Group
 
-Avatar can be grouped using `<p-avatar-group>`. Group sets used to display 
+Avatar can be grouped using `<p-avatar-group>`. Group sets used to display
 a collection of avatars with size xsmall only.
 
 <preview>
@@ -94,7 +94,7 @@ a collection of avatars with size xsmall only.
     <p-avatar />
     <p-avatar />
     <p-avatar />
-    <p-avatar>2+</p-avatar>
+    <p-avatar />
   </p-avatar-group>
 </preview>
 
@@ -105,7 +105,34 @@ a collection of avatars with size xsmall only.
     <p-avatar />
     <p-avatar />
     <p-avatar />
-    <p-avatar>2+</p-avatar>
+    <p-avatar />
+  </p-avatar-group>
+</template>
+```
+
+### Limiting items
+
+Set maximum avatar inside avatar group using prop `length`, if items more than the length, it truncated automatically.
+default is `5`
+
+<preview>
+  <p-avatar-group length="3">
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+  </p-avatar-group>
+</preview>
+
+```vue
+<template>
+  <p-avatar-group length="3">
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
   </p-avatar-group>
 </template>
 ```

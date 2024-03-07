@@ -34,3 +34,44 @@ it('should render properly', () => {
   expect(avatar).toBeInTheDocument()
   expect(avatar).toHaveClass('avatar--xs')
 })
+
+it('should render all items if less or equal the `length`', () => {
+  const screen = render({
+    components: { AvatarGroup, Avatar },
+    template  : `
+      <AvatarGroup>
+        <Avatar />
+        <Avatar />
+        <Avatar />
+        <Avatar />
+      </AvatarGroup>
+    `,
+  })
+
+  const avatarGroup = screen.queryByTestId('avatar-group')
+  const avatars     = screen.queryAllByTestId('avatar')
+
+  expect(avatarGroup).toBeInTheDocument()
+  expect(avatars).toHaveLength(4)
+})
+
+it('should truncate the items if more than `length`', () => {
+  const screen = render({
+    components: { AvatarGroup, Avatar },
+    template  : `
+      <AvatarGroup length="3">
+        <Avatar />
+        <Avatar />
+        <Avatar />
+        <Avatar />
+        <Avatar />
+      </AvatarGroup>
+    `,
+  })
+
+  const avatarGroup = screen.queryByTestId('avatar-group')
+  const avatars     = screen.queryAllByTestId('avatar')
+
+  expect(avatarGroup).toBeInTheDocument()
+  expect(avatars).toHaveLength(3)
+})

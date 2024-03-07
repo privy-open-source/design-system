@@ -2,18 +2,31 @@
   <div
     data-testid="avatar-group"
     class="avatar-group">
-    <slot />
+    <pAvatarTruncate
+      :size="size"
+      :length="length">
+      <slot />
+    </pAvatarTruncate>
   </div>
 </template>
+
 <script lang="ts" setup>
-import { ref, provide } from 'vue-demi'
+import type { PropType } from 'vue-demi'
 import type { SizeVariant } from '.'
-import { AVATARGROUP_SETTING } from '.'
+import pAvatarTruncate from './AvatarTruncate.vue'
 
-const size = ref<SizeVariant>('xs')
-
-provide(AVATARGROUP_SETTING, { size: size })
+defineProps({
+  size: {
+    type   : String as PropType<SizeVariant>,
+    default: 'xs',
+  },
+  length: {
+    type   : [Number, String],
+    default: 5,
+  },
+})
 </script>
+
 <style lang="postcss">
 .avatar-group {
   --p-avatar-outline-color: theme(backgroundColor.default.DEFAULT);
