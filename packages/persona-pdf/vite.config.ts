@@ -2,20 +2,18 @@
 // vite.config.js
 import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
-import topLevelAwait from 'vite-plugin-top-level-await'
-import dts from 'vite-plugin-dts'
 import getTarget from 'browserslist-to-esbuild'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 export default defineConfig({
-  plugins: [topLevelAwait(), dts({ rollupTypes: true })],
+  plugins: [cssInjectedByJsPlugin()],
   build  : {
     target: getTarget('extends @privyid/browserslist-config'),
     lib   : {
-      entry   : resolve(__dirname, './src/persona-pdf.ts'),
+      entry   : resolve(__dirname, './src/persona-pdf.mjs'),
       name    : 'PersonaPDF',
       fileName: 'persona-pdf',
-      formats : ['es'],
     },
-    rollupOptions: {},
+    rollupOptions: { output: { inlineDynamicImports: true } },
   },
 })

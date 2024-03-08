@@ -21,20 +21,20 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "main": "./dist/persona-pdf.js",
+  "main": "./dist/persona-pdf.umd.cjs",
   "module": "./dist/persona-pdf.js",
-  "types": "./dist/persona-pdf.d.ts",
+  "types": "./src/persona-pdf.d.ts",
   "files": [
-    "dist/"
+    "dist/",
+    "src/persona-pdf.d.ts"
   ],
   "devDependencies": {
     "@privyid/browserslist-config": "workspace:^",
     "typescript": "^5.3.3",
     "vite": "^5.1.5",
-    "vite-plugin-dts": "^3.7.3",
-    "vite-plugin-top-level-await": "^1.4.1"
+    "vite-plugin-css-injected-by-js": "^3.4.0"
   },
   "dependencies": {
-    "pdfjs-dist": "^4.0.379"
+    "pdfjs-dist": "patch:pdfjs-dist@npm%3A4.0.379#~/.yarn/patches/pdfjs-dist-npm-4.0.379-5ea93302cd.patch"
   }
 }

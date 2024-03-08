@@ -1,14 +1,11 @@
-/* eslint-disable unicorn/prefer-export-from */
-import type * as PDFJS from 'pdfjs-dist'
-import type * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer.mjs'
+let pdfjsLib
 
-let pdfjsLib: typeof PDFJS
+let pdfjsViewer
 
-let pdfjsViewer: typeof PDFJSViewer
-
-async function importPdfJS () {
+export async function importPdfJS () {
   if (!pdfjsLib) {
-    const pdfjs = await import('pdfjs-dist')
+    const { __main__ } = await import('pdfjs-dist')
+    const pdfjs        = await __main__()
 
     if (typeof window !== 'undefined' && 'Worker' in window)
       pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
@@ -19,16 +16,20 @@ async function importPdfJS () {
   return pdfjsLib
 }
 
-async function importPdfJSViewer () {
+export async function importPdfJSViewer () {
   await importPdfJS()
 
-  if (!pdfjsViewer)
-    pdfjsViewer = await import('pdfjs-dist/web/pdf_viewer.mjs')
+  if (!pdfjsViewer) {
+    await import('pdfjs-dist/web/pdf_viewer.css')
+
+    const { __main__ } = await import('pdfjs-dist/web/pdf_viewer.mjs')
+    pdfjsViewer        = await __main__()
+  }
 
   return pdfjsViewer
 }
 
-export async function getDocument (...params: Parameters<typeof PDFJS['getDocument']>) {
+export async function getDocument (...params) {
   await importPdfJS()
 
   return pdfjsLib.getDocument(...params)
@@ -50,19 +51,14 @@ export async function createEventBus () {
   return new pdfjsViewer.EventBus()
 }
 
-export async function createViewer (...params: ConstructorParameters<typeof PDFJSViewer['PDFViewer']>) {
+export async function createViewer (...params) {
   await importPdfJSViewer()
 
   return new pdfjsViewer.PDFViewer(...params)
 }
 
-export async function createLinkService (...params: ConstructorParameters<typeof PDFJSViewer['PDFLinkService']>) {
+export async function createLinkService (...params) {
   await importPdfJSViewer()
 
   return new pdfjsViewer.PDFLinkService(...params)
-}
-
-export type {
-  PDFJS,
-  PDFJSViewer,
 }
