@@ -46,9 +46,9 @@
     "@vitest/browser": "^0.25.3",
     "@vitest/coverage-c8": "0.24.5",
     "@vue/eslint-config-typescript": "12.0.0",
-    "autoprefixer": "10.4.17",
+    "autoprefixer": "10.4.18",
     "browserslist-to-esbuild": "^2.0.0",
-    "eslint": "8.56.0",
+    "eslint": "8.57.0",
     "eslint-config-standard-with-typescript": "~21.0.1",
     "eslint-formatter-pretty": "5.0.0",
     "eslint-plugin-align-assignments": "1.1.2",
@@ -58,7 +58,7 @@
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-unicorn": "48.0.1",
     "eslint-plugin-varspacing": "1.2.2",
-    "eslint-plugin-vue": "9.21.1",
+    "eslint-plugin-vue": "9.22.0",
     "happy-dom": "8.9.0",
     "husky": "9.0.11",
     "jest-extended": "4.0.2",
@@ -75,17 +75,17 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
-    "@fontsource/dm-sans": "5.0.18",
+    "@fontsource/dm-sans": "5.0.19",
     "@jill64/universal-sanitizer": "^1.0.2",
     "@juggle/resize-observer": "^3.4.0",
     "@privyid/persona-icon": "workspace:^",
     "@splidejs/splide": "^4.1.4",
     "@testing-library/user-event": "^14.4.3",
-    "@vueuse/core": "10.8.0",
-    "@vueuse/math": "10.8.0",
+    "@vueuse/core": "10.9.0",
+    "@vueuse/math": "10.9.0",
     "@zxing/browser": "0.1.4",
     "@zxing/library": "0.20.0",
-    "chart.js": "4.4.1",
+    "chart.js": "4.4.2",
     "core-js": "3",
     "date-fns": "2.30.0",
     "defu": "6.1.4",
@@ -103,7 +103,7 @@
     "vue-collapsed": "^1.2.5",
     "vue-content-loader": "^2.0.1",
     "vue-demi": "0.14.7",
-    "vue-router": "4.2.5",
+    "vue-router": "4.3.0",
     "vuedraggable": "next",
     "webfontloader": "1.6.28",
     "zxcvbn": "^4.4.2"
@@ -117,6 +117,6 @@
     "packages/*"
   ],
   "resolutions": {
-    "@vue/runtime-core": "3.4.19"
+    "@vue/runtime-core": "3.4.21"
   }
 }
