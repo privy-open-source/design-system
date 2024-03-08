@@ -3195,7 +3195,7 @@ __metadata:
     scroll-into-view: "npm:1.16.2"
     tabbable: "npm:6.2.0"
     tailwind: "npm:^4.0.0"
-    vue-collapsed: "npm:1.3.0"
+    vue-collapsed: "npm:1.3.1"
     vue-demi: "npm:0.14.7"
     vuedraggable: "npm:next"
     webfontloader: "npm:1.6.28"
@@ -19492,14 +19492,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-collapsed@npm:1.3.0":
-  version: 1.3.0
-  resolution: "vue-collapsed@npm:1.3.0"
-  checksum: 10/8daa6cca32fd92414677088fbad38f72f89cb9ce18faeb4c272a5074dd7d61625127d71ae88376e7032293d04c039005579d2d3a89f110f83f8bd14ba28d2b21
-  languageName: node
-  linkType: hard
-
-"vue-collapsed@npm:^1.2.5":
+"vue-collapsed@npm:1.3.1, vue-collapsed@npm:^1.2.5":
   version: 1.3.1
   resolution: "vue-collapsed@npm:1.3.1"
   checksum: 10/088328f7cf979a125289104f3645ba384236570959a00629bc85c0d94b52d90e377fcd6ff01e91b3ada03244f6ed66393622e90f691a9fecdd92f587e1afdfe7
