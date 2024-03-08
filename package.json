@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "packageManager": "yarn@4.1.1",
   "private": true,
   "type": "module",
@@ -46,6 +46,7 @@
     "@vitest/browser": "^0.25.3",
     "@vitest/coverage-c8": "0.24.5",
     "@vue/eslint-config-typescript": "12.0.0",
+    "@vue/test-utils": "^2.4.4",
     "autoprefixer": "10.4.18",
     "browserslist-to-esbuild": "^2.0.0",
     "eslint": "8.57.0",
@@ -115,8 +116,5 @@
   },
   "workspaces": [
     "packages/*"
-  ],
-  "resolutions": {
-    "@vue/runtime-core": "3.4.21"
-  }
+  ]
 }

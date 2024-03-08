@@ -220,12 +220,12 @@ You can hide close button with `dismissable` set to `false`
 
 ```vue
 <template>
-  <p-banner 
-    :dismissable="false" 
-    noIcon 
+  <p-banner
+    :dismissable="false"
+    noIcon
     background-url="../assets/images/img-banner-bg.svg">
     <span class="text-default">
-      Buy and activate your Personal plan in 
+      Buy and activate your Personal plan in
       <strong>Privy mobile app</strong>
     </span>
   </p-banner>
@@ -246,9 +246,9 @@ You can hide close button with `dismissable` set to `false`
 
 ### Slots
 
-| Name      | Description                |
-|-----------|----------------------------|
-| `default` | Content to place in banner |
+| Name      | Description                     |
+|-----------|---------------------------------|
+| `default` | Content to place in banner      |
 | `icon`    | Content to place icon in banner |
 
 ### Events

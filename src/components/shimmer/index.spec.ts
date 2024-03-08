@@ -14,22 +14,22 @@ describe('v-bind-once', () => {
   it('should bind attribute on ssr', async () => {
     const uid     = genId()
     const content = await renderToString({
-      template  : '<span v-bind-once:id="uid" />',
+      template  : '<div v-bind-once:id="uid" />',
       directives: { bindOnce: vBindOnce },
       setup () {
         return { uid }
       },
     })
 
-    expect(content).toBe(`<span id="${uid}"></span>`)
+    expect(content).toBe(`<div id="${uid}"></div>`)
   })
 
   it('should not bind attribute on ssr if value is empty', async () => {
     const content = await renderToString({
-      template  : '<span v-bind-once:id />',
+      template  : '<div v-bind-once:id />',
       directives: { bindOnce: vBindOnce },
     })
 
-    expect(content).toBe('<span></span>')
+    expect(content).toBe('<div></div>')
   })
 })
