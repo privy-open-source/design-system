@@ -2134,10 +2134,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:5.0.18":
-  version: 5.0.18
-  resolution: "@fontsource/dm-sans@npm:5.0.18"
-  checksum: 10/eb8a6396f9cb0b46395e19d4026c9e7b7fa322990eecf69e9bc832ff2aa3032b6a6ded7274ae149d157c1b7233880b2b48dd455692c46b0331b5cc26145fe995
+"@fontsource/dm-sans@npm:5.0.19":
+  version: 5.0.19
+  resolution: "@fontsource/dm-sans@npm:5.0.19"
+  checksum: 10/f4b2b2383476930fd7f646829f43514e169d40c600eab486c761e044639339e6651f9ac53a8c417850cb73d27cbed5a83b2bd3f898590d99726879ee614978ed
   languageName: node
   linkType: hard
 
@@ -3081,7 +3081,7 @@ __metadata:
   resolution: "@privyid/design-system@workspace:."
   dependencies:
     "@floating-ui/dom": "npm:^1.0.4"
-    "@fontsource/dm-sans": "npm:5.0.18"
+    "@fontsource/dm-sans": "npm:5.0.19"
     "@interactjs/types": "npm:1.10.26"
     "@jill64/universal-sanitizer": "npm:^1.0.2"
     "@juggle/resize-observer": "npm:^3.4.0"
@@ -3112,7 +3112,7 @@ __metadata:
     "@vueuse/math": "npm:10.9.0"
     "@zxing/browser": "npm:0.1.4"
     "@zxing/library": "npm:0.20.0"
-    autoprefixer: "npm:10.4.17"
+    autoprefixer: "npm:10.4.18"
     browserslist-to-esbuild: "npm:^2.0.0"
     chart.js: "npm:4.4.2"
     core-js: "npm:3"
@@ -3146,9 +3146,9 @@ __metadata:
     scroll-into-view: "npm:^1.16.2"
     tabbable: "npm:6.2.0"
     tailwindcss: "npm:3.4.1"
-    typescript: "npm:5.3.3"
+    typescript: "npm:5.4.2"
     ufo: "npm:^1.0.1"
-    vitepress: "npm:1.0.0-rc.44"
+    vitepress: "npm:1.0.0-rc.45"
     vitest: "npm:0.24.5"
     vue-collapsed: "npm:^1.2.5"
     vue-content-loader: "npm:^2.0.1"
@@ -3260,7 +3260,7 @@ __metadata:
     scroll-into-view: "npm:1.16.2"
     tabbable: "npm:6.2.0"
     tailwind: "npm:^4.0.0"
-    vue-collapsed: "npm:1.3.0"
+    vue-collapsed: "npm:1.3.1"
     vue-demi: "npm:0.14.7"
     vuedraggable: "npm:next"
     webfontloader: "npm:1.6.28"
@@ -6179,7 +6179,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:10.4.17, autoprefixer@npm:^10.4.17":
+"autoprefixer@npm:10.4.18":
+  version: 10.4.18
+  resolution: "autoprefixer@npm:10.4.18"
+  dependencies:
+    browserslist: "npm:^4.23.0"
+    caniuse-lite: "npm:^1.0.30001591"
+    fraction.js: "npm:^4.3.7"
+    normalize-range: "npm:^0.1.2"
+    picocolors: "npm:^1.0.0"
+    postcss-value-parser: "npm:^4.2.0"
+  peerDependencies:
+    postcss: ^8.1.0
+  bin:
+    autoprefixer: bin/autoprefixer
+  checksum: 10/c5bc0b539451557ac0b531bd6dad2db50499cf3d5daff9ead57d0d90d8f63ea6aa0e0556cbda3fbd3d081ec1199202f14533d54494ea47f42b239852d6bde16f
+  languageName: node
+  linkType: hard
+
+"autoprefixer@npm:^10.4.17":
   version: 10.4.17
   resolution: "autoprefixer@npm:10.4.17"
   dependencies:
@@ -6420,6 +6438,20 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: 10/e3590793db7f66ad3a50817e7b7f195ce61e029bd7187200244db664bfbe0ac832f784e4f6b9c958aef8ea4abe001ae7880b7522682df521f4bc0a5b67660b5e
+  languageName: node
+  linkType: hard
+
+"browserslist@npm:^4.23.0":
+  version: 4.23.0
+  resolution: "browserslist@npm:4.23.0"
+  dependencies:
+    caniuse-lite: "npm:^1.0.30001587"
+    electron-to-chromium: "npm:^1.4.668"
+    node-releases: "npm:^2.0.14"
+    update-browserslist-db: "npm:^1.0.13"
+  bin:
+    browserslist: cli.js
+  checksum: 10/496c3862df74565dd942b4ae65f502c575cbeba1fa4a3894dad7aa3b16130dc3033bc502d8848147f7b625154a284708253d9598bcdbef5a1e34cf11dc7bad8e
   languageName: node
   linkType: hard
 
@@ -6781,6 +6813,13 @@ __metadata:
   version: 1.0.30001579
   resolution: "caniuse-lite@npm:1.0.30001579"
   checksum: 10/2cd0c02e5d66b09888743ad2b624dbde697ace5c76b55bfd6065ea033f6abea8ac3f5d3c9299c042f91b396e2141b49bc61f5e17086dc9ba3a866cc6790134c0
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001587, caniuse-lite@npm:^1.0.30001591":
+  version: 1.0.30001593
+  resolution: "caniuse-lite@npm:1.0.30001593"
+  checksum: 10/c179af389ca40b254939308099b9e8681d1ca1ad535e48a3e3035880e97fe2cca147e3481ca821112c11a8cde534d090daf5a3b072d73db9e9360c136bf84e55
   languageName: node
   linkType: hard
 
@@ -8285,6 +8324,13 @@ __metadata:
   version: 1.4.610
   resolution: "electron-to-chromium@npm:1.4.610"
   checksum: 10/62e7218db74102dd12572b35f223884c4b55b8a19e77a0886d1c47a4041a7b2e1462b52c9350a2eee9fcdf10ac1c3b2734eb0045310e1f92bea096dc1c6f3394
+  languageName: node
+  linkType: hard
+
+"electron-to-chromium@npm:^1.4.668":
+  version: 1.4.690
+  resolution: "electron-to-chromium@npm:1.4.690"
+  checksum: 10/3a8e43623b8b5d39783e369b28fe3ebcf5d26157793b27286c24a2a1536b10bb94b22468d1403c2f1a7beb2537a029e032bc320661ddc438f8a7e0e57dfd1efa
   languageName: node
   linkType: hard
 
@@ -18781,6 +18827,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:5.4.2":
+  version: 5.4.2
+  resolution: "typescript@npm:5.4.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/f8cfdc630ab1672f004e9561eb2916935b2d267792d07ce93e97fc601c7a65191af32033d5e9c0169b7dc37da7db9bf320f7432bc84527cb7697effaa4e4559d
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
   version: 5.3.3
   resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
@@ -18788,6 +18844,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/c93786fcc9a70718ba1e3819bab56064ead5817004d1b8186f8ca66165f3a2d0100fee91fa64c840dcd45f994ca5d615d8e1f566d39a7470fc1e014dbb4cf15d
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>":
+  version: 5.4.2
+  resolution: "typescript@patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=5adc0c"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/f5f9a4133c2670761f0166eae5b3bafbc4a3fc24f0f42a93c9c893d9e9d6e66ea066969c5e7483fa66b4ae0e99125592553f3b92fd3599484de8be13b0615176
   languageName: node
   linkType: hard
 
@@ -19743,9 +19809,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.0-rc.44":
-  version: 1.0.0-rc.44
-  resolution: "vitepress@npm:1.0.0-rc.44"
+"vitepress@npm:1.0.0-rc.45":
+  version: 1.0.0-rc.45
+  resolution: "vitepress@npm:1.0.0-rc.45"
   dependencies:
     "@docsearch/css": "npm:^3.5.2"
     "@docsearch/js": "npm:^3.5.2"
@@ -19772,7 +19838,7 @@ __metadata:
       optional: true
   bin:
     vitepress: bin/vitepress.js
-  checksum: 10/f9930e277a39706ee908586342e0bd1433e0b1d4bd3eeda037b11110823e50e3c2fc449af50a84bfeb753a3fbe5a9540aeaf0cd5b0db38e2f0326be21c0e46aa
+  checksum: 10/096f586cbbb37f4d1942f2bfa3c46b05137ee3fa5614e55b27011ec40543c11877b07c5e697e9010d681c524c9e31f0ecf2fd93bc9fb2cd24c42b71c415f306a
   languageName: node
   linkType: hard
 
@@ -19883,10 +19949,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-collapsed@npm:1.3.0, vue-collapsed@npm:^1.2.5":
-  version: 1.3.0
-  resolution: "vue-collapsed@npm:1.3.0"
-  checksum: 10/8daa6cca32fd92414677088fbad38f72f89cb9ce18faeb4c272a5074dd7d61625127d71ae88376e7032293d04c039005579d2d3a89f110f83f8bd14ba28d2b21
+"vue-collapsed@npm:1.3.1, vue-collapsed@npm:^1.2.5":
+  version: 1.3.1
+  resolution: "vue-collapsed@npm:1.3.1"
+  checksum: 10/088328f7cf979a125289104f3645ba384236570959a00629bc85c0d94b52d90e377fcd6ff01e91b3ada03244f6ed66393622e90f691a9fecdd92f587e1afdfe7
   languageName: node
   linkType: hard
 

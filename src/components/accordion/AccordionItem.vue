@@ -11,9 +11,24 @@
         class="accordion__item__activator"
         data-testid="accordion-item-activator"
         @click="toggle">
-        <Subheading class="accordion__item__title">
-          {{ title }}
-        </Subheading>
+        <div
+          class="accordion__item__title"
+          :class="titleClass"
+          data-testid="accordion-item-title">
+          <div
+            v-if="accordionIcon"
+            class="accordion__item__icon"
+            data-testid="accordion-item-icon"
+            :class="iconClass">
+            <component
+              :is="accordionIcon" />
+          </div>
+          <slot name="title">
+            <Subheading>
+              {{ title }}
+            </Subheading>
+          </slot>
+        </div>
         <slot
           v-if="!noCaret"
           name="caret"
@@ -33,6 +48,7 @@
     <p-collapse
       :model-value="model"
       class="accordion__item__content"
+      :class="contentClass"
       data-testid="accordion-item-content">
       <slot :expanded="model" />
     </p-collapse>
@@ -41,9 +57,14 @@
 
 <script lang="ts" setup>
 import { useVModel } from '../input'
-import type { VNode } from 'vue-demi'
-import { computed, watch } from 'vue-demi'
-
+import type {
+  VNode, PropType, Component,
+} from 'vue-demi'
+import {
+  computed,
+  watch,
+  h,
+} from 'vue-demi'
 import Subheading from '../subheading/Subheading.vue'
 import pCollapse from '../collapse/Collapse.vue'
 import ChevronUp from '@privyid/persona-icon/vue/chevron-up/16.vue'
@@ -68,8 +89,41 @@ const props = defineProps({
     type   : Boolean,
     default: false,
   },
+  icon: {
+    type: [
+      String,
+      Object,
+      Function,
+    ] as PropType<string | Component>,
+    default: undefined,
+  },
+  titleClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  contentClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
+  iconClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
 })
-const emit  = defineEmits<{
+
+const emit = defineEmits<{
   'update:modelValue': [boolean],
   'expand': [],
   'collapse': [],
@@ -89,6 +143,21 @@ const classNames = computed(() => {
     result.push('collapsed')
 
   return result
+})
+
+const accordionIcon = computed(() => {
+  if (props.icon) {
+    if (typeof props.icon === 'string') {
+      return () => h('img', {
+        'src'        : props.icon,
+        'max-width'  : '100%',
+        'height'     : 'auto',
+        'data-testid': 'accordion-item-icon-image',
+      })
+    }
+
+    return props.icon
+  }
 })
 
 function toggle () {
@@ -118,6 +187,8 @@ defineSlots<{
   --p-accordion-collapsed-border-dark: theme(borderColor.dark.default.DEFAULT);
   --p-accordion-expanded-border: theme(borderColor.default.DEFAULT);
   --p-accordion-expanded-border-dark: theme(borderColor.dark.default.DEFAULT);
+  --p-accordion-expanded-activator-bg: theme(backgroundColor.default.alpha);
+  --p-accordion-expanded-activator-bg-dark: theme(backgroundColor.dark.default.alpha);
 
   @apply w-full bg-[color:var(--p-accordion-bg)];
   @apply dark:bg-[color:var(--p-accordion-bg-dark)];
@@ -136,18 +207,26 @@ defineSlots<{
     }
 
     .accordion__item__activator {
-      @apply bg-default-alpha;
-      @apply dark:bg-dark-default-alpha;
+      @apply bg-[color:var(--p-accordion-expanded-activator-bg)];
+      @apply dark:bg-[color:var(--p-accordion-expanded-activator-bg-dark)];
     }
   }
 
   &__activator {
-    @apply flex justify-between items-center p-4 cursor-pointer;
+    @apply flex justify-between items-center p-4 cursor-pointer space-x-2;
 
     .expanded & {
-      @apply bg-default-alpha;
-      @apply dark:bg-dark-default-alpha;
+      @apply bg-[color:var(--p-accordion-expanded-activator-bg)];
+      @apply dark:bg-[color:var(--p-accordion-expanded-activator-bg-dark)];
     }
+  }
+
+  &__title {
+    @apply grow flex;
+  }
+
+  &__caret {
+    @apply flex-shrink-0;
   }
 
   &:is(&--disabled) {

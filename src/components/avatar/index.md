@@ -5,6 +5,7 @@ description: Show user's avatar, using name or image
 
 <script setup>
   import pAvatar from './Avatar.vue'
+  import pAvatarGroup from './AvatarGroup.vue'
   import IconUser from '@privyid/persona-icon/vue/profile/20.vue'
 </script>
 
@@ -79,6 +80,60 @@ There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is
   <p-avatar src="https://picsum.photos/id/40/40" size="md" />
   <p-avatar src="https://picsum.photos/id/56/56" size="lg" />
   <p-avatar src="https://picsum.photos/id/96/96" size="xl" />
+</template>
+```
+
+## Avatar Group
+
+Avatar can be grouped using `<p-avatar-group>`. Group sets used to display
+a collection of avatars with size xsmall only.
+
+<preview>
+  <p-avatar-group>
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+  </p-avatar-group>
+</preview>
+
+```vue
+<template>
+  <p-avatar-group>
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+  </p-avatar-group>
+</template>
+```
+
+### Limiting items
+
+Set maximum avatar inside avatar group using prop `length`, if items more than the length, it truncated automatically.
+default is `5`
+
+<preview>
+  <p-avatar-group length="3">
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+  </p-avatar-group>
+</preview>
+
+```vue
+<template>
+  <p-avatar-group length="3">
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+    <p-avatar />
+  </p-avatar-group>
 </template>
 ```
 

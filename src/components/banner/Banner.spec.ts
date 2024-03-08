@@ -151,19 +151,34 @@ it('should be able to add custom icon via slot `icon`', () => {
   expect(icon).toHaveClass('banner__icon--custom')
 })
 
-it('should be able to remove icon via slot `no-icon`', () => {
+it('should be able to add background image via slot `background-url`', () => {
   const screen = render({
     components: { Banner },
     template  : `
-    <Banner noIcon>
+    <Banner background-url="assets/images/img-background-banner.svg">
       Text
     </Banner>
     `,
   })
 
   const banner = screen.queryByTestId('banner')
-  const icon   = screen.queryByTestId('banner-icon')
 
   expect(banner).toBeInTheDocument()
-  expect(icon).not.toBeInTheDocument()
+  expect(banner).toHaveStyle({ 'background-image': 'url("assets/images/img-background-banner.svg")' })
+})
+
+it('should be able to add background overlay via slot `background-overlay`', () => {
+  const screen = render({
+    components: { Banner },
+    template  : `
+    <Banner background-overlay>
+      Text
+    </Banner>
+    `,
+  })
+
+  const banner = screen.queryByTestId('banner')
+
+  expect(banner).toBeInTheDocument()
+  expect(banner).toHaveClass('banner--overlay')
 })

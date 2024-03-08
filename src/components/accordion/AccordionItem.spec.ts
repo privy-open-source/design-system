@@ -1,6 +1,8 @@
 import { render, fireEvent } from '@testing-library/vue'
 import { vi } from 'vitest'
 import pAccordionItem from './AccordionItem.vue'
+import iconPrivy from '@privyid/persona-icon/vue/privy-alt/24.vue'
+import { markRaw } from 'vue-demi'
 
 it('should render properly without any props', () => {
   const screen = render({
@@ -117,4 +119,109 @@ it('should hide caret icon if props `no-caret` is provided', () => {
 
   expect(accordion).toBeInTheDocument()
   expect(caret).not.toBeInTheDocument()
+})
+
+it('Should be able to add custom title class from `titleClass` props', () => {
+  const screen = render({
+    components: { pAccordionItem },
+    template  : `
+      <p-accordion-item 
+        title="custom title class" 
+        titleClass="custom-title-class">
+        content
+      </p-accordion-item>
+    `,
+  })
+
+  const title = screen.queryByTestId('accordion-item-title')
+
+  expect(title).toBeInTheDocument()
+  expect(title).toHaveClass('custom-title-class')
+})
+
+it('Should be able to add custom content class from `contentClass` props', () => {
+  const screen = render({
+    components: { pAccordionItem },
+    template  : `
+      <p-accordion-item 
+        title="custom content class"
+        contentClass="custom-content-class">
+        content
+      </p-accordion-item>
+    `,
+  })
+
+  const title = screen.queryByTestId('accordion-item-content')
+
+  expect(title).toBeInTheDocument()
+  expect(title).toHaveClass('custom-content-class')
+})
+
+it('should be able to add accordion title via slot `title`', () => {
+  const screen = render({
+    components: { pAccordionItem },
+    template  : `
+      <p-accordion-item>
+        <template #title>
+          Accordion Title
+        </template>
+        Accordion Text
+      </p-accordion-item>
+    `,
+  })
+
+  const title = screen.queryByTestId('accordion-item-title')
+  const text  = screen.queryByText('Accordion Title')
+
+  expect(title).toBeInTheDocument()
+  expect(title).toHaveClass('accordion__item__title')
+  expect(text).toBeInTheDocument()
+})
+
+it('Should be able to custom icon via `icon` props', () => {
+  const screen = render({
+    components: { pAccordionItem },
+    template  : `
+      <p-accordion-item 
+        title="custom icon class"
+        icon="http://lorem-picsum.com">
+        content
+      </p-accordion-item>
+    `,
+  })
+
+  const icon    = screen.queryByTestId('accordion-item-icon')
+  const iconImg = screen.queryByTestId('accordion-item-icon-image')
+
+  expect(icon).toBeInTheDocument()
+  expect(icon).toHaveClass('accordion__item__icon')
+
+  expect(iconImg).toBeInTheDocument()
+  expect(iconImg).toBeInstanceOf(HTMLImageElement)
+  expect(iconImg).toHaveAttribute('src', 'http://lorem-picsum.com')
+})
+
+it('should be able to custom icon with Component and add custom icon class via `icon` & `iconClass` props', () => {
+  const screen = render({
+    components: {
+      pAccordionItem,
+      iconPrivy,
+    },
+    template: `
+      <p-accordion-item 
+        title="custom icon"
+        :icon="icon"
+        iconClass="custom-icon-class">
+        content
+      </p-accordion-item>
+    `,
+    setup () {
+      return { icon: markRaw(iconPrivy) }
+    },
+  })
+
+  const icon = screen.queryByTestId('accordion-item-icon')
+
+  expect(icon).toBeInTheDocument()
+  expect(icon).toHaveClass('custom-icon-class')
 })

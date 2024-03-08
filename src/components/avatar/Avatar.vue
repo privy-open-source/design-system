@@ -30,6 +30,8 @@ import {
 import loadImage from './utils/load-image'
 import type { TypeVariant, SizeVariant } from '.'
 
+defineOptions({ name: 'Avatar' })
+
 const props = defineProps({
   variant: {
     type   : String as PropType<TypeVariant>,
@@ -137,23 +139,23 @@ onMounted(() => {
   }
 
   &--xs {
-    @apply w-6 h-6;
+    @apply w-6 h-6 text-tn;
   }
 
   &--sm {
-    @apply w-8 h-8;
+    @apply w-8 h-8 text-xs;
   }
 
   &--md {
-    @apply w-10 h-10;
+    @apply w-10 h-10 text-sm;
   }
 
   &--lg {
-    @apply w-14 h-14;
+    @apply w-14 h-14 text-base;
   }
 
   &--xl {
-    @apply w-24 h-24;
+    @apply w-24 h-24 text-lg;
   }
 }
 </style>
