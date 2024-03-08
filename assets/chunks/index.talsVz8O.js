@@ -1,0 +1,1 @@
+import{c as a}from"./index.y_Gos51Z.js";import{ac as r,l as u}from"./framework.AUcs5FuE.js";function l(e){const n=a(r(e,"min"),{nanToZero:!0}),o=a(r(e,"max"),{nanToZero:!0}),t=a(r(e,"value"),{nanToZero:!0});return u(()=>(t.value-n.value)/(o.value-n.value))}export{l as u};
