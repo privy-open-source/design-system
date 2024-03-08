@@ -2,7 +2,8 @@
   <div
     v-if="show"
     data-testid="banner"
-    :class="classNames">
+    :class="classNames"
+    :style="{ 'background-image': backgroundUrl ? `url('${backgroundUrl}')`: 'none' }">
     <div
       v-if="!noIcon"
       class="banner__icon"
@@ -53,6 +54,14 @@ const props = defineProps({
     type   : Boolean,
     default: false,
   },
+  backgroundUrl: {
+    type   : String,
+    default: undefined,
+  },
+  backgroundOverlay: {
+    type   : Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits<{
@@ -66,6 +75,12 @@ const classNames = computed(() => {
 
   if (props.variant)
     result.push(`banner--${props.variant}`)
+
+  if (props.backgroundUrl)
+    result.push('banner--custom-background')
+
+  if (props.backgroundOverlay)
+    result.push('banner--overlay')
 
   return result
 })
@@ -106,6 +121,20 @@ defineSlots<{
     }
 
     @apply mb-2;
+  }
+
+  &&--custom-background {
+    @apply bg-cover bg-no-repeat bg-center overflow-hidden;
+  }
+
+  &&--overlay {
+    @apply after:content-[''] relative after:w-full after:h-full overflow-hidden after:absolute after:top-0 after:left-0 after:bg-base-black after:opacity-20;
+
+    .banner__body,
+    .banner__icon,
+    .banner-close {
+      @apply z-1;
+    }
   }
 
   &&--info {
