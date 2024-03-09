@@ -4,9 +4,10 @@ import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import getTarget from 'browserslist-to-esbuild'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
-  plugins: [cssInjectedByJsPlugin()],
+  plugins: [cssInjectedByJsPlugin(), viteStaticCopy({ targets: [{ src: './src/persona-pdf.d.ts', dest: '.' }] })],
   build  : {
     target: getTarget('extends @privyid/browserslist-config'),
     lib   : {
@@ -14,6 +15,5 @@ export default defineConfig({
       name    : 'PersonaPDF',
       fileName: 'persona-pdf',
     },
-    rollupOptions: { output: { inlineDynamicImports: true } },
   },
 })

@@ -3164,6 +3164,7 @@ __metadata:
     typescript: "npm:^5.3.3"
     vite: "npm:^5.1.5"
     vite-plugin-css-injected-by-js: "npm:^3.4.0"
+    vite-plugin-static-copy: "npm:^1.0.1"
   languageName: unknown
   linkType: soft
 
@@ -9865,6 +9866,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "fast-glob@npm:3.3.2"
+  dependencies:
+    "@nodelib/fs.stat": "npm:^2.0.2"
+    "@nodelib/fs.walk": "npm:^1.2.3"
+    glob-parent: "npm:^5.1.2"
+    merge2: "npm:^1.3.0"
+    micromatch: "npm:^4.0.4"
+  checksum: 10/222512e9315a0efca1276af9adb2127f02105d7288fa746145bf45e2716383fb79eb983c89601a72a399a56b7c18d38ce70457c5466218c5f13fad957cee16df
+  languageName: node
+  linkType: hard
+
 "fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
@@ -9888,19 +9902,6 @@ __metadata:
     merge2: "npm:^1.3.0"
     micromatch: "npm:^4.0.4"
   checksum: 10/51bcd15472879dfe51d4b01c5b70bbc7652724d39cdd082ba11276dbd7d84db0f6b33757e1938af8b2768a4bf485d9be0c89153beae24ee8331d6dcc7550379f
-  languageName: node
-  linkType: hard
-
-"fast-glob@npm:^3.3.2":
-  version: 3.3.2
-  resolution: "fast-glob@npm:3.3.2"
-  dependencies:
-    "@nodelib/fs.stat": "npm:^2.0.2"
-    "@nodelib/fs.walk": "npm:^1.2.3"
-    glob-parent: "npm:^5.1.2"
-    merge2: "npm:^1.3.0"
-    micromatch: "npm:^4.0.4"
-  checksum: 10/222512e9315a0efca1276af9adb2127f02105d7288fa746145bf45e2716383fb79eb983c89601a72a399a56b7c18d38ce70457c5466218c5f13fad957cee16df
   languageName: node
   linkType: hard
 
@@ -19234,6 +19235,20 @@ __metadata:
     "@nuxt/kit":
       optional: true
   checksum: 10/977f68784fd4f6883145bc7bf05c9b6efe8169eaa28f4a64e04846089f1613b7f060c5fe1206b95cc0765012e3e016f341f987b19049e3483d3a1e2ab594dd56
+  languageName: node
+  linkType: hard
+
+"vite-plugin-static-copy@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "vite-plugin-static-copy@npm:1.0.1"
+  dependencies:
+    chokidar: "npm:^3.5.3"
+    fast-glob: "npm:^3.2.11"
+    fs-extra: "npm:^11.1.0"
+    picocolors: "npm:^1.0.0"
+  peerDependencies:
+    vite: ^5.0.0
+  checksum: 10/c0ca7f3695e293d3a4efc5f0900d0da7a5a2ee73821a52ff515aaf71d88551b0e4571faa7ad7d22a6d1c067ed5d5cb704b5652a45e7bb68d9734ec4fa3062d4d
   languageName: node
   linkType: hard
 
