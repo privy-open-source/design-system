@@ -72,7 +72,8 @@
 
 <script lang="ts" setup>
 import { defineProps } from 'vue-demi'
-import { genId, vBindOnce } from '.'
+import { vBindOnce } from '.'
+import { uniqueId } from 'lodash-es'
 
 defineProps({
   width: {
@@ -89,7 +90,7 @@ defineProps({
   },
 })
 
-const uid = genId()
+const uid = uniqueId('shimmer')
 </script>
 
 <style lang="postcss">

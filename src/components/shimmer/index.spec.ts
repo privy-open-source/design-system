@@ -1,18 +1,10 @@
 import { renderToString } from '@vue/test-utils'
-import { vBindOnce, genId } from '.'
-
-describe('genId', () => {
-  it('should generate uniq id', () => {
-    const a = genId()
-    const b = genId()
-
-    expect(a).not.toBe(b)
-  })
-})
+import { vBindOnce } from '.'
+import { uniqueId } from 'lodash-es'
 
 describe('v-bind-once', () => {
   it('should bind attribute on ssr', async () => {
-    const uid     = genId()
+    const uid     = uniqueId('shimmer')
     const content = await renderToString({
       template  : '<div v-bind-once:id="uid" />',
       directives: { bindOnce: vBindOnce },
