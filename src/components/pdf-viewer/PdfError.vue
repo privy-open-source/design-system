@@ -32,7 +32,7 @@ import { vPAspectRatio } from '../aspect-ratio'
 import type { PropType } from 'vue-demi'
 import { onMounted, ref } from 'vue-demi'
 import Heading from '../heading/Heading.vue'
-import { getVersion } from './utils/pdfjs'
+import { getVersion } from '@privyid/persona-pdf'
 
 defineProps({
   url: {

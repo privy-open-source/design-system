@@ -3036,6 +3036,7 @@ __metadata:
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/eslint-config-persona": "workspace:^"
     "@privyid/persona-icon": "workspace:^"
+    "@privyid/persona-pdf": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": "npm:1.7.2"
     "@splidejs/splide": "npm:^4.1.4"
@@ -3086,7 +3087,6 @@ __metadata:
     lodash-es: "npm:4.17.21"
     marked: "npm:^11.0.0"
     nanodelay: "npm:2.0.2"
-    pdfjs-dist: "npm:^3.10.111"
     postcss: "npm:8.4.35"
     postcss-hexrgba: "npm:^2.1.0"
     postcss-lighten-darken: "npm:^0.9.0"
@@ -3155,6 +3155,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@privyid/persona-pdf@workspace:^, @privyid/persona-pdf@workspace:packages/persona-pdf":
+  version: 0.0.0-use.local
+  resolution: "@privyid/persona-pdf@workspace:packages/persona-pdf"
+  dependencies:
+    "@privyid/browserslist-config": "workspace:^"
+    pdfjs-dist: "patch:pdfjs-dist@npm%3A4.0.379#~/.yarn/patches/pdfjs-dist-npm-4.0.379-5ea93302cd.patch"
+    typescript: "npm:^5.3.3"
+    vite: "npm:^5.1.5"
+    vite-plugin-css-injected-by-js: "npm:^3.4.0"
+    vite-plugin-static-copy: "npm:^1.0.1"
+  languageName: unknown
+  linkType: soft
+
 "@privyid/persona@workspace:packages/persona":
   version: 0.0.0-use.local
   resolution: "@privyid/persona@workspace:packages/persona"
@@ -3167,6 +3180,7 @@ __metadata:
     "@nuxt/schema": "npm:3.10.3"
     "@nuxtjs/tailwindcss": "npm:^6.2.0"
     "@privyid/browserslist-config": "workspace:^"
+    "@privyid/persona-pdf": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@splidejs/splide": "npm:4.1.4"
     "@testing-library/dom": "npm:9.3.4"
@@ -3188,7 +3202,6 @@ __metadata:
     marked: "npm:11.2.0"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.10.3"
-    pdfjs-dist: "npm:3.11.174"
     postcss-custom-properties: "npm:^13.0.0"
     postcss-hexrgba: "npm:^2.1.0"
     postcss-lighten-darken: "npm:^0.9.0"
@@ -9853,6 +9866,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "fast-glob@npm:3.3.2"
+  dependencies:
+    "@nodelib/fs.stat": "npm:^2.0.2"
+    "@nodelib/fs.walk": "npm:^1.2.3"
+    glob-parent: "npm:^5.1.2"
+    merge2: "npm:^1.3.0"
+    micromatch: "npm:^4.0.4"
+  checksum: 10/222512e9315a0efca1276af9adb2127f02105d7288fa746145bf45e2716383fb79eb983c89601a72a399a56b7c18d38ce70457c5466218c5f13fad957cee16df
+  languageName: node
+  linkType: hard
+
 "fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
@@ -9876,19 +9902,6 @@ __metadata:
     merge2: "npm:^1.3.0"
     micromatch: "npm:^4.0.4"
   checksum: 10/51bcd15472879dfe51d4b01c5b70bbc7652724d39cdd082ba11276dbd7d84db0f6b33757e1938af8b2768a4bf485d9be0c89153beae24ee8331d6dcc7550379f
-  languageName: node
-  linkType: hard
-
-"fast-glob@npm:^3.3.2":
-  version: 3.3.2
-  resolution: "fast-glob@npm:3.3.2"
-  dependencies:
-    "@nodelib/fs.stat": "npm:^2.0.2"
-    "@nodelib/fs.walk": "npm:^1.2.3"
-    glob-parent: "npm:^5.1.2"
-    merge2: "npm:^1.3.0"
-    micromatch: "npm:^4.0.4"
-  checksum: 10/222512e9315a0efca1276af9adb2127f02105d7288fa746145bf45e2716383fb79eb983c89601a72a399a56b7c18d38ce70457c5466218c5f13fad957cee16df
   languageName: node
   linkType: hard
 
@@ -15089,9 +15102,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:3.11.174, pdfjs-dist@npm:^3.10.111":
-  version: 3.11.174
-  resolution: "pdfjs-dist@npm:3.11.174"
+"pdfjs-dist@npm:4.0.379":
+  version: 4.0.379
+  resolution: "pdfjs-dist@npm:4.0.379"
   dependencies:
     canvas: "npm:^2.11.2"
     path2d-polyfill: "npm:^2.0.1"
@@ -15100,7 +15113,22 @@ __metadata:
       optional: true
     path2d-polyfill:
       optional: true
-  checksum: 10/f739ffd451718d214e664c943a066dcb4020bc1ed92b5639ae38d6a25ef0bddcc05b35a68c3dfeb95fcfb852377bcb2aef935c780312a229f1f34e682627a8ae
+  checksum: 10/9abea0cd20e3a209537be81092055e247dc10cadc08c840ad4b2495e1e6d512b3f3208dfe12f47389af6b9f078a6e00b7bb9d950fe4dbe9f214ef726f8c2815f
+  languageName: node
+  linkType: hard
+
+"pdfjs-dist@patch:pdfjs-dist@npm%3A4.0.379#~/.yarn/patches/pdfjs-dist-npm-4.0.379-5ea93302cd.patch":
+  version: 4.0.379
+  resolution: "pdfjs-dist@patch:pdfjs-dist@npm%3A4.0.379#~/.yarn/patches/pdfjs-dist-npm-4.0.379-5ea93302cd.patch::version=4.0.379&hash=98daed"
+  dependencies:
+    canvas: "npm:^2.11.2"
+    path2d-polyfill: "npm:^2.0.1"
+  dependenciesMeta:
+    canvas:
+      optional: true
+    path2d-polyfill:
+      optional: true
+  checksum: 10/c2f2b64c006e238adca007f59c522bda4b0a7809cf9dc6f8b66150cc9af8e2591edcb8b612e4a92d4cf2904527ca041047c64e8c8495320cfdc2cf32382e0786
   languageName: node
   linkType: hard
 
@@ -18486,6 +18514,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "typescript@npm:5.3.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/6e4e6a14a50c222b3d14d4ea2f729e79f972fa536ac1522b91202a9a65af3605c2928c4a790a4a50aa13694d461c479ba92cedaeb1e7b190aadaa4e4b96b8e18
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>":
   version: 5.4.2
   resolution: "typescript@patch:typescript@npm%3A5.4.2#optional!builtin<compat/typescript>::version=5.4.2&hash=5adc0c"
@@ -18493,6 +18531,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/f5f9a4133c2670761f0166eae5b3bafbc4a3fc24f0f42a93c9c893d9e9d6e66ea066969c5e7483fa66b4ae0e99125592553f3b92fd3599484de8be13b0615176
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
+  version: 5.3.3
+  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/c93786fcc9a70718ba1e3819bab56064ead5817004d1b8186f8ca66165f3a2d0100fee91fa64c840dcd45f994ca5d615d8e1f566d39a7470fc1e014dbb4cf15d
   languageName: node
   linkType: hard
 
@@ -19160,6 +19208,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vite-plugin-css-injected-by-js@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "vite-plugin-css-injected-by-js@npm:3.4.0"
+  peerDependencies:
+    vite: ">2.0.0-0"
+  checksum: 10/cbe2cb0a6cb0255735a8462d1c153d0d890029da7e523d2e2240368748dc1a98ed6a40a693b24d4ffaf11e0566d6ca3aeb306165fe19432efe3b68f3e032d659
+  languageName: node
+  linkType: hard
+
 "vite-plugin-inspect@npm:^0.8.1":
   version: 0.8.1
   resolution: "vite-plugin-inspect@npm:0.8.1"
@@ -19178,6 +19235,20 @@ __metadata:
     "@nuxt/kit":
       optional: true
   checksum: 10/977f68784fd4f6883145bc7bf05c9b6efe8169eaa28f4a64e04846089f1613b7f060c5fe1206b95cc0765012e3e016f341f987b19049e3483d3a1e2ab594dd56
+  languageName: node
+  linkType: hard
+
+"vite-plugin-static-copy@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "vite-plugin-static-copy@npm:1.0.1"
+  dependencies:
+    chokidar: "npm:^3.5.3"
+    fast-glob: "npm:^3.2.11"
+    fs-extra: "npm:^11.1.0"
+    picocolors: "npm:^1.0.0"
+  peerDependencies:
+    vite: ^5.0.0
+  checksum: 10/c0ca7f3695e293d3a4efc5f0900d0da7a5a2ee73821a52ff515aaf71d88551b0e4571faa7ad7d22a6d1c067ed5d5cb704b5652a45e7bb68d9734ec4fa3062d4d
   languageName: node
   linkType: hard
 
@@ -19349,6 +19420,46 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 10/e9003b853f0784260f4fe7ce0190124b347fd8fd6bf889a07080facd0d9a9667eaff4022eddb1ba3f0283ef69d15d77f84bca832082e48874a7a62e7f6d66b08
+  languageName: node
+  linkType: hard
+
+"vite@npm:^5.1.5":
+  version: 5.1.5
+  resolution: "vite@npm:5.1.5"
+  dependencies:
+    esbuild: "npm:^0.19.3"
+    fsevents: "npm:~2.3.3"
+    postcss: "npm:^8.4.35"
+    rollup: "npm:^4.2.0"
+  peerDependencies:
+    "@types/node": ^18.0.0 || >=20.0.0
+    less: "*"
+    lightningcss: ^1.21.0
+    sass: "*"
+    stylus: "*"
+    sugarss: "*"
+    terser: ^5.4.0
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+    less:
+      optional: true
+    lightningcss:
+      optional: true
+    sass:
+      optional: true
+    stylus:
+      optional: true
+    sugarss:
+      optional: true
+    terser:
+      optional: true
+  bin:
+    vite: bin/vite.js
+  checksum: 10/ada0a9138ca541723008ee261d80a97f6b70173508ded0f87834e2142660f45dff9801d143551aa3a8979ed446f0aec71ae114ab3ae978b3fbd5cf1f8c4bc331
   languageName: node
   linkType: hard
 
