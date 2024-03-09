@@ -388,52 +388,52 @@ Add props `no-caret` to hide caret icon. Add on `p-accordion` to hide globally, 
 ## Icon
 
 <preview class="flex-col space-y-4">
-  <p-accordion-item 
-    title="How to create an account?" 
-    titleClass="items-center space-x-2" 
-    icon="https://privy.id/static/privy.png" 
+  <p-accordion-item
+    title="How to create an account?"
+    titleClass="items-center space-x-2"
+    icon="https://privy.id/static/privy.png"
     iconClass="max-w-20">
     <div class="p-4">
-      A wonderful serenity has taken possession of my entire soul, 
-      like these sweet mornings of spring which I enjoy with my 
-      whole heart. I am alone, and feel the charm 
+      A wonderful serenity has taken possession of my entire soul,
+      like these sweet mornings of spring which I enjoy with my
+      whole heart. I am alone, and feel the charm
     </div>
   </p-accordion-item>
 
-  <p-accordion-item 
-    title="How to create an account?" 
-    titleClass="items-center space-x-2" 
+  <p-accordion-item
+    title="How to create an account?"
+    titleClass="items-center space-x-2"
     :icon="icon">
     <div class="p-4">
-      A wonderful serenity has taken possession of my entire soul, 
-      like these sweet mornings of spring which I enjoy with 
-      my whole heart. I am alone, and feel the charm 
+      A wonderful serenity has taken possession of my entire soul,
+      like these sweet mornings of spring which I enjoy with
+      my whole heart. I am alone, and feel the charm
     </div>
   </p-accordion-item>
 </preview>
 
 ```vue
 <template>
-  <p-accordion-item 
-    title="How to create an account?" 
-    titleClass="items-center space-x-2" 
-    icon="https://domain.com/assets/images/privy.png" 
+  <p-accordion-item
+    title="How to create an account?"
+    titleClass="items-center space-x-2"
+    icon="https://domain.com/assets/images/privy.png"
     iconClass="max-w-20">
     <div class="p-4">
-      A wonderful serenity has taken possession of my entire soul, 
-      like these sweet mornings of spring which I enjoy with my 
-      whole heart. I am alone, and feel the charm 
+      A wonderful serenity has taken possession of my entire soul,
+      like these sweet mornings of spring which I enjoy with my
+      whole heart. I am alone, and feel the charm
     </div>
   </p-accordion-item>
 
-  <p-accordion-item 
-    title="How to create an account?" 
-    titleClass="items-center space-x-2" 
+  <p-accordion-item
+    title="How to create an account?"
+    titleClass="items-center space-x-2"
     :icon="icon">
     <div class="p-4">
-      A wonderful serenity has taken possession of my entire soul, 
-      like these sweet mornings of spring which I enjoy with 
-      my whole heart. I am alone, and feel the charm 
+      A wonderful serenity has taken possession of my entire soul,
+      like these sweet mornings of spring which I enjoy with
+      my whole heart. I am alone, and feel the charm
     </div>
   </p-accordion-item>
 </template>
@@ -452,30 +452,30 @@ Accordion title can be Customized by using slot `title`.
 <preview>
   <p-accordion-item titleClass="items-center" style="--p-accordion-expanded-activator-bg: transparent; --p-accordion-expanded-activator-bg-dark: transparent;">
     <template #title>
-      <img src="../../public/assets/images/icon-personal-plan-access.svg" 
+      <img src="../../public/assets/images/icon-personal-plan-access.svg"
         class="inline-block w-10 h-auto mr-4" />
       <strong>Have a full digital identity experience</strong>
     </template>
     <div class="p-4">
-      A wonderful serenity has taken possession of my entire soul, 
-      like these sweet mornings of spring which I enjoy with my whole 
-      heart. I am alone, and feel the charm 
+      A wonderful serenity has taken possession of my entire soul,
+      like these sweet mornings of spring which I enjoy with my whole
+      heart. I am alone, and feel the charm
     </div>
   </p-accordion-item>
 </preview>
 
 ```vue
 <template>
-  <p-accordion-item 
-    titleClass="items-center" 
-    style="--p-accordion-expanded-activator-bg: transparent; 
+  <p-accordion-item
+    titleClass="items-center"
+    style="--p-accordion-expanded-activator-bg: transparent;
     --p-accordion-expanded-activator-bg-dark: transparent;">
     <template #title>
-      <img src="/assets/images/icon-personal-plan-access.svg" class="inline-block w-10 h-auto mr-4" /> 
+      <img src="/assets/images/icon-personal-plan-access.svg" class="inline-block w-10 h-auto mr-4" />
       <strong>Have a full digital identity experience</strong>
     </template>
     <div class="p-4">
-      But I must explain to you how all this mistaken idea of 
+      But I must explain to you how all this mistaken idea of
       denouncing pleasure and praising pain was born
     </div>
   </p-accordion-item>
@@ -575,42 +575,42 @@ Accordion use local CSS variables on `.accordion__item` for enhanced real-time c
 
 ### Props `<p-accordion>`
 
-| Props         |   Type    |  Default  | Description                                               |
-|---------------|:---------:|:---------:|-----------------------------------------------------------|
-| `flush`       | `Boolean` |  `false`  | Enable flush, accordion without container-border            |
-| `pill`       | `Boolean` |  `false`  | Enable pill, accordion with space on each accordion item   |
-| `multiple`   | `Boolean` |  `false`  | Allow expand multiple accordion item                       |
-| `no-caret`   | `Boolean` |  `false`  | Hide caret icon                                            |
-| `items`      | `Array`   |   `-`     | Accordion items                                            |
-| `v-model`    | `String`  |   `-`     | ID of current expanded accordion item                      |
+| Props      |   Type    | Default | Description                                              |
+|------------|:---------:|:-------:|----------------------------------------------------------|
+| `flush`    | `Boolean` | `false` | Enable flush, accordion without container-border         |
+| `pill`     | `Boolean` | `false` | Enable pill, accordion with space on each accordion item |
+| `multiple` | `Boolean` | `false` | Allow expand multiple accordion item                     |
+| `no-caret` | `Boolean` | `false` | Hide caret icon                                          |
+| `items`    |  `Array`  |   `-`   | Accordion items                                          |
+| `v-model`  | `String`  |   `-`   | ID of current expanded accordion item                    |
 
 ### Slots `<p-accordion>`
 
-| Name             | Description                           |
-|------------------|---------------------------------------|
-| `default`        | Accordion content                     |
+| Name      | Description       |
+|-----------|-------------------|
+| `default` | Accordion content |
 
 ### Props `<p-accordion-item>`
 
-| Props         |   Type    |  Default  | Description                                                           |
-|---------------|:---------:|:---------:|-----------------------------------------------------------------------|
-| `title`       | `String`  |     -     | Accordion Item Header Title                                           |
-| `disabled`    | `Boolean` |  `false`  | Disable state of accordion item                                       |
-| `no-caret`    | `Boolean` |  `false`  | Hide caret icon                                                       |
-| `v-model`     | `Boolean` |  `false`  | v-model value for expand or collapse the accordion item               |
-| `icon`        | `String`, `Component` |     -     | v-model value for expand or collapse the accordion item   |
-| `titleClass`  | `String` or `Array` or `Object`  |     -     | Additional class for accordion item title      |
-| `contentClass`  | `String` or `Array` or `Object`  |     -     | Additional class for accordion item content  |
-| `iconClass`  | `String` or `Array` or `Object`  |     -     | Additional class for accordion item content     |
+| Props          |              Type               | Default | Description                                             |
+|----------------|:-------------------------------:|:-------:|---------------------------------------------------------|
+| `title`        |            `String`             |    -    | Accordion Item Header Title                             |
+| `disabled`     |            `Boolean`            | `false` | Disable state of accordion item                         |
+| `no-caret`     |            `Boolean`            | `false` | Hide caret icon                                         |
+| `v-model`      |            `Boolean`            | `false` | v-model value for expand or collapse the accordion item |
+| `icon`         |      `String`, `Component`      |    -    | v-model value for expand or collapse the accordion item |
+| `titleClass`   | `String` or `Array` or `Object` |    -    | Additional class for accordion item title               |
+| `contentClass` | `String` or `Array` or `Object` |    -    | Additional class for accordion item content             |
+| `iconClass`    | `String` or `Array` or `Object` |    -    | Additional class for accordion item content             |
 
 ### Slots `<p-accordion-item>`
 
-| Name             | Description                           |
-|------------------|---------------------------------------|
-| `default`        | Accordion item content                |
-| `activator`      | Content to replace Item Activator     |
-| `default`        | Content to replace Item Title         |
-| `caret`          | Content to replace Caret Icon         |
+| Name        | Description                       |
+|-------------|-----------------------------------|
+| `default`   | Accordion item content            |
+| `activator` | Content to replace Item Activator |
+| `default`   | Content to replace Item Title     |
+| `caret`     | Content to replace Caret Icon     |
 
 ### Events `<p-accordion-item>`
 

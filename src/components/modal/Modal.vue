@@ -43,7 +43,9 @@
               data-testid="modal-header"
               class="modal__header"
               :class="headerClass">
-              <slot name="header">
+              <slot
+                name="header"
+                :close="close">
                 <Heading
                   v-if="title"
                   class="modal__title"
@@ -78,7 +80,9 @@
                     data-testid="modal-full-header"
                     class="modal--full__header__title"
                     :class="headerClass">
-                    <slot name="header">
+                    <slot
+                      name="header"
+                      :close="close">
                       <Heading
                         v-if="title"
                         class="modal__title"
@@ -89,12 +93,16 @@
                   </div>
                 </div><!-- /header -->
                 <div :class="bodyClass">
-                  <slot name="body">
+                  <slot
+                    name="body"
+                    :close="close">
                     {{ text }}
                   </slot>
                 </div><!-- /body -->
               </div><!-- /content -->
-              <slot v-else>
+              <slot
+                v-else
+                :close="close">
                 {{ text }}
               </slot>
             </div>
@@ -247,21 +255,23 @@ const classNames = computed(() => {
   return result
 })
 
-function close (event: Event): void {
+function close (): void {
+  const event = new CustomEvent('close')
+
   emit('close', event)
 
   if (!event.defaultPrevented)
     model.value = false
 }
 
-function closeOnBackdrop (event: Event): void {
+function closeOnBackdrop (): void {
   if (!props.noCloseOnBackdrop)
-    close(event)
+    close()
 }
 
-onKeyStroke('Escape', (event) => {
+onKeyStroke('Escape', () => {
   if (!props.noCloseOnEsc)
-    close(event)
+    close()
 }, { eventName: 'keydown' })
 
 watch(model, (value) => {
@@ -272,11 +282,15 @@ watch(model, (value) => {
   }
 })
 
+interface SlotScope {
+  close (): void,
+}
+
 defineSlots<{
-  'header'(): VNode[],
-  'body'(): VNode[],
-  'footer'(): VNode[],
-  'default'(): VNode[],
+  'header'(props: SlotScope): VNode[],
+  'body'(props: SlotScope): VNode[],
+  'footer'(props: SlotScope): VNode[],
+  'default'(props: SlotScope): VNode[],
 }>()
 </script>
 

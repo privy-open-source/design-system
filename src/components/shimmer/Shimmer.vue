@@ -1,5 +1,6 @@
 <template>
   <svg
+    v-bind-once:data-uid="uid"
     role="img"
     class="shimmer"
     :class="{ 'shimmer--responsive': responsive }"
@@ -12,14 +13,14 @@
     xmlns="http://www.w3.org/2000/svg">
     <title id="loading-aria">Loading...</title>
     <rect
+      v-bind-once:clip-path="`url(#clip-path-${uid})`"
+      v-bind-once:fill="`url(#fill-${uid})`"
       x="0"
       y="0"
       width="100%"
-      height="100%"
-      :clip-path="`url(#clip-path-${uid})`"
-      :style="{ fill: `url('#fill-${uid}')` }" />
+      height="100%" />
     <defs>
-      <clipPath :id="`clip-path-${uid}`">
+      <clipPath v-bind-once:id="`clip-path-${uid}`">
         <slot>
           <rect
             x="0"
@@ -30,7 +31,7 @@
             height="100%" />
         </slot>
       </clipPath>
-      <linearGradient :id="`fill-${uid}`">
+      <linearGradient v-bind-once:id="`fill-${uid}`">
         <stop
           offset=".6"
           class="shimmer__fg"
@@ -70,11 +71,9 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  computed,
-  getCurrentInstance,
-  defineProps,
-} from 'vue-demi'
+import { defineProps } from 'vue-demi'
+import { vBindOnce } from '.'
+import { uniqueId } from 'lodash-es'
 
 defineProps({
   width: {
@@ -91,8 +90,7 @@ defineProps({
   },
 })
 
-const instance = getCurrentInstance()
-const uid      = computed(() => instance?.uid)
+const uid = uniqueId('shimmer')
 </script>
 
 <style lang="postcss">

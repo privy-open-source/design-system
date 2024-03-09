@@ -4,13 +4,8 @@
  * https://github.com/vuejs/rfcs/discussions/585
  */
 import type { PropType } from 'vue-demi'
-import {
-  defineComponent,
-  h,
-  mergeProps,
-} from 'vue-demi'
+import { defineComponent, h } from 'vue-demi'
 import { findAllChildren } from '../utils/vnode'
-import pAccordionItem from './AccordionItem.vue'
 
 export default defineComponent({
   props: {
@@ -55,13 +50,13 @@ export default defineComponent({
           ? props.modelValue.includes(i)
           : props.modelValue === i
 
-        return h(pAccordionItem, mergeProps(item.props, {
+        return h(item, {
           'noCaret'            : item.props.noCaret ?? props.noCaret,
           'modelValue'         : isExpand,
           'onUpdate:modelValue': (value: boolean) => {
             setValue(value, i)
           },
-        }), item.children)
+        })
       })
     }
   },

@@ -13,7 +13,7 @@ export function usePreview (file: MaybeRef<string | globalThis.File>, fallback =
   watchEffect((onCleanup) => {
     const value = unref(file)
 
-    if (value instanceof globalThis.File) {
+    if (typeof window !== 'undefined' && value instanceof globalThis.File) {
       const url = window.URL.createObjectURL(value)
 
       onCleanup(() => {
@@ -22,7 +22,7 @@ export function usePreview (file: MaybeRef<string | globalThis.File>, fallback =
 
       preview.value = url
     } else
-      preview.value = value ?? fallback
+      preview.value = (typeof value === 'string' && value) ? value : fallback
   })
 
   return preview

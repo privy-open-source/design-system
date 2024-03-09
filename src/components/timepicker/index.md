@@ -8,14 +8,14 @@ description: Base button component
   import pToggle from '../toggle/Toggle.vue'
   import pButton from '../button/Button.vue'
   import { ref, watch } from "vue-demi"
-  import { startOfDay, addDays, set, addHours } from 'date-fns'
+  import { startOfDay, set } from 'date-fns'
 
   const minTime = ref(set(new Date(), { hours: 1, minutes: 0 }))
   const maxTime = ref(set(new Date(), { hours: 17, minutes: 30 }))
 
-  const is12Hour = ref(true)
-  const model = ref(new Date())
-  const model2 = ref(new Date())
+  const is12Hour  = ref(true)
+  const model     = ref(new Date())
+  const model2    = ref(new Date())
   const timeModel = ref({
     hh: '01',
     mm: '30'
@@ -238,7 +238,7 @@ const model = ref(new Date())
 ### Props
 
 | Props             | Type                  | Default  | Description                                                                                           |
-| ----------------- | --------------------- | -------- | ----------------------------------------------------------------------------------------------------- |
+|-------------------|-----------------------|----------|-------------------------------------------------------------------------------------------------------|
 | `modelValue`      | `Date` or `TimeModel` | `-`      | `v-model` value accept `Date` and `TimeModel` object which have default value is current start of day |
 | `size`            | `String`              | `md`     | Input size variant, valid value: `xs`, `sm`, `md`, `lg`                                               |
 | `placeholder`     | `String`              | `-`      | Input placeholder                                                                                     |
@@ -257,21 +257,21 @@ const model = ref(new Date())
 ### Slots
 
 | Name     | Description                |
-| -------- | -------------------------- |
+|----------|----------------------------|
 | `footer` | Content to place at footer |
 
 `footer` slot contains scoped slots
 
 | Scoped    | Type       | Default | Description                    |
-| --------- | ---------- | ------- | ------------------------------ |
+|-----------|------------|---------|--------------------------------|
 | `confirm` | `Function` | `-`     | Hook to update `v-model` value |
 | `close`   | `Function` | `-`     | Hook to close dropdown menu    |
 
 ### Events
 
-| Name      | Arguments     | Description                                                                                                                                                                               |
-| --------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `context` | `TimeContext` | Event when `confirm` hook is triggered. `TimeContext` contains property `time` formatted as 24-hour or 12-hour, `date` is `Date` object, and `dateISO` formatted as standard ISO string   |
+| Name      | Arguments     | Description                                                                                                                                                                             |
+|-----------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `context` | `TimeContext` | Event when `confirm` hook is triggered. `TimeContext` contains property `time` formatted as 24-hour or 12-hour, `date` is `Date` object, and `dateISO` formatted as standard ISO string |
 
 ## See Also
 

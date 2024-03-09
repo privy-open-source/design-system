@@ -58,7 +58,9 @@
 <script lang="ts" setup>
 import { useVModel } from '../input'
 import type {
-  VNode, PropType, Component,
+  VNode,
+  PropType,
+  Component,
 } from 'vue-demi'
 import {
   computed,

@@ -159,7 +159,7 @@ const result = ref('')
 | `width`      | `Number` |         `430`          | Image's width                                       |
 | `height`     | `Number` |         `230`          | Image's width                                       |
 | `text`       | `String` |          `-`           | Image's text                                        |
-| `maxlimit`   | `Number` |          `2`           | Maximal word to be generated                        |
+| `maxwords`   | `Number` |          `2`           | Maximal word to be generated                        |
 | `maxlength`  | `Number` |          `50`          | Maximal text length                                 |
 | `font`       | `String` | `Herr Von Muellerhoff` | Text font, imported from [Google Font][google-font] |
 | `color`      | `String` |       `#000000`        | Text color                                          |

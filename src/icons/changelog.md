@@ -12,6 +12,10 @@
 
 > Icons changelog
 
+## 1.0.0-rc.3
+
+Nothing Changed
+
 ## 1.0.0-rc.2
 
 ### Added

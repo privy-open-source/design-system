@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "packageManager": "yarn@4.1.1",
   "private": true,
   "type": "module",
@@ -115,8 +115,5 @@
   },
   "workspaces": [
     "packages/*"
-  ],
-  "resolutions": {
-    "@vue/runtime-core": "3.4.21"
-  }
+  ]
 }

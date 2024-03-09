@@ -117,6 +117,7 @@ import PdfObjects from '../pdf-object/PdfObjects.vue'
 import { useViewer } from './utils/use-viewer'
 import type { PDFViewer } from 'pdfjs-dist/web/pdf_viewer'
 import type { PDFDocumentProxy } from 'pdfjs-dist'
+import type { OpenDocConfig } from './utils/use-viewer'
 
 const props = defineProps({
   src: {
@@ -146,6 +147,10 @@ const props = defineProps({
   offsetTop: {
     type   : [Number, String],
     default: 0,
+  },
+  config: {
+    type   : [Object] as PropType<OpenDocConfig>,
+    default: () => ({}),
   },
 })
 
@@ -193,7 +198,7 @@ const {
 } = useViewer(container, viewer)
 
 watchDebounced(() => [props.src, props.password], ([src, password]) => {
-  openDoc(src, password)
+  openDoc(src, password, props.config)
 }, { debounce: 500 })
 
 watch(() => props.layout, (layout) => {
@@ -202,7 +207,7 @@ watch(() => props.layout, (layout) => {
 
 onMounted(async () => {
   if (props.src)
-    openDoc(props.src, props.password)
+    openDoc(props.src, props.password, props.config)
 })
 
 onLoaded((doc) => {
@@ -252,6 +257,10 @@ syncRef(pdfScale, vScale)
 defineExpose({
   page : pdfPage,
   scale: pdfScale,
+  root,
+  container,
+  viewer,
+  loading,
   totalPage,
   zoomIn,
   zoomOut,

@@ -33,8 +33,7 @@ it('should load document from src url', async () => {
   await delay(2)
 
   expect(viewer).toBeInTheDocument()
-  // eslint-disable-next-line unicorn/no-useless-undefined
-  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', undefined)
+  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', undefined, {})
 })
 
 it('should load document with password if prop password given', async () => {
@@ -53,7 +52,7 @@ it('should load document with password if prop password given', async () => {
   await delay(2)
 
   expect(viewer).toBeInTheDocument()
-  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', '123456')
+  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', '123456', {})
 })
 
 it('should have style layout fit if prop `layout` set to "fit"', () => {
@@ -86,21 +85,21 @@ it('should reload document if src changed', async () => {
   vi.advanceTimersByTime(2)
 
   expect(viewer).toBeInTheDocument()
-  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', '')
+  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', '', {})
 
   src.value = 'http://sample-3.pdf'
   await nextTick()
 
   vi.advanceTimersByTime(502) // skip debounce
 
-  expect(useViewer.openDoc).lastCalledWith('http://sample-3.pdf', '')
+  expect(useViewer.openDoc).lastCalledWith('http://sample-3.pdf', '', {})
 
   password.value = '123456'
   await nextTick()
 
   vi.advanceTimersByTime(502) // skip debounce
 
-  expect(useViewer.openDoc).lastCalledWith('http://sample-3.pdf', '123456')
+  expect(useViewer.openDoc).lastCalledWith('http://sample-3.pdf', '123456', {})
 
   vi.useRealTimers()
 })
@@ -144,6 +143,22 @@ it('should emit error-password when document is protected but no password provid
   expect(errorPage).toBeInTheDocument()
   expect(errorPage).toBeVisible()
   expect(onErrorPassword).toBeCalled()
+})
+
+it('should able to pass option when open document using props `config`', async () => {
+  const screen = render({
+    components: { PdfViewer },
+    template  : `<pdf-viewer
+      :config="{ disableStream: true, disableRange: true }"
+      src="http://sample.pdf" />`,
+  })
+
+  const viewer = screen.queryByTestId('pdf-viewer')
+
+  await delay(2)
+
+  expect(viewer).toBeInTheDocument()
+  expect(useViewer.openDoc).lastCalledWith('http://sample.pdf', undefined, { disableStream: true, disableRange: true })
 })
 
 it('should expose navigation in slot', async () => {
