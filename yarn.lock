@@ -1146,29 +1146,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/cascade-layer-name-parser@npm:^1.0.8":
-  version: 1.0.8
-  resolution: "@csstools/cascade-layer-name-parser@npm:1.0.8"
+"@csstools/cascade-layer-name-parser@npm:^1.0.9":
+  version: 1.0.9
+  resolution: "@csstools/cascade-layer-name-parser@npm:1.0.9"
   peerDependencies:
-    "@csstools/css-parser-algorithms": ^2.6.0
-    "@csstools/css-tokenizer": ^2.2.3
-  checksum: 10/7102fa11c380a08061472249d3f8690b5bc3f21d7465c4cb06802a5018044561c85cc17088799c89aad82f64028f461ee905c3bfee0f0a28fd3882672017c877
+    "@csstools/css-parser-algorithms": ^2.6.1
+    "@csstools/css-tokenizer": ^2.2.4
+  checksum: 10/75eabf9e3707085ca38ec56869d8872156b250aae81d9e76c75ecca47264531963f918787acf8cf58f6ad32967d2151939a749e601579c34d23f06e5a60fc6d4
   languageName: node
   linkType: hard
 
-"@csstools/css-parser-algorithms@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "@csstools/css-parser-algorithms@npm:2.6.0"
+"@csstools/css-parser-algorithms@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "@csstools/css-parser-algorithms@npm:2.6.1"
   peerDependencies:
-    "@csstools/css-tokenizer": ^2.2.3
-  checksum: 10/f8131e6c0e87879c9c6c608e809fba2e2a2e4e7f958c362f3b3e59f0856bbc1d95ba766782e708009af69ddc1470773ae59f0e1246ba8baa7a0c209a75b0e8b5
+    "@csstools/css-tokenizer": ^2.2.4
+  checksum: 10/4ad4778525a92240c87ba063f3415216b36b81c45bbfcf69a4c82aab140e8943c269ef353ad6ac31de0950b776d972feb622df76b66180b402cba50951d0d58c
   languageName: node
   linkType: hard
 
-"@csstools/css-tokenizer@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "@csstools/css-tokenizer@npm:2.2.3"
-  checksum: 10/cf0c191cd6a9cdc0e85dd2a0472bd6c3ff394d31752dd6ee1e1bb21a35ad9fe116835ef9a804e7b8f3cf7845581bf01f975a6371200fe6f469b1971011459b52
+"@csstools/css-tokenizer@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "@csstools/css-tokenizer@npm:2.2.4"
+  checksum: 10/13cc71a8ebc3ff81c49a459e57e1a94031969b70ce0e582bc949fa4f2d97900c07319866b080c57020896e4f5bee0968cc14f7bf41e7f105eb1c04a6c7bc33c4
   languageName: node
   linkType: hard
 
@@ -15271,17 +15271,17 @@ __metadata:
   linkType: hard
 
 "postcss-custom-properties@npm:^13.0.0, postcss-custom-properties@npm:^13.3.4":
-  version: 13.3.5
-  resolution: "postcss-custom-properties@npm:13.3.5"
+  version: 13.3.6
+  resolution: "postcss-custom-properties@npm:13.3.6"
   dependencies:
-    "@csstools/cascade-layer-name-parser": "npm:^1.0.8"
-    "@csstools/css-parser-algorithms": "npm:^2.6.0"
-    "@csstools/css-tokenizer": "npm:^2.2.3"
+    "@csstools/cascade-layer-name-parser": "npm:^1.0.9"
+    "@csstools/css-parser-algorithms": "npm:^2.6.1"
+    "@csstools/css-tokenizer": "npm:^2.2.4"
     "@csstools/utilities": "npm:^1.0.0"
     postcss-value-parser: "npm:^4.2.0"
   peerDependencies:
     postcss: ^8.4
-  checksum: 10/04873044d63d0f40a1521b9969e66620cd2a1f3f7b572a714e6adadc61185de5b467de4988faaa482e6ba82a9728ff2a09f71fca5384858758c6baa485e58eb0
+  checksum: 10/a8bbdcb1ee482084abb7835dfb93a6227bbd5e1fc24a977baef0f1296205eaca9e4ac16aa33564038b41e548dfe412f9d39f78bdef5682b83cd926719850753d
   languageName: node
   linkType: hard
 
