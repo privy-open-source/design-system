@@ -374,6 +374,8 @@ defineExpose({
   fit,
   canvas,
   image,
+  angle,
+  scale,
 })
 
 defineSlots<{
