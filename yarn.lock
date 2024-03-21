@@ -2218,14 +2218,14 @@ __metadata:
   linkType: hard
 
 "@jill64/universal-sanitizer@npm:^1.0.2":
-  version: 1.2.3
-  resolution: "@jill64/universal-sanitizer@npm:1.2.3"
+  version: 1.2.5
+  resolution: "@jill64/universal-sanitizer@npm:1.2.5"
   dependencies:
     "@types/dompurify": "npm:3.0.5"
     "@types/sanitize-html": "npm:2.11.0"
-    dompurify: "npm:3.0.9"
+    dompurify: "npm:3.0.10"
     sanitize-html: "npm:2.12.1"
-  checksum: 10/abffcdd22b7355e22c0a7fe8591b505521e14ff39dd4018f18798fa86d8d8f30e1d8a740e70240cd3df9b17ff55cc29ea10a064189d0fa751be2cf0cd5950f0a
+  checksum: 10/f0cf2b3910cb67d54f3dbcbb96bff7901a375bfc023aba80b22f68d0078a748bf140b8c183ab7548bf3f787f0a8cd5134f33186df44ff88c38f5ea10ebd1e976
   languageName: node
   linkType: hard
 
@@ -7924,10 +7924,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:3.0.9":
-  version: 3.0.9
-  resolution: "dompurify@npm:3.0.9"
-  checksum: 10/cfb8ed92672e7ddfa43a9ce5bfcd4b3c91287454402672da930b0ecfc8c86d0d2133116607e6c7c77a07ddd8c6baec6d11fa07d9fddebd8701572e3cace2ecea
+"dompurify@npm:3.0.10":
+  version: 3.0.10
+  resolution: "dompurify@npm:3.0.10"
+  checksum: 10/ecb3e3783bc6b022ea1c7ff126b42b08062e33e752504abcf6ae120ecb0354efdcac7ea1216ab47c5a4d726150fb742c752f2280489f6dbaacec61be8fd6731a
   languageName: node
   linkType: hard
 
