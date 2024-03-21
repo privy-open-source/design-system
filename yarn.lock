@@ -2661,7 +2661,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.10.3, @nuxt/kit@npm:^3.4.3, @nuxt/kit@npm:^3.8.2, @nuxt/kit@npm:^3.9.1, @nuxt/kit@npm:^3.9.3":
+"@nuxt/kit@npm:3.10.3":
   version: 3.10.3
   resolution: "@nuxt/kit@npm:3.10.3"
   dependencies:
@@ -2684,6 +2684,32 @@ __metadata:
     unimport: "npm:^3.7.1"
     untyped: "npm:^1.4.2"
   checksum: 10/07ee8720a9a97570733fb928c514272b0fb1067a8ff6f3d8a06e4f29cec3ed16fddca96e607b9e39a0cb69a8fe665bd234c7b3bade63c4be69b3b7f876a67ed7
+  languageName: node
+  linkType: hard
+
+"@nuxt/kit@npm:^3.4.3, @nuxt/kit@npm:^3.8.2, @nuxt/kit@npm:^3.9.1, @nuxt/kit@npm:^3.9.3":
+  version: 3.11.1
+  resolution: "@nuxt/kit@npm:3.11.1"
+  dependencies:
+    "@nuxt/schema": "npm:3.11.1"
+    c12: "npm:^1.10.0"
+    consola: "npm:^3.2.3"
+    defu: "npm:^6.1.4"
+    globby: "npm:^14.0.1"
+    hash-sum: "npm:^2.0.0"
+    ignore: "npm:^5.3.1"
+    jiti: "npm:^1.21.0"
+    knitwork: "npm:^1.0.0"
+    mlly: "npm:^1.6.1"
+    pathe: "npm:^1.1.2"
+    pkg-types: "npm:^1.0.3"
+    scule: "npm:^1.3.0"
+    semver: "npm:^7.6.0"
+    ufo: "npm:^1.5.2"
+    unctx: "npm:^2.3.1"
+    unimport: "npm:^3.7.1"
+    untyped: "npm:^1.4.2"
+  checksum: 10/9b87d90fd52820fc399ac8731bba7c538d4cd9ae08a6c2f6185db6acd61a59ac1ad79cccbf971256c5205e82e54c13007d4310b566e42cf687e69866c3c13c79
   languageName: node
   linkType: hard
 
@@ -2722,6 +2748,25 @@ __metadata:
     unimport: "npm:^3.7.1"
     untyped: "npm:^1.4.2"
   checksum: 10/8cbc0024f260f93d2d3b1ab17669aab9ad0b2fdbfa172cae105684ebdcbe0e08a5ff0b8fd0ecdf5daa93b3b3cdf034dfc21cc98ffc92466396962d8fd00cb025
+  languageName: node
+  linkType: hard
+
+"@nuxt/schema@npm:3.11.1":
+  version: 3.11.1
+  resolution: "@nuxt/schema@npm:3.11.1"
+  dependencies:
+    "@nuxt/ui-templates": "npm:^1.3.1"
+    consola: "npm:^3.2.3"
+    defu: "npm:^6.1.4"
+    hookable: "npm:^5.5.3"
+    pathe: "npm:^1.1.2"
+    pkg-types: "npm:^1.0.3"
+    scule: "npm:^1.3.0"
+    std-env: "npm:^3.7.0"
+    ufo: "npm:^1.5.2"
+    unimport: "npm:^3.7.1"
+    untyped: "npm:^1.4.2"
+  checksum: 10/d57c8f0890a63b8901f6a00ae4152891834a5651fec3f9ce4979e8bbb848f88a27795a7b8a351ccbfc7191e8ae44106589bb6f39207530babf1e4d1bb73d1627
   languageName: node
   linkType: hard
 
@@ -6304,6 +6349,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"c12@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "c12@npm:1.10.0"
+  dependencies:
+    chokidar: "npm:^3.6.0"
+    confbox: "npm:^0.1.3"
+    defu: "npm:^6.1.4"
+    dotenv: "npm:^16.4.5"
+    giget: "npm:^1.2.1"
+    jiti: "npm:^1.21.0"
+    mlly: "npm:^1.6.1"
+    ohash: "npm:^1.1.3"
+    pathe: "npm:^1.1.2"
+    perfect-debounce: "npm:^1.0.0"
+    pkg-types: "npm:^1.0.3"
+    rc9: "npm:^2.1.1"
+  checksum: 10/e592593fe3fb48c63ecae6a711045fae11904d1a50c5c7ff2920528e398a15e695d791f962662c51c6dcd3add8404b45a89ce9f305c4a029deef0bbd89466768
+  languageName: node
+  linkType: hard
+
 "c12@npm:^1.5.1":
   version: 1.5.1
   resolution: "c12@npm:1.5.1"
@@ -7951,7 +8016,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.3, dotenv@npm:^16.3.1, dotenv@npm:^16.3.2":
+"dotenv@npm:^16.0.3, dotenv@npm:^16.3.1, dotenv@npm:^16.3.2, dotenv@npm:^16.4.5":
   version: 16.4.5
   resolution: "dotenv@npm:16.4.5"
   checksum: 10/55a3134601115194ae0f924e54473459ed0d9fc340ae610b676e248cca45aa7c680d86365318ea964e6da4e2ea80c4514c1adab5adb43d6867fb57ff068f95c8
@@ -13636,7 +13701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mlly@npm:^1.6.0":
+"mlly@npm:^1.6.0, mlly@npm:^1.6.1":
   version: 1.6.1
   resolution: "mlly@npm:1.6.1"
   dependencies:
@@ -18492,6 +18557,13 @@ __metadata:
   version: 1.5.2
   resolution: "ufo@npm:1.5.2"
   checksum: 10/3a5cc4ee99971622a4b27bbbf9013728594106d0bdde2779ea34b3155a17a83658152a62af305be79a22040d2cef68d207c0755690a701fdad1e64096fb4620e
+  languageName: node
+  linkType: hard
+
+"ufo@npm:^1.5.2":
+  version: 1.5.3
+  resolution: "ufo@npm:1.5.3"
+  checksum: 10/2b30dddd873c643efecdb58cfe457183cd4d95937ccdacca6942c697b87a2c578232c25a5149fda85436696bf0fdbc213bf2b220874712bc3e58c0fb00a2c950
   languageName: node
   linkType: hard
 
