@@ -51,7 +51,7 @@ export default defineComponent({
           : props.modelValue === i
 
         return h(item, {
-          'noCaret'            : item.props.noCaret ?? props.noCaret,
+          'noCaret'            : item.props?.noCaret ?? props.noCaret,
           'modelValue'         : isExpand,
           'onUpdate:modelValue': (value: boolean) => {
             setValue(value, i)
