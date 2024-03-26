@@ -242,6 +242,7 @@ You can hide close button with `dismissable` set to `false`
 | `variant`           | `String`  | `info`  | Banner variant, valid value is `info`, `danger` |
 | `dismissable`       | `Boolean` | `true`  | Show / Hide dismiss button                      |
 | `backgroundUrl`     | `String`  |    -    | Custom background image of banner               |
+| `backgroundDarkUrl` | `String`  |    -    | Custom background image of banner in Dark Mode  |
 | `backgroundOverlay` | `Boolean` | `false` | Activate background overlay of banner           |
 
 ### Slots
