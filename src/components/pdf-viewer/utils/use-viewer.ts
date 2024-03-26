@@ -13,9 +13,8 @@ import type {
   EventBus,
 } from 'pdfjs-dist/web/pdf_viewer'
 import useLoading from '../../overlay/utils/use-loading'
-import { useClamp } from '@vueuse/math'
+import { useClamp, useMax } from '@vueuse/math'
 import { createEventHook } from '@vueuse/core'
-import { type EventHook } from '@vueuse/shared'
 import {
   createEventBus,
   createLinkService,
@@ -38,14 +37,14 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
 
   const totalPage = computed(() => pdfDoc.value?.numPages ?? 0)
   const scale     = useClamp(1, 0.1, 2)
-  const page      = useClamp(1, 1, totalPage)
+  const page      = useClamp(1, 1, useMax(totalPage, 1))
   const loading   = useLoading()
   const ready     = shallowRef(false)
   const error     = shallowRef<Error>()
 
-  const loadEvent: EventHook<PDFJS.PDFDocumentProxy> = createEventHook<PDFJS.PDFDocumentProxy>()
-  const errorEvent: EventHook<Error>                 = createEventHook<Error>()
-  const readyEvent: EventHook<PDFViewer>             = createEventHook<PDFViewer>()
+  const loadEvent  = createEventHook<PDFJS.PDFDocumentProxy>()
+  const errorEvent = createEventHook<Error>()
+  const readyEvent = createEventHook<PDFViewer>()
 
   async function openDoc (url: string, password?: string, config: Partial<OpenDocConfig> = {}) {
     loading.value = true

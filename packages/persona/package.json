@@ -28,7 +28,7 @@
       "import": "./dist/directive/index.mjs",
       "types": "./dist/directive/index.d.ts"
     },
-    "./components/*": "./dist/components/"
+    "./components/": "./dist/components/"
   },
   "typesVersions": {
     "*": {
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "1.6.3",
-    "@jill64/universal-sanitizer": "^1.0.2",
+    "@jill64/universal-sanitizer": "1.2.7",
     "@juggle/resize-observer": "3.4.0",
     "@nuxt/kit": "3.10.3",
     "@splidejs/splide": "4.1.4",
@@ -73,7 +73,7 @@
     "core-js": "3",
     "date-fns": "3.6.0",
     "defu": "6.1.4",
-    "fast-equals": "^5.0.0",
+    "fast-equals": "5.0.1",
     "fuse.js": "7.0.0",
     "interactjs": "1.10.26",
     "lodash-es": "4.17.21",

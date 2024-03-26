@@ -2208,6 +2208,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jill64/universal-sanitizer@npm:1.2.7":
+  version: 1.2.7
+  resolution: "@jill64/universal-sanitizer@npm:1.2.7"
+  dependencies:
+    "@types/dompurify": "npm:3.0.5"
+    "@types/sanitize-html": "npm:2.11.0"
+    dompurify: "npm:3.0.11"
+    sanitize-html: "npm:2.13.0"
+  checksum: 10/c1c3b637126be9265a7ead54172e7ed11991bf302550061ab1d2f36c25a4a562bafa350311fd30a130e8912e00f2dd0cc2c18354922d268ad67663059fd7acf9
+  languageName: node
+  linkType: hard
+
 "@jill64/universal-sanitizer@npm:^1.0.2":
   version: 1.2.5
   resolution: "@jill64/universal-sanitizer@npm:1.2.5"
@@ -3078,6 +3090,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:6.4.2"
     "@testing-library/user-event": "npm:^14.4.3"
     "@testing-library/vue": "npm:8.0.3"
+    "@types/html-escaper": "npm:^3"
     "@types/lodash-es": "npm:4.17.12"
     "@types/marked": "npm:^5.0.1"
     "@types/sanitize-html": "npm:^2"
@@ -3115,6 +3128,7 @@ __metadata:
     fast-equals: "npm:^5.0.0"
     fuse.js: "npm:7.0.0"
     happy-dom: "npm:8.9.0"
+    html-escaper: "npm:^3.0.3"
     husky: "npm:9.0.11"
     interactjs: "npm:1.10.26"
     jest-extended: "npm:4.0.2"
@@ -3122,11 +3136,12 @@ __metadata:
     lodash-es: "npm:4.17.21"
     marked: "npm:^12.0.0"
     nanodelay: "npm:2.0.2"
-    pdfjs-dist: "npm:^3.10.111"
+    pdfjs-dist: "npm:^3.11.174"
     postcss: "npm:8.4.37"
     postcss-hexrgba: "npm:^2.1.0"
     postcss-lighten-darken: "npm:^0.9.0"
     postcss-nested: "npm:6.0.1"
+    qr-code-styling: "npm:^1.6.0-rc.1"
     scroll-into-view: "npm:^1.16.2"
     tabbable: "npm:6.2.0"
     tailwindcss: "npm:3.4.1"
@@ -3196,7 +3211,7 @@ __metadata:
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
     "@floating-ui/dom": "npm:1.6.3"
-    "@jill64/universal-sanitizer": "npm:^1.0.2"
+    "@jill64/universal-sanitizer": "npm:1.2.7"
     "@juggle/resize-observer": "npm:3.4.0"
     "@nuxt/kit": "npm:3.10.3"
     "@nuxt/module-builder": "npm:^0.5.0"
@@ -3217,7 +3232,7 @@ __metadata:
     core-js: "npm:3"
     date-fns: "npm:3.6.0"
     defu: "npm:6.1.4"
-    fast-equals: "npm:^5.0.0"
+    fast-equals: "npm:5.0.1"
     fuse.js: "npm:7.0.0"
     interactjs: "npm:1.10.26"
     lodash-es: "npm:4.17.21"
@@ -4099,6 +4114,13 @@ __metadata:
     "@types/tough-cookie": "npm:*"
     form-data: "npm:^2.5.0"
   checksum: 10/21d300355d0ce460490659763fa761b79d8ca381c0fce3fcc98002ace7e43abe7806aed5905cbf3b1e754aec079afc08417ae489d0a8dc63a430d978b16e04b3
+  languageName: node
+  linkType: hard
+
+"@types/html-escaper@npm:^3":
+  version: 3.0.2
+  resolution: "@types/html-escaper@npm:3.0.2"
+  checksum: 10/bb37bfcb63a1c806d1b238162fa85f5341c51c3efdce5fe8a264e61caba1e3c2b161c213842ff9f62a29c9f87f478af12ffb911928c1c855b06fb6d426f3cfc6
   languageName: node
   linkType: hard
 
@@ -7985,6 +8007,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dompurify@npm:3.0.11":
+  version: 3.0.11
+  resolution: "dompurify@npm:3.0.11"
+  checksum: 10/fc7027ef5cc09ad906625e8aa39b3ca50570fd05aec9fd5995349f0be866385122265c7a823c416694c7bb4c3415e9172cce03b92a153a16c7d1d27165b2a0fd
+  languageName: node
+  linkType: hard
+
 "domutils@npm:^3.0.1":
   version: 3.0.1
   resolution: "domutils@npm:3.0.1"
@@ -9880,7 +9909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-equals@npm:^5.0.0":
+"fast-equals@npm:5.0.1, fast-equals@npm:^5.0.0":
   version: 5.0.1
   resolution: "fast-equals@npm:5.0.1"
   checksum: 10/9dc1ef767903600e5694a89a787782fc3a4f56cc04d235afc13616c848c33563b8f415b1c6a248b2a236424f624aa1a7513f46b7fa69590a640e7784f1296bce
@@ -11180,6 +11209,13 @@ __metadata:
   version: 2.0.2
   resolution: "html-escaper@npm:2.0.2"
   checksum: 10/034d74029dcca544a34fb6135e98d427acd73019796ffc17383eaa3ec2fe1c0471dcbbc8f8ed39e46e86d43ccd753a160631615e4048285e313569609b66d5b7
+  languageName: node
+  linkType: hard
+
+"html-escaper@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "html-escaper@npm:3.0.3"
+  checksum: 10/7795141912bd82f0ece3c65fa329cdf40cd0ea6c1b9c556ac88ff2212e878ddc55b64219709f5fcb252406fe420ae15e5bd5626e36c0215ff1054f9d601ca382
   languageName: node
   linkType: hard
 
@@ -15130,7 +15166,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:3.11.174, pdfjs-dist@npm:^3.10.111":
+"pdfjs-dist@npm:3.11.174, pdfjs-dist@npm:^3.11.174":
   version: 3.11.174
   resolution: "pdfjs-dist@npm:3.11.174"
   dependencies:
@@ -15956,6 +15992,22 @@ __metadata:
   version: 2.1.1
   resolution: "punycode@npm:2.1.1"
   checksum: 10/939daa010c2cacebdb060c40ecb52fef0a739324a66f7fffe0f94353a1ee83e3b455e9032054c4a0c4977b0a28e27086f2171c392832b59a01bd948fd8e20914
+  languageName: node
+  linkType: hard
+
+"qr-code-styling@npm:^1.6.0-rc.1":
+  version: 1.6.0-rc.1
+  resolution: "qr-code-styling@npm:1.6.0-rc.1"
+  dependencies:
+    qrcode-generator: "npm:^1.4.3"
+  checksum: 10/5654e75497eae7123143bd8fc87afae3b03e01b24f7cbd2c08df20e84f412d0ac1309191c89c9590396b8d38ba37ef15ea6461713c7cea0c710f8a2dbdeec892
+  languageName: node
+  linkType: hard
+
+"qrcode-generator@npm:^1.4.3":
+  version: 1.4.4
+  resolution: "qrcode-generator@npm:1.4.4"
+  checksum: 10/65b2bba237d1f230eba0d08ae4267d04f326859c2265775ade99191be1b522158b623fcc0b613bbfc9d4edbbafb928fc41c66d61053b333f2eb0bcedb2ebadca
   languageName: node
   linkType: hard
 
@@ -16799,6 +16851,20 @@ __metadata:
     parse-srcset: "npm:^1.0.2"
     postcss: "npm:^8.3.11"
   checksum: 10/0aef3e56a7fe30983921e070d432167df1aabd9e6e4a78b5de127af275c38b41f8e97f0440b6970cee1875dc003bc5e3c3a588ec7d2c242fca6d8f3327ea8efb
+  languageName: node
+  linkType: hard
+
+"sanitize-html@npm:2.13.0":
+  version: 2.13.0
+  resolution: "sanitize-html@npm:2.13.0"
+  dependencies:
+    deepmerge: "npm:^4.2.2"
+    escape-string-regexp: "npm:^4.0.0"
+    htmlparser2: "npm:^8.0.0"
+    is-plain-object: "npm:^5.0.0"
+    parse-srcset: "npm:^1.0.2"
+    postcss: "npm:^8.3.11"
+  checksum: 10/2805259492c2a5e6fcef5e7edc35a90a8d4bc4e0e844b23117986a8c23ea6345df111595396c3a72960fea01c337ccc4f693699782aea7c52839da3e25b7e23c
   languageName: node
   linkType: hard
 
