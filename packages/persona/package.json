@@ -71,7 +71,7 @@
     "@zxing/library": "0.20.0",
     "chart.js": "4.4.2",
     "core-js": "3",
-    "date-fns": "2.30.0",
+    "date-fns": "3.6.0",
     "defu": "6.1.4",
     "fast-equals": "^5.0.0",
     "fuse.js": "7.0.0",
