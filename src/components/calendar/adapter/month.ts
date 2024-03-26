@@ -4,6 +4,7 @@ import {
   endOfYear,
   isAfter,
   isBefore,
+  isDate,
   isSameMonth,
   isWithinInterval,
   set,
@@ -73,7 +74,7 @@ export default defineAdapter({
   },
 
   setValue (value, lastValue) {
-    return lastValue
+    return isDate(lastValue)
       ? set(lastValue, {
         year : value.getFullYear(),
         month: value.getMonth(),

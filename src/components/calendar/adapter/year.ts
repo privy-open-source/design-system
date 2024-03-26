@@ -3,6 +3,7 @@ import {
   addYears,
   eachYearOfInterval,
   endOfDecade,
+  isDate,
   isAfter,
   isBefore,
   isSameYear,
@@ -73,7 +74,7 @@ export default defineAdapter({
   },
 
   setValue (value, lastValue) {
-    return lastValue
+    return isDate(lastValue)
       ? set(lastValue, { year: value.getFullYear() })
       : value
   },
