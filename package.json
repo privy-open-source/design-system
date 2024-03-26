@@ -47,7 +47,7 @@
     "@vitest/browser": "^0.25.3",
     "@vitest/coverage-c8": "0.24.5",
     "@vue/eslint-config-typescript": "13.0.0",
-    "autoprefixer": "10.4.18",
+    "autoprefixer": "10.4.19",
     "browserslist-to-esbuild": "^2.0.0",
     "eslint": "8.57.0",
     "eslint-config-standard-with-typescript": "~21.0.1",
@@ -65,14 +65,14 @@
     "jest-extended": "4.0.2",
     "lint-staged": "15.2.2",
     "nanodelay": "2.0.2",
-    "postcss": "8.4.37",
+    "postcss": "8.4.38",
     "postcss-nested": "6.0.1",
     "tailwindcss": "3.4.1",
-    "typescript": "5.4.2",
+    "typescript": "5.4.3",
     "ufo": "^1.0.1",
-    "vitepress": "1.0.0-rc.45",
+    "vitepress": "1.0.1",
     "vitest": "0.24.5",
-    "vue-tsc": "2.0.6"
+    "vue-tsc": "2.0.7"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
