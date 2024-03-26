@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.4.3",
-    "path-intersection": "^2.2.1"
+    "path-intersection": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"

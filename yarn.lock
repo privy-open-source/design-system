@@ -3147,7 +3147,7 @@ __metadata:
     ohash: "npm:^1.1.2"
     ora: "npm:^8.0.0"
     p-all: "npm:^5.0.0"
-    path-intersection: "npm:^2.2.1"
+    path-intersection: "npm:^3.0.0"
     svg-path-commander: "npm:^2.0.5"
     svgo: "npm:^3.0.2"
     webfont: "npm:^11.2.26"
@@ -14852,10 +14852,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-intersection@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "path-intersection@npm:2.2.1"
-  checksum: 10/9016c2f8250771b373e94edb8b31bc7fa7b63eed3ca983dc564853a706c217d1713eefc107e3aab07368e303c0566dba287fba35288353d9d02dc806f7031967
+"path-intersection@npm:^3.0.0":
+  version: 3.1.0
+  resolution: "path-intersection@npm:3.1.0"
+  checksum: 10/c5f62acb6a1ca14c0809270382cb72ea3224dcec4b6a70eac281dc44d1a84044f68135be3f4a8a046abace7c84b544db91eb301201dc0febd3b6e8cb44358b22
   languageName: node
   linkType: hard
 
