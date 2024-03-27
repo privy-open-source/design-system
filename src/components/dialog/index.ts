@@ -6,7 +6,11 @@ import type {
   StyleVariant as FooterButtonStyleVariant,
   ColorVariant as FooterButtonColorVariant,
 } from '../button'
-import type { VNode } from 'vue-demi'
+import type {
+  VNode,
+  Component,
+  HTMLAttributes,
+} from 'vue-demi'
 import {
   ref,
   h,
@@ -31,6 +35,9 @@ interface DialogButton {
 
 export interface DialogOptions {
   title: string,
+  icon?: string | Component,
+  iconClass?: HTMLAttributes['class'],
+  iconAttrs?: AdditionalAttr,
   text?: string,
   size?: SizeVariant,
   centered?: boolean,

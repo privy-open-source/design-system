@@ -1,5 +1,4 @@
-import id from 'date-fns/locale/id/index'
-import en from 'date-fns/locale/en-US/index'
+import { id, enUS as en } from 'date-fns/locale'
 import { getLang } from '../global/store'
 import type { Locale } from 'date-fns'
 import { format } from 'date-fns'

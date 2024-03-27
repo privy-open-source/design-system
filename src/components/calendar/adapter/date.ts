@@ -12,6 +12,7 @@ import {
   isBefore,
   isWithinInterval,
   set,
+  isDate,
 } from 'date-fns'
 import type { CalendarItem } from './adapter'
 import { defineAdapter } from './adapter'
@@ -93,7 +94,7 @@ export default defineAdapter({
   },
 
   setValue (value, lastValue) {
-    return lastValue
+    return isDate(lastValue)
       ? set(lastValue, {
         year : value.getFullYear(),
         month: value.getMonth(),

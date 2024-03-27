@@ -14,7 +14,6 @@ import {
   ref,
   computed,
   onMounted,
-  watch,
 } from 'vue-demi'
 import { useVModel } from '../input'
 import { createSpinner } from '../avatar/utils/create-image'
@@ -23,6 +22,7 @@ import generate from './utils/generate-text'
 import { usePreview } from '../cropper'
 import type { ModelModifier } from '../dropzone'
 import { fromBase64 } from '../utils/base64'
+import { watchDebounced } from '@vueuse/core'
 
 const props = defineProps({
   modelValue: {
@@ -93,7 +93,7 @@ const name = computed(() => {
   )
 })
 
-watch(() => [
+watchDebounced(() => [
   props.text,
   props.font,
   props.color,
@@ -103,7 +103,7 @@ watch(() => [
   props.maxlength,
 ], () => {
   load()
-})
+}, { debounce: 300 })
 
 onMounted(() => {
   load()

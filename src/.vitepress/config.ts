@@ -172,6 +172,10 @@ export default defineConfig({
               link: '/components/progressbar/',
             },
             {
+              text: 'Qrcode',
+              link: '/components/qrcode/',
+            },
+            {
               text: 'Ringbar',
               link: '/components/ringbar/',
             },

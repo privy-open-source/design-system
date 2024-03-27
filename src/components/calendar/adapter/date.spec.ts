@@ -5,7 +5,7 @@ import { initStore, setLang } from '../../global/store'
 import {
   minTime as MIN_TIME,
   maxTime as MAX_TIME,
-} from 'date-fns'
+} from 'date-fns/constants'
 
 export function createMockContext (
   minDate?: Date,

@@ -23,7 +23,6 @@ import {
 import { kebabCase, chunk } from 'lodash-es'
 import type { Config } from 'svgo'
 import { optimize } from 'svgo'
-import download from 'download'
 import ora from 'ora'
 import { ESLint } from 'eslint'
 import type { ObjectData, MetaData } from './types'
@@ -32,6 +31,7 @@ import { createFont } from './create-font'
 import pAll from 'p-all'
 import ohash from 'ohash'
 import minimist from 'minimist'
+import got from 'got'
 
 const argv       = minimist(process.argv.slice(2))
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
@@ -120,31 +120,34 @@ function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData
   const result: Map<string, ObjectData> = new Map()
 
   for (const component of components) {
-    const hash     = ohash.hash(component)
-    const split    = component.containing_frame?.name.split('/') ?? []
-    const names    = split[1].split(',')
-    const variant  = kebabCase(component.containing_frame?.pageName)
-    const category = kebabCase(split[0])
-    const name     = kebabCase(names[0])
-    const aliases  = names.slice(1).map((alias) => kebabCase(alias))
-    const folder   = variant === 'outline' ? name : `${name}-${variant}`
-    const id       = component.node_id
-    const [,size]  = component.name.split('=')
-    const filename = join(folder, size)
-    const filepath = `${filename}.svg`
+    const { size, scale } = Object.fromEntries(component.name.split(',').map((i) => i.trim().split('=')))
 
-    result.set(id, {
-      id,
-      hash,
-      name,
-      folder,
-      variant,
-      category,
-      filename,
-      filepath,
-      aliases,
-      component,
-    })
+    if (!scale || scale === 'false') {
+      const hash     = ohash.hash(component)
+      const split    = component.containing_frame?.name.split('/') ?? []
+      const names    = split[1].split(',')
+      const variant  = kebabCase(component.containing_frame?.pageName)
+      const category = kebabCase(split[0])
+      const name     = kebabCase(names[0])
+      const aliases  = names.slice(1).map((alias) => kebabCase(alias))
+      const folder   = variant === 'outline' ? name : `${name}-${variant}`
+      const id       = component.node_id
+      const filename = join(folder, size)
+      const filepath = `${filename}.svg`
+
+      result.set(id, {
+        id,
+        hash,
+        name,
+        folder,
+        variant,
+        category,
+        filename,
+        filepath,
+        aliases,
+        component,
+      })
+    }
   }
 
   return result
@@ -260,8 +263,8 @@ async function main () {
         if (object && url) {
           spinner.start(`[${count}/${total}] - Downloading ${object.filename}`)
 
-          const buffer = await download(url)
-          const svg    = optimize(buffer.toString(), svgoConfig).data
+          const res = await got(url)
+          const svg = optimize(res.body, svgoConfig).data
 
           await ensureFile(resolve(SVG_DIR, object.filepath))
           await writeFile(resolve(SVG_DIR, object.filepath), svg)

@@ -2182,35 +2182,6 @@
     ]
   },
   {
-    "name": "microsoft",
-    "aliases": [],
-    "category": "brand",
-    "folder": "microsoft",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "microsoft/32",
-        "path": "microsoft/32.svg",
-        "hash": "fd547145fcc64037a8a298a3a97e35ca2ba4adfd50de2f314f0f1c67121f8c56"
-      },
-      {
-        "name": "microsoft/16",
-        "path": "microsoft/16.svg",
-        "hash": "eb9f5b3d3f131203db49970011316083b4d6698b9a859696a0b62494de23cbd6"
-      },
-      {
-        "name": "microsoft/20",
-        "path": "microsoft/20.svg",
-        "hash": "819f38eb63012d5615c1443f49f8788b90bd812a72f6bbc28a844c1bcf3709b3"
-      },
-      {
-        "name": "microsoft/24",
-        "path": "microsoft/24.svg",
-        "hash": "e7506c6269678ad8d5f05645f89dc1e141a38f7cf031303928f4e4891af78e94"
-      }
-    ]
-  },
-  {
     "name": "signature-manage",
     "aliases": [],
     "category": "formatting",
@@ -4899,35 +4870,6 @@
         "name": "money/16",
         "path": "money/16.svg",
         "hash": "f5bebd253e10c43d81b03434b0def3c4cd97d13dd0a21110397c3756dc260728"
-      }
-    ]
-  },
-  {
-    "name": "persona",
-    "aliases": [],
-    "category": "brand",
-    "folder": "persona",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "persona/32",
-        "path": "persona/32.svg",
-        "hash": "2e01bfaa353d9279f1c391f764fd801e71cd1cab1f75df9618dc36147ce699b5"
-      },
-      {
-        "name": "persona/24",
-        "path": "persona/24.svg",
-        "hash": "f4ee1ca0e137f2afd38ed54a1bdd53aaec83b999a8839f65d300176440a2fae1"
-      },
-      {
-        "name": "persona/16",
-        "path": "persona/16.svg",
-        "hash": "5f82917ee4c92b3960b844192e83c4695b097a6b84b63d51fda461955564566d"
-      },
-      {
-        "name": "persona/20",
-        "path": "persona/20.svg",
-        "hash": "537606d887532373b3381e666237b4dc6f05600741029fef0ec5b55105b154ec"
       }
     ]
   },
@@ -9061,35 +9003,6 @@
     ]
   },
   {
-    "name": "need-action",
-    "aliases": [],
-    "category": "files",
-    "folder": "need-action",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "need-action/24",
-        "path": "need-action/24.svg",
-        "hash": "bd94d19dcac1659db73e6a25a59e0042474cb6ce4ba28481eaf8025be399e165"
-      },
-      {
-        "name": "need-action/32",
-        "path": "need-action/32.svg",
-        "hash": "b2c336a445789fcce0a6629c3d4e6cf43e96a89bf3812c2376deb4af3404e92a"
-      },
-      {
-        "name": "need-action/20",
-        "path": "need-action/20.svg",
-        "hash": "3938fd5118a87b8f48592211156d1a116038d5da8afdad02f1518cf68406beaf"
-      },
-      {
-        "name": "need-action/16",
-        "path": "need-action/16.svg",
-        "hash": "f2bc212e1ed132724a68490be1685dc07b63f4e658a32a565d8fa3a40e04dcff"
-      }
-    ]
-  },
-  {
     "name": "smartphone-landscape",
     "aliases": [],
     "category": "technology",
@@ -10009,6 +9922,64 @@
     ]
   },
   {
+    "name": "microsoft",
+    "aliases": [],
+    "category": "brand",
+    "folder": "microsoft",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "microsoft/16",
+        "path": "microsoft/16.svg",
+        "hash": "eb9f5b3d3f131203db49970011316083b4d6698b9a859696a0b62494de23cbd6"
+      },
+      {
+        "name": "microsoft/32",
+        "path": "microsoft/32.svg",
+        "hash": "fd547145fcc64037a8a298a3a97e35ca2ba4adfd50de2f314f0f1c67121f8c56"
+      },
+      {
+        "name": "microsoft/20",
+        "path": "microsoft/20.svg",
+        "hash": "819f38eb63012d5615c1443f49f8788b90bd812a72f6bbc28a844c1bcf3709b3"
+      },
+      {
+        "name": "microsoft/24",
+        "path": "microsoft/24.svg",
+        "hash": "e7506c6269678ad8d5f05645f89dc1e141a38f7cf031303928f4e4891af78e94"
+      }
+    ]
+  },
+  {
+    "name": "persona",
+    "aliases": [],
+    "category": "brand",
+    "folder": "persona",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "persona/16",
+        "path": "persona/16.svg",
+        "hash": "5f82917ee4c92b3960b844192e83c4695b097a6b84b63d51fda461955564566d"
+      },
+      {
+        "name": "persona/20",
+        "path": "persona/20.svg",
+        "hash": "537606d887532373b3381e666237b4dc6f05600741029fef0ec5b55105b154ec"
+      },
+      {
+        "name": "persona/32",
+        "path": "persona/32.svg",
+        "hash": "2e01bfaa353d9279f1c391f764fd801e71cd1cab1f75df9618dc36147ce699b5"
+      },
+      {
+        "name": "persona/24",
+        "path": "persona/24.svg",
+        "hash": "f4ee1ca0e137f2afd38ed54a1bdd53aaec83b999a8839f65d300176440a2fae1"
+      }
+    ]
+  },
+  {
     "name": "preview",
     "aliases": [],
     "category": "actions",
@@ -10034,6 +10005,64 @@
         "name": "preview/24",
         "path": "preview/24.svg",
         "hash": "53c534f21b790f4672ac5ff6f1198ee78cd74f33cbee00f3bca768759f59e3b7"
+      }
+    ]
+  },
+  {
+    "name": "need-action",
+    "aliases": [],
+    "category": "files",
+    "folder": "need-action",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "need-action/24",
+        "path": "need-action/24.svg",
+        "hash": "b6570dcaf3a8e903c36f063012bb61dc892645cb92ce3cdbff8faa92a93d4db5"
+      },
+      {
+        "name": "need-action/32",
+        "path": "need-action/32.svg",
+        "hash": "52ccc1a79fee1b89e1221e3cd55a99945a86cb43fab40c23b7d020f7c3629c77"
+      },
+      {
+        "name": "need-action/20",
+        "path": "need-action/20.svg",
+        "hash": "513e223c4cf4ef66b4f899b7a0ad9d6b48fdd7d3f8a2926c9610778bf9dc2a1c"
+      },
+      {
+        "name": "need-action/16",
+        "path": "need-action/16.svg",
+        "hash": "a6da31c5f7078b370b985f7d1d0790e6b8fd2a2af48cd4116f330de73d3aff40"
+      }
+    ]
+  },
+  {
+    "name": "need-action-alt",
+    "aliases": [],
+    "category": "files",
+    "folder": "need-action-alt",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "need-action-alt/32",
+        "path": "need-action-alt/32.svg",
+        "hash": "b2c336a445789fcce0a6629c3d4e6cf43e96a89bf3812c2376deb4af3404e92a"
+      },
+      {
+        "name": "need-action-alt/16",
+        "path": "need-action-alt/16.svg",
+        "hash": "f2bc212e1ed132724a68490be1685dc07b63f4e658a32a565d8fa3a40e04dcff"
+      },
+      {
+        "name": "need-action-alt/20",
+        "path": "need-action-alt/20.svg",
+        "hash": "3938fd5118a87b8f48592211156d1a116038d5da8afdad02f1518cf68406beaf"
+      },
+      {
+        "name": "need-action-alt/24",
+        "path": "need-action-alt/24.svg",
+        "hash": "bd94d19dcac1659db73e6a25a59e0042474cb6ce4ba28481eaf8025be399e165"
       }
     ]
   },
@@ -10105,6 +10134,16 @@
     "variant": "logo-apps",
     "files": [
       {
+        "name": "message-logo-apps/32",
+        "path": "message-logo-apps/32.svg",
+        "hash": "5f3fade7e1afb8fd3f53b44f0728ea506e6384665036b658148cd5c5fc80638c"
+      },
+      {
+        "name": "message-logo-apps/20",
+        "path": "message-logo-apps/20.svg",
+        "hash": "6441db7afe165bbd1fd9fd07c19843930a473eacf533cfb8ef09d5a836d4bad2"
+      },
+      {
         "name": "message-logo-apps/24",
         "path": "message-logo-apps/24.svg",
         "hash": "c0134d00e2aa0370f1aab7096e2c2954d1477aa776bfa538e14370a2dabc392b"
@@ -10113,16 +10152,6 @@
         "name": "message-logo-apps/16",
         "path": "message-logo-apps/16.svg",
         "hash": "272685ce9fe40f871927a9bad6c7c7fd0879fb61403205c2bb5e594258d01e4b"
-      },
-      {
-        "name": "message-logo-apps/32",
-        "path": "message-logo-apps/32.svg",
-        "hash": "6b7e09253d07595b50ee375086dd580e866c3815af55f28c920c8637791ba346"
-      },
-      {
-        "name": "message-logo-apps/20",
-        "path": "message-logo-apps/20.svg",
-        "hash": "6441db7afe165bbd1fd9fd07c19843930a473eacf533cfb8ef09d5a836d4bad2"
       }
     ]
   }

@@ -102,11 +102,13 @@ import {
   startOfMonth,
   min as minDate,
   max as maxDate,
-  minTime as MIN_TIME,
-  maxTime as MAX_TIME,
   add,
   sub,
 } from 'date-fns'
+import {
+  minTime as MIN_TIME,
+  maxTime as MAX_TIME,
+} from 'date-fns/constants'
 import { syncRef } from '@vueuse/core'
 
 const Adapters: Record<CalendarMode, CalendarAdapter> = {

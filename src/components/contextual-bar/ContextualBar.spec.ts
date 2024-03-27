@@ -145,7 +145,28 @@ it('should be able to add custom background via prop `background-url`', () => {
 
   expect(bar).toBeInTheDocument()
   expect(bar).toHaveClass('contextual-bar--background-image')
-  expect(bar).toHaveStyle({ 'background-image': 'url("assets/images/img-background-contextualbar.svg")' })
+  expect(bar).toHaveStyle({ '--p-contextual-bar-bg-image': 'url("assets/images/img-background-contextualbar.svg")' })
+})
+
+it('should be able to add custom background for dark mode via prop `background-dark-url`', () => {
+  const screen = render({
+    components: { pContextualBar },
+    template  : `
+      <p-contextual-bar
+        title="hey!"
+        background-url="assets/images/img-background-contextualbar.svg"
+        background-dark-url="assets/images/img-background-contextualbar-dark.svg" />
+    `,
+  })
+
+  const bar = screen.queryByTestId('contextual-bar')
+
+  expect(bar).toBeInTheDocument()
+  expect(bar).toHaveClass('contextual-bar--background-image')
+  expect(bar).toHaveStyle({
+    '--p-contextual-bar-bg-image'     : 'url("assets/images/img-background-contextualbar.svg")',
+    '--p-contextual-bar-bg-dark-image': 'url("assets/images/img-background-contextualbar-dark.svg")',
+  })
 })
 
 it('should be able to add icon via slot `icon`', () => {

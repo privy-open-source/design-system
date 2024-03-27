@@ -73,32 +73,11 @@ toast({
 
 ## Position
 
-There available 6 position for toast: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right` default is `bottom-left`
+There available 3 position for toast: `bottom-left`, `bottom-center`, `bottom-right` default is `bottom-left`
 
 **Try it:**
 
 <div class="grid grid-cols-3 gap-3 mt-3">
-  <Button class="items-center" color="info" @click="toast({
-    text    : 'Far far away, behind the word.',
-    position: 'top-left'
-  })">
-    Top Left
-  </Button>
-
-  <Button class="items-center" color="info" @click="toast({
-    text    : 'Far far away, behind the word.',
-    position: 'top-center'
-  })">
-    Top Center
-  </Button>
-
-  <Button class="items-center" color="info" @click="toast({
-    text    : 'Far far away, behind the word.',
-    position: 'top-right'
-  })">
-    Top Right
-  </Button>
-
   <Button class="items-center" color="info" @click="toast({
     text    : 'Far far away, behind the word.',
     position: 'bottom-left'
@@ -123,24 +102,6 @@ There available 6 position for toast: `top-left`, `top-center`, `top-right`, `bo
 
 ```ts
 import { toast } from '@privyid/persona/core'
-
-// top-left
-toast({
-  text    : 'Far far away, behind the word.',
-  position: 'top-left'
-})
-
-// top-center
-toast({
-  text    : 'Far far away, behind the word.',
-  position: 'top-center'
-})
-
-// top-right
-toast({
-  text    : 'Far far away, behind the word.',
-  position: 'top-right'
-})
 
 // bottom-left
 toast({
@@ -325,17 +286,17 @@ toast({
 
 `toast(options: ToastOptions): Promise<ToastInstance>`
 
-| Options       |          Type           |    Default    | Description                                                                                                           |
-|---------------|:-----------------------:|:-------------:|-----------------------------------------------------------------------------------------------------------------------|
-| `text`        |        `String`         |       -       | Toast text message (support markdown)                                                                                 |
-| `position`    |        `String`         | `bottom-left` | Position for toast, valid value is `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `top-right` |
-| `duration`    |        `Number`         |    `3000`     | Duration for which the toast should be displayed. `-1` to permanent toast                                             |
-| `icon`        | `String` or `Component` |       -       | Custom toast icon (will replace default icon)                                                                         |
-| `iconColor`   |        `String`         |       -       | Custom color of toast icon, valid value is `default`, `primary`, `info`, `success`, `warning`, `danger`               |
-| `toastClass`  |        `String`         |       -       | Add class to toast component                                                                                          |
-| `toastAttrs`  |        `String`         |       -       | Add attribute to toast component                                                                           |
-| `dismissable` |        `Boolean`        |    `true`     | Enable dismiss button                                                                                                 |
-| `actions`     |  `Array<ActionOption>`  |       -       | Add action button                                                                                                     |
+| Options       |          Type           |    Default    | Description                                                                                             |
+|---------------|:-----------------------:|:-------------:|---------------------------------------------------------------------------------------------------------|
+| `text`        |        `String`         |       -       | Toast text message (support markdown)                                                                   |
+| `position`    |        `String`         | `bottom-left` | Position for toast, valid value is `bottom-left`, `bottom-center`, `top-right`                          |
+| `duration`    |        `Number`         |    `3000`     | Duration for which the toast should be displayed. `-1` to permanent toast                               |
+| `icon`        | `String` or `Component` |       -       | Custom toast icon (will replace default icon)                                                           |
+| `iconColor`   |        `String`         |       -       | Custom color of toast icon, valid value is `default`, `primary`, `info`, `success`, `warning`, `danger` |
+| `toastClass`  |        `String`         |       -       | Add class to toast component                                                                            |
+| `toastAttrs`  |        `String`         |       -       | Add attribute to toast component                                                                        |
+| `dismissable` |        `Boolean`        |    `true`     | Enable dismiss button                                                                                   |
+| `actions`     |  `Array<ActionOption>`  |       -       | Add action button                                                                                       |
 
 In `actions` contains:
 

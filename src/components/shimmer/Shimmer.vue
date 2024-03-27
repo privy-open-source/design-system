@@ -90,7 +90,7 @@ defineProps({
   },
 })
 
-const uid = uniqueId('shimmer')
+const uid = uniqueId('shimmer-')
 </script>
 
 <style lang="postcss">

@@ -146,7 +146,10 @@ function clear () {
     dropzone.value.clear()
 }
 
-defineExpose({ dropzone })
+defineExpose({
+  dropzone,
+  clear,
+})
 </script>
 
 <style lang="postcss">

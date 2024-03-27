@@ -29,9 +29,6 @@ export default defineNuxtModule<ModuleOptions>({
   async setup (options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
-    // Add alias to unsupported ESM package
-    nuxt.options.alias['date-fns/locale'] = 'date-fns/esm/locale'
-
     // Add font CDN
     if (options.font) {
       nuxt.options.app.head.link?.push(
