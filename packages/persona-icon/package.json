@@ -49,13 +49,12 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.5.0",
-    "@types/download": "^8",
     "@types/fs-extra": "^11",
     "@types/minimist": "^1",
     "dotenv": "^16.0.3",
-    "download": "^8.0.0",
     "figma-api": "^1.11.0",
     "fs-extra": "^11.1.1",
+    "got": "^14.2.1",
     "jiti": "^1.18.2",
     "minimist": "^1.2.8",
     "ohash": "^1.1.2",
@@ -66,8 +65,7 @@
     "webfont": "^11.2.26"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.4.3",
-    "path-intersection": "^2.2.1"
+    "@nuxt/kit": "^3.4.3"
   },
   "publishConfig": {
     "access": "public"
