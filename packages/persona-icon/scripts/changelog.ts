@@ -6,7 +6,7 @@ import { resolve } from 'node:path'
 import { readJSON } from 'fs-extra'
 import { name } from '../package.json'
 import type { MetaData } from './types'
-import got from 'got'
+import { ofetch } from 'ofetch'
 import ohash from 'ohash'
 import minimist from 'minimist'
 import {
@@ -29,12 +29,11 @@ function getFilesData (metadata: MetaData[]): Record<string, CompareMeta> {
 
 async function getMeta (version: string): Promise<MetaData[]> {
   try {
-    if (version === 'local')
-      return await readJSON(META_FILE)
-
-    const response = await got(`https://unpkg.io/${name}@${version}/svg/meta.json`)
-
-    return JSON.parse(response.body)
+    return await (
+      version === 'local'
+        ? readJSON(META_FILE)
+        : ofetch(`https://unpkg.io/${name}@${version}/svg/meta.json`, { responseType: 'json' })
+    )
   } catch {
     return []
   }
