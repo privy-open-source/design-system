@@ -2778,35 +2778,6 @@
     ]
   },
   {
-    "name": "document-external",
-    "aliases": [],
-    "category": "files",
-    "folder": "document-external",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "document-external/32",
-        "path": "document-external/32.svg",
-        "hash": "09c00f3166264cfb5ea42061ceaf8284b7a99eb1a00311f9e3e748b0f03c07c8"
-      },
-      {
-        "name": "document-external/16",
-        "path": "document-external/16.svg",
-        "hash": "1c1691b342c267528256f76655f6bacda882c1b6ed765614a82000f0c5c98edc"
-      },
-      {
-        "name": "document-external/24",
-        "path": "document-external/24.svg",
-        "hash": "9c3276c9dcb8dca178898d29a81017f59ce10555dff8464bac2c5ce57b71df85"
-      },
-      {
-        "name": "document-external/20",
-        "path": "document-external/20.svg",
-        "hash": "9b7cef50df3dfe84c628d4ea0d1d37244bfdfb639eb046e67565a5c922877ea4"
-      }
-    ]
-  },
-  {
     "name": "health-facility",
     "aliases": [],
     "category": "health",
@@ -10152,6 +10123,66 @@
         "name": "message-logo-apps/16",
         "path": "message-logo-apps/16.svg",
         "hash": "272685ce9fe40f871927a9bad6c7c7fd0879fb61403205c2bb5e594258d01e4b"
+      }
+    ]
+  },
+  {
+    "name": "document-external-alt",
+    "aliases": [
+      "document-enterprise"
+    ],
+    "category": "files",
+    "folder": "document-external-alt",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-external-alt/16",
+        "path": "document-external-alt/16.svg",
+        "hash": "1c1691b342c267528256f76655f6bacda882c1b6ed765614a82000f0c5c98edc"
+      },
+      {
+        "name": "document-external-alt/20",
+        "path": "document-external-alt/20.svg",
+        "hash": "9b7cef50df3dfe84c628d4ea0d1d37244bfdfb639eb046e67565a5c922877ea4"
+      },
+      {
+        "name": "document-external-alt/24",
+        "path": "document-external-alt/24.svg",
+        "hash": "9c3276c9dcb8dca178898d29a81017f59ce10555dff8464bac2c5ce57b71df85"
+      },
+      {
+        "name": "document-external-alt/32",
+        "path": "document-external-alt/32.svg",
+        "hash": "df4c437b69325e53134387d1abf66a86b5a24851e410ee4356d7ab864411a803"
+      }
+    ]
+  },
+  {
+    "name": "document-external",
+    "aliases": [],
+    "category": "files",
+    "folder": "document-external",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "document-external/24",
+        "path": "document-external/24.svg",
+        "hash": "c5f42d26813f28392d8485e56de9feba2e7ba35da481be89e622b55993a6f94b"
+      },
+      {
+        "name": "document-external/20",
+        "path": "document-external/20.svg",
+        "hash": "fcdbdb8a45e03dfc58fabfb0b2ab2de977462c3c5e48ee36e89df0c3e35ed866"
+      },
+      {
+        "name": "document-external/32",
+        "path": "document-external/32.svg",
+        "hash": "f38c40abb92570e95d451ff8938c72f75013a9d78f1898df4b17a6703c87d8da"
+      },
+      {
+        "name": "document-external/16",
+        "path": "document-external/16.svg",
+        "hash": "dd9b79340788d436fb2f22ff91740d251b3d11dff6a3ba1d688db5d73f66ae41"
       }
     ]
   }
