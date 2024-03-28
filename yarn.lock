@@ -3027,7 +3027,7 @@ __metadata:
     "@privyid/eslint-config-persona": "workspace:^"
     "@privyid/persona-icon": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
-    "@rushstack/eslint-patch": "npm:1.8.0"
+    "@rushstack/eslint-patch": "npm:1.9.0"
     "@splidejs/splide": "npm:^4.1.4"
     "@testing-library/jest-dom": "npm:6.4.2"
     "@testing-library/user-event": "npm:^14.4.3"
@@ -3715,10 +3715,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:1.8.0":
-  version: 1.8.0
-  resolution: "@rushstack/eslint-patch@npm:1.8.0"
-  checksum: 10/ba51ca4882c224d5ab41bafb913ccee6325e78c1cc00443b4af74195acc0924b1fe5d9503be236433dda497a8b80cf36d1edfeca811312ada57b80e94934fc2a
+"@rushstack/eslint-patch@npm:1.9.0":
+  version: 1.9.0
+  resolution: "@rushstack/eslint-patch@npm:1.9.0"
+  checksum: 10/4f98fa7f29f6c50e5aa4af87eabef89aaad8ca38e4f48a5b41477b71a5a4b355dfd5ae2771840e275c6b38bccd0c37334bed16d6e7f47e5752164384dd3c8183
   languageName: node
   linkType: hard
 
