@@ -2164,13 +2164,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interactjs/types@npm:1.10.26":
-  version: 1.10.26
-  resolution: "@interactjs/types@npm:1.10.26"
-  checksum: 10/76fb5e0718347601a90f090afc7f9df5be65358da16a25c433aa6cff2e28962003a3ca32aa405f759374bfd89f2e564b7a97a6bf9be5d8a30acbb7e57d4fe912
-  languageName: node
-  linkType: hard
-
 "@interactjs/types@npm:1.10.27":
   version: 1.10.27
   resolution: "@interactjs/types@npm:1.10.27"
