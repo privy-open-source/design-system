@@ -31,7 +31,7 @@ import { createFont } from './create-font'
 import pAll from 'p-all'
 import ohash from 'ohash'
 import minimist from 'minimist'
-import got from 'got'
+import { ofetch } from 'ofetch'
 
 const argv       = minimist(process.argv.slice(2))
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
@@ -81,7 +81,7 @@ const svgoConfig: Config = {
                 if (node.attributes.d)
                   node.attributes.d = fixPath(node.attributes.d)
 
-                if (node.attributes.fill !== 'none')
+                if (node.attributes.fill !== 'none' && !node.attributes.fill.startsWith('url'))
                   node.attributes.fill = 'currentColor'
               }
             },
@@ -101,7 +101,22 @@ const svgoConfig: Config = {
       name  : 'preset-default',
       params: { overrides: { removeViewBox: false } },
     },
+    {
+      name  : 'prefixIds',
+      params: {
+        delim           : '_',
+        prefix          : genId,
+        prefixClassNames: false,
+        prefixIds       : true,
+      },
+    },
   ],
+}
+
+let svgoId = 0
+
+function genId () {
+  return (++svgoId).toString(36)
 }
 
 async function getLockData (): Promise<Map<string, ObjectData>> {
@@ -263,8 +278,8 @@ async function main () {
         if (object && url) {
           spinner.start(`[${count}/${total}] - Downloading ${object.filename}`)
 
-          const res = await got(url)
-          const svg = optimize(res.body, svgoConfig).data
+          const res = await ofetch(url, { responseType: 'text', retry: 3 })
+          const svg = optimize(res, svgoConfig).data
 
           await ensureFile(resolve(SVG_DIR, object.filepath))
           await writeFile(resolve(SVG_DIR, object.filepath), svg)
