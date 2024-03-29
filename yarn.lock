@@ -3078,7 +3078,7 @@ __metadata:
     happy-dom: "npm:8.9.0"
     html-escaper: "npm:^3.0.3"
     husky: "npm:9.0.11"
-    interactjs: "npm:1.10.26"
+    interactjs: "npm:1.10.27"
     jest-extended: "npm:4.0.2"
     lint-staged: "npm:15.2.2"
     lodash-es: "npm:4.17.21"
@@ -3203,7 +3203,7 @@ __metadata:
     defu: "npm:6.1.4"
     fast-equals: "npm:5.0.1"
     fuse.js: "npm:7.0.0"
-    interactjs: "npm:1.10.26"
+    interactjs: "npm:1.10.27"
     lodash-es: "npm:4.17.21"
     marked: "npm:12.0.1"
     nanodelay: "npm:2.0.2"
@@ -10890,12 +10890,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"interactjs@npm:1.10.26":
-  version: 1.10.26
-  resolution: "interactjs@npm:1.10.26"
+"interactjs@npm:1.10.27":
+  version: 1.10.27
+  resolution: "interactjs@npm:1.10.27"
   dependencies:
-    "@interactjs/types": "npm:1.10.26"
-  checksum: 10/d94634b1474fa7a5f08b339683c8965c4622029f9659851ae083d654e26d1cda39a45d5312078d71b8917f368050c4baaf3326faba10a20a6baad9c059cc9395
+    "@interactjs/types": "npm:1.10.27"
+  checksum: 10/d92f323ad42617e4831cfb9035cba359ba99ea1df52197587d0c1e814c58b56699bdd357345ab52ed47ea556ab177bc1da75f2e52bd2e572d0a7d72b5c644ff3
   languageName: node
   linkType: hard
 
