@@ -1,7 +1,7 @@
 {
   "name": "@privyid/tailwind-extended",
   "description": "Add missing tailwind utilities",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.4",
   "packageManager": "yarn@4.1.1",
   "license": "MIT",
   "repository": {
