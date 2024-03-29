@@ -52,7 +52,7 @@
   "scripts": {
     "prepack": "yarn build",
     "prepare": "yarn dev:prepare",
-    "build": "nuxt-module-build",
+    "build": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"

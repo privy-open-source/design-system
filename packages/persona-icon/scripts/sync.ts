@@ -278,7 +278,7 @@ async function main () {
         if (object && url) {
           spinner.start(`[${count}/${total}] - Downloading ${object.filename}`)
 
-          const res = await ofetch(url, { responseType: 'text' })
+          const res = await ofetch(url, { responseType: 'text', retry: 3 })
           const svg = optimize(res, svgoConfig).data
 
           await ensureFile(resolve(SVG_DIR, object.filepath))

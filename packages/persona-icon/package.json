@@ -42,13 +42,13 @@
   ],
   "scripts": {
     "prepack": "yarn build",
-    "build": "nuxt-module-build",
+    "build": "nuxt-module-build build",
     "lint": "jiti scripts/lint.ts",
     "sync": "jiti scripts/sync.ts",
     "changelog": "jiti scripts/changelog.ts"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.5.0",
+    "@nuxt/module-builder": "^0.5.5",
     "@types/fs-extra": "^11",
     "@types/minimist": "^1",
     "dotenv": "^16.0.3",
