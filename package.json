@@ -26,7 +26,7 @@
     "icon:changelog": "yarn workspace @privyid/persona-icon changelog"
   },
   "devDependencies": {
-    "@interactjs/types": "1.10.26",
+    "@interactjs/types": "1.10.27",
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/eslint-config-persona": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
