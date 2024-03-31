@@ -105,18 +105,12 @@ const svgoConfig: Config = {
       name  : 'prefixIds',
       params: {
         delim           : '_',
-        prefix          : genId,
+        prefix          : (_, info) => info.path ? ohash.hash(info.path) : '',
         prefixClassNames: false,
         prefixIds       : true,
       },
     },
   ],
-}
-
-let svgoId = 0
-
-function genId () {
-  return (++svgoId).toString(36)
 }
 
 async function getLockData (): Promise<Map<string, ObjectData>> {
@@ -279,7 +273,7 @@ async function main () {
           spinner.start(`[${count}/${total}] - Downloading ${object.filename}`)
 
           const res = await ofetch(url, { responseType: 'text', retry: 3 })
-          const svg = optimize(res, svgoConfig).data
+          const svg = optimize(res, { path: object.filepath, ...svgoConfig }).data
 
           await ensureFile(resolve(SVG_DIR, object.filepath))
           await writeFile(resolve(SVG_DIR, object.filepath), svg)

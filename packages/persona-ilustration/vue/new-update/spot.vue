@@ -5,7 +5,7 @@
     height="150"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 150 150"><g clip-path="url(#10_a)"><g clip-path="url(#11_b)"><rect
+    viewBox="0 0 150 150"><g clip-path="url(#l8uGm3zyJ5_a)"><g clip-path="url(#l8uGm3zyJ5_b)"><rect
       width="125"
       height="125"
       x="12.5"
@@ -134,23 +134,23 @@
                                                 fill-rule="evenodd"
                                                 d="M59.501 75.927a12.98 12.98 0 0 0 9.206 3.811 12.98 12.98 0 0 0 9.205-3.811l18.41-18.403a12.98 12.98 0 0 0-9.205-3.812 12.98 12.98 0 0 0-9.205 3.812 12.98 12.98 0 0 0-9.205-3.812c-7.725 0-12.614 5.806-13.017 13.206a12.97 12.97 0 0 0 3.811 9.009"
                                                 clip-rule="evenodd" /><path
-                                                  fill="url(#12_c)"
+                                                  fill="url(#l8uGm3zyJ5_c)"
                                                   fill-rule="evenodd"
                                                   d="M77.998 57.54a13.03 13.03 0 0 0-9.24-3.828c-7.756 0-12.663 5.83-13.068 13.262a13.03 13.03 0 0 0 3.826 9.046z"
                                                   clip-rule="evenodd" /><path
                                                     fill="#FFC509"
                                                     fill-rule="evenodd"
                                                     d="M33.322 33.652c5.66 0 10.248-4.588 10.248-10.249 0 5.66 4.589 10.249 10.249 10.249-5.66 0-10.249 4.588-10.249 10.249 0-5.66-4.588-10.249-10.248-10.249M105.763 72.148c8.833 0 15.993-7.16 15.993-15.993 0 8.832 7.16 15.992 15.992 15.992-8.832 0-15.992 7.16-15.992 15.993 0-8.832-7.16-15.993-15.993-15.993M25.84 98.389c5.66 0 10.249-4.589 10.249-10.25 0 5.661 4.588 10.25 10.249 10.25-5.66 0-10.249 4.588-10.249 10.248 0-5.66-4.588-10.249-10.249-10.249"
-                                                    clip-rule="evenodd" /></g></g><defs><clipPath id="10_a"><path
+                                                    clip-rule="evenodd" /></g></g><defs><clipPath id="l8uGm3zyJ5_a"><path
                                                       fill="#fff"
-                                                      d="M0 0h150v150H0z" /></clipPath><clipPath id="11_b"><rect
+                                                      d="M0 0h150v150H0z" /></clipPath><clipPath id="l8uGm3zyJ5_b"><rect
                                                         width="125"
                                                         height="125"
                                                         x="12.5"
                                                         y="12.5"
                                                         fill="#fff"
                                                         rx="62.5" /></clipPath><linearGradient
-                                                          id="12_c"
+                                                          id="l8uGm3zyJ5_c"
                                                           x1="64.326"
                                                           x2="77.998"
                                                           y1="61.954"

@@ -5,7 +5,7 @@
     height="300"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 300 300"><g clip-path="url(#78_a)"><g clip-path="url(#79_b)"><rect
+    viewBox="0 0 300 300"><g clip-path="url(#ij7HO2pxfg_a)"><g clip-path="url(#ij7HO2pxfg_b)"><rect
       width="250"
       height="250"
       x="25"
@@ -61,9 +61,9 @@
                                                 cx="98.956"
                                                 cy="24.192"
                                                 r="12.162"
-                                                fill="#A4A1E0" /></g><defs><clipPath id="78_a"><path
+                                                fill="#A4A1E0" /></g><defs><clipPath id="ij7HO2pxfg_a"><path
                                                   fill="#fff"
-                                                  d="M0 0h300v300H0z" /></clipPath><clipPath id="79_b"><rect
+                                                  d="M0 0h300v300H0z" /></clipPath><clipPath id="ij7HO2pxfg_b"><rect
                                                     width="250"
                                                     height="250"
                                                     x="25"

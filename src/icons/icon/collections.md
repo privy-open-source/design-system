@@ -6,17 +6,17 @@ description: List of all icons
 <script setup>
 import Fuse from 'fuse.js'
 import meta from '@privyid/persona-icon/svg/meta.json'
-import pButton from '../components/button/Button.vue'
-import pText from '../components/text/Text.vue'
-import pInput from '../components/input/Input.vue'
-import pTabs from '../components/tabs/Tabs.vue'
-import pTab from '../components/tabs/Tab.vue'
-import pModal from '../components/modal/Modal.vue'
-import pSelect from '../components/select/Select.vue'
-import pFormGroup from '../components/form-group/FormGroup.vue'
-import pLabel from '../components/label/Label.vue'
+import pButton from '../../components/button/Button.vue'
+import pText from '../../components/text/Text.vue'
+import pInput from '../../components/input/Input.vue'
+import pTabs from '../../components/tabs/Tabs.vue'
+import pTab from '../../components/tabs/Tab.vue'
+import pModal from '../../components/modal/Modal.vue'
+import pSelect from '../../components/select/Select.vue'
+import pFormGroup from '../../components/form-group/FormGroup.vue'
+import pLabel from '../../components/label/Label.vue'
 import PiDownload16 from '@privyid/persona-icon/vue/download/16.vue'
-import { createSpinner } from '../components/avatar/utils/create-image'
+import { createSpinner } from '../../components/avatar/utils/create-image'
 import { computed, ref } from 'vue-demi'
 import {
   groupBy,
@@ -53,7 +53,7 @@ const icons = computed(() => {
 })
 
 function getURL (icon, size = 32) {
-  return new URL(`../../packages/persona-icon/svg/${icon.folder}/${size}.svg`, import.meta.url).href
+  return new URL(`../../../packages/persona-icon/svg/${icon.folder}/${size}.svg`, import.meta.url).href
 }
 
 function showDetail (icon) {

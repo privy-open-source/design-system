@@ -81,6 +81,7 @@
     "@jill64/universal-sanitizer": "^1.0.2",
     "@juggle/resize-observer": "^3.4.0",
     "@privyid/persona-icon": "workspace:^",
+    "@privyid/persona-ilustration": "workspace:^",
     "@splidejs/splide": "^4.1.4",
     "@testing-library/user-event": "^14.4.3",
     "@vueuse/core": "10.9.0",

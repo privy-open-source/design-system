@@ -5,7 +5,7 @@
     height="150"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 150 150"><g clip-path="url(#5h_a)"><g clip-path="url(#5i_b)"><rect
+    viewBox="0 0 150 150"><g clip-path="url(#FKxyyKymR7_a)"><g clip-path="url(#FKxyyKymR7_b)"><rect
       width="125"
       height="125"
       x="12.5"
@@ -58,19 +58,19 @@
                                   fill-rule="evenodd"
                                   d="M51.285 81.555a9.35 9.35 0 0 0 6.632 2.746c2.59 0 4.934-1.05 6.632-2.746l13.263-13.258a9.35 9.35 0 0 0-6.632-2.746 9.35 9.35 0 0 0-6.632 2.746 9.35 9.35 0 0 0-6.631-2.746c-5.566 0-9.087 4.183-9.378 9.514a9.34 9.34 0 0 0 2.746 6.49"
                                   clip-rule="evenodd" /><path
-                                    fill="url(#5j_c)"
+                                    fill="url(#FKxyyKymR7_c)"
                                     fill-rule="evenodd"
                                     d="M64.61 68.308a9.39 9.39 0 0 0-6.657-2.757c-5.587 0-9.122 4.2-9.414 9.554a9.38 9.38 0 0 0 2.757 6.517z"
-                                    clip-rule="evenodd" /></g><defs><clipPath id="5h_a"><path
+                                    clip-rule="evenodd" /></g><defs><clipPath id="FKxyyKymR7_a"><path
                                       fill="#fff"
-                                      d="M0 0h150v150H0z" /></clipPath><clipPath id="5i_b"><rect
+                                      d="M0 0h150v150H0z" /></clipPath><clipPath id="FKxyyKymR7_b"><rect
                                         width="125"
                                         height="125"
                                         x="12.5"
                                         y="12.5"
                                         fill="#fff"
                                         rx="62.5" /></clipPath><linearGradient
-                                          id="5j_c"
+                                          id="FKxyyKymR7_c"
                                           x1="54.761"
                                           x2="64.611"
                                           y1="71.489"

@@ -5,7 +5,7 @@
     height="80"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 80 80"><g clip-path="url(#i_a)"><rect
+    viewBox="0 0 80 80"><g clip-path="url(#qjcdAIeBtM_a)"><rect
       width="52.326"
       height="60.443"
       fill="#EFFAFF"
@@ -21,7 +21,7 @@
             y="25.037"
             fill="#FFB26F"
             rx="1.98" /><mask
-              id="j_b"
+              id="qjcdAIeBtM_b"
               width="11"
               height="11"
               x="6"
@@ -31,7 +31,7 @@
                 cx="11.719"
                 cy="32.285"
                 r="4.792"
-                fill="#5A83EA" /></mask><g mask="url(#j_b)"><circle
+                fill="#5A83EA" /></mask><g mask="url(#qjcdAIeBtM_b)"><circle
                   cx="11.719"
                   cy="32.285"
                   r="4.792"
@@ -55,7 +55,7 @@
                             y="42.626"
                             fill="#54D9FF"
                             rx="1.98" /><mask
-                              id="k_c"
+                              id="qjcdAIeBtM_c"
                               width="11"
                               height="10"
                               x="6"
@@ -65,7 +65,7 @@
                                 cx="11.719"
                                 cy="49.873"
                                 r="4.792"
-                                fill="#5A83EA" /></mask><g mask="url(#k_c)"><circle
+                                fill="#5A83EA" /></mask><g mask="url(#qjcdAIeBtM_c)"><circle
                                   cx="11.719"
                                   cy="49.873"
                                   r="4.792"
@@ -86,7 +86,7 @@
                                         fill="#37A2F8"
                                         rx="1.188" /><path
                                           fill="#37A2F8"
-                                          d="M71.701 49.806c0-.656-.532-1.198-1.188-1.198h-9.57c-.655 0-1.187.542-1.187 1.198s.532 1.198 1.188 1.198h9.57c.655 0 1.187-.542 1.187-1.198" /></g><defs><clipPath id="i_a"><path
+                                          d="M71.701 49.806c0-.656-.532-1.198-1.188-1.198h-9.57c-.655 0-1.187.542-1.187 1.198s.532 1.198 1.188 1.198h9.57c.655 0 1.187-.542 1.187-1.198" /></g><defs><clipPath id="qjcdAIeBtM_a"><path
                                             fill="#fff"
                                             d="M0 0h80v80H0z" /></clipPath></defs></svg>
 </template>

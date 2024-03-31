@@ -5,7 +5,7 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#d5_a)"><g clip-path="url(#d6_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#pfuWfGT5O6_a)"><g clip-path="url(#pfuWfGT5O6_b)"><rect
       width="200"
       height="200"
       x="20.224"
@@ -32,9 +32,9 @@
                         fill="#FFC79D"
                         d="m182.65 132.286-8.988 11.328 55.147 43.756 8.988-11.328z" /><path
                           fill="#FF8D18"
-                          d="M235.897 183.795c2.476-3.12 3.339-6.556 1.929-7.675-1.411-1.119-4.561.503-7.036 3.623-2.476 3.119-3.339 6.556-1.929 7.675 1.411 1.119 4.561-.503 7.036-3.623" /></g><defs><clipPath id="d5_a"><path
+                          d="M235.897 183.795c2.476-3.12 3.339-6.556 1.929-7.675-1.411-1.119-4.561.503-7.036 3.623-2.476 3.119-3.339 6.556-1.929 7.675 1.411 1.119 4.561-.503 7.036-3.623" /></g><defs><clipPath id="pfuWfGT5O6_a"><path
                             fill="#fff"
-                            d="M0 0h240v240H0z" /></clipPath><clipPath id="d6_b"><rect
+                            d="M0 0h240v240H0z" /></clipPath><clipPath id="pfuWfGT5O6_b"><rect
                               width="200"
                               height="200"
                               x="20.224"

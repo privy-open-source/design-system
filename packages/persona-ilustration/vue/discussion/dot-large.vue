@@ -5,7 +5,7 @@
     height="80"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 80 80"><g clip-path="url(#9x_a)"><path
+    viewBox="0 0 80 80"><g clip-path="url(#MqnrkQtnOF_a)"><path
       fill="#D3EDFF"
       d="M40 73.333c18.41 0 33.333-14.924 33.333-33.333C73.333 21.59 58.41 6.667 40 6.667S6.667 21.59 6.667 40 21.59 73.333 40 73.333" /><ellipse
         cx="44.118"
@@ -22,7 +22,7 @@
             rx="24.072"
             ry="16.299" /><path
               fill="#FFB26F"
-              d="M2.28 54.315c5.664-.573 17.387-7.056 21.4-11.121l-9.99-4.897c-1.18 3.228-3.221 8.977-11.41 16.018" /></g><defs><clipPath id="9x_a"><path
+              d="M2.28 54.315c5.664-.573 17.387-7.056 21.4-11.121l-9.99-4.897c-1.18 3.228-3.221 8.977-11.41 16.018" /></g><defs><clipPath id="MqnrkQtnOF_a"><path
                 fill="#fff"
                 d="M0 0h80v80H0z" /></clipPath></defs></svg>
 </template>

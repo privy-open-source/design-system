@@ -3026,6 +3026,7 @@ __metadata:
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/eslint-config-persona": "workspace:^"
     "@privyid/persona-icon": "workspace:^"
+    "@privyid/persona-ilustration": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rushstack/eslint-patch": "npm:1.10.1"
     "@splidejs/splide": "npm:^4.1.4"
@@ -3145,7 +3146,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@privyid/persona-ilustration@workspace:packages/persona-ilustration":
+"@privyid/persona-ilustration@workspace:^, @privyid/persona-ilustration@workspace:packages/persona-ilustration":
   version: 0.0.0-use.local
   resolution: "@privyid/persona-ilustration@workspace:packages/persona-ilustration"
   dependencies:

@@ -5,7 +5,7 @@
     height="300"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 300 300"><g clip-path="url(#ad_a)"><g clip-path="url(#ae_b)"><rect
+    viewBox="0 0 300 300"><g clip-path="url(#3VhOqoG228_a)"><g clip-path="url(#3VhOqoG228_b)"><rect
       width="250"
       height="250"
       x="25"
@@ -92,7 +92,7 @@
                                                           d="M180.129 196.496c2.26 8.212-2.036 8.763-7.137 10.167s-10.174-.872-11.333-5.083 2.036-8.763 7.136-10.166c5.101-1.404 9.379-2.021 11.334 5.082" /><path
                                                             fill="#FFC79D"
                                                             d="M180.254 213.444c2.125 8.623-2.024 8.992-6.956 10.208s-9.813-1.384-10.904-5.806 2.025-8.993 6.956-10.208c4.932-1.216 9.065-1.654 10.904 5.806" /><mask
-                                                              id="af_c"
+                                                              id="3VhOqoG228_c"
                                                               width="51"
                                                               height="51"
                                                               x="102"
@@ -100,7 +100,7 @@
                                                               maskUnits="userSpaceOnUse"
                                                               style="mask-type:alpha"><path
                                                                 fill="#239842"
-                                                                d="M127.75 183.125c13.807 0 25-11.193 25-25s-11.193-25-25-25-25 11.193-25 25 11.193 25 25 25" /></mask><g mask="url(#af_c)"><path
+                                                                d="M127.75 183.125c13.807 0 25-11.193 25-25s-11.193-25-25-25-25 11.193-25 25 11.193 25 25 25" /></mask><g mask="url(#3VhOqoG228_c)"><path
                                                                   fill="#239842"
                                                                   d="M127.75 183.125c13.807 0 25-11.193 25-25s-11.193-25-25-25-25 11.193-25 25 11.193 25 25 25" /><path
                                                                     fill="#38BA58"
@@ -108,9 +108,9 @@
                                                                       fill="#F8F8F8"
                                                                       fill-rule="evenodd"
                                                                       d="M141.435 148.489a4.68 4.68 0 0 1-.002 6.621l-12.652 12.646a4.68 4.68 0 0 1-6.621-.002l-8.099-8.105a4.681 4.681 0 1 1 6.623-6.618l4.789 4.793 9.341-9.336a4.68 4.68 0 0 1 6.621.001"
-                                                                      clip-rule="evenodd" /></g></g><defs><clipPath id="ad_a"><path
+                                                                      clip-rule="evenodd" /></g></g><defs><clipPath id="3VhOqoG228_a"><path
                                                                         fill="#fff"
-                                                                        d="M0 0h300v300H0z" /></clipPath><clipPath id="ae_b"><rect
+                                                                        d="M0 0h300v300H0z" /></clipPath><clipPath id="3VhOqoG228_b"><rect
                                                                           width="250"
                                                                           height="250"
                                                                           x="25"

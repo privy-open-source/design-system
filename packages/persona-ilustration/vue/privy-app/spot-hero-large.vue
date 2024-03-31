@@ -5,7 +5,7 @@
     height="300"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 300 300"><g clip-path="url(#5l_a)"><g clip-path="url(#5m_b)"><rect
+    viewBox="0 0 300 300"><g clip-path="url(#ER2DkYpzaW_a)"><g clip-path="url(#ER2DkYpzaW_b)"><rect
       width="250"
       height="250"
       x="25"
@@ -98,19 +98,19 @@
                                                             fill-rule="evenodd"
                                                             d="M104.569 171.109a18.7 18.7 0 0 0 13.264 5.492c5.179 0 9.869-2.099 13.263-5.492l26.527-26.516a18.7 18.7 0 0 0-13.263-5.492c-5.18 0-9.87 2.099-13.264 5.492a18.7 18.7 0 0 0-13.263-5.492c-11.131 0-18.175 8.366-18.756 19.028a18.68 18.68 0 0 0 5.492 12.98"
                                                             clip-rule="evenodd" /><path
-                                                              fill="url(#5n_c)"
+                                                              fill="url(#ER2DkYpzaW_c)"
                                                               fill-rule="evenodd"
                                                               d="M131.22 144.616a18.77 18.77 0 0 0-13.315-5.515c-11.174 0-18.244 8.401-18.828 19.108a18.77 18.77 0 0 0 5.513 13.035z"
-                                                              clip-rule="evenodd" /></g><defs><clipPath id="5l_a"><path
+                                                              clip-rule="evenodd" /></g><defs><clipPath id="ER2DkYpzaW_a"><path
                                                                 fill="#fff"
-                                                                d="M0 0h300v300H0z" /></clipPath><clipPath id="5m_b"><rect
+                                                                d="M0 0h300v300H0z" /></clipPath><clipPath id="ER2DkYpzaW_b"><rect
                                                                   width="250"
                                                                   height="250"
                                                                   x="25"
                                                                   y="25"
                                                                   fill="#fff"
                                                                   rx="125" /></clipPath><linearGradient
-                                                                    id="5n_c"
+                                                                    id="ER2DkYpzaW_c"
                                                                     x1="111.521"
                                                                     x2="131.22"
                                                                     y1="150.976"
