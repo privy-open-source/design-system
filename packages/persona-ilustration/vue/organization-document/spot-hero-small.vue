@@ -5,7 +5,7 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#e9_a)"><g clip-path="url(#ea_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#ViiRUnr9wv_a)"><g clip-path="url(#ViiRUnr9wv_b)"><rect
       width="200"
       height="200"
       x="20.225"
@@ -155,9 +155,9 @@
                                                                                                                                   fill="#4793CC"
                                                                                                                                   fill-rule="evenodd"
                                                                                                                                   d="M202.778 151.324a.9.9 0 0 0-.141.395l-8.594 62.603c-.122.887-.794 1.823-1.501 2.09-.707.268-1.181-.234-1.06-1.121l8.594-62.603c.577-4.201 5.385-6.986 5.973-3.46l8.769 52.586c.124.744-.348 1.794-1.055 2.345-.706.552-1.38.395-1.504-.349l-8.769-52.585c-.028-.172-.092-.216-.142-.231-.063-.02-.163-.007-.285.064a.9.9 0 0 0-.285.266"
-                                                                                                                                  clip-rule="evenodd" /></g><defs><clipPath id="e9_a"><path
+                                                                                                                                  clip-rule="evenodd" /></g><defs><clipPath id="ViiRUnr9wv_a"><path
                                                                                                                                     fill="#fff"
-                                                                                                                                    d="M0 0h240v240H0z" /></clipPath><clipPath id="ea_b"><rect
+                                                                                                                                    d="M0 0h240v240H0z" /></clipPath><clipPath id="ViiRUnr9wv_b"><rect
                                                                                                                                       width="200"
                                                                                                                                       height="200"
                                                                                                                                       x="20.225"

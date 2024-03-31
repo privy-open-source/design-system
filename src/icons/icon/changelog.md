@@ -12,6 +12,20 @@
 
 > Icons changelog
 
+## 1.0.0-rc.4
+
+### Added
+
+- document-external-alt
+- need-action-alt
+
+### Changed
+
+- admin-center-logo-apps
+- document-external
+- message-logo-apps/32
+- need-action
+
 ## 1.0.0-rc.3
 
 Nothing Changed

@@ -11,6 +11,7 @@ description: Display content with collapse behavior
   import CaretDown from '@privyid/persona-icon/vue/caret-down/16.vue'
   import iconPrivy from '@privyid/persona-icon/vue/privy-alt/24.vue'
   import { ref, markRaw } from 'vue-demi'
+  import { withBase } from 'vitepress'
 
   const items = defineAccordion([
     {
@@ -34,7 +35,7 @@ description: Display content with collapse behavior
 
   const active   = ref()
   const expanded = ref(false)
-  const icon = markRaw(iconPrivy)
+  const icon     = markRaw(iconPrivy)
 </script>
 
 # Accordion
@@ -452,7 +453,7 @@ Accordion title can be Customized by using slot `title`.
 <preview>
   <p-accordion-item titleClass="items-center" style="--p-accordion-expanded-activator-bg: transparent; --p-accordion-expanded-activator-bg-dark: transparent;">
     <template #title>
-      <img src="../../public/assets/images/icon-personal-plan-access.svg"
+      <img :src="withBase('/assets/images/icon-personal-plan-access.svg')"
         class="inline-block w-10 h-auto mr-4" />
       <strong>Have a full digital identity experience</strong>
     </template>

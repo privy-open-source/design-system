@@ -5,7 +5,7 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#o_a)"><g clip-path="url(#p_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#NOqqtqq0oR_a)"><g clip-path="url(#NOqqtqq0oR_b)"><rect
       width="200"
       height="200"
       x="20"
@@ -166,23 +166,23 @@
                                                                 fill-rule="evenodd"
                                                                 d="M99.619 120.802a17.09 17.09 0 0 0 12.117 5.017c4.733 0 9.017-1.917 12.118-5.017l24.236-24.226a17.1 17.1 0 0 0-12.118-5.018 17.1 17.1 0 0 0-12.118 5.018 17.09 17.09 0 0 0-12.118-5.018c-10.169 0-16.604 7.644-17.135 17.385a17.07 17.07 0 0 0 5.017 11.859"
                                                                 clip-rule="evenodd" /><path
-                                                                  fill="url(#q_c)"
+                                                                  fill="url(#NOqqtqq0oR_c)"
                                                                   fill-rule="evenodd"
                                                                   d="M123.967 96.597a17.15 17.15 0 0 0-12.164-5.039c-10.209 0-16.669 7.676-17.202 17.458a17.15 17.15 0 0 0 5.037 11.909z"
                                                                   clip-rule="evenodd" /><path
                                                                     fill="#FFC509"
                                                                     fill-rule="evenodd"
                                                                     d="M65.155 65.151c7.451 0 13.492-6.04 13.492-13.49 0 7.45 6.04 13.49 13.49 13.49-7.45 0-13.49 6.04-13.49 13.492 0-7.451-6.04-13.492-13.492-13.492M160.517 115.826c11.626 0 21.052-9.425 21.052-21.052 0 11.627 9.425 21.052 21.052 21.052-11.627 0-21.052 9.426-21.052 21.053 0-11.627-9.426-21.053-21.052-21.053M55.307 150.37c7.45 0 13.49-6.04 13.49-13.491 0 7.451 6.041 13.491 13.492 13.491-7.45 0-13.491 6.04-13.491 13.491 0-7.451-6.04-13.491-13.491-13.491"
-                                                                    clip-rule="evenodd" /></g></g><defs><clipPath id="o_a"><path
+                                                                    clip-rule="evenodd" /></g></g><defs><clipPath id="NOqqtqq0oR_a"><path
                                                                       fill="#fff"
-                                                                      d="M0 0h240v240H0z" /></clipPath><clipPath id="p_b"><rect
+                                                                      d="M0 0h240v240H0z" /></clipPath><clipPath id="NOqqtqq0oR_b"><rect
                                                                         width="200"
                                                                         height="200"
                                                                         x="20"
                                                                         y="20"
                                                                         fill="#fff"
                                                                         rx="100" /></clipPath><linearGradient
-                                                                          id="q_c"
+                                                                          id="NOqqtqq0oR_c"
                                                                           x1="105.97"
                                                                           x2="123.967"
                                                                           y1="102.408"

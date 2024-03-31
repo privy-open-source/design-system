@@ -5,7 +5,7 @@
     height="80"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 80 80"><g clip-path="url(#4x_a)"><path
+    viewBox="0 0 80 80"><g clip-path="url(#g18k2TrHD3_a)"><path
       fill="#FFDCC5"
       d="m5.59 41.34 3.473 19.931 32.892 10.246 2.357-20.615z" /><path
         fill="#FFC79D"
@@ -79,7 +79,7 @@
                                                               fill="#FFB26F"
                                                               fill-rule="evenodd"
                                                               d="m66.447 21.084.874-1.922-32.605-4.585 1.239 1.657zM35.79 16.507l30.832 4.904 1.131-2.486-33.699-4.74zM59.94 39.79l-35.893-7.004.113-.58 35.893 7.004z"
-                                                              clip-rule="evenodd" /></g><defs><clipPath id="4x_a"><path
+                                                              clip-rule="evenodd" /></g><defs><clipPath id="g18k2TrHD3_a"><path
                                                                 fill="#fff"
                                                                 d="M0 0h80v80H0z" /></clipPath></defs></svg>
 </template>

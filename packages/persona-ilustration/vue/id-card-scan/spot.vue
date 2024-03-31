@@ -5,7 +5,7 @@
     height="150"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 150 150"><g clip-path="url(#95_a)"><g clip-path="url(#96_b)"><rect
+    viewBox="0 0 150 150"><g clip-path="url(#9R7DNaIMoJ_a)"><g clip-path="url(#9R7DNaIMoJ_b)"><rect
       width="125"
       height="125"
       x="12.5"
@@ -52,7 +52,7 @@
                                 d="M91.708 95.169c1.223 4.44-1.101 4.739-3.86 5.498s-5.502-.471-6.129-2.749 1.101-4.739 3.86-5.498 5.072-1.093 6.13 2.749" /><path
                                   fill="#FFC79D"
                                   d="M91.776 104.334c1.15 4.664-1.095 4.864-3.762 5.521-2.667.658-5.308-.748-5.897-3.14-.59-2.391 1.095-4.863 3.762-5.521s4.902-.894 5.897 3.14" /><mask
-                                    id="97_c"
+                                    id="9R7DNaIMoJ_c"
                                     width="27"
                                     height="28"
                                     x="50"
@@ -60,7 +60,7 @@
                                     maskUnits="userSpaceOnUse"
                                     style="mask-type:alpha"><path
                                       fill="#239842"
-                                      d="M63.22 88.183c7.281 0 13.183-5.902 13.183-13.183s-5.902-13.183-13.182-13.183S50.038 67.72 50.038 75 55.94 88.183 63.22 88.183" /></mask><g mask="url(#97_c)"><path
+                                      d="M63.22 88.183c7.281 0 13.183-5.902 13.183-13.183s-5.902-13.183-13.182-13.183S50.038 67.72 50.038 75 55.94 88.183 63.22 88.183" /></mask><g mask="url(#9R7DNaIMoJ_c)"><path
                                         fill="#239842"
                                         d="M63.22 88.183c7.281 0 13.183-5.902 13.183-13.182S70.501 61.818 63.22 61.818 50.038 67.72 50.038 75 55.94 88.183 63.22 88.183" /><path
                                           fill="#38BA58"
@@ -69,9 +69,9 @@
                                             stroke-linecap="round"
                                             stroke-linejoin="round"
                                             stroke-width="4.937"
-                                            d="m57.748 74.06 4.271 4.273 6.672-6.668" /></g></g><defs><clipPath id="95_a"><path
+                                            d="m57.748 74.06 4.271 4.273 6.672-6.668" /></g></g><defs><clipPath id="9R7DNaIMoJ_a"><path
                                               fill="#fff"
-                                              d="M0 0h150v150H0z" /></clipPath><clipPath id="96_b"><rect
+                                              d="M0 0h150v150H0z" /></clipPath><clipPath id="9R7DNaIMoJ_b"><rect
                                                 width="125"
                                                 height="125"
                                                 x="12.5"
