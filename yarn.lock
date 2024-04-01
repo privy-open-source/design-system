@@ -3089,7 +3089,7 @@ __metadata:
     tailwindcss: "npm:3.4.3"
     typescript: "npm:5.4.3"
     ufo: "npm:^1.0.1"
-    vitepress: "npm:1.0.1"
+    vitepress: "npm:1.0.2"
     vitest: "npm:0.24.5"
     vue-collapsed: "npm:^1.2.5"
     vue-content-loader: "npm:^2.0.1"
@@ -18470,9 +18470,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.0.1":
-  version: 1.0.1
-  resolution: "vitepress@npm:1.0.1"
+"vitepress@npm:1.0.2":
+  version: 1.0.2
+  resolution: "vitepress@npm:1.0.2"
   dependencies:
     "@docsearch/css": "npm:^3.6.0"
     "@docsearch/js": "npm:^3.6.0"
@@ -18499,7 +18499,7 @@ __metadata:
       optional: true
   bin:
     vitepress: bin/vitepress.js
-  checksum: 10/9a2851773d1142e4b3fbc47d914c22d04809bc8c3fe255e0f00b427b4a60e83695b7825aa2b6b59a7b21cc5244ad8932be165492d79ace9e0a0a4ed21ef3ad6e
+  checksum: 10/ca780744a77898fbd1aebfa537be3ac4b4a06a52c63f652eaeb6b9458eb2745cb3a76d22953c33db13d06b3a33dc86c4a0871fe86368b446123e686c2ccb51b2
   languageName: node
   linkType: hard
 
