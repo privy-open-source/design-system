@@ -5,7 +5,7 @@
     height="150"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 150 150"><g clip-path="url(#f9_a)"><g clip-path="url(#fa_b)"><rect
+    viewBox="0 0 150 150"><g clip-path="url(#QEOBNGNS5r_a)"><g clip-path="url(#QEOBNGNS5r_b)"><rect
       width="125"
       height="125"
       x="12.5"
@@ -35,9 +35,9 @@
                       rx="2.55"
                       ry="2.555" /><path
                         fill="#AD2F2E"
-                        d="M104.37 52.828a2.454 2.454 0 1 1 4.905 0l-.467 12.15a1.987 1.987 0 0 1-3.971 0z" /></g><defs><clipPath id="f9_a"><path
+                        d="M104.37 52.828a2.454 2.454 0 1 1 4.905 0l-.467 12.15a1.987 1.987 0 0 1-3.971 0z" /></g><defs><clipPath id="QEOBNGNS5r_a"><path
                           fill="#fff"
-                          d="M0 0h150v150H0z" /></clipPath><clipPath id="fa_b"><rect
+                          d="M0 0h150v150H0z" /></clipPath><clipPath id="QEOBNGNS5r_b"><rect
                             width="125"
                             height="125"
                             x="12.5"
