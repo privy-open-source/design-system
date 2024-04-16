@@ -1,0 +1,223 @@
+diff --git a/build/pdf.mjs b/build/pdf.mjs
+index ca5b7c1adfe081754f627773ffa7fb78616050c1..9525d1a4d4a1c2654f5c885c90a74d0df025cce7 100644
+--- a/build/pdf.mjs
++++ b/build/pdf.mjs
+@@ -20,6 +20,7 @@
+  * JavaScript code in this page
+  */
+ 
++export async function __main__ () {
+ /******/ var __webpack_modules__ = ({
+ 
+ /***/ 976:
+@@ -19400,7 +19401,7 @@ const AnnotationPrefix = "pdfjs_internal_id_";
+ /************************************************************************/
+ /******/ // The module cache
+ /******/ var __webpack_module_cache__ = {};
+-/******/ 
++/******/
+ /******/ // The require function
+ /******/ function __webpack_require__(moduleId) {
+ /******/ 	// Check if module is in cache
+@@ -19414,14 +19415,14 @@ const AnnotationPrefix = "pdfjs_internal_id_";
+ /******/ 		// no module.loaded needed
+ /******/ 		exports: {}
+ /******/ 	};
+-/******/ 
++/******/
+ /******/ 	// Execute the module function
+ /******/ 	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+-/******/ 
++/******/
+ /******/ 	// Return the exports of the module
+ /******/ 	return module.exports;
+ /******/ }
+-/******/ 
++/******/
+ /************************************************************************/
+ /******/ /* webpack/runtime/async module */
+ /******/ (() => {
+@@ -19491,7 +19492,7 @@ const AnnotationPrefix = "pdfjs_internal_id_";
+ /******/ 		queue && queue.d < 0 && (queue.d = 0);
+ /******/ 	};
+ /******/ })();
+-/******/ 
++/******/
+ /******/ /* webpack/runtime/define property getters */
+ /******/ (() => {
+ /******/ 	// define getter functions for harmony exports
+@@ -19503,14 +19504,14 @@ const AnnotationPrefix = "pdfjs_internal_id_";
+ /******/ 		}
+ /******/ 	};
+ /******/ })();
+-/******/ 
++/******/
+ /******/ /* webpack/runtime/hasOwnProperty shorthand */
+ /******/ (() => {
+ /******/ 	__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+ /******/ })();
+-/******/ 
++/******/
+ /************************************************************************/
+-/******/ 
++/******/
+ /******/ // startup
+ /******/ // Load entry module and return exports
+ /******/ // This entry module used 'module' so it can't be inlined
+@@ -19561,7 +19562,53 @@ const AnnotationPrefix = "pdfjs_internal_id_";
+ /******/ var __webpack_exports__shadow = __webpack_exports__.shadow;
+ /******/ var __webpack_exports__updateTextLayer = __webpack_exports__.updateTextLayer;
+ /******/ var __webpack_exports__version = __webpack_exports__.version;
+-/******/ export { __webpack_exports__AbortException as AbortException, __webpack_exports__AnnotationEditorLayer as AnnotationEditorLayer, __webpack_exports__AnnotationEditorParamsType as AnnotationEditorParamsType, __webpack_exports__AnnotationEditorType as AnnotationEditorType, __webpack_exports__AnnotationEditorUIManager as AnnotationEditorUIManager, __webpack_exports__AnnotationLayer as AnnotationLayer, __webpack_exports__AnnotationMode as AnnotationMode, __webpack_exports__CMapCompressionType as CMapCompressionType, __webpack_exports__ColorPicker as ColorPicker, __webpack_exports__DOMSVGFactory as DOMSVGFactory, __webpack_exports__DrawLayer as DrawLayer, __webpack_exports__FeatureTest as FeatureTest, __webpack_exports__GlobalWorkerOptions as GlobalWorkerOptions, __webpack_exports__ImageKind as ImageKind, __webpack_exports__InvalidPDFException as InvalidPDFException, __webpack_exports__MissingPDFException as MissingPDFException, __webpack_exports__OPS as OPS, __webpack_exports__Outliner as Outliner, __webpack_exports__PDFDataRangeTransport as PDFDataRangeTransport, __webpack_exports__PDFDateString as PDFDateString, __webpack_exports__PDFWorker as PDFWorker, __webpack_exports__PasswordResponses as PasswordResponses, __webpack_exports__PermissionFlag as PermissionFlag, __webpack_exports__PixelsPerInch as PixelsPerInch, __webpack_exports__RenderingCancelledException as RenderingCancelledException, __webpack_exports__UnexpectedResponseException as UnexpectedResponseException, __webpack_exports__Util as Util, __webpack_exports__VerbosityLevel as VerbosityLevel, __webpack_exports__XfaLayer as XfaLayer, __webpack_exports__build as build, __webpack_exports__createValidAbsoluteUrl as createValidAbsoluteUrl, __webpack_exports__fetchData as fetchData, __webpack_exports__getDocument as getDocument, __webpack_exports__getFilenameFromUrl as getFilenameFromUrl, __webpack_exports__getPdfFilenameFromUrl as getPdfFilenameFromUrl, __webpack_exports__getXfaPageViewport as getXfaPageViewport, __webpack_exports__isDataScheme as isDataScheme, __webpack_exports__isPdfFile as isPdfFile, __webpack_exports__noContextMenu as noContextMenu, __webpack_exports__normalizeUnicode as normalizeUnicode, __webpack_exports__renderTextLayer as renderTextLayer, __webpack_exports__setLayerDimensions as setLayerDimensions, __webpack_exports__shadow as shadow, __webpack_exports__updateTextLayer as updateTextLayer, __webpack_exports__version as version };
+-/******/ 
+-
++/******/ return {
++  AbortException: __webpack_exports__AbortException,
++  AnnotationEditorLayer: __webpack_exports__AnnotationEditorLayer,
++  AnnotationEditorParamsType: __webpack_exports__AnnotationEditorParamsType,
++  AnnotationEditorType: __webpack_exports__AnnotationEditorType,
++  AnnotationEditorUIManager: __webpack_exports__AnnotationEditorUIManager,
++  AnnotationLayer: __webpack_exports__AnnotationLayer,
++  AnnotationMode: __webpack_exports__AnnotationMode,
++  CMapCompressionType: __webpack_exports__CMapCompressionType,
++  ColorPicker: __webpack_exports__ColorPicker,
++  DOMSVGFactory: __webpack_exports__DOMSVGFactory,
++  DrawLayer: __webpack_exports__DrawLayer,
++  FeatureTest: __webpack_exports__FeatureTest,
++  GlobalWorkerOptions: __webpack_exports__GlobalWorkerOptions,
++  ImageKind: __webpack_exports__ImageKind,
++  InvalidPDFException: __webpack_exports__InvalidPDFException,
++  MissingPDFException: __webpack_exports__MissingPDFException,
++  OPS: __webpack_exports__OPS,
++  Outliner: __webpack_exports__Outliner,
++  PDFDataRangeTransport: __webpack_exports__PDFDataRangeTransport,
++  PDFDateString: __webpack_exports__PDFDateString,
++  PDFWorker: __webpack_exports__PDFWorker,
++  PasswordResponses: __webpack_exports__PasswordResponses,
++  PermissionFlag: __webpack_exports__PermissionFlag,
++  PixelsPerInch: __webpack_exports__PixelsPerInch,
++  RenderingCancelledException: __webpack_exports__RenderingCancelledException,
++  UnexpectedResponseException: __webpack_exports__UnexpectedResponseException,
++  Util: __webpack_exports__Util,
++  VerbosityLevel: __webpack_exports__VerbosityLevel,
++  XfaLayer: __webpack_exports__XfaLayer,
++  build: __webpack_exports__build,
++  createValidAbsoluteUrl: __webpack_exports__createValidAbsoluteUrl,
++  fetchData: __webpack_exports__fetchData,
++  getDocument: __webpack_exports__getDocument,
++  getFilenameFromUrl: __webpack_exports__getFilenameFromUrl,
++  getPdfFilenameFromUrl: __webpack_exports__getPdfFilenameFromUrl,
++  getXfaPageViewport: __webpack_exports__getXfaPageViewport,
++  isDataScheme: __webpack_exports__isDataScheme,
++  isPdfFile: __webpack_exports__isPdfFile,
++  noContextMenu: __webpack_exports__noContextMenu,
++  normalizeUnicode: __webpack_exports__normalizeUnicode,
++  renderTextLayer: __webpack_exports__renderTextLayer,
++  setLayerDimensions: __webpack_exports__setLayerDimensions,
++  shadow: __webpack_exports__shadow,
++  updateTextLayer: __webpack_exports__updateTextLayer,
++  version: __webpack_exports__version,
++};
++/******/
++}
+ //# sourceMappingURL=pdf.mjs.map
+diff --git a/web/pdf_viewer.mjs b/web/pdf_viewer.mjs
+index 74814023635099372c68a4a90747ea53774f6410..275290595cf8d7834e04ee641134edb75209d295 100644
+--- a/web/pdf_viewer.mjs
++++ b/web/pdf_viewer.mjs
+@@ -20,6 +20,7 @@
+  * JavaScript code in this page
+  */
+ 
++export async function __main__ () {
+ /******/ var __webpack_modules__ = ({
+ 
+ /***/ 588:
+@@ -8501,7 +8502,7 @@ __webpack_async_result__();
+ /************************************************************************/
+ /******/ // The module cache
+ /******/ var __webpack_module_cache__ = {};
+-/******/ 
++/******/
+ /******/ // The require function
+ /******/ function __webpack_require__(moduleId) {
+ /******/ 	// Check if module is in cache
+@@ -8515,14 +8516,14 @@ __webpack_async_result__();
+ /******/ 		// no module.loaded needed
+ /******/ 		exports: {}
+ /******/ 	};
+-/******/ 
++/******/
+ /******/ 	// Execute the module function
+ /******/ 	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+-/******/ 
++/******/
+ /******/ 	// Return the exports of the module
+ /******/ 	return module.exports;
+ /******/ }
+-/******/ 
++/******/
+ /************************************************************************/
+ /******/ /* webpack/runtime/async module */
+ /******/ (() => {
+@@ -8592,7 +8593,7 @@ __webpack_async_result__();
+ /******/ 		queue && queue.d < 0 && (queue.d = 0);
+ /******/ 	};
+ /******/ })();
+-/******/ 
++/******/
+ /******/ /* webpack/runtime/define property getters */
+ /******/ (() => {
+ /******/ 	// define getter functions for harmony exports
+@@ -8604,14 +8605,14 @@ __webpack_async_result__();
+ /******/ 		}
+ /******/ 	};
+ /******/ })();
+-/******/ 
++/******/
+ /******/ /* webpack/runtime/hasOwnProperty shorthand */
+ /******/ (() => {
+ /******/ 	__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+ /******/ })();
+-/******/ 
++/******/
+ /************************************************************************/
+-/******/ 
++/******/
+ /******/ // startup
+ /******/ // Load entry module and return exports
+ /******/ // This entry module used 'module' so it can't be inlined
+@@ -8639,7 +8640,30 @@ __webpack_async_result__();
+ /******/ var __webpack_exports__TextLayerBuilder = __webpack_exports__.TextLayerBuilder;
+ /******/ var __webpack_exports__XfaLayerBuilder = __webpack_exports__.XfaLayerBuilder;
+ /******/ var __webpack_exports__parseQueryString = __webpack_exports__.parseQueryString;
+-/******/ export { __webpack_exports__AnnotationLayerBuilder as AnnotationLayerBuilder, __webpack_exports__DownloadManager as DownloadManager, __webpack_exports__EventBus as EventBus, __webpack_exports__FindState as FindState, __webpack_exports__GenericL10n as GenericL10n, __webpack_exports__LinkTarget as LinkTarget, __webpack_exports__PDFFindController as PDFFindController, __webpack_exports__PDFHistory as PDFHistory, __webpack_exports__PDFLinkService as PDFLinkService, __webpack_exports__PDFPageView as PDFPageView, __webpack_exports__PDFScriptingManager as PDFScriptingManager, __webpack_exports__PDFSinglePageViewer as PDFSinglePageViewer, __webpack_exports__PDFViewer as PDFViewer, __webpack_exports__ProgressBar as ProgressBar, __webpack_exports__RenderingStates as RenderingStates, __webpack_exports__ScrollMode as ScrollMode, __webpack_exports__SimpleLinkService as SimpleLinkService, __webpack_exports__SpreadMode as SpreadMode, __webpack_exports__StructTreeLayerBuilder as StructTreeLayerBuilder, __webpack_exports__TextLayerBuilder as TextLayerBuilder, __webpack_exports__XfaLayerBuilder as XfaLayerBuilder, __webpack_exports__parseQueryString as parseQueryString };
+-/******/ 
+-
++/******/ return {
++    AnnotationLayerBuilder: __webpack_exports__AnnotationLayerBuilder,
++    DownloadManager: __webpack_exports__DownloadManager,
++    EventBus: __webpack_exports__EventBus,
++    FindState: __webpack_exports__FindState,
++    GenericL10n: __webpack_exports__GenericL10n,
++    LinkTarget: __webpack_exports__LinkTarget,
++    PDFFindController: __webpack_exports__PDFFindController,
++    PDFHistory: __webpack_exports__PDFHistory,
++    PDFLinkService: __webpack_exports__PDFLinkService,
++    PDFPageView: __webpack_exports__PDFPageView,
++    PDFScriptingManager: __webpack_exports__PDFScriptingManager,
++    PDFSinglePageViewer: __webpack_exports__PDFSinglePageViewer,
++    PDFViewer: __webpack_exports__PDFViewer,
++    ProgressBar: __webpack_exports__ProgressBar,
++    RenderingStates: __webpack_exports__RenderingStates,
++    ScrollMode: __webpack_exports__ScrollMode,
++    SimpleLinkService: __webpack_exports__SimpleLinkService,
++    SpreadMode: __webpack_exports__SpreadMode,
++    StructTreeLayerBuilder: __webpack_exports__StructTreeLayerBuilder,
++    TextLayerBuilder: __webpack_exports__TextLayerBuilder,
++    XfaLayerBuilder: __webpack_exports__XfaLayerBuilder,
++    parseQueryString: __webpack_exports__parseQueryString,
++  };
++/******/
++}
+ //# sourceMappingURL=pdf_viewer.mjs.map

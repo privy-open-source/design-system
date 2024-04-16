@@ -207,8 +207,16 @@ function download (icon) {
 </p-tab>
 <p-tab title="CDN">
 
+**UNPKG**
+
 ```txt-vue
 https://unpkg.com/@privyid/persona-icon/svg/{{ selected.folder }}/{{ size }}.svg
+```
+
+**JsDeliver**
+
+```txt-vue
+https://cdn.jsdelivr.net/npm/@privyid/persona-icon/svg/{{ selected.folder }}/{{ size }}.svg
 ```
 
 </p-tab>

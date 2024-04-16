@@ -171,9 +171,5 @@ export {
 } from '../components/pdf-object/utils/use-selector'
 
 export {
-  getDocument,
-} from '../components/pdf-viewer/utils/pdfjs'
-
-export {
   usePopoverPromise,
 } from '../components/popover'

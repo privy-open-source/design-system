@@ -2,7 +2,7 @@
 
 > Persona core package
 
-Learn more about this package: https://privy-open-source.github.io/design-system/
+Learn more about this package: https://persona.privyid.dev
 
 ## Contributing
 
