@@ -69,7 +69,7 @@
     "postcss": "8.4.38",
     "postcss-nested": "6.0.1",
     "tailwindcss": "3.4.3",
-    "typescript": "5.4.3",
+    "typescript": "5.4.5",
     "ufo": "^1.0.1",
     "vitepress": "1.0.2",
     "vitest": "0.24.5",
