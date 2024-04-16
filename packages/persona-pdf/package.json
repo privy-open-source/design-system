@@ -35,6 +35,6 @@
     "vite-plugin-static-copy": "^1.0.1"
   },
   "dependencies": {
-    "pdfjs-dist": "patch:pdfjs-dist@npm%3A4.0.379#~/.yarn/patches/pdfjs-dist-npm-4.0.379-5ea93302cd.patch"
+    "pdfjs-dist": "patch:pdfjs-dist@npm%3A4.1.392#~/.yarn/patches/pdfjs-dist-npm-4.1.392-ede88f2820.patch"
   }
 }
