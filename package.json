@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "packageManager": "yarn@4.1.1",
   "private": true,
   "type": "module",
@@ -68,9 +68,12 @@
     "nanodelay": "2.0.2",
     "postcss": "8.4.38",
     "postcss-nested": "6.0.1",
+    "sharp": "^0.33.3",
+    "svgo": "^3.2.0",
     "tailwindcss": "3.4.3",
     "typescript": "5.4.3",
     "ufo": "^1.0.1",
+    "vite-plugin-image-optimizer": "^1.1.7",
     "vitepress": "1.0.2",
     "vitest": "0.24.5",
     "vue-tsc": "2.0.7"
