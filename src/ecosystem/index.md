@@ -6,6 +6,7 @@
 
 - **[@privyid/persona][persona]** - Persona core package
 - **[@privyid/persona-icon][persona-icon]** - Persona icon package
+- **[@privyid/persona-ilustration][persona-ilustration]** - Persona ilustration package
 - **[@privyid/tailwind-preset][tailwind-preset]** - Tailwind config presets which following our foundations
 - **[@privyid/tailwind-extended][tailwind-extended]** - Add missing tailwind utilities
 - **[@privyid/tailwind-animation][tailwind-animation]** - Collection animation class for vue `<transition>`
@@ -18,6 +19,7 @@
 
 [persona]: https://www.npmjs.com/package/@privyid/persona
 [persona-icon]: https://www.npmjs.com/package/@privyid/persona-icon
+[persona-ilustration]: https://www.npmjs.com/package/@privyid/persona-ilustration
 [tailwind-preset]: https://www.npmjs.com/package/@privyid/tailwind-preset
 [tailwind-extended]: https://www.npmjs.com/package/@privyid/tailwind-extended
 [tailwind-animation]: https://www.npmjs.com/package/@privyid/tailwind-animation

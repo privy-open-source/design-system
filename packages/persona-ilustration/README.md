@@ -1,6 +1,6 @@
 # @privyid/persona-ilustration
 
-> Persona icon package
+> Persona ilustration package
 
 ## Installation
 
@@ -10,7 +10,7 @@ yarn add -D @privyid/persona-ilustration
 
 ## Usage
 
-TODO
+See: https://persona.privyid.dev/icons/ilustration/getting-started
 
 ## License
 

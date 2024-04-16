@@ -20,7 +20,7 @@ export default defineConfig({
       { text: 'Components', link: '/components/accordion/' },
       { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
-      { text: 'Icons', link: '/icons/icon/getting-started' },
+      { text: 'Assets', link: '/assets/icon/getting-started' },
       { text: 'Ecosystem', link: '/ecosystem/' },
     ],
     outline    : [2, 3],
@@ -508,23 +508,23 @@ export default defineConfig({
           ],
         },
       ],
-      '/icons/': [
+      '/assets/': [
         {
           text     : 'Icons',
           collapsed: true,
           items    : [
-            { text: 'Installation', link: '/icons/icon/getting-started' },
-            { text: 'Collections', link: '/icons/icon/collections' },
-            { text: 'Changelog', link: '/icons/icon/changelog' },
+            { text: 'Installation', link: '/assets/icon/getting-started' },
+            { text: 'Collections', link: '/assets/icon/collections' },
+            { text: 'Changelog', link: '/assets/icon/changelog' },
           ],
         },
         {
           text     : 'Ilustration',
           collapsed: true,
           items    : [
-            { text: 'Installation', link: '/icons/ilustration/getting-started' },
-            { text: 'Collections', link: '/icons/ilustration/collections' },
-            { text: 'Changelog', link: '/icons/ilustration/changelog' },
+            { text: 'Installation', link: '/assets/ilustration/getting-started' },
+            { text: 'Collections', link: '/assets/ilustration/collections' },
+            { text: 'Changelog', link: '/assets/ilustration/changelog' },
           ],
         },
       ],
