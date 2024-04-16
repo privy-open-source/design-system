@@ -10,7 +10,7 @@ yarn add -D @privyid/persona-icon
 
 ## Usage
 
-See: https://privy-open-source.github.io/design-system/icons/getting-started
+See: https://persona.privyid.dev/icons/icon/getting-started
 
 ## License
 

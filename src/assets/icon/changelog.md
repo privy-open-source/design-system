@@ -1,5 +1,5 @@
 <style lang="postcss">
-  ._design-system_icons_changelog ul {
+  ._design-system_assets_icon_changelog ul {
     @apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3;
 
     > li {

@@ -55,7 +55,7 @@ toast('Far far away, behind the word.')
   <Button color="info" @click="toast({
     text    : `Far far away, behind the word.`,
     duration: 5000,
-    position: 'top-right'
+    position: 'bottom-right'
   })">
     Show Toast
   </Button>
@@ -67,7 +67,7 @@ import { toast } from '@privyid/persona/core'
 toast({
   text    : 'Far far away, behind the word.',
   duration: 5000,
-  position: 'top-right'
+  position: 'bottom-right'
 })
 ```
 
