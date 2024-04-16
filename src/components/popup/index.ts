@@ -7,6 +7,11 @@ import type { RequireAtLeastOne } from 'type-fest'
 import type pPopup from './Popup.vue'
 import { showNotify } from '../notify'
 
+import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
+import IconSuccess from '@privyid/persona-icon/vue/checkmark/20.vue'
+import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
+import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/20.vue'
+
 export type PopupTypeVariant = 'info' | 'success' | 'warning' | 'error'
 
 export type PopupStyleVariant = 'simple' | 'filled'
@@ -30,6 +35,13 @@ interface Option extends Omit<NotifyOption, 'component'> {
   popupAttrs?: AdditionalAttr,
   dismissable?: boolean,
   actions?: PopupActionOption[],
+}
+
+export const PopupIcons = {
+  info   : markRaw(IconInfo),
+  success: markRaw(IconSuccess),
+  warning: markRaw(IconWarning),
+  error  : markRaw(IconError),
 }
 
 export type PopupOption = RequireAtLeastOne<Option, 'text' | 'title'>

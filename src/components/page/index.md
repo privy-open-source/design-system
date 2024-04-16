@@ -4,6 +4,7 @@ description: Page with toggle expand for responsive purpose
 ---
 
 <script setup>
+  import { withBase } from 'vitepress'
   import pPage from './Page.vue'
   import pSidebarMenu from '../sidebar-menu/SidebarMenu.vue'
   import pSidebarBrand from '../sidebar/SidebarBrand.vue'
@@ -16,12 +17,13 @@ description: Page with toggle expand for responsive purpose
   import IconUsers from '@privyid/persona-icon/vue/user-multiple/20.vue'
   import IconSettings from '@privyid/persona-icon/vue/adjust/20.vue'
   import IconMenu from '@privyid/persona-icon/vue/menu-burger/20.vue'
-  import IconEN from '../../public/assets/images/img-flag.svg'
   import { defineMenu } from '../sidebar-menu'
   import { ref } from 'vue-demi'
 
-  const model = ref(false)
-  const modelA   = ref(false)
+  const IconEN = withBase('/assets/images/img-flag.svg')
+
+  const model  = ref(false)
+  const modelA = ref(false)
   const modelB = ref(false)
 
   const menu = defineMenu([
@@ -92,8 +94,8 @@ description: Page with toggle expand for responsive purpose
     },
     {
       condensed: true,
-      title: 'Quick Jump',
-      items: [
+      title    : 'Quick Jump',
+      items    : [
         {
           name : 'rejects',
           label: 'Rejects',
@@ -108,7 +110,7 @@ description: Page with toggle expand for responsive purpose
     },
     {
       bottom: true,
-      items: [
+      items : [
         {
           name : 'settings',
           label: 'Settings',

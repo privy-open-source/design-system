@@ -85,7 +85,8 @@ Check [this](https://marked.js.org/using_advanced#inline) for more information.
 
 ### Modifiers
 
-| Modifiers  | Description                   |
-|------------|-------------------------------|
-| `inline`   | Enable inline parsing         |
-| `unsecure` | Parsing without HTML Sanitize |
+| Modifiers  | Description                       |
+|------------|-----------------------------------|
+| `inline`   | Enable inline parsing             |
+| `escape`   | Enable HTML Escape before parsing |
+| `unsecure` | Parsing without HTML Sanitize     |

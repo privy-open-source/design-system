@@ -5,7 +5,7 @@ import {
   getLocale,
   installLocale,
 } from './date'
-import fr from 'date-fns/locale/fr/index'
+import { fr } from 'date-fns/locale'
 
 beforeEach(() => {
   initStore()

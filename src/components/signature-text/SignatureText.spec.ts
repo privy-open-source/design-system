@@ -4,6 +4,18 @@ import generate from './__mocks__/generate-text'
 import SignatureText from './SignatureText.vue'
 import { nextTick, ref } from 'vue-demi'
 import { delay } from 'nanodelay'
+import type * as VueUse from '@vueuse/core'
+import type * as VueDemi from 'vue-demi'
+
+vi.mock('@vueuse/core', async () => {
+  const vueuse  = await vi.importActual('@vueuse/core')
+  const vueDemi = await vi.importActual('vue-demi')
+
+  return {
+    ...vueuse as typeof VueUse,
+    watchDebounced: (vueDemi as typeof VueDemi).watch,
+  }
+})
 
 vi.mock('./utils/generate-text.ts', () => {
   return { default: generate }

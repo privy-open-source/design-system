@@ -3,10 +3,12 @@ import {
   addYears,
   eachYearOfInterval,
   endOfDecade,
+  isDate,
   isAfter,
   isBefore,
   isSameYear,
   isWithinInterval,
+  set,
   startOfDecade,
   subYears,
 } from 'date-fns'
@@ -69,5 +71,11 @@ export default defineAdapter({
     const date = this.getPrevCursor(context)
 
     return !min || isAfter(date, min) || isWithinInterval(min, getInterval(date))
+  },
+
+  setValue (value, lastValue) {
+    return isDate(lastValue)
+      ? set(lastValue, { year: value.getFullYear() })
+      : value
   },
 })

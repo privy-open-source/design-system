@@ -8,7 +8,7 @@ description: Sub-component for Timepicker
   import pToggle from '../toggle/Toggle.vue'
   import pButton from "../button/Button.vue"
   import { ref, watch } from "vue-demi"
-  import { startOfDay, addDays, set, addHours } from 'date-fns'
+  import { startOfDay, set } from 'date-fns'
 
   const minTime = ref(set(new Date(), { hours: 1, minutes: 20 }))
   const maxTime = ref(set(new Date(), { hours: 17, minutes: 30 }))
@@ -214,9 +214,9 @@ const model = ref<TimeModel>({
 ### Props
 
 | Props             | Type                  | Default | Description                                                                                           |
-| ----------------- | --------------------- | ------- | ----------------------------------------------------------------------------------------------------- |
-| `modelValue`      | `Date` or `TimeModel` | `-`  | `v-model` value accept `Date` and `TimeModel` object which have default value is current start of day |
-| `is12-hour`      | `Boolean`             | `false` | Enable hour item to be formatted to 12 Hour                                                           |
+|-------------------|-----------------------|---------|-------------------------------------------------------------------------------------------------------|
+| `modelValue`      | `Date` or `TimeModel` | `-`     | `v-model` value accept `Date` and `TimeModel` object which have default value is current start of day |
+| `is12-hour`       | `Boolean`             | `false` | Enable hour item to be formatted to 12 Hour                                                           |
 | `hour-interval`   | `Number`              | `1`     | Step of each hour item                                                                                |
 | `minute-interval` | `Number`              | `1`     | Steap of each minute item                                                                             |
 | `min`             | `Date`                | `-`     | Minimum datetime to generate time items                                                               |
@@ -225,20 +225,20 @@ const model = ref<TimeModel>({
 ### Slots
 
 | Name      | Description                                 |
-| --------- | ------------------------------------------- |
+|-----------|---------------------------------------------|
 | `default` | Content to place at footer as footer action |
 
 `default` slot contains scoped slots
 
 | Scoped    | Type       | Default | Description                    |
-| --------- | ---------- | ------- | ------------------------------ |
+|-----------|------------|---------|--------------------------------|
 | `confirm` | `Function` | `-`     | Hook to update `v-model` value |
 
 ### Events
 
-| Name      | Arguments     | Description                                                                                                                                                                               |
-| --------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `context` | `TimeContext` | Event when `confirm` hook is triggered. `TimeContext` contains property `time` formatted as 24-hour or 12-hour, `date` is `Date` object, and `dateISO` formatted as standard ISO string   |
+| Name      | Arguments     | Description                                                                                                                                                                             |
+|-----------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `context` | `TimeContext` | Event when `confirm` hook is triggered. `TimeContext` contains property `time` formatted as 24-hour or 12-hour, `date` is `Date` object, and `dateISO` formatted as standard ISO string |
 
 ## See Also
 

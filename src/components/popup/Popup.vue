@@ -52,29 +52,18 @@ import type { Component, PropType } from 'vue-demi'
 import {
   computed,
   h,
-  markRaw,
 } from 'vue-demi'
 import type {
   PopupActionOption,
   PopupStyleVariant,
   PopupTypeVariant,
 } from '.'
-import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
-import IconSuccess from '@privyid/persona-icon/vue/checkmark/20.vue'
-import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
-import IconError from '@privyid/persona-icon/vue/exclamation-triangle-solid/20.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import { vPMd } from '../markdown'
 import type { ColorVariant } from '../button'
 import type { AdditionalAttr } from '../global/types'
 import { useNotifyItem } from '../notify'
-
-const ToastIcons = {
-  info   : markRaw(IconInfo),
-  success: markRaw(IconSuccess),
-  warning: markRaw(IconWarning),
-  error  : markRaw(IconError),
-}
+import { PopupIcons } from '.'
 
 const props = defineProps({
   title: {
@@ -155,7 +144,7 @@ const classIcon = computed(() => {
 
 const toastIcon = computed(() => {
   if (!props.icon)
-    return ToastIcons[props.type]
+    return PopupIcons[props.type]
 
   if (typeof props.icon === 'string') {
     return () => h('img', {

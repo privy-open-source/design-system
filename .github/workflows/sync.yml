@@ -8,17 +8,12 @@ permissions:
   contents: write
   pull-requests: write
 
-jobs:
-  test:
-    runs-on: ${{ matrix.os }}
+env:
+  NODE_VERSION: 18
 
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - ubuntu-latest
-        node-version:
-          - 18
+jobs:
+  sync:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Git Checkout
@@ -41,25 +36,31 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
           cache: "yarn"
 
       - name: Install Deps
         run: yarn install --immutable
 
-      - name: Run Sync
+      - name: Run Sync Icon
         run: yarn icon:sync
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FIGMA_FILE_ID: ${{ secrets.FIGMA_FILE_ID }}
 
+      - name: Run Sync Ilustration
+        run: yarn ilustration:sync
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE_ID: ${{ secrets.FIGMA_FILE_ID_ILUSTRATION }}
+
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.PAT }}
           branch: feat/sync-icon
-          commit-message: "chore(persona-icon): sync with figma"
-          title: "chore(persona-icon): sync with figma"
+          commit-message: "chore: sync with figma"
+          title: "chore: sync with figma"

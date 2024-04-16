@@ -10,7 +10,7 @@ import type {
   PDFJSViewer,
 } from '@privyid/persona-pdf'
 import useLoading from '../../overlay/utils/use-loading'
-import { useClamp } from '@vueuse/math'
+import { useClamp, useMax } from '@vueuse/math'
 import { createEventHook } from '@vueuse/core'
 import {
   createEventBus,
@@ -21,7 +21,8 @@ import {
 } from '@privyid/persona-pdf'
 
 export interface OpenDocConfig {
-  noStream: boolean,
+  disableStream: boolean,
+  disableRange: boolean,
 }
 
 export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivElement>) {
@@ -33,7 +34,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
 
   const totalPage = computed(() => pdfDoc.value?.numPages ?? 0)
   const scale     = useClamp(1, 0.1, 2)
-  const page      = useClamp(1, 1, totalPage)
+  const page      = useClamp(1, 1, useMax(totalPage, 1))
   const loading   = useLoading()
   const ready     = shallowRef(false)
   const error     = shallowRef<Error>()
@@ -42,7 +43,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
   const errorEvent = createEventHook<Error>()
   const readyEvent = createEventHook<PDFJSViewer.PDFViewer>()
 
-  async function openDoc (url: string, password?: string, config?: OpenDocConfig) {
+  async function openDoc (url: string, password?: string, config: Partial<OpenDocConfig> = {}) {
     loading.value = true
     error.value   = undefined
 
@@ -57,7 +58,8 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
           password     : password,
           cMapUrl      : await getCMAPUri(),
           cMapPacked   : true,
-          disableStream: config.noStream,
+          disableStream: config.disableStream,
+          disableRange : config.disableRange,
         })
 
         pdfDoc.value = await pdfLoadingTask.value.promise

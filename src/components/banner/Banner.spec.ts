@@ -164,7 +164,32 @@ it('should be able to add background image via slot `background-url`', () => {
   const banner = screen.queryByTestId('banner')
 
   expect(banner).toBeInTheDocument()
-  expect(banner).toHaveStyle({ 'background-image': 'url("assets/images/img-background-banner.svg")' })
+  expect(banner).toHaveStyle({
+    '--p-banner-bg-image'     : 'url("assets/images/img-background-banner.svg")',
+    '--p-banner-bg-dark-image': 'url("assets/images/img-background-banner.svg")',
+  })
+})
+
+it('should be able to add background image for dark mode via slot `background-dark-url`', () => {
+  const screen = render({
+    components: { Banner },
+    template  : `
+    <Banner
+      background-url="assets/images/img-background-banner.svg"
+      background-dark-url="assets/images/img-background-banner-dark.svg"
+    >
+      Text
+    </Banner>
+    `,
+  })
+
+  const banner = screen.queryByTestId('banner')
+
+  expect(banner).toBeInTheDocument()
+  expect(banner).toHaveStyle({
+    '--p-banner-bg-image'     : 'url("assets/images/img-background-banner.svg")',
+    '--p-banner-bg-dark-image': 'url("assets/images/img-background-banner-dark.svg")',
+  })
 })
 
 it('should be able to add background overlay via slot `background-overlay`', () => {

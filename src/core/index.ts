@@ -21,6 +21,7 @@ export {
 
 export {
   default as popup,
+  PopupIcons,
 } from '../components/popup'
 
 export {

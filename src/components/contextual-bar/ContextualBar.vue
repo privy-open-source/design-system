@@ -11,10 +11,14 @@
       class="contextual-bar"
       v-bind="$attrs"
       :class="classNames"
-      :style="{ 'background-image': backgroundUrl ? `url('${backgroundUrl}')`: 'none' }">
+      :style="styleBg">
       <div
         data-testid="contextual-bar-wrapper"
-        :class="[{ 'contextual-bar__wrapper--with-message' : (message || $slots.message), 'contextual-bar__wrapper--with-action' : $slots.action } ,'contextual-bar__wrapper']">
+        class="contextual-bar__wrapper"
+        :class="{
+          'contextual-bar__wrapper--with-message': (message || $slots.message),
+          'contextual-bar__wrapper--with-action': $slots.action
+        }">
         <span
           v-if="$slots.icon"
           data-testid="contextual-bar-icon"
@@ -65,7 +69,11 @@
 </template>
 
 <script lang="ts" setup>
-import type { PropType, VNode } from 'vue-demi'
+import type {
+  PropType,
+  StyleValue,
+  VNode,
+} from 'vue-demi'
 import {
   computed,
   onMounted,
@@ -86,6 +94,10 @@ const props = defineProps({
     default: 'info',
   },
   backgroundUrl: {
+    type   : String,
+    default: undefined,
+  },
+  backgroundDarkUrl: {
     type   : String,
     default: undefined,
   },
@@ -142,6 +154,19 @@ const classNames = computed(() => {
   return result
 })
 
+const styleBg = computed<StyleValue>(() => {
+  const result: StyleValue = {}
+
+  if (props.backgroundUrl) {
+    result['--p-contextual-bar-bg-image']      = `url("${props.backgroundUrl}")`
+    result['--p-contextual-bar-bg-dark-image'] = props.backgroundDarkUrl
+      ? `url("${props.backgroundDarkUrl}")`
+      : `url("${props.backgroundUrl}")`
+  }
+
+  return result
+})
+
 function onEnter (target: HTMLDivElement) {
   target.style.setProperty('transform', `translateY(-${target.clientHeight}px)`)
 
@@ -178,6 +203,9 @@ defineSlots<{
 
 <style lang="postcss">
 .contextual-bar {
+  --p-contextual-bar-bg-image: none;
+  --p-contextual-bar-bg-dark-image: none;
+
   @apply fixed z-50 top-0 left-0 p-6 w-full max-w-[100vw];
 
   &__body {
@@ -207,7 +235,8 @@ defineSlots<{
   * are available
   */
   &--background-image {
-    @apply bg-no-repeat bg-cover bg-[top_center];
+    @apply bg-no-repeat bg-cover bg-[top_center] bg-[image:var(--p-contextual-bar-bg-image)];
+    @apply dark:bg-[image:var(--p-contextual-bar-bg-dark-image)]
   }
 
   /**

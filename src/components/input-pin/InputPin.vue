@@ -17,8 +17,8 @@
       :error="error"
       @keydown="onKeyDown($event)"
       @beforeinput.prevent="setValue(i - 1, $event)"
-      @keyup.left.stop.prevent="prevFocus"
-      @keyup.right.stop.prevent="nextFocus" />
+      @keydown.left.stop.prevent="prevFocus"
+      @keydown.right.stop.prevent="nextFocus" />
   </div>
 </template>
 
@@ -100,7 +100,10 @@ const classNames = computed(() => {
   return result
 })
 
-const { next: nextFocus, prev: prevFocus } = useFocus(root, false)
+const {
+  next: nextFocus,
+  prev: prevFocus,
+} = useFocus(root, false)
 
 const model = computed<string[]>({
   get () {
@@ -138,19 +141,18 @@ function setValue (index: number, event: InputEvent) {
 }
 
 function onKeyDown (event: KeyboardEvent) {
-  const target = event.target as HTMLInputElement
+  if (!props.readonly && !props.disabled) {
+    const target = event.target as HTMLInputElement
 
-  if (props.readonly || props.disabled)
-    return
+    if (target.value && [...event.key].length === 1 && !event.ctrlKey && !event.metaKey) {
+      event.preventDefault()
 
-  if (target.value && [...event.key].length === 1 && !event.ctrlKey && !event.metaKey) {
-    event.preventDefault()
+      target.dispatchEvent(new InputEvent('beforeinput', { inputType: 'insertText', data: event.key }))
+    } else if (event.key === 'Backspace') {
+      event.preventDefault()
 
-    target.dispatchEvent(new InputEvent('beforeinput', { inputType: 'insertText', data: event.key }))
-  } else if (event.key === 'Backspace') {
-    event.preventDefault()
-
-    target.dispatchEvent(new InputEvent('beforeinput', { inputType: 'deleteContentBackward' }))
+      target.dispatchEvent(new InputEvent('beforeinput', { inputType: 'deleteContentBackward' }))
+    }
   }
 }
 </script>

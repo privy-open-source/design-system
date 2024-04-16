@@ -128,3 +128,27 @@ describe('canNext', () => {
     expect(result).toBe(true)
   })
 })
+
+describe('setValue', () => {
+  it('should only set year and keep month and date', () => {
+    const oldValue = new Date(2023, 2, 15, 5, 20, 45)
+    const newValue = new Date(2025, 0, 1)
+    const result   = Adapter.setValue(newValue, oldValue)
+
+    expect(result.getFullYear()).toBe(2025)
+    expect(result.getMonth()).toBe(2)
+    expect(result.getDate()).toBe(15)
+
+    expect(result.getHours()).toBe(5)
+    expect(result.getMinutes()).toBe(20)
+    expect(result.getSeconds()).toBe(45)
+  })
+
+  it('should return as is if oldValue undefined', () => {
+    const oldValue = undefined
+    const newValue = new Date(2025, 5, 1)
+    const result   = Adapter.setValue(newValue, oldValue)
+
+    expect(result.getFullYear()).toBe(2025)
+  })
+})

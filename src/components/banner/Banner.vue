@@ -3,7 +3,7 @@
     v-if="show"
     data-testid="banner"
     :class="classNames"
-    :style="{ 'background-image': backgroundUrl ? `url('${backgroundUrl}')`: 'none' }">
+    :style="styleBg">
     <div
       v-if="!noIcon"
       class="banner__icon"
@@ -32,7 +32,11 @@
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 import IconDanger from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
-import type { PropType, VNode } from 'vue-demi'
+import type {
+  PropType,
+  StyleValue,
+  VNode,
+} from 'vue-demi'
 import { ref, computed } from 'vue-demi'
 import type { StyleVariant } from '.'
 
@@ -55,6 +59,10 @@ const props = defineProps({
     default: false,
   },
   backgroundUrl: {
+    type   : String,
+    default: undefined,
+  },
+  backgroundDarkUrl: {
     type   : String,
     default: undefined,
   },
@@ -85,6 +93,19 @@ const classNames = computed(() => {
   return result
 })
 
+const styleBg = computed<StyleValue>(() => {
+  const result: StyleValue = {}
+
+  if (props.backgroundUrl) {
+    result['--p-banner-bg-image']      = `url("${props.backgroundUrl}")`
+    result['--p-banner-bg-dark-image'] = props.backgroundDarkUrl
+      ? `url("${props.backgroundDarkUrl}")`
+      : `url("${props.backgroundUrl}")`
+  }
+
+  return result
+})
+
 const icon = computed(() => {
   return BannerIcons[props.variant]
 })
@@ -105,8 +126,11 @@ defineSlots<{
 
 <style lang="postcss">
 .banner {
-  @apply p-4 flex space-x-2 rounded text-subtle;
-  @apply dark:text-dark-subtle;
+  --p-banner-bg-image: none;
+  --p-banner-bg-dark-image: none;
+
+  @apply p-4 flex space-x-2 rounded text-subtle bg-[image:var(--p-banner-bg-image)];
+  @apply dark:text-dark-subtle dark:bg-[image:var(--p-banner-bg-dark-image)];
 
   a {
     &:not(.btn) {

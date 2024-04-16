@@ -13,6 +13,9 @@
       "jest-extended",
       "vite/client",
       "interactjs"
-    ]
+    ],
+    "paths": {
+      "pdfjs-dist": ["node_modules/pdfjs-dist/types/src/pdf.d.ts"]
+    }
   }
 }

@@ -4,14 +4,14 @@ import {
   endOfYear,
   isAfter,
   isBefore,
+  isDate,
   isSameMonth,
   isWithinInterval,
+  set,
   startOfYear,
   subYears,
 } from 'date-fns'
-import {
-  defineAdapter,
-} from './adapter'
+import { defineAdapter } from './adapter'
 import { formatDate } from '../../utils/date'
 
 function getInterval (date: Date) {
@@ -71,5 +71,14 @@ export default defineAdapter({
     const date = this.getPrevCursor(context)
 
     return !min || isAfter(date, min) || isWithinInterval(min, getInterval(date))
+  },
+
+  setValue (value, lastValue) {
+    return isDate(lastValue)
+      ? set(lastValue, {
+        year : value.getFullYear(),
+        month: value.getMonth(),
+      })
+      : value
   },
 })

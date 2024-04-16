@@ -68,7 +68,7 @@ const divider = inject('divider', () => h(IconChevron))
 <style lang="postcss">
 .breadcrumbs {
   &__item {
-    @apply inline-flex text-sm items-center capitalize;
+    @apply inline-flex text-sm items-center;
 
     &:last-child {
       & > .breadcrumbs__item__divider {

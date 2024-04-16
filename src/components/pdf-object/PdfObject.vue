@@ -259,9 +259,9 @@ function move (event: KeyboardEvent, dx: number, dy: number) {
 function autoPosition () {
   const otherObjects = [...objects.values()].filter((obj) => {
     return obj.id !== id
-          && Number.isFinite(obj.x)
-          && Number.isFinite(obj.y)
-          && obj.page === objectPage.value
+      && Number.isFinite(obj.x)
+      && Number.isFinite(obj.y)
+      && obj.page === objectPage.value
   })
 
   const size = {

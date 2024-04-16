@@ -18,6 +18,12 @@ describe('markdown', () => {
     expect(result).toBe('<p>123<a>I am a dolphin!</a></p>\n')
   })
 
+  it('should escape html when options.escape set to true', () => {
+    const result = markdown("123<a href='javascript:alert(1)'>I am a dolphin!</a>", { escape: true })
+
+    expect(result).toBe("<p>123&lt;a href='javascript:alert(1)'&gt;I am a dolphin!&lt;/a&gt;</p>\n")
+  })
+
   it('should render inline when options.inline set to true', () => {
     const result = markdown('**Hello** _world_', { inline: true })
 

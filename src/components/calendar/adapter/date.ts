@@ -11,11 +11,11 @@ import {
   isAfter,
   isBefore,
   isWithinInterval,
+  set,
+  isDate,
 } from 'date-fns'
 import type { CalendarItem } from './adapter'
-import {
-  defineAdapter,
-} from './adapter'
+import { defineAdapter } from './adapter'
 import { formatDate } from '../../utils/date'
 
 function getInterval (date: Date) {
@@ -91,5 +91,15 @@ export default defineAdapter({
     const end   = endOfMonth(date)
 
     return !min || isAfter(date, min) || isWithinInterval(min, { start, end })
+  },
+
+  setValue (value, lastValue) {
+    return isDate(lastValue)
+      ? set(lastValue, {
+        year : value.getFullYear(),
+        month: value.getMonth(),
+        date : value.getDate(),
+      })
+      : value
   },
 })

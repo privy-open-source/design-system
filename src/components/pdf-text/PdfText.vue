@@ -90,6 +90,10 @@ const props = defineProps({
   },
 })
 
+defineEmits<{
+  'update:modelValue': [unknown],
+}>()
+
 const model   = useVModel(props)
 const preview = usePreview(model, createSpinner(props.width, props.height))
 const srcset  = ref('')

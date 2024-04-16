@@ -304,14 +304,15 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 
 ### Props
 
-| Props            |   Type    | Default | Description                                                          |
-|------------------|:---------:|:-------:|----------------------------------------------------------------------|
-| `state`          | `String`  | `info` | Contextualbar state variants, valid value is `error`, `warning`, `info` and `neutral`            |
-| `align`          | `String`  | `left`  | Contextualbar alignment, valid value is `left`, `center` and `right` |
-| `dismissable`    | `Boolean` | `true`  | Show / Hide dismiss button                                           |
-| `title`          | `String`  |    -    | Content or title inside of Contextualbar                             |
-| `message`        | `String`  |    -    | Additional message of Contextualbar                                  |
-| `background-url` | `String`  |    -    | Custom background image of Contextualbar                             |
+| Props                 |   Type    | Default | Description                                                                           |
+|-----------------------|:---------:|:-------:|---------------------------------------------------------------------------------------|
+| `state`               | `String`  | `info`  | Contextualbar state variants, valid value is `error`, `warning`, `info` and `neutral` |
+| `align`               | `String`  | `left`  | Contextualbar alignment, valid value is `left`, `center` and `right`                  |
+| `dismissable`         | `Boolean` | `true`  | Show / Hide dismiss button                                                            |
+| `title`               | `String`  |    -    | Content or title inside of Contextualbar                                              |
+| `message`             | `String`  |    -    | Additional message of Contextualbar                                                   |
+| `background-url`      | `String`  |    -    | Custom background image of Contextualbar                                              |
+| `background-dark-url` | `String`  |    -    | Custom background image of Contextualbar in Dark Mode                                 |
 
 ### Slots
 | Name       | Description                                          |

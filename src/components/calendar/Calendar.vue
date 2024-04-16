@@ -102,11 +102,13 @@ import {
   startOfMonth,
   min as minDate,
   max as maxDate,
-  minTime as MIN_TIME,
-  maxTime as MAX_TIME,
   add,
   sub,
 } from 'date-fns'
+import {
+  minTime as MIN_TIME,
+  maxTime as MAX_TIME,
+} from 'date-fns/constants'
 import { syncRef } from '@vueuse/core'
 
 const Adapters: Record<CalendarMode, CalendarAdapter> = {
@@ -184,8 +186,8 @@ const localStart = ref(Array.isArray(props.modelValue) ? props.modelValue[0] : (
 const localEnd   = ref(Array.isArray(props.modelValue) ? props.modelValue[1] : (props.end ?? props.modelValue))
 
 /**
-     * v-model:start
-     */
+ * v-model:start
+ */
 const vStart = computed({
   get () {
     return Array.isArray(props.modelValue)
@@ -198,8 +200,8 @@ const vStart = computed({
 })
 
 /**
-     * v-model:end
-     */
+ * v-model:end
+ */
 const vEnd = computed({
   get () {
     return Array.isArray(props.modelValue)
@@ -296,10 +298,13 @@ function changeMode (step = 1) {
 function selectItem (item: CalendarItem) {
   if (viewmode.value === props.mode) {
     if (props.range && (localStart.value && !localEnd.value)) {
-      localEnd.value   = maxDate([localStart.value, item.value])
-      localStart.value = minDate([localStart.value, item.value])
+      const startValue = minDate([localStart.value, item.value])
+      const endValue   = maxDate([localStart.value, item.value])
+
+      localStart.value = adapter.value.setValue(startValue, localStart.value)
+      localEnd.value   = adapter.value.setValue(endValue, localEnd.value)
     } else {
-      localStart.value = item.value
+      localStart.value = adapter.value.setValue(item.value, localStart.value)
       localEnd.value   = undefined
     }
   } else {
@@ -328,6 +333,9 @@ function isInRange (item: CalendarItem) {
 syncRef(localStart, vStart, { immediate: false })
 syncRef(localEnd, vEnd, { immediate: false })
 
+/**
+ * syncRef between v-model:start + v-model:end to v-model
+ */
 watch([localStart, localEnd], ([startVal, endVal]) => {
   if (props.range) {
     if (startVal && endVal) {

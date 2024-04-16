@@ -14,6 +14,14 @@
     @hide="onModalHide"
     @close="onCancel">
     <template #header>
+      <template v-if="dialogIcon">
+        <div class="dialog__icon">
+          <component
+            :is="dialogIcon"
+            :class="context.iconClass"
+            v-bind="context.iconAttrs" />
+        </div>
+      </template>
       <Heading
         v-p-md.inline="context.title"
         class="modal__title"
@@ -49,7 +57,13 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick, ref } from 'vue-demi'
+import {
+  h,
+  ref,
+  computed,
+  nextTick,
+  shallowRef,
+} from 'vue-demi'
 import Modal from '../modal/Modal.vue'
 import Heading from '../heading/Heading.vue'
 import DialogFooter from './DialogFooter.vue'
@@ -60,7 +74,22 @@ import { until } from '@vueuse/core'
 const id         = ref<symbol>()
 const modal      = ref(false)
 const processing = ref(false)
-const context    = ref<DialogContext>()
+const context    = shallowRef<DialogContext>()
+
+const dialogIcon = computed(() => {
+  if (context.value.icon) {
+    if (typeof context.value.icon === 'string') {
+      return () => h('img', {
+        'src'        : context.value.icon,
+        'width'      : 20,
+        'height'     : 20,
+        'data-testid': 'dialog-icon-image',
+      })
+    }
+
+    return context.value.icon
+  }
+})
 
 async function show (options: DialogContext) {
   id.value      = Symbol('DialogId')
@@ -112,5 +141,9 @@ defineExpose({
 <style lang="postcss">
 .dialog {
   --p-modal-z-index: theme(zIndex.dialog);
+
+  &__icon {
+    @apply mt-1 mr-2;
+  }
 }
 </style>

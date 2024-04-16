@@ -42,6 +42,52 @@ description: Show chart data, Powered by ChartJS
       }
     }
   })
+
+  const dataSales = computed(() => {
+    return {
+      labels: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June'
+      ],
+      datasets: [{
+        label                    : 'Data',
+        data                     : [65, 55, 60, 45, 50, 30],
+        borderColor              : 'rgb(2, 174, 197)',
+        backgroundColor          : 'rgba(2, 174, 197, 0.2)',
+        fill                     : true,
+        pointBorderWidth         : 0,
+        pointHoverBorderWidth    : 0,
+        pointBackgroundColor     : 'transparent',
+        pointHoverBackgroundColor: 'rgb(2, 174, 197)',
+        tension                  : 0.35,
+      }]
+    }
+  })
+
+  const salesOptions = computed(() => {
+    return {
+      plugins: {
+        title: {
+          display: false,
+        },
+        legend: {
+          display: false
+        },
+      },
+      scales: {
+        x: {
+          display: false,
+        },
+        y: {
+          display: false,
+        }
+      }
+    }
+  })
 </script>
 
 # Chart
@@ -102,6 +148,66 @@ description: Show chart data, Powered by ChartJS
     </p-chart-set>
   </p-chart>
 </template>
+```
+
+### Advance Usage
+
+<preview>
+  <p-chart :data="dataSales" :options="salesOptions" />
+</preview>
+
+```vue
+<template>
+  <p-chart :data="dataSales" :options="salesOptions" />
+</template>
+
+<script lang="ts" setup>
+  const dataSales = computed(() => {
+    return {
+      labels: [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June'
+      ],
+      datasets: [{
+        label                    : 'Data',
+        data                     : [65, 55, 60, 45, 50, 30],
+        borderColor              : 'rgb(2, 174, 197)',
+        backgroundColor          : 'rgba(2, 174, 197, 0.2)',
+        fill                     : true,
+        pointBorderWidth         : 0,
+        pointHoverBorderWidth    : 0,
+        pointBackgroundColor     : 'transparent',
+        pointHoverBackgroundColor: 'rgb(2, 174, 197)',
+        tension                  : 0.35,
+      }]
+    }
+  })
+
+  const salesOptions = computed(() => {
+    return {
+      plugins: {
+        title: {
+          display: false,
+        },
+        legend: {
+          display: false
+        },
+      },
+      scales: {
+        x: {
+          display: false,
+        },
+        y: {
+          display: false,
+        }
+      }
+    }
+  })
+</script>
 ```
 
 ## Variants

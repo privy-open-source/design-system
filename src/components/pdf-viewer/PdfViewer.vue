@@ -115,7 +115,8 @@ import PdfError from './PdfError.vue'
 import { useIdle } from './utils/use-idle'
 import PdfObjects from '../pdf-object/PdfObjects.vue'
 import { useViewer } from './utils/use-viewer'
-import type { PDFJSViewer, PDFJS } from '@privyid/persona-pdf'
+import type { PDFJS, PDFJSViewer } from '@privyid/persona-pdf'
+import type { OpenDocConfig } from './utils/use-viewer'
 
 const props = defineProps({
   src: {
@@ -146,9 +147,9 @@ const props = defineProps({
     type   : [Number, String],
     default: 0,
   },
-  noStream: {
-    type   : Boolean,
-    default: false,
+  config: {
+    type   : [Object] as PropType<OpenDocConfig>,
+    default: () => ({}),
   },
 })
 
@@ -196,7 +197,7 @@ const {
 } = useViewer(container, viewer)
 
 watchDebounced(() => [props.src, props.password], ([src, password]) => {
-  openDoc(src, password, { noStream: props.noStream })
+  openDoc(src, password, props.config)
 }, { debounce: 500 })
 
 watch(() => props.layout, (layout) => {
@@ -205,7 +206,7 @@ watch(() => props.layout, (layout) => {
 
 onMounted(async () => {
   if (props.src)
-    openDoc(props.src, props.password, { noStream: props.noStream })
+    openDoc(props.src, props.password, props.config)
 })
 
 onLoaded((doc) => {
@@ -255,6 +256,10 @@ syncRef(pdfScale, vScale)
 defineExpose({
   page : pdfPage,
   scale: pdfScale,
+  root,
+  container,
+  viewer,
+  loading,
   totalPage,
   zoomIn,
   zoomOut,

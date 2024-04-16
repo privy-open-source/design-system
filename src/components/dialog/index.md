@@ -116,18 +116,21 @@ dialog.prompt({
 
 `confirm(options: DialogConfirmOption): Promise<boolean>`
 
-| Options             |      Type      | Default | Description                                                      |
-|---------------------|:--------------:|:-------:|------------------------------------------------------------------|
-| `title`             |    `String`    |    -    | Dialog title, **required**                                       |
-| `text`              |    `String`    |    -    | Dialog text content (support markdown)                           |
-| `size`              |    `String`    |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
-| `centered`          |   `Boolean`    | `false` | Dialog vertically center in the viewport                         |
-| `dismissable`       |   `Boolean`    | `true`  | Show / Hide dismiss button                                       |
-| `noCloseOnBackdrop` |   `Boolean`    | `false` | No close dialog while dialog Backdrop was clicked                |
-| `footerAlign`       |    `Number`    | `start` | The alignment of dialog footer, valid value is `start` and `end` |
-| `cancel`            | `DialogButton` |    -    | Cancel button's options for dialog footer                        |
-| `confirm`           | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
-| `attrs`             |    `Object`    |    -    | Additional attributes placed modal dialog                        |
+| Options             |          Type           | Default | Description                                                      |
+|---------------------|:-----------------------:|:-------:|------------------------------------------------------------------|
+| `title`             |        `String`         |    -    | Dialog title, **required**                                       |
+| `text`              |        `String`         |    -    | Dialog text content (support markdown)                           |
+| `size`              |        `String`         |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
+| `centered`          |        `Boolean`        | `false` | Dialog vertically center in the viewport                         |
+| `dismissable`       |        `Boolean`        | `true`  | Show / Hide dismiss button                                       |
+| `noCloseOnBackdrop` |        `Boolean`        | `false` | No close dialog while dialog Backdrop was clicked                |
+| `footerAlign`       |        `Number`         | `start` | The alignment of dialog footer, valid value is `start` and `end` |
+| `cancel`            |     `DialogButton`      |    -    | Cancel button's options for dialog footer                        |
+| `confirm`           |     `DialogButton`      |    -    | Confirm button's options for dialog footer                       |
+| `attrs`             |        `Object`         |    -    | Additional attributes placed modal dialog                        |
+| `icon`              | `String` or `Component` |    -    | Dialog's icon                                                    |
+| `iconClass`         |        `String`         |    -    | Dialog's icon custom class                                       |
+| `iconAttrs`         |        `Object`         |    -    | Dialog's icon custom attribute                                   |
 
 `DialogButton`
 
@@ -145,34 +148,40 @@ dialog.prompt({
 
 `alert(options: DialogAlertOption): Promise<void>`
 
-| Options       |      Type      | Default | Description                                                      |
-|---------------|:--------------:|:-------:|------------------------------------------------------------------|
-| `title`       |    `String`    |    -    | Dialog title, **required**                                       |
-| `text`        |    `String`    |    -    | Dialog text content                                              |
-| `size`        |    `String`    |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
-| `centered`    |   `Boolean`    | `false` | Dialog vertically center in the viewport                         |
-| `footerAlign` |    `Number`    | `start` | The alignment of dialog footer, valid value is `start` and `end` |
-| `confirm`     | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
-| `attrs`       |    `Object`    |    -    | Additional attributes placed on modal dialog                     |
+| Options       |          Type           | Default | Description                                                      |
+|---------------|:-----------------------:|:-------:|------------------------------------------------------------------|
+| `title`       |        `String`         |    -    | Dialog title, **required**                                       |
+| `text`        |        `String`         |    -    | Dialog text content                                              |
+| `size`        |        `String`         |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
+| `centered`    |        `Boolean`        | `false` | Dialog vertically center in the viewport                         |
+| `footerAlign` |        `Number`         | `start` | The alignment of dialog footer, valid value is `start` and `end` |
+| `confirm`     |     `DialogButton`      |    -    | Confirm button's options for dialog footer                       |
+| `attrs`       |        `Object`         |    -    | Additional attributes placed on modal dialog                     |
+| `icon`        | `String` or `Component` |    -    | Dialog's icon                                                    |
+| `iconClass`   |        `String`         |    -    | Dialog's icon custom class                                       |
+| `iconAttrs`   |        `Object`         |    -    | Dialog's icon custom attribute                                   |
 
 ### Prompt
 
 `prompt(options: DialogPromptOption): Promise<string>`
 
-| Options             |      Type      | Default | Description                                                      |
-|---------------------|:--------------:|:-------:|------------------------------------------------------------------|
-| `title`             |    `String`    |    -    | Dialog title, **required**                                       |
-| `text`              |    `String`    |    -    | Dialog text content (support markdown)                           |
-| `size`              |    `String`    |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
-| `centered`          |   `Boolean`    | `false` | Dialog vertically center in the viewport                         |
-| `dismissable`       |   `Boolean`    | `true`  | Show / Hide dismiss button                                       |
-| `noCloseOnBackdrop` |   `Boolean`    | `false` | No close dialog while dialog Backdrop was clicked                |
-| `footerAlign`       |    `Number`    | `start` | The alignment of dialog footer, valid value is `start` and `end` |
-| `cancel`            | `DialogButton` |    -    | Cancel button's options for dialog footer                        |
-| `confirm`           | `DialogButton` |    -    | Confirm button's options for dialog footer                       |
-| `input`             | `DialogInput`  |    -    | Input's options                                                  |
-| `value`             |    `String`    |    -    | Default input value                                              |
-| `attrs`             |    `Object`    |    -    | Additional attributes placed on modal dialog                     |
+| Options             |          Type           | Default | Description                                                      |
+|---------------------|:-----------------------:|:-------:|------------------------------------------------------------------|
+| `title`             |        `String`         |    -    | Dialog title, **required**                                       |
+| `text`              |        `String`         |    -    | Dialog text content (support markdown)                           |
+| `size`              |        `String`         |    -    | Dialog size, valid value is `sm`, `md`, `lg`, `xl`               |
+| `centered`          |        `Boolean`        | `false` | Dialog vertically center in the viewport                         |
+| `dismissable`       |        `Boolean`        | `true`  | Show / Hide dismiss button                                       |
+| `noCloseOnBackdrop` |        `Boolean`        | `false` | No close dialog while dialog Backdrop was clicked                |
+| `footerAlign`       |        `Number`         | `start` | The alignment of dialog footer, valid value is `start` and `end` |
+| `cancel`            |     `DialogButton`      |    -    | Cancel button's options for dialog footer                        |
+| `confirm`           |     `DialogButton`      |    -    | Confirm button's options for dialog footer                       |
+| `input`             |      `DialogInput`      |    -    | Input's options                                                  |
+| `value`             |        `String`         |    -    | Default input value                                              |
+| `attrs`             |        `Object`         |    -    | Additional attributes placed on modal dialog                     |
+| `icon`              | `String` or `Component` |    -    | Dialog's icon                                                    |
+| `iconClass`         |        `String`         |    -    | Dialog's icon custom class                                       |
+| `iconAttrs`         |        `Object`         |    -    | Dialog's icon custom attribute                                   |
 
 `DialogInput`
 
