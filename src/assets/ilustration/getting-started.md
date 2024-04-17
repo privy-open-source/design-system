@@ -11,6 +11,9 @@ import ImgS from '@privyid/persona-ilustration/svg/privy-app/spot.svg'
 import ImgSHM from '@privyid/persona-ilustration/svg/privy-app/spot-hero-small.svg'
 import ImgSHL from '@privyid/persona-ilustration/svg/privy-app/spot-hero-large.svg'
 
+import ImgPNG from '@privyid/persona-ilustration/png/privy-app/spot.png'
+import ImgPNGx2 from '@privyid/persona-ilustration/png/privy-app/spot@2x.png'
+
 import pilIdFaceSpot from '@privyid/persona-ilustration/vue/id-face/spot.vue'
 import pilPageNotFoundSpotHeroLarge from '@privyid/persona-ilustration/vue/page-not-found/spot-hero-large.vue'
 </script>
@@ -42,6 +45,25 @@ To use original svg file, you can manually import from `@privyid/persona-ilustra
 
 <script setup lang="ts">
 import ImgURL from '@privyid/persona-ilustration/svg/privy-app/spot.svg'
+</script>
+```
+
+### Using as PNG
+
+Ilustration also available in PNG format, you can import from `@privyid/persona-ilustration/png/[name]/[size].png`
+
+<preview>
+  <img :src="ImgPNG" :srcset="`${ImgPNGx2} 2x`" />
+</preview>
+
+```vue
+<template>
+  <img :src="ImgURL" :srcset="`${ImgURLx2} 2x`" />
+</template>
+
+<script setup lang="ts">
+import ImgURL from '@privyid/persona-ilustration/png/privy-app/spot.png'
+import ImgURLx2 from '@privyid/persona-ilustration/png/privy-app/spot@2x.png'
 </script>
 ```
 

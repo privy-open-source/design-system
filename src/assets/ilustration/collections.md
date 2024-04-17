@@ -7,6 +7,8 @@ description: List of all icons
 import Fuse from 'fuse.js'
 import meta from '@privyid/persona-ilustration/svg/meta.json'
 import pButton from '../../components/button/Button.vue'
+import pDropdown from '../../components/dropdown/Dropdown.vue'
+import pDropdownItem from '../../components/dropdown/DropdownItem.vue'
 import pText from '../../components/text/Text.vue'
 import pInput from '../../components/input/Input.vue'
 import pTabs from '../../components/tabs/Tabs.vue'
@@ -52,8 +54,8 @@ const icons = computed(() => {
   return groupBy(filtered, 'category')
 })
 
-function getURL (icon, size = 'spot') {
-  return new URL(`../../../packages/persona-ilustration/svg/${icon.folder}/${size}.svg`, import.meta.url).href
+function getURL (icon, size = 'spot', format = 'svg', scale = '') {
+  return new URL(`../../../packages/persona-ilustration/${format}/${icon.folder}/${size}${scale}.${format}`, import.meta.url).href
 }
 
 function showDetail (icon) {
@@ -61,11 +63,11 @@ function showDetail (icon) {
   showModal.value = true
 }
 
-function download (icon) {
+function download (icon, format = 'svg', scale = '') {
   const a = document.createElement('a')
 
-  a.href     = getURL(icon, size.value)
-  a.download = kebabCase(`pil-${icon.folder}-${size.value}`)
+  a.href     = getURL(icon, size.value, format, scale)
+  a.download = kebabCase(`pil-${icon.folder}-${size.value}`) + scale
 
   a.click()
 }
@@ -157,18 +159,27 @@ function download (icon) {
           <p-form-group label="Size">
             <div class="flex space-x-4">
               <p-select
-                class="w-36"
+                class="w-40"
                 v-model="size"
                 :options="['dot-small', 'dot-large', 'spot', 'spot-hero-small', 'spot-hero-large']" />
             </div>
           </p-form-group>
-          <div>
-            <p-button
-              class="w-36"
-              @click="download(selected)">
-              <PiDownload16 />
-              Get SVG
-            </p-button>
+          <div class="space-y-1">
+            <p-dropdown class="w-40">
+              <template #button-content>
+                <PiDownload16 />
+                Get File
+              </template>
+              <p-dropdown-item @click="download(selected, 'svg')">
+                SVG
+              </p-dropdown-item>
+              <p-dropdown-item @click="download(selected, 'png')">
+                PNG
+              </p-dropdown-item>
+              <p-dropdown-item @click="download(selected, 'png', '@2x')">
+                PNG x2
+              </p-dropdown-item>
+            </p-dropdown>
           </div>
         </div>
       </div>
@@ -196,7 +207,23 @@ function download (icon) {
 </template>
 
 <script lang="ts" setup>
-  import {{ pascalCase(`img-${selected.folder}-32`) }} from '@privyid/persona-ilustration/svg/{{ selected.folder }}/{{ size }}.svg'
+  import {{ pascalCase(`img-${selected.folder}-${size}`) }} from '@privyid/persona-ilustration/svg/{{ selected.folder }}/{{ size }}.svg'
+</script>
+```
+
+</p-tab>
+<p-tab title="PNG">
+
+```vue-vue
+<template>
+  <img
+    :src="{{ pascalCase(`img-${selected.folder}-${size}`) }}"
+    :srcset="`{{'${' + pascalCase(`img-${selected.folder}-${size}`) + '2x}'}} 2x`"/>
+</template>
+
+<script lang="ts" setup>
+  import {{ pascalCase(`img-${selected.folder}-${size}`) }} from '@privyid/persona-ilustration/png/{{ selected.folder }}/{{ size }}.png'
+  import {{ pascalCase(`img-${selected.folder}-${size}`) }}2x from '@privyid/persona-ilustration/png/{{ selected.folder }}/{{ size }}@2x.png'
 </script>
 ```
 

@@ -3350,6 +3350,7 @@ __metadata:
     ohash: "npm:^1.1.2"
     ora: "npm:^8.0.0"
     p-all: "npm:^5.0.0"
+    sharp: "npm:^0.33.3"
     svg-path-commander: "npm:^2.0.5"
     svgo: "npm:^3.0.2"
     webfont: "npm:^11.2.26"

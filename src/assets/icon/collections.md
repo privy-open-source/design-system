@@ -200,7 +200,7 @@ function download (icon) {
 </template>
 
 <script lang="ts" setup>
-  import {{ pascalCase(`icon-${selected.folder}-32`) }} from '@privyid/persona-icon/svg/{{ selected.folder }}/{{ size }}.svg'
+  import {{ pascalCase(`icon-${selected.folder}-${size}`) }} from '@privyid/persona-icon/svg/{{ selected.folder }}/{{ size }}.svg'
 </script>
 ```
 

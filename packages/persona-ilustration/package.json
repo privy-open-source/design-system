@@ -20,6 +20,10 @@
     "./svg/": {
       "types": "./types/svg.d.ts",
       "default": "./svg/"
+    },
+    "./png/": {
+      "types": "./types/png.d.ts",
+      "default": "./png/"
     }
   },
   "license": "MIT",
@@ -36,6 +40,7 @@
   "files": [
     "dist/",
     "svg/",
+    "png/",
     "vue/"
   ],
   "scripts": {
@@ -58,6 +63,7 @@
     "ohash": "^1.1.2",
     "ora": "^8.0.0",
     "p-all": "^5.0.0",
+    "sharp": "^0.33.3",
     "svg-path-commander": "^2.0.5",
     "svgo": "^3.0.2",
     "webfont": "^11.2.26"
