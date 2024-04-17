@@ -63,7 +63,7 @@
     "@juggle/resize-observer": "3.4.0",
     "@nuxt/kit": "3.11.1",
     "@splidejs/splide": "4.1.4",
-    "@testing-library/dom": "9.3.4",
+    "@testing-library/dom": "10.0.0",
     "@testing-library/user-event": "14.5.2",
     "@vueuse/core": "10.9.0",
     "@vueuse/math": "10.9.0",
