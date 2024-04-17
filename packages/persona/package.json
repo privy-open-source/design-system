@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "1.6.3",
-    "@jill64/universal-sanitizer": "1.2.7",
+    "@jill64/universal-sanitizer": "1.2.8",
     "@juggle/resize-observer": "3.4.0",
     "@nuxt/kit": "3.11.1",
     "@splidejs/splide": "4.1.4",
