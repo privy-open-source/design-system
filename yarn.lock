@@ -2201,7 +2201,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jill64/universal-sanitizer@npm:1.2.8":
+"@jill64/universal-sanitizer@npm:1.2.8, @jill64/universal-sanitizer@npm:^1.0.2":
   version: 1.2.8
   resolution: "@jill64/universal-sanitizer@npm:1.2.8"
   dependencies:
@@ -2210,18 +2210,6 @@ __metadata:
     dompurify: "npm:3.1.0"
     sanitize-html: "npm:2.13.0"
   checksum: 10/a9d1015713a8f471ae05467c0ead4304bb326aff7e22d5d98adddd0dfbce98ad9abffe3f456bf9d9e554a2504ffa38117a256427fdb5941377f66a7f83942901
-  languageName: node
-  linkType: hard
-
-"@jill64/universal-sanitizer@npm:^1.0.2":
-  version: 1.2.7
-  resolution: "@jill64/universal-sanitizer@npm:1.2.7"
-  dependencies:
-    "@types/dompurify": "npm:3.0.5"
-    "@types/sanitize-html": "npm:2.11.0"
-    dompurify: "npm:3.0.11"
-    sanitize-html: "npm:2.13.0"
-  checksum: 10/c1c3b637126be9265a7ead54172e7ed11991bf302550061ab1d2f36c25a4a562bafa350311fd30a130e8912e00f2dd0cc2c18354922d268ad67663059fd7acf9
   languageName: node
   linkType: hard
 
@@ -7843,13 +7831,6 @@ __metadata:
   dependencies:
     domelementtype: "npm:^2.3.0"
   checksum: 10/809b805a50a9c6884a29f38aec0a4e1b4537f40e1c861950ed47d10b049febe6b79ab72adaeeebb3cc8fc1cd33f34e97048a72a9265103426d93efafa78d3e96
-  languageName: node
-  linkType: hard
-
-"dompurify@npm:3.0.11":
-  version: 3.0.11
-  resolution: "dompurify@npm:3.0.11"
-  checksum: 10/fc7027ef5cc09ad906625e8aa39b3ca50570fd05aec9fd5995349f0be866385122265c7a823c416694c7bb4c3415e9172cce03b92a153a16c7d1d27165b2a0fd
   languageName: node
   linkType: hard
 
