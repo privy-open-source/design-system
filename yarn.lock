@@ -18869,17 +18869,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-collapsed@npm:1.3.3":
+"vue-collapsed@npm:1.3.3, vue-collapsed@npm:^1.2.5":
   version: 1.3.3
   resolution: "vue-collapsed@npm:1.3.3"
   checksum: 10/e4230acbad539af847b532c511c2e906e5461aad953680327192a7988ee1e211433971b41b5f93c51b4f00d0cbce44b9495b5dd3e89950955e2cf5d4d26cff4b
-  languageName: node
-  linkType: hard
-
-"vue-collapsed@npm:^1.2.5":
-  version: 1.3.1
-  resolution: "vue-collapsed@npm:1.3.1"
-  checksum: 10/088328f7cf979a125289104f3645ba384236570959a00629bc85c0d94b52d90e377fcd6ff01e91b3ada03244f6ed66393622e90f691a9fecdd92f587e1afdfe7
   languageName: node
   linkType: hard
 
