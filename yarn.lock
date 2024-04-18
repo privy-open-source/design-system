@@ -3084,7 +3084,7 @@ __metadata:
     vue-collapsed: "npm:^1.2.5"
     vue-content-loader: "npm:^2.0.1"
     vue-demi: "npm:0.14.7"
-    vue-router: "npm:4.3.0"
+    vue-router: "npm:4.3.1"
     vue-tsc: "npm:2.0.13"
     vuedraggable: "npm:next"
     webfontloader: "npm:1.6.28"
@@ -18910,7 +18910,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-router@npm:4.3.0, vue-router@npm:^4.3.0":
+"vue-router@npm:4.3.1":
+  version: 4.3.1
+  resolution: "vue-router@npm:4.3.1"
+  dependencies:
+    "@vue/devtools-api": "npm:^6.5.1"
+  peerDependencies:
+    vue: ^3.2.0
+  checksum: 10/5ba88713a138fa44f63232edb56e158d157f861fccd4434e5dd3ab29147d7cbdd81c76d2ef8e2201eb3b25ac9eec7e6ccadb9346e461a0d0c82c8431554faecd
+  languageName: node
+  linkType: hard
+
+"vue-router@npm:^4.3.0":
   version: 4.3.0
   resolution: "vue-router@npm:4.3.0"
   dependencies:
