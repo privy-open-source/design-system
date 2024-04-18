@@ -175,6 +175,9 @@ it('should failed to typing if input have readonly properties', async () => {
   const screen = render({
     components: { InputPin },
     template  : '<input-pin readonly v-model="model"/>',
+    setup () {
+      return { model }
+    },
   })
 
   const inputs = screen.queryAllByTestId('input')
@@ -193,6 +196,9 @@ it('should failed to typing if input have disabled properties', async () => {
   const screen = render({
     components: { InputPin },
     template  : '<input-pin disabled v-model="model"/>',
+    setup () {
+      return { model }
+    },
   })
 
   const inputs = screen.queryAllByTestId('input')
@@ -204,4 +210,25 @@ it('should failed to typing if input have disabled properties', async () => {
   await user.type(inputs.at(4), '3')
 
   expect(model.value).toBe('')
+})
+
+it('should replace existing value if already inputed', async () => {
+  const model  = ref('54321')
+  const screen = render({
+    components: { InputPin },
+    template  : '<input-pin v-model="model"/>',
+    setup () {
+      return { model }
+    },
+  })
+
+  const inputs = screen.queryAllByTestId('input')
+  const user   = userEvent.setup()
+
+  await user.type(inputs.at(1), '1')
+  await user.type(inputs.at(2), '2')
+  await user.type(inputs.at(3), '3')
+  await user.type(inputs.at(4), '4')
+
+  expect(model.value).toBe('51234')
 })

@@ -30,12 +30,14 @@ import pAll from 'p-all'
 import ohash from 'ohash'
 import minimist from 'minimist'
 import { ofetch } from 'ofetch'
+import Sharp from 'sharp'
 
 const argv       = minimist(process.argv.slice(2))
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
 const FILE_ID    = process.env.FIGMA_FILE_ID ?? ''
 const SVG_DIR    = resolve(__dirname, '../svg')
 const VUE_DIR    = resolve(__dirname, '../vue')
+const PNG_DIR    = resolve(__dirname, '../png')
 const META_FILE  = resolve(SVG_DIR, 'meta.json')
 const LOCK_FILE  = resolve(__dirname, '../sync-lock.json')
 const FORCE_SYNC = argv.f || argv.force
@@ -242,6 +244,15 @@ async function main () {
           await ensureFile(resolve(VUE_DIR, `${object.filename}.vue`))
           await writeFile(resolve(VUE_DIR, `${object.filename}.vue`), toVue(svg))
           await lintFile(resolve(VUE_DIR, `${object.filename}.vue`))
+
+          await ensureFile(resolve(PNG_DIR, `${object.filename}.png`))
+          await Sharp(resolve(SVG_DIR, object.filepath))
+            .toFormat('png')
+            .toFile(resolve(PNG_DIR, `${object.filename}.png`))
+
+          await Sharp(resolve(SVG_DIR, object.filepath), { density: 144 })
+            .toFormat('png')
+            .toFile(resolve(PNG_DIR, `${object.filename}@2x.png`))
 
           object.filehash = createHash('SHA256')
             .update(svg)
