@@ -1,0 +1,1560 @@
+[
+  {
+    "name": "biometric",
+    "aliases": [
+      "authentication",
+      "smartphone"
+    ],
+    "category": "features",
+    "folder": "biometric",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "biometric/dot-small",
+        "path": "biometric/dot-small.svg",
+        "hash": "c57eed7e3b9577451a8c36e52e21216f1584cff7e8591e5394ef3cf0988f89cb"
+      },
+      {
+        "name": "biometric/dot-large",
+        "path": "biometric/dot-large.svg",
+        "hash": "9df8c7d30caf7bdaae3266a5861dcb13af0cf47b124aa5da69239c29fcfb95b6"
+      },
+      {
+        "name": "biometric/spot",
+        "path": "biometric/spot.svg",
+        "hash": "526c9d40eb11d05bc38f56ed7bec17d3e44b4078538560a1a7e22d773f61fa0f"
+      },
+      {
+        "name": "biometric/spot-hero-small",
+        "path": "biometric/spot-hero-small.svg",
+        "hash": "64cbd4814d99964753a2b094cf4fed248c53a2aff1ec151b09f78be2f45080f7"
+      },
+      {
+        "name": "biometric/spot-hero-large",
+        "path": "biometric/spot-hero-large.svg",
+        "hash": "26566546a9fcbb73fecaca62bd04acc26c043c8567e5e566d5837ecfe5e78abd"
+      }
+    ]
+  },
+  {
+    "name": "new-update",
+    "aliases": [
+      "privy-app"
+    ],
+    "category": "features",
+    "folder": "new-update",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "new-update/dot-small",
+        "path": "new-update/dot-small.svg",
+        "hash": "6e7d9b6fd0f30e7507f400f948cce5f0fc4dc22e9d63f8633c8c2a4eb3298bd7"
+      },
+      {
+        "name": "new-update/dot-large",
+        "path": "new-update/dot-large.svg",
+        "hash": "df06524f4b28aa768f124657c208392d658e5347609d3ca96d41ca47fa4c5c92"
+      },
+      {
+        "name": "new-update/spot",
+        "path": "new-update/spot.svg",
+        "hash": "f657410cdcaa31b26dcfee6094d20382a155fc468630068436779ac0e3f9839c"
+      },
+      {
+        "name": "new-update/spot-hero-small",
+        "path": "new-update/spot-hero-small.svg",
+        "hash": "0ed1983a049e987f653a7086aa4c88b76d87fdf393ca9838b5b0b816a3eda1ed"
+      },
+      {
+        "name": "new-update/spot-hero-large",
+        "path": "new-update/spot-hero-large.svg",
+        "hash": "4da146474c34b2c1d0f9f22daba3c73f91806094c34ec1876b9d29b33f5afec0"
+      }
+    ]
+  },
+  {
+    "name": "bill",
+    "aliases": [
+      "payment"
+    ],
+    "category": "not-found",
+    "folder": "bill",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "bill/dot-small",
+        "path": "bill/dot-small.svg",
+        "hash": "f569a73d854c4aa0c3fdd2bd71c05ba086d1a4125a735f5a41583e16989f101a"
+      },
+      {
+        "name": "bill/spot-hero-small",
+        "path": "bill/spot-hero-small.svg",
+        "hash": "8db20beea9539228e1c8a2520c0e9d60025560fe63aecfa82935d36068f98a03"
+      },
+      {
+        "name": "bill/dot-large",
+        "path": "bill/dot-large.svg",
+        "hash": "7f3e9d9d74963f978022b46d2abd92950dfc96d586798d8b6c0a8522078f6b59"
+      },
+      {
+        "name": "bill/spot",
+        "path": "bill/spot.svg",
+        "hash": "5ea6400e64f46a4a69272e0d99f3bbc4072dd514ea8146f918bfd4109bf9dec6"
+      },
+      {
+        "name": "bill/spot-hero-large",
+        "path": "bill/spot-hero-large.svg",
+        "hash": "2ba3411421f9fc6d46fe39f88679dda3fd3401ebfa9c78239f8204863c22617a"
+      }
+    ]
+  },
+  {
+    "name": "order",
+    "aliases": [
+      "sort",
+      "card",
+      "hand"
+    ],
+    "category": "not-found",
+    "folder": "order",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "order/dot-small",
+        "path": "order/dot-small.svg",
+        "hash": "12e6b582bad69999df010a3d746540ad63597cd254581d39a4c558d715f31e72"
+      },
+      {
+        "name": "order/dot-large",
+        "path": "order/dot-large.svg",
+        "hash": "489518d207d8157307cd4a2a3bfa73ab82f28fbc7a6c23931ae0254dc2a69be8"
+      },
+      {
+        "name": "order/spot-hero-large",
+        "path": "order/spot-hero-large.svg",
+        "hash": "e42f838f7beec0454d5f7a4bd7163d23117ce7e13f9a4525ac1b8f5687431383"
+      },
+      {
+        "name": "order/spot",
+        "path": "order/spot.svg",
+        "hash": "d6c58ae234ba54f1f71849eb0121f6c5c686469a6ee2f9917b351ba0f157f271"
+      },
+      {
+        "name": "order/spot-hero-small",
+        "path": "order/spot-hero-small.svg",
+        "hash": "63626b6eb612e455a47a58c80b65c943b6ece9f950b93fce7ee424a208b8e663"
+      }
+    ]
+  },
+  {
+    "name": "page-not-found",
+    "aliases": [
+      "404"
+    ],
+    "category": "not-found",
+    "folder": "page-not-found",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "page-not-found/dot-small",
+        "path": "page-not-found/dot-small.svg",
+        "hash": "774724b1cb1adc4ad6d45fea7d60f5254a11f09de24777607daa7e07a99fb8c2"
+      },
+      {
+        "name": "page-not-found/spot-hero-small",
+        "path": "page-not-found/spot-hero-small.svg",
+        "hash": "20a3c430a53ea3b7bc127f7faf49272c326bcbe0113f47cf1312349e129fcfc0"
+      },
+      {
+        "name": "page-not-found/dot-large",
+        "path": "page-not-found/dot-large.svg",
+        "hash": "ea4399f177fee4bba67e307079ad230484c833ce1ce64c21a99050fed2a5aa4e"
+      },
+      {
+        "name": "page-not-found/spot",
+        "path": "page-not-found/spot.svg",
+        "hash": "c52d8bf9baf75e9856e3fd6e6e382a81735de22bfdd1c4143fa72df3ceeeca50"
+      },
+      {
+        "name": "page-not-found/spot-hero-large",
+        "path": "page-not-found/spot-hero-large.svg",
+        "hash": "ab394e40a8752dc964f71e330e395d97d5938b213c543ff9046862253793b92a"
+      }
+    ]
+  },
+  {
+    "name": "document-template",
+    "aliases": [],
+    "category": "not-found",
+    "folder": "document-template",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "document-template/dot-small",
+        "path": "document-template/dot-small.svg",
+        "hash": "339635cb98dac2bb3ed11da8ae718d1b892d556d7794edea219c312b8ae7f7a1"
+      },
+      {
+        "name": "document-template/dot-large",
+        "path": "document-template/dot-large.svg",
+        "hash": "59ad414c5cd58658b0fb1543058b6a48b782252a9a7f0d7cac0728b717bab049"
+      },
+      {
+        "name": "document-template/spot",
+        "path": "document-template/spot.svg",
+        "hash": "e5ff0dc1f9d6ae77a50d8670373cea6b78dcc93ce1d701414d7f615e41cc00eb"
+      },
+      {
+        "name": "document-template/spot-hero-small",
+        "path": "document-template/spot-hero-small.svg",
+        "hash": "6e1ded55ee86fa1f68706352f3f62a743a3f3abe6e69a2ece5a6542a13f02f50"
+      },
+      {
+        "name": "document-template/spot-hero-large",
+        "path": "document-template/spot-hero-large.svg",
+        "hash": "869dc6f7bd85f09e3586714defea1a996026f4969393a25c415bf025de381dcf"
+      }
+    ]
+  },
+  {
+    "name": "padlock",
+    "aliases": [
+      "no-access"
+    ],
+    "category": "error",
+    "folder": "padlock",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "padlock/dot-small",
+        "path": "padlock/dot-small.svg",
+        "hash": "4202de8f358382aeb2bbc72737f3a69e352bef13d358915adaaea146f4ebf59c"
+      },
+      {
+        "name": "padlock/dot-large",
+        "path": "padlock/dot-large.svg",
+        "hash": "a5ab0e2047379e1dcbda2c903c65e5b64abac1c55f418c6cf30ea5ff71a12b7f"
+      },
+      {
+        "name": "padlock/spot",
+        "path": "padlock/spot.svg",
+        "hash": "33d24752ee5add5fcb1fb2292c25d2fe5c6a15b6e9a8134f4bbcf5662e8f6384"
+      },
+      {
+        "name": "padlock/spot-hero-small",
+        "path": "padlock/spot-hero-small.svg",
+        "hash": "3213af7f0cc0f1f2fe8ce85a703494ca9308b2982cac7fd171ad524e078a2efc"
+      },
+      {
+        "name": "padlock/spot-hero-large",
+        "path": "padlock/spot-hero-large.svg",
+        "hash": "df6bc11e50ec58ed82a7c79457697408e470b6757d22e64eb51f6c0c1c786859"
+      }
+    ]
+  },
+  {
+    "name": "server-error",
+    "aliases": [
+      "server-bad"
+    ],
+    "category": "error",
+    "folder": "server-error",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "server-error/dot-small",
+        "path": "server-error/dot-small.svg",
+        "hash": "8b418b4ac34471d006c6b935670eb09cf045763cfd6d254961cf3158e6387765"
+      },
+      {
+        "name": "server-error/spot-hero-small",
+        "path": "server-error/spot-hero-small.svg",
+        "hash": "4feb53bec2a6a25e47e29a7a0b2ac38c968a8abf30b0729b90b905f75b726da8"
+      },
+      {
+        "name": "server-error/dot-large",
+        "path": "server-error/dot-large.svg",
+        "hash": "e411c34a85c95692177ce3f51ddbdfcc08f15cf7edea26022c6486d3204cf6cb"
+      },
+      {
+        "name": "server-error/spot",
+        "path": "server-error/spot.svg",
+        "hash": "b5b9bd9add3a747ae023470720226168affe7cff34849817c624f63ff805f622"
+      },
+      {
+        "name": "server-error/spot-hero-large",
+        "path": "server-error/spot-hero-large.svg",
+        "hash": "13891cd4bc3fedd333057bda47cb51db80238ea1765d08bd3cefa55928fe1d55"
+      }
+    ]
+  },
+  {
+    "name": "link-expired",
+    "aliases": [
+      "broken-bridge"
+    ],
+    "category": "error",
+    "folder": "link-expired",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "link-expired/dot-small",
+        "path": "link-expired/dot-small.svg",
+        "hash": "441cef094f65051ec7e724747358ea1ff18b0c934c32eb3f72c735c905643109"
+      },
+      {
+        "name": "link-expired/dot-large",
+        "path": "link-expired/dot-large.svg",
+        "hash": "f1d550d2db233c4f4a5b0b2b7b7032306777efe8ee41daea1f28044850354302"
+      },
+      {
+        "name": "link-expired/spot-hero-large",
+        "path": "link-expired/spot-hero-large.svg",
+        "hash": "089d3ad757f504be0f1267dfff84114479dbcab4e6523f1de574dc83dd2cd2e0"
+      },
+      {
+        "name": "link-expired/spot",
+        "path": "link-expired/spot.svg",
+        "hash": "e565756b538d159392351c945ed6ac9addb4f32fe8c34bde62b51b6a241102dc"
+      },
+      {
+        "name": "link-expired/spot-hero-small",
+        "path": "link-expired/spot-hero-small.svg",
+        "hash": "a189c3e2daf43fc6b96c2dcd6dbd949c443c5cdc562ace93a9acd593fd7b6b59"
+      }
+    ]
+  },
+  {
+    "name": "maintenance",
+    "aliases": [
+      "bucket",
+      "paint",
+      "brush"
+    ],
+    "category": "error",
+    "folder": "maintenance",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "maintenance/dot-small",
+        "path": "maintenance/dot-small.svg",
+        "hash": "208a890941fc8cb3a5cf56c49a8710e10c5480a1fa2700fbb7026bca770f5b73"
+      },
+      {
+        "name": "maintenance/dot-large",
+        "path": "maintenance/dot-large.svg",
+        "hash": "7aab90f0cf5e44f377246c314e2dfac24d627f62160d1c7e850e47a5e5ff7a67"
+      },
+      {
+        "name": "maintenance/spot-hero-large",
+        "path": "maintenance/spot-hero-large.svg",
+        "hash": "df396f52bb4954f53ae959e0b206162725cb351a223b3a13a58adccab285f813"
+      },
+      {
+        "name": "maintenance/spot",
+        "path": "maintenance/spot.svg",
+        "hash": "3b2bdf0811d5286e0260922540164b2842bd792a25e1229975ad8c702fdfd374"
+      },
+      {
+        "name": "maintenance/spot-hero-small",
+        "path": "maintenance/spot-hero-small.svg",
+        "hash": "bdc615dea003554a7e6264bd9a112705d97414aaa6acb0ca7017b22e739da303"
+      }
+    ]
+  },
+  {
+    "name": "no-bill",
+    "aliases": [
+      "magnifier"
+    ],
+    "category": "not-found",
+    "folder": "no-bill",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "no-bill/dot-small",
+        "path": "no-bill/dot-small.svg",
+        "hash": "2a7cf4d41d9a731f96c42f5b4f6eee1c9a27a1e854171989c9c53d5e3cb25f5e"
+      },
+      {
+        "name": "no-bill/dot-large",
+        "path": "no-bill/dot-large.svg",
+        "hash": "dc3ceb2e3de91b86f88b965d1e856f7dc16db06dfd52c502d25341176da07e2f"
+      },
+      {
+        "name": "no-bill/spot",
+        "path": "no-bill/spot.svg",
+        "hash": "ec4a7aefb1f4b72eaf8214d13a2f337ddf9b85fa0f48bd26860aceeb9c6b5457"
+      },
+      {
+        "name": "no-bill/spot-hero-small",
+        "path": "no-bill/spot-hero-small.svg",
+        "hash": "ff363a154719378db791a4406aacc24a3bc9326ffcb76c9807bf97f143f741c3"
+      },
+      {
+        "name": "no-bill/spot-hero-large",
+        "path": "no-bill/spot-hero-large.svg",
+        "hash": "1888d9290bc9739a2a6ec6f1746bddc29ab8ec7d6bd88e2306be75301b260f67"
+      }
+    ]
+  },
+  {
+    "name": "organization-structure",
+    "aliases": [
+      "organigram"
+    ],
+    "category": "not-found",
+    "folder": "organization-structure",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "organization-structure/dot-small",
+        "path": "organization-structure/dot-small.svg",
+        "hash": "996df615ab223252796d60bef6307e23edfa5606f8f334499a8e21fb67cb82bd"
+      },
+      {
+        "name": "organization-structure/spot-hero-small",
+        "path": "organization-structure/spot-hero-small.svg",
+        "hash": "de2f0e99731122ed91a069aa7149e41224a0402385c89f24b1c0353f115e6a14"
+      },
+      {
+        "name": "organization-structure/dot-large",
+        "path": "organization-structure/dot-large.svg",
+        "hash": "b0b8fc677ee5b960f541969cb676d163cbb67a3aa81dd6a60eee24cff99a104d"
+      },
+      {
+        "name": "organization-structure/spot",
+        "path": "organization-structure/spot.svg",
+        "hash": "ab480c9553084bd66465f9ab8f309663785437b763161dd0e07a1d29c0060a2c"
+      },
+      {
+        "name": "organization-structure/spot-hero-large",
+        "path": "organization-structure/spot-hero-large.svg",
+        "hash": "982f29bd9e37ff4a009dda0e9d344ff708927283c1e828793cc12300c7753e56"
+      }
+    ]
+  },
+  {
+    "name": "position",
+    "aliases": [
+      "chair",
+      "laptop"
+    ],
+    "category": "not-found",
+    "folder": "position",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "position/dot-small",
+        "path": "position/dot-small.svg",
+        "hash": "d896deb32a4b24cb3818b496fcd51981dfaaa6c9091e0760606a5370c368ca4f"
+      },
+      {
+        "name": "position/spot",
+        "path": "position/spot.svg",
+        "hash": "eaa7a677ecc66b15bbeed3daae9ab1809c58137b54492ffedf67ddb26ab3181f"
+      },
+      {
+        "name": "position/dot-large",
+        "path": "position/dot-large.svg",
+        "hash": "5b809d069e57d2025ab43091168d9ebf6d17e7251cb546b9c57d9e1834192da9"
+      },
+      {
+        "name": "position/spot-hero-small",
+        "path": "position/spot-hero-small.svg",
+        "hash": "0c1a2fbb04962a26a790916747702f34be07f5ae03a832fb821b3d110384f9aa"
+      },
+      {
+        "name": "position/spot-hero-large",
+        "path": "position/spot-hero-large.svg",
+        "hash": "fcb1b78d349799f0fdea5b3e682ee8bf7bbfcb377c433eda0d335a8badcfea33"
+      }
+    ]
+  },
+  {
+    "name": "roles",
+    "aliases": [
+      "card-employee"
+    ],
+    "category": "not-found",
+    "folder": "roles",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "roles/dot-small",
+        "path": "roles/dot-small.svg",
+        "hash": "b769c3cb893183097be3f99538edce540966b3cb8b2ed9563709fc4233fa8931"
+      },
+      {
+        "name": "roles/dot-large",
+        "path": "roles/dot-large.svg",
+        "hash": "41acd598023b0621019f2d461e478983ef99dbe6ddef62116afe7b75a0ad79ed"
+      },
+      {
+        "name": "roles/spot",
+        "path": "roles/spot.svg",
+        "hash": "ce6798b98d157f1a328927815c7519dc6165e2d2e5d9492ec5e6c6ad90d4b8dc"
+      },
+      {
+        "name": "roles/spot-hero-small",
+        "path": "roles/spot-hero-small.svg",
+        "hash": "f24f73241f9223d687ea6b46fba186e973e4c5143596b8bbde5d58f901803a41"
+      },
+      {
+        "name": "roles/spot-hero-large",
+        "path": "roles/spot-hero-large.svg",
+        "hash": "ceb33e6a290935c0ad1a1f7620cdb7a2e09b74a82c78641d1645119f6d1aa6a8"
+      }
+    ]
+  },
+  {
+    "name": "balance",
+    "aliases": [
+      "pocket",
+      "money"
+    ],
+    "category": "not-found",
+    "folder": "balance",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "balance/dot-small",
+        "path": "balance/dot-small.svg",
+        "hash": "62cf441ae08135e01999145af3c5e793d88433474d4ce8b8921ac96a6368b649"
+      },
+      {
+        "name": "balance/spot",
+        "path": "balance/spot.svg",
+        "hash": "eba9ea4c1cd3419f395cab471b716306da8b6053cdb285c82b37667fc09067b6"
+      },
+      {
+        "name": "balance/dot-large",
+        "path": "balance/dot-large.svg",
+        "hash": "da7b846fbb9ea94002df0ad71dc9cf8d13e629296cbf731d226a3aefe3fb1ca7"
+      },
+      {
+        "name": "balance/spot-hero-small",
+        "path": "balance/spot-hero-small.svg",
+        "hash": "9a8dbe67acbdf532adfdc1d1b493241134fb1d9f42d1f72cfddb18a34e5bdbf2"
+      },
+      {
+        "name": "balance/spot-hero-large",
+        "path": "balance/spot-hero-large.svg",
+        "hash": "aa0bc3209fae26a076b044a1982237d46d45d18465aeb9b72096f8c22a552622"
+      }
+    ]
+  },
+  {
+    "name": "privy-app",
+    "aliases": [
+      "browser",
+      "smartphone"
+    ],
+    "category": "features",
+    "folder": "privy-app",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "privy-app/dot-small",
+        "path": "privy-app/dot-small.svg",
+        "hash": "a762edadfe778eea0fc82e267721dc829114849cf03257010d1063915d33bfd6"
+      },
+      {
+        "name": "privy-app/dot-large",
+        "path": "privy-app/dot-large.svg",
+        "hash": "ceb519b4c35453938c6f2032b2db4e269d307d3cb996db5a244fa43d6437ac28"
+      },
+      {
+        "name": "privy-app/spot",
+        "path": "privy-app/spot.svg",
+        "hash": "4cd685a2f75f9c439ca40a0566413e1e56ed720c8585160a2748cd82424f2b4c"
+      },
+      {
+        "name": "privy-app/spot-hero-small",
+        "path": "privy-app/spot-hero-small.svg",
+        "hash": "fcd8a7dfc82d2b94e723b58bdcc6da07e7cac5a9e0a8e6439b672b84a47faac7"
+      },
+      {
+        "name": "privy-app/spot-hero-large",
+        "path": "privy-app/spot-hero-large.svg",
+        "hash": "bc76deeb48d3a77eb019271dee4b89974fb80a287f473c50600804dd1c941080"
+      }
+    ]
+  },
+  {
+    "name": "treasure",
+    "aliases": [],
+    "category": "features",
+    "folder": "treasure",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "treasure/dot-small",
+        "path": "treasure/dot-small.svg",
+        "hash": "6b0f7ea6c6e1182e49ab81f63c34b708946b1cc3673d4bd12f5a7899ee0e1e3f"
+      },
+      {
+        "name": "treasure/dot-large",
+        "path": "treasure/dot-large.svg",
+        "hash": "9703f2adeeb55db4ca24e32f4691d4ae7b2f43942f2ae7a487ed98cd0bf82b36"
+      },
+      {
+        "name": "treasure/spot-hero-large",
+        "path": "treasure/spot-hero-large.svg",
+        "hash": "e7dc87b92c05481b0f43cbfc384a003691bb2080f024423d5d40a41a6d561f6c"
+      },
+      {
+        "name": "treasure/spot",
+        "path": "treasure/spot.svg",
+        "hash": "941e12342dfbddcbb06fd88f182e975ff180f32adfb731259880d57578dcf906"
+      },
+      {
+        "name": "treasure/spot-hero-small",
+        "path": "treasure/spot-hero-small.svg",
+        "hash": "bdabbdb2da8215dfeedac2525f7e0022be49a86fc6717e6b53c038d37261de51"
+      }
+    ]
+  },
+  {
+    "name": "coming-soon",
+    "aliases": [
+      "star"
+    ],
+    "category": "features",
+    "folder": "coming-soon",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "coming-soon/dot-small",
+        "path": "coming-soon/dot-small.svg",
+        "hash": "22bcce0cff18a8c2fcc832427dc4d1ad20f448849ce756cd5138ebf7ae98cd79"
+      },
+      {
+        "name": "coming-soon/dot-large",
+        "path": "coming-soon/dot-large.svg",
+        "hash": "94f89688be6a7000f84c0c0b478b3d1f8f1ad34148b741f5003bae0e13fafa97"
+      },
+      {
+        "name": "coming-soon/spot",
+        "path": "coming-soon/spot.svg",
+        "hash": "4cef498d3834c331b796e595e86221fbd0e7f50c5768b45343188f561d7b66fd"
+      },
+      {
+        "name": "coming-soon/spot-hero-small",
+        "path": "coming-soon/spot-hero-small.svg",
+        "hash": "9acfc17ca2a7c1285656ea3085cdce900c4230231236cc67a3abcdc060507a04"
+      },
+      {
+        "name": "coming-soon/spot-hero-large",
+        "path": "coming-soon/spot-hero-large.svg",
+        "hash": "30070609e8a264bc30cc89647fc40ced1ffb4e67ce28a9b1b12f693e86c77093"
+      }
+    ]
+  },
+  {
+    "name": "ticket",
+    "aliases": [
+      "voucher",
+      "promo"
+    ],
+    "category": "features",
+    "folder": "ticket",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "ticket/dot-small",
+        "path": "ticket/dot-small.svg",
+        "hash": "6bbbbaac32bf302fce9ad65a72ffcde35b5130f2d51ec359608c4427696e7ec3"
+      },
+      {
+        "name": "ticket/spot",
+        "path": "ticket/spot.svg",
+        "hash": "c26c25007d906727a836c928fb0d5e4a4ce3bdc53cc6731116ebd57fceba0dd3"
+      },
+      {
+        "name": "ticket/dot-large",
+        "path": "ticket/dot-large.svg",
+        "hash": "6a81dbdf20324310dc458b6fc7328af4903bf7d2398ca2feff4f8e90f8b81d8f"
+      },
+      {
+        "name": "ticket/spot-hero-small",
+        "path": "ticket/spot-hero-small.svg",
+        "hash": "b08742271ddde126edf62e6689f8631206d375268111cec7e220c3737d08be6c"
+      },
+      {
+        "name": "ticket/spot-hero-large",
+        "path": "ticket/spot-hero-large.svg",
+        "hash": "f112a6629e4bdb8a27a155128dbda46eff43ef349f4de4100fd27c2aa8bf5dcb"
+      }
+    ]
+  },
+  {
+    "name": "group",
+    "aliases": [
+      "board",
+      "pawns",
+      "user"
+    ],
+    "category": "not-found",
+    "folder": "group",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "group/dot-small",
+        "path": "group/dot-small.svg",
+        "hash": "20376a9068c19eec9a25faec32fc58b40e91aa69f53f61b7cf952527e1305bd3"
+      },
+      {
+        "name": "group/spot-hero-small",
+        "path": "group/spot-hero-small.svg",
+        "hash": "d0ea4c65876255981b98ed02241aa1036080549ea93b6c40615a837423a5724b"
+      },
+      {
+        "name": "group/dot-large",
+        "path": "group/dot-large.svg",
+        "hash": "1f89f0c4b1c566688fa8d1725038285497d61e5abe075a93c469b70e9850b912"
+      },
+      {
+        "name": "group/spot",
+        "path": "group/spot.svg",
+        "hash": "34e19c0f7841533be6d3659d34006e6729b7e49659fce8a2acd8669ed5094b89"
+      },
+      {
+        "name": "group/spot-hero-large",
+        "path": "group/spot-hero-large.svg",
+        "hash": "d327df7d82c64702652d41c69cbcf30358cc8bc44bff93283546d58008f9cd5d"
+      }
+    ]
+  },
+  {
+    "name": "citizenship",
+    "aliases": [
+      "location",
+      "world"
+    ],
+    "category": "features",
+    "folder": "citizenship",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "citizenship/dot-small",
+        "path": "citizenship/dot-small.svg",
+        "hash": "ccc15c89a4aabb91baf577a4d57fd36b4712f0f217fee3a0a3d605612ff51d48"
+      },
+      {
+        "name": "citizenship/spot",
+        "path": "citizenship/spot.svg",
+        "hash": "f6c86f3838fe831b16ad88e4b76cfe662873f99e35f43495b070ab639dcfd140"
+      },
+      {
+        "name": "citizenship/spot-hero-large",
+        "path": "citizenship/spot-hero-large.svg",
+        "hash": "057c4367dc1f94a780b06d6d747850b9aae76747274b02098c74b6de8c81e328"
+      },
+      {
+        "name": "citizenship/dot-large",
+        "path": "citizenship/dot-large.svg",
+        "hash": "76f2ccbd54081d26c66d56d0354e87da9f29483d5a6a35759de5275caf0fc287"
+      },
+      {
+        "name": "citizenship/spot-hero-small",
+        "path": "citizenship/spot-hero-small.svg",
+        "hash": "2a45405a57687c5423463ae381a3d1b567c5f751031b4266d4ebe2816789d7b9"
+      }
+    ]
+  },
+  {
+    "name": "forbidden-sign",
+    "aliases": [
+      "paper",
+      "block",
+      "document"
+    ],
+    "category": "failed",
+    "folder": "forbidden-sign",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "forbidden-sign/dot-small",
+        "path": "forbidden-sign/dot-small.svg",
+        "hash": "02c8e2289f8e58855bc8552b3157f492ea573b082092acc4205e898c71cc63d6"
+      },
+      {
+        "name": "forbidden-sign/dot-large",
+        "path": "forbidden-sign/dot-large.svg",
+        "hash": "f736d17cd0f414faee841fa36ea53d2ad0d4b9a731e40d92e0d5b7f21159d3e0"
+      },
+      {
+        "name": "forbidden-sign/spot",
+        "path": "forbidden-sign/spot.svg",
+        "hash": "03a1b6e2e7d3a44045c2319b25a26bb7c56ab1f69a77bfac3c9b2e12b9d505ef"
+      },
+      {
+        "name": "forbidden-sign/spot-hero-small",
+        "path": "forbidden-sign/spot-hero-small.svg",
+        "hash": "d693cb3fda74f70d4b496e8b37f57df8533b87631ea17d728d5f934fe4191ca6"
+      },
+      {
+        "name": "forbidden-sign/spot-hero-large",
+        "path": "forbidden-sign/spot-hero-large.svg",
+        "hash": "ace8e933b4c93082628f8770ab121c6d20f889193c2ee73109d27016597be9f8"
+      }
+    ]
+  },
+  {
+    "name": "id-card",
+    "aliases": [
+      "id-face",
+      "exclamation"
+    ],
+    "category": "failed",
+    "folder": "id-card",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "id-card/dot-small",
+        "path": "id-card/dot-small.svg",
+        "hash": "c3f4925c87a9b3c5b45ccac01271cea21d0e904250106d645629bb03695048d2"
+      },
+      {
+        "name": "id-card/dot-large",
+        "path": "id-card/dot-large.svg",
+        "hash": "ca724f81bd26c49851a64745c30085c0b882093690a0c2d3134b4202bd1c281d"
+      },
+      {
+        "name": "id-card/spot",
+        "path": "id-card/spot.svg",
+        "hash": "d82bcb1d8fcf39b7cd0c4084eaa4262a3dd623d9a8eff2639f6e8fe3b16b2b7b"
+      },
+      {
+        "name": "id-card/spot-hero-small",
+        "path": "id-card/spot-hero-small.svg",
+        "hash": "404ca1b9bc22fa986bde0b1236921124f448df2a68255670c6db75132164dd3f"
+      },
+      {
+        "name": "id-card/spot-hero-large",
+        "path": "id-card/spot-hero-large.svg",
+        "hash": "6cb380ca14ab7d40b46603da5b4d017fc126a10cc20f895de42c373613bf2041"
+      },
+      {
+        "name": "id-card/dot-small",
+        "path": "id-card/dot-small.svg",
+        "hash": "30fc13d2cbeb08363c19bc9a52f7c4914ad9fbb98dd1e7319b72ca6ef409159c"
+      },
+      {
+        "name": "id-card/dot-large",
+        "path": "id-card/dot-large.svg",
+        "hash": "2d719c129d60a1f3141a8a2dd016fec9d45e39f564ac7b5b3d482ee0b9632f90"
+      },
+      {
+        "name": "id-card/spot",
+        "path": "id-card/spot.svg",
+        "hash": "a047e6fd3697eee0a2f7a95d4d5f99690614515ec0b4076e8495b609483d5282"
+      },
+      {
+        "name": "id-card/spot-hero-small",
+        "path": "id-card/spot-hero-small.svg",
+        "hash": "d91c958b16971764fa88a448e018929d08c22f05c0cecfaded6f5b377e7d520f"
+      },
+      {
+        "name": "id-card/spot-hero-large",
+        "path": "id-card/spot-hero-large.svg",
+        "hash": "c382a9a984d2bbb9ef5bcf61f6fcf546606a190afa0baf721721630388caef04"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-document",
+    "aliases": [
+      "paper"
+    ],
+    "category": "success",
+    "folder": "checkmark-document",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "checkmark-document/dot-small",
+        "path": "checkmark-document/dot-small.svg",
+        "hash": "40db5f9ad9d3910b8d7132559e299056c1bf0ca12d0dcf16ec2fc8d4bad41311"
+      },
+      {
+        "name": "checkmark-document/dot-large",
+        "path": "checkmark-document/dot-large.svg",
+        "hash": "a39fa628e2e795c54e31882862eadcc939ffaff7dcf6d0863dd60f545f4523f6"
+      },
+      {
+        "name": "checkmark-document/spot",
+        "path": "checkmark-document/spot.svg",
+        "hash": "8f1f091ab2031e6392ff8a3aa30d61c5d06ac58c90ab01455ddefad8481ccf14"
+      },
+      {
+        "name": "checkmark-document/spot-hero-small",
+        "path": "checkmark-document/spot-hero-small.svg",
+        "hash": "16eb29f9982b7114fe181aa09ae71487a695052f12f105299d260fe0f3c789b6"
+      },
+      {
+        "name": "checkmark-document/spot-hero-large",
+        "path": "checkmark-document/spot-hero-large.svg",
+        "hash": "30e7229b0a62b80f2e23aa5af9d8bc520371892571f145a6a71f7f99f3d370ec"
+      }
+    ]
+  },
+  {
+    "name": "registration",
+    "aliases": [
+      "success",
+      "human"
+    ],
+    "category": "success",
+    "folder": "registration",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "registration/dot-small",
+        "path": "registration/dot-small.svg",
+        "hash": "20fb69102e6a674af2feaa90156b4de56c898edaee89fceb40025118dd1399e6"
+      },
+      {
+        "name": "registration/spot-hero-small",
+        "path": "registration/spot-hero-small.svg",
+        "hash": "01b1b0ee533210aaba6a91b2330e23efc3423fed3c29a1951a69d310cc40a393"
+      },
+      {
+        "name": "registration/spot-hero-large",
+        "path": "registration/spot-hero-large.svg",
+        "hash": "e352694515d3f7781b3c64676c26364d8cc10ea0dcdd1189f760466670c51acf"
+      },
+      {
+        "name": "registration/dot-large",
+        "path": "registration/dot-large.svg",
+        "hash": "9e63ec272bdd65679294eeb6bcecf919711fe2c2bacacc8943c2a4b021f3e893"
+      },
+      {
+        "name": "registration/spot",
+        "path": "registration/spot.svg",
+        "hash": "4240b598d8f4ad0c3f8f7d54938cf7548822bd70b59f3136d230b3612167a57c"
+      }
+    ]
+  },
+  {
+    "name": "document-processing",
+    "aliases": [
+      "id-face",
+      "id-card"
+    ],
+    "category": "success",
+    "folder": "document-processing",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "document-processing/dot-small",
+        "path": "document-processing/dot-small.svg",
+        "hash": "2747209de59ecd611b0cb76b6feef1aef81e0654b0b9bccb9d8827ac946367c9"
+      },
+      {
+        "name": "document-processing/dot-large",
+        "path": "document-processing/dot-large.svg",
+        "hash": "8837695ec83b2f51cd64b023c968f007ca56ffe1cf5b85f5bc3d3ecff07a72fa"
+      },
+      {
+        "name": "document-processing/spot-hero-small",
+        "path": "document-processing/spot-hero-small.svg",
+        "hash": "cbcd4b68f07accdadf39b6f8e1445692bdd8ef94318cc563fb334119cc13e678"
+      },
+      {
+        "name": "document-processing/spot",
+        "path": "document-processing/spot.svg",
+        "hash": "c06e25d11136a8965dcfe63e33b71faedc9a4e434a150b2d8f180e49173a5b51"
+      },
+      {
+        "name": "document-processing/spot-hero-large",
+        "path": "document-processing/spot-hero-large.svg",
+        "hash": "353888c8711c5769fdc1816e09b153133a201467dbb0540649acf9cf27b0ae2e"
+      }
+    ]
+  },
+  {
+    "name": "id-card-scan",
+    "aliases": [
+      "checkmark",
+      "smartphone"
+    ],
+    "category": "success",
+    "folder": "id-card-scan",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "id-card-scan/dot-small",
+        "path": "id-card-scan/dot-small.svg",
+        "hash": "2e0c8c366c1bff1e070db3f44b549f59268739586ed04ad1fbe4850d00d5a647"
+      },
+      {
+        "name": "id-card-scan/spot-hero-small",
+        "path": "id-card-scan/spot-hero-small.svg",
+        "hash": "e705e251c271a7bdd2a420a75cd705de99255f337ec699615b9a489b28e35e4c"
+      },
+      {
+        "name": "id-card-scan/dot-large",
+        "path": "id-card-scan/dot-large.svg",
+        "hash": "e6c771b1b024ec795d492629c73e7b76d15d5ad685cff7bba934947105cbf7c1"
+      },
+      {
+        "name": "id-card-scan/spot-hero-large",
+        "path": "id-card-scan/spot-hero-large.svg",
+        "hash": "7abd4326c5fa0ca6612f5af0d7e488aec4826fb5c30bc108eb5141c37e147192"
+      },
+      {
+        "name": "id-card-scan/spot",
+        "path": "id-card-scan/spot.svg",
+        "hash": "e83b589b0cc56d4339b13cbf72805425471b987796160c6836b6960b34a40c09"
+      }
+    ]
+  },
+  {
+    "name": "verification",
+    "aliases": [
+      "document",
+      "human"
+    ],
+    "category": "success",
+    "folder": "verification",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "verification/dot-small",
+        "path": "verification/dot-small.svg",
+        "hash": "693630b3299e783b0c2ade89225e02b40fa39ccc4dceec6fd18f976c403b493f"
+      },
+      {
+        "name": "verification/spot-hero-large",
+        "path": "verification/spot-hero-large.svg",
+        "hash": "bd615d6f26fd0ff7f73c8c78d3defcda5b289edcc2ff32fe43ff60e968d4e438"
+      },
+      {
+        "name": "verification/dot-large",
+        "path": "verification/dot-large.svg",
+        "hash": "70e6e6f2f04032b96e6168514c3b1458f37dd6f5fd7b9235eca3bdb9c5031724"
+      },
+      {
+        "name": "verification/spot",
+        "path": "verification/spot.svg",
+        "hash": "02eb3f114f1c67532a48c164423786828779f617d74e04b32fbe89ad817331bc"
+      },
+      {
+        "name": "verification/spot-hero-small",
+        "path": "verification/spot-hero-small.svg",
+        "hash": "846ed1adf4ed9da478da8fd5f8c7b993bb6de51b88ba2bb68b0cb62076af25e8"
+      }
+    ]
+  },
+  {
+    "name": "contact-book",
+    "aliases": [],
+    "category": "not-found",
+    "folder": "contact-book",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "contact-book/dot-small",
+        "path": "contact-book/dot-small.svg",
+        "hash": "03026bff6c53243da8e0f1f6835c4d97a503ff6849aae957c2a9ab4c77cee712"
+      },
+      {
+        "name": "contact-book/spot",
+        "path": "contact-book/spot.svg",
+        "hash": "b2bf9611653f00636d4bcb73f50bd4228123c6039cab8c59e7a42045bcea5e37"
+      },
+      {
+        "name": "contact-book/dot-large",
+        "path": "contact-book/dot-large.svg",
+        "hash": "a8256f66b33eea700909035047a114566cff61fcfb1ab359f2c62e047a46c70c"
+      },
+      {
+        "name": "contact-book/spot-hero-small",
+        "path": "contact-book/spot-hero-small.svg",
+        "hash": "056e9f2ba64b785c552af70c453d741342b95eadaf06721baa0d6368253ffff9"
+      },
+      {
+        "name": "contact-book/spot-hero-large",
+        "path": "contact-book/spot-hero-large.svg",
+        "hash": "2c17ef830aea0a037c79921bfadbbeace0e65581d8417bb564519906f8ee96e8"
+      }
+    ]
+  },
+  {
+    "name": "discussion",
+    "aliases": [
+      "human",
+      "chat"
+    ],
+    "category": "not-found",
+    "folder": "discussion",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "discussion/dot-small",
+        "path": "discussion/dot-small.svg",
+        "hash": "10b90c2327bbb6a0024817f2ad4cf3c9c4183705bd209783f495329c785ed353"
+      },
+      {
+        "name": "discussion/dot-large",
+        "path": "discussion/dot-large.svg",
+        "hash": "4eae14ffa40879c7821a712dd8f1636714efb83a3c3b1e73585f08fc36284e8b"
+      },
+      {
+        "name": "discussion/spot",
+        "path": "discussion/spot.svg",
+        "hash": "11812256cd3afaffbe5b9b7c0e8ff08171be095047ac68edac10ef30c4503e7d"
+      },
+      {
+        "name": "discussion/spot-hero-small",
+        "path": "discussion/spot-hero-small.svg",
+        "hash": "0fc8f464cf2a6266d8495d151eaf07495a1b4bed1ec839a2161217a7e0322cf9"
+      },
+      {
+        "name": "discussion/spot-hero-large",
+        "path": "discussion/spot-hero-large.svg",
+        "hash": "51fdd74c50356025db30efb9353857bc79189509a173d53f325d4a8862cf8e92"
+      }
+    ]
+  },
+  {
+    "name": "organization-document",
+    "aliases": [
+      "file-rack"
+    ],
+    "category": "not-found",
+    "folder": "organization-document",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "organization-document/dot-small",
+        "path": "organization-document/dot-small.svg",
+        "hash": "d5244fd13034dd45fca1a8d477b89454dcc3c8e8ac9ba97422f79622cd45b2ad"
+      },
+      {
+        "name": "organization-document/dot-large",
+        "path": "organization-document/dot-large.svg",
+        "hash": "677f2d73424145e3275f36f660c083c701d228c39351fd6737d73254fa5c8970"
+      },
+      {
+        "name": "organization-document/spot",
+        "path": "organization-document/spot.svg",
+        "hash": "470ea319a868b1b8043fefbede3679fe0a5be67b3951b148f9d57600d091750a"
+      },
+      {
+        "name": "organization-document/spot-hero-small",
+        "path": "organization-document/spot-hero-small.svg",
+        "hash": "a595ea1e103a8de07ce34485932a99d692049bc85c3ee4b5033a95f9cc06c3eb"
+      },
+      {
+        "name": "organization-document/spot-hero-large",
+        "path": "organization-document/spot-hero-large.svg",
+        "hash": "8f5054ffdb4385e710a5ec74b4e657c8742f0a84978e2374e136576c9040dfe1"
+      }
+    ]
+  },
+  {
+    "name": "user-activities",
+    "aliases": [
+      "shoe",
+      "footprints",
+      "magnifier"
+    ],
+    "category": "not-found",
+    "folder": "user-activities",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "user-activities/dot-small",
+        "path": "user-activities/dot-small.svg",
+        "hash": "75bc26d69bed6a35430b616afd0adea294b018a4e916a20b5a3109f86e31b403"
+      },
+      {
+        "name": "user-activities/dot-large",
+        "path": "user-activities/dot-large.svg",
+        "hash": "bb3ab74a6b5bbca1194126ae315ec181ad32486770b2704b3eb8b9030d8952ff"
+      },
+      {
+        "name": "user-activities/spot",
+        "path": "user-activities/spot.svg",
+        "hash": "ad64f1239de28c33824ce15701e7f64a84196ac4b36128bcd7b98c26ca0dc0d9"
+      },
+      {
+        "name": "user-activities/spot-hero-small",
+        "path": "user-activities/spot-hero-small.svg",
+        "hash": "9b4f2f9f039133134fe5476a5ff8a97118823df9338663c51013e57c55be65cc"
+      },
+      {
+        "name": "user-activities/spot-hero-large",
+        "path": "user-activities/spot-hero-large.svg",
+        "hash": "42cd6601d73565d5a60cb8a236ef20fe70b3d65befde5f96b816d5ea66dd6dcf"
+      }
+    ]
+  },
+  {
+    "name": "department",
+    "aliases": [
+      "chair",
+      "desk"
+    ],
+    "category": "not-found",
+    "folder": "department",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "department/dot-small",
+        "path": "department/dot-small.svg",
+        "hash": "afcb0229f9e081ab0f010733564e2fde49aaf28896537a20c945eafac8b6d2d0"
+      },
+      {
+        "name": "department/spot-hero-large",
+        "path": "department/spot-hero-large.svg",
+        "hash": "2be2a22c0827f9c41a41bc8e392305ec5b01d868ae25033f7d8a2a62f7564588"
+      },
+      {
+        "name": "department/dot-large",
+        "path": "department/dot-large.svg",
+        "hash": "114d9bfaece46727100b17b63f1964a1cbd48785609dab05645c019758c918cf"
+      },
+      {
+        "name": "department/spot",
+        "path": "department/spot.svg",
+        "hash": "f7354b114a385c513bce77a5e35ee3d1470172b19a60a41e92764fb39dc9d811"
+      },
+      {
+        "name": "department/spot-hero-small",
+        "path": "department/spot-hero-small.svg",
+        "hash": "38ff97e6535821b6d75c79b5acb7bd1bbdc8006619b91b8fa684bf8d3c5c7d46"
+      }
+    ]
+  },
+  {
+    "name": "paperbag",
+    "aliases": [
+      "cashier",
+      "merchant"
+    ],
+    "category": "features",
+    "folder": "paperbag",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "paperbag/dot-small",
+        "path": "paperbag/dot-small.svg",
+        "hash": "cdeceaa835b4722d0e4eab7af40917110dd64feff479f95eb629a44f1d9c8eac"
+      },
+      {
+        "name": "paperbag/dot-large",
+        "path": "paperbag/dot-large.svg",
+        "hash": "455fcf4dce83f3b52d2cb46ceb5bcf463409109d9cd630beabe17ada1ff77250"
+      },
+      {
+        "name": "paperbag/spot-hero-large",
+        "path": "paperbag/spot-hero-large.svg",
+        "hash": "ef0797249ea6a2440e3d70f2b54ae1475d4050ac3084a4a8945b9faedae63aa3"
+      },
+      {
+        "name": "paperbag/spot",
+        "path": "paperbag/spot.svg",
+        "hash": "5c05374792f7d1dac901d3f9ff0c1831a846bb189141591e34eacf9ca08af62d"
+      },
+      {
+        "name": "paperbag/spot-hero-small",
+        "path": "paperbag/spot-hero-small.svg",
+        "hash": "0ae17214becd815ae50fee312d17259daee593397401b2839983a232d54a7ec9"
+      }
+    ]
+  },
+  {
+    "name": "empty-locker",
+    "aliases": [],
+    "category": "not-found",
+    "folder": "empty-locker",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "empty-locker/dot-small",
+        "path": "empty-locker/dot-small.svg",
+        "hash": "d4c72e309e72cd23d9d15678eef5967a86e80db165ab052f20379c96a6af7bf6"
+      },
+      {
+        "name": "empty-locker/spot-hero-small",
+        "path": "empty-locker/spot-hero-small.svg",
+        "hash": "7011991a7603c6c68ce94adb5c0a91020b9128b80a928af9321de3f2df7763d8"
+      },
+      {
+        "name": "empty-locker/dot-large",
+        "path": "empty-locker/dot-large.svg",
+        "hash": "335e919592d140a7323bcc821f666bf5a6fc0e49010b37e1856ca5c3cc406868"
+      },
+      {
+        "name": "empty-locker/spot",
+        "path": "empty-locker/spot.svg",
+        "hash": "90af1668be7cf196cc8b32b1e55577bd880ca7145d1d3e6236514095f06b518c"
+      },
+      {
+        "name": "empty-locker/spot-hero-large",
+        "path": "empty-locker/spot-hero-large.svg",
+        "hash": "bb5b82e5e36cf289d677d251ebd1ee4399237c7637b8e81bcf0050052468bdce"
+      }
+    ]
+  },
+  {
+    "name": "expired-document",
+    "aliases": [
+      "old-paper"
+    ],
+    "category": "failed",
+    "folder": "expired-document",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "expired-document/dot-small",
+        "path": "expired-document/dot-small.svg",
+        "hash": "f84071f623c5cd411136b36d6b16d0d6c79faf9a6388743d175305c63963812d"
+      },
+      {
+        "name": "expired-document/dot-large",
+        "path": "expired-document/dot-large.svg",
+        "hash": "0bc5106b9b6fcf501973db92f9d6a74b75b72b704ed6a09566c301e3188c16db"
+      },
+      {
+        "name": "expired-document/spot",
+        "path": "expired-document/spot.svg",
+        "hash": "931b71c683b3ad5c5a0103bf2b1efb20e5761b54e189f2866670a2d49f975a7a"
+      },
+      {
+        "name": "expired-document/spot-hero-small",
+        "path": "expired-document/spot-hero-small.svg",
+        "hash": "5ce95f04a7fe92a1c804c22b1bd903942aaca907c25f1c057ee29763c67b616b"
+      },
+      {
+        "name": "expired-document/spot-hero-large",
+        "path": "expired-document/spot-hero-large.svg",
+        "hash": "a693680e6693c6c7c0b1ebf3bd2112c3258f80b792bcfd8922df5f116f4ce149"
+      }
+    ]
+  },
+  {
+    "name": "id-face",
+    "aliases": [
+      "scan",
+      "failed",
+      "smartphone"
+    ],
+    "category": "failed",
+    "folder": "id-face",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "id-face/dot-small",
+        "path": "id-face/dot-small.svg",
+        "hash": "06389696dc4751b68d87a3d44c812968720169823f14ffefa4d6f92587c54894"
+      },
+      {
+        "name": "id-face/dot-large",
+        "path": "id-face/dot-large.svg",
+        "hash": "93ad4ab391aba210c1be6b0f3f46dc8ef4bde3ca9f19f2c948c1bfd8edd970f9"
+      },
+      {
+        "name": "id-face/spot-hero-small",
+        "path": "id-face/spot-hero-small.svg",
+        "hash": "346214d338b0c6ef9d01a9deb252f63c9f6b137cec69b676140477b2db44d739"
+      },
+      {
+        "name": "id-face/spot",
+        "path": "id-face/spot.svg",
+        "hash": "f12ffddaff70dcbf87e0879ebd29453c95a228e3d48dc7d48f6e57ad27b411f8"
+      },
+      {
+        "name": "id-face/spot-hero-large",
+        "path": "id-face/spot-hero-large.svg",
+        "hash": "3351edcb8b68809ab0206b3c02b85eceed626c85ba47c92bfba7ccc0c27c95af"
+      }
+    ]
+  },
+  {
+    "name": "liveness",
+    "aliases": [
+      "verification",
+      "id-face",
+      "scan",
+      "smartphone"
+    ],
+    "category": "features",
+    "folder": "liveness",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "liveness/dot-small",
+        "path": "liveness/dot-small.svg",
+        "hash": "3b2ef81f11132b626a3b8a4d92fa8d3433470dd7ddb6261bca18b8172265691e"
+      },
+      {
+        "name": "liveness/dot-large",
+        "path": "liveness/dot-large.svg",
+        "hash": "a0b0047fb2e9e364158c866bf8fb70dbdac3e3b3a030e77c0cf7f628525656e2"
+      },
+      {
+        "name": "liveness/spot-hero-large",
+        "path": "liveness/spot-hero-large.svg",
+        "hash": "faf6b6a963818ef873fbac8614b2b5e2b1370255ab86a6c784a9ea9291e69171"
+      },
+      {
+        "name": "liveness/spot",
+        "path": "liveness/spot.svg",
+        "hash": "4e522a43f3754419ab5d2fbcd7d0b1059da446cf321de622c0db55233f95f55a"
+      },
+      {
+        "name": "liveness/spot-hero-small",
+        "path": "liveness/spot-hero-small.svg",
+        "hash": "a93efa8d5623bce549006ece7823ae519a20736034de035daeb2166721aabc25"
+      }
+    ]
+  },
+  {
+    "name": "internet",
+    "aliases": [
+      "not-connected"
+    ],
+    "category": "error",
+    "folder": "internet",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "internet/dot-small",
+        "path": "internet/dot-small.svg",
+        "hash": "27e3a769c9d689b5c59af60abba2c33a08363ca2838f9a9a7aa9c5bcaed3a736"
+      },
+      {
+        "name": "internet/spot-hero-large",
+        "path": "internet/spot-hero-large.svg",
+        "hash": "660ef5a47af63c5d576f6fc3250979bed0d28acf3dc31b9de182af923acce559"
+      },
+      {
+        "name": "internet/dot-large",
+        "path": "internet/dot-large.svg",
+        "hash": "f683ecf72ec3eb1b1eabd57131d195b81975155572e105b6af11ffc27232a431"
+      },
+      {
+        "name": "internet/spot",
+        "path": "internet/spot.svg",
+        "hash": "bd2a938e34ff1e8c45cb56ae31b6a125b60c959a5ee05b9871f3ea1c1f9adea3"
+      },
+      {
+        "name": "internet/spot-hero-small",
+        "path": "internet/spot-hero-small.svg",
+        "hash": "22f73c80f38c9688a8bc3f10f7417ab34f333be007c92db248ab54b5748109da"
+      }
+    ]
+  },
+  {
+    "name": "notification",
+    "aliases": [
+      "bell"
+    ],
+    "category": "not-found",
+    "folder": "notification",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "notification/dot-small",
+        "path": "notification/dot-small.svg",
+        "hash": "f04909d186e1beee0cf9c29461a2a289fafbeacc5e47a75f80d466cf83fbf4b5"
+      },
+      {
+        "name": "notification/spot-hero-small",
+        "path": "notification/spot-hero-small.svg",
+        "hash": "700216585a4ac80a4239f576a6810d0a59b8aeefb52c0e4715f9eac943f55f28"
+      },
+      {
+        "name": "notification/dot-large",
+        "path": "notification/dot-large.svg",
+        "hash": "6f5b26716d9e99aa84ff3472c27c4abbdeb65cee53557f0a31c633157f035f80"
+      },
+      {
+        "name": "notification/spot-hero-large",
+        "path": "notification/spot-hero-large.svg",
+        "hash": "c8642e69c798d6da5ed5590433a60466796310b5ed6ea2beda57562ef9674bf3"
+      },
+      {
+        "name": "notification/spot",
+        "path": "notification/spot.svg",
+        "hash": "3910880f87d6856a2cbe377039af073f31937bc77776362bf16636c2fe1aae5a"
+      }
+    ]
+  },
+  {
+    "name": "server-busy",
+    "aliases": [],
+    "category": "error",
+    "folder": "server-busy",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "server-busy/dot-small",
+        "path": "server-busy/dot-small.svg",
+        "hash": "42a1f7bbf81b0992eaf7a7ce89de7c6e20994477a6130d1ec1a7597efecbc5ff"
+      },
+      {
+        "name": "server-busy/dot-large",
+        "path": "server-busy/dot-large.svg",
+        "hash": "4081afdccd9d8380475a3d64ef569dc3a3573fc0f981ba96868389861416dc2e"
+      },
+      {
+        "name": "server-busy/spot",
+        "path": "server-busy/spot.svg",
+        "hash": "2192f5577c6472c68fb59c7ea54600721156712bc2bea82e7e7ef87ed8f8fdcf"
+      },
+      {
+        "name": "server-busy/spot-hero-small",
+        "path": "server-busy/spot-hero-small.svg",
+        "hash": "4c65353da4418c0819e577de32283cf6bb90ee3993d8ba802d2acf124a20a3ea"
+      },
+      {
+        "name": "server-busy/spot-hero-large",
+        "path": "server-busy/spot-hero-large.svg",
+        "hash": "2542ce4bbf403187c0cdcada800ec72c5c55b8658c9c105f3fd997a86df13f89"
+      }
+    ]
+  },
+  {
+    "name": "no-process",
+    "aliases": [
+      "tea",
+      "cup",
+      "human"
+    ],
+    "category": "not-found",
+    "folder": "no-process",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "no-process/dot-small",
+        "path": "no-process/dot-small.svg",
+        "hash": "806b72fdbc5c1f0b6aa624ec00f3291652dc2aa2f5cc93b9bdb608c967d2565b"
+      },
+      {
+        "name": "no-process/spot-hero-small",
+        "path": "no-process/spot-hero-small.svg",
+        "hash": "5ed2f02aae80c911fec4540dde2c0d7c0df0dd8068d860701d40d32a9666f18f"
+      },
+      {
+        "name": "no-process/dot-large",
+        "path": "no-process/dot-large.svg",
+        "hash": "111ebe4617138fb6ae3bee7f19c9ca0ece0834b2ac1d6467d70e17eaa1e50dc6"
+      },
+      {
+        "name": "no-process/spot",
+        "path": "no-process/spot.svg",
+        "hash": "09de5d687db35a32a12ac9cbdccf98a4a3e07156272a36fb861f5cfe851e0c96"
+      },
+      {
+        "name": "no-process/spot-hero-large",
+        "path": "no-process/spot-hero-large.svg",
+        "hash": "1cc1fc9264cf1964aeabdb4ee5eb7e29a56fb8c3d45e1832b1a797f77571513f"
+      }
+    ]
+  }
+]

@@ -1,1 +1,0 @@
-import{r as s,k as u,ap as n,aq as m}from"./framework.BSGfltUV.js";function c(e){const t=s(e.modelValue),{emit:a}=m(),o=u({get(){return e.modelValue},set(l){a("update:modelValue",l)}});return n(t,o,{immediate:!1}),t}export{c as u};
