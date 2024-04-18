@@ -3265,13 +3265,13 @@ __metadata:
     postcss-nested: "npm:6.0.1"
     qr-code-styling: "npm:^1.6.0-rc.1"
     scroll-into-view: "npm:^1.16.2"
-    sharp: "npm:^0.33.3"
-    svgo: "npm:^3.2.0"
+    sharp: "npm:0.33.3"
+    svgo: "npm:3.2.0"
     tabbable: "npm:6.2.0"
     tailwindcss: "npm:3.4.3"
     typescript: "npm:5.4.5"
     ufo: "npm:1.5.3"
-    vite-plugin-image-optimizer: "npm:^1.1.7"
+    vite-plugin-image-optimizer: "npm:1.1.7"
     vitepress: "npm:1.1.0"
     vitest: "npm:0.24.5"
     vue-collapsed: "npm:^1.2.5"
@@ -16633,7 +16633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:0.33.3, sharp@npm:^0.33.3":
+"sharp@npm:0.33.3":
   version: 0.33.3
   resolution: "sharp@npm:0.33.3"
   dependencies:
@@ -18702,7 +18702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-image-optimizer@npm:^1.1.7":
+"vite-plugin-image-optimizer@npm:1.1.7":
   version: 1.1.7
   resolution: "vite-plugin-image-optimizer@npm:1.1.7"
   dependencies:
