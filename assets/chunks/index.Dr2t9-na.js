@@ -1,1 +1,0 @@
-import{ao as a,ac as n,l as t}from"./framework.Icj7jQBO.js";function c(e){const o=a(n(e,"min"),{nanToZero:!0}),r=a(n(e,"max"),{nanToZero:!0}),u=a(n(e,"value"),{nanToZero:!0});return t(()=>(u.value-o.value)/(r.value-o.value))}export{c as u};
