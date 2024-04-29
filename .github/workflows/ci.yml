@@ -24,6 +24,7 @@ jobs:
         node-version:
           - 18
           - 20
+          - 22
 
     steps:
       - name: Git Checkout
@@ -58,7 +59,7 @@ jobs:
 
       - name: Upload to Codecov
         uses: codecov/codecov-action@v4
-        if: matrix.node-version == 18
+        if: matrix.node-version == env.NODE_VERSION
         with:
           fail_ci_if_error: false
 
