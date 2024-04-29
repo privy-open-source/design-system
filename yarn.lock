@@ -3289,20 +3289,21 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@privyid/eslint-config-persona@workspace:packages/eslint-config-persona"
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ">=5.47.0"
-    "@typescript-eslint/parser": ">=5.47.0"
-    "@vue/eslint-config-typescript": ">=11.0.2"
-    eslint: ">=8.30.0"
-    eslint-config-standard-with-typescript: ">=24.0.0"
-    eslint-formatter-pretty: ">=4.1.0"
-    eslint-plugin-align-assignments: ">=1.1.2"
-    eslint-plugin-import: ">=2.26.0"
-    eslint-plugin-n: ">=15.6.0"
-    eslint-plugin-node: ">=11.1.0"
-    eslint-plugin-promise: ">=6.1.1"
-    eslint-plugin-unicorn: ">=45.0.2"
-    eslint-plugin-varspacing: ">=1.2.2"
-    eslint-plugin-vue: ">=9.8.0"
+    "@typescript-eslint/eslint-plugin": 5.62.0
+    "@typescript-eslint/parser": 5.62.0
+    "@vue/eslint-config-typescript": 13.0.0
+    eslint: 8.57.0
+    eslint-config-standard-with-typescript: 21.0.1
+    eslint-formatter-pretty: 5.0.0
+    eslint-plugin-align-assignments: 1.1.2
+    eslint-plugin-import: 2.29.1
+    eslint-plugin-n: 16.6.2
+    eslint-plugin-node: 11.1.0
+    eslint-plugin-promise: 6.1.1
+    eslint-plugin-unicorn: 48.0.1
+    eslint-plugin-varspacing: 1.2.2
+    eslint-plugin-vue: 9.23.0
+    typescript: 5.4.5
   languageName: unknown
   linkType: soft
 
