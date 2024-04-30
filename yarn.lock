@@ -2879,22 +2879,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/module-builder@npm:0.5.5":
-  version: 0.5.5
-  resolution: "@nuxt/module-builder@npm:0.5.5"
+"@nuxt/module-builder@npm:0.6.0":
+  version: 0.6.0
+  resolution: "@nuxt/module-builder@npm:0.6.0"
   dependencies:
-    citty: "npm:^0.1.5"
+    citty: "npm:^0.1.6"
     consola: "npm:^3.2.3"
-    mlly: "npm:^1.4.2"
-    pathe: "npm:^1.1.1"
+    defu: "npm:^6.1.4"
+    mlly: "npm:^1.6.1"
+    pathe: "npm:^1.1.2"
+    pkg-types: "npm:^1.1.0"
     unbuild: "npm:^2.0.0"
   peerDependencies:
-    "@nuxt/kit": ^3.8.2
-    nuxi: ^3.10.0
+    "@nuxt/kit": ^3.11.2
+    nuxi: ^3.11.1
   bin:
     nuxt-build-module: dist/cli.mjs
     nuxt-module-build: dist/cli.mjs
-  checksum: 10/f83f51bcf6c87d161ec3912762b365ca55dd65da28f615d6c837152e3f486183b85993a4497e9144cc4f69db6dfd10dbfcf7e7096b20f4c6e7e56b74e0e5b2d8
+  checksum: 10/059bccfc68e9226e6f50702dce4cf9ed994d26b271e4eaa79e1407756674089a8dcdb8a41279a0c9b8fce578e20781e8ff3498ecbf4d6d72eadbfbbef78d878e
   languageName: node
   linkType: hard
 
@@ -3312,7 +3314,7 @@ __metadata:
   resolution: "@privyid/persona-icon@workspace:packages/persona-icon"
   dependencies:
     "@nuxt/kit": "npm:^3.4.3"
-    "@nuxt/module-builder": "npm:0.5.5"
+    "@nuxt/module-builder": "npm:0.6.0"
     "@types/fs-extra": "npm:11.0.4"
     "@types/minimist": "npm:1.2.5"
     dotenv: "npm:16.4.5"
@@ -3335,7 +3337,7 @@ __metadata:
   resolution: "@privyid/persona-ilustration@workspace:packages/persona-ilustration"
   dependencies:
     "@nuxt/kit": "npm:^3.4.3"
-    "@nuxt/module-builder": "npm:0.5.5"
+    "@nuxt/module-builder": "npm:0.6.0"
     "@types/fs-extra": "npm:11.0.4"
     "@types/minimist": "npm:1.2.5"
     dotenv: "npm:16.4.5"
@@ -3362,7 +3364,7 @@ __metadata:
     "@jill64/universal-sanitizer": "npm:1.2.8"
     "@juggle/resize-observer": "npm:3.4.0"
     "@nuxt/kit": "npm:3.11.2"
-    "@nuxt/module-builder": "npm:0.5.5"
+    "@nuxt/module-builder": "npm:0.6.0"
     "@nuxt/schema": "npm:3.11.2"
     "@nuxtjs/tailwindcss": "npm:6.12.0"
     "@privyid/browserslist-config": "workspace:^"
@@ -7189,6 +7191,13 @@ __metadata:
   version: 0.1.3
   resolution: "confbox@npm:0.1.3"
   checksum: 10/5a5b05169f9efb3dbb34452275fd3667004903782146027b5c44e9630de13cc797612d312f9cc167d82591dcbaede127401704045055dcb32e94d264826be3fd
+  languageName: node
+  linkType: hard
+
+"confbox@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "confbox@npm:0.1.7"
+  checksum: 10/3086687b9a2a70d44d4b40a2d376536fe7e1baec4a2a34261b21b8a836026b419cbf89ded6054216631823e7d63c415dad4b4d53591d6edbb202bb9820dfa6fa
   languageName: node
   linkType: hard
 
@@ -14778,6 +14787,17 @@ __metadata:
     mlly: "npm:^1.2.0"
     pathe: "npm:^1.1.0"
   checksum: 10/e17e1819ce579c9ea390e4c41a9ed9701d8cff14b463f9577cc4f94688da8917c66dabc40feacd47a21eb3de9b532756a78becd882b76add97053af307c1240a
+  languageName: node
+  linkType: hard
+
+"pkg-types@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "pkg-types@npm:1.1.0"
+  dependencies:
+    confbox: "npm:^0.1.7"
+    mlly: "npm:^1.6.1"
+    pathe: "npm:^1.1.2"
+  checksum: 10/c1e32a54a1ae00205eb769f6cdae1f0ed4389c785963875b2d53ce7445ac8f762d0e837a84b1ab802375f1f8f7fd0639ceaf81fc9bb9be84c360a3a9ddbddbae
   languageName: node
   linkType: hard
 
