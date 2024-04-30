@@ -3388,7 +3388,7 @@ __metadata:
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.11.2"
     pdfjs-dist: "npm:3.11.174"
-    postcss-custom-properties: "npm:13.3.7"
+    postcss-custom-properties: "npm:13.3.8"
     postcss-hexrgba: "npm:2.1.0"
     postcss-lighten-darken: "npm:0.9.0"
     scroll-into-view: "npm:1.16.2"
@@ -14846,9 +14846,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-custom-properties@npm:13.3.7":
-  version: 13.3.7
-  resolution: "postcss-custom-properties@npm:13.3.7"
+"postcss-custom-properties@npm:13.3.8":
+  version: 13.3.8
+  resolution: "postcss-custom-properties@npm:13.3.8"
   dependencies:
     "@csstools/cascade-layer-name-parser": "npm:^1.0.9"
     "@csstools/css-parser-algorithms": "npm:^2.6.1"
@@ -14857,7 +14857,7 @@ __metadata:
     postcss-value-parser: "npm:^4.2.0"
   peerDependencies:
     postcss: ^8.4
-  checksum: 10/49eaae48fc366592ce60cb3c35a260026ced615b684213c668a29fcd98d56874da6b6ce224df5d52e8738aa1a52845bc4bf70ab6ceb2c22ec4bcfe9a60f6e9f9
+  checksum: 10/8255eb47763df505e83a57435682a96ac597c66a7dd820184c659dfea9080691870482c6318b300f0a3b968294e7e739c34ad793229c7d4cbd3dfd7b123e24e0
   languageName: node
   linkType: hard
 
