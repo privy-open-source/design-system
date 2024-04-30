@@ -3241,7 +3241,7 @@ __metadata:
     "@vueuse/core": "npm:10.9.0"
     "@vueuse/math": "npm:10.9.0"
     "@zxing/browser": "npm:0.1.4"
-    "@zxing/library": "npm:0.20.0"
+    "@zxing/library": "npm:0.21.0"
     autoprefixer: "npm:10.4.19"
     browserslist-to-esbuild: "npm:2.1.1"
     chart.js: "npm:4.4.2"
@@ -3386,7 +3386,7 @@ __metadata:
     "@vueuse/core": "npm:10.9.0"
     "@vueuse/math": "npm:10.9.0"
     "@zxing/browser": "npm:0.1.4"
-    "@zxing/library": "npm:0.20.0"
+    "@zxing/library": "npm:0.21.0"
     browserslist-to-esbuild: "npm:2.1.1"
     chart.js: "npm:4.4.2"
     core-js: "npm:3"
@@ -5513,16 +5513,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zxing/library@npm:0.20.0":
-  version: 0.20.0
-  resolution: "@zxing/library@npm:0.20.0"
+"@zxing/library@npm:0.21.0":
+  version: 0.21.0
+  resolution: "@zxing/library@npm:0.21.0"
   dependencies:
     "@zxing/text-encoding": "npm:~0.9.0"
     ts-custom-error: "npm:^3.2.1"
   dependenciesMeta:
     "@zxing/text-encoding":
       optional: true
-  checksum: 10/866ec2adc9f59b5176046a6219951122bd075eac846aa739285b9b20372635c29ad13bc49a4a721e91d13b0d078c5f50fe81087a510920b0ea202dda41b0a5a4
+  checksum: 10/6a37a43ea27bff29c733502493d785128510510fbd26c1e2426c4f7cc9e14126e69342f2ec7ac78d5da598cdbc8775c7f7526f8e69daeefd82c68b4a653cc4d2
   languageName: node
   linkType: hard
 
