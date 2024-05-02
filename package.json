@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.6",
   "packageManager": "yarn@4.1.1",
   "private": true,
   "type": "module",
