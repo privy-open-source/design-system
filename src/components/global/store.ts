@@ -12,15 +12,24 @@ type Lang = LiteralUnion<'id' | 'en', string>
  * Simple vuex-like-store for global configuration
  */
 export interface State {
-  /* Language setting */
+  /**
+   * Language
+   */
   lang: Lang,
+  /**
+   * PDFJS CDN base url
+   */
+  cdnURL: string,
 }
 
 let globalState: Ref<State>
 
 export function createStore (): Ref<State> {
   const scope = effectScope(true)
-  const state = scope.run(() => ref<State>({ lang: 'en' }))
+  const state = scope.run(() => ref<State>({
+    lang  : 'en',
+    cdnURL: 'https://unpkg.com/',
+  }))
 
   return state
 }
@@ -47,6 +56,14 @@ export function setLang (lang: Lang) {
 
 export function getLang () {
   return globalState?.value.lang ?? 'en'
+}
+
+export function getCDN () {
+  return globalState?.value.cdnURL
+}
+
+export function setCDN (url: string) {
+  globalState.value.cdnURL = url
 }
 
 /**
