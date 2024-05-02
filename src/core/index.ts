@@ -102,6 +102,8 @@ export {
   setLang,
   getLang,
   useLang,
+  getCDN,
+  setCDN,
   type State,
 } from '../components/global/store'
 
