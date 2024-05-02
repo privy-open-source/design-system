@@ -8,6 +8,7 @@ import {
   setStore,
   getCDN,
   setCDN,
+  destroyStore,
 } from './store'
 
 beforeEach(() => {
@@ -70,5 +71,13 @@ describe('setCDN', () => {
 
     expect(context.value.cdnURL).toBe('https://www.jsdelivr.com/package/npm/')
     expect(getCDN()).toBe('https://www.jsdelivr.com/package/npm/')
+  })
+})
+
+describe('getCDN', () => {
+  it('should return default if globalState not defined', () => {
+    destroyStore()
+
+    expect(getCDN()).toBe('https://unpkg.com/')
   })
 })

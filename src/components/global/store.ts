@@ -8,6 +8,9 @@ import type { LiteralUnion } from 'type-fest'
 
 type Lang = LiteralUnion<'id' | 'en', string>
 
+const LANG_DEFAULT = 'en'
+const CDN_DEFAULT  = 'https://unpkg.com/'
+
 /**
  * Simple vuex-like-store for global configuration
  */
@@ -27,8 +30,8 @@ let globalState: Ref<State>
 export function createStore (): Ref<State> {
   const scope = effectScope(true)
   const state = scope.run(() => ref<State>({
-    lang  : 'en',
-    cdnURL: 'https://unpkg.com/',
+    lang  : LANG_DEFAULT,
+    cdnURL: CDN_DEFAULT,
   }))
 
   return state
@@ -46,6 +49,10 @@ export function initStore (): Ref<State> {
   return store
 }
 
+export function destroyStore () {
+  globalState = undefined
+}
+
 export function useStore () {
   return globalState
 }
@@ -55,11 +62,11 @@ export function setLang (lang: Lang) {
 }
 
 export function getLang () {
-  return globalState?.value.lang ?? 'en'
+  return globalState?.value.lang ?? LANG_DEFAULT
 }
 
 export function getCDN () {
-  return globalState?.value.cdnURL
+  return globalState?.value.cdnURL ?? CDN_DEFAULT
 }
 
 export function setCDN (url: string) {
