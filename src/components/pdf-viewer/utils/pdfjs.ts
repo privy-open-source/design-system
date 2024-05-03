@@ -1,5 +1,7 @@
 import type * as PDFJS from 'pdfjs-dist'
 import type * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer'
+import { withBase } from 'ufo'
+import { getCDN } from '../../global/store'
 
 let pdfjsLib: typeof PDFJS
 
@@ -10,7 +12,7 @@ async function importPdfJS () {
     const pdfjs = await import('pdfjs-dist')
 
     if (typeof window !== 'undefined' && 'Worker' in window)
-      pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
+      pdfjs.GlobalWorkerOptions.workerSrc = withBase(`pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`, getCDN())
 
     pdfjsLib = pdfjs
   }
@@ -34,7 +36,7 @@ export async function getDocument (...params: Parameters<typeof PDFJS['getDocume
 }
 
 export async function getCMAPUri () {
-  return `https://cdn.jsdelivr.net/npm/pdfjs-dist@${await getVersion()}/cmaps/`
+  return withBase(`pdfjs-dist@${await getVersion()}/cmaps/`, getCDN())
 }
 
 export async function getVersion () {

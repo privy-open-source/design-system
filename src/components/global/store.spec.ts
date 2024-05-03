@@ -6,6 +6,9 @@ import {
   createStore,
   initStore,
   setStore,
+  getCDN,
+  setCDN,
+  destroyStore,
 } from './store'
 
 beforeEach(() => {
@@ -33,7 +36,7 @@ describe('createStore', () => {
   })
 })
 
-describe('setStore', () => {
+describe('useStore', () => {
   it('should create new store instance', () => {
     const a = useStore()
     const b = createStore()
@@ -54,5 +57,27 @@ describe('setStore', () => {
     const c = useStore()
 
     expect(c).toBe(b)
+  })
+})
+
+describe('setCDN', () => {
+  it('should able to set global cdnURL', () => {
+    const context = useStore()
+
+    expect(context.value.cdnURL).toBe('https://unpkg.com/')
+    expect(getCDN()).toBe('https://unpkg.com/')
+
+    setCDN('https://www.jsdelivr.com/package/npm/')
+
+    expect(context.value.cdnURL).toBe('https://www.jsdelivr.com/package/npm/')
+    expect(getCDN()).toBe('https://www.jsdelivr.com/package/npm/')
+  })
+})
+
+describe('getCDN', () => {
+  it('should return default if globalState not defined', () => {
+    destroyStore()
+
+    expect(getCDN()).toBe('https://unpkg.com/')
   })
 })

@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.6",
   "packageManager": "yarn@4.1.1",
   "private": true,
   "type": "module",
@@ -76,11 +76,11 @@
     "vite-plugin-image-optimizer": "1.1.7",
     "vitepress": "1.1.0",
     "vitest": "0.24.5",
-    "vue-tsc": "2.0.13"
+    "vue-tsc": "2.0.15"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
-    "@fontsource/dm-sans": "5.0.20",
+    "@fontsource/dm-sans": "5.0.21",
     "@jill64/universal-sanitizer": "^1.0.2",
     "@juggle/resize-observer": "^3.4.0",
     "@privyid/persona-icon": "workspace:^",
@@ -90,7 +90,7 @@
     "@vueuse/core": "10.9.0",
     "@vueuse/math": "10.9.0",
     "@zxing/browser": "0.1.4",
-    "@zxing/library": "0.20.0",
+    "@zxing/library": "0.21.0",
     "chart.js": "4.4.2",
     "core-js": "3",
     "date-fns": "3.6.0",
