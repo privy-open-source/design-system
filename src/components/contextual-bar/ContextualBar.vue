@@ -11,7 +11,7 @@
       class="contextual-bar"
       v-bind="$attrs"
       :class="classNames"
-      :style="{ 'background-image': backgroundUrl ? `url('${backgroundUrl}')`: 'none' }">
+      :style="{ '--p-contextualbar-bg-image': backgroundImageUrl }">
       <div
         data-testid="contextual-bar-wrapper"
         :class="[{ 'contextual-bar__wrapper--with-message' : (message || $slots.message), 'contextual-bar__wrapper--with-action' : $slots.action } ,'contextual-bar__wrapper']">
@@ -142,6 +142,10 @@ const classNames = computed(() => {
   return result
 })
 
+const backgroundImageUrl = computed(() => {
+  return `url("${props.backgroundUrl}")`
+})
+
 function onEnter (target: HTMLDivElement) {
   target.style.setProperty('transform', `translateY(-${target.clientHeight}px)`)
 
@@ -207,7 +211,7 @@ defineSlots<{
   * are available
   */
   &--background-image {
-    @apply bg-no-repeat bg-cover bg-[top_center];
+    @apply bg-no-repeat bg-cover bg-[top_center] !bg-[image:var(--p-contextualbar-bg-image)];
   }
 
   /**

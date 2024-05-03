@@ -148,7 +148,10 @@ onBeforeUnmount(() => {
 
 <style lang="postcss">
 .chart {
-  @apply w-full bg-default p-4;
+  --p-chart-padding-x: theme(spacing.4);
+  --p-chart-padding-y: theme(spacing.4);
+
+  @apply w-full bg-default px-[var(--p-chart-padding-x)] py-[var(--p-chart-padding-y)];
   @apply dark:bg-dark-default;
 }
 </style>

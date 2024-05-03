@@ -164,7 +164,7 @@ it('should be able to add background image via slot `background-url`', () => {
   const banner = screen.queryByTestId('banner')
 
   expect(banner).toBeInTheDocument()
-  expect(banner).toHaveStyle({ 'background-image': 'url("assets/images/img-background-banner.svg")' })
+  expect(banner).toHaveStyle({ '--p-banner-bg-image': 'url("assets/images/img-background-banner.svg")' })
 })
 
 it('should be able to add background overlay via slot `background-overlay`', () => {

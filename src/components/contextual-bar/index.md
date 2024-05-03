@@ -211,7 +211,7 @@ import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
     message="You will be unable to sign or seal a document"
     background-url="../../public/assets/images/img-contextualbar-bg.svg">
     <template #icon>
-      <img src="../avatar/assets/avatar.png" />
+      <img src="../../public/assets/images/user.png" />
     </template>
   </p-contextual-bar>
 </preview>
@@ -288,7 +288,7 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
     title="Hey! This is Title Text and telling less as possible"
     background-url="../../public/assets/images/img-contextualbar-bg.svg">
     <template #icon>
-      <img src="../avatar/assets/avatar.png" />
+      <img src="../../public/assets/images/user.png" />
     </template>
     <template #action>
       <p-button size="sm" color="secondary" variant="link">Cancel</p-button>

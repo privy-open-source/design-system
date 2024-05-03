@@ -3,7 +3,7 @@
     v-if="show"
     data-testid="banner"
     :class="classNames"
-    :style="{ 'background-image': backgroundUrl ? `url('${backgroundUrl}')`: 'none' }">
+    :style="{ '--p-banner-bg-image' : bannerBgImage }">
     <div
       v-if="!noIcon"
       class="banner__icon"
@@ -85,6 +85,8 @@ const classNames = computed(() => {
   return result
 })
 
+const bannerBgImage = `url("${props.backgroundUrl}")`
+
 const icon = computed(() => {
   return BannerIcons[props.variant]
 })
@@ -105,7 +107,10 @@ defineSlots<{
 
 <style lang="postcss">
 .banner {
-  @apply p-4 flex space-x-2 rounded text-subtle;
+  --p-banner-padding-x: theme(spacing.4);
+  --p-banner-padding-y: theme(spacing.4);
+
+  @apply px-[var(--p-banner-padding-x)] py-[var(--p-banner-padding-y)] flex space-x-2 rounded text-subtle;
   @apply dark:text-dark-subtle;
 
   a {
@@ -124,7 +129,7 @@ defineSlots<{
   }
 
   &&--custom-background {
-    @apply bg-cover bg-no-repeat bg-center overflow-hidden;
+    @apply bg-cover bg-no-repeat bg-center overflow-hidden bg-[image:var(--p-banner-bg-image)];
   }
 
   &&--overlay {
