@@ -1,0 +1,97 @@
+:host, :root {
+  --PSPDFKit-fontFamily-1: theme('fontFamily.sans');
+  --PSPDFKit-App-background: theme('backgroundColor.subtle.DEFAULT');
+}
+
+.PSPDFKit-Selection-Outline-Border {
+  stroke-dasharray: 4px;
+  rx: theme('borderRadius.DEFAULT');
+  ry: theme('borderRadius.DEFAULT');
+  stroke: theme('borderColor.subtle.DEFAULT');
+}
+
+.PSPDFKit-Resize-Anchor-Left,
+.PSPDFKit-Resize-Anchor-Top,
+.PSPDFKit-Resize-Anchor-Top-Left,
+.PSPDFKit-Resize-Anchor-Top-Right,
+.PSPDFKit-Resize-Anchor-Right,
+.PSPDFKit-Resize-Anchor-Bottom-Left,
+.PSPDFKit-Resize-Anchor-Bottom,
+[resizable="false"] .PSPDFKit-Resize-Anchor-Bottom-Right {
+  @apply hidden;
+}
+
+[moveable="false"] .PSPDFKit-Rectangle-Annotation-Selected {
+  @apply pointer-events-none;
+}
+
+.PSPDFKit-Resize-Anchor {
+  @apply fill-subtle;
+}
+
+.w-full {
+  width: theme('width.full');
+}
+
+.h-full {
+  height: theme('height.full');
+}
+
+.rounded {
+  border-radius: theme('borderRadius.DEFAULT');
+}
+
+.pdf-object {
+  &__container {
+    @apply relative w-full h-full overflow-visible rounded cursor-pointer;
+    @apply dark:border-dark-subtle;
+
+    &,
+    & > * {
+      @apply pointer-events-none touch-none;
+    }
+
+    button,
+    input,
+    textarea,
+    a {
+      @apply pointer-events-auto;
+    }
+  }
+}
+
+.pdf-object {
+  --p-pdf-debugger-size: 198px;
+
+  &__debugger {
+    @apply grid grid-cols-1 p-4 bg-inverse text-on-emphasis absolute rounded w-[var(--p-pdf-debugger-size)];
+    /* @apply dark:bg-dark-inverse dark:text-dark-on-emphasis; */
+
+    > pre {
+      @apply truncate text-[1em] text-left;
+    }
+  }
+}
+
+.pdf-object {
+  &__addon {
+    @apply absolute;
+    @apply dark:text-default;
+
+    &--right {
+      @apply top-0 pl-2 left-full;
+    }
+
+    &--left {
+      @apply top-0 pr-2 right-full;
+    }
+
+    &--top {
+      @apply left-0 pb-2 bottom-full;
+    }
+
+    &--bottom {
+      @apply left-0 pt-2 top-full;
+    }
+  }
+}

@@ -130,3 +130,4 @@ dist
 .pnp.*
 !src/.vitepress
 src/.vitepress/cache
+src/public/js
