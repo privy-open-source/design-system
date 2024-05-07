@@ -292,43 +292,6 @@
     ]
   },
   {
-    "name": "sequence",
-    "aliases": [
-      "sign-order",
-      "list-profile"
-    ],
-    "category": "feature",
-    "folder": "sequence",
-    "variant": "illustration",
-    "files": [
-      {
-        "name": "sequence/dot-small",
-        "path": "sequence/dot-small.svg",
-        "hash": "39cfa02b571597880c0b33ca0362a1a5f1a092920a01b0b89f4de7c0e6a0bef3"
-      },
-      {
-        "name": "sequence/dot-large",
-        "path": "sequence/dot-large.svg",
-        "hash": "e2f9c36a919e3252d3bfe252398717102088d92445bf22075992ed2484739bc9"
-      },
-      {
-        "name": "sequence/spot-hero-large",
-        "path": "sequence/spot-hero-large.svg",
-        "hash": "9f1f2f96ef1a0977cb7636199f9926a5caa0e38b342688823c86379e9e96ce41"
-      },
-      {
-        "name": "sequence/spot",
-        "path": "sequence/spot.svg",
-        "hash": "a0120b70553af44aa37fca64e23888069ab67e287c311986d5fc066df4e6af97"
-      },
-      {
-        "name": "sequence/spot-hero-small",
-        "path": "sequence/spot-hero-small.svg",
-        "hash": "c9ed6207f49811c7b98644a86ad7929d1c1aa18a745560347714414e2b38d89d"
-      }
-    ]
-  },
-  {
     "name": "discussion",
     "aliases": [
       "chat"
@@ -1496,7 +1459,7 @@
       {
         "name": "security/spot-hero-large",
         "path": "security/spot-hero-large.svg",
-        "hash": "294cd2b538e45b27abe869b9846c109ed6350a45e99277e4d6cc0432ef991587"
+        "hash": "9eaf6d44bdf2a4640eebe2081cd5095b414cab52bc565c5d69da3a2fccb4fe2b"
       },
       {
         "name": "security/spot",
@@ -2092,6 +2055,43 @@
         "name": "bill/spot",
         "path": "bill/spot.svg",
         "hash": "5ea6400e64f46a4a69272e0d99f3bbc4072dd514ea8146f918bfd4109bf9dec6"
+      }
+    ]
+  },
+  {
+    "name": "sequence",
+    "aliases": [
+      "sign-order",
+      "list-profile"
+    ],
+    "category": "feature",
+    "folder": "sequence",
+    "variant": "illustration",
+    "files": [
+      {
+        "name": "sequence/spot-hero-large",
+        "path": "sequence/spot-hero-large.svg",
+        "hash": "9f1f2f96ef1a0977cb7636199f9926a5caa0e38b342688823c86379e9e96ce41"
+      },
+      {
+        "name": "sequence/spot-hero-small",
+        "path": "sequence/spot-hero-small.svg",
+        "hash": "c9ed6207f49811c7b98644a86ad7929d1c1aa18a745560347714414e2b38d89d"
+      },
+      {
+        "name": "sequence/dot-large",
+        "path": "sequence/dot-large.svg",
+        "hash": "e2f9c36a919e3252d3bfe252398717102088d92445bf22075992ed2484739bc9"
+      },
+      {
+        "name": "sequence/spot",
+        "path": "sequence/spot.svg",
+        "hash": "a0120b70553af44aa37fca64e23888069ab67e287c311986d5fc066df4e6af97"
+      },
+      {
+        "name": "sequence/dot-small",
+        "path": "sequence/dot-small.svg",
+        "hash": "39cfa02b571597880c0b33ca0362a1a5f1a092920a01b0b89f4de7c0e6a0bef3"
       }
     ]
   }

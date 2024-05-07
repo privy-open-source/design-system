@@ -1,7 +1,7 @@
 {
   "name": "@privyid/design-system",
   "version": "1.0.0-rc.6",
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.2.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -33,7 +33,7 @@
     "@privyid/eslint-config-persona": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@rushstack/eslint-patch": "1.10.2",
-    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/jest-dom": "6.4.5",
     "@testing-library/vue": "8.0.3",
     "@types/html-escaper": "3.0.2",
     "@types/lodash-es": "4.17.12",
@@ -76,7 +76,7 @@
     "vite-plugin-image-optimizer": "1.1.7",
     "vitepress": "1.1.0",
     "vitest": "0.24.5",
-    "vue-tsc": "2.0.15"
+    "vue-tsc": "2.0.16"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
