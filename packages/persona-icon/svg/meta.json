@@ -331,6 +331,35 @@
     ]
   },
   {
+    "name": "contact-book",
+    "aliases": [],
+    "category": "user",
+    "folder": "contact-book",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "contact-book/32",
+        "path": "contact-book/32.svg",
+        "hash": "2518378a3d35eb88818aacd323f1cfc1b49b127f5b46a796045da47172284621"
+      },
+      {
+        "name": "contact-book/24",
+        "path": "contact-book/24.svg",
+        "hash": "d6185882b7a129f91fa2e0c346afcbab6aa4e9f7ad62026abd4f2f2b22e806a5"
+      },
+      {
+        "name": "contact-book/16",
+        "path": "contact-book/16.svg",
+        "hash": "036ed57e34d8e4c370a446966412df3b018b064541db8b5fe189084c080d5070"
+      },
+      {
+        "name": "contact-book/20",
+        "path": "contact-book/20.svg",
+        "hash": "07ee3331734c226a2dd6e3f77026445d96c8bcffd3ce9c8f5d0c43da9f364a0a"
+      }
+    ]
+  },
+  {
     "name": "blog",
     "aliases": [],
     "category": "technology",
@@ -3710,7 +3739,7 @@
       {
         "name": "document-review/32",
         "path": "document-review/32.svg",
-        "hash": "538cf96bdaba8fff88e5bb842dfffb4716dc5fdba57f11611173566842ab5961"
+        "hash": "3d6d6189940fcadee8a79827a78d3ca4ad957fd34b7a044aa5c4c98ee0baef11"
       },
       {
         "name": "document-review/20",
