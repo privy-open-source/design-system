@@ -3382,22 +3382,22 @@
       {
         "name": "customer-service/20",
         "path": "customer-service/20.svg",
-        "hash": "c17ca9a83a4846e2d269fb28780bc1b92586a5f9728b9587c14a89d5b97a2e15"
+        "hash": "e0f4e13d153559e727bfe9030cd84eb9241ec6646ccd2757a4c553509d53053c"
       },
       {
         "name": "customer-service/24",
         "path": "customer-service/24.svg",
-        "hash": "4767f28242aebd65ca43a027bb87ac6c32d59818f7acfe1de907af293b5c7803"
+        "hash": "acfe56d0e01292c6d2f37e801ac8c95d0b2a29d1c72ca02b6ee2f54f14dce665"
       },
       {
         "name": "customer-service/16",
         "path": "customer-service/16.svg",
-        "hash": "823a31c973840ee6a2f304e664589744ae54ffc0a920d3d1a91ee583e5d0b79f"
+        "hash": "ee260ebab9c359b28a30c5a6704ae80607a8c3349ba96cf2181d39986e8f082c"
       },
       {
         "name": "customer-service/32",
         "path": "customer-service/32.svg",
-        "hash": "fccd32a8c5a81e6ad0e7d62fd5ca941b2d2a6c6a3a73f495493af835932cf91a"
+        "hash": "b3fbcce5776e9ac66117d3d05a8902b753ad6a6c7d26018c0af7eabf91cade18"
       }
     ]
   },
@@ -5501,22 +5501,22 @@
       {
         "name": "email/16",
         "path": "email/16.svg",
-        "hash": "af5b2e4eac94a1f432f60c52f9bed6a4c10e6899c3fd19425258002508e23578"
+        "hash": "e4022ed7d7780d7e9290d9258da8ea2c9190429c79365f6a46cd1136a698b89c"
       },
       {
         "name": "email/20",
         "path": "email/20.svg",
-        "hash": "0bcc87ac50205bc6fa2a8ea41492263dc2a4ba42df1be6025d6874c146b8730f"
+        "hash": "9a5305557880ec87448fdcae90cdf11d1627b95044927cccbb79c66e7f63a7d0"
       },
       {
         "name": "email/24",
         "path": "email/24.svg",
-        "hash": "a9f5e2b2da103b84adbb520e65ddf4d654b4784e9bb2ee0919dcccc3dd8b578b"
+        "hash": "49a5c70fc4758ea688dadc5bc5b34000a29090a0c820531d2a1527d64062dd33"
       },
       {
         "name": "email/32",
         "path": "email/32.svg",
-        "hash": "77fa9df7ebf25d55197f287031469e61d7611135116c40ffd498357c722e999c"
+        "hash": "e2a0d44d77a1e52fff322190eb4904bcf82dbc844690740a36efb5e7a33263e7"
       }
     ]
   },
@@ -6650,22 +6650,22 @@
       {
         "name": "email-download/16",
         "path": "email-download/16.svg",
-        "hash": "eafd79506fcc956050f3939b3832e147a4dee379892ce8adf9fd29d036f3bc59"
+        "hash": "750cca8b7c2dc81075576da6c2256cad9f483c7f16287c2de65f85a37fb238a8"
       },
       {
         "name": "email-download/32",
         "path": "email-download/32.svg",
-        "hash": "7f2e13b7ab557e86755a5e83cf7108a50c083b76b2306be75eea5b391720523d"
+        "hash": "df607dcc652e317b5a7d54e85a76fea73f3025416044c8ce81ded260c61ba49c"
       },
       {
         "name": "email-download/20",
         "path": "email-download/20.svg",
-        "hash": "6a1d83f53c3eb53c3fc67f27e3deb982d36c1e09612e63152d13f70e2a8ba625"
+        "hash": "e6b9fa58a8d891555d3f8e1107643e0c3f444d1778daec69e45d063681a3daae"
       },
       {
         "name": "email-download/24",
         "path": "email-download/24.svg",
-        "hash": "7e89c1e4532ed619b9e5b5deadbb3b52ca8cc802f88637af93723c9bd8f527c2"
+        "hash": "8b2593e8d4e79209658f8cc00443051d8c6adffff8d8c917311b35d7f3f22e9b"
       }
     ]
   },
@@ -7267,22 +7267,22 @@
       {
         "name": "chat/32",
         "path": "chat/32.svg",
-        "hash": "f3f3389d421e6e2b374e1fc2cce29e1e96bf8705217933e07a48f639b4861082"
+        "hash": "f539dd1da47ca9b23e93fb83e550aa9716575cda81fc0efc700219d70af2cd80"
       },
       {
         "name": "chat/16",
         "path": "chat/16.svg",
-        "hash": "143a424b61beab38651490f616ab189ed9152e8a3ec519512bc882750b9b02cb"
+        "hash": "a95981a1b124f5a0ad30a72f1e81af92038ff1171e55a5cacb0ef78c023dc627"
       },
       {
         "name": "chat/24",
         "path": "chat/24.svg",
-        "hash": "7c4b307615b576de7569f67e004434289fdde30db468cbdc8d3f8fbf5c352f26"
+        "hash": "76bdce6b276a2ac07b962ceee7de21bbd0812b7e17a6abcb5018453d23bfca6a"
       },
       {
         "name": "chat/20",
         "path": "chat/20.svg",
-        "hash": "1cc82b33f9ae878d9709c5cb37a638a96909d981defd1e98e2f76b493ecb555a"
+        "hash": "983c2144e21d7cc489a5f912bf0852699de9c686083cf4b4088d1979a75f44a0"
       }
     ]
   },
