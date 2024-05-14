@@ -331,35 +331,6 @@
     ]
   },
   {
-    "name": "contact-book",
-    "aliases": [],
-    "category": "user",
-    "folder": "contact-book",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "contact-book/32",
-        "path": "contact-book/32.svg",
-        "hash": "2518378a3d35eb88818aacd323f1cfc1b49b127f5b46a796045da47172284621"
-      },
-      {
-        "name": "contact-book/24",
-        "path": "contact-book/24.svg",
-        "hash": "d6185882b7a129f91fa2e0c346afcbab6aa4e9f7ad62026abd4f2f2b22e806a5"
-      },
-      {
-        "name": "contact-book/16",
-        "path": "contact-book/16.svg",
-        "hash": "036ed57e34d8e4c370a446966412df3b018b064541db8b5fe189084c080d5070"
-      },
-      {
-        "name": "contact-book/20",
-        "path": "contact-book/20.svg",
-        "hash": "07ee3331734c226a2dd6e3f77026445d96c8bcffd3ce9c8f5d0c43da9f364a0a"
-      }
-    ]
-  },
-  {
     "name": "blog",
     "aliases": [],
     "category": "technology",
@@ -2459,22 +2430,22 @@
       {
         "name": "email-invitation/24",
         "path": "email-invitation/24.svg",
-        "hash": "68231bc12243f9626e168083160a84042f30aa1fb065eb7435f73496010ca303"
+        "hash": "c0d98a39cbbb0cf2221ba39807e7d0f6b175e95f908531f88b53d6b67b5668b0"
       },
       {
         "name": "email-invitation/16",
         "path": "email-invitation/16.svg",
-        "hash": "1e566afb7da95845175632af70a5177b4c9829b7b0589212f4e40c3900ed41af"
+        "hash": "dce468a1b5a86c1780d1dd1f74bc019562eee2c16b6059243425a24f2d1f1f15"
       },
       {
         "name": "email-invitation/20",
         "path": "email-invitation/20.svg",
-        "hash": "5ebdac90e8e9796d86584ada7b79a0ebbf67a13f9efc468c15e6b3912000dba8"
+        "hash": "30da2c5592a49caabef5378645a0a3d581168ff8ea96a050698ee102674ee37d"
       },
       {
         "name": "email-invitation/32",
         "path": "email-invitation/32.svg",
-        "hash": "5a13f4bb1aa2c74a718ab9ffb4f454d1fd24446f28007b77ebc74314108fb8ae"
+        "hash": "5448e40c41940bd92e7d99e1a150f95e2c192ceec1a185a5b63dec3c6a25b44a"
       }
     ]
   },
@@ -4485,7 +4456,7 @@
       {
         "name": "document-question/32",
         "path": "document-question/32.svg",
-        "hash": "d417a43e213ea2f8324ca3c32800adf9f623478e4c823cec9137d4b132614a19"
+        "hash": "439411f5dd01df40daee7987e2867f4d5715d365bf118a2fe3effb2a424d603b"
       },
       {
         "name": "document-question/24",
@@ -8019,7 +7990,7 @@
       {
         "name": "template/32",
         "path": "template/32.svg",
-        "hash": "f3092d1f2b760586368ccb2bae978e23c4cc16a80de67594fedde3264c2df90a"
+        "hash": "2d4a5c603e3b7c3946ce272fd9ef7ac4ea0f5d1d8a911fc13aa4477110cdc259"
       }
     ]
   },
@@ -9546,7 +9517,7 @@
       {
         "name": "document-retract/32",
         "path": "document-retract/32.svg",
-        "hash": "4c0bc5dbb232352a38ebb434aed1beb4694ec93cbee052841cb9a5e697a01255"
+        "hash": "0d2f928693a8502e4d15ab84ed65c2ed767caebdfaa58072ac576efec2bece27"
       },
       {
         "name": "document-retract/16",
@@ -10212,6 +10183,212 @@
         "name": "document-external/16",
         "path": "document-external/16.svg",
         "hash": "dd9b79340788d436fb2f22ff91740d251b3d11dff6a3ba1d688db5d73f66ae41"
+      }
+    ]
+  },
+  {
+    "name": "csv",
+    "aliases": [],
+    "category": "files",
+    "folder": "csv",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "csv/16",
+        "path": "csv/16.svg",
+        "hash": "cb063e759393a6058d8781bf7fb3135765bffa74202f22dede39bc931bc52d94"
+      },
+      {
+        "name": "csv/20",
+        "path": "csv/20.svg",
+        "hash": "4f3cd9bfd8922d8a346484de3c882a31edf37943452c3cd26726758b6872d648"
+      },
+      {
+        "name": "csv/24",
+        "path": "csv/24.svg",
+        "hash": "3a8e6d59495da05a8506bf2e7caa847bd94f753a2f7ff0ef2653ffc94913f610"
+      },
+      {
+        "name": "csv/32",
+        "path": "csv/32.svg",
+        "hash": "174e8ef9be181f968a1ed3c030fad17de63eb572c9a583e49d0d22cd60d2265e"
+      }
+    ]
+  },
+  {
+    "name": "doc",
+    "aliases": [],
+    "category": "files",
+    "folder": "doc",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "doc/16",
+        "path": "doc/16.svg",
+        "hash": "e096799a562ff8c00a8ab33412bead2492cdb770842a48a83b88d49505e7c653"
+      },
+      {
+        "name": "doc/20",
+        "path": "doc/20.svg",
+        "hash": "24017fadd22a7922b37333dea42ed366b1d24b003bbd637fae82a55f0ac1bc80"
+      },
+      {
+        "name": "doc/24",
+        "path": "doc/24.svg",
+        "hash": "abcab984c21589f31807d7f2602fdf3756b6366bc69c8e740734288436e2212f"
+      },
+      {
+        "name": "doc/32",
+        "path": "doc/32.svg",
+        "hash": "2377f3df6a417a696fcaeab976ea4c6b6921bae80d7312ea7870c8582f15e450"
+      }
+    ]
+  },
+  {
+    "name": "quota-sign",
+    "aliases": [],
+    "category": "other",
+    "folder": "quota-sign",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "quota-sign/16",
+        "path": "quota-sign/16.svg",
+        "hash": "9d4ee9631ca6852a756a2f2cabe36dc2421d10bb8b5c3391cd1e710bafc27d30"
+      },
+      {
+        "name": "quota-sign/20",
+        "path": "quota-sign/20.svg",
+        "hash": "a99776c7c76ab7855348ccbcbb9464deaa841926e8dc48f5c74402e019405ad2"
+      },
+      {
+        "name": "quota-sign/24",
+        "path": "quota-sign/24.svg",
+        "hash": "20c8242e81f72f70432bc0778edd7f8a060e3084186d7017e7ea1446ea5b31fc"
+      },
+      {
+        "name": "quota-sign/32",
+        "path": "quota-sign/32.svg",
+        "hash": "212d0943a6f9c9dc2de8b7cd4266a53cee9d7f3930d989dd71de7e30f94fddde"
+      }
+    ]
+  },
+  {
+    "name": "pdf",
+    "aliases": [],
+    "category": "files",
+    "folder": "pdf",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "pdf/16",
+        "path": "pdf/16.svg",
+        "hash": "adb154bfa52698fb9536a5be9fe3ed7f140dfcf271fde51f4ba04e003c4794d4"
+      },
+      {
+        "name": "pdf/20",
+        "path": "pdf/20.svg",
+        "hash": "12cf146f67a221cc45626cb12e8dd51e7edc663fe672dc25508f9c661cf13024"
+      },
+      {
+        "name": "pdf/24",
+        "path": "pdf/24.svg",
+        "hash": "b7a9acccfd1c104514232a2528736c03da8e574c5e6db3dd77e3241ce9194ec2"
+      },
+      {
+        "name": "pdf/32",
+        "path": "pdf/32.svg",
+        "hash": "0da4ac0e3302b8b91b045d35c3292d370b0c7defb8a7d121b7457487cb4a4907"
+      }
+    ]
+  },
+  {
+    "name": "docx",
+    "aliases": [],
+    "category": "files",
+    "folder": "docx",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "docx/16",
+        "path": "docx/16.svg",
+        "hash": "2e11fec4eadaa6d693e3f9a5824c1beb051c5229fa68eedb0e81ff938e11ee90"
+      },
+      {
+        "name": "docx/20",
+        "path": "docx/20.svg",
+        "hash": "8a60b4578d30b3d5f901d52838650b90ed044e4cbc72766764645122b8eb28b7"
+      },
+      {
+        "name": "docx/24",
+        "path": "docx/24.svg",
+        "hash": "b3eef4a418cba44509b9196bcef365c625aa38086bd15e4c5a4ef37d363585ab"
+      },
+      {
+        "name": "docx/32",
+        "path": "docx/32.svg",
+        "hash": "c16fa4ba900d13163c78e4d150b145c74fa60b91fc347090c941e91fd6443c61"
+      }
+    ]
+  },
+  {
+    "name": "bank",
+    "aliases": [
+      "building",
+      "goverment"
+    ],
+    "category": "life-style",
+    "folder": "bank",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "bank/16",
+        "path": "bank/16.svg",
+        "hash": "dfaed8d87e00057f7c871fb216f6f6b909227316aa5e52bd93374f76d7578053"
+      },
+      {
+        "name": "bank/20",
+        "path": "bank/20.svg",
+        "hash": "b9f0b5e092fb47084a37365596e48c5a537f97844dc69767fe6a192579279af7"
+      },
+      {
+        "name": "bank/24",
+        "path": "bank/24.svg",
+        "hash": "d49370851d335d8065157d03386de6d52e8cd3a6cd4591a2adbe77044ad7e9cc"
+      },
+      {
+        "name": "bank/32",
+        "path": "bank/32.svg",
+        "hash": "10e62491f3d861158d9e1d1a07044e024f3ba645534faa1f070906a6711bf789"
+      }
+    ]
+  },
+  {
+    "name": "contact-book",
+    "aliases": [],
+    "category": "user",
+    "folder": "contact-book",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "contact-book/32",
+        "path": "contact-book/32.svg",
+        "hash": "0d3bac70f36df366730fa3a6ee7f5644bd0c2dd8af863e5b0d99f398dfe2e481"
+      },
+      {
+        "name": "contact-book/24",
+        "path": "contact-book/24.svg",
+        "hash": "a4207e7e9bd560b61faa12505740ca6a118cb955e16179c39267418d178576bf"
+      },
+      {
+        "name": "contact-book/16",
+        "path": "contact-book/16.svg",
+        "hash": "605388279e7bb1fd81703660eda3098f8d5b5b9fc7e7344a6eb1a32861c29a34"
+      },
+      {
+        "name": "contact-book/20",
+        "path": "contact-book/20.svg",
+        "hash": "e07ff9a33fe111a643637bfb2513be5600acf5455c7b8811ddef20c2f8b537e9"
       }
     ]
   }
