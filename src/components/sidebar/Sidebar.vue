@@ -134,9 +134,14 @@ provide(SIDEBAR_SETTINGS, {
   --p-sidebar-z-index: theme(zIndex.fixed);
   --p-sidebar-sticky-top: theme(spacing.0);
   --p-sidebar-padding-x: theme(spacing.2);
+  --p-sidebar-padding-left: var(--p-sidebar-padding-x);
+  --p-sidebar-padding-right: var(--p-sidebar-padding-x);
   --p-sidebar-padding-y: theme(spacing.4);
+  --p-sidebar-padding-top: var(--p-sidebar-padding-y);
+  --p-sidebar-padding-bottom: var(--p-sidebar-padding-y);
+  --p-sidebar-shadow: theme(boxShadow.lg);
 
-  @apply bg-[color:var(--p-sidebar-bg)] px-[var(--p-sidebar-padding-x)] py-[var(--p-sidebar-padding-y)] flex flex-col items-stretch;
+  @apply bg-[color:var(--p-sidebar-bg)] pt-[var(--p-sidebar-padding-top)] pb-[var(--p-sidebar-padding-bottom)] pl-[var(--p-sidebar-padding-left)] pr-[var(--p-sidebar-padding-right)] flex flex-col items-stretch;
   @apply dark:bg-[color:var(--p-sidebar-bg-dark)];
 
   /**
@@ -161,6 +166,7 @@ provide(SIDEBAR_SETTINGS, {
   */
   &&--fixed {
     @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg;
+    /* box-shadow: var(--p-sidebar-shadow); */
 
     .sidebar__menus {
       @apply grow h-full overflow-y-auto py-2;
