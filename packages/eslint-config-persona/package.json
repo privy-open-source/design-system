@@ -2,7 +2,7 @@
   "name": "@privyid/eslint-config-persona",
   "description": "Eslint shareable config for Persona project",
   "version": "1.0.0-rc.6",
-  "packageManager": "yarn@4.2.1",
+  "packageManager": "yarn@4.2.2",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
