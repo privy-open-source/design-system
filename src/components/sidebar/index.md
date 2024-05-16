@@ -806,7 +806,12 @@ Sidebar use local CSS variables for enhanced real-time customization.
 --p-sidebar-z-index: theme(zIndex.fixed);
 --p-sidebar-sticky-top: theme(spacing.0);
 --p-sidebar-padding-x: theme(spacing.2);
+--p-sidebar-padding-left: var(--p-sidebar-padding-x);
+--p-sidebar-padding-right: var(--p-sidebar-padding-x);
 --p-sidebar-padding-y: theme(spacing.4);
+--p-sidebar-padding-top: var(--p-sidebar-padding-y);
+--p-sidebar-padding-bottom: var(--p-sidebar-padding-y);
+--p-sidebar-shadow: theme(boxShadow.lg);
 ```
 
 ### `.sidebar__brand`

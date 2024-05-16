@@ -583,9 +583,15 @@ Navbar use local CSS variables on `.navbar` for enhanced real-time customization
 --p-navbar-sticky-top: theme(spacing.0);
 --p-navbar-collapse-max-height: 20rem; /* 320px */
 --p-navbar-padding-x: theme(spacing.3);
+--p-navbar-padding-left: var(--p-navbar-padding-x);
+--p-navbar-padding-right: var(--p-navbar-padding-x);
 --p-navbar-padding-y: theme(spacing.3);
+--p-navbar-padding-top: var(--p-navbar-padding-y);
+--p-navbar-padding-bottom: var(--p-navbar-padding-y);
 --p-navbar-bg: theme(backgroundColor.default.DEFAULT);
 --p-navbar-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
+--p-navbar-shadow: none;
+--p-navbar-shadow-on-scroll: theme(boxShadow.lg);
 ```
 ## API
 
