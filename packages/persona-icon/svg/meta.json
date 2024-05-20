@@ -280,22 +280,22 @@
       {
         "name": "read-message/24",
         "path": "read-message/24.svg",
-        "hash": "3147560a7cc401146c3a7bb62ff478dc12e9ef6bd7f098dc73e6c4e141b89f3a"
+        "hash": "44ab6077831b99e5e592079829b08f036a45ea5be5430ac65db1e054c4b20d6e"
       },
       {
         "name": "read-message/16",
         "path": "read-message/16.svg",
-        "hash": "41e49b5a687ad43fbba50ab6df7868a5512d8a37af7a45a633eb1112367a08a1"
+        "hash": "468909c7bc63ca0004458b965bca4893600a1e07664288523bab05f00889aa9c"
       },
       {
         "name": "read-message/32",
         "path": "read-message/32.svg",
-        "hash": "e75028d7233865a05fcce167a116add33ac7a9fcda2b6b8683330077b462c9d2"
+        "hash": "1de421da08b6807dbcdb7e5ed769fa6f9e5f820b8006a39e255d60017ddc950e"
       },
       {
         "name": "read-message/20",
         "path": "read-message/20.svg",
-        "hash": "65f6ae51dca0410ee66e3a11ff8dd6372325907ae8510978ea75f53e0ef3cf87"
+        "hash": "73b1b3ba41d71ea8a26e380bc83df3b7ad3ad21921487150df403070808ba32c"
       }
     ]
   },
@@ -327,35 +327,6 @@
         "name": "pin/16",
         "path": "pin/16.svg",
         "hash": "5d68d2f9ae71ee22ecd5327a3489ac57cc6d5141bb8457eef58f9de8dd11d383"
-      }
-    ]
-  },
-  {
-    "name": "contact-book",
-    "aliases": [],
-    "category": "user",
-    "folder": "contact-book",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "contact-book/32",
-        "path": "contact-book/32.svg",
-        "hash": "2518378a3d35eb88818aacd323f1cfc1b49b127f5b46a796045da47172284621"
-      },
-      {
-        "name": "contact-book/24",
-        "path": "contact-book/24.svg",
-        "hash": "d6185882b7a129f91fa2e0c346afcbab6aa4e9f7ad62026abd4f2f2b22e806a5"
-      },
-      {
-        "name": "contact-book/16",
-        "path": "contact-book/16.svg",
-        "hash": "036ed57e34d8e4c370a446966412df3b018b064541db8b5fe189084c080d5070"
-      },
-      {
-        "name": "contact-book/20",
-        "path": "contact-book/20.svg",
-        "hash": "07ee3331734c226a2dd6e3f77026445d96c8bcffd3ce9c8f5d0c43da9f364a0a"
       }
     ]
   },
@@ -723,22 +694,22 @@
       {
         "name": "email-user/16",
         "path": "email-user/16.svg",
-        "hash": "6f0fb19bfeabab801af1d680d433607196f391116bdce927889b1fba94d28d1d"
+        "hash": "79e15c9254b195a4bdee00fc6890ec29b8cbe92da40c5fe054921418a9922bc2"
       },
       {
         "name": "email-user/24",
         "path": "email-user/24.svg",
-        "hash": "1d1abf91bf5d4c7ff5d7e45ff5a5eaeb079665f259119ab846952d2b0cacfe39"
+        "hash": "69e41aa0bf5ef04346f98d2667965bfe2a9afe9421dbca01513865bcb195a4cf"
       },
       {
         "name": "email-user/32",
         "path": "email-user/32.svg",
-        "hash": "d91ea1377be8b8e392ec3f28b92fc224cdfcfd8f01046b97837e4495cbdce394"
+        "hash": "8c04ea57add61374321d1461d6cea1a916916b8ce8f7c0c4850d701e3cdb29b8"
       },
       {
         "name": "email-user/20",
         "path": "email-user/20.svg",
-        "hash": "c02c00610885d1977ebd69f660ec34f2be77eda3599774196b39ab63ec9d787b"
+        "hash": "6d80c1b6bd56062faa1305a2f8047dd0bfaeb18a18035ae2bef3d01b24a509a1"
       }
     ]
   },
@@ -2459,22 +2430,22 @@
       {
         "name": "email-invitation/24",
         "path": "email-invitation/24.svg",
-        "hash": "68231bc12243f9626e168083160a84042f30aa1fb065eb7435f73496010ca303"
+        "hash": "c0d98a39cbbb0cf2221ba39807e7d0f6b175e95f908531f88b53d6b67b5668b0"
       },
       {
         "name": "email-invitation/16",
         "path": "email-invitation/16.svg",
-        "hash": "1e566afb7da95845175632af70a5177b4c9829b7b0589212f4e40c3900ed41af"
+        "hash": "dce468a1b5a86c1780d1dd1f74bc019562eee2c16b6059243425a24f2d1f1f15"
       },
       {
         "name": "email-invitation/20",
         "path": "email-invitation/20.svg",
-        "hash": "5ebdac90e8e9796d86584ada7b79a0ebbf67a13f9efc468c15e6b3912000dba8"
+        "hash": "30da2c5592a49caabef5378645a0a3d581168ff8ea96a050698ee102674ee37d"
       },
       {
         "name": "email-invitation/32",
         "path": "email-invitation/32.svg",
-        "hash": "5a13f4bb1aa2c74a718ab9ffb4f454d1fd24446f28007b77ebc74314108fb8ae"
+        "hash": "5448e40c41940bd92e7d99e1a150f95e2c192ceec1a185a5b63dec3c6a25b44a"
       }
     ]
   },
@@ -3353,22 +3324,22 @@
       {
         "name": "email-upload/20",
         "path": "email-upload/20.svg",
-        "hash": "503ef086f072ea03ec8dd022e5176099be5dd14b2260a8cc8be1e73ce23aa8e8"
+        "hash": "57e0d4c4c8bf48423f574ef0a08b4ac49ed43f4aed04ce221cfe24bf56da94dc"
       },
       {
         "name": "email-upload/24",
         "path": "email-upload/24.svg",
-        "hash": "3e1ed6d4f72fa2072cf2b070653b595806d009d2d120c48d6866cc411f64e3fb"
+        "hash": "ecab08d800e7273d0e44776b8e9ee9bcf65b91d8f1f76333e15785ea59889b4a"
       },
       {
         "name": "email-upload/16",
         "path": "email-upload/16.svg",
-        "hash": "6d111b7207943bb71f3cce14d1f592e3490c83ac780c229d66c530406e70558e"
+        "hash": "e934edd1e8d84ff40d746b4670252b4343b9445f8b05c21f77de93af9608b1cf"
       },
       {
         "name": "email-upload/32",
         "path": "email-upload/32.svg",
-        "hash": "df692640364528bf012ab672160b68d7e1956a6297532e83a45026e92acc90fb"
+        "hash": "8f412f7238b1b7ce3c6ffc7f99e972f530e3d57094a8045fa67c622f4a19c560"
       }
     ]
   },
@@ -3382,22 +3353,22 @@
       {
         "name": "customer-service/20",
         "path": "customer-service/20.svg",
-        "hash": "c17ca9a83a4846e2d269fb28780bc1b92586a5f9728b9587c14a89d5b97a2e15"
+        "hash": "e0f4e13d153559e727bfe9030cd84eb9241ec6646ccd2757a4c553509d53053c"
       },
       {
         "name": "customer-service/24",
         "path": "customer-service/24.svg",
-        "hash": "4767f28242aebd65ca43a027bb87ac6c32d59818f7acfe1de907af293b5c7803"
+        "hash": "acfe56d0e01292c6d2f37e801ac8c95d0b2a29d1c72ca02b6ee2f54f14dce665"
       },
       {
         "name": "customer-service/16",
         "path": "customer-service/16.svg",
-        "hash": "823a31c973840ee6a2f304e664589744ae54ffc0a920d3d1a91ee583e5d0b79f"
+        "hash": "ee260ebab9c359b28a30c5a6704ae80607a8c3349ba96cf2181d39986e8f082c"
       },
       {
         "name": "customer-service/32",
         "path": "customer-service/32.svg",
-        "hash": "fccd32a8c5a81e6ad0e7d62fd5ca941b2d2a6c6a3a73f495493af835932cf91a"
+        "hash": "b3fbcce5776e9ac66117d3d05a8902b753ad6a6c7d26018c0af7eabf91cade18"
       }
     ]
   },
@@ -4485,7 +4456,7 @@
       {
         "name": "document-question/32",
         "path": "document-question/32.svg",
-        "hash": "d417a43e213ea2f8324ca3c32800adf9f623478e4c823cec9137d4b132614a19"
+        "hash": "439411f5dd01df40daee7987e2867f4d5715d365bf118a2fe3effb2a424d603b"
       },
       {
         "name": "document-question/24",
@@ -4796,22 +4767,22 @@
       {
         "name": "pause/24",
         "path": "pause/24.svg",
-        "hash": "e33dcf4ca6b51eff6b571e0e02469d0eb9a6f7f2db64f15d4230caed14b91538"
+        "hash": "723b421ba0d27440d06f4f69b5de92d3e6b3937271b0d917b49032b46852cd90"
       },
       {
         "name": "pause/16",
         "path": "pause/16.svg",
-        "hash": "ccba1915645264869e4b43ca0ed0d28b7d7d3899f68c6d95959f45aebe5f158c"
+        "hash": "8d29413c5ec0795ce1433543dcba37d9cc63d1aa357bf13fd73cea79256ba062"
       },
       {
         "name": "pause/20",
         "path": "pause/20.svg",
-        "hash": "45766a3c3f43c778df8e77952bf2771f64b17a2189982ef979fc609747bac8bc"
+        "hash": "a5c2cd9835ec88ce352bb854763754b8ae78cf14f4251ad00f45c701338cf7a8"
       },
       {
         "name": "pause/32",
         "path": "pause/32.svg",
-        "hash": "1ca3bf87729b347a6f77eb9ab56d56210b25ca0cb639598af30acc2e556fdc80"
+        "hash": "4329910d0fa0cc313dd3324d1e4c0350188b5ec9978164912d9055bf2d3646d2"
       }
     ]
   },
@@ -4825,22 +4796,22 @@
       {
         "name": "forward/16",
         "path": "forward/16.svg",
-        "hash": "10666b22bad62bff985cf3d93f82f2e7a818e4953eb7a72fcdb2460448d02f7e"
+        "hash": "e99a48c0ed1785ecec224bb90af0b8ebf03095dc361026988569651785ca7a22"
       },
       {
         "name": "forward/24",
         "path": "forward/24.svg",
-        "hash": "4d136f859ae29fed71436dfb51bd465c76ef3c1381558df1eec7626dd0a0c8c4"
+        "hash": "396e0c6de953eb8cce630295209775ba130905eacb2775123891828fe9a7b9d5"
       },
       {
         "name": "forward/32",
         "path": "forward/32.svg",
-        "hash": "bf8d4e829da519cc4a9bfae5e47024f75c22151910ca3f4606729355f0f0b48a"
+        "hash": "45ccacc9e12d922720e0f7a2e88c0089a84358297d5c193e8072e60a0850d50b"
       },
       {
         "name": "forward/20",
         "path": "forward/20.svg",
-        "hash": "02c3f0916ccc65097fd8991112c2d96dd4018a1ec85e4f9489df41a29649d8ff"
+        "hash": "33b3b0a9fc20b84a7546fcc924b0bbd9ead15cd232c7dd95199da130979da0c4"
       }
     ]
   },
@@ -5414,22 +5385,22 @@
       {
         "name": "message/24",
         "path": "message/24.svg",
-        "hash": "fb084be4428acbd7600c61ad6730f7702d17c05ecd670c5f1dd2c29e9e013c7c"
+        "hash": "3fc60fbb3004ea3720b5835a01a3c4fda42b1682abcbfce756d7b4f4f6af8326"
       },
       {
         "name": "message/20",
         "path": "message/20.svg",
-        "hash": "b5c597e163c6452a7fb6a85da651aec2d00bba631c584950818ca97dd9fbcbb7"
+        "hash": "c300ca08949bd91dbfdfaadfac52b02dcadab29b3f560fbc26b19eec172bc25e"
       },
       {
         "name": "message/32",
         "path": "message/32.svg",
-        "hash": "b521a3fbceb0b056512a7f3aa8b659c66f8fa56633765b029c51d4fbfe5ca179"
+        "hash": "e647213500c16b2c1f3fb4570d690d998053c305a9c718e15554f2fdd9f04d7c"
       },
       {
         "name": "message/16",
         "path": "message/16.svg",
-        "hash": "ac9503c3cc911f8818bf7f6df0e716c7fb872941c7295f0147c564f101006471"
+        "hash": "8df1f094bbed47e8980d358f01259cb356ac6aa1c9a46a37ca703cd98f404a87"
       }
     ]
   },
@@ -5501,22 +5472,22 @@
       {
         "name": "email/16",
         "path": "email/16.svg",
-        "hash": "af5b2e4eac94a1f432f60c52f9bed6a4c10e6899c3fd19425258002508e23578"
+        "hash": "e4022ed7d7780d7e9290d9258da8ea2c9190429c79365f6a46cd1136a698b89c"
       },
       {
         "name": "email/20",
         "path": "email/20.svg",
-        "hash": "0bcc87ac50205bc6fa2a8ea41492263dc2a4ba42df1be6025d6874c146b8730f"
+        "hash": "9a5305557880ec87448fdcae90cdf11d1627b95044927cccbb79c66e7f63a7d0"
       },
       {
         "name": "email/24",
         "path": "email/24.svg",
-        "hash": "a9f5e2b2da103b84adbb520e65ddf4d654b4784e9bb2ee0919dcccc3dd8b578b"
+        "hash": "49a5c70fc4758ea688dadc5bc5b34000a29090a0c820531d2a1527d64062dd33"
       },
       {
         "name": "email/32",
         "path": "email/32.svg",
-        "hash": "77fa9df7ebf25d55197f287031469e61d7611135116c40ffd498357c722e999c"
+        "hash": "e2a0d44d77a1e52fff322190eb4904bcf82dbc844690740a36efb5e7a33263e7"
       }
     ]
   },
@@ -5851,22 +5822,22 @@
       {
         "name": "backward/16",
         "path": "backward/16.svg",
-        "hash": "a9aa572144ed688d407fa8dfdf66c7635f1c26359cda89a1bc5cc1c2c108ad10"
+        "hash": "83cda6e02243905c38bba27d608fecaacef13c5ea797101ebf8fe9dcbc04fe78"
       },
       {
         "name": "backward/24",
         "path": "backward/24.svg",
-        "hash": "60aacda0a1ac9a2a89cf13a303db6296cc47afa1a4d4536f631b081e756850c6"
+        "hash": "865e3338e4fa483fb88bec846157708bcf17637b0964b72c9e5fc3a66c68d4c7"
       },
       {
         "name": "backward/32",
         "path": "backward/32.svg",
-        "hash": "a8d43595588ea443825df562ac0ead29d7b42df294d4064c4d05de829234081d"
+        "hash": "059fb63d47ae8544f337e6867afc6fcdaa947dc0ef8b445a6e0ff64b986fc239"
       },
       {
         "name": "backward/20",
         "path": "backward/20.svg",
-        "hash": "1813c4c4131bdac4f79049ad3612f0c22e70f0eb4bc43847930b92207a10bfed"
+        "hash": "d31c3ef0be14584f4f7bcab4ca4ed8c93200af23df75f5609c88a9572e61465a"
       }
     ]
   },
@@ -6532,22 +6503,22 @@
       {
         "name": "play/32",
         "path": "play/32.svg",
-        "hash": "78cc744cf54a0134b6f4f0fcfb01e53a634b69fceb7ec54663caa263d67966bc"
+        "hash": "d7f13095e83e812c9f425fdfa85b2d53caa90341966dafe7eabf98bd25c9afec"
       },
       {
         "name": "play/24",
         "path": "play/24.svg",
-        "hash": "fd016473c0a74ce9abfcc473944bc321b35415c298d93e2b30a20c758156338d"
+        "hash": "978cd3c083dc54efc640db7d622098e82dd2eed109c6addf7e8c66ae41d29a53"
       },
       {
         "name": "play/20",
         "path": "play/20.svg",
-        "hash": "e5302a6dd6ec2df8014d43df73f9b530c3eeb6758845b4e00cc8fcaf0272ed4c"
+        "hash": "b75923ab3331a8850cb355b49bd750790fbc780fb0f422f08869017492797c42"
       },
       {
         "name": "play/16",
         "path": "play/16.svg",
-        "hash": "35858a598c758c1e8a83ae3342349cd7fe598622035064a0a700f8807b9de352"
+        "hash": "14e76be0b9b018b0d553dc1d33b69870f6fe7bd09b5db24e0a7e9e8aea918e76"
       }
     ]
   },
@@ -6650,22 +6621,22 @@
       {
         "name": "email-download/16",
         "path": "email-download/16.svg",
-        "hash": "eafd79506fcc956050f3939b3832e147a4dee379892ce8adf9fd29d036f3bc59"
+        "hash": "750cca8b7c2dc81075576da6c2256cad9f483c7f16287c2de65f85a37fb238a8"
       },
       {
         "name": "email-download/32",
         "path": "email-download/32.svg",
-        "hash": "7f2e13b7ab557e86755a5e83cf7108a50c083b76b2306be75eea5b391720523d"
+        "hash": "df607dcc652e317b5a7d54e85a76fea73f3025416044c8ce81ded260c61ba49c"
       },
       {
         "name": "email-download/20",
         "path": "email-download/20.svg",
-        "hash": "6a1d83f53c3eb53c3fc67f27e3deb982d36c1e09612e63152d13f70e2a8ba625"
+        "hash": "e6b9fa58a8d891555d3f8e1107643e0c3f444d1778daec69e45d063681a3daae"
       },
       {
         "name": "email-download/24",
         "path": "email-download/24.svg",
-        "hash": "7e89c1e4532ed619b9e5b5deadbb3b52ca8cc802f88637af93723c9bd8f527c2"
+        "hash": "8b2593e8d4e79209658f8cc00443051d8c6adffff8d8c917311b35d7f3f22e9b"
       }
     ]
   },
@@ -7267,22 +7238,22 @@
       {
         "name": "chat/32",
         "path": "chat/32.svg",
-        "hash": "f3f3389d421e6e2b374e1fc2cce29e1e96bf8705217933e07a48f639b4861082"
+        "hash": "f539dd1da47ca9b23e93fb83e550aa9716575cda81fc0efc700219d70af2cd80"
       },
       {
         "name": "chat/16",
         "path": "chat/16.svg",
-        "hash": "143a424b61beab38651490f616ab189ed9152e8a3ec519512bc882750b9b02cb"
+        "hash": "a95981a1b124f5a0ad30a72f1e81af92038ff1171e55a5cacb0ef78c023dc627"
       },
       {
         "name": "chat/24",
         "path": "chat/24.svg",
-        "hash": "7c4b307615b576de7569f67e004434289fdde30db468cbdc8d3f8fbf5c352f26"
+        "hash": "76bdce6b276a2ac07b962ceee7de21bbd0812b7e17a6abcb5018453d23bfca6a"
       },
       {
         "name": "chat/20",
         "path": "chat/20.svg",
-        "hash": "1cc82b33f9ae878d9709c5cb37a638a96909d981defd1e98e2f76b493ecb555a"
+        "hash": "983c2144e21d7cc489a5f912bf0852699de9c686083cf4b4088d1979a75f44a0"
       }
     ]
   },
@@ -8019,7 +7990,7 @@
       {
         "name": "template/32",
         "path": "template/32.svg",
-        "hash": "f3092d1f2b760586368ccb2bae978e23c4cc16a80de67594fedde3264c2df90a"
+        "hash": "2d4a5c603e3b7c3946ce272fd9ef7ac4ea0f5d1d8a911fc13aa4477110cdc259"
       }
     ]
   },
@@ -8480,22 +8451,22 @@
       {
         "name": "email-signature/32",
         "path": "email-signature/32.svg",
-        "hash": "1735eef548f422761fcb84bdcf58fd6ac56213cc26883cc1a79af5ae4a08f8b8"
+        "hash": "a88a0e8d434757ee923767e8b463ff298e28457758fce6ddba7ebe60baebd770"
       },
       {
         "name": "email-signature/20",
         "path": "email-signature/20.svg",
-        "hash": "1b3592fc98c6df9adab6bfc09a689e923f234f8462219d1a402dc97240064a23"
+        "hash": "bc8668e428af52d50b5efa739c591ea8bd53abe69d078598abcbc55a659ac4ac"
       },
       {
         "name": "email-signature/24",
         "path": "email-signature/24.svg",
-        "hash": "f2b93e4e44ec6883a823fa8601b6370bbe45d55d7502333e1375992c0afd392f"
+        "hash": "2c3b48b1d4b51f994227f8e514f06615d03499cdf02a057d41c50807d91cc7df"
       },
       {
         "name": "email-signature/16",
         "path": "email-signature/16.svg",
-        "hash": "a5b7ecca15235ec1879f36138061e13ea3fc4395e5ed0120a69266e6aaede8fa"
+        "hash": "1297bcd5072bf97572416af6f2fcea1b3ceea9bdc8768937f4429200faf4b415"
       }
     ]
   },
@@ -9546,7 +9517,7 @@
       {
         "name": "document-retract/32",
         "path": "document-retract/32.svg",
-        "hash": "4c0bc5dbb232352a38ebb434aed1beb4694ec93cbee052841cb9a5e697a01255"
+        "hash": "0d2f928693a8502e4d15ab84ed65c2ed767caebdfaa58072ac576efec2bece27"
       },
       {
         "name": "document-retract/16",
@@ -10212,6 +10183,212 @@
         "name": "document-external/16",
         "path": "document-external/16.svg",
         "hash": "dd9b79340788d436fb2f22ff91740d251b3d11dff6a3ba1d688db5d73f66ae41"
+      }
+    ]
+  },
+  {
+    "name": "csv",
+    "aliases": [],
+    "category": "files",
+    "folder": "csv",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "csv/16",
+        "path": "csv/16.svg",
+        "hash": "cb063e759393a6058d8781bf7fb3135765bffa74202f22dede39bc931bc52d94"
+      },
+      {
+        "name": "csv/20",
+        "path": "csv/20.svg",
+        "hash": "4f3cd9bfd8922d8a346484de3c882a31edf37943452c3cd26726758b6872d648"
+      },
+      {
+        "name": "csv/24",
+        "path": "csv/24.svg",
+        "hash": "3a8e6d59495da05a8506bf2e7caa847bd94f753a2f7ff0ef2653ffc94913f610"
+      },
+      {
+        "name": "csv/32",
+        "path": "csv/32.svg",
+        "hash": "174e8ef9be181f968a1ed3c030fad17de63eb572c9a583e49d0d22cd60d2265e"
+      }
+    ]
+  },
+  {
+    "name": "doc",
+    "aliases": [],
+    "category": "files",
+    "folder": "doc",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "doc/16",
+        "path": "doc/16.svg",
+        "hash": "e096799a562ff8c00a8ab33412bead2492cdb770842a48a83b88d49505e7c653"
+      },
+      {
+        "name": "doc/20",
+        "path": "doc/20.svg",
+        "hash": "24017fadd22a7922b37333dea42ed366b1d24b003bbd637fae82a55f0ac1bc80"
+      },
+      {
+        "name": "doc/24",
+        "path": "doc/24.svg",
+        "hash": "abcab984c21589f31807d7f2602fdf3756b6366bc69c8e740734288436e2212f"
+      },
+      {
+        "name": "doc/32",
+        "path": "doc/32.svg",
+        "hash": "2377f3df6a417a696fcaeab976ea4c6b6921bae80d7312ea7870c8582f15e450"
+      }
+    ]
+  },
+  {
+    "name": "quota-sign",
+    "aliases": [],
+    "category": "other",
+    "folder": "quota-sign",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "quota-sign/16",
+        "path": "quota-sign/16.svg",
+        "hash": "9d4ee9631ca6852a756a2f2cabe36dc2421d10bb8b5c3391cd1e710bafc27d30"
+      },
+      {
+        "name": "quota-sign/20",
+        "path": "quota-sign/20.svg",
+        "hash": "a99776c7c76ab7855348ccbcbb9464deaa841926e8dc48f5c74402e019405ad2"
+      },
+      {
+        "name": "quota-sign/24",
+        "path": "quota-sign/24.svg",
+        "hash": "20c8242e81f72f70432bc0778edd7f8a060e3084186d7017e7ea1446ea5b31fc"
+      },
+      {
+        "name": "quota-sign/32",
+        "path": "quota-sign/32.svg",
+        "hash": "212d0943a6f9c9dc2de8b7cd4266a53cee9d7f3930d989dd71de7e30f94fddde"
+      }
+    ]
+  },
+  {
+    "name": "pdf",
+    "aliases": [],
+    "category": "files",
+    "folder": "pdf",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "pdf/16",
+        "path": "pdf/16.svg",
+        "hash": "adb154bfa52698fb9536a5be9fe3ed7f140dfcf271fde51f4ba04e003c4794d4"
+      },
+      {
+        "name": "pdf/20",
+        "path": "pdf/20.svg",
+        "hash": "12cf146f67a221cc45626cb12e8dd51e7edc663fe672dc25508f9c661cf13024"
+      },
+      {
+        "name": "pdf/24",
+        "path": "pdf/24.svg",
+        "hash": "b7a9acccfd1c104514232a2528736c03da8e574c5e6db3dd77e3241ce9194ec2"
+      },
+      {
+        "name": "pdf/32",
+        "path": "pdf/32.svg",
+        "hash": "0da4ac0e3302b8b91b045d35c3292d370b0c7defb8a7d121b7457487cb4a4907"
+      }
+    ]
+  },
+  {
+    "name": "docx",
+    "aliases": [],
+    "category": "files",
+    "folder": "docx",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "docx/16",
+        "path": "docx/16.svg",
+        "hash": "2e11fec4eadaa6d693e3f9a5824c1beb051c5229fa68eedb0e81ff938e11ee90"
+      },
+      {
+        "name": "docx/20",
+        "path": "docx/20.svg",
+        "hash": "8a60b4578d30b3d5f901d52838650b90ed044e4cbc72766764645122b8eb28b7"
+      },
+      {
+        "name": "docx/24",
+        "path": "docx/24.svg",
+        "hash": "b3eef4a418cba44509b9196bcef365c625aa38086bd15e4c5a4ef37d363585ab"
+      },
+      {
+        "name": "docx/32",
+        "path": "docx/32.svg",
+        "hash": "c16fa4ba900d13163c78e4d150b145c74fa60b91fc347090c941e91fd6443c61"
+      }
+    ]
+  },
+  {
+    "name": "bank",
+    "aliases": [
+      "building",
+      "goverment"
+    ],
+    "category": "life-style",
+    "folder": "bank",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "bank/16",
+        "path": "bank/16.svg",
+        "hash": "dfaed8d87e00057f7c871fb216f6f6b909227316aa5e52bd93374f76d7578053"
+      },
+      {
+        "name": "bank/20",
+        "path": "bank/20.svg",
+        "hash": "b9f0b5e092fb47084a37365596e48c5a537f97844dc69767fe6a192579279af7"
+      },
+      {
+        "name": "bank/24",
+        "path": "bank/24.svg",
+        "hash": "d49370851d335d8065157d03386de6d52e8cd3a6cd4591a2adbe77044ad7e9cc"
+      },
+      {
+        "name": "bank/32",
+        "path": "bank/32.svg",
+        "hash": "10e62491f3d861158d9e1d1a07044e024f3ba645534faa1f070906a6711bf789"
+      }
+    ]
+  },
+  {
+    "name": "contact-book",
+    "aliases": [],
+    "category": "user",
+    "folder": "contact-book",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "contact-book/32",
+        "path": "contact-book/32.svg",
+        "hash": "0d3bac70f36df366730fa3a6ee7f5644bd0c2dd8af863e5b0d99f398dfe2e481"
+      },
+      {
+        "name": "contact-book/24",
+        "path": "contact-book/24.svg",
+        "hash": "a4207e7e9bd560b61faa12505740ca6a118cb955e16179c39267418d178576bf"
+      },
+      {
+        "name": "contact-book/16",
+        "path": "contact-book/16.svg",
+        "hash": "605388279e7bb1fd81703660eda3098f8d5b5b9fc7e7344a6eb1a32861c29a34"
+      },
+      {
+        "name": "contact-book/20",
+        "path": "contact-book/20.svg",
+        "hash": "e07ff9a33fe111a643637bfb2513be5600acf5455c7b8811ddef20c2f8b537e9"
       }
     ]
   }

@@ -2404,15 +2404,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jill64/universal-sanitizer@npm:1.2.10":
-  version: 1.2.10
-  resolution: "@jill64/universal-sanitizer@npm:1.2.10"
+"@jill64/universal-sanitizer@npm:1.2.11":
+  version: 1.2.11
+  resolution: "@jill64/universal-sanitizer@npm:1.2.11"
   dependencies:
     "@types/dompurify": "npm:3.0.5"
     "@types/sanitize-html": "npm:2.11.0"
-    dompurify: "npm:3.1.2"
+    dompurify: "npm:3.1.3"
     sanitize-html: "npm:2.13.0"
-  checksum: 10/603ae1463032cdb368754ec85b231a7ce0e9fc0e16d8420be5397b1f765e14048e7d92996febc5493257560cd8fcbb7e5cc16027be28fd587a74435b58949204
+  checksum: 10/1cbd0b7a8853fb689150438dcd0d25743d984cd052fb3dd337a659f27f7ce67eb809ad977895fd0b55ecb5866d8b74de67bdc91e6946994c51d458a3430f1dd9
   languageName: node
   linkType: hard
 
@@ -3281,7 +3281,7 @@ __metadata:
     qr-code-styling: "npm:^1.6.0-rc.1"
     scroll-into-view: "npm:^1.16.2"
     sharp: "npm:0.33.3"
-    svgo: "npm:3.2.0"
+    svgo: "npm:3.3.2"
     tabbable: "npm:6.2.0"
     tailwindcss: "npm:3.4.3"
     typescript: "npm:5.4.5"
@@ -3293,7 +3293,7 @@ __metadata:
     vue-content-loader: "npm:^2.0.1"
     vue-demi: "npm:0.14.7"
     vue-router: "npm:4.3.2"
-    vue-tsc: "npm:2.0.16"
+    vue-tsc: "npm:2.0.19"
     vuedraggable: "npm:next"
     webfontloader: "npm:1.6.28"
     zxcvbn: "npm:^4.4.2"
@@ -3340,7 +3340,7 @@ __metadata:
     ora: "npm:8.0.1"
     p-all: "npm:5.0.0"
     svg-path-commander: "npm:2.0.9"
-    svgo: "npm:3.2.0"
+    svgo: "npm:3.3.2"
     webfont: "npm:11.2.26"
   languageName: unknown
   linkType: soft
@@ -3364,7 +3364,7 @@ __metadata:
     p-all: "npm:5.0.0"
     sharp: "npm:0.33.3"
     svg-path-commander: "npm:2.0.9"
-    svgo: "npm:3.2.0"
+    svgo: "npm:3.3.2"
     webfont: "npm:11.2.26"
   languageName: unknown
   linkType: soft
@@ -3374,7 +3374,7 @@ __metadata:
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
     "@floating-ui/dom": "npm:1.6.5"
-    "@jill64/universal-sanitizer": "npm:1.2.10"
+    "@jill64/universal-sanitizer": "npm:1.2.11"
     "@juggle/resize-observer": "npm:3.4.0"
     "@nuxt/kit": "npm:3.11.2"
     "@nuxt/module-builder": "npm:0.6.0"
@@ -5008,31 +5008,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@volar/language-core@npm:2.2.1, @volar/language-core@npm:~2.2.0":
-  version: 2.2.1
-  resolution: "@volar/language-core@npm:2.2.1"
+"@volar/language-core@npm:2.2.4, @volar/language-core@npm:~2.2.4":
+  version: 2.2.4
+  resolution: "@volar/language-core@npm:2.2.4"
   dependencies:
-    "@volar/source-map": "npm:2.2.1"
-  checksum: 10/db0e72c4c29864d5cc4f4c0b366582e891511ef8d0f679244e492108dac0f6a1204685cc9aecced218c2660442497e64fe8b6a63326fe3209812fd7f8bb069b5
+    "@volar/source-map": "npm:2.2.4"
+  checksum: 10/1c1b2f8af6fa75e39aeb08185c7c43ddbaa1f6180518790b09bd23e3e2ee8fcad1101509fc6f5e172929883c28ee7b14577a879766557a30185cd60e6843e84b
   languageName: node
   linkType: hard
 
-"@volar/source-map@npm:2.2.1":
-  version: 2.2.1
-  resolution: "@volar/source-map@npm:2.2.1"
+"@volar/source-map@npm:2.2.4":
+  version: 2.2.4
+  resolution: "@volar/source-map@npm:2.2.4"
   dependencies:
     muggle-string: "npm:^0.4.0"
-  checksum: 10/8123b2ac65475dcd3bcab78f44e00aaefa0b312056b1a2a84137f8b910827848d3ec7ba39ecf3c21de311a83d1df04ef3642bc0ac8b7d88a6088afda784630cf
+  checksum: 10/5bc767f0c68279800c009e4f34bbcc0cefd939802686d4dabe5b61cf1a339e97f6487891ba9e533c7489d4d8e66822544a17fb0f99978d2c0f0bb32fbfda7397
   languageName: node
   linkType: hard
 
-"@volar/typescript@npm:~2.2.0":
-  version: 2.2.1
-  resolution: "@volar/typescript@npm:2.2.1"
+"@volar/typescript@npm:~2.2.4":
+  version: 2.2.4
+  resolution: "@volar/typescript@npm:2.2.4"
   dependencies:
-    "@volar/language-core": "npm:2.2.1"
+    "@volar/language-core": "npm:2.2.4"
     path-browserify: "npm:^1.0.1"
-  checksum: 10/4f89060ef2fc25938b62444e9d17d11a1c780039a5770f1ed96d45de20c59ac33b91ac98d6f8307172008d2063a4c0bdc7968778045a7a4d78c59238566b4e3c
+  checksum: 10/de95ecc4c6abbcc1eb6f867fb62d87b617db45db477326429273268818a41cc19d76a5c85f90dd36da31596da6c4e20711e045ada62b7ea23ded4f6374c44f1c
   languageName: node
   linkType: hard
 
@@ -5310,11 +5310,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/language-core@npm:2.0.16":
-  version: 2.0.16
-  resolution: "@vue/language-core@npm:2.0.16"
+"@vue/language-core@npm:2.0.19":
+  version: 2.0.19
+  resolution: "@vue/language-core@npm:2.0.19"
   dependencies:
-    "@volar/language-core": "npm:~2.2.0"
+    "@volar/language-core": "npm:~2.2.4"
     "@vue/compiler-dom": "npm:^3.4.0"
     "@vue/shared": "npm:^3.4.0"
     computeds: "npm:^0.0.1"
@@ -5326,7 +5326,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/14a2e7a59465da62595b71e5f7f975412c25880922b5b249616cb94dece01bfbcfb456c09b8fb52eccfc7a21e668ab997dbb54103f69a3afad4b4ac0e36f5312
+  checksum: 10/c59e195b3fb3c3b4c341153858febbfeda27c183d0792c4cc855518c6a0365c415f377742c524aaea9ff0a706c62e0d7b6ceab0d306f4ec4e75a8d0e35cd1964
   languageName: node
   linkType: hard
 
@@ -8063,10 +8063,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:3.1.2":
-  version: 3.1.2
-  resolution: "dompurify@npm:3.1.2"
-  checksum: 10/9d5f4464d6b52aa540ac362a8e4354adc7dc33ef05a2b0a109cfcc1ba63c011b5ff38bbbf4f6b5a893166d976cbbd665c7aa4f5571cd010c812dc63a1f701f8b
+"dompurify@npm:3.1.3":
+  version: 3.1.3
+  resolution: "dompurify@npm:3.1.3"
+  checksum: 10/bb1badf23e8b8c32e116339ae70842465f35706be0d3b2c38a392f3ee1f32e73dbabee6462e9e89406a527e837100b75002b86d8f386937663448cbdf714c466
   languageName: node
   linkType: hard
 
@@ -17617,7 +17617,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svgo@npm:3.2.0, svgo@npm:^3.2.0":
+"svgo@npm:3.3.2":
+  version: 3.3.2
+  resolution: "svgo@npm:3.3.2"
+  dependencies:
+    "@trysound/sax": "npm:0.2.0"
+    commander: "npm:^7.2.0"
+    css-select: "npm:^5.1.0"
+    css-tree: "npm:^2.3.1"
+    css-what: "npm:^6.1.0"
+    csso: "npm:^5.0.5"
+    picocolors: "npm:^1.0.0"
+  bin:
+    svgo: ./bin/svgo
+  checksum: 10/82fdea9b938884d808506104228e4d3af0050d643d5b46ff7abc903ff47a91bbf6561373394868aaf07a28f006c4057b8fbf14bbd666298abdd7cc590d4f7700
+  languageName: node
+  linkType: hard
+
+"svgo@npm:^3.2.0":
   version: 3.2.0
   resolution: "svgo@npm:3.2.0"
   dependencies:
@@ -19241,18 +19258,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-tsc@npm:2.0.16":
-  version: 2.0.16
-  resolution: "vue-tsc@npm:2.0.16"
+"vue-tsc@npm:2.0.19":
+  version: 2.0.19
+  resolution: "vue-tsc@npm:2.0.19"
   dependencies:
-    "@volar/typescript": "npm:~2.2.0"
-    "@vue/language-core": "npm:2.0.16"
+    "@volar/typescript": "npm:~2.2.4"
+    "@vue/language-core": "npm:2.0.19"
     semver: "npm:^7.5.4"
   peerDependencies:
     typescript: "*"
   bin:
     vue-tsc: bin/vue-tsc.js
-  checksum: 10/ca1c45ee61e0ead8f5ca4c8044c101311d7846ebc4b1a31c86458adb643bd377a7da56a4263ebd009301ff5f3e7cc1ab392907e112311d8f41bec4093c0c8d3d
+  checksum: 10/b95afad59e59314338f2588e1d8b826a25b5eeeddb3118dd6d40f539e267561ef8553a082e4a3a29c0a424196a88035df3ef1acb87d53921f7c9b38462c90e63
   languageName: node
   linkType: hard
 

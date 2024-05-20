@@ -21,7 +21,6 @@ export default defineComponent({
       const navs = props.bottom
         ? findAllChildren(slots.default(), 'SidebarNav').filter((vnode) => toBoolean(vnode.props?.bottom))
         : findAllChildren(slots.default(), '*').filter((vnode) => toBoolean(vnode.props?.bottom) !== true)
-
       return navs.map((nav) => h(nav))
     }
   },

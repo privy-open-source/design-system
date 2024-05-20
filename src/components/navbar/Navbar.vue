@@ -93,13 +93,19 @@ provide(NAVBAR_SETTINGS, {
   --p-navbar-sticky-top: theme(spacing.0);
   --p-navbar-collapse-max-height: 20rem; /** 320px */
   --p-navbar-padding-x: theme(spacing.3);
+  --p-navbar-padding-left: var(--p-navbar-padding-x);
+  --p-navbar-padding-right: var(--p-navbar-padding-x);
   --p-navbar-padding-y: theme(spacing.3);
+  --p-navbar-padding-top: var(--p-navbar-padding-y);
+  --p-navbar-padding-bottom: var(--p-navbar-padding-y);
   --p-navbar-bg: theme(backgroundColor.default.DEFAULT);
   --p-navbar-bg-dark: theme(backgroundColor.dark.default.DEFAULT);
-  --p-navbar-shadow: theme(boxShadow.lg);
+  --p-navbar-shadow: none;
+  --p-navbar-shadow-on-scroll: theme(boxShadow.lg);
 
-  @apply bg-[color:var(--p-navbar-bg)] relative px-[var(--p-navbar-padding-x)] py-[var(--p-navbar-padding-y)] flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
+  @apply bg-[color:var(--p-navbar-bg)] relative pl-[var(--p-navbar-padding-left)] pr-[var(--p-navbar-padding-right)] pt-[var(--p-navbar-padding-top)] pb-[var(--p-navbar-padding-bottom)] flex items-center flex-wrap transition-shadow duration-150 ease-in-out;
   @apply dark:bg-[color:var(--p-navbar-bg-dark)];
+  box-shadow: var(--p-navbar-shadow);
 
   &&--fixed {
     @apply fixed left-0 top-0 w-full z-[var(--p-navbar-z-index)];
@@ -110,7 +116,8 @@ provide(NAVBAR_SETTINGS, {
   }
 
   &&--shadow {
-    @apply shadow-[var(--p-navbar-shadow)] transition-shadow duration-150 ease-in-out;
+    @apply transition-shadow duration-150 ease-in-out;
+    box-shadow: var(--p-navbar-shadow-on-scroll);
   }
 
   &&--expand {
