@@ -535,4 +535,5 @@ export default defineConfig({
     build  : { target: getTarget('extends @privyid/browserslist-config') },
     plugins: [ViteImageOptimizer()],
   },
+  srcExclude: ['public/js/**'],
 })

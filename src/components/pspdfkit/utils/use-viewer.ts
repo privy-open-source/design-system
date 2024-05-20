@@ -20,7 +20,7 @@ import {
   joinURL,
   hasProtocol,
 } from 'ufo'
-import Style from '../css/custom.css?url'
+import Style from '../css/custom.css?inline'
 import {
   createViewState,
   createViewer,
@@ -31,6 +31,15 @@ import {
 } from './pspdfkit'
 
 export type OpenDocConfig = Omit<Configuration, 'document' | 'password' | 'container'>
+
+let styleURL: string
+
+function getStyleURL () {
+  if (!styleURL)
+    styleURL = window.URL.createObjectURL(new Blob([Style], { type: 'text/css' }))
+
+  return styleURL
+}
 
 export function useViewer (container: Ref<HTMLDivElement>) {
   const lang     = useLang()
@@ -61,7 +70,7 @@ export function useViewer (container: Ref<HTMLDivElement>) {
         container         : container.value,
         document          : url,
         password          : password,
-        styleSheets       : [Style],
+        styleSheets       : [getStyleURL()],
         maxPasswordRetries: 0,
         locale            : lang.value,
         baseUrl           : hasProtocol(baseUrl) ? baseUrl : withBase(baseUrl, location.origin),
