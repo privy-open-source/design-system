@@ -9,7 +9,8 @@ import './css/custom.css'
 import Preview from './components/Preview.vue'
 import NuxtLink from './components/NuxtLink.vue'
 import vueRouter from './router'
-import { initStore } from '../../components/global/store'
+import { withBase } from 'vitepress'
+import { initStore, setCDN } from '../../components/global/store'
 import { installRouter } from '../../components/global/router'
 
 export default {
@@ -20,6 +21,7 @@ export default {
     app.component('NuxtLink', NuxtLink)
 
     initStore()
+    setCDN(withBase('/js/'))
     installRouter({
       toURL (url) {
         return router.go(url)

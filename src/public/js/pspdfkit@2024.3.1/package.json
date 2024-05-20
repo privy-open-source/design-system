@@ -1,0 +1,33 @@
+{
+  "name": "pspdfkit",
+  "version": "2024.3.1",
+  "description": "View and annotate PDF files in your web app. Full support for mobile and desktop. Runs in the browser using WASM.",
+  "keywords": [
+    "pdf",
+    "pdf sdk",
+    "sdk",
+    "web-sdk",
+    "webassembly",
+    "pdf wasm",
+    "pdf webassembly",
+    "react",
+    "angular",
+    "vue",
+    "ember",
+    "jquery",
+    "backbone",
+    "pdf.js"
+  ],
+  "author": "PSPDFKit (https://pspdfkit.com)",
+  "homepage": "https://pspdfkit.com/web",
+  "license": "SEE LICENSE IN https://pspdfkit.com/legal/License.pdf",
+  "readme": "https://pspdfkit.com/guides/web",
+  "bugs": {
+    "url": "https://pspdfkit.com/guides/web/current/pspdfkit-for-web/troubleshooting"
+  },
+  "main": "dist/pspdfkit.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "@types/react": "^17.0.39"
+  }
+}
