@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Persona Icon';
-  src: url('../font/persona-icon.eot?61aeea38');
-  src: url('../font/persona-icon.eot?61aeea38#iefix') format('embedded-opentype'),
-       url('../font/persona-icon.woff2?861ced8a') format('woff2'),
-       url('../font/persona-icon.woff?da2b1f93') format('woff'),
-       url('../font/persona-icon.ttf?30c74ed3') format('truetype'),
-       url('../font/persona-icon.svg?c29fe33d#Persona%20Icon') format('svg');
+  src: url('../font/persona-icon.eot?fe529411');
+  src: url('../font/persona-icon.eot?fe529411#iefix') format('embedded-opentype'),
+       url('../font/persona-icon.woff2?44181a3d') format('woff2'),
+       url('../font/persona-icon.woff?d9324500') format('woff'),
+       url('../font/persona-icon.ttf?627a7454') format('truetype'),
+       url('../font/persona-icon.svg?66c4ab1d#Persona%20Icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
