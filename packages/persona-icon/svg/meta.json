@@ -5588,12 +5588,12 @@
       {
         "name": "stop/32",
         "path": "stop/32.svg",
-        "hash": "4d9e3cd29a833f2969519a6ac8557ccd2414407f7ea85a2152f2eb574ef72ed5"
+        "hash": "e6e0c253e63f23fd6748b9cb593d51f80f1d15d9a2ffbd42de63eaafb3b0df2d"
       },
       {
         "name": "stop/16",
         "path": "stop/16.svg",
-        "hash": "706c418621adf6714f3626c7bd9e54ca72b7363b0bd3bd57a17d84dbf03af2ca"
+        "hash": "13267e852820bd035b8da2597043ff736d74b47fc1c6c2e72db7121e5c366b9d"
       },
       {
         "name": "stop/20",
@@ -6503,12 +6503,12 @@
       {
         "name": "play/32",
         "path": "play/32.svg",
-        "hash": "d7f13095e83e812c9f425fdfa85b2d53caa90341966dafe7eabf98bd25c9afec"
+        "hash": "bdecd10005a7c97a6b457dd026b82cdf2a526b011708e37eb734541804cbc3c4"
       },
       {
         "name": "play/24",
         "path": "play/24.svg",
-        "hash": "978cd3c083dc54efc640db7d622098e82dd2eed109c6addf7e8c66ae41d29a53"
+        "hash": "50bdd11e85b02f3d23192525730c4aa8c24b9f58905251a15a4c5dff417403a0"
       },
       {
         "name": "play/20",
@@ -7033,22 +7033,22 @@
       {
         "name": "record/32",
         "path": "record/32.svg",
-        "hash": "2a95bc32a1cc19a9f4263d7ec9a4cf986cfaa799ae7d4bd9071a62402d069d08"
+        "hash": "bf5dfe46761b3e501f59884a626952a6615137061a1d49412765857cfa188550"
       },
       {
         "name": "record/20",
         "path": "record/20.svg",
-        "hash": "b83afd279d5159248ff665371f3b5cfe2d69d1561d834efddf99a0f5fe69faab"
+        "hash": "8e4ceb67b7030367c3e6e1f6599ce55cf97f8346f2af84aacc950cec744661a7"
       },
       {
         "name": "record/16",
         "path": "record/16.svg",
-        "hash": "5096795aa3de6bd3dedbdf32f630d04eaaebf2c02b734aae33e4e5c0fbc77666"
+        "hash": "e529fd5599e310779e1f1ffa3af6281c22871adb03f097c1f835c474a8d9f4aa"
       },
       {
         "name": "record/24",
         "path": "record/24.svg",
-        "hash": "bcc2405b6730dd4e792aa252a0e541c0d682987f55c66f4c18aa7d2bc4ad8a84"
+        "hash": "e2d7624021a0276cfd9fee1339123f78aaad43baccbaefac07ddb54e9a7d9e81"
       }
     ]
   },
