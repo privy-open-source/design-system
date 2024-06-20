@@ -45,7 +45,7 @@
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "@vitejs/plugin-vue": "4.5.2",
-    "@vitest/browser": "0.25.8",
+    "@vitest/browser": "1.6.0",
     "@vitest/coverage-c8": "0.24.5",
     "@vue/eslint-config-typescript": "13.0.0",
     "autoprefixer": "10.4.19",
@@ -75,7 +75,7 @@
     "ufo": "1.5.3",
     "vite-plugin-image-optimizer": "1.1.7",
     "vitepress": "1.1.0",
-    "vitest": "0.24.5",
+    "vitest": "1.6.0",
     "vue-tsc": "2.0.19"
   },
   "dependencies": {
