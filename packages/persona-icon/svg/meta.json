@@ -9893,64 +9893,6 @@
     ]
   },
   {
-    "name": "microsoft",
-    "aliases": [],
-    "category": "brand",
-    "folder": "microsoft",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "microsoft/16",
-        "path": "microsoft/16.svg",
-        "hash": "eb9f5b3d3f131203db49970011316083b4d6698b9a859696a0b62494de23cbd6"
-      },
-      {
-        "name": "microsoft/32",
-        "path": "microsoft/32.svg",
-        "hash": "fd547145fcc64037a8a298a3a97e35ca2ba4adfd50de2f314f0f1c67121f8c56"
-      },
-      {
-        "name": "microsoft/20",
-        "path": "microsoft/20.svg",
-        "hash": "819f38eb63012d5615c1443f49f8788b90bd812a72f6bbc28a844c1bcf3709b3"
-      },
-      {
-        "name": "microsoft/24",
-        "path": "microsoft/24.svg",
-        "hash": "e7506c6269678ad8d5f05645f89dc1e141a38f7cf031303928f4e4891af78e94"
-      }
-    ]
-  },
-  {
-    "name": "persona",
-    "aliases": [],
-    "category": "brand",
-    "folder": "persona",
-    "variant": "outline",
-    "files": [
-      {
-        "name": "persona/16",
-        "path": "persona/16.svg",
-        "hash": "5f82917ee4c92b3960b844192e83c4695b097a6b84b63d51fda461955564566d"
-      },
-      {
-        "name": "persona/20",
-        "path": "persona/20.svg",
-        "hash": "537606d887532373b3381e666237b4dc6f05600741029fef0ec5b55105b154ec"
-      },
-      {
-        "name": "persona/32",
-        "path": "persona/32.svg",
-        "hash": "2e01bfaa353d9279f1c391f764fd801e71cd1cab1f75df9618dc36147ce699b5"
-      },
-      {
-        "name": "persona/24",
-        "path": "persona/24.svg",
-        "hash": "f4ee1ca0e137f2afd38ed54a1bdd53aaec83b999a8839f65d300176440a2fae1"
-      }
-    ]
-  },
-  {
     "name": "preview",
     "aliases": [],
     "category": "actions",
@@ -10389,6 +10331,64 @@
         "name": "contact-book/20",
         "path": "contact-book/20.svg",
         "hash": "e07ff9a33fe111a643637bfb2513be5600acf5455c7b8811ddef20c2f8b537e9"
+      }
+    ]
+  },
+  {
+    "name": "persona",
+    "aliases": [],
+    "category": "brand",
+    "folder": "persona",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "persona/32",
+        "path": "persona/32.svg",
+        "hash": "2e01bfaa353d9279f1c391f764fd801e71cd1cab1f75df9618dc36147ce699b5"
+      },
+      {
+        "name": "persona/16",
+        "path": "persona/16.svg",
+        "hash": "5f82917ee4c92b3960b844192e83c4695b097a6b84b63d51fda461955564566d"
+      },
+      {
+        "name": "persona/24",
+        "path": "persona/24.svg",
+        "hash": "f4ee1ca0e137f2afd38ed54a1bdd53aaec83b999a8839f65d300176440a2fae1"
+      },
+      {
+        "name": "persona/20",
+        "path": "persona/20.svg",
+        "hash": "537606d887532373b3381e666237b4dc6f05600741029fef0ec5b55105b154ec"
+      }
+    ]
+  },
+  {
+    "name": "microsoft",
+    "aliases": [],
+    "category": "brand",
+    "folder": "microsoft",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "microsoft/16",
+        "path": "microsoft/16.svg",
+        "hash": "eb9f5b3d3f131203db49970011316083b4d6698b9a859696a0b62494de23cbd6"
+      },
+      {
+        "name": "microsoft/20",
+        "path": "microsoft/20.svg",
+        "hash": "819f38eb63012d5615c1443f49f8788b90bd812a72f6bbc28a844c1bcf3709b3"
+      },
+      {
+        "name": "microsoft/24",
+        "path": "microsoft/24.svg",
+        "hash": "e7506c6269678ad8d5f05645f89dc1e141a38f7cf031303928f4e4891af78e94"
+      },
+      {
+        "name": "microsoft/32",
+        "path": "microsoft/32.svg",
+        "hash": "fd547145fcc64037a8a298a3a97e35ca2ba4adfd50de2f314f0f1c67121f8c56"
       }
     ]
   }
