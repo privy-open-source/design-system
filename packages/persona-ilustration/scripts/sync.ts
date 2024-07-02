@@ -177,6 +177,8 @@ async function cleanup (objects: Map<string, ObjectData>, lockObjects: Map<strin
     if (!newObject || newObject.filename !== oldObject.filename) {
       await remove(resolve(SVG_DIR, `${oldObject.filename}.svg`))
       await remove(resolve(VUE_DIR, `${oldObject.filename}.vue`))
+      await remove(resolve(PNG_DIR, `${oldObject.filename}.png`))
+      await remove(resolve(PNG_DIR, `${oldObject.filename}@2x.png`))
     }
   }
 }

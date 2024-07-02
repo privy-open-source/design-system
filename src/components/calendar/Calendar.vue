@@ -54,6 +54,7 @@
             variant="solid"
             type="button"
             data-testid="calendar-item"
+            class="calendar__item-btn"
             :readonly="item.readonly || disabled || readonly"
             :active="item.active"
             :disabled="item.disabled"
@@ -419,12 +420,18 @@ watch([viewmode, cursor], ([vm, cursor], [vmOld, cursorOld]) => {
     &[viewmode="date"] {
       @apply grid grid-cols-7 gap-y-1;
 
-      .btn--md {
+      .calendar__item-btn.btn--md {
         @apply p-1 md:p-2;
       }
 
-      .btn--outline:nth-child(-n+7) {
+      .calendar__item-btn:nth-child(-n+7) {
         @apply font-medium;
+      }
+
+      .calendar__item-btn:nth-child(7n) {
+        &:not([active="true"]) {
+          @apply text-danger dark:text-dark-danger;
+        }
       }
     }
 

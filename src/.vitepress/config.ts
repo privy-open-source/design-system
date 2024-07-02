@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
 import getTarget from 'browserslist-to-esbuild'
 import head from './head'
+import { env, nodeless } from 'unenv'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+
+const { alias } = env(nodeless)
 
 export default defineConfig({
   base       : process.env.BASE_URL ?? '/design-system/',
@@ -533,6 +536,8 @@ export default defineConfig({
   },
   vite: {
     build  : { target: getTarget('extends @privyid/browserslist-config') },
+    resolve: { alias },
     plugins: [ViteImageOptimizer()],
   },
+  srcExclude: ['public/js/**'],
 })
