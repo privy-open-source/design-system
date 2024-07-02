@@ -62,7 +62,7 @@ const head: HeadConfig[] = [
     'link',
     {
       rel        : 'preconnect',
-      href       : 'https://polyfill.io',
+      href       : 'https://cdnjs.cloudflare.com',
       crossorigin: '',
     },
   ],
@@ -70,7 +70,7 @@ const head: HeadConfig[] = [
     'script',
     {
       defer: '',
-      src  : `https://polyfill.io/v3/polyfill.min.js?features=${[
+      src  : `https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=${[
         'AbortController',
         'ArrayBuffer.isView',
         'Blob',

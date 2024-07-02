@@ -1,5 +1,4 @@
 // import 'virtual:fonts.css'
-import 'core-js'
 import '@fontsource/dm-sans'
 import '@fontsource/dm-sans/400-italic.css'
 import '@fontsource/dm-sans/500.css'
