@@ -1,1 +1,0 @@
-import{ax as a,ac as n,k as t}from"./framework.sPKXfJg2.js";function c(e){const r=a(n(e,"min"),{nanToZero:!0}),u=a(n(e,"max"),{nanToZero:!0}),o=a(n(e,"value"),{nanToZero:!0});return t(()=>(o.value-r.value)/(u.value-r.value))}export{c as u};

@@ -1,1 +1,0 @@
-import{r as l,k as u,as as n,at as m}from"./framework.sPKXfJg2.js";function c(e){const t=l(e.modelValue),{emit:a}=m(),o=u({get(){return e.modelValue},set(s){a("update:modelValue",s)}});return n(t,o,{immediate:!1}),t}export{c as u};
