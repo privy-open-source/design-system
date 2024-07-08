@@ -9,6 +9,8 @@ import {
   getCDN,
   setCDN,
   destroyStore,
+  setPSPDFLicenseKey,
+  getPSPDFLicenseKey,
 } from './store'
 
 beforeEach(() => {
@@ -79,5 +81,13 @@ describe('getCDN', () => {
     destroyStore()
 
     expect(getCDN()).toBe('https://unpkg.com/')
+  })
+})
+
+describe('setPSPDFLicenseKey', () => {
+  it('should able to set PSPDFKit Licensekey', () => {
+    setPSPDFLicenseKey('ABCDEFG')
+
+    expect(getPSPDFLicenseKey()).toBe('ABCDEFG')
   })
 })

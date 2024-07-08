@@ -104,6 +104,8 @@ export {
   useLang,
   getCDN,
   setCDN,
+  getPSPDFLicenseKey,
+  setPSPDFLicenseKey,
   type State,
 } from '../components/global/store'
 
