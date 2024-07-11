@@ -78,6 +78,7 @@ import {
   computed,
   onMounted,
   onBeforeUnmount,
+  ref,
 } from 'vue-demi'
 import type { AlignVariant } from '../nav'
 import { useVModel } from '../input'
@@ -130,7 +131,8 @@ const emit = defineEmits<{
   'hide': [],
 }>()
 
-const model = useVModel(props)
+const model      = useVModel(props)
+const contextbar = ref<HTMLDivElement>()
 
 function close (event: Event) : void {
   emit('close', event)
@@ -168,19 +170,24 @@ const styleBg = computed<StyleValue>(() => {
 })
 
 function onEnter (target: HTMLDivElement) {
-  target.style.setProperty('transform', `translateY(-${target.clientHeight}px)`)
+  // target.style.setProperty('transform', `translateY(-${target.clientHeight}px)`)
+  contextbar.value = target
 
   document.body.classList.add('contextual-bar__body--active')
-  document.body.style.setProperty('transform', `translateY(${target.clientHeight}px)`)
+  // document.body.style.setProperty('transform', `translateY(${target.clientHeight}px)`)
+  document.body.style.setProperty('margin-top', `${target.clientHeight}px`)
+  document.body.style.setProperty('--p-contextual-bar-height', `${target.clientHeight}px`)
 
   emit('show')
 }
 
-function onLeave (target: HTMLDivElement) {
-  target.style.setProperty('transform', 'translateY(0px)')
+function onLeave () {
+  // target.style.setProperty('transform', 'translateY(0px)')
 
   document.body.classList.remove('contextual-bar__body--active')
-  document.body.style.removeProperty('transform')
+  // document.body.style.removeProperty('transform')
+  document.body.style.removeProperty('margin-top')
+  document.body.style.removeProperty('--p-contextual-bar-height')
 
   emit('hide')
 }
@@ -205,11 +212,26 @@ defineSlots<{
 .contextual-bar {
   --p-contextual-bar-bg-image: none;
   --p-contextual-bar-bg-dark-image: none;
+  --p-contextual-bar-fixed-top: theme(spacing.0);
 
-  @apply fixed z-50 top-0 left-0 p-6 w-full max-w-[100vw];
+  @apply fixed z-50 top-[var(--p-contextual-bar-fixed-top)] left-0 p-6 w-full max-w-[100vw] transition-all;
 
   &__body {
-    @apply transition-transform;
+    @apply transition-all;
+
+    &--active {
+      @apply transition-all;
+
+      &:not(&-hide) {
+        .navbar--fixed {
+          @apply mt-[var(--p-contextual-bar-height)] transition-all;
+        }
+
+        .sidebar--fixed {
+          @apply mt-[var(--p-contextual-bar-height)] transition-all;
+        }
+      }
+    }
   }
 
   &__wrapper {

@@ -32,6 +32,10 @@ function example1 () {
   }, 3000)
 }
 
+function scrolled (height) {
+  console.log('height', height)
+}
+
 onMounted (() => {
   document.body?.style.removeProperty('transform')
 })
@@ -286,7 +290,8 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
     v-model="sample1"
     color="light"
     title="Hey! This is Title Text and telling less as possible"
-    background-url="../../public/assets/images/img-contextualbar-bg.svg">
+    background-url="../../public/assets/images/img-contextualbar-bg.svg"
+    @onContextualScrolled="scrolled">
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
