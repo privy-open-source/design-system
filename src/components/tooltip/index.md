@@ -130,6 +130,27 @@ Tooltips can be triggered (opened/closed) using modifiers `.click`, `.hover` and
 </template>
 ```
 
+### Long Hover
+
+Special for `.hover`, it's have additional modifier `.long` which enable **Long Hover** mode.
+Duration can be change using `data-tooltip-long` attribute, default is `500` (ms).
+
+<preview>
+  <div class="flex flex-col space-gap-2 md:flex-row">
+    <p-button v-p-tooltip.hover title="Hover">Hover</p-button>
+    <p-button v-p-tooltip.hover.long title="Hover + Long">Long Hover</p-button>
+    <p-button v-p-tooltip.hover.long title="Hover + Long + Duration" data-tooltip-long="1500">Super Long Hover</p-button>
+  </div>
+</preview>
+
+```vue
+<template>
+  <p-button v-p-tooltip.hover title="Hover">Hover</p-button>
+  <p-button v-p-tooltip.hover.long title="Hover + Long">Long Hover</p-button>
+  <p-button v-p-tooltip.hover.long title="Hover + Long + Duration" data-tooltip-long="1500">Super Long Hover</p-button>
+</template>
+```
+
 ### Manual Trigger
 
 If you prefer to trigger manually, add modifiers `.manual` and combine it with some ref.
@@ -203,6 +224,7 @@ Alternatively, you can manual trigger tooltip using `showTooltip`, `hideToolip`,
 | `hover`   | Enable hover trigger         |
 | `click`   | Enable click trigger         |
 | `focus`   | Enable focus trigger         |
+| `long`    | Enable long hover mode       |
 
 ### Events
 

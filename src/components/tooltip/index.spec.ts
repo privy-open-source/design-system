@@ -20,7 +20,8 @@ it('should able render the tooltip', async () => {
     template  : `
       <div
         data-testid="sample"
-        v-p-tooltip="'Hello World'" />
+        v-p-tooltip="'Hello World'"
+        data-tooltip-debounce="0" />
     `,
   })
 
@@ -38,7 +39,7 @@ it('should able render the tooltip', async () => {
   expect(tooltip).toHaveTextContent('Hello World')
 
   await fireEvent.mouseLeave(sample)
-  await delay(0)
+  await delay(1)
 
   expect(tooltip).not.toBeVisible()
 })
@@ -86,7 +87,8 @@ it('should able to change tooltip trigger using trigger modifiers (.click, .focu
     template  : `
       <div
         data-testid="sample"
-        v-p-tooltip.click="'Hello World'" />
+        v-p-tooltip.click="'Hello World'"
+        data-tooltip-debounce="0" />
     `,
   })
 
@@ -96,6 +98,7 @@ it('should able to change tooltip trigger using trigger modifiers (.click, .focu
   const tooltip = screen.queryByTestId('tooltip')
 
   await fireEvent.mouseEnter(sample)
+  await delay(0)
   await delay(0)
 
   expect(tooltip).toBeInTheDocument()
@@ -296,6 +299,33 @@ it('should able to manual show/hide tooltip using `toggleTooltip`', async () => 
   await toggleTooltip(sample)
 
   expect(tooltip).not.toBeVisible()
+})
+
+it('should enable long hover if modifier .long provided', async () => {
+  const screen = render({
+    directives: { PTooltip: pTooltip },
+    template  : `
+      <div
+        data-testid="sample"
+        v-p-tooltip.hover.long="'Hello World'"
+        data-tooltip-long="2"
+        data-tooltip-debounce="0" />
+    `,
+  })
+
+  await delay(0)
+
+  const sample  = screen.queryByTestId('sample')
+  const tooltip = screen.queryByTestId('tooltip')
+
+  await fireEvent.mouseEnter(sample)
+  await delay(0)
+
+  expect(tooltip).not.toBeVisible()
+
+  await delay(3)
+
+  expect(tooltip).toBeVisible()
 })
 
 it('should export alias vPTooltip', () => {
