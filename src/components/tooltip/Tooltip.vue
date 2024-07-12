@@ -1,6 +1,6 @@
 <template>
   <div
-    v-show="show"
+    v-show="show && !isHidden"
     ref="tooltip"
     class="tooltip"
     data-testid="tooltip"
@@ -31,6 +31,8 @@ import {
   offset,
   flip,
   shift,
+  inline,
+  hide,
 } from '@floating-ui/dom'
 
 const props = defineProps({
@@ -61,6 +63,7 @@ const placement    = toRef(props, 'placement')
 const target       = toRef(props, 'target')
 const tooltip      = ref<HTMLDivElement>()
 const tooltipArrow = ref<HTMLDivElement>()
+const isHidden     = ref(false)
 
 const classNames = computed(() => {
   const result: string[] = []
@@ -87,7 +90,9 @@ watchEffect((onCleanup) => {
         middleware: [
           flip(),
           shift(),
+          inline(),
           offset(12),
+          hide(),
           arrow({ element: tooltipArrow.value }),
         ],
       }).then(({ x, y, middlewareData, placement }) => {
@@ -96,6 +101,8 @@ watchEffect((onCleanup) => {
 
           tooltip.value.style.left = `${x || 0}px`
           tooltip.value.style.top  = `${y || 0}px`
+
+          isHidden.value = middlewareData.hide.referenceHidden
         }
 
         if (tooltipArrow.value) {

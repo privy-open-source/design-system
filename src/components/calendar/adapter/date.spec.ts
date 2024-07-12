@@ -11,9 +11,9 @@ export function createMockContext (
   minDate?: Date,
   maxDate?: Date,
 ): CalendarContext {
-  const cursor = ref(new Date(2022, 4, 13))
-  const start  = ref(new Date(2022, 4, 13))
-  const end    = ref(new Date(2022, 4, 13))
+  const cursor = ref(new Date(2022, 9, 13))
+  const start  = ref(new Date(2022, 9, 13))
+  const end    = ref(new Date(2022, 9, 13))
   const min    = ref(minDate ?? new Date(MIN_TIME))
   const max    = ref(maxDate ?? new Date(MAX_TIME))
 
@@ -33,7 +33,7 @@ beforeEach(() => {
 describe('getItems', () => {
   /****************************
    * **   Calendar Style     **
-   * **      May 2022        **
+   * **      Oct 2022        **
    * **************************
    * Mo  Tu  We  Th  Fr  Sa  Su
    * 25  26  27  28  29  30   1
@@ -49,7 +49,7 @@ describe('getItems', () => {
 
     /* eslint-disable array-element-newline, no-multi-spaces */
     const expected = [
-      'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su',
+      'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa',
       '25', '26', '27', '28', '29', '30', '1',
       '2',  '3',  '4',  '5',  '6',  '7',  '8',
       '9',  '10', '11', '12', '13', '14', '15',
@@ -74,7 +74,7 @@ describe('getItems', () => {
   })
 
   it('should be disabled if the date is before "min"', () => {
-    const context    = createMockContext(new Date(2022, 4, 9))
+    const context    = createMockContext(new Date(2022, 9, 9))
     const items      = Adapter.getItems(context)
     const isDisabled = (item: CalendarItem) => item.disabled
 
@@ -83,7 +83,7 @@ describe('getItems', () => {
   })
 
   it('should be enabled if the date same as "min"', () => {
-    const context = createMockContext(new Date(2022, 4, 9))
+    const context = createMockContext(new Date(2022, 9, 9))
     const items   = Adapter.getItems(context)
 
     expect(items[21].text).toBe('9')
@@ -91,7 +91,7 @@ describe('getItems', () => {
   })
 
   it('should be disabled if the date is after "max"', () => {
-    const context    = createMockContext(undefined, new Date(2022, 4, 1))
+    const context    = createMockContext(undefined, new Date(2022, 9, 1))
     const items      = Adapter.getItems(context)
     const isDisabled = (item: CalendarItem) => item.disabled
 
@@ -100,7 +100,7 @@ describe('getItems', () => {
   })
 
   it('should be enabled if the date same as "max"', () => {
-    const context = createMockContext(new Date(2022, 4, 1))
+    const context = createMockContext(new Date(2022, 9, 1))
     const items   = Adapter.getItems(context)
 
     expect(items[13].text).toBe('1')
@@ -112,7 +112,7 @@ describe('getTitle', () => {
   it('should be able to return title of current cursor', () => {
     const context  = createMockContext()
     const title    = Adapter.getTitle(context)
-    const expected = 'May 2022'
+    const expected = 'October 2022'
 
     expect(title).toBe(expected)
   })
@@ -122,7 +122,7 @@ describe('getPrevCursor', () => {
   it('should be able to return previous month', () => {
     const context  = createMockContext()
     const month    = Adapter.getPrevCursor(context).getMonth()
-    const expected = 3 // Month in JS starts with 0, so May => 4, April => 3
+    const expected = 8 // Month in JS starts with 0, so Oct => 9, Sept => 8
 
     expect(month).toBe(expected)
   })
@@ -132,7 +132,7 @@ describe('getNextCursor', () => {
   it('should be able to return next month', () => {
     const context  = createMockContext()
     const month    = Adapter.getNextCursor(context).getMonth()
-    const expected = 5 // Month in JS starts with 0, so May => 4, June => 5
+    const expected = 10 // Month in JS starts with 0, so Oct => 9, Nov => 10
 
     expect(month).toBe(expected)
   })
@@ -147,7 +147,7 @@ describe('canPrev', () => {
   })
 
   it('should return false if min set to this month', () => {
-    const context = createMockContext(new Date(2022, 4, 1))
+    const context = createMockContext(new Date(2022, 9, 1))
     const result  = Adapter.canPrev(context)
 
     expect(result).toBe(false)
@@ -170,14 +170,14 @@ describe('canNext', () => {
   })
 
   it('should return false if max set to this month', () => {
-    const context = createMockContext(undefined, new Date(2022, 4, 31))
+    const context = createMockContext(undefined, new Date(2022, 9, 31))
     const result  = Adapter.canNext(context)
 
     expect(result).toBe(false)
   })
 
   it('should return true if max set to next month', () => {
-    const context = createMockContext(undefined, new Date(2022, 5, 15))
+    const context = createMockContext(undefined, new Date(2022, 10, 15))
     const result  = Adapter.canNext(context)
 
     expect(result).toBe(true)
@@ -192,13 +192,13 @@ describe('Localization', () => {
     const items   = Adapter.getItems(context).slice(0, 7).map((i) => i.text)
 
     const expected = [
+      'Min',
       'Sen',
       'Sel',
       'Rab',
       'Kam',
       'Jum',
       'Sab',
-      'Min',
     ]
 
     expect(items).toStrictEqual(expected)

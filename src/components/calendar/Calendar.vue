@@ -428,7 +428,7 @@ watch([viewmode, cursor], ([vm, cursor], [vmOld, cursorOld]) => {
         @apply font-medium;
       }
 
-      .calendar__item-btn:nth-child(7n) {
+      .calendar__item-btn:nth-child(7n-6) {
         &:not([active="true"]) {
           @apply text-danger dark:text-dark-danger;
         }
