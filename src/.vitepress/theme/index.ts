@@ -2,6 +2,7 @@
 import '@fontsource/dm-sans'
 import '@fontsource/dm-sans/400-italic.css'
 import '@fontsource/dm-sans/500.css'
+import '@fontsource/dm-sans/700.css'
 import './css/tailwind.css'
 import DefaultTheme from 'vitepress/theme'
 import './css/custom.css'

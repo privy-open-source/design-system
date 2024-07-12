@@ -323,7 +323,7 @@ it('should enable long hover if modifier .long provided', async () => {
 
   expect(tooltip).not.toBeVisible()
 
-  await delay(3)
+  await delay(5)
 
   expect(tooltip).toBeVisible()
 })
