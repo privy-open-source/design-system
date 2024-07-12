@@ -92,6 +92,9 @@ function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData
   const result: Map<string, ObjectData> = new Map()
 
   for (const component of components) {
+    if (!component.containing_frame?.name)
+      continue
+
     if (component.containing_frame?.pageName === 'Illustration') {
       const { type } = Object.fromEntries(component.name.split(',').map((i) => i.trim().split('=')))
 
