@@ -287,7 +287,7 @@ it('should modify value in v-model', async () => {
   const items    = screen.queryAllByTestId('calendar-item')
   const expected = new Date(2022, 0, 1)
 
-  await fireEvent.click(items.at(12))
+  await fireEvent.click(items.at(13))
 
   expect(model.value).toBeDate()
   expect(model.value.toISOString()).toBe(expected.toISOString())
@@ -308,8 +308,8 @@ it('should able to select range of date using prop `range`', async () => {
   const items    = screen.queryAllByTestId('calendar-item')
   const expected = [new Date(2022, 0, 1), new Date(2022, 0, 8)]
 
-  await fireEvent.click(items.at(12))
-  await fireEvent.click(items.at(19))
+  await fireEvent.click(items.at(13))
+  await fireEvent.click(items.at(20))
 
   expect(model.value).toBeArray()
   expect(model.value[0]).toBeDate()
@@ -338,12 +338,12 @@ it('should modify v-model:start and v-model:end when using props `range`', async
   const items    = screen.queryAllByTestId('calendar-item')
   const expected = [new Date(2022, 0, 1), new Date(2022, 0, 8)]
 
-  await fireEvent.click(items.at(12))
+  await fireEvent.click(items.at(13))
 
   expect(start.value).toBeDate()
   expect(end.value).toBeUndefined()
 
-  await fireEvent.click(items.at(19))
+  await fireEvent.click(items.at(20))
 
   expect(start.value).toBeDate()
   expect(end.value).toBeDate()

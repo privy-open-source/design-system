@@ -257,12 +257,12 @@ it('should modify v-model:start and v-model:end when using props `range`', async
   const items    = screen.queryAllByTestId('calendar-item')
   const expected = [new Date(2022, 0, 1), new Date(2022, 0, 8)]
 
-  await fireEvent.click(items.at(12))
+  await fireEvent.click(items.at(13))
 
   expect(start.value).toBeDate()
   expect(end.value).toBeUndefined()
 
-  await fireEvent.click(items.at(19))
+  await fireEvent.click(items.at(20))
 
   expect(start.value).toBeDate()
   expect(end.value).toBeDate()

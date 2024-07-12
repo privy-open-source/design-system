@@ -19,8 +19,8 @@ import { defineAdapter } from './adapter'
 import { formatDate } from '../../utils/date'
 
 function getInterval (date: Date) {
-  const start = startOfWeek(startOfMonth(date), { weekStartsOn: 1 })
-  const end   = endOfWeek(endOfMonth(date), { weekStartsOn: 1 })
+  const start = startOfWeek(startOfMonth(date), { weekStartsOn: 0 })
+  const end   = endOfWeek(endOfMonth(date), { weekStartsOn: 0 })
 
   return {
     start,
