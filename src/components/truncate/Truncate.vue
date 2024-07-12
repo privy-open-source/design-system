@@ -4,7 +4,7 @@
     mode="out-in">
     <span
       :key="`${expand}`"
-      v-p-tooltip="tooltip && !expandable && text.length > maxLength"
+      v-p-tooltip.long="tooltip && !expandable && text.length > maxLength"
       class="truncated"
       data-testid="truncate"
       :title="text">

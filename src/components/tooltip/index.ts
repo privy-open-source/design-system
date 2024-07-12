@@ -3,6 +3,7 @@ import type { Placement } from '@floating-ui/dom'
 import type { Directive } from 'vue-demi'
 import { useSingleton } from '../global/use-singleton'
 import createHandler from './utils/create-handler'
+import { addHoverListener, removeHoverListener } from './utils/on-hover'
 import {
   parsePlacement,
   parseAction,
@@ -59,10 +60,18 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
 
     el.removeAttribute('title') // remove attribute title, we don't want native-browser's tooltip to shown
     el.addEventListener('click', handleClick)
-    el.addEventListener('mouseenter', handleMouseEnter, { passive: true })
-    el.addEventListener('mouseleave', handleMouseLeave, { passive: true })
     el.addEventListener('focus', handleFocus, { passive: true })
     el.addEventListener('blur', handleBlur, { passive: true })
+
+    const delay    = Number.parseInt(el.dataset.tooltipLong ?? '500')
+    const debounce = Number.parseInt(el.dataset.tooltipDebounce)
+
+    addHoverListener(el, {
+      onHoverIn : handleMouseEnter,
+      onHoverOut: handleMouseLeave,
+      delay     : bindings.modifiers.long ? delay : 0,
+      debounced : debounce,
+    })
   },
 
   async updated (el, bindings) {
@@ -103,11 +112,11 @@ export const pTooltip: Directive<HTMLElement, string | boolean> = {
     tooltip.remove(id)
 
     el.removeEventListener('click', handleClick)
-    el.removeEventListener('mouseenter', handleMouseEnter)
-    el.removeEventListener('mouseleave', handleMouseLeave)
     el.removeEventListener('focus', handleFocus)
     el.removeEventListener('blur', handleBlur)
     el.setAttribute('title', text)
+
+    removeHoverListener(el)
 
     delete el.dataset.tooltipId
     delete el.dataset.tooltipAction

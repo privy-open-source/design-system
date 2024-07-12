@@ -4,12 +4,9 @@
     ".vscode/tailwind.json"
   ],
   "eslint.enable": true,
-  "eslint.packageManager": "yarn",
   "eslint.run": "onSave",
   "eslint.lintTask.options": "--cache .",
   "eslint.lintTask.enable": true,
-  "volar.autoCompleteRefs": false,
-  "volar.vueserver.useSecondServer": true,
   "C_Cpp.dimInactiveRegions": false,
   "eslint.options": {
     "overrideConfig": {
@@ -22,5 +19,9 @@
   },
   "editor.rulers": [
     80
+  ],
+  "css.lint.validProperties": [
+    "rx",
+    "ry"
   ]
 }
