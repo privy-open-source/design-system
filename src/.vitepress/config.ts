@@ -24,8 +24,35 @@ export default defineConfig({
       { text: 'Components', link: '/components/accordion/' },
       { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
-      { text: 'Assets', link: '/assets/icon/getting-started' },
+      {
+        text : 'Assets',
+        items: [
+          {
+            text: 'Icon',
+            link: '/assets/icon/getting-started',
+          },
+          {
+            text: 'Ilustration',
+            link: '/assets/ilustration/getting-started',
+          },
+        ],
+      },
       { text: 'Ecosystem', link: '/ecosystem/' },
+      {
+        text : 'Tools',
+        items: [
+          {
+            text  : 'PDF Coordinate Finder',
+            link  : '/tools/pdf-compress',
+            target: '_blank',
+          },
+          {
+            text  : 'PDF Optimizer',
+            link  : '/tools/pdf-optimizer',
+            target: '_blank',
+          },
+        ],
+      },
     ],
     outline    : [2, 3],
     socialLinks: [{ icon: 'github', link: 'https://github.com/privy-open-source/design-system' }],
@@ -535,9 +562,10 @@ export default defineConfig({
     },
   },
   vite: {
-    build  : { target: getTarget('extends @privyid/browserslist-config') },
-    resolve: { alias },
-    plugins: [ViteImageOptimizer()],
+    build       : { target: getTarget('extends @privyid/browserslist-config') },
+    resolve     : { alias },
+    plugins     : [ViteImageOptimizer()],
+    optimizeDeps: { exclude: ['@privyid/ghoulscript'] },
   },
   srcExclude: ['public/js/**'],
 })

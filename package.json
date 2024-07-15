@@ -31,6 +31,7 @@
     "@interactjs/types": "1.10.27",
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/eslint-config-persona": "workspace:^",
+    "@privyid/ghoulscript": "^0.1.0-alpha.2",
     "@privyid/tailwind-preset": "workspace:^",
     "@rollup/plugin-inject": "^5.0.5",
     "@rushstack/eslint-patch": "1.10.2",
