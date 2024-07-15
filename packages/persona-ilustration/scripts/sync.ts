@@ -31,6 +31,7 @@ import ohash from 'ohash'
 import minimist from 'minimist'
 import { ofetch } from 'ofetch'
 import Sharp from 'sharp'
+import { parseISO, isEqual } from 'date-fns'
 
 const argv       = minimist(process.argv.slice(2))
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
@@ -95,7 +96,7 @@ function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData
     if (!component.containing_frame?.name)
       continue
 
-    if (component.containing_frame?.pageName === 'Illustration') {
+    if (component.containing_frame?.pageName === 'illustrations - five variants') {
       const { type } = Object.fromEntries(component.name.split(',').map((i) => i.trim().split('=')))
 
       const hash     = ohash.hash(component)
@@ -206,9 +207,15 @@ async function main () {
     const object = objects.get(id)
 
     if (object) {
-      if (object.hash === lockObjects.get(object.id)?.hash)
-        object.filehash = lockObjects.get(object.id)?.filehash
-      else
+      const lockObject = lockObjects.get(object.id)
+
+      if (lockObject) {
+        const oldUpdatedAt = parseISO(lockObject.component.updated_at)
+        const newUpdatedAt = parseISO(object.component.updated_at)
+
+        if (isEqual(oldUpdatedAt, newUpdatedAt))
+          objects.set(id, lockObject)
+      } else
         queue.push(object)
     }
   }
@@ -240,35 +247,51 @@ async function main () {
         if (object && url) {
           spinner.start(`[${count}/${total}] - Downloading ${object.filename}`)
 
-          const res = await ofetch(url, { responseType: 'text', retry: 3 })
-          const svg = optimize(res, { path: object.filepath, ...svgoConfig }).data
+          try {
+            const res = await ofetch(url, {
+              responseType: 'text',
+              retry       : 3,
+              retryDelay  : 5000,
+            })
 
-          await ensureFile(resolve(SVG_DIR, object.filepath))
-          await writeFile(resolve(SVG_DIR, object.filepath), svg)
+            const svg = optimize(res, { path: object.filepath, ...svgoConfig }).data
 
-          await ensureFile(resolve(VUE_DIR, `${object.filename}.vue`))
-          await writeFile(resolve(VUE_DIR, `${object.filename}.vue`), toVue(svg))
-          await lintFile(resolve(VUE_DIR, `${object.filename}.vue`))
+            await ensureFile(resolve(SVG_DIR, object.filepath))
+            await writeFile(resolve(SVG_DIR, object.filepath), svg)
 
-          await ensureFile(resolve(PNG_DIR, `${object.filename}.png`))
-          await Sharp(resolve(SVG_DIR, object.filepath))
-            .toFormat('png')
-            .toFile(resolve(PNG_DIR, `${object.filename}.png`))
+            await ensureFile(resolve(VUE_DIR, `${object.filename}.vue`))
+            await writeFile(resolve(VUE_DIR, `${object.filename}.vue`), toVue(svg))
+            await lintFile(resolve(VUE_DIR, `${object.filename}.vue`))
 
-          await Sharp(resolve(SVG_DIR, object.filepath), { density: 144 })
-            .toFormat('png')
-            .toFile(resolve(PNG_DIR, `${object.filename}@2x.png`))
+            await ensureFile(resolve(PNG_DIR, `${object.filename}.png`))
+            await Sharp(resolve(SVG_DIR, object.filepath))
+              .toFormat('png')
+              .toFile(resolve(PNG_DIR, `${object.filename}.png`))
 
-          object.filehash = createHash('SHA256')
-            .update(svg)
-            .digest()
-            .toString('hex')
+            await Sharp(resolve(SVG_DIR, object.filepath), { density: 144 })
+              .toFormat('png')
+              .toFile(resolve(PNG_DIR, `${object.filename}@2x.png`))
 
-          spinner.start(`[${++count}/${total}] - Success download ${object.filename}`)
+            object.filehash = createHash('SHA256')
+              .update(svg)
+              .digest()
+              .toString('hex')
+
+            spinner.start(`[${++count}/${total}] - Success download ${object.filename}`)
+          } catch (error) {
+            spinner.fail(`[${++count}/${total}] - Fail to download ${object.filename}`)
+            spinner.fail(`${(error as Error).message}`)
+
+            await remove(resolve(SVG_DIR, object.filepath))
+            await remove(resolve(VUE_DIR, `${object.filename}.vue`))
+            await remove(resolve(PNG_DIR, `${object.filename}.png`))
+
+            objects.delete(id)
+          }
         }
       }
     }),
-    { concurrency: 25 },
+    { concurrency: 10 },
   )
 
   spinner.start('Cleanup')

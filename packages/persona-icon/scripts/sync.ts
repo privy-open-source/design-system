@@ -32,6 +32,7 @@ import pAll from 'p-all'
 import ohash from 'ohash'
 import minimist from 'minimist'
 import { ofetch } from 'ofetch'
+import { parseISO, isEqual } from 'date-fns'
 
 const argv       = minimist(process.argv.slice(2))
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
@@ -238,9 +239,15 @@ async function main () {
     const object = objects.get(id)
 
     if (object) {
-      if (object.hash === lockObjects.get(object.id)?.hash)
-        object.filehash = lockObjects.get(object.id)?.filehash
-      else
+      const lockObject = lockObjects.get(object.id)
+
+      if (lockObject) {
+        const oldUpdatedAt = parseISO(lockObject.component.updated_at)
+        const newUpdatedAt = parseISO(object.component.updated_at)
+
+        if (isEqual(oldUpdatedAt, newUpdatedAt))
+          objects.set(id, lockObject)
+      } else
         queue.push(object)
     }
   }
