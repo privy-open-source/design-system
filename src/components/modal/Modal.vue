@@ -299,7 +299,7 @@ defineSlots<{
 * Component Name: Modal
 * Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=336%3A10366
 * Date Created  : June 07, 2022
-* Last Update   : June 24, 2022
+* Last Update   : July 11, 2024
 */
 .modal {
   /**
@@ -348,7 +348,19 @@ defineSlots<{
 
     .modal__dismiss {
       @apply absolute top-6 right-6 mt-1.5 hover:cursor-pointer z-[var(--p-modal-dismiss-z-index)] text-default/30 hover:text-default/50;
-      @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
+    }
+  }
+
+  /**
+  * Modal dismiss stay in
+  * light mode when
+  * modal variant is banner
+  */
+  &:not(&--banner) {
+    .modal__content {
+      .modal__dismiss {
+        @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
+      }
     }
   }
 
