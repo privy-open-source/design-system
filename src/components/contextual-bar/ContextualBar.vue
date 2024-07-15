@@ -78,7 +78,6 @@ import {
   computed,
   onMounted,
   onBeforeUnmount,
-  ref,
 } from 'vue-demi'
 import type { AlignVariant } from '../nav'
 import { useVModel } from '../input'
@@ -135,8 +134,7 @@ const emit = defineEmits<{
   'hide': [],
 }>()
 
-const model      = useVModel(props)
-const contextbar = ref<HTMLDivElement>()
+const model = useVModel(props)
 
 function close (event: Event) : void {
   emit('close', event)
@@ -181,8 +179,6 @@ const styleBg = computed<StyleValue>(() => {
 })
 
 function onEnter (target: HTMLDivElement) {
-  contextbar.value = target
-
   document.body.classList.add('contextual-bar__body--active')
 
   if (isFixed.value) {
