@@ -133,6 +133,7 @@ provide(SIDEBAR_SETTINGS, {
   --p-sidebar-bg-dark: theme(backgroundColor.dark.DEFAULT);
   --p-sidebar-z-index: theme(zIndex.fixed);
   --p-sidebar-sticky-top: theme(spacing.0);
+  --p-sidebar-fixed-top: theme(spacing.0);
   --p-sidebar-padding-x: theme(spacing.2);
   --p-sidebar-padding-left: var(--p-sidebar-padding-x);
   --p-sidebar-padding-right: var(--p-sidebar-padding-x);
@@ -165,8 +166,8 @@ provide(SIDEBAR_SETTINGS, {
   * Fixed sidebar
   */
   &&--fixed {
-    @apply fixed z-[var(--p-sidebar-z-index)] top-0 h-full shadow-lg;
-    /* box-shadow: var(--p-sidebar-shadow); */
+    @apply fixed z-[var(--p-sidebar-z-index)] top-[var(--p-sidebar-fixed-top)] h-full transition-all;
+    box-shadow: var(--p-sidebar-shadow);
 
     .sidebar__menus {
       @apply grow h-full overflow-y-auto py-2;

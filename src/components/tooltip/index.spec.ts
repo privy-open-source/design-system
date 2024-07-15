@@ -308,7 +308,7 @@ it('should enable long hover if modifier .long provided', async () => {
       <div
         data-testid="sample"
         v-p-tooltip.hover.long="'Hello World'"
-        data-tooltip-long="2"
+        data-tooltip-long="3"
         data-tooltip-debounce="0" />
     `,
   })
@@ -319,7 +319,7 @@ it('should enable long hover if modifier .long provided', async () => {
   const tooltip = screen.queryByTestId('tooltip')
 
   await fireEvent.mouseEnter(sample)
-  await delay(0)
+  await delay(1)
 
   expect(tooltip).not.toBeVisible()
 

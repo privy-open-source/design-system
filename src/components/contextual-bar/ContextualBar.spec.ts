@@ -292,7 +292,8 @@ it('should have style attribute `display: none` when contextual bar is hide', as
         title="hello"
         :style="{ transitionDuration: '1ms' }"
         @show="isShow = true"
-        @hide="isShow = false" />
+        @hide="isShow = false"
+        fixed />
     `,
     setup () {
       return { model, isShow }
@@ -310,6 +311,7 @@ it('should have style attribute `display: none` when contextual bar is hide', as
 
   expect(bar).toBeVisible()
   expect(document.body).toHaveClass('contextual-bar__body--active')
+  expect(document.body).toHaveClass('contextual-bar__body--fixed-active')
 
   model.value = false
 
@@ -317,4 +319,5 @@ it('should have style attribute `display: none` when contextual bar is hide', as
 
   expect(bar).not.toBeVisible()
   expect(document.body).not.toHaveClass('contextual-bar__body--active')
+  expect(document.body).not.toHaveClass('contextual-bar__body--fixed-active')
 })

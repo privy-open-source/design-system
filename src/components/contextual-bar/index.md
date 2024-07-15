@@ -24,20 +24,12 @@ const sample10 = ref(true)
 const sample11 = ref(true)
 const sample12 = ref(true)
 
-function example1 () {
-  sample1.value = true
-
-  setTimeout(() => {
-    sample1.value = false
-  }, 3000)
-}
-
 onMounted (() => {
   document.body?.style.removeProperty('transform')
 })
 </script>
 
-<style scoped lang="postcss">
+<style lang="postcss">
   .preview {
     &--bar {
       .contextual-bar {
@@ -57,6 +49,13 @@ onMounted (() => {
       }
     }
   }
+
+  .contextual-bar__body--active {
+    .VPNav,
+    .VPSidebar {
+      --vp-layout-top-height: var(--p-contextual-bar-height);
+    }
+  }
 </style>
 
 # Contextual Bar
@@ -66,10 +65,6 @@ onMounted (() => {
 ## Usage
 
 ### Simple Usage
-
-<div class="pt-5">
-  <p-button @click="example1" color="info">Live Preview</p-button>
-</div>
 
 <preview class="preview--bar">
   <p-contextual-bar v-model="sample01" title="Hey! This is Title Text and telling less" />
@@ -230,6 +225,38 @@ import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
 </template>
 ```
 
+## Fixed
+Contextual Bar have fixed position that can be setup by using `fixed` prop.
+
+```vue
+<template>
+  <p-contextual-bar
+    v-model="model"
+    color="light"
+    title="Hey! This is Title Text and telling less as possible"
+    background-url="../../public/assets/images/img-contextualbar-bg.svg"
+    fixed>
+    <template #icon>
+      <img src="../avatar/assets/avatar.png" />
+    </template>
+    <template #action>
+      <p-button 
+        size="sm" 
+        color="secondary" variant="link">Cancel</p-button>
+      <p-button size="sm" color="info">Button Text</p-button>
+    </template>
+    <template #message>
+      You will be unable to sign or seal a 
+      document while your privy balance runs out.
+    </template>
+  </p-contextual-bar>
+</template>
+```
+
+<div class="pt-5">
+  <p-button @click="sample1 = !sample1" color="info">{{ sample1 ? 'End preview' : 'Live preview' }}</p-button>
+</div>
+
 ## State
 Contextual Bar have 4 state variants: `error`, `warning`, `info` and `neutral`. Default is `info`
 
@@ -286,7 +313,8 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
     v-model="sample1"
     color="light"
     title="Hey! This is Title Text and telling less as possible"
-    background-url="../../public/assets/images/img-contextualbar-bg.svg">
+    background-url="../../public/assets/images/img-contextualbar-bg.svg"
+    fixed>
     <template #icon>
       <img src="../avatar/assets/avatar.png" />
     </template>
@@ -313,6 +341,7 @@ To align Contextual Bar content, use align prop. Available value are `left`, `ri
 | `message`             | `String`  |    -    | Additional message of Contextualbar                                                   |
 | `background-url`      | `String`  |    -    | Custom background image of Contextualbar                                              |
 | `background-dark-url` | `String`  |    -    | Custom background image of Contextualbar in Dark Mode                                 |
+| `fixed`               | `Boolean` |   false | Activate fixed Contextualbar                                                          |
 
 ### Slots
 | Name       | Description                                          |
