@@ -92,6 +92,9 @@ function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData
   const result: Map<string, ObjectData> = new Map()
 
   for (const component of components) {
+    if (!component.containing_frame?.name)
+      continue
+
     if (component.containing_frame?.pageName === 'Illustration') {
       const { type } = Object.fromEntries(component.name.split(',').map((i) => i.trim().split('=')))
 
@@ -177,6 +180,8 @@ async function cleanup (objects: Map<string, ObjectData>, lockObjects: Map<strin
     if (!newObject || newObject.filename !== oldObject.filename) {
       await remove(resolve(SVG_DIR, `${oldObject.filename}.svg`))
       await remove(resolve(VUE_DIR, `${oldObject.filename}.vue`))
+      await remove(resolve(PNG_DIR, `${oldObject.filename}.png`))
+      await remove(resolve(PNG_DIR, `${oldObject.filename}@2x.png`))
     }
   }
 }

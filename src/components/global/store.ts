@@ -20,9 +20,18 @@ export interface State {
    */
   lang: Lang,
   /**
-   * PDFJS CDN base url
+   * PDFJS & PSPDFKIT CDN base url
    */
   cdnURL: string,
+  /**
+   * PSPDF Global config
+   */
+  pspdfkit: {
+    /**
+     * License Key
+     */
+    licenseKey?: string,
+  },
 }
 
 let globalState: Ref<State>
@@ -30,8 +39,9 @@ let globalState: Ref<State>
 export function createStore (): Ref<State> {
   const scope = effectScope(true)
   const state = scope.run(() => ref<State>({
-    lang  : LANG_DEFAULT,
-    cdnURL: CDN_DEFAULT,
+    lang    : LANG_DEFAULT,
+    cdnURL  : CDN_DEFAULT,
+    pspdfkit: {},
   }))
 
   return state
@@ -71,6 +81,14 @@ export function getCDN () {
 
 export function setCDN (url: string) {
   globalState.value.cdnURL = url
+}
+
+export function getPSPDFLicenseKey () {
+  return globalState?.value.pspdfkit?.licenseKey
+}
+
+export function setPSPDFLicenseKey (licenseKey: string) {
+  globalState.value.pspdfkit.licenseKey = licenseKey
 }
 
 /**

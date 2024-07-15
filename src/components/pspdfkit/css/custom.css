@@ -1,0 +1,345 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:host, :root {
+  --PSPDFKit-fontFamily-1: theme('fontFamily.sans');
+  --PSPDFKit-App-background: theme('backgroundColor.subtle.DEFAULT');
+}
+
+.PSPDFKit-Selection-Outline-Border {
+  stroke-dasharray: 4px;
+  rx: theme('borderRadius.DEFAULT');
+  ry: theme('borderRadius.DEFAULT');
+  stroke: theme('borderColor.subtle.DEFAULT');
+}
+
+.PSPDFKit-Resize-Anchor-Left,
+.PSPDFKit-Resize-Anchor-Top,
+.PSPDFKit-Resize-Anchor-Top-Left,
+.PSPDFKit-Resize-Anchor-Top-Right,
+.PSPDFKit-Resize-Anchor-Right,
+.PSPDFKit-Resize-Anchor-Bottom-Left,
+.PSPDFKit-Resize-Anchor-Bottom,
+[resizable="false"] .PSPDFKit-Resize-Anchor-Bottom-Right {
+  @apply hidden;
+}
+
+[moveable="false"] .PSPDFKit-Rectangle-Annotation-Selected {
+  @apply pointer-events-none;
+}
+
+.PSPDFKit-Resize-Anchor {
+  @apply fill-subtle;
+}
+
+/**
+* Source: ../../pdf-object/PdfObject.vue
+*/
+.pdf-object {
+  &__container {
+    @apply relative w-full h-full overflow-visible rounded cursor-pointer;
+    @apply dark:border-dark-subtle;
+
+    &,
+    & > * {
+      @apply pointer-events-none touch-none;
+    }
+
+    button,
+    input,
+    textarea,
+    a {
+      @apply pointer-events-auto;
+    }
+  }
+}
+
+/**
+* Source: ../../pdf-object/PdfObjectDebugger.vue
+*/
+.pdf-object {
+  --p-pdf-debugger-size: 198px;
+
+  &__debugger {
+    @apply grid grid-cols-1 p-4 bg-inverse text-on-emphasis absolute rounded w-[var(--p-pdf-debugger-size)];
+    /* @apply dark:bg-dark-inverse dark:text-dark-on-emphasis; */
+
+    > pre {
+      @apply truncate text-[1em] text-left;
+    }
+  }
+}
+
+/**
+* Source: ../../pdf-object/PdfObjectAddon.vue
+*/
+.pdf-object {
+  &__addon {
+    @apply absolute;
+    @apply dark:text-default;
+
+    &--right {
+      @apply top-0 pl-2 left-full;
+    }
+
+    &--left {
+      @apply top-0 pr-2 right-full;
+    }
+
+    &--top {
+      @apply left-0 pb-2 bottom-full;
+    }
+
+    &--bottom {
+      @apply left-0 pt-2 top-full;
+    }
+  }
+}
+
+/**
+* Source: ../../button/Button.vue
+*/
+.btn {
+  --p-color-primary-hover: darken(theme(colors.brand.action), 5%);
+  --p-color-dark-primary-hover: darken(theme(colors.dark.brand.action), 5%);
+  --p-color-primary-focus: darken(theme(colors.brand.action), 10%);
+  --p-color-dark-primary-focus: darken(theme(colors.dark.brand.action), 10%);
+  --p-color-info-hover: darken(theme(backgroundColor.info.emphasis), 5%);
+  --p-color-dark-info-hover: darken(theme(backgroundColor.dark.info.emphasis), 5%);
+  --p-color-info-focus: darken(theme(backgroundColor.info.emphasis), 10%);
+  --p-color-dark-info-focus: darken(theme(backgroundColor.dark.info.emphasis), 10%);
+  --p-color-success-hover: darken(theme(backgroundColor.success.emphasis), 5%);
+  --p-color-dark-success-hover: darken(theme(backgroundColor.dark.success.emphasis), 5%);
+  --p-color-success-focus: darken(theme(backgroundColor.success.emphasis), 10%);
+  --p-color-dark-success-focus: darken(theme(backgroundColor.dark.success.emphasis), 10%);
+  --p-color-warning-hover: darken(theme(backgroundColor.warning.emphasis), 5%);
+  --p-color-dark-warning-hover: darken(theme(backgroundColor.dark.warning.emphasis), 5%);
+  --p-color-warning-focus: darken(theme(backgroundColor.warning.emphasis), 10%);
+  --p-color-dark-warning-focus: darken(theme(backgroundColor.dark.warning.emphasis), 10%);
+  --p-color-danger-hover: darken(theme(backgroundColor.danger.emphasis), 5%);
+  --p-color-dark-danger-hover: darken(theme(backgroundColor.dark.danger.emphasis), 5%);
+  --p-color-danger-focus: darken(theme(backgroundColor.danger.emphasis), 10%);
+  --p-color-dark-danger-focus: darken(theme(backgroundColor.dark.danger.emphasis), 10%);
+  --p-button-xs-padding-x: theme(spacing.2);
+  --p-button-sm-padding-x: theme(spacing.4);
+  --p-button-md-padding-x: theme(spacing.5);
+  --p-button-lg-padding-x: theme(spacing.8);
+
+  @apply inline-flex justify-center font-medium no-underline align-middle transition-all duration-200 ease-in-out hover:no-underline disabled:opacity-50 disabled:pointer-events-none;
+
+  > svg {
+    @apply self-center;
+  }
+
+  > * {
+    @apply relative z-[2];
+  }
+
+  /*
+  * Button has 4 different sizing
+  * eg: xs, sm, md, and lg
+  */
+  &&--xs {
+    @apply px-[var(--p-button-xs-padding-x)] py-[2px] gap-1 text-sm rounded-xs;
+  }
+
+  &&--sm {
+    @apply px-[var(--p-button-sm-padding-x)] py-1 gap-2 text-base tracking-wider rounded-sm;
+  }
+
+  &&--md {
+    @apply px-[var(--p-button-md-padding-x)] py-[10px] gap-3 text-base tracking-wider rounded;
+  }
+
+  &&--lg {
+    @apply px-[var(--p-button-lg-padding-x)] py-4 gap-4 text-base tracking-wider rounded;
+  }
+
+  /*
+  * Button solid is the
+  * default style variant
+  */
+  &&--variant-solid {
+    @apply border border-solid hover:shadow-lg focus:shadow-none active:shadow-none text-state-emphasis hover:text-state-emphasis;
+    @apply dark:text-dark-state-emphasis dark:hover:text-dark-state-emphasis;
+
+    &.btn {
+      &--default {
+        @apply bg-default-alpha focus:bg-subtle-alpha active:bg-subtle-alpha hover:text-default focus:text-default;
+        @apply dark:bg-dark-default-alpha focus:dark:bg-dark-subtle-alpha active:dark:bg-dark-subtle-alpha hover:dark:text-dark-default focus:dark:text-dark-default;
+      }
+
+      &--primary {
+        @apply bg-brand-action hover:bg-[color:var(--p-color-primary-hover)] focus:bg-[color:var(--p-color-primary-focus)] active:bg-[color:var(--p-color-primary-focus)];
+        @apply dark:bg-dark-brand-action hover:dark:bg-[color:var(--p-color-dark-primary-hover)] focus:dark:bg-[color:var(--p-color-dark-primary-focus)] active:dark:bg-[color:var(--p-color-dark-primary-focus)];
+      }
+
+      &--info {
+        @apply bg-info-emphasis hover:bg-[color:var(--p-color-info-hover)] focus:bg-[color:var(--p-color-info-focus)] active:bg-[color:var(--p-color-info-focus)];
+        @apply dark:bg-dark-info-emphasis hover:dark:bg-[color:var(--p-color-dark-info-hover)] focus:dark:bg-[color:var(--p-color-dark-info-focus)] active:dark:bg-[color:var(--p-color-dark-info-focus)];
+      }
+
+      &--success {
+        @apply bg-success-emphasis hover:bg-[color:var(--p-color-success-hover)] focus:bg-[color:var(--p-color-success-focus)] active:bg-[color:var(--p-color-success-focus)];
+        @apply dark:bg-dark-success-emphasis hover:dark:bg-[color:var(--p-color-dark-success-hover)] focus:dark:bg-[color:var(--p-color-dark-success-focus)] active:dark:bg-[color:var(--p-color-dark-success-focus)]
+      }
+
+      &--warning {
+        @apply bg-warning-emphasis hover:bg-[color:var(--p-color-warning-hover)] focus:bg-[color:var(--p-color-warning-focus)] active:bg-[color:var(--p-color-warning-focus)];
+        @apply dark:bg-dark-warning-emphasis hover:dark:bg-[color:var(--p-color-dark-warning-hover)] focus:dark:bg-[color:var(--p-color-dark-warning-focus)] active:dark:bg-[color:var(--p-color-dark-warning-focus)];
+      }
+
+      &--danger {
+        @apply bg-danger-emphasis hover:bg-[color:var(--p-color-danger-hover)] focus:bg-[color:var(--p-color-danger-focus)] active:bg-[color:var(--p-color-danger-focus)];
+        @apply dark:bg-dark-danger-emphasis hover:dark:bg-[color:var(--p-color-dark-danger-hover)] focus:dark:bg-[color:var(--p-color-dark-danger-focus)] active:dark:bg-[color:var(--p-color-dark-danger-focus)]
+      }
+    }
+  }
+
+  &&--variant-outline,
+  &&--variant-ghost {
+    @apply border border-solid text-default hover:text-default hover:shadow-lg focus:shadow-none active:shadow-none focus:text-default active:text-default;
+    @apply dark:text-dark-default hover:dark:text-dark-default focus:dark:text-dark-default active:dark:text-dark-default;
+  }
+
+  /**
+  * Provide colors in
+  * button outline variant
+  * and border colors for
+  * solid variant
+  */
+  &&--variant-solid,
+  &&--variant-outline {
+    &.btn {
+      &--default {
+        @apply text-default border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
+        @apply dark:text-dark-default dark:border-dark-default-alpha hover:dark:border-dark-subtle-alpha active:dark:border-dark-subtle-alpha focus:dark:border-dark-subtle-alpha;
+      }
+
+      &--primary {
+        @apply border-brand-action hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
+        @apply dark:border-dark-brand-action border-brand-action hover:dark:border-[color:var(--p-color-dark-primary-hover)] focus:dark:border-[color:var(--p-color-dark-primary-focus)] active:dark:border-[color:var(--p-color-dark-primary-focus)];
+      }
+
+      &--info {
+        @apply border-info-emphasis hover:border-[color:var(--p-color-info-hover)] focus:border-[color:var(--p-color-info-focus)] active:border-[color:var(--p-color-info-focus)];
+        @apply dark:border-dark-info-emphasis hover:dark:border-[color:var(--p-color-dark-info-hover)] focus:dark:border-[color:var(--p-color-dark-info-focus)] active:dark:border-[color:var(--p-color-dark-info-focus)];
+      }
+
+      &--success {
+        @apply border-success-emphasis hover:border-[color:var(--p-color-success-hover)] focus:border-[color:var(--p-color-success-focus)] active:border-[color:var(--p-color-success-focus)];
+        @apply dark:border-dark-success-emphasis hover:dark:border-[color:var(--p-color-dark-success-hover)] focus:dark:border-[color:var(--p-color-dark-success-focus)] active:dark:border-[color:var(--p-color-dark-success-fucus)];
+      }
+
+      &--warning {
+        @apply border-warning-emphasis hover:border-[color:var(--p-color-warning-hover)] focus:border-[color:var(--p-color-warning-focus)] active:border-[color:var(--p-color-warning-focus)];
+        @apply dark:border-dark-warning-emphasis hover:dark:border-[color:var(--p-color-dark-warning-hover)] focus:dark:border-[color:var(--p-color-dark-warning-focus)] active:dark:border-[color:var(--p-color-dark-warning-focus)]
+      }
+
+      &--danger {
+        @apply border-danger-emphasis hover:border-[color:var(--p-color-danger-hover)] focus:border-[color:var(--p-color-danger-focus)] active:border-[color:var(--p-color-danger-focus)];
+        @apply dark:border-dark-danger-emphasis hover:dark:border-[color:var(--p-color-dark-danger-hover)] focus:dark:border-[color:var(--p-color-dark-danger-focus)] active:dark:border-[color:var(--p-color-dark-danger-focus)];
+      }
+    }
+  }
+
+  /**
+  * Button ghost variant
+  */
+  &&--variant-ghost {
+    @apply bg-transparent border-transparent hover:border-default-alpha hover:bg-default-alpha active:bg-default-alpha focus:bg-default-alpha active:border-default-alpha focus:border-default-alpha ;
+    @apply dark:border-transparent dark:bg-transparent hover:dark:border-dark-default-alpha hover:dark:bg-dark-default-alpha active:dark:bg-dark-default-alpha focus:dark:bg-dark-default-alpha active:dark:border-dark-default-alpha focus:dark:border-dark-default-alpha;
+  }
+
+  /**
+  * Provide text colors
+  * in button link variant
+  */
+  &&--variant-link {
+    @apply font-normal border border-transparent hover:underline;
+
+    &.btn {
+      &--default {
+        @apply text-default hover:text-default focus:text-default active:text-default ;
+        @apply dark:text-dark-default hover:dark:text-dark-default focus:dark:text-dark-default active:dark:text-dark-default;
+      }
+
+      &--primary {
+        @apply text-brand-action hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
+        @apply dark:text-dark-brand-action hover:dark:text-[color:var(--p-color-dark-primary-hover)] focus:dark:text-[color:var(--p-color-dark-primary-focus)] active:dark:text-[color:var(--p-color-dark-primary-focus)];
+      }
+
+      &--info {
+        @apply text-info hover:text-[color:var(--p-color-info-hover)] focus:text-[color:var(--p-color-info-focus)] active:text-[color:var(--p-color-info-focus)];
+        @apply dark:text-dark-info hover:dark:text-[color:var(--p-color-dark-info-hover)] focus:dark:text-[color:var(--p-color-dark-info-focus)] active:dark:text-[color:var(--p-color-dark-info-focus)];
+      }
+
+      &--success {
+        @apply text-success hover:text-[color:var(--p-color-success-hover)] focus:text-[color:var(--p-color-success-focus)] active:text-[color:var(--p-color-success-focus)];
+        @apply dark:text-dark-success hover:dark:text-[color:var(--p-color-dark-success-hover)] focus:dark:text-[color:var(--p-color-dark-success-focus)] active:dark:text-[color:var(--p-color-dark-success-focus)];
+      }
+
+      &--warning {
+        @apply text-warning hover:text-[color:var(--p-color-warning-hover)] focus:text-[color:var(--p-color-warning-focus)] active:text-[color:var(--p-color-warning-focus)];
+        @apply dark:text-dark-warning hover:dark:text-[color:var(--p-color-dark-warning-hover)] focus:dark:text-[color:var(--p-color-dark-warning-focus)] active:dark:text-[color:var(--p-color-dark-warning-focus)];
+      }
+
+      &--danger {
+        @apply text-danger hover:text-[color:var(--p-color-danger-hover)] focus:text-[color:var(--p-color-danger-focus)] active:text-[color:var(--p-color-danger-focus)];
+        @apply dark:text-dark-danger hover:dark:text-[color:var(--p-color-dark-danger-hover)] focus:dark:text-[color:var(--p-color-dark-danger-focus)] active:dark:text-[color:var(--p-color-dark-danger-focus)];
+      }
+    }
+  }
+
+  &&--variant-input {
+    @apply font-normal border border-solid border-muted text-subtle bg-default hover:border-subtle focus:border-subtle active:outline-default;
+    @apply dark:border-dark-muted dark:text-dark-subtle dark:bg-dark-default hover:dark:border-dark-subtle focus:dark:border-dark-subtle active:dark:outline-dark-default;
+
+    .state--disabled & {
+      @apply pointer-events-none bg-subtle border-muted text-muted;
+      @apply dark:bg-dark-subtle dark:border-dark-muted dark:text-dark-muted;
+    }
+
+    .state--error & {
+      @apply border-danger-emphasis;
+      @apply dark:border-dark-danger-emphasis;
+
+      &:focus {
+        @apply ring-danger border-danger-emphasis;
+        @apply dark:ring-dark-danger dark:border-dark-danger-emphasis;
+      }
+    }
+  }
+
+  /**
+  * Button icon variant
+  */
+  &&--icon {
+    &.btn--xs {
+      @apply px-[2px];
+    }
+
+    &.btn--sm {
+      @apply px-1;
+    }
+
+    &.btn--md {
+      @apply px-[10px];
+    }
+
+    &.btn--lg {
+      @apply px-4;
+    }
+  }
+
+  &&--pill {
+    @apply rounded-full;
+  }
+
+  &--loading {
+    .spinner {
+      @apply h-6;
+    }
+  }
+}
