@@ -12,6 +12,52 @@
 
 > Icons changelog
 
+## 1.0.0-rc.7
+
+### Added
+
+- bank
+- briefcase
+- contact-book
+- crown
+- csv
+- doc
+- docx
+- notification-solid
+- pdf
+- quota-sign
+
+### Changed
+
+- backward
+- building/32
+- chat
+- customer-service
+- document-protected/32
+- document-question/32
+- document-retract/32
+- document-review/32
+- dollars/16
+- dollars/20
+- dollars/32
+- email-download
+- email-invitation
+- email-signature
+- email-upload
+- email-user
+- email
+- forward
+- message
+- pause
+- play
+- read-message
+- record
+- shop/32
+- shopping-bag/32
+- stop/16
+- stop/32
+- template/32
+
 ## 1.0.0-rc.4
 
 ### Added

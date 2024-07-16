@@ -1,7 +1,7 @@
 {
   "name": "@privyid/design-system",
-  "version": "1.0.0-rc.6",
-  "packageManager": "yarn@4.2.2",
+  "version": "1.0.0-rc.7",
+  "packageManager": "yarn@4.3.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -33,7 +33,7 @@
     "@privyid/eslint-config-persona": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@rollup/plugin-inject": "5.0.5",
-    "@rushstack/eslint-patch": "1.10.2",
+    "@rushstack/eslint-patch": "1.10.3",
     "@testing-library/jest-dom": "6.4.5",
     "@testing-library/vue": "8.0.3",
     "@types/html-escaper": "3.0.2",
@@ -65,7 +65,7 @@
     "happy-dom": "8.9.0",
     "husky": "9.0.11",
     "jest-extended": "4.0.2",
-    "lint-staged": "15.2.2",
+    "lint-staged": "15.2.7",
     "nanodelay": "2.0.2",
     "postcss": "8.4.38",
     "postcss-import": "16.1.0",
