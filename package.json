@@ -33,7 +33,7 @@
     "@privyid/eslint-config-persona": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@rollup/plugin-inject": "5.0.5",
-    "@rushstack/eslint-patch": "1.10.2",
+    "@rushstack/eslint-patch": "1.10.3",
     "@testing-library/jest-dom": "6.4.5",
     "@testing-library/vue": "8.0.3",
     "@types/html-escaper": "3.0.2",
