@@ -232,6 +232,13 @@ You can hide close button with `dismissable` set to `false`
 </template>
 ```
 
+## Variables
+Banner use local CSS variables on `.banner` for enhanced real-time customization.
+
+```sass
+--p-banner-padding-x: theme(spacing.4);
+--p-banner-padding-y: theme(spacing.4);
+```
 
 ## API
 

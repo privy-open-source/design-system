@@ -91,7 +91,7 @@ const pages = computed<SelectItem[]>(() => {
       @apply flex bg-inverse text-subtlest rounded p-2 space-x-1 items-center;
       @apply dark:text-dark-default;
 
-      > .btn {
+      > .btn.btn--variant-ghost {
         @apply text-subtlest hover:text-muted focus:text-muted;
         @apply dark:text-dark-subtle hover:dark:text-dark-default focus:dark:text-dark-default;
       }

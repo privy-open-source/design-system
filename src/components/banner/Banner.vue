@@ -128,9 +128,11 @@ defineSlots<{
 .banner {
   --p-banner-bg-image: none;
   --p-banner-bg-dark-image: none;
+  --p-banner-padding-x: theme(spacing.4);
+  --p-banner-padding-y: theme(spacing.4);
 
-  @apply p-4 flex space-x-2 rounded text-subtle bg-[image:var(--p-banner-bg-image)];
-  @apply dark:text-dark-subtle dark:bg-[image:var(--p-banner-bg-dark-image)];
+  @apply px-[var(--p-banner-padding-x)] py-[var(--p-banner-padding-y)] flex space-x-2 rounded text-subtle;
+  @apply dark:text-dark-subtle;
 
   a {
     &:not(.btn) {
@@ -148,7 +150,8 @@ defineSlots<{
   }
 
   &&--custom-background {
-    @apply bg-cover bg-no-repeat bg-center overflow-hidden;
+    @apply bg-cover bg-no-repeat bg-center overflow-hidden bg-[image:var(--p-banner-bg-image)];
+    @apply dark:bg-[image:var(--p-banner-bg-dark-image)]
   }
 
   &&--overlay {

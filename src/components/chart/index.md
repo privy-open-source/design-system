@@ -623,6 +623,14 @@ If renderless not satisfies your needs, you can manually set the datasets and op
 </script>
 ```
 
+## Variables
+Chart use local CSS variables on `.chart` for enhanced real-time customization.
+
+```sass
+--p-chart-padding-x: theme(spacing.4);
+--p-chart-padding-y: theme(spacing.4);
+```
+
 ## API
 
 ### Props `<p-chart>`
