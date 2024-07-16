@@ -24,7 +24,19 @@ export default defineConfig({
       { text: 'Components', link: '/components/accordion/' },
       { text: 'Foundation', link: '/foundation/colors/' },
       { text: 'Styleguide', link: '/styleguide/badge/' },
-      { text: 'Assets', link: '/assets/icon/getting-started' },
+      {
+        text : 'Assets',
+        items: [
+          {
+            text: 'Icon',
+            link: '/assets/icon/getting-started',
+          },
+          {
+            text: 'Ilustration',
+            link: '/assets/ilustration/getting-started',
+          },
+        ],
+      },
       { text: 'Ecosystem', link: '/ecosystem/' },
     ],
     outline    : [2, 3],

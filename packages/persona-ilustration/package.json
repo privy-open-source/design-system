@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona-ilustration",
   "description": "Persona ilustration package",
-  "version": "1.0.0-rc.6",
+  "version": "1.0.0-rc.7",
   "packageManager": "yarn@4.2.2",
   "type": "module",
   "main": "./dist/module.cjs",
