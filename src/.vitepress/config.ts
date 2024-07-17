@@ -562,10 +562,9 @@ export default defineConfig({
     },
   },
   vite: {
-    build       : { target: getTarget('extends @privyid/browserslist-config') },
-    resolve     : { alias },
-    plugins     : [ViteImageOptimizer()],
-    optimizeDeps: { exclude: ['@privyid/ghoulscript'] },
+    build  : { target: getTarget('extends @privyid/browserslist-config') },
+    resolve: { alias },
+    plugins: [ViteImageOptimizer()],
   },
   srcExclude: ['public/js/**'],
 })

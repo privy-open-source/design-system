@@ -10,6 +10,7 @@ layout: false
   import pHeading from '../components/heading/Heading.vue'
   import pCaption from '../components/caption/Caption.vue'
   import { showOverlay, hideOverlay } from '../components/overlay'
+  import pBanner from '../components/banner/Banner.vue'
   import IconFile from '@privyid/persona-icon/vue/document-filled/32.vue'
   import IconImage from '@privyid/persona-icon/vue/image/32.vue'
   import { usePreview } from '../components/cropper/utils/use-preview'
@@ -30,7 +31,8 @@ layout: false
   const inputUrl  = usePreview(input)
   const outputUrl = usePreview(output)
 
-  const scale = ref()
+  const scale    = ref()
+  const duration = ref()
 
   const diff = computed(() => {
     if (input.value && output.value) {
@@ -43,10 +45,13 @@ layout: false
       try {
         showOverlay()
 
-        const result = await optimizePDF(value)
+        const start = performance.now()
+
+        const result = await optimizePDF(value, { noTransparency: false })
         const name   = input.value.name.replace('.pdf', '.compressed.pdf')
 
-        output.value = new File([result], name, { type: 'application/pdf' })
+        output.value   = new File([result], name, { type: 'application/pdf' })
+        duration.value = (performance.now() - start) / 1000
       } finally {
         hideOverlay()
       }
@@ -117,13 +122,18 @@ layout: false
         <template #default="{ isDragover, isHovered, model, browse }">
           <div class="flex flex-col items-center justify-center w-full p-6 space-y-3 border-2 border-dashed rounded aspect-video "
             :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
+            <p-banner class="text-start">
+              Digital Signature, Attachment, Annotations, and some content
+              may be lost during compressing.<br/>
+              <strong>Please take it at your own risk</strong>
+            </p-banner>
             <p-spread :active="isDragover || isHovered">
-              <IconFile class="w-16 h-16 mt-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
+              <IconFile class="w-20 h-20 my-5 fill-info-emphasis dark:fill-dark-info-emphasis" />
             </p-spread>
             <p-heading element="h5">
               Upload Document
             </p-heading>
-            <p-heading element="h6">
+            <p-heading element="h6" class="line-clamp-1">
               <template v-if="!model">
                 Drag your document here or click
                 <a class="text-info hover:underline" href="#" @click.prevent="browse">Browse</a>
@@ -136,7 +146,8 @@ layout: false
         </template>
       </p-dropzone>
       <p-caption class="my-4">
-        Powered by: <a href="https://github.com/privy-open-source/ghoulscript" target="_blank"><b>Ghoulscript</b></a>
+        Powered by:
+        <a class="hover:underline decoration-dashed" href="https://github.com/privy-open-source/ghoulscript" target="_blank"><b>Ghoulscript</b></a>
       </p-caption>
     </div>
   </div>
@@ -160,15 +171,18 @@ layout: false
         <template #header>
           <div class="flex p-2">
             <div class="flex-grow">
-              Result Size:&nbsp;<b>{{ bytes(output.size) }}</b>&nbsp;
-              <span :class="diff < 0 ? 'text-green-50' : 'text-red-50'"> ({{ diff }}%)</span>
+              Compressed Size:&nbsp;<b>{{ bytes(output.size) }}</b>&nbsp;
+              <span :class="diff < 0 ? 'text-green-50' : 'text-red-50'">
+                <span v-if="diff > 0">+</span>({{ diff }}%)
+              </span>
+              Duration: {{ duration.toFixed(2) }}s
             </div>
             <p-button
               :href="outputUrl"
               :download="output.name"
               color="info"
               size="xs">
-              Download Result
+              Download Compressed
             </p-button>
           </div>
         </template>
