@@ -91,6 +91,7 @@ provide(NAVBAR_SETTINGS, {
 .navbar {
   --p-navbar-z-index: theme(zIndex.fixed);
   --p-navbar-sticky-top: theme(spacing.0);
+  --p-navbar-fixed-top: theme(spacing.0);
   --p-navbar-collapse-max-height: 20rem; /** 320px */
   --p-navbar-padding-x: theme(spacing.3);
   --p-navbar-padding-left: var(--p-navbar-padding-x);
@@ -108,7 +109,7 @@ provide(NAVBAR_SETTINGS, {
   box-shadow: var(--p-navbar-shadow);
 
   &&--fixed {
-    @apply fixed left-0 top-0 w-full z-[var(--p-navbar-z-index)];
+    @apply fixed left-0 top-[var(--p-navbar-fixed-top)] w-full z-[var(--p-navbar-z-index)] transition-all;
   }
 
   &&--sticky {

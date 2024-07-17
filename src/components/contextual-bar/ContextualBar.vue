@@ -121,6 +121,10 @@ const props = defineProps({
     type   : Boolean,
     default: true,
   },
+  fixed: {
+    type   : Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits<{
@@ -139,6 +143,10 @@ function close (event: Event) : void {
     model.value = false
 }
 
+const isFixed = computed(() => {
+  return props.fixed
+})
+
 const classNames = computed(() => {
   const result: string[] = ['']
 
@@ -150,6 +158,9 @@ const classNames = computed(() => {
 
   if (props.backgroundUrl)
     result.push('contextual-bar--background-image')
+
+  if (props.fixed)
+    result.push('contextual-bar--fixed')
 
   return result
 })
@@ -168,19 +179,25 @@ const styleBg = computed<StyleValue>(() => {
 })
 
 function onEnter (target: HTMLDivElement) {
-  target.style.setProperty('transform', `translateY(-${target.clientHeight}px)`)
-
   document.body.classList.add('contextual-bar__body--active')
-  document.body.style.setProperty('transform', `translateY(${target.clientHeight}px)`)
+
+  if (isFixed.value) {
+    document.body.style.setProperty('margin-top', `${target.clientHeight}px`)
+    document.body.style.setProperty('--p-contextual-bar-height', `${target.clientHeight}px`)
+    document.body.classList.add('contextual-bar__body--fixed-active')
+  }
 
   emit('show')
 }
 
-function onLeave (target: HTMLDivElement) {
-  target.style.setProperty('transform', 'translateY(0px)')
-
+function onLeave () {
   document.body.classList.remove('contextual-bar__body--active')
-  document.body.style.removeProperty('transform')
+
+  if (isFixed.value) {
+    document.body.style.removeProperty('margin-top')
+    document.body.style.removeProperty('--p-contextual-bar-height')
+    document.body.classList.remove('contextual-bar__body--fixed-active')
+  }
 
   emit('hide')
 }
@@ -205,11 +222,40 @@ defineSlots<{
 .contextual-bar {
   --p-contextual-bar-bg-image: none;
   --p-contextual-bar-bg-dark-image: none;
+  --p-contextual-bar-fixed-top: theme(spacing.0);
 
-  @apply fixed z-50 top-0 left-0 p-6 w-full max-w-[100vw];
+  @apply p-6 w-full max-w-[100vw] transition-all;
+
+  &:not(&--fixed) {
+    @apply relative;
+  }
 
   &__body {
-    @apply transition-transform;
+    @apply transition-all;
+
+    &--active {
+      @apply transition-all;
+
+      &:not(&-hide) {
+        .navbar--fixed {
+          @apply mt-[var(--p-contextual-bar-height)] transition-all;
+        }
+
+        .sidebar--fixed {
+          @apply mt-[var(--p-contextual-bar-height)] transition-all;
+        }
+      }
+    }
+
+    &--fixed-active {
+      .navbar--fixed {
+        @apply mt-[var(--p-contextual-bar-height)] transition-all;
+      }
+
+      .sidebar--fixed {
+        @apply mt-[var(--p-contextual-bar-height)] transition-all;
+      }
+    }
   }
 
   &__wrapper {
@@ -334,7 +380,17 @@ defineSlots<{
   */
   &__close {
     @apply absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer text-default/30 hover:text-default/50;
-    @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
+  }
+
+  /**
+  * Dismiss button stay
+  * in light mode when
+  * has background-image
+  */
+  &:not(&--background-image) {
+    .contextual-bar__close {
+      @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
+    }
   }
 
   /**
@@ -390,5 +446,13 @@ defineSlots<{
       @apply dark:text-dark-on-emphasis/30 hover:dark:text-dark-on-emphasis/50;
     }
   }
+
+  /**
+  * Contextualbar with
+  * fixed-top position
+   */
+   &&--fixed {
+    @apply fixed z-50 top-[var(--p-contextual-bar-fixed-top)] left-0;
+   }
 }
 </style>

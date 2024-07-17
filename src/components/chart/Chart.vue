@@ -77,16 +77,16 @@ const classNames = computed(() => {
   return result
 })
 
-const data = computed(() => {
+const data = computed<ChartData>(() => {
   return defuFn(
-    props.data,
+    props.data as ChartData,
     getAdapter(variant.value)?.getDatasets(slots?.default?.() ?? []),
   )
 })
 
 const options = computed<ChartOptions>(() => {
   return defuFn(
-    props.options,
+    props.options as PropType<ChartOptions>,
     {
       plugins: {
         legend: {
@@ -112,7 +112,7 @@ async function initChart () {
     instance.value.destroy()
 
   instance.value = await createChart(
-    canvas.value,
+    canvas.value as HTMLCanvasElement,
     variant.value,
     data.value,
     options.value,
@@ -148,7 +148,10 @@ onBeforeUnmount(() => {
 
 <style lang="postcss">
 .chart {
-  @apply w-full bg-default p-4;
+  --p-chart-padding-x: theme(spacing.4);
+  --p-chart-padding-y: theme(spacing.4);
+
+  @apply w-full bg-default px-[var(--p-chart-padding-x)] py-[var(--p-chart-padding-y)];
   @apply dark:bg-dark-default;
 }
 </style>

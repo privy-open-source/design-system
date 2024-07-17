@@ -12,6 +12,53 @@
 
 > Ilustration changelog
 
+## 1.0.0-rc.7
+
+### Added
+
+- signature
+- test
+
+### Changed
+
+- id-card/dot-large
+- id-card/dot-small
+- id-card/spot-hero-small
+- security/spot-hero-large
+
+### Removed
+
+- benefit/dot-large
+- benefit/dot-small
+- benefit/spot
+- email-address/dot-large
+- email-address/dot-small
+- email-address/spot
+- front-camera-issue/dot-large
+- front-camera-issue/dot-small
+- front-camera-issue/spot
+- people-behind-user/dot-large
+- people-behind-user/dot-small
+- people-behind-user/spot
+- phone-number/dot-large
+- phone-number/dot-small
+- phone-number/spot
+- pin-number/dot-large
+- pin-number/dot-small
+- pin-number/spot
+- user-face/dot-large
+- user-face/dot-small
+- user-face/spot
+- user-facing-light/dot-large
+- user-facing-light/dot-small
+- user-facing-light/spot
+- user-instruction/dot-large
+- user-instruction/dot-small
+- user-instruction/spot
+- user/dot-large
+- user/dot-small
+- user/spot
+
 ## 1.0.0-rc.5 - Initial Release
 
 ### Added
