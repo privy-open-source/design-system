@@ -28,6 +28,6 @@
   "main": "dist/pspdfkit.js",
   "typings": "dist/index.d.ts",
   "dependencies": {
-    "@types/react": "^17.0.39"
+    "@types/react": "^18.0.0"
   }
 }
