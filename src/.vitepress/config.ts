@@ -43,7 +43,7 @@ export default defineConfig({
         items: [
           {
             text  : 'PDF Coordinate Finder',
-            link  : '/tools/pdf-compress',
+            link  : '/tools/pdf-coordinate-finder',
             target: '_blank',
           },
           {

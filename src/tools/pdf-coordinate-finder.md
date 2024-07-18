@@ -3,18 +3,18 @@ layout: false
 ---
 
 <script setup>
-  import pButton from '../button/Button.vue'
-  import pPdfViewer from '../pdf-viewer/PdfViewer.vue'
-  import pPdfObject from './PdfObject.vue'
-  import pPdfObjectAddon from './PdfObjectAddon.vue'
-  import pDropzone from '../dropzone/Dropzone.vue'
-  import pCheckbox from '../checkbox/Checkbox.vue'
-  import pSheet from '../sheet/Sheet.vue'
-  import pFormGroup from '../form-group/FormGroup.vue'
-  import pInput from '../input/Input.vue'
+  import pButton from '../components/button/Button.vue'
+  import pPdfViewer from '../components/pdf-viewer/PdfViewer.vue'
+  import pPdfObject from '../components/pdf-object/PdfObject.vue'
+  import pPdfObjectAddon from '../components/pdf-object/PdfObjectAddon.vue'
+  import pDropzone from '../components/dropzone/Dropzone.vue'
+  import pCheckbox from '../components/checkbox/Checkbox.vue'
+  import pSheet from '../components/sheet/Sheet.vue'
+  import pFormGroup from '../components/form-group/FormGroup.vue'
+  import pInput from '../components/input/Input.vue'
   import IconClose from '@privyid/persona-icon/vue/close/16.vue'
   import IconEdit from '@privyid/persona-icon/vue/edit/16.vue'
-  import { usePreview } from '../cropper/utils/use-preview'
+  import { usePreview } from '../components/cropper/utils/use-preview'
   import { reactive, ref } from 'vue-demi'
   import { withBase } from 'vitepress'
 

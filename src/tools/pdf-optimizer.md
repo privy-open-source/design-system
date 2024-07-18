@@ -122,9 +122,8 @@ layout: false
         <template #default="{ isDragover, isHovered, model, browse }">
           <div class="flex flex-col items-center justify-center w-full p-6 space-y-3 border-2 border-dashed rounded aspect-video "
             :class="[isDragover ? 'bg-info dark:bg-dark-info border-info-emphasis dark:border-dark-info-emphasis' : 'bg-default dark:bg-dark-default border-default dark:border-dark-default']">
-            <p-banner class="text-start">
-              Digital Signature, Attachment, Annotations, and some content
-              may be lost during compressing.<br/>
+            <p-banner variant="danger" class="text-start">
+              Some content may be lost during compressing.<br/>
               <strong>Please take it at your own risk</strong>
             </p-banner>
             <p-spread :active="isDragover || isHovered">
@@ -152,7 +151,7 @@ layout: false
     </div>
   </div>
   <template v-else>
-    <div class="w-full border">
+    <div class="w-full border border-default dark:border-dark-default">
       <p-pdf-viewer v-model:scale="scale" ref="inputViewer" :src="inputUrl" layout="fit">
         <template #header>
           <div class="flex p-2">
@@ -166,7 +165,7 @@ layout: false
         </template>
       </p-pdf-viewer>
     </div>
-    <div class="w-full border">
+    <div class="w-full border dark:border-dark-default">
       <p-pdf-viewer v-model:scale="scale" ref="outputViewer" :src="outputUrl" layout="fit">
         <template #header>
           <div class="flex p-2">
