@@ -14,7 +14,7 @@
   "license": "Apache-2.0",
   "optionalDependencies": {
     "canvas": "^2.11.2",
-    "path2d-polyfill": "^2.0.1"
+    "path2d-polyfill": "^3.0.0"
   },
   "browser": {
     "canvas": false,
