@@ -3307,7 +3307,7 @@ __metadata:
     "@vue/eslint-config-typescript": "npm:13.0.0"
     "@vueuse/core": "npm:10.9.0"
     "@vueuse/math": "npm:10.9.0"
-    "@zxing/browser": "npm:0.1.4"
+    "@zxing/browser": "npm:0.1.5"
     "@zxing/library": "npm:0.21.0"
     autoprefixer: "npm:10.4.19"
     browserslist-to-esbuild: "npm:2.1.1"
@@ -3455,7 +3455,7 @@ __metadata:
     "@types/sanitize-html": "npm:2.11.0"
     "@vueuse/core": "npm:10.9.0"
     "@vueuse/math": "npm:10.9.0"
-    "@zxing/browser": "npm:0.1.4"
+    "@zxing/browser": "npm:0.1.5"
     "@zxing/library": "npm:0.21.0"
     browserslist-to-esbuild: "npm:2.1.1"
     chart.js: "npm:4.4.2"
@@ -5594,17 +5594,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zxing/browser@npm:0.1.4":
-  version: 0.1.4
-  resolution: "@zxing/browser@npm:0.1.4"
+"@zxing/browser@npm:0.1.5":
+  version: 0.1.5
+  resolution: "@zxing/browser@npm:0.1.5"
   dependencies:
     "@zxing/text-encoding": "npm:^0.9.0"
   peerDependencies:
-    "@zxing/library": ^0.20.0
+    "@zxing/library": ^0.21.0
   dependenciesMeta:
     "@zxing/text-encoding":
       optional: true
-  checksum: 10/fc85267eeb9b2cfdbad6eb6be4b477fabe7262d5174f9ecf35632f058fdaac1cb250a30eabc37e2c624803ef16f73aa69816af0e9ebbe14977098363fd7a0a10
+  checksum: 10/13df1471dc93b1a54c11df00caebe529fb5e4435d5876e606da048697a039098f5650724710e92cef2db746dbf89b72d04791fd89c6b9a6cf1c1b841dc24cb32
   languageName: node
   linkType: hard
 
