@@ -3351,7 +3351,7 @@ __metadata:
     tabbable: "npm:6.2.0"
     tailwindcss: "npm:3.4.3"
     typescript: "npm:5.5.4"
-    ufo: "npm:1.5.3"
+    ufo: "npm:1.5.4"
     unenv: "npm:1.9.0"
     vite-plugin-image-optimizer: "npm:1.1.7"
     vitepress: "npm:1.1.0"
@@ -18532,7 +18532,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ufo@npm:1.5.3, ufo@npm:^1.0.0, ufo@npm:^1.1.1, ufo@npm:^1.1.2, ufo@npm:^1.2.0, ufo@npm:^1.3.0, ufo@npm:^1.3.2, ufo@npm:^1.4.0, ufo@npm:^1.5.3":
+"ufo@npm:1.5.4":
+  version: 1.5.4
+  resolution: "ufo@npm:1.5.4"
+  checksum: 10/a885ed421e656aea6ca64e9727b8118a9488715460b6f1a0f0427118adfe2f2830fe7c1d5bd9c5c754a332e6807516551cd663ea67ce9ed6a4e3edc739916335
+  languageName: node
+  linkType: hard
+
+"ufo@npm:^1.0.0, ufo@npm:^1.1.1, ufo@npm:^1.1.2, ufo@npm:^1.2.0, ufo@npm:^1.3.0, ufo@npm:^1.3.2, ufo@npm:^1.4.0, ufo@npm:^1.5.3":
   version: 1.5.3
   resolution: "ufo@npm:1.5.3"
   checksum: 10/2b30dddd873c643efecdb58cfe457183cd4d95937ccdacca6942c697b87a2c578232c25a5149fda85436696bf0fdbc213bf2b220874712bc3e58c0fb00a2c950
