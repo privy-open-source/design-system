@@ -12,10 +12,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adobe/css-tools@npm:^4.3.2":
-  version: 4.3.2
-  resolution: "@adobe/css-tools@npm:4.3.2"
-  checksum: 10/973dcb7ba5141f57ec726ddec2e94e8947361bb0c5f0e8ebd1e8aa3a84b28e66db4ad843908825f99730d59784ff3c43868b014a7268676a65950cdb850c42cc
+"@adobe/css-tools@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "@adobe/css-tools@npm:4.4.0"
+  checksum: 10/9c6315fe9efa5075d6ddb6ded7a1424bc9c41a01f2314b6bdcc368723985fe161008d03ddcc2b27b2da50cb9c14190fbce965d15cefe5f9a31bdd43f35b52115
   languageName: node
   linkType: hard
 
@@ -3289,9 +3289,9 @@ __metadata:
     "@rollup/plugin-inject": "npm:5.0.5"
     "@rushstack/eslint-patch": "npm:1.10.3"
     "@splidejs/splide": "npm:^4.1.4"
-    "@testing-library/jest-dom": "npm:6.4.5"
+    "@testing-library/jest-dom": "npm:6.4.7"
     "@testing-library/user-event": "npm:^14.4.3"
-    "@testing-library/vue": "npm:8.0.3"
+    "@testing-library/vue": "npm:8.1.0"
     "@types/html-escaper": "npm:3.0.2"
     "@types/lodash-es": "npm:4.17.12"
     "@types/marked": "npm:6.0.0"
@@ -3450,7 +3450,7 @@ __metadata:
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@splidejs/splide": "npm:4.1.4"
-    "@testing-library/dom": "npm:10.1.0"
+    "@testing-library/dom": "npm:10.4.0"
     "@testing-library/user-event": "npm:14.5.2"
     "@types/sanitize-html": "npm:2.11.0"
     "@vueuse/core": "npm:10.9.0"
@@ -4201,9 +4201,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:10.1.0":
-  version: 10.1.0
-  resolution: "@testing-library/dom@npm:10.1.0"
+"@testing-library/dom@npm:10.4.0":
+  version: 10.4.0
+  resolution: "@testing-library/dom@npm:10.4.0"
   dependencies:
     "@babel/code-frame": "npm:^7.10.4"
     "@babel/runtime": "npm:^7.12.5"
@@ -4213,7 +4213,7 @@ __metadata:
     dom-accessibility-api: "npm:^0.5.9"
     lz-string: "npm:^1.5.0"
     pretty-format: "npm:^27.0.2"
-  checksum: 10/6d6ef942deedf547180c76d4cc2c43fe8e52a98ef68be6ba7382a43d3b1e1e5696d9c32ae0b2df12c92ea50023187d132ad2542fc118ba4b900f149e97d019e0
+  checksum: 10/05825ee9a15b88cbdae12c137db7111c34069ed3c7a1bd03b6696cb1b37b29f6f2d2de581ebf03033e7df1ab7ebf08399310293f440a4845d95c02c0a9ecc899
   languageName: node
   linkType: hard
 
@@ -4233,11 +4233,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:6.4.5":
-  version: 6.4.5
-  resolution: "@testing-library/jest-dom@npm:6.4.5"
+"@testing-library/jest-dom@npm:6.4.7":
+  version: 6.4.7
+  resolution: "@testing-library/jest-dom@npm:6.4.7"
   dependencies:
-    "@adobe/css-tools": "npm:^4.3.2"
+    "@adobe/css-tools": "npm:^4.4.0"
     "@babel/runtime": "npm:^7.9.2"
     aria-query: "npm:^5.0.0"
     chalk: "npm:^3.0.0"
@@ -4262,7 +4262,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10/6d9e6cc01ec9111ea631657d93596fa9505d294fdfc4172fbd750b8df6268f02d55900626423b195dac5b067a302557453894a5814bdf4e770dee37cdb1c0f2d
+  checksum: 10/bddbb18e968c64a1ab0b2b1e93728e9c60b1db72efc6ce4f38e3fb365c437f13d9d926bfef7bd62eb62339e0482a91fbdb4801ce29dc163a251fad874c172097
   languageName: node
   linkType: hard
 
@@ -4275,9 +4275,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/vue@npm:8.0.3":
-  version: 8.0.3
-  resolution: "@testing-library/vue@npm:8.0.3"
+"@testing-library/vue@npm:8.1.0":
+  version: 8.1.0
+  resolution: "@testing-library/vue@npm:8.1.0"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
     "@testing-library/dom": "npm:^9.3.3"
@@ -4288,7 +4288,7 @@ __metadata:
   peerDependenciesMeta:
     "@vue/compiler-sfc":
       optional: true
-  checksum: 10/d4f5e49038016b7737f86cdf0c47cb185ad66edd9f2356671c2f467a3572c46410e174bafca574a3dc468521cf054f481a255630a2bb03af88f5dad8e8b46c92
+  checksum: 10/5581d794070c550f3f6873880757c2ab61e75b5c8793159ce74db13fc06e154b95f5bff589144b824d411bd16d76c8ae1ccb50de2ab15eaa183836b3dcd51713
   languageName: node
   linkType: hard
 
