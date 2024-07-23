@@ -30,7 +30,7 @@
     "eslint-plugin-unicorn": "54.0.0",
     "eslint-plugin-varspacing": "1.2.2",
     "eslint-plugin-vue": "9.23.0",
-    "typescript": "5.4.5"
+    "typescript": "5.5.4"
   },
   "keywords": [
     "eslint",
