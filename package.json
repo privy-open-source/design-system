@@ -76,7 +76,7 @@
     "typescript": "5.5.4",
     "ufo": "1.5.3",
     "unenv": "1.9.0",
-    "vite-plugin-image-optimizer": "1.1.7",
+    "vite-plugin-image-optimizer": "1.1.8",
     "vitepress": "1.1.0",
     "vitest": "0.24.5",
     "vue-tsc": "2.0.19"
