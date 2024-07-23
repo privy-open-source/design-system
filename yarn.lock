@@ -3349,7 +3349,7 @@ __metadata:
     sharp: "npm:0.33.3"
     svgo: "npm:3.3.2"
     tabbable: "npm:6.2.0"
-    tailwindcss: "npm:3.4.3"
+    tailwindcss: "npm:3.4.6"
     typescript: "npm:5.5.4"
     ufo: "npm:1.5.3"
     unenv: "npm:1.9.0"
@@ -18032,9 +18032,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.4.3":
-  version: 3.4.3
-  resolution: "tailwindcss@npm:3.4.3"
+"tailwindcss@npm:3.4.6":
+  version: 3.4.6
+  resolution: "tailwindcss@npm:3.4.6"
   dependencies:
     "@alloc/quick-lru": "npm:^5.2.0"
     arg: "npm:^5.0.2"
@@ -18061,7 +18061,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 10/8d65347bcab1b492fe3acb95a917d8610112c1efb01a91259368c6360e98a5622bfd37bce96fc7ce70268c9d25d42674a7a475074e079781573a1eae8559bb9f
+  checksum: 10/bd550628cc2a5e80b0543738320ff1e3377e1eb8b4ea6aa3774d479b4e88926eb18828416570859dbe38b12af0e4ea2f97deda5a6449d1f0985936046fcc7a47
   languageName: node
   linkType: hard
 
