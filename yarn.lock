@@ -3925,7 +3925,7 @@ __metadata:
     "@vitest/coverage-c8": "npm:0.24.5"
     "@vue/eslint-config-typescript": "npm:13.0.0"
     "@vueuse/core": "npm:10.9.0"
-    "@vueuse/math": "npm:10.9.0"
+    "@vueuse/math": "npm:10.11.0"
     "@zxing/browser": "npm:0.1.5"
     "@zxing/library": "npm:0.21.0"
     autoprefixer: "npm:10.4.19"
@@ -4073,7 +4073,7 @@ __metadata:
     "@testing-library/user-event": "npm:14.5.2"
     "@types/sanitize-html": "npm:2.11.0"
     "@vueuse/core": "npm:10.9.0"
-    "@vueuse/math": "npm:10.9.0"
+    "@vueuse/math": "npm:10.11.0"
     "@zxing/browser": "npm:0.1.5"
     "@zxing/library": "npm:0.21.0"
     browserslist-to-esbuild: "npm:2.1.1"
@@ -6169,13 +6169,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/math@npm:10.9.0":
-  version: 10.9.0
-  resolution: "@vueuse/math@npm:10.9.0"
+"@vueuse/math@npm:10.11.0":
+  version: 10.11.0
+  resolution: "@vueuse/math@npm:10.11.0"
   dependencies:
-    "@vueuse/shared": "npm:10.9.0"
-    vue-demi: "npm:>=0.14.7"
-  checksum: 10/d9044cdf9d50c82026f6e29bbfe0a624d319617280d4d5fbe460483d9935fde299b8a18f9d63e82ff4daea2f20ce44894b904c7eeea6867c37ac2cf0a623c88c
+    "@vueuse/shared": "npm:10.11.0"
+    vue-demi: "npm:>=0.14.8"
+  checksum: 10/589cc40425a63aba7727044f6a996257304d08bf469de53b6fe7d4d43babe7bf794a9608343d877ca913c6d7b749e7d0553eaf7707cfaaa00e11fe8b47211487
   languageName: node
   linkType: hard
 
@@ -6183,6 +6183,15 @@ __metadata:
   version: 10.9.0
   resolution: "@vueuse/metadata@npm:10.9.0"
   checksum: 10/f32c3a4c1a572a6873223fe973c24b6eaf8ed398be383ebb9bc95ab837a9ee1e23126afa966f3fdea68767883e6b12528fe997f0c393f9ce017d345c72fc715c
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:10.11.0":
+  version: 10.11.0
+  resolution: "@vueuse/shared@npm:10.11.0"
+  dependencies:
+    vue-demi: "npm:>=0.14.8"
+  checksum: 10/670d8b934ba6348de085a82aa3adf457421bd2d18a7db3db29d67aa74fd36ef4123847858b9340aeb843b8feece3ef9118c90d400780dda29ecc961c08706553
   languageName: node
   linkType: hard
 
@@ -19995,6 +20004,22 @@ __metadata:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
   checksum: 10/04884677b8790320bcd3cbbf8dae1c4da9f4ab304659bf18d69b11255f7d16825d2135d2d0e565b1a1f1b7f601100eb26760254129c6bacec2c7e72ab0f61d52
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:>=0.14.8":
+  version: 0.14.9
+  resolution: "vue-demi@npm:0.14.9"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 10/07c0288832ea64759bc59ebce2ebe181bea8bb1adba6a0f70e463c688a233aaafd2ea5c47c804869094936f2ebc60e73bdce39911b685d10ad6454edc21a70c7
   languageName: node
   linkType: hard
 
