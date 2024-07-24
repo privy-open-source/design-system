@@ -3961,7 +3961,7 @@ __metadata:
     postcss-hexrgba: "npm:^2.1.0"
     postcss-import: "npm:16.1.0"
     postcss-lighten-darken: "npm:^0.9.0"
-    postcss-nested: "npm:6.0.1"
+    postcss-nested: "npm:6.2.0"
     pspdfkit: "npm:^2024.3.1"
     qr-code-styling: "npm:^1.6.0-rc.1"
     scroll-into-view: "npm:^1.16.2"
@@ -15870,7 +15870,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nested@npm:6.0.1, postcss-nested@npm:^6.0.1":
+"postcss-nested@npm:6.2.0":
+  version: 6.2.0
+  resolution: "postcss-nested@npm:6.2.0"
+  dependencies:
+    postcss-selector-parser: "npm:^6.1.1"
+  peerDependencies:
+    postcss: ^8.2.14
+  checksum: 10/d7f6ba6bfd03d42f84689a0630d4e393c421bb53723f16fe179a840f03ed17763b0fe494458577d2a015e857e0ec27c7e194909ffe209ee5f0676aec39737317
+  languageName: node
+  linkType: hard
+
+"postcss-nested@npm:^6.0.1":
   version: 6.0.1
   resolution: "postcss-nested@npm:6.0.1"
   dependencies:
@@ -16057,7 +16068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.1.0":
+"postcss-selector-parser@npm:^6.1.0, postcss-selector-parser@npm:^6.1.1":
   version: 6.1.1
   resolution: "postcss-selector-parser@npm:6.1.1"
   dependencies:
