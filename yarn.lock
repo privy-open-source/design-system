@@ -3977,7 +3977,7 @@ __metadata:
     vitest: "npm:0.24.5"
     vue-collapsed: "npm:^1.2.5"
     vue-content-loader: "npm:^2.0.1"
-    vue-demi: "npm:0.14.7"
+    vue-demi: "npm:0.14.9"
     vue-router: "npm:4.3.2"
     vue-tsc: "npm:2.0.28"
     vuedraggable: "npm:next"
@@ -4096,7 +4096,7 @@ __metadata:
     tabbable: "npm:6.2.0"
     tailwind: "npm:4.0.0"
     vue-collapsed: "npm:1.3.3"
-    vue-demi: "npm:0.14.7"
+    vue-demi: "npm:0.14.9"
     vuedraggable: "npm:next"
     webfontloader: "npm:1.6.28"
     zxcvbn: "npm:4.4.2"
@@ -19982,7 +19982,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:0.14.7, vue-demi@npm:>=0.14.7":
+"vue-demi@npm:0.14.9":
+  version: 0.14.9
+  resolution: "vue-demi@npm:0.14.9"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 10/07c0288832ea64759bc59ebce2ebe181bea8bb1adba6a0f70e463c688a233aaafd2ea5c47c804869094936f2ebc60e73bdce39911b685d10ad6454edc21a70c7
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:>=0.14.7":
   version: 0.14.7
   resolution: "vue-demi@npm:0.14.7"
   peerDependencies:
