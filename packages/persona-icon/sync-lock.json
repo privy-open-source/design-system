@@ -56282,5 +56282,161 @@
       }
     },
     "filehash": "537606d887532373b3381e666237b4dc6f05600741029fef0ec5b55105b154ec"
+  },
+  "12709:1437": {
+    "id": "12709:1437",
+    "hash": "gYUQNfkkFf",
+    "name": "time",
+    "folder": "time-solid",
+    "variant": "solid",
+    "category": "operation",
+    "filename": "time-solid/32",
+    "filepath": "time-solid/32.svg",
+    "aliases": [],
+    "component": {
+      "key": "de155b4a3ab07d8b1aeff212dc4f16373f346ba5",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "12709:1437",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/4G8/e50/PAe2Y6eEVvncuNaZ/12709_1437.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSWNWIZ6J%2F20240728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240728T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=798d676a9d4cb085309ce81670a1e13dec2e10b0f4786ce6de9fcb7860cc8525",
+      "name": "size=32",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-07-25T08:12:42.762Z",
+      "updated_at": "2024-07-25T08:12:42.762Z",
+      "containing_frame": {
+        "name": "Operation / Time",
+        "nodeId": "12709:1436",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Operation / Time",
+          "nodeId": "12709:1436"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "bdd28883f0a4b0458814e5bc420be5c43d43fcbd60f89d9e04e45aeab6c77307"
+  },
+  "12709:1450": {
+    "id": "12709:1450",
+    "hash": "6qXKlQzdOL",
+    "name": "time",
+    "folder": "time-solid",
+    "variant": "solid",
+    "category": "operation",
+    "filename": "time-solid/16",
+    "filepath": "time-solid/16.svg",
+    "aliases": [],
+    "component": {
+      "key": "7aadf4ce3a5d0d34bd588b6b7d3d06a681232611",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "12709:1450",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/Lxi/tZz/EyL7svewSKLuIVkA/12709_1450.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSWNWIZ6J%2F20240728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240728T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7485c53bd0774c603008a9931d24e91842680487cb2b7cc93fca97dc6794b2c3",
+      "name": "size=16",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-07-25T08:12:42.770Z",
+      "updated_at": "2024-07-25T08:12:42.770Z",
+      "containing_frame": {
+        "name": "Operation / Time",
+        "nodeId": "12709:1436",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Operation / Time",
+          "nodeId": "12709:1436"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "b3d44482fcf5b984e9380f847b42e53a30a6a6d038132dcfb37ff51d82454b3e"
+  },
+  "12709:1442": {
+    "id": "12709:1442",
+    "hash": "h36yvNao24",
+    "name": "time",
+    "folder": "time-solid",
+    "variant": "solid",
+    "category": "operation",
+    "filename": "time-solid/24",
+    "filepath": "time-solid/24.svg",
+    "aliases": [],
+    "component": {
+      "key": "984b69e4114b47c9f05a211fa2155745968d26c4",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "12709:1442",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/ovY/my5/wsWSY4LAmakh2Yvy/12709_1442.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSWNWIZ6J%2F20240728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240728T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c027a8c61a9f93953a9cf193fa6504fd95e1b92e47ab90aa6511c76cbc24b8c5",
+      "name": "size=24",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-07-25T08:12:42.777Z",
+      "updated_at": "2024-07-25T08:12:42.777Z",
+      "containing_frame": {
+        "name": "Operation / Time",
+        "nodeId": "12709:1436",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Operation / Time",
+          "nodeId": "12709:1436"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "fb41d63db1efab1c1d7def584fc23d0606a6e98cd18af86a1bae272c5ec69a32"
+  },
+  "12709:1446": {
+    "id": "12709:1446",
+    "hash": "4RrbAXxVj0",
+    "name": "time",
+    "folder": "time-solid",
+    "variant": "solid",
+    "category": "operation",
+    "filename": "time-solid/20",
+    "filepath": "time-solid/20.svg",
+    "aliases": [],
+    "component": {
+      "key": "c0566c221d2e383419631ca51bb660f177e25c05",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "12709:1446",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/J4B/8rY/ddg6vAMVB7yjz1tg/12709_1446.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSWNWIZ6J%2F20240728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240728T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8094b7534c8260652b7c325b1eda5d113f5bc4af1099e2373f69a2d6a84c66ad",
+      "name": "size=20",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-07-25T08:12:42.783Z",
+      "updated_at": "2024-07-25T08:12:42.783Z",
+      "containing_frame": {
+        "name": "Operation / Time",
+        "nodeId": "12709:1436",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Operation / Time",
+          "nodeId": "12709:1436"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "b22f52ab49571b2f5725faa0d15da3c978de5ce950534446e1166709754b8e1b"
   }
 }
