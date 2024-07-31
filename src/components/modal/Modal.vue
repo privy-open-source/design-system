@@ -270,7 +270,7 @@ function closeOnBackdrop (): void {
 }
 
 onKeyStroke('Escape', () => {
-  if (!props.noCloseOnEsc)
+  if (!props.noCloseOnEsc && model.value)
     close()
 }, { eventName: 'keydown' })
 

@@ -10500,5 +10500,34 @@
         "hash": "fd547145fcc64037a8a298a3a97e35ca2ba4adfd50de2f314f0f1c67121f8c56"
       }
     ]
+  },
+  {
+    "name": "time",
+    "aliases": [],
+    "category": "operation",
+    "folder": "time-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "time-solid/32",
+        "path": "time-solid/32.svg",
+        "hash": "bdd28883f0a4b0458814e5bc420be5c43d43fcbd60f89d9e04e45aeab6c77307"
+      },
+      {
+        "name": "time-solid/16",
+        "path": "time-solid/16.svg",
+        "hash": "b3d44482fcf5b984e9380f847b42e53a30a6a6d038132dcfb37ff51d82454b3e"
+      },
+      {
+        "name": "time-solid/24",
+        "path": "time-solid/24.svg",
+        "hash": "fb41d63db1efab1c1d7def584fc23d0606a6e98cd18af86a1bae272c5ec69a32"
+      },
+      {
+        "name": "time-solid/20",
+        "path": "time-solid/20.svg",
+        "hash": "b22f52ab49571b2f5725faa0d15da3c978de5ce950534446e1166709754b8e1b"
+      }
+    ]
   }
 ]
