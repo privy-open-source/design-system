@@ -6244,45 +6244,6 @@
     },
     "filehash": "a93efa8d5623bce549006ece7823ae519a20736034de035daeb2166721aabc25"
   },
-  "2437:2840": {
-    "id": "2437:2840",
-    "hash": "HHOz4CXv6h",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/spot-hero-large",
-    "filepath": "test/spot-hero-large.svg",
-    "aliases": [],
-    "component": {
-      "key": "17c76400984e1d901912db30714f611056b25ede",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:2840",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/Xwm/SJH/0nMGQ0mP817MRCN7/2437_2840.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5a190cd5d649f33aef41d94be4448d6200e685807caa4cb5e29c4c30be1eaa9a",
-      "name": "type=spot hero large, Mode=Dark",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.130Z",
-      "updated_at": "2024-07-15T07:16:51.568Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "7f6d20ea82c4b530c8ccf5833a2b1338fc59fc69bf8ab808b8f74145dfcebd47"
-  },
   "913:19297": {
     "id": "913:19297",
     "hash": "c7KMV96Kog",
@@ -6364,45 +6325,6 @@
       }
     },
     "filehash": "6f5b26716d9e99aa84ff3472c27c4abbdeb65cee53557f0a31c633157f035f80"
-  },
-  "2437:974": {
-    "id": "2437:974",
-    "hash": "GUocyfCeqz",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/spot-hero-large",
-    "filepath": "test/spot-hero-large.svg",
-    "aliases": [],
-    "component": {
-      "key": "216092778ac3c6c26f059da919252a2c7ef62439",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:974",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/iRs/bdg/3huWHMFbheRFRnG3/2437_974.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=bea05f17649601c38e7c3393a93594c68984d6adcac75bf8f06f77017d5add5e",
-      "name": "type=spot hero large, Mode=Light",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.179Z",
-      "updated_at": "2024-07-15T07:16:51.586Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "b28d83a3ba4ab5bf14bed4d54c0f2337af66953e7b705f963d1877b82cdd9fb6"
   },
   "772:6985": {
     "id": "772:6985",
@@ -6816,45 +6738,6 @@
       }
     },
     "filehash": "4eae14ffa40879c7821a712dd8f1636714efb83a3c3b1e73585f08fc36284e8b"
-  },
-  "2437:2968": {
-    "id": "2437:2968",
-    "hash": "R6zcF6XSCk",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/spot-hero-small",
-    "filepath": "test/spot-hero-small.svg",
-    "aliases": [],
-    "component": {
-      "key": "4033be90a5fa825653b3280cd997bf913e99e1b2",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:2968",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/KHs/wsP/fqzrW6dKD2CuOwSo/2437_2968.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2d46bedc3828ddaf0d6aa9e5f9753691bd1f0350acba626755214bf349cbbfe3",
-      "name": "type=spot hero small, Mode=Dark",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.172Z",
-      "updated_at": "2024-07-15T07:16:51.673Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "d630eecca48d5e2be977e0c5dd26707efa0947c9768a5240ab9e1d056e571f0c"
   },
   "534:2464": {
     "id": "534:2464",
@@ -7521,45 +7404,6 @@
     },
     "filehash": "63626b6eb612e455a47a58c80b65c943b6ece9f950b93fce7ee424a208b8e663"
   },
-  "2437:848": {
-    "id": "2437:848",
-    "hash": "d3CkFXZsoW",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/spot-hero-small",
-    "filepath": "test/spot-hero-small.svg",
-    "aliases": [],
-    "component": {
-      "key": "61456189546ae701337d3cad7fba3b6456ad977d",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:848",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/iMa/gf6/GlXvO1B2i9KXefGy/2437_848.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=caf5762b6d7aea5ed14f645d973974f5e77e79b0c4b761324eb5437341a8ad69",
-      "name": "type=spot hero small, Mode=Light",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.113Z",
-      "updated_at": "2024-07-15T07:16:51.799Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "644a2bf2214415cf490b7d7c14c076a08847102b0282f47c5cfc79750ea988e5"
-  },
   "746:10926": {
     "id": "746:10926",
     "hash": "6Wek0T4zV4",
@@ -7642,45 +7486,6 @@
       }
     },
     "filehash": "ceb33e6a290935c0ad1a1f7620cdb7a2e09b74a82c78641d1645119f6d1aa6a8"
-  },
-  "2437:596": {
-    "id": "2437:596",
-    "hash": "NFOUiAPEBs",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/dot-large",
-    "filepath": "test/dot-large.svg",
-    "aliases": [],
-    "component": {
-      "key": "676716b942b412915f706f3b86cd8bb09c087c87",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:596",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/gsM/tZc/e5xSIqxz2y4WIWey/2437_596.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=dc5bd88867ab1b8593244ed81b1d4713afc7b06d1867e763ddba7bb7ffd7f0af",
-      "name": "type=dot large, Mode=Light",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.138Z",
-      "updated_at": "2024-07-15T07:16:51.822Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "6ada4ddf753d72581b2f9fbec90176cddcdb49913b79f88fe7b99a2cc7204b65"
   },
   "913:19340": {
     "id": "913:19340",
@@ -8350,45 +8155,6 @@
     },
     "filehash": "208a890941fc8cb3a5cf56c49a8710e10c5480a1fa2700fbb7026bca770f5b73"
   },
-  "2437:3346": {
-    "id": "2437:3346",
-    "hash": "ofrMrE0yxx",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/dot-small",
-    "filepath": "test/dot-small.svg",
-    "aliases": [],
-    "component": {
-      "key": "bc597a7f4abd176a2da4112624147d0c51279993",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:3346",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/0gu/CRl/aBpznvVHtaxND8Ni/2437_3346.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=de5f2030e28fadac6c8a896bee3bac7fea337c380e7840b1e8c550fc1972d01e",
-      "name": "type=dot small, Mode=Dark",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.122Z",
-      "updated_at": "2024-07-15T07:16:52.101Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "0f00f29261bd2d99eeb5cbe69d88566ee712b3f5a3336daca591ba3cc4280c1a"
-  },
   "772:6964": {
     "id": "772:6964",
     "hash": "l4CAohkIig",
@@ -8430,45 +8196,6 @@
       }
     },
     "filehash": "6a81dbdf20324310dc458b6fc7328af4903bf7d2398ca2feff4f8e90f8b81d8f"
-  },
-  "2437:722": {
-    "id": "2437:722",
-    "hash": "yZttGcPphk",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/spot",
-    "filepath": "test/spot.svg",
-    "aliases": [],
-    "component": {
-      "key": "c3de28b2571f1d2233903a7df403bc230590524f",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:722",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/8w3/xlg/NCFNrWAZtcwlKaU4/2437_722.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d3c9430f9360ff7a664d028eea0ab037aaff464948d1a6b52ef73c73202971a7",
-      "name": "type=spot, Mode=Light",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.155Z",
-      "updated_at": "2024-07-15T07:16:52.112Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "0422cc89f4622cc94f8e484d4c12e7de7f4bbee194a4e33fba261ec21ddad4d9"
   },
   "534:2448": {
     "id": "534:2448",
@@ -10025,45 +9752,6 @@
     },
     "filehash": "806b72fdbc5c1f0b6aa624ec00f3291652dc2aa2f5cc93b9bdb608c967d2565b"
   },
-  "2437:3094": {
-    "id": "2437:3094",
-    "hash": "P6njNrs4SU",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/spot",
-    "filepath": "test/spot.svg",
-    "aliases": [],
-    "component": {
-      "key": "a4688705b8cc01b777d26df21324bd0c3743453f",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:3094",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/SJH/ZaM/OZpuQWSewwu2uq1C/2437_3094.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=86326a9ad28df043dedee59a2c39de175fcd4d0f6a2b80f431149e03216739d6",
-      "name": "type=spot, Mode=Dark",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.163Z",
-      "updated_at": "2024-07-15T07:16:51.988Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "96e55f9563f453201621df97942263e7c1c45e4fe8c1f0580a79985545b9c9ee"
-  },
   "1723:6215": {
     "id": "1723:6215",
     "hash": "RZvMBy6Zxk",
@@ -10398,45 +10086,6 @@
     },
     "filehash": "bdf63b79fcef50629c74b59f694f089665571a0749cde14f17683bd7c70b21c2"
   },
-  "2437:3220": {
-    "id": "2437:3220",
-    "hash": "gVD1Yvls62",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/dot-large",
-    "filepath": "test/dot-large.svg",
-    "aliases": [],
-    "component": {
-      "key": "fadad1fd7f178dd5f3a4390ff81105e386984a96",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:3220",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/nGE/Vp2/RQqMgYPNxDS2vpsx/2437_3220.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ce8338a641080f2b8f35fe006a2227eb6ba42e52431ac0367567eeb682aae26c",
-      "name": "type=dot large, Mode=Dark",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.146Z",
-      "updated_at": "2024-07-15T07:16:52.336Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "11e54d352aaefdbf4762c6b035e09da8a4f8df7ee836774d14c0c62bfe391e2f"
-  },
   "746:10605": {
     "id": "746:10605",
     "hash": "MSWtxYil8n",
@@ -10520,45 +10169,6 @@
       }
     },
     "filehash": "489518d207d8157307cd4a2a3bfa73ab82f28fbc7a6c23931ae0254dc2a69be8"
-  },
-  "2437:522": {
-    "id": "2437:522",
-    "hash": "sbomDcnxTH",
-    "name": "test",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "category": "feature",
-    "filename": "test/dot-small",
-    "filepath": "test/dot-small.svg",
-    "aliases": [],
-    "component": {
-      "key": "fd8940e0112926b374367d9a6ec6f8400efa10a3",
-      "file_key": "9SwvOeQ4BBLnN57fOAHuhN",
-      "node_id": "2437:522",
-      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/C5C/zgU/cirhb61gszuCvCEh/2437_522.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCTXMUGCGK%2F20240714%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240714T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d3354ebf4c93934ee3cf78280c1eb98364127a1540968d5a8e461c68eb713d7f",
-      "name": "type=dot small, Mode=Light",
-      "description": "",
-      "description_rt": "",
-      "created_at": "2024-06-11T08:58:52.104Z",
-      "updated_at": "2024-07-15T07:16:52.368Z",
-      "containing_frame": {
-        "name": "Feature / Test",
-        "nodeId": "2437:521",
-        "pageId": "2:9345",
-        "pageName": "illustrations - five variants",
-        "backgroundColor": "rgba(0, 0, 0, 0)",
-        "containingStateGroup": {
-          "name": "Feature / Test",
-          "nodeId": "2437:521"
-        }
-      },
-      "user": {
-        "id": "958296800842783627",
-        "handle": "Product Designer",
-        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
-      }
-    },
-    "filehash": "63f99fdea8f7bc8800cc72e91481eae56ea6a1eb89893945a6c1ceb19115c717"
   },
   "694:3569": {
     "id": "694:3569",
