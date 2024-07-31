@@ -1178,65 +1178,6 @@
     ]
   },
   {
-    "name": "test",
-    "aliases": [],
-    "category": "feature",
-    "folder": "test",
-    "variant": "illustrations-five-variants",
-    "files": [
-      {
-        "name": "test/spot-hero-large",
-        "path": "test/spot-hero-large.svg",
-        "hash": "7f6d20ea82c4b530c8ccf5833a2b1338fc59fc69bf8ab808b8f74145dfcebd47"
-      },
-      {
-        "name": "test/spot-hero-large",
-        "path": "test/spot-hero-large.svg",
-        "hash": "b28d83a3ba4ab5bf14bed4d54c0f2337af66953e7b705f963d1877b82cdd9fb6"
-      },
-      {
-        "name": "test/spot-hero-small",
-        "path": "test/spot-hero-small.svg",
-        "hash": "d630eecca48d5e2be977e0c5dd26707efa0947c9768a5240ab9e1d056e571f0c"
-      },
-      {
-        "name": "test/spot-hero-small",
-        "path": "test/spot-hero-small.svg",
-        "hash": "644a2bf2214415cf490b7d7c14c076a08847102b0282f47c5cfc79750ea988e5"
-      },
-      {
-        "name": "test/dot-large",
-        "path": "test/dot-large.svg",
-        "hash": "6ada4ddf753d72581b2f9fbec90176cddcdb49913b79f88fe7b99a2cc7204b65"
-      },
-      {
-        "name": "test/dot-small",
-        "path": "test/dot-small.svg",
-        "hash": "0f00f29261bd2d99eeb5cbe69d88566ee712b3f5a3336daca591ba3cc4280c1a"
-      },
-      {
-        "name": "test/spot",
-        "path": "test/spot.svg",
-        "hash": "0422cc89f4622cc94f8e484d4c12e7de7f4bbee194a4e33fba261ec21ddad4d9"
-      },
-      {
-        "name": "test/spot",
-        "path": "test/spot.svg",
-        "hash": "96e55f9563f453201621df97942263e7c1c45e4fe8c1f0580a79985545b9c9ee"
-      },
-      {
-        "name": "test/dot-large",
-        "path": "test/dot-large.svg",
-        "hash": "11e54d352aaefdbf4762c6b035e09da8a4f8df7ee836774d14c0c62bfe391e2f"
-      },
-      {
-        "name": "test/dot-small",
-        "path": "test/dot-small.svg",
-        "hash": "63f99fdea8f7bc8800cc72e91481eae56ea6a1eb89893945a6c1ceb19115c717"
-      }
-    ]
-  },
-  {
     "name": "internet",
     "aliases": [
       "not-connected"
