@@ -50,7 +50,7 @@
     "@vitest/browser": "0.25.8",
     "@vitest/coverage-c8": "0.24.5",
     "@vue/eslint-config-typescript": "13.0.0",
-    "autoprefixer": "10.4.19",
+    "autoprefixer": "10.4.20",
     "browserslist-to-esbuild": "2.1.1",
     "eslint": "8.57.0",
     "eslint-config-standard-with-typescript": "21.0.1",
