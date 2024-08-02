@@ -6,12 +6,10 @@ import {
   shallowRef,
   watch,
 } from 'vue-demi'
-import type * as PDFJS from 'pdfjs-dist'
 import type {
-  PDFViewer,
-  PDFLinkService,
-  EventBus,
-} from 'pdfjs-dist/web/pdf_viewer'
+  PDFJS,
+  PDFJSViewer,
+} from './pdfjs'
 import useLoading from '../../overlay/utils/use-loading'
 import { useClamp, useMax } from '@vueuse/math'
 import { createEventHook } from '@vueuse/core'
@@ -30,10 +28,10 @@ export interface OpenDocConfig {
 
 export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivElement>) {
   const pdfDoc         = shallowRef<PDFJS.PDFDocumentProxy>()
-  const pdfEventBus    = shallowRef<EventBus>()
-  const pdfViewer      = shallowRef<PDFViewer>()
+  const pdfEventBus    = shallowRef<PDFJSViewer.EventBus>()
+  const pdfViewer      = shallowRef<PDFJSViewer.PDFViewer>()
   const pdfLoadingTask = shallowRef<PDFJS.PDFDocumentLoadingTask>()
-  const pdfLinkService = shallowRef<PDFLinkService>()
+  const pdfLinkService = shallowRef<PDFJSViewer.PDFLinkService>()
 
   const totalPage = computed(() => pdfDoc.value?.numPages ?? 0)
   const scale     = useClamp(1, 0.1, 2)
@@ -44,7 +42,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
 
   const loadEvent  = createEventHook<PDFJS.PDFDocumentProxy>()
   const errorEvent = createEventHook<Error>()
-  const readyEvent = createEventHook<PDFViewer>()
+  const readyEvent = createEventHook<PDFJSViewer.PDFViewer>()
 
   async function openDoc (url: string, password?: string, config: Partial<OpenDocConfig> = {}) {
     loading.value = true

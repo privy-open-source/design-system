@@ -3796,7 +3796,7 @@ __metadata:
     lodash-es: "npm:4.17.21"
     marked: "npm:^13.0.0"
     nanodelay: "npm:2.0.2"
-    pdfjs-dist: "npm:^3.11.174"
+    pdfjs-dist: "npm:^4.0.0"
     postcss: "npm:8.4.40"
     postcss-hexrgba: "npm:^2.1.0"
     postcss-import: "npm:16.1.0"
@@ -3946,7 +3946,7 @@ __metadata:
     marked: "npm:13.0.3"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.12.4"
-    pdfjs-dist: "npm:3.11.174"
+    pdfjs-dist: "npm:4.5.136"
     postcss-custom-properties: "npm:13.3.12"
     postcss-hexrgba: "npm:2.1.0"
     postcss-lighten-darken: "npm:0.9.0"
@@ -15140,10 +15140,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path2d-polyfill@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "path2d-polyfill@npm:2.0.1"
-  checksum: 10/82b26ef1a737560bc7a974919aec5d1c316d923b39cdf3aae2f20cd77b08d6c5256a5605f178d7dc010de7c886eeac0c263a590653687f8aea60fabbc0582890
+"path2d@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "path2d@npm:0.2.1"
+  checksum: 10/16dd250206069417cc9e7377a8f077a4f385e1b0ed121d9766420f592b5519fad8c160b85205561fcdd8cf5169c779deb9e2e883ed61b21980c9201c6df198f8
   languageName: node
   linkType: hard
 
@@ -15182,18 +15182,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:3.11.174, pdfjs-dist@npm:^3.11.174":
-  version: 3.11.174
-  resolution: "pdfjs-dist@npm:3.11.174"
+"pdfjs-dist@npm:4.5.136, pdfjs-dist@npm:^4.0.0":
+  version: 4.5.136
+  resolution: "pdfjs-dist@npm:4.5.136"
   dependencies:
     canvas: "npm:^2.11.2"
-    path2d-polyfill: "npm:^2.0.1"
+    path2d: "npm:^0.2.1"
   dependenciesMeta:
     canvas:
       optional: true
-    path2d-polyfill:
+    path2d:
       optional: true
-  checksum: 10/f739ffd451718d214e664c943a066dcb4020bc1ed92b5639ae38d6a25ef0bddcc05b35a68c3dfeb95fcfb852377bcb2aef935c780312a229f1f34e682627a8ae
+  checksum: 10/500c01a778479bd9e3e206d5e79347f0e5dcea76fe7478f1729ad1160b01696a10bbab3b5a3374068274759949be6604d4178abe653f129c0001882139b6dc2c
   languageName: node
   linkType: hard
 

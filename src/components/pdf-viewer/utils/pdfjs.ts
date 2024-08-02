@@ -1,5 +1,5 @@
 import type * as PDFJS from 'pdfjs-dist'
-import type * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer'
+import type * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer.mjs'
 import { withBase } from 'ufo'
 import { getCDN } from '../../global/store'
 
@@ -12,7 +12,7 @@ async function importPdfJS () {
     const pdfjs = await import('pdfjs-dist')
 
     if (typeof window !== 'undefined' && 'Worker' in window)
-      pdfjs.GlobalWorkerOptions.workerSrc = withBase(`pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`, getCDN())
+      pdfjs.GlobalWorkerOptions.workerSrc = withBase(`pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`, getCDN())
 
     pdfjsLib = pdfjs
   }
@@ -24,7 +24,7 @@ async function importPdfJSViewer () {
   await importPdfJS()
 
   if (!pdfjsViewer)
-    pdfjsViewer = await import('pdfjs-dist/web/pdf_viewer')
+    pdfjsViewer = await import('pdfjs-dist/web/pdf_viewer.mjs')
 
   return pdfjsViewer
 }
@@ -62,3 +62,7 @@ export async function createLinkService (...params: ConstructorParameters<typeof
 
   return new pdfjsViewer.PDFLinkService(...params)
 }
+
+export type * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer.mjs'
+
+export type * as PDFJS from 'pdfjs-dist'

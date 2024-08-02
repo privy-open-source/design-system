@@ -115,9 +115,8 @@ import PdfError from './PdfError.vue'
 import { useIdle } from './utils/use-idle'
 import PdfObjects from '../pdf-object/PdfObjects.vue'
 import { useViewer } from './utils/use-viewer'
-import type { PDFViewer } from 'pdfjs-dist/web/pdf_viewer'
-import type { PDFDocumentProxy } from 'pdfjs-dist'
 import type { OpenDocConfig } from './utils/use-viewer'
+import type { PDFJS, PDFJSViewer } from './utils/pdfjs'
 
 const props = defineProps({
   src: {
@@ -155,8 +154,8 @@ const props = defineProps({
 })
 
 const emit = defineEmits<{
-  'ready': [PDFViewer],
-  'loaded': [PDFDocumentProxy],
+  'ready': [PDFJSViewer.PDFViewer],
+  'loaded': [PDFJS.PDFDocumentProxy],
   'error': [Error],
   'error-password': [Error],
   'update:page': [number],
@@ -274,7 +273,7 @@ interface PdfViewerSlotScope {
   page: number,
   scale: number,
   totalPage: number,
-  doc: PDFDocumentProxy,
+  doc: PDFJS.PDFDocumentProxy,
   zoomIn: () => void,
   zoomOut: () => void,
   next: () => void,
