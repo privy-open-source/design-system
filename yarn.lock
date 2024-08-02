@@ -3818,7 +3818,7 @@ __metadata:
     vue-collapsed: "npm:^1.2.5"
     vue-content-loader: "npm:^2.0.1"
     vue-demi: "npm:0.14.10"
-    vue-router: "npm:4.4.0"
+    vue-router: "npm:4.4.2"
     vue-tsc: "npm:2.0.29"
     vuedraggable: "npm:next"
     webfontloader: "npm:1.6.28"
@@ -5690,6 +5690,13 @@ __metadata:
   version: 6.6.1
   resolution: "@vue/devtools-api@npm:6.6.1"
   checksum: 10/040f7307904e23fd02a3f65b024ac7fe71b9e1f5f66244a5ba30d9f3d1b58a79dd5a3b46e8ed4c6a51a153688a356f776bb3260f801df39a7a3cf972c9c79505
+  languageName: node
+  linkType: hard
+
+"@vue/devtools-api@npm:^6.6.3":
+  version: 6.6.3
+  resolution: "@vue/devtools-api@npm:6.6.3"
+  checksum: 10/3566ca63d5dc4aed8be0cd7c1d326f6eca13e2f1f4071f1be6e7eeaee9723f6475ad6c6cfa2b3801f432bb4d81e373c8743786bd33b1a6e11e724323f4868f6e
   languageName: node
   linkType: hard
 
@@ -19707,7 +19714,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-router@npm:4.4.0, vue-router@npm:^4.4.0":
+"vue-router@npm:4.4.2":
+  version: 4.4.2
+  resolution: "vue-router@npm:4.4.2"
+  dependencies:
+    "@vue/devtools-api": "npm:^6.6.3"
+  peerDependencies:
+    vue: ^3.2.0
+  checksum: 10/84921334919f0f90b0c60fec20912dec0ba97e6974cb6fbcf04c47235da44e032a1e06391880a1f5ca937efc5abf520ca8f8f59e9a3377d9cf67f17d3858862c
+  languageName: node
+  linkType: hard
+
+"vue-router@npm:^4.4.0":
   version: 4.4.0
   resolution: "vue-router@npm:4.4.0"
   dependencies:
