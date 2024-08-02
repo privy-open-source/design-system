@@ -106,7 +106,7 @@
     "lodash-es": "4.17.21",
     "marked": "^13.0.0",
     "nanodelay": "2.0.2",
-    "pdfjs-dist": "^3.11.174",
+    "pdfjs-dist": "^4.0.0",
     "postcss-hexrgba": "^2.1.0",
     "postcss-lighten-darken": "^0.9.0",
     "pspdfkit": "^2024.3.1",
