@@ -464,4 +464,4 @@ To disable object resize, set prop `resizable` to `false`.
 ## See Also
 
 - [PDF Viewer](/components/pdf-viewer/)
-- [Online PDF Debugger](./debugger)
+- [Online PDF Debugger](../../tools/pdf-coordinate-finder)

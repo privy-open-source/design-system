@@ -3741,6 +3741,7 @@ __metadata:
     "@juggle/resize-observer": "npm:^3.4.0"
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/eslint-config-persona": "workspace:^"
+    "@privyid/ghoulscript": "npm:^0.1.0-alpha.4"
     "@privyid/persona-icon": "workspace:^"
     "@privyid/persona-ilustration": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
@@ -3846,6 +3847,24 @@ __metadata:
     typescript: 5.5.4
   languageName: unknown
   linkType: soft
+
+"@privyid/ghostscript@npm:^0.1.0-alpha.1":
+  version: 0.1.0-alpha.1
+  resolution: "@privyid/ghostscript@npm:0.1.0-alpha.1"
+  checksum: 10/0550058a3fe350a728fbd63c8688d8f0181a45b740abc6ce266cbd50ca51a2cb0e253c2474323ef471963bb2720e9608104ee0e61878c5b0c771d28be533457b
+  languageName: node
+  linkType: hard
+
+"@privyid/ghoulscript@npm:^0.1.0-alpha.4":
+  version: 0.1.0-alpha.4
+  resolution: "@privyid/ghoulscript@npm:0.1.0-alpha.4"
+  dependencies:
+    "@privyid/ghostscript": "npm:^0.1.0-alpha.1"
+    defu: "npm:^6.1.4"
+    ufo: "npm:^1.5.3"
+  checksum: 10/6c8e87086d2ac1dad93999c8ea2ca17fcdd1311b73a6a856d24d08f4b7b3df4964ed82d736e0dee43106127e4b233098c54bbcc75b5ce8886eef34ff1162e985
+  languageName: node
+  linkType: hard
 
 "@privyid/persona-icon@workspace:^, @privyid/persona-icon@workspace:packages/persona-icon":
   version: 0.0.0-use.local

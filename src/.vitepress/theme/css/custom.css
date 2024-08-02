@@ -255,3 +255,7 @@
     }
   }
 }
+
+.VPNav .divider {
+  @apply h-0 my-0;
+}

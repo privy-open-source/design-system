@@ -38,6 +38,21 @@ export default defineConfig({
         ],
       },
       { text: 'Ecosystem', link: '/ecosystem/' },
+      {
+        text : 'Tools',
+        items: [
+          {
+            text  : 'PDF Coordinate Finder',
+            link  : '/tools/pdf-coordinate-finder',
+            target: '_blank',
+          },
+          {
+            text  : 'PDF Optimizer',
+            link  : '/tools/pdf-optimizer',
+            target: '_blank',
+          },
+        ],
+      },
     ],
     outline    : [2, 3],
     socialLinks: [{ icon: 'github', link: 'https://github.com/privy-open-source/design-system' }],
