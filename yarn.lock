@@ -3741,7 +3741,7 @@ __metadata:
     "@juggle/resize-observer": "npm:^3.4.0"
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/eslint-config-persona": "workspace:^"
-    "@privyid/ghoulscript": "npm:^0.1.0-alpha.4"
+    "@privyid/ghoulscript": "npm:0.1.0-alpha.4"
     "@privyid/persona-icon": "workspace:^"
     "@privyid/persona-ilustration": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
@@ -3855,7 +3855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@privyid/ghoulscript@npm:^0.1.0-alpha.4":
+"@privyid/ghoulscript@npm:0.1.0-alpha.4":
   version: 0.1.0-alpha.4
   resolution: "@privyid/ghoulscript@npm:0.1.0-alpha.4"
   dependencies:
