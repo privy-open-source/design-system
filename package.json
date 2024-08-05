@@ -1,7 +1,7 @@
 {
   "name": "@privyid/design-system",
   "version": "1.0.0-rc.7",
-  "packageManager": "yarn@4.3.1",
+  "packageManager": "yarn@4.4.0",
   "private": true,
   "type": "module",
   "scripts": {
