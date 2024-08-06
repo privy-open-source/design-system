@@ -68,7 +68,7 @@
     "jest-extended": "4.0.2",
     "lint-staged": "15.2.8",
     "nanodelay": "2.0.2",
-    "postcss": "8.4.40",
+    "postcss": "8.4.41",
     "postcss-import": "16.1.0",
     "postcss-nested": "6.2.0",
     "sharp": "0.33.4",
