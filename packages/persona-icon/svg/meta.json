@@ -10502,6 +10502,35 @@
     ]
   },
   {
+    "name": "nfc",
+    "aliases": [],
+    "category": "technology",
+    "folder": "nfc-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "nfc-solid/16",
+        "path": "nfc-solid/16.svg",
+        "hash": "246ee35298c30b535f7579c069787cd9f4ebd7c54da4575d6c862e060bbb8714"
+      },
+      {
+        "name": "nfc-solid/20",
+        "path": "nfc-solid/20.svg",
+        "hash": "aa68e66201ff2ae5fd239256066a022d682dff9dabf56e5a86894c74fe45621c"
+      },
+      {
+        "name": "nfc-solid/24",
+        "path": "nfc-solid/24.svg",
+        "hash": "6a507be103cbbdf9ab9e86c6bd86506a3466d9c1370d4de489684fa4dfe59a80"
+      },
+      {
+        "name": "nfc-solid/32",
+        "path": "nfc-solid/32.svg",
+        "hash": "3b0005e25fdb1339350a4c7968cde6d3b5712a97e4b59386b7e6b4a8696ffd7a"
+      }
+    ]
+  },
+  {
     "name": "time",
     "aliases": [],
     "category": "operation",
