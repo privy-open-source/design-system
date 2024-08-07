@@ -56283,6 +56283,162 @@
     },
     "filehash": "537606d887532373b3381e666237b4dc6f05600741029fef0ec5b55105b154ec"
   },
+  "12818:4286": {
+    "id": "12818:4286",
+    "hash": "LPCj69M0pZ",
+    "name": "nfc",
+    "folder": "nfc-solid",
+    "variant": "solid",
+    "category": "technology",
+    "filename": "nfc-solid/16",
+    "filepath": "nfc-solid/16.svg",
+    "aliases": [],
+    "component": {
+      "key": "dfcab3872aef2cc8d1914a0cc0eea4a3115736ec",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "12818:4286",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/Jmi/YVl/V6Wn81Mbr8JotEEj/12818_4286.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWC7YPQYKJL%2F20240804%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240804T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=047aa319e1ad9affdb4b441461845a1a50a9a34f86b19465c046eb5114eb6b87",
+      "name": "size=16",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-06T10:12:40.601Z",
+      "updated_at": "2024-08-06T10:12:40.601Z",
+      "containing_frame": {
+        "name": "Technology / NFC",
+        "nodeId": "12818:4285",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Technology / NFC",
+          "nodeId": "12818:4285"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "246ee35298c30b535f7579c069787cd9f4ebd7c54da4575d6c862e060bbb8714"
+  },
+  "12818:4290": {
+    "id": "12818:4290",
+    "hash": "YAHgtjtFx5",
+    "name": "nfc",
+    "folder": "nfc-solid",
+    "variant": "solid",
+    "category": "technology",
+    "filename": "nfc-solid/20",
+    "filepath": "nfc-solid/20.svg",
+    "aliases": [],
+    "component": {
+      "key": "d96e1f2c0ceefe866003cf78d4793390e27f490f",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "12818:4290",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/yyt/CJN/dkvhuP1dXNWK7Ve7/12818_4290.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWC7YPQYKJL%2F20240804%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240804T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b70bd5e3f7f0f0c7fc3ef89738f113e8b7ce42550c5b08b4c9d73dbad9d121e2",
+      "name": "size=20",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-06T10:12:40.609Z",
+      "updated_at": "2024-08-06T10:12:40.609Z",
+      "containing_frame": {
+        "name": "Technology / NFC",
+        "nodeId": "12818:4285",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Technology / NFC",
+          "nodeId": "12818:4285"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "aa68e66201ff2ae5fd239256066a022d682dff9dabf56e5a86894c74fe45621c"
+  },
+  "12818:4294": {
+    "id": "12818:4294",
+    "hash": "80iz3wzxa9",
+    "name": "nfc",
+    "folder": "nfc-solid",
+    "variant": "solid",
+    "category": "technology",
+    "filename": "nfc-solid/24",
+    "filepath": "nfc-solid/24.svg",
+    "aliases": [],
+    "component": {
+      "key": "5c5542169bb1c72c6c6f5b8232d6be6d74371b79",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "12818:4294",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/o17/6QK/tv234SxSurmNF2xB/12818_4294.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWC7YPQYKJL%2F20240804%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240804T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a5b07f4cae2773331739880ac8002c644aa5f1978e1e14487d11ce2f921820ba",
+      "name": "size=24",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-06T10:12:40.615Z",
+      "updated_at": "2024-08-06T10:12:40.615Z",
+      "containing_frame": {
+        "name": "Technology / NFC",
+        "nodeId": "12818:4285",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Technology / NFC",
+          "nodeId": "12818:4285"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "6a507be103cbbdf9ab9e86c6bd86506a3466d9c1370d4de489684fa4dfe59a80"
+  },
+  "12818:4298": {
+    "id": "12818:4298",
+    "hash": "cmRWv1fnXx",
+    "name": "nfc",
+    "folder": "nfc-solid",
+    "variant": "solid",
+    "category": "technology",
+    "filename": "nfc-solid/32",
+    "filepath": "nfc-solid/32.svg",
+    "aliases": [],
+    "component": {
+      "key": "402a003efc4bd663a4644b959692be38206fd376",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "12818:4298",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/bC9/kke/4oxMX3s4hX3as0wW/12818_4298.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWC7YPQYKJL%2F20240804%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240804T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=728783778e7941abf29ac36410d54c987f5b08f4a6c911165a806f68f543b754",
+      "name": "size=32",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-06T10:12:40.621Z",
+      "updated_at": "2024-08-06T10:12:40.621Z",
+      "containing_frame": {
+        "name": "Technology / NFC",
+        "nodeId": "12818:4285",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Technology / NFC",
+          "nodeId": "12818:4285"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "3b0005e25fdb1339350a4c7968cde6d3b5712a97e4b59386b7e6b4a8696ffd7a"
+  },
   "12709:1437": {
     "id": "12709:1437",
     "hash": "gYUQNfkkFf",
