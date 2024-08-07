@@ -3801,7 +3801,7 @@ __metadata:
     jest-extended: "npm:4.0.2"
     lint-staged: "npm:15.2.8"
     lodash-es: "npm:4.17.21"
-    marked: "npm:^13.0.0"
+    marked: "npm:^14.0.0"
     nanodelay: "npm:2.0.2"
     pdfjs-dist: "npm:^4.0.0"
     postcss: "npm:8.4.41"
@@ -3950,7 +3950,7 @@ __metadata:
     fuse.js: "npm:7.0.0"
     interactjs: "npm:1.10.27"
     lodash-es: "npm:4.17.21"
-    marked: "npm:13.0.3"
+    marked: "npm:14.0.0"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.12.4"
     pdfjs-dist: "npm:4.5.136"
@@ -13533,21 +13533,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:13.0.3":
-  version: 13.0.3
-  resolution: "marked@npm:13.0.3"
+"marked@npm:14.0.0, marked@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "marked@npm:14.0.0"
   bin:
     marked: bin/marked.js
-  checksum: 10/95daf69e316879a3be112793f203093b2646aeeaa1b7eedc6ea7902bff6af44da045cd35c723711645bc7d92dbe872101e5a36976b48164e1efc1356b12a4a57
-  languageName: node
-  linkType: hard
-
-"marked@npm:^13.0.0":
-  version: 13.0.2
-  resolution: "marked@npm:13.0.2"
-  bin:
-    marked: bin/marked.js
-  checksum: 10/73696e2d9d77995011f7a75acaa82a8d3b68cbe7072ad06cfdaddef9cb716022f07c3e51f91710db25338dda7736815d0aa9673950bf27c0ed325e6e3549db38
+  checksum: 10/5f69e58e177bde75fb6145127c939c096d05494c5dff92d73af8a550097d6631c82e919f8a375e3743379a2623418151086b925a902a2be123590b887716f2bb
   languageName: node
   linkType: hard
 
