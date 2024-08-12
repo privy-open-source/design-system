@@ -10,6 +10,7 @@ description: Base text-input form.
   import IconCheck from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
   import IconEmail from '@privyid/persona-icon/vue/email/20.vue'
   import PSpinner from '../spinner/Spinner.vue'
+  import PBanner from '../banner/Banner.vue'
 
   const value  = ref('')
   const result = ref('')
@@ -105,6 +106,10 @@ Add clear button to input with prop `clearable`.
 ## Prepend & Append
 Input has append & prepend feature to place content inside input field. But the content that can be inserted is limited, which is only an icon.
 
+<p-banner :dismissable="false">
+  When the prepend of <code>Textfield</code> was an icon, the color of icon must be <code>fg.subtle</code> (<code>.text-subtle</code>) and or <code>fg.subtlest</code> (<code>.text-subtlest</code>).
+</p-banner>
+
 ### Prepend
 <preview class="flex-col space-y-3">
   <p-input>
@@ -135,6 +140,10 @@ Input has append & prepend feature to place content inside input field. But the 
 ```
 
 ### Append
+
+<p-banner :dismissable="false" class="mt-4">
+  When the append of <code>Textfield</code> was an icon, the color of icon must be <a href="/design-system/foundation/colors/#brand">brand</a> and or <a href="/design-system/foundation/colors/#foregrounds">state(roles)</a> foregrounds. The spinner (circle loading) of <code>Textfield</code> must be <a href="/design-system/foundation/colors/#brand">brand</a>, <code>fg.subtle</code> (<code>.text-subtle</code>) and or <code>fg.subtlest</code> (<code>.text-subtlest</code>).
+</p-banner>
 
 <preview class="flex-col space-y-3">
   <p-input>

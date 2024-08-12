@@ -1009,9 +1009,9 @@
         {
           "id" : 3,
           "token" : "fg.warning",
-          "figma" : "main/orange/70",
-          "hex"   : "#8E6014",
-          "parentToken" : "$orange.70"
+          "figma" : "main/orange/60",
+          "hex"   : "#B07819",
+          "parentToken" : "$orange.60"
         },
         {
           "id" : 4,

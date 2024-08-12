@@ -111,8 +111,8 @@ const item = computed<ProgressLabel>(() => {
   }
 
   &__point {
-    @apply w-7 h-7 rounded-full bg-subtle flex items-center justify-center text-default;
-    @apply dark:bg-dark-subtle dark:text-dark-default;
+    @apply w-7 h-7 rounded-full bg-[color:var(--p-bg-bar-normal-state)] flex items-center justify-center text-default;
+    @apply dark:bg-[color:var(--p-bg-dark-bar-normal-state)] dark:text-dark-default;
   }
 
   &__bar {

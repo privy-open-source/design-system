@@ -133,10 +133,15 @@ description: Alert to convey information or actions
 
 ## Variants
 
-Banner have 2 variants: `info` and `danger`, default is `info`
+Banner have 3 variants: `info`, `warning` and `danger`, default is `info`
 
 <preview class="flex-col space-y-3">
   <p-banner variant="info">
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
+  </p-banner>
+  <p-banner variant="warning">
     Every sign will requires privy balance.
     Please make sure you have enough privy balance
     before sign the document(s)
@@ -151,6 +156,11 @@ Banner have 2 variants: `info` and `danger`, default is `info`
 ```vue
 <template>
   <p-banner variant="info">
+    Every sign will requires privy balance.
+    Please make sure you have enough privy balance
+    before sign the document(s)
+  </p-banner>
+  <p-banner variant="warning">
     Every sign will requires privy balance.
     Please make sure you have enough privy balance
     before sign the document(s)
@@ -246,7 +256,7 @@ Banner use local CSS variables on `.banner` for enhanced real-time customization
 
 | Props               |   Type    | Default | Description                                     |
 |---------------------|:---------:|:-------:|-------------------------------------------------|
-| `variant`           | `String`  | `info`  | Banner variant, valid value is `info`, `danger` |
+| `variant`           | `String`  | `info`  | Banner variant, valid value is `info`, `warning` & `danger` |
 | `dismissable`       | `Boolean` | `true`  | Show / Hide dismiss button                      |
 | `backgroundUrl`     | `String`  |    -    | Custom background image of banner               |
 | `backgroundDarkUrl` | `String`  |    -    | Custom background image of banner in Dark Mode  |

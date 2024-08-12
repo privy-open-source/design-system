@@ -1,1 +1,1 @@
-export type StyleVariant = 'info' | 'danger'
+export type StyleVariant = 'info' | 'danger' | 'warning'

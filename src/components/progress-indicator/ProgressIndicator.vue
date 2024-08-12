@@ -84,6 +84,11 @@ function setValue (value: number) {
 
 <style lang="postcss">
 .progress-indicator {
+  --p-bg-indicator-item: theme(backgroundColor.subtle.alpha);
+  --p-bg-dark-indicator-item: theme(backgroundColor.dark.subtle.alpha);
+  --p-bg-indicator-item-active: theme(backgroundColor.brand.accent);
+  --p-bg-dark-indicator-item-active: theme(backgroundColor.dark.brand.accent);
+
   @apply relative;
 
   &__container {
@@ -91,11 +96,13 @@ function setValue (value: number) {
   }
 
   &__item {
-    @apply bg-gray-50/30 cursor-pointer;
+    @apply bg-[color:var(--p-bg-indicator-item)] cursor-pointer;
+    @apply dark:bg-[color:var(--p-bg-dark-indicator-item)];
 
     &--active {
       @apply absolute top-0 left-0 transition-transform;
-      @apply bg-gray-50 pointer-events-none;
+      @apply bg-[color:var(--p-bg-indicator-item-active)] pointer-events-none;
+      @apply dark:bg-[color:var(--p-bg-dark-indicator-item-active)];
     }
   }
 

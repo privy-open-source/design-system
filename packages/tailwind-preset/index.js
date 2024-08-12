@@ -102,7 +102,7 @@ module.exports = {
         'state-emphasis': theme.colors.gray[0],
         'info'          : theme.colors.blue[60],
         'success'       : theme.colors.green[60],
-        'warning'       : theme.colors.orange[70],
+        'warning'       : theme.colors.orange[60],
         'danger'        : theme.colors.red[60],
         'dark'          : {
           'DEFAULT'       : theme.colors.gray[0],

@@ -69,8 +69,12 @@ const classNames = computed(() => {
 
 <style lang="postcss">
 .progressbar {
-  @apply bg-base w-full h-1 rounded-full overflow-hidden;
-  @apply dark:bg-dark-base;
+  /* --p-bg-progress-default: theme(backgroundColor.base.DEFAULT); */
+  --p-bg-progress-default: theme(backgroundColor.subtle.alpha);
+  --p-bg-dark-progress-default: theme(backgroundColor.dark.subtle.alpha);
+
+  @apply bg-[color:var(--p-bg-progress-default)] w-full h-1 rounded-full overflow-hidden;
+  @apply dark:[color:var(--p-bg-dark-progress-default)];
 
   &__bar {
     @apply transition-[width] will-change-[width] duration-75 ease-out;
