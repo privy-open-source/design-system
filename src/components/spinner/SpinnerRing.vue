@@ -1,7 +1,7 @@
 <template>
   <svg
     data-testid="spinner"
-    class="spinner spinner-ring"
+    class="spinner spinner--ring"
     width="1em"
     height="1em"
     viewBox="0 0 18 18"
