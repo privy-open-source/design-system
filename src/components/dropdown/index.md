@@ -9,6 +9,7 @@ description: Base dropdown button, suit for action menus
   import pDropdown from "./Dropdown.vue"
   import pDropdownItem from "./DropdownItem.vue"
   import pDropdownHeader from './DropdownHeader.vue'
+  import pAccordionItem from '../accordion/AccordionItem.vue'
   import Banner from '../banner/Banner.vue'
   import pCheckbox from '../checkbox/Checkbox.vue'
   import pRadio from '../radio/Radio.vue'
@@ -19,6 +20,7 @@ description: Base dropdown button, suit for action menus
 
   const show     = ref(false)
   const selected = ref('')
+  const sample = ref(false)
 </script>
 
 # Dropdown

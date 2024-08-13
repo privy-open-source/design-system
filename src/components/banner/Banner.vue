@@ -30,7 +30,8 @@
 
 <script lang="ts" setup>
 import IconInfo from '@privyid/persona-icon/vue/information-circle-solid/20.vue'
-import IconDanger from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
+import IconDanger from '@privyid/persona-icon/vue/exclamation-triangle-solid/20.vue'
+import IconWarning from '@privyid/persona-icon/vue/exclamation-circle-solid/20.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import type {
   PropType,
@@ -41,8 +42,9 @@ import { ref, computed } from 'vue-demi'
 import type { StyleVariant } from '.'
 
 const BannerIcons = {
-  danger: IconDanger,
-  info  : IconInfo,
+  danger : IconDanger,
+  info   : IconInfo,
+  warning: IconWarning,
 }
 
 const props = defineProps({
@@ -181,6 +183,16 @@ defineSlots<{
     .banner__icon {
       @apply text-danger;
       @apply dark:text-dark-danger;
+    }
+  }
+
+  &&--warning {
+    @apply bg-warning;
+    @apply dark:bg-dark-warning;
+
+    .banner__icon {
+      @apply text-warning;
+      @apply dark:text-dark-warning;
     }
   }
 
