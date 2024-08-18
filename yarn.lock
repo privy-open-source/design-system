@@ -3761,7 +3761,7 @@ __metadata:
     "@types/html-escaper": "npm:3.0.2"
     "@types/lodash-es": "npm:4.17.12"
     "@types/marked": "npm:6.0.0"
-    "@types/sanitize-html": "npm:2.11.0"
+    "@types/sanitize-html": "npm:2.13.0"
     "@types/scroll-into-view": "npm:1.16.4"
     "@types/webfontloader": "npm:1.6.38"
     "@types/zxcvbn": "npm:4.4.4"
@@ -3936,7 +3936,7 @@ __metadata:
     "@splidejs/splide": "npm:4.1.4"
     "@testing-library/dom": "npm:10.4.0"
     "@testing-library/user-event": "npm:14.5.2"
-    "@types/sanitize-html": "npm:2.11.0"
+    "@types/sanitize-html": "npm:2.13.0"
     "@vueuse/core": "npm:11.0.0"
     "@vueuse/math": "npm:11.0.0"
     "@zxing/browser": "npm:0.1.5"
@@ -4959,6 +4959,15 @@ __metadata:
   dependencies:
     htmlparser2: "npm:^8.0.0"
   checksum: 10/a901d55d31cd946a7fce0130cc7cf6bcf56602af9c87291be77d8149c60e7afc47c83ca74c67c2d84e6ba029fe9bbd6f14f89a8cb30fbd185766eebc5722c251
+  languageName: node
+  linkType: hard
+
+"@types/sanitize-html@npm:2.13.0":
+  version: 2.13.0
+  resolution: "@types/sanitize-html@npm:2.13.0"
+  dependencies:
+    htmlparser2: "npm:^8.0.0"
+  checksum: 10/a32c67bdf86048efa8ee5cdc1a68351758bae888956010eea58e694c1f9fc580632d1ce0478d31984559e0b03282d130ffe3e87479838c8da92cf1ac06626edc
   languageName: node
   linkType: hard
 
