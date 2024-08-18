@@ -2620,10 +2620,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/dm-sans@npm:5.0.21":
-  version: 5.0.21
-  resolution: "@fontsource/dm-sans@npm:5.0.21"
-  checksum: 10/b084230e98e9834a1bc01aa6213c316e2ad82d372e0c9c17e00a8088673a89a225ae5fd9ac55a9f62df705d21f0a30b195cf819b969e3a14d3500c8b7d1279ef
+"@fontsource/dm-sans@npm:5.0.22":
+  version: 5.0.22
+  resolution: "@fontsource/dm-sans@npm:5.0.22"
+  checksum: 10/64d04510cbb62b36b2158a0d9305caf4c9e6145e83b0e14b7f7e46efd60557bbdf26a0d6cb3c6abcd4c1b1d2c01e0fea80f642772ccd7ae72018bf8a43a03803
   languageName: node
   linkType: hard
 
@@ -3742,7 +3742,7 @@ __metadata:
   resolution: "@privyid/design-system@workspace:."
   dependencies:
     "@floating-ui/dom": "npm:^1.0.4"
-    "@fontsource/dm-sans": "npm:5.0.21"
+    "@fontsource/dm-sans": "npm:5.0.22"
     "@interactjs/types": "npm:1.10.27"
     "@jill64/universal-sanitizer": "npm:^1.0.2"
     "@juggle/resize-observer": "npm:^3.4.0"
