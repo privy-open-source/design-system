@@ -126,7 +126,7 @@ defineSlots<{
 * Component Name: Button
 * Component URI : https://www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=291%3A3945
 * Date Created  : Feb 01, 2022
-* Last Update   : Nov 21, 2022
+* Last Update   : Aug 19, 2024
 */
 .btn {
   --p-color-primary-hover: darken(theme(colors.brand.action), 5%);
@@ -149,6 +149,12 @@ defineSlots<{
   --p-color-dark-danger-hover: darken(theme(backgroundColor.dark.danger.emphasis), 5%);
   --p-color-danger-focus: darken(theme(backgroundColor.danger.emphasis), 10%);
   --p-color-dark-danger-focus: darken(theme(backgroundColor.dark.danger.emphasis), 10%);
+
+  --p-text-link-hover: darken(theme(textColor.link), 5%);
+  --p-text-dark-link-hover: darken(theme(textColor.dark.link), 5%);
+  --p-text-link-focus: darken(theme(textColor.link), 10%);
+  --p-text-dark-link-focus: darken(theme(textColor.dark.link), 10%);
+
   --p-button-xs-padding-x: theme(spacing.2);
   --p-button-sm-padding-x: theme(spacing.4);
   --p-button-md-padding-x: theme(spacing.5);
@@ -241,8 +247,8 @@ defineSlots<{
   &&--variant-outline {
     &.btn {
       &--default {
-        @apply text-default border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
-        @apply dark:text-dark-default dark:border-dark-default-alpha hover:dark:border-dark-subtle-alpha active:dark:border-dark-subtle-alpha focus:dark:border-dark-subtle-alpha;
+        @apply text-default;
+        @apply dark:text-dark-default;
       }
 
       &--primary {
@@ -272,6 +278,20 @@ defineSlots<{
     }
   }
 
+  &&--variant-solid {
+    &.btn--default {
+      @apply border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
+      @apply dark:border-dark-default-alpha dark:hover:border-dark-subtle-alpha dark:active:border-dark-subtle-alpha dark:focus:border-dark-subtle-alpha;
+    }
+  }
+
+  &&--variant-outline {
+    &.btn--default {
+      @apply border-default hover:border-subtle active:border-subtle focus:border-subtle;
+      @apply dark:border-dark-default dark:hover:border-dark-subtle dark:focus:border-dark-subtle dark:active:border-dark-subtle;
+    }
+  }
+
   /**
   * Button ghost variant
   */
@@ -285,12 +305,12 @@ defineSlots<{
   * in button link variant
   */
   &&--variant-link {
-    @apply border border-transparent font-normal hover:underline;
+    @apply border border-transparent;
 
     &.btn {
       &--default {
-        @apply text-default hover:text-default focus:text-default active:text-default ;
-        @apply dark:text-dark-default hover:dark:text-dark-default focus:dark:text-dark-default active:dark:text-dark-default;
+        @apply text-link hover:text-[color:var(--p-text-link-hover)] focus:text-[color:var(--p-text-link-focus)] active:text-[color:var(--p-text-link-focus)];
+        @apply dark:text-dark-link dark:hover:text-[color:var(--p-text-dark-link-hover)] dark:focus:text-[color:var(--p-text-dark-link-focus)] dark:active:text-[color:var(--p-text-dark-link-focus)];
       }
 
       &--primary {
