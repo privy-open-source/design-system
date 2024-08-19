@@ -3771,7 +3771,7 @@ __metadata:
     "@vitest/browser": "npm:0.25.8"
     "@vitest/coverage-c8": "npm:0.24.5"
     "@vue/eslint-config-typescript": "npm:13.0.0"
-    "@vueuse/core": "npm:11.0.0"
+    "@vueuse/core": "npm:11.0.1"
     "@vueuse/math": "npm:11.0.0"
     "@zxing/browser": "npm:0.1.5"
     "@zxing/library": "npm:0.21.2"
@@ -3937,7 +3937,7 @@ __metadata:
     "@testing-library/dom": "npm:10.4.0"
     "@testing-library/user-event": "npm:14.5.2"
     "@types/sanitize-html": "npm:2.13.0"
-    "@vueuse/core": "npm:11.0.0"
+    "@vueuse/core": "npm:11.0.1"
     "@vueuse/math": "npm:11.0.0"
     "@zxing/browser": "npm:0.1.5"
     "@zxing/library": "npm:0.21.2"
@@ -6043,6 +6043,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vueuse/core@npm:11.0.1":
+  version: 11.0.1
+  resolution: "@vueuse/core@npm:11.0.1"
+  dependencies:
+    "@types/web-bluetooth": "npm:^0.0.20"
+    "@vueuse/metadata": "npm:11.0.1"
+    "@vueuse/shared": "npm:11.0.1"
+    vue-demi: "npm:>=0.14.10"
+  checksum: 10/c512c03cb8d450c33f2a6ec5f8df55e2b8428bcce024749f56d2f93d6c82f7c54f2a035458c2d988cba6143f9a83da34fa9d5b24e775f0870abffb1d2dcee3f7
+  languageName: node
+  linkType: hard
+
 "@vueuse/integrations@npm:^11.0.0":
   version: 11.0.0
   resolution: "@vueuse/integrations@npm:11.0.0"
@@ -6109,12 +6121,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vueuse/metadata@npm:11.0.1":
+  version: 11.0.1
+  resolution: "@vueuse/metadata@npm:11.0.1"
+  checksum: 10/ed1c617a2e875180ba1c223e16bad330bc18a03698a4305285f6d5c714da7c3ebdaea0050e1e4bb1226b07a2a5164af146d0ce209f8b1f92084d205e6313d2c8
+  languageName: node
+  linkType: hard
+
 "@vueuse/shared@npm:11.0.0":
   version: 11.0.0
   resolution: "@vueuse/shared@npm:11.0.0"
   dependencies:
     vue-demi: "npm:>=0.14.10"
   checksum: 10/1e532e7677ae629e16bb4036f62aa496b96f5c6e53dfa46d256bfaf94f527eec2266baf4674a159ab79c32316d512225e3dd64a71c3788a83c3d747e31cfce85
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:11.0.1":
+  version: 11.0.1
+  resolution: "@vueuse/shared@npm:11.0.1"
+  dependencies:
+    vue-demi: "npm:>=0.14.10"
+  checksum: 10/2800cad5c1ed73a5bb812d130f34d035ab3cd5beadec4075d86c7bcc5428b81a2a5950b42de869d3cef3c3dc690e005a100957d3ad7efdfca899ab100ba7581d
   languageName: node
   linkType: hard
 
