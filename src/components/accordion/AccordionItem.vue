@@ -191,6 +191,8 @@ defineSlots<{
   --p-accordion-expanded-border-dark: theme(borderColor.dark.default.DEFAULT);
   --p-accordion-expanded-activator-bg: theme(backgroundColor.default.alpha);
   --p-accordion-expanded-activator-bg-dark: theme(backgroundColor.dark.default.alpha);
+  --p-accordion-expanded-activator-color: theme(textColor.default);
+  --p-accordion-expanded-activator-color-dark: theme(textColor.dark.default);
 
   @apply w-full bg-[color:var(--p-accordion-bg)];
   @apply dark:bg-[color:var(--p-accordion-bg-dark)];
@@ -220,6 +222,12 @@ defineSlots<{
     .expanded & {
       @apply bg-[color:var(--p-accordion-expanded-activator-bg)];
       @apply dark:bg-[color:var(--p-accordion-expanded-activator-bg-dark)];
+
+      .accordion__item__title,
+      .subheading {
+        @apply text-[color:var(--p-accordion-expanded-activator-color)];
+        @apply dark:text-[color:var(--p-accordion-expanded-activator-color-dark)];
+      }
     }
   }
 

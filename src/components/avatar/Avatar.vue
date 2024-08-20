@@ -61,6 +61,10 @@ const props = defineProps({
     ],
     default: undefined,
   },
+  square: {
+    type   : Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits<{
@@ -76,6 +80,9 @@ const classNames = computed(() => {
   // eslint-disable-next-line unicorn/explicit-length-check
   if (props.size)
     result.push(`avatar--${props.size}`)
+
+  if (props.square)
+    result.push('avatar--square')
 
   return result
 })
@@ -131,8 +138,12 @@ onMounted(() => {
 
 <style lang="postcss">
 .avatar {
-  @apply rounded-full inline-flex items-center justify-center overflow-hidden text-subtle bg-subtle;
+  @apply inline-flex items-center justify-center overflow-hidden text-subtle bg-subtle;
   @apply dark:text-dark-subtle dark:bg-dark-subtle;
+
+  &:not(&--square) {
+    @apply rounded-full;
+  }
 
   &__image {
     @apply w-full h-full object-cover;
@@ -156,6 +167,27 @@ onMounted(() => {
 
   &--xl {
     @apply w-24 h-24 text-lg;
+  }
+
+  &--square {
+    &.avatar {
+      &--xs {
+        @apply rounded-xs;
+      }
+
+      &--sm {
+        @apply rounded-sm;
+      }
+
+      &--md {
+        @apply rounded;
+      }
+
+      &--lg,
+      &--xl {
+        @apply rounded-md;
+      }
+    }
   }
 }
 </style>

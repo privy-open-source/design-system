@@ -191,7 +191,7 @@ it('should emit event "imgerror" when image fail to load', async () => {
   )
 })
 
-it('should have addiotional class if prop imgClass if provided', () => {
+it('should have additional class if prop imgClass if provided', () => {
   const screen = render({
     components: { Avatar },
     template  : `
@@ -205,4 +205,18 @@ it('should have addiotional class if prop imgClass if provided', () => {
   expect(avatar).toBeInTheDocument()
   expect(image).toHaveClass('custom-class')
   expect(avatar).not.toHaveClass('custom-class')
+})
+
+it('should have style `square` when `square` prop was provided', () => {
+  const screen = render({
+    components: { Avatar },
+    template  : `
+      <Avatar square />
+    `,
+  })
+
+  const avatar = screen.queryByTestId('avatar')
+
+  expect(avatar).toBeInTheDocument()
+  expect(avatar).toHaveClass('avatar--square')
 })

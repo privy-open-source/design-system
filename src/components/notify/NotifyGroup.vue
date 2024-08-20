@@ -121,8 +121,6 @@ defineExpose({
   }
 
   &--top-right {
-    @apply top-2 right-4;
-
     .notify-group__container {
       @apply items-end;
     }
@@ -136,7 +134,7 @@ defineExpose({
   }
 
   &--top-center {
-    @apply top-2 left-1/2 -translate-x-1/2;
+    @apply left-1/2 -translate-x-1/2;
 
     .notify-group__container {
       @apply items-center;
@@ -151,8 +149,6 @@ defineExpose({
   }
 
   &--top-left {
-    @apply top-2 left-4;
-
     .notify-group__container {
       @apply items-start;
     }
@@ -166,8 +162,6 @@ defineExpose({
   }
 
   &--bottom-right {
-    @apply bottom-2 right-4;
-
     .notify-group__container {
       @apply items-end;
     }
@@ -181,7 +175,7 @@ defineExpose({
   }
 
   &--bottom-center {
-    @apply bottom-2 left-1/2 -translate-x-1/2;
+    @apply left-1/2 -translate-x-1/2;
 
     .notify-group__container {
       @apply items-center;
@@ -196,8 +190,6 @@ defineExpose({
   }
 
   &--bottom-left {
-    @apply bottom-2 left-4;
-
     .notify-group__container {
       @apply items-start;
     }
@@ -208,6 +200,28 @@ defineExpose({
         @apply opacity-0 -translate-x-20;
       }
     }
+  }
+
+  &--top-right,
+  &--top-center,
+  &--top-left {
+    @apply top-8;
+  }
+
+  &--top-right,
+  &--bottom-right {
+    @apply right-8;
+  }
+
+  &--top-left,
+  &--bottom-left {
+    @apply left-8;
+  }
+
+  &--bottom-center,
+  &--bottom-right,
+  &--bottom-left {
+    @apply bottom-8;
   }
 
   &--top-left,
