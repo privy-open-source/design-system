@@ -267,8 +267,8 @@ watch([startValue, endValue], ([startVal, endVal]) => {
     @apply h-2 rounded;
 
     &-active {
-      @apply bg-info-emphasis relative text-center;
-      @apply dark:bg-dark-info-emphasis;
+      @apply bg-brand-accent relative text-center;
+      @apply dark:bg-dark-brand-accent;
     }
 
     &-upper {
@@ -282,8 +282,8 @@ watch([startValue, endValue], ([startVal, endVal]) => {
 
     &:hover,
     &:active {
-      @apply ring ring-info border-info-emphasis;
-      @apply dark:ring-dark-info dark:border-dark-info-emphasis;
+      @apply ring ring-info border-brand-accent;
+      @apply dark:ring-dark-info dark:border-dark-brand-accent;
     }
 
     &-start {
