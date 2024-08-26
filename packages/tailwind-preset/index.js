@@ -9,13 +9,13 @@ module.exports = {
         brand: {
           logo  : theme.colors.red[40],
           action: theme.colors.red[40],
-          accent: theme.colors.red[40],
+          accent: theme.colors.blue[40],
         },
         dark: {
           brand: {
             logo  : theme.colors.gray[0],
             action: theme.colors.red[30],
-            accent: theme.colors.red[30],
+            accent: theme.colors.blue[30],
           },
         },
       },

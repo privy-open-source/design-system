@@ -78,8 +78,8 @@ const classNames = computed(() => {
 
   &__bar {
     @apply transition-[width] will-change-[width] duration-75 ease-out;
-    @apply bg-info-emphasis rounded-full h-full origin-center;
-    @apply dark:bg-dark-info-emphasis;
+    @apply bg-brand-accent rounded-full h-full origin-center;
+    @apply dark:bg-dark-brand-accent;
   }
 
   &--indeterminate {
