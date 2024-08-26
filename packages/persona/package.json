@@ -68,7 +68,7 @@
     "@vueuse/core": "11.0.1",
     "@vueuse/math": "11.0.1",
     "@zxing/browser": "0.1.5",
-    "@zxing/library": "0.21.2",
+    "@zxing/library": "0.21.3",
     "chart.js": "4.4.4",
     "core-js": "3",
     "date-fns": "3.6.0",
