@@ -132,8 +132,8 @@ const item = computed<ProgressLabel>(() => {
 
   &--active {
     .progress__point {
-      @apply bg-info-emphasis text-state-emphasis;
-      @apply dark:bg-dark-info-emphasis dark:text-dark-state-emphasis;
+      @apply bg-brand-accent text-state-emphasis;
+      @apply dark:bg-dark-brand-accent dark:text-dark-state-emphasis;
     }
   }
 
