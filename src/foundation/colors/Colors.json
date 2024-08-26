@@ -894,9 +894,9 @@
         {
           "id" : 3,
           "token" : "brand.accent",
-          "figma" : "main/red/40",
-          "hex"   : "#E42E2C",
-          "parentToken" : "$red.40"
+          "figma" : "main/blue/40",
+          "hex"   : "#0065D1",
+          "parentToken" : "$blue.40"
         }
       ]
     }
@@ -924,9 +924,9 @@
         {
           "id" : 3,
           "token" : "brand.accent",
-          "figma" : "main/red/30",
-          "hex"   : "#EA5C5A",
-          "parentToken" : "$red.30"
+          "figma" : "main/blue/30",
+          "hex"   : "#3887DB",
+          "parentToken" : "$blue.30"
         }
       ]
     }

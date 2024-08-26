@@ -143,8 +143,8 @@ defineSlots<{
     &.checkbox {
       &--checked {
         .card {
-          @apply border-info-emphasis;
-          @apply dark:border-dark-info-emphasis;
+          @apply border-brand-accent;
+          @apply dark:border-dark-brand-accent;
         }
       }
     }
@@ -159,7 +159,8 @@ defineSlots<{
   }
 
   /**
-  * give color of checkbox label
+  * give color of
+  * checkbox label
   */
   &__label {
     @apply text-default;
@@ -167,14 +168,13 @@ defineSlots<{
   }
 
   /**
-  * give info background and
-  * white checked icon
+  * checkbox checked
   */
   &--checked,
   &--indeterminate {
     .checkbox__icon {
-      @apply bg-info-emphasis border-info-emphasis;
-      @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis;
+      @apply bg-brand-accent border-brand-accent;
+      @apply dark:bg-dark-brand-accent dark:border-dark-brand-accent;
 
       > svg {
         @apply fill-default;
@@ -203,7 +203,8 @@ defineSlots<{
   }
 
   /**
-  * checkbox in dropdown menu
+  * checkbox in
+  * dropdown menu
   */
   .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
   .dropdown__menu > .dropdown__subitem > & {

@@ -551,8 +551,8 @@ defineSlots<{
     }
 
     .selected .select__option-checked {
-      @apply bg-info-emphasis border-info-emphasis;
-      @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis;
+      @apply bg-brand-accent border-brand-accent;
+      @apply dark:bg-dark-brand-accent dark:border-dark-brand-accent;
     }
 
     .dropdown__item:disabled:not(.selected) .select__option-checked {

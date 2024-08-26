@@ -10558,5 +10558,92 @@
         "hash": "b22f52ab49571b2f5725faa0d15da3c978de5ce950534446e1166709754b8e1b"
       }
     ]
+  },
+  {
+    "name": "backspace",
+    "aliases": [],
+    "category": "actions",
+    "folder": "backspace-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "backspace-solid/16",
+        "path": "backspace-solid/16.svg",
+        "hash": "02b80c14dee75168cece2684158c0cc022d0f49734b96901bf1f34d2514adc7e"
+      },
+      {
+        "name": "backspace-solid/20",
+        "path": "backspace-solid/20.svg",
+        "hash": "b962b106cfc7c01f6efa88d3e3952ebd39cd24c4a24ce7cb61ab408d521f96fa"
+      },
+      {
+        "name": "backspace-solid/24",
+        "path": "backspace-solid/24.svg",
+        "hash": "a5f6f0a3ea11293a094ee13f1c8c223fdc13e4c3db32f304239aa1586a20f5ad"
+      },
+      {
+        "name": "backspace-solid/32",
+        "path": "backspace-solid/32.svg",
+        "hash": "021179c0266dedd9c7d59dc961060c2f87a4b7816618b08cd8a854170095ccec"
+      }
+    ]
+  },
+  {
+    "name": "face-id",
+    "aliases": [],
+    "category": "technology",
+    "folder": "face-id",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "face-id/16",
+        "path": "face-id/16.svg",
+        "hash": "660714b31c05dc784be7c87401d878b141a89c2aba2899e94d181ebe8e3777db"
+      },
+      {
+        "name": "face-id/20",
+        "path": "face-id/20.svg",
+        "hash": "602a7e474eb86ef5e099b273567f8691f34478e82984c9b01d3629eb5a8ea732"
+      },
+      {
+        "name": "face-id/24",
+        "path": "face-id/24.svg",
+        "hash": "83b60e361585b7196ffef3226d1efa31862a0e17c7497cb5c9c653929f1dc526"
+      },
+      {
+        "name": "face-id/32",
+        "path": "face-id/32.svg",
+        "hash": "1bcf1a86492adcb4cb76d49792f63de41287962533360d713a903e19eb6f5fa6"
+      }
+    ]
+  },
+  {
+    "name": "backspace",
+    "aliases": [],
+    "category": "actions",
+    "folder": "backspace",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "backspace/16",
+        "path": "backspace/16.svg",
+        "hash": "5a22289dba81d73a7c284d41e92354ae1117c162fd2cf92e8679977216992e72"
+      },
+      {
+        "name": "backspace/20",
+        "path": "backspace/20.svg",
+        "hash": "c8233b21650279a442023542ff5188a3bd3d30bb89afcd3550e7664e90263a4c"
+      },
+      {
+        "name": "backspace/32",
+        "path": "backspace/32.svg",
+        "hash": "e2c0ef73f113ef12c67a264ba801c862243b1eebcd43b8d2dc39289fb4562526"
+      },
+      {
+        "name": "backspace/24",
+        "path": "backspace/24.svg",
+        "hash": "4a9921117bcb4f69e57321d3e3ea031ebe3ae194ce444224f55e9ac2f54049af"
+      }
+    ]
   }
 ]
