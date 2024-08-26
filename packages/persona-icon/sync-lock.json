@@ -56594,5 +56594,473 @@
       }
     },
     "filehash": "b22f52ab49571b2f5725faa0d15da3c978de5ce950534446e1166709754b8e1b"
+  },
+  "13042:1172": {
+    "id": "13042:1172",
+    "hash": "BRhKdtfh1r",
+    "name": "backspace",
+    "folder": "backspace-solid",
+    "variant": "solid",
+    "category": "actions",
+    "filename": "backspace-solid/16",
+    "filepath": "backspace-solid/16.svg",
+    "aliases": [],
+    "component": {
+      "key": "86603c8219c5c5e69076371ca8e76aa4fc1a91d1",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1172",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/PzQ/qn7/X13p9A1DP282vLaK/13042_1172.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f109df5a7d6f014fd10648221f18fed3f4e9386f8b72144ad0c5f89257f8ccf9",
+      "name": "size=16",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.508Z",
+      "updated_at": "2024-08-24T06:51:03.508Z",
+      "containing_frame": {
+        "name": "Actions / Backspace",
+        "nodeId": "13042:1171",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Actions / Backspace",
+          "nodeId": "13042:1171"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "02b80c14dee75168cece2684158c0cc022d0f49734b96901bf1f34d2514adc7e"
+  },
+  "13042:1176": {
+    "id": "13042:1176",
+    "hash": "m4IaBB4orM",
+    "name": "backspace",
+    "folder": "backspace-solid",
+    "variant": "solid",
+    "category": "actions",
+    "filename": "backspace-solid/20",
+    "filepath": "backspace-solid/20.svg",
+    "aliases": [],
+    "component": {
+      "key": "070e0f2b1e442f8fa34fd792f3e5c5d0d1523b96",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1176",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/xtz/GDh/A7wNBqf70DP8ntsK/13042_1176.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b6c69315b0baffcf194e23a70e2e5caee3ee4f6567d64e14818b3fd06811b731",
+      "name": "size=20",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.516Z",
+      "updated_at": "2024-08-24T06:51:03.516Z",
+      "containing_frame": {
+        "name": "Actions / Backspace",
+        "nodeId": "13042:1171",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Actions / Backspace",
+          "nodeId": "13042:1171"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "b962b106cfc7c01f6efa88d3e3952ebd39cd24c4a24ce7cb61ab408d521f96fa"
+  },
+  "13042:1180": {
+    "id": "13042:1180",
+    "hash": "3nFsxPxTg8",
+    "name": "backspace",
+    "folder": "backspace-solid",
+    "variant": "solid",
+    "category": "actions",
+    "filename": "backspace-solid/24",
+    "filepath": "backspace-solid/24.svg",
+    "aliases": [],
+    "component": {
+      "key": "85bcadbda3cd51b6e0b7d8a6521964757afebd6c",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1180",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/Y7P/rbF/n263d6arimsPvPPo/13042_1180.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0d01d7316ebd300f37742b48750dfa824a108a0bff0803caac3368171ecff3f3",
+      "name": "size=24",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.522Z",
+      "updated_at": "2024-08-24T06:51:03.522Z",
+      "containing_frame": {
+        "name": "Actions / Backspace",
+        "nodeId": "13042:1171",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Actions / Backspace",
+          "nodeId": "13042:1171"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "a5f6f0a3ea11293a094ee13f1c8c223fdc13e4c3db32f304239aa1586a20f5ad"
+  },
+  "13042:1184": {
+    "id": "13042:1184",
+    "hash": "x9ZPDTLnRI",
+    "name": "backspace",
+    "folder": "backspace-solid",
+    "variant": "solid",
+    "category": "actions",
+    "filename": "backspace-solid/32",
+    "filepath": "backspace-solid/32.svg",
+    "aliases": [],
+    "component": {
+      "key": "ed0f38e882d75fed8f210191d63955518026d4a6",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1184",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/zoT/rro/bxZLRkR3CceDy7ky/13042_1184.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=996dc547e1aec5d4b52710cf1e8563460d6c3afd1eedadcbeaeffb362b8a58f2",
+      "name": "size=32",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.527Z",
+      "updated_at": "2024-08-24T06:51:03.527Z",
+      "containing_frame": {
+        "name": "Actions / Backspace",
+        "nodeId": "13042:1171",
+        "pageId": "6579:38849",
+        "pageName": "Solid",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Actions / Backspace",
+          "nodeId": "13042:1171"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "021179c0266dedd9c7d59dc961060c2f87a4b7816618b08cd8a854170095ccec"
+  },
+  "13042:1199": {
+    "id": "13042:1199",
+    "hash": "6lwAfhivX2",
+    "name": "face-id",
+    "folder": "face-id",
+    "variant": "outline",
+    "category": "technology",
+    "filename": "face-id/16",
+    "filepath": "face-id/16.svg",
+    "aliases": [],
+    "component": {
+      "key": "e2c607cd04df9fcee791a058dc72f34922f186cd",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1199",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/2bg/669/lRet1auNPF6Q3i2d/13042_1199.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=34984f028964a79c6a03ece42a2bed4faeccf7d4552141e418cbafa16b0630ca",
+      "name": "size=16",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.533Z",
+      "updated_at": "2024-08-24T06:51:03.533Z",
+      "containing_frame": {
+        "name": "Technology / Face ID",
+        "nodeId": "13042:1198",
+        "pageId": "6323:110090",
+        "pageName": "Outline",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Technology / Face ID",
+          "nodeId": "13042:1198"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "660714b31c05dc784be7c87401d878b141a89c2aba2899e94d181ebe8e3777db"
+  },
+  "13042:1203": {
+    "id": "13042:1203",
+    "hash": "LyfN9yu4s8",
+    "name": "face-id",
+    "folder": "face-id",
+    "variant": "outline",
+    "category": "technology",
+    "filename": "face-id/20",
+    "filepath": "face-id/20.svg",
+    "aliases": [],
+    "component": {
+      "key": "95f05a996c24721e1b5fc216264b47fbb244d2e6",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1203",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/1Yn/PEN/cnCiGHGhebkWQHrb/13042_1203.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6c4596a2c63e98260353492e23dfd2f8d07e47ccbcd94a663d66e3802f1802f9",
+      "name": "size=20",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.539Z",
+      "updated_at": "2024-08-24T06:51:03.539Z",
+      "containing_frame": {
+        "name": "Technology / Face ID",
+        "nodeId": "13042:1198",
+        "pageId": "6323:110090",
+        "pageName": "Outline",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Technology / Face ID",
+          "nodeId": "13042:1198"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "602a7e474eb86ef5e099b273567f8691f34478e82984c9b01d3629eb5a8ea732"
+  },
+  "13042:1207": {
+    "id": "13042:1207",
+    "hash": "dEM6qHDpPL",
+    "name": "face-id",
+    "folder": "face-id",
+    "variant": "outline",
+    "category": "technology",
+    "filename": "face-id/24",
+    "filepath": "face-id/24.svg",
+    "aliases": [],
+    "component": {
+      "key": "1a17757986c37c431d180aa513d2fabfda77f894",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1207",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/zb5/Qse/AGPASEMH59xNAgMa/13042_1207.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e5ccbee541cd1cc4554722f34cffa236d9243d86113e3c934d1b0e12cae1c325",
+      "name": "size=24",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.545Z",
+      "updated_at": "2024-08-24T06:51:03.545Z",
+      "containing_frame": {
+        "name": "Technology / Face ID",
+        "nodeId": "13042:1198",
+        "pageId": "6323:110090",
+        "pageName": "Outline",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Technology / Face ID",
+          "nodeId": "13042:1198"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "83b60e361585b7196ffef3226d1efa31862a0e17c7497cb5c9c653929f1dc526"
+  },
+  "13042:1211": {
+    "id": "13042:1211",
+    "hash": "g4HQtukACW",
+    "name": "face-id",
+    "folder": "face-id",
+    "variant": "outline",
+    "category": "technology",
+    "filename": "face-id/32",
+    "filepath": "face-id/32.svg",
+    "aliases": [],
+    "component": {
+      "key": "963b2251aacfa929b16414e9b48aa4f0516eb2b9",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1211",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/52s/0Dg/yCnYNKNNilNskMAl/13042_1211.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=89ef0547f020a55a79bd3bfc1e5fe63b062219f91777a16748c4b631f64526e7",
+      "name": "size=32",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.550Z",
+      "updated_at": "2024-08-24T06:51:03.550Z",
+      "containing_frame": {
+        "name": "Technology / Face ID",
+        "nodeId": "13042:1198",
+        "pageId": "6323:110090",
+        "pageName": "Outline",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Technology / Face ID",
+          "nodeId": "13042:1198"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "1bcf1a86492adcb4cb76d49792f63de41287962533360d713a903e19eb6f5fa6"
+  },
+  "13042:1137": {
+    "id": "13042:1137",
+    "hash": "Qc58YLCaEi",
+    "name": "backspace",
+    "folder": "backspace",
+    "variant": "outline",
+    "category": "actions",
+    "filename": "backspace/16",
+    "filepath": "backspace/16.svg",
+    "aliases": [],
+    "component": {
+      "key": "cd5b8af333014669ccac6beea11b5b40a38f99bf",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1137",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/qUe/1mp/3vOTNQaRiMoqyxIo/13042_1137.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=67787bfc629e83fe93bb4ca2af6a9772ee78bd8fe52e14b53032eaea4a8dd981",
+      "name": "size=16",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.556Z",
+      "updated_at": "2024-08-24T06:51:03.556Z",
+      "containing_frame": {
+        "name": "Actions / Backspace",
+        "nodeId": "13042:1136",
+        "pageId": "6323:110090",
+        "pageName": "Outline",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Actions / Backspace",
+          "nodeId": "13042:1136"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "5a22289dba81d73a7c284d41e92354ae1117c162fd2cf92e8679977216992e72"
+  },
+  "13042:1141": {
+    "id": "13042:1141",
+    "hash": "aqy4Qqh3pu",
+    "name": "backspace",
+    "folder": "backspace",
+    "variant": "outline",
+    "category": "actions",
+    "filename": "backspace/20",
+    "filepath": "backspace/20.svg",
+    "aliases": [],
+    "component": {
+      "key": "95074bf60436c5a14c66b5b8f20b0b540b8f59ac",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1141",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/YyQ/Vn2/uqQVwxWYGB0C6EFW/13042_1141.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=16512d7fb71c7d6829c1e275491d9dea5af2902e7f7d19abf3872f4455240c80",
+      "name": "size=20",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.561Z",
+      "updated_at": "2024-08-24T06:51:03.561Z",
+      "containing_frame": {
+        "name": "Actions / Backspace",
+        "nodeId": "13042:1136",
+        "pageId": "6323:110090",
+        "pageName": "Outline",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Actions / Backspace",
+          "nodeId": "13042:1136"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "c8233b21650279a442023542ff5188a3bd3d30bb89afcd3550e7664e90263a4c"
+  },
+  "13042:1149": {
+    "id": "13042:1149",
+    "hash": "flzXomFmZO",
+    "name": "backspace",
+    "folder": "backspace",
+    "variant": "outline",
+    "category": "actions",
+    "filename": "backspace/32",
+    "filepath": "backspace/32.svg",
+    "aliases": [],
+    "component": {
+      "key": "0dfa927dc168867b28349280545125988406f1ee",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1149",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/ZTK/k0O/5PS0DPOV9gQbwO90/13042_1149.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a62808e82cd585e7a3f76da6098b9b5e9656c6c43172fd4868af47828ce1f0cf",
+      "name": "size=32",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.568Z",
+      "updated_at": "2024-08-24T06:51:03.568Z",
+      "containing_frame": {
+        "name": "Actions / Backspace",
+        "nodeId": "13042:1136",
+        "pageId": "6323:110090",
+        "pageName": "Outline",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Actions / Backspace",
+          "nodeId": "13042:1136"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "e2c0ef73f113ef12c67a264ba801c862243b1eebcd43b8d2dc39289fb4562526"
+  },
+  "13042:1145": {
+    "id": "13042:1145",
+    "hash": "qppGpJQyDG",
+    "name": "backspace",
+    "folder": "backspace",
+    "variant": "outline",
+    "category": "actions",
+    "filename": "backspace/24",
+    "filepath": "backspace/24.svg",
+    "aliases": [],
+    "component": {
+      "key": "a8dbf7dff4eca410052b0d45c180e358a07204cd",
+      "file_key": "FrVFffiWgF7OvLaO0YhMjz",
+      "node_id": "13042:1145",
+      "thumbnail_url": "https://s3-alpha.figma.com/checkpoints/HlH/tpN/8ZJ7UKhu5H78pRIZ/13042_1145.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCSOH7HNM7%2F20240825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240825T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8bfc42b82bd70fc931953fff905a62ba1018cc33fe9c2aaafcfafd1c8565bb8e",
+      "name": "size=24",
+      "description": "",
+      "description_rt": "",
+      "created_at": "2024-08-24T06:51:03.574Z",
+      "updated_at": "2024-08-24T06:51:03.574Z",
+      "containing_frame": {
+        "name": "Actions / Backspace",
+        "nodeId": "13042:1136",
+        "pageId": "6323:110090",
+        "pageName": "Outline",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "containingStateGroup": {
+          "name": "Actions / Backspace",
+          "nodeId": "13042:1136"
+        }
+      },
+      "user": {
+        "id": "958296800842783627",
+        "handle": "Product Designer",
+        "img_url": "https://www.gravatar.com/avatar/488d8732de9705a51175bac672f70142?size=240&default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_p_v2.png"
+      }
+    },
+    "filehash": "4a9921117bcb4f69e57321d3e3ea031ebe3ae194ce444224f55e9ac2f54049af"
   }
 }
