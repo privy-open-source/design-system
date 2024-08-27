@@ -3764,7 +3764,7 @@ __metadata:
     "@types/sanitize-html": "npm:2.13.0"
     "@types/scroll-into-view": "npm:1.16.4"
     "@types/webfontloader": "npm:1.6.38"
-    "@types/zxcvbn": "npm:4.4.4"
+    "@types/zxcvbn": "npm:4.4.5"
     "@typescript-eslint/eslint-plugin": "npm:5.62.0"
     "@typescript-eslint/parser": "npm:5.62.0"
     "@vitejs/plugin-vue": "npm:4.5.2"
@@ -5027,10 +5027,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/zxcvbn@npm:4.4.4":
-  version: 4.4.4
-  resolution: "@types/zxcvbn@npm:4.4.4"
-  checksum: 10/d5de69c1e34d6d3988b2f23d0e4d1e8ca136d039480cca265d7358c921937da50648bef29154835670dadcc1c8449349339c2a87cd77cfc3ff6a9b19ce669864
+"@types/zxcvbn@npm:4.4.5":
+  version: 4.4.5
+  resolution: "@types/zxcvbn@npm:4.4.5"
+  checksum: 10/279b0d43e21b8de48a9ef98b5753e343673fdb6cfdd2679e2afbb292410d610a0f01d7c1cb1dad1acbd0d35ee01e8a8dbe21cb034a2e2f3458492cf5fd3b44c3
   languageName: node
   linkType: hard
 
