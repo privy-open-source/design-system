@@ -3820,7 +3820,7 @@ __metadata:
     ufo: "npm:1.5.4"
     unenv: "npm:1.10.0"
     vite-plugin-image-optimizer: "npm:1.1.8"
-    vitepress: "npm:1.3.3"
+    vitepress: "npm:1.3.4"
     vitest: "npm:0.24.5"
     vue-collapsed: "npm:^1.2.5"
     vue-content-loader: "npm:^2.0.1"
@@ -19782,9 +19782,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:1.3.3":
-  version: 1.3.3
-  resolution: "vitepress@npm:1.3.3"
+"vitepress@npm:1.3.4":
+  version: 1.3.4
+  resolution: "vitepress@npm:1.3.4"
   dependencies:
     "@docsearch/css": "npm:^3.6.1"
     "@docsearch/js": "npm:^3.6.1"
@@ -19812,7 +19812,7 @@ __metadata:
       optional: true
   bin:
     vitepress: bin/vitepress.js
-  checksum: 10/e96b40959884356b57f35f5594fd06b0d9c82e2b98ce4962a189c19a4e27e9beac4c431927b2c4166f127a7a559a5b38d4506dfbe226f762dd58adf8ab13c5b4
+  checksum: 10/6f22f8ea17cf42c36364f8f30e79f838181793adda745af21cb32a1a7c5a1ee4a35e9d2abe1e472ec7aaaa9e58f182cb81c4e6e3bc670d035f02a4812f6a607f
   languageName: node
   linkType: hard
 
