@@ -175,7 +175,7 @@ defineSlots<{
   * checked radio
   */
   &&--checked {
-    &:not(.radio--checkbox) {
+    &:not(.radio--checkbox, .radio--option) {
       .radio__icon {
         @apply bg-default;
         @apply dark:bg-dark-inverse;
