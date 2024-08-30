@@ -91,7 +91,7 @@
     "@privyid/persona-ilustration": "workspace:^",
     "@splidejs/splide": "^4.1.4",
     "@testing-library/user-event": "^14.4.3",
-    "@vueuse/core": "11.0.1",
+    "@vueuse/core": "11.0.3",
     "@vueuse/math": "11.0.1",
     "@zxing/browser": "0.1.5",
     "@zxing/library": "0.21.3",
