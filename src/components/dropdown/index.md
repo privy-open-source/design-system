@@ -8,6 +8,7 @@ description: Base dropdown button, suit for action menus
   import pInput from "../input/Input.vue"
   import pDropdown from "./Dropdown.vue"
   import pDropdownItem from "./DropdownItem.vue"
+  import pDropdownText from "./DropdownText.vue"
   import pDropdownHeader from './DropdownHeader.vue'
   import pAccordionItem from '../accordion/AccordionItem.vue'
   import Banner from '../banner/Banner.vue'
@@ -21,6 +22,7 @@ description: Base dropdown button, suit for action menus
   const show     = ref(false)
   const selected = ref('')
   const sample = ref(false)
+  const radio = ref('')
 </script>
 
 # Dropdown
@@ -41,7 +43,7 @@ description: Base dropdown button, suit for action menus
 ```vue
 <template>
   <p-dropdown text="Click Here">
-    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item active>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
   </p-dropdown>
@@ -209,20 +211,17 @@ You can combine placement with suffix `*-start` and `*-end` to set popup positio
 
 ### Variant, Color and Size
 
-Every props in [Button][button] like `variant`, `color`, `size`, `pill` and `icon`  also works in here.
+Every props in [Button][button] like `variant`, `color`, `size` and `icon`  also works in here.
 Check out [Button][button] for more information.
 
 <preview>
   <p-dropdown
     text="Button"
-    variant="outline"
-    color="secondary"
-    size="lg"
-    pill
-    icon>
+    variant="link"
+    color="info">
+    <p-dropdown-item active>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item disabled>Item Text</p-dropdown-item>
   </p-dropdown>
 </preview>
 
@@ -230,13 +229,11 @@ Check out [Button][button] for more information.
 <template>
   <p-dropdown
     text="Button"
-    variant="outline"
-    color="secondary"
-    size="lg"
-    pill>
+    variant="link"
+    color="info">
+    <p-dropdown-item active>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
-    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item disabled>Item Text</p-dropdown-item>
   </p-dropdown>
 </template>
 ```
@@ -308,6 +305,123 @@ You can also completely change dropdown's activator button to something else via
 </template>
 ```
 
+### Custom dropdown item
+
+#### With checkbox
+<preview>
+  <p-dropdown
+    text="Label">
+    <p-dropdown-text>
+      <p-checkbox>Checklist Label</p-checkbox>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-checkbox>Checklist Label</p-checkbox>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-checkbox>Checklist Label</p-checkbox>
+    </p-dropdown-text>
+  </p-dropdown>
+</preview>
+
+```vue
+<template>
+  <p-dropdown
+    text="Label">
+    <p-dropdown-text>
+      <p-checkbox>Checklist Label</p-checkbox>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-checkbox>Checklist Label</p-checkbox>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-checkbox>Checklist Label</p-checkbox>
+    </p-dropdown-text>
+  </p-dropdown>
+</template>
+```
+
+
+#### With radio
+<preview>
+  <p-dropdown
+    text="Label">
+    <p-dropdown-text>
+      <p-radio v-model="radio" value="list 1">Checklist Label</p-radio>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-radio v-model="radio" value="list 2">Checklist Label</p-radio>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-radio v-model="radio" value="list 3">Checklist Label</p-radio>
+    </p-dropdown-text>
+  </p-dropdown>
+</preview>
+
+```vue
+<template>
+  <p-dropdown
+    text="Label">
+    <p-dropdown-text>
+      <p-radio v-model="radio" value="list 1">Checklist Label</p-radio>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-radio v-model="radio" value="list 2">Checklist Label</p-radio>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-radio v-model="radio" value="list 3">Checklist Label</p-radio>
+    </p-dropdown-text>
+  </p-dropdown>
+</template>
+```
+
+#### With radio option
+<preview>
+  <p-dropdown
+    text="Label">
+    <p-dropdown-text>
+      <p-radio v-model="radio" appearance="option" value="list 1">Checklist Label</p-radio>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-radio v-model="radio" appearance="option" value="list 2">Checklist Label</p-radio>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-radio v-model="radio" appearance="option" value="list 3">Checklist Label</p-radio>
+    </p-dropdown-text>
+  </p-dropdown>
+</preview>
+
+```vue
+<template>
+  <p-dropdown
+    text="Label">
+    <p-dropdown-text>
+      <p-radio 
+        v-model="option" 
+        appearance="option" 
+        value="list 1">
+        Checklist Label
+      </p-radio>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-radio 
+        v-model="option" 
+        appearance="option" 
+        value="list 2">
+        Checklist Label
+      </p-radio>
+    </p-dropdown-text>
+    <p-dropdown-text>
+      <p-radio 
+        v-model="option" 
+        appearance="option" 
+        value="list 3">
+        Checklist Label
+      </p-radio>
+    </p-dropdown-text>
+  </p-dropdown>
+</template>
+```
+
 ## Disabled State
 
 <preview>
@@ -324,6 +438,34 @@ You can also completely change dropdown's activator button to something else via
   <p-dropdown
     text="Button"
     disabled>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+</template>
+```
+
+## Dropdown Text
+<preview>
+  <p-dropdown
+    text="Label">
+    <p-dropdown-text>
+      But I must explain to you how all this mistaken idea of denouncing pleasure
+      <span class="block mt-2">And this is more example text</span>
+    </p-dropdown-text>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+    <p-dropdown-item>Item Text</p-dropdown-item>
+  </p-dropdown>
+</preview>
+
+```vue
+<template>
+  <p-dropdown
+    text="Label">
+    <p-dropdown-text>
+      But I must explain to you how all 
+      this mistaken idea of denouncing pleasure
+      <span class="block mt-2">And this is more example text</span>
+    </p-dropdown-text>
     <p-dropdown-item>Item Text</p-dropdown-item>
     <p-dropdown-item>Item Text</p-dropdown-item>
   </p-dropdown>

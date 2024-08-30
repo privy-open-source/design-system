@@ -76,8 +76,8 @@ const tagName = computed(() => {
 
 <style lang="postcss">
 .dropdown__item {
-  @apply px-4 py-2 block cursor-pointer text-subtle w-full select-none text-left;
-  @apply dark:text-dark-subtle;
+  @apply px-4 py-2 block cursor-pointer text-default w-full select-none text-left;
+  @apply dark:text-dark-default;
 
   &:is(a) {
     @apply no-underline hover:no-underline hover:text-default;
@@ -97,8 +97,7 @@ const tagName = computed(() => {
   }
 
   &:disabled {
-    @apply bg-default/50 border-subtle pointer-events-none text-subtlest;
-    @apply dark:bg-dark-default/50 dark:border-dark-subtle  dark:text-dark-subtlest;
+    @apply opacity-50 pointer-events-none;
   }
 }
 </style>
