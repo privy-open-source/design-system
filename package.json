@@ -35,7 +35,7 @@
     "@privyid/tailwind-preset": "workspace:^",
     "@rollup/plugin-inject": "5.0.5",
     "@rushstack/eslint-patch": "1.10.4",
-    "@testing-library/jest-dom": "6.4.8",
+    "@testing-library/jest-dom": "6.5.0",
     "@testing-library/vue": "8.1.0",
     "@types/html-escaper": "3.0.2",
     "@types/lodash-es": "4.17.12",
