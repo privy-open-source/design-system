@@ -91,8 +91,8 @@ Button has 4 variants, `solid`, `outline`, `ghost`, `link`. Default is `solid`
 <preview>
   <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
     <p-button color="info" variant="solid">Click me</p-button>
-    <p-button color="info" variant="outline">Click me</p-button>
-    <p-button variant="ghost">Click me</p-button>
+    <p-button variant="outline">Click me</p-button>
+    <p-button color="info" variant="ghost">Click me</p-button>
     <p-button color="info" variant="link">Click me</p-button>
   </div>
 </preview>
@@ -130,15 +130,15 @@ Button available in 5 different colors `primary`, `info`, `success`, `warning` a
 </template>
 ```
 
-It's also work with other variants (except `ghost`).
+It's also work with other variants (except `outline`).
 
 <preview label="outline variant">
   <div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
-    <p-button variant="outline" color="primary">Click me</p-button>
-    <p-button variant="outline" color="info">Click me</p-button>
-    <p-button variant="outline" color="success">Click me</p-button>
-    <p-button variant="outline" color="warning">Click me</p-button>
-    <p-button variant="outline" color="danger">Click me</p-button>
+    <p-button variant="ghost" color="primary">Click me</p-button>
+    <p-button variant="ghost" color="info">Click me</p-button>
+    <p-button variant="ghost" color="success">Click me</p-button>
+    <p-button variant="ghost" color="warning">Click me</p-button>
+    <p-button variant="ghost" color="danger">Click me</p-button>
   </div>
 </preview>
 
@@ -154,11 +154,11 @@ It's also work with other variants (except `ghost`).
 
 ```vue
 <template>
-  <p-button variant="outline" color="primary">Click me</p-button>
-  <p-button variant="outline" color="info">Click me</p-button>
-  <p-button variant="outline" color="success">Click me</p-button>
-  <p-button variant="outline" color="warning">Click me</p-button>
-  <p-button variant="outline" color="danger">Click me</p-button>
+  <p-button variant="ghost" color="primary">Click me</p-button>
+  <p-button variant="ghost" color="info">Click me</p-button>
+  <p-button variant="ghost" color="success">Click me</p-button>
+  <p-button variant="ghost" color="warning">Click me</p-button>
+  <p-button variant="ghost" color="danger">Click me</p-button>
 
   <p-button variant="link" color="primary">Click me</p-button>
   <p-button variant="link" color="info">Click me</p-button>

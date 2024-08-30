@@ -243,8 +243,7 @@ defineSlots<{
   * and border colors for
   * solid variant
   */
-  &&--variant-solid,
-  &&--variant-outline {
+  &&--variant-solid {
     &.btn {
       &--default {
         @apply text-default;
@@ -253,7 +252,7 @@ defineSlots<{
 
       &--primary {
         @apply border-brand-action hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
-        @apply dark:border-dark-brand-action border-brand-action hover:dark:border-[color:var(--p-color-dark-primary-hover)] focus:dark:border-[color:var(--p-color-dark-primary-focus)] active:dark:border-[color:var(--p-color-dark-primary-focus)];
+        @apply dark:border-dark-brand-action hover:dark:border-[color:var(--p-color-dark-primary-hover)] focus:dark:border-[color:var(--p-color-dark-primary-focus)] active:dark:border-[color:var(--p-color-dark-primary-focus)];
       }
 
       &--info {
@@ -286,10 +285,8 @@ defineSlots<{
   }
 
   &&--variant-outline {
-    &.btn--default {
-      @apply border-default hover:border-subtle active:border-subtle focus:border-subtle;
-      @apply dark:border-dark-default dark:hover:border-dark-subtle dark:focus:border-dark-subtle dark:active:border-dark-subtle;
-    }
+    @apply border-default hover:border-subtle active:border-subtle focus:border-subtle;
+    @apply dark:border-dark-default dark:hover:border-dark-subtle dark:focus:border-dark-subtle dark:active:border-dark-subtle;
   }
 
   /**
@@ -304,15 +301,11 @@ defineSlots<{
   * Provide text colors
   * in button link variant
   */
-  &&--variant-link {
+  /* &&--variant-link, */
+  &&--variant-ghost {
     @apply border border-transparent;
 
     &.btn {
-      &--default {
-        @apply text-link hover:text-[color:var(--p-text-link-hover)] focus:text-[color:var(--p-text-link-focus)] active:text-[color:var(--p-text-link-focus)];
-        @apply dark:text-dark-link dark:hover:text-[color:var(--p-text-dark-link-hover)] dark:focus:text-[color:var(--p-text-dark-link-focus)] dark:active:text-[color:var(--p-text-dark-link-focus)];
-      }
-
       &--primary {
         @apply text-brand-action hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
         @apply dark:text-dark-brand-action hover:dark:text-[color:var(--p-color-dark-primary-hover)] focus:dark:text-[color:var(--p-color-dark-primary-focus)] active:dark:text-[color:var(--p-color-dark-primary-focus)];
@@ -336,6 +329,20 @@ defineSlots<{
       &--danger {
         @apply text-danger hover:text-[color:var(--p-color-danger-hover)] focus:text-[color:var(--p-color-danger-focus)] active:text-[color:var(--p-color-danger-focus)];
         @apply dark:text-dark-danger hover:dark:text-[color:var(--p-color-dark-danger-hover)] focus:dark:text-[color:var(--p-color-dark-danger-focus)] active:dark:text-[color:var(--p-color-dark-danger-focus)];
+      }
+    }
+  }
+
+  &&--variant-link {
+    &.btn {
+      /* &--default { */
+        @apply text-link hover:text-[color:var(--p-text-link-hover)] focus:text-[color:var(--p-text-link-focus)] active:text-[color:var(--p-text-link-focus)];
+        @apply dark:text-dark-link dark:hover:text-[color:var(--p-text-dark-link-hover)] dark:focus:text-[color:var(--p-text-dark-link-focus)] dark:active:text-[color:var(--p-text-dark-link-focus)];
+      /* } */
+
+      &--emphasis {
+        @apply text-state-emphasis hover:text-state-emphasis;
+        @apply dark:text-dark-state-emphasis;
       }
     }
   }
