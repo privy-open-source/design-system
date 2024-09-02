@@ -3953,7 +3953,7 @@ __metadata:
     marked: "npm:14.0.0"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.12.4"
-    pdfjs-dist: "npm:4.5.136"
+    pdfjs-dist: "npm:4.6.82"
     postcss-custom-properties: "npm:14.0.1"
     postcss-hexrgba: "npm:2.1.0"
     postcss-lighten-darken: "npm:0.9.0"
@@ -15422,7 +15422,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:4.5.136, pdfjs-dist@npm:^4.0.0":
+"pdfjs-dist@npm:4.6.82":
+  version: 4.6.82
+  resolution: "pdfjs-dist@npm:4.6.82"
+  dependencies:
+    canvas: "npm:^2.11.2"
+    path2d: "npm:^0.2.1"
+  dependenciesMeta:
+    canvas:
+      optional: true
+    path2d:
+      optional: true
+  checksum: 10/03831a862182dfb7786a509c0c146e4d38dad422917d323e7f3d966ea43feafb4e5df3735f088f915063708443e77a38ceb5b3091e7d4288214ff7285c85a6fe
+  languageName: node
+  linkType: hard
+
+"pdfjs-dist@npm:^4.0.0":
   version: 4.5.136
   resolution: "pdfjs-dist@npm:4.5.136"
   dependencies:
