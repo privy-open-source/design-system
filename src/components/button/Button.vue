@@ -150,10 +150,15 @@ defineSlots<{
   --p-color-danger-focus: darken(theme(backgroundColor.danger.emphasis), 10%);
   --p-color-dark-danger-focus: darken(theme(backgroundColor.dark.danger.emphasis), 10%);
 
-  --p-text-link-hover: darken(theme(textColor.link), 5%);
-  --p-text-dark-link-hover: darken(theme(textColor.dark.link), 5%);
-  --p-text-link-focus: darken(theme(textColor.link), 10%);
-  --p-text-dark-link-focus: darken(theme(textColor.dark.link), 10%);
+  --p-text-link-hover: darken(theme(textColor.link.DEFAULT), 5%);
+  --p-text-dark-link-hover: darken(theme(textColor.dark.link.DEFAULT), 5%);
+  --p-text-link-focus: darken(theme(textColor.link.DEFAULT), 10%);
+  --p-text-dark-link-focus: darken(theme(textColor.dark.link.DEFAULT), 10%);
+
+  --p-text-link-emphasis-hover: darken(theme(textColor.link.on-emphasis), 5%);
+  --p-text-dark-link-emphasis-hover: darken(theme(textColor.dark.link.on-emphasis), 5%);
+  --p-text-link-emphasis-focus: darken(theme(textColor.link.on-emphasis), 10%);
+  --p-text-dark-link-emphasis-focus: darken(theme(textColor.dark.link.on-emphasis), 10%);
 
   --p-button-xs-padding-x: theme(spacing.2);
   --p-button-sm-padding-x: theme(spacing.4);
@@ -238,16 +243,15 @@ defineSlots<{
   }
 
   /**
-  * Provide colors in
-  * button outline variant
-  * and border colors for
+  * Provide border
+  * colors for
   * solid variant
   */
   &&--variant-solid {
     &.btn {
       &--default {
-        @apply text-default;
-        @apply dark:text-dark-default;
+        @apply text-default border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
+        @apply dark:text-dark-default dark:border-dark-default-alpha dark:hover:border-dark-subtle-alpha dark:active:border-dark-subtle-alpha dark:focus:border-dark-subtle-alpha;
       }
 
       &--primary {
@@ -277,76 +281,83 @@ defineSlots<{
     }
   }
 
-  &&--variant-solid {
-    &.btn--default {
-      @apply border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
-      @apply dark:border-dark-default-alpha dark:hover:border-dark-subtle-alpha dark:active:border-dark-subtle-alpha dark:focus:border-dark-subtle-alpha;
-    }
-  }
-
+  /**
+  * Button outline variant
+  */
   &&--variant-outline {
     @apply border-default hover:border-subtle active:border-subtle focus:border-subtle;
     @apply dark:border-dark-default dark:hover:border-dark-subtle dark:focus:border-dark-subtle dark:active:border-dark-subtle;
+
+    &.btn--emphasis {
+      @apply border-default text-on-emphasis hover:text-on-emphasis;
+      @apply dark:border-dark-default dark:text-dark-on-emphasis;
+    }
   }
 
   /**
   * Button ghost variant
   */
   &&--variant-ghost {
-    @apply border-transparent bg-transparent hover:border-default-alpha hover:bg-default-alpha active:bg-default-alpha focus:bg-default-alpha active:border-default-alpha focus:border-default-alpha ;
+    @apply border border-transparent bg-transparent hover:border-default-alpha hover:bg-default-alpha active:bg-default-alpha focus:bg-default-alpha active:border-default-alpha focus:border-default-alpha ;
     @apply dark:border-transparent dark:bg-transparent hover:dark:border-dark-default-alpha hover:dark:bg-dark-default-alpha active:dark:bg-dark-default-alpha focus:dark:bg-dark-default-alpha active:dark:border-dark-default-alpha focus:dark:border-dark-default-alpha;
   }
 
   /**
-  * Provide text colors
-  * in button link variant
+  * Provide colors
+  * of button ghost variant
   */
-  /* &&--variant-link, */
   &&--variant-ghost {
-    @apply border border-transparent;
-
     &.btn {
       &--primary {
-        @apply text-brand-action hover:text-[color:var(--p-color-primary-hover)] focus:text-[color:var(--p-color-primary-focus)] active:text-[color:var(--p-color-primary-focus)];
-        @apply dark:text-dark-brand-action hover:dark:text-[color:var(--p-color-dark-primary-hover)] focus:dark:text-[color:var(--p-color-dark-primary-focus)] active:dark:text-[color:var(--p-color-dark-primary-focus)];
+        @apply text-brand-action hover:text-brand-action focus:text-brand-action active:text-brand-action;
+        @apply dark:text-dark-brand-action hover:dark:text-dark-brand-action focus:dark:text-dark-brand-action active:dark:text-dark-brand-action;
       }
 
       &--info {
-        @apply text-info hover:text-[color:var(--p-color-info-hover)] focus:text-[color:var(--p-color-info-focus)] active:text-[color:var(--p-color-info-focus)];
-        @apply dark:text-dark-info hover:dark:text-[color:var(--p-color-dark-info-hover)] focus:dark:text-[color:var(--p-color-dark-info-focus)] active:dark:text-[color:var(--p-color-dark-info-focus)];
+        @apply text-info hover:text-info focus:text-info active:text-info;
+        @apply dark:text-dark-info hover:dark:text-dark-info focus:dark:text-dark-info active:dark:text-dark-info;
       }
 
       &--success {
-        @apply text-success hover:text-[color:var(--p-color-success-hover)] focus:text-[color:var(--p-color-success-focus)] active:text-[color:var(--p-color-success-focus)];
-        @apply dark:text-dark-success hover:dark:text-[color:var(--p-color-dark-success-hover)] focus:dark:text-[color:var(--p-color-dark-success-focus)] active:dark:text-[color:var(--p-color-dark-success-focus)];
+        @apply text-success hover:text-success focus:text-success active:text-success;
+        @apply dark:text-dark-success hover:dark:text-success focus:dark:text-success active:dark:text-success;
       }
 
       &--warning {
-        @apply text-warning hover:text-[color:var(--p-color-warning-hover)] focus:text-[color:var(--p-color-warning-focus)] active:text-[color:var(--p-color-warning-focus)];
-        @apply dark:text-dark-warning hover:dark:text-[color:var(--p-color-dark-warning-hover)] focus:dark:text-[color:var(--p-color-dark-warning-focus)] active:dark:text-[color:var(--p-color-dark-warning-focus)];
+        @apply text-warning hover:text-warning focus:text-warning active:text-warning;
+        @apply dark:text-dark-warning hover:dark:text-warning focus:dark:text-warning active:dark:text-warning;
       }
 
       &--danger {
-        @apply text-danger hover:text-[color:var(--p-color-danger-hover)] focus:text-[color:var(--p-color-danger-focus)] active:text-[color:var(--p-color-danger-focus)];
-        @apply dark:text-dark-danger hover:dark:text-[color:var(--p-color-dark-danger-hover)] focus:dark:text-[color:var(--p-color-dark-danger-focus)] active:dark:text-[color:var(--p-color-dark-danger-focus)];
+        @apply text-danger hover:text-danger focus:text-danger active:text-danger;
+        @apply dark:text-dark-danger hover:dark:text-dark-danger focus:dark:text-dark-danger active:dark:text-dark-danger;
       }
     }
   }
 
+  /**
+  * Button link variant
+  */
   &&--variant-link {
     &.btn {
-      /* &--default { */
-        @apply text-link hover:text-[color:var(--p-text-link-hover)] focus:text-[color:var(--p-text-link-focus)] active:text-[color:var(--p-text-link-focus)];
-        @apply dark:text-dark-link dark:hover:text-[color:var(--p-text-dark-link-hover)] dark:focus:text-[color:var(--p-text-dark-link-focus)] dark:active:text-[color:var(--p-text-dark-link-focus)];
-      /* } */
+      @apply text-link hover:text-[color:var(--p-text-link-hover)] focus:text-[color:var(--p-text-link-focus)] active:text-[color:var(--p-text-link-focus)];
+      @apply dark:text-dark-link dark:hover:text-[color:var(--p-text-dark-link-hover)] dark:focus:text-[color:var(--p-text-dark-link-focus)] dark:active:text-[color:var(--p-text-dark-link-focus)];
+
+      &--primary {
+        @apply text-brand-action hover:text-[color:var(--p-color-primary-hover)];
+        @apply dark:text-dark-brand-action dark:hover:text-[color:var(--p-color-dark-primary-hover)];
+      }
 
       &--emphasis {
-        @apply text-state-emphasis hover:text-state-emphasis;
-        @apply dark:text-dark-state-emphasis;
+        @apply text-link-on-emphasis hover:text-[color:var(--p-text-link-emphasis-hover)] focus:text-[color:var(--p-text-link-emphasis-focus)] active:text-[color:var(--p-text-link-emphasis-focus)];
+        @apply dark:text-dark-link dark:hover:text-[color:var(--p-text-dark-link-emphasis-hover)] dark:focus:text-[color:var(--p-text-dark-link-emphasis-focus)] dark:active:text-[color:var(--p-text-dark-link-emphasis-focus)];
       }
     }
   }
 
+  /**
+  * Button input variant
+  */
   &&--variant-input {
     @apply border border-solid border-muted text-subtle font-normal bg-default hover:border-subtle focus:border-subtle active:outline-default;
     @apply dark:border-dark-muted dark:text-dark-subtle dark:bg-dark-default hover:dark:border-dark-subtle focus:dark:border-dark-subtle active:dark:outline-dark-default;
