@@ -300,7 +300,7 @@ it('should have style attribute `display: none` when contextual bar is hide', as
     },
   }, { global: { stubs: { transition: false } } })
 
-  const bar = screen.queryByTestId('contextual-bar') as HTMLDivElement
+  const bar = screen.queryByTestId('contextual-bar')
 
   expect(bar).not.toBeVisible()
   expect(document.body).toHaveClass('contextual-bar__body')

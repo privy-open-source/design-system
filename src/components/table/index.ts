@@ -77,3 +77,11 @@ export function withUnit (value?: number | string | undefined, unit = '%') {
 
   return value
 }
+
+export function withoutUnit (value: string, unit = '%') {
+  const val = value.endsWith(unit)
+    ? value.slice(0, value.length - unit.length)
+    : value
+
+  return Number.parseFloat(val)
+}

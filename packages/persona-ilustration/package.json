@@ -11,19 +11,31 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs",
-      "types": "./dist/types.d.ts"
+      "types": {
+        "import": "./dist/types.d.mts",
+        "require": "./dist/types.d.ts"
+      }
     },
-    "./vue/": {
-      "types": "./types/vue.d.ts",
-      "default": "./vue/"
+    "./vue/*": {
+      "types": {
+        "import": "./types/vue.d.mts",
+        "require": "./types/vue.d.cts"
+      },
+      "default": "./vue/*"
     },
-    "./svg/": {
-      "types": "./types/svg.d.ts",
-      "default": "./svg/"
+    "./svg/*": {
+      "types": {
+        "import": "./types/svg.d.mts",
+        "require": "./types/svg.d.cts"
+      },
+      "default": "./svg/*"
     },
-    "./png/": {
-      "types": "./types/png.d.ts",
-      "default": "./png/"
+    "./png/*": {
+      "types": {
+        "import": "./types/png.d.mts",
+        "require": "./types/png.d.cts"
+      },
+      "default": "./png/*"
     }
   },
   "license": "MIT",
@@ -69,7 +81,7 @@
     "webfont": "11.2.26"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.4.3"
+    "@nuxt/kit": "3.12.4"
   },
   "publishConfig": {
     "access": "public"

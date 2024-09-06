@@ -9,6 +9,9 @@ description: Alert to convey information or actions
   import pCaption from '../caption/Caption.vue'
   import pSubheading from '../subheading/Subheading.vue'
   import IconCheck from '@privyid/persona-icon/vue/checkmark-circle-solid/20.vue'
+  import { withBase } from 'vitepress'
+
+  const IMG_BG = withBase('/assets/images/img-banner-bg.svg')
 </script>
 
 # Banner
@@ -223,8 +226,8 @@ You can hide close button with `dismissable` set to `false`
 ## Custom background image
 
 <preview class="flex-col">
-  <p-banner :dismissable="false" noIcon background-url="../../public/assets/images/img-banner-bg.svg">
-    <span class="text-default">Buy and activate your Personal plan in <strong>Privy mobile app</strong></span>
+  <p-banner :dismissable="false" noIcon :background-url="IMG_BG">
+    <span class="text-default dark:text-dark-default">Buy and activate your Personal plan in <strong>Privy mobile app</strong></span>
   </p-banner>
 </preview>
 
@@ -234,7 +237,7 @@ You can hide close button with `dismissable` set to `false`
     :dismissable="false"
     noIcon
     background-url="../assets/images/img-banner-bg.svg">
-    <span class="text-default">
+    <span class="text-default dark:text-dark-default">
       Buy and activate your Personal plan in
       <strong>Privy mobile app</strong>
     </span>

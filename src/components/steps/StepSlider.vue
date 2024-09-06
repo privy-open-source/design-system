@@ -6,7 +6,7 @@
 import {
   defineComponent,
   h,
-  resolveComponent,
+  KeepAlive,
   Transition,
 } from 'vue-demi'
 import { findAllChildren } from '../utils/vnode'
@@ -31,7 +31,7 @@ export default defineComponent({
       const step = findAllChildren(slots.default(), 'Step').at(props.active)
       const body = () => {
         return props.keepAlive
-          ? h(resolveComponent('keep-alive'), () => h(step, { key: props.active }))
+          ? h(KeepAlive, h(step, { key: props.active }))
           : h(step, { key: props.active })
       }
 

@@ -568,3 +568,5 @@ Tabs use local CSS variables for enhanced real-time customization.
     </tr>
   </tbody>
 </table>
+
+[KeepAlive]: https://vuejs.org/guide/built-ins/keep-alive.html

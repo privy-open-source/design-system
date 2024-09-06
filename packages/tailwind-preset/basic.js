@@ -4,7 +4,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   darkMode: 'class',
   theme   : {
-    fontFamily   : { sans: ['DM Sans', ...defaultTheme.fontFamily.sans] },
+    fontFamily: {
+      ...defaultTheme.fontFamily,
+      mono: ['DM Mono', ...defaultTheme.fontFamily.mono],
+      sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
+    },
     letterSpacing: {
       tighter: '-0.4px',
       tight  : '-0.2px',

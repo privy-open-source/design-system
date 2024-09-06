@@ -2,3 +2,4 @@ imports.autoImport=false
 typescript.includeWorkspace=true
 typescript.strict=false
 typescript.tsConfig.compilerOptions.strictNullChecks=true
+typescript.tsConfig.compilerOptions.moduleResoultion=bundler

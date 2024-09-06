@@ -118,11 +118,13 @@ const options = computed<Options>(() => {
     pagination: false,
     autoplay  : props.autoplay,
     interval  : Number.parseInt(`${props.autoplayInterval}`),
+    start     : props.modelValue - 1,
   })
 })
 
 watch(model, (value) => {
-  slider.value.go(value - 1)
+  if (slider.value)
+    slider.value.go(value - 1)
 })
 
 watch(options, (value) => {
