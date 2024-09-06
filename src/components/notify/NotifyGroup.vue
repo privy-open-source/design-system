@@ -202,10 +202,14 @@ defineExpose({
     }
   }
 
-  &--top-right,
+  &--top-left,
   &--top-center,
-  &--top-left {
+  &--top-right {
     @apply top-8;
+
+    .notify-group__container {
+      @apply justify-start flex-col-reverse space-y-reverse;
+    }
   }
 
   &--top-right,
@@ -218,23 +222,11 @@ defineExpose({
     @apply left-8;
   }
 
-  &--bottom-center,
-  &--bottom-right,
-  &--bottom-left {
-    @apply bottom-8;
-  }
-
-  &--top-left,
-  &--top-center,
-  &--top-right {
-    .notify-group__container {
-      @apply justify-start flex-col-reverse space-y-reverse;
-    }
-  }
-
   &--bottom-left,
   &--bottom-center,
   &--bottom-right {
+    @apply bottom-8;
+
     .notify-group__container {
       @apply justify-end flex-col;
     }
