@@ -1,6 +1,6 @@
 import type { Ref, InjectionKey } from 'vue-demi'
 
-export type MenuSizeVariant = 'sm' | 'md' | 'lg' | 'xl'
+export type MenuSizeVariant = 'sm' | 'md' | 'lg' | 'xl' | 'auto'
 
 interface DropdownContext {
   close: () => void,
