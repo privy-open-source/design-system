@@ -24,9 +24,9 @@ afterEach(() => {
 
 describe('findRelativeParent', () => {
   it('should return nearest relative parent', () => {
-    const container = queryByTestId(document.body, 'container') as HTMLDivElement
-    const viewer    = queryByTestId(document.body, 'viewer') as HTMLDivElement
-    const reference = queryByTestId(document.body, 'page-2') as HTMLDivElement
+    const container = queryByTestId(document.body, 'container')
+    const viewer    = queryByTestId(document.body, 'viewer')
+    const reference = queryByTestId(document.body, 'page-2')
 
     const parent = findRelativeParent(reference, container)
 
@@ -47,9 +47,9 @@ describe('findRelativeParent', () => {
 
 describe('computePosition', () => {
   it('should render x, y position to top, left position', () => {
-    const container = queryByTestId(document.body, 'container') as HTMLDivElement
-    const viewer    = queryByTestId(document.body, 'viewer') as HTMLDivElement
-    const reference = queryByTestId(document.body, 'page-2') as HTMLDivElement
+    const container = queryByTestId(document.body, 'container')
+    const viewer    = queryByTestId(document.body, 'viewer')
+    const reference = queryByTestId(document.body, 'page-2')
 
     vi.spyOn(viewer, 'getBoundingClientRect').mockReturnValue({
       top   : 400,
@@ -90,8 +90,8 @@ describe('computePosition', () => {
 
 describe('getPosition', () => {
   it('should able to return x, y position of current object', () => {
-    const object    = queryByTestId(document.body, 'object') as HTMLDivElement
-    const reference = queryByTestId(document.body, 'page-2') as HTMLDivElement
+    const object    = queryByTestId(document.body, 'object')
+    const reference = queryByTestId(document.body, 'page-2')
 
     vi.spyOn(object, 'getBoundingClientRect').mockReturnValue({
       top   : 500,

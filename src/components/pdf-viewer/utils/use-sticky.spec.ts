@@ -39,7 +39,7 @@ it('should set element height to fit window height', async () => {
     },
   })
 
-  const target = screen.queryByTestId('target') as HTMLDivElement
+  const target = screen.queryByTestId('target')
 
   setWindowSize(1000)
 
@@ -96,7 +96,7 @@ it('should ', async () => {
     },
   })
 
-  const target = screen.queryByTestId('target') as HTMLDivElement
+  const target = screen.queryByTestId('target')
 
   setWindowSize(1000)
 
