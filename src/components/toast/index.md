@@ -38,7 +38,7 @@ description: Simple notification pop-up.
 ### Simple Usage
 
 <div class="flex mt-3">
-  <Button color="info" @click="toast('Far far away, behind the word.')">
+  <Button color="info" @click="toast({ text: 'Far far away, behind the word.', duration: -1 })">
     Show Toast
   </Button>
 </div>

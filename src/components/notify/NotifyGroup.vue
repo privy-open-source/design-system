@@ -121,8 +121,6 @@ defineExpose({
   }
 
   &--top-right {
-    @apply top-2 right-4;
-
     .notify-group__container {
       @apply items-end;
     }
@@ -136,7 +134,7 @@ defineExpose({
   }
 
   &--top-center {
-    @apply top-2 left-1/2 -translate-x-1/2;
+    @apply left-1/2 -translate-x-1/2;
 
     .notify-group__container {
       @apply items-center;
@@ -151,8 +149,6 @@ defineExpose({
   }
 
   &--top-left {
-    @apply top-2 left-4;
-
     .notify-group__container {
       @apply items-start;
     }
@@ -166,8 +162,6 @@ defineExpose({
   }
 
   &--bottom-right {
-    @apply bottom-2 right-4;
-
     .notify-group__container {
       @apply items-end;
     }
@@ -181,7 +175,7 @@ defineExpose({
   }
 
   &--bottom-center {
-    @apply bottom-2 left-1/2 -translate-x-1/2;
+    @apply left-1/2 -translate-x-1/2;
 
     .notify-group__container {
       @apply items-center;
@@ -196,8 +190,6 @@ defineExpose({
   }
 
   &--bottom-left {
-    @apply bottom-2 left-4;
-
     .notify-group__container {
       @apply items-start;
     }
@@ -213,14 +205,28 @@ defineExpose({
   &--top-left,
   &--top-center,
   &--top-right {
+    @apply top-8;
+
     .notify-group__container {
       @apply justify-start flex-col-reverse space-y-reverse;
     }
   }
 
+  &--top-right,
+  &--bottom-right {
+    @apply right-8;
+  }
+
+  &--top-left,
+  &--bottom-left {
+    @apply left-8;
+  }
+
   &--bottom-left,
   &--bottom-center,
   &--bottom-right {
+    @apply bottom-8;
+
     .notify-group__container {
       @apply justify-end flex-col;
     }

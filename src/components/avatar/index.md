@@ -7,6 +7,8 @@ description: Show user's avatar, using name or image
   import pAvatar from './Avatar.vue'
   import pAvatarGroup from './AvatarGroup.vue'
   import IconUser from '@privyid/persona-icon/vue/profile/20.vue'
+  import IconGroup from '@privyid/persona-icon/vue/chat/24.vue'
+  import pBanner from '../banner/Banner.vue'
 </script>
 
 # Avatar
@@ -59,17 +61,47 @@ description: Show user's avatar, using name or image
 </script>
 ```
 
+## Square round
+Avatar also comes in square-round type variant. Just using `square` prop
+to enable this type variant.
+
+<p-banner :dismissable="false">
+  Use square-round type variant of avatars only to represent an entity, e.g. group chat avatar. 
+  Avatar square-round can't be used to represent a user.
+</p-banner>
+
+<preview>
+  <p-avatar square>
+    <IconGroup />
+  </p-avatar>
+</preview>
+
+```vue
+<template>
+  <p-avatar square>
+    <IconChatGroup />
+  </p-avatar>
+</template>
+```
+
 ## Sizing
 
 There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is `md`.
 
-<preview>
+<preview class="flex-col space-y-4">
   <div class="flex flex-col items-center space-gap-3 lg:flex-row">
     <p-avatar src="https://picsum.photos/id/24/24" size="xs" />
     <p-avatar src="https://picsum.photos/id/32/32" size="sm" />
     <p-avatar src="https://picsum.photos/id/40/40" size="md" />
     <p-avatar src="https://picsum.photos/id/56/56" size="lg" />
     <p-avatar src="https://picsum.photos/id/96/96" size="xl" />
+  </div>
+  <div class="flex flex-col items-center space-gap-3 lg:flex-row">
+    <p-avatar src="https://picsum.photos/id/96/96" size="xl" square />
+    <p-avatar src="https://picsum.photos/id/56/56" size="lg" square />
+    <p-avatar src="https://picsum.photos/id/40/40" size="md" square />
+    <p-avatar src="https://picsum.photos/id/32/32" size="sm" square />
+    <p-avatar src="https://picsum.photos/id/24/24" size="xs" square />
   </div>
 </preview>
 
@@ -80,6 +112,12 @@ There are 5 available size variant: `xs`, `sm`, `md`, `lg`, `xl`. The default is
   <p-avatar src="https://picsum.photos/id/40/40" size="md" />
   <p-avatar src="https://picsum.photos/id/56/56" size="lg" />
   <p-avatar src="https://picsum.photos/id/96/96" size="xl" />
+
+  <p-avatar src="https://picsum.photos/id/96/96" size="xl" square />
+  <p-avatar src="https://picsum.photos/id/56/56" size="lg" square />
+  <p-avatar src="https://picsum.photos/id/40/40" size="md" square />
+  <p-avatar src="https://picsum.photos/id/32/32" size="sm" square />
+  <p-avatar src="https://picsum.photos/id/24/24" size="xs" square />
 </template>
 ```
 

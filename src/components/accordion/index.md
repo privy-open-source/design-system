@@ -559,7 +559,19 @@ const expanded = ref(false)
 ```
 
 ## Variables
-Accordion use local CSS variables on `.accordion__item` for enhanced real-time customization.
+Accordion use local CSS variables on `.accordion` and `.accordion__item` for enhanced real-time customization.
+
+### .accordion
+```sass
+--p-accordion-border: theme(borderColor.default.DEFAULT);
+--p-accordion-border-dark: theme(borderColor.dark.default.DEFAULT);
+--p-accordion-item-border: theme(borderColor.default.DEFAULT);
+--p-accordion-item-border-dark: theme(borderColor.dark.default.DEFAULT);
+--p-accordion-divide: theme(divideColor.default.DEFAULT);
+--p-accordion-divide-dark: theme(divideColor.dark.default.DEFAULT);
+```
+
+### .accordion__item
 
 ```sass
 --p-accordion-bg: theme(backgroundColor.default.DEFAULT);
@@ -570,7 +582,10 @@ Accordion use local CSS variables on `.accordion__item` for enhanced real-time c
 --p-accordion-expanded-border-dark: theme(borderColor.dark.default.DEFAULT);
 --p-accordion-expanded-activator-bg: theme(backgroundColor.default.alpha);
 --p-accordion-expanded-activator-bg-dark: theme(backgroundColor.dark.default.alpha);
+--p-accordion-expanded-activator-color: theme(textColor.default);
+--p-accordion-expanded-activator-color-dark: theme(textColor.dark.default);
 ```
+
 
 ## API
 
