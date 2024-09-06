@@ -11,17 +11,14 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs",
-      "types": "./dist/types.d.ts"
+      "types": {
+        "import": "./dist/types.d.mts",
+        "require": "./dist/types.d.ts"
+      }
     },
-    "./vue/": {
-      "types": "./types/vue.d.ts",
-      "default": "./vue/"
-    },
-    "./font/": "./font/",
-    "./svg/": {
-      "types": "./types/svg.d.ts",
-      "default": "./svg/"
-    }
+    "./vue/*": "./vue/*",
+    "./font/*": "./font/*",
+    "./svg/*": "./svg/*"
   },
   "license": "MIT",
   "repository": {
@@ -65,7 +62,7 @@
     "webfont": "11.2.26"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.4.3"
+    "@nuxt/kit": "3.12.4"
   },
   "publishConfig": {
     "access": "public"
