@@ -285,13 +285,11 @@ defineSlots<{
   &&--variant-ghost {
     @apply border border-transparent bg-transparent hover:border-default-alpha hover:bg-default-alpha active:bg-default-alpha focus:bg-default-alpha active:border-default-alpha focus:border-default-alpha ;
     @apply dark:border-transparent dark:bg-transparent hover:dark:border-dark-default-alpha hover:dark:bg-dark-default-alpha active:dark:bg-dark-default-alpha focus:dark:bg-dark-default-alpha active:dark:border-dark-default-alpha focus:dark:border-dark-default-alpha;
-  }
 
-  /**
-  * Provide colors
-  * of button ghost variant
-  */
-  &&--variant-ghost {
+    /**
+    * Provide colors
+    * of button ghost variant
+    */
     &.btn {
       &--primary {
         @apply text-brand-action hover:text-brand-action focus:text-brand-action active:text-brand-action;
