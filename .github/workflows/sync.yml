@@ -59,7 +59,7 @@ jobs:
           FIGMA_FILE_ID: ${{ secrets.FIGMA_FILE_ID_ILUSTRATION }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.PAT }}
           branch: feat/sync-icon
