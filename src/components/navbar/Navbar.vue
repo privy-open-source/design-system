@@ -73,9 +73,11 @@ const classNames = computed(() => {
 watchEffect((onCleanup) => {
   if (typeof document !== 'undefined' && document.body && props.fixed) {
     document.body.style.setProperty('padding-top', `${height.value}px`)
+    document.body.style.setProperty('--p-navbar-height', `${height.value}px`)
 
     onCleanup(() => {
       document.body.style.removeProperty('padding-top')
+      document.body.style.removeProperty('--p-navbar-height')
     })
   }
 })
