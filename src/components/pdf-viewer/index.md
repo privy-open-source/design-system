@@ -198,11 +198,12 @@ Set `layout` prop to `fit` to enable layout fit mode. It will adapt the viewer h
 
 ### Events
 
-| Name             | Arguments | Description                                                |
-|------------------|-----------|------------------------------------------------------------|
-| `loaded`         | -         | Event when document loaded                                 |
-| `error`          | Error     | Event when got error when loading the document             |
-| `error-password` | Error     | Event when document require a password or password invalid |
+| Name             | Arguments     | Description                                                |
+|------------------|---------------|------------------------------------------------------------|
+| `loading`        | ProgressEvent | Event when loading document                                |
+| `loaded`         | -             | Event when document loaded                                 |
+| `error`          | Error         | Event when got error when loading the document             |
+| `error-password` | Error         | Event when document require a password or password invalid |
 
 ## See Also
 

@@ -1,22 +1,33 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "composite": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "jsx": "preserve",
-    "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true,
+    "target": "ES2022",
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": false,
     "types": [
+      "vite/client",
       "vitest",
       "vitest/importMeta",
       "vitest/globals",
-      "jest-extended",
-      "vite/client",
-      "interactjs"
-    ],
-    "paths": {
-      "pdfjs-dist": ["node_modules/pdfjs-dist/types/src/pdf.d.ts"]
-    }
-  }
+      "jest-extended"
+    ]
+  },
+  "include": [
+    "vite.config.ts",
+    "vitest.setup.ts",
+    "src/**/*.spec.ts",
+  ]
 }

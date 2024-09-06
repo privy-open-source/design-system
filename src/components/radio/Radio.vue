@@ -29,7 +29,7 @@
         <circle
           cx="7"
           cy="7"
-          r="6.25" />
+          r="6" />
       </svg>
     </span>
     <span class="radio__label">
@@ -134,7 +134,7 @@ defineSlots<{
   * with custom icon
   */
   &__icon {
-    @apply w-5 h-5 border shrink-0 rounded-full border-subtle inline-flex items-center justify-center bg-default;
+    @apply w-4 h-4 border shrink-0 rounded-full border-subtle inline-flex items-center justify-center bg-default;
     @apply dark:border-dark-subtle dark:bg-dark-default;
 
     > svg {
@@ -144,7 +144,8 @@ defineSlots<{
   }
 
   /**
-  * give color of checkbox label
+  * give color of
+  * checkbox label
   */
   &__label {
     @apply text-default grow;
@@ -171,17 +172,31 @@ defineSlots<{
   }
 
   /**
-  * give info background and
-  * white checked icon
+  * checked radio
   */
   &&--checked {
+    &:not(.radio--checkbox, .radio--option) {
+      .radio__icon {
+        @apply bg-default;
+        @apply dark:bg-dark-inverse;
+      }
+    }
+
     .radio__icon {
-      @apply bg-info-emphasis border-info-emphasis;
-      @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis;
+      @apply border-brand-accent;
+      @apply dark:border-dark-brand-accent;
+
+      > svg {
+        @apply fill-brand-accent;
+        @apply dark:fill-dark-brand-accent;
+      }
     }
 
     &.radio--checkbox {
       .radio__icon {
+        @apply bg-brand-accent;
+        @apply dark:bg-dark-brand-accent;
+
         > svg {
           @apply fill-default;
           @apply dark:fill-dark-inverse;
@@ -191,7 +206,8 @@ defineSlots<{
   }
 
   /**
-  * radio with checkbox appearance
+  * radio with checkbox
+  * appearance
   */
   &&--checkbox {
     .radio__icon {
@@ -200,7 +216,8 @@ defineSlots<{
   }
 
   /**
-  * radio with option appearance
+  * radio with option
+  * appearance
   */
   &&--option {
     .radio__icon {
@@ -227,15 +244,16 @@ defineSlots<{
         @apply dark:text-dark-info;
 
         > svg {
-          @apply fill-info-emphasis;
-          @apply dark:fill-dark-info-emphasis;
+          @apply fill-brand-accent;
+          @apply dark:fill-dark-brand-accent;
         }
       }
     }
   }
 
   /**
-  * radio with appearance none
+  * radio with
+  * appearance none
   */
   &&--none {
     .radio__icon {
@@ -255,7 +273,8 @@ defineSlots<{
   }
 
   /**
-  * checkbox in dropdown menu
+  * checkbox in
+  * dropdown menu
   */
   .dropdown__menu > .dropdown__subitem > .dropdown__item > &,
   .dropdown__menu > .dropdown__subitem > & {

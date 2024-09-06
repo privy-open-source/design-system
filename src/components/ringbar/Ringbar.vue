@@ -33,6 +33,7 @@ import { useProgressbar } from '../progressbar'
 import type { PropType } from 'vue-demi'
 import { computed } from 'vue-demi'
 import { type SizeVariant } from '../button'
+import type { DirectionVariant } from '.'
 
 const props = defineProps({
   value: {
@@ -55,6 +56,10 @@ const props = defineProps({
     type   : Boolean,
     default: false,
   },
+  direction: {
+    type   : String as PropType<DirectionVariant>,
+    default: 'cw',
+  },
 })
 
 const presentage = useProgressbar(props)
@@ -68,6 +73,9 @@ const classNames = computed(() => {
   // eslint-disable-next-line unicorn/explicit-length-check
   if (props.size)
     result.push(`ringbar--${props.size}`)
+
+  if (props.direction)
+    result.push(`ringbar--${props.direction}`)
 
   return result
 })
@@ -114,6 +122,10 @@ const classNames = computed(() => {
 
   &--lg {
     @apply w-8 h-8;
+  }
+
+  &--ccw {
+    @apply -scale-x-100;
   }
 }
 

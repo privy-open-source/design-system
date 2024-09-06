@@ -396,8 +396,8 @@ watch([viewmode, cursor], ([vm, cursor], [vmOld, cursorOld]) => {
       }
 
       &[active="true"] {
-        @apply bg-info-emphasis border-info-emphasis text-state-emphasis cursor-default;
-        @apply dark:bg-dark-info-emphasis dark:border-dark-info-emphasis dark:text-dark-state-emphasis;
+        @apply bg-brand-accent border-brand-accent text-state-emphasis cursor-default;
+        @apply dark:bg-dark-brand-accent dark:border-dark-brand-accent dark:text-dark-state-emphasis;
       }
 
       &[disabled][active="false"] {

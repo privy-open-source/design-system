@@ -1,12 +1,20 @@
+import { KeepAlive } from './__mocks__/keep-alive'
 import { render } from '@testing-library/vue'
 import { vi } from 'vitest'
-import type { FunctionalComponent } from 'vue-demi'
 import Step from './Step.vue'
 import StepSlider from './StepSlider.vue'
-
-const KeepAlive: FunctionalComponent = vi.fn()
+import type * as VueDemi from 'vue-demi'
 
 vi.spyOn(console, 'warn').mockReturnThis()
+
+vi.mock('vue-demi', async () => {
+  const vueDemi = await vi.importActual('vue-demi')
+
+  return {
+    ...vueDemi as typeof VueDemi,
+    KeepAlive,
+  }
+})
 
 afterEach(() => {
   vi.restoreAllMocks()
@@ -45,7 +53,7 @@ it('should keeping alive component if prop keep-alive is provided', async () => 
     setup () {
       return {}
     },
-  }, { global: { stubs: { 'keep-alive': KeepAlive } } })
+  })
 
   expect(KeepAlive).toBeCalled()
 })

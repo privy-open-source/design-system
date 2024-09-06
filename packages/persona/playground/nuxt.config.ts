@@ -1,10 +1,9 @@
-import PersonaModule from '..'
+import PersonaModule from '../src/module'
 import { fileURLToPath } from 'node:url'
 import { defineNuxtConfig } from 'nuxt/config'
-import preset from '@privyid/tailwind-preset'
 
 export default defineNuxtConfig({
-  modules   : [['@nuxtjs/tailwindcss', { config: { presets: [preset] } }], PersonaModule],
+  modules   : ['@nuxtjs/tailwindcss', PersonaModule],
   alias     : { '@privyid/persona': fileURLToPath(new URL('../dist/', import.meta.url)) },
   typescript: {
     tsConfig: {

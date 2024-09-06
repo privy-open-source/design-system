@@ -5,18 +5,19 @@
  */
 import {
   Transition,
+  KeepAlive,
   h,
   ref,
   watch,
-  resolveComponent,
   defineComponent,
 } from 'vue-demi'
 import { findAllChildren, toBoolean } from '../utils/vnode'
+import { useToNumber } from '@vueuse/core'
 
 export default defineComponent({
   props: {
     active: {
-      type    : Number,
+      type    : [Number, String],
       required: true,
     },
     keepAlive: {
@@ -30,6 +31,7 @@ export default defineComponent({
   },
   setup (props, { slots }) {
     const transition = ref(props.vertical ? 'slide-top' : 'slide-left')
+    const active     = useToNumber(() => props.active, { nanToZero: true })
 
     watch(() => props.active, (value, last) => {
       transition.value = value < last
@@ -49,11 +51,11 @@ export default defineComponent({
             style    : { display: isActive ? 'block' : 'none' },
           })
         })
-        .at(props.active)
+        .at(active.value)
 
       const body = () => {
         return props.keepAlive
-          ? h(resolveComponent('keep-alive'), () => tab)
+          ? h(KeepAlive, tab)
           : tab
       }
 

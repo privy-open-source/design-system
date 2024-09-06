@@ -23,5 +23,7 @@
   "css.lint.validProperties": [
     "rx",
     "ry"
-  ]
+  ],
+  "javascript.preferences.importModuleSpecifier": "shortest",
+  "js/ts.implicitProjectConfig.module": "NodeNext"
 }

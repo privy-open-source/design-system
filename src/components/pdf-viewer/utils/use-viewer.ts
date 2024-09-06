@@ -24,6 +24,7 @@ import {
 export interface OpenDocConfig {
   disableStream: boolean,
   disableRange: boolean,
+  httpHeaders: Object,
 }
 
 export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivElement>) {
@@ -40,9 +41,10 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
   const ready     = shallowRef(false)
   const error     = shallowRef<Error>()
 
-  const loadEvent  = createEventHook<PDFJS.PDFDocumentProxy>()
-  const errorEvent = createEventHook<Error>()
-  const readyEvent = createEventHook<PDFJSViewer.PDFViewer>()
+  const loadEvent    = createEventHook<PDFJS.PDFDocumentProxy>()
+  const loadingEvent = createEventHook<PDFJS.OnProgressParameters>()
+  const errorEvent   = createEventHook<Error>()
+  const readyEvent   = createEventHook<PDFJSViewer.PDFViewer>()
 
   async function openDoc (url: string, password?: string, config: Partial<OpenDocConfig> = {}) {
     loading.value = true
@@ -61,7 +63,10 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
           cMapPacked   : true,
           disableStream: config.disableStream,
           disableRange : config.disableRange,
+          httpHeaders  : config.httpHeaders,
         })
+
+        pdfLoadingTask.value.onProgress = loadingEvent.trigger
 
         pdfDoc.value = await pdfLoadingTask.value.promise
 
@@ -181,5 +186,6 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
     onLoaded      : loadEvent.on,
     onError       : errorEvent.on,
     onReady       : readyEvent.on,
+    onLoading     : loadingEvent.on,
   }
 }

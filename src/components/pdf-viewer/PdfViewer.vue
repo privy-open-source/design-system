@@ -60,7 +60,7 @@
 
       <transition name="slide-up">
         <PdfNavigation
-          v-show="!idle && !loading && !error" />
+          v-show="src && !idle && !loading && !error" />
       </transition>
 
       <slot
@@ -156,6 +156,7 @@ const props = defineProps({
 const emit = defineEmits<{
   'ready': [PDFJSViewer.PDFViewer],
   'loaded': [PDFJS.PDFDocumentProxy],
+  'loading': [PDFJS.OnProgressParameters],
   'error': [Error],
   'error-password': [Error],
   'update:page': [number],
@@ -194,6 +195,7 @@ const {
   onLoaded,
   onError,
   onReady,
+  onLoading,
 } = useViewer(container, viewer)
 
 watchDebounced(() => [props.src, props.password], ([src, password]) => {
@@ -222,6 +224,10 @@ onError((error_) => {
 
 onReady((pdfViewer) => {
   emit('ready', pdfViewer)
+})
+
+onLoading((event) => {
+  emit('loading', event)
 })
 
 function zoomIn () {

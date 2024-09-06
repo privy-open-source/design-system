@@ -208,6 +208,9 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   document.body.classList.remove('contextual-bar__body')
+
+  if (model.value)
+    onLeave()
 })
 
 defineSlots<{

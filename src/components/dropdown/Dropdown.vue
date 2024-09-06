@@ -203,9 +203,9 @@ const slots = defineSlots<{
     close: () => void,
     toggle: () => void,
   }): VNode[],
-  'button-content'(): VNode[],
-  'prepend'(): VNode[],
-  'append'(): VNode[],
+  'button-content': () => VNode[],
+  'prepend': () => VNode[],
+  'append': () => VNode[],
 }>()
 
 const root     = ref<HTMLDivElement>()
@@ -385,6 +385,10 @@ defineExpose({
 
   &--menu-sm {
     --p-dropdown-size: var(--p-dropdown-size-sm);
+  }
+
+  &--menu-auto {
+    --p-dropdown-size: auto;
   }
 
   &__menu {

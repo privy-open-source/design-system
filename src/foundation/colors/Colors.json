@@ -894,9 +894,9 @@
         {
           "id" : 3,
           "token" : "brand.accent",
-          "figma" : "main/red/40",
-          "hex"   : "#E42E2C",
-          "parentToken" : "$red.40"
+          "figma" : "main/blue/40",
+          "hex"   : "#0065D1",
+          "parentToken" : "$blue.40"
         }
       ]
     }
@@ -924,9 +924,9 @@
         {
           "id" : 3,
           "token" : "brand.accent",
-          "figma" : "main/red/30",
-          "hex"   : "#EA5C5A",
-          "parentToken" : "$red.30"
+          "figma" : "main/blue/30",
+          "hex"   : "#3887DB",
+          "parentToken" : "$blue.30"
         }
       ]
     }
@@ -974,13 +974,20 @@
         },
         {
           "id" : 6,
+          "token" : "fg.linkOnEmphasis",
+          "figma" : "main/blue/20",
+          "hex"   : "#70A9E5",
+          "parentToken" : "$blue.20"
+        },
+        {
+          "id" : 7,
           "token" : "fg.onEmphasis",
           "figma" : "main/gray/0",
           "hex"   : "#FDFDFD",
           "parentToken" : "$gray.0"
         },
         {
-          "id" : 7,
+          "id" : 8,
           "token" : "fg.stateEmphasis",
           "figma" : "main/gray/0",
           "hex"   : "#FDFDFD",
@@ -1066,13 +1073,20 @@
         },
         {
           "id" : 6,
+          "token" : "fg.linkOnEmphasis",
+          "figma" : "main/blue/40",
+          "hex"   : "#0065D1",
+          "parentToken" : "$blue.40"
+        },
+        {
+          "id" : 7,
           "token" : "fg.onEmphasis",
           "figma" : "main/gray/100",
           "hex"   : "#0D1117",
           "parentToken" : "$gray.100"
         },
         {
-          "id" : 7,
+          "id" : 8,
           "token" : "fg.stateEmphasis",
           "figma" : "main/gray/0",
           "hex"   : "#FDFDFD",
