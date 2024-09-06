@@ -207,31 +207,55 @@ defineSlots<{
       &--default {
         @apply bg-default-alpha focus:bg-subtle-alpha active:bg-subtle-alpha hover:text-default focus:text-default;
         @apply dark:bg-dark-default-alpha focus:dark:bg-dark-subtle-alpha active:dark:bg-dark-subtle-alpha hover:dark:text-dark-default focus:dark:text-dark-default;
+
+        /* Border */
+        @apply text-default border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
+        @apply dark:text-dark-default dark:border-dark-default-alpha dark:hover:border-dark-subtle-alpha dark:active:border-dark-subtle-alpha dark:focus:border-dark-subtle-alpha;
       }
 
       &--primary {
         @apply bg-brand-action hover:bg-[color:var(--p-color-primary-hover)] focus:bg-[color:var(--p-color-primary-focus)] active:bg-[color:var(--p-color-primary-focus)];
         @apply dark:bg-dark-brand-action hover:dark:bg-[color:var(--p-color-dark-primary-hover)] focus:dark:bg-[color:var(--p-color-dark-primary-focus)] active:dark:bg-[color:var(--p-color-dark-primary-focus)];
+
+        /* Border */
+        @apply border-brand-action hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
+        @apply dark:border-dark-brand-action hover:dark:border-[color:var(--p-color-dark-primary-hover)] focus:dark:border-[color:var(--p-color-dark-primary-focus)] active:dark:border-[color:var(--p-color-dark-primary-focus)];
       }
 
       &--info {
         @apply bg-info-emphasis hover:bg-[color:var(--p-color-info-hover)] focus:bg-[color:var(--p-color-info-focus)] active:bg-[color:var(--p-color-info-focus)];
         @apply dark:bg-dark-info-emphasis hover:dark:bg-[color:var(--p-color-dark-info-hover)] focus:dark:bg-[color:var(--p-color-dark-info-focus)] active:dark:bg-[color:var(--p-color-dark-info-focus)];
+
+        /* Border */
+        @apply border-info-emphasis hover:border-[color:var(--p-color-info-hover)] focus:border-[color:var(--p-color-info-focus)] active:border-[color:var(--p-color-info-focus)];
+        @apply dark:border-dark-info-emphasis hover:dark:border-[color:var(--p-color-dark-info-hover)] focus:dark:border-[color:var(--p-color-dark-info-focus)] active:dark:border-[color:var(--p-color-dark-info-focus)];
       }
 
       &--success {
         @apply bg-success-emphasis hover:bg-[color:var(--p-color-success-hover)] focus:bg-[color:var(--p-color-success-focus)] active:bg-[color:var(--p-color-success-focus)];
-        @apply dark:bg-dark-success-emphasis hover:dark:bg-[color:var(--p-color-dark-success-hover)] focus:dark:bg-[color:var(--p-color-dark-success-focus)] active:dark:bg-[color:var(--p-color-dark-success-focus)]
+        @apply dark:bg-dark-success-emphasis hover:dark:bg-[color:var(--p-color-dark-success-hover)] focus:dark:bg-[color:var(--p-color-dark-success-focus)] active:dark:bg-[color:var(--p-color-dark-success-focus)];
+
+        /* Border */
+        @apply border-success-emphasis hover:border-[color:var(--p-color-success-hover)] focus:border-[color:var(--p-color-success-focus)] active:border-[color:var(--p-color-success-focus)];
+        @apply dark:border-dark-success-emphasis hover:dark:border-[color:var(--p-color-dark-success-hover)] focus:dark:border-[color:var(--p-color-dark-success-focus)] active:dark:border-[color:var(--p-color-dark-success-fucus)];
       }
 
       &--warning {
         @apply bg-warning-emphasis hover:bg-[color:var(--p-color-warning-hover)] focus:bg-[color:var(--p-color-warning-focus)] active:bg-[color:var(--p-color-warning-focus)];
         @apply dark:bg-dark-warning-emphasis hover:dark:bg-[color:var(--p-color-dark-warning-hover)] focus:dark:bg-[color:var(--p-color-dark-warning-focus)] active:dark:bg-[color:var(--p-color-dark-warning-focus)];
+
+        /* Border */
+        @apply border-warning-emphasis hover:border-[color:var(--p-color-warning-hover)] focus:border-[color:var(--p-color-warning-focus)] active:border-[color:var(--p-color-warning-focus)];
+        @apply dark:border-dark-warning-emphasis hover:dark:border-[color:var(--p-color-dark-warning-hover)] focus:dark:border-[color:var(--p-color-dark-warning-focus)] active:dark:border-[color:var(--p-color-dark-warning-focus)]
       }
 
       &--danger {
         @apply bg-danger-emphasis hover:bg-[color:var(--p-color-danger-hover)] focus:bg-[color:var(--p-color-danger-focus)] active:bg-[color:var(--p-color-danger-focus)];
-        @apply dark:bg-dark-danger-emphasis hover:dark:bg-[color:var(--p-color-dark-danger-hover)] focus:dark:bg-[color:var(--p-color-dark-danger-focus)] active:dark:bg-[color:var(--p-color-dark-danger-focus)]
+        @apply dark:bg-dark-danger-emphasis hover:dark:bg-[color:var(--p-color-dark-danger-hover)] focus:dark:bg-[color:var(--p-color-dark-danger-focus)] active:dark:bg-[color:var(--p-color-dark-danger-focus)];
+
+        /* Border */
+        @apply border-danger-emphasis hover:border-[color:var(--p-color-danger-hover)] focus:border-[color:var(--p-color-danger-focus)] active:border-[color:var(--p-color-danger-focus)];
+        @apply dark:border-dark-danger-emphasis hover:dark:border-[color:var(--p-color-dark-danger-hover)] focus:dark:border-[color:var(--p-color-dark-danger-focus)] active:dark:border-[color:var(--p-color-dark-danger-focus)];
       }
     }
   }
@@ -240,45 +264,6 @@ defineSlots<{
   &&--variant-ghost {
     @apply border border-solid text-default hover:text-default hover:shadow-lg focus:shadow-none active:shadow-none focus:text-default active:text-default;
     @apply dark:text-dark-default hover:dark:text-dark-default focus:dark:text-dark-default active:dark:text-dark-default;
-  }
-
-  /**
-  * Provide border
-  * colors for
-  * solid variant
-  */
-  &&--variant-solid {
-    &.btn {
-      &--default {
-        @apply text-default border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
-        @apply dark:text-dark-default dark:border-dark-default-alpha dark:hover:border-dark-subtle-alpha dark:active:border-dark-subtle-alpha dark:focus:border-dark-subtle-alpha;
-      }
-
-      &--primary {
-        @apply border-brand-action hover:border-[color:var(--p-color-primary-hover)] focus:border-[color:var(--p-color-primary-focus)] active:border-[color:var(--p-color-primary-focus)];
-        @apply dark:border-dark-brand-action hover:dark:border-[color:var(--p-color-dark-primary-hover)] focus:dark:border-[color:var(--p-color-dark-primary-focus)] active:dark:border-[color:var(--p-color-dark-primary-focus)];
-      }
-
-      &--info {
-        @apply border-info-emphasis hover:border-[color:var(--p-color-info-hover)] focus:border-[color:var(--p-color-info-focus)] active:border-[color:var(--p-color-info-focus)];
-        @apply dark:border-dark-info-emphasis hover:dark:border-[color:var(--p-color-dark-info-hover)] focus:dark:border-[color:var(--p-color-dark-info-focus)] active:dark:border-[color:var(--p-color-dark-info-focus)];
-      }
-
-      &--success {
-        @apply border-success-emphasis hover:border-[color:var(--p-color-success-hover)] focus:border-[color:var(--p-color-success-focus)] active:border-[color:var(--p-color-success-focus)];
-        @apply dark:border-dark-success-emphasis hover:dark:border-[color:var(--p-color-dark-success-hover)] focus:dark:border-[color:var(--p-color-dark-success-focus)] active:dark:border-[color:var(--p-color-dark-success-fucus)];
-      }
-
-      &--warning {
-        @apply border-warning-emphasis hover:border-[color:var(--p-color-warning-hover)] focus:border-[color:var(--p-color-warning-focus)] active:border-[color:var(--p-color-warning-focus)];
-        @apply dark:border-dark-warning-emphasis hover:dark:border-[color:var(--p-color-dark-warning-hover)] focus:dark:border-[color:var(--p-color-dark-warning-focus)] active:dark:border-[color:var(--p-color-dark-warning-focus)]
-      }
-
-      &--danger {
-        @apply border-danger-emphasis hover:border-[color:var(--p-color-danger-hover)] focus:border-[color:var(--p-color-danger-focus)] active:border-[color:var(--p-color-danger-focus)];
-        @apply dark:border-dark-danger-emphasis hover:dark:border-[color:var(--p-color-dark-danger-hover)] focus:dark:border-[color:var(--p-color-dark-danger-focus)] active:dark:border-[color:var(--p-color-dark-danger-focus)];
-      }
-    }
   }
 
   /**
