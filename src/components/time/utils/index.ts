@@ -13,7 +13,7 @@ import {
 import { uniq } from 'lodash-es'
 
 export function getHourUnits (model: Date, is12Hour: boolean, step: number = 1, min?: Date, max?: Date) {
-  if (isBefore(max as Date, min as Date)) {
+  if (isBefore(max, min)) {
     console.warn('`max` value should greater than `min` value and vice versa')
 
     return []
@@ -43,7 +43,7 @@ export function getHourUnits (model: Date, is12Hour: boolean, step: number = 1, 
 }
 
 export function getMinuteUnits (model: Date, currentHour: number, step: number = 1, min?: Date, max?: Date) {
-  if (isBefore(max as Date, min as Date)) {
+  if (isBefore(max, min)) {
     console.warn('`max` value should greater than `min` value and vice versa')
 
     return []

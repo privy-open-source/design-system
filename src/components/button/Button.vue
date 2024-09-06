@@ -91,10 +91,10 @@ const classNames = computed(() => {
     result.push('btn--loading')
 
   // eslint-disable-next-line unicorn/explicit-length-check
-  if (inputSetting?.size.value)
+  if (inputSetting?.size?.value)
     result.push(`btn--${inputSetting?.size.value}`)
   // eslint-disable-next-line unicorn/explicit-length-check
-  else if (buttonSetting?.size.value)
+  else if (buttonSetting?.size?.value)
     result.push(`btn--${buttonSetting?.size.value}`)
   // eslint-disable-next-line unicorn/explicit-length-check
   else if (props.size)
@@ -344,6 +344,8 @@ defineSlots<{
   * Button icon variant
   */
   &&--icon {
+    @apply gap-1;
+
     &.btn--xs {
       @apply px-[2px];
     }

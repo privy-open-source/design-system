@@ -18,18 +18,26 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs",
-      "types": "./dist/types.d.ts"
+      "types": {
+        "import": "./dist/types.d.mts",
+        "require": "./dist/types.d.ts"
+      }
     },
     "./core": {
       "import": "./dist/core/index.mjs",
+      "require": "./dist/core/index.js",
       "types": "./dist/core/index.d.ts"
     },
     "./directive": {
       "import": "./dist/directive/index.mjs",
+      "require": "./dist/directive/index.js",
       "types": "./dist/directive/index.d.ts"
     },
-    "./components/": "./dist/components/"
+    "./components/*": "./dist/components/*"
   },
+  "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
   "typesVersions": {
     "*": {
       "core": [
@@ -37,17 +45,11 @@
       ],
       "directive": [
         "./dist/directive/index.d.ts"
-      ],
-      "components": [
-        "./dist/components/"
       ]
     }
   },
-  "main": "./dist/module.cjs",
-  "module": "./dist/module.mjs",
-  "types": "./dist/types.d.ts",
   "files": [
-    "dist"
+    "dist/"
   ],
   "scripts": {
     "prepack": "yarn build",
@@ -55,7 +57,7 @@
     "build": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev:prepare": "nuxt-module-build build --stub && nuxi prepare playground"
   },
   "dependencies": {
     "@floating-ui/dom": "1.6.10",
@@ -65,6 +67,21 @@
     "@splidejs/splide": "4.1.4",
     "@testing-library/dom": "10.4.0",
     "@testing-library/user-event": "14.5.2",
+    "@tiptap/extension-font-family": "^2.5.9",
+    "@tiptap/extension-highlight": "^2.5.9",
+    "@tiptap/extension-image": "^2.6.4",
+    "@tiptap/extension-link": "^2.6.6",
+    "@tiptap/extension-placeholder": "^2.5.9",
+    "@tiptap/extension-table": "^2.6.5",
+    "@tiptap/extension-table-cell": "^2.6.5",
+    "@tiptap/extension-table-header": "^2.6.5",
+    "@tiptap/extension-table-row": "^2.6.5",
+    "@tiptap/extension-text-align": "^2.5.9",
+    "@tiptap/extension-text-style": "^2.5.9",
+    "@tiptap/extension-underline": "^2.5.9",
+    "@tiptap/pm": "^2.5.9",
+    "@tiptap/starter-kit": "^2.5.9",
+    "@tiptap/vue-3": "^2.5.9",
     "@vueuse/core": "11.0.1",
     "@vueuse/math": "11.0.1",
     "@zxing/browser": "0.1.5",
@@ -82,6 +99,7 @@
     "pdfjs-dist": "4.5.136",
     "scroll-into-view": "1.16.2",
     "tabbable": "6.2.0",
+    "tiptap-extension-font-size": "^1.2.0",
     "vue-collapsed": "1.3.4",
     "vue-demi": "0.14.10",
     "vuedraggable": "next",

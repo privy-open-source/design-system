@@ -217,7 +217,7 @@
     }
   }
 
-  table {
+  > * > table {
     @apply min-w-full md:table;
 
     thead tr {

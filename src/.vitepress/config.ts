@@ -329,6 +329,10 @@ export default defineConfig({
               link: '/components/radio/',
             },
             {
+              text: 'Richtext',
+              link: '/components/richtext/',
+            },
+            {
               text: 'Select',
               link: '/components/select/',
             },

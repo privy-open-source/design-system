@@ -3,6 +3,7 @@ import {
   defineTable,
   withKey,
   withoutKey,
+  withoutUnit,
   withUnit,
 } from '.'
 
@@ -121,5 +122,15 @@ describe('withUnit', () => {
 
   it('should return as is if value has a unit', () => {
     expect(withUnit('10rem')).toBe('10rem')
+  })
+})
+
+describe('withoutUnit', () => {
+  it('should remove unit if exist', () => {
+    expect(withoutUnit('100%')).toBe(100)
+  })
+
+  it('should return as is if value has no unit', () => {
+    expect(withoutUnit('50')).toBe(50)
   })
 })
