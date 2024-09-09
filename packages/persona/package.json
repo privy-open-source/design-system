@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona",
   "description": "Persona core package",
-  "version": "1.0.0-rc.8",
+  "version": "1.0.0-rc.9",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
@@ -23,16 +23,8 @@
         "require": "./dist/types.d.ts"
       }
     },
-    "./core": {
-      "import": "./dist/core/index.mjs",
-      "require": "./dist/core/index.js",
-      "types": "./dist/core/index.d.ts"
-    },
-    "./directive": {
-      "import": "./dist/directive/index.mjs",
-      "require": "./dist/directive/index.js",
-      "types": "./dist/directive/index.d.ts"
-    },
+    "./core/*": "./dist/core/*",
+    "./directive/*": "./dist/directive/*",
     "./components/*": "./dist/components/*"
   },
   "main": "./dist/module.cjs",
