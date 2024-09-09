@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona-icon",
   "description": "Persona icon package",
-  "version": "1.0.0-rc.7",
+  "version": "1.0.0-rc.8",
   "packageManager": "yarn@4.4.1",
   "type": "module",
   "main": "./dist/module.cjs",
