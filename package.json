@@ -1,6 +1,6 @@
 {
   "name": "@privyid/design-system",
-  "version": "1.0.0-rc.8",
+  "version": "1.0.0-rc.10",
   "packageManager": "yarn@4.4.1",
   "private": true,
   "type": "module",
@@ -132,7 +132,7 @@
     "vue-collapsed": "^1.2.5",
     "vue-content-loader": "^2.0.1",
     "vue-demi": "0.14.10",
-    "vue-router": "4.4.3",
+    "vue-router": "4.4.4",
     "vuedraggable": "next",
     "webfontloader": "1.6.28",
     "zxcvbn": "^4.4.2"

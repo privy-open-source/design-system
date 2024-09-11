@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona-icon",
   "description": "Persona icon package",
-  "version": "1.0.0-rc.8",
+  "version": "1.0.0-rc.10",
   "packageManager": "yarn@4.4.1",
   "type": "module",
   "main": "./dist/module.cjs",
@@ -45,7 +45,7 @@
     "changelog": "jiti scripts/changelog.ts"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "0.8.3",
+    "@nuxt/module-builder": "0.8.4",
     "@types/fs-extra": "11.0.4",
     "@types/minimist": "1.2.5",
     "dotenv": "16.4.5",

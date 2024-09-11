@@ -96,10 +96,10 @@ const emit = defineEmits<{
 }>()
 
 const footerClassNames = computed(() => {
-  const result: string[] = ['footer']
+  const result: string[] = ['modal-dialog__footer']
 
   if (props.align)
-    result.push(`footer--align-${props.align}`)
+    result.push(`modal-dialog__footer--align-${props.align}`)
 
   return result
 })
@@ -114,22 +114,24 @@ function confirm (): void {
 </script>
 
 <style lang="postcss">
-.footer {
-  @apply flex items-center space-x-3;
+.modal-dialog {
+  &__footer {
+    @apply flex items-center space-x-3;
 
-  &--align {
-    &-left,
-    &-start {
-      @apply justify-start;
-    }
+    &--align {
+      &-left,
+      &-start {
+        @apply justify-start;
+      }
 
-    &-right,
-    &-end {
-      @apply justify-end;
-    }
+      &-right,
+      &-end {
+        @apply justify-end;
+      }
 
-    &-center {
-      @apply justify-center;
+      &-center {
+        @apply justify-center;
+      }
     }
   }
 }
