@@ -4,7 +4,7 @@
     :key="id"
     v-model="modal"
     v-bind="context.attrs"
-    class="dialog"
+    class="modal-dialog"
     :title="context.title"
     :size="context.size"
     :centered="context.centered"
@@ -15,7 +15,7 @@
     @close="onCancel">
     <template #header>
       <template v-if="dialogIcon">
-        <div class="dialog__icon">
+        <div class="modal-dialog__icon">
           <component
             :is="dialogIcon"
             :class="context.iconClass"
@@ -139,7 +139,7 @@ defineExpose({
 </script>
 
 <style lang="postcss">
-.dialog {
+.modal-dialog {
   --p-modal-z-index: theme(zIndex.dialog);
 
   &__icon {
