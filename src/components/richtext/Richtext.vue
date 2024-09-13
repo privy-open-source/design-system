@@ -66,8 +66,8 @@ import Link from '@tiptap/extension-link'
 import ToolbarSimple from './RichtextToolbarSimple.vue'
 import ToolbarAdvance from './RichtextToolbarAdvance.vue'
 
-import ImageEdit from './floating-menu/ImageEdit.vue'
-import LinkDetail from './floating-menu/LinkDetail.vue'
+import ImageEdit from './popup/RichtextPopupImageEdit.vue'
+import LinkDetail from './popup/RichtextPopupLinkDetail.vue'
 
 import { useVModel } from '../input'
 import { defuFn } from 'defu'

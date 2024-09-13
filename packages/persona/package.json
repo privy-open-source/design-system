@@ -90,6 +90,7 @@
     "defu": "6.1.4",
     "fast-equals": "5.0.1",
     "fuse.js": "7.0.0",
+    "html-escaper": "^3.0.3",
     "interactjs": "1.10.27",
     "lodash-es": "4.17.21",
     "marked": "14.1.2",

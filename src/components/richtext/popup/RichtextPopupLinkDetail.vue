@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts" setup>
-import LinkEdit from './LinkEdit.vue'
+import LinkEdit from './RichtextPopupLinkEdit.vue'
 import pButton from '../../button/Button.vue'
 import IconEdit from '@privyid/persona-icon/vue/edit/20.vue'
 import IconNewPage from '@privyid/persona-icon/vue/new-page/16.vue'
