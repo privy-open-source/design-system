@@ -476,7 +476,7 @@ it('should have clear button if prop `clearable` was provided', async () => {
 
   await fireEvent.click(clear)
 
-  expect(model.value).toBeUndefined()
+  expect(model.value).toStrictEqual({ text: '', value: undefined })
 })
 
 it('should clear search keyword if click clear button when select was opened', async () => {
@@ -594,4 +594,41 @@ it('should show selected items when options updated', async () => {
   await nextTick()
 
   expect(activator).toHaveTextContent('orange')
+})
+
+it('should be keep selected when option changed after search', async () => {
+  const options = ref<string[]>([
+    'apple',
+    'grape',
+    'orange',
+  ])
+  const model   = ref('apple')
+  const screen  = render({
+    components: { Select },
+    template  : `
+      <Select
+        v-model="model"
+        :options="options"
+      />
+    `,
+    setup () {
+      return { model, options }
+    },
+  })
+
+  const activator = screen.queryByTestId('select-activator')
+
+  expect(activator).toHaveTextContent('apple')
+
+  const select = screen.queryByTestId('select')
+  const caret  = screen.queryByTestId('select-caret-icon')
+
+  await fireEvent.click(caret)
+
+  expect(select).toHaveClass('select--open')
+
+  await fireEvent.update(screen.queryByTestId('select-search'), 'orange')
+  await nextTick()
+
+  expect(activator).toHaveTextContent('apple')
 })
