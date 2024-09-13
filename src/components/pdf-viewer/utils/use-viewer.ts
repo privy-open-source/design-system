@@ -22,9 +22,9 @@ import {
 } from './pdfjs'
 
 export interface OpenDocConfig {
-  disableStream: boolean,
-  disableRange: boolean,
-  httpHeaders: Object,
+  disableStream?: boolean,
+  disableRange?: boolean,
+  httpHeaders?: Object,
 }
 
 export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivElement>) {
@@ -46,7 +46,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
   const errorEvent   = createEventHook<Error>()
   const readyEvent   = createEventHook<PDFJSViewer.PDFViewer>()
 
-  async function openDoc (url: string, password?: string, config: Partial<OpenDocConfig> = {}) {
+  async function openDoc (url: string, password?: string, config: OpenDocConfig = {}) {
     loading.value = true
     error.value   = undefined
 
