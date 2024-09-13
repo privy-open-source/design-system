@@ -41,6 +41,8 @@ export const openDoc = vi.fn((src: string, password?: string) => {
 
         void errorEvent.trigger(context.error)
       } else {
+        void loadingEvent.trigger({ total: 100, loaded: 10 })
+
         context.ready     = true
         context.totalPage = 5
 
