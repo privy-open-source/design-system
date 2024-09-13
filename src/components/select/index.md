@@ -51,6 +51,7 @@ description: Base form input.
   const province   = ref('')
   const city       = ref('')
   const multiValue = ref([])
+  const provinces  = ref([])
 
   const provincesAdapter = defineAsyncAdapter(async (keyword, page, perPage) => {
     const response = await getProvinces(keyword, page, perPage)
@@ -258,6 +259,10 @@ You can set size of select via `size` prop. Available size are `lg`, `md`, `sm`,
   <p-select :options="optionsD" v-model="multiValue" multiple />
 </preview>
 
+**Result :**
+
+<pre><code>{{ multiValue || [] }}</code></pre>
+
 ```vue
 <template>
   <p-select :options="optionsD" v-model="multiValue" multiple />
@@ -360,11 +365,24 @@ It will take care of loading, inifinite load, and other stuff.
 
 <pre><code>{{ province }}</code></pre>
 
+### Multiple value
+<preview>
+  <p-select
+    :adapter="provincesAdapter"
+    v-model="provinces"
+    multiple />
+</preview>
+
+**Result:**
+
+<pre><code>{{ provinces }}</code></pre>
+
 ```vue
 <template>
   <p-select
     :adapter="provincesAdapter"
-    v-model="province" />
+    v-model="province"
+    multiple />
 </template>
 
 <script setup>

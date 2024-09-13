@@ -190,7 +190,7 @@ import { isEqual } from '../utils/value'
 import { onStartTyping, watchPausable } from '@vueuse/core'
 import type { SizeVariant } from '../button'
 import type { MenuSizeVariant } from '../dropdown/'
-import { isNil } from 'lodash-es'
+import { isNil, uniqBy } from 'lodash-es'
 
 defineOptions({
   models: {
@@ -377,25 +377,28 @@ const modelWatcher = watchPausable(() => props.modelValue, (value) => {
 
 watch(items, (options) => {
   if (props.modelValue && options.length > 0) {
-    localModel.value = props.multiple
+    const value = props.multiple
       ? filterSelected(options, props.modelValue as unknown[])
       : findSelected(options, props.modelValue)
+
+    localModel.value = props.multiple
+      ? uniqBy([...localModel.value as SelectItem[], ...value as SelectItem[]], 'value')
+      : ((value as SelectItem).value === undefined ? localModel.value as SelectItem : value as SelectItem)
   }
 })
 
 function setValue (item?: SelectItem) {
-  let value: SelectItem | SelectItem[]
+  // define default item value
+  let value: SelectItem | SelectItem[] = props.multiple
+    ? []
+    : { text: '', value: undefined }
 
-  if (props.multiple) {
-    if (item) {
-      if (Array.isArray(localModel.value)) {
-        value = localModel.value.some((val) => isEqual(val.value, item.value))
-          ? localModel.value.filter((val) => !isEqual(val.value, item.value))
-          : [...localModel.value, item]
-      }
-    } else
-      value = []
-  } else
+  if (props.multiple && item && Array.isArray(localModel.value)) {
+    value = localModel.value.some((val) => isEqual(val.value, item.value))
+      ? localModel.value.filter((val) => !isEqual(val.value, item.value))
+      : [...localModel.value, item]
+  }
+  if (!props.multiple && item)
     value = item
 
   modelWatcher.pause()
@@ -431,7 +434,10 @@ function onClear () {
 }
 
 function isSelected (item: SelectItem) {
-  if (!localModel.value)
+  if (props.multiple && localModel.value.length === 0)
+    return false
+
+  if (!props.multiple && (localModel.value as SelectItem).value === undefined)
     return false
 
   if (props.multiple && Array.isArray(localModel.value))
