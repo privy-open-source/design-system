@@ -23,15 +23,15 @@
 </template>
 
 <script lang="ts" setup>
-import History from './controls/History.vue'
-import TextAlign from './controls/TextAlign.vue'
-import TextHeading from './controls/TextHeading.vue'
-import TextFormat from './controls/TextFormat.vue'
-import FontFamily from './controls/FontFamily.vue'
-import FontSize from './controls/FontSize.vue'
-import Highlight from './controls/Highlight.vue'
-import Image from './controls/Image.vue'
-import Table from './controls/Table.vue'
-import Link from './controls/Link.vue'
-import List from './controls/List.vue'
+import History from './control/RichtextControlHistory.vue'
+import TextAlign from './control/RichtextControlTextAlign.vue'
+import TextHeading from './control/RichtextControlTextHeading.vue'
+import TextFormat from './control/RichtextControlTextFormat.vue'
+import FontFamily from './control/RichtextControlFontFamily.vue'
+import FontSize from './control/RichtextControlFontSize.vue'
+import Highlight from './control/RichtextControlHighlight.vue'
+import Image from './control/RichtextControlImage.vue'
+import Table from './control/RichtextControlTable.vue'
+import Link from './control/RichtextControlLink.vue'
+import List from './control/RichtextControlList.vue'
 </script>

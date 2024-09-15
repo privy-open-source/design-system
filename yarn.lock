@@ -4040,6 +4040,7 @@ __metadata:
     defu: "npm:6.1.4"
     fast-equals: "npm:5.0.1"
     fuse.js: "npm:7.0.0"
+    html-escaper: "npm:^3.0.3"
     interactjs: "npm:1.10.27"
     lodash-es: "npm:4.17.21"
     marked: "npm:14.1.2"
