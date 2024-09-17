@@ -192,3 +192,19 @@ it('should have custom body class via "body-class" props', () => {
   expect(body).toBeInTheDocument()
   expect(body).toHaveClass('bg-info')
 })
+
+it('should have custom spacing via `spacing` props', () => {
+  const screen = render({
+    components: { Card },
+    template  : `
+      <Card spacing="lg">
+        Content
+      </Card>
+    `,
+  })
+
+  const body = screen.queryByTestId('card')
+
+  expect(body).toBeInTheDocument()
+  expect(body).toHaveClass('card--spacing-lg')
+})

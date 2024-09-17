@@ -57,7 +57,7 @@ import type { PropType, VNode } from 'vue-demi'
 import { computed, ref } from 'vue-demi'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import Heading from '../heading/Heading.vue'
-import type { ElementVariant } from '.'
+import type { ElementVariant, SpacingVariant } from '.'
 
 const props = defineProps({
   element: {
@@ -88,6 +88,10 @@ const props = defineProps({
     type   : [String, Array],
     default: undefined,
   },
+  spacing: {
+    type   : String as PropType<SpacingVariant>,
+    default: 'md',
+  },
 })
 
 const emit = defineEmits<{
@@ -107,6 +111,9 @@ const classNames = computed(() => {
 
   if (props.callout)
     result.push('card--callout')
+
+  if (props.spacing)
+    result.push(`card--spacing-${props.spacing}`)
 
   return result
 })
@@ -147,8 +154,10 @@ defineSlots<{
   --p-card-border-dark: theme(borderColor.dark.default.DEFAULT);
   --p-card-color: theme(textColor.default);
   --p-card-color-dark: theme(textColor.dark.default);
+  --p-card-border-radius: theme(borderRadius.md);
+  --p-card-inside-border-radius: theme(borderRadius.DEFAULT);
 
-  @apply border bg-[color:var(--p-card-bg)] border-[color:var(--p-card-border)] text-[color:var(--p-card-color)] rounded-md;
+  @apply border bg-[color:var(--p-card-bg)] border-[color:var(--p-card-border)] text-[color:var(--p-card-color)] rounded-[var(--p-card-border-radius)];
   @apply dark:bg-[color:var(--p-card-bg-dark)] dark:border-[color:var(--p-card-border-dark)] dark:text-[color:var(--p-card-color-dark)];
 
   /**
@@ -156,7 +165,29 @@ defineSlots<{
   * has 8px rounded
   */
   .card {
-    @apply rounded;
+    @apply rounded-[var(--p-card-inside-border-radius)];
+  }
+
+  &&--spacing {
+    &-sm {
+      --p-card-padding-x: theme(spacing.4);
+      --p-card-padding-y: theme(spacing.4);
+    }
+
+    &-md {
+      --p-card-padding-x: theme(spacing.6);
+      --p-card-padding-y: theme(spacing.6);
+    }
+
+    &-lg {
+      --p-card-padding-x: theme(spacing.9);
+      --p-card-padding-y: theme(spacing.9);
+    }
+
+    &-xl {
+      --p-card-padding-x: theme(spacing.12);
+      --p-card-padding-y: theme(spacing.12);
+    }
   }
 
   /*
@@ -236,6 +267,10 @@ defineSlots<{
   }
 
   &__header {
+    .heading {
+      @apply font-medium leading-none;
+    }
+
     &&--default {
       @apply flex justify-between items-center;
     }
@@ -256,6 +291,11 @@ defineSlots<{
     &__dismiss {
       @apply text-default/30 hover:text-default/50 hover:cursor-pointer;
       @apply dark:text-dark-default/30 hover:dark:text-dark-default/50;
+    }
+
+    + .card__body,
+    + .card__section > .card__body {
+      @apply pt-4;
     }
   }
 
@@ -279,7 +319,7 @@ defineSlots<{
   }
 
   &__footer {
-    @apply pb-[var(--p-card-padding-y)] px-[var(--p-card-padding-x)] pt-3;
+    @apply pb-[var(--p-card-padding-y)] px-[var(--p-card-padding-x)] pt-8;
   }
 }
 </style>
