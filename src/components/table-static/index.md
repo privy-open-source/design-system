@@ -577,6 +577,7 @@ Table use local CSS variables for enhanced real-time customization.
 | `table-class` | `String`  |              `-`               | Add class to table element                              |
 | `tr-class`    | `String`  |              `-`               | Add class to table row element                          |
 | `scrollable`  | `Boolean` |             `true`             | Enable scroll when table overflow                       |
+| `sortable`    | `Boolean` |             `false`            | Enable sort items by field name                         |
 
 In props `fields` contain
 
@@ -588,6 +589,7 @@ In props `fields` contain
 | `formatter?` |    `Function`    | Field's formatter, it receives `value` and `item` params and returning string value |
 | `thClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table column cell                             |
 | `tdClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table head cell                               |
+| `sortable?`  | `Boolean`        | Enable field sorting. Eventhough table have `sortable` prop, but the field not set `sortable`, sort function not able to use |
 
 
 ### Slots
