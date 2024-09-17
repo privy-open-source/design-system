@@ -34,6 +34,13 @@ export interface TableField<T = Record<string, unknown>> {
   tdClass?: HTMLAttributes['class'],
 
   thClass?: HTMLAttributes['class'],
+
+  sortable?: boolean,
+}
+
+export interface TableSort<T = unknown> {
+  key: KeyType<T>,
+  value: 'asc' | 'desc',
 }
 
 export function baseFormatter (value: unknown): string {
