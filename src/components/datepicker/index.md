@@ -57,6 +57,37 @@ Datepicker has 4 variants size: `xs`, `sm`, `md`, `lg`, default is `md`.
 </template>
 ```
 
+## Placement
+
+You can customize the datepicker position using the `placement` prop. 
+This flexibility ensures that the datepicker fits seamlessly within your user interface. 
+The placement prop determines where the datepicker will appear in relation to the input field. 
+
+<preview>
+  <p-datepicker placement="left" />
+</preview>
+
+```vue
+<template>
+  <p-datepicker placement="left" />
+</template>
+```
+
+### Combining Placement
+
+You can further refine the placement by combining it with a suffix to adjust vertical/horizontal alignment.
+This suffix is useful for aligning the datepicker with the start (`*-start`) or end (`*-end`) of the input field.
+
+<preview class="flex-col space-y-6">
+  <p-datepicker placement="bottom-end" />
+</preview>
+
+```vue
+<template>
+  <p-datepicker placement="bottom-end" />
+</template>
+```
+
 ## Placeholder
 
 You can set input placeholder via `placeholder` props
