@@ -12,6 +12,16 @@
 
 > Icons changelog
 
+## 1.0.0-rc.12
+
+### Added
+
+- backspace-solid
+- backspace
+- face-id
+- nfc-solid
+- time-solid
+
 ## 1.0.0-rc.7
 
 ### Added
