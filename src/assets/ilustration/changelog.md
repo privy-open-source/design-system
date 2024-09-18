@@ -12,6 +12,18 @@
 
 > Ilustration changelog
 
+## 1.0.0-rc.12
+
+### Added
+
+- unable-to-process
+
+### Removed
+
+- document-processing
+- id-face
+- test
+
 ## 1.0.0-rc.7
 
 ### Added
