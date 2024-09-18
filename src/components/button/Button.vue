@@ -165,6 +165,15 @@ defineSlots<{
   --p-button-md-padding-x: theme(spacing.5);
   --p-button-lg-padding-x: theme(spacing.8);
 
+  /**
+  * only for button
+  * variant link
+  */
+  --p-button-xs-padding-y: theme(spacing[0.5]);
+  --p-button-sm-padding-y: theme(spacing.1);
+  --p-button-md-padding-y: theme(spacing[2.5]);
+  --p-button-lg-padding-y: theme(spacing.4);
+
   @apply inline-flex align-middle justify-center font-medium no-underline hover:no-underline disabled:opacity-50 disabled:pointer-events-none transition-all ease-in-out duration-200;
 
   > svg {
@@ -181,18 +190,34 @@ defineSlots<{
   */
   &&--xs {
     @apply px-[var(--p-button-xs-padding-x)] py-[2px] gap-1 text-sm rounded-xs;
+
+    &:where(.btn--variant-link) {
+      @apply py-[var(--p-button-xs-padding-y)];
+    }
   }
 
   &&--sm {
     @apply px-[var(--p-button-sm-padding-x)] py-1 gap-2 text-base tracking-wider rounded-sm;
+
+    &:where(.btn--variant-link) {
+      @apply py-[var(--p-button-sm-padding-y)];
+    }
   }
 
   &&--md {
     @apply px-[var(--p-button-md-padding-x)] py-[10px] gap-3 text-base tracking-wider rounded;
+
+    &:where(.btn--variant-link) {
+      @apply py-[var(--p-button-md-padding-y)];
+    }
   }
 
   &&--lg {
     @apply px-[var(--p-button-lg-padding-x)] py-4 gap-4 text-base tracking-wider rounded;
+
+    &:where(.btn--variant-link) {
+      @apply py-[var(--p-button-lg-padding-y)];
+    }
   }
 
   /*

@@ -300,6 +300,12 @@ Button use local CSS variables on `.btn` for enhanced real-time customization.
 --p-button-sm-padding-x: theme(spacing.4);
 --p-button-md-padding-x: theme(spacing.5);
 --p-button-lg-padding-x: theme(spacing.8);
+
+/** only work in button variant link */
+--p-button-xs-padding-y: theme(spacing[0.5]);
+--p-button-sm-padding-y: theme(spacing.1);
+--p-button-md-padding-y: theme(spacing[2.5]);
+--p-button-lg-padding-y: theme(spacing.4);
 ```
 
 ## API
