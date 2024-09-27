@@ -4,7 +4,9 @@ import {
   addPlugin,
   addComponentsDir,
   extendViteConfig,
+  addPluginTemplate,
 } from '@nuxt/kit'
+import path from 'pathe'
 
 export interface ModuleOptions {
   /**
@@ -17,6 +19,11 @@ export interface ModuleOptions {
    * @default 'p'
    */
   prefix?: string,
+  /**
+   * Use local pdf worker
+   * @default false
+   */
+  useLocalPdfWorker?: boolean,
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -25,7 +32,11 @@ export default defineNuxtModule<ModuleOptions>({
     configKey    : 'persona',
     compatibility: { nuxt: '>=3.0.0' },
   },
-  defaults: { font: true, prefix: 'p' },
+  defaults: {
+    font             : true,
+    prefix           : 'p',
+    useLocalPdfWorker: false,
+  },
   async setup (options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
@@ -68,5 +79,48 @@ export default defineNuxtModule<ModuleOptions>({
         'vuedraggable',
       )
     })
+
+    // Use local pdf worker
+    if (options.useLocalPdfWorker) {
+      nuxt.hook('nitro:config', async (nitroConfig) => {
+        // eslint-disable-next-line align-assignments/align-assignments
+        nitroConfig.publicAssets ||= []
+
+        // eslint-disable-next-line unicorn/prefer-module
+        const pdfjsDir                 = path.dirname(require.resolve('pdfjs-dist'))
+        const { default: { version } } = await import('pdfjs-dist/package.json')
+        const pdfjsBaseUrl             = `_persona/pdjs-dist@${version}`
+
+        const assetsMaxAge = 60 * 60 * 24 * 30
+
+        nitroConfig.publicAssets.push(
+          {
+            baseURL: `${pdfjsBaseUrl}/build`,
+            dir    : pdfjsDir,
+            maxAge : assetsMaxAge,
+          },
+          {
+            baseURL: `${pdfjsBaseUrl}/cmaps`,
+            dir    : path.join(pdfjsDir, '../cmaps'),
+            maxAge : assetsMaxAge,
+          },
+        )
+      })
+
+      addPluginTemplate({
+        filename   : 'persona-local-pdf-worker.mjs',
+        getContents: () => `
+          import { setCDN } from '@privyid/persona/core'
+
+          export default defineNuxtPlugin({
+            name: 'persona-local-pdf-worker',
+            dependsOn: ['persona-setup'],
+            setup () {
+              setCDN('/_persona/')
+            },
+          })
+        `,
+      })
+    }
   },
 })
