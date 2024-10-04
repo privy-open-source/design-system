@@ -8,10 +8,6 @@
     viewBox="0 0 16 16"><path
       fill="currentColor"
       fill-rule="evenodd"
-      d="M8 14A6 6 0 1 1 8 2a6 6 0 0 1 0 12M3 8a5 5 0 1 0 10 0A5 5 0 0 0 3 8"
-      clip-rule="evenodd" /><path
-        fill="currentColor"
-        fill-rule="evenodd"
-        d="M8 5a.51.51 0 0 1 .51.51v1.98h1.98a.51.51 0 0 1 0 1.02H8.51v1.98a.51.51 0 1 1-1.02 0V8.51H5.51a.51.51 0 1 1 0-1.02h1.98V5.51A.51.51 0 0 1 8 5"
-        clip-rule="evenodd" /></svg>
+      d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8m7-6a6 6 0 1 0 0 12A6 6 0 0 0 8 2m0 2.61a.5.5 0 0 0-.5.5V7.5H5.112a.5.5 0 0 0 0 1H7.5v2.388a.5.5 0 1 0 1 0V8.5h2.39a.5.5 0 1 0 0-1H8.5V5.11a.5.5 0 0 0-.5-.5"
+      clip-rule="evenodd" /></svg>
 </template>

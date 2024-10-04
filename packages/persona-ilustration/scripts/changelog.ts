@@ -56,7 +56,7 @@ async function main () {
           console.log(`- ${group}`)
         else {
           for (const item of items)
-            console.log(`- ${item.key.replace('.hash', '')}`)
+            console.log(`- ${(item.key as string).replace('.hash', '')}`)
         }
       }
     }

@@ -1,0 +1,27 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    class="persona-icon"
+    viewBox="0 0 24 24"><path
+      fill="currentColor"
+      d="M7.056 5a.75.75 0 0 1 .75-.75h4.8a.75.75 0 1 1 0 1.5h-4.8a.75.75 0 0 1-.75-.75M16.195 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2" /><path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M5.806 2a1.75 1.75 0 0 0-1.75 1.75v3.5c0 .414.335.75.75.75h14.388a.75.75 0 0 0 .75-.75v-3.5A1.75 1.75 0 0 0 18.194 2zm-.25 1.75a.25.25 0 0 1 .25-.25h12.388a.25.25 0 0 1 .25.25V6.5H5.556z"
+        clip-rule="evenodd" /><path
+          fill="currentColor"
+          d="M7.056 12a.75.75 0 0 1 .75-.75h4.8a.75.75 0 1 1 0 1.5h-4.8a.75.75 0 0 1-.75-.75M16.195 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2" /><path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M4.056 9.75a.75.75 0 0 1 .75-.75h14.388a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75H4.806a.75.75 0 0 1-.75-.75zm1.5.75v3h12.888v-3z"
+            clip-rule="evenodd" /><path
+              fill="currentColor"
+              d="M7.806 18.25a.75.75 0 0 0 0 1.5h4.8a.75.75 0 1 0 0-1.5zM17.195 19a1 1 0 1 1-2 0 1 1 0 0 1 2 0" /><path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.056 16.75a.75.75 0 0 1 .75-.75h14.388a.75.75 0 0 1 .75.75v3.5a1.75 1.75 0 0 1-1.75 1.75H5.806a1.75 1.75 0 0 1-1.75-1.75zm1.5.75v2.75c0 .138.112.25.25.25h12.388a.25.25 0 0 0 .25-.25V17.5z"
+                clip-rule="evenodd" /></svg>
+</template>

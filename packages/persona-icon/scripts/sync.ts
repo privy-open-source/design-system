@@ -82,7 +82,7 @@ const svgoConfig: Config = {
                 if (node.attributes.d)
                   node.attributes.d = fixPath(node.attributes.d)
 
-                if (node.attributes.fill !== 'none' && !node.attributes.fill.startsWith('url'))
+                if (node.attributes.fill && node.attributes.fill !== 'none' && !node.attributes.fill.startsWith('url'))
                   node.attributes.fill = 'currentColor'
               }
             },
@@ -280,6 +280,17 @@ async function main () {
           spinner.start(`[${count}/${total}] - Downloading ${object.filename}`)
 
           const res = await ofetch(url, { responseType: 'text', retry: 3 })
+
+          if (!res) {
+            objects.delete(id)
+            spinner.warn(`[${count}/${total}] - Skip ${object.filename} because it's empty / not found`)
+
+            await remove(resolve(SVG_DIR, object.filepath))
+            await remove(resolve(VUE_DIR, `${object.filename}.vue`))
+
+            return
+          }
+
           const svg = optimize(res, { path: object.filepath, ...svgoConfig }).data
 
           await ensureFile(resolve(SVG_DIR, object.filepath))
