@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Persona Icon';
-  src: url('../font/persona-icon.eot?4a86c484');
-  src: url('../font/persona-icon.eot?4a86c484#iefix') format('embedded-opentype'),
-       url('../font/persona-icon.woff2?9458883c') format('woff2'),
-       url('../font/persona-icon.woff?c135dfeb') format('woff'),
-       url('../font/persona-icon.ttf?1f14d018') format('truetype'),
-       url('../font/persona-icon.svg?e67158c2#Persona%20Icon') format('svg');
+  src: url('../font/persona-icon.eot?784898b9');
+  src: url('../font/persona-icon.eot?784898b9#iefix') format('embedded-opentype'),
+       url('../font/persona-icon.woff2?1bda1e26') format('woff2'),
+       url('../font/persona-icon.woff?2338670d') format('woff'),
+       url('../font/persona-icon.ttf?9cb3a7bb') format('truetype'),
+       url('../font/persona-icon.svg?fa09d9b0#Persona%20Icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -315,78 +315,76 @@
 .pi-sidebar::before { content: '\eb1f' }
 .pi-sign-in::before { content: '\eb20' }
 .pi-sign-out::before { content: '\eb21' }
-.pi-signature-draw-alt::before { content: '\eb22' }
-.pi-signature-draw::before { content: '\eb23' }
-.pi-signature-manage::before { content: '\eb24' }
-.pi-signature-text::before { content: '\eb25' }
-.pi-signature::before { content: '\eb26' }
-.pi-smartphone-landscape::before { content: '\eb27' }
-.pi-smartphone::before { content: '\eb28' }
-.pi-speaker-mute::before { content: '\eb29' }
-.pi-speaker-off::before { content: '\eb2a' }
-.pi-speaker-on::before { content: '\eb2b' }
-.pi-spoon-and-fork::before { content: '\eb2c' }
-.pi-stamp::before { content: '\eb2d' }
-.pi-star-favorite-refinement::before { content: '\eb2e' }
-.pi-star-favorite-solid::before { content: '\eb2f' }
-.pi-star-favorite::before { content: '\eb30' }
-.pi-stetoscop::before { content: '\eb31' }
-.pi-stop::before { content: '\eb32' }
-.pi-stopwatch::before { content: '\eb33' }
-.pi-strikethrough::before { content: '\eb34' }
-.pi-sun::before { content: '\eb35' }
-.pi-switch::before { content: '\eb36' }
-.pi-system-administrator::before { content: '\eb37' }
-.pi-table::before { content: '\eb38' }
-.pi-tablet-landscape::before { content: '\eb39' }
-.pi-tablet::before { content: '\eb3a' }
-.pi-tag-all::before { content: '\eb3b' }
-.pi-tag::before { content: '\eb3c' }
-.pi-tax::before { content: '\eb3d' }
-.pi-template::before { content: '\eb3e' }
-.pi-text-editor::before { content: '\eb3f' }
-.pi-ticket::before { content: '\eb40' }
-.pi-time-solid::before { content: '\eb41' }
-.pi-time::before { content: '\eb42' }
-.pi-translates::before { content: '\eb43' }
-.pi-transmit-data::before { content: '\eb44' }
-.pi-trash::before { content: '\eb45' }
-.pi-trasmit-data::before { content: '\eb46' }
-.pi-twitter::before { content: '\eb47' }
-.pi-two-grid-view::before { content: '\eb48' }
-.pi-unarchive::before { content: '\eb49' }
-.pi-underlined::before { content: '\eb4a' }
-.pi-undo::before { content: '\eb4b' }
-.pi-unlimited::before { content: '\eb4c' }
-.pi-unlink::before { content: '\eb4d' }
-.pi-unlock::before { content: '\eb4e' }
-.pi-upload::before { content: '\eb4f' }
-.pi-user-biometric::before { content: '\eb50' }
-.pi-user-checkmark::before { content: '\eb51' }
-.pi-user-circle::before { content: '\eb52' }
-.pi-user-cross::before { content: '\eb53' }
-.pi-user-event::before { content: '\eb54' }
-.pi-user-exclamation::before { content: '\eb55' }
-.pi-user-find::before { content: '\eb56' }
-.pi-user-groups::before { content: '\eb57' }
-.pi-user-logs::before { content: '\eb58' }
-.pi-user-minus::before { content: '\eb59' }
-.pi-user-multiple-edit::before { content: '\eb5a' }
-.pi-user-multiple::before { content: '\eb5b' }
-.pi-user-plus::before { content: '\eb5c' }
-.pi-user-settings::before { content: '\eb5d' }
-.pi-user-square::before { content: '\eb5e' }
-.pi-user-suspend::before { content: '\eb5f' }
-.pi-user-transfer::before { content: '\eb60' }
-.pi-user-verified::before { content: '\eb61' }
-.pi-user-wait::before { content: '\eb62' }
-.pi-video-camera-off::before { content: '\eb63' }
-.pi-video-camera::before { content: '\eb64' }
-.pi-view-off::before { content: '\eb65' }
-.pi-view::before { content: '\eb66' }
-.pi-voucher::before { content: '\eb67' }
-.pi-wallet::before { content: '\eb68' }
-.pi-whatsapp::before { content: '\eb69' }
-.pi-zoom-in::before { content: '\eb6a' }
-.pi-zoom-out::before { content: '\eb6b' }
+.pi-signature-draw::before { content: '\eb22' }
+.pi-signature-manage::before { content: '\eb23' }
+.pi-signature-text::before { content: '\eb24' }
+.pi-smartphone-landscape::before { content: '\eb25' }
+.pi-smartphone::before { content: '\eb26' }
+.pi-speaker-mute::before { content: '\eb27' }
+.pi-speaker-off::before { content: '\eb28' }
+.pi-speaker-on::before { content: '\eb29' }
+.pi-spoon-and-fork::before { content: '\eb2a' }
+.pi-stamp::before { content: '\eb2b' }
+.pi-star-favorite-refinement::before { content: '\eb2c' }
+.pi-star-favorite-solid::before { content: '\eb2d' }
+.pi-star-favorite::before { content: '\eb2e' }
+.pi-stetoscop::before { content: '\eb2f' }
+.pi-stop::before { content: '\eb30' }
+.pi-stopwatch::before { content: '\eb31' }
+.pi-strikethrough::before { content: '\eb32' }
+.pi-sun::before { content: '\eb33' }
+.pi-switch::before { content: '\eb34' }
+.pi-system-administrator::before { content: '\eb35' }
+.pi-table::before { content: '\eb36' }
+.pi-tablet-landscape::before { content: '\eb37' }
+.pi-tablet::before { content: '\eb38' }
+.pi-tag-all::before { content: '\eb39' }
+.pi-tag::before { content: '\eb3a' }
+.pi-tax::before { content: '\eb3b' }
+.pi-template::before { content: '\eb3c' }
+.pi-text-editor::before { content: '\eb3d' }
+.pi-ticket::before { content: '\eb3e' }
+.pi-time-solid::before { content: '\eb3f' }
+.pi-time::before { content: '\eb40' }
+.pi-translates::before { content: '\eb41' }
+.pi-transmit-data::before { content: '\eb42' }
+.pi-trash::before { content: '\eb43' }
+.pi-trasmit-data::before { content: '\eb44' }
+.pi-twitter::before { content: '\eb45' }
+.pi-two-grid-view::before { content: '\eb46' }
+.pi-unarchive::before { content: '\eb47' }
+.pi-underlined::before { content: '\eb48' }
+.pi-undo::before { content: '\eb49' }
+.pi-unlimited::before { content: '\eb4a' }
+.pi-unlink::before { content: '\eb4b' }
+.pi-unlock::before { content: '\eb4c' }
+.pi-upload::before { content: '\eb4d' }
+.pi-user-biometric::before { content: '\eb4e' }
+.pi-user-checkmark::before { content: '\eb4f' }
+.pi-user-circle::before { content: '\eb50' }
+.pi-user-cross::before { content: '\eb51' }
+.pi-user-event::before { content: '\eb52' }
+.pi-user-exclamation::before { content: '\eb53' }
+.pi-user-find::before { content: '\eb54' }
+.pi-user-groups::before { content: '\eb55' }
+.pi-user-logs::before { content: '\eb56' }
+.pi-user-minus::before { content: '\eb57' }
+.pi-user-multiple-edit::before { content: '\eb58' }
+.pi-user-multiple::before { content: '\eb59' }
+.pi-user-plus::before { content: '\eb5a' }
+.pi-user-settings::before { content: '\eb5b' }
+.pi-user-square::before { content: '\eb5c' }
+.pi-user-suspend::before { content: '\eb5d' }
+.pi-user-transfer::before { content: '\eb5e' }
+.pi-user-verified::before { content: '\eb5f' }
+.pi-user-wait::before { content: '\eb60' }
+.pi-video-camera-off::before { content: '\eb61' }
+.pi-video-camera::before { content: '\eb62' }
+.pi-view-off::before { content: '\eb63' }
+.pi-view::before { content: '\eb64' }
+.pi-voucher::before { content: '\eb65' }
+.pi-wallet::before { content: '\eb66' }
+.pi-whatsapp::before { content: '\eb67' }
+.pi-zoom-in::before { content: '\eb68' }
+.pi-zoom-out::before { content: '\eb69' }
 
