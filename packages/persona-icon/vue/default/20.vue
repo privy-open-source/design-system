@@ -1,0 +1,13 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    fill="none"
+    class="persona-icon"
+    viewBox="0 0 20 20"><circle
+      cx="10"
+      cy="10"
+      r="8"
+      fill="#1F2329" /></svg>
+</template>
