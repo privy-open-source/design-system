@@ -4,9 +4,11 @@ import {
   addPlugin,
   addComponentsDir,
   extendViteConfig,
-  addPluginTemplate,
 } from '@nuxt/kit'
-import path from 'pathe'
+import { join as joinPath } from 'pathe'
+import { defu } from 'defu'
+import { joinURL } from 'ufo'
+import { version as PDFJS_VERSION } from 'pdfjs-dist/legacy/build/pdf.mjs'
 
 export interface ModuleOptions {
   /**
@@ -26,11 +28,17 @@ export interface ModuleOptions {
   useLocalPdfWorker?: boolean,
 }
 
+export interface ModulePublicRuntimeConfig {
+  persona: {
+    cdnURL: string,
+  },
+}
+
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name         : '@privyid/persona',
     configKey    : 'persona',
-    compatibility: { nuxt: '>=3.0.0' },
+    compatibility: { nuxt: '>=3.4.0' },
   },
   defaults: {
     font             : true,
@@ -38,7 +46,7 @@ export default defineNuxtModule<ModuleOptions>({
     useLocalPdfWorker: false,
   },
   async setup (options, nuxt) {
-    const { resolve } = createResolver(import.meta.url)
+    const { resolve, resolvePath } = createResolver(import.meta.url)
 
     // Add font CDN
     if (options.font) {
@@ -62,7 +70,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Add Plugin
-    addPlugin({ src: resolve('./runtime/plugin') })
+    addPlugin({ src: resolve('./runtime/plugins/persona') })
 
     // Extend vite config
     extendViteConfig((config) => {
@@ -82,44 +90,36 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Use local pdf worker
     if (options.useLocalPdfWorker) {
+      nuxt.options.runtimeConfig.public.persona = defu(
+        { cdnURL: './_persona' },
+        nuxt.options.runtimeConfig.public.persona,
+      )
+
       nuxt.hook('nitro:config', async (nitroConfig) => {
         // eslint-disable-next-line align-assignments/align-assignments
         nitroConfig.publicAssets ||= []
 
-        // eslint-disable-next-line unicorn/prefer-module
-        const pdfjsDir                 = path.dirname(require.resolve('pdfjs-dist'))
-        const { default: { version } } = await import('pdfjs-dist/package.json')
-        const pdfjsBaseUrl             = `_persona/pdjs-dist@${version}`
-
-        const assetsMaxAge = 60 * 60 * 24 * 30
+        const pdfjsDir     = joinPath(await resolvePath('pdfjs-dist'), '../../')
+        const pdfjsBaseURL = `_persona/pdfjs-dist@${PDFJS_VERSION}`
+        const assetsMaxAge = 60 * 60 * 24 * 30 // 1 month
 
         nitroConfig.publicAssets.push(
           {
-            baseURL: `${pdfjsBaseUrl}/build`,
-            dir    : pdfjsDir,
+            baseURL: joinURL(pdfjsDir, 'build'),
+            dir    : joinPath(pdfjsDir, 'build'),
             maxAge : assetsMaxAge,
           },
           {
-            baseURL: `${pdfjsBaseUrl}/cmaps`,
-            dir    : path.join(pdfjsDir, '../cmaps'),
+            baseURL: joinURL(pdfjsBaseURL, 'legacy'),
+            dir    : joinPath(pdfjsDir, 'legacy'),
+            maxAge : assetsMaxAge,
+          },
+          {
+            baseURL: joinURL(pdfjsBaseURL, 'cmaps'),
+            dir    : joinPath(pdfjsDir, 'cmaps'),
             maxAge : assetsMaxAge,
           },
         )
-      })
-
-      addPluginTemplate({
-        filename   : 'persona-local-pdf-worker.mjs',
-        getContents: () => `
-          import { setCDN } from '@privyid/persona/core'
-
-          export default defineNuxtPlugin({
-            name: 'persona-local-pdf-worker',
-            dependsOn: ['persona-setup'],
-            setup () {
-              setCDN('/_persona/')
-            },
-          })
-        `,
       })
     }
   },

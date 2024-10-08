@@ -10,7 +10,7 @@
   <div class="flex h-full min-h-screen">
     <p-sidebar-menu :menus="menus" />
 
-    <div>
+    <div class="flex-grow">
       <div class="bg-default">
         <NuxtLayout>
           <NuxtPage />
