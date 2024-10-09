@@ -7,7 +7,7 @@ import { readJSON } from 'fs-extra'
 import { name } from '../package.json'
 import type { MetaData } from './types'
 import { ofetch } from 'ofetch'
-import ohash from 'ohash'
+import * as ohash from 'ohash'
 import minimist from 'minimist'
 import {
   groupBy,
@@ -56,7 +56,7 @@ async function main () {
           console.log(`- ${group}`)
         else {
           for (const item of items)
-            console.log(`- ${(item.key as string).replace('.hash', '')}`)
+            console.log(`- ${item.key.replace('.hash', '')}`)
         }
       }
     }
