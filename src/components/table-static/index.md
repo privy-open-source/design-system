@@ -36,7 +36,7 @@ description: Classic style Table.
     },
   ])
 
-  const items1 = ref([
+  const items = ref([
     {
       id    : 1,
       name  : 'Tarjono',
@@ -58,7 +58,6 @@ description: Classic style Table.
       status: true,
     },
   ])
-  const items = ref([])
 
   const itemsB = ref([
     {
@@ -88,6 +87,55 @@ description: Classic style Table.
 
   const selected = ref([])
   const selectedA = ref([])
+
+  const sortableFields = defineTable([
+    { key: 'id' },
+    {
+      key     : 'name',
+      sortable: true,
+    },
+    {
+      key     : 'gender',
+      sortable: true,
+    },
+    {
+      key     : 'age',
+      sortable: true,
+    },
+  ])
+
+  const sortableItems = ref([
+    {
+      id    : 1,
+      name  : 'David',
+      gender: 'male',
+      age   : 27,
+    },
+    {
+      id    : 2,
+      name  : 'Evan',
+      gender: 'male',
+      age   : 20,
+    },
+    {
+      id    : 3,
+      name  : 'Jane',
+      gender: 'female',
+      age   : 30,
+    },
+    {
+      id    : 4,
+      name  : 'Andi',
+      gender: 'male',
+      age   : 21,
+    },
+    {
+      id    : 5,
+      name  : 'Bella',
+      gender: 'female',
+      age   : 24,
+    },
+  ])
 </script>
 
 <style lang="postcss">
@@ -106,7 +154,7 @@ description: Classic style Table.
 
 ### Simple Usage
 <preview class="flex-col space-y-2">
-  <p-table-static :fields="fields" :items="items1" selectable />
+  <p-table-static :fields="fields" :items="items" />
 </preview>
 
 ```vue
@@ -316,6 +364,72 @@ add prop `draggable` to enable drag-to-sort.
   <p-table-static :fields="fields" v-model:items="items" draggable />
 </template>
 ```
+
+## Sortable
+
+to support sortable field, you need to add prop `sortable` and when define table fields, add `sortable` with `true` value on field item
+
+<preview class="flex-col space-y-2">
+  <p-table-static sortable :fields="sortableFields" v-model:items="sortableItems" />
+</preview>
+
+```vue
+<template>
+  <p-table-static sortable :fields="fields" v-model:items="items" />
+</template>
+
+<script setup>
+  const fields = defineTable([
+    { key: 'id' },
+    {
+      key     : 'name',
+      sortable: true,
+    },
+    {
+      key     : 'gender',
+      sortable: true,
+    },
+    {
+      key     : 'age',
+      sortable: true,
+    },
+  ])
+
+  const items = ref([
+    {
+      id    : 1,
+      name  : 'David',
+      gender: 'male',
+      age   : 27,
+    },
+    {
+      id    : 2,
+      name  : 'Evan',
+      gender: 'male',
+      age   : 20,
+    },
+    {
+      id    : 3,
+      name  : 'Jane',
+      gender: 'female',
+      age   : 30,
+    },
+    {
+      id    : 4,
+      name  : 'Andi',
+      gender: 'male',
+      age   : 21,
+    },
+    {
+      id    : 5,
+      name  : 'Bella',
+      gender: 'female',
+      age   : 24,
+    },
+  ])
+</script>
+```
+
 ## Customization Slot
 
 ### Custom Cell
@@ -463,6 +577,7 @@ Table use local CSS variables for enhanced real-time customization.
 | `table-class` | `String`  |              `-`               | Add class to table element                              |
 | `tr-class`    | `String`  |              `-`               | Add class to table row element                          |
 | `scrollable`  | `Boolean` |             `true`             | Enable scroll when table overflow                       |
+| `sortable`    | `Boolean` |             `false`            | Enable sort items by field name                         |
 
 In props `fields` contain
 
@@ -474,6 +589,7 @@ In props `fields` contain
 | `formatter?` |    `Function`    | Field's formatter, it receives `value` and `item` params and returning string value |
 | `thClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table column cell                             |
 | `tdClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table head cell                               |
+| `sortable?`  | `Boolean`        | Enable field sorting. Eventhough table have `sortable` prop, but the field not set `sortable`, sort function not able to use |
 
 
 ### Slots
