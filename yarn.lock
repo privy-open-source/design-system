@@ -3900,7 +3900,7 @@ __metadata:
     ohash: "npm:1.1.4"
     ora: "npm:8.1.0"
     p-all: "npm:5.0.0"
-    svg-path-commander: "npm:2.0.10"
+    svg-path-commander: "npm:2.1.0"
     svgo: "npm:3.3.2"
     webfont: "npm:11.2.26"
   languageName: unknown
@@ -3924,7 +3924,7 @@ __metadata:
     ora: "npm:8.1.0"
     p-all: "npm:5.0.0"
     sharp: "npm:0.33.5"
-    svg-path-commander: "npm:2.0.10"
+    svg-path-commander: "npm:2.1.0"
     svgo: "npm:3.3.2"
     webfont: "npm:11.2.26"
   languageName: unknown
@@ -4835,10 +4835,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@thednp/dommatrix@npm:^2.0.7":
-  version: 2.0.7
-  resolution: "@thednp/dommatrix@npm:2.0.7"
-  checksum: 10/b5d3a2062397466244efc3f13b553e2f36c01436c1b9197b256c9d8b3e13bf82ccee3cde51d6413b3352048c866a71026791f5749865f2df1e99325931682a3b
+"@thednp/dommatrix@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "@thednp/dommatrix@npm:2.0.8"
+  checksum: 10/d289c7d69057775af235df71c7458bcbbf25403d29fd6c18d8aa79bde2031b1f118861569e21265e8cc27032bc59ce1477388fce9664070bb9f978c318d3fc26
   languageName: node
   linkType: hard
 
@@ -19258,12 +19258,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svg-path-commander@npm:2.0.10":
-  version: 2.0.10
-  resolution: "svg-path-commander@npm:2.0.10"
+"svg-path-commander@npm:2.1.0":
+  version: 2.1.0
+  resolution: "svg-path-commander@npm:2.1.0"
   dependencies:
-    "@thednp/dommatrix": "npm:^2.0.7"
-  checksum: 10/cd64f77112c5a4da525b744cc61b2a71291324522fb7a91b1dba3481ed2308ff2a766ffd5825ac29651c9681f3fdda778cc7af4de6f7ebee4da539accacb0b16
+    "@thednp/dommatrix": "npm:^2.0.8"
+  checksum: 10/558ab587ab747258a87293b3b6ce6cab0ff530d72b1edad7c968743e1302b6e346316b53506f2a78bd9d86363085451a95690605f4ab7c0fa45a74ddb3f2305b
   languageName: node
   linkType: hard
 
