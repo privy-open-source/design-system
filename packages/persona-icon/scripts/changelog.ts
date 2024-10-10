@@ -7,7 +7,7 @@ import { readJSON } from 'fs-extra'
 import { name } from '../package.json'
 import type { MetaData } from './types'
 import { ofetch } from 'ofetch'
-import ohash from 'ohash'
+import * as ohash from 'ohash'
 import minimist from 'minimist'
 import {
   groupBy,

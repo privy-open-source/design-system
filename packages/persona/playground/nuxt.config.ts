@@ -1,11 +1,11 @@
-import PersonaModule from '../src/module'
 import { fileURLToPath } from 'node:url'
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  modules   : ['@nuxtjs/tailwindcss', PersonaModule],
-  alias     : { '@privyid/persona': fileURLToPath(new URL('../dist/', import.meta.url)) },
-  typescript: {
+  compatibilityDate: '2024-10-03',
+  modules          : ['@nuxtjs/tailwindcss', '../src/module'],
+  alias            : { '@privyid/persona': fileURLToPath(new URL('../dist/', import.meta.url)) },
+  typescript       : {
     tsConfig: {
       compilerOptions: {
         strict          : false,
@@ -13,4 +13,5 @@ export default defineNuxtConfig({
       },
     },
   },
+  persona: { useLocalPdfWorker: true },
 })
