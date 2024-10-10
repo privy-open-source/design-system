@@ -3896,7 +3896,7 @@ __metadata:
     fs-extra: "npm:11.2.0"
     jiti: "npm:1.21.6"
     minimist: "npm:1.2.8"
-    ofetch: "npm:1.4.0"
+    ofetch: "npm:1.4.1"
     ohash: "npm:1.1.4"
     ora: "npm:8.1.0"
     p-all: "npm:5.0.0"
@@ -3919,7 +3919,7 @@ __metadata:
     fs-extra: "npm:11.2.0"
     jiti: "npm:1.21.6"
     minimist: "npm:1.2.8"
-    ofetch: "npm:1.4.0"
+    ofetch: "npm:1.4.1"
     ohash: "npm:1.1.4"
     ora: "npm:8.1.0"
     p-all: "npm:5.0.0"
@@ -15670,14 +15670,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ofetch@npm:1.4.0":
-  version: 1.4.0
-  resolution: "ofetch@npm:1.4.0"
+"ofetch@npm:1.4.1":
+  version: 1.4.1
+  resolution: "ofetch@npm:1.4.1"
   dependencies:
     destr: "npm:^2.0.3"
     node-fetch-native: "npm:^1.6.4"
     ufo: "npm:^1.5.4"
-  checksum: 10/92af33cfb35879314c0ecdd9c15b814fd3a7dc31dbae1032492fa42767bb1afe6f2a7faa179b2c2a4482d4b30c87671ddb043bcccde7ada7499b10e5caf2eb51
+  checksum: 10/329ecd5595eff6da090c728e66f4223ad7ba5c2c309446f3707245c1b213da47dfd1eb1740f26b3da9e31ed7b7a903733bdaae85187b714514da865a0c5a4a9c
   languageName: node
   linkType: hard
 
