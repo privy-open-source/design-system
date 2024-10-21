@@ -9,6 +9,7 @@ import { join as joinPath } from 'pathe'
 import { defu } from 'defu'
 import { joinURL } from 'ufo'
 import { version as PDFJS_VERSION } from 'pdfjs-dist/legacy/build/pdf.mjs'
+import { version as PSPDFKIT_VERSION } from 'pspdfkit/package.json'
 
 export interface ModuleOptions {
   /**
@@ -99,13 +100,18 @@ export default defineNuxtModule<ModuleOptions>({
         // eslint-disable-next-line align-assignments/align-assignments
         nitroConfig.publicAssets ||= []
 
+        const baseURL      = '_persona'
         const pdfjsDir     = joinPath(await resolvePath('pdfjs-dist'), '../../')
-        const pdfjsBaseURL = `_persona/pdfjs-dist@${PDFJS_VERSION}`
+        const pdfjsBaseURL = joinURL(baseURL, `pdfjs-dist@${PDFJS_VERSION}`)
+
+        const pspdfDir     = joinPath(await resolvePath('pspdfkit'), '../../')
+        const pspdfBaseURL = joinURL(baseURL, `pspdfkit@${PSPDFKIT_VERSION}`)
+
         const assetsMaxAge = 60 * 60 * 24 * 30 // 1 month
 
         nitroConfig.publicAssets.push(
           {
-            baseURL: joinURL(pdfjsDir, 'build'),
+            baseURL: joinURL(pdfjsBaseURL, 'build'),
             dir    : joinPath(pdfjsDir, 'build'),
             maxAge : assetsMaxAge,
           },
@@ -117,6 +123,11 @@ export default defineNuxtModule<ModuleOptions>({
           {
             baseURL: joinURL(pdfjsBaseURL, 'cmaps'),
             dir    : joinPath(pdfjsDir, 'cmaps'),
+            maxAge : assetsMaxAge,
+          },
+          {
+            baseURL: joinURL(pspdfBaseURL, 'dist'),
+            dir    : joinPath(pspdfDir, 'dist'),
             maxAge : assetsMaxAge,
           },
         )
