@@ -25,13 +25,23 @@
           class="table-static__header"
           data-testid="table-static-header"
           :style="field.width ? { width: withUnit(field.width) } : {}"
-          :class="field.thClass"
-          :data-header="field.key">
+          :class="[field.thClass, { 'table-static__header--sortable': sortable && field.sortable }]"
+          :data-header="field.key"
+          @click="sortField(field)">
           <slot
             :name="`head(${field.key})`"
             :label="field.label"
-            :field="field">
+            :field="field"
+            :sort="getSortField(field.key)">
             {{ field.label }}
+            <IconUp
+              v-if="getSortField(field.key) === 'asc'"
+              class="table-static__header__sort-up"
+              data-testid="table-static-header-sort-up" />
+            <IconDown
+              v-if="getSortField(field.key) === 'desc'"
+              class="table-static__header__sort-down"
+              data-testid="table-static-header-sort-down" />
           </slot>
         </th>
       </tr>
@@ -113,12 +123,16 @@ import type {
   VNode,
 } from 'vue-demi'
 import {
+  ref,
   computed,
+  onMounted,
+  nextTick,
 } from 'vue-demi'
 import type {
   ApperanceVariant,
   TableField,
   KeyType,
+  TableSort,
 } from '../table'
 import {
   withKey,
@@ -130,6 +144,10 @@ import TableStaticRoot from './TableStaticRoot.vue'
 import { useVModel } from '../input'
 import IconDrag from '@privyid/persona-icon/vue/draggable/20.vue'
 import Draggable from 'vuedraggable'
+import IconUp from '@privyid/persona-icon/vue/caret-up/16.vue'
+import IconDown from '@privyid/persona-icon/vue/caret-down/16.vue'
+import { orderBy } from 'lodash-es'
+import { watchPausable } from '@vueuse/core'
 
 const props = defineProps({
   apperance: {
@@ -184,12 +202,22 @@ const props = defineProps({
     type   : Boolean,
     default: true,
   },
+  sortable: {
+    type   : Boolean,
+    default: false,
+  },
+  sortableAsyncronous: {
+    type   : Boolean,
+    default: false,
+  },
 })
 
 const model = useVModel(props)
 const emit  = defineEmits<{
   'update:modelValue': [T[]],
   'update:items': [T[]],
+  'sort': [TableSort<T>[]],
+  'reset-sort': [],
 }>()
 
 const rows = computed<T[]>({
@@ -249,15 +277,89 @@ const indeterminate = computed(() => {
     && model.value.length < selectableRows.value.length
 })
 
+const defaultItems = ref<T[]>()
+const tableSorts   = ref<TableSort<T>[]>([])
+
+const itemsWatcher = watchPausable(() => props.items, (value) => {
+  if (props.sortable && !props.sortableAsyncronous) {
+    defaultItems.value = value
+    tableSorts.value   = []
+  }
+})
+
+async function sortField (field: TableField<T>) {
+  if (!props.sortable || !field.sortable || field.sortable === undefined)
+    return
+
+  const currentFieldSort  = tableSorts.value.find((sort) => sort.key === field.key)
+  const isChangeFieldSort = currentFieldSort && currentFieldSort.value === 'asc'
+  const isClearFieldSort  = currentFieldSort && currentFieldSort.value === 'desc'
+
+  if (!currentFieldSort)
+    tableSorts.value.push({ key: field.key, value: 'asc' })
+
+  if (isChangeFieldSort) {
+    tableSorts.value = tableSorts.value.map((sort) => {
+      if (sort.key === field.key)
+        sort.value = 'desc'
+
+      return sort
+    })
+  }
+  if (isClearFieldSort)
+    tableSorts.value = tableSorts.value.filter((sort) => sort.key !== field.key)
+
+  const isEmptySorts = tableSorts.value.length === 0
+
+  emit('sort', tableSorts.value)
+
+  if (isEmptySorts)
+    emit('reset-sort')
+
+  if (props.sortableAsyncronous)
+    return
+
+  if (isEmptySorts && !props.sortableAsyncronous) {
+    emit('update:items', defaultItems.value)
+
+    return
+  }
+
+  itemsWatcher.pause()
+
+  const items = orderBy(
+    props.items,
+    tableSorts.value.flatMap((sort) => sort.key),
+    tableSorts.value.flatMap((sort) => sort.value),
+  )
+
+  emit('update:items', items)
+
+  await nextTick()
+  itemsWatcher.resume()
+}
+
+function getSortField (key: string) {
+  return tableSorts.value.find((sort) => sort.key === key)?.value
+}
+
+/**
+ * if table is sortable, store props items as default items when reset sorting
+ */
+onMounted(() => {
+  if (props.sortable && !props.sortableAsyncronous)
+    defaultItems.value = [...props.items]
+})
+
 defineSlots<{
   'empty'(): VNode[],
   'row'(props: { index: number, item: T }): VNode[],
   [K: `cell(${string})`]:(props: { index: number }) => VNode[],
-  [K: `head(${string})`]:(props: { field: TableField<T>, label: string }) => VNode[],
+  [K: `head(${string})`]:(props: { field: TableField<T>, label: string, sort?: 'asc' | 'desc' }) => VNode[],
 } & {
   [K in KeyType<T> as `cell(${K})`]:(props: { item: T, index: number }) => VNode[]
 } & {
-  [K in KeyType<T> as `head(${K})`]:(props: { field: TableField<T>, label: string }) => VNode[]
+  [K in KeyType<T> as `head(${K})`]:(props: { field: TableField<T>, label: string, sort?: 'asc' | 'desc' }) => VNode[]
 }>()
 </script>
 
@@ -306,6 +408,18 @@ defineSlots<{
       &.table-static__drag,
       &.table-static__checkbox {
         @apply w-[1%];
+      }
+
+      &:where(&--sortable) {
+        @apply cursor-pointer;
+      }
+
+      &__sort-up {
+        @apply inline mb-2;
+      }
+
+      &__sort-down {
+        @apply inline mt-2;
       }
     }
 

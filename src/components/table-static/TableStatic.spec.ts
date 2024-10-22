@@ -37,6 +37,57 @@ const items = ref([
   },
 ])
 
+const sortableFields = defineTable([
+  { key: 'id' },
+  {
+    key     : 'name',
+    sortable: true,
+  },
+  {
+    key     : 'gender',
+    sortable: true,
+  },
+  {
+    key     : 'age',
+    sortable: true,
+  },
+])
+
+function generateItems () {
+  return [
+    {
+      id    : 1,
+      name  : 'Dora',
+      gender: 'male',
+      age   : 27,
+    },
+    {
+      id    : 2,
+      name  : 'Emilly',
+      gender: 'male',
+      age   : 20,
+    },
+    {
+      id    : 3,
+      name  : 'Jane',
+      gender: 'female',
+      age   : 30,
+    },
+    {
+      id    : 4,
+      name  : 'Andi',
+      gender: 'male',
+      age   : 21,
+    },
+    {
+      id    : 5,
+      name  : 'Bella',
+      gender: 'female',
+      age   : 24,
+    },
+  ]
+}
+
 it('should render properly', () => {
   const screen = render({
     components: { Table },
@@ -304,4 +355,205 @@ it('should able to select all items (except disable one) in variant static', asy
   await fireEvent.click(selectAll)
 
   expect(selected.value).toHaveLength(0)
+})
+
+it('should X field header have sortable class if have `sortable` property with `true` value & `sortable` prop is provided', () => {
+  const items = ref([])
+  items.value = generateItems()
+
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="sortableFields"
+        v-model:items="items"
+        sortable
+      />`,
+    setup () {
+      return {
+        sortableFields,
+        items,
+      }
+    },
+  })
+
+  const heads = screen.queryAllByTestId('table-static-header')
+
+  expect(heads.at(0)).not.toHaveClass('table-static__header--sortable')
+  expect(heads.at(1)).toHaveClass('table-static__header--sortable')
+})
+
+it('should X field header have caret up/down icon when sort by field', async () => {
+  const items = ref([])
+  items.value = generateItems()
+
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="sortableFields"
+        v-model:items="items"
+        sortable
+      />`,
+    setup () {
+      return {
+        sortableFields,
+        items,
+      }
+    },
+  })
+
+  const heads = screen.queryAllByTestId('table-static-header')
+
+  await fireEvent.click(heads.at(1))
+
+  const sortUp = heads.at(1).querySelector('.table-static__header__sort-up')
+
+  expect(sortUp).toBeInTheDocument()
+
+  await fireEvent.click(heads.at(1))
+
+  const sortDown = heads.at(1).querySelector('.table-static__header__sort-down')
+
+  expect(sortDown).toBeInTheDocument()
+  expect(sortUp).not.toBeInTheDocument()
+
+  await fireEvent.click(heads.at(1))
+
+  expect(sortDown).not.toBeInTheDocument()
+})
+
+it('should able to sort by field if `sortable` prop is provided', async () => {
+  const items = ref([])
+  items.value = generateItems()
+
+  const sorts = ref([])
+
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="sortableFields"
+        v-model:items="items"
+        sortable
+        @sort="sorts = $event"
+      />`,
+    setup () {
+      return {
+        sortableFields,
+        items,
+        sorts,
+      }
+    },
+  })
+
+  expect(sorts.value).toHaveLength(0)
+
+  const heads = screen.queryAllByTestId('table-static-header')
+
+  await fireEvent.click(heads.at(1))
+
+  expect(items.value.at(0).name).toStrictEqual('Andi')
+  expect(sorts.value).toHaveLength(1)
+
+  await fireEvent.click(heads.at(1))
+
+  expect(items.value.at(0).name).toStrictEqual('Jane')
+
+  await fireEvent.click(heads.at(1))
+
+  expect(items.value.at(0).name).toStrictEqual('Dora')
+})
+
+it('should be not sort by field if field not `sortable` eventhough prop `sortable` is provided when render table', async () => {
+  const fields = defineTable([{ key: 'id' }, { key: 'name' }])
+  const items  = ref([
+    {
+      id  : 1,
+      name: 'Jane',
+    },
+    {
+      id  : 2,
+      name: 'Tarjono',
+    },
+  ])
+  const sorts  = ref([])
+
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="fields"
+        v-model:items="items"
+        sortable
+        @sort="sorts = $event"
+      />`,
+    setup () {
+      return {
+        fields,
+        items,
+        sorts,
+      }
+    },
+  })
+
+  const heads = screen.queryAllByTestId('table-static-header')
+
+  await fireEvent.click(heads.at(1))
+
+  const sortUp = heads.at(1).querySelector('.table-static__header__sort-up')
+
+  expect(sortUp).not.toBeInTheDocument()
+  expect(sorts.value).toHaveLength(0)
+})
+
+it('should able to sort by field if `sortable` prop is provided', async () => {
+  const items = ref([])
+  items.value = generateItems()
+
+  const sorts = ref([])
+
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="sortableFields"
+        v-model:items="items"
+        sortable
+        sortable-asyncronous
+        @sort="sorts = $event"
+      />`,
+    setup () {
+      return {
+        sortableFields,
+        items,
+        sorts,
+      }
+    },
+  })
+
+  expect(sorts.value).toHaveLength(0)
+
+  const heads = screen.queryAllByTestId('table-static-header')
+
+  await fireEvent.click(heads.at(2)) // sort gender to ASC
+  expect(sorts.value).toHaveLength(1)
+  expect(sorts.value.at(0)).toStrictEqual({ key: 'gender', value: 'asc' })
+
+  await fireEvent.click(heads.at(3)) // sort age to ASC
+  expect(sorts.value).toHaveLength(2)
+  expect(sorts.value.at(1)).toStrictEqual({ key: 'age', value: 'asc' })
+
+  await fireEvent.click(heads.at(2)) // sort gender to DESC
+  expect(sorts.value).toHaveLength(2)
+  expect(sorts.value.at(0)).toStrictEqual({ key: 'gender', value: 'desc' })
+
+  await fireEvent.click(heads.at(2)) // clear gender sort
+  expect(sorts.value).toHaveLength(1)
+
+  await fireEvent.click(heads.at(3)) // sort age to DESC
+  expect(sorts.value.at(0)).toStrictEqual({ key: 'age', value: 'desc' })
+
+  await fireEvent.click(heads.at(3)) // clear age sort
+  expect(sorts.value).toHaveLength(0)
 })
