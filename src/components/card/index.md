@@ -219,6 +219,78 @@ description: Take picture from user's camera
 </template>
 ```
 
+## Disabled
+When the `disabled` prop is set to true, the card component will visually indicate that it is disabled.
+These state are works in `<p-card-section>` too.
+<preview>
+  <p-card
+    disabled
+    title="Judul apapun seharusnya disini">
+    Ketika Anda berada di sini, Anda akan melihat konten kartu-kartu, semuanya tersedia di sini. Jika Anda membutuhkan kartu-kartu khusus, ambillah komponen yang paling sesuai dengan kebutuhan Anda dan lepaskan.
+  </p-card>
+</preview>
+
+```vue
+<template>
+  <p-card
+    disabled
+    title="Judul apapun seharusnya disini">
+    Ketika Anda berada di sini, Anda akan melihat konten kartu-kartu, 
+    semuanya tersedia di sini. Jika Anda membutuhkan kartu-kartu khusus, 
+    ambillah komponen yang paling sesuai dengan kebutuhan Anda dan lepaskan.
+  </p-card>
+</template>
+```
+
+## Readonly
+Card also has readonly state. The card background will visually change if the `readonly` prop is set to true.
+These state are also work in `<p-card-section>`.
+<preview>
+  <p-card
+    title="Card with Section"
+    sectioned>
+    <p-card-section>
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
+      what you need and detach it.
+    </p-card-section>
+    <p-card-section
+      title="Subtitle supposedly here"
+      readonly>
+      <template #action>
+        <a href="#" class="underline text-link dark:text-dark-link">Edit</a>
+      </template>
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
+      what you need and detach it.
+    </p-card-section>
+  </p-card>
+</preview>
+
+```vue
+<template>
+  <p-card
+    title="Card with Section"
+    sectioned>
+    <p-card-section>
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
+      what you need and detach it.
+    </p-card-section>
+    <p-card-section
+      title="Subtitle supposedly here"
+      readonly>
+      <template #action>
+        <a href="#" class="underline text-link dark:text-dark-link">Edit</a>
+      </template>
+      While here you will see the content of cards, everything goes here.
+      If you need custom cards, take the component which more represent to
+      what you need and detach it.
+    </p-card-section>
+  </p-card>
+</template>
+```
+
 ## Callout
 <preview>
   <p-card
@@ -337,7 +409,7 @@ Card use local CSS variables on `.card` for enhanced real-time customization.
 
 ## API
 
-### Props
+### Props `<p-card>`
 
 | Props         |   Type    |  Default  | Description                                                  |
 |---------------|:---------:|:---------:|--------------------------------------------------------------|
@@ -345,9 +417,18 @@ Card use local CSS variables on `.card` for enhanced real-time customization.
 | `title`       | `String`  |     -     | Card Header Title                                            |
 | `sectioned`   | `Boolean` |  `false`  | Enable Card Section                                          |
 | `disabled`    | `Boolean` |  `false`  | Disable (look-like) Card                                     |
+| `readonly`    | `Boolean` |  `false`  | Readonly (look-like) Card                                    |
 | `callout`     | `Boolean` |  `false`  | Enable Callout                                               |
 | `dismissable` | `Boolean` |  `true`   | Show / Hide dismiss button                                   |
 | `spacing`     | `String`  |  `md`     | Card spacing, valid value are `sm`, `md`, `lg` and `xl`      |
+
+### Props `<p-card-section>`
+
+| Props         |   Type    |  Default  | Description                                                  |
+|---------------|:---------:|:---------:|--------------------------------------------------------------|
+| `title`       | `String`  |     -     | Card Header Title                                            |
+| `disabled`    | `Boolean` |  `false`  | Disable (look-like) Card                                     |
+| `readonly`    | `Boolean` |  `false`  | Readonly (look-like) Card                                    |
 
 ### Slots
 | Name      | Description                                                                                      |

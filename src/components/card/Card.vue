@@ -76,6 +76,10 @@ const props = defineProps({
     type   : Boolean,
     default: false,
   },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
   callout: {
     type   : Boolean,
     default: false,
@@ -108,6 +112,9 @@ const classNames = computed(() => {
 
   if (props.disabled)
     result.push('card--disabled')
+
+  if (props.readonly)
+    result.push('card--readonly')
 
   if (props.callout)
     result.push('card--callout')
@@ -143,7 +150,7 @@ defineSlots<{
 * Component Name: Card
 * Component URI : https : //www.figma.com/file/JIYmbyRYZHc9bnVp6Npm9K/B-A-S-E-%2F-Components?node-id=294%3A5079
 * Date Created  : May 22, 2022
-* Last Update   : May 23, 2022
+* Last Update   : Nov 08, 2024
 */
 .card {
   --p-card-padding-x: theme(spacing.6);
@@ -244,6 +251,15 @@ defineSlots<{
   * padding of card-body-top-parent set to 0
   */
   &&--sectioned {
+    &:has(.card__section--readonly) {
+      .card__section:first-child:where(.card__section--readonly) {
+        @apply rounded-t-[var(--p-card-border-radius)];
+      }
+
+      .card__section:last-child:where(.card__section--readonly) {
+        @apply rounded-b-[var(--p-card-border-radius)];
+      }
+    }
     > .card__body {
       @apply p-0;
     }
@@ -254,8 +270,16 @@ defineSlots<{
   * If Card disabled
   */
   &&--disabled {
-    @apply bg-subtle;
-    @apply dark:bg-dark-subtle;
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /**
+  * Give background base
+  * when Card are readonly
+  */
+  &&--readonly {
+    @apply bg-base cursor-not-allowed;
+    @apply dark:bg-dark-base;
   }
 
   /**
@@ -309,8 +333,13 @@ defineSlots<{
 
     &&--disabled,
     &.card--disabled {
-      @apply bg-subtle;
-      @apply dark:bg-dark-subtle;
+      @apply opacity-50 cursor-not-allowed;
+    }
+
+    &&--readonly,
+    &.card--readonly {
+      @apply bg-base cursor-not-allowed;
+      @apply dark:bg-dark-base;
     }
 
     &.card--disabled {
