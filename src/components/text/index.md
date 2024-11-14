@@ -18,7 +18,7 @@ Used for the title of any sub-sections
 Default style of `Text` is a body text
 
 <preview>
-  <p-text class="bg-alpha-black-3">The quick brown fox jumps over the lazy dog.</p-text>
+  <p-text>The quick brown fox jumps over the lazy dog.</p-text>
 </preview>
 
 ```vue

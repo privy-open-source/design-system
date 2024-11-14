@@ -224,8 +224,9 @@ module.exports = {
           },
         },
       },
-      fill       : ({ theme }) => ({ ...theme('backgroundColor') }),
-      borderColor: {
+      backgroundImage: { 'gradient-maroon-to-dark-red': 'linear-gradient(90deg, #37162E 0%, #482041 43.68%, #492143 55.03%, #52213F 64.67%, #58213C 76.02%, #912121 113.46%)' },
+      fill           : ({ theme }) => ({ ...theme('backgroundColor') }),
+      borderColor    : {
         DEFAULT: theme.colors.gray[15],
         default: {
           DEFAULT: theme.colors.gray[15],
