@@ -26,127 +26,127 @@
           "id" : 1,
           "token" : "gray.0",
           "figma" : "main/gray/0",
-          "hex" : "#FDFDFD"
+          "hex" : "#FBFCFD"
         },
         {
           "id" : 2,
           "token" : "gray.5",
           "figma" : "main/gray/5",
-          "hex" : "#F3F3F3"
+          "hex" : "#F4F5F7"
         },
         {
           "id" : 3,
           "token" : "gray.10",
           "figma" : "main/gray/10",
-          "hex" : "#E7E7E8"
+          "hex" : "#E6E7EB"
         },
         {
           "id" : 4,
           "token" : "gray.15",
           "figma" : "main/gray/15",
-          "hex" : "#DBDBDC"
+          "hex" : "#D9DDE3"
         },
         {
           "id" : 5,
           "token" : "gray.20",
           "figma" : "main/gray/20",
-          "hex" : "#CFCFD1"
+          "hex" : "#CBD1D8"
         },
         {
           "id" : 6,
           "token" : "gray.25",
           "figma" : "main/gray/25",
-          "hex" : "#C2C3C5"
+          "hex" : "#BEC5CF"
         },
         {
           "id" : 7,
           "token" : "gray.30",
           "figma" : "main/gray/30",
-          "hex" : "#B6B8B9"
+          "hex" : "#AFB7C3"
         },
         {
           "id" : 8,
           "token" : "gray.35",
           "figma" : "main/gray/35",
-          "hex" : "#AAACAE"
+          "hex" : "#A0ABB9"
         },
         {
           "id" : 9,
           "token" : "gray.40",
           "figma" : "main/gray/40",
-          "hex" : "#9EA0A2"
+          "hex" : "#939EAE"
         },
         {
           "id" : 10,
           "token" : "gray.45",
           "figma" : "main/gray/45",
-          "hex" : "#929497"
+          "hex" : "#8390A3"
         },
         {
           "id" : 11,
           "token" : "gray.50",
           "figma" : "main/gray/50",
-          "hex" : "#86888B"
+          "hex" : "#728196"
         },
         {
           "id" : 12,
           "token" : "gray.55",
           "figma" : "main/gray/55",
-          "hex" : "#7A7C7F"
+          "hex" : "#647184"
         },
         {
           "id" : 13,
           "token" : "gray.60",
           "figma" : "main/gray/60",
-          "hex" : "#6E7074"
+          "hex" : "#5B6778"
         },
         {
           "id" : 14,
           "token" : "gray.65",
           "figma" : "main/gray/65",
-          "hex" : "#626468"
+          "hex" : "#525D6C"
         },
         {
           "id" : 15,
           "token" : "gray.70",
           "figma" : "main/gray/70",
-          "hex" : "#56585D"
+          "hex" : "#495260"
         },
         {
           "id" : 16,
           "token" : "gray.75",
           "figma" : "main/gray/75",
-          "hex" : "#4A4D51"
+          "hex" : "#414955"
         },
         {
           "id" : 17,
           "token" : "gray.80",
           "figma" : "main/gray/80",
-          "hex" : "#3D4145"
+          "hex" : "#383F4A"
         },
         {
           "id" : 18,
           "token" : "gray.85",
           "figma" : "main/gray/85",
-          "hex" : "#2A2E33"
+          "hex" : "#30363F"
         },
         {
           "id" : 19,
           "token" : "gray.90",
           "figma" : "main/gray/90",
-          "hex" : "#20242A"
+          "hex" : "#272C33"
         },
         {
           "id" : 20,
           "token" : "gray.95",
           "figma" : "main/gray/95",
-          "hex" : "#14181E"
+          "hex" : "#1F2329"
         },
         {
           "id" : 21,
           "token" : "gray.100",
           "figma" : "main/gray/100",
-          "hex" : "#0D1117"
+          "hex" : "#191C21"
         }
       ]
     },
@@ -155,70 +155,76 @@
       "title" : "Blue",
       "data" : [
         {
+          "id" : 0,
+          "token" : "blue.milk",
+          "figma" : "main/blue/milk",
+          "hex" : "#F5FAFF"
+        },
+        {
           "id" : 1,
           "token" : "blue.0",
           "figma" : "main/blue/0",
-          "hex" : "#E5F0FA"
+          "hex" : "#E5F3FF"
         },
         {
           "id" : 2,
           "token" : "blue.10",
           "figma" : "main/blue/10",
-          "hex" : "#A8CBEF"
+          "hex" : "#ADD9FF"
         },
         {
           "id" : 3,
           "token" : "blue.20",
           "figma" : "main/blue/20",
-          "hex" : "#70A9E5"
+          "hex" : "#75C0FF"
         },
         {
           "id" : 4,
           "token" : "blue.30",
           "figma" : "main/blue/30",
-          "hex" : "#3887DB"
+          "hex" : "#3DA6FF"
         },
         {
           "id" : 5,
           "token" : "blue.40",
           "figma" : "main/blue/40",
-          "hex" : "#0065D1"
+          "hex" : "#008AFF"
         },
         {
           "id" : 6,
           "token" : "blue.50",
           "figma" : "main/blue/50",
-          "hex" : "#0057B4"
+          "hex" : "#0075D9"
         },
         {
           "id" : 7,
           "token" : "blue.60",
           "figma" : "main/blue/60",
-          "hex" : "#004996"
+          "hex" : "#0061B3"
         },
         {
           "id" : 8,
           "token" : "blue.70",
           "figma" : "main/blue/70",
-          "hex" : "#003B79"
+          "hex" : "#004C8C"
         },
         {
           "id" : 9,
           "token" : "blue.80",
           "figma" : "main/blue/80",
-          "hex" : "#002C5C"
+          "hex" : "#003766"
         },
         {
           "id" : 10,
           "token" : "blue.90",
           "figma" : "main/blue/90",
-          "hex" : "#001E3F"
+          "hex" : "#002340"
         },
         {
           "id" : 11,
           "token" : "blue.100",
           "figma" : "main/blue/100",
-          "hex" : "#000F1F"
+          "hex" : "#001526"
         }
       ]
     },
@@ -227,70 +233,76 @@
       "title" : "Green",
       "data" : [
         {
+          "id" : 0,
+          "token" : "green.milk",
+          "figma" : "main/green/milk",
+          "hex" : "#F7FDF8"
+        },
+        {
           "id" : 1,
           "token" : "green.0",
           "figma" : "main/green/0",
-          "hex" : "#E9F7EC"
+          "hex" : "#EAF9EE"
         },
         {
           "id" : 2,
           "token" : "green.10",
           "figma" : "main/green/10",
-          "hex" : "#B4E5BF"
+          "hex" : "#BEEDCA"
         },
         {
           "id" : 3,
           "token" : "green.20",
           "figma" : "main/green/20",
-          "hex" : "#84D495"
+          "hex" : "#91E1A5"
         },
         {
           "id" : 4,
           "token" : "green.30",
           "figma" : "main/green/30",
-          "hex" : "#53C36C"
+          "hex" : "#65D481"
         },
         {
           "id" : 5,
           "token" : "green.40",
           "figma" : "main/green/40",
-          "hex" : "#23B242"
+          "hex" : "#34C759"
         },
         {
           "id" : 6,
           "token" : "green.50",
           "figma" : "main/green/50",
-          "hex" : "#1E9939"
+          "hex" : "#2CA94C"
         },
         {
           "id" : 7,
           "token" : "green.60",
           "figma" : "main/green/60",
-          "hex" : "#198030"
+          "hex" : "#248C3E"
         },
         {
           "id" : 8,
           "token" : "green.70",
           "figma" : "main/green/70",
-          "hex" : "#146726"
+          "hex" : "#1D6D31"
         },
         {
           "id" : 9,
           "token" : "green.80",
           "figma" : "main/green/80",
-          "hex" : "#0F4E1D"
+          "hex" : "#155024"
         },
         {
           "id" : 10,
           "token" : "green.90",
           "figma" : "main/green/90",
-          "hex" : "#0B3514"
+          "hex" : "#0D3216"
         },
         {
           "id" : 11,
           "token" : "green.100",
           "figma" : "main/green/100",
-          "hex" : "#051B0A"
+          "hex" : "#081E0D"
         }
       ]
     },
@@ -299,70 +311,76 @@
       "title" : "Light Blue",
       "data" : [
         {
+          "id" : 0,
+          "token" : "lightblue.milk",
+          "figma" : "main/lightBlue/milk",
+          "hex" : "#F5FDFF"
+        },
+        {
           "id" : 1,
           "token" : "lightblue.0",
           "figma" : "main/lightBlue/0",
-          "hex" : "#E6F7F9"
+          "hex" : "#E5FAFF"
         },
         {
           "id" : 2,
           "token" : "lightblue.10",
           "figma" : "main/lightBlue/10",
-          "hex" : "#A9E3EB"
+          "hex" : "#ADF0FF"
         },
         {
           "id" : 3,
           "token" : "lightblue.20",
           "figma" : "main/lightBlue/20",
-          "hex" : "#71D2DF"
+          "hex" : "#75E6FF"
         },
         {
           "id" : 4,
           "token" : "lightblue.30",
           "figma" : "main/lightBlue/30",
-          "hex" : "#3AC0D2"
+          "hex" : "#3DDCFF"
         },
         {
           "id" : 5,
           "token" : "lightblue.40",
           "figma" : "main/lightBlue/40",
-          "hex" : "#02AEC5"
+          "hex" : "#00D1FF"
         },
         {
           "id" : 6,
           "token" : "lightblue.50",
           "figma" : "main/lightBlue/50",
-          "hex" : "#0296A9"
+          "hex" : "#00B2D9"
         },
         {
           "id" : 7,
           "token" : "lightblue.60",
           "figma" : "main/lightBlue/60",
-          "hex" : "#017D8E"
+          "hex" : "#0093B3"
         },
         {
           "id" : 8,
           "token" : "lightblue.70",
           "figma" : "main/lightBlue/70",
-          "hex" : "#016572"
+          "hex" : "#00738C"
         },
         {
           "id" : 9,
           "token" : "lightblue.80",
           "figma" : "main/lightBlue/80",
-          "hex" : "#014D57"
+          "hex" : "#005466"
         },
         {
           "id" : 10,
           "token" : "lightblue.90",
           "figma" : "main/lightBlue/90",
-          "hex" : "#01343B"
+          "hex" : "#003440"
         },
         {
           "id" : 11,
           "token" : "lightblue.100",
           "figma" : "main/lightBlue/100",
-          "hex" : "#001A1E"
+          "hex" : "#001F26"
         }
       ]
     },
@@ -371,22 +389,28 @@
       "title" : "Orange",
       "data" : [
         {
+          "id" : 0,
+          "token" : "orange.milk",
+          "figma" : "main/orange/milk",
+          "hex" : "#FFFBF5"
+        },
+        {
           "id" : 1,
           "token" : "orange.0",
           "figma" : "main/orange/0",
-          "hex" : "#FEF6E9"
+          "hex" : "#FFF5E5"
         },
         {
           "id" : 2,
           "token" : "orange.10",
           "figma" : "main/orange/10",
-          "hex" : "#FCE1B4"
+          "hex" : "#FFE0AD"
         },
         {
           "id" : 3,
           "token" : "orange.20",
           "figma" : "main/orange/20",
-          "hex" : "#F9CD84"
+          "hex" : "#FFCA75"
         },
         {
           "id" : 4,
@@ -398,43 +422,43 @@
           "id" : 5,
           "token" : "orange.40",
           "figma" : "main/orange/40",
-          "hex" : "#F5A623"
+          "hex" : "#FF9E00"
         },
         {
           "id" : 6,
           "token" : "orange.50",
           "figma" : "main/orange/50",
-          "hex" : "#D38F1E"
+          "hex" : "#D98600"
         },
         {
           "id" : 7,
           "token" : "orange.60",
           "figma" : "main/orange/60",
-          "hex" : "#B07819"
+          "hex" : "#B36F00"
         },
         {
           "id" : 8,
           "token" : "orange.70",
           "figma" : "main/orange/70",
-          "hex" : "#8E6014"
+          "hex" : "#8C5700"
         },
         {
           "id" : 9,
           "token" : "orange.80",
           "figma" : "main/orange/80",
-          "hex" : "#6C490F"
+          "hex" : "#663F00"
         },
         {
           "id" : 10,
           "token" : "orange.90",
           "figma" : "main/orange/90",
-          "hex" : "#4A320B"
+          "hex" : "#402800"
         },
         {
           "id" : 11,
           "token" : "orange.100",
           "figma" : "main/orange/100",
-          "hex" : "#251905"
+          "hex" : "#261800"
         }
       ]
     },
@@ -443,28 +467,34 @@
       "title" : "Red",
       "data" : [
         {
+          "id" : 0,
+          "token" : "red.milk",
+          "figma" : "main/red/milk",
+          "hex" : "#FEF7F7"
+        },
+        {
           "id" : 1,
           "token" : "red.0",
           "figma" : "main/red/0",
-          "hex" : "#FCEAEA"
+          "hex" : "#FCEAE9"
         },
         {
           "id" : 2,
           "token" : "red.10",
           "figma" : "main/red/10",
-          "hex" : "#F6B8B7"
+          "hex" : "#F6BCBB"
         },
         {
           "id" : 3,
           "token" : "red.20",
           "figma" : "main/red/20",
-          "hex" : "#F08A89"
+          "hex" : "#F08E8D"
         },
         {
           "id" : 4,
           "token" : "red.30",
           "figma" : "main/red/30",
-          "hex" : "#EA5C5A"
+          "hex" : "#EA605E"
         },
         {
           "id" : 5,
@@ -476,31 +506,31 @@
           "id" : 6,
           "token" : "red.50",
           "figma" : "main/red/50",
-          "hex" : "#C42826"
+          "hex" : "#C22725"
         },
         {
           "id" : 7,
           "token" : "red.60",
           "figma" : "main/red/60",
-          "hex" : "#A42120"
+          "hex" : "#9F201F"
         },
         {
           "id" : 8,
           "token" : "red.70",
           "figma" : "main/red/70",
-          "hex" : "#841B1A"
+          "hex" : "#7D1918"
         },
         {
           "id" : 9,
           "token" : "red.80",
           "figma" : "main/red/80",
-          "hex" : "#641413"
+          "hex" : "#5B1212"
         },
         {
           "id" : 10,
           "token" : "red.90",
           "figma" : "main/red/90",
-          "hex" : "#440E0D"
+          "hex" : "#390C0B"
         },
         {
           "id" : 11,
@@ -515,70 +545,76 @@
       "title" : "Gold",
       "data" : [
         {
+          "id" : 0,
+          "token" : "gold.milk",
+          "figma" : "main/gold/milk",
+          "hex" : "#FFFCF5"
+        },
+        {
           "id" : 1,
           "token" : "gold.0",
           "figma" : "main/gold/0",
-          "hex" : "#F8F5E5"
+          "hex" : "#FFF7E5"
         },
         {
           "id" : 2,
           "token" : "gold.10",
           "figma" : "main/gold/10",
-          "hex" : "#E7DDA8"
+          "hex" : "#FFE7AD"
         },
         {
           "id" : 3,
           "token" : "gold.20",
           "figma" : "main/gold/20",
-          "hex" : "#D7C670"
+          "hex" : "#FFD675"
         },
         {
           "id" : 4,
           "token" : "gold.30",
           "figma" : "main/gold/30",
-          "hex" : "#C7B038"
+          "hex" : "#FFC63D"
         },
         {
           "id" : 5,
           "token" : "gold.40",
           "figma" : "main/gold/40",
-          "hex" : "#B79A00"
+          "hex" : "#FFB400"
         },
         {
           "id" : 6,
           "token" : "gold.50",
           "figma" : "main/gold/50",
-          "hex" : "#9D8400"
+          "hex" : "#D99900"
         },
         {
           "id" : 7,
           "token" : "gold.60",
           "figma" : "main/gold/60",
-          "hex" : "#846F00"
+          "hex" : "#B37E00"
         },
         {
           "id" : 8,
           "token" : "gold.70",
           "figma" : "main/gold/70",
-          "hex" : "#6A5900"
+          "hex" : "#8C6300"
         },
         {
           "id" : 9,
           "token" : "gold.80",
           "figma" : "main/gold/80",
-          "hex" : "#514400"
+          "hex" : "#664800"
         },
         {
           "id" : 10,
           "token" : "gold.90",
           "figma" : "main/gold/90",
-          "hex" : "#372E00"
+          "hex" : "#402D00"
         },
         {
           "id" : 11,
           "token" : "gold.100",
           "figma" : "main/gold/100",
-          "hex" : "#1B1700"
+          "hex" : "#261B00"
         }
       ]
     },
@@ -587,70 +623,76 @@
       "title" : "Yellow",
       "data" : [
         {
+          "id" : 0,
+          "token" : "yellow.milk",
+          "figma" : "main/yellow/milk",
+          "hex" : "#FFFDF5"
+        },
+        {
           "id" : 1,
           "token" : "yellow.0",
           "figma" : "main/yellow/0",
-          "hex" : "#FDFBEA"
+          "hex" : "#FFFBE5"
         },
         {
           "id" : 2,
           "token" : "yellow.10",
           "figma" : "main/yellow/10",
-          "hex" : "#FAF1B7"
+          "hex" : "#FFF2AD"
         },
         {
           "id" : 3,
           "token" : "yellow.20",
           "figma" : "main/yellow/20",
-          "hex" : "#F6E789"
+          "hex" : "#FFE975"
         },
         {
           "id" : 4,
           "token" : "yellow.30",
           "figma" : "main/yellow/30",
-          "hex" : "#F3DE5A"
+          "hex" : "#FFE13D"
         },
         {
           "id" : 5,
           "token" : "yellow.40",
           "figma" : "main/yellow/40",
-          "hex" : "#EFD52C"
+          "hex" : "#FFD700"
         },
         {
           "id" : 6,
           "token" : "yellow.50",
           "figma" : "main/yellow/50",
-          "hex" : "#CEB726"
+          "hex" : "#D9B700"
         },
         {
           "id" : 7,
           "token" : "yellow.60",
           "figma" : "main/yellow/60",
-          "hex" : "#AC9920"
+          "hex" : "#B39700"
         },
         {
           "id" : 8,
           "token" : "yellow.70",
           "figma" : "main/yellow/70",
-          "hex" : "#8B7C1A"
+          "hex" : "#8C7600"
         },
         {
           "id" : 9,
           "token" : "yellow.80",
           "figma" : "main/yellow/80",
-          "hex" : "#695E13"
+          "hex" : "#665600"
         },
         {
           "id" : 10,
           "token" : "yellow.90",
           "figma" : "main/yellow/90",
-          "hex" : "#48400D"
+          "hex" : "#403600"
         },
         {
           "id" : 11,
           "token" : "yellow.100",
           "figma" : "main/yellow/100",
-          "hex" : "#242007"
+          "hex" : "#262000"
         }
       ]
     },
@@ -659,70 +701,76 @@
       "title" : "Lime",
       "data" : [
         {
+          "id" : 0,
+          "token" : "lime.milk",
+          "figma" : "main/lime/milk",
+          "hex" : "#FBFFF5"
+        },
+        {
           "id" : 1,
           "token" : "lime.0",
           "figma" : "main/lime/0",
-          "hex" : "#F6FCEB"
+          "hex" : "#F6FFE5"
         },
         {
           "id" : 2,
           "token" : "lime.10",
           "figma" : "main/lime/10",
-          "hex" : "#E0F7BA"
+          "hex" : "#E1FFAD"
         },
         {
           "id" : 3,
           "token" : "lime.20",
           "figma" : "main/lime/20",
-          "hex" : "#CBF18E"
+          "hex" : "#CDFF75"
         },
         {
           "id" : 4,
           "token" : "lime.30",
           "figma" : "main/lime/30",
-          "hex" : "#B7EB61"
+          "hex" : "#B9FF3D"
         },
         {
           "id" : 5,
           "token" : "lime.40",
           "figma" : "main/lime/40",
-          "hex" : "#A3E635"
+          "hex" : "#A3FF00"
         },
         {
           "id" : 6,
           "token" : "lime.50",
           "figma" : "main/lime/50",
-          "hex" : "#8CC62E"
+          "hex" : "#8BD900"
         },
         {
           "id" : 7,
           "token" : "lime.60",
           "figma" : "main/lime/60",
-          "hex" : "#75A626"
+          "hex" : "#72B300"
         },
         {
           "id" : 8,
           "token" : "lime.70",
           "figma" : "main/lime/70",
-          "hex" : "#5F851F"
+          "hex" : "#598C00"
         },
         {
           "id" : 9,
           "token" : "lime.80",
           "figma" : "main/lime/80",
-          "hex" : "#486517"
+          "hex" : "#416600"
         },
         {
           "id" : 10,
           "token" : "lime.90",
           "figma" : "main/lime/90",
-          "hex" : "#314510"
+          "hex" : "#294000"
         },
         {
           "id" : 11,
           "token" : "lime.100",
           "figma" : "main/lime/100",
-          "hex" : "#182208"
+          "hex" : "#182600"
         }
       ]
     },
@@ -731,70 +779,76 @@
       "title" : "Teal",
       "data" : [
         {
+          "id" : 0,
+          "token" : "teal.milk",
+          "figma" : "main/teal/milk",
+          "hex" : "#F5FDFC"
+        },
+        {
           "id" : 1,
           "token" : "teal.0",
           "figma" : "main/teal/0",
-          "hex" : "#E7F8F5"
+          "hex" : "#E5F9F6"
         },
         {
           "id" : 2,
           "token" : "teal.10",
           "figma" : "main/teal/10",
-          "hex" : "#AEE7DD"
+          "hex" : "#ADEDE3"
         },
         {
           "id" : 3,
           "token" : "teal.20",
           "figma" : "main/teal/20",
-          "hex" : "#7AD7C8"
+          "hex" : "#75E1D0"
         },
         {
           "id" : 4,
           "token" : "teal.30",
           "figma" : "main/teal/30",
-          "hex" : "#46C8B2"
+          "hex" : "#3DD4BE"
         },
         {
           "id" : 5,
           "token" : "teal.40",
           "figma" : "main/teal/40",
-          "hex" : "#12B89C"
+          "hex" : "#00C7A9"
         },
         {
           "id" : 6,
           "token" : "teal.50",
           "figma" : "main/teal/50",
-          "hex" : "#0F9E86"
+          "hex" : "#00A990"
         },
         {
           "id" : 7,
           "token" : "teal.60",
           "figma" : "main/teal/60",
-          "hex" : "#0D8470"
+          "hex" : "#008C77"
         },
         {
           "id" : 8,
           "token" : "teal.70",
           "figma" : "main/teal/70",
-          "hex" : "#0A6B5A"
+          "hex" : "#006D5D"
         },
         {
           "id" : 9,
           "token" : "teal.80",
           "figma" : "main/teal/80",
-          "hex" : "#085145"
+          "hex" : "#005044"
         },
         {
           "id" : 10,
           "token" : "teal.90",
           "figma" : "main/teal/90",
-          "hex" : "#05372F"
+          "hex" : "#00322A"
         },
         {
           "id" : 11,
           "token" : "teal.100",
           "figma" : "main/teal/100",
-          "hex" : "#031C17"
+          "hex" : "#001E19"
         }
       ]
     },
@@ -803,70 +857,76 @@
       "title" : "Purple",
       "data" : [
         {
+          "id" : 0,
+          "token" : "purple.milk",
+          "figma" : "main/purple/milk",
+          "hex" : "#FAF5FF"
+        },
+        {
           "id" : 1,
           "token" : "purple.0",
           "figma" : "main/purple/0",
-          "hex" : "#EFE5FA"
+          "hex" : "#F2E5FF"
         },
         {
           "id" : 2,
           "token" : "purple.10",
           "figma" : "main/purple/10",
-          "hex" : "#C8A8EF"
+          "hex" : "#D6ADFF"
         },
         {
           "id" : 3,
           "token" : "purple.20",
           "figma" : "main/purple/20",
-          "hex" : "#A570E5"
+          "hex" : "#BA75FF"
         },
         {
           "id" : 4,
           "token" : "purple.30",
           "figma" : "main/purple/30",
-          "hex" : "#8138DB"
+          "hex" : "#9E3DFF"
         },
         {
           "id" : 5,
           "token" : "purple.40",
           "figma" : "main/purple/40",
-          "hex" : "#5E00D1"
+          "hex" : "#8000FF"
         },
         {
           "id" : 6,
           "token" : "purple.50",
           "figma" : "main/purple/50",
-          "hex" : "#5100B4"
+          "hex" : "#6D00D9"
         },
         {
           "id" : 7,
           "token" : "purple.60",
           "figma" : "main/purple/60",
-          "hex" : "#440096"
+          "hex" : "#5A00B3"
         },
         {
           "id" : 8,
           "token" : "purple.70",
           "figma" : "main/purple/70",
-          "hex" : "#370079"
+          "hex" : "#46008C"
         },
         {
           "id" : 9,
           "token" : "purple.80",
           "figma" : "main/purple/80",
-          "hex" : "#29005C"
+          "hex" : "#330066"
         },
         {
           "id" : 10,
           "token" : "purple.90",
           "figma" : "main/purple/90",
-          "hex" : "#1C003F"
+          "hex" : "#200040"
         },
         {
           "id" : 11,
           "token" : "purple.100",
           "figma" : "main/purple/100",
-          "hex" : "#0E001F"
+          "hex" : "#130026"
         }
       ]
     }
