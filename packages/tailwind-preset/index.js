@@ -177,8 +177,12 @@ module.exports = {
           DEFAULT: theme.colors.gray[0],
           alpha  : `rgba(${theme.colors.gray[50]}, ${theme.opacity[5]})`,
         },
-        'inverse': theme.colors.gray[100],
-        'subtle' : {
+        'inverse'   : theme.colors.gray[100],
+        'on-inverse': {
+          DEFAULT: theme.colors.gray[90],
+          subtle : theme.colors.gray[80],
+        },
+        'subtle': {
           DEFAULT: theme.colors.gray[10],
           alpha  : `rgba(${theme.colors.gray[80]}, ${theme.opacity[10]})`,
         },
@@ -207,8 +211,12 @@ module.exports = {
             DEFAULT: theme.colors.gray[95],
             alpha  : `rgba(${theme.colors.gray[80]}, ${theme.opacity[10]})`,
           },
-          'inverse': theme.colors.gray[0],
-          'subtle' : {
+          'inverse'   : theme.colors.gray[0],
+          'on-inverse': {
+            DEFAULT: theme.colors.gray[10],
+            subtle : theme.colors.gray[20],
+          },
+          'subtle': {
             DEFAULT: theme.colors.gray[90],
             alpha  : `rgba(${theme.colors.gray[20]}, ${theme.opacity[10]})`,
           },
