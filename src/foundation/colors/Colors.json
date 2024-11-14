@@ -151,6 +151,210 @@
       ]
     },
     {
+      "id"    : 15,
+      "title" : "Alpha Black",
+      "data" : [
+        {
+          "id" : 0,
+          "token" : "alpha.black.3",
+          "figma" : "alpha/black/3",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.3)",
+          "overlay": "rgba(25, 28, 33, 0.03)"
+        },
+        {
+          "id" : 1,
+          "token" : "alpha.black.5",
+          "figma" : "alpha/black/5",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.5)",
+          "overlay": "rgba(25, 28, 33, 0.05)"
+        },
+        {
+          "id" : 2,
+          "token" : "alpha.black.10",
+          "figma" : "alpha/black/10",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.10)",
+          "overlay": "rgba(25, 28, 33, 0.1)"
+        },
+        {
+          "id" : 3,
+          "token" : "alpha.black.20",
+          "figma" : "alpha/black/20",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.20)",
+          "overlay": "rgba(25, 28, 33, 0.2)"
+        },
+        {
+          "id" : 4,
+          "token" : "alpha.black.30",
+          "figma" : "alpha/black/30",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.30)",
+          "overlay": "rgba(25, 28, 33, 0.3)"
+        },
+        {
+          "id" : 5,
+          "token" : "alpha.black.40",
+          "figma" : "alpha/black/40",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.40)",
+          "overlay": "rgba(25, 28, 33, 0.4)"
+        },
+        {
+          "id" : 6,
+          "token" : "alpha.black.50",
+          "figma" : "alpha/black/50",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.50)",
+          "overlay": "rgba(25, 28, 33, 0.5)"
+        },
+        {
+          "id" : 7,
+          "token" : "alpha.black.60",
+          "figma" : "alpha/black/60",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.60)",
+          "overlay": "rgba(25, 28, 33, 0.6)"
+        },
+        {
+          "id" : 8,
+          "token" : "alpha.black.70",
+          "figma" : "alpha/black/70",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.70)",
+          "overlay": "rgba(25, 28, 33, 0.7)"
+        },
+        {
+          "id" : 9,
+          "token" : "alpha.black.80",
+          "figma" : "alpha/black/80",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.80)",
+          "overlay": "rgba(25, 28, 33, 0.8)"
+        },
+        {
+          "id" : 10,
+          "token" : "alpha.black.90",
+          "figma" : "alpha/black/90",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.90)",
+          "overlay": "rgba(25, 28, 33, 0.9)"
+        },
+        {
+          "id" : 11,
+          "token" : "alpha.black.95",
+          "figma" : "alpha/black/95",
+          "hex" : "#fff",
+          "parentToken" : "rgba($gray.100, $opacity.95)",
+          "overlay": "rgba(25, 28, 33, 0.95)"
+        }
+      ]
+    },
+    {
+      "id"    : 16,
+      "title" : "Alpha White",
+      "data" : [
+        {
+          "id" : 0,
+          "token" : "alpha.white.3",
+          "figma" : "alpha/white/3",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.3)",
+          "overlay": "rgba(251, 252, 253, 0.03)"
+        },
+        {
+          "id" : 1,
+          "token" : "alpha.white.5",
+          "figma" : "alpha/white/5",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.5)",
+          "overlay": "rgba(251, 252, 253, 0.05)"
+        },
+        {
+          "id" : 2,
+          "token" : "alpha.white.10",
+          "figma" : "alpha/white/10",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.10)",
+          "overlay": "rgba(251, 252, 253, 0.1)"
+        },
+        {
+          "id" : 3,
+          "token" : "alpha.white.20",
+          "figma" : "alpha/white/20",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.20)",
+          "overlay": "rgba(251, 252, 253, 0.2)"
+        },
+        {
+          "id" : 4,
+          "token" : "alpha.white.30",
+          "figma" : "alpha/white/30",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.30)",
+          "overlay": "rgba(251, 252, 253, 0.3)"
+        },
+        {
+          "id" : 5,
+          "token" : "alpha.white.40",
+          "figma" : "alpha/white/40",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.40)",
+          "overlay": "rgba(251, 252, 253, 0.4)"
+        },
+        {
+          "id" : 6,
+          "token" : "alpha.white.50",
+          "figma" : "alpha/white/50",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.50)",
+          "overlay": "rgba(251, 252, 253, 0.5)"
+        },
+        {
+          "id" : 7,
+          "token" : "alpha.white.60",
+          "figma" : "alpha/white/60",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.60)",
+          "overlay": "rgba(251, 252, 253, 0.6)"
+        },
+        {
+          "id" : 8,
+          "token" : "alpha.white.70",
+          "figma" : "alpha/white/70",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.70)",
+          "overlay": "rgba(251, 252, 253, 0.7)"
+        },
+        {
+          "id" : 9,
+          "token" : "alpha.white.80",
+          "figma" : "alpha/white/80",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.80)",
+          "overlay": "rgba(251, 252, 253, 0.8)"
+        },
+        {
+          "id" : 10,
+          "token" : "alpha.white.90",
+          "figma" : "alpha/white/90",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.90)",
+          "overlay": "rgba(251, 252, 253, 0.9)"
+        },
+        {
+          "id" : 11,
+          "token" : "alpha.white.95",
+          "figma" : "alpha/white/95",
+          "hex" : "#000",
+          "parentToken" : "rgba($gray.0, $opacity.95)",
+          "overlay": "rgba(251, 252, 253, 0.95)"
+        }
+      ]
+    },
+    {
       "id"    : 2,
       "title" : "Blue",
       "data" : [
@@ -927,6 +1131,162 @@
           "token" : "purple.100",
           "figma" : "main/purple/100",
           "hex" : "#130026"
+        }
+      ]
+    },
+    {
+      "id"    : 13,
+      "title" : "Violet",
+      "data" : [
+        {
+          "id" : 0,
+          "token" : "violet.milk",
+          "figma" : "main/violet/milk",
+          "hex" : "#FBF5FF"
+        },
+        {
+          "id" : 1,
+          "token" : "violet.0",
+          "figma" : "main/violet/0",
+          "hex" : "#F5E5FF"
+        },
+        {
+          "id" : 2,
+          "token" : "violet.10",
+          "figma" : "main/violet/10",
+          "hex" : "#DFADFF"
+        },
+        {
+          "id" : 3,
+          "token" : "violet.20",
+          "figma" : "main/violet/20",
+          "hex" : "#C975FF"
+        },
+        {
+          "id" : 4,
+          "token" : "violet.30",
+          "figma" : "main/violet/30",
+          "hex" : "#B33DFF"
+        },
+        {
+          "id" : 5,
+          "token" : "violet.40",
+          "figma" : "main/violet/40",
+          "hex" : "#9B00FF"
+        },
+        {
+          "id" : 6,
+          "token" : "violet.50",
+          "figma" : "main/violet/50",
+          "hex" : "#8400D9"
+        },
+        {
+          "id" : 7,
+          "token" : "violet.60",
+          "figma" : "main/violet/60",
+          "hex" : "#6D00B3"
+        },
+        {
+          "id" : 8,
+          "token" : "violet.70",
+          "figma" : "main/violet/70",
+          "hex" : "#55008C"
+        },
+        {
+          "id" : 9,
+          "token" : "violet.80",
+          "figma" : "main/violet/80",
+          "hex" : "#3E0066"
+        },
+        {
+          "id" : 10,
+          "token" : "violet.90",
+          "figma" : "main/violet/90",
+          "hex" : "#270040"
+        },
+        {
+          "id" : 11,
+          "token" : "violet.100",
+          "figma" : "main/violet/100",
+          "hex" : "#170026"
+        }
+      ]
+    },
+    {
+      "id"    : 14,
+      "title" : "Pink",
+      "data" : [
+        {
+          "id" : 0,
+          "token" : "pink.milk",
+          "figma" : "main/pink/milk",
+          "hex" : "#FEF7FF"
+        },
+        {
+          "id" : 1,
+          "token" : "pink.0",
+          "figma" : "main/pink/0",
+          "hex" : "#FEEBFF"
+        },
+        {
+          "id" : 2,
+          "token" : "pink.10",
+          "figma" : "main/pink/10",
+          "hex" : "#FBC0FF"
+        },
+        {
+          "id" : 3,
+          "token" : "pink.20",
+          "figma" : "main/pink/20",
+          "hex" : "#F895FF"
+        },
+        {
+          "id" : 4,
+          "token" : "pink.30",
+          "figma" : "main/pink/30",
+          "hex" : "#F56AFF"
+        },
+        {
+          "id" : 5,
+          "token" : "pink.40",
+          "figma" : "main/pink/40",
+          "hex" : "#F23BFF"
+        },
+        {
+          "id" : 6,
+          "token" : "pink.50",
+          "figma" : "main/pink/50",
+          "hex" : "#CE32D9"
+        },
+        {
+          "id" : 7,
+          "token" : "pink.60",
+          "figma" : "main/pink/60",
+          "hex" : "#AA29B3"
+        },
+        {
+          "id" : 8,
+          "token" : "pink.70",
+          "figma" : "main/pink/70",
+          "hex" : "#85208C"
+        },
+        {
+          "id" : 9,
+          "token" : "pink.80",
+          "figma" : "main/pink/80",
+          "hex" : "#611866"
+        },
+        {
+          "id" : 10,
+          "token" : "pink.90",
+          "figma" : "main/pink/90",
+          "hex" : "#3D0F40"
+        },
+        {
+          "id" : 11,
+          "token" : "pink.100",
+          "figma" : "main/pink/100",
+          "hex" : "#240926"
         }
       ]
     }
