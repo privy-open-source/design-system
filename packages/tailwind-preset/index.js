@@ -9,13 +9,19 @@ module.exports = {
         brand: {
           logo  : theme.colors.red[40],
           action: theme.colors.red[40],
-          accent: theme.colors.blue[40],
+          accent: {
+            DEFAULT : theme.colors.blue[40],
+            subtlest: theme.colors.blue.milk,
+          },
         },
         dark: {
           brand: {
             logo  : theme.colors.gray[0],
             action: theme.colors.red[30],
-            accent: theme.colors.blue[30],
+            accent: {
+              DEFAULT : theme.colors.blue[30],
+              subtlest: theme.colors.blue.milk,
+            },
           },
         },
         alpha: {
