@@ -11,6 +11,7 @@ module.exports = {
           action: theme.colors.red[40],
           accent: {
             DEFAULT : theme.colors.blue[40],
+            subtle  : theme.colors.blue[20],
             subtlest: theme.colors.blue.milk,
           },
         },
@@ -20,7 +21,8 @@ module.exports = {
             action: theme.colors.red[30],
             accent: {
               DEFAULT : theme.colors.blue[30],
-              subtlest: theme.colors.blue.milk,
+              subtle  : theme.colors.blue[50],
+              subtlest: theme.colors.blue[100],
             },
           },
         },
@@ -128,37 +130,61 @@ module.exports = {
         ],
       },
       textColor: {
-        'DEFAULT' : theme.colors.gray[100],
-        'default' : theme.colors.gray[100],
+        'DEFAULT' : theme.colors.gray[95],
+        'default' : theme.colors.gray[95],
         'subtle'  : theme.colors.gray[60],
         'subtlest': theme.colors.gray[35],
-        'muted'   : theme.colors.gray[25],
+        'muted'   : theme.colors.gray[20],
         'link'    : {
           'DEFAULT'    : theme.colors.blue[50],
           'on-emphasis': theme.colors.blue[20],
         },
         'on-emphasis'   : theme.colors.gray[0],
         'state-emphasis': theme.colors.gray[0],
-        'info'          : theme.colors.blue[60],
-        'success'       : theme.colors.green[60],
-        'warning'       : theme.colors.orange[60],
-        'danger'        : theme.colors.red[60],
-        'dark'          : {
+        'info'          : {
+          'DEFAULT'    : theme.colors.blue[60],
+          'on-emphasis': theme.colors.blue[30],
+        },
+        'success': {
+          'DEFAULT'    : theme.colors.green[60],
+          'on-emphasis': theme.colors.green[30],
+        },
+        'warning': {
+          'DEFAULT'    : theme.colors.orange[70],
+          'on-emphasis': theme.colors.orange[40],
+        },
+        'danger': {
+          'DEFAULT'    : theme.colors.red[60],
+          'on-emphasis': theme.colors.red[30],
+        },
+        'dark': {
           'DEFAULT' : theme.colors.gray[0],
           'default' : theme.colors.gray[0],
           'subtle'  : theme.colors.gray[40],
           'subtlest': theme.colors.gray[60],
-          'muted'   : theme.colors.gray[75],
+          'muted'   : theme.colors.gray[80],
           'link'    : {
-            'DEFAULT'    : theme.colors.blue[30],
-            'on-emphasis': theme.colors.blue[20],
+            'DEFAULT'    : theme.colors.blue[20],
+            'on-emphasis': theme.colors.blue[50],
           },
-          'on-emphasis'   : theme.colors.gray[100],
+          'on-emphasis'   : theme.colors.gray[95],
           'state-emphasis': theme.colors.gray[0],
-          'info'          : theme.colors.blue[20],
-          'success'       : theme.colors.green[20],
-          'warning'       : theme.colors.orange[20],
-          'danger'        : theme.colors.red[20],
+          'info'          : {
+            'DEFAULT'    : theme.colors.blue[20],
+            'on-emphasis': theme.colors.blue[30],
+          },
+          'success': {
+            'DEFAULT'    : theme.colors.green[20],
+            'on-emphasis': theme.colors.green[30],
+          },
+          'warning': {
+            'DEFAULT'    : theme.colors.orange[20],
+            'on-emphasis': theme.colors.orange[40],
+          },
+          'danger': {
+            'DEFAULT'    : theme.colors.red[20],
+            'on-emphasis': theme.colors.red[30],
+          },
         },
       },
       backgroundColor: {
@@ -166,25 +192,23 @@ module.exports = {
         'current'    : 'currentColor',
         'transparent': 'transparent',
         'base'       : {
-          DEFAULT: theme.colors.gray[5],
+          DEFAULT: theme.colors.gray[10],
           black  : theme.colors.base.black,
           white  : theme.colors.base.white,
         },
+        'ground' : theme.colors.gray[5],
         'DEFAULT': theme.colors.gray[0],
-        'layer-1': theme.colors.gray[0],
-        'layer-2': theme.colors.gray[0],
         'default': {
           DEFAULT: theme.colors.gray[0],
-          alpha  : `rgba(${theme.colors.gray[50]}, ${theme.opacity[5]})`,
+          alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[3]})`,
         },
-        'inverse'   : theme.colors.gray[100],
-        'on-inverse': {
+        'layer-1'       : theme.colors.gray[0],
+        'layer-2'       : theme.colors.gray[0],
+        'emphasis-alpha': `rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
+        'inverse'       : theme.colors.gray[95],
+        'on-inverse'    : {
           DEFAULT: theme.colors.gray[90],
           subtle : theme.colors.gray[80],
-        },
-        'subtle': {
-          DEFAULT: theme.colors.gray[10],
-          alpha  : `rgba(${theme.colors.gray[80]}, ${theme.opacity[10]})`,
         },
         'info': {
           DEFAULT : theme.colors.blue[0],
@@ -204,21 +228,19 @@ module.exports = {
         },
         'dark': {
           'base'   : theme.colors.gray[100],
+          'ground' : theme.colors.gray[90],
           'DEFAULT': theme.colors.gray[95],
-          'layer-1': theme.colors.gray[90],
-          'layer-2': theme.colors.gray[85],
           'default': {
             DEFAULT: theme.colors.gray[95],
-            alpha  : `rgba(${theme.colors.gray[80]}, ${theme.opacity[10]})`,
+            alpha  : `rgba(${theme.colors.gray[0]}, ${theme.opacity[3]})`,
           },
-          'inverse'   : theme.colors.gray[0],
-          'on-inverse': {
-            DEFAULT: theme.colors.gray[10],
-            subtle : theme.colors.gray[20],
-          },
-          'subtle': {
-            DEFAULT: theme.colors.gray[90],
-            alpha  : `rgba(${theme.colors.gray[20]}, ${theme.opacity[10]})`,
+          'layer-1'       : theme.colors.gray[90],
+          'layer-2'       : theme.colors.gray[85],
+          'emphasis-alpha': `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
+          'inverse'       : theme.colors.gray[10],
+          'on-inverse'    : {
+            DEFAULT: theme.colors.gray[5],
+            subtle : theme.colors.gray[0],
           },
           'info': {
             DEFAULT : theme.colors.blue[90],
@@ -241,58 +263,68 @@ module.exports = {
       backgroundImage: { 'gradient-maroon-to-dark-red': 'linear-gradient(90deg, #37162E 0%, #482041 43.68%, #492143 55.03%, #52213F 64.67%, #58213C 76.02%, #912121 113.46%)' },
       fill           : ({ theme }) => ({ ...theme('backgroundColor') }),
       borderColor    : {
-        DEFAULT: theme.colors.gray[15],
-        default: {
-          DEFAULT: theme.colors.gray[15],
+        'subtlest': theme.colors.gray[5],
+        'subtle'  : {
+          DEFAULT: theme.colors.gray[25],
           alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
         },
-        subtle: {
-          DEFAULT: theme.colors.gray[25],
+        'DEFAULT': theme.colors.gray[20],
+        'default': {
+          DEFAULT: theme.colors.gray[20],
           alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
         },
-        muted  : theme.colors.gray[10],
-        inverse: theme.colors.gray[100],
-        info   : {
+        'emphasis': {
+          DEFAULT: theme.colors.gray[30],
+          alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[20]})`,
+        },
+        'inverse'   : theme.colors.gray[90],
+        'on-inverse': theme.colors.gray[50],
+        'info'      : {
           DEFAULT : theme.colors.blue[10],
           emphasis: theme.colors.blue[40],
         },
-        success: {
+        'success': {
           DEFAULT : theme.colors.green[10],
           emphasis: theme.colors.green[40],
         },
-        warning: {
+        'warning': {
           DEFAULT : theme.colors.orange[10],
           emphasis: theme.colors.orange[40],
         },
-        danger: {
+        'danger': {
           DEFAULT : theme.colors.red[10],
           emphasis: theme.colors.red[40],
         },
-        dark: {
-          DEFAULT: theme.colors.gray[90],
-          default: {
-            DEFAULT: theme.colors.gray[90],
+        'dark': {
+          'subtlest': theme.colors.gray[90],
+          'DEFAULT' : theme.colors.gray[85],
+          'subtle'  : {
+            DEFAULT: theme.colors.gray[80],
             alpha  : `rgba(${theme.colors.gray[0]}, ${theme.opacity[5]})`,
           },
-          subtle: {
-            DEFAULT: theme.colors.gray[80],
+          'default': {
+            DEFAULT: theme.colors.gray[85],
             alpha  : `rgba(${theme.colors.gray[0]}, ${theme.opacity[10]})`,
           },
-          muted  : theme.colors.gray[85],
-          inverse: theme.colors.gray[0],
-          info   : {
+          'emphasis': {
+            DEFAULT: theme.colors.gray[30],
+            alpha  : `rgba(${theme.colors.gray[0]}, ${theme.opacity[20]})`,
+          },
+          'inverse'   : theme.colors.gray[10],
+          'on-inverse': theme.colors.gray[40],
+          'info'      : {
             DEFAULT : theme.colors.blue[100],
             emphasis: theme.colors.blue[30],
           },
-          success: {
+          'success': {
             DEFAULT : theme.colors.green[100],
             emphasis: theme.colors.green[30],
           },
-          warning: {
+          'warning': {
             DEFAULT : theme.colors.orange[100],
             emphasis: theme.colors.orange[30],
           },
-          danger: {
+          'danger': {
             DEFAULT : theme.colors.red[100],
             emphasis: theme.colors.red[30],
           },
