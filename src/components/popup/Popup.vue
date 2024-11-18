@@ -254,8 +254,8 @@ async function onActionClick (action: PopupActionOption) {
   &&--info {
     &:is(.popup--simple) {
       .popup__icon {
-        @apply bg-base text-info;
-        @apply dark:bg-dark-base dark:text-dark-info;
+        @apply bg-ground text-info;
+        @apply dark:bg-dark-ground dark:text-dark-info;
 
         &--default {
           @apply text-default;
@@ -288,8 +288,8 @@ async function onActionClick (action: PopupActionOption) {
       }
     }
     &.popup--filled {
-      @apply bg-base text-info;
-      @apply dark:bg-dark-base dark:text-dark-info;
+      @apply bg-ground text-info;
+      @apply dark:bg-dark-ground dark:text-dark-info;
     }
   }
 

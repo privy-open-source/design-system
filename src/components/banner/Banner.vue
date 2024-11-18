@@ -167,8 +167,8 @@ defineSlots<{
   }
 
   &&--info {
-    @apply bg-base;
-    @apply dark:bg-dark-base;
+    @apply bg-ground;
+    @apply dark:bg-dark-ground;
 
     .banner__icon {
       @apply text-info;

@@ -84,10 +84,10 @@ function setValue (value: number) {
 
 <style lang="postcss">
 .progress-indicator {
-  --p-bg-indicator-item: theme(backgroundColor.subtle.alpha);
-  --p-bg-dark-indicator-item: theme(backgroundColor.dark.subtle.alpha);
-  --p-bg-indicator-item-active: theme(backgroundColor.brand.accent);
-  --p-bg-dark-indicator-item-active: theme(backgroundColor.dark.brand.accent);
+  --p-bg-indicator-item: theme(backgroundColor.emphasis-alpha);
+  --p-bg-dark-indicator-item: theme(backgroundColor.dark.emphasis-alpha);
+  --p-bg-indicator-item-active: theme(backgroundColor.brand.accent.DEFAULT);
+  --p-bg-dark-indicator-item-active: theme(backgroundColor.dark.brand.accent.DEFAULT);
 
   @apply relative;
 

@@ -341,8 +341,8 @@ provide(PDF_OBJECT_CONTEXT, {
   }
 
   &__resize {
-    @apply absolute w-3 h-3 bottom-0 right-0 translate-x-1/2 translate-y-1/2 bg-subtle rounded-full;
-    @apply dark:bg-dark-subtle;
+    @apply absolute w-3 h-3 bottom-0 right-0 translate-x-1/2 translate-y-1/2 bg-base rounded-full;
+    @apply dark:bg-dark-base;
   }
 }
 </style>

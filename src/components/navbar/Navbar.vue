@@ -199,8 +199,8 @@ provide(NAVBAR_SETTINGS, {
           @apply flex-col;
 
           &__menu {
-            @apply static shadow-none border-0 bg-base rounded-t-none;
-            @apply dark:bg-dark-base;
+            @apply static shadow-none border-0 bg-ground rounded-t-none;
+            @apply dark:bg-dark-ground;
 
             &:where(.dropdown__menu--sm, .dropdown__menu--md, .dropdown__menu--lg) {
               @apply w-full;
@@ -215,8 +215,8 @@ provide(NAVBAR_SETTINGS, {
 
           &.dropdown--open {
             .dropdown__activator.btn.btn--md {
-              @apply rounded-b-none bg-base;
-              @apply dark:bg-dark-base;
+              @apply rounded-b-none bg-ground;
+              @apply dark:bg-dark-ground;
             }
           }
         }

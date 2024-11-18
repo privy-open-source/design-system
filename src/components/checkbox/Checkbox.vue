@@ -191,8 +191,8 @@ defineSlots<{
 
     &:not(.checkbox--checked, .checkbox--indeterminate) {
       .checkbox__icon {
-        @apply bg-subtle border-subtle;
-        @apply dark:bg-dark-subtle dark:border-dark-subtle;
+        @apply bg-base border-subtle;
+        @apply dark:bg-dark-base dark:border-dark-subtle;
 
         > svg {
           @apply fill-subtle;

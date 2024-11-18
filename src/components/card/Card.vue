@@ -278,8 +278,8 @@ defineSlots<{
   * when Card are readonly
   */
   &&--readonly {
-    @apply bg-base cursor-not-allowed;
-    @apply dark:bg-dark-base;
+    @apply bg-ground cursor-not-allowed;
+    @apply dark:bg-dark-ground;
   }
 
   /**
@@ -338,8 +338,8 @@ defineSlots<{
 
     &&--readonly,
     &.card--readonly {
-      @apply bg-base cursor-not-allowed;
-      @apply dark:bg-dark-base;
+      @apply bg-ground cursor-not-allowed;
+      @apply dark:bg-dark-ground;
     }
 
     &.card--disabled {

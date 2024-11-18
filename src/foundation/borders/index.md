@@ -77,7 +77,7 @@ The borders and also rings colors of Persona is based on [semantics borders colo
   </div>
 
   <div class="space-y-4">
-    <div class="border w-28 h-28 border-muted dark:border-dark-muted"></div>
+    <div class="border w-28 h-28 border-subtlest dark:border-dark-subtlest"></div>
     <div class="space-y-1">
       <p-caption size="tn" class="!text-default dark:!text-dark-default">Muted</p-caption>
       <p-caption size="tn" class="!text-lightblue-50">borderColor.muted</p-caption>

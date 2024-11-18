@@ -151,17 +151,17 @@ function handleInput () {
   @apply flex flex-auto relative;
 
   &__input {
-    @apply p-3 rounded border border-solid border-muted hover:border-subtle focus:border-subtle placeholder:text-muted w-full outline-none text-default bg-default resize-none min-h-[46px] focus:ring-4 focus:ring-subtle/10 focus:z-1;
-    @apply dark:border-dark-muted hover:dark:border-dark-subtle focus:dark:border-dark-subtle placeholder:dark:text-dark-muted dark:text-dark-default dark:bg-dark-default focus:dark:ring-dark-subtle/10;
+    @apply p-3 rounded border border-solid border-subtlest hover:border-subtle focus:border-subtle placeholder:text-muted w-full outline-none text-default bg-default resize-none min-h-[46px] focus:ring-4 focus:ring-subtle/10 focus:z-1;
+    @apply dark:border-dark-subtlest hover:dark:border-dark-subtle focus:dark:border-dark-subtle placeholder:dark:text-dark-muted dark:text-dark-default dark:bg-dark-default focus:dark:ring-dark-subtle/10;
 
     .textarea--readonly & {
-      @apply hover:border-muted focus:border-muted focus:ring-0 focus:z-0;
-      @apply hover:dark:border-dark-muted focus:dark:border-dark-muted;
+      @apply hover:border-subtlest focus:border-subtlest focus:ring-0 focus:z-0;
+      @apply hover:dark:border-dark-subtlest focus:dark:border-dark-subtlest;
     }
 
     .textarea--disabled & {
-      @apply bg-subtle border-subtle pointer-events-none text-muted;
-      @apply dark:bg-dark-subtle dark:border-dark-subtle dark:text-dark-muted;
+      @apply bg-base border-subtle pointer-events-none text-muted;
+      @apply dark:bg-dark-base dark:border-dark-subtle dark:text-dark-muted;
     }
 
     .textarea--resize & {

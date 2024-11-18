@@ -69,8 +69,8 @@ const status = computed(() => {
   @apply flex w-full space-x-4;
 
   &__bar {
-    @apply rounded-full h-1 bg-subtle-alpha grow transition-colors duration-150;
-    @apply dark:bg-dark-subtle-alpha;
+    @apply rounded-full h-1 bg-emphasis-alpha grow transition-colors duration-150;
+    @apply dark:bg-dark-emphasis-alpha;
   }
 
   &&[data-status="low"] {

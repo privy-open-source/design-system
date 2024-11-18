@@ -67,7 +67,7 @@ onMounted(async () => {
   }
 
   :not(pre) code {
-    @apply bg-subtle-alpha text-danger;
+    @apply bg-emphasis-alpha text-danger;
     @apply dark:bg-dark-danger dark:text-dark-danger;
   }
 }

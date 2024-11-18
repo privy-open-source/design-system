@@ -220,8 +220,8 @@ const classNames = computed(() => {
       &.router-link-active:not(.nav__link--exact),
       &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
-          @apply border-t-default border-x-default bg-base;
-          @apply dark:border-t-dark-default dark:border-x-dark-default dark:bg-dark-base;
+          @apply border-t-default border-x-default bg-ground;
+          @apply dark:border-t-dark-default dark:border-x-dark-default dark:bg-dark-ground;
         }
       }
     }
@@ -236,8 +236,8 @@ const classNames = computed(() => {
         &.router-link-active:not(.nav__link--exact),
         &.router-link-exact-active.nav__link--exact {
           &:not(.nav__link--disabled) {
-            @apply border-l-default border-y-default border-r-transparent bg-base rounded-l rounded-r-none;
-            @apply dark:border-l-dark-default dark:border-y-dark-default dark:border-r-transparent dark:bg-dark-base;
+            @apply border-l-default border-y-default border-r-transparent bg-ground rounded-l rounded-r-none;
+            @apply dark:border-l-dark-default dark:border-y-dark-default dark:border-r-transparent dark:bg-dark-ground;
           }
         }
       }
@@ -273,8 +273,8 @@ const classNames = computed(() => {
       &.router-link-active:not(.nav__link--exact),
       &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
-          @apply bg-base rounded-b;
-          @apply dark:bg-dark-base;
+          @apply bg-ground rounded-b;
+          @apply dark:bg-dark-ground;
         }
       }
     }

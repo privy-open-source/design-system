@@ -221,8 +221,8 @@ defineExpose({
 .pdf {
   --p-pdf-container-width: 793px;
 
-  @apply relative overflow-hidden w-full flex flex-col bg-subtle z-1;
-  @apply dark:bg-dark-subtle;
+  @apply relative overflow-hidden w-full flex flex-col bg-base z-1;
+  @apply dark:bg-dark-base;
 
   &__wrapper {
     @apply relative h-full w-full grow;

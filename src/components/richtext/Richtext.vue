@@ -205,8 +205,8 @@ defineExpose({ editor })
   }
 
   .tiptap {
-    @apply p-3 rounded rounded-t-none border border-solid border-muted hover:border-subtle focus:border-subtle placeholder:text-muted w-full outline-none text-default bg-default resize-none min-h-[var(--p-richtext-min-height)] focus:ring-4 focus:ring-subtle/10 focus:z-1;
-    @apply dark:border-dark-muted hover:dark:border-dark-subtle focus:dark:border-dark-subtle placeholder:dark:text-dark-muted dark:text-dark-default dark:bg-dark-default focus:dark:ring-dark-subtle/10;
+    @apply p-3 rounded rounded-t-none border border-solid border-subtlest hover:border-subtle focus:border-subtle placeholder:text-muted w-full outline-none text-default bg-default resize-none min-h-[var(--p-richtext-min-height)] focus:ring-4 focus:ring-subtle/10 focus:z-1;
+    @apply dark:border-dark-subtlest hover:dark:border-dark-subtle focus:dark:border-dark-subtle placeholder:dark:text-dark-muted dark:text-dark-default dark:bg-dark-default focus:dark:ring-dark-subtle/10;
 
     p.is-editor-empty:first-child::before {
       @apply content-[attr(data-placeholder)] h-0 float-left;
@@ -264,8 +264,8 @@ defineExpose({ editor })
 
   &--disabled {
     .tiptap {
-      @apply bg-subtle border-subtle pointer-events-none text-muted;
-      @apply dark:bg-dark-subtle dark:border-dark-subtle dark:text-dark-muted;
+      @apply bg-base border-subtle pointer-events-none text-muted;
+      @apply dark:bg-dark-base dark:border-dark-subtle dark:text-dark-muted;
     }
   }
 
@@ -283,13 +283,13 @@ defineExpose({ editor })
   }
 
   .btn.btn--variant-ghost[active="true"] {
-    @apply bg-subtle-alpha border-subtle-alpha text-brand-accent;
-    @apply dark:bg-dark-subtle-alpha dark:border-r-dark-subtle-alpha dark:text-dark-brand-accent;
+    @apply bg-emphasis-alpha border-subtle-alpha text-brand-accent;
+    @apply dark:bg-dark-emphasis-alpha dark:border-r-dark-subtle-alpha dark:text-dark-brand-accent;
   }
 
   .dropdown__item.dropdown__item--active {
-    @apply bg-subtle-alpha border-subtle-alpha;
-    @apply dark:bg-dark-subtle-alpha dark:border-r-dark-subtle-alpha;
+    @apply bg-emphasis-alpha border-subtle-alpha;
+    @apply dark:bg-dark-emphasis-alpha dark:border-r-dark-subtle-alpha;
   }
 }
 </style>
