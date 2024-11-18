@@ -25,28 +25,15 @@ The borders and also rings colors of Persona is based on [semantics borders colo
 
 <div class="grid grid-cols-4 py-8 gap-y-8 gap-x-6">
   <div class="space-y-4">
-    <div class="border w-28 h-28 border-default dark:border-dark-default"></div>
+    <div class="border w-28 h-28 border-subtlest dark:border-dark-subtlest"></div>
     <div class="space-y-1">
-      <p-caption size="tn" class="!text-default dark:!text-dark-default">Default</p-caption>
-      <p-caption size="tn" class="!text-lightblue-50">borderColor.default</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/default</p-caption>
+      <p-caption size="tn" class="!text-default dark:!text-dark-default">Subtlest</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderColor.subtlest</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/subtlest</p-caption>
       <p-caption class="!text-muted dark:!text-dark-muted mt-2">Border</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-default</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-subtlest</p-caption>
       <p-caption class="!text-muted dark:!text-dark-muted mt-2">Ring</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-default</p-caption>
-    </div>
-  </div>
-
-  <div class="space-y-4">
-    <div class="border w-28 h-28 border-default-alpha dark:border-dark-default-alpha"></div>
-    <div class="space-y-1">
-      <p-caption size="tn" class="!text-default dark:!text-dark-default">Default Alpha</p-caption>
-      <p-caption size="tn" class="!text-lightblue-50">borderColor.default.alpha</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/defaultAlpha</p-caption>
-      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Border</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-default-alpha</p-caption>
-      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Ring</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-default-alpha</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-subtlest</p-caption>
     </div>
   </div>
 
@@ -64,6 +51,36 @@ The borders and also rings colors of Persona is based on [semantics borders colo
   </div>
 
   <div class="space-y-4">
+    <div class="border w-28 h-28 border-default dark:border-dark-default"></div>
+    <div class="space-y-1">
+      <p-caption size="tn" class="!text-default dark:!text-dark-default">Default</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderColor.default</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/default</p-caption>
+      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Border</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-default</p-caption>
+      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Ring</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-default</p-caption>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <div class="border w-28 h-28 border-emphasis dark:border-dark-emphasis"></div>
+    <div class="space-y-1">
+      <p-caption size="tn" class="!text-default dark:!text-dark-default">Emphasis</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderColor.emphasis</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/emphasis</p-caption>
+      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Border</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-subtlest</p-caption>
+      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Ring</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-subtlest</p-caption>
+    </div>
+  </div>
+</div>
+
+### Additional
+
+<div class="grid grid-cols-4 py-8 gap-y-8 gap-x-6">
+  <div class="space-y-4">
     <div class="border w-28 h-28 border-subtle-alpha dark:border-dark-subtle-alpha"></div>
     <div class="space-y-1">
       <p-caption size="tn" class="!text-default dark:!text-dark-default">Subtle Alpha</p-caption>
@@ -77,28 +94,59 @@ The borders and also rings colors of Persona is based on [semantics borders colo
   </div>
 
   <div class="space-y-4">
-    <div class="border w-28 h-28 border-subtlest dark:border-dark-subtlest"></div>
+    <div class="border w-28 h-28 border-default-alpha dark:border-dark-default-alpha"></div>
     <div class="space-y-1">
-      <p-caption size="tn" class="!text-default dark:!text-dark-default">Muted</p-caption>
-      <p-caption size="tn" class="!text-lightblue-50">borderColor.muted</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/muted</p-caption>
+      <p-caption size="tn" class="!text-default dark:!text-dark-default">Default Alpha</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderColor.default.alpha</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/defaultAlpha</p-caption>
       <p-caption class="!text-muted dark:!text-dark-muted mt-2">Border</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-muted</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-default-alpha</p-caption>
       <p-caption class="!text-muted dark:!text-dark-muted mt-2">Ring</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-muted</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-default-alpha</p-caption>
     </div>
   </div>
 
   <div class="space-y-4">
+    <div class="border w-28 h-28 border-emphasis-alpha dark:border-dark-emphasis-alpha"></div>
+    <div class="space-y-1">
+      <p-caption size="tn" class="!text-default dark:!text-dark-default">Emphasis Alpha</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderColor.emphasis-alpha</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/emphasisAlpha</p-caption>
+      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Border</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-emphasis-alpha</p-caption>
+      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Ring</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-emphasis-alpha</p-caption>
+    </div>
+  </div>
+</div>
+
+
+### Inverted
+
+<div class="grid grid-cols-4 py-8 gap-y-8 gap-x-6">
+  <div class="space-y-4">
     <div class="border w-28 h-28 border-inverse dark:border-dark-inverse"></div>
     <div class="space-y-1">
-      <p-caption size="tn" class="!text-default dark:!text-dark-default">Inverse</p-caption>
-      <p-caption size="tn" class="!text-lightblue-50">borderColor.inverse</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/inverse</p-caption>
+      <p-caption size="tn" class="!text-default dark:!text-dark-default">Default Alpha</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderColor.default.alpha</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/defaultAlpha</p-caption>
       <p-caption class="!text-muted dark:!text-dark-muted mt-2">Border</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-inverse</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-default-alpha</p-caption>
       <p-caption class="!text-muted dark:!text-dark-muted mt-2">Ring</p-caption>
-      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-inverse</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-default-alpha</p-caption>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <div class="border w-28 h-28 border-on-inverse dark:border-dark-on-inverse"></div>
+    <div class="space-y-1">
+      <p-caption size="tn" class="!text-default dark:!text-dark-default">Subtle Alpha</p-caption>
+      <p-caption size="tn" class="!text-lightblue-50">borderColor.subtle.alpha</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle">border/subtleAlpha</p-caption>
+      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Border</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">border-subtle-alpha</p-caption>
+      <p-caption class="!text-muted dark:!text-dark-muted mt-2">Ring</p-caption>
+      <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">ring-subtle-alpha</p-caption>
     </div>
   </div>
 </div>
@@ -225,7 +273,7 @@ The borders and also rings colors of Persona is based on [semantics borders colo
   <div class="space-y-4">
     <div class="w-28 h-28 outline outline-info dark:outline-dark-info"></div>
     <div class="space-y-1">
-      <p-caption size="tn" class="!text-default dark:!text-dark-default">Info</p-caption>
+      <p-caption size="tn" class="!text-default dark:!text-dark-default">info</p-caption>
       <p-caption size="tn" class="!text-lightblue-50">outlineColor.info</p-caption>
       <p-caption size="tn" class="!text-subtle dark:!text-dark-subtle" weight="bold">outline-info</p-caption>
     </div>

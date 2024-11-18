@@ -265,7 +265,7 @@ module.exports = {
       borderColor    : {
         'subtlest': theme.colors.gray[5],
         'subtle'  : {
-          DEFAULT: theme.colors.gray[25],
+          DEFAULT: theme.colors.gray[10],
           alpha  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[5]})`,
         },
         'DEFAULT': theme.colors.gray[20],
