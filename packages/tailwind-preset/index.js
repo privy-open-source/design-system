@@ -58,6 +58,13 @@ module.exports = {
         },
       },
       fontSize: {
+        'xt': [
+          '10px',
+          {
+            lineHeight   : theme.lineHeight.tight,
+            letterSpacing: theme.letterSpacing.wider,
+          },
+        ],
         'tn': [
           '11px',
           {
