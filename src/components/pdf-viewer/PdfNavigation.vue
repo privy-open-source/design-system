@@ -113,7 +113,7 @@ const pages = computed<SelectItem[]>(() => {
       }
 
       > .divider {
-        @apply border-none bg-dark-subtle-alpha;
+        @apply border-none bg-dark-emphasis-alpha;
       }
     }
 
