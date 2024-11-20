@@ -233,6 +233,12 @@ module.exports = {
           DEFAULT : theme.colors.red[0],
           emphasis: theme.colors.red[40],
         },
+        'dim': {
+          subtle  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+          default : `rgba(${theme.colors.gray[100]}, ${theme.opacity[30]})`,
+          DEFAULT : `rgba(${theme.colors.gray[100]}, ${theme.opacity[30]})`,
+          emphasis: `rgba(${theme.colors.gray[100]}, ${theme.opacity[80]})`,
+        },
         'dark': {
           'base'   : theme.colors.gray[100],
           'ground' : theme.colors.gray[90],
@@ -264,6 +270,12 @@ module.exports = {
           'danger': {
             DEFAULT : theme.colors.red[90],
             emphasis: theme.colors.red[30],
+          },
+          'dim': {
+            subtle  : `rgba(${theme.colors.gray[100]}, ${theme.opacity[10]})`,
+            default : `rgba(${theme.colors.gray[100]}, ${theme.opacity[30]})`,
+            DEFAULT : `rgba(${theme.colors.gray[100]}, ${theme.opacity[30]})`,
+            emphasis: `rgba(${theme.colors.gray[100]}, ${theme.opacity[80]})`,
           },
         },
       },
