@@ -177,8 +177,8 @@ async function onActionClick (action: PopupActionOption) {
 
 <style lang="postcss">
 .popup {
-  --p-popup-icon-color-primary: theme(textColor.brand.accent);
-  --p-popup-icon-color-primary-dark: theme(textColor.dark.brand.accent);
+  --p-popup-icon-color-primary: theme(textColor.brand.accent.DEFAULT);
+  --p-popup-icon-color-primary-dark: theme(textColor.dark.brand.accent.DEFAULT);
 
   /**
   * global style

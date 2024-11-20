@@ -195,7 +195,7 @@ Use this variable for level color (like badge) customization.
 ```sass
 --p-label-bg-variant-default: theme(backgroundColor.inverse);
 --p-label-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
---p-label-text-variant-default: theme(textColor.state-emphasis);
+--p-label-text-variant-default: theme(textColor.on-emphasis);
 --p-label-text-dark-variant-default: theme(textColor.dark.on-emphasis);
 ```
 

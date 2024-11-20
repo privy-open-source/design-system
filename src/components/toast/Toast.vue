@@ -181,8 +181,8 @@ async function onActionClick (action: ToastActionOption) {
 
 <style lang="postcss">
 .toast {
-  --p-toast-icon-color-primary: theme(textColor.brand.accent);
-  --p-toast-icon-color-primary-dark: theme(textColor.dark.brand.accent);
+  --p-toast-icon-color-primary: theme(textColor.brand.accent.DEFAULT);
+  --p-toast-icon-color-primary-dark: theme(textColor.dark.brand.accent.DEFAULT);
 
   /**
   * global style
