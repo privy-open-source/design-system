@@ -30,7 +30,7 @@
 }
 
 .PSPDFKit-Resize-Anchor {
-  @apply fill-subtle;
+  @apply fill-base;
 }
 
 /**
