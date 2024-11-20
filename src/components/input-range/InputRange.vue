@@ -259,8 +259,8 @@ watch([startValue, endValue], ([startVal, endVal]) => {
   @apply py-2 w-full;
 
   &__tracks {
-    @apply relative flex w-full bg-base cursor-pointer overflow-visible rounded;
-    @apply dark:bg-dark-base;
+    @apply relative flex w-full bg-ground cursor-pointer overflow-visible rounded;
+    @apply dark:bg-dark-ground;
   }
 
   &__track {
@@ -277,8 +277,8 @@ watch([startValue, endValue], ([startVal, endVal]) => {
   }
 
   &__thumb {
-    @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-muted touch-none select-none;
-    @apply dark:bg-dark-layer-2 dark:border-dark-subtle;
+    @apply w-4 h-4 rounded-full bg-default shadow-sm absolute top-1/2 bottom-0 -translate-y-1/2 border border-subtlest touch-none select-none;
+    @apply dark:bg-dark-layer-2 dark:border-dark-subtlest;
 
     &:hover,
     &:active {

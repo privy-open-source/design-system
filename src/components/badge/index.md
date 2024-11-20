@@ -165,8 +165,8 @@ Use this variable for [level color](/styleguide/badge/#level-color-customizable-
 
 ### `.badge.badge--variant-light.badge--default`
 ```sass
---p-bg-variant-light: theme(backgroundColor.subtle.alpha);
---p-bg-dark-variant-light: theme(backgroundColor.dark.subtle.alpha);
+--p-bg-variant-light: theme(backgroundColor.emphasis-alpha);
+--p-bg-dark-variant-light: theme(backgroundColor.dark.emphasis-alpha);
 ```
 
 ## API

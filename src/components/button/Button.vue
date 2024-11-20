@@ -230,8 +230,8 @@ defineSlots<{
 
     &.btn {
       &--default {
-        @apply bg-default-alpha focus:bg-subtle-alpha active:bg-subtle-alpha hover:text-default focus:text-default;
-        @apply dark:bg-dark-default-alpha focus:dark:bg-dark-subtle-alpha active:dark:bg-dark-subtle-alpha hover:dark:text-dark-default focus:dark:text-dark-default;
+        @apply bg-default-alpha focus:bg-default-alpha active:bg-default-alpha hover:text-default focus:text-default;
+        @apply dark:bg-dark-default-alpha focus:dark:bg-dark-default-alpha active:dark:bg-dark-default-alpha hover:dark:text-dark-default focus:dark:text-dark-default;
 
         /* Border */
         @apply text-default border-default-alpha hover:border-subtle-alpha active:border-subtle-alpha focus:border-subtle-alpha;
@@ -367,12 +367,12 @@ defineSlots<{
   * Button input variant
   */
   &&--variant-input {
-    @apply border border-solid border-muted text-subtle font-normal bg-default hover:border-subtle focus:border-subtle active:outline-default;
-    @apply dark:border-dark-muted dark:text-dark-subtle dark:bg-dark-default hover:dark:border-dark-subtle focus:dark:border-dark-subtle active:dark:outline-dark-default;
+    @apply border border-solid border-subtlest text-subtle font-normal bg-default hover:border-subtle focus:border-subtle active:outline-default;
+    @apply dark:border-dark-subtlest dark:text-dark-subtle dark:bg-dark-default hover:dark:border-dark-subtle focus:dark:border-dark-subtle active:dark:outline-dark-default;
 
     .state--disabled & {
-      @apply bg-subtle border-muted pointer-events-none text-muted;
-      @apply dark:bg-dark-subtle dark:border-dark-muted dark:text-dark-muted;
+      @apply bg-base border-subtlest pointer-events-none text-muted;
+      @apply dark:bg-dark-base dark:border-dark-subtlest dark:text-dark-muted;
     }
 
     .state--error & {

@@ -19,8 +19,8 @@ description: Headless component for Drag'n'Drop Files Upload.
 <style scoped lang="postcss">
   .preview {
     a {
-      --p-color-info-hover: darken(theme(textColor.info), 5%);
-      --p-color-dark-info-hover: darken(theme(textColor.dark.info), 5%);
+      --p-color-info-hover: darken(theme(textColor.info.DEFAULT), 5%);
+      --p-color-dark-info-hover: darken(theme(textColor.dark.info.DEFAULT), 5%);
       @apply underline text-info dark:text-dark-info hover:text-[color:var(--p-color-info-hover)] hover:dark:text-[color:var(--p-color-dark-info-hover)];
     }
   }

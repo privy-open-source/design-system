@@ -170,8 +170,8 @@ defineExpose({
   &:disabled {
     .input-group__addon,
     .input-group .input__form {
-      @apply bg-subtle text-muted;
-      @apply dark:bg-dark-subtle dark:text-dark-muted;
+      @apply bg-base text-muted;
+      @apply dark:bg-dark-base dark:text-dark-muted;
     }
 
     .input-group__addon {

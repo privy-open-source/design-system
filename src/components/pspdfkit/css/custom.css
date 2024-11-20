@@ -4,7 +4,7 @@
 
 :host, :root {
   --PSPDFKit-fontFamily-1: theme('fontFamily.sans');
-  --PSPDFKit-App-background: theme('backgroundColor.subtle.DEFAULT');
+  --PSPDFKit-App-background: theme('backgroundColor.base.DEFAULT');
 }
 
 .PSPDFKit-Selection-Outline-Border {
@@ -30,7 +30,7 @@
 }
 
 .PSPDFKit-Resize-Anchor {
-  @apply fill-subtle;
+  @apply fill-base;
 }
 
 /**
@@ -166,8 +166,8 @@
 
     &.btn {
       &--default {
-        @apply bg-default-alpha focus:bg-subtle-alpha active:bg-subtle-alpha hover:text-default focus:text-default;
-        @apply dark:bg-dark-default-alpha focus:dark:bg-dark-subtle-alpha active:dark:bg-dark-subtle-alpha hover:dark:text-dark-default focus:dark:text-dark-default;
+        @apply bg-default-alpha focus:bg-emphasis-alpha active:bg-emphasis-alpha hover:text-default focus:text-default;
+        @apply dark:bg-dark-default-alpha focus:dark:bg-dark-emphasis-alpha active:dark:bg-dark-emphasis-alpha hover:dark:text-dark-default focus:dark:text-dark-default;
       }
 
       &--primary {
@@ -293,12 +293,12 @@
   }
 
   &&--variant-input {
-    @apply font-normal border border-solid border-muted text-subtle bg-default hover:border-subtle focus:border-subtle active:outline-default;
-    @apply dark:border-dark-muted dark:text-dark-subtle dark:bg-dark-default hover:dark:border-dark-subtle focus:dark:border-dark-subtle active:dark:outline-dark-default;
+    @apply font-normal border border-solid border-subtlest text-subtle bg-default hover:border-subtle focus:border-subtle active:outline-default;
+    @apply dark:border-dark-subtlest dark:text-dark-subtle dark:bg-dark-default hover:dark:border-dark-subtle focus:dark:border-dark-subtle active:dark:outline-dark-default;
 
     .state--disabled & {
-      @apply pointer-events-none bg-subtle border-muted text-muted;
-      @apply dark:bg-dark-subtle dark:border-dark-muted dark:text-dark-muted;
+      @apply pointer-events-none bg-base border-subtlest text-muted;
+      @apply dark:bg-dark-base dark:border-dark-subtlest dark:text-dark-muted;
     }
 
     .state--error & {

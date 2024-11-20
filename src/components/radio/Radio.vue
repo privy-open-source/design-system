@@ -160,12 +160,12 @@ defineSlots<{
 
     &:not(.radio--checked) {
       .radio__icon {
-        @apply bg-subtle border-subtle;
-        @apply dark:bg-dark-subtle dark:border-dark-subtle;
+        @apply bg-base border-subtle;
+        @apply dark:bg-dark-base dark:border-dark-subtle;
 
         > svg {
-          @apply fill-subtle;
-          @apply dark:fill-dark-subtle;
+          @apply fill-base;
+          @apply dark:fill-dark-base;
         }
       }
     }
@@ -266,8 +266,8 @@ defineSlots<{
 
     &.radio--disabled {
       .card {
-        @apply bg-subtle hover:shadow-none hover:cursor-default;
-        @apply dark:bg-dark-subtle;
+        @apply bg-base hover:shadow-none hover:cursor-default;
+        @apply dark:bg-dark-base;
       }
     }
   }

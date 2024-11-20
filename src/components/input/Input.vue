@@ -150,8 +150,8 @@ defineExpose({
   @apply dark:bg-dark-default;
 
   &__form {
-    @apply py-[10px] px-3 text-base relative rounded border border-solid border-muted hover:border-subtle text-default w-full outline-none bg-transparent;
-    @apply dark:border-dark-muted hover:dark:border-dark-subtle dark:text-dark-default dark:bg-transparent;
+    @apply py-[10px] px-3 text-base relative rounded border border-solid border-subtlest hover:border-subtle text-default w-full outline-none bg-transparent;
+    @apply dark:border-dark-subtlest hover:dark:border-dark-subtle dark:text-dark-default dark:bg-transparent;
 
     &::placeholder,
     &__placeholder {
@@ -163,8 +163,8 @@ defineExpose({
     &--disabled,
     &[disabled="true"],
     .state--disabled & {
-      @apply bg-subtle border-subtle pointer-events-none text-muted;
-      @apply dark:bg-dark-subtle dark:border-dark-subtle  dark:text-dark-muted;
+      @apply bg-base border-subtle pointer-events-none text-muted;
+      @apply dark:bg-dark-base dark:border-dark-subtle  dark:text-dark-muted;
     }
 
     &:focus {

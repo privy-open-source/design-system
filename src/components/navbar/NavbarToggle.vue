@@ -48,8 +48,8 @@ function expanded () {
     @apply inline-flex;
 
     &:is(.btn--variant-outline, .btn--default) {
-      @apply bg-subtle hover:shadow-none text-subtle;
-      @apply dark:bg-dark-subtle dark:text-dark-subtle;
+      @apply bg-base hover:shadow-none text-subtle;
+      @apply dark:bg-dark-base dark:text-dark-subtle;
     }
 
     &&--all {
