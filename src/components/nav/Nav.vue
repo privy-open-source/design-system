@@ -109,6 +109,15 @@ const classNames = computed(() => {
 * Last Update   : Aug 03, 2022
 */
 .nav {
+  --p-border-nav-link-active: theme(borderColor.brand.accent.DEFAULT);
+  --p-border-dark-nav-link-active: theme(borderColor.dark.brand.accent.DEFAULT);
+
+  --p-bg-nav-tabs-active: theme(backgroundColor.default.DEFAULT);
+  --p-bg-dark-nav-tabs-active: theme(backgroundColor.dark.default.DEFAULT);
+
+  --p-bg-nav-pills-active: theme(backgroundColor.default.alpha);
+  --p-bg-dark-nav-pills-active: theme(backgroundColor.default.alpha);
+
   /**
   * Default navigation
   * is horizontal
@@ -164,8 +173,8 @@ const classNames = computed(() => {
       &.router-link-active:not(.nav__link--exact),
       &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
-          @apply border-b-brand-accent;
-          @apply dark:border-b-dark-brand-accent;
+          @apply border-b-[color:var(--p-border-nav-link-active)];
+          @apply dark:border-b-[color:var(--p-border-dark-nav-link-active)];
         }
       }
     }
@@ -182,8 +191,8 @@ const classNames = computed(() => {
         &.router-link-active:not(.nav__link--exact),
         &.router-link-exact-active.nav__link--exact {
           &:not(.nav__link--disabled) {
-            @apply border-r border-r-brand-accent rounded-tr-none;
-            @apply dark:border-r-dark-brand-accent;
+            @apply border-r border-r-[color:var(--p-border-nav-link-active)] rounded-tr-none;
+            @apply dark:border-r-[color:var(--p-border-dark-nav-link-active)];
           }
         }
       }
@@ -196,8 +205,8 @@ const classNames = computed(() => {
           &.router-link-active:not(.nav__link--exact),
           &.router-link-exact-active.nav__link--exact {
             &:not(.nav__link--disabled) {
-              @apply border-l border-l-brand-accent rounded-tl-none;
-              @apply dark:border-l-dark-brand-accent;
+              @apply border-l border-l-[color:var(--p-border-nav-link-active)] rounded-tl-none;
+              @apply dark:border-l-[color:var(--p-border-dark-nav-link-active)];
             }
           }
         }
@@ -220,8 +229,8 @@ const classNames = computed(() => {
       &.router-link-active:not(.nav__link--exact),
       &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
-          @apply border-t-default border-x-default bg-ground;
-          @apply dark:border-t-dark-default dark:border-x-dark-default dark:bg-dark-ground;
+          @apply border-t-default border-x-default bg-[color:var(--p-bg-nav-tabs-active)];
+          @apply dark:border-t-dark-default dark:border-x-dark-default dark:bg-[color:var(--p-bg-dark-nav-tabs-active)];
         }
       }
     }
@@ -236,8 +245,8 @@ const classNames = computed(() => {
         &.router-link-active:not(.nav__link--exact),
         &.router-link-exact-active.nav__link--exact {
           &:not(.nav__link--disabled) {
-            @apply border-l-default border-y-default border-r-transparent bg-ground rounded-l rounded-r-none;
-            @apply dark:border-l-dark-default dark:border-y-dark-default dark:border-r-transparent dark:bg-dark-ground;
+            @apply border-l-default border-y-default border-r-transparent bg-[color:var(--p-bg-nav-tabs-active)] rounded-l rounded-r-none;
+            @apply dark:border-l-dark-default dark:border-y-dark-default dark:border-r-transparent dark:bg-[color:var(--p-bg-dark-nav-tabs-active)];
           }
         }
       }
@@ -273,8 +282,8 @@ const classNames = computed(() => {
       &.router-link-active:not(.nav__link--exact),
       &.router-link-exact-active.nav__link--exact {
         &:not(.nav__link--disabled) {
-          @apply bg-ground rounded-b;
-          @apply dark:bg-dark-ground;
+          @apply bg-[color:var(--p-bg-nav-pills-active)] rounded-b;
+          @apply dark:bg-[color:var(--p-bg-dark-nav-pills-active)];
         }
       }
     }

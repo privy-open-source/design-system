@@ -144,6 +144,10 @@
     &:where(.freetext--hyperlink) {
       @apply decoration-solid;
     }
+
+    &:where(.btn) {
+      @apply no-underline;
+    }
   }
 
   h1 {
