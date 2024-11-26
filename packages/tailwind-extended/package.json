@@ -2,7 +2,7 @@
   "name": "@privyid/tailwind-extended",
   "description": "Add missing tailwind utilities",
   "version": "1.0.0-rc.12",
-  "packageManager": "yarn@4.5.0",
+  "packageManager": "yarn@4.5.3",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
