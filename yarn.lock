@@ -4075,7 +4075,7 @@ __metadata:
     minimist: "npm:1.2.8"
     ofetch: "npm:1.4.1"
     ohash: "npm:1.1.4"
-    ora: "npm:8.1.0"
+    ora: "npm:8.1.1"
     p-all: "npm:5.0.0"
     svg-path-commander: "npm:2.1.5"
     svgo: "npm:3.3.2"
@@ -4098,7 +4098,7 @@ __metadata:
     minimist: "npm:1.2.8"
     ofetch: "npm:1.4.1"
     ohash: "npm:1.1.4"
-    ora: "npm:8.1.0"
+    ora: "npm:8.1.1"
     p-all: "npm:5.0.0"
     sharp: "npm:0.33.5"
     svg-path-commander: "npm:2.1.5"
@@ -16202,9 +16202,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ora@npm:8.1.0":
-  version: 8.1.0
-  resolution: "ora@npm:8.1.0"
+"ora@npm:8.1.1":
+  version: 8.1.1
+  resolution: "ora@npm:8.1.1"
   dependencies:
     chalk: "npm:^5.3.0"
     cli-cursor: "npm:^5.0.0"
@@ -16215,7 +16215,7 @@ __metadata:
     stdin-discarder: "npm:^0.2.2"
     string-width: "npm:^7.2.0"
     strip-ansi: "npm:^7.1.0"
-  checksum: 10/2b394b79ccae4f0aa6d5ef5b4b511be41e5e2f09de00845f6506368b49e577e77e2c08ad5fbdd7de98a25ef8d216a714ac7cc13665408e52e17b80e1ada93d31
+  checksum: 10/2308c0a4da83099b0778a914890f5561329e3c948f73e865e0dced9053d62327219d8bde0f9b7c79a02913a7e41458ff5667d0115032fedc54907862e2de9695
   languageName: node
   linkType: hard
 

@@ -55,7 +55,7 @@
     "minimist": "1.2.8",
     "ofetch": "1.4.1",
     "ohash": "1.1.4",
-    "ora": "8.1.0",
+    "ora": "8.1.1",
     "p-all": "5.0.0",
     "svg-path-commander": "2.1.5",
     "svgo": "3.3.2",
