@@ -49,7 +49,7 @@
     "@types/fs-extra": "11.0.4",
     "@types/minimist": "1.2.5",
     "dotenv": "16.4.5",
-    "figma-api": "1.11.0",
+    "figma-api": "1.12.0",
     "fs-extra": "11.2.0",
     "jiti": "2.3.3",
     "minimist": "1.2.8",
