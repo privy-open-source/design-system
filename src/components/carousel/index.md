@@ -9,7 +9,7 @@ description: Slideshow for cycling through a series of content.
   import pCard from '../card/Card.vue'
   import pCaption from '../caption/Caption.vue'
   import pBanner from '../banner/Banner.vue'
-  import IconRight from '@privyid/persona-icon/vue/chevron-right/32.vue'
+  import IconRight from '@privyid/persona-icon/vue/chevron-right/20.vue'
   import { ref } from 'vue-demi'
 
   const active = ref(1)
@@ -74,7 +74,7 @@ description: Slideshow for cycling through a series of content.
             999999
           </div>
         </div>
-        <IconRight />
+        <IconRight class="text-subtle dark:text-dark-subtle" />
       </p-card>
     </p-carousel-item>
     <p-carousel-item>
@@ -88,7 +88,7 @@ description: Slideshow for cycling through a series of content.
             999999
           </div>
         </div>
-        <IconRight />
+        <IconRight class="text-subtle dark:text-dark-subtle" />
       </p-card>
     </p-carousel-item>
   </p-carousel>
@@ -190,7 +190,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
             999999
           </div>
         </div>
-        <IconRight />
+        <IconRight class="text-subtle dark:text-dark-subtle" />
       </p-card>
     </p-carousel-item>
     <p-carousel-item>
@@ -204,7 +204,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
             999999
           </div>
         </div>
-        <IconRight />
+        <IconRight class="text-subtle dark:text-dark-subtle" />
       </p-card>
     </p-carousel-item>
   </p-carousel>
@@ -221,7 +221,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
             999999
           </div>
         </div>
-        <IconRight />
+        <IconRight class="text-subtle dark:text-dark-subtle" />
       </p-card>
     </p-carousel-item>
     <p-carousel-item>
@@ -235,7 +235,7 @@ You can set position of progress indicator using prop `align`, `start` or `end`.
             999999
           </div>
         </div>
-        <IconRight />
+        <IconRight class="text-subtle dark:text-dark-subtle" />
       </p-card>
     </p-carousel-item>
   </p-carousel>

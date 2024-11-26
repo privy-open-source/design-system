@@ -145,9 +145,9 @@ You can color of shimmer using CSS Variable
 
 ```sass
 --p-shimmer-fg: theme('backgroundColor.base.DEFAULT');
---p-shimmer-bg: theme('backgroundColor.base.DEFAULT');
+--p-shimmer-bg: theme('backgroundColor.ground');
 --p-shimmer-dark-bg: theme('backgroundColor.dark.base');
---p-shimmer-dark-fg: theme('backgroundColor.dark.base');
+--p-shimmer-dark-fg: theme('backgroundColor.dark.ground');
 ```
 
 ## API
