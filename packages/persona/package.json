@@ -123,7 +123,7 @@
   "devDependencies": {
     "@nuxt/module-builder": "0.8.4",
     "@nuxt/schema": "3.13.2",
-    "@nuxtjs/tailwindcss": "6.12.1",
+    "@nuxtjs/tailwindcss": "6.12.2",
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
     "@types/sanitize-html": "2.13.0",
