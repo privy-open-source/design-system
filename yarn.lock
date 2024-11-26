@@ -3894,7 +3894,7 @@ __metadata:
     dotenv: "npm:16.4.5"
     figma-api: "npm:1.11.0"
     fs-extra: "npm:11.2.0"
-    jiti: "npm:2.3.3"
+    jiti: "npm:2.4.0"
     minimist: "npm:1.2.8"
     ofetch: "npm:1.4.1"
     ohash: "npm:1.1.4"
@@ -3917,7 +3917,7 @@ __metadata:
     dotenv: "npm:16.4.5"
     figma-api: "npm:1.11.0"
     fs-extra: "npm:11.2.0"
-    jiti: "npm:2.3.3"
+    jiti: "npm:2.4.0"
     minimist: "npm:1.2.8"
     ofetch: "npm:1.4.1"
     ohash: "npm:1.1.4"
@@ -13397,12 +13397,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:2.3.3":
-  version: 2.3.3
-  resolution: "jiti@npm:2.3.3"
+"jiti@npm:2.4.0":
+  version: 2.4.0
+  resolution: "jiti@npm:2.4.0"
   bin:
     jiti: lib/jiti-cli.mjs
-  checksum: 10/21d1e89d909101c702769537e75ad87b433f980bc6938a6f64a90d1fbe7cb1510a0d4b82d4020b3093b47cebff5568af5e39d883e26aa4413564ced43b8cfd84
+  checksum: 10/10aa999a4f9bccc82b1dab9ebaf4484a8770450883c1bf7fafc07f8fca1e417fd8e7731e651337d1060c9e2ff3f97362dcdfd27e86d1f385db97f4adf7b5a21d
   languageName: node
   linkType: hard
 
