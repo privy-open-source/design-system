@@ -3976,7 +3976,7 @@ __metadata:
     html-escaper: "npm:^3.0.3"
     interactjs: "npm:1.10.27"
     lodash-es: "npm:4.17.21"
-    marked: "npm:14.1.2"
+    marked: "npm:14.1.4"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.13.2"
     pathe: "npm:^1.1.2"
@@ -14377,12 +14377,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:14.1.2":
-  version: 14.1.2
-  resolution: "marked@npm:14.1.2"
+"marked@npm:14.1.4":
+  version: 14.1.4
+  resolution: "marked@npm:14.1.4"
   bin:
     marked: bin/marked.js
-  checksum: 10/2bfc03712c87bc0dff517ca82a3f33b816d4d1fec1b90e8cb3cfac5d8054b06e749d0ddbddfdfbd1ec4ec3067e997e1cf593db8d3fe7ca0a970aa5fc6ad7b868
+  checksum: 10/e3526e7907aa1c13481d205b667a178bd372c01318439e4cd8a3d4b55e3983bccef8c17489129c6a0e31dbecb0b417deff6c27f9f16083faa4eea16a22784a86
   languageName: node
   linkType: hard
 
