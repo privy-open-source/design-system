@@ -3091,15 +3091,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jill64/universal-sanitizer@npm:1.3.3":
-  version: 1.3.3
-  resolution: "@jill64/universal-sanitizer@npm:1.3.3"
+"@jill64/universal-sanitizer@npm:1.3.4":
+  version: 1.3.4
+  resolution: "@jill64/universal-sanitizer@npm:1.3.4"
   dependencies:
     "@types/dompurify": "npm:3.0.5"
     "@types/sanitize-html": "npm:2.13.0"
-    dompurify: "npm:3.1.7"
+    dompurify: "npm:3.2.0"
     sanitize-html: "npm:2.13.1"
-  checksum: 10/99d4089e829a21ed28fbafe22b8848665ea1a148e530d6c3b4b059818c4240f5aa9b1cb2d3d1147e74b58932455ecb9f6cb7dcef4ea556881439632c0405c0ba
+  checksum: 10/06c649bc8daa0eefc47f64f39bd387df9c91220c31c4b99b6976d8ce72aaafa8d3da1c7cd6bc093648af0c736946c41972ed880ad69da4bcfe66517e049d6be7
   languageName: node
   linkType: hard
 
@@ -4112,7 +4112,7 @@ __metadata:
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
     "@floating-ui/dom": "npm:1.6.12"
-    "@jill64/universal-sanitizer": "npm:1.3.3"
+    "@jill64/universal-sanitizer": "npm:1.3.4"
     "@juggle/resize-observer": "npm:3.4.0"
     "@nuxt/kit": "npm:3.13.2"
     "@nuxt/module-builder": "npm:0.8.4"
@@ -9638,10 +9638,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:3.1.7":
-  version: 3.1.7
-  resolution: "dompurify@npm:3.1.7"
-  checksum: 10/dc637a064306f83cf911caa267ffe1f973552047602020e3b6723c90f67962813edf8a65a0b62e8c9bc13fcd173a2691212a3719bc116226967f46bcd6181277
+"dompurify@npm:3.2.0":
+  version: 3.2.0
+  resolution: "dompurify@npm:3.2.0"
+  checksum: 10/d9139fdc69e95efe43d154362216a9a6768c3a238b02b988a7ac0ddd044a992422d6c5fae5b319ab47aef8465824a815d104b843800b294352657f70d5168bfa
   languageName: node
   linkType: hard
 
