@@ -3994,7 +3994,7 @@ __metadata:
     postcss-hexrgba: "npm:^2.1.0"
     postcss-import: "npm:16.1.0"
     postcss-lighten-darken: "npm:^0.9.0"
-    postcss-nested: "npm:6.2.0"
+    postcss-nested: "npm:7.0.2"
     pspdfkit: "npm:^2024.3.1"
     qr-code-styling: "npm:^1.6.0-rc.1"
     scroll-into-view: "npm:^1.16.2"
@@ -17043,7 +17043,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nested@npm:6.2.0, postcss-nested@npm:^6.2.0":
+"postcss-nested@npm:7.0.2":
+  version: 7.0.2
+  resolution: "postcss-nested@npm:7.0.2"
+  dependencies:
+    postcss-selector-parser: "npm:^7.0.0"
+  peerDependencies:
+    postcss: ^8.2.14
+  checksum: 10/adcb74bb94869f7313f2677bcdf5dd9e368602ca6d3e1c1e3da514ee00ccf5c2bdd414fdb9141de65b0b7aee83d8f2b149c0d3723bc4af5ee8b8062dc6e09c3d
+  languageName: node
+  linkType: hard
+
+"postcss-nested@npm:^6.2.0":
   version: 6.2.0
   resolution: "postcss-nested@npm:6.2.0"
   dependencies:
