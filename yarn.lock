@@ -3987,7 +3987,7 @@ __metadata:
     jest-extended: "npm:4.0.2"
     lint-staged: "npm:15.2.10"
     lodash-es: "npm:4.17.21"
-    marked: "npm:^14.0.0"
+    marked: "npm:^15.0.0"
     nanodelay: "npm:2.0.2"
     pdfjs-dist: "npm:^4.0.0"
     postcss: "npm:8.4.49"
@@ -4153,7 +4153,7 @@ __metadata:
     html-escaper: "npm:^3.0.3"
     interactjs: "npm:1.10.27"
     lodash-es: "npm:4.17.21"
-    marked: "npm:14.1.4"
+    marked: "npm:15.0.2"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.13.2"
     pathe: "npm:^1.1.2"
@@ -14764,21 +14764,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:14.1.4":
-  version: 14.1.4
-  resolution: "marked@npm:14.1.4"
+"marked@npm:15.0.2, marked@npm:^15.0.0":
+  version: 15.0.2
+  resolution: "marked@npm:15.0.2"
   bin:
     marked: bin/marked.js
-  checksum: 10/e3526e7907aa1c13481d205b667a178bd372c01318439e4cd8a3d4b55e3983bccef8c17489129c6a0e31dbecb0b417deff6c27f9f16083faa4eea16a22784a86
-  languageName: node
-  linkType: hard
-
-"marked@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "marked@npm:14.0.0"
-  bin:
-    marked: bin/marked.js
-  checksum: 10/5f69e58e177bde75fb6145127c939c096d05494c5dff92d73af8a550097d6631c82e919f8a375e3743379a2623418151086b925a902a2be123590b887716f2bb
+  checksum: 10/dde3d918bb3938906d7a874b990cbfb193514a5fef4b41bca102db3b63d50235afb517dd70429525b6e0a5cff43abd827e7bd2b18617f8bd4776db745e75e973
   languageName: node
   linkType: hard
 

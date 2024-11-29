@@ -93,7 +93,7 @@
     "html-escaper": "^3.0.3",
     "interactjs": "1.10.27",
     "lodash-es": "4.17.21",
-    "marked": "14.1.4",
+    "marked": "15.0.2",
     "nanodelay": "2.0.2",
     "pathe": "^1.1.2",
     "pdfjs-dist": "4.8.69",
