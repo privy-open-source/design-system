@@ -48,8 +48,8 @@ const classNames = computed(() => {
   * Set global style
   * of badge
   */
-  --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
-  --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent), 40%);
+  --p-color-primary-light: lighten(theme(colors.brand.accent.DEFAULT), 40%);
+  --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent.DEFAULT), 40%);
 
   @apply inline-block font-bold text-xs px-2 py-0.5 rounded-full space-x-1 align-middle;
 
@@ -161,8 +161,8 @@ const classNames = computed(() => {
   &--variant-light {
     &.badge {
       &--default {
-        --p-bg-variant-light: theme(backgroundColor.subtle.alpha);
-        --p-bg-dark-variant-light: theme(backgroundColor.dark.subtle.alpha);
+        --p-bg-variant-light: theme(backgroundColor.emphasis-alpha);
+        --p-bg-dark-variant-light: theme(backgroundColor.dark.emphasis-alpha);
         @apply bg-[color:var(--p-bg-variant-light)];
         @apply dark:bg-[color:var(--p-bg-dark-variant-light)];
       }

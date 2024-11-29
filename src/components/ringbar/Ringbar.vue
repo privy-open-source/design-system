@@ -84,8 +84,8 @@ const classNames = computed(() => {
 <style lang="postcss">
 .ringbar {
   &__track {
-    @apply stroke-[color:theme(backgroundColor.base.DEFAULT)];
-    @apply dark:stroke-[color:theme(backgroundColor.dark.base)];
+    @apply stroke-[color:theme(backgroundColor.ground)];
+    @apply dark:stroke-[color:theme(backgroundColor.dark.ground)];
   }
 
   &__ring {

@@ -127,7 +127,7 @@ defineSlots<{
   * define color-bg variable
   * for change
   */
-  --p-input-color-bg: theme(backgroundColor.base.DEFAULT);
+  --p-input-color-bg: theme(backgroundColor.ground);
 
   @apply flex items-center space-x-3 relative;
 
@@ -194,8 +194,8 @@ defineSlots<{
   * body of input-color
   */
   &__body {
-    @apply relative border-2 border-dashed border-default bg-base text-subtle;
-    @apply dark:bg-dark-base dark:border-dark-default dark:text-dark-subtle;
+    @apply relative border-2 border-dashed border-default bg-ground text-subtle;
+    @apply dark:bg-dark-ground dark:border-dark-default dark:text-dark-subtle;
   }
 
   /**

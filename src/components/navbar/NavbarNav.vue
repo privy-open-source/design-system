@@ -76,8 +76,8 @@ const condensed = settings?.condensed
         &--open {
           .dropdown__activator {
             &.btn {
-              @apply bg-subtle hover:bg-subtle;
-              @apply dark:bg-dark-subtle hover:dark:bg-dark-subtle;
+              @apply bg-base hover:bg-base;
+              @apply dark:bg-dark-base hover:dark:bg-dark-base;
             }
           }
         }
@@ -85,8 +85,8 @@ const condensed = settings?.condensed
 
       &.nav--condensed {
         .nav__link--active {
-          @apply bg-subtle;
-          @apply dark:bg-dark-subtle;
+          @apply bg-base;
+          @apply dark:bg-dark-base;
         }
       }
     }

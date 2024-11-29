@@ -5,6 +5,11 @@ import {
   addComponentsDir,
   extendViteConfig,
 } from '@nuxt/kit'
+import { join as joinPath } from 'pathe'
+import { defu } from 'defu'
+import { joinURL } from 'ufo'
+import { version as PDFJS_VERSION } from 'pdfjs-dist/legacy/build/pdf.mjs'
+import { version as PSPDFKIT_VERSION } from 'pspdfkit/package.json'
 
 export interface ModuleOptions {
   /**
@@ -17,17 +22,32 @@ export interface ModuleOptions {
    * @default 'p'
    */
   prefix?: string,
+  /**
+   * Use local pdf worker
+   * @default false
+   */
+  useLocalPdfWorker?: boolean,
+}
+
+export interface ModulePublicRuntimeConfig {
+  persona: {
+    cdnURL: string,
+  },
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name         : '@privyid/persona',
     configKey    : 'persona',
-    compatibility: { nuxt: '>=3.0.0' },
+    compatibility: { nuxt: '>=3.4.0' },
   },
-  defaults: { font: true, prefix: 'p' },
+  defaults: {
+    font             : true,
+    prefix           : 'p',
+    useLocalPdfWorker: false,
+  },
   async setup (options, nuxt) {
-    const { resolve } = createResolver(import.meta.url)
+    const { resolve, resolvePath } = createResolver(import.meta.url)
 
     // Add font CDN
     if (options.font) {
@@ -51,7 +71,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // Add Plugin
-    addPlugin({ src: resolve('./runtime/plugin') })
+    addPlugin({ src: resolve('./runtime/plugins/persona') })
 
     // Extend vite config
     extendViteConfig((config) => {
@@ -68,5 +88,50 @@ export default defineNuxtModule<ModuleOptions>({
         'vuedraggable',
       )
     })
+
+    // Use local pdf worker
+    if (options.useLocalPdfWorker) {
+      nuxt.options.runtimeConfig.public.persona = defu(
+        { cdnURL: './_persona' },
+        nuxt.options.runtimeConfig.public.persona,
+      )
+
+      nuxt.hook('nitro:config', async (nitroConfig) => {
+        // eslint-disable-next-line align-assignments/align-assignments
+        nitroConfig.publicAssets ||= []
+
+        const baseURL      = '_persona'
+        const pdfjsDir     = joinPath(await resolvePath('pdfjs-dist'), '../../')
+        const pdfjsBaseURL = joinURL(baseURL, `pdfjs-dist@${PDFJS_VERSION}`)
+
+        const pspdfDir     = joinPath(await resolvePath('pspdfkit'), '../../')
+        const pspdfBaseURL = joinURL(baseURL, `pspdfkit@${PSPDFKIT_VERSION}`)
+
+        const assetsMaxAge = 60 * 60 * 24 * 30 // 1 month
+
+        nitroConfig.publicAssets.push(
+          {
+            baseURL: joinURL(pdfjsBaseURL, 'build'),
+            dir    : joinPath(pdfjsDir, 'build'),
+            maxAge : assetsMaxAge,
+          },
+          {
+            baseURL: joinURL(pdfjsBaseURL, 'legacy'),
+            dir    : joinPath(pdfjsDir, 'legacy'),
+            maxAge : assetsMaxAge,
+          },
+          {
+            baseURL: joinURL(pdfjsBaseURL, 'cmaps'),
+            dir    : joinPath(pdfjsDir, 'cmaps'),
+            maxAge : assetsMaxAge,
+          },
+          {
+            baseURL: joinURL(pspdfBaseURL, 'dist'),
+            dir    : joinPath(pspdfDir, 'dist'),
+            maxAge : assetsMaxAge,
+          },
+        )
+      })
+    }
   },
 })

@@ -138,8 +138,8 @@ onMounted(() => {
 
 <style lang="postcss">
 .avatar {
-  @apply inline-flex items-center justify-center overflow-hidden text-subtle bg-subtle;
-  @apply dark:text-dark-subtle dark:bg-dark-subtle;
+  @apply inline-flex items-center justify-center overflow-hidden text-subtle bg-base;
+  @apply dark:text-dark-subtle dark:bg-dark-base;
 
   &:not(&--square) {
     @apply rounded-full;

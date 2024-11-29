@@ -37,6 +37,22 @@ it('Card should have style "disabled" if disabled is provided', () => {
   expect(card).toHaveClass('card', 'card--disabled')
 })
 
+it('Card should have style readonly if `readonly` prop is provided', () => {
+  const screen = render({
+    components: { Card },
+    template  : `
+      <Card readonly>
+        Content
+      </Card>
+    `,
+  })
+
+  const card = screen.queryByTestId('card')
+
+  expect(card).toBeInTheDocument()
+  expect(card).toHaveClass('card', 'card--readonly')
+})
+
 it('should be able to add Card Header via slot `header`', () => {
   const screen = render({
     components: { Card, Button },
@@ -191,4 +207,20 @@ it('should have custom body class via "body-class" props', () => {
 
   expect(body).toBeInTheDocument()
   expect(body).toHaveClass('bg-info')
+})
+
+it('should have custom spacing via `spacing` props', () => {
+  const screen = render({
+    components: { Card },
+    template  : `
+      <Card spacing="lg">
+        Content
+      </Card>
+    `,
+  })
+
+  const body = screen.queryByTestId('card')
+
+  expect(body).toBeInTheDocument()
+  expect(body).toHaveClass('card--spacing-lg')
 })

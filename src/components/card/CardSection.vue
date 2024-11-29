@@ -54,6 +54,10 @@ const props = defineProps({
     type   : Boolean,
     default: false,
   },
+  readonly: {
+    type   : Boolean,
+    default: false,
+  },
 })
 
 const classNames = computed(() => {
@@ -61,6 +65,9 @@ const classNames = computed(() => {
 
   if (props.disabled)
     result.push('card__section--disabled')
+
+  if (props.readonly)
+    result.push('card__section--readonly')
 
   return result
 })

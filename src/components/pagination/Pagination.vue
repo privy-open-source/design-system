@@ -398,8 +398,8 @@ defineSlots<{
     @apply justify-center items-center hover:shadow-none;
 
     &.btn--default {
-      @apply bg-transparent hover:bg-base focus:bg-base border-transparent focus:border-default hover:border-default text-default font-normal focus:outline-none;
-      @apply dark:bg-transparent hover:dark:bg-dark-base focus:dark:bg-dark-base dark:border-transparent focus:dark:border-dark-default hover:dark:border-dark-default dark:text-dark-default;
+      @apply bg-transparent hover:bg-ground focus:bg-ground border-transparent focus:border-default hover:border-default text-default font-normal focus:outline-none;
+      @apply dark:bg-transparent hover:dark:bg-dark-ground focus:dark:bg-dark-ground dark:border-transparent focus:dark:border-dark-default hover:dark:border-dark-default dark:text-dark-default;
 
       &[active="true"] {
         @apply bg-info-emphasis border-info-emphasis text-state-emphasis cursor-default;

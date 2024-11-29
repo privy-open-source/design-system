@@ -750,7 +750,7 @@ Modal fullscreen is configured by prop `size` with `full` value. There are two t
         <div class="col-span-2 bg-default dark:bg-dark-default p-7">
           <p-subheading weight="bold">Document properties</p-subheading>
         </div>
-        <div class="col-span-4 px-4 pt-4 bg-base dark:bg-dark-base">
+        <div class="col-span-4 px-4 pt-4 bg-ground dark:bg-dark-ground">
           <div class="h-full p-6 rounded-t-lg shadow-sm bg-default">
             This is place holder text. The basic dialog for modals
             should contain only valuable and relevant information.
@@ -777,11 +777,11 @@ Modal fullscreen is configured by prop `size` with `full` value. There are two t
     body-class="grid h-full grid-cols-8"
     size="full">
     <template #header>
-      <div class="overflow-y-auto modal--full__header__content bg-default-alpha">
-        <div class="flex items-center p-3 space-x-3 bg-default">
+      <div class="overflow-y-auto modal--full__header__content bg-default-alpha dark:bg-dark-default-alpha">
+        <div class="flex items-center p-3 space-x-3 bg-default dark:bg-dark-default">
           <IconDocument />
           <p-text>Letter of Agreement..</p-text>
-          <IconClose class="cursor-pointer text-muted hover:text-subtle" />
+          <IconClose class="cursor-pointer text-muted dark:text-dark-muted hover:text-subtle dark:hover:text-dark-subtle" />
         </div>
       </div>
       <div class="modal--full__header__navigation">
@@ -790,16 +790,16 @@ Modal fullscreen is configured by prop `size` with `full` value. There are two t
       </div>
     </template>
     <template #body>
-        <div class="col-span-2 bg-default p-7">
+        <div class="col-span-2 bg-default dark:bg-dark-default p-7">
           <p-subheading weight="bold">Document properties</p-subheading>
         </div>
-        <div class="col-span-4 px-4 pt-4 bg-base">
-          <div class="h-full p-6 rounded-t-lg shadow-sm bg-default">
+        <div class="col-span-4 px-4 pt-4 bg-subtlest dark:bg-dark-subtlest">
+          <div class="h-full p-6 rounded-t-lg shadow-sm bg-default dark:bg-dark-default">
             This is place holder text. The basic dialog for modals
             should contain only valuable and relevant information.
           </div>
         </div>
-        <div class="col-span-2 p-7 bg-default">
+        <div class="col-span-2 p-7 bg-default dark:bg-dark-default">
           <p-subheading weight="bold">Set e-Meterai</p-subheading>
         </div>
     </template>
@@ -830,7 +830,7 @@ Modal fullscreen is configured by prop `size` with `full` value. There are two t
       <div class="col-span-2 bg-default dark:bg-dark-default p-7">
         <p-subheading weight="bold">Document properties</p-subheading>
       </div>
-      <div class="col-span-4 px-4 pt-4 bg-base dark:bg-dark-base">
+      <div class="col-span-4 px-4 pt-4 bg-ground dark:bg-dark-ground">
         <div class="h-full p-6 rounded-t-lg shadow-sm bg-default dark:bg-dark-default">
           This is place holder text. The basic dialog for modals
           should contain only valuable and relevant information.

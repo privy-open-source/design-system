@@ -44,6 +44,24 @@ it('Card-Section should have style "disabled" if disabled is provided', () => {
   expect(cardSection).toHaveClass('card__section', 'card__section--disabled')
 })
 
+it('Card-Section should have style readonly if `readonly` prop is provided', () => {
+  const screen = render({
+    components: { Card, CardSection },
+    template  : `
+      <Card sectioned>
+        <Card-Section readonly>
+          Content
+        </Card-Section>
+      </Card>
+    `,
+  })
+
+  const cardSection = screen.queryByTestId('card-section')
+
+  expect(cardSection).toBeInTheDocument()
+  expect(cardSection).toHaveClass('card__section', 'card__section--readonly')
+})
+
 it('should be able to add Card Header via slot `header`', () => {
   const screen = render({
     components: {

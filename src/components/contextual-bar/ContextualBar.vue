@@ -402,8 +402,8 @@ defineSlots<{
   * and neutral
   */
   &&--info {
-    @apply bg-base text-default;
-    @apply dark:bg-dark-base dark:text-dark-default;
+    @apply bg-ground text-default;
+    @apply dark:bg-dark-ground dark:text-dark-default;
 
     .contextual-bar {
       &__icon {

@@ -7,7 +7,7 @@ description: Label of the thing they're quantifying, such as the number of notif
   import pBadge from './Badge.vue'
   import pBanner from '../banner/Banner.vue'
   import Icon from '@privyid/persona-icon/vue/persona/16.vue'
-  import IconEmaterai from '@privyid/persona-icon/vue/e-meterai/16.vue'
+  import IconEmaterai from '@privyid/persona-icon/vue/signature/16.vue'
 </script>
 
 # Badge
@@ -32,7 +32,7 @@ Default color of badge are black.
 <template>
   <p-badge>25</p-badge>
   <p-badge>
-    <pi-e-meterai-16 />
+    <pi-signature-16 />
     <span>2</span>
   </p-badge>
 </template>
@@ -165,8 +165,8 @@ Use this variable for [level color](/styleguide/badge/#level-color-customizable-
 
 ### `.badge.badge--variant-light.badge--default`
 ```sass
---p-bg-variant-light: theme(backgroundColor.subtle.alpha);
---p-bg-dark-variant-light: theme(backgroundColor.dark.subtle.alpha);
+--p-bg-variant-light: theme(backgroundColor.emphasis-alpha);
+--p-bg-dark-variant-light: theme(backgroundColor.dark.emphasis-alpha);
 ```
 
 ## API

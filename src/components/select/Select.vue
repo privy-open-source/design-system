@@ -566,8 +566,8 @@ defineSlots<{
       @apply dark:bg-dark-default/50 dark:border-dark-subtle;
 
       > svg {
-        @apply fill-subtle;
-        @apply dark:fill-dark-subtle;
+        @apply fill-base;
+        @apply dark:fill-dark-base;
       }
     }
   }

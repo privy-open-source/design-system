@@ -29,8 +29,8 @@ const classNames = computed(() => {
 
 <style lang="postcss">
 .divider {
-  @apply bg-subtle-alpha;
-  @apply dark:bg-dark-subtle-alpha my-2;
+  @apply bg-emphasis-alpha;
+  @apply dark:bg-dark-emphasis-alpha my-2;
 
   &&--horizontal {
     @apply w-full h-[1px];
@@ -42,8 +42,8 @@ const classNames = computed(() => {
     @apply dark:border-dark-subtle dark:bg-transparent;
 
     &::before {
-      @apply content-[''] bg-subtle-alpha w-[1px] h-full;
-      @apply dark:bg-dark-subtle-alpha;
+      @apply content-[''] bg-emphasis-alpha w-[1px] h-full;
+      @apply dark:bg-dark-emphasis-alpha;
     }
   }
 
@@ -58,8 +58,8 @@ const classNames = computed(() => {
   }
 
   .state--disabled & {
-    @apply bg-subtle border-subtle pointer-events-none text-muted;
-    @apply dark:bg-dark-subtle dark:border-dark-subtle dark:text-dark-muted;
+    @apply bg-base border-subtle pointer-events-none text-muted;
+    @apply dark:bg-dark-base dark:border-dark-subtle dark:text-dark-muted;
   }
 }
 </style>

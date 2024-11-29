@@ -182,8 +182,8 @@ function toggleExpand (): void {
             @apply dark:bg-transparent dark:text-dark-default;
 
             .nav__link__icon {
-              @apply bg-subtle;
-              @apply dark:bg-dark-subtle;
+              @apply bg-base;
+              @apply dark:bg-dark-base;
             }
           }
         }

@@ -4,6 +4,7 @@
     class="datepicker"
     data-testid="datepicker"
     aria-label="datepicker"
+    :placement="placement"
     :class="classNames"
     :disabled="disabled">
     <template #activator>
@@ -63,6 +64,7 @@ import type { CalendarMode } from '../calendar/adapter/adapter'
 import { useVModel } from '../input'
 import IconCalendar from '@privyid/persona-icon/vue/calendar/16.vue'
 import type { SizeVariant } from '../button'
+import type { Placement } from '@floating-ui/dom'
 
 defineOptions({ inheritAttrs: false })
 
@@ -138,6 +140,10 @@ const props = defineProps({
   maxRange: {
     type   : String,
     default: undefined,
+  },
+  placement: {
+    type   : String as PropType<Placement>,
+    default: 'bottom-start',
   },
 })
 

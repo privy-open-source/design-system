@@ -34,27 +34,27 @@ export async function createFont () {
 
   if (result.ttf) {
     await ensureFile(resolve(FONT_DIR, 'persona-icon.ttf'))
-    await writeFile(resolve(FONT_DIR, 'persona-icon.ttf'), result.ttf)
+    await writeFile(resolve(FONT_DIR, 'persona-icon.ttf'), result.ttf.toString())
   }
 
   if (result.woff) {
     await ensureFile(resolve(FONT_DIR, 'persona-icon.woff'))
-    await writeFile(resolve(FONT_DIR, 'persona-icon.woff'), result.woff)
+    await writeFile(resolve(FONT_DIR, 'persona-icon.woff'), result.woff.toString())
   }
 
   if (result.woff2) {
     await ensureFile(resolve(FONT_DIR, 'persona-icon.woff2'))
-    await writeFile(resolve(FONT_DIR, 'persona-icon.woff2'), result.woff2)
+    await writeFile(resolve(FONT_DIR, 'persona-icon.woff2'), result.woff2.toString())
   }
 
   if (result.eot) {
     await ensureFile(resolve(FONT_DIR, 'persona-icon.eot'))
-    await writeFile(resolve(FONT_DIR, 'persona-icon.eot'), result.eot)
+    await writeFile(resolve(FONT_DIR, 'persona-icon.eot'), result.eot.toString())
   }
 
   if (result.svg) {
     await ensureFile(resolve(FONT_DIR, 'persona-icon.svg'))
-    await writeFile(resolve(FONT_DIR, 'persona-icon.svg'), result.svg)
+    await writeFile(resolve(FONT_DIR, 'persona-icon.svg'), result.svg.toString())
   }
 
   await createCss(result)
@@ -62,7 +62,7 @@ export async function createFont () {
 
 function hash (buffer: Buffer | string, length = 4) {
   return createHash('shake256', { outputLength: length })
-    .update(buffer)
+    .update(buffer.toString())
     .digest('hex')
 }
 

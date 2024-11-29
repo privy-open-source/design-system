@@ -144,6 +144,10 @@
     &:where(.freetext--hyperlink) {
       @apply decoration-solid;
     }
+
+    &:where(.btn) {
+      @apply no-underline;
+    }
   }
 
   h1 {
@@ -230,8 +234,8 @@
     }
 
     th {
-      @apply text-xs bg-base;
-      @apply dark:bg-dark-base;
+      @apply text-xs bg-ground;
+      @apply dark:bg-dark-ground;
     }
 
     td {

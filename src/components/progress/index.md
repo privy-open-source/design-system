@@ -198,9 +198,9 @@ Progress use local CSS variables on `.progress` for enhanced real-time customiza
 
 ```sass
 --p-bg-bar-active-state: theme(backgroundColor.info.emphasis);
---p-bg-bar-normal-state: theme(backgroundColor.subtle.DEFAULT);
+--p-bg-bar-normal-state: theme(backgroundColor.base.DEFAULT);
 --p-bg-dark-bar-active-state: theme(backgroundColor.dark.info.emphasis);
---p-bg-dark-bar-normal-state: theme(backgroundColor.dark.subtle.DEFAULT);
+--p-bg-dark-bar-normal-state: theme(backgroundColor.dark.base.DEFAULT);
 ```
 
 ## API

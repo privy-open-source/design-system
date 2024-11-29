@@ -63,8 +63,8 @@ provide(INPUTGROUP_SETTING, { size: toRef(props, 'size') })
   @apply flex w-full;
 
   &:has(:first-child:is(.input-group__addon):nth-last-child(2)) {
-    @apply rounded bg-default focus-within:ring-4 focus-within:ring-subtle/10 border border-solid border-muted hover:border-subtle focus-within:border-subtle;
-    @apply dark:bg-dark-default focus-within:dark:ring-dark-subtle/10 dark:border-dark-muted hover:dark:border-dark-subtle focus-within:dark:border-dark-subtle;
+    @apply rounded bg-default focus-within:ring-4 focus-within:ring-subtle/10 border border-solid border-subtlest hover:border-subtle focus-within:border-subtle;
+    @apply dark:bg-dark-default focus-within:dark:ring-dark-subtle/10 dark:border-dark-subtlest hover:dark:border-dark-subtle focus-within:dark:border-dark-subtle;
 
     .input {
       @apply bg-transparent;

@@ -397,7 +397,7 @@ description: Flexible displaying a series of content
   <p-list-group>
     <p-list-group-item>
       <span class="flex items-center space-x-3">
-        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-base dark:bg-dark-base shrink-0">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-ground dark:bg-dark-ground shrink-0">
           <IconCheck class="text-success dark:text-dark-success" />
         </span>
         <span>
@@ -441,7 +441,7 @@ description: Flexible displaying a series of content
   <p-list-group>
     <p-list-group-item>
       <span class="flex items-center space-x-3">
-        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-base dark:bg-dark-base shrink-0">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-ground dark:bg-dark-ground shrink-0">
           <IconCheck class="text-success dark:text-dark-success" />
         </span>
         <span>

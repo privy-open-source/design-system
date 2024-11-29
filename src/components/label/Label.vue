@@ -84,8 +84,8 @@ function close (event: MouseEvent): void {
 */
 
 .label {
-  --p-color-primary-light: lighten(theme(colors.brand.accent), 40%);
-  --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent), 40%);
+  --p-color-primary-light: lighten(theme(colors.brand.accent.DEFAULT), 40%);
+  --p-color-dark-primary-light: darken(theme(colors.dark.brand.accent.DEFAULT), 40%);
 
   @apply inline-flex items-center border border-transparent;
 
@@ -136,7 +136,7 @@ function close (event: MouseEvent): void {
       &--default {
         --p-label-bg-variant-default: theme(backgroundColor.inverse);
         --p-label-bg-dark-variant-default: theme(backgroundColor.dark.inverse);
-        --p-label-text-variant-default: theme(textColor.state-emphasis);
+        --p-label-text-variant-default: theme(textColor.on-emphasis);
         --p-label-text-dark-variant-default: theme(textColor.dark.on-emphasis);
 
         &:not([class^='bg-'], [class*='bg-']) {
@@ -189,8 +189,8 @@ function close (event: MouseEvent): void {
   &--variant-light {
     &.label {
       &--default {
-        @apply bg-subtle-alpha text-subtle;
-        @apply dark:bg-dark-subtle-alpha dark:text-dark-subtle;
+        @apply bg-emphasis-alpha text-subtle;
+        @apply dark:bg-dark-emphasis-alpha dark:text-dark-subtle;
       }
 
       &--primary {

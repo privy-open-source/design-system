@@ -1332,27 +1332,27 @@
       {
         "name": "premium-plan/dot-small",
         "path": "premium-plan/dot-small.svg",
-        "hash": "10a50919ce44819cbaae76eae591d87242944b28e05e926a042e79ababd67b1b"
+        "hash": "86ecd00d704eafbf6f987a2c13edfdc3faceadaa31abcbb9d08734c2bc545b87"
       },
       {
         "name": "premium-plan/spot",
         "path": "premium-plan/spot.svg",
-        "hash": "d8158c29cdff890a1aeebdafc7db6b4604f7b8be1725a7bf601d7a90680c3a40"
+        "hash": "99bf3b052a763b9ceb3134cb0bde3bf2eed48887bdb5ad972f4ac28d8878b12f"
       },
       {
         "name": "premium-plan/dot-large",
         "path": "premium-plan/dot-large.svg",
-        "hash": "9b21f09ae695f3bf0cdf08b11b54fb54d7441f8fd5fbd76fc5c90babecd67c50"
+        "hash": "f7ac071097c2e6f7f3db18672703d27dace5be0917a2bd0c9dd811f5290e014a"
       },
       {
         "name": "premium-plan/spot-hero-small",
         "path": "premium-plan/spot-hero-small.svg",
-        "hash": "05c269435f22466a9d6e0b3df46f8f628892135751bf386d890b0f22cad84780"
+        "hash": "ae357f6e4323f89381e72358ec0fac7c95e42ce8e1d9326c32627caaa57c01c1"
       },
       {
         "name": "premium-plan/spot-hero-large",
         "path": "premium-plan/spot-hero-large.svg",
-        "hash": "49383fe612a1dcbfddeb991f46b9d881a32594e6b02e2f3949519445fa89163b"
+        "hash": "34d26b8d8993cc674e0d6e899dcfd10c1e92cd796e7dd9b5762da4455a14f6ae"
       }
     ]
   },
@@ -1812,23 +1812,28 @@
     "files": [
       {
         "name": "id-face/spot-hero-large",
-        "path": "id-face/spot-hero-large.svg"
+        "path": "id-face/spot-hero-large.svg",
+        "hash": "cee3bccc3756af13ac30967b90701124a342d6d12d64ec45e3b6e64a30f98245"
       },
       {
         "name": "id-face/spot-hero-small",
-        "path": "id-face/spot-hero-small.svg"
+        "path": "id-face/spot-hero-small.svg",
+        "hash": "6264c73035f5abafe07311a815a6033f2ea5eb2bb7092790eaa08014553f3433"
       },
       {
         "name": "id-face/dot-large",
-        "path": "id-face/dot-large.svg"
+        "path": "id-face/dot-large.svg",
+        "hash": "3fcaa5eca550541d059877f792b21f06f9333f2e7389a8d4874a3765769e09c8"
       },
       {
         "name": "id-face/spot",
-        "path": "id-face/spot.svg"
+        "path": "id-face/spot.svg",
+        "hash": "65cafe37ca1150ef8a4d7898f2f2b79d0f77790cc48cc6d7e4305b5354732f81"
       },
       {
         "name": "id-face/dot-small",
-        "path": "id-face/dot-small.svg"
+        "path": "id-face/dot-small.svg",
+        "hash": "463a8002cff0b3b0e10225a52c4684a936c908189211ac0f6a9234f27c662bf7"
       }
     ]
   },
@@ -1844,23 +1849,28 @@
     "files": [
       {
         "name": "document-processing/spot-hero-small",
-        "path": "document-processing/spot-hero-small.svg"
+        "path": "document-processing/spot-hero-small.svg",
+        "hash": "9f86d424a5b7bd5be1b5d97ab5d1cdebc43a2d459796c7c0168f6a3401170be5"
       },
       {
         "name": "document-processing/spot-hero-large",
-        "path": "document-processing/spot-hero-large.svg"
+        "path": "document-processing/spot-hero-large.svg",
+        "hash": "2e1d9433298f22cc32a2fe54a6cb5df3362d49e19faf63bf5986dce7c7664ca8"
       },
       {
         "name": "document-processing/spot",
-        "path": "document-processing/spot.svg"
+        "path": "document-processing/spot.svg",
+        "hash": "7713500a51d8d9532321b14e0da84b2e3735a0451cf28bcf1d2e2094fe607256"
       },
       {
         "name": "document-processing/dot-large",
-        "path": "document-processing/dot-large.svg"
+        "path": "document-processing/dot-large.svg",
+        "hash": "30f21bb3ee0387d3c1697e54f3b9b4c54de24eaff4c77fce3c2f38eb7dfe4569"
       },
       {
         "name": "document-processing/dot-small",
-        "path": "document-processing/dot-small.svg"
+        "path": "document-processing/dot-small.svg",
+        "hash": "f3b473cfe2d330c30016d39923603a4cf827711ad609362df5c753a7072215a0"
       }
     ]
   }

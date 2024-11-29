@@ -145,8 +145,8 @@ function toggle () {
   @apply dark:text-dark-default;
 
   &__switch {
-    @apply flex shrink-0 items-center justify-center relative bg-subtle border-default font-medium;
-    @apply dark:bg-dark-subtle dark:border-dark-default;
+    @apply flex shrink-0 items-center justify-center relative bg-base border-default font-medium;
+    @apply dark:bg-dark-base dark:border-dark-default;
   }
 
   &__pointer {
@@ -225,8 +225,8 @@ function toggle () {
 
     &:hover,
     &:focus-visible {
-      @apply bg-subtle;
-      @apply dark:bg-dark-subtle;
+      @apply bg-base;
+      @apply dark:bg-dark-base;
     }
   }
 
