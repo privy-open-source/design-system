@@ -11,6 +11,7 @@ description: Classic style Table.
   import pText from '../text/Text.vue'
   import { defineTable } from '../table'
   import { ref } from 'vue-demi'
+  import { useTableQuery } from '.'
 
   const fields = defineTable([
     'id',
@@ -89,22 +90,24 @@ description: Classic style Table.
   const selectedA = ref([])
 
   const sortableFields = defineTable([
-    { key: 'id' },
     {
-      key     : 'name',
-      sortable: true,
+      key: 'id',
+    },
+    {
+      key: 'name',
     },
     {
       key     : 'gender',
-      sortable: true,
+      sortable: false,
     },
     {
-      key     : 'age',
-      sortable: true,
+      key: 'age',
     },
   ])
 
-  const sortableItems = ref([
+  const sortBy = ref({})
+
+  const sortableItems = useTableQuery([
     {
       id    : 1,
       name  : 'David',
@@ -135,7 +138,7 @@ description: Classic style Table.
       gender: 'female',
       age   : 24,
     },
-  ])
+  ], { sortBy })
 </script>
 
 <style lang="postcss">
@@ -370,15 +373,25 @@ add prop `draggable` to enable drag-to-sort.
 to support sortable field, you need to add prop `sortable` and when define table fields, add `sortable` with `true` value on field item
 
 <preview class="flex-col space-y-2">
-  <p-table-static sortable :fields="sortableFields" v-model:items="sortableItems" />
+  <p-table-static
+    v-model:sort-by="sortBy"
+    :fields="sortableFields"
+    :items="sortableItems"
+    sortable />
 </preview>
 
 ```vue
 <template>
-  <p-table-static sortable :fields="fields" v-model:items="items" />
+  <p-table-static
+    v-model:sort-by="sortBy"
+    :fields="sortableFields"
+    :items="sortableItems"
+    sortable />
 </template>
 
-<script setup>
+<script setup lang="ts">
+  import { useTableQuery } from '@privyid/persona/core'
+
   const fields = defineTable([
     { key: 'id' },
     {
@@ -427,6 +440,11 @@ to support sortable field, you need to add prop `sortable` and when define table
       age   : 24,
     },
   ])
+
+  const sortBy = ref({})
+
+  // use `useTableQuery` to simulate backend sorting
+  const sortableItems = useTableQuery(items, { sortBy })
 </script>
 ```
 
@@ -577,19 +595,20 @@ Table use local CSS variables for enhanced real-time customization.
 | `table-class` | `String`  |              `-`               | Add class to table element                              |
 | `tr-class`    | `String`  |              `-`               | Add class to table row element                          |
 | `scrollable`  | `Boolean` |             `true`             | Enable scroll when table overflow                       |
-| `sortable`    | `Boolean` |             `false`            | Enable sort items by field name                         |
+| `sortable`    | `Boolean` |            `false`             | Enable sort items by field name                         |
+| `sortBy`      | `Object`  |              `-`               | v-model:sort-by binding                                 |
 
 In props `fields` contain
 
-| Props        |       Type       | Description                                                                         |
-|--------------|:----------------:|-------------------------------------------------------------------------------------|
-| `key`        |     `String`     | Field's key                                                                         |
-| `label?`     |     `String`     | Field's Label                                                                       |
-| `width?`     |     `Number`     | Field's width in percent                                                            |
-| `formatter?` |    `Function`    | Field's formatter, it receives `value` and `item` params and returning string value |
-| `thClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table column cell                             |
-| `tdClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table head cell                               |
-| `sortable?`  | `Boolean`        | Enable field sorting. Eventhough table have `sortable` prop, but the field not set `sortable`, sort function not able to use |
+| Props        |       Type       | Description                                                                                                                  |
+|--------------|:----------------:|------------------------------------------------------------------------------------------------------------------------------|
+| `key`        |     `String`     | Field's key                                                                                                                  |
+| `label?`     |     `String`     | Field's Label                                                                                                                |
+| `width?`     |     `Number`     | Field's width in percent                                                                                                     |
+| `formatter?` |    `Function`    | Field's formatter, it receives `value` and `item` params and returning string value                                          |
+| `thClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table column cell                                                                      |
+| `tdClass?`   | `HTMLAttributes` | `HTMLAttributes` of `class` to use in table head cell                                                                        |
+| `sortable?`  |    `Boolean`     | Enable field sorting. Eventhough table have `sortable` prop, but the field not set `sortable`, sort function not able to use |
 
 
 ### Slots
