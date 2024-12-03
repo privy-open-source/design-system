@@ -1,0 +1,1 @@
+import{d as r,o as t,c as n,a as o}from"./framework.BjhmxGx1.js";const s=["href"],_=r({__name:"NavbarBrand",props:{href:{type:String,default:void 0}},setup(a){return(e,d)=>(t(),n("a",{href:a.href,"data-testid":"navbar-brand",class:"navbar__brand"},[o(e.$slots,"default")],8,s))}});export{_};
