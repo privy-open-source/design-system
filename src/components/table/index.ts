@@ -30,10 +30,19 @@ export interface TableField<T = Record<string, unknown>> {
    * Function for transforming value in
    */
   formatter?: (value: unknown, item: T) => string,
-
+  /**
+   * Additional class to td element
+   */
   tdClass?: HTMLAttributes['class'],
-
+  /**
+   * Additional class to th element
+   */
   thClass?: HTMLAttributes['class'],
+  /**
+   * Enable sortable field
+   * @default true
+   */
+  sortable?: boolean,
 }
 
 export function baseFormatter (value: unknown): string {
