@@ -1,0 +1,15 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    class="persona-icon"
+    viewBox="0 0 24 24"><path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M8.472 3a3.5 3.5 0 0 0-2.474 1.025L4.025 5.998A3.5 3.5 0 0 0 3 8.472V17.5A3.5 3.5 0 0 0 6.5 21h11a3.5 3.5 0 0 0 3.5-3.5v-11A3.5 3.5 0 0 0 17.5 3h-.183a.75.75 0 0 0-.75.75v4.377a.9.9 0 0 1-.9.9h-5.25a.9.9 0 0 1-.9-.9V3.75a.75.75 0 0 0-.75-.75zM14.5 14.25a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"
+      clip-rule="evenodd" /><path
+        fill="currentColor"
+        d="M12.5 5H11v2.5h1.5z" /></svg>
+</template>

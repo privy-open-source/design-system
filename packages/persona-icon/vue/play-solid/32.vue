@@ -1,0 +1,11 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    fill="none"
+    class="persona-icon"
+    viewBox="0 0 32 32"><path
+      fill="currentColor"
+      d="M13.505 3.558C10.8 1.95 7.5 3.988 7.5 7.087v17.826c0 3.098 3.299 5.137 6.005 3.53l15.007-8.914c2.65-1.574 2.65-5.484 0-7.058z" /></svg>
+</template>

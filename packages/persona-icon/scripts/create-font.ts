@@ -1,5 +1,5 @@
 /* eslint-disable unicorn/prefer-module */
-import webfont from 'webfont'
+import { webfont } from 'webfont'
 import {
   writeFile,
   ensureFile,
