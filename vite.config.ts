@@ -19,6 +19,7 @@ const config: UserConfig & Pick<VitestConfig, 'test'> = {
       exclude: [
         '**/*.spec.ts',
         '**/__mocks__/*',
+        'packages/persona-icon/**',
         'vitest.setup.ts',
       ],
       100: true,

@@ -1,7 +1,11 @@
 import Draggable from '../table/__mocks__/vuedraggable'
 import { vi } from 'vitest'
-import { fireEvent, render } from '@testing-library/vue'
-import { ref } from 'vue-demi'
+import {
+  render,
+  fireEvent,
+  queryByTestId,
+} from '@testing-library/vue'
+import { nextTick, ref } from 'vue-demi'
 import { defineTable } from '../table'
 import Table from './TableStatic.vue'
 
@@ -36,6 +40,54 @@ const items = ref([
     _selectable: false,
   },
 ])
+
+const sortableFields = defineTable([
+  { key: 'id' },
+  { key: 'name' },
+  {
+    key     : 'gender',
+    sortable: false,
+  },
+  {
+    key     : 'age',
+    sortable: true,
+  },
+])
+
+function generateItems () {
+  return [
+    {
+      id    : 1,
+      name  : 'Dora',
+      gender: 'male',
+      age   : 27,
+    },
+    {
+      id    : 2,
+      name  : 'Emilly',
+      gender: 'male',
+      age   : 20,
+    },
+    {
+      id    : 3,
+      name  : 'Jane',
+      gender: 'female',
+      age   : 30,
+    },
+    {
+      id    : 4,
+      name  : 'Andi',
+      gender: 'male',
+      age   : 21,
+    },
+    {
+      id    : 5,
+      name  : 'Bella',
+      gender: 'female',
+      age   : 24,
+    },
+  ]
+}
 
 it('should render properly', () => {
   const screen = render({
@@ -304,4 +356,121 @@ it('should able to select all items (except disable one) in variant static', asy
   await fireEvent.click(selectAll)
 
   expect(selected.value).toHaveLength(0)
+})
+
+it('should X field header have sortable class if have `sortable` property with `true` value & `sortable` prop is provided', () => {
+  const items  = ref(generateItems())
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        :fields="sortableFields"
+        :items="items"
+        sortable
+      />`,
+    setup () {
+      return {
+        sortableFields,
+        items,
+      }
+    },
+  })
+
+  const heads = screen.queryAllByTestId('table-static-header')
+
+  expect(heads.at(0)).toHaveClass('table-static__header--sortable')
+  expect(heads.at(2)).not.toHaveClass('table-static__header--sortable')
+})
+
+it('should able modify sort by header using v-model:sort-by', async () => {
+  const items  = ref(generateItems())
+  const sortBy = ref({})
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        v-model:sort-by="sortBy"
+        :fields="sortableFields"
+        :items="items"
+        sortable
+      />`,
+    setup () {
+      return {
+        sortableFields,
+        items,
+        sortBy,
+      }
+    },
+  })
+
+  const heads = screen.queryAllByTestId('table-static-header')
+
+  expect(heads.at(0)).toHaveClass('table-static__header--sortable')
+  expect(heads.at(2)).not.toHaveClass('table-static__header--sortable')
+
+  await fireEvent.click(heads.at(0))
+
+  const icon = queryByTestId(heads[0], 'table-static-header-sort')
+
+  expect(icon).toHaveAttribute('active', 'asc')
+  expect(sortBy.value).toStrictEqual({ id: 'asc' })
+
+  await fireEvent.click(heads.at(0))
+
+  expect(icon).toHaveAttribute('active', 'desc')
+  expect(sortBy.value).toStrictEqual({ id: 'desc' })
+
+  await fireEvent.click(heads.at(0))
+
+  expect(icon).not.toHaveAttribute('active', 'desc')
+  expect(sortBy.value).toStrictEqual({ id: undefined })
+
+  sortBy.value = { name: 'desc' }
+  await nextTick()
+
+  const icon2 = queryByTestId(heads[1], 'table-static-header-sort')
+
+  expect(icon).not.toHaveAttribute('active', 'asc')
+  expect(icon2).toHaveAttribute('active', 'desc')
+})
+
+it('should have multiple value if sortable set to `multiple`', async () => {
+  const items  = ref(generateItems())
+  const sortBy = ref({})
+  const screen = render({
+    components: { Table },
+    template  : `
+      <Table
+        v-model:sort-by="sortBy"
+        :fields="sortableFields"
+        :items="items"
+        sortable="multiple"
+      />`,
+    setup () {
+      return {
+        sortableFields,
+        items,
+        sortBy,
+      }
+    },
+  })
+
+  const heads = screen.queryAllByTestId('table-static-header')
+
+  expect(heads.at(0)).toHaveClass('table-static__header--sortable')
+  expect(heads.at(2)).not.toHaveClass('table-static__header--sortable')
+
+  await fireEvent.click(heads.at(0))
+
+  const icon  = queryByTestId(heads[0], 'table-static-header-sort')
+  const icon2 = queryByTestId(heads[1], 'table-static-header-sort')
+
+  expect(icon).toHaveAttribute('active', 'asc')
+  expect(sortBy.value).toStrictEqual({ id: 'asc' })
+
+  await fireEvent.click(heads.at(1))
+
+  expect(icon).toHaveAttribute('active', 'asc')
+  expect(icon2).toHaveAttribute('active', 'asc')
+  expect(sortBy.value).toStrictEqual({ id: 'asc', name: 'asc' })
 })

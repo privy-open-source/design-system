@@ -25,13 +25,20 @@
           class="table-static__header"
           data-testid="table-static-header"
           :style="field.width ? { width: withUnit(field.width) } : {}"
-          :class="field.thClass"
-          :data-header="field.key">
+          :class="[field.thClass, { 'table-static__header--sortable': isSortable(field) }]"
+          :data-header="field.key"
+          @click="setSortField(field)">
           <slot
             :name="`head(${field.key})`"
             :label="field.label"
-            :field="field">
-            {{ field.label }}
+            :field="field"
+            :sort="getSortField(field)">
+            <span class="table-static__header-label">
+              {{ field.label }}
+              <TableStaticSort
+                v-if="isSortable(field)"
+                :active="getSortField(field)" />
+            </span>
           </slot>
         </th>
       </tr>
@@ -113,6 +120,8 @@ import type {
   VNode,
 } from 'vue-demi'
 import {
+  ref,
+  watch,
   computed,
 } from 'vue-demi'
 import type {
@@ -130,6 +139,8 @@ import TableStaticRoot from './TableStaticRoot.vue'
 import { useVModel } from '../input'
 import IconDrag from '@privyid/persona-icon/vue/draggable/20.vue'
 import Draggable from 'vuedraggable'
+import type { SortValue } from '.'
+import TableStaticSort from './TableStaticSort.vue'
 
 const props = defineProps({
   apperance: {
@@ -184,12 +195,23 @@ const props = defineProps({
     type   : Boolean,
     default: true,
   },
+  sortable: {
+    type   : [Boolean, String] as PropType<boolean | 'single' | 'multiple'>,
+    default: false,
+  },
+  sortBy: {
+    type   : Object as PropType<Record<string, any>>,
+    default: () => ({}),
+  },
 })
 
-const model = useVModel(props)
-const emit  = defineEmits<{
+const model       = useVModel(props)
+const localSortBy = ref(props.sortBy)
+const emit        = defineEmits<{
   'update:modelValue': [T[]],
   'update:items': [T[]],
+  'update:sortBy': [Record<string, SortValue>],
+  'sort': [Record<string, SortValue>],
 }>()
 
 const rows = computed<T[]>({
@@ -249,15 +271,43 @@ const indeterminate = computed(() => {
     && model.value.length < selectableRows.value.length
 })
 
+watch(() => props.sortBy, (value) => {
+  localSortBy.value = value
+})
+
+function isSortable (field: TableField<T>) {
+  return props.sortable && field.sortable !== false
+}
+
+function getSortField (field: TableField<T>): SortValue {
+  return localSortBy.value[field.key as string]
+}
+
+function setSortField (field: TableField<T>) {
+  if (isSortable(field)) {
+    const oldValue: SortValue = getSortField(field)
+    const newValue: SortValue = oldValue === 'asc' ? 'desc' : (oldValue === 'desc' ? undefined : 'asc')
+
+    const value = props.sortable === 'multiple'
+      ? { ...localSortBy.value, [field.key]: newValue }
+      : { [field.key]: newValue }
+
+    localSortBy.value = value
+
+    emit('update:sortBy', value)
+    emit('sort', value)
+  }
+}
+
 defineSlots<{
   'empty'(): VNode[],
   'row'(props: { index: number, item: T }): VNode[],
   [K: `cell(${string})`]:(props: { index: number }) => VNode[],
-  [K: `head(${string})`]:(props: { field: TableField<T>, label: string }) => VNode[],
+  [K: `head(${string})`]:(props: { field: TableField<T>, label: string, sort?: 'asc' | 'desc' }) => VNode[],
 } & {
   [K in KeyType<T> as `cell(${K})`]:(props: { item: T, index: number }) => VNode[]
 } & {
-  [K in KeyType<T> as `head(${K})`]:(props: { field: TableField<T>, label: string }) => VNode[]
+  [K in KeyType<T> as `head(${K})`]:(props: { field: TableField<T>, label: string, sort?: 'asc' | 'desc' }) => VNode[]
 }>()
 </script>
 
@@ -303,9 +353,41 @@ defineSlots<{
     .table-static__header {
       @apply px-3 text-xs border-x-0;
 
+      &--sortable {
+        @apply cursor-pointer select-none;
+      }
+
       &.table-static__drag,
       &.table-static__checkbox {
         @apply w-[1%];
+      }
+
+      &-label {
+        @apply inline-flex items-center;
+      }
+
+      &-sort {
+        @apply flex flex-col flex-shrink-0 items-center justify-center ml-1;
+        @apply text-muted;
+        @apply dark:text-dark-muted;
+
+        &[active="asc"] {
+          > .table-static__header-sort-down {
+            @apply text-default;
+            @apply dark:text-dark-default;
+          }
+        }
+
+        &[active="desc"] {
+          > .table-static__header-sort-up {
+            @apply text-default;
+            @apply dark:text-dark-default;
+          }
+        }
+      }
+
+      &-sort-down {
+        @apply -mt-2;
       }
     }
 

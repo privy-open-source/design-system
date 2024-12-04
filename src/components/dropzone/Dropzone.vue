@@ -213,10 +213,10 @@ defineSlots<{
 
 <style lang="postcss">
 .dropzone {
-  @apply cursor-pointer block w-full;
+  @apply cursor-pointer block w-full relative;
 
   &__input {
-    @apply hidden;
+    @apply absolute w-[.1px] h-[.1px] opacity-0 overflow-hidden -z-1 bottom-0 right-0;
   }
 
   * {

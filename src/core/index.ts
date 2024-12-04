@@ -181,3 +181,7 @@ export {
 export {
   usePopoverPromise,
 } from '../components/popover'
+
+export {
+  useTableQuery,
+} from '../components/table-static'
