@@ -12,6 +12,18 @@
 
 > Ilustration changelog
 
+## 1.0.0
+
+### Added
+
+- document-processing
+- id-face
+
+### Changed
+
+- expired-document/spot
+- premium-plan
+
 ## 1.0.0-rc.12
 
 ### Added

@@ -147,3 +147,4 @@ eslint-results.sarif
 # Vim configuration
 .vim
 !src/public/js/**/dist
+sync-lock.json

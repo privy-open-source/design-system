@@ -7,5 +7,7 @@
     class="persona-icon"
     viewBox="0 0 16 16"><path
       fill="currentColor"
-      d="M13.5 8a5.5 5.5 0 0 0-8.823-4.383l7.706 7.706A5.48 5.48 0 0 0 13.5 8M11.323 12.383 3.617 4.677a5.5 5.5 0 0 0 7.706 7.706" /></svg>
+      fill-rule="evenodd"
+      d="M15 8A7 7 0 1 0 1 8a7 7 0 0 0 14 0M5.143 4.436l6.421 6.42a.5.5 0 1 1-.707.708L4.436 5.143a.5.5 0 0 1 .707-.707"
+      clip-rule="evenodd" /></svg>
 </template>
