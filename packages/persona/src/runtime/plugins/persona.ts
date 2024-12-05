@@ -12,7 +12,7 @@ import {
 import { joinURL, isRelative } from 'ufo'
 
 export default defineNuxtPlugin({
-  name : 'persona-plugin',
+  name : 'persona:plugin',
   setup: (nuxtApp) => {
     const router = useRouter()
     const store  = initStore()
@@ -28,7 +28,7 @@ export default defineNuxtPlugin({
     })
 
     // Set CDN to self host
-    if (config.public.persona.cdnURL) {
+    if (config.public.persona?.cdnURL) {
       const cdnURL = isRelative(config.public.persona.cdnURL)
         ? joinURL(config.app.baseURL, config.public.persona.cdnURL)
         : config.public.persona.cdnURL

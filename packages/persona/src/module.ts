@@ -75,18 +75,22 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Extend vite config
     extendViteConfig((config) => {
-      config.optimizeDeps?.exclude?.push('@privyid/persona')
-      config.optimizeDeps?.include?.push(
-        '@testing-library/user-event',
-        'interactjs',
-        '@jill64/universal-sanitizer',
-        'scroll-into-view',
-        'webfontloader',
-        'zxcvbn',
-        'pdfjs-dist',
-        'pdfjs-dist/web/pdf_viewer',
-        'vuedraggable',
-      )
+      config.optimizeDeps = {
+        ...config.optimizeDeps,
+        exclude: [...config.optimizeDeps?.exclude ?? [], '@privyid/persona'],
+        include: [
+          ...config.optimizeDeps?.include ?? [],
+          '@testing-library/user-event',
+          'interactjs',
+          '@jill64/universal-sanitizer',
+          'scroll-into-view',
+          'webfontloader',
+          'zxcvbn',
+          'pdfjs-dist',
+          'pdfjs-dist/web/pdf_viewer',
+          'vuedraggable',
+        ],
+      }
     })
 
     // Use local pdf worker
