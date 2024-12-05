@@ -19,8 +19,8 @@
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs",
       "types": {
-        "import": "./dist/types.d.mts",
-        "require": "./dist/types.d.ts"
+        "import": "./dist/module.d.mts",
+        "require": "./dist/module.d.ts"
       }
     },
     "./core": {
