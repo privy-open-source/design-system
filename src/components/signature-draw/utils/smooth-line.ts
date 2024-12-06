@@ -77,5 +77,5 @@ export class SmoothLine {
  * @param length
  */
 export function createLines (length: number): SmoothLine[] {
-  return Array.from({ length }).map((_, i) => new SmoothLine(i / (length * 1.25)))
+  return Array.from({ length }, (_, i) => new SmoothLine(i / (length * 1.25)))
 }
