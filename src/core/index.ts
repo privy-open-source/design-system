@@ -185,3 +185,15 @@ export {
 export {
   useTableQuery,
 } from '../components/table-static'
+
+export {
+  usePspdf,
+} from '../components/pspdfkit'
+
+export {
+  default as loadFont,
+} from '../components/signature-text/utils/load-font'
+
+export {
+  createCanvas,
+} from '../components/signature-draw/utils/canvas'

@@ -160,7 +160,7 @@ export default async function generate (options: GenerateOptions, dpi = 1) {
     context.fillStyle    = labelColor
 
     for (const line of labelLines) {
-      context.fillText(line, padding, y)
+      context.fillText(line, padding, y, maxWidth)
 
       y += (labelSize * lineHeight)
     }
@@ -211,7 +211,7 @@ export default async function generate (options: GenerateOptions, dpi = 1) {
     context.fillStyle    = color
 
     for (const line of lines) {
-      context.fillText(line, padding, y)
+      context.fillText(line, padding, y, maxWidth)
 
       y += (fontSize * lineHeight)
     }
