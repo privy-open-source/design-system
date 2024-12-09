@@ -4153,7 +4153,7 @@ __metadata:
     html-escaper: "npm:^3.0.3"
     interactjs: "npm:1.10.27"
     lodash-es: "npm:4.17.21"
-    marked: "npm:15.0.2"
+    marked: "npm:15.0.3"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.13.2"
     pathe: "npm:^1.1.2"
@@ -14771,7 +14771,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:15.0.2, marked@npm:^15.0.0":
+"marked@npm:15.0.3":
+  version: 15.0.3
+  resolution: "marked@npm:15.0.3"
+  bin:
+    marked: bin/marked.js
+  checksum: 10/821c1af0e527b3f6f4684a68802a0fa5e91cd2b0887d0600ce9035896f8b0fbad180a3f8c5be91de25bdc20323abbd674351832c40d48820b6f0d888fd77cd59
+  languageName: node
+  linkType: hard
+
+"marked@npm:^15.0.0":
   version: 15.0.2
   resolution: "marked@npm:15.0.2"
   bin:
