@@ -96,7 +96,7 @@
     "marked": "15.0.3",
     "nanodelay": "2.0.2",
     "pathe": "^1.1.2",
-    "pdfjs-dist": "4.8.69",
+    "pdfjs-dist": "4.9.155",
     "pspdfkit": "^2024.6.0",
     "scroll-into-view": "1.16.2",
     "tabbable": "6.2.0",
