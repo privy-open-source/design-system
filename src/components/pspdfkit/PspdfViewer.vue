@@ -186,6 +186,14 @@ function prev () {
   pdfPage.value--
 }
 
+function first () {
+  pdfPage.value = 1
+}
+
+function last () {
+  pdfPage.value = totalPage.value
+}
+
 provide(PDF_VIEWER_CONTEXT, {
   page : pdfPage,
   scale: pdfScale,
@@ -194,6 +202,8 @@ provide(PDF_VIEWER_CONTEXT, {
   zoomOut,
   next,
   prev,
+  first,
+  last,
 })
 
 syncRef(pdfPage, vPage)

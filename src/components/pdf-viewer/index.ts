@@ -19,6 +19,8 @@ export interface PdfViewerContext {
   zoomOut: () => void,
   next: () => void,
   prev: () => void,
+  first: () => void,
+  last: () => void,
 }
 
 export const PDF_VIEWER_CONTEXT: InjectionKey<PdfViewerContext> = Symbol('PdfViewer')
@@ -37,6 +39,8 @@ export function usePdfContext () {
       zoomOut: noop,
       next   : noop,
       prev   : noop,
+      first  : noop,
+      last   : noop,
     }
   }, true)
 }
