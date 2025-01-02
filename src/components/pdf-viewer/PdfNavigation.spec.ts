@@ -123,3 +123,18 @@ it('should changed page value if page selection was selected', async () => {
 
   expect(context.page.value).toBe(3)
 })
+
+it('should be able to change num-of-pages, first and last navigation label via props "num-of-pages-nav-label", "first-nav-label" and "last-nav-label"', () => {
+  const screen = render({
+    components: { PdfNavigation },
+    template  : '<PdfNavigation first-nav-label="Awal" last-nav-label="Akhir" num-of-pages-nav-label="dari" />',
+  })
+
+  const firstNavLabel   = screen.queryByText('Awal')
+  const lastNavLabel    = screen.queryByText('Akhir')
+  const numOfPagesLabel = screen.queryByText(/dari/i)
+
+  expect(firstNavLabel).toBeInTheDocument()
+  expect(lastNavLabel).toBeInTheDocument()
+  expect(numOfPagesLabel).toBeInTheDocument()
+})

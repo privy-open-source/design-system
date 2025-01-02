@@ -173,7 +173,7 @@ it('should expose navigation in slot', async () => {
         src="http://sample.pdf"
         password="123456"
       >
-        <template #header="{ zoomIn, zoomOut, next, prev }">
+        <template #header="{ zoomIn, zoomOut, next, prev, first, last }">
           <button data-testid="zoom-in" @click="zoomIn">
             zoom in
           </button>
@@ -185,6 +185,12 @@ it('should expose navigation in slot', async () => {
           </button>
           <button data-testid="prev" @click="prev">
             prev
+          </button>
+          <button data-testid="first" @click="first">
+            first
+          </button>
+          <button data-testid="last" @click="last">
+            last
           </button>
         </template>
       </pdf-viewer>
@@ -207,6 +213,8 @@ it('should expose navigation in slot', async () => {
   const zoomOut = screen.queryByTestId('zoom-out')
   const next    = screen.queryByTestId('next')
   const prev    = screen.queryByTestId('prev')
+  const first   = screen.queryByTestId('first')
+  const last    = screen.queryByTestId('last')
 
   await fireEvent.click(zoomIn)
 
@@ -225,4 +233,34 @@ it('should expose navigation in slot', async () => {
   await fireEvent.click(prev)
 
   expect(page.value).toBe(2)
+
+  await fireEvent.click(first)
+
+  expect(page.value).toBe(1)
+
+  await fireEvent.click(last)
+
+  expect(page.value).toBe(5)
+})
+
+it('should be able to change num-of-pages, first and last navigation label via props "num-of-pages-nav-label", "first-nav-label" and "last-nav-label"', () => {
+  const screen = render({
+    components: { PdfViewer },
+    template  : `
+      <pdf-viewer
+          src="http://sample.pdf"
+          first-nav-label="Awal" 
+          last-nav-label="Akhir" 
+          num-of-pages-nav-label="dari"
+      />
+    `,
+  })
+
+  const firstNavLabel   = screen.queryByText('Awal')
+  const lastNavLabel    = screen.queryByText('Akhir')
+  const numOfPagesLabel = screen.queryByText(/dari/i)
+
+  expect(firstNavLabel).toBeInTheDocument()
+  expect(lastNavLabel).toBeInTheDocument()
+  expect(numOfPagesLabel).toBeInTheDocument()
 })
