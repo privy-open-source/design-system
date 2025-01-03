@@ -64,7 +64,7 @@ const props = defineProps({
     default: undefined,
   },
   titleActionUrl: {
-    type   : String,
+    type   : [String, Object] as PropType<RouteLocationRaw>,
     default: undefined,
   },
   condensed: {

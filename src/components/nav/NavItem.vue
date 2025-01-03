@@ -100,12 +100,8 @@ const navItemClass = computed(() => {
 })
 
 const link = computed(() => {
-  let permalink: string | undefined
-
   if (!props.disabled)
-    permalink = props.href
-
-  return permalink
+    return props.href
 })
 </script>
 
