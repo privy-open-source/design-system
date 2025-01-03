@@ -29,7 +29,20 @@
         size="xs" />
       <span
         data-testid="pdf-total"
-        class="pdf__navigation-total">of {{ totalPage }}</span>
+        class="pdf__navigation-total">
+        <slot name="num-of-pages-navigation">
+          {{ numOfPagesNavLabel }}
+        </slot> {{ totalPage }}</span>
+      <p-button
+        data-testid="pdf-start"
+        variant="ghost"
+        size="xs"
+        icon
+        @click="first">
+        <slot name="first-navigation">
+          {{ firstNavLabel }}
+        </slot>
+      </p-button>
       <p-button
         data-testid="pdf-prev"
         variant="ghost"
@@ -45,6 +58,16 @@
         icon
         @click="next">
         <IconNext />
+      </p-button>
+      <p-button
+        data-testid="pdf-end"
+        variant="ghost"
+        size="xs"
+        icon
+        @click="last">
+        <slot name="last-navigation">
+          {{ lastNavLabel }}
+        </slot>
       </p-button>
     </div>
   </div>
@@ -62,6 +85,21 @@ import pDivider from '../divider/Divider.vue'
 import pSelect from '../select/Select.vue'
 import type { SelectItem } from '../select'
 
+defineProps({
+  firstNavLabel: {
+    type   : String,
+    default: 'First',
+  },
+  lastNavLabel: {
+    type   : String,
+    default: 'Last',
+  },
+  numOfPagesNavLabel: {
+    type   : String,
+    default: 'of',
+  },
+})
+
 const {
   page,
   scale,
@@ -70,6 +108,8 @@ const {
   zoomOut,
   next,
   prev,
+  first,
+  last,
 } = usePdfContext()
 
 const pages = computed<SelectItem[]>(() => {
@@ -85,7 +125,7 @@ const pages = computed<SelectItem[]>(() => {
 <style lang="postcss">
 .pdf {
   &__navigation {
-    @apply absolute bottom-4 inset-x-0 justify-center items-center flex w-80 mx-auto z-10;
+    @apply absolute bottom-4 inset-x-0 justify-center items-center flex w-96 mx-auto z-10;
 
     &-container {
       @apply flex bg-inverse text-subtlest rounded p-2 space-x-1 items-center;
@@ -122,7 +162,7 @@ const pages = computed<SelectItem[]>(() => {
     }
 
     &-total {
-      @apply shrink-0;
+      @apply shrink-0 mr-3 !important;
     }
   }
 }

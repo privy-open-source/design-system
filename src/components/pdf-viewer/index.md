@@ -179,14 +179,17 @@ Set `layout` prop to `fit` to enable layout fit mode. It will adapt the viewer h
 
 ### Props
 
-| Props       |   Type   | Default | Description                                       |
-|-------------|:--------:|:-------:|---------------------------------------------------|
-| `src`       | `String` |   `-`   | Document source URL                               |
-| `password`  | `String` |   `-`   | Document password                                 |
-| `layout`    | `String` | `fixed` | Viewer layout sizing, valid value: `fixed`, `fit` |
-| `offsetTop` | `Number` |   `0`   | Margin top when using layout `fit`                |
-| `page`      | `Number` |   `1`   | `v-model:page` value                              |
-| `scale`     | `Number` |   `1`   | `v-model:scale` value                             |
+| Props                    |   Type   | Default | Description                                                                |
+|--------------------------|:--------:|:-------:|----------------------------------------------------------------------------|
+| `src`                    | `String` |   `-`   | Document source URL                                                        |
+| `password`               | `String` |   `-`   | Document password                                                          |
+| `layout`                 | `String` | `fixed` | Viewer layout sizing, valid value: `fixed`, `fit`                          |
+| `offsetTop`              | `Number` |   `0`   | Margin top when using layout `fit`                                         |
+| `page`                   | `Number` |   `1`   | `v-model:page` value                                                       |
+| `scale`                  | `Number` |   `1`   | `v-model:scale` value                                                      |
+| `first-nav-label`        | `String` | `First` | Label to place in the first navigation button                              |
+| `last-nav-label`         | `String` | `Last`  | Label to place in the last navigation button                               |  
+| `num-of-pages-nav-label` | `String` | `of`    | Label to place on the preposition number of pages navigation button        |
 
 ### Slots
 

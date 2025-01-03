@@ -18,6 +18,8 @@
         :zoom-out="zoomOut"
         :next="next"
         :prev="prev"
+        :first="first"
+        :last="last"
         :doc="pdfDoc" />
     </div>
 
@@ -43,6 +45,8 @@
           :zoom-out="zoomOut"
           :next="next"
           :prev="prev"
+          :first="first"
+          :last="last"
           :doc="pdfDoc" />
       </div>
       <!-- Minimum PDFJS Viewer end -->
@@ -56,11 +60,16 @@
         :zoom-out="zoomOut"
         :next="next"
         :prev="prev"
+        :first="first"
+        :last="last"
         :doc="pdfDoc" />
 
       <transition name="slide-up">
         <PdfNavigation
-          v-show="src && !idle && !loading && !error" />
+          v-show="src && !idle && !loading && !error"
+          :first-nav-label="firstNavLabel"
+          :last-nav-label="lastNavLabel"
+          :num-of-pages-nav-label="numOfPagesNavLabel" />
       </transition>
 
       <slot
@@ -72,6 +81,8 @@
         :zoom-out="zoomOut"
         :next="next"
         :prev="prev"
+        :first="first"
+        :last="last"
         :doc="pdfDoc" />
     </PdfObjects>
     <div class="pdf__footer">
@@ -84,6 +95,8 @@
         :zoom-out="zoomOut"
         :next="next"
         :prev="prev"
+        :first="first"
+        :last="last"
         :doc="pdfDoc" />
     </div>
   </div>
@@ -150,6 +163,18 @@ const props = defineProps({
   config: {
     type   : [Object] as PropType<OpenDocConfig>,
     default: () => ({}),
+  },
+  firstNavLabel: {
+    type   : String,
+    default: 'First',
+  },
+  lastNavLabel: {
+    type   : String,
+    default: 'Last',
+  },
+  numOfPagesNavLabel: {
+    type   : String,
+    default: 'of',
   },
 })
 
@@ -246,6 +271,14 @@ function prev () {
   pdfPage.value--
 }
 
+function first () {
+  pdfPage.value = 1
+}
+
+function last () {
+  pdfPage.value = totalPage.value
+}
+
 provide(PDF_VIEWER_CONTEXT, {
   page : pdfPage,
   scale: pdfScale,
@@ -254,6 +287,8 @@ provide(PDF_VIEWER_CONTEXT, {
   zoomOut,
   next,
   prev,
+  first,
+  last,
 })
 
 syncRef(pdfPage, vPage)
@@ -273,6 +308,8 @@ defineExpose({
   prev,
   openDoc,
   closeDoc,
+  first,
+  last,
 })
 
 interface PdfViewerSlotScope {
