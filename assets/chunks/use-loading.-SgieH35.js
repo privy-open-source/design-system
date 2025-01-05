@@ -1,1 +1,0 @@
-import{d as n}from"./defu.CMw4_7D2.js";import{r as l,l as r,al as d}from"./framework.BjhmxGx1.js";function i(o){const e=n(o,{elapsed:!0}),s=l(0),t=l(e.elapsed!==!1),u=r({get(){return s.value>0||t.value},set(a){a?s.value++:s.value--}});return d(()=>{if(e.elapsed!==!1){const a=e.elapsed===!0?200:e.elapsed;setTimeout(()=>{t.value=!1},a)}}),u}export{i as u};
