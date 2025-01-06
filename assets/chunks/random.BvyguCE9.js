@@ -1,0 +1,1 @@
+import{a as i}from"./toInteger.MhUOs5fD.js";var d=Math.floor,m=Math.random;function v(a,n){return a+d(m()*(n-a+1))}var s=parseFloat,o=Math.min,h=Math.random;function R(a,n,M){if(a===void 0&&n===void 0?(a=0,n=1):(a=i(a),n===void 0?(n=a,a=0):n=i(n)),a>n){var f=a;a=n,n=f}if(a%1||n%1){var t=h();return o(a+t*(n-a+s("1e-"+((t+"").length-1))),n)}return v(a,n)}export{R as r};

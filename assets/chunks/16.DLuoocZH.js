@@ -1,0 +1,1 @@
+import{_ as e,o as n,c as s,m as t}from"./framework.Ae0H8jK5.js";const r={},c={xmlns:"http://www.w3.org/2000/svg",width:"16",height:"16",fill:"none",class:"persona-icon",viewBox:"0 0 16 16"};function l(a,o){return n(),s("svg",c,o[0]||(o[0]=[t("path",{fill:"currentColor",d:"m8 5.567 3.243 3.244H4.757z"},null,-1)]))}const _=e(r,[["render",l]]);export{_ as I};

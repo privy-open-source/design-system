@@ -1,0 +1,1 @@
+import{d as r,o as n,c as t,a as s}from"./framework.Ae0H8jK5.js";const o=["href"],f=r({__name:"NavbarBrand",props:{href:{type:String,default:void 0}},setup(e){return(a,d)=>(n(),t("a",{href:e.href,"data-testid":"navbar-brand",class:"navbar__brand"},[s(a.$slots,"default")],8,o))}});export{f as _};
