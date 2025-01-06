@@ -2801,15 +2801,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jill64/universal-sanitizer@npm:1.3.4":
-  version: 1.3.4
-  resolution: "@jill64/universal-sanitizer@npm:1.3.4"
+"@jill64/universal-sanitizer@npm:1.3.6":
+  version: 1.3.6
+  resolution: "@jill64/universal-sanitizer@npm:1.3.6"
   dependencies:
-    "@types/dompurify": "npm:3.0.5"
+    "@types/dompurify": "npm:3.2.0"
     "@types/sanitize-html": "npm:2.13.0"
-    dompurify: "npm:3.2.0"
-    sanitize-html: "npm:2.13.1"
-  checksum: 10/06c649bc8daa0eefc47f64f39bd387df9c91220c31c4b99b6976d8ce72aaafa8d3da1c7cd6bc093648af0c736946c41972ed880ad69da4bcfe66517e049d6be7
+    dompurify: "npm:3.2.3"
+    sanitize-html: "npm:2.14.0"
+  checksum: 10/fafe3300ba84eb8181018f668184e6e64e688bab201e520a1dd7842a1af7d91917fea398472513e29947fda9ccdb363e781b78ecd55363aa1049429e618966ef
   languageName: node
   linkType: hard
 
@@ -3927,7 +3927,7 @@ __metadata:
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
     "@floating-ui/dom": "npm:1.6.12"
-    "@jill64/universal-sanitizer": "npm:1.3.4"
+    "@jill64/universal-sanitizer": "npm:1.3.6"
     "@juggle/resize-observer": "npm:3.4.0"
     "@nuxt/kit": "npm:3.15.0"
     "@nuxt/module-builder": "npm:0.8.4"
@@ -5236,6 +5236,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dompurify@npm:3.2.0":
+  version: 3.2.0
+  resolution: "@types/dompurify@npm:3.2.0"
+  dependencies:
+    dompurify: "npm:*"
+  checksum: 10/0194dd9024e76e856f3373e8b080c7a5ac9910543ac1ee85db45277efbbea820b2f27fe22c8a6f02bb51833e0a8540d732be0d11d156efd16cb0b97f88e41ebf
+  languageName: node
+  linkType: hard
+
 "@types/eslint@npm:^8.0.0":
   version: 8.56.10
   resolution: "@types/eslint@npm:8.56.10"
@@ -5503,7 +5512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/trusted-types@npm:*":
+"@types/trusted-types@npm:*, @types/trusted-types@npm:^2.0.7":
   version: 2.0.7
   resolution: "@types/trusted-types@npm:2.0.7"
   checksum: 10/8e4202766a65877efcf5d5a41b7dd458480b36195e580a3b1085ad21e948bc417d55d6f8af1fd2a7ad008015d4117d5fdfe432731157da3c68678487174e4ba3
@@ -9145,17 +9154,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dompurify@npm:*, dompurify@npm:3.2.3":
+  version: 3.2.3
+  resolution: "dompurify@npm:3.2.3"
+  dependencies:
+    "@types/trusted-types": "npm:^2.0.7"
+  dependenciesMeta:
+    "@types/trusted-types":
+      optional: true
+  checksum: 10/aad472bcdff40afdbb307fd02abbca86acefee9c39cb35e9634ebbc5e047750a7eeb021b02cd66894d60cf75ad021f69394de2e9e8786b0dd91c5832f497a9af
+  languageName: node
+  linkType: hard
+
 "dompurify@npm:3.0.11":
   version: 3.0.11
   resolution: "dompurify@npm:3.0.11"
   checksum: 10/fc7027ef5cc09ad906625e8aa39b3ca50570fd05aec9fd5995349f0be866385122265c7a823c416694c7bb4c3415e9172cce03b92a153a16c7d1d27165b2a0fd
-  languageName: node
-  linkType: hard
-
-"dompurify@npm:3.2.0":
-  version: 3.2.0
-  resolution: "dompurify@npm:3.2.0"
-  checksum: 10/d9139fdc69e95efe43d154362216a9a6768c3a238b02b988a7ac0ddd044a992422d6c5fae5b319ab47aef8465824a815d104b843800b294352657f70d5168bfa
   languageName: node
   linkType: hard
 
@@ -17994,9 +18008,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sanitize-html@npm:2.13.1":
-  version: 2.13.1
-  resolution: "sanitize-html@npm:2.13.1"
+"sanitize-html@npm:2.14.0":
+  version: 2.14.0
+  resolution: "sanitize-html@npm:2.14.0"
   dependencies:
     deepmerge: "npm:^4.2.2"
     escape-string-regexp: "npm:^4.0.0"
@@ -18004,7 +18018,7 @@ __metadata:
     is-plain-object: "npm:^5.0.0"
     parse-srcset: "npm:^1.0.2"
     postcss: "npm:^8.3.11"
-  checksum: 10/c6c3218ebd4d50650efc6927eb988e1fe501f9d4d8a5cefaa7c60a158c004f0cde4f3c580b0f74f37d4c640e9cc912b763fa7a154fd121173bcdd9f3f72dbc11
+  checksum: 10/8e673f09ee33768537e5bf2dab45bb445c2313f6ce3f1cf6d48cdc5f60c122c9641cff2f5679a2f67c58b28b22e78265445919078360741512a42b0f4744a3e2
   languageName: node
   linkType: hard
 
