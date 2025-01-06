@@ -86,7 +86,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
-    "@fontsource/dm-sans": "5.1.0",
+    "@fontsource/dm-sans": "5.1.1",
     "@jill64/universal-sanitizer": "^1.0.2",
     "@juggle/resize-observer": "^3.4.0",
     "@privyid/persona-icon": "workspace:^",
