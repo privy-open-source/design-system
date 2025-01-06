@@ -69,7 +69,7 @@
     "dotenv": "16.4.7",
     "figma-api": "1.12.0",
     "fs-extra": "11.2.0",
-    "jiti": "2.4.1",
+    "jiti": "2.4.2",
     "minimist": "1.2.8",
     "ofetch": "1.4.1",
     "ohash": "1.1.4",
