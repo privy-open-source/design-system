@@ -3769,8 +3769,8 @@ __metadata:
     "@vitest/browser": "npm:0.25.8"
     "@vitest/coverage-c8": "npm:0.24.5"
     "@vue/eslint-config-typescript": "npm:13.0.0"
-    "@vue/server-renderer": "npm:^3.5.13"
-    "@vue/test-utils": "npm:^2.4.6"
+    "@vue/server-renderer": "npm:3.5.13"
+    "@vue/test-utils": "npm:2.4.6"
     "@vueuse/core": "npm:11.0.3"
     "@vueuse/math": "npm:11.1.0"
     "@zxing/browser": "npm:0.1.5"
@@ -6343,7 +6343,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/server-renderer@npm:3.5.13, @vue/server-renderer@npm:^3.5.13":
+"@vue/server-renderer@npm:3.5.13":
   version: 3.5.13
   resolution: "@vue/server-renderer@npm:3.5.13"
   dependencies:
@@ -6376,6 +6376,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/test-utils@npm:2.4.6":
+  version: 2.4.6
+  resolution: "@vue/test-utils@npm:2.4.6"
+  dependencies:
+    js-beautify: "npm:^1.14.9"
+    vue-component-type-helpers: "npm:^2.0.0"
+  checksum: 10/a3b445f1dae9b663e8cdb048054bb16d0b24b7901bcf45c81e84a8340030651bb7ad9fd309d36f5963addd25883968e0f81da44a06bab99bb9aa89b4235f2880
+  languageName: node
+  linkType: hard
+
 "@vue/test-utils@npm:^2.4.1":
   version: 2.4.1
   resolution: "@vue/test-utils@npm:2.4.1"
@@ -6389,16 +6399,6 @@ __metadata:
     "@vue/server-renderer":
       optional: true
   checksum: 10/7b4737b14e11356d865e2be88de5de57758f294f13423c683e12e4b83e310c801136b475cc580ee9b0fd7d87d42e8ac765445a9b4cab3f8f2c113339ac52ba5b
-  languageName: node
-  linkType: hard
-
-"@vue/test-utils@npm:^2.4.6":
-  version: 2.4.6
-  resolution: "@vue/test-utils@npm:2.4.6"
-  dependencies:
-    js-beautify: "npm:^1.14.9"
-    vue-component-type-helpers: "npm:^2.0.0"
-  checksum: 10/a3b445f1dae9b663e8cdb048054bb16d0b24b7901bcf45c81e84a8340030651bb7ad9fd309d36f5963addd25883968e0f81da44a06bab99bb9aa89b4235f2880
   languageName: node
   linkType: hard
 
