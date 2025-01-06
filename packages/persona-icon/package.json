@@ -62,7 +62,7 @@
     "webfont": "11.2.26"
   },
   "dependencies": {
-    "@nuxt/kit": "3.15.0"
+    "@nuxt/kit": "3.15.1"
   },
   "publishConfig": {
     "access": "public"
