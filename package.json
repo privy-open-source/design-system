@@ -149,6 +149,6 @@
     "packages/*"
   ],
   "resolutions": {
-    "whatwg-url": "13.0.0"
+    "whatwg-url": "14.1.0"
   }
 }
