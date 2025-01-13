@@ -88,7 +88,7 @@
     "core-js": "3",
     "date-fns": "4.1.0",
     "defu": "6.1.4",
-    "fast-equals": "5.0.1",
+    "fast-equals": "5.2.2",
     "fuse.js": "7.0.0",
     "html-escaper": "^3.0.3",
     "interactjs": "1.10.27",

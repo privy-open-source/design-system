@@ -4029,7 +4029,7 @@ __metadata:
     core-js: "npm:3"
     date-fns: "npm:4.1.0"
     defu: "npm:6.1.4"
-    fast-equals: "npm:5.0.1"
+    fast-equals: "npm:5.2.2"
     fuse.js: "npm:7.0.0"
     html-escaper: "npm:^3.0.3"
     interactjs: "npm:1.10.27"
@@ -11239,7 +11239,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-equals@npm:5.0.1, fast-equals@npm:^5.0.0":
+"fast-equals@npm:5.2.2":
+  version: 5.2.2
+  resolution: "fast-equals@npm:5.2.2"
+  checksum: 10/87939dc01c6634f844369c2d774c9bf82b6c5935eb45c698fdfd2e708439c6c94a67a41c67c7e063759394e319850ee563e717e65776c8f5997566b0cbb17c7a
+  languageName: node
+  linkType: hard
+
+"fast-equals@npm:^5.0.0":
   version: 5.0.1
   resolution: "fast-equals@npm:5.0.1"
   checksum: 10/9dc1ef767903600e5694a89a787782fc3a4f56cc04d235afc13616c848c33563b8f415b1c6a248b2a236424f624aa1a7513f46b7fa69590a640e7784f1296bce
