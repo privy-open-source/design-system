@@ -4037,7 +4037,7 @@ __metadata:
     marked: "npm:15.0.5"
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.15.1"
-    pathe: "npm:^1.1.2"
+    pathe: "npm:^2.0.0"
     pdfjs-dist: "npm:4.9.155"
     postcss-custom-properties: "npm:14.0.4"
     postcss-hexrgba: "npm:2.1.0"

@@ -95,7 +95,7 @@
     "lodash-es": "4.17.21",
     "marked": "15.0.5",
     "nanodelay": "2.0.2",
-    "pathe": "^1.1.2",
+    "pathe": "^2.0.0",
     "pdfjs-dist": "4.9.155",
     "pspdfkit": "^2024.6.0",
     "scroll-into-view": "1.16.2",
