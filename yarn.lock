@@ -3152,7 +3152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/canvas@npm:^0.1.64":
+"@napi-rs/canvas@npm:^0.1.65":
   version: 0.1.65
   resolution: "@napi-rs/canvas@npm:0.1.65"
   dependencies:
@@ -4038,7 +4038,7 @@ __metadata:
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.15.1"
     pathe: "npm:^2.0.0"
-    pdfjs-dist: "npm:4.9.155"
+    pdfjs-dist: "npm:4.10.38"
     postcss-custom-properties: "npm:14.0.4"
     postcss-hexrgba: "npm:2.1.0"
     postcss-lighten-darken: "npm:0.9.0"
@@ -16301,15 +16301,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:4.9.155":
-  version: 4.9.155
-  resolution: "pdfjs-dist@npm:4.9.155"
+"pdfjs-dist@npm:4.10.38":
+  version: 4.10.38
+  resolution: "pdfjs-dist@npm:4.10.38"
   dependencies:
-    "@napi-rs/canvas": "npm:^0.1.64"
+    "@napi-rs/canvas": "npm:^0.1.65"
   dependenciesMeta:
     "@napi-rs/canvas":
       optional: true
-  checksum: 10/0eccb8d8a29b93c088055c80061e905c5d87768faf4c24f5d32f4a22dd9847e07aaffda0658f34959f04b895818fb6c9c81b5161cb79ce8fec8248b2ec4dd672
+  checksum: 10/2fee929540863a32a368c02fe445550ce6f0992a08ccfaa05f2e2e185e8ac98b43eda6f88c94c366b86fe99149478eeff7ebb57793270b030c7af54169a4a54c
   languageName: node
   linkType: hard
 
