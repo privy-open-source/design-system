@@ -37,7 +37,7 @@
     "@rushstack/eslint-patch": "1.10.4",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/vue": "8.1.0",
-    "@types/html-escaper": "3.0.2",
+    "@types/html-escaper": "3.0.4",
     "@types/lodash-es": "4.17.12",
     "@types/marked": "6.0.0",
     "@types/sanitize-html": "2.13.0",
