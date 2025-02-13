@@ -34,7 +34,7 @@
     "@privyid/ghoulscript": "0.1.0-alpha.4",
     "@privyid/tailwind-preset": "workspace:^",
     "@rollup/plugin-inject": "5.0.5",
-    "@rushstack/eslint-patch": "1.10.4",
+    "@rushstack/eslint-patch": "1.10.5",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/vue": "8.1.0",
     "@types/html-escaper": "3.0.2",
