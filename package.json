@@ -116,7 +116,7 @@
     "date-fns": "4.1.0",
     "defu": "6.1.4",
     "fast-equals": "^5.0.0",
-    "fuse.js": "7.0.0",
+    "fuse.js": "7.1.0",
     "html-escaper": "^3.0.3",
     "immutable": "^5.0.0-beta.5",
     "interactjs": "1.10.27",
