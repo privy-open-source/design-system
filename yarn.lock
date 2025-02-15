@@ -3733,7 +3733,7 @@ __metadata:
     "@types/zxcvbn": "npm:4.4.5"
     "@typescript-eslint/eslint-plugin": "npm:5.62.0"
     "@typescript-eslint/parser": "npm:5.62.0"
-    "@vitejs/plugin-vue": "npm:4.5.2"
+    "@vitejs/plugin-vue": "npm:5.2.1"
     "@vitest/browser": "npm:0.25.8"
     "@vitest/coverage-c8": "npm:0.24.5"
     "@vue/eslint-config-typescript": "npm:13.0.0"
@@ -6095,17 +6095,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:4.5.2":
-  version: 4.5.2
-  resolution: "@vitejs/plugin-vue@npm:4.5.2"
-  peerDependencies:
-    vite: ^4.0.0 || ^5.0.0
-    vue: ^3.2.25
-  checksum: 10/4d01d5222e5b96f5c90ef34260c57ff296d141a76011f9a41af0c4583a52b8666a8e14aed703fac7f53e0120fe3316f208c22d65af4a94efa92c7a53c36993c1
-  languageName: node
-  linkType: hard
-
-"@vitejs/plugin-vue@npm:^5.1.4, @vitejs/plugin-vue@npm:^5.2.1":
+"@vitejs/plugin-vue@npm:5.2.1, @vitejs/plugin-vue@npm:^5.1.4, @vitejs/plugin-vue@npm:^5.2.1":
   version: 5.2.1
   resolution: "@vitejs/plugin-vue@npm:5.2.1"
   peerDependencies:
@@ -11598,14 +11588,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fuse.js@npm:7.1.0":
-  version: 7.1.0
-  resolution: "fuse.js@npm:7.1.0"
-  checksum: 10/9f9105e54372897a46cb3e04074f0db5bd0a428320d4618276a57e6142d7502235a556f05cf87aa3c5d6d9c6fdfa06b901b78379c48aa0951672ccbc4a1bfe70
-  languageName: node
-  linkType: hard
-
-"fuse.js@npm:^7.0.0":
+"fuse.js@npm:7.1.0, fuse.js@npm:^7.0.0":
   version: 7.1.0
   resolution: "fuse.js@npm:7.1.0"
   checksum: 10/9f9105e54372897a46cb3e04074f0db5bd0a428320d4618276a57e6142d7502235a556f05cf87aa3c5d6d9c6fdfa06b901b78379c48aa0951672ccbc4a1bfe70
