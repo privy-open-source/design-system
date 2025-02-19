@@ -70,7 +70,7 @@
     "jest-extended": "4.0.2",
     "lint-staged": "15.3.0",
     "nanodelay": "2.0.2",
-    "postcss": "8.4.49",
+    "postcss": "8.5.3",
     "postcss-import": "16.1.0",
     "postcss-nested": "7.0.2",
     "sharp": "0.33.5",
