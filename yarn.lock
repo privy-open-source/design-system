@@ -3761,7 +3761,7 @@ __metadata:
     eslint-plugin-vue: "npm:9.23.0"
     fast-equals: "npm:^5.0.0"
     fuse.js: "npm:7.1.0"
-    happy-dom: "npm:8.9.0"
+    happy-dom: "npm:17.1.1"
     html-escaper: "npm:^3.0.3"
     husky: "npm:9.1.7"
     immutable: "npm:^5.0.0-beta.5"
@@ -11598,14 +11598,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fuse.js@npm:7.1.0":
-  version: 7.1.0
-  resolution: "fuse.js@npm:7.1.0"
-  checksum: 10/9f9105e54372897a46cb3e04074f0db5bd0a428320d4618276a57e6142d7502235a556f05cf87aa3c5d6d9c6fdfa06b901b78379c48aa0951672ccbc4a1bfe70
-  languageName: node
-  linkType: hard
-
-"fuse.js@npm:^7.0.0":
+"fuse.js@npm:7.1.0, fuse.js@npm:^7.0.0":
   version: 7.1.0
   resolution: "fuse.js@npm:7.1.0"
   checksum: 10/9f9105e54372897a46cb3e04074f0db5bd0a428320d4618276a57e6142d7502235a556f05cf87aa3c5d6d9c6fdfa06b901b78379c48aa0951672ccbc4a1bfe70
@@ -12106,18 +12099,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:8.9.0":
-  version: 8.9.0
-  resolution: "happy-dom@npm:8.9.0"
+"happy-dom@npm:17.1.1":
+  version: 17.1.1
+  resolution: "happy-dom@npm:17.1.1"
   dependencies:
-    css.escape: "npm:^1.5.1"
-    he: "npm:^1.2.0"
-    iconv-lite: "npm:^0.6.3"
-    node-fetch: "npm:^2.x.x"
     webidl-conversions: "npm:^7.0.0"
-    whatwg-encoding: "npm:^2.0.0"
     whatwg-mimetype: "npm:^3.0.0"
-  checksum: 10/66c65964ba3b2d02aa6ec9f81eb70dafd47b5b3bc5f1567fb7e2e54847cbed43baf2a79b6697d8327ff3cc9d7e60cf57d8dabfd22220a6be6e200fe746faafdf
+  checksum: 10/ec51ec5a7296dff645abf509cbb6c38fb519a3aaaea8c0ff631eca8e8a53fba51634ef6c2c094c89e7ef7bc84d35e40095f156faa86ef50250a31e8d45032e31
   languageName: node
   linkType: hard
 
@@ -12480,7 +12468,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iconv-lite@npm:0.6.3, iconv-lite@npm:^0.6.2, iconv-lite@npm:^0.6.3":
+"iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
   dependencies:
@@ -15307,7 +15295,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7, node-fetch@npm:^2.x.x":
+"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -21655,15 +21643,6 @@ __metadata:
   version: 0.6.2
   resolution: "webpack-virtual-modules@npm:0.6.2"
   checksum: 10/d9a0d035f7ec0c7f1055aaf88bfe48b7f96458043916a1b2926d9012fd61de3810a6b768e31a8cd4b3c84a9b6d55824361a9dd20aaf9f5ccfb6f017af216a178
-  languageName: node
-  linkType: hard
-
-"whatwg-encoding@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "whatwg-encoding@npm:2.0.0"
-  dependencies:
-    iconv-lite: "npm:0.6.3"
-  checksum: 10/162d712d88fd134a4fe587e53302da812eb4215a1baa4c394dfd86eff31d0a079ff932c05233857997de07481093358d6e7587997358f49b8a580a777be22089
   languageName: node
   linkType: hard
 
