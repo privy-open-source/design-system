@@ -73,7 +73,7 @@
     "minimist": "1.2.8",
     "ofetch": "1.4.1",
     "ohash": "1.1.4",
-    "ora": "8.1.1",
+    "ora": "8.2.0",
     "p-all": "5.0.0",
     "sharp": "0.33.5",
     "svg-path-commander": "2.1.10",
