@@ -534,42 +534,6 @@
     ]
   },
   {
-    "name": "organization-document",
-    "aliases": [
-      "file-rack"
-    ],
-    "category": "not-found",
-    "folder": "organization-document",
-    "variant": "illustrations-five-variants",
-    "files": [
-      {
-        "name": "organization-document/spot-hero-large",
-        "path": "organization-document/spot-hero-large.svg",
-        "hash": "8f5054ffdb4385e710a5ec74b4e657c8742f0a84978e2374e136576c9040dfe1"
-      },
-      {
-        "name": "organization-document/spot",
-        "path": "organization-document/spot.svg",
-        "hash": "470ea319a868b1b8043fefbede3679fe0a5be67b3951b148f9d57600d091750a"
-      },
-      {
-        "name": "organization-document/spot-hero-small",
-        "path": "organization-document/spot-hero-small.svg",
-        "hash": "a595ea1e103a8de07ce34485932a99d692049bc85c3ee4b5033a95f9cc06c3eb"
-      },
-      {
-        "name": "organization-document/dot-small",
-        "path": "organization-document/dot-small.svg",
-        "hash": "d5244fd13034dd45fca1a8d477b89454dcc3c8e8ac9ba97422f79622cd45b2ad"
-      },
-      {
-        "name": "organization-document/dot-large",
-        "path": "organization-document/dot-large.svg",
-        "hash": "677f2d73424145e3275f36f660c083c701d228c39351fd6737d73254fa5c8970"
-      }
-    ]
-  },
-  {
     "name": "document-template",
     "aliases": [],
     "category": "not-found",
@@ -1871,6 +1835,78 @@
         "name": "document-processing/dot-small",
         "path": "document-processing/dot-small.svg",
         "hash": "f3b473cfe2d330c30016d39923603a4cf827711ad609362df5c753a7072215a0"
+      }
+    ]
+  },
+  {
+    "name": "organization-document",
+    "aliases": [
+      "file-rack"
+    ],
+    "category": "not-found",
+    "folder": "organization-document",
+    "variant": "illustrations-five-variants",
+    "files": [
+      {
+        "name": "organization-document/spot-hero-large",
+        "path": "organization-document/spot-hero-large.svg",
+        "hash": "8f5054ffdb4385e710a5ec74b4e657c8742f0a84978e2374e136576c9040dfe1"
+      },
+      {
+        "name": "organization-document/spot",
+        "path": "organization-document/spot.svg",
+        "hash": "470ea319a868b1b8043fefbede3679fe0a5be67b3951b148f9d57600d091750a"
+      },
+      {
+        "name": "organization-document/spot-hero-small",
+        "path": "organization-document/spot-hero-small.svg",
+        "hash": "a595ea1e103a8de07ce34485932a99d692049bc85c3ee4b5033a95f9cc06c3eb"
+      },
+      {
+        "name": "organization-document/dot-small",
+        "path": "organization-document/dot-small.svg",
+        "hash": "c05eac8f83b2391a01892c311242e9f9e74941aa15945f4035f23a9c34854c6b"
+      },
+      {
+        "name": "organization-document/dot-large",
+        "path": "organization-document/dot-large.svg",
+        "hash": "ce3d7ee8a87cff0bf36bbda05edf0219c3c787c2a3191d7d20ffd897386c0392"
+      }
+    ]
+  },
+  {
+    "name": "illustration",
+    "aliases": [
+      "painting"
+    ],
+    "category": "default",
+    "folder": "illustration",
+    "variant": "illustrations-five-variants",
+    "files": [
+      {
+        "name": "illustration/dot-small",
+        "path": "illustration/dot-small.svg",
+        "hash": "4f7f18975be1f4d1c8a9bc58e9703ceaf46e66b288fcfa32c879465f94feb6f6"
+      },
+      {
+        "name": "illustration/dot-large",
+        "path": "illustration/dot-large.svg",
+        "hash": "1a26870ad302edab3be8fdea5a1802164759ac3cfc08f90d63683f86eeb0930e"
+      },
+      {
+        "name": "illustration/spot-hero-small",
+        "path": "illustration/spot-hero-small.svg",
+        "hash": "bce231d18b519ec03e6c6a2f40eb68e042f0f75659a61af359484fcb03ee323a"
+      },
+      {
+        "name": "illustration/spot",
+        "path": "illustration/spot.svg",
+        "hash": "9de9e2d307fd5e15ade7258c6ceda9220bc5e85a0431f555d1bf4ecc5883111b"
+      },
+      {
+        "name": "illustration/spot-hero-large",
+        "path": "illustration/spot-hero-large.svg",
+        "hash": "8014a7b834fba2fc25b4dbc9da0b9f8c979be0daa90b8f81b3635d96ab2f2ea0"
       }
     ]
   }

@@ -1,0 +1,35 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="80"
+    height="80"
+    fill="none"
+    class="persona-ilustration"
+    viewBox="0 0 80 80"><g clip-path="url(#mm0RWbSyi3_a)"><path
+      fill="#82C2F1"
+      d="M19.691 77.333a.8.8 0 0 1-.776-.994L37.182 3.272a.8.8 0 0 1 .776-.605h3.684a.8.8 0 0 1 .776.994L24.152 76.727a.8.8 0 0 1-.777.606z" /><path
+        fill="#82C2F1"
+        d="M60.309 77.333a.8.8 0 0 0 .776-.994L42.818 3.272a.8.8 0 0 0-.776-.605h-3.684a.8.8 0 0 0-.776.994l18.267 73.066a.8.8 0 0 0 .776.606z" /><g clip-path="url(#mm0RWbSyi3_b)"><rect
+          width="66.667"
+          height="66.667"
+          x="6.667"
+          y="6.667"
+          fill="#D3EDFF"
+          rx="33.333" /><path
+            fill="#AADBFF"
+            d="M18.671 39.19 6.667 51.197v25.09h72.66v-25.09L60.66 32.526a4 4 0 0 0-5.657 0l-15.84 15.841a4 4 0 0 1-5.657 0l-9.177-9.176a4 4 0 0 0-5.657 0" /><circle
+              cx="30.835"
+              cy="25.785"
+              r="4.718"
+              fill="#fff" /></g><path
+                fill="#82C2F1"
+                d="M13.333 69.067a.8.8 0 0 1 .8-.8h51.734a.8.8 0 0 1 .8.8V72.8a.8.8 0 0 1-.8.8H14.133a.8.8 0 0 1-.8-.8z" /></g><defs><clipPath id="mm0RWbSyi3_a"><path
+                  fill="#fff"
+                  d="M0 0h80v80H0z" /></clipPath><clipPath id="mm0RWbSyi3_b"><rect
+                    width="66.667"
+                    height="66.667"
+                    x="6.667"
+                    y="6.667"
+                    fill="#fff"
+                    rx="33.333" /></clipPath></defs></svg>
+</template>

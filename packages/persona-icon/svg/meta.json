@@ -58,6 +58,64 @@
     ]
   },
   {
+    "name": "jpeg",
+    "aliases": [],
+    "category": "files",
+    "folder": "jpeg",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "jpeg/16",
+        "path": "jpeg/16.svg",
+        "hash": "63e3a4d7a93959951ec7d80b016171174f9057101520f71c4d9d727d929643fc"
+      },
+      {
+        "name": "jpeg/20",
+        "path": "jpeg/20.svg",
+        "hash": "6e0015ec3b1584e86d470a9217eeafb87418e1b4de0fb8d4d01170d0a4ce14c6"
+      },
+      {
+        "name": "jpeg/24",
+        "path": "jpeg/24.svg",
+        "hash": "b746ab9aa7ed140c5b721ef8a3fef1ecc0c69dcc7ee74cc9ccbaccc3ff88f3aa"
+      },
+      {
+        "name": "jpeg/32",
+        "path": "jpeg/32.svg",
+        "hash": "353c612455e0b93a53cf191c5e6c76f97e048702096baf57c953b5e93bf28825"
+      }
+    ]
+  },
+  {
+    "name": "png",
+    "aliases": [],
+    "category": "files",
+    "folder": "png",
+    "variant": "outline",
+    "files": [
+      {
+        "name": "png/16",
+        "path": "png/16.svg",
+        "hash": "00b0323315826a9bb96589b5f6df892f2ce728be7b017b5b42a8e66fa4328996"
+      },
+      {
+        "name": "png/20",
+        "path": "png/20.svg",
+        "hash": "0548b597ebe80c77ae9ed662578407157629205109756deb8a1f6604e28e3069"
+      },
+      {
+        "name": "png/24",
+        "path": "png/24.svg",
+        "hash": "0e53bd8fcfae4c7ec31b8a770493bfa5f5c99f992be256017247149bd3959d3a"
+      },
+      {
+        "name": "png/32",
+        "path": "png/32.svg",
+        "hash": "716aae7875066df288ed48050bde2e58f88c694cc80bc1554db3e203f1e8d3f2"
+      }
+    ]
+  },
+  {
     "name": "package-box",
     "aliases": [],
     "category": "other",
@@ -13284,35 +13342,6 @@
     ]
   },
   {
-    "name": "stamp",
-    "aliases": [],
-    "category": "other",
-    "folder": "stamp-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "stamp-solid/16",
-        "path": "stamp-solid/16.svg",
-        "hash": "3bcc8c14f2d5a85151d775180599d2ca8376b595c7a4253995722cdb8d28ae0b"
-      },
-      {
-        "name": "stamp-solid/24",
-        "path": "stamp-solid/24.svg",
-        "hash": "0b7af8e5dcd416e970a9edc5be6939cbf69f4154c87b14a1d54b56f3ddb1fb71"
-      },
-      {
-        "name": "stamp-solid/20",
-        "path": "stamp-solid/20.svg",
-        "hash": "fe1aadaa6f8f71a6c6feec615bb4592056cbc156ec14b960180e5bbcf68e5f1e"
-      },
-      {
-        "name": "stamp-solid/32",
-        "path": "stamp-solid/32.svg",
-        "hash": "92ac944268b7623b11ff4a4db87cc8db264c193985d590f3d4091a0517ac272d"
-      }
-    ]
-  },
-  {
     "name": "user-groups",
     "aliases": [],
     "category": "user",
@@ -17589,6 +17618,35 @@
         "name": "format-painter/16",
         "path": "format-painter/16.svg",
         "hash": "fd6e24335a8e0a11c19e1c1b895fd9e31892a603c643f1bc16b000c63d284a9a"
+      }
+    ]
+  },
+  {
+    "name": "stamp",
+    "aliases": [],
+    "category": "other",
+    "folder": "stamp-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "stamp-solid/24",
+        "path": "stamp-solid/24.svg",
+        "hash": "0b7af8e5dcd416e970a9edc5be6939cbf69f4154c87b14a1d54b56f3ddb1fb71"
+      },
+      {
+        "name": "stamp-solid/32",
+        "path": "stamp-solid/32.svg",
+        "hash": "92ac944268b7623b11ff4a4db87cc8db264c193985d590f3d4091a0517ac272d"
+      },
+      {
+        "name": "stamp-solid/16",
+        "path": "stamp-solid/16.svg",
+        "hash": "8553366bdac05b26fd50b20f3f1426535e808173c8ed99c29bb728889833668b"
+      },
+      {
+        "name": "stamp-solid/20",
+        "path": "stamp-solid/20.svg",
+        "hash": "fe1aadaa6f8f71a6c6feec615bb4592056cbc156ec14b960180e5bbcf68e5f1e"
       }
     ]
   }
