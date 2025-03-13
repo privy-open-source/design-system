@@ -19,7 +19,7 @@
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
-    "@vue/eslint-config-typescript": "13.0.0",
+    "@vue/eslint-config-typescript": "14.5.0",
     "eslint": "9.6.0",
     "eslint-config-standard-with-typescript": "43.0.1",
     "eslint-formatter-pretty": "6.0.1",
