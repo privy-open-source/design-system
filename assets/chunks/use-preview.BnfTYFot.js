@@ -1,0 +1,1 @@
+import{c as s}from"./create-image.CkAV8b2h.js";import{p as a,s as c,k as f}from"./framework.CI6Dj8yt.js";function p(r,n=s(512,512)){const t=a(n);return c(i=>{const e=f(r);if(typeof window<"u"&&e instanceof globalThis.File){const o=window.URL.createObjectURL(e);i(()=>{window.URL.revokeObjectURL(o)}),t.value=o}else t.value=typeof e=="string"&&e?e:n}),t}export{p as u};
