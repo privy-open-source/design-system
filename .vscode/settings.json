@@ -25,5 +25,6 @@
     "ry"
   ],
   "javascript.preferences.importModuleSpecifier": "shortest",
-  "js/ts.implicitProjectConfig.module": "NodeNext"
+  "js/ts.implicitProjectConfig.module": "NodeNext",
+  "codeQL.githubDatabase.download": "never"
 }

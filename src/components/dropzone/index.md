@@ -467,13 +467,14 @@ If you want reset the value when canceling, use `clearOnCancel` prop to reset th
 
 ### Props
 
-| Props          |        Type         | Default | Description                                                                    |
-|----------------|:-------------------:|:-------:|--------------------------------------------------------------------------------|
-| `multiple`     | `Boolean`, `String` | `false` | Enable multiple mode, set to `append` to [appening values](#appending-values)  |
-| `maxlength`    |      `Number`       |   `-`   | Maxlength selected files, only work on multiple mode                           |
-| `accept`       |      `String`       |   `-`   | Limitting file type can be selected, see [HTML attribute: accept][attr-accept] |
-| `clearOnCanel` |      `Boolean`      | `false` | Clear v-model when user cancel the browse file                                 |
-| `modelValue`   |       `File`        |   `-`   | v-model value                                                                  |
+| Props             |              Type               | Default | Description                                                                    |
+|-------------------|:-------------------------------:|:-------:|--------------------------------------------------------------------------------|
+| `multiple`        |       `Boolean`, `String`       | `false` | Enable multiple mode, set to `append` to [appening values](#appending-values)  |
+| `maxlength`       |            `Number`             |   `-`   | Maxlength selected files, only work on multiple mode                           |
+| `accept`          |            `String`             |   `-`   | Limitting file type can be selected, see [HTML attribute: accept][attr-accept] |
+| `clearOnCanel`    |            `Boolean`            | `false` | Clear v-model when user cancel the browse file                                 |
+| `modelValue`      |             `File`              |   `-`   | v-model value                                                                  |
+| `container-class` | `String` or `Array` or `Object` |   `-`   | CSS class to add in the dropzone container                                     |
 
 ### Slots
 

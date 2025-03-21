@@ -7,7 +7,7 @@ description: Base file-input form.
   import pInputFile from "./InputFile.vue"
   import { ref } from "vue-demi"
 
-  const result = ref()
+  const result    = ref()
   const resultB64 = ref()
 </script>
 
@@ -178,9 +178,9 @@ If you need [base64-dataURI][data-uri] format, you can add modifier `base64` to 
 
 ### Slots
 
-| Name      | Description                   |
-|-----------|-------------------------------|
-| `default` | Content to place for dropzone |
+| Name     | Description                                        |
+|----------|----------------------------------------------------|
+| `append` | Content to place icon inside of append input field |
 
 ### Events
 

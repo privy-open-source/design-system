@@ -1,7 +1,7 @@
 <template>
   <label
     class="dropzone"
-    :class="classNames"
+    :class="[classNames, containerClass]"
     data-testid="dropzone"
     @drop.prevent="onDrop"
     @dragover.prevent
@@ -43,7 +43,10 @@ import {
 import { useVModel } from '../input'
 import { toBase64 } from '../utils/base64'
 import { useToNumber } from '@vueuse/shared'
+import { watchIgnorable } from '@vueuse/core'
 import type { ModelModifier, MultipleType } from '.'
+
+defineOptions({ inheritAttrs: false })
 
 const props = defineProps({
   modelValue: {
@@ -82,6 +85,14 @@ const props = defineProps({
     type   : Boolean,
     default: false,
   },
+  containerClass: {
+    type: [
+      String,
+      Array,
+      Object,
+    ],
+    default: undefined,
+  },
 })
 
 const emit = defineEmits<{
@@ -115,6 +126,17 @@ const classNames = computed(() => {
 
   return result
 })
+
+const { ignoreUpdates } = watchIgnorable(() => props.modelValue, (value) => {
+  if (value) {
+    if (Array.isArray(value))
+      rawModel.value = value.filter((item) => item instanceof globalThis.File)
+    else {
+      if (value instanceof globalThis.File)
+        rawModel.value = value
+    }
+  }
+}, { immediate: true })
 
 function browse () {
   input.value.value = ''
@@ -181,7 +203,10 @@ async function handleFiles (fileList: globalThis.FileList) {
     if (props.modelModifiers.base64)
       value = await filesToBase64(file)
 
-    model.value = value
+    ignoreUpdates(() => {
+      model.value = value
+    })
+
     emit('change', value)
   } else {
     if (props.clearOnCancel)

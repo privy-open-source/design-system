@@ -5,12 +5,15 @@ description: QRCode Image Generator
 
 <script setup>
   import pQrcode from './Qrcode.vue'
+  import pInput from '../input/Input.vue'
   import { withBase } from 'vitepress'
   import { ref } from 'vue-demi'
 
   const Logo      = withBase('/assets/images/logo.svg')
   const result    = ref()
   const resultB64 = ref()
+
+  const text = ref('https://persona.privyid.dev')
 </script>
 
 # QR Code
@@ -29,6 +32,28 @@ description: QRCode Image Generator
 <template>
   <p-qrcode data="https://persona.privyid.dev" />
 </template>
+```
+
+### Simple QR Generator
+
+<preview>
+  <div class="flex flex-col">
+    <p-input v-model="text" />
+    <p-qrcode :data="text" />
+  </div>
+</preview>
+
+```vue
+<template>
+  <div class="flex flex-col">
+    <p-input v-model="text" />
+    <p-qrcode :data="text" />
+  </div>
+</template>
+
+<script lang="ts" setup>
+const text = ref('https://persona.privyid.dev')
+</script>
 ```
 
 ## Sizing
