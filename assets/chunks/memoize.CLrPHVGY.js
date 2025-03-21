@@ -1,0 +1,1 @@
+import{a as h}from"./MapCache.DmvEIV89.js";var p="Expected a function";function o(r,a){if(typeof r!="function"||a!=null&&typeof a!="function")throw new TypeError(p);var e=function(){var c=arguments,n=a?a.apply(this,c):c[0],t=e.cache;if(t.has(n))return t.get(n);var i=r.apply(this,c);return e.cache=t.set(n,i)||t,i};return e.cache=new(o.Cache||h),e}o.Cache=h;export{o as m};
