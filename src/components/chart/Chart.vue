@@ -19,7 +19,7 @@ import type {
   ChartType,
   ChartOptions,
 } from 'chart.js/auto'
-import { watchPausable } from '@vueuse/core'
+import { watchIgnorable } from '@vueuse/core'
 import type { PropType, VNode } from 'vue-demi'
 import {
   onMounted,
@@ -119,20 +119,18 @@ async function initChart () {
   )
 }
 
-const dataWatcher = watchPausable(data, (newData) => {
+const { ignoreUpdates } = watchIgnorable(data, (newData) => {
   if (instance.value) {
     instance.value.data = newData
     instance.value.update()
   }
 })
 
-watch([variant, legend], async () => {
-  dataWatcher.pause()
-
-  await initChart()
-  await nextTick()
-
-  dataWatcher.resume()
+watch([variant, legend], () => {
+  ignoreUpdates(async () => {
+    await initChart()
+    await nextTick()
+  })
 }, { flush: 'pre' })
 
 onMounted(() => {

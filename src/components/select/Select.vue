@@ -175,22 +175,22 @@ import type {
 import {
   computed,
   ref,
-  nextTick,
   watch,
 } from 'vue-demi'
 import type { SelectItem } from '.'
 import {
   findSelected,
   filterSelected,
+  mergeUniq,
 } from '.'
 import type { Adapter, AdapterContext } from './adapter/adapter'
 import BasicAdapter from './adapter/basic-adapter'
 import useLoading from '../overlay/utils/use-loading'
 import { isEqual } from '../utils/value'
-import { onStartTyping, watchPausable } from '@vueuse/core'
+import { onStartTyping, watchIgnorable } from '@vueuse/core'
 import type { SizeVariant } from '../button'
 import type { MenuSizeVariant } from '../dropdown/'
-import { isNil, uniqBy } from 'lodash-es'
+import { isNil } from 'lodash-es'
 
 defineOptions({
   models: {
@@ -369,7 +369,7 @@ const hasValue = computed(() => {
     : !isNil((localModel.value as SelectItem)?.value)
 })
 
-const modelWatcher = watchPausable(() => props.modelValue, (value) => {
+const { ignoreUpdates } = watchIgnorable(() => props.modelValue, (value) => {
   localModel.value = props.multiple
     ? filterSelected(items.value, value as unknown[])
     : findSelected(items.value, value)
@@ -377,51 +377,51 @@ const modelWatcher = watchPausable(() => props.modelValue, (value) => {
 
 watch(items, (options) => {
   if (props.modelValue && options.length > 0) {
-    const value = props.multiple
-      ? filterSelected(options, props.modelValue as unknown[])
-      : findSelected(options, props.modelValue)
+    if (props.multiple) {
+      const selected = filterSelected(options, props.modelValue)
 
-    localModel.value = props.multiple
-      ? uniqBy([...localModel.value as SelectItem[], ...value as SelectItem[]], 'value')
-      : ((value as SelectItem).value === undefined ? localModel.value as SelectItem : value as SelectItem)
+      if (selected.length > 0)
+        localModel.value = mergeUniq(localModel.value as SelectItem[], selected)
+    } else {
+      const selected = findSelected(options, props.modelValue)
+
+      if (!isNil(selected.value))
+        localModel.value = selected
+    }
   }
 })
 
 function setValue (item?: SelectItem) {
-  // define default item value
-  let value: SelectItem | SelectItem[] = props.multiple
-    ? []
-    : { text: '', value: undefined }
+  let value = props.multiple
+    ? [] as SelectItem[]
+    : { text: '', value: undefined } as SelectItem
 
-  if (props.multiple && item && Array.isArray(localModel.value)) {
-    value = localModel.value.some((val) => isEqual(val.value, item.value))
-      ? localModel.value.filter((val) => !isEqual(val.value, item.value))
-      : [...localModel.value, item]
+  if (item) {
+    if (props.multiple && Array.isArray(localModel.value)) {
+      value = localModel.value.some((val) => isEqual(val.value, item.value))
+        ? localModel.value.filter((val) => !isEqual(val.value, item.value))
+        : [...localModel.value, item]
+    } else
+      value = item
   }
-  if (!props.multiple && item)
-    value = item
 
-  modelWatcher.pause()
+  ignoreUpdates(() => {
+    localModel.value = value
 
-  localModel.value = value
-
-  emit('change', value)
-  emit('update:selected', value)
-  emit('update:modelValue',
-    props.multiple
-      ? (value as SelectItem[]).map((i) => i.value)
-      : (value as SelectItem)?.value,
-  )
+    emit('change', value)
+    emit('update:selected', value)
+    emit('update:modelValue',
+      props.multiple
+        ? (value as SelectItem[]).map((i) => i.value)
+        : (value as SelectItem)?.value,
+    )
+  })
 
   if (isOpen.value)
     emit('userInput', value)
 
   if (!props.noCloseAfterSelect)
     isOpen.value = false
-
-  nextTick(() => {
-    modelWatcher.resume()
-  })
 }
 
 function onFocus () {
@@ -484,6 +484,7 @@ defineSlots<{
     isSelected: boolean,
   }): VNode[],
   'loading'(): VNode[],
+  'caret'(): VNode[],
 }>()
 </script>
 

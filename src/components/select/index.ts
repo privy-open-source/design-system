@@ -27,3 +27,16 @@ export function filterSelected (items: SelectItem[], value: unknown[]): SelectIt
     ? items.filter((item) => valueIn(value, item.value))
     : []
 }
+
+export function mergeUniq (...arrays: SelectItem[][]): SelectItem[] {
+  const result: SelectItem[] = []
+
+  for (const items of arrays) {
+    for (const item of items) {
+      if (!result.some((last) => isEqual(item, last)))
+        result.push(item)
+    }
+  }
+
+  return result
+}
