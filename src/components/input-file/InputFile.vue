@@ -3,6 +3,7 @@
     ref="dropzone"
     v-model="model"
     class="input-file"
+    data-testid="input-file"
     :class="classNames"
     :model-modifiers="modelModifiers"
     :multiple="multiple"
@@ -29,14 +30,21 @@
           :clearable="clearable"
           :model-value="getFileNames(rawModel)"
           :placeholder="placeholder"
-          @clear.stop.prevent="clear" />
+          @clear.stop.prevent="clear">
+          <template
+            v-if="$slots.append"
+            #append>
+            <slot
+              name="append" />
+          </template>
+        </p-input>
       </p-input-group>
     </template>
   </p-dropzone>
 </template>
 
 <script lang="ts" setup>
-import type { PropType } from 'vue-demi'
+import type { PropType, VNode } from 'vue-demi'
 import { computed, ref } from 'vue-demi'
 import { useVModel } from '../input'
 import pDropzone from '../dropzone/Dropzone.vue'
@@ -150,6 +158,10 @@ defineExpose({
   dropzone,
   clear,
 })
+
+defineSlots<{
+  'append'(): VNode[],
+}>()
 </script>
 
 <style lang="postcss">
