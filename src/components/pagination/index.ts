@@ -1,6 +1,8 @@
 import { computed, toRef } from 'vue-demi'
 import {
-  getPageItems, getPageRange, PAGE_PADDING,
+  getPageItems,
+  getPageRange,
+  PAGE_PADDING,
 } from './utils/calculate-page'
 
 interface PaginationProps {
@@ -40,8 +42,8 @@ export function usePagination (props: PaginationProps) {
     return getPageItems(page.value, totalPageCount.value, displayLimit.value)
   })
 
-  const canNext = computed(() => page.value !== totalPageCount.value)
-  const canPrev = computed(() => page.value !== 1)
+  const canNext = computed(() => page.value < totalPageCount.value)
+  const canPrev = computed(() => page.value > 1)
 
   return {
     pageItems,
