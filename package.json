@@ -112,7 +112,7 @@
     "@vueuse/math": "11.1.0",
     "@zxing/browser": "0.1.5",
     "@zxing/library": "0.21.3",
-    "chart.js": "4.4.7",
+    "chart.js": "4.4.8",
     "date-fns": "4.1.0",
     "defu": "6.1.4",
     "fast-equals": "^5.0.0",
