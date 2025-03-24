@@ -34,7 +34,7 @@
     "@privyid/ghoulscript": "0.1.0-alpha.4",
     "@privyid/tailwind-preset": "workspace:^",
     "@rollup/plugin-inject": "5.0.5",
-    "@rushstack/eslint-patch": "1.10.5",
+    "@rushstack/eslint-patch": "1.11.0",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/vue": "8.1.0",
     "@types/html-escaper": "3.0.4",
@@ -112,7 +112,7 @@
     "@vueuse/math": "11.1.0",
     "@zxing/browser": "0.1.5",
     "@zxing/library": "0.21.3",
-    "chart.js": "4.4.7",
+    "chart.js": "4.4.8",
     "date-fns": "4.1.0",
     "defu": "6.1.4",
     "fast-equals": "^5.0.0",
@@ -149,6 +149,6 @@
     "packages/*"
   ],
   "resolutions": {
-    "whatwg-url": "14.1.1"
+    "whatwg-url": "14.2.0"
   }
 }

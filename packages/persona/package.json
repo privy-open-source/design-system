@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "1.6.13",
-    "@jill64/universal-sanitizer": "1.4.1",
+    "@jill64/universal-sanitizer": "1.4.2",
     "@juggle/resize-observer": "3.4.0",
     "@nuxt/kit": "3.15.4",
     "@splidejs/splide": "4.1.4",
@@ -84,7 +84,7 @@
     "@vueuse/math": "11.1.0",
     "@zxing/browser": "0.1.5",
     "@zxing/library": "0.21.3",
-    "chart.js": "4.4.7",
+    "chart.js": "4.4.8",
     "core-js": "3",
     "date-fns": "4.1.0",
     "defu": "6.1.4",
