@@ -4,6 +4,7 @@
     v-model="model"
     class="input-file"
     data-testid="input-file"
+    container-class="input-file__container"
     :class="classNames"
     :model-modifiers="modelModifiers"
     :multiple="multiple"
@@ -165,7 +166,7 @@ defineSlots<{
 </script>
 
 <style lang="postcss">
-.input-file {
+.input-file__container {
   > .input-group > .input-group__addon {
     @apply py-1 pl-1 pr-2;
 
