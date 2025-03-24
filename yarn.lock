@@ -3807,7 +3807,7 @@ __metadata:
     jiti: "npm:2.4.2"
     minimist: "npm:1.2.8"
     ofetch: "npm:1.4.1"
-    ohash: "npm:1.1.6"
+    ohash: "npm:2.0.11"
     ora: "npm:8.2.0"
     p-all: "npm:5.0.0"
     svg-path-commander: "npm:2.1.10"
@@ -3830,7 +3830,7 @@ __metadata:
     jiti: "npm:2.4.2"
     minimist: "npm:1.2.8"
     ofetch: "npm:1.4.1"
-    ohash: "npm:1.1.6"
+    ohash: "npm:2.0.11"
     ora: "npm:8.2.0"
     p-all: "npm:5.0.0"
     sharp: "npm:0.33.5"
@@ -15853,10 +15853,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ohash@npm:1.1.6":
-  version: 1.1.6
-  resolution: "ohash@npm:1.1.6"
-  checksum: 10/068a7087f99cb43a60d5b1933bade732fecd5446337447735edfe1e6e5de78c91949eb1d79a0372a2b48b608f2b50ea7b56347b3fcd45526bffd5c4a9d5e2221
+"ohash@npm:2.0.11, ohash@npm:^2.0.5":
+  version: 2.0.11
+  resolution: "ohash@npm:2.0.11"
+  checksum: 10/6b0423f42cc95c3d643f390a88364aac824178b7788dccb4e8c64e2124463d0069e60d4d90bad88ed9823808368d051e088aa27058ca4722b1397a201ffbfa4b
   languageName: node
   linkType: hard
 
@@ -15871,13 +15871,6 @@ __metadata:
   version: 1.1.4
   resolution: "ohash@npm:1.1.4"
   checksum: 10/b11445234e59c9c2b00f357f8f00b6ba00e14c84fc0a232cdc14eb1d80066479b09d27af0201631e84b7a15ba7c4a1939f4cc47f2030e9bf83c9e8afc3ff7dfd
-  languageName: node
-  linkType: hard
-
-"ohash@npm:^2.0.5":
-  version: 2.0.11
-  resolution: "ohash@npm:2.0.11"
-  checksum: 10/6b0423f42cc95c3d643f390a88364aac824178b7788dccb4e8c64e2124463d0069e60d4d90bad88ed9823808368d051e088aa27058ca4722b1397a201ffbfa4b
   languageName: node
   linkType: hard
 
