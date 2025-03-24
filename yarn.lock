@@ -3654,7 +3654,7 @@ __metadata:
     "@privyid/persona-ilustration": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@rollup/plugin-inject": "npm:5.0.5"
-    "@rushstack/eslint-patch": "npm:1.10.5"
+    "@rushstack/eslint-patch": "npm:1.11.0"
     "@splidejs/splide": "npm:^4.1.4"
     "@testing-library/jest-dom": "npm:6.6.3"
     "@testing-library/user-event": "npm:^14.4.3"
@@ -4684,10 +4684,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:1.10.5":
-  version: 1.10.5
-  resolution: "@rushstack/eslint-patch@npm:1.10.5"
-  checksum: 10/769d130dfb088c21e7ce72b552ea58c0d6d790cfe9fcadc4cd66e1282a0213a2c6b570d679723e0d3792a6b6ebfcbdeb5e785261d196017840853b8a5c57dfea
+"@rushstack/eslint-patch@npm:1.11.0":
+  version: 1.11.0
+  resolution: "@rushstack/eslint-patch@npm:1.11.0"
+  checksum: 10/9bb3eb4a48a9a55e31d302b8b99f405e0f3e436fc3cda8c869fdd3fefd3ac398f5a353cceaa6c8cc5e5baf03ccd88d7965fbd25eb111f1f334415f95fa0f996d
   languageName: node
   linkType: hard
 
