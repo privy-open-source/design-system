@@ -321,6 +321,8 @@ interface PdfViewerSlotScope {
   zoomOut: () => void,
   next: () => void,
   prev: () => void,
+  first: () => void,
+  last: () => void,
 }
 
 defineSlots<{
@@ -358,6 +360,10 @@ defineSlots<{
       &.hover {
         @apply ring-info ring;
         @apply dark:ring-dark-info;
+      }
+
+      .annotationWidget {
+        @apply absolute;
       }
     }
   }

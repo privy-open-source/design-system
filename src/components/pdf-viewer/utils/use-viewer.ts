@@ -6,20 +6,23 @@ import {
   shallowRef,
   watch,
 } from 'vue-demi'
-import type {
-  PDFJS,
-  PDFJSViewer,
-} from './pdfjs'
-import useLoading from '../../overlay/utils/use-loading'
-import { useClamp, useMax } from '@vueuse/math'
-import { createEventHook } from '@vueuse/core'
 import {
   createEventBus,
   createLinkService,
   createViewer,
   getCMAPUri,
   getDocument,
+  normalizeRect,
 } from './pdfjs'
+import type {
+  PDFJS,
+  PDFJSAnnotation,
+  PDFJSRawDimension,
+  PDFJSViewer,
+} from './pdfjs'
+import useLoading from '../../overlay/utils/use-loading'
+import { useClamp, useMax } from '@vueuse/math'
+import { createEventHook } from '@vueuse/core'
 
 export interface OpenDocConfig {
   disableStream?: boolean,
@@ -121,6 +124,47 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
 
       bus.on('scalechanging', (event: { scale: number }) => {
         scale.value = event.scale
+      })
+
+      bus.on('annotationlayerrendered', async (event: { source: PDFJSViewer.PDFPageView, error?: Error }) => {
+        if (!event.error) {
+          const source      = event.source
+          const page        = source.pdfPage as PDFJS.PDFPageProxy
+          const annotations = await page.getAnnotations() as PDFJSAnnotation[]
+
+          for (const data of annotations) {
+            if (data.noHTML && !source.annotationLayer.annotationStorage.has(data.id)) {
+              const {
+                pageWidth,
+                pageHeight,
+                pageX,
+                pageY,
+              } = source.viewport.rawDims as PDFJSRawDimension
+
+              const width  = (data.rotation % 180 === 0) ? data.rect[2] - data.rect[0] : data.rect[3] - data.rect[1]
+              const height = (data.rotation % 180 === 0) ? data.rect[3] - data.rect[1] : data.rect[2] - data.rect[0]
+
+              const rect = normalizeRect([
+                data.rect[0],
+                page.view[3] - data.rect[1] + page.view[1],
+                data.rect[2],
+                page.view[3] - data.rect[3] + page.view[1],
+              ])
+
+              const div = document.createElement('div')
+
+              div.classList.add('annotationWidget', data.subtype, data.fieldType)
+
+              div.style.left   = `${(100 * (rect[0] - pageX)) / pageWidth}%`
+              div.style.top    = `${(100 * (rect[1] - pageY)) / pageHeight}%`
+              div.style.width  = `${(100 * width) / pageWidth}%`
+              div.style.height = `${(100 * height) / pageHeight}%`
+
+              source.annotationLayer.div.append(div)
+              source.annotationLayer.annotationStorage.setValue(data.id, { div })
+            }
+          }
+        }
       })
 
       pdfEventBus.value    = bus
