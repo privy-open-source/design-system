@@ -125,7 +125,7 @@ const pages = computed<SelectItem[]>(() => {
 <style lang="postcss">
 .pdf {
   &__navigation {
-    @apply absolute bottom-4 inset-x-0 justify-center items-center flex w-96 mx-auto z-10;
+    @apply absolute bottom-4 inset-x-0 justify-center items-center flex min-w-96 mx-auto z-10;
 
     &-container {
       @apply flex bg-inverse text-subtlest rounded p-2 space-x-1 items-center;

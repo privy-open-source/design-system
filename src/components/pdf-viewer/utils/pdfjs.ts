@@ -66,3 +66,78 @@ export async function createLinkService (...params: ConstructorParameters<typeof
 export type * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer.mjs'
 
 export type * as PDFJS from 'pdfjs-dist'
+
+export function normalizeRect (rect: number[]) {
+  const r = [...rect] // clone rect
+
+  if (rect[0] > rect[2]) {
+    r[0] = rect[2]
+    r[2] = rect[0]
+  }
+
+  if (rect[1] > rect[3]) {
+    r[1] = rect[3]
+    r[3] = rect[1]
+  }
+
+  return r
+}
+
+export interface PDFJSAnnotation {
+  id: string,
+  annotationFlags: number,
+  borderStyle?: {
+    width: number,
+    rawWidth: number,
+    style: number,
+    dashArray: number[],
+    horizontalCornerRadius: number,
+    verticalCornerRadius: number,
+  },
+  color?: Uint8ClampedArray,
+  backgroundColor?: Uint8ClampedArray,
+  borderColor?: Uint8ClampedArray,
+  rotation: 0 | 90 | 180 | 270,
+  contentsObj: {
+    str: string,
+    dir: 'ltr' | 'rtl',
+  },
+  hasAppearance: boolean,
+  modificationDate?: Date,
+  rect: [
+    number,
+    number,
+    number,
+    number,
+  ],
+  subtype: string,
+  hasOwnCanvas: boolean,
+  noRotate: boolean,
+  noHTML: boolean,
+  isEditable: boolean,
+  structParent: number,
+  annotationType: number,
+  fieldName: string,
+  actions?: string,
+  fieldValue?: string,
+  defaultFieldValue?: string,
+  alternativeText: string,
+  defaultAppearanceData?: {
+    fontSize: number,
+    fontName: string,
+    fontColor: Uint8ClampedArray,
+  },
+  fieldType: string,
+  fieldFlags: number,
+  password: boolean,
+  readOnly: boolean,
+  required: boolean,
+  hidden: boolean,
+}
+
+export interface PDFJSRawDimension {
+  pageWidth: number,
+  pageHeight: number,
+  pageX: number,
+  pageY: number,
+}

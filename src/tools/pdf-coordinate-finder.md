@@ -67,9 +67,17 @@ layout: false
   }
 </script>
 
+<style lang="postcss">
+  .pdf-viewer--debug .annotationWidget {
+    @apply pointer-events-auto border-2 border-dashed border-info-emphasis bg-info-emphasis/5;
+    @apply dark:border-dark-info-emphasis dark:bg-info-emphasis/5;
+  }
+</style>
+
 <div class="flex w-full h-full">
   <p-pdf-viewer
     layout="fit"
+    :class="{ 'pdf-viewer--debug': debug }"
     :src="src"
     v-model:scale="scale">
     <template #header>
