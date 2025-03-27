@@ -133,7 +133,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
           const annotations = await page.getAnnotations() as PDFJSAnnotation[]
 
           for (const data of annotations) {
-            if (data.noHTML && !source.annotationLayer.annotationStorage.has(data.id)) {
+            if (data.annotationType === 20 /* Widget */ && data.fieldType === 'Sig' && !source.annotationLayer.annotationStorage.has(data.id)) {
               const {
                 pageWidth,
                 pageHeight,
@@ -141,8 +141,8 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
                 pageY,
               } = source.viewport.rawDims as PDFJSRawDimension
 
-              const width  = (data.rotation % 180 === 0) ? data.rect[2] - data.rect[0] : data.rect[3] - data.rect[1]
-              const height = (data.rotation % 180 === 0) ? data.rect[3] - data.rect[1] : data.rect[2] - data.rect[0]
+              const width  = data.rect[2] - data.rect[0]
+              const height = data.rect[3] - data.rect[1]
 
               const rect = normalizeRect([
                 data.rect[0],
@@ -151,14 +151,26 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
                 page.view[3] - data.rect[3] + page.view[1],
               ])
 
-              const div = document.createElement('div')
+              const div = document.createElement('section')
 
-              div.classList.add('annotationWidget', data.subtype, data.fieldType)
+              div.dataset.annotationId = data.id
+              div.tabIndex             = 1000
+              div.className            = 'signatureWidgetAnnotation'
+              div.role                 = 'img'
+              div.id                   = `pdfjs_internal_id_${data.id}`
+              div.style.zIndex         = '0'
+              div.style.left           = `${(100 * (rect[0] - pageX)) / pageWidth}%`
+              div.style.top            = `${(100 * (rect[1] - pageY)) / pageHeight}%`
 
-              div.style.left   = `${(100 * (rect[0] - pageX)) / pageWidth}%`
-              div.style.top    = `${(100 * (rect[1] - pageY)) / pageHeight}%`
-              div.style.width  = `${(100 * width) / pageWidth}%`
-              div.style.height = `${(100 * height) / pageHeight}%`
+              if (data.rotation === 0) {
+                div.style.width  = `${(100 * width) / pageWidth}%`
+                div.style.height = `${(100 * height) / pageHeight}%`
+              } else {
+                div.style.width  = `${(100 * height) / pageWidth}%`
+                div.style.height = `${(100 * width) / pageHeight}%`
+
+                div.dataset.mainRotation = `${(360 - data.rotation) % 360}`
+              }
 
               source.annotationLayer.div.append(div)
               source.annotationLayer.annotationStorage.setValue(data.id, { div })

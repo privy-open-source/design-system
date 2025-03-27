@@ -361,10 +361,6 @@ defineSlots<{
         @apply ring-info ring;
         @apply dark:ring-dark-info;
       }
-
-      .annotationWidget {
-        @apply absolute;
-      }
     }
   }
 

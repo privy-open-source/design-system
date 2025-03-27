@@ -18,10 +18,11 @@ layout: false
   import { reactive, ref } from 'vue-demi'
   import { withBase } from 'vitepress'
 
-  const scale  = ref(1)
-  const file   = ref()
-  const debug  = ref(false)
-  const src    = usePreview(file, withBase('/assets/pdf/Calibrator-v3.pdf'))
+  const scale           = ref(1)
+  const file            = ref()
+  const debug           = ref(false)
+  const debugAnnotation = ref(false)
+  const src             = usePreview(file, withBase('/assets/pdf/Calibrator-v3.pdf'))
 
   const items  = reactive([])
   const item   = ref()
@@ -68,7 +69,7 @@ layout: false
 </script>
 
 <style lang="postcss">
-  .pdf-viewer--debug .annotationWidget {
+  .pdf-viewer--debug .annotationLayer > section {
     @apply pointer-events-auto border-2 border-dashed border-info-emphasis bg-info-emphasis/5;
     @apply dark:border-dark-info-emphasis dark:bg-info-emphasis/5;
   }
@@ -77,7 +78,7 @@ layout: false
 <div class="flex w-full h-full">
   <p-pdf-viewer
     layout="fit"
-    :class="{ 'pdf-viewer--debug': debug }"
+    :class="{ 'pdf-viewer--debug': debugAnnotation }"
     :src="src"
     v-model:scale="scale">
     <template #header>
@@ -89,9 +90,12 @@ layout: false
             </p-button>
           </template>
         </p-dropzone>
-        <div class="flex items-center px-2 space-x-2 shrink-0">
+        <div class="flex items-center px-2 space-x-4 shrink-0">
           <p-checkbox v-model="debug">
             Show Debug
+          </p-checkbox>
+          <p-checkbox v-model="debugAnnotation">
+            Show Annotation Area
           </p-checkbox>
         </div>
         <div class="flex flex-wrap gap-2 shrink-0 md:flex-nowrap">
