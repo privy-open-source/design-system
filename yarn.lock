@@ -3792,7 +3792,7 @@ __metadata:
     sharp: "npm:0.33.5"
     svgo: "npm:3.3.2"
     tabbable: "npm:6.2.0"
-    tailwindcss: "npm:3.4.17"
+    tailwindcss: "npm:4.0.17"
     tiptap-extension-font-size: "npm:^1.2.0"
     typescript: "npm:5.6.3"
     ufo: "npm:1.5.4"
@@ -19628,7 +19628,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.4.17, tailwindcss@npm:~3.4.17":
+"tailwindcss@npm:4.0.17":
+  version: 4.0.17
+  resolution: "tailwindcss@npm:4.0.17"
+  checksum: 10/c4463f7df51c45252d540db7a7c9d06f386f944b9626e4953dba6274d93c69b9133a9c095918fd2164d3012755cfa2d57ef86b4f11a08b30070ee67d1da98265
+  languageName: node
+  linkType: hard
+
+"tailwindcss@npm:~3.4.17":
   version: 3.4.17
   resolution: "tailwindcss@npm:3.4.17"
   dependencies:
