@@ -54,7 +54,7 @@
     "jiti": "2.4.2",
     "minimist": "1.2.8",
     "ofetch": "1.4.1",
-    "ohash": "1.1.6",
+    "ohash": "2.0.11",
     "ora": "8.2.0",
     "p-all": "5.0.0",
     "svg-path-commander": "2.1.10",
@@ -62,7 +62,7 @@
     "webfont": "11.2.26"
   },
   "dependencies": {
-    "@nuxt/kit": "3.15.4"
+    "@nuxt/kit": "3.16.1"
   },
   "publishConfig": {
     "access": "public"
