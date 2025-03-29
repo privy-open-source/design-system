@@ -5,7 +5,7 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#rBancnktqJ_a)"><g clip-path="url(#rBancnktqJ_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#Qu2psGxKjKqFSaNZFCKD1DHxOKy5NZuvA4AgP0WUafM_a)"><g clip-path="url(#Qu2psGxKjKqFSaNZFCKD1DHxOKy5NZuvA4AgP0WUafM_b)"><rect
       width="200"
       height="200"
       x="20"
@@ -135,9 +135,9 @@
                                                                                                   fill="#AADBFF"
                                                                                                   d="M140.056 166.14c5.146.747 6.189 2.039 9.841 5.11l1.381 9.096-97.936-28.718s-3.035-3.885 1.909-7.72c5.16 1.717 66.277 24.383 84.805 22.232" /><path
                                                                                                     fill="#82C2F1"
-                                                                                                    d="M187.066 133.202c-2.98 1.727-5.744 1.994-12.399 9.583-4.415 7.031-9.808 14.167-17.084 18.588-.868.529-2.827 2.386-3.516 3.703-4.286 4.446-8.661 10.319 0 17.644l35.293-45.049s.56-3.259-2.294-4.469" /></g><defs><clipPath id="rBancnktqJ_a"><path
+                                                                                                    d="M187.066 133.202c-2.98 1.727-5.744 1.994-12.399 9.583-4.415 7.031-9.808 14.167-17.084 18.588-.868.529-2.827 2.386-3.516 3.703-4.286 4.446-8.661 10.319 0 17.644l35.293-45.049s.56-3.259-2.294-4.469" /></g><defs><clipPath id="Qu2psGxKjKqFSaNZFCKD1DHxOKy5NZuvA4AgP0WUafM_a"><path
                                                                                                       fill="#fff"
-                                                                                                      d="M0 0h240v240H0z" /></clipPath><clipPath id="rBancnktqJ_b"><rect
+                                                                                                      d="M0 0h240v240H0z" /></clipPath><clipPath id="Qu2psGxKjKqFSaNZFCKD1DHxOKy5NZuvA4AgP0WUafM_b"><rect
                                                                                                         width="200"
                                                                                                         height="200"
                                                                                                         x="20"

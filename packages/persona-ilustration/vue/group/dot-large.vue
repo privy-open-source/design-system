@@ -5,7 +5,7 @@
     height="80"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 80 80"><g clip-path="url(#58cZNe9nz6_a)"><path
+    viewBox="0 0 80 80"><g clip-path="url(#CXNDSpnrsDkFHlRfckFUVBoLmYB2NfDSCMXKJ9xFbTg_a)"><path
       fill="#C93E41"
       d="M16.385 60.984c6.287 0 11.385-3.505 11.385-7.827 0-4.323-5.098-7.827-11.385-7.827C10.097 45.33 5 48.834 5 53.157c0 4.322 5.097 7.827 11.385 7.827" /><path
         fill="#E79EA1"
@@ -45,7 +45,7 @@
                                     cx="41.62"
                                     cy="39.487"
                                     r="5.901"
-                                    fill="#FEE283" /></g><defs><clipPath id="58cZNe9nz6_a"><path
+                                    fill="#FEE283" /></g><defs><clipPath id="CXNDSpnrsDkFHlRfckFUVBoLmYB2NfDSCMXKJ9xFbTg_a"><path
                                       fill="#fff"
                                       d="M0 0h80v80H0z" /></clipPath></defs></svg>
 </template>

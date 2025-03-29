@@ -5,14 +5,14 @@
     height="150"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 150 150"><g clip-path="url(#iEHAHsP4vA_a)"><g clip-path="url(#iEHAHsP4vA_b)"><rect
+    viewBox="0 0 150 150"><g clip-path="url(#7vyCvFRnuk7ENz2OOsCgU9uzrg5HnMzax23tWRCfg5Y_a)"><g clip-path="url(#7vyCvFRnuk7ENz2OOsCgU9uzrg5HnMzax23tWRCfg5Y_b)"><rect
       width="125"
       height="125"
       x="12.5"
       y="12.5"
       fill="#D3EDFF"
       rx="62.5" /><mask
-        id="iEHAHsP4vA_c"
+        id="7vyCvFRnuk7ENz2OOsCgU9uzrg5HnMzax23tWRCfg5Y_c"
         width="99"
         height="32"
         x="25"
@@ -20,7 +20,7 @@
         maskUnits="userSpaceOnUse"
         style="mask-type:alpha"><path
           fill="#EA4F4A"
-          d="M39.306 83.99c-12.02 4.854-14.327 18.708-13.977 25.027h98.101c.35-6.319-1.956-20.173-13.977-25.026-19.202-7.753-50.946-7.753-70.147 0" /></mask><g mask="url(#iEHAHsP4vA_c)"><path
+          d="M39.306 83.99c-12.02 4.854-14.327 18.708-13.977 25.027h98.101c.35-6.319-1.956-20.173-13.977-25.026-19.202-7.753-50.946-7.753-70.147 0" /></mask><g mask="url(#7vyCvFRnuk7ENz2OOsCgU9uzrg5HnMzax23tWRCfg5Y_c)"><path
             fill="#EA4F4A"
             d="M39.306 83.991c-12.02 4.854-14.327 18.707-13.977 25.027h98.101c.35-6.32-1.956-20.173-13.977-25.027-19.202-7.752-50.946-7.752-70.147 0" /><path
               fill="#DB4747"
@@ -74,9 +74,9 @@
                                                           fill="#FFC79D"
                                                           fill-rule="evenodd"
                                                           d="M94.725 16.155a6.954 6.954 0 0 0 6.954-6.954 6.955 6.955 0 0 0 6.955 6.954 6.955 6.955 0 0 0-6.955 6.955 6.954 6.954 0 0 0-6.954-6.955M11.059 52.022a8.567 8.567 0 0 0 8.567-8.568 8.567 8.567 0 0 0 8.567 8.568 8.567 8.567 0 0 0-8.567 8.567 8.567 8.567 0 0 0-8.567-8.567M115.264 70.347a8.567 8.567 0 0 0 8.567-8.567 8.567 8.567 0 0 0 8.567 8.567 8.567 8.567 0 0 0-8.567 8.568 8.567 8.567 0 0 0-8.567-8.568"
-                                                          clip-rule="evenodd" /></g><defs><clipPath id="iEHAHsP4vA_a"><path
+                                                          clip-rule="evenodd" /></g><defs><clipPath id="7vyCvFRnuk7ENz2OOsCgU9uzrg5HnMzax23tWRCfg5Y_a"><path
                                                             fill="#fff"
-                                                            d="M0 0h150v150H0z" /></clipPath><clipPath id="iEHAHsP4vA_b"><rect
+                                                            d="M0 0h150v150H0z" /></clipPath><clipPath id="7vyCvFRnuk7ENz2OOsCgU9uzrg5HnMzax23tWRCfg5Y_b"><rect
                                                               width="125"
                                                               height="125"
                                                               x="12.5"
