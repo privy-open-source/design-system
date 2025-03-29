@@ -5,7 +5,7 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#T4VK60bPtW_a)"><g clip-path="url(#T4VK60bPtW_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#6fH1OLX4Vf27LH6mLAtNFgCwbsVarmJN33tOAq450hM_a)"><g clip-path="url(#6fH1OLX4Vf27LH6mLAtNFgCwbsVarmJN33tOAq450hM_b)"><rect
       width="200"
       height="200"
       x="20.225"
@@ -25,9 +25,9 @@
                 fill="#CBD3FF"
                 d="m156.693 115.607 25.494-38.117 12.902 8.629-25.494 38.117zM185.995 71.856l-1.912 2.859 12.901 8.628 1.912-2.858zM189.444 66.746l-1.912 2.858 12.901 8.629 1.912-2.859z" /><path
                   fill="#F8F8F8"
-                  d="m156.698 137.359-5.11-3.577-2.81 11.115z" /></g><defs><clipPath id="T4VK60bPtW_a"><path
+                  d="m156.698 137.359-5.11-3.577-2.81 11.115z" /></g><defs><clipPath id="6fH1OLX4Vf27LH6mLAtNFgCwbsVarmJN33tOAq450hM_a"><path
                     fill="#fff"
-                    d="M0 0h240v240H0z" /></clipPath><clipPath id="T4VK60bPtW_b"><rect
+                    d="M0 0h240v240H0z" /></clipPath><clipPath id="6fH1OLX4Vf27LH6mLAtNFgCwbsVarmJN33tOAq450hM_b"><rect
                       width="200"
                       height="200"
                       x="20.225"

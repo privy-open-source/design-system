@@ -5,14 +5,14 @@
     height="300"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 300 300"><g clip-path="url(#H3Rr8WtqRZ_a)"><g clip-path="url(#H3Rr8WtqRZ_b)"><rect
+    viewBox="0 0 300 300"><g clip-path="url(#DSa94LBSQFxcmZZ842ymspdwTwaG11lKkCsZN7xqsWU_a)"><g clip-path="url(#DSa94LBSQFxcmZZ842ymspdwTwaG11lKkCsZN7xqsWU_b)"><rect
       width="250"
       height="250"
       x="25"
       y="25"
       fill="#D3EDFF"
       rx="125" /><mask
-        id="H3Rr8WtqRZ_c"
+        id="DSa94LBSQFxcmZZ842ymspdwTwaG11lKkCsZN7xqsWU_c"
         width="145"
         height="46"
         x="77"
@@ -20,7 +20,7 @@
         maskUnits="userSpaceOnUse"
         style="mask-type:alpha"><path
           fill="#EA4F4A"
-          d="M97.597 124.662c-17.648 7.126-21.034 27.464-20.52 36.742H221.1c.513-9.278-2.872-29.616-20.52-36.742-28.19-11.381-74.794-11.381-102.984 0" /></mask><g mask="url(#H3Rr8WtqRZ_c)"><path
+          d="M97.597 124.662c-17.648 7.126-21.034 27.464-20.52 36.742H221.1c.513-9.278-2.872-29.616-20.52-36.742-28.19-11.381-74.794-11.381-102.984 0" /></mask><g mask="url(#DSa94LBSQFxcmZZ842ymspdwTwaG11lKkCsZN7xqsWU_c)"><path
             fill="#EA4F4A"
             d="M97.597 124.662c-17.648 7.126-21.034 27.464-20.52 36.742H221.1c.513-9.278-2.872-29.616-20.52-36.742-28.19-11.381-74.794-11.381-102.984 0" /><path
               fill="#DB4747"
@@ -119,9 +119,9 @@
                                                                                               fill="#FFC79D"
                                                                                               fill-rule="evenodd"
                                                                                               d="M178.958 25.072c5.639 0 10.211-4.571 10.211-10.21 0 5.638 4.571 10.21 10.21 10.21-5.639 0-10.21 4.571-10.21 10.21 0-5.639-4.572-10.21-10.211-10.21M56.127 77.728c6.946 0 12.577-5.631 12.577-12.578 0 6.947 5.632 12.578 12.578 12.578-6.946 0-12.578 5.632-12.578 12.578 0-6.946-5.63-12.578-12.577-12.578M209.112 104.632c6.946 0 12.578-5.631 12.578-12.578 0 6.947 5.631 12.578 12.578 12.578-6.947 0-12.578 5.631-12.578 12.578 0-6.947-5.632-12.578-12.578-12.578"
-                                                                                              clip-rule="evenodd" /></g><defs><clipPath id="H3Rr8WtqRZ_a"><path
+                                                                                              clip-rule="evenodd" /></g><defs><clipPath id="DSa94LBSQFxcmZZ842ymspdwTwaG11lKkCsZN7xqsWU_a"><path
                                                                                                 fill="#fff"
-                                                                                                d="M0 0h300v300H0z" /></clipPath><clipPath id="H3Rr8WtqRZ_b"><rect
+                                                                                                d="M0 0h300v300H0z" /></clipPath><clipPath id="DSa94LBSQFxcmZZ842ymspdwTwaG11lKkCsZN7xqsWU_b"><rect
                                                                                                   width="250"
                                                                                                   height="250"
                                                                                                   x="25"
