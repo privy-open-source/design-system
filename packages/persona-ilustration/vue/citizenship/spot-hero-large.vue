@@ -5,14 +5,14 @@
     height="300"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 300 300"><g clip-path="url(#s8cMzXTC5w_a)"><g clip-path="url(#s8cMzXTC5w_b)"><rect
+    viewBox="0 0 300 300"><g clip-path="url(#WpaLVLBIsWmMOi6ctjs5BnF2UStVTA23WtChhlT9hVk_a)"><g clip-path="url(#WpaLVLBIsWmMOi6ctjs5BnF2UStVTA23WtChhlT9hVk_b)"><rect
       width="250"
       height="250"
       x="25.281"
       y="25"
       fill="#D3EDFF"
       rx="125" /><mask
-        id="s8cMzXTC5w_c"
+        id="WpaLVLBIsWmMOi6ctjs5BnF2UStVTA23WtChhlT9hVk_c"
         width="365"
         height="366"
         x="-65"
@@ -22,7 +22,7 @@
           cx="117.597"
           cy="291.397"
           r="182.403"
-          fill="#D9D9D9" /></mask><g mask="url(#s8cMzXTC5w_c)"><circle
+          fill="#D9D9D9" /></mask><g mask="url(#WpaLVLBIsWmMOi6ctjs5BnF2UStVTA23WtChhlT9hVk_c)"><circle
             cx="117.597"
             cy="291.397"
             r="182.403"
@@ -32,9 +32,9 @@
                 fill="#EA4F4A"
                 d="M258.3 90.19c15.502-26.85 6.302-61.182-20.548-76.684s-61.182-6.302-76.684 20.547c-19.208 33.27-11.519 90.14-12.731 128.993-.075 2.39 2.586 3.926 4.618 2.666 33.041-20.476 86.136-42.252 105.345-75.522" /><path
                   fill="#F8F8F8"
-                  d="M229.839 74.509c-6.531 11.311-20.995 15.187-32.306 8.656-11.312-6.53-15.187-20.994-8.656-32.306s20.994-15.187 32.306-8.656 15.187 20.994 8.656 32.306" /></g><defs><clipPath id="s8cMzXTC5w_a"><path
+                  d="M229.839 74.509c-6.531 11.311-20.995 15.187-32.306 8.656-11.312-6.53-15.187-20.994-8.656-32.306s20.994-15.187 32.306-8.656 15.187 20.994 8.656 32.306" /></g><defs><clipPath id="WpaLVLBIsWmMOi6ctjs5BnF2UStVTA23WtChhlT9hVk_a"><path
                     fill="#fff"
-                    d="M0 0h300v300H0z" /></clipPath><clipPath id="s8cMzXTC5w_b"><rect
+                    d="M0 0h300v300H0z" /></clipPath><clipPath id="WpaLVLBIsWmMOi6ctjs5BnF2UStVTA23WtChhlT9hVk_b"><rect
                       width="250"
                       height="250"
                       x="25.281"
