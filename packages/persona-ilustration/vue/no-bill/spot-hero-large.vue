@@ -5,7 +5,7 @@
     height="300"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 300 300"><g clip-path="url(#Md7CzLbJER_a)"><g clip-path="url(#Md7CzLbJER_b)"><rect
+    viewBox="0 0 300 300"><g clip-path="url(#Ncr3FRcThHbJ7qeOlmbp6i183BPGPEEnV1-eNSZRo5o_a)"><g clip-path="url(#Ncr3FRcThHbJ7qeOlmbp6i183BPGPEEnV1-eNSZRo5o_b)"><rect
       width="250"
       height="250"
       x="25.28"
@@ -34,9 +34,9 @@
                         fill="#FFC79D"
                         d="m228.312 165.358-11.235 14.159 68.934 54.695 11.235-14.159z" /><path
                           fill="#FF8D18"
-                          d="M294.872 229.744c3.094-3.9 4.173-8.195 2.41-9.594s-5.701.629-8.795 4.528c-3.094 3.9-4.173 8.196-2.41 9.594 1.763 1.399 5.7-.628 8.795-4.528" /></g><defs><clipPath id="Md7CzLbJER_a"><path
+                          d="M294.872 229.744c3.094-3.9 4.173-8.195 2.41-9.594s-5.701.629-8.795 4.528c-3.094 3.9-4.173 8.196-2.41 9.594 1.763 1.399 5.7-.628 8.795-4.528" /></g><defs><clipPath id="Ncr3FRcThHbJ7qeOlmbp6i183BPGPEEnV1-eNSZRo5o_a"><path
                             fill="#fff"
-                            d="M0 0h300v300H0z" /></clipPath><clipPath id="Md7CzLbJER_b"><rect
+                            d="M0 0h300v300H0z" /></clipPath><clipPath id="Ncr3FRcThHbJ7qeOlmbp6i183BPGPEEnV1-eNSZRo5o_b"><rect
                               width="250"
                               height="250"
                               x="25.28"

@@ -5,7 +5,7 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#aL099bpSdB_a)"><g clip-path="url(#aL099bpSdB_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#QVp2_qGK6jsb8P9rIBISz1a8eXfppq9bebkMjK5USxY_a)"><g clip-path="url(#QVp2_qGK6jsb8P9rIBISz1a8eXfppq9bebkMjK5USxY_b)"><rect
       width="200"
       height="200"
       x="20"
@@ -98,19 +98,19 @@
                                                             fill-rule="evenodd"
                                                             d="M83.655 136.888a14.96 14.96 0 0 0 10.611 4.393c4.144 0 7.895-1.679 10.611-4.393l21.221-21.213a14.96 14.96 0 0 0-10.61-4.394 14.96 14.96 0 0 0-10.611 4.394 14.96 14.96 0 0 0-10.61-4.394c-8.906 0-14.54 6.693-15.005 15.223a14.95 14.95 0 0 0 4.393 10.384"
                                                             clip-rule="evenodd" /><path
-                                                              fill="url(#aL099bpSdB_c)"
+                                                              fill="url(#QVp2_qGK6jsb8P9rIBISz1a8eXfppq9bebkMjK5USxY_c)"
                                                               fill-rule="evenodd"
                                                               d="M104.976 115.693a15.02 15.02 0 0 0-10.652-4.412c-8.939 0-14.596 6.721-15.062 15.287a15.02 15.02 0 0 0 4.41 10.428z"
-                                                              clip-rule="evenodd" /></g><defs><clipPath id="aL099bpSdB_a"><path
+                                                              clip-rule="evenodd" /></g><defs><clipPath id="QVp2_qGK6jsb8P9rIBISz1a8eXfppq9bebkMjK5USxY_a"><path
                                                                 fill="#fff"
-                                                                d="M0 0h240v240H0z" /></clipPath><clipPath id="aL099bpSdB_b"><rect
+                                                                d="M0 0h240v240H0z" /></clipPath><clipPath id="QVp2_qGK6jsb8P9rIBISz1a8eXfppq9bebkMjK5USxY_b"><rect
                                                                   width="200"
                                                                   height="200"
                                                                   x="20"
                                                                   y="20"
                                                                   fill="#fff"
                                                                   rx="100" /></clipPath><linearGradient
-                                                                    id="aL099bpSdB_c"
+                                                                    id="QVp2_qGK6jsb8P9rIBISz1a8eXfppq9bebkMjK5USxY_c"
                                                                     x1="89.217"
                                                                     x2="104.976"
                                                                     y1="120.782"

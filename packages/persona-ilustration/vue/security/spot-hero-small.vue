@@ -5,7 +5,7 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#OPJ7PXE3Fb_a)"><g clip-path="url(#OPJ7PXE3Fb_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#miEDBoBZOzNbL5nJSbg5TbwIQBsydL0Ewz1hKtSCqRE_a)"><g clip-path="url(#miEDBoBZOzNbL5nJSbg5TbwIQBsydL0Ewz1hKtSCqRE_b)"><rect
       width="200"
       height="200"
       x="19.999"
@@ -123,9 +123,9 @@
                                                                                         fill="#C66E51"
                                                                                         d="M5.128 143.503c-1.358 6.785 1.704 7.048 10.307 7.365 6.676.245 11.807-1.105 12.001-6.379.163-4.421-5.443-6.398-12.119-6.644-6.676-.245-9.17.57-10.19 5.658" /><path
                                                                                           fill="#C66E51"
-                                                                                          d="M10.31 158.092c1.243 4.815 4.895 5.87 8.522 5.231 5.66-.998 9.574-3.229 8.239-8.282-1.12-4.234-6.376-5.08-12.037-4.082s-5.661 3.503-4.724 7.133" /></g><defs><clipPath id="OPJ7PXE3Fb_a"><path
+                                                                                          d="M10.31 158.092c1.243 4.815 4.895 5.87 8.522 5.231 5.66-.998 9.574-3.229 8.239-8.282-1.12-4.234-6.376-5.08-12.037-4.082s-5.661 3.503-4.724 7.133" /></g><defs><clipPath id="miEDBoBZOzNbL5nJSbg5TbwIQBsydL0Ewz1hKtSCqRE_a"><path
                                                                                             fill="#fff"
-                                                                                            d="M0 0h240v240H0z" /></clipPath><clipPath id="OPJ7PXE3Fb_b"><rect
+                                                                                            d="M0 0h240v240H0z" /></clipPath><clipPath id="miEDBoBZOzNbL5nJSbg5TbwIQBsydL0Ewz1hKtSCqRE_b"><rect
                                                                                               width="200"
                                                                                               height="200"
                                                                                               x="19.999"
