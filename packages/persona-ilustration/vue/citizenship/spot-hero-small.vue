@@ -5,14 +5,14 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#7EELMWBThI_a)"><g clip-path="url(#7EELMWBThI_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#nzc4GAy1BCnejifd1yf-kAwJSxbDWJ85ljMpyYBVn0g_a)"><g clip-path="url(#nzc4GAy1BCnejifd1yf-kAwJSxbDWJ85ljMpyYBVn0g_b)"><rect
       width="200"
       height="200"
       x="20.225"
       y="20"
       fill="#D3EDFF"
       rx="100" /><mask
-        id="7EELMWBThI_c"
+        id="nzc4GAy1BCnejifd1yf-kAwJSxbDWJ85ljMpyYBVn0g_c"
         width="292"
         height="293"
         x="-52"
@@ -22,7 +22,7 @@
           cx="94.077"
           cy="233.118"
           r="145.923"
-          fill="#D9D9D9" /></mask><g mask="url(#7EELMWBThI_c)"><circle
+          fill="#D9D9D9" /></mask><g mask="url(#nzc4GAy1BCnejifd1yf-kAwJSxbDWJ85ljMpyYBVn0g_c)"><circle
             cx="94.077"
             cy="233.118"
             r="145.923"
@@ -32,9 +32,9 @@
                 fill="#EA4F4A"
                 d="M206.64 72.152c12.401-21.48 5.042-48.946-16.438-61.347s-48.946-5.042-61.347 16.438c-15.367 26.616-9.215 72.112-10.185 103.194-.06 1.911 2.068 3.14 3.694 2.133 26.433-16.382 68.909-33.802 84.276-60.418" /><path
                   fill="#F8F8F8"
-                  d="M183.871 59.607c-5.224 9.05-16.795 12.15-25.844 6.925-9.05-5.224-12.15-16.795-6.926-25.845s16.796-12.15 25.845-6.925c9.05 5.225 12.15 16.796 6.925 25.845" /></g><defs><clipPath id="7EELMWBThI_a"><path
+                  d="M183.871 59.607c-5.224 9.05-16.795 12.15-25.844 6.925-9.05-5.224-12.15-16.795-6.926-25.845s16.796-12.15 25.845-6.925c9.05 5.225 12.15 16.796 6.925 25.845" /></g><defs><clipPath id="nzc4GAy1BCnejifd1yf-kAwJSxbDWJ85ljMpyYBVn0g_a"><path
                     fill="#fff"
-                    d="M0 0h240v240H0z" /></clipPath><clipPath id="7EELMWBThI_b"><rect
+                    d="M0 0h240v240H0z" /></clipPath><clipPath id="nzc4GAy1BCnejifd1yf-kAwJSxbDWJ85ljMpyYBVn0g_b"><rect
                       width="200"
                       height="200"
                       x="20.225"
