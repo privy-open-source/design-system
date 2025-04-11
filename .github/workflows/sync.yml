@@ -58,6 +58,12 @@ jobs:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FIGMA_FILE_ID: ${{ secrets.FIGMA_FILE_ID_ILUSTRATION }}
 
+      - name: Generate Changelog
+        id: changelog
+        run: >
+          echo "icon_changelog=$(yarn run icon:changelog)" >> $GITHUB_OUTPUT
+          && echo "ilustration_changelog=$(yarn run ilustration:changelog)" >> $GITHUB_OUTPUT
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
@@ -65,3 +71,13 @@ jobs:
           branch: feat/sync-icon
           commit-message: "chore: sync with figma"
           title: "chore: sync with figma"
+          body: |
+            # Changelog
+
+            ## Icon
+
+            ${{ steps.changelog.outputs.icon_changelog }}
+
+            ## Ilustration
+
+            ${{ steps.changelog.outputs.ilustration_changelog }}
