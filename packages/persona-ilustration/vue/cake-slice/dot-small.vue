@@ -5,7 +5,7 @@
     height="40"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 40 40"><g clip-path="url(#Hj03xr4ovr_a)"><ellipse
+    viewBox="0 0 40 40"><g clip-path="url(#vmJfaFsXmyyM6Bj-B3uC10nvaPBPUcRjk-d4naAPN6s_a)"><ellipse
       cx="19.919"
       cy="24.336"
       fill="#FFF9E1"
@@ -26,7 +26,7 @@
                   d="M24.561 20.799s.515-1.864 1.21-.903c.694.961 1.81 1.228 1.81 1.228s.807.022.756-2.102 1.166-3.19 1.166-3.19.845-.484 1.042.482c.197.965.68 1.005.68 1.005s1.28-.347.91-2.658-.3-8.126-.3-8.126.373-2.646-.94-2.646c-1.311 0-2.558 4.763-2.558 4.763s-5.308 3.125-4.167 4.013c.983.764.391 8.134.391 8.134" /><path
                     fill="#DDAC8E"
                     d="m25.084 14.412-.472-2.069-2.427-1.008 1.587 2.836s.24 6.236.24 6.675l.553-.047.522-6.387z" /><mask
-                      id="Hj03xr4ovr_b"
+                      id="vmJfaFsXmyyM6Bj-B3uC10nvaPBPUcRjk-d4naAPN6s_b"
                       width="17"
                       height="28"
                       x="8"
@@ -34,11 +34,11 @@
                       maskUnits="userSpaceOnUse"
                       style="mask-type:alpha"><path
                         fill="#000"
-                        d="M24.174 14.577v16.176L8.952 22.02V3.929l13.562 7.782a3.3 3.3 0 0 1 1.66 2.866" /></mask><g mask="url(#Hj03xr4ovr_b)"><path
+                        d="M24.174 14.577v16.176L8.952 22.02V3.929l13.562 7.782a3.3 3.3 0 0 1 1.66 2.866" /></mask><g mask="url(#vmJfaFsXmyyM6Bj-B3uC10nvaPBPUcRjk-d4naAPN6s_b)"><path
                           fill="#FEEDB4"
                           d="M24.174 14.577v16.176L8.952 22.02V3.929l13.562 7.782a3.3 3.3 0 0 1 1.66 2.866" /><path
                             fill="#FFB26F"
-                            d="m6.474 8.651 22.985 12.56v2.274L6.474 10.921zM5.355 13.652l22.982 12.56v2.274L5.355 15.922z" /></g></g><defs><clipPath id="Hj03xr4ovr_a"><path
+                            d="m6.474 8.651 22.985 12.56v2.274L6.474 10.921zM5.355 13.652l22.982 12.56v2.274L5.355 15.922z" /></g></g><defs><clipPath id="vmJfaFsXmyyM6Bj-B3uC10nvaPBPUcRjk-d4naAPN6s_a"><path
                               fill="#fff"
                               d="M0 0h40v40H0z" /></clipPath></defs></svg>
 </template>

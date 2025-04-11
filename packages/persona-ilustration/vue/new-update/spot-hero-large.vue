@@ -5,7 +5,7 @@
     height="300"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 300 300"><g clip-path="url(#MprzMhqAib_a)"><g clip-path="url(#MprzMhqAib_b)"><rect
+    viewBox="0 0 300 300"><g clip-path="url(#jVm2Cq3MjeurvXoJ9Dn69NFysh7Zq8lJw6nD34IZ2-U_a)"><g clip-path="url(#jVm2Cq3MjeurvXoJ9Dn69NFysh7Zq8lJw6nD34IZ2-U_b)"><rect
       width="250"
       height="250"
       x="25"
@@ -166,23 +166,23 @@
                                                                 fill-rule="evenodd"
                                                                 d="M124.523 151.002a21.36 21.36 0 0 0 15.147 6.272 21.36 21.36 0 0 0 15.147-6.272l30.295-30.282a21.36 21.36 0 0 0-15.148-6.272 21.36 21.36 0 0 0-15.147 6.271v.001a21.35 21.35 0 0 0-15.147-6.272c-12.712 0-20.755 9.554-21.419 21.73a21.34 21.34 0 0 0 6.272 14.824"
                                                                 clip-rule="evenodd" /><path
-                                                                  fill="url(#MprzMhqAib_c)"
+                                                                  fill="url(#jVm2Cq3MjeurvXoJ9Dn69NFysh7Zq8lJw6nD34IZ2-U_c)"
                                                                   fill-rule="evenodd"
                                                                   d="M154.959 120.746a21.44 21.44 0 0 0-15.206-6.298c-12.761 0-20.836 9.594-21.502 21.822a21.43 21.43 0 0 0 6.296 14.886z"
                                                                   clip-rule="evenodd" /><path
                                                                     fill="#FFC509"
                                                                     fill-rule="evenodd"
                                                                     d="M81.444 81.44c9.314 0 16.864-7.551 16.864-16.865 0 9.314 7.55 16.864 16.864 16.864-9.314 0-16.864 7.55-16.864 16.864 0-9.313-7.55-16.864-16.864-16.864M200.646 144.783c14.533 0 26.315-11.782 26.315-26.315 0 14.533 11.782 26.315 26.315 26.315-14.533 0-26.315 11.782-26.315 26.315 0-14.533-11.782-26.315-26.315-26.315M69.133 187.962c9.314 0 16.864-7.55 16.864-16.864 0 9.314 7.55 16.864 16.864 16.864-9.313 0-16.864 7.551-16.864 16.864 0-9.313-7.55-16.864-16.864-16.864"
-                                                                    clip-rule="evenodd" /></g></g><defs><clipPath id="MprzMhqAib_a"><path
+                                                                    clip-rule="evenodd" /></g></g><defs><clipPath id="jVm2Cq3MjeurvXoJ9Dn69NFysh7Zq8lJw6nD34IZ2-U_a"><path
                                                                       fill="#fff"
-                                                                      d="M0 0h300v300H0z" /></clipPath><clipPath id="MprzMhqAib_b"><rect
+                                                                      d="M0 0h300v300H0z" /></clipPath><clipPath id="jVm2Cq3MjeurvXoJ9Dn69NFysh7Zq8lJw6nD34IZ2-U_b"><rect
                                                                         width="250"
                                                                         height="250"
                                                                         x="25"
                                                                         y="25"
                                                                         fill="#fff"
                                                                         rx="125" /></clipPath><linearGradient
-                                                                          id="MprzMhqAib_c"
+                                                                          id="jVm2Cq3MjeurvXoJ9Dn69NFysh7Zq8lJw6nD34IZ2-U_c"
                                                                           x1="132.462"
                                                                           x2="154.959"
                                                                           y1="128.01"
