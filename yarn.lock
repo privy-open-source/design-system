@@ -2674,14 +2674,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jill64/universal-sanitizer@npm:1.4.2":
-  version: 1.4.2
-  resolution: "@jill64/universal-sanitizer@npm:1.4.2"
+"@jill64/universal-sanitizer@npm:1.4.3":
+  version: 1.4.3
+  resolution: "@jill64/universal-sanitizer@npm:1.4.3"
   dependencies:
-    "@types/sanitize-html": "npm:2.13.0"
+    "@types/sanitize-html": "npm:2.15.0"
     dompurify: "npm:3.2.4"
     sanitize-html: "npm:2.15.0"
-  checksum: 10/46adb7e00048bfa8419eeadc48e239b5e0455231ed5909315125fc4e7f9b9f5d4b1cc8b10f467b0d2daa826c727215079961d345375fda18557bbfd9eb23f73a
+  checksum: 10/7b4bd2bd78998020de8819ca5715d98ab988a459c865cd4fef37a2dc06da9d27ca0e9d6293e45aadbd987d4d656a6778aa3260874b69488d1cb58a95b872427d
   languageName: node
   linkType: hard
 
@@ -3904,7 +3904,7 @@ __metadata:
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
     "@floating-ui/dom": "npm:1.6.13"
-    "@jill64/universal-sanitizer": "npm:1.4.2"
+    "@jill64/universal-sanitizer": "npm:1.4.3"
     "@juggle/resize-observer": "npm:3.4.0"
     "@nuxt/kit": "npm:3.16.1"
     "@nuxt/module-builder": "npm:0.8.4"
@@ -5633,6 +5633,15 @@ __metadata:
   dependencies:
     htmlparser2: "npm:^8.0.0"
   checksum: 10/a32c67bdf86048efa8ee5cdc1a68351758bae888956010eea58e694c1f9fc580632d1ce0478d31984559e0b03282d130ffe3e87479838c8da92cf1ac06626edc
+  languageName: node
+  linkType: hard
+
+"@types/sanitize-html@npm:2.15.0":
+  version: 2.15.0
+  resolution: "@types/sanitize-html@npm:2.15.0"
+  dependencies:
+    htmlparser2: "npm:^8.0.0"
+  checksum: 10/77a21ddea7de41a6a6a80f3b1f4f7336f12e87fbd5b87b1697ff4f2ff22f98549367c9221158bfc0fbf5a2fc9fc74d0265f848d4e765ad10dd2dc38ccdcdf674
   languageName: node
   linkType: hard
 
