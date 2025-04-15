@@ -126,7 +126,7 @@
     "@nuxtjs/tailwindcss": "6.13.2",
     "@privyid/browserslist-config": "workspace:^",
     "@privyid/tailwind-preset": "workspace:^",
-    "@types/sanitize-html": "2.13.0",
+    "@types/sanitize-html": "2.15.0",
     "browserslist-to-esbuild": "2.1.1",
     "nuxt": "3.16.2",
     "postcss-custom-properties": "14.0.4",
