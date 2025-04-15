@@ -5,7 +5,7 @@
     height="40"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 40 40"><g clip-path="url(#1kLvbzoO0e_a)"><rect
+    viewBox="0 0 40 40"><g clip-path="url(#Thr3MGH1eZc3j2eqiCYImuYgc0UOO-eEaNEFrACo7EY_a)"><rect
       width="20.523"
       height="14.97"
       x="18.168"
@@ -36,11 +36,11 @@
                   fill-rule="evenodd"
                   d="M10.624 23.411a3.43 3.43 0 0 0 2.431 1.007c.95 0 1.81-.385 2.432-1.007l4.863-4.861a3.43 3.43 0 0 0-2.431-1.007c-.95 0-1.81.385-2.432 1.007a3.43 3.43 0 0 0-2.432-1.007c-2.04 0-3.332 1.534-3.438 3.488a3.43 3.43 0 0 0 1.006 2.38"
                   clip-rule="evenodd" /><path
-                    fill="url(#1kLvbzoO0e_b)"
+                    fill="url(#Thr3MGH1eZc3j2eqiCYImuYgc0UOO-eEaNEFrACo7EY_b)"
                     fill-rule="evenodd"
                     d="M15.51 18.554a3.44 3.44 0 0 0-2.441-1.011c-2.05 0-3.345 1.54-3.452 3.503a3.44 3.44 0 0 0 1.01 2.39z"
                     clip-rule="evenodd" /></g><defs><linearGradient
-                      id="1kLvbzoO0e_b"
+                      id="Thr3MGH1eZc3j2eqiCYImuYgc0UOO-eEaNEFrACo7EY_b"
                       x1="11.898"
                       x2="15.51"
                       y1="19.72"
@@ -53,7 +53,7 @@
                             offset=".303"
                             stop-opacity=".192" /><stop
                               offset=".387"
-                              stop-opacity=".245" /><stop offset="1" /></linearGradient><clipPath id="1kLvbzoO0e_a"><path
+                              stop-opacity=".245" /><stop offset="1" /></linearGradient><clipPath id="Thr3MGH1eZc3j2eqiCYImuYgc0UOO-eEaNEFrACo7EY_a"><path
                                 fill="#fff"
                                 d="M0 0h40v40H0z" /></clipPath></defs></svg>
 </template>

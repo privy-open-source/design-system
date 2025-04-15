@@ -5,14 +5,14 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#YHAodr4fPj_a)"><g clip-path="url(#YHAodr4fPj_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#0OVW5PQW3_Dd6WGaRhpXfkzsfFtbt_6Gu3S7q4Dle7c_a)"><g clip-path="url(#0OVW5PQW3_Dd6WGaRhpXfkzsfFtbt_6Gu3S7q4Dle7c_b)"><rect
       width="200"
       height="200"
       x="20.225"
       y="20"
       fill="#D3EDFF"
       rx="100" /><mask
-        id="YHAodr4fPj_c"
+        id="0OVW5PQW3_Dd6WGaRhpXfkzsfFtbt_6Gu3S7q4Dle7c_c"
         width="246"
         height="299"
         x="-33"
@@ -20,7 +20,7 @@
         maskUnits="userSpaceOnUse"
         style="mask-type:alpha"><path
           fill="#fff"
-          d="M212.695 61.79-32.801 99.286v260.352h245.496V61.79" /></mask><g mask="url(#YHAodr4fPj_c)"><path
+          d="M212.695 61.79-32.801 99.286v260.352h245.496V61.79" /></mask><g mask="url(#0OVW5PQW3_Dd6WGaRhpXfkzsfFtbt_6Gu3S7q4Dle7c_c)"><path
             fill="#AADBFF"
             d="M212.695 61.79-32.801 99.286v260.352h245.496V61.79" /><path
               fill="#82C2F1"
@@ -87,9 +87,9 @@
                                                     rx="50.147"
                                                     ry="9.382" /><path
                                                       fill="#FFF9E1"
-                                                      d="M107.563 155.643c4.637-.265 9.56-.407 14.661-.407 5.498 0 10.788.165 15.738.471-.249 8.18-6.958 14.735-15.199 14.735-8.262 0-14.985-6.589-15.2-14.799" /></g><defs><clipPath id="YHAodr4fPj_a"><path
+                                                      d="M107.563 155.643c4.637-.265 9.56-.407 14.661-.407 5.498 0 10.788.165 15.738.471-.249 8.18-6.958 14.735-15.199 14.735-8.262 0-14.985-6.589-15.2-14.799" /></g><defs><clipPath id="0OVW5PQW3_Dd6WGaRhpXfkzsfFtbt_6Gu3S7q4Dle7c_a"><path
                                                         fill="#fff"
-                                                        d="M0 0h240v240H0z" /></clipPath><clipPath id="YHAodr4fPj_b"><rect
+                                                        d="M0 0h240v240H0z" /></clipPath><clipPath id="0OVW5PQW3_Dd6WGaRhpXfkzsfFtbt_6Gu3S7q4Dle7c_b"><rect
                                                           width="200"
                                                           height="200"
                                                           x="20.225"

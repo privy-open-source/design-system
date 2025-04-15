@@ -5,7 +5,7 @@
     height="80"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 80 80"><g clip-path="url(#O5RZX8VXnU_a)"><path
+    viewBox="0 0 80 80"><g clip-path="url(#t-euynR9cFfZtyGWLzMj-J8mAUI9AE7WQjNyX7CFaBU_a)"><path
       fill="#7AC5E8"
       d="M33.96 58.762 7.95 63.639h9.356l3.618-.912h17.028l-1.248.912h8.982l26.63-4.877z" /><path
         fill="#FF8D18"
@@ -15,7 +15,7 @@
             fill="#DB4747"
             fill-rule="evenodd"
             d="m38.995 24.022 4.364 16.368c.836 3.135-1.922 7.059-4.961 7.059H22.494c-3.039 0-4.077-3.924-1.867-7.059l11.538-16.368c2.206-3.129 5.996-3.129 6.83 0m-6.281 13.085c.557 0 1.126-.538 1.272-1.202l1.685-7.692c.146-.664-.188-1.202-.745-1.202s-1.127.538-1.272 1.202l-1.686 7.692c-.145.664.188 1.202.746 1.202m.217 5.145c.194-.885-.25-1.603-.994-1.603-.743 0-1.502.718-1.696 1.603-.194.886.25 1.603.994 1.603.742 0 1.502-.717 1.696-1.603"
-            clip-rule="evenodd" /></g><defs><clipPath id="O5RZX8VXnU_a"><path
+            clip-rule="evenodd" /></g><defs><clipPath id="t-euynR9cFfZtyGWLzMj-J8mAUI9AE7WQjNyX7CFaBU_a"><path
               fill="#fff"
               d="M0 0h80v80H0z" /></clipPath></defs></svg>
 </template>

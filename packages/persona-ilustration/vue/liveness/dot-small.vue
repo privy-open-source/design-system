@@ -5,7 +5,7 @@
     height="40"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 40 40"><g clip-path="url(#nBLkObuMRu_a)"><g clip-path="url(#nBLkObuMRu_b)"><rect
+    viewBox="0 0 40 40"><g clip-path="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_a)"><g clip-path="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_b)"><rect
       width="33.333"
       height="33.333"
       x="3.333"
@@ -14,7 +14,7 @@
       rx="16.667" /><path
         fill="#FFC7B6"
         d="M17.155 32.97c.519-3.627 3.817-4.594 5.83-1.533a256 256 0 0 1 3.681 5.793c1.431 2.313-.367 5.235-3.08 5.044a3.37 3.37 0 0 1-2.51-1.408l-3.04-4.269a5.03 5.03 0 0 1-.88-3.627" /><mask
-          id="nBLkObuMRu_c"
+          id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_c"
           width="9"
           height="11"
           x="16"
@@ -22,12 +22,12 @@
           maskUnits="userSpaceOnUse"
           style="mask-type:alpha"><path
             fill="#fff"
-            d="M17.323 31.797c.44-3.079 3.476-4.107 5.247-1.55a59 59 0 0 1 1.578 2.4c.99 1.593-.522 3.95-2.002 5.102-1.378 1.073-3.29 1.084-4.106-.46a65 65 0 0 1-.698-1.364 3.45 3.45 0 0 1-.319-2.03z" /></mask><g mask="url(#nBLkObuMRu_c)"><path
+            d="M17.323 31.797c.44-3.079 3.476-4.107 5.247-1.55a59 59 0 0 1 1.578 2.4c.99 1.593-.522 3.95-2.002 5.102-1.378 1.073-3.29 1.084-4.106-.46a65 65 0 0 1-.698-1.364 3.45 3.45 0 0 1-.319-2.03z" /></mask><g mask="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_c)"><path
               fill="#8FC7B8"
               d="M17.323 31.797c.44-3.079 3.476-4.107 5.247-1.55a59 59 0 0 1 1.578 2.4c.99 1.593-.522 3.95-2.002 5.102-1.378 1.073-3.29 1.084-4.106-.46a65 65 0 0 1-.698-1.364 3.45 3.45 0 0 1-.319-2.03z" /><path
                 fill="#43826E"
                 d="m17.998 29.329 3.514 8.054a2.296 2.296 0 1 1-4.37 1.296l-.842-5.036" /></g><mask
-                  id="nBLkObuMRu_d"
+                  id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_d"
                   width="23"
                   height="21"
                   x="-3"
@@ -35,7 +35,7 @@
                   maskUnits="userSpaceOnUse"
                   style="mask-type:alpha"><path
                     fill="#fff"
-                    d="M-1.606 20.813q0-.002.002-.002c.044.002 7.47.332 14.35 2.305 3.677 1.054 6.583 5.643 6.621 9.468.056 5.655-4.042 9.475-9.51 8.032a11.94 11.94 0 0 1-4.824-2.538C-.884 32.95-4.14 23.944-1.607 20.813" /></mask><g mask="url(#nBLkObuMRu_d)"><path
+                    d="M-1.606 20.813q0-.002.002-.002c.044.002 7.47.332 14.35 2.305 3.677 1.054 6.583 5.643 6.621 9.468.056 5.655-4.042 9.475-9.51 8.032a11.94 11.94 0 0 1-4.824-2.538C-.884 32.95-4.14 23.944-1.607 20.813" /></mask><g mask="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_d)"><path
                       fill="#8FC7B8"
                       d="M-1.606 20.813q0-.002.002-.002c.044.002 7.47.332 14.35 2.305 3.677 1.054 6.583 5.643 6.621 9.468.056 5.655-4.042 9.475-9.51 8.032a11.94 11.94 0 0 1-4.824-2.538C-.884 32.95-4.14 23.944-1.607 20.813" /><path
                         fill="#498F79"
@@ -56,7 +56,7 @@
                                 clip-rule="evenodd" /><path
                                   fill="#FFC7B6"
                                   d="M34.146 24.13a2.08 2.08 0 0 0-2.649 1.508l-2.206 9.344a2.565 2.565 0 1 0 5.04.926l1.257-9.52a2.08 2.08 0 0 0-1.442-2.259" /><mask
-                                    id="nBLkObuMRu_e"
+                                    id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_e"
                                     width="2"
                                     height="6"
                                     x="32"
@@ -64,7 +64,7 @@
                                     maskUnits="userSpaceOnUse"
                                     style="mask-type:alpha"><path
                                       fill="#fff"
-                                      d="M33.764 12.507zc.056.652.118 1.213.171 1.65.079.643-.406 1.444-.758.9-.152-.234-.276-.636-.326-1.305-.17-2.304.095-2.718.896-2.812.235-.028-.014 1.219.015 1.566z" /></mask><g mask="url(#nBLkObuMRu_e)"><path
+                                      d="M33.764 12.507zc.056.652.118 1.213.171 1.65.079.643-.406 1.444-.758.9-.152-.234-.276-.636-.326-1.305-.17-2.304.095-2.718.896-2.812.235-.028-.014 1.219.015 1.566z" /></mask><g mask="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_e)"><path
                                         fill="#FFC7B6"
                                         d="M33.764 12.507zc.056.652.118 1.213.171 1.65.079.643-.406 1.444-.758.9-.152-.234-.276-.636-.326-1.305-.17-2.304.095-2.718.896-2.812.235-.028-.014 1.219.015 1.566z" /><path
                                           fill="#FFC7B6"
@@ -73,7 +73,7 @@
                                             fill-opacity=".5"
                                             d="M32.435 13.79c.263.242.67-.05.524-.377a.33.33 0 1 0-.524.377"
                                             style="mix-blend-mode:overlay" /></g></g><path
-                                              fill="url(#nBLkObuMRu_f)"
+                                              fill="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_f)"
                                               d="m29.358 4.26-18.759.653s-3.656 3.024-2.78 5.94c.876 2.918 1.001 6.378 2.091 7.53s3.883 2.631 5.424 2.498c1.027-.089 13.88-15.193 13.88-15.193l.15-1.427z"
                                               opacity=".25" /><path
                                                 fill="#A4A1E0"
@@ -82,7 +82,7 @@
                                                   d="m27.264 3.044 4.958 1.495c.526.159.874.586.863 1.06l-.362 15.616c-.008.332-.337.595-.726.582l-5.598-.196c-.704-.024-1.252-.526-1.232-1.127l.586-16.55c.024-.654.787-1.1 1.51-.881z" /><path
                                                     fill="#310A81"
                                                     d="M26.465 4.338c.134-.32.409-.313.607-.276l1.239.35c.365.068.628.359.42.778-.15.306-.462.3-.67.257l-1.233-.31c-.367-.074-.53-.401-.363-.8" /><mask
-                                                      id="nBLkObuMRu_g"
+                                                      id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_g"
                                                       width="7"
                                                       height="12"
                                                       x="29"
@@ -90,7 +90,7 @@
                                                       maskUnits="userSpaceOnUse"
                                                       style="mask-type:alpha"><path
                                                         fill="#fff"
-                                                        d="M35.817 24.653s-3.908.543-5.043-1.52c-.486-.883-1.692-3.161-1.692-3.161l1.39-1.22.755-3.238 1.572-1.723 1.275 1.213s1.743 6.236 1.742 9.651z" /></mask><g mask="url(#nBLkObuMRu_g)"><path
+                                                        d="M35.817 24.653s-3.908.543-5.043-1.52c-.486-.883-1.692-3.161-1.692-3.161l1.39-1.22.755-3.238 1.572-1.723 1.275 1.213s1.743 6.236 1.742 9.651z" /></mask><g mask="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_g)"><path
                                                           fill="#FFC7B6"
                                                           d="M35.817 24.653s-3.908.543-5.043-1.52c-.486-.883-1.692-3.161-1.692-3.161l1.39-1.22.755-3.238 1.572-1.723 1.275 1.213s1.743 6.236 1.742 9.651z" /><path
                                                             fill="#FFC7B6"
@@ -123,7 +123,7 @@
                                                                               fill-opacity=".5"
                                                                               d="M30.421 18.625s.985.148 1.186.846c.202.698-.11-.085-.358-.334-.113-.115-.83-.512-.83-.512z"
                                                                               style="mix-blend-mode:overlay" /></g><mask
-                                                                                id="nBLkObuMRu_h"
+                                                                                id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_h"
                                                                                 width="7"
                                                                                 height="9"
                                                                                 x="26"
@@ -131,7 +131,7 @@
                                                                                 maskUnits="userSpaceOnUse"
                                                                                 style="mask-type:alpha"><path
                                                                                   fill="#fff"
-                                                                                  d="m27.399 7.608 5.4 6.183-1.11 1.215s-1.447-1.056-2.47-2.36c-.682-.869-1.98-2.792-2.288-3.68-.118-.34-.212-1.36.468-1.36z" /></mask><g mask="url(#nBLkObuMRu_h)"><path
+                                                                                  d="m27.399 7.608 5.4 6.183-1.11 1.215s-1.447-1.056-2.47-2.36c-.682-.869-1.98-2.792-2.288-3.68-.118-.34-.212-1.36.468-1.36z" /></mask><g mask="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_h)"><path
                                                                                     fill="#FFC7B6"
                                                                                     d="m27.399 7.608 5.4 6.183-1.11 1.215s-1.447-1.056-2.47-2.36c-.682-.869-1.98-2.792-2.288-3.68-.118-.34-.212-1.36.468-1.36z" /><path
                                                                                       fill="#FFC7B6"
@@ -140,7 +140,7 @@
                                                                                         fill-opacity=".5"
                                                                                         d="M26.73 7.426c.163 1.73 1.342 3.14 2.021 4.042.599.795 3.616 3.726 3.616 3.726l-3.065-1.474L26.775 10l-.55-2.067z"
                                                                                         style="mix-blend-mode:overlay" /></g><mask
-                                                                                          id="nBLkObuMRu_i"
+                                                                                          id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_i"
                                                                                           width="9"
                                                                                           height="6"
                                                                                           x="24"
@@ -148,7 +148,7 @@
                                                                                           maskUnits="userSpaceOnUse"
                                                                                           style="mask-type:alpha"><path
                                                                                             fill="#fff"
-                                                                                            d="M30.994 16.792s-2.692-2.183-4.064-2.717c-1.373-.534-2.895-1.095-2.76-1.827s2.897.183 2.897.183 1.814.491 2.377.864c.64.423 2.627 1.55 2.627 1.55l-1.079 1.947z" /></mask><g mask="url(#nBLkObuMRu_i)"><path
+                                                                                            d="M30.994 16.792s-2.692-2.183-4.064-2.717c-1.373-.534-2.895-1.095-2.76-1.827s2.897.183 2.897.183 1.814.491 2.377.864c.64.423 2.627 1.55 2.627 1.55l-1.079 1.947z" /></mask><g mask="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_i)"><path
                                                                                               fill="#FFC7B6"
                                                                                               d="M30.994 16.792s-2.692-2.183-4.064-2.717c-1.373-.534-2.895-1.095-2.76-1.827s2.897.183 2.897.183 1.814.491 2.377.864c.64.423 2.627 1.55 2.627 1.55l-1.079 1.947z" /><path
                                                                                                 fill="#FFC7B6"
@@ -157,7 +157,7 @@
                                                                                                   fill-opacity=".5"
                                                                                                   d="M24.011 12.17s.955.85 1.672 1.088c.534.178 1.478.577 1.927.769q.246.105.467.255l2.302 1.552.93 1.247-3.478-2.07-3.558-2.122-.264-.717z"
                                                                                                   style="mix-blend-mode:overlay" /></g><mask
-                                                                                                    id="nBLkObuMRu_j"
+                                                                                                    id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_j"
                                                                                                     width="8"
                                                                                                     height="5"
                                                                                                     x="24"
@@ -165,7 +165,7 @@
                                                                                                     maskUnits="userSpaceOnUse"
                                                                                                     style="mask-type:alpha"><path
                                                                                                       fill="#fff"
-                                                                                                      d="M24.14 15.44c-.039.258.08.94.685.862s1.506 0 1.506 0l2.72 1.325 1.54 1.326.51-2.111s-.942-.867-1.833-1.192c-.648-.236-2.394-.992-3.524-.9-.74.06-1.53.193-1.604.69" /></mask><g mask="url(#nBLkObuMRu_j)"><path
+                                                                                                      d="M24.14 15.44c-.039.258.08.94.685.862s1.506 0 1.506 0l2.72 1.325 1.54 1.326.51-2.111s-.942-.867-1.833-1.192c-.648-.236-2.394-.992-3.524-.9-.74.06-1.53.193-1.604.69" /></mask><g mask="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_j)"><path
                                                                                                         fill="#FFC7B6"
                                                                                                         d="M24.14 15.44c-.039.258.08.94.685.862s1.506 0 1.506 0l2.72 1.325 1.54 1.326.51-2.111s-.942-.867-1.833-1.192c-.648-.236-2.394-.992-3.524-.9-.74.06-1.53.193-1.604.69" /><path
                                                                                                           fill="#FFC7B6"
@@ -174,7 +174,7 @@
                                                                                                             fill-opacity=".5"
                                                                                                             d="M24.07 16.106s.248.523.708.484c.46-.038 1.243-.21 1.51-.075.268.134 2.009.936 2.009.936l1.3.88 1.11.822-.698-1.031s-.545-.748-1.234-1.073c-.689-.326-1.898-1.017-2.434-1.038-.536-.02-1.826.133-2.291-.244-.266-.217.02.338.02.338z"
                                                                                                             style="mix-blend-mode:overlay" /></g><mask
-                                                                                                              id="nBLkObuMRu_k"
+                                                                                                              id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_k"
                                                                                                               width="8"
                                                                                                               height="4"
                                                                                                               x="23"
@@ -182,7 +182,7 @@
                                                                                                               maskUnits="userSpaceOnUse"
                                                                                                               style="mask-type:alpha"><path
                                                                                                                 fill="#fff"
-                                                                                                                d="M29.949 20.348s-3.714-1.644-4.739-1.714-1.347-.414-1.36-.903c-.01-.429.248-.702 1.64-.51 1.394.192 5.101 1.45 5.101 1.45z" /></mask><g mask="url(#nBLkObuMRu_k)"><path
+                                                                                                                d="M29.949 20.348s-3.714-1.644-4.739-1.714-1.347-.414-1.36-.903c-.01-.429.248-.702 1.64-.51 1.394.192 5.101 1.45 5.101 1.45z" /></mask><g mask="url(#ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_k)"><path
                                                                                                                   fill="#FFC7B6"
                                                                                                                   d="M29.949 20.348s-3.714-1.644-4.739-1.714-1.347-.414-1.36-.903c-.01-.429.248-.702 1.64-.51 1.394.192 5.101 1.45 5.101 1.45z" /><path
                                                                                                                     fill="#FFC7B6"
@@ -258,16 +258,16 @@
                                                                                                                                                                 fill="#411917"
                                                                                                                                                                 fill-rule="evenodd"
                                                                                                                                                                 d="m16.43 11.101.002-.001.01-.013a.455.455 0 0 1 .253-.155c.175-.04.517-.006 1.063.513a.185.185 0 1 0 .255-.268c-.59-.561-1.054-.682-1.4-.606a.82.82 0 0 0-.484.318l-.008.01-.002.004-.001.002.157.098-.158-.097a.185.185 0 0 0 .314.195"
-                                                                                                                                                                clip-rule="evenodd" /></g><defs><clipPath id="nBLkObuMRu_a"><path
+                                                                                                                                                                clip-rule="evenodd" /></g><defs><clipPath id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_a"><path
                                                                                                                                                                   fill="#fff"
-                                                                                                                                                                  d="M0 0h40v40H0z" /></clipPath><clipPath id="nBLkObuMRu_b"><rect
+                                                                                                                                                                  d="M0 0h40v40H0z" /></clipPath><clipPath id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_b"><rect
                                                                                                                                                                     width="33.333"
                                                                                                                                                                     height="33.333"
                                                                                                                                                                     x="3.333"
                                                                                                                                                                     y="3.333"
                                                                                                                                                                     fill="#fff"
                                                                                                                                                                     rx="16.667" /></clipPath><linearGradient
-                                                                                                                                                                      id="nBLkObuMRu_f"
+                                                                                                                                                                      id="ykB9TFMFTGb0uErtM2ZE1sUQ6_X_YDydwwnnTQYsGSY_f"
                                                                                                                                                                       x1="9.338"
                                                                                                                                                                       x2="29.093"
                                                                                                                                                                       y1="14.689"
