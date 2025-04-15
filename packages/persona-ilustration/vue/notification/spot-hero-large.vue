@@ -5,14 +5,14 @@
     height="300"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 300 300"><g clip-path="url(#IQdJ2mrGcF_a)"><g clip-path="url(#IQdJ2mrGcF_b)"><rect
+    viewBox="0 0 300 300"><g clip-path="url(#yPjy1ayA1W1EPxQNVkjnZvQG8Eda1j7L4kl3a-s8diU_a)"><g clip-path="url(#yPjy1ayA1W1EPxQNVkjnZvQG8Eda1j7L4kl3a-s8diU_b)"><rect
       width="250"
       height="250"
       x="25.281"
       y="25"
       fill="#D3EDFF"
       rx="125" /><mask
-        id="IQdJ2mrGcF_c"
+        id="yPjy1ayA1W1EPxQNVkjnZvQG8Eda1j7L4kl3a-s8diU_c"
         width="308"
         height="373"
         x="-42"
@@ -20,7 +20,7 @@
         maskUnits="userSpaceOnUse"
         style="mask-type:alpha"><path
           fill="#fff"
-          d="m265.869 77.238-306.87 46.87v325.439h306.87V77.238" /></mask><g mask="url(#IQdJ2mrGcF_c)"><path
+          d="m265.869 77.238-306.87 46.87v325.439h306.87V77.238" /></mask><g mask="url(#yPjy1ayA1W1EPxQNVkjnZvQG8Eda1j7L4kl3a-s8diU_c)"><path
             fill="#AADBFF"
             d="m265.869 77.238-306.87 46.87v325.439h306.87V77.238" /><path
               fill="#82C2F1"
@@ -84,9 +84,9 @@
                                                     fill="#FFC509"
                                                     d="M215.464 205.772c0 6.477-28.064 11.728-62.684 11.728s-62.683-5.251-62.683-11.728 28.064-11.728 62.683-11.728 62.684 5.251 62.684 11.728" /><path
                                                       fill="#FFF9E1"
-                                                      d="M134.454 194.554c5.797-.331 11.95-.51 18.326-.51 6.872 0 13.486.207 19.673.59-.311 10.225-8.698 18.419-18.999 18.419-10.327 0-18.731-8.237-19-18.499" /></g><defs><clipPath id="IQdJ2mrGcF_a"><path
+                                                      d="M134.454 194.554c5.797-.331 11.95-.51 18.326-.51 6.872 0 13.486.207 19.673.59-.311 10.225-8.698 18.419-18.999 18.419-10.327 0-18.731-8.237-19-18.499" /></g><defs><clipPath id="yPjy1ayA1W1EPxQNVkjnZvQG8Eda1j7L4kl3a-s8diU_a"><path
                                                         fill="#fff"
-                                                        d="M0 0h300v300H0z" /></clipPath><clipPath id="IQdJ2mrGcF_b"><rect
+                                                        d="M0 0h300v300H0z" /></clipPath><clipPath id="yPjy1ayA1W1EPxQNVkjnZvQG8Eda1j7L4kl3a-s8diU_b"><rect
                                                           width="250"
                                                           height="250"
                                                           x="25.281"

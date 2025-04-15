@@ -5,7 +5,7 @@
     height="150"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 150 150"><g clip-path="url(#GTtjB5fKOq_a)"><g clip-path="url(#GTtjB5fKOq_b)"><rect
+    viewBox="0 0 150 150"><g clip-path="url(#R24P5BcoaFrVsmFKH44syfQcy_Ve-sIN4ml02y0cKuE_a)"><g clip-path="url(#R24P5BcoaFrVsmFKH44syfQcy_Ve-sIN4ml02y0cKuE_b)"><rect
       width="125"
       height="125"
       x="12.64"
@@ -32,9 +32,9 @@
                         fill="#FFC79D"
                         d="m114.156 82.679-5.617 7.08 34.467 27.347 5.617-7.079z" /><path
                           fill="#FF8D18"
-                          d="M147.436 114.872c1.547-1.95 2.086-4.098 1.205-4.797-.882-.699-2.85.314-4.397 2.264s-2.087 4.098-1.206 4.797c.882.7 2.851-.314 4.398-2.264" /></g><defs><clipPath id="GTtjB5fKOq_a"><path
+                          d="M147.436 114.872c1.547-1.95 2.086-4.098 1.205-4.797-.882-.699-2.85.314-4.397 2.264s-2.087 4.098-1.206 4.797c.882.7 2.851-.314 4.398-2.264" /></g><defs><clipPath id="R24P5BcoaFrVsmFKH44syfQcy_Ve-sIN4ml02y0cKuE_a"><path
                             fill="#fff"
-                            d="M0 0h150v150H0z" /></clipPath><clipPath id="GTtjB5fKOq_b"><rect
+                            d="M0 0h150v150H0z" /></clipPath><clipPath id="R24P5BcoaFrVsmFKH44syfQcy_Ve-sIN4ml02y0cKuE_b"><rect
                               width="125"
                               height="125"
                               x="12.64"

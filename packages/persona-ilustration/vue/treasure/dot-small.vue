@@ -5,7 +5,7 @@
     height="40"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 40 40"><g clip-path="url(#T8ttSVBbqz_a)"><path
+    viewBox="0 0 40 40"><g clip-path="url(#EaKFVFBdCfsZsK2lGSEdBzqoQJ6ohUS6ljn23MEr7Jg_a)"><path
       fill="#FFDCC5"
       d="m2.795 20.67 1.737 9.966 16.446 5.122 1.178-10.307z" /><path
         fill="#FFC79D"
@@ -79,7 +79,7 @@
                                                               fill="#FFB26F"
                                                               fill-rule="evenodd"
                                                               d="m33.224 10.542.437-.96-16.303-2.294.62.829zM17.895 8.253l15.416 2.453.566-1.244-16.85-2.37zM29.97 19.895l-17.947-3.502.057-.29 17.946 3.502z"
-                                                              clip-rule="evenodd" /></g><defs><clipPath id="T8ttSVBbqz_a"><path
+                                                              clip-rule="evenodd" /></g><defs><clipPath id="EaKFVFBdCfsZsK2lGSEdBzqoQJ6ohUS6ljn23MEr7Jg_a"><path
                                                                 fill="#fff"
                                                                 d="M0 0h40v40H0z" /></clipPath></defs></svg>
 </template>

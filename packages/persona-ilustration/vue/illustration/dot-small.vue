@@ -5,11 +5,11 @@
     height="40"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 40 40"><g clip-path="url(#2Tmo0pZyOz_a)"><path
+    viewBox="0 0 40 40"><g clip-path="url(#OrjhP5JK3Hmyt_RttOdVTlDNg8K_PnZ5fwufv8IM3i8_a)"><path
       fill="#82C2F1"
       d="M9.846 38.667a.4.4 0 0 1-.388-.497L18.59 1.636a.4.4 0 0 1 .388-.302h1.842a.4.4 0 0 1 .388.497l-9.133 36.533a.4.4 0 0 1-.388.303z" /><path
         fill="#82C2F1"
-        d="M30.154 38.667a.4.4 0 0 0 .388-.497L21.41 1.636a.4.4 0 0 0-.388-.302H19.18a.4.4 0 0 0-.388.497l9.133 36.533a.4.4 0 0 0 .388.303z" /><g clip-path="url(#2Tmo0pZyOz_b)"><rect
+        d="M30.154 38.667a.4.4 0 0 0 .388-.497L21.41 1.636a.4.4 0 0 0-.388-.302H19.18a.4.4 0 0 0-.388.497l9.133 36.533a.4.4 0 0 0 .388.303z" /><g clip-path="url(#OrjhP5JK3Hmyt_RttOdVTlDNg8K_PnZ5fwufv8IM3i8_b)"><rect
           width="33.333"
           height="33.333"
           x="3.333"
@@ -23,9 +23,9 @@
               r="2.359"
               fill="#fff" /></g><path
                 fill="#82C2F1"
-                d="M6.667 34.533c0-.22.179-.4.4-.4h25.866c.221 0 .4.18.4.4V36.4a.4.4 0 0 1-.4.4H7.067a.4.4 0 0 1-.4-.4z" /></g><defs><clipPath id="2Tmo0pZyOz_a"><path
+                d="M6.667 34.533c0-.22.179-.4.4-.4h25.866c.221 0 .4.18.4.4V36.4a.4.4 0 0 1-.4.4H7.067a.4.4 0 0 1-.4-.4z" /></g><defs><clipPath id="OrjhP5JK3Hmyt_RttOdVTlDNg8K_PnZ5fwufv8IM3i8_a"><path
                   fill="#fff"
-                  d="M0 0h40v40H0z" /></clipPath><clipPath id="2Tmo0pZyOz_b"><rect
+                  d="M0 0h40v40H0z" /></clipPath><clipPath id="OrjhP5JK3Hmyt_RttOdVTlDNg8K_PnZ5fwufv8IM3i8_b"><rect
                     width="33.333"
                     height="33.333"
                     x="3.333"

@@ -5,11 +5,11 @@
     height="80"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 80 80"><g clip-path="url(#SAjQdveEmj_a)"><path
+    viewBox="0 0 80 80"><g clip-path="url(#JG6JrJ3vLf9GtfMqGg2adZc7Zc8y_8QFTm2I0H9gCM8_a)"><path
       fill="#EA4F4A"
       d="M60.757 28.256c0-11.464-9.294-20.757-20.757-20.757s-20.757 9.293-20.757 20.757c0 14.205 12.976 30.994 19.771 43.66.418.778 1.554.778 1.972 0 6.794-12.666 19.77-29.455 19.77-43.66" /><path
         fill="#F8F8F8"
-        d="M48.745 28.497a8.745 8.745 0 1 1-17.49 0 8.745 8.745 0 0 1 17.49 0" /></g><defs><clipPath id="SAjQdveEmj_a"><path
+        d="M48.745 28.497a8.745 8.745 0 1 1-17.49 0 8.745 8.745 0 0 1 17.49 0" /></g><defs><clipPath id="JG6JrJ3vLf9GtfMqGg2adZc7Zc8y_8QFTm2I0H9gCM8_a"><path
           fill="#fff"
           d="M0 0h80v80H0z" /></clipPath></defs></svg>
 </template>

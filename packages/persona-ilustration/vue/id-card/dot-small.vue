@@ -5,7 +5,7 @@
     height="40"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 40 40"><g clip-path="url(#Wdg0UY9vKj_a)"><g clip-path="url(#Wdg0UY9vKj_b)"><path
+    viewBox="0 0 40 40"><g clip-path="url(#8FINEXtcUqTP0HvFUKY6uIrETaeIggwI0pcjjkMjD9k_a)"><g clip-path="url(#8FINEXtcUqTP0HvFUKY6uIrETaeIggwI0pcjjkMjD9k_b)"><path
       fill="#80D6E2"
       d="M19.468 15.886c0-.849.688-1.536 1.536-1.536h15.568c.849 0 1.536.687 1.536 1.536v9.218c0 .848-.687 1.536-1.536 1.536H21.004a1.536 1.536 0 0 1-1.536-1.536z" /><path
         fill="#F8F8F8"
@@ -26,7 +26,7 @@
                   d="M19.357 14.505a7.46 7.46 0 1 1-10.551 10.55 7.46 7.46 0 0 1 10.551-10.55" /><path
                     fill="#310A81"
                     d="M18.664 26.176a.904.904 0 0 1 0-1.28l.533-.532a.904.904 0 1 1 1.28 1.279l-.534.533a.904.904 0 0 1-1.279 0" /><mask
-                      id="Wdg0UY9vKj_c"
+                      id="8FINEXtcUqTP0HvFUKY6uIrETaeIggwI0pcjjkMjD9k_c"
                       width="14"
                       height="14"
                       x="7"
@@ -34,7 +34,7 @@
                       maskUnits="userSpaceOnUse"
                       style="mask-type:alpha"><path
                         fill="#F9F9F9"
-                        d="M18.504 15.358c2.502 2.501 2.55 6.51.107 8.952s-6.451 2.395-8.953-.106-2.55-6.51-.106-8.953c2.442-2.442 6.45-2.395 8.952.107" /></mask><g mask="url(#Wdg0UY9vKj_c)"><path
+                        d="M18.504 15.358c2.502 2.501 2.55 6.51.107 8.952s-6.451 2.395-8.953-.106-2.55-6.51-.106-8.953c2.442-2.442 6.45-2.395 8.952.107" /></mask><g mask="url(#8FINEXtcUqTP0HvFUKY6uIrETaeIggwI0pcjjkMjD9k_c)"><path
                           fill="#A6B7FF"
                           d="M18.504 15.358c2.502 2.501 2.55 6.51.107 8.952s-6.451 2.395-8.953-.106-2.55-6.51-.106-8.953c2.442-2.442 6.45-2.395 8.952.107"
                           opacity=".75" /><path
@@ -46,7 +46,7 @@
                               fill-rule="evenodd"
                               d="M8.386 25.112a5.28 5.28 0 0 1 4.014-1.851h3.44c1.545 0 3.012.676 4.015 1.851.463.543.718 1.233.718 1.946v.101a3.26 3.26 0 0 1-.72 2.047.717.717 0 1 1-1.118-.898c.253-.314.404-.713.404-1.149v-.1c0-.373-.133-.733-.374-1.016l.545-.465-.545.465a3.85 3.85 0 0 0-2.924-1.348H12.4a3.85 3.85 0 0 0-2.925 1.348 1.56 1.56 0 0 0-.374 1.015v.101c0 .436.15.835.404 1.15a.717.717 0 1 1-1.118.897 3.26 3.26 0 0 1-.72-2.047v-.1c0-.714.254-1.404.718-1.947"
                               clip-rule="evenodd" /></g><mask
-                                id="Wdg0UY9vKj_d"
+                                id="8FINEXtcUqTP0HvFUKY6uIrETaeIggwI0pcjjkMjD9k_d"
                                 width="11"
                                 height="11"
                                 x="19"
@@ -54,15 +54,15 @@
                                 maskUnits="userSpaceOnUse"
                                 style="mask-type:alpha"><path
                                   fill="#009444"
-                                  d="M24.667 12.25a5 5 0 1 0 0-10 5 5 0 0 0 0 10" /></mask><g mask="url(#Wdg0UY9vKj_d)"><path
+                                  d="M24.667 12.25a5 5 0 1 0 0-10 5 5 0 0 0 0 10" /></mask><g mask="url(#8FINEXtcUqTP0HvFUKY6uIrETaeIggwI0pcjjkMjD9k_d)"><path
                                     fill="#F18513"
                                     d="M24.667 12.25a5 5 0 1 0 0-10 5 5 0 0 0 0 10" /><path
                                       fill="#FFB700"
                                       d="M23.482 11.098a5 5 0 1 0 0-10 5 5 0 0 0 0 10" /><path
                                         fill="#7B3328"
-                                        d="M25.402 9.882a.752.752 0 1 1-1.505 0 .752.752 0 0 1 1.505 0M23.926 4.617a.724.724 0 1 1 1.447 0l-.138 3.573a.586.586 0 0 1-1.171 0z" /></g></g></g><defs><clipPath id="Wdg0UY9vKj_a"><path
+                                        d="M25.402 9.882a.752.752 0 1 1-1.505 0 .752.752 0 0 1 1.505 0M23.926 4.617a.724.724 0 1 1 1.447 0l-.138 3.573a.586.586 0 0 1-1.171 0z" /></g></g></g><defs><clipPath id="8FINEXtcUqTP0HvFUKY6uIrETaeIggwI0pcjjkMjD9k_a"><path
                                           fill="#fff"
-                                          d="M0 0h40v40H0z" /></clipPath><clipPath id="Wdg0UY9vKj_b"><path
+                                          d="M0 0h40v40H0z" /></clipPath><clipPath id="8FINEXtcUqTP0HvFUKY6uIrETaeIggwI0pcjjkMjD9k_b"><path
                                             fill="#fff"
                                             d="M0 0h40v40H0z" /></clipPath></defs></svg>
 </template>

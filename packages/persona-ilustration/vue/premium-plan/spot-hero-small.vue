@@ -5,14 +5,14 @@
     height="240"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 240 240"><g clip-path="url(#9Sset2ix3o_a)"><g clip-path="url(#9Sset2ix3o_b)"><rect
+    viewBox="0 0 240 240"><g clip-path="url(#Xt3Xb8b-E7NpdRxfOYbIglszSyZwuAAOcfFIkPC1D9k_a)"><g clip-path="url(#Xt3Xb8b-E7NpdRxfOYbIglszSyZwuAAOcfFIkPC1D9k_b)"><rect
       width="200"
       height="200"
       x="20"
       y="20"
       fill="#D3EDFF"
       rx="100" /><mask
-        id="9Sset2ix3o_c"
+        id="Xt3Xb8b-E7NpdRxfOYbIglszSyZwuAAOcfFIkPC1D9k_c"
         width="116"
         height="38"
         x="61"
@@ -20,7 +20,7 @@
         maskUnits="userSpaceOnUse"
         style="mask-type:alpha"><path
           fill="#EA4F4A"
-          d="M78.078 99.73c-14.119 5.7-16.828 21.971-16.417 29.393h115.22c.41-7.422-2.298-23.693-16.417-29.393-22.551-9.105-59.835-9.105-82.386 0" /></mask><g mask="url(#9Sset2ix3o_c)"><path
+          d="M78.078 99.73c-14.119 5.7-16.828 21.971-16.417 29.393h115.22c.41-7.422-2.298-23.693-16.417-29.393-22.551-9.105-59.835-9.105-82.386 0" /></mask><g mask="url(#Xt3Xb8b-E7NpdRxfOYbIglszSyZwuAAOcfFIkPC1D9k_c)"><path
             fill="#EA4F4A"
             d="M78.078 99.73c-14.119 5.7-16.828 21.971-16.417 29.394h115.22c.41-7.423-2.298-23.694-16.417-29.394-22.551-9.105-59.835-9.105-82.386 0" /><path
               fill="#DB4747"
@@ -119,9 +119,9 @@
                                                                                               fill="#FFC79D"
                                                                                               fill-rule="evenodd"
                                                                                               d="M143.167 20.057a8.17 8.17 0 0 0 8.168-8.168 8.17 8.17 0 0 0 8.168 8.168 8.17 8.17 0 0 0-8.168 8.168 8.17 8.17 0 0 0-8.168-8.168M44.901 62.183c5.558 0 10.063-4.505 10.063-10.063 0 5.558 4.505 10.063 10.062 10.063-5.557 0-10.062 4.505-10.062 10.062 0-5.557-4.505-10.062-10.063-10.062M167.29 83.705c5.557 0 10.062-4.505 10.062-10.062 0 5.557 4.505 10.062 10.062 10.062-5.557 0-10.062 4.505-10.062 10.063 0-5.558-4.505-10.063-10.062-10.063"
-                                                                                              clip-rule="evenodd" /></g><defs><clipPath id="9Sset2ix3o_a"><path
+                                                                                              clip-rule="evenodd" /></g><defs><clipPath id="Xt3Xb8b-E7NpdRxfOYbIglszSyZwuAAOcfFIkPC1D9k_a"><path
                                                                                                 fill="#fff"
-                                                                                                d="M0 0h240v240H0z" /></clipPath><clipPath id="9Sset2ix3o_b"><rect
+                                                                                                d="M0 0h240v240H0z" /></clipPath><clipPath id="Xt3Xb8b-E7NpdRxfOYbIglszSyZwuAAOcfFIkPC1D9k_b"><rect
                                                                                                   width="200"
                                                                                                   height="200"
                                                                                                   x="20"

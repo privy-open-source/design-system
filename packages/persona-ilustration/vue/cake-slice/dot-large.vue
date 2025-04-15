@@ -5,7 +5,7 @@
     height="80"
     fill="none"
     class="persona-ilustration"
-    viewBox="0 0 80 80"><g clip-path="url(#cADxIN9jm1_a)"><ellipse
+    viewBox="0 0 80 80"><g clip-path="url(#SWpBmKp1KSyg3I4ycMgmfmhwEgAmEvAWkTgaNnsJkzk_a)"><ellipse
       cx="39.838"
       cy="48.671"
       fill="#FFF9E1"
@@ -26,7 +26,7 @@
                   d="M49.123 41.596s1.03-3.728 2.42-1.805c1.389 1.922 3.619 2.456 3.619 2.456s1.616.044 1.513-4.204c-.102-4.247 2.332-6.382 2.332-6.382s1.69-.965 2.084.965 1.36 2.01 1.36 2.01 2.559-.694 1.82-5.315c-.738-4.62-.6-16.252-.6-16.252s.746-5.293-1.878-5.293c-2.625 0-5.118 9.526-5.118 9.526s-10.615 6.251-8.334 8.028c1.966 1.528.782 16.266.782 16.266" /><path
                     fill="#DDAC8E"
                     d="m50.168 28.824-.943-4.138-4.854-2.017 3.172 5.673s.483 12.472.483 13.35l1.104-.096 1.045-12.772z" /><mask
-                      id="cADxIN9jm1_b"
+                      id="SWpBmKp1KSyg3I4ycMgmfmhwEgAmEvAWkTgaNnsJkzk_b"
                       width="32"
                       height="55"
                       x="17"
@@ -34,11 +34,11 @@
                       maskUnits="userSpaceOnUse"
                       style="mask-type:alpha"><path
                         fill="#000"
-                        d="M48.348 29.153v32.351L17.905 44.038V7.857L45.03 23.422a6.6 6.6 0 0 1 3.319 5.731" /></mask><g mask="url(#cADxIN9jm1_b)"><path
+                        d="M48.348 29.153v32.351L17.905 44.038V7.857L45.03 23.422a6.6 6.6 0 0 1 3.319 5.731" /></mask><g mask="url(#SWpBmKp1KSyg3I4ycMgmfmhwEgAmEvAWkTgaNnsJkzk_b)"><path
                           fill="#FEEDB4"
                           d="M48.348 29.153v32.351L17.905 44.038V7.857L45.03 23.422a6.6 6.6 0 0 1 3.319 5.731" /><path
                             fill="#FFB26F"
-                            d="m12.949 17.302 45.97 25.12v4.548L12.95 21.842zM10.711 27.304l45.964 25.12v4.548L10.711 31.844z" /></g></g><defs><clipPath id="cADxIN9jm1_a"><path
+                            d="m12.949 17.302 45.97 25.12v4.548L12.95 21.842zM10.711 27.304l45.964 25.12v4.548L10.711 31.844z" /></g></g><defs><clipPath id="SWpBmKp1KSyg3I4ycMgmfmhwEgAmEvAWkTgaNnsJkzk_a"><path
                               fill="#fff"
                               d="M0 0h80v80H0z" /></clipPath></defs></svg>
 </template>
