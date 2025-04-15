@@ -45,7 +45,7 @@
     "changelog": "jiti scripts/changelog.ts"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "0.8.4",
+    "@nuxt/module-builder": "1.0.1",
     "@types/fs-extra": "11.0.4",
     "@types/minimist": "1.2.5",
     "dotenv": "16.5.0",

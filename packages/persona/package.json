@@ -121,7 +121,7 @@
     "vue-router": ">=4.0.0"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "0.8.4",
+    "@nuxt/module-builder": "1.0.1",
     "@nuxt/schema": "3.16.2",
     "@nuxtjs/tailwindcss": "6.13.2",
     "@privyid/browserslist-config": "workspace:^",
