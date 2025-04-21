@@ -2239,14 +2239,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jill64/universal-sanitizer@npm:1.4.2":
-  version: 1.4.2
-  resolution: "@jill64/universal-sanitizer@npm:1.4.2"
+"@jill64/universal-sanitizer@npm:1.4.4":
+  version: 1.4.4
+  resolution: "@jill64/universal-sanitizer@npm:1.4.4"
   dependencies:
-    "@types/sanitize-html": "npm:2.13.0"
+    "@types/sanitize-html": "npm:2.15.0"
     dompurify: "npm:3.2.4"
-    sanitize-html: "npm:2.15.0"
-  checksum: 10/46adb7e00048bfa8419eeadc48e239b5e0455231ed5909315125fc4e7f9b9f5d4b1cc8b10f467b0d2daa826c727215079961d345375fda18557bbfd9eb23f73a
+    sanitize-html: "npm:2.16.0"
+  checksum: 10/c0b8ec46c1a283247fcfe24e36b516bc7e712d9dc93219a01d31a7b575f0d30c7a25910542246ce86f7bba9f6dcc1782cb05e6922894fd90ece8712e05edaffd
   languageName: node
   linkType: hard
 
@@ -3491,7 +3491,7 @@ __metadata:
   resolution: "@privyid/persona@workspace:packages/persona"
   dependencies:
     "@floating-ui/dom": "npm:1.6.13"
-    "@jill64/universal-sanitizer": "npm:1.4.2"
+    "@jill64/universal-sanitizer": "npm:1.4.4"
     "@juggle/resize-observer": "npm:3.4.0"
     "@nuxt/kit": "npm:3.16.2"
     "@nuxt/module-builder": "npm:1.0.1"
@@ -5225,15 +5225,6 @@ __metadata:
   dependencies:
     htmlparser2: "npm:^8.0.0"
   checksum: 10/a901d55d31cd946a7fce0130cc7cf6bcf56602af9c87291be77d8149c60e7afc47c83ca74c67c2d84e6ba029fe9bbd6f14f89a8cb30fbd185766eebc5722c251
-  languageName: node
-  linkType: hard
-
-"@types/sanitize-html@npm:2.13.0":
-  version: 2.13.0
-  resolution: "@types/sanitize-html@npm:2.13.0"
-  dependencies:
-    htmlparser2: "npm:^8.0.0"
-  checksum: 10/a32c67bdf86048efa8ee5cdc1a68351758bae888956010eea58e694c1f9fc580632d1ce0478d31984559e0b03282d130ffe3e87479838c8da92cf1ac06626edc
   languageName: node
   linkType: hard
 
@@ -17899,9 +17890,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sanitize-html@npm:2.15.0":
-  version: 2.15.0
-  resolution: "sanitize-html@npm:2.15.0"
+"sanitize-html@npm:2.16.0":
+  version: 2.16.0
+  resolution: "sanitize-html@npm:2.16.0"
   dependencies:
     deepmerge: "npm:^4.2.2"
     escape-string-regexp: "npm:^4.0.0"
@@ -17909,7 +17900,7 @@ __metadata:
     is-plain-object: "npm:^5.0.0"
     parse-srcset: "npm:^1.0.2"
     postcss: "npm:^8.3.11"
-  checksum: 10/1725b9b944db2b5423799ab68048e58ef9b9bdd14c18eac3db3b40592b07ef7eabe744179a967c0169007f17b66de7b9ef7d18073357ea4ef02c582bdc3f0e3d
+  checksum: 10/eac99df964e3600717dec90867b4098ca66a75e8b0b2bb7ab1661090b35ebefd7776829d023905fbb55e58b2dd05a27dd3b99dde76d8bd75a973a26b4d77cd7a
   languageName: node
   linkType: hard
 
