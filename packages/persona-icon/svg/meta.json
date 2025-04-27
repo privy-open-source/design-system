@@ -145,95 +145,6 @@
     ]
   },
   {
-    "name": "question-circle",
-    "aliases": [],
-    "category": "tatus",
-    "folder": "question-circle-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "question-circle-solid/16",
-        "path": "question-circle-solid/16.svg",
-        "hash": "ec1fe628f82f69f2862dd25bf5b552afcfd1ea245f47e9f3bbbdd9ef38413f21"
-      },
-      {
-        "name": "question-circle-solid/20",
-        "path": "question-circle-solid/20.svg",
-        "hash": "0cb8546dbbbf4ecdad9bca53ef797fae64ad14539b4af8803afeade63ab64607"
-      },
-      {
-        "name": "question-circle-solid/24",
-        "path": "question-circle-solid/24.svg",
-        "hash": "292eb333ae435610828f2b54be775429e628fdf2f4fb8ed276ad5be352d2f7db"
-      },
-      {
-        "name": "question-circle-solid/32",
-        "path": "question-circle-solid/32.svg",
-        "hash": "1944b70745c09a64f9b5e7f8e24f88834f9cff9fa851129530a095ba19b5bf13"
-      }
-    ]
-  },
-  {
-    "name": "exclamation-circle",
-    "aliases": [
-      "warning-circle"
-    ],
-    "category": "tatus",
-    "folder": "exclamation-circle-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "exclamation-circle-solid/16",
-        "path": "exclamation-circle-solid/16.svg",
-        "hash": "2995094fb3c8c610e7b6a16bb640ef24c677fde441832241f869f88606f20fb9"
-      },
-      {
-        "name": "exclamation-circle-solid/24",
-        "path": "exclamation-circle-solid/24.svg",
-        "hash": "274e4c0c5064647fb444d92dbb0999d41938d43019cb8a494480a642af48354c"
-      },
-      {
-        "name": "exclamation-circle-solid/32",
-        "path": "exclamation-circle-solid/32.svg",
-        "hash": "bd00882f077919027a5366bd6f837fd11c7c56e17253e5dff8c4e473bd5c1c11"
-      },
-      {
-        "name": "exclamation-circle-solid/20",
-        "path": "exclamation-circle-solid/20.svg",
-        "hash": "34a0b9c60fd55dce72852568bb4ea9c3397fb563e669b9e98da25084b9e36949"
-      }
-    ]
-  },
-  {
-    "name": "information-circle",
-    "aliases": [],
-    "category": "tatus",
-    "folder": "information-circle-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "information-circle-solid/16",
-        "path": "information-circle-solid/16.svg",
-        "hash": "b977fb733677c12d8971777e53b6c5974fee4e2df1bb840a524b38bc960f32ba"
-      },
-      {
-        "name": "information-circle-solid/20",
-        "path": "information-circle-solid/20.svg",
-        "hash": "6763350752c1a05b7838fc76d51e1496a940aa357f895c31b1be6636b61707ef"
-      },
-      {
-        "name": "information-circle-solid/32",
-        "path": "information-circle-solid/32.svg",
-        "hash": "e6cad2750005941d3e669eaa6e6ee718b81e204e54748d7623908ad2434164ff"
-      },
-      {
-        "name": "information-circle-solid/24",
-        "path": "information-circle-solid/24.svg",
-        "hash": "2e0437129cd037ed3ee7a6b1f184770d33b75751b9bfb9e8bd0f08567e0ddd82"
-      }
-    ]
-  },
-  {
     "name": "document-verified",
     "aliases": [],
     "category": "files",
@@ -14897,38 +14808,6 @@
     ]
   },
   {
-    "name": "close-circle",
-    "aliases": [
-      "clear-circle",
-      "dismiss-circle"
-    ],
-    "category": "tatus",
-    "folder": "close-circle-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "close-circle-solid/32",
-        "path": "close-circle-solid/32.svg",
-        "hash": "3ca4278e57b2202eea8acf003fa670c58f27ff1dfbbd250de6d7fd0e0dabf1e1"
-      },
-      {
-        "name": "close-circle-solid/24",
-        "path": "close-circle-solid/24.svg",
-        "hash": "0145d29434fffac8b70e0111204e38783bb8fdd945fd8d64fd0562cdc22933d8"
-      },
-      {
-        "name": "close-circle-solid/16",
-        "path": "close-circle-solid/16.svg",
-        "hash": "c3f63f031f721dab7f5011c08d6f4e4047bf025cc1db0fafdea6d18f397135fa"
-      },
-      {
-        "name": "close-circle-solid/20",
-        "path": "close-circle-solid/20.svg",
-        "hash": "cade66f9d8054b3837d88c158f69bd376b818e87730b14859b4b6779abb226a1"
-      }
-    ]
-  },
-  {
     "name": "wifi-off",
     "aliases": [
       "internet-off",
@@ -15048,126 +14927,6 @@
         "name": "frowning-face/20",
         "path": "frowning-face/20.svg",
         "hash": "08edd103a815307038a240c8a01aff66be5359b7872aa256d06a2e7a240edc7b"
-      }
-    ]
-  },
-  {
-    "name": "checkmark-circle",
-    "aliases": [],
-    "category": "tatus",
-    "folder": "checkmark-circle-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "checkmark-circle-solid/32",
-        "path": "checkmark-circle-solid/32.svg",
-        "hash": "51b05352d367f5079cbfc5c87f51a2dfbe637a5bd7fbd4046ff673ec6980ad55"
-      },
-      {
-        "name": "checkmark-circle-solid/16",
-        "path": "checkmark-circle-solid/16.svg",
-        "hash": "4b48628add62d2b86728ac2723412608ccafcfb9ae2eaafe5a729c9bbce28701"
-      },
-      {
-        "name": "checkmark-circle-solid/20",
-        "path": "checkmark-circle-solid/20.svg",
-        "hash": "eb03031e141fe022267c12da4ed58a5d4152cdf332381a6eb67e43fbb61e31f8"
-      },
-      {
-        "name": "checkmark-circle-solid/24",
-        "path": "checkmark-circle-solid/24.svg",
-        "hash": "f2e2174d463f16b1bea2f33e85b9c091df3c8f22b2001eee4d7ff09270fdd44f"
-      }
-    ]
-  },
-  {
-    "name": "banned",
-    "aliases": [
-      "reject"
-    ],
-    "category": "tatus",
-    "folder": "banned-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "banned-solid/32",
-        "path": "banned-solid/32.svg",
-        "hash": "db17df04b07994d54c125ec0c76f753fe7c339ea1c2a90526de98e218d909282"
-      },
-      {
-        "name": "banned-solid/24",
-        "path": "banned-solid/24.svg",
-        "hash": "949b4f4baf35ed66c94599f19536aba330d372ad29d2a6b1c20a82ee9708a4ca"
-      },
-      {
-        "name": "banned-solid/20",
-        "path": "banned-solid/20.svg",
-        "hash": "ec8f33014cbbbfdfe9aafa1de2a74c5709f816148a535ba54d34499b5c39459e"
-      },
-      {
-        "name": "banned-solid/16",
-        "path": "banned-solid/16.svg",
-        "hash": "05ef4aa4b10bac03569d898b7ad1cdd553f079772234e10d2827d1ad35905435"
-      }
-    ]
-  },
-  {
-    "name": "exclamation-triangle",
-    "aliases": [
-      "warning-triangle"
-    ],
-    "category": "tatus",
-    "folder": "exclamation-triangle-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "exclamation-triangle-solid/20",
-        "path": "exclamation-triangle-solid/20.svg",
-        "hash": "cbc29fcdd5c3b961630d5bb71cda266bf4dd6edbbe1aad07141ef1dc8a729783"
-      },
-      {
-        "name": "exclamation-triangle-solid/32",
-        "path": "exclamation-triangle-solid/32.svg",
-        "hash": "5532f6d7ad6b3d39d1cee4efdd1303f590d051a576dbdcdd0598099c5752a583"
-      },
-      {
-        "name": "exclamation-triangle-solid/24",
-        "path": "exclamation-triangle-solid/24.svg",
-        "hash": "47dcacd4b66615e9e09a394d958ebe1ee02ebf959b0a51f0c4a98e84d778722b"
-      },
-      {
-        "name": "exclamation-triangle-solid/16",
-        "path": "exclamation-triangle-solid/16.svg",
-        "hash": "400f6a05eace798668512e77f6fd3ed09b2b1445ae475b1205421a0de95b6129"
-      }
-    ]
-  },
-  {
-    "name": "checkmark-verified",
-    "aliases": [],
-    "category": "tatus",
-    "folder": "checkmark-verified-solid",
-    "variant": "solid",
-    "files": [
-      {
-        "name": "checkmark-verified-solid/16",
-        "path": "checkmark-verified-solid/16.svg",
-        "hash": "6fbe2fa0b5e474a8b78a19c9805eabea724dc9a5ef62ae4f31654484ab3892b8"
-      },
-      {
-        "name": "checkmark-verified-solid/20",
-        "path": "checkmark-verified-solid/20.svg",
-        "hash": "781c0351359624ea1de92f8652c4ed3281d94400a9249899e7bfc636de0bc035"
-      },
-      {
-        "name": "checkmark-verified-solid/32",
-        "path": "checkmark-verified-solid/32.svg",
-        "hash": "cb66ad1fbd505866066f59418beda37fcbe877d7af9df425b347bb9959df7d37"
-      },
-      {
-        "name": "checkmark-verified-solid/24",
-        "path": "checkmark-verified-solid/24.svg",
-        "hash": "c1519630ab2521f56e9d59ef40046ab281fc2be013ef8f99ccce67bd3509cea6"
       }
     ]
   },
@@ -17647,6 +17406,247 @@
         "name": "stamp-solid/20",
         "path": "stamp-solid/20.svg",
         "hash": "fe1aadaa6f8f71a6c6feec615bb4592056cbc156ec14b960180e5bbcf68e5f1e"
+      }
+    ]
+  },
+  {
+    "name": "close-circle",
+    "aliases": [
+      "clear-circle",
+      "dismiss-circle"
+    ],
+    "category": "status",
+    "folder": "close-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "close-circle-solid/32",
+        "path": "close-circle-solid/32.svg",
+        "hash": "3ca4278e57b2202eea8acf003fa670c58f27ff1dfbbd250de6d7fd0e0dabf1e1"
+      },
+      {
+        "name": "close-circle-solid/24",
+        "path": "close-circle-solid/24.svg",
+        "hash": "0145d29434fffac8b70e0111204e38783bb8fdd945fd8d64fd0562cdc22933d8"
+      },
+      {
+        "name": "close-circle-solid/16",
+        "path": "close-circle-solid/16.svg",
+        "hash": "c3f63f031f721dab7f5011c08d6f4e4047bf025cc1db0fafdea6d18f397135fa"
+      },
+      {
+        "name": "close-circle-solid/20",
+        "path": "close-circle-solid/20.svg",
+        "hash": "cade66f9d8054b3837d88c158f69bd376b818e87730b14859b4b6779abb226a1"
+      }
+    ]
+  },
+  {
+    "name": "information-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "information-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "information-circle-solid/32",
+        "path": "information-circle-solid/32.svg",
+        "hash": "e6cad2750005941d3e669eaa6e6ee718b81e204e54748d7623908ad2434164ff"
+      },
+      {
+        "name": "information-circle-solid/24",
+        "path": "information-circle-solid/24.svg",
+        "hash": "2e0437129cd037ed3ee7a6b1f184770d33b75751b9bfb9e8bd0f08567e0ddd82"
+      },
+      {
+        "name": "information-circle-solid/16",
+        "path": "information-circle-solid/16.svg",
+        "hash": "b977fb733677c12d8971777e53b6c5974fee4e2df1bb840a524b38bc960f32ba"
+      },
+      {
+        "name": "information-circle-solid/20",
+        "path": "information-circle-solid/20.svg",
+        "hash": "6763350752c1a05b7838fc76d51e1496a940aa357f895c31b1be6636b61707ef"
+      }
+    ]
+  },
+  {
+    "name": "question-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "question-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "question-circle-solid/20",
+        "path": "question-circle-solid/20.svg",
+        "hash": "0cb8546dbbbf4ecdad9bca53ef797fae64ad14539b4af8803afeade63ab64607"
+      },
+      {
+        "name": "question-circle-solid/16",
+        "path": "question-circle-solid/16.svg",
+        "hash": "ec1fe628f82f69f2862dd25bf5b552afcfd1ea245f47e9f3bbbdd9ef38413f21"
+      },
+      {
+        "name": "question-circle-solid/24",
+        "path": "question-circle-solid/24.svg",
+        "hash": "292eb333ae435610828f2b54be775429e628fdf2f4fb8ed276ad5be352d2f7db"
+      },
+      {
+        "name": "question-circle-solid/32",
+        "path": "question-circle-solid/32.svg",
+        "hash": "1944b70745c09a64f9b5e7f8e24f88834f9cff9fa851129530a095ba19b5bf13"
+      }
+    ]
+  },
+  {
+    "name": "exclamation-circle",
+    "aliases": [
+      "warning-circle"
+    ],
+    "category": "status",
+    "folder": "exclamation-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "exclamation-circle-solid/32",
+        "path": "exclamation-circle-solid/32.svg",
+        "hash": "bd00882f077919027a5366bd6f837fd11c7c56e17253e5dff8c4e473bd5c1c11"
+      },
+      {
+        "name": "exclamation-circle-solid/16",
+        "path": "exclamation-circle-solid/16.svg",
+        "hash": "2995094fb3c8c610e7b6a16bb640ef24c677fde441832241f869f88606f20fb9"
+      },
+      {
+        "name": "exclamation-circle-solid/24",
+        "path": "exclamation-circle-solid/24.svg",
+        "hash": "274e4c0c5064647fb444d92dbb0999d41938d43019cb8a494480a642af48354c"
+      },
+      {
+        "name": "exclamation-circle-solid/20",
+        "path": "exclamation-circle-solid/20.svg",
+        "hash": "34a0b9c60fd55dce72852568bb4ea9c3397fb563e669b9e98da25084b9e36949"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-circle",
+    "aliases": [],
+    "category": "status",
+    "folder": "checkmark-circle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "checkmark-circle-solid/32",
+        "path": "checkmark-circle-solid/32.svg",
+        "hash": "51b05352d367f5079cbfc5c87f51a2dfbe637a5bd7fbd4046ff673ec6980ad55"
+      },
+      {
+        "name": "checkmark-circle-solid/16",
+        "path": "checkmark-circle-solid/16.svg",
+        "hash": "4b48628add62d2b86728ac2723412608ccafcfb9ae2eaafe5a729c9bbce28701"
+      },
+      {
+        "name": "checkmark-circle-solid/20",
+        "path": "checkmark-circle-solid/20.svg",
+        "hash": "eb03031e141fe022267c12da4ed58a5d4152cdf332381a6eb67e43fbb61e31f8"
+      },
+      {
+        "name": "checkmark-circle-solid/24",
+        "path": "checkmark-circle-solid/24.svg",
+        "hash": "f2e2174d463f16b1bea2f33e85b9c091df3c8f22b2001eee4d7ff09270fdd44f"
+      }
+    ]
+  },
+  {
+    "name": "banned",
+    "aliases": [
+      "reject"
+    ],
+    "category": "status",
+    "folder": "banned-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "banned-solid/32",
+        "path": "banned-solid/32.svg",
+        "hash": "db17df04b07994d54c125ec0c76f753fe7c339ea1c2a90526de98e218d909282"
+      },
+      {
+        "name": "banned-solid/24",
+        "path": "banned-solid/24.svg",
+        "hash": "949b4f4baf35ed66c94599f19536aba330d372ad29d2a6b1c20a82ee9708a4ca"
+      },
+      {
+        "name": "banned-solid/20",
+        "path": "banned-solid/20.svg",
+        "hash": "ec8f33014cbbbfdfe9aafa1de2a74c5709f816148a535ba54d34499b5c39459e"
+      },
+      {
+        "name": "banned-solid/16",
+        "path": "banned-solid/16.svg",
+        "hash": "05ef4aa4b10bac03569d898b7ad1cdd553f079772234e10d2827d1ad35905435"
+      }
+    ]
+  },
+  {
+    "name": "exclamation-triangle",
+    "aliases": [
+      "warning-triangle"
+    ],
+    "category": "status",
+    "folder": "exclamation-triangle-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "exclamation-triangle-solid/20",
+        "path": "exclamation-triangle-solid/20.svg",
+        "hash": "cbc29fcdd5c3b961630d5bb71cda266bf4dd6edbbe1aad07141ef1dc8a729783"
+      },
+      {
+        "name": "exclamation-triangle-solid/32",
+        "path": "exclamation-triangle-solid/32.svg",
+        "hash": "5532f6d7ad6b3d39d1cee4efdd1303f590d051a576dbdcdd0598099c5752a583"
+      },
+      {
+        "name": "exclamation-triangle-solid/24",
+        "path": "exclamation-triangle-solid/24.svg",
+        "hash": "47dcacd4b66615e9e09a394d958ebe1ee02ebf959b0a51f0c4a98e84d778722b"
+      },
+      {
+        "name": "exclamation-triangle-solid/16",
+        "path": "exclamation-triangle-solid/16.svg",
+        "hash": "400f6a05eace798668512e77f6fd3ed09b2b1445ae475b1205421a0de95b6129"
+      }
+    ]
+  },
+  {
+    "name": "checkmark-verified",
+    "aliases": [],
+    "category": "status",
+    "folder": "checkmark-verified-solid",
+    "variant": "solid",
+    "files": [
+      {
+        "name": "checkmark-verified-solid/16",
+        "path": "checkmark-verified-solid/16.svg",
+        "hash": "6fbe2fa0b5e474a8b78a19c9805eabea724dc9a5ef62ae4f31654484ab3892b8"
+      },
+      {
+        "name": "checkmark-verified-solid/20",
+        "path": "checkmark-verified-solid/20.svg",
+        "hash": "781c0351359624ea1de92f8652c4ed3281d94400a9249899e7bfc636de0bc035"
+      },
+      {
+        "name": "checkmark-verified-solid/32",
+        "path": "checkmark-verified-solid/32.svg",
+        "hash": "cb66ad1fbd505866066f59418beda37fcbe877d7af9df425b347bb9959df7d37"
+      },
+      {
+        "name": "checkmark-verified-solid/24",
+        "path": "checkmark-verified-solid/24.svg",
+        "hash": "c1519630ab2521f56e9d59ef40046ab281fc2be013ef8f99ccce67bd3509cea6"
       }
     ]
   }
