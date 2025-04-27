@@ -395,25 +395,25 @@ You can also completely change dropdown's activator button to something else via
   <p-dropdown
     text="Label">
     <p-dropdown-text>
-      <p-radio 
-        v-model="option" 
-        appearance="option" 
+      <p-radio
+        v-model="option"
+        appearance="option"
         value="list 1">
         Checklist Label
       </p-radio>
     </p-dropdown-text>
     <p-dropdown-text>
-      <p-radio 
-        v-model="option" 
-        appearance="option" 
+      <p-radio
+        v-model="option"
+        appearance="option"
         value="list 2">
         Checklist Label
       </p-radio>
     </p-dropdown-text>
     <p-dropdown-text>
-      <p-radio 
-        v-model="option" 
-        appearance="option" 
+      <p-radio
+        v-model="option"
+        appearance="option"
         value="list 3">
         Checklist Label
       </p-radio>
@@ -462,7 +462,7 @@ You can also completely change dropdown's activator button to something else via
   <p-dropdown
     text="Label">
     <p-dropdown-text>
-      But I must explain to you how all 
+      But I must explain to you how all
       this mistaken idea of denouncing pleasure
       <span class="block mt-2">And this is more example text</span>
     </p-dropdown-text>
@@ -609,7 +609,7 @@ Dropdown use local CSS variables for enhanced real-time customization.
 | `divider`      |            `Boolean`            |      `-`       | Enable divider in dropdown-item                                                                                                                                                              |
 | `menu-class`   | `String` \| `Array` \| `Object` |      `-`       | CSS class to add in the menu container                                                                                                                                                       |
 | `button-class` | `String` \| `Array` \| `Object` |      `-`       | CSS class to add in the button dropdown                                                                                                                                                      |
-| `menu-size`    |            `String`             |      `sm`      | Dropdown menu size, valid value is `sm`, `md`, `lg` and `xl`                                                                                                                                 |
+| `menu-size`    |            `String`             |      `sm`      | Dropdown menu size, valid value is `sm`, `md`, `lg` `xl` and `full`                                                                                                                          |
 
 ### Slots `<p-dropdown>`
 

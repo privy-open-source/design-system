@@ -7,7 +7,7 @@ import 'dotenv/config'
 import { EOL } from 'node:os'
 import { createHash } from 'node:crypto'
 import { Api } from 'figma-api'
-import type { ComponentMetadata } from 'figma-api/lib/api-types'
+import type { ComponentMetadata } from 'figma-api/lib/api-types.js'
 import {
   writeFile,
   ensureFile,
@@ -25,7 +25,7 @@ import type { Config } from 'svgo'
 import { optimize } from 'svgo'
 import ora from 'ora'
 import { ESLint } from 'eslint'
-import type { ObjectData, MetaData } from './types'
+import type { ObjectData, MetaData } from './types.js'
 import pAll from 'p-all'
 import * as ohash from 'ohash'
 import minimist from 'minimist'
@@ -161,7 +161,7 @@ function getMetadata (objects: Iterable<ObjectData>): MetaData[] {
     map.set(object.folder, metadata)
   }
 
-  return [...map.values()]
+  return [...map.values()].sort((a, b) => a.name.localeCompare(b.name))
 }
 
 function toVue (svg: string): string {

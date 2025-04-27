@@ -50,10 +50,12 @@ onMounted (() => {
     }
   }
 
-  .contextual-bar__body--active {
-    .VPNav,
-    .VPSidebar {
-      --vp-layout-top-height: var(--p-contextual-bar-height);
+  @media screen(md) {
+    .contextual-bar__body--active {
+      .VPNav,
+      .VPSidebar {
+        --vp-layout-top-height: var(--p-contextual-bar-height, 0px);
+      }
     }
   }
 </style>
@@ -240,13 +242,13 @@ Contextual Bar have fixed position that can be setup by using `fixed` prop.
       <img src="../avatar/assets/avatar.png" />
     </template>
     <template #action>
-      <p-button 
-        size="sm" 
+      <p-button
+        size="sm"
         color="secondary" variant="link">Cancel</p-button>
       <p-button size="sm" color="info">Button Text</p-button>
     </template>
     <template #message>
-      You will be unable to sign or seal a 
+      You will be unable to sign or seal a
       document while your privy balance runs out.
     </template>
   </p-contextual-bar>

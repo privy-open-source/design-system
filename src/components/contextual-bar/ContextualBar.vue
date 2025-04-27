@@ -6,7 +6,7 @@
     @after-leave="onLeave">
     <div
       v-show="model"
-      ref="contextualbar"
+      ref="root"
       data-testid="contextual-bar"
       class="contextual-bar"
       v-bind="$attrs"
@@ -25,36 +25,38 @@
           class="contextual-bar__icon">
           <slot name="icon" />
         </span>
-        <div class="contextual-bar__content">
-          <div
-            v-if="title || $slots.title"
-            data-testid="contextual-bar-title"
-            class="contextual-bar__content__title">
-            <slot name="title">
-              <p-subheading v-if="message">
-                {{ title }}
-              </p-subheading>
-              <template v-else>
-                {{ title }}
-              </template>
-            </slot>
-          </div>
-          <div
-            v-if="message || $slots.message"
-            data-testid="contextual-bar-message"
-            class="contextual-bar__content__message">
-            <p-caption>
-              <slot name="message">
-                {{ message }}
+        <div class="contextual-bar__content-wrapper">
+          <div class="contextual-bar__content">
+            <div
+              v-if="title || $slots.title"
+              data-testid="contextual-bar-title"
+              class="contextual-bar__content__title">
+              <slot name="title">
+                <p-subheading v-if="message">
+                  {{ title }}
+                </p-subheading>
+                <template v-else>
+                  {{ title }}
+                </template>
               </slot>
-            </p-caption>
+            </div>
+            <div
+              v-if="message || $slots.message"
+              data-testid="contextual-bar-message"
+              class="contextual-bar__content__message">
+              <p-caption>
+                <slot name="message">
+                  {{ message }}
+                </slot>
+              </p-caption>
+            </div>
           </div>
-        </div>
-        <div
-          v-if="$slots.action"
-          data-testid="contextual-bar-action"
-          class="contextual-bar__action">
-          <slot name="action" />
+          <div
+            v-if="$slots.action"
+            data-testid="contextual-bar-action"
+            class="contextual-bar__action">
+            <slot name="action" />
+          </div>
         </div>
       </div>
       <div
@@ -75,9 +77,11 @@ import type {
   VNode,
 } from 'vue-demi'
 import {
+  ref,
   computed,
   onMounted,
   onBeforeUnmount,
+  watchEffect,
 } from 'vue-demi'
 import type { AlignVariant } from '../nav'
 import { useVModel } from '../input'
@@ -85,6 +89,7 @@ import pCaption from '../caption/Caption.vue'
 import pSubheading from '../subheading/Subheading.vue'
 import IconClose from '@privyid/persona-icon/vue/close/16.vue'
 import type { StyleVariant } from '.'
+import { useElementSize } from '@vueuse/core'
 
 defineOptions({ inheritAttrs: false })
 
@@ -135,6 +140,9 @@ const emit = defineEmits<{
 }>()
 
 const model = useVModel(props)
+const root  = ref<HTMLDivElement>()
+
+const { height } = useElementSize(root, undefined, { box: 'border-box' })
 
 function close (event: Event) : void {
   emit('close', event)
@@ -178,12 +186,11 @@ const styleBg = computed<StyleValue>(() => {
   return result
 })
 
-function onEnter (target: HTMLDivElement) {
+function onEnter () {
   document.body.classList.add('contextual-bar__body--active')
 
   if (isFixed.value) {
-    document.body.style.setProperty('margin-top', `${target.clientHeight}px`)
-    document.body.style.setProperty('--p-contextual-bar-height', `${target.clientHeight}px`)
+    document.body.style.setProperty('margin-top', 'var(--p-contextual-bar-height)')
     document.body.classList.add('contextual-bar__body--fixed-active')
   }
 
@@ -195,12 +202,21 @@ function onLeave () {
 
   if (isFixed.value) {
     document.body.style.removeProperty('margin-top')
-    document.body.style.removeProperty('--p-contextual-bar-height')
     document.body.classList.remove('contextual-bar__body--fixed-active')
   }
 
   emit('hide')
 }
+
+watchEffect((onCleanup) => {
+  if (typeof document !== 'undefined' && props.fixed && model.value) {
+    document.body.style.setProperty('--p-contextual-bar-height', `${height.value}px`)
+
+    onCleanup(() => {
+      document.body.style.removeProperty('--p-contextual-bar-height')
+    })
+  }
+})
 
 onMounted(() => {
   document.body.classList.add('contextual-bar__body')
@@ -262,7 +278,7 @@ defineSlots<{
   }
 
   &__wrapper {
-    @apply px-24 items-center flex mr-9;
+    @apply px-4 md:px-24 flex-grow flex items-center mr-3 md:mr-9;
 
     &--with-message {
       @apply items-start;
@@ -350,8 +366,12 @@ defineSlots<{
   * Contextualbar body
   * content
   */
+  &__content-wrapper {
+    @apply flex-grow flex flex-col md:flex-row md:items-center;
+  }
+
   &__content {
-    @apply grow;
+    @apply flex flex-col flex-grow flex-shrink-0;
 
     &__message {
       .caption {
@@ -366,7 +386,7 @@ defineSlots<{
   }
 
   &__action {
-    @apply flex shrink-0 ml-auto space-gap-3;
+    @apply flex shrink-0 ml-auto space-gap-3 pt-4 md:pt-0;
   }
 
   &__icon {
@@ -453,9 +473,9 @@ defineSlots<{
   /**
   * Contextualbar with
   * fixed-top position
-   */
-   &&--fixed {
+  */
+  &&--fixed {
     @apply fixed z-50 top-[var(--p-contextual-bar-fixed-top)] left-0;
-   }
+  }
 }
 </style>

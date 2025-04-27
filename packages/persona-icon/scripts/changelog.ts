@@ -5,9 +5,9 @@
 import { resolve } from 'node:path'
 import { readJSON } from 'fs-extra'
 import { name } from '../package.json'
-import type { MetaData } from './types'
+import type { MetaData } from './types.js'
 import { ofetch } from 'ofetch'
-import * as ohash from 'ohash'
+import { diff } from 'ohash/utils'
 import minimist from 'minimist'
 import {
   groupBy,
@@ -42,7 +42,7 @@ async function getMeta (version: string): Promise<MetaData[]> {
 async function main () {
   const sourceMeta = getFilesData(await getMeta(argv.from ?? 'latest'))
   const targetMeta = getFilesData(await getMeta(argv.to ?? 'local'))
-  const diffs      = ohash.diff(sourceMeta, targetMeta)
+  const diffs      = diff(sourceMeta, targetMeta)
   const changelogs = groupBy(sortBy(diffs, ['type', 'key']), 'type')
 
   if (Object.keys(changelogs).length > 0) {
@@ -56,7 +56,7 @@ async function main () {
           console.log(`- ${group}`)
         else {
           for (const item of items)
-            console.log(`- ${item.key.replace('.hash', '')}`)
+            console.log(`- ${(item.key as string).replace('.hash', '')}`)
         }
       }
     }
