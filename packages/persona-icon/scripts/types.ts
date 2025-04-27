@@ -1,4 +1,4 @@
-import type { ComponentMetadata } from 'figma-api/lib/api-types'
+import type { ComponentMetadata } from 'figma-api/lib/api-types.js'
 
 export interface MetaData {
   name: string,

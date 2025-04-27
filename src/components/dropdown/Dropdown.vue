@@ -3,6 +3,7 @@
     ref="root"
     class="dropdown"
     :class="[{ 'dropdown--open': isOpen, 'dropdown--no-caret' : noCaret }, classNames]"
+    :style="{ '--p-dropdown-root-width': `${width}px` }"
     data-testid="dropdown">
     <slot
       name="activator"
@@ -82,6 +83,7 @@ import {
 import {
   onClickOutside,
   onKeyStroke,
+  useElementSize,
 } from '@vueuse/core'
 import Button from '../button/Button.vue'
 import DropdownGroup from '../dropdown-subitem/DropdownSubitem.vue'
@@ -218,6 +220,7 @@ const isOpen    = useVModel(props)
 const isHidden  = ref(false)
 
 const { next: nextFocus, prev: prevFocus } = useFocus(menuBody)
+const { width }                            = useElementSize(root)
 
 const classNames = computed(() => {
   const result: string[] = ['']
@@ -389,6 +392,10 @@ defineExpose({
 
   &--menu-auto {
     --p-dropdown-size: auto;
+  }
+
+  &--menu-full {
+    --p-dropdown-size: var(--p-dropdown-root-width);
   }
 
   &__menu {
