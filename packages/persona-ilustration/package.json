@@ -64,11 +64,11 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "1.0.1",
-    "@tsconfig/node22": "^22.0.1",
+    "@tsconfig/node22": "22.0.1",
     "@types/fs-extra": "11.0.4",
     "@types/minimist": "1.2.5",
     "dotenv": "16.5.0",
-    "fast-glob": "^3.3.3",
+    "fast-glob": "3.3.3",
     "figma-api": "1.12.0",
     "fs-extra": "11.3.0",
     "jiti": "2.4.2",
