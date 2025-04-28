@@ -22,7 +22,10 @@ export function fixPath (d: string): string {
       break
 
     if (node.value) {
-      if (node.parent && node.parent.dir === node.dir)
+      const pDir = node.parent?.dir ?? 'cw'
+      const dir  = node.dir
+
+      if (pDir === dir)
         node.reverse()
 
       result.push(node.value)
@@ -59,13 +62,13 @@ function getPolygon (path: PathArray, precission = 30) {
   const length          = SVGPath.getTotalLength(path)
 
   for (let i = 1; i <= precission; i++)
-    points.push(SVGPath.getPointAtLength(path, Math.round(length * (i / precission))))
+    points.push(SVGPath.getPointAtLength(path, Math.trunc(length * (i / precission))))
 
   return points
 }
 
-function isClockwise (path: PathArray) {
-  const points = getPolygon(path)
+function getArea (path: PathArray) {
+  const points = getPolygon(path, 29)
   const n      = points.length
 
   let area = 0
@@ -77,7 +80,11 @@ function isClockwise (path: PathArray) {
     area += (p1.x * p2.y - p2.x * p1.y)
   }
 
-  return (area / 2) < 0
+  return area
+}
+
+function isClockwise (path: PathArray) {
+  return getArea(path) <= 0
 }
 
 function sortPaths (paths: PathArray[]): PathArray[] {
@@ -159,7 +166,7 @@ export class PathTree {
 
   get area () {
     if (this.value)
-      return SVGPath.getPathArea(this.value)
+      return getArea(this.value)
   }
 
   get dir () {
@@ -186,9 +193,15 @@ export class PathTree {
     return this
   }
 
+  toString () {
+    return this.value
+      ? SVGPath.pathToString(this.value)
+      : ''
+  }
+
   toJSON (): PathTreeJSON {
     return {
-      value   : this.value ? SVGPath.pathToString(this.value) : undefined,
+      value   : this.toString(),
       dir     : this.dir,
       area    : this.area,
       children: Array.from(this.children, (c) => c.toJSON()),

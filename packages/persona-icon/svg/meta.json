@@ -7607,25 +7607,34 @@
         "name": "forward/16",
         "path": "forward/16.svg",
         "hash": "da760a43a4344b71fa20c76b1ae36f0cd554041118f6691a7969af178ac7b3aa"
-      },
+      }
+    ]
+  },
+  {
+    "name": "forward",
+    "aliases": [],
+    "category": "control",
+    "folder": "forward-2",
+    "variant": "outline",
+    "files": [
       {
-        "name": "forward/24",
-        "path": "forward/24.svg",
+        "name": "forward-2/24",
+        "path": "forward-2/24.svg",
         "hash": "fecd58a4d5134b9a0973ad9c3d6e6edfb96a8de2056aaa7d4e46292e9b8a469d"
       },
       {
-        "name": "forward/32",
-        "path": "forward/32.svg",
+        "name": "forward-2/32",
+        "path": "forward-2/32.svg",
         "hash": "307ce160ed12c6860ab57c205a28c19abe70534a9f35d0dfe8568d04ad99e255"
       },
       {
-        "name": "forward/20",
-        "path": "forward/20.svg",
+        "name": "forward-2/20",
+        "path": "forward-2/20.svg",
         "hash": "394a3769e608b9143de57276027962d1ad2244fbb64856456e7d5788c712325a"
       },
       {
-        "name": "forward/16",
-        "path": "forward/16.svg",
+        "name": "forward-2/16",
+        "path": "forward-2/16.svg",
         "hash": "f08214d7b2afe149e99f25a949379dc8b3d7618c836e27585696319d948efebf"
       }
     ]
@@ -7656,25 +7665,34 @@
         "name": "forward-solid/32",
         "path": "forward-solid/32.svg",
         "hash": "a6774dc8c5227171792b3d0b9f373c6f1591e951ded5dec9894ce8de09cc5557"
-      },
+      }
+    ]
+  },
+  {
+    "name": "forward",
+    "aliases": [],
+    "category": "control",
+    "folder": "forward-2-solid",
+    "variant": "solid",
+    "files": [
       {
-        "name": "forward-solid/16",
-        "path": "forward-solid/16.svg",
+        "name": "forward-2-solid/16",
+        "path": "forward-2-solid/16.svg",
         "hash": "6b3239d69ea0f241a9ed3c90a5f47c0d84ca1949fe9552fd819d9e9202183421"
       },
       {
-        "name": "forward-solid/20",
-        "path": "forward-solid/20.svg",
+        "name": "forward-2-solid/20",
+        "path": "forward-2-solid/20.svg",
         "hash": "b484f86a30f08c94bdb9901d764bbd3a22b2164597d7a396d97b22e3105c6c0d"
       },
       {
-        "name": "forward-solid/24",
-        "path": "forward-solid/24.svg",
+        "name": "forward-2-solid/24",
+        "path": "forward-2-solid/24.svg",
         "hash": "bc835f2328ee694654c377fe3d3162163d71ad4e6c7dd4a9f6e8c1377daa3ba4"
       },
       {
-        "name": "forward-solid/32",
-        "path": "forward-solid/32.svg",
+        "name": "forward-2-solid/32",
+        "path": "forward-2-solid/32.svg",
         "hash": "eca116668f3392ad6053874bdcc349aae4711b46dc9192fed27ce49c1855d76e"
       }
     ]

@@ -358,31 +358,43 @@
         "name": "discussion/spot-hero-large",
         "path": "discussion/spot-hero-large.svg",
         "hash": "36667e1051126ee34aa311fde9f87a6a0e76cdfbcc43031b77fd134d0f8a9251"
+      }
+    ]
+  },
+  {
+    "name": "discussion",
+    "aliases": [
+      "human",
+      "chat"
+    ],
+    "category": "not-found",
+    "folder": "discussion-2",
+    "variant": "illustrations-five-variants",
+    "files": [
+      {
+        "name": "discussion-2/dot-large",
+        "path": "discussion-2/dot-large.svg",
+        "hash": "81396cbc754a20b33b0afc71d8f63da7ca190826fa4c73a372cbc10ba2d11b08"
       },
       {
-        "name": "discussion/dot-large",
-        "path": "discussion/dot-large.svg",
-        "hash": "d31fc298c0a22d0a96cbf0c5e158b81a615b859c2c5109c61dab75f03c9c3d66"
+        "name": "discussion-2/dot-small",
+        "path": "discussion-2/dot-small.svg",
+        "hash": "87cab4b742dd741a6dcee632f5e82a7ad460939fe57cd0b04fd50b98ff0919b2"
       },
       {
-        "name": "discussion/dot-small",
-        "path": "discussion/dot-small.svg",
-        "hash": "a396850d33203bb925bbc85fc4bf8d6995f7d2a7fee0df27bd75dd1581a20c87"
+        "name": "discussion-2/spot-hero-large",
+        "path": "discussion-2/spot-hero-large.svg",
+        "hash": "619a6b6c76e7cf40b884869b710a9f5c3154f3aa7a10153b243a52e0b98e5f22"
       },
       {
-        "name": "discussion/spot-hero-large",
-        "path": "discussion/spot-hero-large.svg",
-        "hash": "56336170ce331cbaf5512c9c8403951d4cd48a9fd997cfd240dab01b5afcbec7"
+        "name": "discussion-2/spot",
+        "path": "discussion-2/spot.svg",
+        "hash": "05128b81947383a9bcde1dcb08261b858dd549baa894b027f82b483912fe5c78"
       },
       {
-        "name": "discussion/spot",
-        "path": "discussion/spot.svg",
-        "hash": "07c96bb2770820a5b60a16b0a06593bd6a83e6c5366d3ac1edb9054e0dc0c4eb"
-      },
-      {
-        "name": "discussion/spot-hero-small",
-        "path": "discussion/spot-hero-small.svg",
-        "hash": "94f3785afedf12b730134827997833e3f383cf438e48063be799d4094946719a"
+        "name": "discussion-2/spot-hero-small",
+        "path": "discussion-2/spot-hero-small.svg",
+        "hash": "ad2074ab27f067a4cf42eacab7e79b883763cde60763b7495a661b86bb06b4de"
       }
     ]
   },
@@ -671,34 +683,46 @@
         "hash": "b293de89bdd293f3139b59ad1e0331f3a540b3db9869f3f1db70c2a15366748f"
       },
       {
-        "name": "id-card/dot-small",
-        "path": "id-card/dot-small.svg",
-        "hash": "19f3eececd44297472320442a278cebd725fb2cf91dac70db3862cb3ef875565"
-      },
-      {
-        "name": "id-card/spot",
-        "path": "id-card/spot.svg",
-        "hash": "f178f33df27e66d61971bfed6d73fb3de57949a2948c02f4d1ac477730ba594f"
-      },
-      {
         "name": "id-card/spot-hero-small",
         "path": "id-card/spot-hero-small.svg",
         "hash": "1a3cccb6591440e242466f9556804d2a4403869afba22f461f55357e0b430eae"
+      }
+    ]
+  },
+  {
+    "name": "id-card",
+    "aliases": [
+      "id-face",
+      "exclamation"
+    ],
+    "category": "failed",
+    "folder": "id-card-2",
+    "variant": "illustrations-five-variants",
+    "files": [
+      {
+        "name": "id-card-2/dot-small",
+        "path": "id-card-2/dot-small.svg",
+        "hash": "03d2cb028a0574b63c75f329ea108153c96c8dd3b15a84368d5e0293c9803e95"
       },
       {
-        "name": "id-card/spot-hero-small",
-        "path": "id-card/spot-hero-small.svg",
-        "hash": "a74f64319e29a10b624eeb02a8c70f3cd8d0eccbd1ca40e4fd0be357f744797a"
+        "name": "id-card-2/spot",
+        "path": "id-card-2/spot.svg",
+        "hash": "abed3f3a874fa4659e74921e10a3d5763ebc15385548604f0c16bf83f5d831ad"
       },
       {
-        "name": "id-card/dot-large",
-        "path": "id-card/dot-large.svg",
-        "hash": "4dad79be29b8ff5161c30ee8679a0ca946192d89a63f6759f527f725a6d5df96"
+        "name": "id-card-2/spot-hero-small",
+        "path": "id-card-2/spot-hero-small.svg",
+        "hash": "3932d9f0e71e5a0dcf586c26974a8ba93b4e81c16407d9e2c736cdde49dca019"
       },
       {
-        "name": "id-card/spot-hero-large",
-        "path": "id-card/spot-hero-large.svg",
-        "hash": "707a32a4c69da672a26b33d43bfc61659f5666ce3ddc0303f782929e44eb88e8"
+        "name": "id-card-2/dot-large",
+        "path": "id-card-2/dot-large.svg",
+        "hash": "f2e6215ad1925094d00f0060cab548553503ba26039b3d1d41097e2d0c471d23"
+      },
+      {
+        "name": "id-card-2/spot-hero-large",
+        "path": "id-card-2/spot-hero-large.svg",
+        "hash": "46cb40c0b2f33377ee8993afbe4493d3b144f9af627d1c690d802951396bd758"
       }
     ]
   },
