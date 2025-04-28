@@ -3504,6 +3504,7 @@ __metadata:
     "@types/fs-extra": "npm:11.0.4"
     "@types/minimist": "npm:1.2.5"
     dotenv: "npm:16.5.0"
+    fast-glob: "npm:^3.3.3"
     figma-api: "npm:1.12.0"
     fs-extra: "npm:11.3.0"
     jiti: "npm:2.4.2"

@@ -19,20 +19,21 @@ import {
 import {
   resolve,
   join,
+  basename,
+  dirname,
 } from 'node:path'
 import { kebabCase, chunk } from 'lodash-es'
-import type { Config } from 'svgo'
-import { optimize } from 'svgo'
+import { loadConfig, optimize } from 'svgo'
 import ora from 'ora'
 import { ESLint } from 'eslint'
 import type { ObjectData, MetaData } from './types.js'
-import { fixPath } from './fix-svg.js'
 import { createFont } from './create-font.js'
 import pAll from 'p-all'
 import * as ohash from 'ohash'
 import minimist from 'minimist'
 import { ofetch } from 'ofetch'
 import { parseISO, isEqual } from 'date-fns'
+import glob from 'fast-glob'
 
 const argv       = minimist(process.argv.slice(2))
 const TOKEN      = process.env.FIGMA_TOKEN ?? ''
@@ -51,69 +52,6 @@ const eslint  = new ESLint({
   extensions: ['.vue'],
 })
 
-const svgoConfig: Config = {
-  plugins: [
-    {
-      name: 'remove-clip-path',
-      fn  : () => {
-        return {
-          element: {
-            exit (node, parentNode) {
-              if (node.name === 'g' && node.attributes['clip-path']) {
-                parentNode.children = node.children.map((child) => {
-                  if (child.type === 'element')
-                    node.attributes.fill = 'currentColor'
-
-                  return child
-                })
-              }
-            },
-          },
-        }
-      },
-    },
-    {
-      name: 'fix-path',
-      fn  : () => {
-        return {
-          element: {
-            enter (node) {
-              if (node.name === 'path') {
-                if (node.attributes.d)
-                  node.attributes.d = fixPath(node.attributes.d)
-
-                if (node.attributes.fill && node.attributes.fill !== 'none' && !node.attributes.fill.startsWith('url'))
-                  node.attributes.fill = 'currentColor'
-              }
-            },
-          },
-        }
-      },
-    },
-    {
-      name  : 'addClassesToSVGElement',
-      params: { className: 'persona-icon' },
-    },
-    {
-      name  : 'addAttributesToSVGElement',
-      params: { attributes: [{ focusable: 'false' }] },
-    },
-    {
-      name  : 'preset-default',
-      params: { overrides: { removeViewBox: false } },
-    },
-    {
-      name  : 'prefixIds',
-      params: {
-        delim           : '_',
-        prefix          : (_, info) => info.path ? ohash.hash(info.path) : '',
-        prefixClassNames: false,
-        prefixIds       : true,
-      },
-    },
-  ],
-}
-
 async function getLockData (): Promise<Map<string, ObjectData>> {
   let data: Record<string, ObjectData> = {}
 
@@ -128,6 +66,7 @@ async function getLockData (): Promise<Map<string, ObjectData>> {
 
 function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData> {
   const result: Map<string, ObjectData> = new Map()
+  const filenames: Set<string>          = new Set()
 
   for (const component of components) {
     const { size, scale } = Object.fromEntries(component.name.split(',').map((i) => i.trim().split('=')))
@@ -140,11 +79,22 @@ function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData
       const category = kebabCase(split[0])
       const name     = kebabCase(names[0])
       const aliases  = names.slice(1).map((alias) => kebabCase(alias))
-      const folder   = variant === 'outline' ? name : `${name}-${variant}`
       const id       = component.node_id
-      const filename = join(folder, size)
-      const filepath = `${filename}.svg`
 
+      let folder   = variant === 'outline' ? name : `${name}-${variant}`
+      let filename = join(folder, size)
+      let filepath = `${filename}.svg`
+      let count    = 2
+
+      while (filenames.has(filename)) {
+        folder   = variant === 'outline' ? `${name}-${count}` : `${name}-${count}-${variant}`
+        filename = join(folder, size)
+        filepath = `${filename}.svg`
+
+        count++
+      }
+
+      filenames.add(filename)
       result.set(id, {
         id,
         hash,
@@ -209,18 +159,34 @@ async function lintFile (file: string) {
 }
 
 async function cleanup (objects: Map<string, ObjectData>, lockObjects: Map<string, ObjectData>) {
-  for (const oldObject of lockObjects.values()) {
-    const newObject = objects.get(oldObject.id)
+  if (FORCE_SYNC || lockObjects.size === 0) {
+    const oldFiles = await glob('./**/*.svg', { cwd: SVG_DIR })
+    const newfiles = new Set(Array.from(objects.values(), (i) => i.filepath))
 
-    if (!newObject || newObject.filename !== oldObject.filename) {
-      await remove(resolve(SVG_DIR, `${oldObject.filename}.svg`))
-      await remove(resolve(VUE_DIR, `${oldObject.filename}.vue`))
+    for (const oldFile of oldFiles) {
+      if (!newfiles.has(oldFile)) {
+        const filename = join(dirname(oldFile), basename(oldFile, '.svg'))
+
+        await remove(resolve(SVG_DIR, `${filename}.svg`))
+        await remove(resolve(VUE_DIR, `${filename}.vue`))
+      }
+    }
+  } else {
+    for (const oldObject of lockObjects.values()) {
+      const newObject = objects.get(oldObject.id)
+
+      if (!newObject || newObject.filename !== oldObject.filename) {
+        await remove(resolve(SVG_DIR, `${oldObject.filename}.svg`))
+        await remove(resolve(VUE_DIR, `${oldObject.filename}.vue`))
+      }
     }
   }
 }
 
 async function main () {
   spinner.start('Opening figma file')
+
+  const svgoConfig = await loadConfig('./svgo.config.mjs', __dirname)
 
   const response   = await api.getFileComponents(FILE_ID)
   const components = response.meta?.components ?? []

@@ -19,7 +19,10 @@ import {
 import {
   resolve,
   join,
+  dirname,
+  basename,
 } from 'node:path'
+import glob from 'fast-glob'
 import { kebabCase, chunk } from 'lodash-es'
 import type { Config } from 'svgo'
 import { optimize } from 'svgo'
@@ -43,6 +46,8 @@ const META_FILE  = resolve(SVG_DIR, 'meta.json')
 const LOCK_FILE  = resolve(__dirname, '../sync-lock.json')
 const FORCE_SYNC = argv.f || argv.force
 const CHUNK_SIZE = 300
+
+const VARIANTS = new Set(['illustrations - five variants'])
 
 const api     = new Api({ personalAccessToken: TOKEN })
 const spinner = ora()
@@ -91,12 +96,13 @@ async function getLockData (): Promise<Map<string, ObjectData>> {
 
 function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData> {
   const result: Map<string, ObjectData> = new Map()
+  const filenames: Set<string>          = new Set()
 
   for (const component of components) {
     if (!component.containing_frame?.name)
       continue
 
-    if (component.containing_frame?.pageName === 'illustrations - five variants') {
+    if (VARIANTS.has(component.containing_frame?.pageName)) {
       const { type } = Object.fromEntries(component.name.split(',').map((i) => i.trim().split('=')))
 
       const hash     = ohash.hash(component)
@@ -106,11 +112,22 @@ function getObjectData (components: ComponentMetadata[]): Map<string, ObjectData
       const category = kebabCase(split[0])
       const name     = kebabCase(names[0])
       const aliases  = names.slice(1).map((alias) => kebabCase(alias))
-      const folder   = name
       const id       = component.node_id
-      const filename = join(folder, kebabCase(type))
-      const filepath = `${filename}.svg`
 
+      let folder   = name
+      let filename = join(folder, kebabCase(type))
+      let filepath = `${filename}.svg`
+      let count    = 2
+
+      while (filenames.has(filename)) {
+        folder   = `${name}-${count}`
+        filename = join(folder, kebabCase(type))
+        filepath = `${filename}.svg`
+
+        count++
+      }
+
+      filenames.add(filename)
       result.set(id, {
         id,
         hash,
@@ -175,14 +192,30 @@ async function lintFile (file: string) {
 }
 
 async function cleanup (objects: Map<string, ObjectData>, lockObjects: Map<string, ObjectData>) {
-  for (const oldObject of lockObjects.values()) {
-    const newObject = objects.get(oldObject.id)
+  if (FORCE_SYNC || lockObjects.size === 0) {
+    const oldFiles = await glob('./**/*.svg', { cwd: SVG_DIR })
+    const newfiles = new Set(Array.from(objects.values(), (i) => i.filepath))
 
-    if (!newObject || newObject.filename !== oldObject.filename) {
-      await remove(resolve(SVG_DIR, `${oldObject.filename}.svg`))
-      await remove(resolve(VUE_DIR, `${oldObject.filename}.vue`))
-      await remove(resolve(PNG_DIR, `${oldObject.filename}.png`))
-      await remove(resolve(PNG_DIR, `${oldObject.filename}@2x.png`))
+    for (const oldFile of oldFiles) {
+      if (!newfiles.has(oldFile)) {
+        const filename = join(dirname(oldFile), basename(oldFile, '.svg'))
+
+        await remove(resolve(SVG_DIR, `${filename}.svg`))
+        await remove(resolve(VUE_DIR, `${filename}.vue`))
+        await remove(resolve(PNG_DIR, `${filename}.png`))
+        await remove(resolve(PNG_DIR, `${filename}@2x.png`))
+      }
+    }
+  } else {
+    for (const oldObject of lockObjects.values()) {
+      const newObject = objects.get(oldObject.id)
+
+      if (!newObject || newObject.filename !== oldObject.filename) {
+        await remove(resolve(SVG_DIR, `${oldObject.filename}.svg`))
+        await remove(resolve(VUE_DIR, `${oldObject.filename}.vue`))
+        await remove(resolve(PNG_DIR, `${oldObject.filename}.png`))
+        await remove(resolve(PNG_DIR, `${oldObject.filename}@2x.png`))
+      }
     }
   }
 }

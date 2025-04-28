@@ -60,9 +60,13 @@ jobs:
 
       - name: Generate Changelog
         id: changelog
-        run: >
-          echo "icon_changelog=$(yarn run icon:changelog)" >> $GITHUB_OUTPUT
-          && echo "ilustration_changelog=$(yarn run ilustration:changelog)" >> $GITHUB_OUTPUT
+        run: |
+          echo 'icon_changelog<<EOF' >> $GITHUB_OUTPUT
+          yarn run icon:changelog >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+          echo 'icon_changelog<<EOF' >> $GITHUB_OUTPUT
+          yarn run ilustration:changelog >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
