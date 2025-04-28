@@ -21,12 +21,10 @@ import {
   join,
 } from 'node:path'
 import { kebabCase, chunk } from 'lodash-es'
-import type { Config } from 'svgo'
-import { optimize } from 'svgo'
+import { loadConfig, optimize } from 'svgo'
 import ora from 'ora'
 import { ESLint } from 'eslint'
 import type { ObjectData, MetaData } from './types.js'
-import { fixPath } from './fix-svg.js'
 import { createFont } from './create-font.js'
 import pAll from 'p-all'
 import * as ohash from 'ohash'
@@ -50,69 +48,6 @@ const eslint  = new ESLint({
   fix       : true,
   extensions: ['.vue'],
 })
-
-const svgoConfig: Config = {
-  plugins: [
-    {
-      name: 'remove-clip-path',
-      fn  : () => {
-        return {
-          element: {
-            exit (node, parentNode) {
-              if (node.name === 'g' && node.attributes['clip-path']) {
-                parentNode.children = node.children.map((child) => {
-                  if (child.type === 'element')
-                    node.attributes.fill = 'currentColor'
-
-                  return child
-                })
-              }
-            },
-          },
-        }
-      },
-    },
-    {
-      name: 'fix-path',
-      fn  : () => {
-        return {
-          element: {
-            enter (node) {
-              if (node.name === 'path') {
-                if (node.attributes.d)
-                  node.attributes.d = fixPath(node.attributes.d)
-
-                if (node.attributes.fill && node.attributes.fill !== 'none' && !node.attributes.fill.startsWith('url'))
-                  node.attributes.fill = 'currentColor'
-              }
-            },
-          },
-        }
-      },
-    },
-    {
-      name  : 'addClassesToSVGElement',
-      params: { className: 'persona-icon' },
-    },
-    {
-      name  : 'addAttributesToSVGElement',
-      params: { attributes: [{ focusable: 'false' }] },
-    },
-    {
-      name  : 'preset-default',
-      params: { overrides: { removeViewBox: false } },
-    },
-    {
-      name  : 'prefixIds',
-      params: {
-        delim           : '_',
-        prefix          : (_, info) => info.path ? ohash.hash(info.path) : '',
-        prefixClassNames: false,
-        prefixIds       : true,
-      },
-    },
-  ],
-}
 
 async function getLockData (): Promise<Map<string, ObjectData>> {
   let data: Record<string, ObjectData> = {}
@@ -221,6 +156,8 @@ async function cleanup (objects: Map<string, ObjectData>, lockObjects: Map<strin
 
 async function main () {
   spinner.start('Opening figma file')
+
+  const svgoConfig = await loadConfig('./svgo.config.mjs', __dirname)
 
   const response   = await api.getFileComponents(FILE_ID)
   const components = response.meta?.components ?? []

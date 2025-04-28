@@ -7,36 +7,32 @@ type Point = ReturnType<typeof SVGPath['getPointAtLength']>
 export function fixPath (d: string): string {
   const path  = SVGPath.normalizePath(d)
   const paths = sortPaths(SVGPath.splitPath(path))
+  const root  = new PathTree()
 
-  for (const [i, cur] of paths.entries()) {
-    if (i > 0) {
-      const outer = paths[0]
-      const prev  = paths[i - 1]
+  for (const p of paths)
+    root.addChild(new PathTree(p))
 
-      const needRotate = (isInside(cur, prev) && isClockwise(cur) === isClockwise(prev))
-        || (isInside(cur, outer) && isClockwise(cur) === isClockwise(outer))
+  const nodes               = [...root.children]
+  const result: PathArray[] = []
 
-      if (needRotate)
-        paths[i] = SVGPath.reversePath(cur)
+  while (nodes.length > 0) {
+    const node = nodes.shift()
+
+    if (!node)
+      break
+
+    if (node.value) {
+      if (node.parent && node.parent.dir === node.dir)
+        node.reverse()
+
+      result.push(node.value)
     }
+
+    if (node.children.size > 0)
+      nodes.push(...node.children)
   }
 
-  return SVGPath.pathToString(paths.flat() as PathArray)
-}
-
-function isInside (inner: PathArray, outer: PathArray) {
-  return isInBox(inner, outer)
-    && isInPolygon(inner, outer)
-}
-
-function isInBox (inner: PathArray, outer: PathArray) {
-  const outerBox = SVGPath.getPathBBox(outer)
-  const innerBox = SVGPath.getPathBBox(inner)
-
-  return innerBox.x >= outerBox.x
-    && innerBox.y >= outerBox.y
-    && (innerBox.x + innerBox.width) <= (outerBox.x + outerBox.width)
-    && (innerBox.y + innerBox.height) <= (outerBox.y + outerBox.height)
+  return SVGPath.pathToString(result.flat(1) as PathArray)
 }
 
 function isInPolygon (inner: PathArray, outer: PathArray) {
@@ -63,13 +59,25 @@ function getPolygon (path: PathArray, precission = 30) {
   const length          = SVGPath.getTotalLength(path)
 
   for (let i = 1; i <= precission; i++)
-    points.push(SVGPath.getPointAtLength(path, length * (i / precission)))
+    points.push(SVGPath.getPointAtLength(path, Math.round(length * (i / precission))))
 
   return points
 }
 
 function isClockwise (path: PathArray) {
-  return SVGPath.getDrawDirection(path)
+  const points = getPolygon(path)
+  const n      = points.length
+
+  let area = 0
+
+  for (let i = 0; i < n; i++) {
+    const p1 = points[i]
+    const p2 = points[(i + 1) % n]
+
+    area += (p1.x * p2.y - p2.x * p1.y)
+  }
+
+  return (area / 2) < 0
 }
 
 function sortPaths (paths: PathArray[]): PathArray[] {
@@ -89,4 +97,101 @@ function sortPaths (paths: PathArray[]): PathArray[] {
     .map((box) => {
       return paths[box.index]
     })
+}
+
+interface PathTreeJSON {
+  value?: string,
+  dir?: 'cw' | 'ccw',
+  area?: number,
+  children: PathTreeJSON[],
+}
+
+export class PathTree {
+  parent?: PathTree
+  value?: PathArray
+  children: Set<PathTree>
+
+  constructor (path?: PathArray) {
+    this.value    = path
+    this.children = new Set()
+  }
+
+  addChild (cur: PathTree) {
+    if (this.value && this.compare(cur) === -1) {
+      this.setParent(cur)
+
+      return this
+    }
+
+    for (const child of this.children) {
+      const c = child.compare(cur)
+
+      if (c === -1) {
+        child.setParent(child)
+
+        return this
+      }
+
+      if (c === 1) {
+        child.addChild(cur)
+
+        return this
+      }
+    }
+
+    this.children.add(cur)
+
+    cur.parent = this
+
+    return this
+  }
+
+  setParent (parent: PathTree) {
+    if (this.parent)
+      this.parent.children.delete(this)
+
+    parent.addChild(this)
+
+    this.parent = parent
+
+    return this
+  }
+
+  get area () {
+    if (this.value)
+      return SVGPath.getPathArea(this.value)
+  }
+
+  get dir () {
+    if (this.value)
+      return isClockwise(this.value) ? 'cw' : 'ccw'
+  }
+
+  compare (other: PathTree) {
+    if (this.value && other.value) {
+      if (isInPolygon(other.value, this.value))
+        return 1
+
+      if (isInPolygon(this.value, other.value))
+        return -1
+    }
+
+    return 0
+  }
+
+  reverse () {
+    if (this.value)
+      this.value = SVGPath.reversePath(this.value)
+
+    return this
+  }
+
+  toJSON (): PathTreeJSON {
+    return {
+      value   : this.value ? SVGPath.pathToString(this.value) : undefined,
+      dir     : this.dir,
+      area    : this.area,
+      children: Array.from(this.children, (c) => c.toJSON()),
+    }
+  }
 }

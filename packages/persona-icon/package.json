@@ -40,9 +40,9 @@
   "scripts": {
     "prepack": "yarn build",
     "build": "nuxt-module-build build",
-    "lint": "jiti scripts/lint.ts",
-    "sync": "jiti scripts/sync.ts",
-    "changelog": "jiti scripts/changelog.ts"
+    "lint": "node --import jiti/register scripts/lint.ts",
+    "sync": "node --import jiti/register scripts/sync.ts",
+    "changelog": "node --import jiti/register scripts/changelog.ts"
   },
   "devDependencies": {
     "@nuxt/module-builder": "1.0.1",
