@@ -3467,15 +3467,15 @@ __metadata:
   dependencies:
     "@nuxt/kit": "npm:3.16.2"
     "@nuxt/module-builder": "npm:1.0.1"
-    "@tsconfig/node22": "npm:^22.0.1"
+    "@tsconfig/node22": "npm:22.0.1"
     "@types/fs-extra": "npm:11.0.4"
     "@types/minimist": "npm:1.2.5"
-    "@types/svg2ttf": "npm:^5.0.3"
-    "@types/ttf2eot": "npm:^2.0.2"
-    "@types/ttf2woff": "npm:^2.0.4"
-    "@types/ttf2woff2": "npm:^6.0.0"
+    "@types/svg2ttf": "npm:5.0.3"
+    "@types/ttf2eot": "npm:2.0.2"
+    "@types/ttf2woff": "npm:2.0.4"
+    "@types/ttf2woff2": "npm:6.0.0"
     dotenv: "npm:16.5.0"
-    fast-glob: "npm:^3.3.3"
+    fast-glob: "npm:3.3.3"
     figma-api: "npm:1.12.0"
     fs-extra: "npm:11.3.0"
     jiti: "npm:2.4.2"
@@ -3485,12 +3485,12 @@ __metadata:
     ora: "npm:8.2.0"
     p-all: "npm:5.0.0"
     svg-path-commander: "npm:2.1.10"
-    svg2ttf: "npm:^6.0.3"
-    svgicons2svgfont: "npm:^15.0.1"
+    svg2ttf: "npm:6.0.3"
+    svgicons2svgfont: "npm:15.0.1"
     svgo: "npm:3.3.2"
-    ttf2eot: "npm:^3.1.0"
-    ttf2woff: "npm:^3.0.0"
-    ttf2woff2: "npm:^6.0.1"
+    ttf2eot: "npm:3.1.0"
+    ttf2woff: "npm:3.0.0"
+    ttf2woff2: "npm:6.0.1"
   languageName: unknown
   linkType: soft
 
@@ -3500,11 +3500,11 @@ __metadata:
   dependencies:
     "@nuxt/kit": "npm:3.16.2"
     "@nuxt/module-builder": "npm:1.0.1"
-    "@tsconfig/node22": "npm:^22.0.1"
+    "@tsconfig/node22": "npm:22.0.1"
     "@types/fs-extra": "npm:11.0.4"
     "@types/minimist": "npm:1.2.5"
     dotenv: "npm:16.5.0"
-    fast-glob: "npm:^3.3.3"
+    fast-glob: "npm:3.3.3"
     figma-api: "npm:1.12.0"
     fs-extra: "npm:11.3.0"
     jiti: "npm:2.4.2"
@@ -4984,7 +4984,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node22@npm:^22.0.1":
+"@tsconfig/node22@npm:22.0.1":
   version: 22.0.1
   resolution: "@tsconfig/node22@npm:22.0.1"
   checksum: 10/da42f21f1b1f8e88d584fae44bca19514ea5b8eca9a60e8b10ecbabc8db5f4067259979ceea3798c16ae443b9c564268c00215093a7230948f29f950f33dd585
@@ -5315,7 +5315,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/svg2ttf@npm:^5.0.3":
+"@types/svg2ttf@npm:5.0.3":
   version: 5.0.3
   resolution: "@types/svg2ttf@npm:5.0.3"
   checksum: 10/1b7a3f5edd5198c45209b4f87af585791818e49483dbf1156efb53f33981cc6754c41b17ae922a501323301500826e3a8a07b5563ba99402ccbe6e508ae775fe
@@ -5329,7 +5329,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ttf2eot@npm:^2.0.2":
+"@types/ttf2eot@npm:2.0.2":
   version: 2.0.2
   resolution: "@types/ttf2eot@npm:2.0.2"
   dependencies:
@@ -5338,7 +5338,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ttf2woff2@npm:^6.0.0":
+"@types/ttf2woff2@npm:6.0.0":
   version: 6.0.0
   resolution: "@types/ttf2woff2@npm:6.0.0"
   dependencies:
@@ -5347,7 +5347,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ttf2woff@npm:^2.0.4":
+"@types/ttf2woff@npm:2.0.4":
   version: 2.0.4
   resolution: "@types/ttf2woff@npm:2.0.4"
   dependencies:
@@ -10875,6 +10875,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-glob@npm:3.3.3, fast-glob@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "fast-glob@npm:3.3.3"
+  dependencies:
+    "@nodelib/fs.stat": "npm:^2.0.2"
+    "@nodelib/fs.walk": "npm:^1.2.3"
+    glob-parent: "npm:^5.1.2"
+    merge2: "npm:^1.3.0"
+    micromatch: "npm:^4.0.8"
+  checksum: 10/dcc6432b269762dd47381d8b8358bf964d8f4f60286ac6aa41c01ade70bda459ff2001b516690b96d5365f68a49242966112b5d5cc9cd82395fa8f9d017c90ad
+  languageName: node
+  linkType: hard
+
 "fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
@@ -10898,19 +10911,6 @@ __metadata:
     merge2: "npm:^1.3.0"
     micromatch: "npm:^4.0.4"
   checksum: 10/222512e9315a0efca1276af9adb2127f02105d7288fa746145bf45e2716383fb79eb983c89601a72a399a56b7c18d38ce70457c5466218c5f13fad957cee16df
-  languageName: node
-  linkType: hard
-
-"fast-glob@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "fast-glob@npm:3.3.3"
-  dependencies:
-    "@nodelib/fs.stat": "npm:^2.0.2"
-    "@nodelib/fs.walk": "npm:^1.2.3"
-    glob-parent: "npm:^5.1.2"
-    merge2: "npm:^1.3.0"
-    micromatch: "npm:^4.0.8"
-  checksum: 10/dcc6432b269762dd47381d8b8358bf964d8f4f60286ac6aa41c01ade70bda459ff2001b516690b96d5365f68a49242966112b5d5cc9cd82395fa8f9d017c90ad
   languageName: node
   linkType: hard
 
@@ -19344,7 +19344,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svg2ttf@npm:^6.0.2, svg2ttf@npm:^6.0.3":
+"svg2ttf@npm:6.0.3, svg2ttf@npm:^6.0.2":
   version: 6.0.3
   resolution: "svg2ttf@npm:6.0.3"
   dependencies:
@@ -19357,6 +19357,24 @@ __metadata:
   bin:
     svg2ttf: svg2ttf.js
   checksum: 10/94b7d36df599fc9cd2eeb5a98fbfb284dbf89593bbf95ddd5222f30111d7a3369aaa22a0493b8cdbbb5601ef416ebb9fd8815c8eb382d4073c65dfec985216b3
+  languageName: node
+  linkType: hard
+
+"svgicons2svgfont@npm:15.0.1":
+  version: 15.0.1
+  resolution: "svgicons2svgfont@npm:15.0.1"
+  dependencies:
+    "@types/sax": "npm:^1.2.7"
+    commander: "npm:^12.1.0"
+    debug: "npm:^4.3.6"
+    glob: "npm:^11.0.0"
+    sax: "npm:^1.4.1"
+    svg-pathdata: "npm:^7.0.0"
+    transformation-matrix: "npm:^3.0.0"
+    yerror: "npm:^8.0.0"
+  bin:
+    svgicons2svgfont: bin/svgicons2svgfont.js
+  checksum: 10/a7c7497edced5714fe1ad3e893623e36926841553b1024f8edc76851e01eca33251c293c885fae842a748ba75d931d85936a9b793de469ef0bf0355df96b65a8
   languageName: node
   linkType: hard
 
@@ -19374,24 +19392,6 @@ __metadata:
   bin:
     svgicons2svgfont: bin/svgicons2svgfont.js
   checksum: 10/065636271cd2a143468ca27e9371c4123517692b29aa3f4156e828ffb29bec7384fad45e5fc26f64d33789c9ee6c8a9fdb3c663ad6412640ba269657e6de7bd9
-  languageName: node
-  linkType: hard
-
-"svgicons2svgfont@npm:^15.0.1":
-  version: 15.0.1
-  resolution: "svgicons2svgfont@npm:15.0.1"
-  dependencies:
-    "@types/sax": "npm:^1.2.7"
-    commander: "npm:^12.1.0"
-    debug: "npm:^4.3.6"
-    glob: "npm:^11.0.0"
-    sax: "npm:^1.4.1"
-    svg-pathdata: "npm:^7.0.0"
-    transformation-matrix: "npm:^3.0.0"
-    yerror: "npm:^8.0.0"
-  bin:
-    svgicons2svgfont: bin/svgicons2svgfont.js
-  checksum: 10/a7c7497edced5714fe1ad3e893623e36926841553b1024f8edc76851e01eca33251c293c885fae842a748ba75d931d85936a9b793de469ef0bf0355df96b65a8
   languageName: node
   linkType: hard
 
@@ -19865,6 +19865,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ttf2eot@npm:3.1.0":
+  version: 3.1.0
+  resolution: "ttf2eot@npm:3.1.0"
+  dependencies:
+    argparse: "npm:^2.0.1"
+  bin:
+    ttf2eot: ttf2eot.js
+  checksum: 10/1660d713c207779af73c8dcb2bbcbb6ff795e7d5edbf5b02d94e3f044932b573ec77764329ad50f57f6567cbe594a0ad2cf3bdc67c2bea4acea2a29138f54ff7
+  languageName: node
+  linkType: hard
+
 "ttf2eot@npm:^2.0.0":
   version: 2.0.0
   resolution: "ttf2eot@npm:2.0.0"
@@ -19877,18 +19888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ttf2eot@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "ttf2eot@npm:3.1.0"
-  dependencies:
-    argparse: "npm:^2.0.1"
-  bin:
-    ttf2eot: ttf2eot.js
-  checksum: 10/1660d713c207779af73c8dcb2bbcbb6ff795e7d5edbf5b02d94e3f044932b573ec77764329ad50f57f6567cbe594a0ad2cf3bdc67c2bea4acea2a29138f54ff7
-  languageName: node
-  linkType: hard
-
-"ttf2woff2@npm:*, ttf2woff2@npm:^6.0.1":
+"ttf2woff2@npm:*, ttf2woff2@npm:6.0.1":
   version: 6.0.1
   resolution: "ttf2woff2@npm:6.0.1"
   dependencies:
@@ -19904,6 +19904,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ttf2woff@npm:3.0.0":
+  version: 3.0.0
+  resolution: "ttf2woff@npm:3.0.0"
+  dependencies:
+    argparse: "npm:^2.0.1"
+    pako: "npm:^1.0.0"
+  bin:
+    ttf2woff: ttf2woff.js
+  checksum: 10/c8fca24616e1d4356c4141c7ec2e3d7f839185b7b6f3baf0bfb13f2eebba64e5ab3620f9f882161ac71e7c36980a70c6fc2548599ea2f66876e5947acaf65765
+  languageName: node
+  linkType: hard
+
 "ttf2woff@npm:^2.0.2":
   version: 2.0.2
   resolution: "ttf2woff@npm:2.0.2"
@@ -19914,18 +19926,6 @@ __metadata:
   bin:
     ttf2woff: ttf2woff.js
   checksum: 10/7685512ab5eb8529e93fddda49db31cd1752c577ecca2aa1972e782d81c99b3539ab9372961fb3d77b91310af16ad1e9dadcf2c8af4fd77ad978df4e39545ca6
-  languageName: node
-  linkType: hard
-
-"ttf2woff@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "ttf2woff@npm:3.0.0"
-  dependencies:
-    argparse: "npm:^2.0.1"
-    pako: "npm:^1.0.0"
-  bin:
-    ttf2woff: ttf2woff.js
-  checksum: 10/c8fca24616e1d4356c4141c7ec2e3d7f839185b7b6f3baf0bfb13f2eebba64e5ab3620f9f882161ac71e7c36980a70c6fc2548599ea2f66876e5947acaf65765
   languageName: node
   linkType: hard
 
