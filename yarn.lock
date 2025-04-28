@@ -3570,7 +3570,7 @@ __metadata:
     nanodelay: "npm:2.0.2"
     nuxt: "npm:3.16.2"
     pathe: "npm:^2.0.0"
-    pdfjs-dist: "npm:5.1.91"
+    pdfjs-dist: "npm:5.2.133"
     postcss-custom-properties: "npm:14.0.4"
     postcss-hexrgba: "npm:2.1.0"
     postcss-lighten-darken: "npm:0.9.0"
@@ -16024,15 +16024,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:5.1.91":
-  version: 5.1.91
-  resolution: "pdfjs-dist@npm:5.1.91"
+"pdfjs-dist@npm:5.2.133":
+  version: 5.2.133
+  resolution: "pdfjs-dist@npm:5.2.133"
   dependencies:
     "@napi-rs/canvas": "npm:^0.1.67"
   dependenciesMeta:
     "@napi-rs/canvas":
       optional: true
-  checksum: 10/be44a205ba85b8dc85170a7c864f5371b9d21551610865b2742f5b495006957160b022c0b9649378301bf4ba579364d600d03fc4df9b88a46a832260627a6d28
+  checksum: 10/cd1af0b5fd1163ae676b50c24d8969ee1d90b4ee2b62c613c05d2f86d5f8a721fa331f0a4c07f05302eec210dac75549dc7cbfa0e7c3342370beb9c5741df3c1
   languageName: node
   linkType: hard
 
