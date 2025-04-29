@@ -12,6 +12,70 @@
 
 > Ilustration changelog
 
+## 1.2.0
+
+### Added
+
+- discussion-2
+- id-card-2
+
+### Changed
+
+- balance
+- bill
+- biometric
+- cake-slice
+- checkmark-document
+- citizenship
+- coming-soon
+- contact-book
+- department
+- discussion
+- document-processing
+- document-template
+- empty-locker
+- expired-document
+- forbidden-sign
+- gift
+- group
+- id-card
+- id-face
+- illustration
+- internet
+- link-expired
+- liveness
+- maintenance
+- new-update
+- no-bill
+- no-process
+- notification
+- order
+- organization-document
+- organization-structure
+- padlock
+- page-not-found
+- paperbag
+- position
+- premium-plan
+- privy-app
+- registration
+- roles
+- sand-clock
+- security
+- sequence
+- server-busy
+- server-error
+- signature
+- ticket
+- treasure
+- unable-to-process
+- user-activities
+- verification
+
+### Removed
+
+- id-card-scan
+
 ## 1.0.0
 
 ### Added
