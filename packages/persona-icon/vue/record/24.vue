@@ -7,9 +7,9 @@
     class="persona-icon"
     viewBox="0 0 24 24"><path
       fill="currentColor"
-      d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10" /><path
+      d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10" /><path
         fill="currentColor"
         fill-rule="evenodd"
-        d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2M3.5 12a8.5 8.5 0 1 1 17 0 8.5 8.5 0 0 1-17 0"
+        d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2M3.5 12a8.5 8.5 0 1 0 17 0 8.5 8.5 0 0 0-17 0"
         clip-rule="evenodd" /></svg>
 </template>
