@@ -4,17 +4,13 @@
   "version": "1.2.0",
   "packageManager": "yarn@4.9.1",
   "type": "module",
-  "main": "./dist/module.cjs",
+  "main": "./dist/module.mjs",
   "module": "./dist/module.mjs",
-  "types": "./dist/types.d.ts",
+  "types": "./dist/types.d.mts",
   "exports": {
     ".": {
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs",
-      "types": {
-        "import": "./dist/types.d.mts",
-        "require": "./dist/types.d.ts"
-      }
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     },
     "./vue/*": "./vue/*",
     "./font/*": "./font/*",

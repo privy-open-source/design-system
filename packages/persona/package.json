@@ -16,12 +16,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs",
-      "types": {
-        "import": "./dist/module.d.mts",
-        "require": "./dist/module.d.ts"
-      }
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     },
     "./core": {
       "import": "./dist/core/index.mjs",
@@ -33,11 +29,14 @@
     },
     "./components/*": "./dist/components/*"
   },
-  "main": "./dist/module.cjs",
+  "main": "./dist/module.mjs",
   "module": "./dist/module.mjs",
-  "types": "./dist/module.d.ts",
+  "types": "./dist/types.d.mts",
   "typesVersions": {
     "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ],
       "core": [
         "./dist/core/index.d.ts"
       ],
