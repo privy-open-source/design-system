@@ -8,6 +8,6 @@
     viewBox="0 0 16 16"><path
       fill="currentColor"
       fill-rule="evenodd"
-      d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1m3.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"
+      d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1m3.5 7a3.5 3.5 0 1 0-7 0 3.5 3.5 0 0 0 7 0"
       clip-rule="evenodd" /></svg>
 </template>
