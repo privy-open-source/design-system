@@ -2791,6 +2791,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nuxt/kit@npm:^3.16.0":
+  version: 3.17.1
+  resolution: "@nuxt/kit@npm:3.17.1"
+  dependencies:
+    c12: "npm:^3.0.3"
+    consola: "npm:^3.4.2"
+    defu: "npm:^6.1.4"
+    destr: "npm:^2.0.5"
+    errx: "npm:^0.1.0"
+    exsolve: "npm:^1.0.5"
+    ignore: "npm:^7.0.4"
+    jiti: "npm:^2.4.2"
+    klona: "npm:^2.0.6"
+    knitwork: "npm:^1.2.0"
+    mlly: "npm:^1.7.4"
+    ohash: "npm:^2.0.11"
+    pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.1.0"
+    scule: "npm:^1.3.0"
+    semver: "npm:^7.7.1"
+    std-env: "npm:^3.9.0"
+    tinyglobby: "npm:^0.2.13"
+    ufo: "npm:^1.6.1"
+    unctx: "npm:^2.4.1"
+    unimport: "npm:^5.0.0"
+    untyped: "npm:^2.0.0"
+  checksum: 10/4337b8c72cd673c41f00b3b939409fdc69ce148e5e9187aa1cdb640f2d722a539c5eddcede8fab037f0dd0144dc1aba61ddb49d90eca67d5828b1daae8ca90a7
+  languageName: node
+  linkType: hard
+
 "@nuxt/kit@npm:^3.16.1":
   version: 3.16.1
   resolution: "@nuxt/kit@npm:3.16.1"
@@ -2936,24 +2966,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/tailwindcss@npm:6.13.2":
-  version: 6.13.2
-  resolution: "@nuxtjs/tailwindcss@npm:6.13.2"
+"@nuxtjs/tailwindcss@npm:6.14.0":
+  version: 6.14.0
+  resolution: "@nuxtjs/tailwindcss@npm:6.14.0"
   dependencies:
+    "@nuxt/kit": "npm:^3.16.0"
     autoprefixer: "npm:^10.4.20"
     c12: "npm:^3.0.2"
     consola: "npm:^3.4.0"
     defu: "npm:^6.1.4"
     h3: "npm:^1.15.1"
     klona: "npm:^2.0.6"
+    ohash: "npm:^2.0.11"
     pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.1.0"
     postcss: "npm:^8.5.3"
     postcss-nesting: "npm:^13.0.1"
     tailwind-config-viewer: "npm:^2.0.4"
     tailwindcss: "npm:~3.4.17"
     ufo: "npm:^1.5.4"
     unctx: "npm:^2.4.1"
-  checksum: 10/9ab1eebd5b4a9f64b0dfe1729a6282b7b120a29637bd491c1d2fedf4c72446f3b88b33c996a9c3039e0d7ccc5b4a42c49a94fc91b4f2a56fd3c737f37c11bd61
+  checksum: 10/1fd33bc7d529dbfb479d002ef05f0c1927ed57fd6ae81a428620b2f1eb5110449913cec06fba1b04153f4a8273259e57085934bfdae5a01a173d5aa1926b8712
   languageName: node
   linkType: hard
 
@@ -3481,7 +3514,7 @@ __metadata:
     "@nuxt/kit": "npm:3.16.2"
     "@nuxt/module-builder": "npm:1.0.1"
     "@nuxt/schema": "npm:3.16.2"
-    "@nuxtjs/tailwindcss": "npm:6.13.2"
+    "@nuxtjs/tailwindcss": "npm:6.14.0"
     "@privyid/browserslist-config": "workspace:^"
     "@privyid/tailwind-preset": "workspace:^"
     "@splidejs/splide": "npm:4.1.4"
@@ -10072,6 +10105,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"exsolve@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "exsolve@npm:1.0.5"
+  checksum: 10/5bcdad5685f3435e3f1f0326cfccf727418752cb5945d7c030d48c0aaff9dd5ebd8b082ab498e576f34c391aaba7b32d35632f2f708c1ca1cdfe714aa66902bc
+  languageName: node
+  linkType: hard
+
 "externality@npm:^1.0.2":
   version: 1.0.2
   resolution: "externality@npm:1.0.2"
@@ -10202,6 +10242,18 @@ __metadata:
     picomatch:
       optional: true
   checksum: 10/8e6d20f4590dc168de1374a9cadaa37e20ca6e0b822aa247c230e7ea1d9e9674a68cd816146435e4ecc98f9285091462ab7e5e56eebc9510931a1794e4db68b2
+  languageName: node
+  linkType: hard
+
+"fdir@npm:^6.4.4":
+  version: 6.4.4
+  resolution: "fdir@npm:6.4.4"
+  peerDependencies:
+    picomatch: ^3 || ^4
+  peerDependenciesMeta:
+    picomatch:
+      optional: true
+  checksum: 10/d0000d6b790059b35f4ed19acc8847a66452e0bc68b28766c929ffd523e5ec2083811fc8a545e4a1d4945ce70e887b3a610c145c681073b506143ae3076342ed
   languageName: node
   linkType: hard
 
@@ -11328,6 +11380,13 @@ __metadata:
   version: 7.0.3
   resolution: "ignore@npm:7.0.3"
   checksum: 10/ce5e812af3acd6607a3fe0a9f9b5f01d53f009a5ace8cbf5b6491d05a481b55d65186e6a7eaa13126e93f15276bcf3d1e8d6ff3ce5549c312f9bb313fff33365
+  languageName: node
+  linkType: hard
+
+"ignore@npm:^7.0.4":
+  version: 7.0.4
+  resolution: "ignore@npm:7.0.4"
+  checksum: 10/01ee59df2ffd14b0844efc17f5ab3642c848e45efdb7cc757928da5e076cb74313748f77f5ffe362a6407c5e7cc71f10fad5e8eb9d91c1a17c4e7ef2c1f8e40e
   languageName: node
   linkType: hard
 
@@ -18173,6 +18232,16 @@ __metadata:
     fdir: "npm:^6.4.3"
     picomatch: "npm:^4.0.2"
   checksum: 10/4ad28701fa9118b32ef0e27f409e0a6c5741e8b02286d50425c1f6f71e6d6c6ded9dd5bbbbb714784b08623c4ec4d150151f1d3d996cfabe0495f908ab4f7002
+  languageName: node
+  linkType: hard
+
+"tinyglobby@npm:^0.2.13":
+  version: 0.2.13
+  resolution: "tinyglobby@npm:0.2.13"
+  dependencies:
+    fdir: "npm:^6.4.4"
+    picomatch: "npm:^4.0.2"
+  checksum: 10/b04557ee58ad2be5f2d2cbb4b441476436c92bb45ba2e1fc464d686b793392b305ed0bcb8b877429e9b5036bdd46770c161a08384c0720b6682b7cd6ac80e403
   languageName: node
   linkType: hard
 
