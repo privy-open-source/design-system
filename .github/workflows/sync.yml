@@ -61,7 +61,7 @@ jobs:
           echo 'icon_changelog<<EOF' >> $GITHUB_OUTPUT
           yarn run icon:changelog >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
-          echo 'icon_changelog<<EOF' >> $GITHUB_OUTPUT
+          echo 'ilustration_changelog<<EOF' >> $GITHUB_OUTPUT
           yarn run ilustration:changelog >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
 
