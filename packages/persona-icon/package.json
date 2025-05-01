@@ -68,7 +68,7 @@
     "ttf2woff2": "6.0.1"
   },
   "dependencies": {
-    "@nuxt/kit": "3.16.2"
+    "@nuxt/kit": "3.17.1"
   },
   "publishConfig": {
     "access": "public"
