@@ -120,19 +120,28 @@ export async function createFont () {
     buffer: svg,
   } = await createSVG()
 
-  const ttf   = await createTtf(svg)
-  const woff  = await createWoff(ttf)
-  const woff2 = await createWoff2(ttf)
-  const eot   = await createEot(ttf)
+  await ensureFile(resolve(FONT_DIR, 'persona-icon.sha256'))
 
-  await createCss({
-    glyphs,
-    svg,
-    ttf,
-    eot,
-    woff,
-    woff2,
-  })
+  const oldChecksum = await readFile(resolve(FONT_DIR, 'persona-icon.sha256')).then((c) => c.toString())
+  const newChecksum = createHash('sha256').update(svg).digest('hex')
+
+  if (oldChecksum !== newChecksum) {
+    const ttf   = await createTtf(svg)
+    const woff  = await createWoff(ttf)
+    const woff2 = await createWoff2(ttf)
+    const eot   = await createEot(ttf)
+
+    await createCss({
+      glyphs,
+      svg,
+      ttf,
+      eot,
+      woff,
+      woff2,
+    })
+  }
+
+  await writeFile(resolve(FONT_DIR, 'persona-icon.sha256'), newChecksum)
 }
 
 function hash (buffer: Buffer | string, length = 4) {
