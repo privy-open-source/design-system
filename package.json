@@ -81,7 +81,7 @@
     "vite-plugin-image-optimizer": "1.1.8",
     "vitepress": "1.6.3",
     "vitest": "0.24.5",
-    "vue-tsc": "2.1.10"
+    "vue-tsc": "2.2.10"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.0.4",
