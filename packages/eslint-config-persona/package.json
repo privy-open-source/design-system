@@ -17,8 +17,8 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.62.0",
-    "@typescript-eslint/parser": "5.62.0",
+    "@typescript-eslint/eslint-plugin": "8.32.1",
+    "@typescript-eslint/parser": "8.32.1",
     "@vue/eslint-config-typescript": "13.0.0",
     "eslint": "9.6.0",
     "eslint-config-standard-with-typescript": "43.0.1",
