@@ -36,9 +36,9 @@
   "scripts": {
     "prepack": "yarn build",
     "build": "nuxt-module-build build",
-    "lint": "node --import jiti/register scripts/lint.ts",
-    "sync": "node --import jiti/register scripts/sync.ts",
-    "changelog": "node --import jiti/register scripts/changelog.ts"
+    "lint": "jiti scripts/lint.ts",
+    "sync": "jiti scripts/sync.ts",
+    "changelog": "jiti scripts/changelog.ts"
   },
   "devDependencies": {
     "@nuxt/module-builder": "1.0.1",
@@ -63,6 +63,7 @@
     "svg2ttf": "6.0.3",
     "svgicons2svgfont": "15.0.1",
     "svgo": "3.3.2",
+    "svgo-fix-path": "^1.0.0",
     "ttf2eot": "3.1.0",
     "ttf2woff": "3.0.0",
     "ttf2woff2": "6.0.1"

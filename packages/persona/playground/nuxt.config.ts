@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   modules          : ['@nuxtjs/tailwindcss', '../src/module'],
   alias            : { '@privyid/persona': fileURLToPath(new URL('../dist/', import.meta.url)) },
   typescript       : {
-    tsConfig: {
+    includeWorkspace: true,
+    tsConfig        : {
       compilerOptions: {
         strict          : false,
         strictNullChecks: true,

@@ -1,4 +1,4 @@
-import { fixPath } from './fix-svg.js'
+import { fixPath } from 'svgo-fix-path'
 import { hash } from 'ohash'
 
 export default {
