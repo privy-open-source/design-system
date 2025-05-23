@@ -4,16 +4,17 @@ import { createResolver } from './script/create-resolver'
 export default defineBuildConfig({
   entries: [
     {
-      builder: 'mkdist',
-      input  : '../../src/components/',
-      outDir : './dist/components',
-      pattern: [
-        '**/*',
-        '!(**/*.md)',
-        '!(**/*.{spec,bench}.ts)',
-        '!(**/__mocks__/**)',
-        '!(**/demo/**)',
-      ],
+      builder    : 'mkdist',
+      input      : '../../src/components/',
+      outDir     : './dist/components',
+      globOptions: {
+        ignore: [
+          '**/*.md',
+          '**/*.{spec,bench}.ts',
+          '**/__mocks__/**',
+          '**/demo/**/*',
+        ],
+      },
     },
     {
       builder: 'mkdist',

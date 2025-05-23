@@ -3922,6 +3922,7 @@ __metadata:
     svg2ttf: "npm:6.0.3"
     svgicons2svgfont: "npm:15.0.1"
     svgo: "npm:3.3.2"
+    svgo-fix-path: "npm:^1.0.0"
     ttf2eot: "npm:3.1.0"
     ttf2woff: "npm:3.0.0"
     ttf2woff2: "npm:6.0.1"
@@ -19656,7 +19657,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svg-path-commander@npm:2.1.10":
+"svg-path-commander@npm:2.1.10, svg-path-commander@npm:^2.1.10":
   version: 2.1.10
   resolution: "svg-path-commander@npm:2.1.10"
   dependencies:
@@ -19734,6 +19735,17 @@ __metadata:
   bin:
     svgicons2svgfont: bin/svgicons2svgfont.js
   checksum: 10/065636271cd2a143468ca27e9371c4123517692b29aa3f4156e828ffb29bec7384fad45e5fc26f64d33789c9ee6c8a9fdb3c663ad6412640ba269657e6de7bd9
+  languageName: node
+  linkType: hard
+
+"svgo-fix-path@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "svgo-fix-path@npm:1.0.0"
+  dependencies:
+    svg-path-commander: "npm:^2.1.10"
+  peerDependencies:
+    svgo: ^3
+  checksum: 10/7ba1a98219cf0f41ab3a985fd1d06a3bcb1ddca16022a5d43fa2b30599e7cf591012853bfbbcdabf0b12a40460cbf731d7e1540ed5fc4f6581337fdf072f4dc7
   languageName: node
   linkType: hard
 
