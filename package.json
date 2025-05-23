@@ -80,7 +80,7 @@
     "unenv": "1.10.0",
     "vite-plugin-image-optimizer": "1.1.8",
     "vitepress": "1.6.3",
-    "vitest": "0.24.5",
+    "vitest": "3.1.4",
     "vue-tsc": "2.1.10"
   },
   "dependencies": {
