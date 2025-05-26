@@ -1,0 +1,1 @@
+import{d as r,h as i,o,c as l,n}from"./framework.CI6Dj8yt.js";const p=r({__name:"Divider",props:{vertical:{type:Boolean,default:!1}},setup(s){const a=s,t=i(()=>{const e=[];return a.vertical?e.push("divider--vertical"):e.push("divider--horizontal"),e});return(e,c)=>(o(),l("div",{"data-testid":"divider",class:n(["divider",t.value])},null,2))}});export{p as _};
