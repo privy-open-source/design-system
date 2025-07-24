@@ -8415,14 +8415,14 @@
         "hash": "8c0caf3c45f136ecc19c2a7a73ba075fdd827a9d0cdfe15aee12c83e44ac457b"
       },
       {
-        "name": "history/16",
-        "path": "history/16.svg",
-        "hash": "80fb73bab7e7531ec8bc67612aa9078e923d9e73c53f90df84cb5f29e3a40c70"
-      },
-      {
         "name": "history/24",
         "path": "history/24.svg",
         "hash": "0f91ffbd7940c581b1d5b921c7b53de01db5d5829cafa88a16e9d09f73fc78d3"
+      },
+      {
+        "name": "history/16",
+        "path": "history/16.svg",
+        "hash": "80fb73bab7e7531ec8bc67612aa9078e923d9e73c53f90df84cb5f29e3a40c70"
       }
     ]
   },
