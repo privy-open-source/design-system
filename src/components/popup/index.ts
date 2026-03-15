@@ -35,6 +35,7 @@ interface Option extends Omit<NotifyOption, 'component'> {
   popupAttrs?: AdditionalAttr,
   dismissable?: boolean,
   actions?: PopupActionOption[],
+  label?: string,
 }
 
 export const PopupIcons = {
