@@ -21,6 +21,12 @@
         v-p-md.inline="text"
         class="popup__text"
         data-testid="popup-text" />
+      <p-label
+        v-if="label"
+        variant="light"
+        class="w-fit">
+        {{ label }}
+      </p-label>
       <div
         v-if="actions.length > 0"
         class="popup__actions">
@@ -64,6 +70,7 @@ import type { ColorVariant } from '../button'
 import type { AdditionalAttr } from '../global/types'
 import { useNotifyItem } from '../notify'
 import { PopupIcons } from '.'
+import pLabel from '../label/Label.vue'
 
 const props = defineProps({
   title: {
@@ -97,6 +104,10 @@ const props = defineProps({
   popupAttrs: {
     type   : Object as PropType<AdditionalAttr>,
     default: undefined,
+  },
+  label: {
+    type   : String,
+    default: '',
   },
   popupClass: {
     type: [
@@ -369,6 +380,7 @@ async function onActionClick (action: PopupActionOption) {
     .popup__action {
       @apply text-info;
       @apply dark:text-dark-info;
+      @apply underline hover:no-underline;
     }
   }
 

@@ -9,6 +9,7 @@ description: Simple notification pop-up.
   import popup from '.'
   import IconSuccess from '@privyid/persona-icon/vue/checkmark/20.vue'
   import IconFailed from '@privyid/persona-icon/vue/trash/20.vue'
+  import IconWarning from '@privyid/persona-icon/vue/exclamation-triangle/20.vue'
   import Banner from '../banner/Banner.vue'
   import { markRaw } from 'vue'
 </script>
@@ -219,7 +220,19 @@ There available 6 position for popup: `top-left`, `top-center`, `top-right`, `bo
   <Button class="items-center" color="info" @click="popup({
     title   : 'Lorem ipsum',
     text    : 'Lorem ipsum dolor sit amet.',
-    position: 'bottom-left'
+    position: 'bottom-left',
+    // type    : 'error',
+    // label   : '2ELWWFM023',
+    // actions   : [
+    //   {
+    //     text: 'Goto Doc',
+    //     onClick (event) {
+    //       // Do something
+    //       // ...
+    //       event.close()
+    //     }
+    //   }
+    // ],
   })">
     Bottom Left
   </Button>
@@ -408,6 +421,42 @@ toast({
   dismissable: false,
 })
 ```
+## Label
+
+You can add label to popup by `label` props. Label will show under text message.
+<preview>
+  <Popup
+    title="Ups, Gagal mengupload dokumen"
+    text="Sepertinya terjadi kesalahan saat mengupload dokumen. Silakan hubungi tim support kami untuk bantuan lebih lanjut."
+    label="SH-TR-001"
+    type="error"
+    :actions="[
+      {
+        text: 'Hubungi kami',
+      }
+    ]"
+  />
+</preview>
+
+```ts
+popup({
+  title: 'Ups, Gagal mengupload dokumen',
+  text : 'Sepertinya terjadi kesalahan saat mengupload dokumen. Silakan hubungi tim support kami untuk bantuan lebih lanjut.',
+  label: 'SH-TR-001',
+  type : 'error',
+  actions: [
+    {
+      text: 'Hubungi kami',
+      onClick (event) {
+        // Do something
+        // ...
+        event.close()
+      }
+    }
+  ],
+})
+```
+
 
 ## Customization
 
