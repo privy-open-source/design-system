@@ -3835,7 +3835,7 @@ __metadata:
     sharp: "npm:0.34.1"
     svgo: "npm:3.3.2"
     tabbable: "npm:6.2.0"
-    tailwindcss: "npm:3.4.17"
+    tailwindcss: "npm:4.2.2"
     tiptap-extension-font-size: "npm:^1.2.0"
     typescript: "npm:5.6.3"
     ufo: "npm:1.6.1"
@@ -4011,7 +4011,7 @@ __metadata:
     pspdfkit: "npm:^2024.6.0"
     scroll-into-view: "npm:1.16.2"
     tabbable: "npm:6.2.0"
-    tailwindcss: "npm:3"
+    tailwindcss: "npm:4"
     tiptap-extension-font-size: "npm:^1.2.0"
     ufo: "npm:^1.5.4"
     vue-collapsed: "npm:1.3.4"
@@ -4024,7 +4024,7 @@ __metadata:
     postcss-custom-properties: ^12.1.11 || ^13.0.0 || ^14.0.0
     postcss-hexrgba: ^2.1.0
     postcss-lighten-darken: ^0.9.0
-    tailwindcss: ^3.0.0
+    tailwindcss: ^3.0.0 || ^4.0.0
     vue-router: ">=4.0.0"
   languageName: unknown
   linkType: soft
@@ -19806,7 +19806,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3, tailwindcss@npm:3.4.17, tailwindcss@npm:~3.4.17":
+"tailwindcss@npm:4, tailwindcss@npm:4.2.2":
+  version: 4.2.2
+  resolution: "tailwindcss@npm:4.2.2"
+  checksum: 10/f468b441d32b7278e7e2639b0f95f59fb8a52678e8c3a027f636ec51006ed32f68aeb2e66eaf81b958b234745d2ccae4757e4ba5dda23c5e158065060f90aa78
+  languageName: node
+  linkType: hard
+
+"tailwindcss@npm:~3.4.17":
   version: 3.4.17
   resolution: "tailwindcss@npm:3.4.17"
   dependencies:
