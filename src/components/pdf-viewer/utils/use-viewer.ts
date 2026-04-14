@@ -12,6 +12,7 @@ import {
   createViewer,
   getCMAPUri,
   getDocument,
+  getWasmUri,
   normalizeRect,
 } from './pdfjs'
 import type {
@@ -64,6 +65,7 @@ export function useViewer (container: Ref<HTMLDivElement>, viewer: Ref<HTMLDivEl
           password     : password,
           cMapUrl      : await getCMAPUri(),
           cMapPacked   : true,
+          wasmUrl      : await getWasmUri(),
           disableStream: config.disableStream,
           disableRange : config.disableRange,
           httpHeaders  : config.httpHeaders,

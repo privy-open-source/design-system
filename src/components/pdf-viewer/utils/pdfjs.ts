@@ -39,6 +39,10 @@ export async function getCMAPUri () {
   return withBase(`pdfjs-dist@${await getVersion()}/cmaps/`, getCDN())
 }
 
+export async function getWasmUri () {
+  return withBase(`pdfjs-dist@${await getVersion()}/wasm/`, getCDN())
+}
+
 export async function getVersion () {
   await importPdfJS()
 
