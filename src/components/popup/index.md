@@ -437,6 +437,24 @@ You can add label to popup by `label` props. Label will show under text message.
     ]"
   />
 </preview>
+<Button color="info" class="mt-2" @click="popup({
+  title: 'Ups, Gagal mengupload dokumen',
+  text : 'Sepertinya terjadi kesalahan saat mengupload dokumen. Silakan hubungi tim support kami untuk bantuan lebih lanjut.',
+  label: 'SH-TR-001',
+  type : 'error',
+  actions: [
+    {
+      text: 'Hubungi kami',
+      onClick (event) {
+        // Do something
+        // ...
+        event.close()
+      }
+    }
+  ],
+})">
+  With Label
+</Button>
 
 ```ts
 popup({
