@@ -130,6 +130,11 @@ export default defineNuxtModule<ModuleOptions>({
             maxAge : assetsMaxAge,
           },
           {
+            baseURL: joinURL(pdfjsBaseURL, 'wasm'),
+            dir    : joinPath(pdfjsDir, 'wasm'),
+            maxAge : assetsMaxAge,
+          },
+          {
             baseURL: joinURL(pspdfBaseURL, 'dist'),
             dir    : joinPath(pspdfDir, 'dist'),
             maxAge : assetsMaxAge,
