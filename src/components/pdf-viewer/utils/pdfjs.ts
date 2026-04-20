@@ -7,8 +7,44 @@ let pdfjsLib: typeof PDFJS
 
 let pdfjsViewer: typeof PDFJSViewer
 
+interface PromiseWithResolversResult<T> {
+  promise: Promise<T>,
+  resolve: (value: T | PromiseLike<T>) => void,
+  reject: (reason?: unknown) => void,
+}
+
+type PromiseWithResolvers = <T>() => PromiseWithResolversResult<T>
+
+function polyfillPromiseWithResolvers () {
+  const PromiseCtor = Promise as PromiseConstructor & {
+    withResolvers?: PromiseWithResolvers,
+  }
+
+  if (typeof PromiseCtor.withResolvers !== 'function') {
+    /* eslint-disable align-assignments/align-assignments */
+    PromiseCtor.withResolvers = function <T>() {
+      let resolve!: (value: T | PromiseLike<T>) => void
+      let reject!: (reason?: unknown) => void
+
+      const promise = new Promise<T>((_resolve, _reject) => {
+        resolve = _resolve
+        reject  = _reject
+      })
+
+      return {
+        promise,
+        resolve,
+        reject,
+      }
+    }
+    /* eslint-enable align-assignments/align-assignments */
+  }
+}
+
 async function importPdfJS () {
   if (!pdfjsLib) {
+    polyfillPromiseWithResolvers()
+
     const pdfjs = await import('pdfjs-dist')
 
     if (typeof window !== 'undefined' && 'Worker' in window)

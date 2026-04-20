@@ -566,9 +566,10 @@ export default defineConfig({
     },
   },
   vite: {
-    build  : { target: getTarget('extends @privyid/browserslist-config') },
-    resolve: { alias },
-    plugins: [ViteImageOptimizer()],
+    build       : { target: getTarget('extends @privyid/browserslist-config') },
+    resolve     : { alias },
+    optimizeDeps: { exclude: ['pdfjs-dist', 'pdfjs-dist/legacy/web/pdf_viewer.mjs'] },
+    plugins     : [ViteImageOptimizer()],
   },
   srcExclude: ['public/js/**'],
 })
