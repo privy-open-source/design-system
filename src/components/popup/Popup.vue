@@ -220,7 +220,7 @@ async function onActionClick (action: PopupActionOption) {
   }
 
   .popup__text {
-    @apply text-xs line-clamp-2;
+    @apply text-xs;
   }
 
   .popup__actions {
