@@ -1,7 +1,7 @@
 {
   "name": "@privyid/persona",
   "description": "Persona core package",
-  "version": "1.2.2-rc.8",
+  "version": "1.2.2-rc.9",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/privy-open-source/design-system.git",
@@ -49,9 +49,6 @@
     "dist/"
   ],
   "scripts": {
-    "prepack": "yarn build",
-    "prepare": "yarn dev:prepare",
-    "build": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxi prepare playground"
